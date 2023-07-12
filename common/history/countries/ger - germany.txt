@@ -1,0 +1,87 @@
+COUNTRIES = {
+	c:GER = {
+		effect_starting_technology_tier_1_tech = yes
+		add_technology_researched = pumpjacks
+		add_technology_researched = nitroglycerin
+		add_technology_researched = dynamite
+		add_technology_researched = steam_donkey
+		add_technology_researched = anarchism
+		add_technology_researched = socialism
+		add_technology_researched = pan_nationalism
+		add_technology_researched = camera
+		add_technology_researched = identification_documents
+		add_technology_researched = political_agitation
+		add_technology_researched = film
+				
+		# Laws 
+		activate_law = law_type:law_presidential_republic
+		activate_law = law_type:law_autocracy
+		activate_law = law_type:law_outlawed_dissent
+		activate_law = law_type:law_women_in_the_workplace
+		activate_law = law_type:law_per_capita_based_taxation
+		activate_law = law_type:law_appointed_bureaucrats
+		activate_law = law_type:law_ethnostate
+		activate_law = law_type:law_protectionism
+		activate_law = law_type:law_interventionism
+		activate_law = law_type:law_public_schools
+		activate_law = law_type:law_collectivized_agriculture
+		activate_law = law_type:law_militarized_police
+		activate_law = law_type:law_professional_army
+		activate_law = law_type:law_migration_controls
+		activate_law = law_type:law_debt_slavery
+		activate_law = law_type:law_colonial_exploitation
+		activate_law = law_type:law_private_health_insurance
+		activate_law = law_type:law_secret_police
+		activate_law = law_type:law_freedom_of_conscience
+
+		
+		set_institution_investment_level = {
+			institution = institution_schools
+			level = 2
+		}
+
+		set_institution_investment_level = {
+			institution = institution_police
+			level = 3
+		}
+		
+		set_institution_investment_level = {
+			institution = institution_home_affairs
+			level = 3
+		}
+		
+		ig:ig_landowners = { 
+			set_interest_group_name = ig_chancellery
+			remove_ideology = ideology_paternalistic
+			add_ideology = ideology_junker_paternalistic
+		}
+
+		ig:ig_armed_forces = {
+			add_ruling_interest_group = yes
+			set_interest_group_name = ig_wehrmacht
+			remove_ideology = ideology_patriotic
+			add_ideology = ideology_iron_fisted
+		}
+
+		ig:ig_industrialists = {
+			set_interest_group_name = ig_autarks
+			remove_ideology = ideology_individualist
+			remove_ideology = ideology_plutocratic
+			add_ideology = ideology_eugenicist
+			add_ideology = ideology_kleptocratic
+		}
+
+		ig:ig_petty_bourgeoisie = {
+			set_interest_group_name = ig_herrenvolk
+		}
+
+		ig:ig_rural_folk = {
+			set_interest_group_name = ig_reichsnahrstand
+		}
+
+		ig:ig_trade_unions = {
+			set_interest_group_name = ig_glf
+		}
+
+	}
+}
