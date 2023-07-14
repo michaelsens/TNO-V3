@@ -2083,56 +2083,6 @@ on_revolution_start = {
 			}
 			set_variable = anti_monarchist_revolution
 		}
-		if = {
-			limit = {
-				has_journal_entry = je_warlord_china
-				NOT = { has_variable = china_warlord_explosion_revolution }
-			}
-			post_notification = warlord_china_explosion_point_add
-			change_variable = {
-				name = china_warlord_explosion
-				add = 1
-			}
-			set_variable = china_warlord_explosion_revolution
-		}
-		if = {
-			limit = {
-				has_journal_entry = je_meiji_restoration
-				scope:target = {
-					ig:ig_landowners = {
-						is_in_government = yes
-					}
-				}
-			}
-			set_variable = anti_shogunate_civil_war
-		}
-		if = {
-			limit = {
-				has_journal_entry = je_the_paris_commune_france
-			}
-			c:FRA = {
-				trigger_event = { id = paris_commune.4 popup = yes }
-			}
-			random_scope_state = {
-				limit = {
-					state_region = s:STATE_ILE_DE_FRANCE
-				}
-				set_state_owner = c:PRC
-			}
-			c:PRC = {
-				annex = scope:target
-				create_diplomatic_play = {
-					type = dp_annex_war
-					target_state = c:FRA.capital
-					annex_as_civil_war = yes
-					add_war_goal = {
-						holder = c:FRA
-						type = annex_country
-						target_country = c:PRC
-					}
-				}
-			}
-		}
 	}
 }
 
@@ -2144,21 +2094,7 @@ on_revolution_end = {
 # Root = Country
 # scope:target = Uprising country
 on_secession_start = {
-	effect = {
-		if = {
-			limit = {
-				has_journal_entry = je_warlord_china
-				NOT = { has_variable = china_warlord_explosion_revolution }
-			}
-			post_notification = warlord_china_explosion_point_add
-			change_variable = {
-				name = china_warlord_explosion
-				add = 1
-			}
-			set_variable = china_warlord_explosion_revolution
-		}
 
-	}
 }
 
 # Root = Country
@@ -2293,18 +2229,6 @@ on_civil_war_won = {
 				}
 			}
 			###
-
-
-			if = {
-				limit = {
-					has_variable = orleanist_restoration_var
-					NOT = { has_journal_entry = je_cement_the_rightful_dynasty }
-					has_dlc_feature = voice_of_the_people_content
-				}
-				add_journal_entry = {
-					type = je_cement_the_rightful_dynasty
-				}
-			}
 		}
 
 		### Bonapartists
@@ -2387,16 +2311,6 @@ on_civil_war_won = {
 			###
 
 
-			if = {
-				limit = {
-					has_variable = bonapartist_restoration_var
-					NOT = { has_journal_entry = je_cement_the_rightful_dynasty }
-					has_dlc_feature = voice_of_the_people_content
-				}
-				add_journal_entry = {
-					type = je_cement_the_rightful_dynasty
-				}
-			}
 		}
 
 		### Legitimists
@@ -2479,16 +2393,6 @@ on_civil_war_won = {
 			###
 
 
-			if = {
-				limit = {
-					has_variable = legitimist_restoration_var
-					NOT = { has_journal_entry = je_cement_the_rightful_dynasty }
-					has_dlc_feature = voice_of_the_people_content
-				}
-				add_journal_entry = {
-					type = je_cement_the_rightful_dynasty
-				}
-			}
 		}
 	}
 }
