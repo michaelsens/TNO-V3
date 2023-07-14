@@ -1143,24 +1143,6 @@ ideology_jingoist_leader = {
 			}
 			add = 50
 		}
-		# less likely for conservative French IG's
-		if = {
-			limit = {
-				owner = {
-					exists = c:FRA
-					this = c:FRA
-					has_journal_entry = je_divided_monarchists
-				}
-				scope:interest_group = {
-					OR = {
-						is_interest_group_type = ig_landowners
-						is_interest_group_type = ig_petty_bourgeoisie
-						is_interest_group_type = ig_devout
-					}
-				}
-			}
-			add = -100
-		}
 		# conservative and/or reactionary leaders have a higher spawn chance if the Anti-Dreyfusards won.
 		if = {
 			limit = {
@@ -2543,23 +2525,6 @@ ideology_market_liberal = {
 			}
 			add = -75
 		}
-		# less likely for conservative French IG's
-		if = {
-			limit = {
-				owner = {
-					exists = c:FRA
-					this = c:FRA
-					has_journal_entry = je_divided_monarchists
-				}
-				scope:interest_group = {
-					OR = {
-						is_interest_group_type = ig_industrialists
-						is_interest_group_type = ig_petty_bourgeoisie
-					}
-				}
-			}
-			add = -100
-		}
 		# liberal and/or radical leaders have a higher spawn chance if the Dreyfusards won.
 		if = {
 			limit = {
@@ -2783,24 +2748,6 @@ ideology_authoritarian = {
 			}
 			add = -50
 		}
-		# less likely for conservative French IG's
-		if = {
-			limit = {
-				owner = {
-					exists = c:FRA
-					this = c:FRA
-					has_journal_entry = je_divided_monarchists
-				}
-				scope:interest_group = {
-					OR = {
-						is_interest_group_type = ig_landowners
-						is_interest_group_type = ig_petty_bourgeoisie
-						is_interest_group_type = ig_devout
-					}
-				}
-			}
-			add = -100
-		}
 		# conservative and/or reactionary leaders have a higher spawn chance if the Anti-Dreyfusards won.
 		if = {
 			limit = {
@@ -2946,23 +2893,6 @@ ideology_protectionist = {
 				}
 			}
 			add = -75
-		}
-		# less likely for conservative French IG's
-		if = {
-			limit = {
-				owner = {
-					exists = c:FRA
-					this = c:FRA
-					has_journal_entry = je_divided_monarchists
-				}
-				scope:interest_group = {
-					OR = {
-						is_interest_group_type = ig_industrialists
-						is_interest_group_type = ig_petty_bourgeoisie
-					}
-				}
-			}
-			add = -100
 		}
 	}
 }

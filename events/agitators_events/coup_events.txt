@@ -866,18 +866,6 @@ coup.2 = {
 		generate_french_monarch = yes
 		if = {
 			limit = {
-				has_variable = fra_divided_monarchists_freeze
-			}
-			remove_variable = fra_divided_monarchists_freeze
-		}
-		add_journal_entry = {
-			type = je_divided_monarchists
-		}
-		add_journal_entry = {
-			type = je_cement_the_rightful_dynasty
-		}
-		if = {
-			limit = {
 				any_country = {
 					has_variable = coup_sponsor
 					this.var:coup_sponsor = root
