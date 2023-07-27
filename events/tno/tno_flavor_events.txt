@@ -1,0 +1,370 @@
+namespace = tno_flavor_events
+
+tno_flavor_events.1 = {
+    type = country_event
+    placement = ROOT
+
+	title = saf_flavor.1
+	desc = saf_flavor.1.d
+    flavor = saf_flavor.1.f	
+
+	event_image = {
+		texture  = "gfx/event_pictures/super_pictures/panzer.dds"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/middleeast/courtroom_upheaval" 
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	trigger = {
+		this ?= c:USA
+	}	
+	
+	duration = 3
+
+	option = {
+		name = saf_flavor.1.a
+        change_relations = {
+            country = c:GER
+            value = 20
+        }
+        change_relations = {
+            country = c:KON
+            value = 30
+        }
+        change_infamy = -10
+	}
+    option = {
+		name = saf_flavor.1.b
+        add_modifier = {
+			name = munitions_production_modifier 
+			months = 16
+		}
+        add_radicals = {
+			value = 0.005
+		}
+	}
+}
+
+tno_flavor_events.2 = {
+    type = country_event
+    placement = ROOT
+
+	title = usa_flavor.1
+	desc = usa_flavor.1.d
+    flavor = usa_flavor.1.f
+
+	event_image = {
+		texture  = "gfx/event_pictures/super_pictures/summit_1.dds"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/middleeast/courtroom_upheaval" 
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	trigger = {
+		this ?= c:USA
+	}	
+	
+	duration = 3
+
+	
+    option = {
+		name = usa_flavor.1.b
+		change_relations = {
+            country = c:SAF
+            value = -10
+        }
+        change_infamy = -5
+	}
+    option = {
+		name = usa_flavor.1.a
+        change_relations = {
+            country = c:SAF
+            value = 50
+        }
+        change_relations = {
+            country = c:KON
+            value = -50
+        }
+		c:SAF = {
+  		    add_modifier = {
+    		    name = national_defence_modifier
+    	        years = 3
+  	        }
+        }
+        add_radicals = {
+			value = 0.005
+		}
+	}
+}
+
+tno_flavor_events.3 = {
+    type = country_event
+    placement = ROOT
+
+	title = ger_flavor.1
+	desc = ger_flavor.1.d
+    flavor = ger_flavor.1.f
+
+	event_image = {
+		texture  = "gfx/event_pictures/super_pictures/investigation.dds"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/middleeast/courtroom_upheaval" 
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	trigger = {
+		this ?= c:GER
+	}	
+	
+	duration = 3
+
+	option = {
+		name = ger_flavor.1.a
+        change_relations = {
+            country = c:KON
+            value = 50
+        }
+	}
+    option = {
+		name = ger_flavor.1.b
+		change_relations = {
+            country = c:KON
+            value = -30
+        }
+        add_radicals = {
+			value = 0.005
+		}
+		add_modifier = {
+			name = army_resources_modifier
+			value = 5 
+			months = 12
+		}
+	}
+}
+
+tno_flavor_events.4 = {
+    type = country_event
+    placement = ROOT
+
+	title = ita_flavor.1
+	desc = ita_flavor.1.d
+    flavor = ita_flavor.1.f
+
+	event_image = {
+		texture  = "gfx/event_pictures/super_pictures/merc.dds"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/middleeast/courtroom_upheaval" 
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	trigger = {
+		this ?= c:ITA
+	}	
+	
+	duration = 3
+
+	option = {
+		name = ita_flavor.1.a
+        s:STATE_CONSTANTINE = {
+			add_devastation = 20
+		}
+		s:STATE_EAST_SAHARA = {
+			add_devastation = 20
+		}
+	}
+    option = {
+		name = ita_flavor.1.b
+		change_relations = {
+            country = c:IBE
+            value = -50
+        }
+		add_modifier = { 
+			name = frontier_military_aid
+			multiplier = money_amount_multiplier_small
+			months = 7
+		}
+		add_modifier = {
+			name = army_resources_modifier
+			value = 5 
+			months = 12
+		}
+	}
+}
+
+tno_flavor_events.5 = {
+    type = country_event
+    placement = ROOT
+
+	title = ibe_flavor.1
+	desc = ibe_flavor.1.d
+    flavor = ibe_flavor.1.f
+
+	event_image = {
+		texture  = "gfx/event_pictures/super_pictures/merc.dds"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/middleeast/courtroom_upheaval" 
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	trigger = {
+		this ?= c:IBE
+	}	
+	
+	duration = 3
+
+	option = {
+		name = ibe_flavor.1.a
+        change_relations = {
+            country = c:ITA
+            value = 20
+        }
+		change_infamy = -10
+	}
+    option = {
+		name = ibe_flavor.1.b
+		change_infamy = 10
+		s:STATE_CONSTANTINE = {
+			add_devastation = 10
+		}
+		s:STATE_EAST_SAHARA = {
+			add_devastation = 10
+		}
+		add_modifier = {
+			name = modifier_raiding_parties
+			months = 6
+		}
+		c:ITA = {
+			add_modifier = {
+			name = modifier_border_raids
+			months = 6
+		}
+		}
+		change_relations = {
+            country = c:ITA
+            value = -20
+        }
+	}
+}
+
+tno_flavor_events.6 = {
+    type = country_event
+    placement = ROOT
+
+	title = ita_flavor.2
+	desc = ita_flavor.2.d
+    flavor = ita_flavor.2.f
+
+	event_image = {
+		texture  = "gfx/event_pictures/super_pictures/oilwell.dds"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/middleeast/courtroom_upheaval" 
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	trigger = {
+		this ?= c:ITA
+	}	
+	
+	duration = 3
+
+	option = {
+		name = ita_flavor.2.a
+        change_relations = {
+            country = c:TUR
+            value = 10
+        }
+		add_modifier = {
+			name = modifier_political_failure
+			months = 12
+		}
+		add_modifier = {
+			name = modifier_lost_oil_revenue
+			months = 8
+		}
+        change_infamy = -5
+	}
+    option = {
+		name = ita_flavor.2.b
+		create_diplomatic_pact = {
+			country = c:TUR
+			type = embargo
+		}
+		add_modifier = {
+			name = modifier_lost_oil_revenue
+			months = 8
+		}
+		change_relations = {
+            country = c:TUR
+            value = -50
+        }
+		change_infamy = 5
+	}
+}
+
+tno_flavor_events.7 = {
+    type = country_event
+    placement = ROOT
+
+	title = tur_flavor.1
+	desc = tur_flavor.1.d
+    flavor = tur_flavor.1.f
+
+	event_image = {
+		texture  = "gfx/event_pictures/super_pictures/oilwell.dds"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/middleeast/courtroom_upheaval" 
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	trigger = {
+		this ?= c:TUR
+	}	
+	
+	duration = 3
+
+	option = {
+		name = tur_flavor.1.a
+		add_modifier = {
+			name = oil_production_modifier
+			months = 8
+		}
+		change_relations = {
+            country = c:ITA
+            value = -25
+        }
+        
+	}
+    option = {
+		name = tur_flavor.1.b
+		add_modifier = {
+			name = oil_production_modifier
+			months = 10
+		}
+		change_relations = {
+            country = c:ITA
+            value = -50
+        }
+		add_radicals = {
+			value = 0.005
+		}
+		add_modifier = {
+			name = modifier_gained_oil_revenue
+			months = 8
+		}
+		change_infamy = 10
+	}
+}

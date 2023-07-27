@@ -1,0 +1,155 @@
+﻿on_monthly_pulse_country = {
+    effect = {
+        #SAF
+        if = {
+			limit = {
+				c:KON ?= this
+		        game_date >= 1957.3.1
+                NOT = { has_global_variable = saf_war_var }
+			}
+            set_global_variable = saf_war_var
+            trigger_event = { id = tno_war_events.1 }
+
+        }
+        if = {
+			limit = {
+               has_global_variable = saf_war_var
+               NOT = { has_variable = saf_super_var }
+            }
+            set_variable = saf_super_var
+            trigger_event = { id = tno_super_events.2 days = 0 popup = yes }
+        }
+        #Phillipean
+        if = {
+			limit = {
+				c:PHI ?= this
+		        game_date >= 1962.6.1
+                NOT = { has_global_variable = phi_war_var }
+			}
+            set_global_variable = phi_war_var
+            trigger_event = { id = tno_war_events.2 }
+
+        }
+        if = {
+			limit = {
+               has_global_variable = phi_war_var
+               NOT = { has_variable = phi_super_var }
+            }
+            set_variable = phi_super_var
+            trigger_event = { id = tno_super_events.3 days = 0 popup = yes }
+        }
+        #Triumvirate
+        if = {
+			limit = {
+				c:TUR ?= this
+		        game_date >= 1954.8.1
+                NOT = { has_global_variable = tri_war_var }
+			}
+            set_global_variable = tri_war_var
+            trigger_event = { id = tno_war_events.3 }
+
+        }
+        if = {
+			limit = {
+               has_global_variable = tri_war_var
+               NOT = { has_variable = tri_super_var }
+            }
+            set_variable = tri_super_var
+            trigger_event = { id = tno_super_events.4 days = 0 popup = yes }
+        }
+        if = {
+			limit = {
+               game_date >= 1953.10.1
+               NOT = { has_variable = ita_flavor_var }
+            }
+            set_variable = ita_flavor_var
+            trigger_event = { id = tno_flavor_events.4 days = 0 }
+        }
+        if = {
+			limit = {
+               game_date >= 1954.1.1
+               NOT = { has_variable = ibe_flavor_var }
+            }
+            set_variable = ibe_flavor_var
+            trigger_event = { id = tno_flavor_events.5 days = 0 }
+        }
+        if = {
+			limit = {
+               game_date >= 1954.3.1
+               NOT = { has_variable = ita_flavor_var_2 }
+            }
+            set_variable = ita_flavor_var_2
+            trigger_event = { id = tno_flavor_events.6 days = 0 }
+        }
+        if = {
+			limit = {
+               game_date >= 1954.2.1
+               NOT = { has_variable = tur_flavor_var }
+            }
+            set_variable = tur_flavor_var
+            trigger_event = { id = tno_flavor_events.7 days = 0 }
+        }
+
+        #British Reuinification
+        if = {
+            limit = {
+                c:GBR ?= THIS
+                NOT = { has_global_variable = gbr_var }
+            }
+            set_global_variable = gbr_var
+        }
+        if = {
+			limit = {
+               has_global_variable = gbr_var
+               NOT = { has_variable = gbr_super_var }
+            }
+            set_variable = gbr_super_var
+            trigger_event = { id = tno_super_events.5 days = 0 popup = yes }
+        }
+        
+
+        #SafContext
+        if = {
+			limit = {
+               game_date >= 1956.9.1
+               NOT = { has_variable = saf_flavor_var }
+            }
+            set_variable = saf_flavor_var
+            trigger_event = { id = tno_flavor_events.1 days = 0 }
+        }
+
+        #South African Conference
+        if = {
+			limit = {
+               game_date >= 1957.1.1
+               NOT = { has_variable = usa_flavor_var }
+            }
+            set_variable = usa_flavor_var
+            trigger_event = { id = tno_flavor_events.2 days = 0 popup = yes }
+        }
+
+        #Mittelafrika investigation
+        if = {
+			limit = {
+               game_date >= 1956.1.1
+               NOT = { has_variable = ger_flavor_var }
+            }
+            set_variable = ger_flavor_var
+            trigger_event = { id = tno_flavor_events.3 days = 0 popup = yes }
+        }
+    }
+}  
+
+on_yearly_pulse_country = {
+    effect = {
+        if = {
+			limit = {
+               game_date >= 1960.1.1
+               NOT = { has_variable = rus_super_var }
+            }
+            set_variable = rus_super_var
+            trigger_event = { id = tno_super_events.1 days = 0 popup = yes }
+        }
+    }
+    
+}

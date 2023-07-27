@@ -1,0 +1,231 @@
+﻿namespace = tno_war_events
+
+tno_war_events.1 = {
+	type = country_event
+    hidden = yes
+
+	 
+
+	trigger = {
+        exists = c:KON
+		exists = c:SAF
+		ROOT = c:KON
+	}	
+	
+    immediate = {
+        create_diplomatic_play = {
+            name = saf
+            target_country = c:SAF
+                type = dp_humiliation
+                war = yes
+                initiator = c:KON
+                add_initiator_backers = { c:GER }
+                add_target_backers = { c:USA }
+                add_war_goal = {
+                    holder = c:KON
+                    type = conquer_state
+                    target_state = s:STATE_TRANSVAAL.region_state:SAF
+                }
+                add_war_goal = {
+                    holder = c:KON
+                    type = conquer_state
+                    target_state = s:STATE_NAMAQUALAND.region_state:SAF
+                }
+                add_war_goal = {
+                    holder = c:KON
+                    type = conquer_state
+                    target_state = s:STATE_SOUTH_ANGOLA.region_state:SAF
+                }
+                add_war_goal = {
+                    holder = c:KON
+                    type = conquer_state
+                    target_state = s:STATE_ZAMBEZI.region_state:SAF
+                }
+                add_war_goal = {
+                    holder = c:KON
+                    type = conquer_state    
+                    target_state = s:STATE_BOTSWANA.region_state:SAF
+                }
+                add_war_goal = {
+                    holder = c:KON
+                    type = conquer_state    
+                    target_state = s:STATE_HEREROLAND.region_state:SAF
+                }
+                add_war_goal = {
+                    holder = c:KON
+                    type = conquer_state    
+                    target_state = s:STATE_LOURENCO_MARQUES.region_state:SAF
+                }
+                add_war_goal = {
+                    holder = c:SAF
+                    type = conquer_state
+                    target_state = s:STATE_ZAMBEZIA.region_state:KON
+                }
+                add_war_goal = {
+                    holder = c:SAF
+                    type = conquer_state
+                    target_state = s:STATE_ZAMBIA.region_state:KON
+                }
+                add_war_goal = {
+                    holder = c:SAF
+                    type = conquer_state
+                    target_state = s:STATE_EAST_ANGOLA.region_state:KON
+                }
+                add_war_goal = {
+                    holder = c:SAF
+                    type = conquer_state
+                    target_state = s:STATE_NORTH_ANGOLA.region_state:KON
+                }
+                add_war_goal = {
+                    holder = c:SAF
+                    type = conquer_state
+                    target_state = s:STATE_KATANGA.region_state:KON
+                }
+                add_war_goal = {    
+                    holder = c:SAF
+                    type = conquer_state
+                    target_state = s:STATE_KAZEMBE.region_state:KON
+                }
+                add_war_goal = {
+                    holder = c:SAF
+                    type = conquer_state
+                    target_state = s:STATE_MOCAMBIQUE.region_state:KON
+                }
+        }
+        hidden_effect = {
+				change_infamy = -150
+		}
+    }
+}
+
+tno_war_events.2 = {
+	type = country_event
+    hidden = yes
+
+	 
+
+	trigger = {
+        exists = c:PHI
+		exists = c:RNG
+		ROOT = c:PHI
+	}	
+	
+    immediate = {
+        create_diplomatic_play = {
+            name = phi
+            target_country = c:RNG
+                type = dp_annex_war
+                war = yes
+                initiator = c:KON
+                add_initiator_backers = { c:JAP }
+                add_target_backers = { c:USA }
+                add_war_goal = {
+                    holder = c:RNG
+                    type = return_state
+                    target_state = s:STATE_MINDANAO.region_state:PHI
+                }
+                add_war_goal = {    
+                    holder = c:RNG
+                    type = return_state
+                    target_state = s:STATE_VISAYAS.region_state:PHI
+                }
+                add_war_goal = {
+                    holder = c:RNG
+                    type = return_state
+                    target_state = s:STATE_LUZON.region_state:PHI
+                }
+        }
+        hidden_effect = {
+				change_infamy = -150
+		}
+    }
+}
+
+tno_war_events.3 = {
+	type = country_event
+    hidden = yes
+
+	 
+
+	trigger = {
+        exists = c:ITA
+		exists = c:IBE
+		ROOT = c:TUR
+	}	
+	
+    immediate = {
+        create_diplomatic_play = {
+            name = tri
+            target_country = c:PAL
+                type = dp_annex_war
+                war = no
+                escalation = 80
+                initiator = c:TUR
+                add_initiator_backers = { c:IBE }
+                add_target_backers = { c:GRE C:EGY c:ITA }
+                add_war_goal = {
+                    holder = c:GRE
+                    type = conquer_state
+                    target_state = s:STATE_WESTERN_THRACE.region_state:TUR
+                }
+                add_war_goal = {    
+                    holder = c:PAL
+                    type = conquer_state
+                    target_state = s:STATE_SYRIA.region_state:TUR
+                }
+                add_war_goal = {    
+                    holder = c:PAL
+                    type = conquer_state
+                    target_state = s:STATE_LEBANON.region_state:TUR
+                }
+                add_war_goal = {    
+                    holder = c:ITA
+                    type = conquer_state
+                    target_state = s:STATE_CONSTANTINE.region_state:IBE
+                }
+                add_war_goal = {    
+                    holder = c:ITA
+                    type = conquer_state
+                    target_state = s:STATE_SAHARA.region_state:IBE
+                }
+                add_war_goal = {    
+                    holder = c:ITA
+                    type = conquer_state
+                    target_state = s:STATE_ALGIERS.region_state:IBE
+                }
+                add_war_goal = {    
+                    holder = c:ITA
+                    type = conquer_state
+                    target_state = s:STATE_TLEMCEN.region_state:IBE
+                }
+                add_war_goal = {    
+                    holder = c:TUR
+                    type = return_state
+                    target_state = s:STATE_AYDIN.region_state:ITA
+                }
+                add_war_goal = {    
+                    holder = c:TUR
+                    type = return_state
+                    target_state = s:STATE_EAST_AEGEAN_ISLANDS.region_state:ITA
+                }
+                add_war_goal = {    
+                    holder = c:TUR
+                    type = return_state
+                    target_state = s:STATE_CYPRUS.region_state:ITA
+                }
+                add_war_goal = {    
+                    holder = c:IBE
+                    type = conquer_state
+                    target_state = s:STATE_TUNISIA.region_state:ITA
+                }
+                add_war_goal = {    
+                    holder = c:IBE
+                    type = conquer_state
+                    target_state = s:STATE_EAST_SAHARA.region_state:ITA
+                }
+        }
+        hidden_effect = {
+				change_infamy = -150
+		}
+    }
+}

@@ -747,27 +747,6 @@ on_spreading_technology = {
 # scope:target = Target of the play
 on_diplomatic_play_started = {
 	effect = {
-		if = {
-			limit = { is_diplomatic_play_type = dp_unify_germany }
-			every_country = {
-				limit = {
-					is_supporting_unification_candidate = { who = scope:initiator country_formation = GER }
-				}
-				
-				scope:initiator = { annex = prev }
-			}
-		}
-		
-		if = {
-			limit = { is_diplomatic_play_type = dp_unify_italy }
-			every_country = {
-				limit = {
-					is_supporting_unification_candidate = { who = scope:initiator country_formation = ITA }
-				}
-				
-				scope:initiator = { annex = prev }
-			}
-		}
 
 		if = {
 			limit = { is_diplomatic_play_type = dp_unify_scandinavia }
@@ -2114,18 +2093,6 @@ on_civil_war_won = {
 				has_global_variable = achievement_revo_needed
 			}
 			set_global_variable = achievement_revolutionary
-		}
-		if = {
-			limit = {
-				has_journal_entry = je_meiji_restoration
-				has_variable = anti_shogunate_civil_war
-				has_variable = shogunate_var
-			}
-			change_variable = {
-				name = shogunate_var
-				add = 120
-			}
-			remove_variable = anti_shogunate_civil_war
 		}
 		if = {
 			limit = {
