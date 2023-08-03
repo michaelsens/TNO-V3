@@ -136,9 +136,67 @@
             }
             set_variable = ger_flavor_var
             trigger_event = { id = tno_flavor_events.3 days = 0 popup = yes }
+        } 
+
+        #Rk Insurgency ost  
+        if = {
+			limit = {
+               game_date >= 1950.3.1
+               NOT = { has_variable = ost_insurgecy_var }
+            }
+            set_variable = ost_insurgecy_var
+            trigger_event = { id = tno_rk_events.1 popup = yes }
+        }
+        
+        #battle of minsk
+        if = {
+			limit = {
+               game_date >= 1950.2.1
+               NOT = { has_variable = ost_battle_var }
+            }
+            set_variable = ost_battle_var
+            trigger_event = { id = tno_rk_events.2 popup = yes }
+
+            #warsaw upriseing 
+        if = {
+			limit = {
+               game_date >= 1950.2.1
+               NOT = { has_variable = warsaw_upriseing_var }
+            }
+            set_variable = warsaw_upriseing_var
+            trigger_event = { id = tno_rk_events.3 popup = yes }
+        }
+        
+         #war in dagestan starting event
+        if = {
+			limit = {
+               game_date >= 1950.2.1
+               NOT = { has_variable = dag_war_var }
+            }
+            set_variable = dag_war_var
+            trigger_event = { id = tno_rk_events.4 popup = yes }
         }
     }
+    #ukraine starting event
+        if = {
+			limit = {
+               game_date >= 1950.2.1
+               NOT = { has_variable = ukraine_start_var }
+            }
+            set_variable = ukraine_start_var
+            trigger_event = { id = tno_rk_events.5 days = 0 popup = yes }
+            
+            #moskvin starting event
+        if = {
+			limit = {
+               game_date >= 1950.2.1
+               NOT = { has_variable = start_mosk_var }
+            }
+            set_variable = start_mosk_var
+            trigger_event = { id = tno_rk_events.6 popup = yes }
+        } 
 }  
+
 
 on_yearly_pulse_country = {
     effect = {

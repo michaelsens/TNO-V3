@@ -1,0 +1,199 @@
+namespace = tno_rk_events
+
+tno_rk_events.1 ={
+    type = country_event
+    placement = ROOT
+ 
+    title = insurgency_ost.1
+    desc = insurgency_ost.1.d
+    flavor = insurgency_ost.1.f 
+    event_image = {
+		video = "unspecific_ruler_speaking_to_people"
+	}
+
+    icon = "gfx/interface/icons/event_icons/event_skull.dds"
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 3
+
+    trigger = {
+        this ?= c:RKO
+
+    }
+
+    option = {
+        name = insurgency_ost.1.a
+        add_modifier ={name = modifier_baltic_insurgency} 
+        add_modifier ={name = modifier_belarus_insurgency}
+    }
+}
+
+tno_rk_events.2 ={ 
+    type = country_event
+    placement = ROOT
+ 
+    title = insurgency_ost.2
+    desc = insurgency_ost.2.d
+    flavor = insurgency_ost.2.f 
+    event_image = {
+		video = "unspecific_ruler_speaking_to_people"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_skull.dds"
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 3
+
+    trigger = {
+        this ?= c:RKO
+   
+    }
+
+    option = {
+        name = insurgency_ost.2.a
+        s:STATE_MINSK = {
+            add_devastation = 80
+        }
+        s:STATE_ESTONIA = {
+            add_devastation = 55
+        }
+        s:STATE_LATVIA = {
+            add_devastation =45
+        }
+        s:STATE_ORSHA = {
+            add_devastation = 40
+        }
+        s:STATE_BREST = {
+            add_devastation = 65
+        }
+        s:STATE_LITHUANIA = {
+            add_devastation = 30
+        }
+        s:STATE_INGRIA = {
+            add_devastation = 15
+        }
+    
+         
+    }
+}
+
+tno_rk_events.3 ={
+    type = country_event
+    placement = ROOT
+ 
+    title = warsaw_upriseing.1
+    desc = warsaw_upriseing.1.d
+    flavor = warsaw_upriseing.1.f 
+    event_image = {
+		video = "unspecific_ruler_speaking_to_people"
+	}
+
+    icon = "gfx/interface/icons/event_icons/event_skull.dds"
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 3
+
+    trigger = {
+        this ?= c:GER
+
+    }
+
+    option = {
+        name = warsaw_upriseing.1.a
+       s:STATE_MAZOVIA = {
+            add_devastation = 65
+        }
+    }
+    
+}
+
+ tno_rk_events.4 = {
+    type = country_event
+    placement = ROOT
+ 
+    title = war_dagestan.4
+    desc = war_dagestan.4.d
+    flavor = war_dagestan.4.f 
+    event_image = {
+		video = "unspecific_ruler_speaking_to_people"
+	}
+
+    icon = "gfx/interface/icons/event_icons/event_skull.dds"
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 3
+
+    trigger = {
+        this ?= c:RKK
+
+    }
+
+    option = {
+        name = war_dagestan.4.a
+        add_modifier ={name = modifier_war_dagestan} 
+        add_modifier ={name =modifier_reich_oil}
+    }
+}
+
+tno_rk_events.5 ={
+    type = country_event
+    placement = ROOT
+ 
+    title = insurgency_ost.5
+    desc = insurgency_ost.5.d
+    flavor = insurgency_ost.5.f 
+    event_image = {
+		video = "unspecific_ruler_speaking_to_people"
+	}
+
+    icon = "gfx/interface/icons/event_icons/event_skull.dds"
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 3
+
+    trigger = {
+        this ?= c:RKU
+
+    }
+
+    option = {
+        name = insurgency_ost.5.a
+        add_modifier ={name = modifier_breadbasket} 
+        add_modifier ={name = modifier_upa_defeated}
+    }
+}
+
+tno_rk_events.6 ={
+    type = country_event
+    placement = ROOT
+ 
+    title = insurgency_ost.6
+    desc = insurgency_ost.6.d
+    flavor = insurgency_ost.6.f 
+    event_image = {
+		video = "unspecific_ruler_speaking_to_people"
+	}
+
+    icon = "gfx/interface/icons/event_icons/event_skull.dds"
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 3
+
+    trigger = {
+        this ?= c:RKM
+
+    }
+
+    option = {
+        name = insurgency_ost.6.a
+        add_modifier ={name = modifier_mines} 
+        add_modifier ={name = modifier_big_brother}
+        add_modifier ={name = modifier_russian_border}
+    }
+}
