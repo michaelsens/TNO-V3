@@ -137,6 +137,19 @@
             set_variable = ger_flavor_var
             trigger_event = { id = tno_flavor_events.3 days = 0 popup = yes }
         }
+
+        if = {
+			limit = {
+               game_date >= 1950.2.1
+               NOT = { has_variable = start_var }
+            }
+            set_variable = start_var
+            trigger_event = { id = tno_starting_events.1 popup = yes }
+            trigger_event = { id = tno_starting_events.2 popup = yes }
+            trigger_event = { id = tno_starting_events.3 popup = yes }
+            trigger_event = { id = tno_starting_events.4 popup = yes }
+            trigger_event = { id = tno_starting_events.5 popup = yes }
+        }
     }
 }  
 
@@ -150,6 +163,9 @@ on_yearly_pulse_country = {
             set_variable = rus_super_var
             trigger_event = { id = tno_super_events.1 days = 0 popup = yes }
         }
+        
     }
     
 }
+
+
