@@ -1,0 +1,32 @@
+namespace = tno_rom_events
+
+tno_rom_events.1 ={
+    type = country_event
+    placement = ROOT
+ 
+    title = tno_rom_events.1
+    desc = tno_rom_events.1.d
+    flavor = tno_rom_events.1.f 
+    event_image = {
+        video = "europenorthamerica_springtime_of_nations"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_map.dds"
+
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 3
+
+    trigger = {
+        this ?= c:ROM
+
+    }
+
+   option = {
+        name = tno_rom_events.1.a
+        add_modifier ={name = modifier_revanchism} 
+        add_modifier ={name =modifier_hung_rival}
+         add_modifier ={name =modifier_victoria_mutilata}
+    }
+
+}
