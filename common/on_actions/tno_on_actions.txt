@@ -156,6 +156,7 @@
             }
             set_variable = ost_battle_var
             trigger_event = { id = tno_rk_events.2 popup = yes }
+        }
 
             #warsaw upriseing 
         if = {
@@ -167,7 +168,7 @@
             trigger_event = { id = tno_rk_events.3 popup = yes }
         }
         
-         #war in dagestan starting event
+         #war in dagestan
         if = {
 			limit = {
                game_date >= 1950.2.1
@@ -176,7 +177,6 @@
             set_variable = dag_war_var
             trigger_event = { id = tno_rk_events.4 popup = yes }
         }
-
         if = {
 			limit = {
                game_date >= 1950.2.1
@@ -197,9 +197,10 @@
                NOT = { has_variable = ukraine_start_var }
             }
             set_variable = ukraine_start_var
-            trigger_event = { id = tno_rk_events.5 days = 0 popup = yes }
-            
-            #moskvin starting event
+            trigger_event = { id = tno_rk_events.5 popup = yes }
+        }
+
+         # Moskowien starting event 
         if = {
 			limit = {
                game_date >= 1950.2.1
@@ -207,7 +208,80 @@
             }
             set_variable = start_mosk_var
             trigger_event = { id = tno_rk_events.6 popup = yes }
-        } 
+        }
+
+        # Rostov riot
+        if = {
+			limit = {
+               game_date >= 1950.3.1
+               NOT = { has_variable = rostov_riot_var }
+            }
+            set_variable = rostov_riot_var
+            trigger_event = { id = tno_rk_events.7 popup = yes }
+        }
+
+        # Crimea - rostov - UTU formation event
+        if = {
+			limit = {
+               game_date >= 1950.3.1
+               NOT = { has_variable = utu_form_var }
+            }
+            set_variable = utu_form_var
+            trigger_event = { id = tno_rk_events.8 popup = yes }
+        }
+
+        # Germany Stabbilty report
+        if = {
+			limit = {
+               game_date >= 1950.5.1
+               NOT = { has_variable = rk_report_var }
+            }
+            set_variable = rk_report_var
+            trigger_event = { id = tno_rk_events.9 popup = yes }
+        }
+
+ # hungarian start
+        if = {
+			limit = {
+               game_date >= 1950.2.1
+               NOT = { has_variable = start_hung_var }
+            }
+            set_variable = start_hung_var
+            trigger_event = { id = tno_hun_events.1 popup = yes }
+        }
+
+           # Romanian starting event 
+        if = {
+			limit = {
+               game_date >= 1950.2.1
+               NOT = { has_variable = rom_start_var }
+            }
+            set_variable = rom_start_var
+            trigger_event = { id = tno_rom_events.1 popup = yes }
+        }  
+
+        # Iberia starting event
+        if = {
+			limit = {
+               game_date >= 1950.2.1
+               NOT = { has_variable = spain_sep_var }
+            }
+            set_variable = spain_sep_var
+            trigger_event = { id = tno_spain_events.1 popup = yes }
+        }
+
+        # Iberia sepretism
+        if = {
+			limit = {
+               game_date >= 1950.3.1
+               NOT = { has_variable = spain_army_var }
+            }
+            set_variable = spain_army_var
+            trigger_event = { id = tno_spain_events.2 popup = yes }
+        }
+        
+
+    }
 }  
 
 

@@ -1,0 +1,60 @@
+namespace = tno_spain_events
+
+tno_spain_events.1 ={
+    type = country_event
+    placement = ROOT
+ 
+    title = tno_spain_events.1
+    desc = tno_spain_events.1.d
+    flavor = tno_spain_events.1.f 
+    event_image = {
+        video = "europenorthamerica_springtime_of_nations"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_protest.dds"
+
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 3
+
+    trigger = {
+        this ?= c:IBE
+
+    }
+
+   option = {
+        name = tno_spain_events.1.a
+        add_modifier ={name = modifier_basque_separatism} 
+        add_modifier ={name = modifier_catalan_separatism}
+        add_modifier ={name = modifier_moroccan_separatism}
+    }
+}
+
+tno_spain_events.2 ={
+    type = country_event
+    placement = ROOT
+ 
+    title = tno_spain_events.2
+    desc = tno_spain_events.2.d
+    flavor = tno_spain_events.2.f 
+    event_image = {
+        video = "europenorthamerica_springtime_of_nations"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_protest.dds"
+
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 3
+
+    trigger = {
+        this ?= c:IBE
+
+    }
+
+   option = {
+        name = tno_spain_events.2.a
+        add_modifier ={name = modifier_weak_fed_military} 
+    }
+
+}
