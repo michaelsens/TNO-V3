@@ -9,7 +9,7 @@ tno_starting_events.1 = {
     flavor = ger.1.f	
 
 	event_image = {
-		texture  = "gfx/event_pictures/super_pictures/panzer.dds"
+		texture  = "gfx/event_pictures/super_pictures/volkshalle.dds"
 	}
 
     icon = "gfx/interface/icons/event_icons/event_default.dds"
@@ -21,7 +21,7 @@ tno_starting_events.1 = {
 	duration = 6
 
 	option = {
-		name = ger.a
+		name = ger.1.a
 		add_modifier = {
     		name = modifier_masters_of_europe
   	    }
@@ -49,7 +49,7 @@ tno_starting_events.2 = {
     flavor = usa.1.f	
 
 	event_image = {
-		texture  = "gfx/event_pictures/super_pictures/panzer.dds"
+		texture  = "gfx/event_pictures/super_pictures/liberty.dds"
 	}
 
     icon = "gfx/interface/icons/event_icons/event_default.dds"
@@ -61,7 +61,7 @@ tno_starting_events.2 = {
 	duration = 6
 
 	option = {
-		name = usa.a
+		name = usa.1.a
 		add_modifier = { name = american_dream }
 		add_modifier = { 
 			name = national_humiliation 
@@ -88,7 +88,7 @@ tno_starting_events.3 = {
     flavor = jap.1.f	
 
 	event_image = {
-		texture  = "gfx/event_pictures/super_pictures/panzer.dds"
+		texture  = "gfx/event_pictures/super_pictures/palace.dds"
 	}
 
     icon = "gfx/interface/icons/event_icons/event_default.dds"
@@ -100,7 +100,7 @@ tno_starting_events.3 = {
 	duration = 6
 
 	option = {
-		name = jap.a
+		name = jap.1.a
 		add_modifier = { name = japanese_efficiency }
 		add_modifier = { name = sphere_overreliance }
 		add_modifier = { name = corrupt_bureaucracy }
@@ -120,7 +120,7 @@ tno_starting_events.4 = {
     flavor = ita.1.f	
 
 	event_image = {
-		texture  = "gfx/event_pictures/super_pictures/panzer.dds"
+		texture  = "gfx/event_pictures/super_pictures/vatican.dds"
 	}
 
     icon = "gfx/interface/icons/event_icons/event_default.dds"
@@ -151,7 +151,7 @@ tno_starting_events.5 = {
     flavor = bgd.1.f	
 
 	event_image = {
-		texture  = "gfx/event_pictures/super_pictures/panzer.dds"
+		texture  = "gfx/event_pictures/super_pictures/soldier.dds"
 	}
 
     icon = "gfx/interface/icons/event_icons/event_default.dds"
@@ -171,6 +171,34 @@ tno_starting_events.5 = {
 		add_modifier = { name = shadow_economy }
 		add_modifier = { name = national_purity  }
 		add_modifier = { name = armed_against_democracy  }
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+}
+
+tno_starting_events.6 = {
+    type = country_event
+    placement = ROOT
+
+	title = yue.1
+	desc = yue.1.d
+    flavor = yue.1.f	
+
+	event_image = {
+		texture  = "gfx/event_pictures/super_pictures/soldier.dds"
+	}
+
+    icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	trigger = {
+		this ?= c:YUE
+	}	
+	
+	duration = 6
+
+	option = {
+		name = yue.a
+		
 	}
 
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
