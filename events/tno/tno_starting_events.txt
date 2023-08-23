@@ -204,7 +204,64 @@ tno_starting_events.6 = {
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 }
 
+tno_starting_events.7 = {
+    type = country_event
+    placement = ROOT
 
+	title = "The Divine Mandate of Siberia"
+	desc = "Gods of the North"
+    flavor = "The disappointing truth is that we are currently witnessing the darkest of times in the history of our people, as dark those before the Light of the Message began to be spread among the Rus. But we are the light that shines in the darkness. As such we must stand above all the disgusting sinful: statesmen, soldiers, rapists, pillagers, communists and fascists, to show the people our virtue."
+
+	event_image = {
+		texture  = "gfx/event_pictures/super_pictures/soldier.dds"
+	}
+
+    icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	trigger = {
+		this ?= c:DIV
+	}	
+	
+	duration = 6
+
+	option = {
+		name = "What shall become of this world?"
+		add_loyalists = {
+			value = 0.05
+		}
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+}
+
+tno_starting_events.8 = {
+    type = country_event
+    placement = ROOT
+
+	title = "England"
+	desc = "Sun sets on our Empire"
+    flavor = "Once we were the top of the world, an empire spanning the world where the sun never sets. Now we are a broken nation ravaged by occupation and failure. The navy died during the war and is yet to recover! Will we manage to return to our former glory?"
+
+	event_image = {
+		texture  = "gfx/event_pictures/super_pictures/soldier.dds"
+	}
+
+    icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	trigger = {
+		this ?= c:ENG
+	}	
+	
+	duration = 6
+
+	option = {
+		name = "We will never be slaves again!"
+		add_modifier = { name = shattered_union }
+		add_modifier = { name = the_broken_navy }
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+}
 
 
 #add_modifier = { name =  }
