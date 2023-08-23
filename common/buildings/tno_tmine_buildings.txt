@@ -10,13 +10,51 @@
 	}
 
 	production_method_groups = {
-		pmg_tfarm_base_building_logging_camp
-		pmg_tfarm_equipment
-		pmg_tfarm_transportation_building_logging_camp
-		pmg_tfarm_ownership_capital_building_logging_camp
+		pmg_tno_nuclear_mine
+		pmg_tno_nuclear_equipment
+		pmg_tno_nuclear_transportaion
+		pmg_tno_ownership_capital_building_nuclear
 	}
 	
 	required_construction = construction_cost_medium
 }
 
+building_nuclear_enrichtigment_facility = {
+	building_group = bg_nuclear_enrichtment
+	texture = "gfx/interface/icons/building_icons/logging_camp.dds"
+	city_type = city
+	levels_per_mesh = 5
+	
+	unlocking_technologies = {
+		atmospheric_engine
+	}
 
+	production_method_groups = {
+		pmg_tno_nuclear_enrichtiment
+		pmg_tno_nuclear_equipment
+		pmg_tno_nuclear_transportaion
+		ppmg_tno_ownership_capital_building_nuclear
+	}
+	
+	required_construction = construction_cost_high
+}
+
+building_nuclear_fuel_makers = {
+	building_group = bg_nuclear_fuel 
+	texture = "gfx/interface/icons/building_icons/logging_camp.dds"
+	city_type = city
+	levels_per_mesh = 5
+	
+	unlocking_technologies = {
+		atmospheric_engine
+	}
+
+	production_method_groups = {
+		pmg_tno_nuclear_fuel_rods
+		pmg_tno_nuclear_equipment
+		pmg_tno_nuclear_transportaion
+		pmg_tno_ownership_capital_building_nuclear
+	}
+	
+	required_construction = construction_cost_high
+}
