@@ -1,4 +1,4 @@
-﻿bg_nuclear_mine = {
+﻿bg_uranium_mine = {
 	parent_group = bg_mining
 	category = rural
 
@@ -39,6 +39,26 @@ bg_nuclear_enrichtment = {
 }
 
 bg_nuclear_fuel = {
+	parent_group = bg_manufacturing
+	category = urban
+
+	always_possible = yes
+	
+	lens = heavy_industry
+	
+	economy_of_scale = yes
+	
+	can_use_slaves = yes
+	
+	urbanization = 5
+	infrastructure_usage_per_level = 1
+	
+	should_auto_expand = { 
+		default_auto_expand_rule = yes
+	}
+}
+
+bg_nuclear_reactor = {
 	parent_group = bg_manufacturing
 	category = urban
 

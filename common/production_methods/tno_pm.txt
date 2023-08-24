@@ -1,4 +1,4 @@
-﻿pm_tno_nuclear_mining = {
+﻿pm_tno_uranium_mining = {
 	texture = "gfx/interface/icons/production_method_icons/simple_forestry.dds"
 
 	building_modifiers = {
@@ -51,6 +51,24 @@ pm_tno_nuclear_fuel_production = {
 	}
 }
 
+pm_tno_nuclear_energy = {
+	texture = "gfx/interface/icons/production_method_icons/simple_forestry.dds"
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			building_input_uranium_rods_add = 5		
+
+			# output goods
+			building_output_electricity_add = 10000
+		}
+
+		level_scaled = {
+			# employment
+			building_employment_laborers_add = 5000
+		}
+	}
+}
 
 
 
