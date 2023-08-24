@@ -9,6 +9,9 @@
 		level_scaled = {
 			# employment
 			building_employment_laborers_add = 10000
+		    building_employment_machinists_add = 1000
+			building_employment_engineers_add = 500
+			
 		}
 	}
 }
@@ -19,15 +22,19 @@ pm_tno_nuclear_enrichtment_prozess = {
 	building_modifiers = {
 		workforce_scaled = {
 			# input goods
-		    building_input_uranium_ore_add = 40		
-
+		    building_input_uranium_ore_add = 20
+		
 			# output goods
-			building_output_uranium_rods_add = 5
+			building_output_uranium_rods_add = 2
 		}
-
 		level_scaled = {
 			# employment
-			building_employment_laborers_add = 20000
+			building_employment_laborers_add = 1000
+			building_employment_machinists_add = 3000
+			building_employment_engineers_add = 500
+			building_employment_academics_add = 25
+			
+
 		}
 	}
 }
@@ -38,15 +45,18 @@ pm_tno_nuclear_energy = {
 	building_modifiers = {
 		workforce_scaled = {
 			# input goods
-			building_input_uranium_rods_add = 5		
+			building_input_uranium_rods_add = 2	
 
 			# output goods
-			building_output_electricity_add = 10000
+			building_output_electricity_add = 1500
 		}
 
 		level_scaled = {
-			# employment
-			building_employment_laborers_add = 50000
+			# employment		
+			building_employment_machinists_add = 1500
+			building_employment_clerks_add = 100
+			building_employment_engineers_add = 1000
+			building_employment_academics_add = 100
 		}
 	}
 }
@@ -58,7 +68,7 @@ pm_tfarm_no_equipment = {
 }
 
 
-pm_tfarm_rail_transport_building_logging_camp = {
+pm_tfarm_rail_transport_building_nuclear = {
 	texture = "gfx/interface/icons/production_method_icons/rail_transport.dds"
 
 	pollution_generation = 15
@@ -68,33 +78,15 @@ pm_tfarm_rail_transport_building_logging_camp = {
 	}
 	building_modifiers = {
 		workforce_scaled = {
-			building_input_transportation_add = 2.5
+			building_input_transportation_add = 5.0
 		}
 
 		level_scaled = {
-			building_employment_laborers_add = -500
+			building_employment_machinists_add = 500
 		}
 	}
 }
 
-pm_tfarm_log_carts = {
-	texture = "gfx/interface/icons/production_method_icons/log_carts.dds"
-
-	pollution_generation = 15
-
-	unlocking_technologies = {
-		electric_railway
-	}
-	building_modifiers = {
-		workforce_scaled = {
-			building_input_transportation_add = 4
-		}
-
-		level_scaled = {
-			building_employment_laborers_add = -750
-		}
-	}
-}
 
 
 pm_tfarm_privately_owned_building_logging_camp = {
