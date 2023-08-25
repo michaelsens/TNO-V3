@@ -1,0 +1,158 @@
+namespace = tno_ger_events
+
+tno_ger_events.1 = {
+    type = country_event
+    placement = ROOT
+ 
+    title = tno_ger_events.1
+    desc = tno_ger_events.1.d
+    flavor = tno_ger_events.1.f 
+   event_image = {
+		texture  = "gfx/event_pictures/super_pictures/warsaw.png"
+	}
+
+    icon = "gfx/interface/icons/event_icons/event_skull.dds"
+
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 3
+
+    trigger = {
+        this ?= c:GER
+
+    }
+
+   option = {
+        name = tno_ger_events.1.a
+        add_radicals = {
+            value = 0.25
+            culture = cu:polish
+        }   
+        s:STATE_MAZOVIA = {
+            add_devastation = 25
+        }  
+		add_modifier = {
+			name = modifier_parade
+			months = 8
+		}            
+    }   
+
+	option = {
+        name = tno_ger_events.1.b
+        add_radicals = {
+            value = 0.20
+            culture = cu:polish
+        }   
+        s:STATE_MAZOVIA = {
+            add_devastation = 25
+        }
+		add_modifier = {
+			name = modifier_parade_denied
+			months = 8
+		}       
+		
+    }   
+
+}
+
+tno_ger_events.2 = {
+    type = country_event
+    placement = ROOT
+ 
+    title = tno_ger_events.2
+    desc = tno_ger_events.2.d
+    flavor = tno_ger_events.2.f 
+   event_image = {
+		texture  = "gfx/event_pictures/super_pictures/protest_ger.png"
+	}
+
+    icon = "gfx/interface/icons/event_icons/event_protest.dds"
+
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 3
+
+    trigger = {
+        this ?= c:GER
+
+    }
+
+   option = {
+        name = tno_ger_events.2.a
+        add_radicals = {
+            value = 0.10
+        }    
+		add_modifier = {
+			name = modifier_protest_suppresed
+			months = 62
+		}            
+    }   
+
+	option = {
+        name = tno_ger_events.2.b
+        add_radicals = {
+            value = 0.05
+        }   
+		add_modifier = {
+			name = modifier_protest_ignored
+			months = 62
+		}       
+        
+		
+    }   
+
+}
+
+tno_ger_events.3 = {
+    type = country_event
+    placement = ROOT
+ 
+    title = tno_ger_events.3
+    desc = tno_ger_events.3.d
+    flavor = tno_ger_events.3.f 
+   event_image = {
+		texture  = "gfx/event_pictures/super_pictures/protest_ger.2.png"
+	}
+
+    icon = "gfx/interface/icons/event_icons/event_protest.dds"
+
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 3
+
+    trigger = {
+        this ?= c:GER
+
+    }
+
+   option = {
+        name = tno_ger_events.3.a
+        add_radicals = {
+            value = 0.15
+        }    
+        s:STATE_NORTH_RHINE = {
+            add_devastation = 10
+        }     
+        s:STATE_ELBE = {
+            add_devastation = 5
+        }   
+        s:STATE_HESSE = {
+            add_devastation = 5
+        }   
+    }   
+     option = {
+        name = tno_ger_events.3.b
+        add_radicals = {
+            value = 0.10
+        }    
+        s:STATE_NORTH_RHINE = {
+            add_devastation = 10
+        }     
+        s:STATE_ELBE = {
+            add_devastation = 5
+        }   
+        s:STATE_HESSE = {
+            add_devastation = 5
+        }   
+    }   
+}

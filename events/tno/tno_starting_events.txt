@@ -163,7 +163,7 @@ tno_starting_events.5 = {
 	duration = 6
 
 	option = {
-		name = bgd.a
+		name = bgd.1.a
 		add_modifier = { 
 			name = shadow_state
 			years = 20
@@ -185,7 +185,7 @@ tno_starting_events.6 = {
     flavor = yue.1.f	
 
 	event_image = {
-		texture  = "gfx/event_pictures/super_pictures/soldier.dds"
+		texture  = "gfx/event_pictures/super_pictures/guangcolor.dds"
 	}
 
     icon = "gfx/interface/icons/event_icons/event_default.dds"
@@ -197,7 +197,35 @@ tno_starting_events.6 = {
 	duration = 6
 
 	option = {
-		name = yue.a
+		name = yue.1.a
+		
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+}
+
+tno_starting_events.10 = {
+    type = country_event
+    placement = ROOT
+
+	title = fra.1
+	desc = fra.1.d
+    flavor = fra.1.f	
+
+	event_image = {
+		texture  = "gfx/event_pictures/super_pictures/arc.dds"
+	}
+
+    icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	trigger = {
+		this ?= c:FRA
+	}	
+	
+	duration = 6
+
+	option = {
+		name = fra.1.a
 		
 	}
 
