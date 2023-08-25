@@ -1,37 +1,11 @@
-﻿tier_one_dummy_production = {
-	# Unlocks construction of Farms and Plantations
-	era = era_1
-	texture = "gfx/interface/icons/invention_icons/enclosure.dds"
-	category = production
-	
-	ai_weight = {
-		value = 3 # Very important tech in general
-	}
-}
-
-
-tier_two_dummy_production = {
-	# Unlocks construction of Farms and Plantations
-	era = era_2
-	texture = "gfx/interface/icons/invention_icons/enclosure.dds"
-	category = production
-	
-	unlocking_technologies = {
-	    tier_one_dummy_production
-	}
-	
-	ai_weight = {
-		value = 3 # Very important tech in general
-	}
-}
-
+﻿### ERA 1
 
 sericulture = {
 	# Unlocks Mulberry Groves PM on Rice Farms
 	era = era_1
 	texture = "gfx/interface/icons/invention_icons/sericulture.dds"
 	category = production
-	can_research = no	
+	can_research = no
 	
 	modifier = {
 		building_silk_plantation_throughput_mult = 0.25
@@ -47,7 +21,7 @@ enclosure = {
 	era = era_1
 	texture = "gfx/interface/icons/invention_icons/enclosure.dds"
 	category = production
-	can_research = no
+	
 	ai_weight = {
 		value = 3 # Very important tech in general
 	}
@@ -59,7 +33,7 @@ manufacturies = {
 	era = era_1
 	texture = "gfx/interface/icons/invention_icons/manufacturies.dds"
 	category = production
-	can_research = no
+	
 	ai_weight = {
 		value = 3 # Very important tech in general
 	}
@@ -70,9 +44,10 @@ shaft_mining = {
 	era = era_1
 	texture = "gfx/interface/icons/invention_icons/shaft_mining.dds"
 	category = production
-	can_research = no
+	
 	unlocking_technologies = {
-		
+		enclosure
+		manufacturies
 	}
 	
 	ai_weight = {
@@ -84,13 +59,13 @@ cotton_gin = {
 	era = era_1
 	texture = "gfx/interface/icons/invention_icons/cotton_gin.dds"
 	category = production
-    can_research = no
+
 	modifier = {
 		building_cotton_plantation_throughput_mult = 0.25
 	}
 	
 	unlocking_technologies = {
-		
+		manufacturies
 	}
 	
 	ai_weight = {
@@ -103,9 +78,9 @@ lathe = {
 	era = era_1
 	texture = "gfx/interface/icons/invention_icons/lathe.dds"
 	category = production
-	can_research = no
+	
 	unlocking_technologies = {
-		
+		cotton_gin
 	}
 	
 	ai_weight = {
@@ -130,9 +105,9 @@ distillation = {
 	era = era_1
 	texture = "gfx/interface/icons/invention_icons/distillation.dds"
 	category = production
-	can_research = no
+	
 	unlocking_technologies = {
-		
+		manufacturies
 	}
 	
 	ai_weight = {
@@ -145,9 +120,9 @@ steelworking = {
 	era = era_1
 	texture = "gfx/interface/icons/invention_icons/steelworking.dds"
 	category = production
-	can_research = no
+	
 	unlocking_technologies = {
-		
+		shaft_mining
 	}
 	
 	ai_weight = {
@@ -170,9 +145,9 @@ prospecting = {
 	era = era_1
 	texture = "gfx/interface/icons/invention_icons/prospecting_tech.dds"
 	category = production
-	can_research = no
+	
 	unlocking_technologies = {
-		
+		shaft_mining
 	}
 	
 	ai_weight = {
@@ -187,9 +162,9 @@ crystal_glass = {
 	era = era_2
 	texture = "gfx/interface/icons/invention_icons/crystal_glass.dds"
 	category = production
-	can_research = no
+	
 	unlocking_technologies = {
-		
+		lathe
 	}
 	
 	ai_weight = {
@@ -204,9 +179,9 @@ intensive_agriculture = {
 	era = era_2
 	texture = "gfx/interface/icons/invention_icons/intensive_agriculture.dds"
 	category = production
-	can_research = no
+	
 	unlocking_technologies = {
-		
+		enclosure
 	}
 	
 	ai_weight = {
@@ -230,9 +205,9 @@ fractional_distillation = {
 	era = era_2
 	texture = "gfx/interface/icons/invention_icons/fractional_distillation.dds"
 	category = production
-	can_research = no
+	
 	unlocking_technologies = {
-		
+		distillation
 	}
 	
 	ai_weight = {
@@ -245,9 +220,9 @@ canneries = {
 	era = era_2
 	texture = "gfx/interface/icons/invention_icons/canneries.dds"
 	category = production
-	can_research = no
+	
 	unlocking_technologies = {
-		
+		lathe
 	}
 	
 	ai_weight = {
@@ -261,9 +236,9 @@ watertube_boiler = {
 	era = era_2
 	texture = "gfx/interface/icons/invention_icons/watertube_boiler.dds"
 	category = production
-	can_research = no
+	
 	unlocking_technologies = {
-		
+		atmospheric_engine
 	}
 	
 	ai_weight = {
@@ -277,9 +252,9 @@ atmospheric_engine = {
 	era = era_2
 	texture = "gfx/interface/icons/invention_icons/atmospheric_engine.dds"
 	category = production
-	can_research = no
+	
 	unlocking_technologies = {
-		
+		shaft_mining
 	}
 	
 	ai_weight = {
@@ -308,9 +283,10 @@ railways = {
 	era = era_2
 	texture = "gfx/interface/icons/invention_icons/railways.dds"
 	category = production
-	can_research = no
+	
 	unlocking_technologies = {
-		
+		mechanical_tools
+		atmospheric_engine
 	}
 	
 	ai_weight = {
@@ -334,9 +310,9 @@ chemical_bleaching = {
 	era = era_2
 	texture = "gfx/interface/icons/invention_icons/chemical_bleaching.dds"
 	category = production
-can_research = no
+
 	unlocking_technologies = {	
-		
+		crystal_glass
 	}
 	
 	ai_weight = {
@@ -352,13 +328,14 @@ nitroglycerin = {
 	era = era_2
 	texture = "gfx/interface/icons/invention_icons/nitroglycerin.dds"
 	category = production
-	can_research = no
+	
 	modifier = {
 		country_resource_discovery_chance_mult = 0.25
 	}
 	
 	unlocking_technologies = {	
-	
+		intensive_agriculture
+		prospecting
 	}
 	
 	ai_weight = {
@@ -372,9 +349,9 @@ bessemer_process = {
 	era = era_2
 	texture = "gfx/interface/icons/invention_icons/bessemer_process.dds"
 	category = production
-	can_research = no
+	
 	unlocking_technologies = {	
-		
+		steelworking
 	}
 	
 	ai_weight = {
@@ -394,9 +371,9 @@ baking_powder = {
 	era = era_2
 	texture = "gfx/interface/icons/invention_icons/baking_powder.dds"
 	category = production
-	can_research = no
+	
 	unlocking_technologies = {
-		
+		fractional_distillation
 	}
 	
 	ai_weight = {
@@ -410,13 +387,14 @@ mechanized_workshops = {
 	era = era_2
 	texture = "gfx/interface/icons/invention_icons/mechanized_workshops.dds"
 	category = production
-	can_research = no
+	
 	modifier = {
 		building_economy_of_scale_level_cap_add = 10
 	}
 	
 	unlocking_technologies = {
-		
+		canneries
+		mechanical_tools
 	}
 	
 	ai_weight = {
@@ -436,10 +414,10 @@ mechanical_tools = {
 	era = era_2
 	texture = "gfx/interface/icons/invention_icons/mechanical_tools.dds"
 	category = production
-	can_research = no
+	
 	unlocking_technologies = {
-		
-		
+		lathe
+		steelworking
 	}
 	
 	ai_weight = {
@@ -457,7 +435,7 @@ improved_fertilizer = {
 	category = production
 	
 	unlocking_technologies = {	
-		tier_two_dummy_production
+		intensive_agriculture
 	}
 	
 	ai_weight = {
@@ -473,7 +451,7 @@ steam_donkey = {
 	category = production
 	
 	unlocking_technologies = {	
-		tier_two_dummy_production
+		intensive_agriculture
 	}
 	
 	ai_weight = {
@@ -505,7 +483,7 @@ dynamite = {
 	}
 	
 	unlocking_technologies = {	
-		tier_two_dummy_production
+		nitroglycerin
 	}
 	
 	ai_weight = {
@@ -520,7 +498,8 @@ rubber_mastication = {
 	category = production
 	
 	unlocking_technologies = {	
-	   tier_two_dummy_production
+		fractional_distillation
+		chemical_bleaching
 	}
 	
 	ai_weight = {
@@ -545,7 +524,7 @@ rotary_valve_engine = {
 	category = production
 	
 	unlocking_technologies = {	
-		tier_two_dummy_production
+		watertube_boiler
 	}
 	
 	ai_weight = {
@@ -564,7 +543,7 @@ reinforced_concrete = {
 	}
 	
 	unlocking_technologies = {	
-		tier_two_dummy_production
+		bessemer_process
 	}
 	
 	ai_weight = {
@@ -646,7 +625,7 @@ open_hearth_process = {
 	category = production
 	
 	unlocking_technologies = {	
-		tier_two_dummy_production
+		bessemer_process
 	}
 	
 	ai_weight = {
@@ -676,7 +655,7 @@ vacuum_canning = {
 	category = production
 	
 	unlocking_technologies = {	
-		tier_two_dummy_production
+		mechanized_workshops
 	}
 	
 	ai_weight = {
@@ -694,7 +673,7 @@ shift_work = {
 	}
 	
 	unlocking_technologies = {	
-		tier_two_dummy_production
+		mechanized_workshops
 	}
 	
 	ai_weight = {
@@ -711,7 +690,7 @@ steel_railway_cars = {
 	category = production	
 	
 	unlocking_technologies = {	
-		tier_two_dummy_production
+		railways
 	}
 	
 	ai_weight = {
