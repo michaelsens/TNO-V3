@@ -1,0 +1,168 @@
+namespace = tno_usa_events
+
+tno_usa_events.1 ={
+    type = country_event
+    placement = ROOT
+ 
+    title = tno_usa_events.1
+    desc = tno_usa_events.1.d
+    flavor = tno_usa_events.1.f 
+    event_image = {
+        texture = "gfx/event_pictures/super_pictures/civilrights.1.png"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_fire.dds"
+
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 3
+
+    trigger = {
+        this ?= c:USA
+
+    }
+
+   option = {
+
+     add_modifier ={name = modifier_civil_rights_protests
+        is_decaying = yes
+        months = 48}
+        name = tno_usa_events.1.a
+        add_radicals = {
+            value = 0.05
+            culture = cu:dixie
+        }   
+        add_radicals = {
+            value = 0.02
+            culture = cu:yankee
+        }  
+        add_radicals = {
+            value = 0.02
+            culture = cu:afro_american
+
+        }
+        
+                
+    } 
+
+    option = {
+
+     add_modifier ={name = modifier_civil_rights_protests_suppressed
+        is_decaying = yes
+        months = 48}
+        name = tno_usa_events.1.b
+        add_loyalists = {
+            value = 0.02
+            culture = cu:dixie
+        }   
+        add_radicals = {
+            value = 0.02
+            culture = cu:yankee
+        }         
+        add_radicals = {
+            value = 0.05
+            culture = cu:afro_american
+
+        }   
+    }   
+
+}
+
+tno_usa_events.2 ={
+    type = country_event
+    placement = ROOT
+ 
+    title = tno_usa_events.2
+    desc = tno_usa_events.2.d
+    flavor = tno_usa_events.2.f 
+    event_image = {
+        texture = "gfx/event_pictures/super_pictures/civilrights.2.png"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_fire.dds"
+
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 3
+
+    trigger = {
+        this ?= c:USA
+
+    }
+
+   option = {
+
+     add_modifier ={name = modifier_Clarks_favored
+        is_decaying = yes
+        months = 48}
+        name = tno_usa_events.2.a
+        s:STATE_ILLINOIS = {
+            add_devastation = 1
+        }   
+    }
+
+    option = {
+
+     add_modifier ={name = modifier_favored_whites
+        is_decaying = yes
+        months = 48}
+        name = tno_usa_events.2.b
+        s:STATE_ILLINOIS = {
+            add_devastation = 1
+        }   
+    }
+
+    option = {
+
+     add_modifier ={name = modifier_rebuilding
+        is_decaying = yes
+        months = 48}
+        name = tno_usa_events.2.c
+        s:STATE_ILLINOIS = {
+            add_devastation = 1
+        }   
+    } 
+}
+
+    tno_usa_events.3 ={
+    type = country_event
+    placement = ROOT
+ 
+    title = tno_usa_events.3
+    desc = tno_usa_events.3.d
+    flavor = tno_usa_events.3.f 
+    event_image = {
+        texture = "gfx/event_pictures/super_pictures/civilrights.3.png"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_fire.dds"
+
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 3
+
+    trigger = {
+        this ?= c:USA
+
+    }
+
+   option = {
+        name = tno_usa_events.3.a
+        add_loyalists = {
+            value = 0.05
+            culture = cu:afro_american
+
+        }
+
+        add_radicals = {
+            value = 0.01
+            culture = cu:american
+
+        }       
+    } 
+
+}
+
+
+
+

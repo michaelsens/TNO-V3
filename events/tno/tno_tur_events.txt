@@ -1,0 +1,80 @@
+namespace = tno_tur_events
+
+tno_tur_events.1 ={
+    type = country_event
+    placement = ROOT
+ 
+    title = tno_tur_events.1
+    desc = tno_tur_events.1.d
+    flavor = tno_tur_events.1.f 
+    event_image = {
+        texture = "gfx/event_pictures/super_pictures/tur.png"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_map.dds"
+
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 3
+
+    trigger = {
+        this ?= c:TUR
+
+    }
+
+   option = {
+        name = tno_tur_events.1.a
+        add_modifier ={name = modifier_gaurd
+        is_decaying = yes
+        months = 920} 
+        add_modifier ={name = modifier_kem
+        is_decaying = yes
+        months = 430}
+    }
+
+    option = {
+        name = tno_tur_events.1.b
+        add_modifier ={name = modifier_ottoman_nost
+        is_decaying = yes
+        months = 430} 
+    }
+
+}
+
+tno_tur_events.2 ={
+    type = country_event
+    placement = ROOT
+ 
+    title = tno_tur_events.2
+    desc = tno_tur_events.2.d
+    flavor = tno_tur_events.2.f 
+    event_image = {
+        texture = "gfx/event_pictures/super_pictures/tur.2.png"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_map.dds"
+
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 3
+
+    trigger = {
+        this ?= c:TUR
+
+    }
+
+   option = {
+        name = tno_tur_events.2.a
+        add_modifier ={name = modifier_armenia
+        is_decaying = yes
+        months = 470} 
+    }
+
+    option = {
+        name = tno_tur_events.2.b
+        add_modifier ={name = modifier_armenia_harsh
+        is_decaying = yes
+        months = 200} 
+    }
+
+}
