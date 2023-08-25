@@ -119,9 +119,36 @@ abolish_tangena_ordeal = {
 
 	when_taken = {
 		remove_modifier = modifier_tangena_ordeal
+	}}
+	ai_chance = {
+		base = 100
 	}
+
+	
+reform_the_navy = {
+	is_shown = {
+		exists = c:ENG
+		ROOT = c:ENG
+		has_modifier = the_broken_navy
+	}
+
+	possible = {
+		exists = c:ENG
+		ROOT = c:ENG
+		has_modifier = the_broken_navy
+		GDP >= 20000000
+			}
+		
+	
+
+	when_taken = {
+		remove_modifier = the_broken_navy
+		add_modifier = { 
+			name = pay_up
+			years = 5
+		}
+	}}
 
 	ai_chance = {
 		base = 100
 	}
-}

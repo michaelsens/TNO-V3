@@ -1,4 +1,4 @@
-﻿on_monthly_pulse_country = {
+on_monthly_pulse_country = {
     effect = {
         #SAF
         if = {
@@ -192,6 +192,7 @@
             trigger_event = { id = tno_starting_events.7 popup = yes }
             trigger_event = { id = tno_starting_events.10 popup = yes }
         }
+        
     #ukraine starting event
         if = {
 			limit = {
@@ -280,8 +281,48 @@
             }
             set_variable = spain_army_var
             trigger_event = { id = tno_spain_events.2 popup = yes }
+        }        
+     # Divine starting event
+        if = {
+			limit = {
+               game_date >= 1950.2.1
+               NOT = { has_variable = div_var }
+            }
+            set_variable = div_var
+            trigger_event = { id = tno_starting_events.9 popup = yes }
         }
-
+        
+     # Britian starting event
+        if = {
+			limit = {
+               game_date >= 1950.2.1
+               NOT = { has_variable = eng_var }
+            }
+            set_variable = eng_var
+            trigger_event = { id = tno_starting_events.8 popup = yes }
+        }
+        
+        if = {
+			limit = {
+               owns_entire_state_region = STATE_HIGHLANDS
+               owns_entire_state_region = STATE_LOWLANDS 
+               NOT = { has_variable = eng_var_2 }
+            }
+            set_variable = eng_var_2
+            trigger_event = { id = tno_flavor_events.8 popup = yes }
+        }
+ 
+        if = {
+			limit = {
+               owns_entire_state_region = STATE_CONNAUGHT
+               owns_entire_state_region = STATE_LEINSTER
+               owns_entire_state_region = STATE_MUNSTER
+               owns_entire_state_region = STATE_ULSTER
+               NOT = { has_variable = eng_var_3 }
+            }
+            set_variable = eng_var_3
+            trigger_event = { id = tno_flavor_events.9 popup = yes }
+        }
         # Iberia ETA foundation
         if = {
 			limit = {
