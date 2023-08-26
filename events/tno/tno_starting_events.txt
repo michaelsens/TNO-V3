@@ -132,7 +132,7 @@ tno_starting_events.4 = {
 	duration = 6
 
 	option = {
-		name = ita.a
+		name = ita.1.a
 		add_modifier = { name = fading_fascism }
 		add_modifier = { name = masters_of_the_med }
 		add_modifier = { name = atlantropa_disaster }
@@ -235,6 +235,37 @@ tno_starting_events.10 = {
 tno_starting_events.7 = {
     type = country_event
     placement = ROOT
+	title = amr.1
+	desc = amr.1.d
+    flavor = amr.1.f	
+
+	event_image = {
+		texture  = "gfx/event_pictures/super_pictures/amur.dds"
+	}
+
+    icon = "gfx/interface/icons/event_icons/event_default.dds"
+
+	trigger = {
+		this ?= c:AMR
+	}	
+	
+	duration = 6
+
+	option = {
+		name = amr.1.a
+		add_modifier = { name = all_russian_repopulation_program }
+		add_modifier = { name = russian_fascist_stronghold }
+		add_modifier = { 
+			name = the_flight_east 
+			years = 2
+			is_decaying = yes
+		}
+		add_modifier = { 
+			name = paranoia_of_the_vozhd
+			years = 10
+			is_decaying = yes
+		}
+	}
 
 	title = "The Divine Mandate of Siberia"
 	desc = "Gods of the North"
