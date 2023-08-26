@@ -12,5 +12,29 @@ NAI = {
 }
 
 NEconomy = {
-	MAX_WEEKLY_CONSTRUCTION_PROGRESS = 60
+	MAX_WEEKLY_CONSTRUCTION_PROGRESS = 40
+	AI_PEACE_AGREEMENT_BASE_VALUE = -100
+    TRADE_ROUTE_MIN_SCORE_TO_CREATE_BASE = 500 # If a potential trade route is scored less than this, don't create it
+	AI_PEACE_AGREEMENT_WHITE_PEACE_BASE = -20 # If no wargoals are being enforced on either side
+	AI_PEACE_AGREEMENT_WHITE_PEACE_WAR_DURATION = 0.1 # For each month the war goes on add this to the acceptance for a white peace
+	AI_CAPITULATE_BASE_VALUE = -50
+
+}
+
+NEconomy = {
+	TRADE_ROUTE_BUREAUCRACY_COST = 5					# The cost in BUR per trade route
+	TRADE_ROUTE_MAX_LEVEL = 9999
+	SLAVE_TRADE_SLAVES_PER_WEEK = 10000
+
+}
+
+NPops = {
+	ASSIMILATION_RATE = 0.02					# Percentage of pops who will Assimilate into a different Culture each month, if eligible
+	MIN_ASSIMILATION = 100						# If there is any assmiliation at least this many people will assimilate
+	CONVERSION_RATE = 0.02						# Percentage of pops who will Convert into a different Religion each month, if eligible
+	MIN_CONVERSION = 100
+}
+
+NDiplomacy = {
+	DEFAULT_TRUCE_MONTHS = 24
 }
