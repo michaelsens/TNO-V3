@@ -189,7 +189,7 @@
             trigger_event = { id = tno_starting_events.4 popup = yes }
             trigger_event = { id = tno_starting_events.5 popup = yes }
         }
-    }
+    
     #ukraine starting event
         if = {
 			limit = {
@@ -279,7 +279,15 @@
             set_variable = spain_army_var
             trigger_event = { id = tno_spain_events.2 popup = yes }
         }
-        
+        # Amur starting event
+        if = {
+			limit = {
+               game_date >= 1950.2.1
+               NOT = { has_variable = amur_var }
+            }
+            set_variable = amur_var
+            trigger_event = { id = tno_starting_events.7 popup = yes }
+        }        
 
     }
 }  
