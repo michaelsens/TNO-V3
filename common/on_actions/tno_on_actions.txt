@@ -1,4 +1,4 @@
-﻿on_monthly_pulse_country = {
+on_monthly_pulse_country = {
     effect = {
         #SAF
         if = {
@@ -158,14 +158,14 @@
             trigger_event = { id = tno_rk_events.2 popup = yes }
         }
 
-            #warsaw upriseing 
+            #warsaw riot
         if = {
 			limit = {
-               game_date >= 1950.2.1
-               NOT = { has_variable = warsaw_upriseing_var }
+               game_date >= 1952.2.1
+               NOT = { has_variable = warsaw_riot_var }
             }
-            set_variable = warsaw_upriseing_var
-            trigger_event = { id = tno_rk_events.3 popup = yes }
+            set_variable = warsaw_riot_var
+            trigger_event = { id = tno_flavor_events.8 popup = yes }
         }
         
          #war in dagestan
@@ -188,8 +188,11 @@
             trigger_event = { id = tno_starting_events.3 popup = yes }
             trigger_event = { id = tno_starting_events.4 popup = yes }
             trigger_event = { id = tno_starting_events.5 popup = yes }
+            trigger_event = { id = tno_starting_events.6 popup = yes }
+            trigger_event = { id = tno_starting_events.7 popup = yes }
+            trigger_event = { id = tno_starting_events.10 popup = yes }
         }
-    
+
     #ukraine starting event
         if = {
 			limit = {
@@ -240,7 +243,7 @@
             trigger_event = { id = tno_rk_events.9 popup = yes }
         }
 
- # hungarian start
+        # hungarian start
         if = {
 			limit = {
                game_date >= 1950.2.1
@@ -270,7 +273,7 @@
             trigger_event = { id = tno_spain_events.1 popup = yes }
         }
 
-        # Iberia sepretism
+        # Iberia weak federal millitary
         if = {
 			limit = {
                game_date >= 1950.3.1
@@ -278,6 +281,25 @@
             }
             set_variable = spain_army_var
             trigger_event = { id = tno_spain_events.2 popup = yes }
+        }        
+     # Divine starting event
+        if = {
+			limit = {
+               game_date >= 1950.2.1
+               NOT = { has_variable = div_var }
+            }
+            set_variable = div_var
+            trigger_event = { id = tno_starting_events.9 popup = yes }
+        }
+        
+     # Britian starting event
+        if = {
+			limit = {
+               game_date >= 1950.2.1
+               NOT = { has_variable = eng_var }
+            }
+            set_variable = eng_var
+            trigger_event = { id = tno_starting_events.8 popup = yes }
         }
         # Amur starting event
         if = {
@@ -288,6 +310,127 @@
             set_variable = amur_var
             trigger_event = { id = tno_starting_events.7 popup = yes }
         }        
+        
+        if = {
+			limit = {
+               owns_entire_state_region = STATE_HIGHLANDS
+               owns_entire_state_region = STATE_LOWLANDS 
+               NOT = { has_variable = eng_var_2 }
+            }
+            set_variable = eng_var_2
+            trigger_event = { id = tno_flavor_events.8 popup = yes }
+        }
+ 
+        if = {
+			limit = {
+               owns_entire_state_region = STATE_CONNAUGHT
+               owns_entire_state_region = STATE_LEINSTER
+               owns_entire_state_region = STATE_MUNSTER
+               owns_entire_state_region = STATE_ULSTER
+               NOT = { has_variable = eng_var_3 }
+            }
+            set_variable = eng_var_3
+            trigger_event = { id = tno_flavor_events.9 popup = yes }
+        }
+        # Iberia ETA foundation
+        if = {
+			limit = {
+               game_date >= 1950.4.1
+               NOT = { has_variable = spain_eta_var }
+            }
+            set_variable = spain_eta_var
+            trigger_event = { id = tno_spain_events.3 popup = yes }
+        }
+
+        # Iberia CNT-FAI start
+        if = {
+			limit = {
+               game_date >= 1951.5.1
+               NOT = { has_variable = spain_cnt_var }
+            }
+            set_variable = spain_cnt_var
+            trigger_event = { id = tno_spain_events.4 popup = yes }
+        }
+
+        # Navara Eibar attacks
+        if = {
+			limit = {
+               game_date >= 1950.8.1
+               NOT = { has_variable = spain_eibar_var }
+            }
+            set_variable = spain_eibar_var
+            trigger_event = { id = tno_spain_events.5 popup = yes }
+        }
+
+         # warsaw riot
+        if = {
+			limit = {
+               game_date >= 1950.2.1
+               NOT = { has_variable = warsaw_riot_var }
+            }
+            set_variable = warsaw_riot_var
+            trigger_event = { id = tno_ger_events.1 popup = yes }
+        }
+
+        # student protest in germany 
+        if = {
+			limit = {
+               game_date >= 1951.3.1
+               NOT = { has_variable = ger_protest_var }
+            }
+            set_variable = ger_protest_var
+            trigger_event = { id = tno_ger_events.2 popup = yes }
+        }
+
+        # student revolt germany
+        if = {
+			limit = {
+               game_date >= 1951.5.1
+               NOT = { has_variable = ger_revolt_var }
+            }
+            set_variable = ger_revolt_var
+            trigger_event = { id = tno_ger_events.3 popup = yes }
+        }
+
+        # turkey starting event
+        if = {
+			limit = {
+               game_date >= 1950.2.1
+               NOT = { has_variable = tur_start_var }
+            }
+            set_variable = tur_start_var
+            trigger_event = { id = tno_tur_events.1 popup = yes }
+        }
+
+        # Armenia gurrila war
+        if = {
+			limit = {
+               game_date >= 1950.7.1
+               NOT = { has_variable = tur_aerm_var }
+            }
+            set_variable = tur_aerm_var
+            trigger_event = { id = tno_tur_events.2 popup = yes }
+        }
+
+         # usa race riot.1
+        if = {
+			limit = {
+               game_date >= 1951.3.1
+               NOT = { has_variable = usa_race_var }
+            }
+            set_variable = usa_race_var
+            trigger_event = { id = tno_usa_events.2 popup = yes }
+        }
+
+        # Brown v. Board of Education
+        if = {
+			limit = {
+               game_date >= 1954.5.1
+               NOT = { has_variable = usa_brown_bord_var }
+            }
+            set_variable = usa_brown_bord_var
+            trigger_event = { id = tno_usa_events.3 popup = yes }
+        }
 
     }
 }  
