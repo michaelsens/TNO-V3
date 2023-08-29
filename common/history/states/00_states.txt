@@ -902,12 +902,8 @@ STATES = {
 	}
 	s:STATE_BOSNIA = {
 		create_state = {
-			country = c:ITA
-			owned_provinces = { x1E7362 xA40356 xF06101 xD021A0 xAC2DD3 x5F13FD x9021E0 }
-		}
-		create_state = {
 			country = c:CRO
-			owned_provinces = { x1121E0 x3F67BA x23D67C x19AF6A x51A0A0 xD0A0A0 xDA817B x7C904A x50209F x3B7D2B }
+			owned_provinces = { x1E7362 xA40356 xF06101 xD021A0 xAC2DD3 x5F13FD x9021E0 x1121E0 x3F67BA x23D67C x19AF6A x51A0A0 xD0A0A0 xDA817B x7C904A x50209F x3B7D2B }
 		}
 		
 		add_homeland = bosniak
@@ -6291,21 +6287,21 @@ STATES = {
 	}
 	s:STATE_DALMATIA = {
 		create_state = {
-			country = c:ITA
-			owned_provinces = { xF9421B xEFA0C0 x11A0E0 x90A0E0 }
+			country = c:CRO
+			owned_provinces = { xEFA0C0 x11A0E0 x90A0E0 }
 		}
-		
+		create_state = {
+			country = c:ITA
+			owned_provinces = { xF9421B }
+		}
+		add_homeland = north_italian
 		add_homeland = croat
 		add_homeland = serb
 	}
 	s:STATE_CROATIA = {
 		create_state = {
-			country = c:ITA
-			owned_provinces = { x71A041 x70DF00 xF021C0 x71A0C0 xB39050 xB339EC }
-		}
-		create_state = {
 			country = c:CRO
-			owned_provinces = { x458E4C x6D8BC6 }
+			owned_provinces = { x71A041 x70DF00 xF021C0 x71A0C0 xB39050 xB339EC x458E4C x6D8BC6 }
 		}
 		
 		add_homeland = croat
@@ -6418,9 +6414,13 @@ STATES = {
 	s:STATE_SLOVENIA = {
 		create_state = {
 			country = c:GER
-			owned_provinces = { x31E041 xB0E040 x792B8A x44F127 }
+			owned_provinces = { x31E041 }
 		}
-		
+		create_state = {
+			country = c:ITA
+			owned_provinces = { xB0E040 x792B8A x44F127 }
+		}
+		add_homeland = north_italian
 		add_homeland = north_german
 		add_homeland = slovene
 	}
