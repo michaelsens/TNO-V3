@@ -266,7 +266,40 @@ tno_starting_events.7 = {
 			is_decaying = yes
 		}
 	}
+}
 
+tno_starting_events.8 = {
+    type = country_event
+    placement = ROOT
+
+	title = "England"
+	desc = "Sun sets on our Empire"
+    flavor = "Once we were the top of the world, an empire spanning the world where the sun never sets. Now we are a broken nation ravaged by occupation and failure. The navy died during the war and is yet to recover! Will we manage to return to our former glory?"
+
+	event_image = {
+		texture  = "gfx/event_pictures/super_pictures/soldier.dds"
+	}
+
+    icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	trigger = {
+		this ?= c:ENG
+	}	
+	
+	duration = 6
+
+	option = {
+		name = "Keep Calm and Carry On"
+		add_modifier = { name = shattered_union }
+		add_modifier = { name = the_broken_navy }
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+}
+
+tno_starting_events.9 = {
+	type = country_event
+    placement = ROOT
 	title = "The Divine Mandate of Siberia"
 	desc = "Gods of the North"
     flavor = "The disappointing truth is that we are currently witnessing the darkest of times in the history of our people, as dark those before the Light of the Message began to be spread among the Rus. But we are the light that shines in the darkness. As such we must stand above all the disgusting sinful: statesmen, soldiers, rapists, pillagers, communists and fascists, to show the people our virtue."
@@ -293,34 +326,60 @@ tno_starting_events.7 = {
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 }
 
-tno_starting_events.8 = {
+tno_starting_events.10 ={
     type = country_event
     placement = ROOT
+ 
+    title = ibe.1
+    desc = ibe.1.d
+    flavor = ibe.1.f 
+    event_image = {
+        texture = "gfx/event_pictures/super_pictures/sep1.jpg"
+    }
 
-	title = "England"
-	desc = "Sun sets on our Empire"
-    flavor = "Once we were the top of the world, an empire spanning the world where the sun never sets. Now we are a broken nation ravaged by occupation and failure. The navy died during the war and is yet to recover! Will we manage to return to our former glory?"
+    icon = "gfx/interface/icons/event_icons/event_protest.dds"
 
-	event_image = {
-		texture  = "gfx/event_pictures/super_pictures/soldier.dds"
-	}
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 
-    icon = "gfx/interface/icons/event_icons/event_default.dds"
-	
-	trigger = {
-		this ?= c:ENG
-	}	
-	
-	duration = 6
+    duration = 6
 
-	option = {
-		name = "We will never be slaves again!"
-		add_modifier = { name = shattered_union }
-		add_modifier = { name = the_broken_navy }
-	}
+    trigger = {
+        this ?= c:IBE
 
-	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+    }
+
+   option = {
+        name = ibe.1.a
+
+    }
 }
 
+tno_starting_events.11 ={
+    type = country_event
+    placement = ROOT
+ 
+    title = tur.1
+    desc = tur.1.d
+    flavor = tur.1.f 
+    event_image = {
+        texture = "gfx/event_pictures/super_pictures/tur.png"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_map.dds"
+
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 6
+
+    trigger = {
+        this ?= c:TUR
+
+    }
+
+   option = {
+        name = tur.1.a
+
+    }
+}
 
 #add_modifier = { name =  }
