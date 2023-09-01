@@ -1,4 +1,4 @@
-﻿namespace = fi_construction_executer
+namespace = fi_construction_executer
 
 fi_construction_executer.1 = {
 	type = country_event
@@ -10,7 +10,10 @@ fi_construction_executer.1 = {
 
 	immediate = {
 		set_variable = not_finished_construction
-		set_variable = fi_cost_medium
+		set_variable = {
+			name = fi_cost_variable
+			value = 2
+		}
 		save_scope_as = fi_target_country
 		while = {
 			limit = {
@@ -47,8 +50,7 @@ fi_construction_executer.1 = {
 			}
 			remove_variable = number_of_foreign_construction
 		}
-		remove_variable = fi_cost_medium
-		trigger_event = { id = fi_construction_executer.10  days = 1}
+		remove_variable = fi_cost_variable
 	}
 }
 
@@ -62,7 +64,10 @@ fi_construction_executer.2 = {
 
 	immediate = {
 		set_variable = not_finished_construction
-		set_variable = fi_cost_low
+		set_variable = {
+			name = fi_cost_variable
+			value = 1
+		}
 		save_scope_as = fi_target_country
 		while = {
 			limit = {
@@ -99,9 +104,10 @@ fi_construction_executer.2 = {
 			}
 			remove_variable = number_of_foreign_construction
 		}
-		trigger_event = { id = fi_construction_executer.10  days = 1}
+		trigger_event = { id = fi_construction_executer.11  days = 1 }
 		
-		remove_variable = fi_cost_low
+
+		remove_variable = fi_cost_variable
 	}
 }
 
@@ -115,7 +121,10 @@ fi_construction_executer.3 = {
 
 	immediate = {
 		set_variable = not_finished_construction
-		set_variable = fi_cost_high
+		set_variable = {
+			name = fi_cost_variable
+			value = 3
+		}
 		save_scope_as = fi_target_country
 		while = {
 			limit = {
@@ -152,9 +161,9 @@ fi_construction_executer.3 = {
 			}
 			remove_variable = number_of_foreign_construction
 		}
+		trigger_event = { id = fi_construction_executer.12  days = 1 }
 
-		trigger_event = { id = fi_construction_executer.10  days = 1}
-		remove_variable = fi_cost_high
+		remove_variable = fi_cost_variable
 	}
 }
 
@@ -168,7 +177,10 @@ fi_construction_executer.4 = {
 
 	immediate = {
 		set_variable = not_finished_construction
-		set_variable = fi_cost_very_high
+		set_variable = {
+			name = fi_cost_variable
+			value = 4
+		}
 		save_scope_as = fi_target_country
 		while = {
 			limit = {
@@ -205,14 +217,14 @@ fi_construction_executer.4 = {
 			}
 			remove_variable = number_of_foreign_construction
 		}
+		trigger_event = { id = fi_construction_executer.13  days = 1 }
 
-		trigger_event = { id = fi_construction_executer.10  days = 1}
-		remove_variable = fi_cost_very_high
+		remove_variable = fi_cost_variable
 	}
 }
 
 
-fi_construction_executer.10 = {
+fi_construction_executer.11 = {
 	type = country_event
 	hidden = yes
 
@@ -220,26 +232,59 @@ fi_construction_executer.10 = {
 	}
 
 	immediate = {
-		every_scope_building = {
-			limit = {
-				is_building_type = building_investment_industry_low
-				is_under_construction = no
+		capital = {
+			if = {
+				limit = {	
+					any_scope_building = {
+						is_building_type = building_investment_industry_low
+						is_under_construction = no
+					}
+				}
+				remove_building = building_investment_industry_low
 			}
-			state = { remove_building = building_investment_industry_low }
 		}
-		every_scope_building = {
-			limit = {
-				is_building_type = building_investment_industry_high
-				is_under_construction = no
+		
+	}
+}
+fi_construction_executer.12 = {
+	type = country_event
+	hidden = yes
+
+	trigger = {
+	}
+
+	immediate = {
+		capital = {
+			if = {
+				limit = {	
+					any_scope_building = {
+						is_building_type = building_investment_industry_high
+						is_under_construction = no
+					}
+				}
+				remove_building = building_investment_industry_high
 			}
-			state = { remove_building = building_investment_industry_high }
 		}
-		every_scope_building = {
-			limit = {
-				is_building_type = building_investment_industry_very_high
-				is_under_construction = no
+	}
+}
+fi_construction_executer.13 = {
+	type = country_event
+	hidden = yes
+
+	trigger = {
+	}
+
+	immediate = {
+		capital = {
+			if = {
+				limit = {	
+					any_scope_building = {
+						is_building_type = building_investment_industry_very_high
+						is_under_construction = no
+					}
+				}
+				remove_building = building_investment_industry_very_high
 			}
-			state = { remove_building = building_investment_industry_very_high }
 		}
 	}
 }

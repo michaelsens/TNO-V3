@@ -1,0 +1,483 @@
+namespace = fi_share_selling_executer
+fi_share_selling_executer.1 = {
+	type = country_event
+	duration = 1
+	title = fi_share_selling_executer.1.t
+	desc = fi_share_selling_executer.1.d
+	flavor = fi_share_selling_executer.1.f
+
+	event_image = {
+		video = "votp_conspiring"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_trade.dds"
+
+	trigger = {
+	}
+
+	immediate = {
+		save_scope_as = fi_target_country
+		
+		random_country = {
+			limit = {
+				has_variable = buy_share_proposing_country
+			}
+			save_scope_as = buy_share_country
+			change_variable = {
+				name = buy_share_proposing_country
+				subtract = 1
+			}
+			if = {
+				limit = {
+					var:buy_share_proposing_country < 1
+				}
+				remove_variable = buy_share_proposing_country
+			}
+		}
+		set_variable = {
+			name = buy_share_proposed_country
+			value = buy_share_proposed_country_value
+			months = 2
+		}
+		fi_id_executor_no_building = {
+			FUNCTION = fi_id_select_building_6
+		}
+	}
+
+	option = { 
+		name = fi_share_selling_executer.1.a
+		default_option = yes
+
+		custom_tooltip = {
+			text = fi_buy_share2_tt
+			
+			scope:buy_share_country = {
+				trigger_event = { id = fi_share_selling_executer.11 } 
+			}
+		}
+		ai_chance = {base = 1}
+	}
+	option = { 
+		name = fi_share_selling_executer.1.b
+		custom_tooltip = {
+			text = fi_buy_share2_tt
+
+			scope:buy_share_country = {
+				trigger_event = { id = fi_share_selling_executer.12 } 
+			}
+		}
+		ai_chance = {base = 4}
+	}
+	option = { 
+		name = fi_share_selling_executer.1.c
+		custom_tooltip = {
+			text = fi_buy_share2_tt
+
+			scope:buy_share_country = {
+				trigger_event = { id = fi_share_selling_executer.13 } 
+			}
+		}
+		ai_chance = {base = 4}
+	}
+}
+
+fi_share_selling_executer.11 = {
+	type = country_event
+	duration = 1
+	title = fi_share_selling_executer.11.t
+	desc = fi_share_selling_executer.11.d
+	flavor = fi_share_selling_executer.11.f
+
+	event_image = {
+		video = "votp_conspiring"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_trade.dds"
+
+	trigger = {
+	}
+
+	immediate = {
+		save_scope_as = seller_country
+		
+		random_country = {
+			limit = {
+				has_variable = buy_share_proposed_country
+			}
+			save_scope_as = buy_share_country
+			save_scope_as = fi_target_country
+			change_variable = {
+				name = buy_share_proposed_country
+				subtract = 1
+			}
+			if = {
+				limit = {
+					var:buy_share_proposed_country < 1
+				}
+				remove_variable = buy_share_proposed_country
+			}
+		}
+		fi_id_executor_no_building = {
+			FUNCTION = fi_id_select_building_7
+		}
+		set_local_variable = {
+            name = buy_share_price
+            value = {
+                fixed_range = {
+                        min = 1.05
+                        max = 1.5
+                }
+            }
+        }
+        save_scope_value_as = {
+        	name = scope_buy_price_percentage
+        	value = {
+        		value = local_var:buy_share_price
+        		multiply = 100
+        	}
+        }
+		save_scope_value_as = {
+			name = scope_fi_buying_price
+			value = fi_buying_price
+		}
+		save_scope_value_as = {
+			name = scope_fi_selling_price
+			value = fi_selling_price
+		}
+		save_scope_value_as = {
+			name = scope_building_number
+			value = local_var:building_number_store
+		}
+
+		remove_local_variable = buy_share_price
+    	remove_local_variable = building_number_store
+	}
+
+	option = { 
+		name = fi_share_selling_executer.11.a
+		default_option = yes
+		scope:buy_share_country = {
+			add_investment_pool = scope:scope_fi_selling_price
+		}
+		add_investment_pool = scope:scope_fi_buying_price
+		custom_tooltip = {
+			text = fi_sell_share2_tt
+			scope:buy_share_target_state = {
+				no_id_every_building_executor = {
+					FUNCTION = fi_sell_share_effect_proposed
+				}
+				remove_variable = fi_state_item_number
+				fi_id_building_executor = {
+					FUNCTION = fi_buy_share_update_gui
+				}
+				remove_variable = fi_state_total_number
+				every_id_building_executor = {
+					FUNCTION = fi_buy_share_update_gui2
+				}
+			}
+		}
+		ai_chance = {base = 4}
+	}
+	option = { 
+		name = fi_share_selling_executer.11.b
+		scope:buy_share_country = {
+			add_investment_pool = scope:scope_fi_selling_price
+		}
+		add_treasury = scope:scope_fi_buying_price
+		add_radicals = {
+			value = fi_radical_from_selling
+			strata = rich
+		}
+		custom_tooltip = {
+			text = fi_sell_share2_tt
+			scope:buy_share_target_state = {
+				no_id_every_building_executor = {
+					FUNCTION = fi_sell_share_effect_proposed
+				}
+				remove_variable = fi_state_item_number
+				fi_id_building_executor = {
+					FUNCTION = fi_buy_share_update_gui
+				}
+				remove_variable = fi_state_total_number
+				every_id_building_executor = {
+					FUNCTION = fi_buy_share_update_gui2
+				}
+			}
+		}
+		ai_chance = {base = 4}
+	}
+	option = { 
+		name = fi_share_selling_executer.11.c
+		ai_chance = {base = 1}
+	}
+}
+
+fi_share_selling_executer.12 = {
+	type = country_event
+	duration = 1
+	title = fi_share_selling_executer.11.t
+	desc = fi_share_selling_executer.11.d
+	flavor = fi_share_selling_executer.11.f
+
+	event_image = {
+		video = "votp_conspiring"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_trade.dds"
+
+	trigger = {
+	}
+
+	immediate = {
+		save_scope_as = seller_country
+		
+		random_country = {
+			limit = {
+				has_variable = buy_share_proposed_country
+			}
+			save_scope_as = buy_share_country
+			save_scope_as = fi_target_country
+			change_variable = {
+				name = buy_share_proposed_country
+				subtract = 1
+			}
+			if = {
+				limit = {
+					var:buy_share_proposed_country < 1
+				}
+				remove_variable = buy_share_proposed_country
+			}
+		}
+		fi_id_executor_no_building = {
+			FUNCTION = fi_id_select_building_7
+		}
+		set_local_variable = {
+            name = buy_share_price
+            value = {
+                fixed_range = {
+                        min = 0.95
+                        max = 1.05
+                }
+            }
+        }
+        save_scope_value_as = {
+        	name = scope_buy_price_percentage
+        	value = {
+        		value = local_var:buy_share_price
+        		multiply = 100
+        	}
+        }
+		save_scope_value_as = {
+			name = scope_fi_buying_price
+			value = fi_buying_price
+		}
+		save_scope_value_as = {
+			name = scope_fi_selling_price
+			value = fi_selling_price
+		}
+		save_scope_value_as = {
+			name = scope_building_number
+			value = local_var:building_number_store
+		}
+		
+		remove_local_variable = buy_share_price
+    	remove_local_variable = building_number_store
+	}
+
+	option = { 
+		name = fi_share_selling_executer.11.a
+		default_option = yes
+		scope:buy_share_country = {
+			add_investment_pool = scope:scope_fi_selling_price
+		}
+		add_investment_pool = scope:scope_fi_buying_price
+		custom_tooltip = {
+			text = fi_sell_share2_tt
+			scope:buy_share_target_state = {
+				no_id_every_building_executor = {
+					FUNCTION = fi_sell_share_effect_proposed
+				}
+				remove_variable = fi_state_item_number
+				fi_id_building_executor = {
+					FUNCTION = fi_buy_share_update_gui
+				}
+				remove_variable = fi_state_total_number
+				every_id_building_executor = {
+					FUNCTION = fi_buy_share_update_gui2
+				}
+			}
+		}
+		ai_chance = {base = 4}
+	}
+	option = { 
+		name = fi_share_selling_executer.11.b
+		scope:buy_share_country = {
+			add_investment_pool = scope:scope_fi_selling_price
+		}
+		add_treasury = scope:scope_fi_buying_price
+		add_radicals = {
+			value = fi_radical_from_selling
+			strata = rich
+		}
+		custom_tooltip = {
+			text = fi_sell_share2_tt
+			scope:buy_share_target_state = {
+				no_id_every_building_executor = {
+					FUNCTION = fi_sell_share_effect_proposed
+				}
+				remove_variable = fi_state_item_number
+				fi_id_building_executor = {
+					FUNCTION = fi_buy_share_update_gui
+				}
+				remove_variable = fi_state_total_number
+				every_id_building_executor = {
+					FUNCTION = fi_buy_share_update_gui2
+				}
+			}
+		}
+		ai_chance = {base = 4}
+	}
+	option = { 
+		name = fi_share_selling_executer.11.c
+		ai_chance = {base = 1}
+	}
+}
+
+fi_share_selling_executer.13 = {
+	type = country_event
+	duration = 1
+	title = fi_share_selling_executer.11.t
+	desc = fi_share_selling_executer.11.d
+	flavor = fi_share_selling_executer.11.f
+
+	event_image = {
+		video = "votp_conspiring"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_trade.dds"
+
+	trigger = {
+	}
+
+	immediate = {
+		save_scope_as = seller_country
+		
+		random_country = {
+			limit = {
+				has_variable = buy_share_proposed_country
+			}
+			save_scope_as = buy_share_country
+			save_scope_as = fi_target_country
+			change_variable = {
+				name = buy_share_proposed_country
+				subtract = 1
+			}
+			if = {
+				limit = {
+					var:buy_share_proposed_country < 1
+				}
+				remove_variable = buy_share_proposed_country
+			}
+		}
+		fi_id_executor_no_building = {
+			FUNCTION = fi_id_select_building_7
+		}
+		set_local_variable = {
+            name = buy_share_price
+            value = {
+                fixed_range = {
+                        min = 0.5
+                        max = 0.95
+                }
+            }
+        }
+        save_scope_value_as = {
+        	name = scope_buy_price_percentage
+        	value = {
+        		value = local_var:buy_share_price
+        		multiply = 100
+        	}
+        }
+		save_scope_value_as = {
+			name = scope_fi_buying_price
+			value = fi_buying_price
+		}
+		save_scope_value_as = {
+			name = scope_fi_selling_price
+			value = fi_selling_price
+		}
+		save_scope_value_as = {
+			name = scope_building_number
+			value = local_var:building_number_store
+		}
+		
+		remove_local_variable = buy_share_price
+    	remove_local_variable = building_number_store
+	}
+
+	option = { 
+		name = fi_share_selling_executer.11.a
+		default_option = yes
+		scope:buy_share_country = {
+			add_investment_pool = scope:scope_fi_selling_price
+		}
+		add_investment_pool = scope:scope_fi_buying_price
+		custom_tooltip = {
+			text = fi_sell_share2_tt
+			scope:buy_share_target_state = {
+				no_id_every_building_executor = {
+					FUNCTION = fi_sell_share_effect_proposed
+				}
+				remove_variable = fi_state_item_number
+				fi_id_building_executor = {
+					FUNCTION = fi_buy_share_update_gui
+				}
+				remove_variable = fi_state_total_number
+				every_id_building_executor = {
+					FUNCTION = fi_buy_share_update_gui2
+				}
+			}
+		}
+		ai_chance = {base = 4}
+	}
+	option = { 
+		name = fi_share_selling_executer.11.b
+		scope:buy_share_country = {
+			add_investment_pool = scope:scope_fi_selling_price
+		}
+		add_treasury = scope:scope_fi_buying_price
+		add_radicals = {
+			value = fi_radical_from_selling
+			strata = rich
+		}
+		custom_tooltip = {
+			text = fi_sell_share2_tt
+			scope:buy_share_target_state = {
+				no_id_every_building_executor = {
+					FUNCTION = fi_sell_share_effect_proposed
+				}
+				remove_variable = fi_state_item_number
+				fi_id_building_executor = {
+					FUNCTION = fi_buy_share_update_gui
+				}
+				remove_variable = fi_state_total_number
+				every_id_building_executor = {
+					FUNCTION = fi_buy_share_update_gui2
+				}
+			}
+		}
+		ai_chance = {base = 4}
+	}
+	option = { 
+		name = fi_share_selling_executer.11.c
+		ai_chance = {base = 1}
+	}
+}

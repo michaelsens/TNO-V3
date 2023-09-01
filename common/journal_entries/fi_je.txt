@@ -1,0 +1,136 @@
+je_fi_protectorate = {
+	icon = "gfx/interface/icons/event_icons/event_skull.dds"
+    
+	immediate = {
+		set_variable = {
+			name = fi_protectorate_target
+			value = 0
+		}
+	}
+    
+	fail = {
+		OR = {
+			country_rank > rank_value:minor_power
+			custom_tooltip ={
+				text = fi_je_fail_tt
+				NOT = {
+					any_country = {
+			        	has_variable = fi_identification
+			        	is_owed_obligation_by = root
+			        }
+			    }
+			}
+			is_subject = yes
+		}
+	}
+	on_fail = {
+		every_id_executor_no_building = {
+			FUNCTION = fi_remove_all_je_variable
+		}
+		remove_variable = fi_protectorate_target
+	}
+	on_monthly_pulse = {
+		effect = {
+			set_local_variable = {
+				name = building_number_calc
+				value = 1
+			}
+			root = {
+				set_variable = {
+					name = fi_protectorate_target
+					value = 0
+					years = 5
+				}
+				set_variable = {
+					name = fi_protectorate_highest
+					value = 0
+				}
+				every_scope_building = {
+					limit = {
+						NOT = { is_building_group = bg_bureaucracy }
+						NOT = { is_building_group = bg_technology }
+						NOT = { is_building_group = bg_construction }
+						NOT = { is_building_group = bg_army }
+						NOT = { is_building_group = bg_conscription }
+						NOT = { is_building_group = bg_navy }
+						NOT = { is_building_group = bg_service }
+						NOT = { is_building_group = bg_public_infrastructure }
+						NOT = { is_building_group = bg_trade }
+						NOT = { is_building_group = bg_subsistence_agriculture }
+						NOT = { is_building_group = bg_subsistence_ranching }
+						NOT = { is_building_group = bg_investment_industry }
+					}
+					change_local_variable = {
+						name = building_number_calc
+						add = level
+					}
+				}
+			}
+			every_country = {
+				limit = {
+					has_variable = fi_identification
+					is_owed_obligation_by = root
+				}
+				save_scope_as = fi_target_country
+				set_local_variable = {
+					name = invest_number_calc
+					value = 0
+				}
+				fi_id_building_executor = {
+					FUNCTION = fi_set_protectorate_var
+				}
+				change_local_variable = {
+					name = invest_number_calc
+					divide = local_var:building_number_calc		
+				}
+				change_local_variable = {
+					name = invest_number_calc
+					multiply = 100
+				}
+				fi_id_executor_no_building = {
+					FUNCTION = fi_set_protectorate_var_2
+				}
+				save_scope_as = actor
+				root = {
+					if = {
+						limit = {
+							fi_protectorate_acceptance >= 0
+							NOT = { has_variable = fi_dip_timer }
+						}
+						set_variable = {
+							name = fi_dip_timer
+							value = 1
+							years = 1
+						}
+						set_variable = {
+							name = fi_dip_event_target
+							value = local_var:invest_number_calc
+						}
+						scope:actor = { trigger_event = { id = fi_diplomatic_events.1 } }
+					}
+					if = {
+						limit = { var:fi_protectorate_target < fi_protectorate_value }
+						set_variable = {
+							name = fi_protectorate_target
+							value = fi_protectorate_value
+						}
+					}
+				}
+				remove_local_variable = invest_number_calc
+			}
+			remove_local_variable = building_number_calc
+		}
+	}
+
+	current_value = {
+		value = root.var:fi_protectorate_target
+	}	
+	goal_add_value = {
+		value = 100
+	}	
+
+	progressbar = yes
+	weight = 10000
+	
+	should_be_pinned_by_default = yes
+}

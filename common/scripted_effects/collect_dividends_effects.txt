@@ -84,6 +84,12 @@
 					trigger_event = { id = fi_dividend_collector.3 }
 					cancel_building_effect = yes
 				}
+				every_scope_building = {
+					limit = {
+						has_modifier = invested_foriegn_building
+					}
+					remove_modifier = invested_foriegn_building
+				}
 				remove_local_variable = destroyed_number
 				remove_variable = $ID$_$BUILDING$_number
 			}
@@ -149,6 +155,7 @@
 						limit = {
 							state = {
 								is_split_state = yes
+								owner = { has_revolution = yes }
 							}
 							state.state_region = { 
 								any_scope_state = {
@@ -186,10 +193,13 @@
 							name = invested_foriegn_building
 							multiplier = share_multiplier
 						}
-						
 						set_local_variable = {	
 							name = profit_calc_store
-							value = $BUILDING$_share_calculater
+							value = state.var:$ID$_$BUILDING$_number
+						}
+						change_local_variable = {
+							name = profit_calc_store
+							divide = level
 						}
 						change_local_variable = {
 							name = profit_calc_store

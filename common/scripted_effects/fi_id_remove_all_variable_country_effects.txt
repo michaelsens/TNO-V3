@@ -1,85 +1,30 @@
 ﻿fi_id_remove_all_from_state_country = {
-        if = {
-                limit = { root.var:fi_identification = 1 }
-                fi_remove_all_from_state_country = { ID = 1 }
-        }
-        else_if = {
-                limit = { root.var:fi_identification = 2 }
-                fi_remove_all_from_state_country = { ID = 2 }
-        }
-else_if = {
-                limit = { root.var:fi_identification = 3 }
-                fi_remove_all_from_state_country = { ID = 3 }
-        }
-else_if = {
-                limit = { root.var:fi_identification = 4 }
-                fi_remove_all_from_state_country = { ID = 4 }
-        }
-else_if = {
-                limit = { root.var:fi_identification = 5 }
-                fi_remove_all_from_state_country = { ID = 5 }
-        }
-else_if = {
-                limit = { root.var:fi_identification = 6 }
-                fi_remove_all_from_state_country = { ID = 6 }
-        }
-else_if = {
-                limit = { root.var:fi_identification = 7 }
-                fi_remove_all_from_state_country = { ID = 7 }
-        }
-else_if = {
-                limit = { root.var:fi_identification = 8 }
-                fi_remove_all_from_state_country = { ID = 8 }
-        }
-else_if = {
-                limit = { root.var:fi_identification = 9 }
-                fi_remove_all_from_state_country = { ID = 9 }
-        }
-else_if = {
-                limit = { root.var:fi_identification = 10 }
-                fi_remove_all_from_state_country = { ID = 10 }
-        }
-else_if = {
-                limit = { root.var:fi_identification = 11 }
-                fi_remove_all_from_state_country = { ID = 11 }
-        }
-else_if = {
-                limit = { root.var:fi_identification = 12 }
-                fi_remove_all_from_state_country = { ID = 12 }
-        }
-else_if = {
-                limit = { root.var:fi_identification = 13 }
-                fi_remove_all_from_state_country = { ID = 13 }
-        }
-else_if = {
-                limit = { root.var:fi_identification = 14 }
-                fi_remove_all_from_state_country = { ID = 14 }
-        }
-else_if = {
-                limit = { root.var:fi_identification = 15 }
-                fi_remove_all_from_state_country = { ID = 15 }
-        }
-else_if = {
-                limit = { root.var:fi_identification = 16 }
-                fi_remove_all_from_state_country = { ID = 16 }
-        }
-else_if = {
-                limit = { root.var:fi_identification = 17 }
-                fi_remove_all_from_state_country = { ID = 17 }
-        }
-else_if = {
-                limit = { root.var:fi_identification = 18 }
-                fi_remove_all_from_state_country = { ID = 18 }
-        }
-else_if = {
-                limit = { root.var:fi_identification = 19 }
-                fi_remove_all_from_state_country = { ID = 19 }
-        }
-else_if = {
-                limit = { root.var:fi_identification = 20 }
-                fi_remove_all_from_state_country = { ID = 20 }
-        }
+
+switch = {
+trigger = root.var:fi_identification
+1={fi_remove_all_from_state_country = {ID=1}}
+2={fi_remove_all_from_state_country = {ID=2}}
+3={fi_remove_all_from_state_country = {ID=3}}
+4={fi_remove_all_from_state_country = {ID=4}}
+5={fi_remove_all_from_state_country = {ID=5}}
+6={fi_remove_all_from_state_country = {ID=6}}
+7={fi_remove_all_from_state_country = {ID=7}}
+8={fi_remove_all_from_state_country = {ID=8}}
+9={fi_remove_all_from_state_country = {ID=9}}
+10={fi_remove_all_from_state_country = {ID=10}}
+11={fi_remove_all_from_state_country = {ID=11}}
+12={fi_remove_all_from_state_country = {ID=12}}
+13={fi_remove_all_from_state_country = {ID=13}}
+14={fi_remove_all_from_state_country = {ID=14}}
+15={fi_remove_all_from_state_country = {ID=15}}
+16={fi_remove_all_from_state_country = {ID=16}}
+17={fi_remove_all_from_state_country = {ID=17}}
+18={fi_remove_all_from_state_country = {ID=18}}
+19={fi_remove_all_from_state_country = {ID=19}}
+20={fi_remove_all_from_state_country = {ID=20}}
 }
+}
+
 fi_remove_all_from_state_country = {
         if = {
                 limit = {has_variable = $ID$_building_coal_mine_number}

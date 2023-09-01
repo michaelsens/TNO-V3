@@ -1,0 +1,39 @@
+fi_set_protectorate_var = {
+	root = {
+		every_scope_state = {
+			limit = {
+				has_variable = $ID$_$BUILDING$_number
+			}
+			change_local_variable = {
+				name = invest_number_calc
+				add = var:$ID$_$BUILDING$_number
+			}
+		}
+	}
+}
+fi_set_protectorate_var_2 = {
+	root = {
+		set_variable = {
+			name = $ID$_fi_protectorate_var
+			value = local_var:invest_number_calc
+		}
+		if = {
+			limit = {
+				var:fi_protectorate_highest < var:$ID$_fi_protectorate_var
+			}
+			set_variable = {
+				name = fi_protectorate_highest
+				value = var:$ID$_fi_protectorate_var
+			}
+		}
+	}
+}
+
+fi_remove_all_je_variable = {
+	root = {
+		if = {
+			limit = { has_variable = $ID$_fi_protectorate_var }
+			remove_variable = $ID$_fi_protectorate_var
+		}
+	}
+}

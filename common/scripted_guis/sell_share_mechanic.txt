@@ -1,0 +1,80 @@
+sell_share_state_scripted_gui = {
+	scope = country
+	saved_scopes = {
+		invested_state
+		player_country
+	}
+
+	is_shown = {
+		always = yes	
+	}
+	
+	is_valid = {
+		scope:invested_state = {
+			NOT = { has_variable = buy_share_counter }
+			OR = {
+				NOT = { has_variable = fi_state_item_number }
+				NOT = { var:fi_state_building_number = var:fi_state_item_number }
+			}
+		}
+		any_country = {
+			has_variable = fi_identification
+			investment_pool > 1000000
+			check_investable_reverse = yes
+			OR = {
+				NOT = { has_variable = buying_share_maximum}
+				var:buying_share_maximum > 0
+			}
+		}
+		
+	}
+
+	effect = {
+		every_country = {
+			limit = {
+				has_variable = fi_identification
+				investment_pool > 1000000
+				NOT = { has_variable = buying_share_maximum }
+			}
+			save_scope_as = investor_country
+			if = {
+				limit = {
+					scope:player_country = { check_investable = yes }
+				}
+				set_variable = {
+					name = buying_share_maximum
+					value = {
+		                fixed_range = {
+	                        min = 1
+	                        max = buying_share_maximum_value
+		                }
+		                floor = yes
+		            }
+		            months = 1
+				}
+			}
+		}
+		scope:invested_state = {
+			set_variable = {
+				name = buy_share_counter
+				value = 1
+				months = 1
+			}
+
+			ordered_scope_building = {
+               limit = { 
+                    check_invested_building = yes
+               }
+               order_by = weekly_profit_divided_by_level
+               check_range_bounds = no
+               max = 99
+               no_id_every_building_executor = {
+               		FUNCTION = fi_sell_share_calculate_maximum
+               }
+			}
+			no_id_every_building_executor = {
+           		FUNCTION = fi_sell_share_remove_variable
+           }
+		}
+	}
+}
