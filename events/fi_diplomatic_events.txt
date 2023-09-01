@@ -1,0 +1,64 @@
+namespace = fi_diplomatic_events
+
+fi_diplomatic_events.1 = {
+	type = country_event
+	duration = 1
+	title = fi_diplomatic_events.1.t
+	desc = fi_diplomatic_events.1.d
+	flavor = fi_diplomatic_events.1.f
+
+	event_image = {
+		video = "southamerica_factory_opening"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/middleeast/police_breaking_door"
+
+	icon = "gfx/interface/icons/event_icons/event_protest.dds"
+
+	trigger = {
+	}
+
+	immediate = {
+		random_country ={
+			limit = {has_variable = fi_dip_event_target}
+			save_scope_as = fi_dip_event_target
+		}
+		save_scope_as = fi_target_country
+	}
+	
+	option = { 
+		name = fi_diplomatic_events.1.a
+		default_option = yes
+		trigger = {
+			root = { is_player = yes }
+		}
+		scope:fi_dip_event_target = {
+			remove_variable = fi_dip_event_target
+		}
+	}
+	option = { 
+		name = fi_diplomatic_events.1.a
+		default_option = yes
+		trigger = {
+			root = { is_player = no }
+		}
+		create_diplomatic_pact = {
+			country = scope:fi_dip_event_target
+			type = protectorate
+		}
+		create_incident = {
+			country = scope:fi_dip_event_target
+			value = 5
+		}
+		
+		create_truce = { country = scope:fi_dip_event_target months = 60 }
+		scope:fi_dip_event_target = {
+			set_owes_obligation_to = {
+			   	country = root
+			   	setting = no
+			}
+			remove_variable = fi_dip_event_target
+		}
+	}
+}

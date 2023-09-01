@@ -1,0 +1,78 @@
+﻿fi_sell_share_remove_variable = {
+     if = {
+          limit = { has_variable = $BUILDING$_maximum_buy }
+          remove_variable = $BUILDING$_maximum_buy
+     }
+}
+fi_sell_share_calculate_maximum = {
+     if = {
+          limit = {
+               is_building_type = $BUILDING$
+          }
+          scope:invested_state = {
+               set_variable = {
+                    name = $BUILDING$_maximum_buy
+                    value = prev.level
+               }
+               change_variable = {
+                    name = $BUILDING$_maximum_buy
+                    subtract = $BUILDING$_total_number
+               }
+               every_id_executor = {
+                    FUNCTION = fi_sell_share_propose_effect
+                    BUILDING = $BUILDING$
+               }
+          }
+     }
+}
+
+fi_sell_share_propose_effect = {
+     if = {
+          limit = {
+               var:$BUILDING$_maximum_buy > 0
+          }
+          random_country = {
+               limit = {
+                    has_variable = fi_identification
+                    has_variable = buying_share_maximum
+                    var:fi_identification = $ID$
+                    var:buying_share_maximum > 0
+               }
+               save_scope_as = investor_country
+               scope:invested_state = {
+                    set_variable = {
+                         name = $ID$_$BUILDING$_SELL_SHARE
+                         value = 0
+                    }
+                    while = {
+                         limit = {
+                              scope:investor_country.var:buying_share_maximum > 0
+                              var:$BUILDING$_maximum_buy > 0
+                         }
+                         change_variable = {
+                              name = $ID$_$BUILDING$_SELL_SHARE
+                              add = 1
+                         }
+                         change_variable = {
+                              name = $BUILDING$_maximum_buy
+                              subtract = 1
+                         }
+                         scope:investor_country = {
+                              change_variable = {
+                                   name = buying_share_maximum
+                                   subtract = 1
+                              }
+                         }
+                    }
+               }
+               scope:player_country = {
+                    set_variable = {
+                           name = buy_share_proposing_country
+                           value = buy_share_proposing_country_value
+                           months = 2
+                   }
+               }
+               trigger_event = { id = fi_share_selling_executer.1 }
+          }
+     }
+}

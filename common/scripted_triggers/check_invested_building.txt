@@ -1,0 +1,372 @@
+check_investable_reverse = {
+        exists = market_capital
+        OR = {
+                market_capital = {
+                        this = scope:player_country.market_capital
+                }
+                scope:player_country = { has_law = law_type:law_free_trade }
+                market_capital.owner = { has_treaty_port_in_country = scope:player_country }
+                overlord = {
+                        has_diplomatic_pact = {
+                                who = scope:player_country.market_capital.owner
+                                type = trade_agreement
+                        }
+                }
+        }
+}
+
+check_invested_building = {
+        level > 0
+	OR = {
+AND = {
+	is_building_type = building_coal_mine
+	level > state.building_coal_mine_total_number
+}
+AND = {
+        is_building_type = building_iron_mine
+        level > state.building_iron_mine_total_number
+}
+AND = {
+        is_building_type = building_lead_mine
+        level > state.building_lead_mine_total_number
+}
+AND = {
+        is_building_type = building_sulfur_mine
+        level > state.building_sulfur_mine_total_number
+}
+AND = {
+        is_building_type = building_gold_mine
+        level > state.building_gold_mine_total_number
+}
+AND = {
+        is_building_type = building_logging_camp
+        level > state.building_logging_camp_total_number
+}
+AND = {
+        is_building_type = building_fishing_wharf
+        level > state.building_fishing_wharf_total_number
+}
+AND = {
+        is_building_type = building_whaling_station
+        level > state.building_whaling_station_total_number
+}
+AND = {
+        is_building_type = building_rubber_plantation
+        level > state.building_rubber_plantation_total_number
+}
+AND = {
+        is_building_type = building_oil_rig
+        level > state.building_oil_rig_total_number
+}
+AND = {
+        is_building_type = building_railway
+        level > state.building_railway_total_number
+}
+AND = {
+        is_building_type = building_coffee_plantation
+        level > state.building_coffee_plantation_total_number
+}
+AND = {
+        is_building_type = building_cotton_plantation
+        level > state.building_cotton_plantation_total_number
+}
+AND = {
+        is_building_type = building_dye_plantation
+        level > state.building_dye_plantation_total_number
+}
+AND = {
+        is_building_type = building_opium_plantation
+        level > state.building_opium_plantation_total_number
+}
+AND = {
+        is_building_type = building_tea_plantation
+        level > state.building_tea_plantation_total_number
+}
+AND = {
+        is_building_type = building_tobacco_plantation
+        level > state.building_tobacco_plantation_total_number
+}
+AND = {
+        is_building_type = building_sugar_plantation
+        level > state.building_sugar_plantation_total_number
+}
+AND = {
+        is_building_type = building_banana_plantation
+        level > state.building_banana_plantation_total_number
+}
+AND = {
+        is_building_type = building_silk_plantation
+        level > state.building_silk_plantation_total_number
+}
+AND = {
+        is_building_type = building_rye_farm
+        level > state.building_rye_farm_total_number
+}
+AND = {
+        is_building_type = building_wheat_farm
+        level > state.building_wheat_farm_total_number
+}
+AND = {
+        is_building_type = building_rice_farm
+        level > state.building_rice_farm_total_number
+}
+AND = {
+        is_building_type = building_maize_farm
+        level > state.building_maize_farm_total_number
+}
+AND = {
+        is_building_type = building_millet_farm
+        level > state.building_millet_farm_total_number
+}
+AND = {
+        is_building_type = building_livestock_ranch
+        level > state.building_livestock_ranch_total_number
+}
+AND = {
+        is_building_type = building_food_industry
+        level > state.building_food_industry_total_number
+}
+AND = {
+        is_building_type = building_textile_mills
+        level > state.building_textile_mills_total_number
+}
+AND = {
+        is_building_type = building_furniture_manufacturies
+        level > state.building_furniture_manufacturies_total_number
+}
+AND = {
+        is_building_type = building_glassworks
+        level > state.building_glassworks_total_number
+}
+AND = {
+        is_building_type = building_tooling_workshops
+        level > state.building_tooling_workshops_total_number
+}
+AND = {
+        is_building_type = building_paper_mills
+        level > state.building_paper_mills_total_number
+}
+AND = {
+        is_building_type = building_chemical_plants
+        level > state.building_chemical_plants_total_number
+}
+AND = {
+        is_building_type = building_synthetics_plants
+        level > state.building_synthetics_plants_total_number
+}
+AND = {
+        is_building_type = building_steel_mills
+        level > state.building_steel_mills_total_number
+}
+AND = {
+        is_building_type = building_motor_industry
+        level > state.building_motor_industry_total_number
+}
+AND = {
+        is_building_type = building_shipyards
+        level > state.building_shipyards_total_number
+}
+AND = {
+        is_building_type = building_war_machine_industry
+        level > state.building_war_machine_industry_total_number
+}
+AND = {
+        is_building_type = building_electrics_industry
+        level > state.building_electrics_industry_total_number
+}
+AND = {
+        is_building_type = building_arms_industry
+        level > state.building_arms_industry_total_number
+}
+AND = {
+        is_building_type = building_munition_plants
+        level > state.building_munition_plants_total_number
+}
+AND = {
+        is_building_type = building_arts_academy
+        level > state.building_arts_academy_total_number
+}
+AND = {
+        is_building_type = building_power_plant
+        level > state.building_power_plant_total_number
+}
+	}
+}
+
+check_invested_building2 = {
+        level > 0
+        OR = {
+AND = {
+        is_building_type = building_coal_mine
+        level > state.coal_total_item
+}
+AND = {
+        is_building_type = building_iron_mine
+        level > state.iron_total_item
+}
+AND = {
+        is_building_type = building_lead_mine
+        level > state.lead_total_item
+}
+AND = {
+        is_building_type = building_sulfur_mine
+        level > state.sulfur_total_item
+}
+AND = {
+        is_building_type = building_gold_mine
+        level > state.gold_mine_total_item
+}
+AND = {
+        is_building_type = building_logging_camp
+        level > state.logging_camp_total_item
+}
+AND = {
+        is_building_type = building_fishing_wharf
+        level > state.fishing_wharf_total_item
+}
+AND = {
+        is_building_type = building_whaling_station
+        level > state.whaling_station_total_item
+}
+AND = {
+        is_building_type = building_rubber_plantation
+        level > state.rubber_plantation_total_item
+}
+AND = {
+        is_building_type = building_oil_rig
+        level > state.oil_rig_total_item
+}
+AND = {
+        is_building_type = building_railway
+        level > state.railway_total_item
+}
+AND = {
+        is_building_type = building_coffee_plantation
+        level > state.coffee_plantation_total_item
+}
+AND = {
+        is_building_type = building_cotton_plantation
+        level > state.cotton_plantation_total_item
+}
+AND = {
+        is_building_type = building_dye_plantation
+        level > state.dye_plantation_total_item
+}
+AND = {
+        is_building_type = building_opium_plantation
+        level > state.opium_plantation_total_item
+}
+AND = {
+        is_building_type = building_tea_plantation
+        level > state.tea_plantation_total_item
+}
+AND = {
+        is_building_type = building_tobacco_plantation
+        level > state.tobacco_plantation_total_item
+}
+AND = {
+        is_building_type = building_sugar_plantation
+        level > state.sugar_plantation_total_item
+}
+AND = {
+        is_building_type = building_banana_plantation
+        level > state.banana_plantation_total_item
+}
+AND = {
+        is_building_type = building_silk_plantation
+        level > state.silk_plantation_total_item
+}
+AND = {
+        is_building_type = building_rye_farm
+        level > state.rye_farm_total_item
+}
+AND = {
+        is_building_type = building_wheat_farm
+        level > state.wheat_farm_total_item
+}
+AND = {
+        is_building_type = building_rice_farm
+        level > state.rice_farm_total_item
+}
+AND = {
+        is_building_type = building_maize_farm
+        level > state.maize_farm_total_item
+}
+AND = {
+        is_building_type = building_millet_farm
+        level > state.millet_farm_total_item
+}
+AND = {
+        is_building_type = building_livestock_ranch
+        level > state.livestock_ranch_total_item
+}
+AND = {
+        is_building_type = building_food_industry
+        level > state.food_industry_total_item
+}
+AND = {
+        is_building_type = building_textile_mills
+        level > state.textile_mills_total_item
+}
+AND = {
+        is_building_type = building_furniture_manufacturies
+        level > state.furniture_manufacturies_total_item
+}
+AND = {
+        is_building_type = building_glassworks
+        level > state.glassworks_total_item
+}
+AND = {
+        is_building_type = building_tooling_workshops
+        level > state.tooling_workshops_total_item
+}
+AND = {
+        is_building_type = building_paper_mills
+        level > state.paper_mills_total_item
+}
+AND = {
+        is_building_type = building_chemical_plants
+        level > state.chemical_plants_total_item
+}
+AND = {
+        is_building_type = building_synthetics_plants
+        level > state.synthetics_plants_total_item
+}
+AND = {
+        is_building_type = building_steel_mills
+        level > state.steel_mills_total_item
+}
+AND = {
+        is_building_type = building_motor_industry
+        level > state.motor_industry_total_item
+}
+AND = {
+        is_building_type = building_shipyards
+        level > state.shipyards_total_item
+}
+AND = {
+        is_building_type = building_war_machine_industry
+        level > state.war_machine_industry_total_item
+}
+AND = {
+        is_building_type = building_electrics_industry
+        level > state.electrics_industry_total_item
+}
+AND = {
+        is_building_type = building_arms_industry
+        level > state.arms_industry_total_item
+}
+AND = {
+        is_building_type = building_munition_plants
+        level > state.munition_plants_total_item
+}
+AND = {
+        is_building_type = building_arts_academy
+        level > state.arts_academy_total_item
+}
+AND = {
+        is_building_type = building_power_plant
+        level > state.power_plant_total_item
+}
+        }
+}

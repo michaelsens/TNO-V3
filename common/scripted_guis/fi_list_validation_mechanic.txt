@@ -1,4 +1,4 @@
-﻿fi_list_all_clear = {
+fi_list_all_clear = {
 	scope = country
 	saved_scopes = {
 		investor_country
@@ -17,6 +17,12 @@
 				has_variable_list = invested_my_states
 			}
 			clear_variable_list = invested_my_states
+		}
+		every_country = {
+			limit = {
+				has_variable_list = invested_every_states
+			}
+			clear_variable_list = invested_every_states
 		}
 		every_country = {
 			limit = {
@@ -79,6 +85,12 @@
 			}
 			remove_variable = fi_target_country2_number
 		}
+		every_country = {
+			limit = {
+				has_variable = fi_panel_selected_country
+			}
+			remove_variable = fi_panel_selected_country
+		}
 		every_state = {
 			limit = {
 				has_variable_list = building_owner_countries
@@ -121,6 +133,20 @@
 			}
 			remove_variable = fi_state_profit_calculater
 		}
+		every_state = {
+			limit = {
+				has_variable = fi_state_every_profit_calculater
+			}
+			remove_variable = fi_state_every_profit_calculater
+		}
+		every_state = {
+			limit = {
+				has_variable = fi_state_building_number
+			}
+			remove_variable = fi_state_building_number
+		}
+
+		
 	}
 }
 
@@ -139,12 +165,23 @@ fi_state_list_validation = {
 	}
 
 	effect = {
+		every_country = {
+			limit = {
+				has_variable = fi_panel_list_filter_by_country
+			}
+			remove_variable = fi_panel_list_filter_by_country
+		}
+		every_country = {
+			limit = {
+				has_variable = fi_panel_list_filter_by_investable
+			}
+			remove_variable = fi_panel_list_filter_by_investable
+		}
 		scope:investor_country = { 
 			clear_variable_list = invested_states
 			if = {
 				limit = {
 					has_variable = fi_identification
-					#has_variable_list = invested_states
 				}
 				every_state = {
 					fi_add_list = yes
@@ -179,11 +216,7 @@ fi_state_list_validation = {
 			}
 		}
 		scope:investor_country = {
-			save_scope_as = player_country
 			every_scope_state = {
-				limit = {
-					state_total_number > 0
-				}
 				scope:investor_country = {
 					add_to_variable_list = {
 						name = invested_my_states
@@ -213,6 +246,7 @@ fi_state_list_validation = {
 						NOT = { is_building_group = bg_trade }
 						NOT = { is_building_group = bg_subsistence_agriculture }
 						NOT = { is_building_group = bg_subsistence_ranching }
+						NOT = { is_building_group = bg_investment_industry }
 					}
 					scope:investor_country = {
 						change_variable = {
@@ -221,306 +255,9 @@ fi_state_list_validation = {
 						}
 					}
 				}
-				if = {
-					limit = {
-						1_remove_number_calc > 0
-					}
-					random_country ={
-						limit = {
-							has_variable = fi_identification
-							var:fi_identification = 1
-						}
-						change_variable = {
-							name = fi_target_country1_number
-							add = prev.1_remove_number_calc
-						}
-					}
+				every_id_building_executor = {
+					FUNCTION = fi_list_chart_calculator
 				}
-				if = {
-                        limit = {
-                                2_remove_number_calc > 0
-                        }
-                        random_country ={
-                                limit = {
-                                        has_variable = fi_identification
-                                        var:fi_identification = 2
-                                }
-                                change_variable = {
-                                        name = fi_target_country1_number
-                                        add = prev.2_remove_number_calc
-                                }
-                        }
-                }
-				if = {
-                        limit = {
-                                3_remove_number_calc > 0
-                        }
-                        random_country ={
-                                limit = {
-                                        has_variable = fi_identification
-                                        var:fi_identification = 3
-                                }
-                                change_variable = {
-                                        name = fi_target_country1_number
-                                        add = prev.3_remove_number_calc
-                                }
-                        }
-                }
-				if = {
-                        limit = {
-                                4_remove_number_calc > 0
-                        }
-                        random_country ={
-                                limit = {
-                                        has_variable = fi_identification
-                                        var:fi_identification = 4
-                                }
-                                change_variable = {
-                                        name = fi_target_country1_number
-                                        add = prev.4_remove_number_calc
-                                }
-                        }
-                }
-				if = {
-                        limit = {
-                                5_remove_number_calc > 0
-                        }
-                        random_country ={
-                                limit = {
-                                        has_variable = fi_identification
-                                        var:fi_identification = 5
-                                }
-                                change_variable = {
-                                        name = fi_target_country1_number
-                                        add = prev.5_remove_number_calc
-                                }
-                        }
-                }
-				if = {
-                        limit = {
-                                6_remove_number_calc > 0
-                        }
-                        random_country ={
-                                limit = {
-                                        has_variable = fi_identification
-                                        var:fi_identification = 6
-                                }
-                                change_variable = {
-                                        name = fi_target_country1_number
-                                        add = prev.6_remove_number_calc
-                                }
-                        }
-                }
-				if = {
-                        limit = {
-                                7_remove_number_calc > 0
-                        }
-                        random_country ={
-                                limit = {
-                                        has_variable = fi_identification
-                                        var:fi_identification = 7
-                                }
-                                change_variable = {
-                                        name = fi_target_country1_number
-                                        add = prev.7_remove_number_calc
-                                }
-                        }
-                }
-				if = {
-                        limit = {
-                                8_remove_number_calc > 0
-                        }
-                        random_country ={
-                                limit = {
-                                        has_variable = fi_identification
-                                        var:fi_identification = 8
-                                }
-                                change_variable = {
-                                        name = fi_target_country1_number
-                                        add = prev.8_remove_number_calc
-                                }
-                        }
-                }
-				if = {
-                        limit = {
-                                9_remove_number_calc > 0
-                        }
-                        random_country ={
-                                limit = {
-                                        has_variable = fi_identification
-                                        var:fi_identification = 9
-                                }
-                                change_variable = {
-                                        name = fi_target_country1_number
-                                        add = prev.9_remove_number_calc
-                                }
-                        }
-                }
-				if = {
-                        limit = {
-                                10_remove_number_calc > 0
-                        }
-                        random_country ={
-                                limit = {
-                                        has_variable = fi_identification
-                                        var:fi_identification = 10
-                                }
-                                change_variable = {
-                                        name = fi_target_country1_number
-                                        add = prev.10_remove_number_calc
-                                }
-                        }
-                }
-				if = {
-                        limit = {
-                                11_remove_number_calc > 0
-                        }
-                        random_country ={
-                                limit = {
-                                        has_variable = fi_identification
-                                        var:fi_identification = 11
-                                }
-                                change_variable = {
-                                        name = fi_target_country1_number
-                                        add = prev.11_remove_number_calc
-                                }
-                        }
-                }
-				if = {
-                        limit = {
-                                12_remove_number_calc > 0
-                        }
-                        random_country ={
-                                limit = {
-                                        has_variable = fi_identification
-                                        var:fi_identification = 12
-                                }
-                                change_variable = {
-                                        name = fi_target_country1_number
-                                        add = prev.12_remove_number_calc
-                                }
-                        }
-                }
-				if = {
-                        limit = {
-                                13_remove_number_calc > 0
-                        }
-                        random_country ={
-                                limit = {
-                                        has_variable = fi_identification
-                                        var:fi_identification = 13
-                                }
-                                change_variable = {
-                                        name = fi_target_country1_number
-                                        add = prev.13_remove_number_calc
-                                }
-                        }
-                }
-				if = {
-                        limit = {
-                                14_remove_number_calc > 0
-                        }
-                        random_country ={
-                                limit = {
-                                        has_variable = fi_identification
-                                        var:fi_identification = 14
-                                }
-                                change_variable = {
-                                        name = fi_target_country1_number
-                                        add = prev.14_remove_number_calc
-                                }
-                        }
-                }
-				if = {
-                        limit = {
-                                15_remove_number_calc > 0
-                        }
-                        random_country ={
-                                limit = {
-                                        has_variable = fi_identification
-                                        var:fi_identification = 15
-                                }
-                                change_variable = {
-                                        name = fi_target_country1_number
-                                        add = prev.15_remove_number_calc
-                                }
-                        }
-                }
-				if = {
-                        limit = {
-                                16_remove_number_calc > 0
-                        }
-                        random_country ={
-                                limit = {
-                                        has_variable = fi_identification
-                                        var:fi_identification = 16
-                                }
-                                change_variable = {
-                                        name = fi_target_country1_number
-                                        add = prev.16_remove_number_calc
-                                }
-                        }
-                }
-				if = {
-                        limit = {
-                                17_remove_number_calc > 0
-                        }
-                        random_country ={
-                                limit = {
-                                        has_variable = fi_identification
-                                        var:fi_identification = 17
-                                }
-                                change_variable = {
-                                        name = fi_target_country1_number
-                                        add = prev.17_remove_number_calc
-                                }
-                        }
-                }
-				if = {
-                        limit = {
-                                18_remove_number_calc > 0
-                        }
-                        random_country ={
-                                limit = {
-                                        has_variable = fi_identification
-                                        var:fi_identification = 18
-                                }
-                                change_variable = {
-                                        name = fi_target_country1_number
-                                        add = prev.18_remove_number_calc
-                                }
-                        }
-                }
-				if = {
-                        limit = {
-                                19_remove_number_calc > 0
-                        }
-                        random_country ={
-                                limit = {
-                                        has_variable = fi_identification
-                                        var:fi_identification = 19
-                                }
-                                change_variable = {
-                                        name = fi_target_country1_number
-                                        add = prev.19_remove_number_calc
-                                }
-                        }
-                }
-				if = {
-                        limit = {
-                                20_remove_number_calc > 0
-                        }
-                        random_country ={
-                                limit = {
-                                        has_variable = fi_identification
-                                        var:fi_identification = 20
-                                }
-                                change_variable = {
-                                        name = fi_target_country1_number
-                                        add = prev.20_remove_number_calc
-                                }
-                        }
-                }
 			}
 			set_local_variable = {
 				name = fi_total_number_store
@@ -619,48 +356,138 @@ fi_state_list_validation = {
 			}
 			remove_variable = fi_state_profit_calculater
 		}
-		
-		
+
+		every_id_building_executor = {
+			FUNCTION = every_list_state_item
+		}
 		every_state = {
 			limit = {
-				state_total_number > 0
+				owner = { check_investable = yes }
+				NOT = {
+					scope:investor_country = {
+						is_target_in_variable_list = {
+							name = list_before_order
+							target = prev
+						}
+					}
+				}
 			}
-			set_variable = {
-				name = fi_state_total_number
-				value = state_total_number
+			scope:investor_country = {
+				add_to_variable_list = {
+					name = list_before_order
+					target = prev
+				}
 			}
-			set_variable = {
-				name = fi_state_total_queued
-				value = state_total_queued
+			if = {
+				limit = { NOT = { has_variable = fi_state_total_number } }
+				set_variable = {
+					name = fi_state_total_number
+					value = 0
+				}
+			}
+			if = {
+				limit = { NOT = { has_variable = fi_state_total_queued } }
+				set_variable = {
+					name = fi_state_total_queued
+					value = 0
+				}
+			}
+			if = {
+				limit = { NOT = { has_variable = fi_state_every_profit_calculater } }
+				set_variable = {
+					name = fi_state_every_profit_calculater
+					value = 0
+				}
+			}
+			if = {
+				limit = { NOT = { has_variable = state_every_profit_building_number } }
+				set_variable = {
+					name = state_every_profit_building_number
+					value = 0.01
+				}
 			}
 		}
 		scope:investor_country = {
+			ordered_in_list = {
+				variable = list_before_order
+				order_by = gdp
+				max = 9999
+				check_range_bounds = no
+				set_variable = {
+					name = fi_state_building_number
+					value = 0
+				}
+				every_scope_building = {
+					limit = {
+						NOT = { is_building_group = bg_bureaucracy }
+						NOT = { is_building_group = bg_technology }
+						NOT = { is_building_group = bg_construction }
+						NOT = { is_building_group = bg_army }
+						NOT = { is_building_group = bg_conscription }
+						NOT = { is_building_group = bg_navy }
+						NOT = { is_building_group = bg_service }
+						NOT = { is_building_group = bg_public_infrastructure }
+						NOT = { is_building_group = bg_trade }
+						NOT = { is_building_group = bg_subsistence_agriculture }
+						NOT = { is_building_group = bg_subsistence_ranching }
+						NOT = { is_building_group = bg_investment_industry }
+					}
+					prev = {
+						change_variable = {
+							name = fi_state_building_number
+							add = prev.level
+						}
+					}
+				}
+				scope:investor_country = {
+					add_to_variable_list = {
+						name = invested_every_states
+						target = prev
+					}
+				}
+			}
+			clear_variable_list = list_before_order
 			save_scope_as = fi_target_country
 		}
-		if = {
-			limit = {
-				scope:investor_country = {
-					has_variable = fi_identification
-				}
-			}
-			fi_id_building_executor = {
-				FUNCTION = fi_list_state_item
-			}
-			every_state = {
-				limit = { has_variable = state_profit_building_number }
+		scope:investor_country = {
+			every_in_list = {
+				variable = invested_every_states
 				change_variable = {
-					name = fi_state_profit_calculater
-					divide = var:state_profit_building_number
+					name = fi_state_every_profit_calculater
+					divide = var:state_every_profit_building_number
 				}
 				change_variable = {
-					name = fi_state_profit_calculater
+					name = fi_state_every_profit_calculater
 					divide = 1000
 				}
-				remove_variable = state_profit_building_number
+				remove_variable = state_every_profit_building_number
+				set_variable = {
+					name = fi_state_item_number
+					value = 0
+				}
+			}
+			if = {
+				limit = {
+					has_variable = fi_identification
+				}
+				fi_id_building_executor = {
+					FUNCTION = fi_list_state_item
+				}
+				every_in_list = {
+					variable = invested_every_states
+					limit = { has_variable = state_profit_building_number }
+					change_variable = {
+						name = fi_state_profit_calculater
+						divide = var:state_profit_building_number
+					}
+					change_variable = {
+						name = fi_state_profit_calculater
+						divide = 1000
+					}
+					remove_variable = state_profit_building_number
+				}
 			}
 		}
-		
-
 	}
 }
 
@@ -694,6 +521,12 @@ fi_state_list_validation2= {
 		}
 		every_country = {
 			limit = {
+				has_variable = fi_panel_selected_country
+			}
+			remove_variable = fi_panel_selected_country
+		}
+		every_country = {
+			limit = {
 				has_variable = fi_identification
 			}
 			set_variable = {
@@ -712,6 +545,7 @@ fi_state_list_validation2= {
 				name = fi_target_country2_number
 				value = 0
 			}
+			set_variable = fi_panel_selected_country
 			add_to_variable_list = {
 				name = list_before_order
 				target = scope:investor_country
@@ -726,6 +560,7 @@ fi_state_list_validation2= {
 						NOT = { is_building_group = bg_urban_facilities }
 						NOT = { is_building_group = bg_subsistence_agriculture }
 						NOT = { is_building_group = bg_subsistence_ranching }
+						NOT = { is_building_group = bg_investment_industry }
 					}
 					scope:investor_country = {
 						change_variable = {
@@ -734,306 +569,9 @@ fi_state_list_validation2= {
 						}
 					}
 				}
-				if = {
-					limit = {
-						1_remove_number_calc > 0
-					}
-					random_country ={
-						limit = {
-							has_variable = fi_identification
-							var:fi_identification = 1
-						}
-						change_variable = {
-							name = fi_target_country2_number
-							add = prev.1_remove_number_calc
-						}
-					}
+				every_id_building_executor = {
+					FUNCTION = fi_list_chart_calculator2
 				}
-				if = {
-                        limit = {
-                                2_remove_number_calc > 0
-                        }
-                        random_country ={
-                                limit = {
-                                        has_variable = fi_identification
-                                        var:fi_identification = 2
-                                }
-                                change_variable = {
-                                        name = fi_target_country2_number
-                                        add = prev.2_remove_number_calc
-                                }
-                        }
-                }
-				if = {
-                        limit = {
-                                3_remove_number_calc > 0
-                        }
-                        random_country ={
-                                limit = {
-                                        has_variable = fi_identification
-                                        var:fi_identification = 3
-                                }
-                                change_variable = {
-                                        name = fi_target_country2_number
-                                        add = prev.3_remove_number_calc
-                                }
-                        }
-                }
-				if = {
-                        limit = {
-                                4_remove_number_calc > 0
-                        }
-                        random_country ={
-                                limit = {
-                                        has_variable = fi_identification
-                                        var:fi_identification = 4
-                                }
-                                change_variable = {
-                                        name = fi_target_country2_number
-                                        add = prev.4_remove_number_calc
-                                }
-                        }
-                }
-				if = {
-                        limit = {
-                                5_remove_number_calc > 0
-                        }
-                        random_country ={
-                                limit = {
-                                        has_variable = fi_identification
-                                        var:fi_identification = 5
-                                }
-                                change_variable = {
-                                        name = fi_target_country2_number
-                                        add = prev.5_remove_number_calc
-                                }
-                        }
-                }
-				if = {
-                        limit = {
-                                6_remove_number_calc > 0
-                        }
-                        random_country ={
-                                limit = {
-                                        has_variable = fi_identification
-                                        var:fi_identification = 6
-                                }
-                                change_variable = {
-                                        name = fi_target_country2_number
-                                        add = prev.6_remove_number_calc
-                                }
-                        }
-                }
-				if = {
-                        limit = {
-                                7_remove_number_calc > 0
-                        }
-                        random_country ={
-                                limit = {
-                                        has_variable = fi_identification
-                                        var:fi_identification = 7
-                                }
-                                change_variable = {
-                                        name = fi_target_country2_number
-                                        add = prev.7_remove_number_calc
-                                }
-                        }
-                }
-				if = {
-                        limit = {
-                                8_remove_number_calc > 0
-                        }
-                        random_country ={
-                                limit = {
-                                        has_variable = fi_identification
-                                        var:fi_identification = 8
-                                }
-                                change_variable = {
-                                        name = fi_target_country2_number
-                                        add = prev.8_remove_number_calc
-                                }
-                        }
-                }
-				if = {
-                        limit = {
-                                9_remove_number_calc > 0
-                        }
-                        random_country ={
-                                limit = {
-                                        has_variable = fi_identification
-                                        var:fi_identification = 9
-                                }
-                                change_variable = {
-                                        name = fi_target_country2_number
-                                        add = prev.9_remove_number_calc
-                                }
-                        }
-                }
-				if = {
-                        limit = {
-                                10_remove_number_calc > 0
-                        }
-                        random_country ={
-                                limit = {
-                                        has_variable = fi_identification
-                                        var:fi_identification = 10
-                                }
-                                change_variable = {
-                                        name = fi_target_country2_number
-                                        add = prev.10_remove_number_calc
-                                }
-                        }
-                }
-				if = {
-                        limit = {
-                                11_remove_number_calc > 0
-                        }
-                        random_country ={
-                                limit = {
-                                        has_variable = fi_identification
-                                        var:fi_identification = 11
-                                }
-                                change_variable = {
-                                        name = fi_target_country2_number
-                                        add = prev.11_remove_number_calc
-                                }
-                        }
-                }
-				if = {
-                        limit = {
-                                12_remove_number_calc > 0
-                        }
-                        random_country ={
-                                limit = {
-                                        has_variable = fi_identification
-                                        var:fi_identification = 12
-                                }
-                                change_variable = {
-                                        name = fi_target_country2_number
-                                        add = prev.12_remove_number_calc
-                                }
-                        }
-                }
-				if = {
-                        limit = {
-                                13_remove_number_calc > 0
-                        }
-                        random_country ={
-                                limit = {
-                                        has_variable = fi_identification
-                                        var:fi_identification = 13
-                                }
-                                change_variable = {
-                                        name = fi_target_country2_number
-                                        add = prev.13_remove_number_calc
-                                }
-                        }
-                }
-				if = {
-                        limit = {
-                                14_remove_number_calc > 0
-                        }
-                        random_country ={
-                                limit = {
-                                        has_variable = fi_identification
-                                        var:fi_identification = 14
-                                }
-                                change_variable = {
-                                        name = fi_target_country2_number
-                                        add = prev.14_remove_number_calc
-                                }
-                        }
-                }
-				if = {
-                        limit = {
-                                15_remove_number_calc > 0
-                        }
-                        random_country ={
-                                limit = {
-                                        has_variable = fi_identification
-                                        var:fi_identification = 15
-                                }
-                                change_variable = {
-                                        name = fi_target_country2_number
-                                        add = prev.15_remove_number_calc
-                                }
-                        }
-                }
-				if = {
-                        limit = {
-                                16_remove_number_calc > 0
-                        }
-                        random_country ={
-                                limit = {
-                                        has_variable = fi_identification
-                                        var:fi_identification = 16
-                                }
-                                change_variable = {
-                                        name = fi_target_country2_number
-                                        add = prev.16_remove_number_calc
-                                }
-                        }
-                }
-				if = {
-                        limit = {
-                                17_remove_number_calc > 0
-                        }
-                        random_country ={
-                                limit = {
-                                        has_variable = fi_identification
-                                        var:fi_identification = 17
-                                }
-                                change_variable = {
-                                        name = fi_target_country2_number
-                                        add = prev.17_remove_number_calc
-                                }
-                        }
-                }
-				if = {
-                        limit = {
-                                18_remove_number_calc > 0
-                        }
-                        random_country ={
-                                limit = {
-                                        has_variable = fi_identification
-                                        var:fi_identification = 18
-                                }
-                                change_variable = {
-                                        name = fi_target_country2_number
-                                        add = prev.18_remove_number_calc
-                                }
-                        }
-                }
-				if = {
-                        limit = {
-                                19_remove_number_calc > 0
-                        }
-                        random_country ={
-                                limit = {
-                                        has_variable = fi_identification
-                                        var:fi_identification = 19
-                                }
-                                change_variable = {
-                                        name = fi_target_country2_number
-                                        add = prev.19_remove_number_calc
-                                }
-                        }
-                }
-				if = {
-                        limit = {
-                                20_remove_number_calc > 0
-                        }
-                        random_country ={
-                                limit = {
-                                        has_variable = fi_identification
-                                        var:fi_identification = 20
-                                }
-                                change_variable = {
-                                        name = fi_target_country2_number
-                                        add = prev.20_remove_number_calc
-                                }
-                        }
-                }
 			}
 			set_local_variable = {
 				name = fi_total_number_store
