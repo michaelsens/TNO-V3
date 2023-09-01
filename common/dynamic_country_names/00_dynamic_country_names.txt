@@ -5,6 +5,37 @@
 ################################################################
 
 
+BHT = {
+	dynamic_country_name = {
+		name = "Republic of India"
+		adjective = "Indian"
+		
+		is_main_tag_only = yes
+		priority = 1
+		
+		trigger = {
+			coa_def_republic_flag_trigger = yes
+				
+		}
+	}
+}
+
+MCH = { 
+	dynamic_country_name = {
+		name = "Empire of Manchuria"
+		adjective = "Manchurian"
+		
+		is_main_tag_only = yes
+		priority = 1
+		
+		trigger = {
+			scope:actor = {
+				is_subject_of = c:JAP
+			}
+		}
+	}
+}
+
 PAL = { # Levante
 	dynamic_country_name = {
 		name = "Levant"
@@ -1131,6 +1162,24 @@ CHI = { # China
 		
 		trigger = {
 			coa_def_communist_flag_trigger = yes
+		}
+	}
+	dynamic_country_name = {
+		name = dyn_c_republic_of_china
+		
+		is_main_tag_only = yes
+		priority = 0
+		
+		trigger = {
+			OR = {
+				scope:actor = {
+					is_subject_of = c:JAP
+				}
+				scope:actor = { 		
+					coa_def_republic_flag_trigger = yes
+				}
+				
+			}
 		}
 	}
 }
