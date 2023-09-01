@@ -2,46 +2,51 @@ modifier_offensive_footing = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
 	unit_army_offense_mult = 0.15
 	unit_army_defense_mult = -0.15
+	country_diplomatic_play_maneuvers_add = 60
 }
 
 modifier_advanced_economy = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds
-	building_subsistence_output_mult = 0.8
 	state_middle_standard_of_living_add = 2
+	state_poor_standard_of_living_add = 2
+	building_group_bg_subsistence_agriculture_throughput_mult = 0.85
 }
 
 modifier_very_developed_economy = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds
-	building_subsistence_output_mult = 0.8
 	state_middle_standard_of_living_add = 2
+	state_poor_standard_of_living_add = 2
+	building_group_bg_subsistence_agriculture_throughput_mult = 0.65
 }
 
 modifier_developed_economy = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds
-	building_subsistence_output_mult = 0.4
 	state_middle_standard_of_living_add = 1
-	state_accepted_birth_rate_mult = 0.05
+	state_poor_standard_of_living_add = 1
+	state_birth_rate_mult = 0.05
+	building_group_bg_subsistence_agriculture_throughput_mult = 0.35
 }
 
 modifier_developing_economy = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
-	building_subsistence_output_mult = -0.2
 	state_poor_standard_of_living_add = 2
-	state_accepted_birth_rate_mult = 0.25
+	state_birth_rate_mult = 0.25
+	building_group_bg_subsistence_agriculture_throughput_mult = -0.35
 }
 
 modifier_undeveloped_economy = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
-	building_subsistence_output_mult = -0.4
 	state_poor_standard_of_living_add = 2
 	state_birth_rate_mult = 0.55
+	building_group_bg_subsistence_agriculture_throughput_mult = -0.65
 }
 
 modifier_least_developed_economy = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
-	building_subsistence_output_mult = -0.6
 	state_poor_standard_of_living_add = 2
-	state_birth_rate_mult = 0.75
+	state_birth_rate_mult = 0.70
+	building_group_bg_subsistence_agriculture_throughput_mult = -0.95
+	
 }
 
 modifier_raiding_parties = {
@@ -162,10 +167,10 @@ last_bastion_democracy = {
 
 japanese_efficiency = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_positive.dds
-	building_group_bg_manufacturing_throughput_mult = 0.15
+	building_group_bg_manufacturing_throughput_mult = 0.20
 	building_group_bg_manufacturing_laborers_mortality_mult = 0.02
 	country_trade_route_exports_add = 10
-	country_loan_interest_rate_mult = -0.15
+	country_loan_interest_rate_mult = -0.20
 }
 
 corrupt_bureaucracy = {
@@ -374,4 +379,41 @@ hitachi = {
 	state_radicals_from_discrimination_mult = 0.30
 	state_construction_mult = 0.10
 	building_group_bg_construction_laborers_mortality_mult = 0.2
+}
+
+pillaged_economy = {
+	building_group_bg_service_throughput_mult = -0.85
+	building_group_bg_plantations_throughput_mult = -0.3
+	building_group_bg_mines_throughput_mult = -0.3
+	building_group_bg_logging_throughput_mult = -0.3
+	building_group_bg_manufacturing_throughput_mult = -0.4
+	building_output_liquor_mult = -0.5
+	
+
+}
+
+agrarian_economy = {
+	state_poor_standard_of_living_add = 2
+}
+
+worlds_factory = {
+	building_group_bg_manufacturing_throughput_mult = 0.10
+	building_minimum_wage_mult = -0.15
+	building_input_mult = -0.15
+	country_tech_spread_mult -0.25
+}
+
+end_of_colonial = {
+	state_expected_sol_mult = -0.1
+	state_loyalists_from_sol_change_mult = 0.20
+}
+
+two_state_solution = {
+	state_radicals_from_discrimination_mult = 0.75
+	state_turmoil_effects_mult = 0.20
+	state_mortality_turmoil_mult = 0.1
+}
+
+oppresive_colonial_rule = {
+	state_poor_standard_of_living_add = -3
 }
