@@ -198,7 +198,21 @@ tno_starting_events.6 = {
 
 	option = {
 		name = yue.1.a
-		
+		add_modifier = {
+			name = unchecked_capitalism 
+		}
+		add_modifier = {
+			name = sony
+		}
+		add_modifier = {
+			name = fujitsu
+		}
+		add_modifier = {
+			name = matsushia
+		}
+		add_modifier = {
+			name = hitachi
+		}
 	}
 
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
@@ -353,6 +367,7 @@ tno_starting_events.11 ={
     }
 }
 
+
 tno_starting_events.12 = {
     type = country_event
     placement = ROOT
@@ -380,4 +395,36 @@ tno_starting_events.12 = {
 
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 }
+
+tno_starting_events.13 ={
+    type = country_event
+    placement = ROOT
+ 
+    title = bht.1
+    desc = bht.1.d
+    flavor = bht.1.f 
+    event_image = {
+        texture = "gfx/event_pictures/super_pictures/tur.png"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_map.dds"
+
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 6
+
+    trigger = {
+        this ?= c:BHT
+
+    }
+
+   option = {
+        name = bht.1.a
+		add_modifier = { name = worlds_factory }
+		add_modifier = { name = end_of_colonial }
+		add_modifier = { name = two_state_solution }
+    }
+}
+
+
 #add_modifier = { name =  }
