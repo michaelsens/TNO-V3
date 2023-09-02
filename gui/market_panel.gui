@@ -1,4 +1,4 @@
-# COPY-PASTED FOR NOW
+﻿# COPY-PASTED FOR NOW
 @panel_width_minus_10 = 530			# used to be 450
 @panel_width = 540  				# used to be 460
 @panel_width_half = 270				# used to be 230
@@ -75,7 +75,7 @@ type market_gdp_graphs_piechart = chart {
 		
 		blockoverride "window_header_name"
 		{
-			text = "#BOLD [Market.GetOwner.GetFlagTextIcon] [Market.GetName]#!"
+			raw_text = "#BOLD [Market.GetOwner.GetFlagTextIcon] [Market.GetName]#!"
 		}
 		
 		blockoverride "fixed_top"
@@ -333,7 +333,7 @@ type market_gdp_graphs_piechart = chart {
 				default_header = {
 					using = default_list_position
 					blockoverride "text" {
-					text = "GDP Chart"
+					raw_text = "GDP Chart"
 					}
 
 				}
@@ -675,7 +675,7 @@ type market_gdp_graphs_piechart = chart {
 			textbox = {
 				align = right|nobaseline
 				visible = "[Not(GreaterThan_CFixedPoint(Goods.GetMarketSellOrders, '(CFixedPoint)0'))]"
-				text = "-"
+				raw_text = "-"
 				alpha = 0.5
 				size = { 105 40 }
 				margin_right = 10
@@ -696,7 +696,7 @@ type market_gdp_graphs_piechart = chart {
 			textbox = {
 				align = right|nobaseline
 				visible = "[Not(GreaterThan_CFixedPoint(Goods.GetMarketBuyOrders, '(CFixedPoint)0'))]"
-				text = "-"
+				raw_text = "-"
 				alpha = 0.5
 				size = { 100 40 }
 				margin_right = 10
@@ -769,7 +769,7 @@ type market_gdp_graphs_piechart = chart {
 				
 				textbox = {
 					align = right|nobaseline
-					text = "@money![Goods.GetMarketPrice|0v] [Goods.GetCompareIconAgainstBasePriceNoFormatting( Goods.GetMarketPrice )]"
+					raw_text = "@money![Goods.GetMarketPrice|0v] [Goods.GetCompareIconAgainstBasePriceNoFormatting( Goods.GetMarketPrice )]"
 					size = { 110 40 }
 					margin_right = 10
 					parentanchor = vcenter
