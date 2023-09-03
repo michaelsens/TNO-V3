@@ -383,7 +383,7 @@ tno_flavor_events.8 = {
     flavor = eng_flavor.1.f
 
 	event_image = {
-		texture  = "gfx/event_pictures/super_pictures/oilwell.dds"
+		texture  = "gfx/event_pictures/super_pictures/union.dds"
 	}
 
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
@@ -414,7 +414,7 @@ tno_flavor_events.9 = {
 	desc = eng_flavor.2.d
     flavor = eng_flavor.2.f
 	event_image = {
-		texture  = "gfx/event_pictures/super_pictures/oilwell.dds"
+		texture  = "gfx/event_pictures/super_pictures/ireland.dds"
 	}
 
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
@@ -423,7 +423,11 @@ tno_flavor_events.9 = {
 	icon = "gfx/interface/icons/event_icons/event_default.dds"
 	
 	trigger = {
-		this ?= c:ENG
+		OR = {
+			this ?= c:ENG
+			this ?= c:GBR
+		}
+		
 	}	
 	
 	duration = 3
@@ -431,10 +435,8 @@ tno_flavor_events.9 = {
 	option = {
 		name = eng_flavor.2.a
 		default_option = yes
-		remove_modifier = mended_union 
 		add_modifier = { 
 			name = big_again
-			years = 15
 		}	
 	}
 }
