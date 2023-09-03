@@ -164,24 +164,11 @@ template multiplayer_lobby_selected_country_info {
 							minimumsize = { 175 -1 }
 							direction = vertical
 
-							flowcontainer = {
-								using = GDP_tooltip_with_graph
-								using = tooltip_1
-								direction = vertical
-								textbox = {
-									parentanchor = vcenter
-									raw_text = "#header [concept_gdp]#!: "
-									autoresize = yes
-									align = left|nobaseline
-								}
-								textbox = {
-									parentanchor = vcenter
-									raw_text = "#variable[SelectLocalization(LessThan_CFixedPoint(Country.MakeScope.ScriptValue('cwp_gdp'), '(CFixedPoint)1000000000000'), 'CWP_NORMAL', 'CWP_TRILLION')|Dv]#!"
-									autoresize = yes
-									align = left|nobaseline
+							country_gdp_info = {
+								blockoverride "tooltip" {
+									tooltip = "GDP_TOOLTIP"
 								}
 							}
-							
 							country_population_info = {
 								blockoverride "tooltip" {
 									tooltip = "POP_TOOLTIP"
