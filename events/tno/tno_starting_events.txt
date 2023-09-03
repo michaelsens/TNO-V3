@@ -263,7 +263,7 @@ tno_starting_events.8 = {
 	desc = eng.1.d
     flavor = eng.1.f
 	event_image = {
-		texture  = "gfx/event_pictures/super_pictures/soldier.dds"
+		texture  = "gfx/event_pictures/super_pictures/london.dds"
 	}
 
     icon = "gfx/interface/icons/event_icons/event_default.dds"
@@ -278,6 +278,12 @@ tno_starting_events.8 = {
 		name = eng.1.a
 		add_modifier = { name = shattered_union }
 		add_modifier = { name = the_broken_navy }
+		add_modifier = { 
+			name = emergency_powers
+			is_decaying = yes
+			years = 20
+		}
+		add_modifier = { name = empire_remnants }
 	}
 
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
@@ -423,6 +429,65 @@ tno_starting_events.13 ={
 		add_modifier = { name = worlds_factory }
 		add_modifier = { name = end_of_colonial }
 		add_modifier = { name = two_state_solution }
+    }
+}
+
+tno_starting_events.14 ={
+    type = country_event
+    placement = ROOT
+ 
+    title = osk.1
+    desc = osk.1.d
+    flavor = osk.1.f 
+    event_image = {
+        texture = "gfx/event_pictures/super_pictures/trial.dds"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_map.dds"
+
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 6
+
+    trigger = {
+        this ?= c:OSK
+
+    }
+
+   option = {
+        name = osk.1.a
+		add_modifier = { name = fueled_by_hate }
+		add_modifier = { name = nothing_to_lose }
+    }
+}
+
+tno_starting_events.15 ={
+    type = country_event
+    placement = ROOT
+ 
+    title = wst.1
+    desc = wst.1.d
+    flavor = wst.1.f 
+    event_image = {
+        texture = "gfx/event_pictures/super_pictures/wst.png"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_map.dds"
+
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 6
+
+    trigger = {
+        this ?= c:WST
+		
+    }
+
+   option = {
+        name = wst.1.a
+		add_modifier = { name = veterans }
+		add_modifier = { name = frozen_wasteland }
+		add_modifier = { name = soviet_successors }
     }
 }
 

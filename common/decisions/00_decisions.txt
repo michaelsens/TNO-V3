@@ -127,8 +127,17 @@ abolish_tangena_ordeal = {
 	
 reform_the_navy = {
 	is_shown = {
-		exists = c:ENG
-		ROOT = c:ENG
+		OR = {
+			AND = {
+				exists = c:ENG
+				ROOT = c:ENG
+			}
+			AND = {
+				exists = c:GBR
+				ROOT = c:GBR
+			}
+		}
+		
 		has_modifier = the_broken_navy
 	}
 
@@ -136,16 +145,19 @@ reform_the_navy = {
 		exists = c:ENG
 		ROOT = c:ENG
 		has_modifier = the_broken_navy
-		GDP >= 20000000
-			}
+		GDP >= 40000000
+	}
 		
 	
 
 	when_taken = {
 		remove_modifier = the_broken_navy
+		add_modifier = {
+			name = the_british_navy
+		}
 		add_modifier = { 
 			name = pay_up
-			years = 5
+			years = 3
 		}
 	}
 	ai_chance = {
