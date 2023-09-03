@@ -3,7 +3,12 @@
 	
 	type = administrative
 
+	subsidies = {
+		building_uranium_mine = wants_to_have
+	}
+
 	building_group_weights = {
+		bg_uranium_mine = 2.0
 		bg_agriculture = 2.0
 		bg_ranching = 2.0
 		bg_fishing = 1.5
@@ -16,6 +21,7 @@
 		meat = { stance = wants_export }
 		fish = { stance = wants_export }
 		fruit = { stance = wants_export }
+		uranium_ore = { stance = wants_export }
 		liquor = { stance = wants_export }
 		wine = { stance = wants_export }
 		fabric = { stance = wants_export }
@@ -111,9 +117,14 @@ ai_strategy_plantation_economy = {
 	icon = "gfx/interface/icons/ai_strategy_icons/agricultural_expansion.dds"
 	
 	type = administrative
+	
+	subsidies = {
+		building_uranium_mine = wants_to_have
+	}
 
 	goods_stances = {
 		fruit = { stance = wants_export }
+		uranium_ore = { stance = wants_export }
 		fabric = { stance = wants_export }
 		sugar = { stance = wants_export }
 		coffee = { stance = wants_export }
@@ -126,6 +137,7 @@ ai_strategy_plantation_economy = {
 
 	building_group_weights = {
 		bg_plantations = 2.0
+		bg_uranium_mine = 2.0
 		bg_manufacturing = 0.5
 	}
 
@@ -180,6 +192,9 @@ ai_strategy_resource_expansion = {
 
 	building_group_weights = {
 		bg_rubber = 1.5
+		bg_oil_extraction = 1.5
+		bg_uranium_mine = 2.0
+		bg_mining = 1.5
 		bg_oil_extraction = 1.7
 		bg_mining = 2.0
 		bg_logging = 1.5
@@ -188,6 +203,7 @@ ai_strategy_resource_expansion = {
 	subsidies = {
 		building_tooling_workshops = wants_to_have
 		building_chemical_plants = wants_to_have
+		building_uranium_mine = wants_to_have
 	}
 	
 	goods_stances = {
@@ -203,6 +219,7 @@ ai_strategy_resource_expansion = {
 				has_technology_researched = nitroglycerin
 			}				
 		}
+		uranium_ore = { stance = wants_export }
 		tools = { stance = wants_high_supply }
 		coal = { stance = wants_export }
 		iron = { stance = wants_export }
@@ -210,8 +227,7 @@ ai_strategy_resource_expansion = {
 		lead = { stance = wants_export }
 		wood = { stance = wants_export }
 		hardwood = { stance = wants_export }
-		sulfur = { stance = wants_export }
-		uranium_ore = { stance = wants_export }					
+		sulfur = { stance = wants_export }			
 	}
 
 
@@ -277,6 +293,7 @@ ai_strategy_industrial_expansion = {
 	type = administrative
 	
 	subsidies = {
+		building_uranium_mine = wants_to_have
 		building_motor_industry = wants_to_have
 		building_tooling_workshops = wants_to_have
 		building_coal_mine = wants_to_have
@@ -288,6 +305,7 @@ ai_strategy_industrial_expansion = {
 	}
 	
 	goods_stances = {
+		uranium_ore = { stance = wants_export }
 		electricity = { stance = wants_high_supply }
 		oil = { stance = wants_high_supply }
 		dye = { stance = wants_high_supply }
@@ -303,7 +321,6 @@ ai_strategy_industrial_expansion = {
 		sugar = { stance = wants_high_supply }
 		explosives = { stance = wants_export }	
 		fertilizer = { stance = wants_export }
-		uranium_ore = { stance = wants_export }
 	}
 	
 	building_group_weights = {
@@ -312,6 +329,7 @@ ai_strategy_industrial_expansion = {
 		bg_oil_extraction = 1.25
 		bg_mining = 1.25
 		bg_logging = 1.25		
+		bg_uranium_mine = 2.0
 	}
 	
 	weight = {
@@ -399,7 +417,12 @@ ai_strategy_placate_population = {
 	max_tax_level = medium
 	min_tax_level = very_low
 
+	subsidies = {
+		building_uranium_mine = wants_to_have
+	}
+
 	building_group_weights = {
+		bg_uranium_mine = 2.0
 		bg_agriculture = 2.0
 		bg_ranching = 2.0
 		bg_oil_extraction = 0.5
@@ -415,6 +438,7 @@ ai_strategy_placate_population = {
 		fruit = { stance = wants_high_supply }
 		fabric = { stance = wants_high_supply }
 		wood = { stance = wants_high_supply }
+		uranium_ore = { stance = wants_export }
 		opium = { stance = does_not_want }
 	}
 
