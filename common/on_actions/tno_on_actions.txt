@@ -1,16 +1,44 @@
 ﻿on_monthly_pulse_country = {
     effect = {
-        #SAF
+        #Starting Events
         if = {
 			limit = {
-				c:KON ?= this
-		        game_date >= 1957.3.1
-                NOT = { has_global_variable = saf_war_var }
-			}
-            set_global_variable = saf_war_var
-            trigger_event = { id = tno_war_events.1 }
-
+               game_date >= 1950.2.1
+               NOT = { has_variable = start_var }
+            }
+            set_variable = start_var
+            trigger_event = { id = tno_starting_events.1 popup = yes }
+            trigger_event = { id = tno_starting_events.2 popup = yes }
+            trigger_event = { id = tno_starting_events.3 popup = yes }
+            trigger_event = { id = tno_starting_events.4 popup = yes }
+            trigger_event = { id = tno_starting_events.5 popup = yes }
+            trigger_event = { id = tno_starting_events.6 popup = yes }
+            trigger_event = { id = tno_starting_events.7 popup = yes }
+            trigger_event = { id = tno_starting_events.8 popup = yes }
+            trigger_event = { id = tno_starting_events.9 popup = yes }
+            trigger_event = { id = tno_starting_events.10 popup = yes }
+            trigger_event = { id = tno_starting_events.11 popup = yes }
+            trigger_event = { id = tno_starting_events.12 popup = yes }
+            trigger_event = { id = tno_starting_events.13 popup = yes }
+            trigger_event = { id = tno_starting_events.14 popup = yes }
+            trigger_event = { id = tno_starting_events.15 popup = yes }
         }
+        
+
+
+
+        #Super events
+
+        #RUS
+        if = {
+			limit = {
+               game_date >= 1960.1.1
+               NOT = { has_variable = rus_super_var }
+            }
+            set_variable = rus_super_var
+            trigger_event = { id = tno_super_events.1 days = 0 popup = yes }
+        }
+        #SAF
         if = {
 			limit = {
                has_global_variable = saf_war_var
@@ -19,6 +47,77 @@
             set_variable = saf_super_var
             trigger_event = { id = tno_super_events.2 days = 0 popup = yes }
         }
+
+        #Phillipean
+        if = {
+			limit = {
+               has_global_variable = phi_war_var
+               NOT = { has_variable = phi_super_var }
+            }
+            set_variable = phi_super_var
+            trigger_event = { id = tno_super_events.3 days = 0 popup = yes }
+        }
+
+        #Triumvirate
+        if = {
+			limit = {
+               has_global_variable = tri_war_var
+               NOT = { has_variable = tri_super_var }
+            }
+            set_variable = tri_super_var
+            trigger_event = { id = tno_super_events.4 days = 0 popup = yes }
+        }
+
+        #British Reuinification
+        if = {
+            limit = {
+                c:GBR ?= THIS
+                NOT = { has_global_variable = gbr_var }
+            }
+            set_global_variable = gbr_var
+        }
+        if = {
+			limit = {
+               has_global_variable = gbr_var
+               NOT = { has_variable = gbr_super_var }
+            }
+            set_variable = gbr_super_var
+            trigger_event = { id = tno_super_events.5 days = 0 popup = yes }
+        }
+
+        if = {
+			limit = {
+               owns_entire_state_region = STATE_CONNAUGHT
+               owns_entire_state_region = STATE_LEINSTER
+               owns_entire_state_region = STATE_MUNSTER
+               owns_entire_state_region = STATE_ULSTER
+               NOT = { has_variable = eng_var_3 }
+            }
+            set_variable = eng_var_3
+            trigger_event = { id = tno_flavor_events.9 popup = yes }
+        }
+
+
+
+
+
+
+
+
+
+        #War Events
+        #SAF
+        if = {
+            limit = {
+                c:KON ?= this
+                game_date >= 1957.3.1
+                NOT = { has_global_variable = saf_war_var }
+            }
+            set_global_variable = saf_war_var
+            trigger_event = { id = tno_war_events.1 }
+
+        }
+
         #Phillipean
         if = {
 			limit = {
@@ -28,16 +127,8 @@
 			}
             set_global_variable = phi_war_var
             trigger_event = { id = tno_war_events.2 }
-
         }
-        if = {
-			limit = {
-               has_global_variable = phi_war_var
-               NOT = { has_variable = phi_super_var }
-            }
-            set_variable = phi_super_var
-            trigger_event = { id = tno_super_events.3 days = 0 popup = yes }
-        }
+        
         #Triumvirate
         if = {
 			limit = {
@@ -47,16 +138,10 @@
 			}
             set_global_variable = tri_war_var
             trigger_event = { id = tno_war_events.3 }
+        }
 
-        }
-        if = {
-			limit = {
-               has_global_variable = tri_war_var
-               NOT = { has_variable = tri_super_var }
-            }
-            set_variable = tri_super_var
-            trigger_event = { id = tno_super_events.4 days = 0 popup = yes }
-        }
+        #Flavor Events
+
         if = {
 			limit = {
                game_date >= 1953.10.1
@@ -90,24 +175,6 @@
             trigger_event = { id = tno_flavor_events.7 days = 0 }
         }
 
-        #British Reuinification
-        if = {
-            limit = {
-                c:GBR ?= THIS
-                NOT = { has_global_variable = gbr_var }
-            }
-            set_global_variable = gbr_var
-        }
-        if = {
-			limit = {
-               has_global_variable = gbr_var
-               NOT = { has_variable = gbr_super_var }
-            }
-            set_variable = gbr_super_var
-            trigger_event = { id = tno_super_events.5 days = 0 popup = yes }
-        }
-        
-
         #SafContext
         if = {
 			limit = {
@@ -136,20 +203,28 @@
             }
             set_variable = ger_flavor_var
             trigger_event = { id = tno_flavor_events.3 days = 0 popup = yes }
-        }
-    }
-}  
-
-on_yearly_pulse_country = {
-    effect = {
+        } 
+        
         if = {
 			limit = {
-               game_date >= 1960.1.1
-               NOT = { has_variable = rus_super_var }
+               owns_entire_state_region = STATE_HIGHLANDS
+               owns_entire_state_region = STATE_LOWLANDS 
+               NOT = { has_variable = eng_var_2 }
             }
-            set_variable = rus_super_var
-            trigger_event = { id = tno_super_events.1 days = 0 popup = yes }
+            set_variable = eng_var_2
+            trigger_event = { id = tno_flavor_events.8 popup = yes }
         }
+        if = {
+			limit = {
+               owns_entire_state_region = STATE_CONNAUGHT
+               owns_entire_state_region = STATE_LEINSTER
+               owns_entire_state_region = STATE_MUNSTER
+               owns_entire_state_region = STATE_ULSTER
+               NOT = { has_variable = eng_var_3 }
+            }
+            set_variable = eng_var_3
+            trigger_event = { id = tno_flavor_events.9 popup = yes }
+        }
+        
     }
-    
-}
+}  

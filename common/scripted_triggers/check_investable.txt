@@ -1,16 +1,15 @@
-check_investable = {
+﻿check_investable = {
+	exists = market_capital
 	OR = {
 		market_capital = {
 			this = scope:investor_country.market_capital
 		}
 		has_law = law_type:law_free_trade
 		scope:investor_country.market_capital.owner = { has_treaty_port_in_country = prev }
-		market_capital = {
-			owner = {
-				has_diplomatic_pact = {
-					who = scope:investor_country.market_capital.owner
-					type = trade_agreement
-				}
+		overlord = {
+			has_diplomatic_pact = {
+				who = scope:investor_country.market_capital.owner
+				type = trade_agreement
 			}
 		}
 	}

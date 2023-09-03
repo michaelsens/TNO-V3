@@ -9,21 +9,23 @@ law_mercantilism = {
 	
 	progressiveness = 0
 	
-	unlocking_technologies = {
-		international_trade
+	modifier = {
+		country_trade_route_quantity_mult = 0.5
+		country_trade_route_imports_add = 5
+		country_trade_route_exports_add = 10
 	}
 	
 	tariff_modifier_no_priority = {
-		tariff_import_add = 0.15
-		tariff_export_add = 0.05
+		tariff_import_add = 0.07
+		tariff_export_add = 0.025
 	}	
 	
 	tariff_modifier_export_priority = {
-		tariff_import_add = 0.45
+		tariff_import_add = 0.22
 	}
 	
 	tariff_modifier_import_priority = {
-		tariff_export_add = 0.15
+		tariff_export_add = 0.07
 	}
 
 	possible_political_movements = {
@@ -68,17 +70,23 @@ law_protectionism = {
 		stock_exchange
 	}
 	
+	modifier = {
+		country_trade_route_quantity_mult = 0.5
+		country_trade_route_imports_add = 5
+		country_trade_route_exports_add = 5
+	}
+
 	tariff_modifier_no_priority = {
-		tariff_export_add = 0.10
-		tariff_import_add = 0.10
+		tariff_export_add = 0.05
+		tariff_import_add = 0.05
 	}	
 	
 	tariff_modifier_export_priority = {
-		tariff_import_add = 0.30
+		tariff_import_add = 0.15
 	}
 	
 	tariff_modifier_import_priority = {
-		tariff_export_add = 0.30
+		tariff_export_add = 0.15
 	}	
 	
 	possible_political_movements = {
@@ -118,22 +126,13 @@ law_free_trade = {
 		stock_exchange
 	}
 	
-	on_enact = {
-		if = {
-			limit = { is_banning_goods = g:opium }
-			remove_banned_goods = g:opium
-		}	
-		if = {
-			limit = { is_banning_goods = g:liquor }
-			remove_banned_goods = g:liquor
-		}
-	}
-	
 	modifier = {
 		country_trade_route_competitiveness_mult = 0.5
-		country_trade_route_quantity_mult = 0.5
+		country_trade_route_quantity_mult = 0.8
 		country_trade_route_cost_mult = -0.5
 		country_capitalists_pol_str_mult = 0.25
+		country_trade_route_imports_add = 10
+		country_trade_route_exports_add = 10
 	}
 	
 	possible_political_movements = {

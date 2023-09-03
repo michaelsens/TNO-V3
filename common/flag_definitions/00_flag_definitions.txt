@@ -63,6 +63,19 @@ DEFAULT = {
 	}
 }
 
+DIV = {
+	flag_definition = {
+		coa = DIV
+		priority = 2000
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_law = law_type:law_anarchy
+			}
+		}
+	}
+}
+
 ABS = { # Absaroka
 	flag_definition = {
 		coa = ABS
@@ -3159,7 +3172,7 @@ GER = { # Germany
 		}
 	}
 	flag_definition = {
-		coa = GER_dictatorship
+		coa = GER
 		subject_canton = GER_dictatorship
 		priority = 15
 		trigger = { 

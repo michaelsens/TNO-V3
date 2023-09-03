@@ -1328,7 +1328,6 @@ exiles_more_events.9 = {
 				ig_type_matches_former = yes
 				is_powerful = yes
 			}
-			save_scope_as = fertile_ground_ig
 		}
 	}
 
@@ -1353,38 +1352,6 @@ exiles_more_events.9 = {
 		}
 	}
 
-	option = {
-		name = exiles_more_events.9.b
-
-		scope:fertile_ground_ig = { 
-			add_modifier = {
-				name = messed_with_the_wrong_ig
-				months = normal_modifier_time
-			}
-		}
-	}
-
-	option = {
-		name = exiles_more_events.9.c
-		highlighted_option = yes
-
-		trigger = {
-			scope:fertile_ground_ig = {
-				is_in_government = no
-			}
-			OR = {
-				has_law = law_type:law_outlawed_dissent
-				has_law = law_type:law_censorship
-			}
-		}
-
-		scope:fertile_ground_ig = { 
-			add_modifier = {
-				name = accused_of_subversion
-				months = normal_modifier_time
-			}
-		}
-	}
 }
 
 # Purging unstable elements in a time of crisis

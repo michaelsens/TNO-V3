@@ -20,28 +20,33 @@ nihilism.1 = {
 	trigger = {
 	 	#Triggered by journal entry
 	}
-
+    
 	immediate = {
-		if = {
-			limit = {
-				has_dlc_feature = voice_of_the_people_content
-			}
-			create_character = {
-				is_agitator = yes 
-				interest_group = ig_intelligentsia
-				ideology = ideology_atheist
-			}
-		}
-		
-		random_scope_character = {
-			limit = {
-				has_role = agitator
-				has_ideology = ideology:ideology_atheist
-			}
-			save_scope_as = nihilist_scope
-			set_variable = { name = memento_mori_immunity years = 20 }
-		}
-	}
+    if = {
+        limit = {
+            NOT = {
+                any_scope_character = {
+                    has_role = agitator
+                    has_ideology = ideology:ideology_atheist
+                }
+            }
+        }
+        create_character = {
+            is_agitator = yes
+            interest_group = ig_intelligentsia
+            ideology = ideology_atheist
+        }
+    }
+    
+    random_scope_character = {
+        limit = {
+            has_role = agitator
+            has_ideology = ideology:ideology_atheist
+        }
+        save_scope_as = nihilist_scope
+        set_variable = { name = memento_mori_immunity years = 20 }
+    }
+}
 
 	option = { 
 		name = nihilism.1.a
@@ -77,6 +82,7 @@ nihilism.1 = {
 		custom_tooltip = {
 			text = nihilism.1.tt
 		}
+		
 		scope:nihilist_scope = {
 			add_modifier = {
 				name = less_popular_nihilist

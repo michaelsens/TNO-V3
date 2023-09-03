@@ -1,4 +1,4 @@
-# Root = Building
+﻿# Root = Building
 on_building_built = {
 	on_actions = {
 		fi_construction_actions
@@ -50,6 +50,7 @@ on_monthly_pulse_country = {
 	on_actions = {
 		collect_dividend_actions
 		fi_construction_queue_clear_actions
+		fi_diplomatic_actions
 	}
 }
 collect_dividend_actions = {
@@ -63,28 +64,35 @@ fi_construction_queue_clear_actions ={
 		fi_dividend_collector.6
 	}
 }
-
+fi_diplomatic_actions = {
+	effect = {
+		ROOT = {
+			if = {
+				limit  = {
+					is_subject = no
+					country_rank <= rank_value:minor_power
+					NOT = { has_variable = fi_protectorate_target }
+					any_country = {
+			        	has_variable = fi_identification
+			        	is_owed_obligation_by = root
+			        }
+				}
+				add_journal_entry = {type = je_fi_protectorate}
+			}
+		}
+	}
+}
 on_yearly_pulse_country = {
 	on_actions = {
-		breakIf_notGreatPower_actions
-		fi_list_clear_actions
 		ai_construct_actions
 		mine_exclusive_actions
 	}
 }
-breakIf_notGreatPower_actions ={
-	events = {
-		fi_dividend_collector.2
-	}
-}
-fi_list_clear_actions ={
-	events = {
-		fi_dividend_collector.5
-	}
-}
+
 ai_construct_actions ={
 	events = {
 		fi_ai_investment.1
+		fi_dividend_collector.7
 	}
 }
 mine_exclusive_actions ={
@@ -96,4 +104,13 @@ mine_exclusive_actions ={
 		1 = fi_share_taking_executer.41
 	}
 }
-
+on_five_year_pulse_country = {
+	on_actions = {
+		fi_list_clear_actions
+	}
+}
+fi_list_clear_actions ={
+	events = {
+		fi_dividend_collector.5
+	}
+}

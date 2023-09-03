@@ -9,7 +9,7 @@
 				save_temporary_scope_as = investor_country
 			}
 			OR = {
-				NOT = { scope:investor_country = { market_capital = { owner = scope:investor_country } } }
+				NOT = { scope:investor_country = { capital = { owner = scope:investor_country } } }
 				check_investable = no
 			}
 		}
@@ -22,7 +22,7 @@
 				save_temporary_scope_as = investor_country
 			}
 			has_variable = mine_exclusive
-			scope:investor_country = { market_capital = { owner = scope:investor_country } }
+			scope:investor_country = { capital = { owner = scope:investor_country } }
 			check_investable = yes	
 		}
 		localization_key = "FI_EXPAND_DISABLED_MINE_EXCLUSIVE"
@@ -39,7 +39,7 @@ fi_expand_disabled_urban = {
 				save_temporary_scope_as = investor_country
 			}
 			OR = {
-				NOT = { scope:investor_country = { market_capital = { owner = scope:investor_country } } }
+				NOT = { scope:investor_country = { capital = { owner = scope:investor_country } } }
 				check_investable = no
 			}
 		}
@@ -51,10 +51,35 @@ fi_expand_disabled_urban = {
 				is_player = yes
 				save_temporary_scope_as = investor_country
 			}
-			scope:investor_country = { market_capital = { owner = scope:investor_country } }
+			scope:investor_country = { capital = { owner = scope:investor_country } }
 			check_investable = yes	
 		}
 		localization_key = "FI_EXPAND_DISABLED_TECHNOLOGY"
+	}
+}
+fi_expand_subject = {
+	type = country
+	random_valid = yes
+
+	text = {
+		trigger = {
+			any_country = {
+				is_player = yes
+				save_temporary_scope_as = player
+			}
+			is_subject_of = scope:player
+		}
+		localization_key = "YES_CHECK"
+	}
+	text = {
+		trigger = {
+			any_country = {
+				is_player = yes
+				save_temporary_scope_as = player
+			}
+			NOT = { is_subject_of = scope:player }
+		}
+		localization_key = "NO_CHECK"
 	}
 }
 fi_expand_treaty = {
@@ -109,8 +134,9 @@ fi_expand_custom = {
 				is_player = yes
 				save_temporary_scope_as = player
 			}
-			market_capital = {
-				this = scope:player.market_capital
+			has_diplomatic_pact = {
+				who = scope:player
+				type = customs_union
 			}
 		}
 		localization_key = "YES_CHECK"
@@ -122,9 +148,10 @@ fi_expand_custom = {
 				save_temporary_scope_as = player
 			}
 			NOT = { 
-				market_capital = {
-					this = scope:player.market_capital
-				}
+				has_diplomatic_pact = {
+					who = scope:player
+					type = customs_union
+				} 
 			}
 		}
 		localization_key = "NO_CHECK"
@@ -140,9 +167,9 @@ fi_expand_trade = {
 				is_player = yes
 				save_temporary_scope_as = player
 			}
-			market_capital.owner = {
+			capital.owner = {
 				has_diplomatic_pact = {
-					who = scope:player.market_capital.owner
+					who = scope:player
 					type = trade_agreement
 				}
 			}
@@ -156,9 +183,9 @@ fi_expand_trade = {
 				save_temporary_scope_as = player
 			}
 			NOT = { 
-				market_capital.owner = {
+				capital.owner = {
 					has_diplomatic_pact = {
-						who = scope:player.market_capital.owner
+						who = scope:player
 						type = trade_agreement
 					}
 				}
@@ -167,3 +194,4 @@ fi_expand_trade = {
 		localization_key = "NO_CHECK"
 	}
 }
+

@@ -61,18 +61,32 @@ ai_strategy_default = {
 	# Added to base boldness in diplomatic plays	
 	# Using this value in other strategies will function additively
 	diplomatic_play_boldness = {
-		value = 50 
+		value = 50
+		
+		if = { # Isolationist Japan should tend to back down against market opening plays
+			limit = {
+				exists = c:JAP
+				THIS = c:JAP
+				has_law = law_type:law_isolationism 
+				NOT = { has_variable = japan_forced_to_open_market }
+				scope:diplomatic_play = { 
+					has_play_goal = open_market
+				}
+			}
+			add = -75
+		}		
 
 		if = { #Taiping should never surrender against China.
 			limit = {
 				exists = c:TPG
 				THIS = c:TPG
-				is_diplomatic_play_initiator = yes
+				exists = c:CHI
+				is_diplomatic_play_enemy_of = c:CHI
 			}
 			add = 1000
 		}
 
-		if = { #Caucasian states should never surrender against Russia
+		if = { #Caucasian states & Kazakhstan should never surrender against Russia
 			limit = {
 				OR = {
 					AND = {		
@@ -83,19 +97,13 @@ ai_strategy_default = {
 						exists = c:CHC
 						THIS = c:CHC	
 					}
+					AND = {
+						exists = c:KAZ
+						THIS = c:KAZ
+					}
 				}
-				c:RUS = {
-					is_diplomatic_play_initiator = yes
-				}
-			}
-			add = 1000
-		}
-
-		if = { #Likewise for Kazakhstan.
-			limit = {
-				exists = c:KAZ
-				THIS = c:KAZ
-				is_diplomatic_play_initiator = yes
+				exists = c:RUS
+				is_diplomatic_play_enemy_of = c:RUS
 			}
 			add = 1000
 		}
@@ -104,9 +112,8 @@ ai_strategy_default = {
 			limit = {
 				exists = c:MUG
 				THIS = c:MUG
-				c:BIC = {
-					is_diplomatic_play_initiator = yes
-				}
+				exists = c:BIC
+				is_diplomatic_play_enemy_of = c:BIC
 			}
 			add = 1000
 		}
@@ -125,8 +132,22 @@ ai_strategy_default = {
 			add = -0.1
 		}
 
-	
-				
+		# Ottomans should want Syria back
+		if = {
+			limit = {
+				scope:enemy_country = {
+					OR = {
+						owns_entire_state_region = STATE_ALEPPO
+						owns_entire_state_region = STATE_SYRIA
+						owns_entire_state_region = STATE_LEBANON
+						owns_entire_state_region = STATE_PALESTINE
+						owns_entire_state_region = STATE_TRANSJORDAN
+						owns_entire_state_region = STATE_ADANA
+					}
+				}
+			}
+			add = 0.25
+		}	
 	}
 	
 	# Chance each update that the AI is willing to start changing a law (1 = 1%)
@@ -329,9 +350,28 @@ ai_strategy_default = {
 				is_subject_of = scope:target_country				
 			}
 			add = 1
-		}		
-		
-
+		}	
+			#Caucasus
+		if = { 
+			limit = {
+				exists = c:CIR
+				THIS = c:CIR
+				scope:target_country = {
+					this = c:RUS
+				}
+			}
+			add = 5
+		}
+		if = { 
+			limit = {
+				exists = c:CHC
+				THIS = c:CHC
+				scope:target_country = {
+					this = c:RUS
+				}
+			}
+			add = 5
+		}
 	}
 	
 	# How likely is the AI to start a diplomatic play against another country if their attitude allows for it
@@ -371,6 +411,103 @@ ai_strategy_default = {
 			add = 25
 		}		
 		
+	
+		if = { #Carving up China
+			limit = {
+				country_rank >= rank_value:great_power
+				exists = c:CHI
+				any_country = {
+					NOT = { THIS = ROOT }
+					country_is_in_europe = yes
+					any_scope_state = {
+						OR = {
+							region = sr:region_north_china
+							region = sr:region_south_china
+							region = sr:region_manchuria
+						}
+						is_treaty_port = yes
+					}
+				}
+				scope:target_country = {
+					c:CHI ?= this
+				}
+			}
+			add = 10
+		}
+		else_if = {
+			limit = {
+				country_rank >= rank_value:great_power
+				exists = c:CHI
+				any_country = {
+					NOT = { THIS = ROOT }
+					country_rank >= rank_value:great_power
+					any_scope_state = {
+						OR = {
+							region = sr:region_north_china
+							region = sr:region_south_china
+							region = sr:region_manchuria
+						}
+						is_treaty_port = yes
+					}
+				}
+				scope:target_country = {
+					c:CHI ?= this
+				}
+			}
+			add = 25
+		}
+
+		# Extra french aggression for Haiti renouncing debt payments
+		if = {
+			limit = {
+				has_variable = haiti_stops_paying_france_aggressor				
+				scope:target_country = {
+					has_variable = haiti_stops_paying_france_target
+					any_state = {
+						has_claim_by = root
+					}
+				}				
+			}
+			add = 5
+		}
+
+		if = { #Russian Caucasus
+			limit = {
+				country_has_primary_culture = cu:russian
+				has_law = law_type:law_national_supremacy
+				scope:target_country = {
+					any_scope_state = {
+						OR = {
+							state_region = s:STATE_KUBAN
+							state_region = s:STATE_DAGESTAN
+						}
+					}
+				}
+			}
+			add = 10
+		}
+
+
+		if = { #Russian Central Asia
+			limit = {
+				owns_entire_state_region = STATE_URALSK
+				owns_entire_state_region = STATE_AKMOLINSK
+				owns_entire_state_region = STATE_SEMIRECHE
+				scope:target_country = {
+					any_scope_state = {
+						OR = {
+							state_region = s:STATE_UZBEKIA
+							state_region = s:STATE_KIRGHIZIA
+							state_region = s:STATE_KHIVA
+							state_region = s:STATE_TURKMENIA
+							state_region = s:STATE_TAJIKISTAN
+						}
+					}
+				}
+				can_reach_target_country = yes
+			}
+			add = 10
+		}
 
 		# Aggression against radical leftists
 		if = {
@@ -462,6 +599,30 @@ ai_strategy_default = {
             }
             add = -25
         }
+		# Russia should very aggressively go for the Caucasus if it's still a great power.
+		if = {
+			limit = {
+                exists = c:RUS
+                THIS = c:RUS
+                c:RUS = {
+                	country_rank = rank_value:great_power
+                }
+                OR = {
+                	exists = c:CIR
+                	exists = c:CHC
+                }
+				scope:target_country = {
+					any_scope_state = {
+						OR = {
+							state_region = s:STATE_KUBAN
+							state_region = s:STATE_DAGESTAN
+						}
+					}
+				}
+			}
+			add = 100
+		}
+
 	}
 	
 	# How many levels of construction sector should the AI aim to have
@@ -851,17 +1012,11 @@ ai_strategy_default = {
 	# How important is it that the AI maintains an interest in a specific strategic region (added on top of region value calculations set in defines)
 	# Using this value in other strategies will function additively
 	strategic_region_scores = {
+		region_anatolia = {
+		}	
+		region_arabic = {
+		}
 		region_japan = {	
-			if = {
-				limit = { # Great Powers should try to open Japan
-					exists = c:JAP
-					c:JAP = { has_law = law_type:law_isolationism }
-					has_technology_researched = civilizing_mission	
-					country_rank = rank_value:great_power
-					navy_size >= 50
-				}
-				add = 1000
-			}
 			if = {
 				limit = {
 					exists = c:JAP
@@ -871,6 +1026,24 @@ ai_strategy_default = {
 				add = -50
 			}				
 		}				
+		region_north_germany = {
+			if = {
+				limit = {
+					country_is_in_europe = yes
+					country_rank >= rank_value:great_power
+				}
+				add = 100
+			}			
+		}
+		region_south_germany = {
+			if = {
+				limit = {
+					country_is_in_europe = yes
+					country_rank >= rank_value:great_power
+				}
+				add = 100
+			}			
+		}		
 		region_italy = {
 			if = {
 				limit = {
@@ -881,12 +1054,6 @@ ai_strategy_default = {
 			}
 		}
 		region_baltic = {
-			if = {
-				limit = { 
-					wants_to_solve_schleswig_holstein = yes			
-				}			
-				add = 100
-			}
 		}
 		region_balkans = {
 			if = {
@@ -971,94 +1138,6 @@ ai_strategy_default = {
 				}
 				add = 50
 			}
-		}
-		region_pacific_coast = {
-			if = {
-				limit = {
-					has_variable = monroe_doctrine	
-				}
-				add = 1000
-			}			
-		}
-		region_great_plains = {
-			if = {
-				limit = {
-					has_variable = monroe_doctrine	
-				}
-				add = 100
-			}			
-		}
-		region_dixie = {
-			if = {
-				limit = {
-					has_variable = monroe_doctrine	
-				}
-				add = 100
-			}			
-		}		
-		region_new_england = {
-			if = {
-				limit = {
-					has_variable = monroe_doctrine	
-				}
-				add = 100
-			}			
-		}
-		region_canada = {
-			if = {
-				limit = {
-					has_variable = monroe_doctrine	
-				}
-				add = 100
-			}			
-		}	
-		region_the_midwest = {
-			if = {
-				limit = {
-					has_variable = monroe_doctrine	
-				}
-				add = 100
-			}			
-		}	
-		region_central_america = {
-			if = {
-				limit = {
-					has_variable = monroe_doctrine	
-				}
-				add = 100
-			}			
-		}
-		region_brazil = {
-			if = {
-				limit = {
-					has_variable = monroe_doctrine	
-				}
-				add = 100
-			}			
-		}	
-		region_andes = {
-			if = {
-				limit = {
-					has_variable = monroe_doctrine	
-				}
-				add = 100
-			}			
-		}
-		region_la_plata = {
-			if = {
-				limit = {
-					has_variable = monroe_doctrine	
-				}
-				add = 100
-			}			
-		}
-		region_gran_colombia = {
-			if = {
-				limit = {
-					has_variable = monroe_doctrine	
-				}
-				add = 100
-			}			
 		}		
 	}
 	
@@ -1179,7 +1258,6 @@ ai_strategy_default = {
 				}
 				multiply = 1.5
 			}
-
 			
 			if = {
 				limit = {
@@ -1414,7 +1492,6 @@ ai_strategy_default = {
 				}
 				multiply = 0.5
 			}	
-
 			if = {
 				limit = {
 					harsh_ai_behavior_trigger = yes
@@ -1718,6 +1795,52 @@ ai_strategy_default = {
 			}
 			
 		
+			if = {
+				limit = {
+					country_has_primary_culture = cu:russian
+					has_law = law_type:law_national_supremacy
+					scope:target_country = {
+						any_scope_state = {
+							OR = {
+								state_region = s:STATE_KUBAN
+								state_region = s:STATE_DAGESTAN
+							}
+						}
+					}
+				}
+				add = 1000
+			}
+
+
+			if = {
+				limit = {
+					country_has_primary_culture = cu:russian
+					has_law = law_type:law_national_supremacy
+					has_technology_researched = nationalism
+					OR = {
+						AND = {	
+							exists = c:KZH
+							scope:target_country = {
+								this = c:KZH
+							}
+						}
+						AND = {	
+							exists = c:UZH
+							scope:target_country = {
+								this = c:UZH
+							}
+						}
+						AND = {	
+							exists = c:OZH
+							scope:target_country = {
+								this = c:OZH
+							}
+						}
+					}
+				}
+				add = 50
+			}
+					
 			multiply = {
 				value = "ai_ideological_opinion(scope:target_country)"
 				multiply = -0.05
@@ -1872,8 +1995,8 @@ ai_strategy_default = {
 			}
 		}		
 		dominate = {
-			value = 0		
-			
+			value = 0
+
 			if = {
 				limit = {
 					scope:target_country = { 
@@ -1910,7 +2033,6 @@ ai_strategy_default = {
 				}
 				add = 25
 			}
-			
 			
 			multiply = {
 				value = "ai_ideological_opinion(scope:target_country)"
@@ -2280,8 +2402,105 @@ ai_strategy_default = {
 					}
 				}
 			}				
-						
+
+			if = { #Russian Central Asia
+				limit = {
+					owns_entire_state_region = STATE_URALSK
+					owns_entire_state_region = STATE_AKMOLINSK
+					owns_entire_state_region = STATE_SEMIRECHE
+					scope:target_state = {
+						OR = {
+							state_region = s:STATE_UZBEKIA
+							state_region = s:STATE_KIRGHIZIA
+							state_region = s:STATE_KHIVA
+							state_region = s:STATE_TURKMENIA
+							state_region = s:STATE_TAJIKISTAN
+						}
+					}
+					can_reach_target_state = yes
+				}
+				add = 50
+			}
+
+			if = {
+				limit = {
+					country_has_primary_culture = cu:russian
+					has_law = law_type:law_national_supremacy
+					has_technology_researched = nationalism
+					OR = {
+						AND = {	
+							exists = c:KZH
+							scope:target_state.owner = {
+								this = c:KZH
+							}
+						}
+						AND = {	
+							exists = c:UZH
+							scope:target_state.owner = {
+								this = c:UZH
+							}
+						}
+						AND = {	
+							exists = c:OZH
+							scope:target_state.owner = {
+								this = c:OZH
+							}
+						}
+					}
+					can_reach_target_state = yes
+				}
+				add = 50
+			}
 			
+				if = {
+					limit = {
+						scope:target_state = { state_region = s:STATE_SCHLESWIG_HOLSTEIN }				
+					}				
+					add = 50
+				}
+				else = {
+					multiply = 0.0
+				}
+			}			
+			
+			if = {
+				limit = {
+					lenient_ai_behavior_trigger = yes
+					scope:target_state = { is_homeland_of_country_cultures = scope:target_country }
+				}
+				multiply = 0.0
+			}
+			
+			if = { #Do Not Take Chinese States In Full, unless another power has already done so
+				limit = {
+					country_rank >= rank_value:major_power			
+					OR = {
+						country_is_in_north_america = yes
+						country_is_in_europe = yes
+						country_is_in_south_america = yes
+					}					
+					NOT = {
+						any_country = {
+							NOT = { THIS = ROOT }
+							country_rank >= rank_value:major_power
+							OR = {
+								country_is_in_north_america = yes
+								country_is_in_europe = yes
+								country_is_in_south_america = yes
+							}
+							any_scope_state = {
+								NOT = { is_treaty_port = yes }
+								OR = {
+									region = sr:region_north_china
+									region = sr:region_south_china
+									region = sr:region_manchuria
+								}
+							}
+						}					
+					}
+				}
+				multiply = 0
+			}				
 			min = 0
 			max = 100			
 		}
@@ -2321,15 +2540,6 @@ ai_strategy_default = {
 				}
 			}
 			
-			if = {
-				limit = { 
-					wants_to_solve_schleswig_holstein = yes			
-					scope:target_state = { state_region = s:STATE_SCHLESWIG_HOLSTEIN }				
-					can_reach_target_state = yes
-				}
-				add = 100
-			}
-
 			if = {
 				limit = { 
 					NOT = { has_strategic_land_adjacency = scope:target_state } 
@@ -2473,6 +2683,43 @@ ai_strategy_default = {
 					}					
 				}										
 			}
+						
+				else_if = {
+				limit = {
+					country_rank >= rank_value:great_power
+					exists = c:CHI
+					OR = {
+						sr:region_north_china = {
+							any_scope_state = {
+								is_treaty_port = yes
+								owner = {
+									NOT = { THIS = ROOT }
+									country_rank >= rank_value:great_power
+								}
+							}
+						}
+						sr:region_south_china = {
+							any_scope_state = {
+								is_treaty_port = yes
+								owner = {
+									NOT = { THIS = ROOT }
+									country_rank >= rank_value:great_power
+								}
+							}
+						}
+						sr:region_manchuria = {
+							any_scope_state = {
+								is_treaty_port = yes
+								owner = {
+									NOT = { THIS = ROOT }
+									country_rank >= rank_value:great_power
+								}
+							}
+						}
+					}
+				}
+				add = 75
+			}
 
 			if = {
 				limit = {
@@ -2543,16 +2790,7 @@ ai_strategy_default = {
 						multiply = 1.25
 					}						
 				}			
-			}				
-		
-			if = {
-				limit = { 
-					wants_to_solve_schleswig_holstein = yes
-					scope:target_country = { this = c:HOL }
-					can_reach_target_country = yes
-				}
-				add = 100
-			}			
+			}						
 			
 			min = 0
 			max = 100			
@@ -2590,6 +2828,59 @@ ai_strategy_default = {
 					}						
 				}			
 			}			
+			# Russian expansion into Central Asia
+			if = {
+				limit = {
+					country_has_primary_culture = cu:russian
+					has_law = law_type:law_national_supremacy
+					has_technology_researched = nationalism
+					OR = {
+						AND = {	
+							exists = c:KZH
+							scope:target_country = {
+								this = c:KZH
+							}
+						}
+						AND = {	
+							exists = c:UZH
+							scope:target_country = {
+								this = c:UZH
+							}
+						}
+						AND = {	
+							exists = c:OZH
+							scope:target_country = {
+								this = c:OZH
+							}
+						}					
+						AND = {	
+							exists = c:KOK
+							scope:target_country = {
+								this = c:KOK
+							}
+						}
+						AND = {	
+							exists = c:KHI
+							scope:target_country = {
+								this = c:KHI
+							}
+						}
+						AND = {	
+							exists = c:BUK
+							scope:target_country = {
+								this = c:BUK
+							}
+						}
+						AND = {	
+							exists = c:AFG
+							scope:target_country = {
+								this = c:AFG
+							}
+						}
+					}
+				}
+				add = 100
+			}
 
 			if = { #Indian suzerain will be aggressive against Afganistan, if Afghanistan is threatened by Russia.
 				limit = {
@@ -2710,6 +3001,13 @@ ai_strategy_default = {
 				}
 			}
 			
+			if = {
+				limit = {
+					exists = c:EGY
+					scope:target_country = c:EGY
+				}
+				add = 100
+			}	
 
 			if = { #Indian suzerain will be aggressive against Afghanistan
 				limit = {
@@ -2830,6 +3128,13 @@ ai_strategy_default = {
 				}
 			}
 			
+			if = {
+				limit = {
+					exists = c:EGY
+					scope:target_country = c:EGY
+				}
+				add = 100
+			}	
 
 			if = {
 				limit = {
@@ -2889,7 +3194,6 @@ ai_strategy_default = {
 					multiply = 1.5
 				}
 			}
-
 			min = 0
 			max = 100			
 		}	
@@ -2957,7 +3261,7 @@ ai_strategy_default = {
 				}
 				add = 50
 			}			
-
+	
 			if = {
 				limit = {
 					AND = {
@@ -3252,16 +3556,6 @@ ai_strategy_default = {
 					max = 2.0
 				}				
 			}
-			
-			if = {
-				limit = { 
-					wants_to_solve_schleswig_holstein = yes
-					scope:target_country = { this = c:HOL }
-					can_reach_target_country = no
-				}
-				add = 100
-			}
-
 			min = 0
 			max = 100				
 		}

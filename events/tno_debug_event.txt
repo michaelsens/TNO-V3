@@ -22,6 +22,14 @@ tno_debug_event.1 {
                 has_variable = brazil_sucession_state
                 has_variable = china_warlord_explosion
                 has_variable = china_warlord_abolished_monarchy
+                has_variable = anti_shogunate_civil_war
+                has_variable = chinese_central_government
+                has_variable = shogunate_var
+                has_variable = serial_killer_caught
+                has_variable = is_billy
+                has_variable = is_victoria
+                has_variable = je_acw_countdown_complete
+                has_variable = french_dynastic_primary_progress_var
             }
             set_variable = china_warlord_abolished_monarchy
             set_variable = custom_titanic_var
@@ -129,7 +137,6 @@ tno_debug_event.1 {
             set_variable = antarctica_expedition_success_var
             set_variable = krakatoa_uni_var
             set_variable = krakatoa_var
-            set_variable = anti_shogunate_civil_war
             set_variable = shogunate_var
             set_variable = first_flight_achievement_check
             set_variable = completed_natural_borders_je
@@ -144,6 +151,26 @@ tno_debug_event.1 {
             set_variable = paris_commune_progress_var
             set_variable = chose_initial_french_dynasty
             set_variable = china_warlord_explosion
+            set_variable = getting_married
+            set_variable = fall_of_the_samurai_global_var
+            set_variable = bismarck_variable
+            set_variable = has_scotland_yard_var
+            set_variable = anti_shogunate_civil_war
+            set_variable = french_dynastic_primary_progress_var
+            set_variable = number_of_mega_earthquakes
+            set_variable = serial_killer_caught
         }
+       
+        if = {
+			limit = {
+               game_date >= 1999.10.1
+          }
+            trigger_event = { id = tno_super_events.6 days = 0 }
+            trigger_event = { id = tno_super_events.7 days = 0 }
+            trigger_event = { id = tno_super_events.8 days = 0 }
+            trigger_event = { id = pm_events.3 days = 0 }
+        }
+   
     }
+
 }

@@ -1,18 +1,9 @@
 ﻿fi_construct_stock_exchange = {
+	switch = {
+		trigger = $BUILDING$_id
+4={
 	if = {
 		limit = {
-			20 > $BUILDING$_id
-			$BUILDING$_id > 10
-			owner = {
-				NOT = {has_technology_researched = shaft_mining }
-			}
-		}
-		set_variable = tech_target_state
-		scope:investor_country = { trigger_event = { id = fi_share_taking_executer.7 } }
-	}
-	else_if = {
-		limit = {
-			$BUILDING$_id = 4
 			owner = {
 				NOT = {has_technology_researched = rubber_mastication }
 			}
@@ -20,9 +11,10 @@
 		set_variable = tech_target_state
 		scope:investor_country = { trigger_event = { id = fi_share_taking_executer.8 } }
 	}
-	else_if = {
+}
+5={
+	if = {
 		limit = {
-			$BUILDING$_id = 5
 			owner = {
 				NOT = {has_technology_researched = pumpjacks }
 			}
@@ -30,9 +22,10 @@
 		set_variable = tech_target_state
 		scope:investor_country = { trigger_event = { id = fi_share_taking_executer.9 } }
 	}
-	else_if = {
+}
+6={
+	if = {
 		limit = {
-			$BUILDING$_id = 6
 			owner = {
 				NOT = {has_technology_researched = railways }
 			}
@@ -40,10 +33,65 @@
 		set_variable = tech_target_state
 		scope:investor_country = { trigger_event = { id = fi_share_taking_executer.10 } }
 	}
-	else_if = {
+}
+11={
+	if = {
 		limit = {
-			20 < $BUILDING$_id
-			$BUILDING$_id < 30
+			owner = {
+				NOT = {has_technology_researched = shaft_mining }
+			}
+		}
+		set_variable = tech_target_state
+		scope:investor_country = { trigger_event = { id = fi_share_taking_executer.7 } }
+	}
+}
+12={
+	if = {
+		limit = {
+			owner = {
+				NOT = {has_technology_researched = shaft_mining }
+			}
+		}
+		set_variable = tech_target_state
+		scope:investor_country = { trigger_event = { id = fi_share_taking_executer.7 } }
+	}
+}
+13={
+	if = {
+		limit = {
+			owner = {
+				NOT = {has_technology_researched = shaft_mining }
+			}
+		}
+		set_variable = tech_target_state
+		scope:investor_country = { trigger_event = { id = fi_share_taking_executer.7 } }
+	}
+}
+14={
+	if = {
+		limit = {
+			owner = {
+				NOT = {has_technology_researched = shaft_mining }
+			}
+		}
+		set_variable = tech_target_state
+		scope:investor_country = { trigger_event = { id = fi_share_taking_executer.7 } }
+	}
+}
+15={
+	if = {
+		limit = {
+			owner = {
+				NOT = {has_technology_researched = shaft_mining }
+			}
+		}
+		set_variable = tech_target_state
+		scope:investor_country = { trigger_event = { id = fi_share_taking_executer.7 } }
+	}
+}
+29={
+	if = {
+		limit = {
 			owner = {
 				NOT = {has_technology_researched = enclosure }
 			}
@@ -51,10 +99,10 @@
 		set_variable = tech_target_state
 		scope:investor_country = { trigger_event = { id = fi_share_taking_executer.11 } }
 	}
-	else_if = {
+}
+40={
+	if = {
 		limit = {
-			39 < $BUILDING$_id
-			$BUILDING$_id < 46
 			owner = {
 				NOT = {has_technology_researched = manufacturies }
 			}
@@ -62,19 +110,76 @@
 		set_variable = tech_target_state
 		scope:investor_country = { trigger_event = { id = fi_share_taking_executer.13 } }
 	}
-    else_if = {
-            limit = {
-                    $BUILDING$_id = 46
-                    owner = {
-                            NOT = {has_technology_researched = intensive_agriculture }
-                    }
+}
+41={
+	if = {
+		limit = {
+			owner = {
+				NOT = {has_technology_researched = manufacturies }
+			}
+		}
+		set_variable = tech_target_state
+		scope:investor_country = { trigger_event = { id = fi_share_taking_executer.13 } }
+	}
+}
+42={
+	if = {
+		limit = {
+			owner = {
+				NOT = {has_technology_researched = manufacturies }
+			}
+		}
+		set_variable = tech_target_state
+		scope:investor_country = { trigger_event = { id = fi_share_taking_executer.13 } }
+	}
+}
+43={
+	if = {
+		limit = {
+			owner = {
+				NOT = {has_technology_researched = manufacturies }
+			}
+		}
+		set_variable = tech_target_state
+		scope:investor_country = { trigger_event = { id = fi_share_taking_executer.13 } }
+	}
+}
+44={
+	if = {
+		limit = {
+			owner = {
+				NOT = {has_technology_researched = manufacturies }
+			}
+		}
+		set_variable = tech_target_state
+		scope:investor_country = { trigger_event = { id = fi_share_taking_executer.13 } }
+	}
+}
+45={
+	if = {
+		limit = {
+			owner = {
+				NOT = {has_technology_researched = manufacturies }
+			}
+		}
+		set_variable = tech_target_state
+		scope:investor_country = { trigger_event = { id = fi_share_taking_executer.13 } }
+	}
+}
+46={
+	if = {
+        limit = {
+            owner = {
+                NOT = {has_technology_researched = intensive_agriculture }
             }
-            set_variable = tech_target_state
-            scope:investor_country = { trigger_event = { id = fi_share_taking_executer.15 } }
+        }
+        set_variable = tech_target_state
+        scope:investor_country = { trigger_event = { id = fi_share_taking_executer.15 } }
     }
-    else_if = {
+}
+47={
+	if = {
             limit = {
-                    $BUILDING$_id = 47
                     owner = {
                             NOT = {has_technology_researched = aniline }
                     }
@@ -82,9 +187,10 @@
             set_variable = tech_target_state
             scope:investor_country = { trigger_event = { id = fi_share_taking_executer.21 } }
     }
-    else_if = {
+}
+48={
+	if = {
             limit = {
-                    $BUILDING$_id = 48
                     owner = {
                             NOT = {has_technology_researched = steelworking }
                     }
@@ -92,9 +198,10 @@
             set_variable = tech_target_state
             scope:investor_country = { trigger_event = { id = fi_share_taking_executer.23 } }
     }
-    else_if = {
+}
+49={
+	if = {
             limit = {
-                    $BUILDING$_id = 49
                     owner = {
                             NOT = {has_technology_researched = atmospheric_engine }
                     }
@@ -102,9 +209,10 @@
             set_variable = tech_target_state
             scope:investor_country = { trigger_event = { id = fi_share_taking_executer.25 } }
     }
-    else_if = {
+}
+50={
+	if = {
             limit = {
-                    $BUILDING$_id = 50
                     owner = {
                             NOT = {has_technology_researched = navigation }
                     }
@@ -112,9 +220,10 @@
             set_variable = tech_target_state
             scope:investor_country = { trigger_event = { id = fi_share_taking_executer.27 } }
     }
-    else_if = {
+}
+51={
+	if = {
             limit = {
-                    $BUILDING$_id = 51
                     owner = {
                             NOT = {has_technology_researched = military_aviation }
                     }
@@ -122,9 +231,10 @@
             set_variable = tech_target_state
             scope:investor_country = { trigger_event = { id = fi_share_taking_executer.29 } }
     }
-    else_if = {
+}
+52={
+	if = {
             limit = {
-                    $BUILDING$_id = 52
                     owner = {
                             NOT = {has_technology_researched = telephone }
                     }
@@ -132,9 +242,10 @@
             set_variable = tech_target_state
             scope:investor_country = { trigger_event = { id = fi_share_taking_executer.31 } }
     }
-    else_if = {
+}
+53={
+	if = {
             limit = {
-                    $BUILDING$_id = 53
                     owner = {
                             NOT = {has_technology_researched = gunsmithing }
                     }
@@ -142,9 +253,10 @@
             set_variable = tech_target_state
             scope:investor_country = { trigger_event = { id = fi_share_taking_executer.33 } }
     }
-    else_if = {
+}
+54={
+	if = {
             limit = {
-                    $BUILDING$_id = 54
                     owner = {
                             NOT = {has_technology_researched = percussion_cap }
                     }
@@ -152,9 +264,10 @@
             set_variable = tech_target_state
             scope:investor_country = { trigger_event = { id = fi_share_taking_executer.35 } }
     }
-    else_if = {
+}
+55={
+	if = {
             limit = {
-                    $BUILDING$_id = 55
                     owner = {
                             NOT = {has_technology_researched = romanticism }
                     }
@@ -162,9 +275,10 @@
             set_variable = tech_target_state
             scope:investor_country = { trigger_event = { id = fi_share_taking_executer.37 } }
     }
-    else_if = {
+}
+56={
+	if = {
             limit = {
-                    $BUILDING$_id = 56
                     owner = {
                             NOT = {has_technology_researched = electrical_generation }
                     }
@@ -172,7 +286,9 @@
             set_variable = tech_target_state
             scope:investor_country = { trigger_event = { id = fi_share_taking_executer.39 } }
     }
-    
+}
+	}
+
     scope:investor_country = {
     	if = {
             limit = {
@@ -191,10 +307,10 @@
 						NOT = { has_game_rule = autonomous_investment_pool }
 					}
 				} 
-				market_capital = { start_building_construction = building_investment_industry_low }
+				capital = { start_building_construction = building_investment_industry_low }
 			}
 			else = {
-				market_capital = { start_privately_funded_building_construction = building_investment_industry_low }
+				capital = { start_privately_funded_building_construction = building_investment_industry_low }
 			}
 		}
 		else_if = {
@@ -208,10 +324,10 @@
 						NOT = { has_game_rule = autonomous_investment_pool }
 					}
 				} 
-				market_capital = { start_building_construction = building_investment_industry }
+				capital = { start_building_construction = building_investment_industry }
 			}
 			else = {
-				market_capital = { start_privately_funded_building_construction = building_investment_industry }
+				capital = { start_privately_funded_building_construction = building_investment_industry }
 			}
 		}
 		else_if = {
@@ -225,10 +341,10 @@
 						NOT = { has_game_rule = autonomous_investment_pool }
 					}
 				} 
-				market_capital = { start_building_construction = building_investment_industry_very_high }
+				capital = { start_building_construction = building_investment_industry_very_high }
 			}
 			else = {
-				market_capital = { start_privately_funded_building_construction = building_investment_industry_very_high }
+				capital = { start_privately_funded_building_construction = building_investment_industry_very_high }
 			}
 		}
 		else = {
@@ -239,10 +355,10 @@
 						NOT = { has_game_rule = autonomous_investment_pool }
 					}
 				} 
-				market_capital = { start_building_construction = building_investment_industry_high }
+				capital = { start_building_construction = building_investment_industry_high }
 			}
 			else = {
-				market_capital = { start_privately_funded_building_construction = building_investment_industry_high }
+				capital = { start_privately_funded_building_construction = building_investment_industry_high }
 			}
 		}
 	}

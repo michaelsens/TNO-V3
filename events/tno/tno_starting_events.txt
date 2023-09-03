@@ -1,0 +1,495 @@
+﻿namespace = tno_starting_events
+
+tno_starting_events.1 = {
+    type = country_event
+    placement = ROOT
+
+	title = ger.1
+	desc = ger.1.d
+    flavor = ger.1.f	
+
+	event_image = {
+		texture  = "gfx/event_pictures/super_pictures/volkshalle.dds"
+	}
+
+    icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	trigger = {
+		this ?= c:GER
+	}	
+	
+	duration = 6
+
+	option = {
+		name = ger.1.a
+		add_modifier = {
+    		name = modifier_masters_of_europe
+  	    }
+		add_modifier = {
+    		name = bloated_whermacht
+  	    }
+		add_modifier = { name = slavery_dependence }
+		add_modifier = { 
+			name = war_spoils 
+			years = 7
+		}
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+}
+
+
+
+tno_starting_events.2 = {
+    type = country_event
+    placement = ROOT
+
+	title = usa.1
+	desc = usa.1.d
+    flavor = usa.1.f	
+
+	event_image = {
+		texture  = "gfx/event_pictures/super_pictures/liberty.dds"
+	}
+
+    icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	trigger = {
+		this ?= c:USA
+	}	
+	
+	duration = 6
+
+	option = {
+		name = usa.1.a
+		add_modifier = { name = american_dream }
+		add_modifier = { 
+			name = national_humiliation 
+			years = 15
+			is_decaying = yes
+		}
+		add_modifier = { name = military_industrial }
+		add_modifier = { name = hollywood }
+		add_modifier = { name = jim_crow }
+		add_modifier = { name = last_bastion_democracy }
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+}
+
+
+
+tno_starting_events.3 = {
+    type = country_event
+    placement = ROOT
+
+	title = jap.1
+	desc = jap.1.d
+    flavor = jap.1.f	
+
+	event_image = {
+		texture  = "gfx/event_pictures/super_pictures/palace.dds"
+	}
+
+    icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	trigger = {
+		this ?= c:JAP
+	}	
+	
+	duration = 6
+
+	option = {
+		name = jap.1.a
+		add_modifier = { name = japanese_efficiency }
+		add_modifier = { name = sphere_overreliance }
+		add_modifier = { name = corrupt_bureaucracy }
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+}
+
+
+
+tno_starting_events.4 = {
+    type = country_event
+    placement = ROOT
+
+	title = ita.1
+	desc = ita.1.d
+    flavor = ita.1.f	
+
+	event_image = {
+		texture  = "gfx/event_pictures/super_pictures/vatican.dds"
+	}
+
+    icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	trigger = {
+		this ?= c:ITA
+	}	
+	
+	duration = 6
+
+	option = {
+		name = ita.1.a
+		add_modifier = { name = fading_fascism }
+		add_modifier = { name = masters_of_the_med }
+		add_modifier = { name = atlantropa_disaster }
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+}
+
+
+tno_starting_events.5 = {
+    type = country_event
+    placement = ROOT
+
+	title = bgd.1
+	desc = bgd.1.d
+    flavor = bgd.1.f	
+
+	event_image = {
+		texture  = "gfx/event_pictures/super_pictures/soldier.dds"
+	}
+
+    icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	trigger = {
+		this ?= c:BGD
+	}	
+	
+	duration = 6
+
+	option = {
+		name = bgd.1.a
+		add_modifier = { 
+			name = shadow_state
+			years = 20
+		}
+		add_modifier = { name = shadow_economy }
+		add_modifier = { name = national_purity  }
+		add_modifier = { name = armed_against_democracy  }
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+}
+
+tno_starting_events.6 = {
+    type = country_event
+    placement = ROOT
+
+	title = yue.1
+	desc = yue.1.d
+    flavor = yue.1.f	
+
+	event_image = {
+		texture  = "gfx/event_pictures/super_pictures/guangcolor.dds"
+	}
+
+    icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	trigger = {
+		this ?= c:YUE
+	}	
+	
+	duration = 6
+
+	option = {
+		name = yue.1.a
+		add_modifier = {
+			name = unchecked_capitalism 
+		}
+		add_modifier = {
+			name = sony
+		}
+		add_modifier = {
+			name = fujitsu
+		}
+		add_modifier = {
+			name = matsushia
+		}
+		add_modifier = {
+			name = hitachi
+		}
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+}
+
+
+tno_starting_events.7 = {
+    type = country_event
+    placement = ROOT
+	title = amr.1
+	desc = amr.1.d
+    flavor = amr.1.f	
+
+	event_image = {
+		texture  = "gfx/event_pictures/super_pictures/amur.dds"
+	}
+
+    icon = "gfx/interface/icons/event_icons/event_default.dds"
+
+	trigger = {
+		this ?= c:AMR
+	}	
+	
+	duration = 6
+
+	option = {
+		name = amr.1.a
+		add_modifier = { name = all_russian_repopulation_program }
+		add_modifier = { name = russian_fascist_stronghold }
+		add_modifier = { 
+			name = the_flight_east 
+			years = 2
+			is_decaying = yes
+		}
+		add_modifier = { 
+			name = paranoia_of_the_vozhd
+			years = 10
+			is_decaying = yes
+		}
+	}
+}
+
+tno_starting_events.8 = {
+    type = country_event
+    placement = ROOT
+
+	title = eng.1
+	desc = eng.1.d
+    flavor = eng.1.f
+	event_image = {
+		texture  = "gfx/event_pictures/super_pictures/london.dds"
+	}
+
+    icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	trigger = {
+		this ?= c:ENG
+	}	
+	
+	duration = 6
+
+	option = {
+		name = eng.1.a
+		add_modifier = { name = shattered_union }
+		add_modifier = { name = the_broken_navy }
+		add_modifier = { 
+			name = emergency_powers
+			is_decaying = yes
+			years = 20
+		}
+		add_modifier = { name = empire_remnants }
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+}
+
+tno_starting_events.9 = {
+	type = country_event
+    placement = ROOT
+	title = div.1
+	desc = div.1.d
+    flavor = div.1.f
+	event_image = {
+		texture  = "gfx/event_pictures/super_pictures/soldier.dds"
+	}
+
+    icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	trigger = {
+		this ?= c:DIV
+	}	
+	
+	duration = 6
+
+	option = {
+		name = div.1.a
+		add_loyalists = {
+			value = 0.05
+		}
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+}
+
+tno_starting_events.10 ={
+    type = country_event
+    placement = ROOT
+ 
+    title = ibe.1
+    desc = ibe.1.d
+    flavor = ibe.1.f 
+    event_image = {
+        texture = "gfx/event_pictures/super_pictures/sep1.dds"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_protest.dds"
+
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 6
+
+    trigger = {
+        this ?= c:IBE
+
+    }
+
+   option = {
+        name = ibe.1.a
+
+    }
+}
+
+tno_starting_events.11 ={
+    type = country_event
+    placement = ROOT
+ 
+    title = tur.1
+    desc = tur.1.d
+    flavor = tur.1.f 
+    event_image = {
+        texture = "gfx/event_pictures/super_pictures/tur.dds"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_map.dds"
+
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 6
+
+    trigger = {
+        this ?= c:TUR
+
+    }
+
+   option = {
+        name = tur.1.a
+
+    }
+}
+
+
+tno_starting_events.12 = {
+    type = country_event
+    placement = ROOT
+
+	title = fra.1
+	desc = fra.1.d
+    flavor = fra.1.f	
+
+	event_image = {
+		texture  = "gfx/event_pictures/super_pictures/arc.dds"
+	}
+
+    icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	trigger = {
+		this ?= c:FRA
+	}	
+	
+	duration = 6
+
+	option = {
+		name = fra.1.a
+		
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+}
+
+tno_starting_events.13 ={
+    type = country_event
+    placement = ROOT
+ 
+    title = bht.1
+    desc = bht.1.d
+    flavor = bht.1.f 
+    event_image = {
+        texture = "gfx/event_pictures/super_pictures/tur.dds"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_map.dds"
+
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 6
+
+    trigger = {
+        this ?= c:BHT
+
+    }
+
+   option = {
+        name = bht.1.a
+		add_modifier = { name = worlds_factory }
+		add_modifier = { name = end_of_colonial }
+		add_modifier = { name = two_state_solution }
+    }
+}
+
+tno_starting_events.14 ={
+    type = country_event
+    placement = ROOT
+ 
+    title = osk.1
+    desc = osk.1.d
+    flavor = osk.1.f 
+    event_image = {
+        texture = "gfx/event_pictures/super_pictures/trial.dds"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_map.dds"
+
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 6
+
+    trigger = {
+        this ?= c:OSK
+
+    }
+
+   option = {
+        name = osk.1.a
+		add_modifier = { name = fueled_by_hate }
+		add_modifier = { name = nothing_to_lose }
+    }
+}
+
+tno_starting_events.15 ={
+    type = country_event
+    placement = ROOT
+ 
+    title = wst.1
+    desc = wst.1.d
+    flavor = wst.1.f 
+    event_image = {
+        texture = "gfx/event_pictures/super_pictures/wst.dds"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_map.dds"
+
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 6
+
+    trigger = {
+        this ?= c:WST
+		
+    }
+
+   option = {
+        name = wst.1.a
+		add_modifier = { name = veterans }
+		add_modifier = { name = frozen_wasteland }
+		add_modifier = { name = soviet_successors }
+    }
+}
+
+
+#add_modifier = { name =  }

@@ -8,6 +8,8 @@
 @panel_width_plus_20 = 560			# used to be 480
 @panel_width_plus_30 = 570			# used to be 490
 @panel_width_plus_70 = 610			# used to be 530
+@spacing_widget_3_position = 570
+@fi_panel_position = 590
 
 types fi_investment_panel_types
 {
@@ -221,24 +223,41 @@ types fi_investment_panel_types
 					text = "OTHER_INVEST"
 				}
 
+				blockoverride "third_button" {
+					text = "GlOBAL_INVEST"
+				}
+				blockoverride "third_button_click" {
+					onclick = "[GetVariableSystem.Set('invest_panel_var', 'global_invest_tab')]"
+					onclick = "[GetVariableSystem.Set('fi_last_tab', 'global_invest_tab')]"
+				}
+				blockoverride "third_button_visibility" {
+					visible = "[GetVariableSystem.HasValue('invest_panel_var', 'global_invest_tab')]"
+				}
+				blockoverride "third_button_visibility_checked" {
+					visible = "[Not( GetVariableSystem.HasValue('invest_panel_var', 'global_invest_tab') )]"
+				}
+				blockoverride "third_button_selected" {
+					text = "GlOBAL_INVEST"
+				}
+
 			}
 			flowcontainer = {
 				margin_top = 10
 				visible = "[GetVariableSystem.HasValue('invest_panel_var', 'my_invest_tab')]"
 				sort_button = {
-					size = { 160 30 }
+					size = { 150 30 }
 					text = "COUNTRY_TITLE"
 					datacontext = "[GetScriptedGui('fi_sort_by_country_rank')]"
 					onclick = "[ScriptedGui.Execute(GuiScope.AddScope('player_country', GetPlayer.MakeScope).End )]"
 				}
 				sort_button = {
-					size = { 140 30 }
+					size = { 135 30 }
 					text = "STATE_TITLE"
 					datacontext = "[GetScriptedGui('fi_sort_by_state_gdp')]"
 					onclick = "[ScriptedGui.Execute(GuiScope.AddScope('player_country', GetPlayer.MakeScope).End )]"
 				}
 				sort_button = {
-					size = { 75 30 }
+					size = { 70 30 }
 					tooltip = "MY_INVESTED_NUMBER"
 					datacontext = "[GetScriptedGui('fi_sort_by_my_number')]"
 					onclick = "[ScriptedGui.Execute(GuiScope.AddScope('player_country', GetPlayer.MakeScope).End )]"
@@ -250,7 +269,7 @@ types fi_investment_panel_types
 					}
 				}
 				sort_button = {
-					size = { 75 30 }
+					size = { 70 30 }
 					tooltip = "TOTAL_INVESTED_NUMBER"
 					datacontext = "[GetScriptedGui('fi_sort_by_total_number')]"
 					onclick = "[ScriptedGui.Execute(GuiScope.AddScope('player_country', GetPlayer.MakeScope).End )]"
@@ -262,7 +281,19 @@ types fi_investment_panel_types
 					}
 				}
 				sort_button = {
-					size = { 85 30 }
+					size = { 70 30 }
+					tooltip = "TOTAL_BUILDING_NUMBER"
+					datacontext = "[GetScriptedGui('fi_sort_by_building_number')]"
+					onclick = "[ScriptedGui.Execute(GuiScope.AddScope('player_country', GetPlayer.MakeScope).End )]"
+					button = {
+						texture = "gfx/interface/icons/generic_icons/truce.dds"
+						size = { 25 25 }
+						parentanchor = center
+						alwaystransparent = yes
+					}
+				}
+				sort_button = {
+					size = { 65 30 }
 					tooltip = "INVESTMENT_EFFICIENCY"
 					datacontext = "[GetScriptedGui('fi_sort_by_investment_efficiency')]"
 					onclick = "[ScriptedGui.Execute(GuiScope.AddScope('player_country', GetPlayer.MakeScope).End )]"
@@ -279,13 +310,13 @@ types fi_investment_panel_types
 				visible = "[GetVariableSystem.HasValue('invest_panel_var', 'other_invest_tab')]"
 
 				sort_button = {
-					size = { 140 30 }
+					size = { 130 30 }
 					text = "STATE_TITLE"
 					datacontext = "[GetScriptedGui('fi_sort_by_my_state_gdp')]"
 					onclick = "[ScriptedGui.Execute(GuiScope.AddScope('player_country', GetPlayer.MakeScope).End )]"
 				}
 				sort_button = {
-					size = { 75 30 }
+					size = { 65 30 }
 					tooltip = "OTHER_INVESTED_NUMBER"
 					datacontext = "[GetScriptedGui('fi_sort_by_total_number_foreign')]"
 					onclick = "[ScriptedGui.Execute(GuiScope.AddScope('player_country', GetPlayer.MakeScope).End )]"
@@ -297,7 +328,199 @@ types fi_investment_panel_types
 					}
 				}
 				sort_button = {
-					size = { 320 30 }
+					size = { 65 30 }
+					tooltip = "TOTAL_BUILDING_NUMBER"
+					datacontext = "[GetScriptedGui('fi_sort_by_building_number_foreign')]"
+					onclick = "[ScriptedGui.Execute(GuiScope.AddScope('player_country', GetPlayer.MakeScope).End )]"
+					button = {
+						texture = "gfx/interface/icons/generic_icons/truce.dds"
+						size = { 25 25 }
+						parentanchor = center
+						alwaystransparent = yes
+					}
+				}
+				sort_button = {
+					size = { 285 30 }
+				}			
+			}
+			flowcontainer = {
+				visible = "[GetVariableSystem.HasValue('invest_panel_var', 'global_invest_tab')]"
+				direction = vertical
+
+				section_header_button = {					
+					blockoverride "left_text" {
+						text = "FILTERS"
+						fontsize_min = 12
+						elide = right
+					}
+
+					blockoverride "onclick" {
+						onclick = "[GetVariableSystem.Toggle( 'fi_filters' )]"
+					}
+					
+					blockoverride "onclick_showmore" {
+						visible = "[Not(GetVariableSystem.Exists( 'fi_filters' ))]"
+					}
+
+					blockoverride "onclick_showless" {
+						visible = "[GetVariableSystem.Exists( 'fi_filters' )]"
+					}
+				}
+				flowcontainer = {
+					visible = "[GetVariableSystem.Exists( 'fi_filters' )]"
+					margin_left = 10
+
+					using = default_list_position
+					direction = horizontal
+					minimumsize = { @panel_width_plus_14 -1 }
+					background = {
+						using = dark_area
+					}
+					button = {
+						using = default_button
+						size = { 250 35 }
+						parentanchor = vcenter
+						visible = "[Not(EqualTo_CFixedPoint(GetPlayer.MakeScope.Var('fi_panel_list_filter_by_country').GetValue,'(CFixedPoint)1'))]"
+						datacontext = "[GetScriptedGui('fi_panel_list_filter_by_country')]"
+						onclick = "[ScriptedGui.Execute(GuiScope.AddScope('player_country', GetPlayer.MakeScope).End )]"
+						textbox = {
+							margin_left = 30
+							size = { 220 100% }
+							text = SELECTED_COUNTRY_FILTER
+							align = hcenter
+							parentanchor = vcenter
+							multiline = yes
+						}
+					}
+					button = {
+						using = default_button
+						size = { 250 35 }
+						parentanchor = vcenter
+						visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.Var('fi_panel_list_filter_by_country').GetValue,'(CFixedPoint)1')]"
+						
+						datacontext = "[GetScriptedGui('fi_state_list_validation')]"
+						onclick = "[ScriptedGui.Execute(GuiScope.AddScope('investor_country', GetPlayer.MakeScope).End )]"
+						textbox = {
+							icon = {
+								texture = "gfx/interface/icons/generic_icons/checkmark.dds"
+								size = { 25 25 }
+								parentanchor = vcenter
+								position = { 5 0 }
+							}
+							margin_left = 30
+							size = { 220 100% }
+							text = SELECTED_COUNTRY_FILTER
+							align = hcenter
+							parentanchor = vcenter
+							multiline = yes
+						}
+						
+					}
+					widget = { size = { 30 35 }}
+					button = {
+						using = default_button
+						size = { 250 35 }
+						parentanchor = vcenter
+						visible = "[Not(EqualTo_CFixedPoint(GetPlayer.MakeScope.Var('fi_panel_list_filter_by_investable').GetValue,'(CFixedPoint)1'))]"
+						datacontext = "[GetScriptedGui('fi_panel_list_filter_by_investable')]"
+						onclick = "[ScriptedGui.Execute(GuiScope.AddScope('player_country', GetPlayer.MakeScope).End )]"
+						textbox = {
+							margin_left = 30
+							size = { 220 100% }
+							text = INVESTABLE_FILTER
+							align = hcenter
+							parentanchor = vcenter
+							multiline = yes
+						}
+					}
+					button = {
+						using = default_button
+						size = { 250 35 }
+						parentanchor = vcenter
+						visible = "[EqualTo_CFixedPoint(GetPlayer.MakeScope.Var('fi_panel_list_filter_by_investable').GetValue,'(CFixedPoint)1')]"
+						datacontext = "[GetScriptedGui('fi_state_list_validation')]"
+						onclick = "[ScriptedGui.Execute(GuiScope.AddScope('investor_country', GetPlayer.MakeScope).End )]"
+						textbox = {
+							icon = {
+								texture = "gfx/interface/icons/generic_icons/checkmark.dds"
+								size = { 25 25 }
+								position = { 5 0 }
+								parentanchor = vcenter
+							}
+							size = { 220 100% }
+							margin_left = 30
+							text = INVESTABLE_FILTER
+							align = center
+							parentanchor = vcenter
+							multiline = yes
+						}
+						
+					}
+				}
+			}
+			flowcontainer = {
+				margin_top = 10
+				visible = "[GetVariableSystem.HasValue('invest_panel_var', 'global_invest_tab')]"
+
+				sort_button = {
+					size = { 150 30 }
+					text = "COUNTRY_TITLE"
+					datacontext = "[GetScriptedGui('global_sort_by_country_rank')]"
+					onclick = "[ScriptedGui.Execute(GuiScope.AddScope('player_country', GetPlayer.MakeScope).End )]"
+				}
+				sort_button = {
+					size = { 135 30 }
+					text = "STATE_TITLE"
+					datacontext = "[GetScriptedGui('global_sort_by_state_gdp')]"
+					onclick = "[ScriptedGui.Execute(GuiScope.AddScope('player_country', GetPlayer.MakeScope).End )]"
+				}
+				sort_button = {
+					size = { 70 30 }
+					tooltip = "MY_INVESTED_NUMBER"
+					datacontext = "[GetScriptedGui('global_sort_by_my_number')]"
+					onclick = "[ScriptedGui.Execute(GuiScope.AddScope('player_country', GetPlayer.MakeScope).End )]"
+					button = {
+						texture = "gfx/interface/icons/generic_icons/secession_culture_possible.dds"
+						size = { 25 25 }
+						parentanchor = center
+						alwaystransparent = yes
+					}
+				}
+				sort_button = {
+					size = { 70 30 }
+					tooltip = "TOTAL_INVESTED_NUMBER"
+					datacontext = "[GetScriptedGui('global_sort_by_total_number')]"
+					onclick = "[ScriptedGui.Execute(GuiScope.AddScope('player_country', GetPlayer.MakeScope).End )]"
+					button = {
+						texture = "gfx/interface/icons/generic_icons/secession_culture_ongoing.dds"
+						size = { 25 25 }
+						parentanchor = center
+						alwaystransparent = yes
+					}
+				}
+				sort_button = {
+					size = { 70 30 }
+					tooltip = "TOTAL_BUILDING_NUMBER"
+					datacontext = "[GetScriptedGui('global_sort_by_building_number')]"
+					onclick = "[ScriptedGui.Execute(GuiScope.AddScope('player_country', GetPlayer.MakeScope).End )]"
+					button = {
+						texture = "gfx/interface/icons/generic_icons/truce.dds"
+						size = { 25 25 }
+						parentanchor = center
+						alwaystransparent = yes
+					}
+				}
+				sort_button = {
+					size = { 65 30 }
+					tooltip = "INVESTMENT_EFFICIENCY_GLOBAL"
+					datacontext = "[GetScriptedGui('global_sort_by_investment_efficiency')]"
+					onclick = "[ScriptedGui.Execute(GuiScope.AddScope('player_country', GetPlayer.MakeScope).End )]"
+					button = {
+						texture = "gfx/interface/buttons/sort_button_icons/sort_icon_profitability.dds"
+						size = { 25 25 }
+						parentanchor = center
+						alwaystransparent = yes
+					}
 				}			
 			}
 		}
@@ -334,7 +557,7 @@ types fi_investment_panel_types
 									
 									button = {
 										using = default_button
-										size = { 160 35 }
+										size = { 150 35 }
 										parentanchor = vcenter
 										datacontext = "[GetScriptedGui('fi_state_list_validation2')]"
 										onmousehierarchyenter = "[AccessHighlightManager.HighlightCountry(Scope.GetState.GetCountry)]"
@@ -349,12 +572,9 @@ types fi_investment_panel_types
 
 										}
 									}
-									
-									widget = { size = { 5 5 }}
-
 									button = {
 										using = clean_button
-										size = { 140 35 }
+										size = { 135 35 }
 										parentanchor = vcenter
 										datacontext = "[Scope.GetState]"
 										onmousehierarchyenter = "[AccessHighlightManager.HighlightState(State.Self)]"
@@ -369,7 +589,7 @@ types fi_investment_panel_types
 										}
 									}
 									widget = {
-										size = { 75 100% }
+										size = { 70 100% }
 										textbox = {
 											datacontext = "[Scope.GetState]"
 											visible = "[And(NotEqualTo_CFixedPoint(Scope.GetState.MakeScope.Var('fi_state_item_number').GetValue, '(CFixedPoint)0'), EqualTo_CFixedPoint(Scope.GetState.MakeScope.Var('fi_state_item_queued').GetValue,'(CFixedPoint)0'))]"
@@ -390,14 +610,14 @@ types fi_investment_panel_types
 										}
 										icon = {
 											texture = "gfx/interface/icons/generic_icons/secession_culture_possible.dds"
-											size = { 30 30 }
+											size = { 25 25 }
 											parentanchor = vcenter
 											
 										}
 									}
 									
 									widget = {
-										size = { 65 100% }
+										size = { 70 100% }
 										textbox = {
 											datacontext = "[Scope.GetState]"
 											visible = "[And(NotEqualTo_CFixedPoint(Scope.GetState.MakeScope.Var('fi_state_total_number').GetValue, '(CFixedPoint)0'), EqualTo_CFixedPoint(Scope.GetState.MakeScope.Var('fi_state_total_queued').GetValue,'(CFixedPoint)0'))]"
@@ -419,46 +639,72 @@ types fi_investment_panel_types
 
 										icon = {
 											texture = "gfx/interface/icons/generic_icons/secession_culture_ongoing.dds"
-											size = { 30 30 }
+											size = { 25 25 }
 											parentanchor = vcenter
 										}
 									}
-									widget = { size = { 11 11 }}
-
-									textbox = {
-										raw_text = "#bold #green [Scope.GetState.MakeScope.Var('fi_state_profit_calculater').GetValue|1]K#!#! "
+									widget = {
+										size = { 70 100% }
+										textbox = {
+											datacontext = "[Scope.GetState]"
+											raw_text = "#bold [Scope.GetState.MakeScope.Var('fi_state_building_number').GetValue]#!#!"
+											size = { 100% 100% }
+											align = hcenter
+											margin_left = 15
+											parentanchor = right|vcenter
+										}
+										icon = {
+											texture = "gfx/interface/icons/generic_icons/truce.dds"
+											size = { 25 25 }
+											parentanchor = vcenter
+										}
+									}
+									button = {
+										button = {
+											using = clean_button
+											size = { 65 100% }
+											align = center|nobaseline
+											parentanchor = vcenter
+											margin_left = 20
+											raw_text = "#bold #green [Scope.GetState.MakeScope.Var('fi_state_profit_calculater').GetValue|1]K#!#! "
+											datacontext = "[GetScriptedGui('buy_share_state_scripted_gui')]"
+											tooltip = "FI_BUY_SHARE_TOOLTIP"
+											enabled = "[ScriptedGui.IsValid(GuiScope.AddScope('invested_state', State.MakeScope).AddScope('investor_country', GetPlayer.MakeScope).End)]"
+											onclick = "[ScriptedGui.Execute(GuiScope.AddScope('invested_state', State.MakeScope).AddScope('investor_country', GetPlayer.MakeScope).End)]"
+										}
 										size = { 65 100% }
-										align = right|nobaseline
-										parentanchor = vcenter
-										margin_left = 30
 
 										icon = {
 											texture = "gfx/interface/icons/generic_icons/coin_icon_01.dds"
 											visible = "[LessThan_CFixedPoint(Scope.GetState.MakeScope.Var('fi_state_profit_calculater').GetValue,'(CFixedPoint)0')]"
-											size = { 25 25 }
+											size = { 20 20 }
+											position = { 5 0 }
 											parentanchor = vcenter
 										}
 										icon = {
 											texture = "gfx/interface/icons/generic_icons/coin_icon_05.dds"
 											visible = "[And(GreaterThanOrEqualTo_CFixedPoint(Scope.GetState.MakeScope.Var('fi_state_profit_calculater').GetValue,'(CFixedPoint)0'), LessThan_CFixedPoint(Scope.GetState.MakeScope.Var('fi_state_profit_calculater').GetValue,'(CFixedPoint)0.5'))]"
-											size = { 25 25 }
+											size = { 20 20 }
+											position = { 5 0 }
 											parentanchor = vcenter
 										}
 										icon = {
 											texture = "gfx/interface/icons/generic_icons/coin_icon_09.dds"
 											visible = "[And(GreaterThanOrEqualTo_CFixedPoint(Scope.GetState.MakeScope.Var('fi_state_profit_calculater').GetValue,'(CFixedPoint)0.5'), LessThan_CFixedPoint(Scope.GetState.MakeScope.Var('fi_state_profit_calculater').GetValue,'(CFixedPoint)1'))]"
-											size = { 25 25 }
+											size = { 20 20 }
+											position = { 5 0 }
 											parentanchor = vcenter
 										}
 
 										icon = {
 											texture = "gfx/interface/icons/generic_icons/coin_icon_10.dds"
 											visible = "[GreaterThanOrEqualTo_CFixedPoint(Scope.GetState.MakeScope.Var('fi_state_profit_calculater').GetValue,'(CFixedPoint)1')]"
-											size = { 25 25 }
+											size = { 20 20 }
+											position = { 5 0 }
 											parentanchor = vcenter
 										}
 										
-									}				
+									}			
 								}
 							}
 						}	
@@ -483,10 +729,10 @@ types fi_investment_panel_types
 									alwaystransparent = no
 									datacontext = "[Scope.GetState]"
 									onmousehierarchyenter = "[AccessHighlightManager.HighlightState(State.Self)]"
-		onmousehierarchyleave = "[AccessHighlightManager.RemoveHighlight]"
+									onmousehierarchyleave = "[AccessHighlightManager.RemoveHighlight]"
 									button = {
 										using = clean_button
-										size = { 150 35 }
+										size = { 135 35 }
 										parentanchor = vcenter
 										datacontext = "[State]"
 										onclick = "[InformationPanelBar.OpenStatePanel(State.AccessSelf )]"
@@ -523,16 +769,33 @@ types fi_investment_panel_types
 
 										icon = {
 											texture = "gfx/interface/icons/generic_icons/secession_culture_ongoing.dds"
-											size = { 30 30 }
+											size = { 25 25 }
+											parentanchor = vcenter
+										}
+									}
+									widget = {
+										size = { 65 100% }
+										textbox = {
+											datacontext = "[State]"
+											raw_text = "#bold [State.MakeScope.Var('fi_state_building_number').GetValue]#!#!"
+											size = { 100% 100% }
+											align = center
+											parentanchor = right|vcenter
+											margin_left = 20
+										}
+
+										icon = {
+											texture = "gfx/interface/icons/generic_icons/truce.dds"
+											size = { 25 25 }
 											parentanchor = vcenter
 										}
 									}
 									button = {
 										using = clean_button
-										size = { 130 35 }
+										size = { 95 35 }
 										parentanchor = vcenter
 										datacontext = "[GetScriptedGui('buy_share_state_scripted_gui')]"
-										tooltip = "FI_BUY_SHARE_TOOLTIP"
+										tooltip = "FI_BUY_SHARE_TOOLTIP2"
 										enabled = "[ScriptedGui.IsValid(GuiScope.AddScope('invested_state', State.MakeScope).AddScope('investor_country', GetPlayer.MakeScope).End)]"
 										onclick = "[ScriptedGui.Execute(GuiScope.AddScope('invested_state', State.MakeScope).AddScope('investor_country', GetPlayer.MakeScope).End)]"
 										textbox = {
@@ -545,10 +808,27 @@ types fi_investment_panel_types
 									}
 									button = {
 										using = clean_button
-										size = { 190 35 }
+										size = { 95 35 }
+										parentanchor = vcenter
+										datacontext = "[GetScriptedGui('sell_share_state_scripted_gui')]"
+										tooltip = "FI_SELL_SHARE_TOOLTIP"
+										enabled = "[ScriptedGui.IsValid(GuiScope.AddScope('invested_state', State.MakeScope).AddScope('player_country', GetPlayer.MakeScope).End)]"
+										onclick = "[ScriptedGui.Execute(GuiScope.AddScope('invested_state', State.MakeScope).AddScope('player_country', GetPlayer.MakeScope).End)]"
+										textbox = {
+											size = { 100% 100% }
+											text = "SELL_SHARE_FROM_COUNTRY"
+											align = hcenter
+											parentanchor = vcenter
+											multiline = yes
+										}
+									}
+									button = {
+										using = clean_button
+										size = { 95 35 }
 										parentanchor = vcenter
 										datacontext = "[GetScriptedGui('take_share_scripted_gui')]"
 										tooltip = "FI_TAKE_SHARE_TOOLTIP"
+										enabled = "[ScriptedGui.IsValid(GuiScope.AddScope('invested_state', State.MakeScope).End)]"
 										onclick = "[ScriptedGui.Execute(GuiScope.AddScope('invested_state', State.MakeScope).End )]"
 										textbox = {
 
@@ -565,6 +845,181 @@ types fi_investment_panel_types
 						}	
 					}
 				}
+				flowcontainer = {
+					parentanchor = hcenter
+					direction = vertical
+					using = default_content_fade
+					visible = "[GetVariableSystem.HasValue('invest_panel_var', 'global_invest_tab')]"
+					
+					flowcontainer = {	
+						direction = vertical
+						
+						dynamicgridbox = {
+							datamodel = "[AccessPlayer.MakeScope.GetList('invested_every_states')]"
+
+							item = {
+								flowcontainer = {
+									using = unclickable_listentry_small
+									minimumsize = { @panel_width 48 }
+									alwaystransparent = no
+									datacontext = "[Scope.GetState]"
+									onmousehierarchyenter = "[AccessHighlightManager.HighlightState(State.Self)]"
+									onmousehierarchyleave = "[AccessHighlightManager.RemoveHighlight]"
+									
+									button = {
+										using = default_button
+										size = { 150 35 }
+										parentanchor = vcenter
+										datacontext = "[GetScriptedGui('fi_state_list_validation2')]"
+										onmousehierarchyenter = "[AccessHighlightManager.HighlightCountry(Scope.GetState.GetCountry)]"
+										onmousehierarchyleave = "[AccessHighlightManager.RemoveHighlight]"
+										onclick = "[ScriptedGui.Execute(GuiScope.AddScope('investor_country', Scope.GetState.GetCountry.MakeScope).AddScope('player_country', GetPlayer.MakeScope).End )]"
+										textbox = {
+											size = { 100% 100% }
+											text = "[Scope.GetState.GetCountry.GetName]"
+											align = hcenter
+											parentanchor = vcenter
+											multiline = yes
+
+										}
+									}
+									button = {
+										using = clean_button
+										size = { 135 35 }
+										parentanchor = vcenter
+										datacontext = "[Scope.GetState]"
+										onmousehierarchyenter = "[AccessHighlightManager.HighlightState(State.Self)]"
+										onmousehierarchyleave = "[AccessHighlightManager.RemoveHighlight]"
+										onclick = "[InformationPanelBar.OpenStatePanel(State.AccessSelf )]"
+										textbox = {
+											size = { 100% 100% }
+											text = "[Scope.GetState.GetName]"
+											align = hcenter
+											parentanchor = vcenter
+											multiline = yes
+										}
+									}
+									widget = {
+										size = { 70 100% }
+										textbox = {
+											datacontext = "[Scope.GetState]"
+											visible = "[And(NotEqualTo_CFixedPoint(Scope.GetState.MakeScope.Var('fi_state_item_number').GetValue, '(CFixedPoint)0'), EqualTo_CFixedPoint(Scope.GetState.MakeScope.Var('fi_state_item_queued').GetValue,'(CFixedPoint)0'))]"
+											raw_text = "#bold #gold [Scope.GetState.MakeScope.Var('fi_state_item_number').GetValue]#!#!"
+											size = { 100% 100% }
+											align = hcenter
+											margin_left = 8
+											parentanchor = right|vcenter	
+										}
+										textbox = {
+											datacontext = "[Scope.GetState]"
+											visible = "[NotEqualTo_CFixedPoint(Scope.GetState.MakeScope.Var('fi_state_item_queued').GetValue,'(CFixedPoint)0')]"
+											raw_text = "#bold #gold [Scope.GetState.MakeScope.Var('fi_state_item_number').GetValue]+[Scope.GetState.MakeScope.Var('fi_state_item_queued').GetValue]#!#! "
+											size = { 100% 100% }
+											align = hcenter
+											margin_left = 8
+											parentanchor = right|vcenter
+										}
+										icon = {
+											texture = "gfx/interface/icons/generic_icons/secession_culture_possible.dds"
+											size = { 25 25 }
+											parentanchor = vcenter
+											
+										}
+									}
+									
+									widget = {
+										size = { 70 100% }
+										textbox = {
+											datacontext = "[Scope.GetState]"
+											visible = "[And(NotEqualTo_CFixedPoint(Scope.GetState.MakeScope.Var('fi_state_total_number').GetValue, '(CFixedPoint)0'), EqualTo_CFixedPoint(Scope.GetState.MakeScope.Var('fi_state_total_queued').GetValue,'(CFixedPoint)0'))]"
+											raw_text = "#bold [Scope.GetState.MakeScope.Var('fi_state_total_number').GetValue]#!#!"
+											size = { 100% 100% }
+											align = hcenter
+											margin_left = 15
+											parentanchor = right|vcenter
+										}
+										textbox = {
+											datacontext = "[Scope.GetState]"
+											visible = "[NotEqualTo_CFixedPoint(Scope.GetState.MakeScope.Var('fi_state_total_queued').GetValue,'(CFixedPoint)0')]"
+											raw_text = "#bold [Scope.GetState.MakeScope.Var('fi_state_total_number').GetValue]+[Scope.GetState.MakeScope.Var('fi_state_total_queued').GetValue]#!#! "
+											size = { 100% 100% }
+											align = hcenter
+											margin_left = 15
+											parentanchor = right|vcenter
+										}
+
+										icon = {
+											texture = "gfx/interface/icons/generic_icons/secession_culture_ongoing.dds"
+											size = { 25 25 }
+											parentanchor = vcenter
+										}
+									}
+									widget = {
+										size = { 70 100% }
+										textbox = {
+											datacontext = "[Scope.GetState]"
+											raw_text = "#bold [Scope.GetState.MakeScope.Var('fi_state_building_number').GetValue]#!#!"
+											size = { 100% 100% }
+											align = hcenter
+											margin_left = 15
+											parentanchor = right|vcenter
+										}
+										icon = {
+											texture = "gfx/interface/icons/generic_icons/truce.dds"
+											size = { 25 25 }
+											parentanchor = vcenter
+										}
+									}
+									button = {
+										button = {
+											using = clean_button
+											size = { 65 100% }
+											align = center|nobaseline
+											parentanchor = vcenter
+											margin_left = 20
+											raw_text = "#bold #green [Scope.GetState.MakeScope.Var('fi_state_every_profit_calculater').GetValue|1]K#!#! "
+											datacontext = "[GetScriptedGui('buy_share_state_scripted_gui')]"
+											tooltip = "FI_BUY_SHARE_TOOLTIP"
+											enabled = "[ScriptedGui.IsValid(GuiScope.AddScope('invested_state', State.MakeScope).AddScope('investor_country', GetPlayer.MakeScope).End)]"
+											onclick = "[ScriptedGui.Execute(GuiScope.AddScope('invested_state', State.MakeScope).AddScope('investor_country', GetPlayer.MakeScope).End)]"
+										}
+										size = { 65 100% }
+										icon = {
+											texture = "gfx/interface/icons/generic_icons/coin_icon_01.dds"
+											visible = "[LessThan_CFixedPoint(Scope.GetState.MakeScope.Var('fi_state_every_profit_calculater').GetValue,'(CFixedPoint)0')]"
+											size = { 20 20 }
+											position = { 5 0 }
+											parentanchor = vcenter
+										}
+										icon = {
+											texture = "gfx/interface/icons/generic_icons/coin_icon_05.dds"
+											visible = "[And(GreaterThanOrEqualTo_CFixedPoint(Scope.GetState.MakeScope.Var('fi_state_every_profit_calculater').GetValue,'(CFixedPoint)0'), LessThan_CFixedPoint(Scope.GetState.MakeScope.Var('fi_state_every_profit_calculater').GetValue,'(CFixedPoint)0.5'))]"
+											size = { 20 20 }
+											position = { 5 0 }
+											parentanchor = vcenter
+										}
+										icon = {
+											texture = "gfx/interface/icons/generic_icons/coin_icon_09.dds"
+											visible = "[And(GreaterThanOrEqualTo_CFixedPoint(Scope.GetState.MakeScope.Var('fi_state_every_profit_calculater').GetValue,'(CFixedPoint)0.5'), LessThan_CFixedPoint(Scope.GetState.MakeScope.Var('fi_state_every_profit_calculater').GetValue,'(CFixedPoint)1'))]"
+											size = { 20 20 }
+											position = { 5 0 }
+											parentanchor = vcenter
+										}
+
+										icon = {
+											texture = "gfx/interface/icons/generic_icons/coin_icon_10.dds"
+											visible = "[GreaterThanOrEqualTo_CFixedPoint(Scope.GetState.MakeScope.Var('fi_state_every_profit_calculater').GetValue,'(CFixedPoint)1')]"
+											size = { 20 20 }
+											position = { 5 0 }
+											parentanchor = vcenter
+										}
+									}				
+								}
+							}
+						}	
+					}
+				}
+
 			}
 		}
 		blockoverride "header_back_button" {
@@ -583,4 +1038,67 @@ types fi_investment_panel_types
 
 template fifi_investment_panel {
 	fi_investment_panel = {}
+}
+
+template fifi_button_cancel {
+	onclick = "[GetVariableSystem.Clear('fi_industry_panel_var')]"
+	onclick = "[GetVariableSystem.Clear('invest_panel_var')]"
+	datacontext = "[GetScriptedGui('fi_list_all_clear')]"
+	onclick = "[ScriptedGui.Execute(GuiScope.AddScope('investor_country', GetPlayer.MakeScope).End )]"
+}
+
+template fifi_panel_bar_button {
+	using = fifi_investment_panel_bar_button
+}
+
+template fifi_investment_panel_bar_button {
+	#widget needed to prevent you from clicking on the map
+	widget = {
+		using = clickthrough_blocker
+		position = { 0 @spacing_widget_3_position }
+		size = { 100% @spacing_widget_size }
+	}
+	sidebar_label_button_small = {
+		position = { -100 @fi_panel_position }
+		blockoverride "onclick" {
+			onclick = "[InformationPanelBar.ClosePanel]"
+			onclick = "[MapListPanelManager.CloseCurrentPanel]"
+			onclick = "[GetVariableSystem.SetOrToggle('invest_panel_var', GetVariableSystem.Get('fi_last_tab'))]"
+			datacontext = "[GetScriptedGui('fi_state_list_validation')]"
+			onclick = "[ScriptedGui.Execute(GuiScope.AddScope('investor_country', GetPlayer.MakeScope).End )]"
+		}
+	}
+
+	sidebar_label_text_small = {
+		position = { -100 @fi_panel_position }
+		text = "FI_BTN"
+	}
+
+	widget = {
+		position = { 0 @fi_panel_position }
+		using = clickthrough_blocker
+		using = sidebar_button_size_small
+		using = selected_sidepanel_animation_small
+		blockoverride "selected_visibility" {
+			visible = "[GetVariableSystem.Exists('invest_panel_var')]"
+		}
+		sidepanel_button_small = {
+			blockoverride "icon" {
+				texture = "gfx/interface/icons/pops_icons/sol_upper_icon.dds"
+			}
+			blockoverride "button_selected" {
+				visible = "[GetVariableSystem.Exists('invest_panel_var')]"
+			}
+			onclick = "[InformationPanelBar.ClosePanel]"
+			onclick = "[MapListPanelManager.CloseCurrentPanel]"
+			onclick = "[GetVariableSystem.SetOrToggle('invest_panel_var', GetVariableSystem.Get('fi_last_tab'))]"
+			datacontext = "[GetScriptedGui('fi_state_list_validation')]"
+			onclick = "[ScriptedGui.Execute(GuiScope.AddScope('investor_country', GetPlayer.MakeScope).End )]"
+		}
+	}
+
+	sidebar_tooltip_area_small = {
+		position = { 0 @fi_panel_position }
+	}
+	
 }
