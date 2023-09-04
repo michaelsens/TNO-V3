@@ -1,0 +1,71 @@
+﻿namespace = tno_war_help
+
+tno_war_help.1 = {
+    type = country_event
+    placement = ROOT
+
+	title = eng.1
+	desc = eng.1.d
+    flavor = eng.1.f
+	event_image = {
+		texture  = "gfx/event_pictures/super_pictures/london.dds"
+	}
+
+    icon = "gfx/interface/icons/event_icons/event_default.dds"
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	
+	duration = 6
+
+	option = {
+	    name = eng.1.a
+		default_option = yes
+		add_modifier = { name = volunteers }
+		set_variable = volunteers_help
+		random_scope_state = {
+			limit = {
+				is_incorporated = yes
+				has_building = building_urban_center
+			}
+			save_scope_as = volunteer_state
+		}
+	
+		scope:volunteer_state = {
+			create_building={
+			building = "building_volunteer_barracks" 
+			level=20 
+			reserves=1 
+			activate_production_methods= { "pm_skirmish_infantry" "pm_mobile_artillery" "pm_cavalry_scouts" "pm_bicycle_messengers" "pm_wound_dressing"  }
+			}
+		}
+	}
+}
+
+tno_war_help.2 = {
+    type = country_event
+    placement = ROOT
+
+	title = eng.1
+	desc = eng.1.d
+    flavor = eng.1.f
+	event_image = {
+		texture  = "gfx/event_pictures/super_pictures/london.dds"
+	}
+
+    icon = "gfx/interface/icons/event_icons/event_default.dds"
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	
+	duration = 6
+
+	option = {
+	    name = eng.1.a
+		default_option = yes	
+		every_scope_state = {
+			if = {
+				limit = {
+					has_building = building_volunteer_barracks
+				}
+				remove_building = building_volunteer_barracks#
+			}
+		}
+}
+}

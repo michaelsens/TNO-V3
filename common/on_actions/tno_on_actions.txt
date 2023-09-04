@@ -228,3 +228,55 @@
         
     }
 }  
+
+# Root = Country
+on_peace_agreement_signed_war_leader = {
+	effect = {
+		if = {
+            limit = {
+                has_variable = volunteers_help
+            }
+            remove_modifier = volunteers
+            trigger_event = { id = tno_war_help.2 popup = yes }
+        }
+	}
+}
+
+# Root = Country
+on_peace_agreement_signed_war_participant = {
+	effect = {
+		if = {
+            limit = {
+                has_variable = volunteers_help
+            }
+            remove_modifier = volunteers
+            trigger_event = { id = tno_war_help.2 popup = yes }
+        }
+	}
+}
+
+# Root = Country
+on_peace_agreement_signed_non_participant = {
+	effect = {
+		if = {
+            limit = {
+                has_variable = volunteers_help
+            }
+            remove_modifier = volunteers
+            trigger_event = { id = tno_war_help.2 popup = yes }
+        }
+	}
+}
+
+# Root = Country
+on_capitulation = {
+	effect = {
+		if = {
+            limit = {
+                has_variable = volunteers_help
+            }
+            remove_modifier  = volunteers
+            trigger_event = { id = tno_war_help.2 popup = yes }
+        }
+	}
+}
