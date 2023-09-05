@@ -32,7 +32,7 @@
         #RUS
         if = {
 			limit = {
-               game_date >= 1960.1.1
+               game_date >= 1955.1.1
                NOT = { has_variable = rus_super_var }
             }
             set_variable = rus_super_var
@@ -138,6 +138,16 @@
 			}
             set_global_variable = tri_war_var
             trigger_event = { id = tno_war_events.3 }
+        }
+
+        if = {
+			limit = {
+				c:IBE ?= this
+		        game_date >= 1954.9.1
+                NOT = { has_global_variable = tri_war_var_ibe }
+			}
+            set_global_variable = tri_war_var_ibe
+            trigger_event = { id = tno_war_events.4 }
         }
 
         #Flavor Events
