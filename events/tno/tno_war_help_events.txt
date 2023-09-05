@@ -31,8 +31,8 @@ tno_war_help.1 = {
 	
 		scope:volunteer_state = {
 			create_building={
-			building = "building_volunteer_barracks" 
-			level=20 
+			building = "building_volunteer_barracks"
+			level=30 
 			reserves=1 
 			activate_production_methods= { "pm_skirmish_infantry" "pm_mobile_artillery" "pm_cavalry_scouts" "pm_wound_dressing"  }
 			}
@@ -43,63 +43,52 @@ tno_war_help.1 = {
 tno_war_help.2 = {
     type = country_event
     placement = ROOT
-	hidden = yes
-
-	title = eng.1
-	desc = eng.1.d
-    flavor = eng.1.f
-	event_image = {
-		texture  = "gfx/event_pictures/super_pictures/london.dds"
-	}
-
-    icon = "gfx/interface/icons/event_icons/event_default.dds"
-	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
-	
-	duration = 6
-
-	option = {
+    hidden = yes
+	immediate = {
 	    name = eng.1.a
 		default_option = yes	
-		every_scope_state = {
-			if = {
-				limit = {
-					has_building = building_volunteer_barracks
-				}
-				remove_building = building_volunteer_barracks#
+		random_scope_state = {
+			limit = {
+				has_building = building_volunteer_barracks
 			}
+		save_scope_as = volunteer_state
 		}
+		scope:volunteer_state = {
+					remove_building = building_volunteer_barracks
+					}
     }
 }
 
 tno_war_help.3 = {
     type = country_event
     placement = ROOT
-	
-	title = eng.1
-	desc = eng.1.d
-    flavor = eng.1.f
-	event_image = {
-		texture  = "gfx/event_pictures/super_pictures/london.dds"
-	}
-
-    icon = "gfx/interface/icons/event_icons/event_default.dds"
-	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
-	
-	duration = 6
-	
-	option = {
-		name = eng.1.a
-		every_scope_state = {
-			if = {
-				limit = {
-					has_building = building_volunteer_barracks
-				}
-			add_building_level ={
-				building = building_volunteer_barracks
-				level= 5
-				}
+	hidden = yes
+	immediate = {
+		name = "add 2 building_volunteer_barracks"
+		random_scope_state = {
+			limit = {
+				has_building = building_urban_center
+				NOT = { has_building = building_volunteer_barracks }
 			}
-					
+		save_scope_as = volunteer_state
+		}
+		scope:volunteer_state = {
+			create_building={
+			building = "building_volunteer_barracks"
+			level=20 
+			reserves=1 
+			activate_production_methods= { "pm_skirmish_infantry" "pm_mobile_artillery" "pm_cavalry_scouts" "pm_wound_dressing"  }
+			}
 		}
 	}
-}
+}			
+				
+		
+	
+
+			
+					
+		
+	
+
+
