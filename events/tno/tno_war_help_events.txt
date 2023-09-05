@@ -34,7 +34,7 @@ tno_war_help.1 = {
 			building = "building_volunteer_barracks" 
 			level=20 
 			reserves=1 
-			activate_production_methods= { "pm_skirmish_infantry" "pm_mobile_artillery" "pm_cavalry_scouts" "pm_bicycle_messengers" "pm_wound_dressing"  }
+			activate_production_methods= { "pm_skirmish_infantry" "pm_mobile_artillery" "pm_cavalry_scouts" "pm_wound_dressing"  }
 			}
 		}
 	}
@@ -43,6 +43,7 @@ tno_war_help.1 = {
 tno_war_help.2 = {
     type = country_event
     placement = ROOT
+	hidden = yes
 
 	title = eng.1
 	desc = eng.1.d
@@ -67,5 +68,38 @@ tno_war_help.2 = {
 				remove_building = building_volunteer_barracks#
 			}
 		}
+    }
 }
+
+tno_war_help.3 = {
+    type = country_event
+    placement = ROOT
+	
+	title = eng.1
+	desc = eng.1.d
+    flavor = eng.1.f
+	event_image = {
+		texture  = "gfx/event_pictures/super_pictures/london.dds"
+	}
+
+    icon = "gfx/interface/icons/event_icons/event_default.dds"
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	
+	duration = 6
+	
+	option = {
+		name = eng.1.a
+		every_scope_state = {
+			if = {
+				limit = {
+					has_building = building_volunteer_barracks
+				}
+			add_building_level ={
+				building = building_volunteer_barracks
+				level= 5
+				}
+			}
+					
+		}
+	}
 }

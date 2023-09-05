@@ -35,7 +35,7 @@
 	
 	pact = {	
 		cost = 200
-	
+	    is_helping_war = yes
 		is_two_sided_pact = no
 		show_in_outliner = yes
 		
@@ -45,17 +45,53 @@
 		income_transfer = 0.20
 		recipient_gets_income_transfer = yes
 		income_transfer_based_on_recipient = yes
-   }
+   		}
    
-   ai = {
-	propose_score = {
+   		ai = {
+		propose_score = {
 		value = 10
-	}	
+		}	
 
-	will_propose = { 
-		always = no
+		will_propose = { 
+			always = no
+		}
 	}
 }
 
-
-}
+more_war_help = {
+	requires_approval = yes
+	possible = {
+		scope:target_country = { 
+			is_at_war = yes
+			NOT = { is_diplomatic_play_enemy_of = ROOT }
+		}
+		scope:target_country = {
+			NOT = {
+				has_diplomatic_pact = {
+					who = root
+					type = rivalry
+				}					
+			}					
+		}
+		scope:target_country = {
+			has_modifier = volunteers
+				}					
+			has_diplomatic_relevance = scope:target_country
+		}					
+	 
+		accept_effect = {
+			scope:target_country = {
+				trigger_event = { id = tno_war_help.3 popup = yes }
+			}
+		}
+			   
+		ai = {
+			propose_score = {
+			value = 10
+			}	
+	
+			will_propose = { 
+				always = no
+			}
+		}
+	}
