@@ -106,7 +106,7 @@ KON = {
         }
     }	
     dynamic_country_name = {
-        name = "Mittelafrika" 
+        name = "Reichskommissariat ZentralAfrika" 
         
         is_main_tag_only = yes
         priority = 1
@@ -1131,26 +1131,6 @@ CHI = { # China
 		
 		trigger = {
 			coa_def_communist_flag_trigger = yes
-		}
-	}
-}
-
-CLM = { # Colombia
-	dynamic_country_name = {
-		name = dyn_c_new_granada
-		adjective = dyn_c_new_granada_adj
-
-		is_main_tag_only = yes
-		priority = 0
-		
-		trigger = {
-			coa_def_republic_flag_trigger = yes
-			scope:actor = {
-				OR = {
-					has_law = law_type:law_legacy_slavery
-					has_law = law_type:law_slave_trade
-				}
-			}
 		}
 	}
 }
@@ -2506,4 +2486,34 @@ ALD = {
 			}
 		}
 	}
+}
+
+ETH = {
+	dynamic_country_name = {
+		name = dyn_c_ethiopia
+
+		is_main_tag_only = yes
+		priority = 0
+	}
+	dynamic_country_name = {
+		name = dyn_c_ethiopia_german
+		adjective = dyn_c_ethiopia_german_adj
+
+		is_main_tag_only = no
+		priority = 1
+		
+		trigger = {
+			exists = c:ITA
+			c:ITA = {
+				OR = {
+					has_diplomatic_pact = {
+						who = c:ETH
+						type = protectorate
+						is_initiator = yes
+					}
+				}
+				
+			}
+		}
+	}	
 }
