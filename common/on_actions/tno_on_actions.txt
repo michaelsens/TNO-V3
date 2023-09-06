@@ -228,7 +228,9 @@
         if = {
             limit = {
                 NOT = { has_modifier= volunteers }
-                has_modifier= volunteers_leaving
+                OR = {
+                    has_modifier= volunteers_leaving
+                }
             }
             trigger_event = { id = tno_war_help.2 popup = yes }
                    }
