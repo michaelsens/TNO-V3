@@ -7,7 +7,7 @@ NWar = {
     DAYS_BETWEEN_WAR_EXHAUSTION = 10 # Every this many days war support will be reduced by the war exhaustion formula
 	MAX_SIMULTANEOUS_BATTLES = 3
 	DEVASTATION_INCREASE_RATE = 0.2
-	DEVASTATION_FROM_BATTLES = 0.3
+	DEVASTATION_FROM_BATTLES = 5
 }
 
 NAI = {
@@ -52,20 +52,19 @@ NDiplomacy = {
 }
 
 NMilitary = {
-	MIN_MOBILIZATION_PER_DAY = 0.10				# minimum mobilization gained per day by each mobilizing battalion (the last unit to gain mobilization in a state might have to do with whatever is left)
-	MAX_MOBILIZATION_PER_DAY = 0.40				# maximum mobilization gained per day by each mobilizing battalion
+	MIN_MOBILIZATION_PER_DAY = 0.15				# minimum mobilization gained per day by each mobilizing battalion (the last unit to gain mobilization in a state might have to do with whatever is left)
+	MAX_MOBILIZATION_PER_DAY = 0.60				# maximum mobilization gained per day by each mobilizing battalion
 	MIN_MANPOWER_CASUALTY_PER_ROUND = 15
 	BATTLE_PLAN_ADVANCE_PROGRESS_TO_LAUNCH = 50
 	BATTLE_PLAN_SWITCH_ORDER_LOST_PROGRESS_PERCENT = 0.25
 	GENERAL_TRAVEL_PIXELS_TO_DAYS_SCALE = 0.005
-	GENERAL_TRAVEL_CAP = 10                         # Limits the travel time to GENERAL_TRAVEL_CAP days. The overseas penalty (GENERAL_TRAVEL_OVERSEAS_SCALE) is still applied.
-    GENERAL_AUTO_TRAVEL_MAX_DAYS = 6               # Disables auto traveling if the travel takes more than `GENERAL_AUTO_TRAVEL_MAX_DAYS`. Makes general standby the nearest HQ.
+	GENERAL_TRAVEL_CAP = 25                         # Limits the travel time to GENERAL_TRAVEL_CAP days. The overseas penalty (GENERAL_TRAVEL_OVERSEAS_SCALE) is still applied.
+    GENERAL_AUTO_TRAVEL_MAX_DAYS = 15               # Disables auto traveling if the travel takes more than `GENERAL_AUTO_TRAVEL_MAX_DAYS`. Makes general standby the nearest HQ.
     GENERAL_TRAVEL_OVERSEAS_SCALE = 1
 }
 
 NPolitics = {
-	LAW_ENACTMENT_DEFAULT_BASE_DAYS = 40
-	LAW_ENACTMENT_COOLDOWN_DAYS = 250
+	LAW_ENACTMENT_COOLDOWN_DAYS = 365
 	DAILY_INSTITUTION_SIZE_CHANGE =  0.0056
 	DEFAULT_LAW_ACTIVATION_DATE = "1962.1.1"	
 }
