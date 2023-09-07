@@ -1,4 +1,4 @@
-﻿pm_irregular_infantry = {
+﻿pm_battle_rifle_infantry = {
 	texture = "gfx/interface/icons/production_method_icons/irregular_infantry.dds"
 	is_default = yes
 	building_modifiers = {
@@ -27,7 +27,7 @@
 	}
 }
 
-pm_line_infantry = {
+pm_assault_rifle_infantry = {
 	texture = "gfx/interface/icons/production_method_icons/line_infantry.dds"
 	is_default = yes
 	unlocking_technologies = {
@@ -63,7 +63,7 @@ pm_line_infantry = {
 	}
 }
 
-pm_skirmish_infantry = {
+pm_self_propelled_artillery_infantry = {
 	texture = "gfx/interface/icons/production_method_icons/skirmish_infantry.dds"
 	unlocking_technologies = {
 		general_staff
@@ -99,7 +99,7 @@ pm_skirmish_infantry = {
 	}
 }
 
-pm_trench_infantry = {
+pm_integrated_fireteam_infantry = {
 	texture = "gfx/interface/icons/production_method_icons/trench_infantry.dds"
 	unlocking_technologies = {
 		trench_works
@@ -138,7 +138,7 @@ pm_trench_infantry = {
 	}
 }
 
-pm_squad_infantry = {
+pm_multiple_rocket_infantry = {
 	texture = "gfx/interface/icons/production_method_icons/squad_infantry.dds"
 	unlocking_technologies = {
 		nco_training
@@ -176,7 +176,7 @@ pm_squad_infantry = {
 	}
 }
 
-pm_mechanized_infantry = {
+pm_modern_infantry = {
 	texture = "gfx/interface/icons/production_method_icons/armored_division.dds"
 	unlocking_technologies = {
 		mobile_armor
@@ -221,11 +221,11 @@ pm_mechanized_infantry = {
 	}
 }
 
-pm_no_artillery = {
+pm_no_tanks = {
 	texture = "gfx/interface/icons/production_method_icons/no_artillery.dds"
 }
 
-pm_cannon_artillery = {
+pm_gen1_tank= {
 	texture = "gfx/interface/icons/production_method_icons/cannon_artillery.dds"
 
 	unlocking_technologies = {
@@ -257,7 +257,7 @@ pm_cannon_artillery = {
 	}
 }
 
-pm_mobile_artillery = {
+pm_gen2_early_tank = {
 	texture = "gfx/interface/icons/production_method_icons/mobile_artillery.dds"
 
 	unlocking_technologies = {
@@ -289,7 +289,7 @@ pm_mobile_artillery = {
 	}
 }
 
-pm_shrapnel_artillery = {
+pm_gen2_mid_tank = {
 	texture = "gfx/interface/icons/production_method_icons/shrapnel_artillery.dds"
 
 	unlocking_technologies = {
@@ -326,7 +326,7 @@ pm_shrapnel_artillery = {
 	}
 }
 
-pm_siege_artillery = {
+pm_gen2_late_tank = {
 	texture = "gfx/interface/icons/production_method_icons/siege_artillery.dds"
 
 	unlocking_technologies = {
@@ -363,11 +363,48 @@ pm_siege_artillery = {
 	}
 }
 
-pm_cavalry_scouts = {
+pm_gen3_tank = {
+	texture = "gfx/interface/icons/production_method_icons/siege_artillery.dds"
+
+	unlocking_technologies = {
+		wargaming
+	}
+	disallowing_laws = {
+		law_peasant_levies
+	}	
+
+	building_modifiers = {
+		workforce_scaled = {
+			building_input_artillery_add = 4
+			building_input_ammunition_add = 4
+		}
+
+		throughput_scaled = {
+			unit_offense_add = 40
+			unit_defense_add = 30
+		}
+
+		unscaled = {
+			unit_morale_damage_mult = 0.4
+			unit_kill_rate_add = 0.25
+			unit_devastation_mult = 0.5
+		}
+	}
+	country_modifiers = {
+		workforce_scaled = {
+			country_army_power_projection_add = 7
+		}
+	}
+	timed_modifiers = {
+		pm_offense_defense_readjustment_minor
+	}
+}
+
+pm_no_aircraft = {
 	texture = "gfx/interface/icons/production_method_icons/cavalry.dds"
 }
 
-pm_bicycle_messengers = {
+pm_early_supersonic = {
 	texture = "gfx/interface/icons/production_method_icons/bicycle_messengers.dds"
 
 	unlocking_technologies = {
@@ -399,7 +436,7 @@ pm_bicycle_messengers = {
 	}
 }
 
-pm_motorized_recon = {
+pm_supersonice = {
 	texture = "gfx/interface/icons/production_method_icons/motorised_logistics.dds"
 
 	unlocking_technologies = {
@@ -434,7 +471,42 @@ pm_motorized_recon = {
 	}
 }
 
-pm_aerial_recon = {
+pm_multi_purpose_fighters = {
+	texture = "gfx/interface/icons/production_method_icons/aerial_recon.dds"
+	unlocking_technologies = {
+		military_aviation
+	}
+	disallowing_laws = {
+		law_peasant_levies
+	}	
+
+	building_modifiers = {
+		workforce_scaled = {
+			building_input_aeroplanes_add = 2
+			building_input_oil_add = 2
+		}
+
+		throughput_scaled = {
+			unit_offense_add = 15
+			unit_defense_add = 10
+		}
+
+		unscaled = {
+			unit_provinces_captured_mult = 0.5
+			# should add Battle Condition chance
+		}
+	}
+	country_modifiers = {
+		workforce_scaled = {
+			country_army_power_projection_add = 5
+		}
+	}	
+	timed_modifiers = {
+		pm_offense_defense_readjustment_minor
+	}
+}
+
+pm_supersonic_multirole = {
 	texture = "gfx/interface/icons/production_method_icons/aerial_recon.dds"
 	unlocking_technologies = {
 		military_aviation
@@ -473,7 +545,7 @@ pm_no_specialists = {
 	texture = "gfx/interface/icons/production_method_icons/no_specialists.dds"
 }
 
-pm_machine_gunners = {
+pm_infantry_fighting_vehicle = {
 	texture = "gfx/interface/icons/production_method_icons/machine_gunners.dds"
 	unlocking_technologies = {
 		automatic_machine_guns
@@ -504,7 +576,7 @@ pm_machine_gunners = {
 	}
 }
 
-pm_infiltrators = {
+pm_infiltrators_with_heli = {
 	texture = "gfx/interface/icons/production_method_icons/infiltrators.dds"
 	unlocking_technologies = {
 		stormtroopers
@@ -537,7 +609,7 @@ pm_infiltrators = {
 	}
 }
 
-pm_flamethrower_company = {
+pm_gunboats = {
 	texture = "gfx/interface/icons/production_method_icons/flamethrower_company.dds"
 	unlocking_technologies = {
 		flamethrowers
@@ -606,7 +678,7 @@ pm_chemical_weapons_specialists = {
 	}
 }
 
-pm_irregular_infantry_conscription = {
+pm_irregular_battle_rifle_infantry = {
 	texture = "gfx/interface/icons/production_method_icons/irregular_infantry.dds"
 	is_default = yes
 	building_modifiers = {
@@ -630,7 +702,7 @@ pm_irregular_infantry_conscription = {
 	}
 }
 
-pm_line_infantry_conscription = {
+pm_assault_rifle_infantry_conscription = {
 	texture = "gfx/interface/icons/production_method_icons/line_infantry.dds"
 	is_default = yes
 	unlocking_technologies = {
@@ -661,7 +733,7 @@ pm_line_infantry_conscription = {
 	}
 }
 
-pm_skirmish_infantry_conscription = {
+pm_self_propelled_artillery_infantry_conscription = {
 	texture = "gfx/interface/icons/production_method_icons/skirmish_infantry.dds"
 	unlocking_technologies = {
 		general_staff
@@ -695,7 +767,7 @@ pm_skirmish_infantry_conscription = {
 	}
 }
 
-pm_trench_infantry_conscription = {
+pm_integrated_fireteam_infantry_conscription = {
 	texture = "gfx/interface/icons/production_method_icons/trench_infantry.dds"
 	unlocking_technologies = {
 		trench_works
@@ -731,7 +803,7 @@ pm_trench_infantry_conscription = {
 	}
 }
 
-pm_squad_infantry_conscription = {
+pm_multiple_rocket_infantry_conscription = {
 	texture = "gfx/interface/icons/production_method_icons/squad_infantry.dds"
 	unlocking_technologies = {
 		nco_training
@@ -767,7 +839,7 @@ pm_squad_infantry_conscription = {
 	}
 }
 
-pm_mechanized_infantry_conscription = {
+pm_modern_infantry_conscription = {
 	texture = "gfx/interface/icons/production_method_icons/armored_division.dds"
 	unlocking_technologies = {
 		mobile_armor
@@ -806,11 +878,11 @@ pm_mechanized_infantry_conscription = {
 	}
 }
 
-pm_no_artillery_conscription = {
+pm_no_tank_conscription = {
 	texture = "gfx/interface/icons/production_method_icons/no_artillery.dds"
 }
 
-pm_cannon_artillery_conscription = {
+pm_tanks_conscription = {
 	texture = "gfx/interface/icons/production_method_icons/cannon_artillery.dds"
 
 	unlocking_technologies = {
@@ -840,7 +912,7 @@ pm_cannon_artillery_conscription = {
 	}
 }
 
-pm_mobile_artillery_conscription = {
+pm_gen1_tank_conscription = {
 	texture = "gfx/interface/icons/production_method_icons/mobile_artillery.dds"
 
 	unlocking_technologies = {
@@ -871,7 +943,7 @@ pm_mobile_artillery_conscription = {
 	}
 }
 
-pm_shrapnel_artillery_conscription = {
+pm_gen2_early_tank_conscription = {
 	texture = "gfx/interface/icons/production_method_icons/shrapnel_artillery.dds"
 
 	unlocking_technologies = {
@@ -903,7 +975,7 @@ pm_shrapnel_artillery_conscription = {
 	}
 }
 
-pm_siege_artillery_conscription = {
+pm_gen2_mid_tank_conscription = {
 	texture = "gfx/interface/icons/production_method_icons/siege_artillery.dds"
 
 	unlocking_technologies = {
@@ -935,11 +1007,76 @@ pm_siege_artillery_conscription = {
 	}
 }
 
-pm_cavalry_scouts_conscription = {
+pm_gen2_late_tank_conscription = {
+	texture = "gfx/interface/icons/production_method_icons/siege_artillery.dds"
+
+	unlocking_technologies = {
+		wargaming
+	}
+	disallowing_laws = {
+		law_peasant_levies
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			building_input_artillery_add = 4
+			building_input_ammunition_add = 4
+		}
+
+		throughput_scaled = {
+			unit_offense_add = 40
+			unit_defense_add = 30
+		}
+
+		unscaled = {
+			unit_morale_damage_mult = 0.4
+			unit_kill_rate_add = 0.25
+			unit_devastation_mult = 0.5
+		}
+	}
+	timed_modifiers = {
+		pm_offense_defense_readjustment_minor
+	}
+}
+
+pm_gen3_tank_conscription = {
+	texture = "gfx/interface/icons/production_method_icons/siege_artillery.dds"
+
+	unlocking_technologies = {
+		wargaming
+	}
+	disallowing_laws = {
+		law_peasant_levies
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			building_input_artillery_add = 4
+			building_input_ammunition_add = 4
+		}
+
+		throughput_scaled = {
+			unit_offense_add = 40
+			unit_defense_add = 30
+		}
+
+		unscaled = {
+			unit_morale_damage_mult = 0.4
+			unit_kill_rate_add = 0.25
+			unit_devastation_mult = 0.5
+		}
+	}
+	timed_modifiers = {
+		pm_offense_defense_readjustment_minor
+	}
+}
+
+
+pm_no_aircraft_conscription = {
 	texture = "gfx/interface/icons/production_method_icons/cavalry.dds"
 }
 
-pm_bicycle_messengers_conscription = {
+pm_early_supersonic_conscription = {
 	texture = "gfx/interface/icons/production_method_icons/bicycle_messengers.dds"
 
 	unlocking_technologies = {
@@ -970,7 +1107,7 @@ pm_bicycle_messengers_conscription = {
 	}
 }
 
-pm_motorized_recon_conscription = {
+pm_supersonice_conscription = {
 	texture = "gfx/interface/icons/production_method_icons/motorised_logistics.dds"
 
 	unlocking_technologies = {
@@ -1001,7 +1138,38 @@ pm_motorized_recon_conscription = {
 	}
 }
 
-pm_aerial_recon_conscription = {
+pm_multi_purpose_fighters_conscription = {
+	texture = "gfx/interface/icons/production_method_icons/aerial_recon.dds"
+	unlocking_technologies = {
+		military_aviation
+	}
+	disallowing_laws = {
+		law_peasant_levies
+		law_mass_conscription
+	}	
+
+	building_modifiers = {
+		workforce_scaled = {
+			building_input_aeroplanes_add = 2
+			building_input_oil_add = 2
+		}
+
+		throughput_scaled = {
+			unit_offense_add = 15
+			unit_defense_add = 10
+		}
+
+		unscaled = {
+			unit_provinces_captured_mult = 0.25
+			# should add Battle Condition chance
+		}
+	}
+	timed_modifiers = {
+		pm_offense_defense_readjustment_minor
+	}
+}
+
+pm_supersonic_multirole_conscription = {
 	texture = "gfx/interface/icons/production_method_icons/aerial_recon.dds"
 	unlocking_technologies = {
 		military_aviation
@@ -1036,7 +1204,7 @@ pm_no_specialists_conscription = {
 	texture = "gfx/interface/icons/production_method_icons/no_specialists.dds"
 }
 
-pm_machine_gunners_conscription = {
+pm_infantry_fighting_vehicle_conscription = {
 	texture = "gfx/interface/icons/production_method_icons/machine_gunners.dds"
 	unlocking_technologies = {
 		automatic_machine_guns
@@ -1066,7 +1234,7 @@ pm_machine_gunners_conscription = {
 	}
 }
 
-pm_infiltrators_conscription = {
+pm_infiltrators_with_heli_conscription = {
 	texture = "gfx/interface/icons/production_method_icons/infiltrators.dds"
 	unlocking_technologies = {
 		stormtroopers
@@ -1095,7 +1263,7 @@ pm_infiltrators_conscription = {
 	}
 }
 
-pm_flamethrower_company_conscription = {
+pm_gunboats_conscription = {
 	texture = "gfx/interface/icons/production_method_icons/flamethrower_company.dds"
 	unlocking_technologies = {
 		flamethrowers
