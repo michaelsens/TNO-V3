@@ -1,0 +1,80 @@
+je_reforming_the_oas = {
+
+    icon = "gfx/interface/icons/event_icons/tutorial_icon.dds"
+   
+    	is_shown_when_inactive = {
+		has_technology_researched = democracy
+	}
+    #TUTORIAL: Here we write what triggers make the journal entry complete, so because we are making it complete due to a timer, we write the following
+    #TUTORIAL: Also, i suggest you read through vanilla journal entries and triggers to see what they use, you will learn many triggers
+    complete = {
+		institution_investment_level = {
+			institution = institution_police
+			value = 5
+		}
+    }
+
+    #TUTORIAL: Here we write what effects do we want to take place when the journal entry completes
+    on_complete = {
+        add_modifier = reformed_oas
+    }
+
+    #TUTORIAL: Because we want this journal entry to complete in a few months timer, we should identify our timer here
+    #current_value = {
+    #    value = root.var:tutorial_great_wait_timer
+    #}
+
+    #TUTORIAL: This should ONLY be added if the journal entry is set with a timer
+    #TUTORIAL: The value is the amount of months we want this journal entry to last before it completes
+    #goal_add_value = {
+    #    value = 3
+    #}
+
+    #TUTORIAL: The weight of this entry in the journal entries list, the higher the value, the higher will the journal entry be in the list
+    weight = 10
+
+    #TUTORIAL: You can choose (yes\no), this pins the journal entry to the top-right hand side of the screen
+    should_be_pinned_by_default = yes
+
+}
+
+je_stablizing_the_economy = {
+
+    icon = "gfx/interface/icons/event_icons/tutorial_icon.dds"
+   
+    	is_shown_when_inactive = {
+		has_technology_researched = democracy
+	}
+    #TUTORIAL: Here we write what triggers make the journal entry complete, so because we are making it complete due to a timer, we write the following
+    #TUTORIAL: Also, i suggest you read through vanilla journal entries and triggers to see what they use, you will learn many triggers
+    complete = {
+		institution_investment_level = {
+			institution = institution_police
+			value = 5
+		}
+    }
+
+    #TUTORIAL: Here we write what effects do we want to take place when the journal entry completes
+    on_complete = {
+    	remove_modifier = economic_meltdown
+        add_modifier = economic_stagnation
+    }
+
+    #TUTORIAL: Because we want this journal entry to complete in a few months timer, we should identify our timer here
+    #current_value = {
+    #    value = root.var:tutorial_great_wait_timer
+    #}
+
+    #TUTORIAL: This should ONLY be added if the journal entry is set with a timer
+    #TUTORIAL: The value is the amount of months we want this journal entry to last before it completes
+    #goal_add_value = {
+    #    value = 3
+    #}
+
+    #TUTORIAL: The weight of this entry in the journal entries list, the higher the value, the higher will the journal entry be in the list
+    weight = 110
+
+    #TUTORIAL: You can choose (yes\no), this pins the journal entry to the top-right hand side of the screen
+    should_be_pinned_by_default = yes
+
+}
