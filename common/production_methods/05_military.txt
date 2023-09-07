@@ -882,36 +882,6 @@ pm_no_tank_conscription = {
 	texture = "gfx/interface/icons/production_method_icons/no_artillery.dds"
 }
 
-pm_tanks_conscription = {
-	texture = "gfx/interface/icons/production_method_icons/cannon_artillery.dds"
-
-	unlocking_technologies = {
-		artillery
-	}
-	disallowing_laws = {
-		law_peasant_levies
-	}
-	
-	building_modifiers = {
-		workforce_scaled = {
-			building_input_artillery_add = 1
-		}
-
-		throughput_scaled = {
-			unit_offense_add = 10
-			unit_defense_add = 10
-		}
-
-		unscaled = {
-			unit_morale_damage_mult = 0.1
-			unit_kill_rate_add = 0.1
-		}
-	}
-	timed_modifiers = {
-		pm_offense_defense_readjustment_minor
-	}
-}
-
 pm_gen1_tank_conscription = {
 	texture = "gfx/interface/icons/production_method_icons/mobile_artillery.dds"
 
