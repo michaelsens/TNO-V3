@@ -1,11 +1,13 @@
 ﻿NGame = {
-	START_DATE = "1950.1.1" 
+	START_DATE = "1962.1.1" 
 	END_DATE = "1991.12.26" 
 }
 
 NWar = {
-    DAYS_BETWEEN_WAR_EXHAUSTION = 14 # Every this many days war support will be reduced by the war exhaustion formula
+    DAYS_BETWEEN_WAR_EXHAUSTION = 10 # Every this many days war support will be reduced by the war exhaustion formula
 	MAX_SIMULTANEOUS_BATTLES = 3
+	DEVASTATION_INCREASE_RATE = 0.2
+	DEVASTATION_FROM_BATTLES = 5
 }
 
 NAI = {
@@ -13,7 +15,8 @@ NAI = {
 }
 
 NEconomy = {
-	MAX_WEEKLY_CONSTRUCTION_PROGRESS = 40
+	MAX_WEEKLY_CONSTRUCTION_PROGRESS = 60
+	MAX_WEEKLY_CONSTRUCTION_ALLOCATION = 60
 	AI_PEACE_AGREEMENT_BASE_VALUE = -100
     TRADE_ROUTE_MIN_SCORE_TO_CREATE_BASE = 500 # If a potential trade route is scored less than this, don't create it
 	AI_PEACE_AGREEMENT_WHITE_PEACE_BASE = -20 # If no wargoals are being enforced on either side
@@ -34,13 +37,34 @@ NPops = {
 	MIN_ASSIMILATION = 100						# If there is any assmiliation at least this many people will assimilate
 	CONVERSION_RATE = 0.02						# Percentage of pops who will Convert into a different Religion each month, if eligible
 	MIN_CONVERSION = 100
+	MIGRATION_PULL_FROM_AVAILABLE_ARABLE_LAND = 0.25
+	MASS_MIGRATION_TARGET_MIN_ARABLE_LAND = 10
 }
 
 NDiplomacy = {
-	DEFAULT_TRUCE_MONTHS = 24
-	WAR_GOAL_REPARATIONS_MONTHS = 24
-	WAR_GOAL_HUMILIATION_MONTHS = 24
-	WAR_GOAL_BAN_SLAVERY_MONTHS = 24
-	WAR_GOAL_OPEN_MARKET_MONTHS = 24
-	WAR_GOAL_REGIME_CHANGE_MONTHS = 24
+	DEFAULT_TRUCE_MONTHS = 18
+	WAR_GOAL_REPARATIONS_MONTHS = 18
+	WAR_GOAL_HUMILIATION_MONTHS = 18
+	WAR_GOAL_BAN_SLAVERY_MONTHS = 18
+	WAR_GOAL_OPEN_MARKET_MONTHS = 18
+	WAR_GOAL_REGIME_CHANGE_MONTHS = 18
+	DIPLOMATIC_PLAY_ESCALATION_DAILY = 2
+}
+
+NMilitary = {
+	MIN_MOBILIZATION_PER_DAY = 0.15				# minimum mobilization gained per day by each mobilizing battalion (the last unit to gain mobilization in a state might have to do with whatever is left)
+	MAX_MOBILIZATION_PER_DAY = 0.60				# maximum mobilization gained per day by each mobilizing battalion
+	MIN_MANPOWER_CASUALTY_PER_ROUND = 15
+	BATTLE_PLAN_ADVANCE_PROGRESS_TO_LAUNCH = 50
+	BATTLE_PLAN_SWITCH_ORDER_LOST_PROGRESS_PERCENT = 0.25
+	GENERAL_TRAVEL_PIXELS_TO_DAYS_SCALE = 0.005
+	GENERAL_TRAVEL_CAP = 25                         # Limits the travel time to GENERAL_TRAVEL_CAP days. The overseas penalty (GENERAL_TRAVEL_OVERSEAS_SCALE) is still applied.
+    GENERAL_AUTO_TRAVEL_MAX_DAYS = 15               # Disables auto traveling if the travel takes more than `GENERAL_AUTO_TRAVEL_MAX_DAYS`. Makes general standby the nearest HQ.
+    GENERAL_TRAVEL_OVERSEAS_SCALE = 1
+}
+
+NPolitics = {
+	LAW_ENACTMENT_COOLDOWN_DAYS = 365
+	DAILY_INSTITUTION_SIZE_CHANGE =  0.0056
+	DEFAULT_LAW_ACTIVATION_DATE = "1962.1.1"	
 }
