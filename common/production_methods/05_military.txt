@@ -3,8 +3,8 @@
 	is_default = yes
 	building_modifiers = {
 		workforce_scaled = {
-			building_input_small_arms_add = 2
-			building_input_ammunition_add = 2
+			building_input_small_arms_add = 1
+			building_input_ammunition_add = 1
 			building_input_artillery_add = 1
 
 		}
@@ -40,8 +40,7 @@ pm_assault_rifle_infantry = {
 	building_modifiers = {
 		workforce_scaled = {
 			building_input_small_arms_add = 3
-			building_input_ammunition_add = 3
-			building_input_artillery_add = 2
+			building_input_ammunition_add = 2
 		}
 
 		level_scaled = {
@@ -69,45 +68,6 @@ pm_assault_rifle_infantry = {
 	}
 }
 
-pm_self_propelled_artillery_infantry = {
-	texture = "gfx/interface/icons/production_method_icons/skirmish_infantry.dds"
-	unlocking_technologies = {
-		general_staff
-	}
-	building_modifiers = {
-		workforce_scaled = {
-			building_input_small_arms_add = 3
-			building_input_ammunition_add = 3
-			building_input_artillery_add = 4
-			building_input_oil_add = 2
-			building_input_radios_add = 2
-		}
-
-		level_scaled = {
-			building_employment_soldiers_add = 1800
-			building_employment_officers_add = 200
-			building_training_rate_add = 40
-		}
-
-		throughput_scaled = {
-			unit_offense_add = 30
-			unit_defense_add = 35
-		}
-
-		unscaled = {
-			unit_morale_loss_add = 10
-		}
-	}
-	country_modifiers = {
-		workforce_scaled = {
-			country_army_power_projection_add = 5
-		}
-	}
-	timed_modifiers = {
-		pm_offense_defense_readjustment
-	}
-}
-
 pm_integrated_fireteam_infantry = {
 	texture = "gfx/interface/icons/production_method_icons/trench_infantry.dds"
 	unlocking_technologies = {
@@ -115,11 +75,10 @@ pm_integrated_fireteam_infantry = {
 	}
 	building_modifiers = {
 		workforce_scaled = {
-			building_input_small_arms_add = 4
-			building_input_ammunition_add = 5
-			building_input_artillery_add = 4
+			building_input_small_arms_add = 3
+			building_input_ammunition_add = 3
 			building_input_oil_add = 2
-			building_input_radios_add = 2
+			building_input_radios_add = 1
 		}
 
 		level_scaled = {
@@ -150,47 +109,6 @@ pm_integrated_fireteam_infantry = {
 	}
 }
 
-pm_multiple_rocket_infantry = {
-	texture = "gfx/interface/icons/production_method_icons/squad_infantry.dds"
-	unlocking_technologies = {
-		nco_training
-	}
-	building_modifiers = {
-		workforce_scaled = {
-			building_input_small_arms_add = 4
-			building_input_ammunition_add = 6
-			building_input_artillery_add = 6
-			building_input_oil_add = 3
-			building_input_radios_add = 3
-			building_input_tanks_add = 1
-		}
-
-		level_scaled = {
-			building_employment_soldiers_add = 800
-			building_employment_officers_add = 200
-			building_training_rate_add = 40
-		}
-
-		throughput_scaled = {
-			unit_offense_add = 55
-			unit_defense_add = 65
-		}
-		
-		unscaled = {
-			unit_morale_loss_add = 6
-			unit_provinces_lost_mult = -0.25
-		}		
-	}
-	country_modifiers = {
-		workforce_scaled = {
-			country_army_power_projection_add = 9
-		}
-	}
-	timed_modifiers = {
-		pm_offense_defense_readjustment
-	}
-}
-
 pm_modern_infantry = {
 	texture = "gfx/interface/icons/production_method_icons/armored_division.dds"
 	unlocking_technologies = {
@@ -201,7 +119,7 @@ pm_modern_infantry = {
 	}
 	building_modifiers = {
 		workforce_scaled = {
-			building_input_small_arms_add = 2
+			building_input_small_arms_add = 3
 			building_input_ammunition_add = 6
 			building_input_tanks_add = 2
 			building_input_oil_add = 2
@@ -249,9 +167,9 @@ pm_gen1_tank= {
 
 	building_modifiers = {
 		workforce_scaled = {
-			building_input_artillery_add = 1
-			building_input_tanks_add = 2
-			building_input_ammunition_add = 2
+			building_input_tanks_add = 1
+			building_input_ammunition_add = 1
+			building_input_oil_add = 1
 			building_input_oil_add = 1
 		}
 
@@ -283,10 +201,10 @@ pm_gen2_early_tank = {
 	}
 	building_modifiers = {
 		workforce_scaled = {
-			building_input_tanks_add = 3
-			building_input_ammunition_add = 3
+			building_input_tanks_add = 2
+			building_input_ammunition_add = 2
 			building_input_oil_add = 2
-			building_input_radios_add = 2
+			building_input_radios_add = 1
 		}
 
 		throughput_scaled = {
@@ -322,10 +240,10 @@ pm_gen2_mid_tank = {
 
 	building_modifiers = {
 		workforce_scaled = {
-			building_input_tanks_add = 4
-			building_input_ammunition_add = 4
+			building_input_tanks_add = 3
+			building_input_ammunition_add = 3
 			building_input_oil_add = 2
-			building_input_radios_add = 3
+			building_input_radios_add = 2
 		}
 
 		throughput_scaled = {
@@ -361,8 +279,8 @@ pm_gen2_late_tank = {
 
 	building_modifiers = {
 		workforce_scaled = {
-			building_input_tanks_add = 5
-			building_input_ammunition_add = 5
+			building_input_tanks_add = 3
+			building_input_ammunition_add = 4
 			building_input_oil_add = 2
 			building_input_radios_add = 2
 		}
@@ -400,10 +318,10 @@ pm_gen3_tank = {
 
 	building_modifiers = {
 		workforce_scaled = {
-			building_input_tanks_add = 6
-			building_input_ammunition_add = 6
-			building_input_oil_add = 3
-			building_input_radios_add = 3
+			building_input_tanks_add = 4
+			building_input_ammunition_add = 5
+			building_input_oil_add = 2
+			building_input_radios_add = 2
 		}
 
 		throughput_scaled = {
@@ -440,8 +358,8 @@ pm_early_supersonic = {
 	
 	building_modifiers = {
 		workforce_scaled = {
-			building_input_aeroplanes_add = 2
-			building_input_rubber_add = 2
+			building_input_aeroplanes_add = 1
+			building_input_rubber_add = 1
 			building_input_oil_add = 1
 		}
 
@@ -512,7 +430,7 @@ pm_multi_purpose_fighters = {
 	building_modifiers = {
 		workforce_scaled = {
 			building_input_aeroplanes_add = 3
-			building_input_rubber_add = 3
+			building_input_rubber_add = 2
 			building_input_oil_add = 2
 			building_input_ammunition_add = 2
 		}
@@ -549,9 +467,9 @@ pm_supersonic_multirole = {
 	building_modifiers = {
 		workforce_scaled = {
 			building_input_aeroplanes_add = 4
-			building_input_rubber_add = 3
-			building_input_oil_add = 4
-			building_input_ammunition_add = 2
+			building_input_rubber_add = 2
+			building_input_oil_add = 3
+			building_input_ammunition_add = 3
 		}
 
 		throughput_scaled = {
@@ -659,7 +577,7 @@ pm_gunboats = {
 			building_input_radios_add = 1
 			building_input_explosives_add = 3
 			building_input_ammunition_add = 3
-			building_input_aeroplanes_add = 3
+			building_input_aeroplanes_add = 2
 			building_input_artillery_add = 1
 		}
 		throughput_scaled = {
@@ -718,13 +636,19 @@ pm_chemical_weapons_specialists = {
 	}
 }
 
+
+
+
+#Conscripts
+
+
 pm_irregular_battle_rifle_infantry = {
 	texture = "gfx/interface/icons/production_method_icons/irregular_infantry.dds"
 	is_default = yes
 	building_modifiers = {
 		workforce_scaled = {
-			building_input_small_arms_add = 2
-			building_input_ammunition_add = 2
+			building_input_small_arms_add = 1
+			building_input_ammunition_add = 1
 			building_input_artillery_add = 1
 		}
 
@@ -753,7 +677,8 @@ pm_assault_rifle_infantry_conscription = {
 	}
 	building_modifiers = {
 		workforce_scaled = {
-			building_input_small_arms_add = 2
+			building_input_small_arms_add = 3
+			building_input_ammunition_add = 2
 		}
 
 		level_scaled = {
@@ -776,40 +701,6 @@ pm_assault_rifle_infantry_conscription = {
 	}
 }
 
-pm_self_propelled_artillery_infantry_conscription = {
-	texture = "gfx/interface/icons/production_method_icons/skirmish_infantry.dds"
-	unlocking_technologies = {
-		general_staff
-	}
-	disallowing_laws = {
-		law_peasant_levies
-	}	
-	building_modifiers = {
-		workforce_scaled = {
-			building_input_ammunition_add = 2
-			building_input_small_arms_add = 2
-		}
-
-		level_scaled = {
-			building_employment_soldiers_add = 1800
-			building_employment_officers_add = 200
-			building_training_rate_add = 40
-		}
-
-		throughput_scaled = {
-			unit_offense_add = 30
-			unit_defense_add = 35
-		}
-		
-		unscaled = {
-			unit_morale_loss_add = 15
-		}
-	}
-	timed_modifiers = {
-		pm_offense_defense_readjustment
-	}
-}
-
 pm_integrated_fireteam_infantry_conscription = {
 	texture = "gfx/interface/icons/production_method_icons/trench_infantry.dds"
 	unlocking_technologies = {
@@ -820,8 +711,10 @@ pm_integrated_fireteam_infantry_conscription = {
 	}	
 	building_modifiers = {
 		workforce_scaled = {
-			building_input_ammunition_add = 4
-			building_input_small_arms_add = 2
+			building_input_small_arms_add = 3
+			building_input_ammunition_add = 3
+			building_input_oil_add = 2
+			building_input_radios_add = 1
 		}
 
 		level_scaled = {
@@ -846,42 +739,6 @@ pm_integrated_fireteam_infantry_conscription = {
 	}
 }
 
-pm_multiple_rocket_infantry_conscription = {
-	texture = "gfx/interface/icons/production_method_icons/squad_infantry.dds"
-	unlocking_technologies = {
-		nco_training
-	}
-	disallowing_laws = {
-		law_peasant_levies
-	}
-	building_modifiers = {
-		workforce_scaled = {
-			building_input_ammunition_add = 4
-			building_input_small_arms_add = 2
-			building_input_radios_add = 2
-		}
-
-		level_scaled = {
-			building_employment_soldiers_add = 1600
-			building_employment_officers_add = 400
-			building_training_rate_add = 40
-		}
-
-		throughput_scaled = {
-			unit_offense_add = 55
-			unit_defense_add = 60
-		}
-
-		unscaled = {
-			unit_morale_loss_add = 8
-			unit_provinces_lost_mult = -0.25
-		}
-	}
-	timed_modifiers = {
-		pm_offense_defense_readjustment
-	}
-}
-
 pm_modern_infantry_conscription = {
 	texture = "gfx/interface/icons/production_method_icons/armored_division.dds"
 	unlocking_technologies = {
@@ -892,7 +749,7 @@ pm_modern_infantry_conscription = {
 	}
 	building_modifiers = {
 		workforce_scaled = {
-			building_input_small_arms_add = 2
+			building_input_small_arms_add = 3
 			building_input_ammunition_add = 6
 			building_input_tanks_add = 2
 			building_input_oil_add = 2
@@ -937,7 +794,10 @@ pm_gen1_tank_conscription = {
 	
 	building_modifiers = {
 		workforce_scaled = {
-			building_input_artillery_add = 2
+			building_input_tanks_add = 1
+			building_input_ammunition_add = 1
+			building_input_oil_add = 1
+			building_input_oil_add = 1
 		}
 
 		throughput_scaled = {
@@ -968,8 +828,10 @@ pm_gen2_early_tank_conscription = {
 
 	building_modifiers = {
 		workforce_scaled = {
-			building_input_artillery_add = 2
+			building_input_tanks_add = 2
 			building_input_ammunition_add = 2
+			building_input_oil_add = 2
+			building_input_radios_add = 1
 		}
 
 		throughput_scaled = {
@@ -1000,8 +862,10 @@ pm_gen2_mid_tank_conscription = {
 
 	building_modifiers = {
 		workforce_scaled = {
-			building_input_artillery_add = 4
-			building_input_ammunition_add = 4
+			building_input_tanks_add = 3
+			building_input_ammunition_add = 3
+			building_input_oil_add = 2
+			building_input_radios_add = 2
 		}
 
 		throughput_scaled = {
@@ -1032,8 +896,10 @@ pm_gen2_late_tank_conscription = {
 
 	building_modifiers = {
 		workforce_scaled = {
-			building_input_artillery_add = 4
+			building_input_tanks_add = 3
 			building_input_ammunition_add = 4
+			building_input_oil_add = 2
+			building_input_radios_add = 2
 		}
 
 		throughput_scaled = {
@@ -1064,8 +930,10 @@ pm_gen3_tank_conscription = {
 
 	building_modifiers = {
 		workforce_scaled = {
-			building_input_artillery_add = 4
-			building_input_ammunition_add = 4
+			building_input_tanks_add = 4
+			building_input_ammunition_add = 5
+			building_input_oil_add = 2
+			building_input_radios_add = 2
 		}
 
 		throughput_scaled = {
@@ -1102,8 +970,9 @@ pm_early_supersonic_conscription = {
 	
 	building_modifiers = {
 		workforce_scaled = {
-			building_input_tools_add = 2
-			building_input_rubber_add = 2
+			building_input_aeroplanes_add = 1
+			building_input_rubber_add = 1
+			building_input_oil_add = 1
 		}
 
 		throughput_scaled = {
@@ -1133,7 +1002,8 @@ pm_supersonice_conscription = {
 	
 	building_modifiers = {
 		workforce_scaled = {
-			building_input_automobiles_add = 2
+			building_input_aeroplanes_add = 2
+			building_input_rubber_add = 2
 			building_input_oil_add = 2
 		}
 
@@ -1163,8 +1033,10 @@ pm_multi_purpose_fighters_conscription = {
 
 	building_modifiers = {
 		workforce_scaled = {
-			building_input_aeroplanes_add = 2
+			building_input_aeroplanes_add = 3
+			building_input_rubber_add = 2
 			building_input_oil_add = 2
+			building_input_ammunition_add = 2
 		}
 
 		throughput_scaled = {
@@ -1194,8 +1066,10 @@ pm_supersonic_multirole_conscription = {
 
 	building_modifiers = {
 		workforce_scaled = {
-			building_input_aeroplanes_add = 2
-			building_input_oil_add = 2
+			building_input_aeroplanes_add = 4
+			building_input_rubber_add = 2
+			building_input_oil_add = 3
+			building_input_ammunition_add = 3
 		}
 
 		throughput_scaled = {
@@ -1229,8 +1103,9 @@ pm_infantry_fighting_vehicle_conscription = {
 	
 	building_modifiers = {
 		workforce_scaled = {
-			building_input_small_arms_add = 2
-			building_input_ammunition_add = 2
+			building_input_small_arms_add = 3
+			building_input_ammunition_add = 3
+			building_input_tanks_add = 1
 		}
 		throughput_scaled = {
 			unit_defense_add = 25
@@ -1261,6 +1136,8 @@ pm_infiltrators_with_heli_conscription = {
 		workforce_scaled = {
 			building_input_radios_add = 2
 			building_input_explosives_add = 2
+			building_input_ammunition_add = 2
+			building_input_aeroplanes_add = 2
 		}
 		throughput_scaled = {
 			unit_offense_add = 15
@@ -1288,8 +1165,11 @@ pm_gunboats_conscription = {
 	
 	building_modifiers = {
 		workforce_scaled = {
-			building_input_small_arms_add = 2
-			building_input_oil_add = 2
+			building_input_radios_add = 1
+			building_input_explosives_add = 3
+			building_input_ammunition_add = 3
+			building_input_aeroplanes_add = 2
+			building_input_artillery_add = 1
 		}
 		throughput_scaled = {
 			unit_offense_add = 20
@@ -1318,8 +1198,9 @@ pm_chemical_weapons_specialists_conscription = {
 	
 	building_modifiers = {
 		workforce_scaled = {
-			building_input_artillery_add = 2
-			building_input_oil_add = 2
+			building_input_artillery_add = 4
+			building_input_oil_add = 4
+			building_input_aeroplanes_add = 1
 		}
 		throughput_scaled = {
 			unit_offense_add = 50
@@ -1330,6 +1211,148 @@ pm_chemical_weapons_specialists_conscription = {
 			unit_kill_rate_add = 0.5
 			unit_devastation_mult = 1.0
 			unit_provinces_captured_mult = -0.5
+		}
+	}
+	timed_modifiers = {
+		pm_offense_defense_readjustment_minor
+	}
+}
+
+#### Artillery Docntrine 
+
+pm_ww_doctrine = {
+	texture = "gfx/interface/icons/production_method_icons/cannon_artillery.dds"
+
+	unlocking_technologies = {
+		artillery
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			building_input_artillery_add = 1
+			building_input_ammunition_add = 1
+		}
+
+		throughput_scaled = {
+			unit_offense_add = 10
+			unit_defense_add = 10
+		}
+
+		unscaled = {
+			unit_morale_damage_mult = 0.1
+			unit_kill_rate_add = 0.1
+		}
+	}
+	country_modifiers = {
+		workforce_scaled = {
+			country_army_power_projection_add = 1
+		}
+	}
+	timed_modifiers = {
+		pm_offense_defense_readjustment_minor
+	}
+}
+
+pm_high_precision_doctrine = {
+	texture = "gfx/interface/icons/production_method_icons/mobile_artillery.dds"
+
+	unlocking_technologies = {
+		napoleonic_warfare
+	}
+	building_modifiers = {
+		workforce_scaled = {
+			building_input_artillery_add = 1.5
+			building_input_ammunition_add = 1
+		}
+
+		throughput_scaled = {
+			unit_offense_add = 15
+			unit_defense_add = 15
+		}
+
+		unscaled = {
+			unit_morale_damage_mult = 0.15
+			unit_kill_rate_add = 0.1
+			unit_provinces_captured_mult = 0.1
+		}
+	}
+	country_modifiers = {
+		workforce_scaled = {
+			country_army_power_projection_add = 3
+		}
+	}
+	timed_modifiers = {
+		pm_offense_defense_readjustment_minor
+	}
+}
+
+pm_mass_shelling = {
+	texture = "gfx/interface/icons/production_method_icons/shrapnel_artillery.dds"
+
+	unlocking_technologies = {
+		breech_loading_artillery
+	}
+	disallowing_laws = {
+		law_peasant_levies
+	}		
+
+	building_modifiers = {
+		workforce_scaled = {
+			building_input_artillery_add = 3
+			building_input_ammunition_add = 2
+		}
+
+		throughput_scaled = {
+			unit_offense_add = 30
+			unit_defense_add = 30
+		}
+
+		unscaled = {
+			unit_morale_damage_mult = 0.2
+			unit_kill_rate_add = 0.3
+			unit_devastation_mult = 0.25
+		}
+	}
+	country_modifiers = {
+		workforce_scaled = {
+			country_army_power_projection_add = 5
+		}
+	}
+	timed_modifiers = {
+		pm_offense_defense_readjustment_minor
+	}
+}
+
+pm_ulimate_destruction = {
+	texture = "gfx/interface/icons/production_method_icons/siege_artillery.dds"
+
+	unlocking_technologies = {
+		wargaming
+	}
+	disallowing_laws = {
+		law_peasant_levies
+	}	
+
+	building_modifiers = {
+		workforce_scaled = {
+			building_input_artillery_add = 4
+			building_input_ammunition_add = 4
+		}
+
+		throughput_scaled = {
+			unit_offense_add = 40
+			unit_defense_add = 30
+		}
+
+		unscaled = {
+			unit_morale_damage_mult = 0.4
+			unit_kill_rate_add = 0.25
+			unit_devastation_mult = 0.5
+		}
+	}
+	country_modifiers = {
+		workforce_scaled = {
+			country_army_power_projection_add = 7
 		}
 	}
 	timed_modifiers = {
