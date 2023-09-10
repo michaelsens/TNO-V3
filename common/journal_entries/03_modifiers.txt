@@ -1,0 +1,234 @@
+je_reforming_the_oas = {
+
+    icon = "gfx/interface/icons/event_icons/tutorial_icon.dds"
+   
+    	is_shown_when_inactive = {
+		has_technology_researched = democracy
+	}
+
+    complete = {
+		institution_investment_level = {
+			institution = institution_police
+			value = 5
+		}
+    }
+
+    on_complete = {
+        add_modifier = reformed_oas
+    }
+
+
+    weight = 10
+
+    progressbar = no
+
+    should_be_pinned_by_default = yes
+
+}
+
+je_stabilizing_the_economy = {
+
+    icon = "gfx/interface/icons/event_icons/tutorial_icon.dds"
+   
+        is_shown_when_inactive = {
+        has_technology_researched = democracy
+    }
+
+    complete = {
+        market_capital.market = {
+            mg:electricity = { 
+                market_goods_pricier < 0.20 
+            }
+        }
+        market_capital.market = {
+            mg:oil = { 
+                market_goods_pricier < 0.20 
+            }
+        }
+
+    }
+
+    on_complete = {
+        remove_modifier = economic_meltdown
+        add_modifier = economic_stagnation
+    }
+
+
+    weight = 100
+
+    progressbar = no
+    
+    should_be_pinned_by_default = yes
+
+}
+
+je_vichy_treaty = {
+
+    icon = "gfx/interface/icons/event_icons/tutorial_icon.dds"
+   
+        is_shown_when_inactive = {
+        has_technology_researched = democracy
+    }
+
+    complete = {
+
+        game_date >= 1955.2.1
+        country_pm_usage = {
+            target = ROOT
+            production_method = pm_shrapnel_artillery
+            value > 0.75
+        }
+    }
+
+    on_complete = {
+    remove_modifier = treaty_of_vichy
+    add_modifier = armed_forces_in_disarray
+
+    }
+
+
+    weight = 75
+
+    progressbar = no
+    
+    should_be_pinned_by_default = yes
+
+}
+
+je_dealing_with_noires = {
+
+    icon = "gfx/interface/icons/event_icons/tutorial_icon.dds"
+   
+        is_shown_when_inactive = {
+        has_technology_researched = democracy
+    }
+
+    complete = {
+
+        game_date >= 1952.2.1
+        NOT = { has_law = law_type:law_monarchy }
+        NOT = { has_law = law_type:law_autocracy }
+    }
+
+    on_complete = {
+    remove_modifier = les_annees_noires
+
+    }
+
+
+    weight = 75
+
+    progressbar = no
+    
+    should_be_pinned_by_default = yes
+
+}
+
+je_reforming_the_army = {
+
+    icon = "gfx/interface/icons/event_icons/tutorial_icon.dds"
+   
+        is_shown_when_inactive = {
+        has_modifier = armed_forces_in_disarray 
+    }
+
+    complete = {
+
+        country_pm_usage = {
+            target = ROOT
+            production_method = pm_shrapnel_artillery
+            value > 0.75
+        }
+        country_pm_usage = {
+            target = ROOT
+            production_method = pm_skirmish_infantry
+            value > 0.75
+        }
+
+        army_size > 200
+    }
+
+    on_complete = {
+    remove_modifier = armed_forces_in_disarray
+    add_modifier = armed_forces_reorganization
+
+    }
+
+
+    weight = 75
+
+    progressbar = no
+    
+    should_be_pinned_by_default = yes
+
+}
+
+je_professional_army_corps = {
+
+    icon = "gfx/interface/icons/event_icons/tutorial_icon.dds"
+   
+        is_shown_when_inactive = {
+
+        has_modifier = armed_forces_reorganization
+    }
+
+    complete = {
+
+        country_pm_usage = {
+            target = ROOT
+            production_method = pm_siege_artillery
+            value > 0.75
+        }
+        country_pm_usage = {
+            target = ROOT
+            production_method = pm_trench_infantry
+            value > 0.75
+        }
+
+        army_size > 250
+    }
+
+    on_complete = {
+    remove_modifier = armed_forces_reorganization
+    add_modifier = professional_armed_forces
+
+    }
+
+
+    weight = 75
+
+    progressbar = no
+    
+    should_be_pinned_by_default = yes
+
+}
+
+je_spur_economic_growth = {
+
+    icon = "gfx/interface/icons/event_icons/tutorial_icon.dds"
+   
+        is_shown_when_inactive = {
+        has_modifier = economic_stagnation
+    }
+
+    complete = {
+    has_technology_researched = shift_work
+    has_technology_researched = open_hearth_process
+    root.average_sol > 14
+
+    }
+
+    on_complete = {
+    remove_modifier = economic_stagnation
+    add_modifier = economic_upturn
+
+    }
+
+
+    weight = 100
+
+    progressbar = no
+    
+    should_be_pinned_by_default = yes
+
+}
