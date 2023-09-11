@@ -1,8 +1,10 @@
+#France
+
 je_reforming_the_oas = {
 
     icon = "gfx/interface/icons/event_icons/tutorial_icon.dds"
    
-    	is_shown_when_inactive = {
+    is_shown_when_inactive = {
 		has_technology_researched = democracy
 	}
 
@@ -30,22 +32,17 @@ je_stabilizing_the_economy = {
 
     icon = "gfx/interface/icons/event_icons/tutorial_icon.dds"
    
-        is_shown_when_inactive = {
+    is_shown_when_inactive = {
         has_technology_researched = democracy
     }
 
     complete = {
+        GDP >= 45000000
         market_capital.market = {
             mg:electricity = { 
                 market_goods_pricier < 0.20 
             }
         }
-        market_capital.market = {
-            mg:oil = { 
-                market_goods_pricier < 0.20 
-            }
-        }
-
     }
 
     on_complete = {
@@ -66,13 +63,13 @@ je_vichy_treaty = {
 
     icon = "gfx/interface/icons/event_icons/tutorial_icon.dds"
    
-        is_shown_when_inactive = {
+    is_shown_when_inactive = {
         has_technology_researched = democracy
     }
 
     complete = {
-
-        game_date >= 1955.2.1
+        army_size > 150
+        has_technology_researched = breech_loading_artillery
         country_pm_usage = {
             target = ROOT
             production_method = pm_shrapnel_artillery
@@ -81,8 +78,8 @@ je_vichy_treaty = {
     }
 
     on_complete = {
-    remove_modifier = treaty_of_vichy
-    add_modifier = armed_forces_in_disarray
+        remove_modifier = treaty_of_vichy
+        add_modifier = armed_forces_in_disarray
 
     }
 
@@ -99,19 +96,19 @@ je_dealing_with_noires = {
 
     icon = "gfx/interface/icons/event_icons/tutorial_icon.dds"
    
-        is_shown_when_inactive = {
+    is_shown_when_inactive = {
         has_technology_researched = democracy
     }
 
     complete = {
 
-        game_date >= 1952.2.1
+        game_date >= 1965.2.1
         NOT = { has_law = law_type:law_monarchy }
         NOT = { has_law = law_type:law_autocracy }
     }
 
     on_complete = {
-    remove_modifier = les_annees_noires
+        remove_modifier = les_annees_noires
 
     }
 
@@ -128,12 +125,12 @@ je_reforming_the_army = {
 
     icon = "gfx/interface/icons/event_icons/tutorial_icon.dds"
    
-        is_shown_when_inactive = {
+    is_shown_when_inactive = {
         has_modifier = armed_forces_in_disarray 
     }
 
     complete = {
-
+        has_technology_researched = repeaters
         country_pm_usage = {
             target = ROOT
             production_method = pm_shrapnel_artillery
@@ -149,8 +146,8 @@ je_reforming_the_army = {
     }
 
     on_complete = {
-    remove_modifier = armed_forces_in_disarray
-    add_modifier = armed_forces_reorganization
+        remove_modifier = armed_forces_in_disarray
+        add_modifier = armed_forces_reorganization
 
     }
 
@@ -167,8 +164,7 @@ je_professional_army_corps = {
 
     icon = "gfx/interface/icons/event_icons/tutorial_icon.dds"
    
-        is_shown_when_inactive = {
-
+    is_shown_when_inactive = {
         has_modifier = armed_forces_reorganization
     }
 
@@ -189,8 +185,8 @@ je_professional_army_corps = {
     }
 
     on_complete = {
-    remove_modifier = armed_forces_reorganization
-    add_modifier = professional_armed_forces
+        remove_modifier = armed_forces_reorganization
+        add_modifier = professional_armed_forces
 
     }
 
@@ -207,20 +203,48 @@ je_spur_economic_growth = {
 
     icon = "gfx/interface/icons/event_icons/tutorial_icon.dds"
    
-        is_shown_when_inactive = {
+    is_shown_when_inactive = {
         has_modifier = economic_stagnation
     }
 
     complete = {
-    has_technology_researched = shift_work
-    has_technology_researched = open_hearth_process
-    root.average_sol > 14
+        GDP >= 7500000
+        root.average_sol > 16
 
     }
 
     on_complete = {
-    remove_modifier = economic_stagnation
-    add_modifier = economic_upturn
+        remove_modifier = economic_stagnation
+        add_modifier = economic_upturn
+
+    }
+
+
+    weight = 100
+
+    progressbar = no
+    
+    should_be_pinned_by_default = yes
+
+}
+
+
+#Germany
+je_dependence_on_slavery = {
+
+    icon = "gfx/interface/icons/event_icons/tutorial_icon.dds"
+   
+#      is_shown_when_inactive = {
+#       has_modifier = economic_stagnation
+#    }
+
+    complete = {
+        has_law = law_type:law_slavery_banned
+
+    }
+
+    on_complete = {
+        remove_modifier = slavery_dependence
 
     }
 
