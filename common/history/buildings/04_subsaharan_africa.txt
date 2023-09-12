@@ -891,7 +891,7 @@
 				building="building_barracks"
 				level=1
 				reserves=1
-				activate_production_methods={ "pm_battle_rifle_infantry" "pm_gen1_tank" "pm_no_aircraft" "pm_no_specialists" "pm_wound_dressing" }
+				activate_production_methods={ "pm_battle_rifle_infantry" "pm_no_tanks" "pm_no_aircraft" "pm_no_specialists" "pm_wound_dressing" }
 			}
 			create_building={
 				building="building_port"
@@ -1026,7 +1026,7 @@
 				building="building_barracks"
 				level=1
 				reserves=1
-				activate_production_methods={ "pm_battle_rifle_infantry" "pm_gen1_tank" "pm_no_aircraft" "pm_no_specialists" "pm_wound_dressing" }
+				activate_production_methods={ "pm_battle_rifle_infantry" "pm_no_tanks" "pm_no_aircraft" "pm_no_specialists" "pm_wound_dressing" }
 			}
 			create_building={
 				building="building_port"
@@ -1054,8 +1054,17 @@
 	}
 	s:STATE_EAST_ANGOLA={
 	}
+	
 	s:STATE_KATANGA={
+	region_state:KON={
+		create_building={
+			building="building_war_machine_industry"
+			level=1
+			reserves=1
+			activate_production_methods={ "pm_tank_production" "pm_aeroplane_production" "pm_privately_owned_industry" }
+		}
 	}
+}
 	s:STATE_GABON={
 		region_state:KON={
 		}
@@ -1174,6 +1183,12 @@
 	}
 	s:STATE_CAPE_COLONY={
 		region_state:SAF={
+			create_building={
+				building="building_war_machine_industry"
+				level=1
+				reserves=1
+				activate_production_methods={ "pm_tank_production" "pm_aeroplane_production" "pm_privately_owned_industry" }
+			}
 			create_building={
 				building="building_government_administration"
 				level=4
