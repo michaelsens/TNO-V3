@@ -227,85 +227,31 @@
         }
         if = {
             limit = {
-                NOT = { has_modifier= volunteers }
-                OR = {
-                    has_modifier= volunteers_leaving
-                }
-            }
+             has_modifier= volunteers_leaving
+           }
             trigger_event = { id = tno_war_help.2 popup = yes }
-                   }
-        
+        }
     }
 }  
 
-# Root = Country
-on_peace_agreement_signed_war_leader = {
+on_war_end = {
 	effect = {
-		if = {
-            limit = {
-                has_variable = volunteers_help
-            }
-            trigger_event = { id = tno_war_help.2 popup = yes }
-            remove_modifier = volunteers
+		scope:actor = {
+			remove_modifier = volunteers
             add_modifier = {
                 name = volunteers_leaving
                 is_decaying = yes
-                years = 1
+                months = 5
             }
-       }
-	}
-}
-
-# Root = Country
-on_peace_agreement_signed_war_participant = {
-	effect = {
-		if = {
-            limit = {
-                has_variable = volunteers_help
-            }
-            trigger_event = { id = tno_war_help.2 popup = yes }
-            remove_modifier = volunteers
+		    
+		}
+		scope:target = {
+			remove_modifier = volunteers
             add_modifier = {
                 name = volunteers_leaving
                 is_decaying = yes
-                years = 1
-            }
-                 }
-	}
-}
-
-# Root = Country
-on_peace_agreement_signed_non_participant = {
-	effect = {
-		if = {
-            limit = {
-                has_variable = volunteers_help
-            }
-            trigger_event = { id = tno_war_help.2 popup = yes }
-            remove_modifier = volunteers
-            add_modifier = {
-                name = volunteers_leaving
-                is_decaying = yes
-                years = 1
-            }
-                  }
-	}
-}
-
-# Root = Country
-on_capitulation = {
-	effect = {
-		if = {
-            limit = {
-                has_variable = volunteers_help
-            }
-            trigger_event = { id = tno_war_help.2 popup = yes }
-            remove_modifier  = volunteers
-            add_modifier = {
-                name = volunteers_leaving
-                is_decaying = yes
-                years = 1
-            }
-                   }
-	}
+                months = 5
+            }   
+		}
+	}	
 }

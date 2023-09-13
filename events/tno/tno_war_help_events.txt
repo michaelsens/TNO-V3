@@ -20,11 +20,9 @@ tno_war_help.1 = {
 	    name = eng.1.a
 		default_option = yes
 		add_modifier = { name = volunteers }
-		set_variable = volunteers_help
 		random_scope_state = {
 			limit = {
 				is_incorporated = yes
-				has_building = building_urban_center
 			}
 			save_scope_as = volunteer_state
 		}
@@ -34,7 +32,7 @@ tno_war_help.1 = {
 			building = "building_volunteer_barracks"
 			level=30 
 			reserves=1 
-			activate_production_methods= { "pm_battle_rifle_infantry" "pm_gen2_early_tank" "pm_no_aircraft" "pm_wound_dressing"  }
+			activate_production_methods= { "pm_volunteer_battle_rifle_infantry" "pm_volunteer_gen1_tank" "pm_volunteer_airborne_fac" "pm_no_specialists" "pm_volunteer_ww_doctrine" "pm_wound_dressing"}
 			}
 		}
 	}
@@ -51,9 +49,7 @@ tno_war_help.2 = {
 			}
 		save_scope_as = volunteer_state
 		}
-		scope:volunteer_state = {
-					remove_building = building_volunteer_barracks
-					}
+		scope:volunteer_state = { remove_building = building_volunteer_barracks }
     }
 }
 
@@ -74,7 +70,7 @@ tno_war_help.3 = {
 			building = "building_volunteer_barracks"
 			level=20 
 			reserves=1 
-			activate_production_methods= { "pm_battle_rifle_infantry" "pm_gen2_early_tank" "pm_no_aircraft" "pm_wound_dressing"  }
+			activate_production_methods= { "pm_volunteer_battle_rifle_infantry" "pm_volunteer_gen1_tank" "pm_volunteer_airborne_fac" "pm_no_specialists" "pm_volunteer_ww_doctrine" "pm_wound_dressing"}
 			}
 		}
 	}
