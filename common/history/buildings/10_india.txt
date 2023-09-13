@@ -55,9 +55,9 @@
 			}
 			create_building={
 				building="building_barracks"
-				level=5
+				level=3
 				reserves=1
-				activate_production_methods={ "pm_wound_dressing" "pm_line_infantry" "pm_cavalry_scouts" "pm_no_specialists" "pm_mobile_artillery" }
+				activate_production_methods={ "pm_wound_dressing" "pm_battle_rifle_infantry" "pm_no_aircraft" "pm_no_specialists" "pm_gen2_early_tank" }
 			}
 		}
 	}
@@ -77,9 +77,9 @@
 			}
 			create_building={
 				building="building_barracks"
-				level=5
+				level=3
 				reserves=1
-				activate_production_methods={ "pm_line_infantry" "pm_mobile_artillery" "pm_cavalry_scouts" "pm_no_specialists" "pm_wound_dressing" }
+				activate_production_methods={ "pm_battle_rifle_infantry" "pm_no_tanks" "pm_no_aircraft" "pm_no_specialists" "pm_wound_dressing" "pm_ww_doctrine" }
 			}
 		}
 	}
@@ -111,9 +111,9 @@
 			}
 			create_building={
 				building="building_barracks"
-				level=5
+				level=3
 				reserves=1
-				activate_production_methods={ "pm_line_infantry" "pm_mobile_artillery" "pm_cavalry_scouts" "pm_no_specialists" "pm_wound_dressing" }
+				activate_production_methods={ "pm_battle_rifle_infantry" "pm_no_tanks" "pm_no_aircraft" "pm_no_specialists" "pm_wound_dressing" "pm_ww_doctrine" }
 			}
 		}
 	}
@@ -133,9 +133,9 @@
 			}
 			create_building={
 				building="building_barracks"
-				level=7
+				level=4
 				reserves=1
-				activate_production_methods={ "pm_irregular_infantry" "pm_wound_dressing" "pm_cavalry_scouts" "pm_no_specialists" "pm_no_artillery" }
+				activate_production_methods={ "pm_battle_rifle_infantry" "pm_wound_dressing" "pm_no_aircraft" "pm_no_specialists" "pm_no_tanks" }
 			}
 		}
 	}
@@ -155,9 +155,9 @@
 			}
 			create_building={
 				building="building_barracks"
-				level=10
+				level=5
 				reserves=1
-				activate_production_methods={ "pm_irregular_infantry" "pm_wound_dressing" "pm_cavalry_scouts" "pm_no_specialists" "pm_no_artillery" }
+				activate_production_methods={ "pm_battle_rifle_infantry" "pm_wound_dressing" "pm_no_aircraft" "pm_no_specialists" "pm_no_tanks" }
 			}
 			create_building={
 				building="building_livestock_ranch"
@@ -195,9 +195,9 @@
 			}
 			create_building={
 				building="building_barracks"
-				level=20
+				level=10
 				reserves=1
-				activate_production_methods={ "pm_irregular_infantry" "pm_wound_dressing" "pm_cavalry_scouts" "pm_no_specialists" "pm_no_artillery" }
+				activate_production_methods={ "pm_battle_rifle_infantry" "pm_wound_dressing" "pm_no_aircraft" "pm_no_specialists" "pm_no_tanks" }
 			}
 		}
 	}
@@ -223,9 +223,9 @@
 			}			
 			create_building={
 				building="building_barracks"
-				level=10
+				level=5
 				reserves=1
-				activate_production_methods={ "pm_line_infantry" "pm_cannon_artillery" "pm_cavalry_scouts" "pm_no_specialists" "pm_wound_dressing" }
+				activate_production_methods={ "pm_battle_rifle_infantry" "pm_no_tanks" "pm_no_aircraft" "pm_no_specialists" "pm_wound_dressing" }
 			}
 		}
 	}
@@ -287,9 +287,9 @@
 			}
 			create_building={
 				building="building_barracks"
-				level=30
+				level=15
 				reserves=1
-				activate_production_methods={ "pm_line_infantry" "pm_cannon_artillery" "pm_cavalry_scouts" "pm_no_specialists" "pm_wound_dressing" }
+				activate_production_methods={ "pm_battle_rifle_infantry" "pm_no_tanks" "pm_no_aircraft" "pm_no_specialists" "pm_wound_dressing" }
 			}
 		}
 	}
@@ -309,9 +309,9 @@
 			}
 			create_building={
 				building="building_barracks"
-				level=20
+				level=10
 				reserves=1
-				activate_production_methods={ "pm_irregular_infantry" "pm_wound_dressing" "pm_cavalry_scouts" "pm_no_specialists" "pm_no_artillery" }
+				activate_production_methods={ "pm_battle_rifle_infantry" "pm_wound_dressing" "pm_no_aircraft" "pm_no_specialists" "pm_no_tanks" }
 			}
 		}
 	}
@@ -357,7 +357,7 @@
 				building="building_barracks"
 				level=10
 				reserves=1
-				activate_production_methods={ "pm_line_infantry" "pm_mobile_artillery" "pm_cavalry_scouts" "pm_no_specialists" "pm_wound_dressing" }
+				activate_production_methods={ "pm_battle_rifle_infantry" "pm_no_tanks" "pm_no_aircraft" "pm_no_specialists" "pm_wound_dressing" "pm_ww_doctrine" }
 			}
 			create_building={
 				building="building_naval_base"
@@ -401,9 +401,9 @@
 			}
 			create_building={
 				building="building_barracks"
-				level=10
+				level=5
 				reserves=1
-				activate_production_methods={ "pm_irregular_infantry" "pm_wound_dressing" "pm_cavalry_scouts" "pm_no_specialists" "pm_no_artillery" }
+				activate_production_methods={ "pm_battle_rifle_infantry" "pm_wound_dressing" "pm_no_aircraft" "pm_no_specialists" "pm_no_tanks" }
 			}
 		}
 	}
@@ -417,9 +417,9 @@
 			}	
 			create_building={
 				building="building_barracks"
-				level=25
+				level=13
 				reserves=1
-				activate_production_methods={ "pm_irregular_infantry" "pm_wound_dressing" "pm_cavalry_scouts" "pm_no_specialists" "pm_no_artillery" }
+				activate_production_methods={ "pm_battle_rifle_infantry" "pm_wound_dressing" "pm_no_aircraft" "pm_no_specialists" "pm_no_tanks" }
 			}
 			create_building={
 				building="building_taj_mahal"
@@ -429,6 +429,12 @@
 	}
 	s:STATE_CEYLON={
 		region_state:BHT={
+			create_building={
+				building="building_electrics_industry"
+				level=1
+				reserves=1
+				activate_production_methods={ "pm_telephones" "pm_radios" "pm_privately_owned_industry"}
+			}
 			create_building={
 				building="building_government_administration"
 				level=1
@@ -443,9 +449,9 @@
 			}
 			create_building={
 				building="building_barracks"
-				level=2
+				level=1
 				reserves=1
-				activate_production_methods={ "pm_line_infantry" "pm_mobile_artillery" "pm_cavalry_scouts" "pm_no_specialists" "pm_wound_dressing" }
+				activate_production_methods={ "pm_battle_rifle_infantry" "pm_no_tanks" "pm_no_aircraft" "pm_no_specialists" "pm_wound_dressing" "pm_ww_doctrine" }
 			}
 			create_building={
 				building="building_port"
@@ -517,9 +523,9 @@
 			}
 			create_building={
 				building="building_barracks"
-				level=3
+				level=2
 				reserves=1
-				activate_production_methods={ "pm_line_infantry" "pm_mobile_artillery" "pm_cavalry_scouts" "pm_no_specialists" "pm_wound_dressing" }
+				activate_production_methods={ "pm_battle_rifle_infantry" "pm_no_tanks" "pm_no_aircraft" "pm_no_specialists" "pm_wound_dressing" "pm_ww_doctrine" }
 			}
 		}
 	}
@@ -551,9 +557,9 @@
 			}
 			create_building={
 				building="building_barracks"
-				level=15
+				level=7
 				reserves=1
-				activate_production_methods={ "pm_irregular_infantry" "pm_wound_dressing" "pm_cavalry_scouts" "pm_no_specialists" "pm_no_artillery" }
+				activate_production_methods={ "pm_battle_rifle_infantry" "pm_wound_dressing" "pm_no_aircraft" "pm_no_specialists" "pm_no_tanks" }
 			}
 		}
 	}
@@ -579,9 +585,9 @@
 			}
 			create_building={
 				building="building_barracks"
-				level=10
+				level=5
 				reserves=1
-				activate_production_methods={ "pm_line_infantry" "pm_mobile_artillery" "pm_cavalry_scouts" "pm_no_specialists" "pm_wound_dressing" }
+				activate_production_methods={ "pm_battle_rifle_infantry" "pm_no_tanks" "pm_no_aircraft" "pm_no_specialists" "pm_wound_dressing" "pm_ww_doctrine" }
 			}
 		}
 	}
@@ -607,9 +613,9 @@
 			}
 			create_building={
 				building="building_barracks"
-				level=10
+				level=5
 				reserves=1
-				activate_production_methods={ "pm_line_infantry" "pm_mobile_artillery" "pm_cavalry_scouts" "pm_no_specialists" "pm_wound_dressing" }
+				activate_production_methods={ "pm_battle_rifle_infantry" "pm_no_tanks" "pm_no_aircraft" "pm_no_specialists" "pm_wound_dressing" "pm_ww_doctrine" }
 			}
 			create_building={
 				building="building_port"
@@ -629,14 +635,20 @@
 			}		
 			create_building={
 				building="building_barracks"
-				level=10
+				level=5
 				reserves=1
-				activate_production_methods={ "pm_irregular_infantry" "pm_cannon_artillery" "pm_cavalry_scouts" "pm_no_specialists" "pm_wound_dressing" }
+				activate_production_methods={ "pm_battle_rifle_infantry" "pm_no_tanks" "pm_no_aircraft" "pm_no_specialists" "pm_wound_dressing" }
 			}
 		}
 	}
 	s:STATE_BOMBAY={
 		region_state:BHT={
+			create_building={
+				building="building_war_machine_industry"
+				level=2
+				reserves=1
+				activate_production_methods={ "pm_tank_production" "pm_aeroplane_production" "pm_privately_owned_industry" }
+			}
 			create_building={
 				building="building_government_administration"
 				level=4
@@ -663,9 +675,9 @@
 			}
 			create_building={
 				building="building_barracks"
-				level=10
+				level=5
 				reserves=1
-				activate_production_methods={ "pm_line_infantry" "pm_mobile_artillery" "pm_cavalry_scouts" "pm_no_specialists" "pm_wound_dressing" }
+				activate_production_methods={ "pm_battle_rifle_infantry" "pm_no_tanks" "pm_no_aircraft" "pm_no_specialists" "pm_wound_dressing" "pm_ww_doctrine" }
 			}
 			create_building={
 				building="building_naval_base"

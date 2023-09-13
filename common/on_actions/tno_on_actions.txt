@@ -235,6 +235,33 @@
             set_variable = eng_var_3
             trigger_event = { id = tno_flavor_events.9 popup = yes }
         }
-        
+        if = {
+            limit = {
+             has_modifier= volunteers_leaving
+           }
+            trigger_event = { id = tno_war_help.2 popup = yes }
+        }
     }
 }  
+
+on_war_end = {
+	effect = {
+		scope:actor = {
+			remove_modifier = volunteers
+            add_modifier = {
+                name = volunteers_leaving
+                is_decaying = yes
+                months = 5
+            }
+		    
+		}
+		scope:target = {
+			remove_modifier = volunteers
+            add_modifier = {
+                name = volunteers_leaving
+                is_decaying = yes
+                months = 5
+            }   
+		}
+	}	
+}

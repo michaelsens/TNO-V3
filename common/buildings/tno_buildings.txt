@@ -2,7 +2,8 @@
 	building_group = bg_uranium_mine
 	texture = "gfx/interface/icons/building_icons/uranium.dds"
 	city_type = mine
-	levels_per_mesh = 20
+	levels_per_mesh = 30
+
 	terrain_manipulator = mining
 	
 	unlocking_technologies = {
@@ -44,7 +45,7 @@ building_nuclear_reator = {
 	texture = "gfx/interface/icons/building_icons/reactor.dds"
 	city_type = city
 	levels_per_mesh = 20
-	
+
 	unlocking_technologies = {
 		nuclear_times
 	}
@@ -63,7 +64,7 @@ building_school = {
 	building_group = bg_school
 	texture = "gfx/interface/icons/building_icons/labor_camps.dds"
 	city_type = city
-	levels_per_mesh = 5
+	levels_per_mesh = 30
 	
 	unlocking_technologies = {
 		academia
@@ -75,4 +76,28 @@ building_school = {
 	}
 	
 	required_construction = construction_cost_medium
+}
+
+building_volunteer_barracks = {
+	building_group = bg_volunteer
+	
+	recruits_combat_unit = combat_unit_regular
+	texture = "gfx/interface/icons/building_icons/building_barracks.dds"
+	city_type = city
+	expandable = no
+	buildable = no
+	downsizeable = no
+	levels_per_mesh = 50
+	unlocking_technologies = {
+		standing_army
+	}
+
+	production_method_groups = {
+		pmg_volunteer_organization
+		pmg_volunteer_tanks_battalions
+		pmg_volunteer_close_air_support
+		pmg_volunteer_specialist_companies
+		pmg_volunteer_artillery_doctrine
+		pmg_volunteer_medical_aid
+	}
 }
