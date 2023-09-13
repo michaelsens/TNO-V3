@@ -145,11 +145,9 @@ tno_war_events.3 = {
 	type = country_event
     hidden = yes
 
-	 
-
 	trigger = {
         exists = c:ITA
-		exists = c:IBE
+        exists = c:PAL
 		ROOT = c:TUR
 	}	
 	
@@ -161,7 +159,6 @@ tno_war_events.3 = {
                 war = no
                 escalation = 80
                 initiator = c:TUR
-                add_initiator_backers = { c:IBE }
                 add_target_backers = { c:GRE C:EGY c:ITA }
                 add_war_goal = {
                     holder = c:GRE
@@ -178,6 +175,46 @@ tno_war_events.3 = {
                     type = conquer_state
                     target_state = s:STATE_LEBANON.region_state:TUR
                 }
+                add_war_goal = {    
+                    holder = c:TUR
+                    type = return_state
+                    target_state = s:STATE_AYDIN.region_state:ITA
+                }
+                add_war_goal = {    
+                    holder = c:TUR
+                    type = return_state
+                    target_state = s:STATE_EAST_AEGEAN_ISLANDS.region_state:ITA
+                }
+                add_war_goal = {    
+                    holder = c:TUR
+                    type = return_state
+                    target_state = s:STATE_CYPRUS.region_state:ITA
+                }
+        }
+        hidden_effect = {
+				change_infamy = -150
+		}
+    }
+}
+
+tno_war_events.4 = {
+	type = country_event
+    hidden = yes
+
+	trigger = {
+        exists = c:ITA
+		exists = c:IBE
+        root = c:IBE
+	}	
+	
+    immediate = {
+        create_diplomatic_play = {
+            name = tri2
+            target_country = c:ITA
+                type = dp_humiliation
+                war = no
+                escalation = 80
+                initiator = c:IBE
                 add_war_goal = {    
                     holder = c:ITA
                     type = conquer_state
@@ -197,21 +234,6 @@ tno_war_events.3 = {
                     holder = c:ITA
                     type = conquer_state
                     target_state = s:STATE_ORAN.region_state:IBE
-                }
-                add_war_goal = {    
-                    holder = c:TUR
-                    type = return_state
-                    target_state = s:STATE_AYDIN.region_state:ITA
-                }
-                add_war_goal = {    
-                    holder = c:TUR
-                    type = return_state
-                    target_state = s:STATE_EAST_AEGEAN_ISLANDS.region_state:ITA
-                }
-                add_war_goal = {    
-                    holder = c:TUR
-                    type = return_state
-                    target_state = s:STATE_CYPRUS.region_state:ITA
                 }
                 add_war_goal = {    
                     holder = c:IBE
