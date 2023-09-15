@@ -538,7 +538,7 @@ combat_unit_flotilla = {
     	icon = "gfx/interface/icons/generic_icons/flotillas.dds"
 
 	combat_unit_image = {
-		trigger = { building = { has_active_production_method = pm_man_o_wars } }
+		trigger = { building = { has_active_production_method = pm_tno_carriers } }
 		texture = "gfx/unit_illustrations/unit_flotilla_ship_of_the_line.dds"
 	}
 
@@ -546,9 +546,9 @@ combat_unit_flotilla = {
 		trigger = {
 			building = {
 				OR = {
-					has_active_production_method = pm_ironclads
-					has_active_production_method = pm_monitors
-					has_active_production_method = pm_dreadnoughts
+					has_active_production_method = pm_tno_carriers
+					has_active_production_method = pm_supercarriers
+					has_active_production_method = pm_nuclear_carriers
 				}
 			}	
 		}
@@ -556,7 +556,7 @@ combat_unit_flotilla = {
 	}
 
 	combat_unit_image = {
-		trigger = { building = { has_active_production_method = pm_battleships } }
+		trigger = { building = { has_active_production_method = pm_modern_carriers } }
 		texture = "gfx/unit_illustrations/unit_flotilla_battleship.dds"
 	}
 }
