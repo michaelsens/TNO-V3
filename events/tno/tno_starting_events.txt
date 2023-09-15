@@ -462,7 +462,7 @@ tno_starting_events.14 ={
     }
 }
 
-tno_starting_events.15 ={
+tno_starting_events.15 = {
     type = country_event
     placement = ROOT
  
@@ -492,5 +492,64 @@ tno_starting_events.15 ={
     }
 }
 
+tno_starting_events.16 = {
+    type = country_event
+    placement = ROOT
+ 
+    title = hre.1
+    desc = hre.1.d
+    flavor = hre.1.f 
+    event_image = {
+        texture = "gfx/event_pictures/super_pictures/holy.dds"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_map.dds"
+
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 6
+
+    trigger = {
+        this ?= c:HRE
+		game_date <= 1963.2.1
+    }
+
+   option = {
+        name = hre.1.a
+		add_modifier = { name = absolute_purity }
+		add_modifier = { name = cathedrals_of_industry }
+		add_modifier = { name = absolute_truth }
+		add_modifier = { name = salted_earth }
+		add_modifier = { name = imperskiye_shturmoviki }
+    }
+}
+
+tno_starting_events.17 = {
+    type = country_event
+    placement = ROOT
+ 
+    title = chi.1
+    desc = chi.1.d
+    flavor = chi.1.f 
+    event_image = {
+        texture = "gfx/event_pictures/super_pictures/chinabomb.dds"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_map.dds"
+
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 6
+
+    trigger = {
+        this ?= c:CHI
+		game_date <= 1963.2.1
+    }
+
+   option = {
+        name = chi.1.a
+
+    }
+}
 
 #add_modifier = { name =  }

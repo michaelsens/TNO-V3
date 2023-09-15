@@ -1,8 +1,10 @@
 ﻿modifier_offensive_footing = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
-	unit_army_offense_mult = 0.15
-	unit_army_defense_mult = -0.15
+	unit_army_offense_mult = 0.1
+	unit_army_defense_mult = -0.1
 	country_diplomatic_play_maneuvers_add = 60
+	political_movement_radicalism_mult = -0.2
+	political_movement_support_mult = -0.2
 }
 
 modifier_advanced_economy = {
@@ -106,6 +108,7 @@ slavery_dependence = {
 	state_rich_standard_of_living_add = 1
 	state_pop_qualifications_mult = -0.1
 	state_poor_expected_sol = -1
+	building_minimum_wage_mult = -0.05
 }
 
 war_spoils = {
@@ -119,6 +122,7 @@ american_dream = {
 	state_education_access_add = 0.2
 	state_pop_qualifications_mult = 0.15
 	state_migration_pull_mult = 0.05
+	building_minimum_wage_mult = 0.1
 }
 
 national_humiliation = {
@@ -170,6 +174,7 @@ japanese_efficiency = {
 	building_group_bg_manufacturing_laborers_mortality_mult = 0.02
 	country_trade_route_exports_add = 10
 	country_loan_interest_rate_mult = -0.20
+	building_minimum_wage_mult = -0.1
 }
 
 corrupt_bureaucracy = {
@@ -231,6 +236,9 @@ shadow_state = {
 	country_legitimacy_base_add = 40
 	state_radicals_from_sol_change_mult = -0.5
 	country_aristocrats_pol_str_mult = 0.9
+	country_academics_pol_str_mult = -0.9
+	country_laborers_pol_str_mult = -0.9
+	country_clerks_pol_str_mult = -0.75
 }
 
 shadow_economy = {
@@ -251,6 +259,9 @@ shadow_economy = {
 	building_group_bg_iron_mining_mortality_mult = 0.25
 	state_construction_mult = -0.30
 	state_mortality_mult = 0.2
+	tax_per_capita_add = 0.75
+	building_group_bg_construction_laborers_mortality_mult = 0.2
+	building_minimum_wage_mult = -0.35
 }
 
 armed_against_democracy = {
@@ -356,6 +367,7 @@ unchecked_capitalism = {
 	tax_dividends_add = -1
 	tax_land_add = -1
 	tax_per_capita_add = -1	
+	building_minimum_wage_mult = -0.25
 }
 
 sony = {
@@ -408,6 +420,7 @@ worlds_factory = {
 	building_minimum_wage_mult = -0.15
 	building_input_mult = -0.15
 	country_tech_spread_mult -0.25
+	building_minimum_wage_mult = -0.15
 }
 
 end_of_colonial = {
@@ -465,6 +478,7 @@ fueled_by_hate = {
 	country_officers_pol_str_mult = 0.7
 	country_soldiers_pol_str_mult = 0.25
 	battle_casualties_mult = 0.1
+	building_minimum_wage_mult = -0.2
 }
 
 nothing_to_lose = {
@@ -476,11 +490,11 @@ nothing_to_lose = {
 	tax_dividends_add = 0.5
 	tax_land_add = 0.1
 	tax_per_capita_add = 0.25
-	state_expected_sol_mult = -0.33
-	state_mortality_turmoil_mult = 0.10
+	state_expected_sol_mult = -0.2
 	state_turmoil_effects_mult = -0.33
 	state_mortality_turmoil_mult = 0.6
 	country_war_exhaustion_casualties_mult = -0.75
+	state_rich_standard_of_living_add = -4
 }
 
 veterans = {
@@ -509,4 +523,82 @@ soviet_successors = {
 	country_authority_mult = 0.1
 	country_war_exhaustion_casualties_mult = -0.25
 	country_prestige_mult = 0.1
+}
+
+absolute_purity = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	state_accepted_birth_rate_mult = 0.10
+	state_turmoil_effects_mult = -0.25
+	state_standard_of_living_add = -3
+	state_poor_standard_of_living_add = -2
+	state_mortality_mult = 0.4
+	state_mortality_turmoil_mult = 0.8
+	country_aristocrats_pol_str_mult = 0.5
+	country_laborers_pol_str_mult = -0.9
+}
+
+cathedrals_of_industry = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_positive.dds
+	state_laborers_mortality_mult = 0.5
+	state_slaves_mortality_mult = 0.5
+	building_steel_mills_throughput_mult = 0.15
+	building_arms_industry_throughput_mult = 0.15
+	building_munition_plants_throughput_mult = 0.15
+	building_tooling_workshops_throughput_mult = 0.1
+	tax_per_capita_add = 0.75
+	state_construction_mult = -0.15
+	building_group_bg_construction_laborers_mortality_mult = 0.2
+	building_minimum_wage_mult = -0.2
+}
+
+absolute_truth = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	state_expected_sol_mult = -0.1
+	country_legitimacy_base_add = 10
+	country_authority_mult = 0.33
+	country_academics_pol_str_mult = -0.9
+	country_clerks_pol_str_mult = -0.75
+	state_education_access_add = -0.35
+	state_pop_qualifications_mult = -0.35
+}
+
+salted_earth = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
+	state_construction_mult = -0.10
+	building_group_bg_agriculture_throughput_mult = -0.25
+	building_input_mult = -0.05
+	country_loan_interest_rate_mult = 0.4
+}
+
+imperskiye_shturmoviki = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
+	unit_morale_loss_mult = -0.1
+	unit_morale_recovery_mult = 0.15
+	unit_army_defense_mult = 0.08
+	unit_kill_rate_add = 0.15
+	unit_devastation_mult = 0.35
+	state_officers_mortality_mult = 0.25
+	state_soldiers_mortality_mult = 0.25
+}
+
+japans_breadbasket = {
+	building_group_bg_agriculture_throughput_mult = 0.35
+	interest_group_ig_rural_folk_pop_attraction_mult = 0.25
+	building_input_mult = -0.05
+	building_minimum_wage_mult = -0.05
+}
+
+restricted_army = {
+	country_army_power_projection_mult = -0.2
+	state_conscription_rate_mult = -0.65
+	unit_morale_loss_mult = 0.15
+}
+
+slave_of_the_samurai = {
+	country_authority_mult = -0.25
+	country_prestige_mult = -0.15
+	country_legitimacy_base_add = -10
+	state_radicals_from_sol_change_mult = -0.2
+	political_movement_radicalism_mult = -0.2
+	political_movement_support_mult = -0.2
 }
