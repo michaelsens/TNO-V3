@@ -35,7 +35,6 @@
 				scope:target_country = {
 					OR = {
 						country_has_primary_culture = cu:russian
-						country_has_primary_culture = cu:siberian
 						country_has_primary_culture = cu:uzbek
 					}				
 				}
@@ -56,7 +55,6 @@
 				scope:target_country = {
 					OR = {
 						country_has_primary_culture = cu:russian
-						country_has_primary_culture = cu:siberian
 						country_has_primary_culture = cu:uzbek
 					}	
 				}
@@ -72,6 +70,15 @@
 				}					
 			}
 			multiply = 1.5
+		}
+
+		if = {
+			limit = {
+				NOT = {
+					is_adjacent = scope:target_country
+				}
+			}
+			multiply = 0
 		}			
 	}
 
