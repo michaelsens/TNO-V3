@@ -6,6 +6,9 @@ je_reforming_the_oas = {
    
     is_shown_when_inactive = {
 		has_technology_researched = democracy
+        exists = c:FRA
+		ROOT = c:FRA
+		NOT = { has_modifier = reformed_oas }
 	}
 
     complete = {
@@ -34,6 +37,9 @@ je_stabilizing_the_economy = {
    
     is_shown_when_inactive = {
         has_technology_researched = democracy
+        exists = c:FRA
+		ROOT = c:FRA
+		has_modifier = economic_meltdown
     }
 
     complete = {
@@ -65,6 +71,9 @@ je_vichy_treaty = {
    
     is_shown_when_inactive = {
         has_technology_researched = democracy
+		exists = c:FRA
+		ROOT = c:FRA
+		has_modifier = treaty_of_vichy
     }
 
     complete = {
@@ -98,6 +107,9 @@ je_dealing_with_noires = {
    
     is_shown_when_inactive = {
         has_technology_researched = democracy
+        exists = c:FRA
+		ROOT = c:FRA
+		has_modifier = les_annees_noires
     }
 
     complete = {
@@ -127,6 +139,8 @@ je_reforming_the_army = {
    
     is_shown_when_inactive = {
         has_modifier = armed_forces_in_disarray 
+        exists = c:FRA
+		ROOT = c:FRA
     }
 
     complete = {
@@ -166,6 +180,8 @@ je_professional_army_corps = {
    
     is_shown_when_inactive = {
         has_modifier = armed_forces_reorganization
+        exists = c:FRA
+		ROOT = c:FRA
     }
 
     complete = {
@@ -205,6 +221,8 @@ je_spur_economic_growth = {
    
     is_shown_when_inactive = {
         has_modifier = economic_stagnation
+        exists = c:FRA
+		ROOT = c:FRA
     }
 
     complete = {
@@ -234,13 +252,14 @@ je_dependence_on_slavery = {
 
     icon = "gfx/interface/icons/event_icons/tutorial_icon.dds"
    
-#      is_shown_when_inactive = {
-#       has_modifier = economic_stagnation
-#    }
+    is_shown_when_inactive = {
+        exists = c:GER
+		ROOT = c:GER
+        has_modifier = slavery_dependence
+    }
 
     complete = {
         has_law = law_type:law_slavery_banned
-
     }
 
     on_complete = {
