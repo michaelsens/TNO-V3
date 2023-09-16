@@ -2,7 +2,8 @@
 	building_group = bg_uranium_mine
 	texture = "gfx/interface/icons/building_icons/uranium.dds"
 	city_type = mine
-	levels_per_mesh = 5
+	levels_per_mesh = 30
+
 	terrain_manipulator = mining
 	
 	unlocking_technologies = {
@@ -23,7 +24,7 @@ building_nuclear_enrichtigment_facility = {
 	building_group = bg_nuclear_enrichtment
 	texture = "gfx/interface/icons/building_icons/uranium_enrichment.dds"
 	city_type = city
-	levels_per_mesh = 5
+	levels_per_mesh = 20
 	
 	unlocking_technologies = {
 		nuclear_times
@@ -43,8 +44,8 @@ building_nuclear_reator = {
 	building_group = bg_nuclear_reactor
 	texture = "gfx/interface/icons/building_icons/reactor.dds"
 	city_type = city
-	levels_per_mesh = 5
-	
+	levels_per_mesh = 20
+
 	unlocking_technologies = {
 		nuclear_times
 	}
@@ -63,7 +64,7 @@ building_school = {
 	building_group = bg_school
 	texture = "gfx/interface/icons/building_icons/labor_camps.dds"
 	city_type = city
-	levels_per_mesh = 5
+	levels_per_mesh = 30
 	
 	unlocking_technologies = {
 		academia
@@ -75,4 +76,86 @@ building_school = {
 	}
 	
 	required_construction = construction_cost_medium
+}
+
+building_volunteer_barracks = {
+	building_group = bg_volunteer
+	
+	recruits_combat_unit = combat_unit_regular
+	texture = "gfx/interface/icons/building_icons/building_barracks.dds"
+	city_type = city
+	expandable = no
+	buildable = no
+	downsizeable = no
+	levels_per_mesh = 50
+	unlocking_technologies = {
+		standing_army
+	}
+
+	production_method_groups = {
+		pmg_volunteer_organization
+		pmg_volunteer_tanks_battalions
+		pmg_volunteer_close_air_support
+		pmg_volunteer_specialist_companies
+		pmg_volunteer_artillery_doctrine
+		pmg_volunteer_medical_aid
+	}
+}
+
+building_tank_industry = {
+	building_group = bg_heavy_industry
+	texture = "gfx/interface/icons/building_icons/vehicles_industry.dds"
+	city_type = city
+	levels_per_mesh = 40
+	
+	unlocking_technologies = {
+		logistics
+	}
+
+	production_method_groups = {
+		pmg_tanks
+		pmg_ownership_capital_building_war_machine_industry
+	}
+	
+	required_construction = construction_cost_very_high
+
+	possible = {
+		error_check = {
+			severity = fail
+			this = {
+				owner = { 
+					NOT = { has_law = law_type:law_industry_banned } 
+				}
+			}
+		}
+	}
+}
+
+building_war_machine_industry = {
+	building_group = bg_heavy_industry
+	texture = "gfx/interface/icons/building_icons/vehicles_industry.dds"
+	city_type = city
+	levels_per_mesh = 20
+	
+	unlocking_technologies = {
+		logistics	
+	}
+
+	production_method_groups = {
+		pmg_aeroplanes
+		pmg_ownership_capital_building_war_machine_industry
+	}
+	
+	required_construction = construction_cost_very_high
+
+	possible = {
+		error_check = {
+			severity = fail
+			this = {
+				owner = { 
+					NOT = { has_law = law_type:law_industry_banned } 
+				}
+			}
+		}
+	}
 }

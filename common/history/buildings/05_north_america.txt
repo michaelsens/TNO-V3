@@ -33,7 +33,7 @@
 				building="building_port"
 				level=2
 				reserves=1
-				activate_production_methods={ "pm_basic_port" }
+				activate_production_methods={ "pm_industrial_port" }
 			}
 		}
 	}
@@ -56,7 +56,7 @@
 				building="building_port"
 				level=4
 				reserves=1
-				activate_production_methods={ "pm_basic_port" }
+				activate_production_methods={ "pm_industrial_port" }
 			}
 			create_building={
 				building="building_sugar_plantation"
@@ -122,7 +122,7 @@
 			}
 			create_building={
 				building="building_munition_plants"
-				level=2
+				level=4
 				reserves=1
 				activate_production_methods={ "pm_percussion_caps" "pm_privately_owned_industry" }
 			}			
@@ -130,7 +130,7 @@
 				building="building_university"
 				level=6
 				reserves=1
-				activate_production_methods={ "pm_scholastic_education" }
+				activate_production_methods={ "pm_philosophy_department" }
 			}
 			create_building={
 				building="building_iron_mine"
@@ -178,25 +178,25 @@
 				building="building_fishing_wharf"
 				level=4
 				reserves=1
-				activate_production_methods={ "pm_merchant_guilds_building_fishing_wharf" "pm_unrefrigerated" "pm_fishing_trawlers" }
+				activate_production_methods={ "pm_merchant_guilds_building_fishing_wharf" "pm_unrefrigerated" "pm_steam_trawlers" }
 			}
 			create_building={
 				building="building_naval_base"
 				level=10
 				reserves=1
-				activate_production_methods={ "pm_man_o_wars" "pm_frigates" "pm_commerce_raider" "pm_no_naval_theory" }
+				activate_production_methods={ "pm_tno_carriers" "pm_tno_battleship" "pm_tno_submarine" "pm_no_naval_theory" }
 			}
 			create_building={
 				building="building_barracks"
-				level=6
+				level=10
 				reserves=1
-				activate_production_methods={ "pm_skirmish_infantry" "pm_mobile_artillery" "pm_cavalry_scouts" "pm_no_specialists" "pm_wound_dressing" }
+				activate_production_methods={ "pm_battle_rifle_infantry" "pm_gen1_tank" "pm_airborne_fac" "pm_no_specialists" "pm_wound_dressing" "pm_ww_doctrine" }
 			}
 			create_building={
 				building="building_port"
 				level=6
 				reserves=1
-				activate_production_methods={ "pm_basic_port" }
+				activate_production_methods={ "pm_industrial_port" }
 			}
 		}
 	}
@@ -231,7 +231,7 @@
 				building="building_arms_industry"
 				level=3
 				reserves=1
-				activate_production_methods={ "pm_muskets" "pm_no_artillery_production" "pm_merchant_guilds_building_arms_industry" }
+				activate_production_methods={ "pm_muskets" "pm_cannons" "pm_merchant_guilds_building_arms_industry" }
 			}
 			create_building={
 				building="building_iron_mine"
@@ -267,25 +267,25 @@
 				building="building_barracks"
 				level=10
 				reserves=1
-				activate_production_methods={ "pm_skirmish_infantry" "pm_mobile_artillery" "pm_cavalry_scouts" "pm_no_specialists" "pm_wound_dressing" }
+				activate_production_methods={ "pm_battle_rifle_infantry" "pm_gen1_tank" "pm_airborne_fac" "pm_no_specialists" "pm_wound_dressing" "pm_ww_doctrine" }
 			}
 			create_building={
 				building="building_shipyards"
 				level=5
 				reserves=1
-				activate_production_methods={ "pm_basic_shipbuilding" "pm_merchant_guilds_building_shipyards" "pm_military_shipbuilding_wooden" }
+				activate_production_methods={ "pm_basic_shipbuilding" "pm_merchant_guilds_building_shipyards" "pm_military_shipbuilding_steam_2" }
 			}			
 			create_building={
 				building="building_naval_base"
 				level=5
 				reserves=1
-				activate_production_methods={ "pm_man_o_wars" "pm_frigates" "pm_commerce_raider" "pm_power_of_the_purse" }
+				activate_production_methods={ "pm_tno_carriers" "pm_tno_battleship" "pm_tno_submarine" "pm_tno_battlefleet_tactics" }
 			}			
 			create_building={
 				building="building_port"
 				level=6
 				reserves=1
-				activate_production_methods={ "pm_basic_port" }
+				activate_production_methods={ "pm_industrial_port" }
 			}			
 		}
 	}
@@ -305,17 +305,23 @@
 				building="building_naval_base"
 				level=10
 				reserves=1
-				activate_production_methods={ "pm_man_o_wars" "pm_frigates" "pm_commerce_raider" "pm_no_naval_theory" }
+				activate_production_methods={ "pm_tno_carriers" "pm_tno_battleship" "pm_tno_submarine" "pm_no_naval_theory" }
 			}
 		}
 	}
 	s:STATE_OREGON={
 		region_state:USA={
 			create_building={
+				building="building_electrics_industry"
+				level=2
+				reserves=1
+				activate_production_methods={ "pm_telephones" "pm_radios" "pm_privately_owned_industry"}
+			}
+			create_building={
 				building="building_naval_base"
 				level=10
 				reserves=1
-				activate_production_methods={ "pm_man_o_wars" "pm_frigates" "pm_commerce_raider" "pm_no_naval_theory" }
+				activate_production_methods={ "pm_tno_carriers" "pm_tno_battleship" "pm_tno_submarine" "pm_no_naval_theory" }
 			}
 			create_building={
 				building="building_logging_camp"
@@ -437,7 +443,7 @@
 				building="building_barracks"
 				level=8
 				reserves=1
-				activate_production_methods={ "pm_mobile_artillery" "pm_wound_dressing" "pm_cavalry_scouts" "pm_no_specialists" "pm_line_infantry" }
+				activate_production_methods={ "pm_battle_rifle_infantry" "pm_gen1_tank" "pm_airborne_fac" "pm_no_specialists" "pm_wound_dressing" "pm_ww_doctrine" }
 			}
 		}
 	}
@@ -472,6 +478,18 @@
 	s:STATE_MICHIGAN={
 		region_state:USA={
 			create_building={
+				building="building_war_machine_industry"
+				level=2
+				reserves=1
+				activate_production_methods={ "pm_aeroplane_production" "pm_privately_owned_industry" }
+			}
+			create_building={
+				building="building_tank_industry"
+				level=2
+				reserves=1
+				activate_production_methods={ "pm_tank_production" "pm_privately_owned_industry" }
+			}
+			create_building={
 				building="building_logging_camp"
 				level=2
 				reserves=1
@@ -493,7 +511,7 @@
 				building="building_barracks"
 				level=8
 				reserves=1
-				activate_production_methods={ "pm_mobile_artillery" "pm_wound_dressing" "pm_cavalry_scouts" "pm_no_specialists" "pm_line_infantry" }
+				activate_production_methods={ "pm_battle_rifle_infantry" "pm_gen1_tank" "pm_airborne_fac" "pm_no_specialists" "pm_wound_dressing" "pm_ww_doctrine" }
 			}
 		}
 	}
@@ -557,7 +575,7 @@
 				building="building_barracks"
 				level=10
 				reserves=1
-				activate_production_methods={ "pm_skirmish_infantry" "pm_mobile_artillery" "pm_cavalry_scouts" "pm_no_specialists" "pm_wound_dressing" }
+				activate_production_methods={ "pm_battle_rifle_infantry" "pm_gen1_tank" "pm_airborne_fac" "pm_no_specialists" "pm_wound_dressing" "pm_ww_doctrine" }
 			}
 		}
 	}
@@ -573,7 +591,7 @@
 				building="building_university"
 				level=2
 				reserves=1
-				activate_production_methods={ "pm_scholastic_education" }
+				activate_production_methods={ "pm_philosophy_department" }
 			}
 			create_building={
 				building="building_food_industry"
@@ -601,9 +619,9 @@
 			}
 			create_building={
 				building="building_barracks"
-				level=6
+				level=9
 				reserves=1
-				activate_production_methods={ "pm_skirmish_infantry" "pm_mobile_artillery" "pm_cavalry_scouts" "pm_no_specialists" "pm_wound_dressing" }
+				activate_production_methods={ "pm_battle_rifle_infantry" "pm_gen1_tank" "pm_airborne_fac" "pm_no_specialists" "pm_wound_dressing" "pm_ww_doctrine" }
 			}			
 		}
 	}
@@ -647,9 +665,9 @@
 			}
 			create_building={
 				building="building_barracks"
-				level=6
+				level=8
 				reserves=1
-				activate_production_methods={ "pm_skirmish_infantry" "pm_mobile_artillery" "pm_cavalry_scouts" "pm_no_specialists" "pm_wound_dressing" }
+				activate_production_methods={ "pm_battle_rifle_infantry" "pm_gen1_tank" "pm_airborne_fac" "pm_no_specialists" "pm_wound_dressing" "pm_ww_doctrine" }
 			}			
 		}
 	}
@@ -717,13 +735,13 @@
 				building="building_barracks"
 				level=8
 				reserves=1
-				activate_production_methods={ "pm_skirmish_infantry" "pm_mobile_artillery" "pm_cavalry_scouts" "pm_no_specialists" "pm_wound_dressing" }
+				activate_production_methods={ "pm_battle_rifle_infantry" "pm_gen1_tank" "pm_airborne_fac" "pm_no_specialists" "pm_wound_dressing" "pm_ww_doctrine" }
 			}
 			create_building={
 				building="building_port"
 				level=2
 				reserves=1
-				activate_production_methods={ "pm_basic_port" }
+				activate_production_methods={ "pm_industrial_port" }
 			}				
 		}
 	}
@@ -773,9 +791,9 @@
 			}
 			create_building={
 				building="building_barracks"
-				level=14
+				level=13
 				reserves=1
-				activate_production_methods={ "pm_skirmish_infantry" "pm_mobile_artillery" "pm_cavalry_scouts" "pm_no_specialists" "pm_wound_dressing" }
+				activate_production_methods={ "pm_battle_rifle_infantry" "pm_gen1_tank" "pm_airborne_fac" "pm_no_specialists" "pm_wound_dressing" "pm_ww_doctrine" }
 			}
 		}
 	}
@@ -785,7 +803,7 @@
 				building="building_shipyards"
 				level=1
 				reserves=1
-				activate_production_methods={ "pm_basic_shipbuilding" "pm_merchant_guilds_building_shipyards" "pm_military_shipbuilding_wooden" }
+				activate_production_methods={ "pm_basic_shipbuilding" "pm_merchant_guilds_building_shipyards" "pm_military_shipbuilding_steam_2" }
 			}
 			create_building={
 				building="building_paper_mills"
@@ -830,28 +848,22 @@
 				activate_production_methods={ "default_building_tobacco_plantation" "pm_road_carts"  }
 			}				
 			create_building={
-				building="building_barracks"
-				level=8
-				reserves=1
-				activate_production_methods={ "pm_skirmish_infantry" "pm_mobile_artillery" "pm_cavalry_scouts" "pm_no_specialists" "pm_wound_dressing" }
-			}
-			create_building={
 				building="building_port"
 				level=2
 				reserves=1
-				activate_production_methods={ "pm_basic_port" }
+				activate_production_methods={ "pm_industrial_port" }
 			}		
 			create_building={
 				building="building_barracks"
-				level=6
+				level=8
 				reserves=1
-				activate_production_methods={ "pm_mobile_artillery" "pm_wound_dressing" "pm_cavalry_scouts" "pm_no_specialists" "pm_line_infantry" }
+				activate_production_methods={ "pm_battle_rifle_infantry" "pm_gen1_tank" "pm_airborne_fac" "pm_no_specialists" "pm_wound_dressing" "pm_ww_doctrine" }
 			}	
 			create_building={
 				building="building_naval_base"
 				level=5
 				reserves=1
-				activate_production_methods={ "pm_man_o_wars" "pm_frigates" "pm_commerce_raider" "pm_no_naval_theory" }
+				activate_production_methods={ "pm_tno_carriers" "pm_tno_battleship" "pm_tno_submarine" "pm_no_naval_theory" }
 			}
 		}
 	}
@@ -889,7 +901,7 @@
 				building="building_fishing_wharf"
 				level=6
 				reserves=1
-				activate_production_methods={ "pm_fishing_trawlers" "pm_unrefrigerated" "pm_merchant_guilds_building_fishing_wharf" }
+				activate_production_methods={ "pm_steam_trawlers" "pm_unrefrigerated" "pm_merchant_guilds_building_fishing_wharf" }
 			}
 			create_building={
 				building="building_tobacco_plantation"
@@ -901,13 +913,13 @@
 				building="building_naval_base"
 				level=5
 				reserves=1
-				activate_production_methods={ "pm_man_o_wars" "pm_frigates" "pm_commerce_raider" "pm_no_naval_theory" }
+				activate_production_methods={ "pm_tno_carriers" "pm_tno_battleship" "pm_tno_submarine" "pm_no_naval_theory" }
 			}
 			create_building={
 				building="building_port"
 				level=4
 				reserves=1
-				activate_production_methods={ "pm_basic_port" }
+				activate_production_methods={ "pm_industrial_port" }
 			}
 		}
 	}
@@ -915,9 +927,9 @@
 		region_state:USA={
 			create_building={
 				building="building_barracks"
-				level=6
+				level=8
 				reserves=1
-				activate_production_methods={ "pm_mobile_artillery" "pm_wound_dressing" "pm_cavalry_scouts" "pm_no_specialists" "pm_line_infantry" }
+				activate_production_methods={ "pm_battle_rifle_infantry" "pm_gen1_tank" "pm_airborne_fac" "pm_no_specialists" "pm_wound_dressing" "pm_ww_doctrine" }
 			}
 			create_building={
 				building="building_government_administration"
@@ -929,7 +941,7 @@
 				building="building_fishing_wharf"
 				level=2
 				reserves=1
-				activate_production_methods={ "pm_fishing_trawlers" "pm_unrefrigerated" "pm_merchant_guilds_building_fishing_wharf" }
+				activate_production_methods={ "pm_steam_trawlers" "pm_unrefrigerated" "pm_merchant_guilds_building_fishing_wharf" }
 			}
 			create_building={
 				building="building_livestock_ranch"
@@ -1011,7 +1023,7 @@
 				building="building_barracks"
 				level=12
 				reserves=1
-				activate_production_methods={ "pm_skirmish_infantry" "pm_mobile_artillery" "pm_cavalry_scouts" "pm_no_specialists" "pm_wound_dressing" }
+				activate_production_methods={ "pm_battle_rifle_infantry" "pm_gen1_tank" "pm_airborne_fac" "pm_no_specialists" "pm_wound_dressing" "pm_ww_doctrine" }
 			}
 		}
 	}
@@ -1033,7 +1045,7 @@
 				building="building_fishing_wharf"
 				level=2
 				reserves=1
-				activate_production_methods={ "pm_fishing_trawlers" "pm_unrefrigerated" "pm_merchant_guilds_building_fishing_wharf" }
+				activate_production_methods={ "pm_steam_trawlers" "pm_unrefrigerated" "pm_merchant_guilds_building_fishing_wharf" }
 			}
 			create_building={
 				building="building_maize_farm"
@@ -1049,15 +1061,15 @@
 			}
 			create_building={
 				building="building_barracks"
-				level=8
+				level=4
 				reserves=1
-				activate_production_methods={ "pm_mobile_artillery" "pm_wound_dressing" "pm_cavalry_scouts" "pm_no_specialists" "pm_line_infantry" }
+				activate_production_methods={ "pm_battle_rifle_infantry" "pm_gen1_tank" "pm_airborne_fac" "pm_no_specialists" "pm_wound_dressing" "pm_ww_doctrine" }
 			}
 			create_building={
 				building="building_shipyards"
 				level=4
 				reserves=1
-				activate_production_methods={ "pm_basic_shipbuilding" "pm_merchant_guilds_building_shipyards" "pm_military_shipbuilding_wooden" }
+				activate_production_methods={ "pm_basic_shipbuilding" "pm_merchant_guilds_building_shipyards" "pm_military_shipbuilding_steam_2" }
 			}
 		}
 	}
@@ -1113,7 +1125,7 @@
 				building="building_fishing_wharf"
 				level=2
 				reserves=1
-				activate_production_methods={ "pm_fishing_trawlers" "pm_unrefrigerated" "pm_merchant_guilds_building_fishing_wharf" }
+				activate_production_methods={ "pm_steam_trawlers" "pm_unrefrigerated" "pm_merchant_guilds_building_fishing_wharf" }
 			}		
 		}
 	}
@@ -1135,13 +1147,13 @@
 				building="building_port"
 				level=2
 				reserves=1
-				activate_production_methods={ "pm_basic_port" }
+				activate_production_methods={ "pm_industrial_port" }
 			}		
 			create_building={
 				building="building_barracks"
-				level=8
+				level=4
 				reserves=1
-				activate_production_methods={ "pm_mobile_artillery" "pm_wound_dressing" "pm_cavalry_scouts" "pm_no_specialists" "pm_line_infantry" }
+				activate_production_methods={ "pm_battle_rifle_infantry" "pm_gen1_tank" "pm_airborne_fac" "pm_no_specialists" "pm_wound_dressing" "pm_ww_doctrine" }
 			}		
 		}
 	}
@@ -1163,7 +1175,7 @@
 				building="building_university"
 				level=4
 				reserves=1
-				activate_production_methods={ "pm_scholastic_education" }
+				activate_production_methods={ "pm_philosophy_department" }
 			}
 			create_building={
 				building="building_textile_mills"
@@ -1181,19 +1193,19 @@
 				building="building_shipyards"
 				level=4
 				reserves=1
-				activate_production_methods={ "pm_basic_shipbuilding" "pm_merchant_guilds_building_shipyards" "pm_military_shipbuilding_wooden" }
+				activate_production_methods={ "pm_basic_shipbuilding" "pm_merchant_guilds_building_shipyards" "pm_military_shipbuilding_steam_2" }
 			}
 			create_building={
 				building="building_fishing_wharf"
 				level=6
 				reserves=1
-				activate_production_methods={ "pm_fishing_trawlers" "pm_unrefrigerated" "pm_merchant_guilds_building_fishing_wharf" }
+				activate_production_methods={ "pm_steam_trawlers" "pm_unrefrigerated" "pm_merchant_guilds_building_fishing_wharf" }
 			}
 			create_building={
 				building="building_whaling_station"
 				level=2
 				reserves=1
-				activate_production_methods={ "pm_wooden_whaling_ships" "pm_unrefrigerated" "pm_merchant_guilds_building_whaling_station" }
+				activate_production_methods={ "pm_steam_whaling_ships" "pm_unrefrigerated" "pm_merchant_guilds_building_whaling_station" }
 			}
 			create_building={
 				building="building_wheat_farm"
@@ -1203,21 +1215,21 @@
 			}
 			create_building={
 				building="building_barracks"
-				level=6
+				level=3
 				reserves=1
-				activate_production_methods={ "pm_skirmish_infantry" "pm_mobile_artillery" "pm_cavalry_scouts" "pm_no_specialists" "pm_wound_dressing" }
+				activate_production_methods={ "pm_battle_rifle_infantry" "pm_gen1_tank" "pm_airborne_fac" "pm_no_specialists" "pm_wound_dressing" "pm_ww_doctrine" }
 			}
 			create_building={
 				building="building_naval_base"
 				level=5
 				reserves=1
-				activate_production_methods={ "pm_man_o_wars" "pm_frigates" "pm_commerce_raider" "pm_no_naval_theory" }
+				activate_production_methods={ "pm_tno_carriers" "pm_tno_battleship" "pm_tno_submarine" "pm_no_naval_theory" }
 			}
 			create_building={
 				building="building_port"
 				level=6
 				reserves=1
-				activate_production_methods={ "pm_basic_port" }
+				activate_production_methods={ "pm_industrial_port" }
 			}
 			create_building={
 				building="building_logging_camp"
@@ -1295,19 +1307,19 @@
 				building="building_shipyards"
 				level=3
 				reserves=1
-				activate_production_methods={ "pm_basic_shipbuilding" "pm_merchant_guilds_building_shipyards" "pm_no_military_shipbuilding" }
+				activate_production_methods={ "pm_basic_shipbuilding" "pm_merchant_guilds_building_shipyards" "pm_military_shipbuilding_steam_2" }
 			}
 			create_building={
 				building="building_fishing_wharf"
 				level=6
 				reserves=1
-				activate_production_methods={ "pm_fishing_trawlers" "pm_unrefrigerated" "pm_merchant_guilds_building_fishing_wharf" }
+				activate_production_methods={ "pm_steam_trawlers" "pm_unrefrigerated" "pm_merchant_guilds_building_fishing_wharf" }
 			}
 			create_building={
 				building="building_port"
 				level=2
 				reserves=1
-				activate_production_methods={ "pm_basic_port" }
+				activate_production_methods={ "pm_industrial_port" }
 			}			
 		}
 	}
@@ -1345,15 +1357,15 @@
 			}
 			create_building={
 				building="building_barracks"
-				level=6
+				level=3
 				reserves=1
-				activate_production_methods={ "pm_skirmish_infantry" "pm_mobile_artillery" "pm_cavalry_scouts" "pm_no_specialists" "pm_wound_dressing" }
+				activate_production_methods={ "pm_battle_rifle_infantry" "pm_gen1_tank" "pm_airborne_fac" "pm_no_specialists" "pm_wound_dressing" "pm_ww_doctrine" }
 			}
 			create_building={
 				building="building_port"
 				level=2
 				reserves=1
-				activate_production_methods={ "pm_basic_port" }
+				activate_production_methods={ "pm_industrial_port" }
 			}			
 		}
 	}
@@ -1389,15 +1401,15 @@
 			}
 			create_building={
 				building="building_barracks"
-				level=6
+				level=3
 				reserves=1
-				activate_production_methods={ "pm_skirmish_infantry" "pm_mobile_artillery" "pm_cavalry_scouts" "pm_no_specialists" "pm_wound_dressing" }
+				activate_production_methods={ "pm_battle_rifle_infantry" "pm_gen1_tank" "pm_airborne_fac" "pm_no_specialists" "pm_wound_dressing" "pm_ww_doctrine" }
 			}
 			create_building={
 				building="building_port"
 				level=2
 				reserves=1
-				activate_production_methods={ "pm_basic_port" }
+				activate_production_methods={ "pm_industrial_port" }
 			}				
 		}
 	}
@@ -1520,9 +1532,9 @@
 			}
 			create_building={
 				building="building_barracks"
-				level=14
+				level=13
 				reserves=1
-				activate_production_methods={ "pm_mobile_artillery" "pm_wound_dressing" "pm_cavalry_scouts" "pm_no_specialists" "pm_line_infantry" }
+				activate_production_methods={ "pm_battle_rifle_infantry" "pm_gen1_tank" "pm_airborne_fac" "pm_no_specialists" "pm_wound_dressing" "pm_ww_doctrine" }
 			}
 		}
 	}
@@ -1542,33 +1554,33 @@
 			}
 			create_building={
 				building="building_barracks"
-				level=6
+				level=7
 				reserves=1
-				activate_production_methods={ "pm_mobile_artillery" "pm_wound_dressing" "pm_cavalry_scouts" "pm_no_specialists" "pm_line_infantry" }
+				activate_production_methods={ "pm_battle_rifle_infantry" "pm_gen1_tank" "pm_airborne_fac" "pm_no_specialists" "pm_wound_dressing" "pm_ww_doctrine" }
 			}
 			create_building={
 				building="building_port"
 				level=2
 				reserves=1
-				activate_production_methods={ "pm_basic_port" }
+				activate_production_methods={ "pm_industrial_port" }
 			}
 			create_building={
 				building="building_fishing_wharf"
 				level=2
 				reserves=1
-				activate_production_methods={ "pm_merchant_guilds_building_fishing_wharf" "pm_unrefrigerated" "pm_fishing_trawlers" }
+				activate_production_methods={ "pm_merchant_guilds_building_fishing_wharf" "pm_unrefrigerated" "pm_steam_trawlers" }
 			}
 			create_building={
 				building="building_barracks"
 				level=6
 				reserves=1
-				activate_production_methods={ "pm_mobile_artillery" "pm_wound_dressing" "pm_cavalry_scouts" "pm_no_specialists" "pm_line_infantry" }
+				activate_production_methods={ "pm_battle_rifle_infantry" "pm_gen1_tank" "pm_airborne_fac" "pm_no_specialists" "pm_wound_dressing" "pm_ww_doctrine" }
 			}
 			create_building={
 				building="building_port"
 				level=2
 				reserves=1
-				activate_production_methods={ "pm_basic_port" }
+				activate_production_methods={ "pm_industrial_port" }
 			}
 		}
 	}
@@ -1578,13 +1590,13 @@
 				building="building_university"
 				level=2
 				reserves=1
-				activate_production_methods={ "pm_scholastic_education" }
+				activate_production_methods={ "pm_philosophy_department" }
 			}
 			create_building={
 				building="building_shipyards"
 				level=2
 				reserves=1
-				activate_production_methods={ "pm_basic_shipbuilding" "pm_merchant_guilds_building_shipyards" "pm_military_shipbuilding_wooden" }
+				activate_production_methods={ "pm_basic_shipbuilding" "pm_merchant_guilds_building_shipyards" "pm_military_shipbuilding_steam_2" }
 			}
 			create_building={
 				building="building_iron_mine"
@@ -1606,15 +1618,15 @@
 			}
 			create_building={
 				building="building_barracks"
-				level=10
+				level=5
 				reserves=1
-				activate_production_methods={ "pm_mobile_artillery" "pm_wound_dressing" "pm_cavalry_scouts" "pm_no_specialists" "pm_line_infantry" }
+				activate_production_methods={ "pm_battle_rifle_infantry" "pm_gen1_tank" "pm_airborne_fac" "pm_no_specialists" "pm_wound_dressing" "pm_ww_doctrine" }
 			}
 			create_building={
 				building="building_port"
 				level=2
 				reserves=1
-				activate_production_methods={ "pm_basic_port" }
+				activate_production_methods={ "pm_industrial_port" }
 			}
 			create_building={
 				building="building_logging_camp"
@@ -1630,7 +1642,7 @@
 				building="building_fishing_wharf"
 				level=4
 				reserves=1
-				activate_production_methods={ "pm_fishing_trawlers" "pm_unrefrigerated" "pm_merchant_guilds_building_fishing_wharf" }
+				activate_production_methods={ "pm_steam_trawlers" "pm_unrefrigerated" "pm_merchant_guilds_building_fishing_wharf" }
 			}
 		}
 	}
@@ -1654,9 +1666,9 @@
 			}	
 			create_building={
 				building="building_barracks"
-				level=4
+				level=2
 				reserves=1
-				activate_production_methods={ "pm_no_artillery" "pm_wound_dressing" "pm_cavalry_scouts" "pm_no_specialists" "pm_line_infantry" }
+				activate_production_methods={ "pm_no_tanks" "pm_wound_dressing" "pm_no_aircraft" "pm_no_specialists" "pm_battle_rifle_infantry" }
 			}				
 		}
 	}
@@ -1668,9 +1680,9 @@
 		region_state:CAN={
 			create_building={
 				building="building_barracks"
-				level=4
+				level=2
 				reserves=1
-				activate_production_methods={ "pm_mobile_artillery" "pm_wound_dressing" "pm_cavalry_scouts" "pm_no_specialists" "pm_line_infantry" }
+				activate_production_methods={ "pm_battle_rifle_infantry" "pm_gen1_tank" "pm_airborne_fac" "pm_no_specialists" "pm_wound_dressing" "pm_ww_doctrine" }
 			}
 			create_building={
 				building="building_logging_camp"
@@ -1704,7 +1716,7 @@
 				building="building_naval_base"
 				level=5
 				reserves=1
-				activate_production_methods={ "pm_man_o_wars" "pm_frigates" "pm_commerce_raider" "pm_power_of_the_purse" }
+				activate_production_methods={ "pm_tno_carriers" "pm_tno_battleship" "pm_tno_submarine" "pm_tno_battlefleet_tactics" }
 			}
 			create_building={
 				building="building_port"
@@ -1760,9 +1772,9 @@
 			}
 			create_building={
 				building="building_barracks"
-				level=14
+				level=10
 				reserves=1
-				activate_production_methods={ "pm_skirmish_infantry" "pm_mobile_artillery" "pm_cavalry_scouts" "pm_no_specialists" "pm_wound_dressing" }
+				activate_production_methods={ "pm_battle_rifle_infantry" "pm_gen1_tank" "pm_airborne_fac" "pm_no_specialists" "pm_wound_dressing" "pm_ww_doctrine" }
 			}
 		}
 	}
@@ -1796,7 +1808,7 @@
 				building="building_port"
 				level=4
 				reserves=1
-				activate_production_methods={ "pm_basic_port" }
+				activate_production_methods={ "pm_industrial_port" }
 			}
 			create_building={
 				building="building_paper_mills"
@@ -1808,13 +1820,13 @@
 				building="building_naval_base"
 				level=2
 				reserves=1
-				activate_production_methods={ "pm_man_o_wars" "pm_frigates" "pm_commerce_raider" "pm_no_naval_theory" }
+				activate_production_methods={ "pm_tno_carriers" "pm_tno_battleship" "pm_tno_submarine" "pm_no_naval_theory" }
 			}
 			create_building={
 				building="building_barracks"
-				level=6
+				level=18
 				reserves=1
-				activate_production_methods={ "pm_wound_dressing" "pm_line_infantry" "pm_cavalry_scouts" "pm_no_specialists" "pm_cannon_artillery" }
+				activate_production_methods={ "pm_wound_dressing" "pm_battle_rifle_infantry" "pm_no_aircraft" "pm_no_specialists" "pm_no_tanks" }
 			}	
 			create_building={
 				building="building_government_administration"
@@ -1835,26 +1847,20 @@
 				building="building_port"
 				level=8
 				reserves=1
-				activate_production_methods={ "pm_basic_port" }
+				activate_production_methods={ "pm_industrial_port" }
 			}
 			create_building={
 				building="building_naval_base"
 				level=10
 				reserves=1
-				activate_production_methods={ "pm_man_o_wars" "pm_frigates" "pm_commerce_raider" "pm_no_naval_theory" }
+				activate_production_methods={ "pm_tno_carriers" "pm_tno_battleship" "pm_tno_submarine" "pm_no_naval_theory" }
 			}
 			create_building={
 				building="building_barracks"
-				level=0
+				level=5
 				reserves=1
-				activate_production_methods={ "pm_wound_dressing" "pm_line_infantry" "pm_cavalry_scouts" "pm_no_specialists" "pm_cannon_artillery" }
+				activate_production_methods={ "pm_wound_dressing" "pm_battle_rifle_infantry" "pm_no_aircraft" "pm_no_specialists" "pm_no_tanks" }
 			}	
-			create_building={
-				building="building_conscription_center"
-				level=10
-				reserves=1
-				activate_production_methods={ "pm_wound_dressing" "pm_line_infantry_conscription" "pm_cavalry_scouts_conscription" "pm_no_specialists_conscription" "pm_cannon_artillery_conscription" }
-			}
 			create_building={
 				building="building_logging_camp"
 				level=12
@@ -1990,9 +1996,9 @@
 			}			
 			create_building={
 				building="building_barracks"
-				level=4
+				level=10
 				reserves=1
-				activate_production_methods={ "pm_wound_dressing" "pm_line_infantry" "pm_cavalry_scouts" "pm_no_specialists" "pm_cannon_artillery" }
+				activate_production_methods={ "pm_wound_dressing" "pm_battle_rifle_infantry" "pm_no_aircraft" "pm_no_specialists" "pm_no_tanks" }
 			}
 			create_building={
 				building= "building_chichen_itza"
@@ -2069,9 +2075,9 @@
 			}
 			create_building={
 				building="building_barracks"
-				level=6
+				level=8
 				reserves=1
-				activate_production_methods={ "pm_wound_dressing" "pm_line_infantry" "pm_cavalry_scouts" "pm_no_specialists" "pm_cannon_artillery" }
+				activate_production_methods={ "pm_wound_dressing" "pm_battle_rifle_infantry" "pm_no_aircraft" "pm_no_specialists" "pm_no_tanks" }
 			}
 		}
 	}
@@ -2111,13 +2117,13 @@
 				building="building_port"
 				level=2
 				reserves=1
-				activate_production_methods={ "pm_basic_port" }
+				activate_production_methods={ "pm_industrial_port" }
 			}	
 			create_building={
 				building="building_barracks"
-				level=4
+				level=6
 				reserves=1
-				activate_production_methods={ "pm_wound_dressing" "pm_line_infantry" "pm_cavalry_scouts" "pm_no_specialists" "pm_cannon_artillery" }
+				activate_production_methods={ "pm_wound_dressing" "pm_battle_rifle_infantry" "pm_no_aircraft" "pm_no_specialists" "pm_no_tanks" }
 			}	
 		}
 	}
@@ -2161,9 +2167,9 @@
 			}
 			create_building={
 				building="building_barracks"
-				level=2
+				level=1
 				reserves=1
-				activate_production_methods={ "pm_line_infantry" "pm_cannon_artillery" "pm_cavalry_scouts" "pm_no_specialists" "pm_wound_dressing" }
+				activate_production_methods={ "pm_battle_rifle_infantry" "pm_gen1_tank" "pm_airborne_fac" "pm_no_specialists" "pm_wound_dressing" "pm_ww_doctrine" }
 			}
 		}
 	}
@@ -2201,9 +2207,9 @@
 			}
 			create_building={
 				building="building_barracks"
-				level=2
+				level=1
 				reserves=1
-				activate_production_methods={ "pm_line_infantry" "pm_cannon_artillery" "pm_cavalry_scouts" "pm_no_specialists" "pm_wound_dressing" }
+				activate_production_methods={ "pm_battle_rifle_infantry" "pm_gen1_tank" "pm_airborne_fac" "pm_no_specialists" "pm_wound_dressing" "pm_ww_doctrine" }
 			}
 		}
 	}
@@ -2225,7 +2231,7 @@
 				building="building_university"
 				level=4
 				reserves=1
-				activate_production_methods={ "pm_scholastic_education" }
+				activate_production_methods={ "pm_philosophy_department" }
 			}
 			create_building={
 				building="building_logging_camp"
@@ -2269,9 +2275,9 @@
 			}
 			create_building={
 				building="building_barracks"
-				level=2
+				level=1
 				reserves=1
-				activate_production_methods={ "pm_line_infantry" "pm_cannon_artillery" "pm_cavalry_scouts" "pm_no_specialists" "pm_wound_dressing" }
+				activate_production_methods={ "pm_battle_rifle_infantry" "pm_gen1_tank" "pm_airborne_fac" "pm_no_specialists" "pm_wound_dressing" "pm_ww_doctrine" }
 			}
 		}
 	}

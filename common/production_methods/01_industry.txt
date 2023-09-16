@@ -1777,7 +1777,35 @@ pm_brine_electrolysis = {
 			building_output_fertilizer_add = -50
 
 			# output goods
-			building_output_explosives_add = 120
+			building_output_explosives_add = 150
+		}
+
+		level_scaled = {
+			# employment
+			building_employment_engineers_add = 1000
+		}
+	}
+}
+
+pm_brine_electrolysis_2 = {
+	texture = "gfx/interface/icons/production_method_icons/vaccum_brine_electrolysis.dds"
+	pollution_generation = 25
+
+	unlocking_technologies = {
+		electrical_capacitors
+	}
+	
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			building_input_sulfur_add = 50
+			building_input_oil_add = 10
+			building_input_electricity_add = 35
+			building_input_coal_add = 25
+			building_output_fertilizer_add = -200
+
+			# output goods
+			building_output_explosives_add = 350
 		}
 
 		level_scaled = {
@@ -2543,7 +2571,7 @@ pm_aeroplane_production = {
 			building_input_electricity_add = 30
 
 			# output goods
-			building_output_aeroplanes_add = 50
+			building_output_aeroplanes_add = 70
 		}
 
 		level_scaled = {
@@ -2563,7 +2591,7 @@ pm_tank_production = {
 	texture = "gfx/interface/icons/production_method_icons/tanks.dds"
 
 	unlocking_technologies = {
-		mobile_armor
+		logistics
 	}
 
 	building_modifiers = {
@@ -2571,13 +2599,12 @@ pm_tank_production = {
 			# input goods
 			building_input_engines_add = 10
 			building_input_steel_add = 20
-			building_input_oil_add = 15
-			building_output_aeroplanes_add = -10
+			building_input_oil_add = 10
 			building_input_electricity_add = 10
 
 
 			# output goods
-			building_output_tanks_add = 40
+			building_output_tanks_add = 60
 		}
 		
 		level_scaled = {
@@ -2616,7 +2643,7 @@ pm_no_radios = {
 pm_radios = {
 	texture = "gfx/interface/icons/production_method_icons/radios.dds"
 	unlocking_technologies = {
-		radio
+		electrical_generation
 	}	
 	building_modifiers = {
 		workforce_scaled = {
@@ -2738,7 +2765,7 @@ pm_bolt_action_rifles = {
 	}
 }
 
-pm_no_artillery_production = {
+pm_no_tanks_production = {
 	texture = "gfx/interface/icons/production_method_icons/no_artillery_production.dds"
 }
 
