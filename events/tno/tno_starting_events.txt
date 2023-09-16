@@ -558,4 +558,38 @@ tno_starting_events.17 = {
     }
 }
 
+tno_starting_events.18 = {
+    type = country_event
+    placement = ROOT
+ 
+    title = brz.1
+    desc = brz.1.d
+    flavor = brz.1.f 
+    event_image = {
+        texture = "gfx/event_pictures/super_pictures/redeemer.dds"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_map.dds"
+
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 6
+
+    trigger = {
+        this ?= c:BRZ
+		game_date <= 1963.2.1
+    }
+
+   option = {
+        name = brz.1.a
+		add_modifier = { 
+			name = rapid_industrialization 
+			is_decaying = yes
+			years = 30
+		}
+		add_modifier = { name = unchecked_corruption }
+		add_modifier = { name = ecos_do_imperio }
+    }
+}
+
 #add_modifier = { name =  }
