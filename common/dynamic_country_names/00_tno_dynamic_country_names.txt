@@ -1,0 +1,36 @@
+﻿### Try to keep tags in alphabetical order if it's not too far gone, please.
+
+################################################################
+## DEFAULT COUNTRY NAMES EXAMPLE CAN BE USED WITH ANY COUNTRY ##
+################################################################
+
+PRO = {
+	dynamic_country_name = {
+		name = Soviet_Provisional_Union
+		adjective = Soviet_Provisional_Union
+
+		is_main_tag_only = yes
+		priority = 10
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_modifier = soviet_successors
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = Provisional_Omsk 
+		adjective = Provisional_Omsk
+
+		is_main_tag_only = yes
+		priority = 10
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_modifier = fueled_by_hate
+			}
+		}
+	}
+}
