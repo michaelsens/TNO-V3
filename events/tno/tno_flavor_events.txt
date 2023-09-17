@@ -395,8 +395,12 @@ tno_flavor_events.8 = {
 		exists = c:ENG
 		this ?= c:ENG
 		OR = {
-			exists = c:GBR
-			this ?= c:GBR
+			exists = c:ENG
+			this ?= c:ENG
+			OR = {
+				exist = c:GBR
+				this ? = c:GBR
+			}
 		}
 	}	
 	
@@ -429,8 +433,12 @@ tno_flavor_events.9 = {
 	
 	trigger = {
 		OR = {
+			exists = c:ENG
 			this ?= c:ENG
-			this ?= c:GBR
+			OR = {
+				exist = c:GBR
+				this ? = c:GBR
+			}
 		}
 		
 	}	
