@@ -428,11 +428,12 @@ tno_flavor_events.9 = {
 	icon = "gfx/interface/icons/event_icons/event_default.dds"
 	
 	trigger = {
+		exists = c:ENG
+		this ?= c:ENG
 		OR = {
-			this ?= c:ENG
+			exists = c:GBR
 			this ?= c:GBR
 		}
-		
 	}	
 	
 	duration = 3
@@ -450,11 +451,11 @@ tno_flavor_events.10 = {
     type = country_event
     placement = ROOT
 
-	title = eng_flavor.2.t
-	desc = eng_flavor.2.d
-    flavor = eng_flavor.2.f
+	title = rus_flavor.1.t
+	desc = rus_flavor.1.d
+    flavor = rus_flavor.1.f
 	event_image = {
-		texture  = "gfx/event_pictures/super_pictures/ireland.dds"
+		texture  = "gfx/event_pictures/super_pictures/trial.dds"
 	}
 
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
@@ -468,6 +469,8 @@ tno_flavor_events.10 = {
 	duration = 3
 
 	option = { 
+		name = rus_flavor.1.a
+		default_option = yes
 		random_state = {
 			limit = {
 				state_region = s:STATE_TVER
@@ -608,11 +611,11 @@ tno_flavor_events.11 = {
     type = country_event
     placement = ROOT
 
-	title = eng_flavor.2.t
-	desc = eng_flavor.2.d
-    flavor = eng_flavor.2.f
+	title = rus_flavor.2.t
+	desc = rus_flavor.2.d
+    flavor = rus_flavor.2.f
 	event_image = {
-		texture  = "gfx/event_pictures/super_pictures/ireland.dds"
+		texture  = "gfx/event_pictures/super_pictures/rusvic.dds"
 	}
 
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
@@ -626,6 +629,8 @@ tno_flavor_events.11 = {
 	duration = 3
 
 	option = {
+		name = rus_flavor.2.a
+		default_option = yes
 		change_tag = RUS 
 	}
 }
