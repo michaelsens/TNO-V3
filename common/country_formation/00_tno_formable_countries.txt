@@ -1,40 +1,4 @@
-﻿RUS = {
-	use_culture_states = yes
-	
-	is_major_formation = yes
-	
-	unification_play = dp_unify_russia
-
-	required_states_fraction = 0.8
-	
-	ai_will_do = { always = yes }
-
-	possible = {
-		country_has_primary_culture = cu:russian
-        has_state_in_state_region = STATE_ARKHANGELSK
-        has_state_in_state_region = STATE_TOMSK
-        has_state_in_state_region = STATE_GALICH
-        has_state_in_state_region = STATE_KAZAN
-        has_state_in_state_region = STATE_SAMARA
-        has_state_in_state_region = STATE_NENETSIA
-        has_state_in_state_region = STATE_PERM
-        has_state_in_state_region = STATE_URAL
-        has_state_in_state_region = STATE_TOBOLSK
-        has_state_in_state_region = STATE_OB
-        has_state_in_state_region = STATE_UPPER_YENISEYSK
-        has_state_in_state_region = STATE_IRKUTSK
-        has_state_in_state_region = STATE_YAKUTSK
-        has_state_in_state_region = STATE_TRANS_BAIKAL
-        has_state_in_state_region = STATE_OKHOTSK
-        has_state_in_state_region = STATE_CHUKOTKA
-        has_state_in_state_region = STATE_KAMCHATKA
-		any_country = {
-				country_has_primary_culture = cu:russian
-		}
-	}
-}
-
-ARA = {
+﻿ARA = {
 	states = {
 		STATE_YEMEN
 		STATE_OMAN
@@ -100,14 +64,15 @@ PRO = {
 	 STATE_TUVA
    }
     required_states_fraction = 0.1
-	
+
 	unification_play = dp_unify_russia
 
-	keep_modifiers = yes 
+    is_major_formation = yes
 	
 	ai_will_do = { always = yes }
 
 	possible = {
 		country_has_primary_culture = cu:russian
+		#country_rank >= rank_value:major_power
 	}
 }

@@ -42,6 +42,52 @@
             set_variable = rus_super_var
             trigger_event = { id = tno_super_events.1 days = 0 popup = yes }
         }
+
+        if = {
+            limit = {
+                c:PRO ?= THIS
+                NOT = { has_global_variable = pro_var }
+            }
+            set_global_variable = pro_var
+        }
+        if = {
+			limit = {
+               has_global_variable = pro_var
+               NOT = { has_variable = pro_super_var }
+            }
+            set_variable = pro_super_var
+            trigger_event = { id = tno_super_events.6 days = 0 popup = yes }
+        }
+
+        if = {
+			limit = {
+               has_global_variable = great_trial
+               NOT = { has_variable = great_trial_var }
+            }
+            set_variable = great_trial_var
+            trigger_event = { id = tno_super_events.7 days = 0 popup = yes }
+        }
+
+        if = {
+			limit = {
+               has_global_variable = great_trial_win
+               NOT = { has_variable = great_trial_win_var }
+            }
+            set_variable = great_trial_win_var
+            trigger_event = { id = tno_super_events.8 days = 0 popup = yes }
+        }
+         
+        if = {
+			limit = {
+               has_modifier = rebuilding_russia
+               NOT = { has_variable = rebuilding_russia_var }
+            }
+            set_variable = rebuilding_russia_var
+            trigger_event = { id = tno_flavor_events.11 popup = yes }
+        }
+         
+        
+        
         #SAF
         if = {
 			limit = {
