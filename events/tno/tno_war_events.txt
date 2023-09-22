@@ -4,8 +4,6 @@ tno_war_events.1 = {
 	type = country_event
     hidden = yes
 
-	 
-
 	trigger = {
         exists = c:KON
 		exists = c:SAF
@@ -255,4 +253,70 @@ tno_war_events.4 = {
 				change_infamy = -150
 		}
     }
+}
+
+tno_war_events.5 = {
+    type = country_event
+    hidden = yes
+
+	trigger = {
+        exists = c:GER
+		exists = c:PRO
+        root = c:PRO
+	}	
+
+    immediate = {
+        create_diplomatic_play = {
+            name = gtr1
+            target_country = c:GER
+              type = dp_return_state
+              target_state = s:STATE_BREST.region_state:GER
+              war = no
+              escalation = 30
+              initiator = c:PRO
+              add_target_backers = { c:FIN }
+              add_war_goal = {
+                holder = c:GER
+                type = contain_threat
+              }
+              add_war_goal = {
+                holder = c:GER
+                type = war_reparations
+              }
+              add_war_goal = {
+                holder = c:PRO
+                type = return_state
+                target_state = s:STATE_LATVIA.region_state:RKO
+              }
+              add_war_goal = {
+                holder = c:PRO
+                type = return_state
+                target_state = s:STATE_EAST_KARELIA.region_state:FIN
+              }
+              add_war_goal = {
+                holder = c:PRO
+                type = return_state
+                target_state = s:STATE_MOSCOW.region_state:RKM
+              }
+              add_war_goal = {
+                holder = c:PRO
+                type = return_state
+                target_state = s:STATE_KIEV.region_state:RKU
+              }
+              add_war_goal = {
+                holder = c:PRO
+                type = return_state
+                target_state = s:STATE_KUBAN.region_state:RKK
+              }
+              add_war_goal = {
+                holder = c:PRO
+                type = return_state
+                target_state = s:STATE_BREST.region_state:RKO
+              }
+        }
+        hidden_effect = {
+            change_infamy = -150
+        }
+    }
+   
 }

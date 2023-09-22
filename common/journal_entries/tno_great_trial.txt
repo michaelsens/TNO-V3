@@ -1,0 +1,29 @@
+﻿je_great_trial_win = {
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	is_shown_when_inactive = {
+		country_has_primary_culture = cu:russian
+		exists = c:PRO
+	}
+
+	possible = {
+		country_has_primary_culture = cu:russian
+	}
+
+	complete = {
+		owns_entire_state_region = STATE_BREST
+		owns_entire_state_region = STATE_LATVIA
+		owns_entire_state_region = STATE_EAST_KARELIA
+		owns_entire_state_region = STATE_MOSCOW
+		owns_entire_state_region = STATE_KIEV
+		owns_entire_state_region = STATE_KUBAN
+	}
+
+	on_complete = {
+		trigger_event = { id = tno_flavor_events.10 }
+		set_global_variable = great_trial_win
+		add_modifier = { name = rebuilding_russia months = 6}
+	}
+
+	weight = 20
+}

@@ -162,3 +162,48 @@ reform_the_navy = {
 	}
 }
 
+the_great_trial = {
+    is_shown = {
+		exists = c:PRO
+		ROOT = c:PRO
+		NOT = {exists = c:RUS}
+	}
+
+    possible = {
+		exists = c:GER
+	}
+	
+	when_taken = {
+		trigger_event = { id = tno_war_events.5 }
+		set_global_variable = great_trial
+	}
+	
+	ai_chance = {
+		base = 100
+	}
+}
+
+#the_great_trial_2 = {
+   # is_shown = {
+		#exists = c:BEN
+		#ROOT = c:BEN
+	#}
+
+   # possible = {
+	
+		#any_scope_state = {
+			#state_region = s:STATE_BENIN
+			#NOT = { controller = ROOT }
+
+		#}
+	#}
+
+	
+	#when_taken = {
+		#trigger_event = { id = patagonia.1 }
+#	}
+	
+	#ai_chance = {
+	#	base = 100
+	#}
+#}

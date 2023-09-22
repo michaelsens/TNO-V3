@@ -432,6 +432,8 @@ tno_flavor_events.9 = {
 	icon = "gfx/interface/icons/event_icons/event_default.dds"
 	
 	trigger = {
+		exists = c:ENG
+		this ?= c:ENG
 		OR = {
 			exists = c:ENG
 			this ?= c:ENG
@@ -440,7 +442,6 @@ tno_flavor_events.9 = {
 				this ?= c:GBR
 			}
 		}
-		
 	}	
 	
 	duration = 3
@@ -453,3 +454,192 @@ tno_flavor_events.9 = {
 		}	
 	}
 }
+
+tno_flavor_events.10 = {
+    type = country_event
+    placement = ROOT
+
+	title = rus_flavor.1.t
+	desc = rus_flavor.1.d
+    flavor = rus_flavor.1.f
+	event_image = {
+		texture  = "gfx/event_pictures/super_pictures/trial.dds"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/middleeast/courtroom_upheaval" 
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	trigger = {
+	}	
+	
+	duration = 3
+
+	option = { 
+		name = rus_flavor.1.a
+		default_option = yes
+		random_state = {
+			limit = {
+				state_region = s:STATE_TVER
+			}
+			set_state_owner = c:PRO
+			set_state_type = incorporated
+		}	
+		random_state = {
+			limit = {
+				state_region = s:STATE_NOVGOROD
+			}
+			set_state_owner = c:PRO
+			set_state_type = incorporated
+		}
+		random_state = {
+			limit = {
+				state_region = s:STATE_SMOLENSK
+			}
+			set_state_owner = c:PRO
+			set_state_type = incorporated
+		}
+		random_state = {
+			limit = {
+				state_region = s:STATE_BRYANSK
+			}
+			set_state_owner = c:PRO
+			set_state_type = incorporated
+		}
+		random_state = {
+			limit = {
+				state_region = s:STATE_KURSK
+			}
+			set_state_owner = c:PRO
+			set_state_type = incorporated
+		}
+		random_state = {
+			limit = {
+				state_region = s:STATE_TARTARIA
+			}
+			set_state_owner = c:PRO
+			set_state_type = incorporated
+		}
+		random_state = {
+			limit = {
+				state_region = s:STATE_ROSTOV
+			}
+			set_state_owner = c:PRO
+			set_state_type = incorporated
+		}
+		random_state = {
+			limit = {
+				state_region = s:STATE_ASTRAKHAN
+			}
+			set_state_owner = c:PRO
+			set_state_type = incorporated
+		}
+		random_state = {
+			limit = {
+				state_region = s:STATE_DAGESTAN
+			}
+			set_state_owner = c:PRO
+			set_state_type = incorporated
+		}
+		random_state = {
+			limit = {
+				state_region = s:STATE_CRIMEA
+			}
+			set_state_owner = c:PRO
+			set_state_type = incorporated
+		}
+		random_state = {
+			limit = {
+				state_region = s:STATE_CRIMEA
+			}
+			set_state_owner = c:PRO
+			set_state_type = incorporated
+		}
+		random_state = {
+			limit = {
+				state_region = s:STATE_LUHANSK
+			}
+			set_state_owner = c:PRO
+			set_state_type = incorporated
+		}
+		random_state = {
+			limit = {
+				state_region = s:STATE_CHERSON
+			}
+			set_state_owner = c:PRO
+			set_state_type = incorporated
+		}
+		random_state = {
+			limit = {
+				state_region = s:STATE_VOLHYNIA
+			}
+			set_state_owner = c:PRO
+			set_state_type = incorporated
+		}
+		random_state = {
+			limit = {
+				state_region = s:STATE_MINSK
+			}
+			set_state_owner = c:PRO
+			set_state_type = incorporated
+		}
+		random_state = {
+			limit = {
+				state_region = s:STATE_ORSHA
+			}
+			set_state_owner = c:PRO
+			set_state_type = incorporated
+		}
+		random_state = {
+			limit = {
+				state_region = s:STATE_LITHUANIA
+			}
+			set_state_owner = c:PRO
+			set_state_type = incorporated
+		}
+		random_state = {
+			limit = {
+				state_region = s:STATE_ESTONIA
+			}
+			set_state_owner = c:PRO
+			set_state_type = incorporated
+		}
+		random_state = {
+			limit = {
+				state_region = s:STATE_INGRIA
+			}
+			set_state_owner = c:PRO
+			set_state_type = incorporated
+		}
+	}
+}
+
+tno_flavor_events.11 = {
+    type = country_event
+    placement = ROOT
+
+	title = rus_flavor.2.t
+	desc = rus_flavor.2.d
+    flavor = rus_flavor.2.f
+	event_image = {
+		texture  = "gfx/event_pictures/super_pictures/rusvic.dds"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/middleeast/courtroom_upheaval" 
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	trigger = {
+	}	
+	
+	duration = 3
+
+	option = {
+		name = rus_flavor.2.a
+		default_option = yes
+		change_tag = RUS 
+	}
+}
+

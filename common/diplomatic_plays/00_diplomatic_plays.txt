@@ -661,3 +661,27 @@ dp_unify_russia = {
 
 	on_war_end = {}
 }
+
+dp_great_trial = {
+	war_goal = humiliation
+	
+	requires_interest_marker = no
+	blocked_by_diplomatic_status = no
+	
+	texture = "gfx/interface/icons/war_goals/unify_germany.dds"
+	
+	selectable_in_lens = {
+		always = no
+	}
+	
+	possible = {
+		NOT = { is_country_type = decentralized }
+		NOT = { exists = c:RUS }
+	}
+	
+	on_weekly_pulse = {}
+	
+	on_war_begins = {}
+
+	on_war_end = {}
+}
