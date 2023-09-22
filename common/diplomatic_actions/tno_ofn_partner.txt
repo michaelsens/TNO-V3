@@ -1,12 +1,18 @@
-nato_partner = {
+﻿ofn_partner = {
 	requires_approval = yes
 	can_use_obligations = yes
+
 	unlocking_technologies = {
-		international_relations
+		democracy
 	}
-	
+
 	potential = {
 		NOT = { is_country_type = decentralized }
+		
+		scope:actor = {
+			this ?= c:USA
+		}
+		
 		scope:target_country = {
 			NOT = { is_country_type = decentralized }
 		}
@@ -56,7 +62,7 @@ nato_partner = {
 	}
 
 	pact = {
-		cost = 50
+		cost = 100
 	
 		is_alliance = yes
 		is_customs_union = yes
@@ -67,7 +73,7 @@ nato_partner = {
 		relations_improvement_max = 80		
 	
 		is_about_to_auto_break = {
-            scope:target_country.relations:root < 23 # this is: cordial + 3
+            scope:target_country.relations:root < 0 # this is: cordial + 3
 		}
 
 		should_auto_break = {
