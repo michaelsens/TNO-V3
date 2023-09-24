@@ -298,30 +298,21 @@
 on_war_end = {
 	effect = {
         scope:actor = {
-			if = {
-                limit = {
-                    has_modifier = volunteers
-                }
-            remove_modifier = volunteers
             add_modifier = {
                 name = volunteers_leaving
                 is_decaying = yes
-                months = 5
+                months = 2
             }
         }  
-		}
+	
 		scope:target = {
-			if = {
-                limit = {
-                    has_modifier = volunteers
-                }
-            remove_modifier = volunteers
             add_modifier = {
                 name = volunteers_leaving
                 is_decaying = yes
-                months = 5
+                months = 2
             }
-        }   
-		}
-	}	
+        } 
+    }
 }
+	
+
