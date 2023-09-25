@@ -275,3 +275,67 @@ je_dependence_on_slavery = {
     should_be_pinned_by_default = yes
 
 }
+
+
+je_jim_crow = {
+    icon = "gfx/interface/icons/event_icons/tutorial_icon.dds"
+   
+    is_shown_when_inactive = {
+        exists = c:USA
+		ROOT = c:USA
+        has_modifier = jim_crow
+    }
+
+    complete = {
+        has_law = law_type:law_multicultural
+    }
+
+    on_complete = {
+        remove_modifier = jim_crow
+        add_radicals = {
+            value = 0.05
+            culture = cu:yankee
+        }
+        add_loyalists = {
+            value = 0.15
+            culture = cu:afro_american
+        }
+    }
+
+
+    weight = 100
+
+    progressbar = no
+    
+    should_be_pinned_by_default = yes
+}
+
+je_corruption = {
+    icon = "gfx/interface/icons/event_icons/tutorial_icon.dds"
+   
+    is_shown_when_inactive = {
+        has_modifier = unchecked_corruption
+    }
+
+    complete = {
+        has_law = law_type:law_elected_bureaucrats
+    }
+
+    on_complete = {
+        remove_modifier = unchecked_corruption
+		add_modifier = {
+			name = effective_bureaucracy
+		}
+		add_modifier = { 
+			name = pay_up
+			years = 1
+		}
+    }
+
+
+    weight = 100
+
+    progressbar = no
+    
+    should_be_pinned_by_default = yes
+}
