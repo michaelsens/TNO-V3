@@ -317,3 +317,32 @@ tno_war_events.5 = {
     }
    
 }
+
+tno_war_events.6 = {
+    type = country_event
+    hidden = yes
+
+	trigger = {
+        exists = c:GER
+		exists = c:MAD
+        exists = c:JAP
+        exists = c:SMD
+        root = c:SMD
+	}	
+
+    immediate = {
+        create_diplomatic_play = {
+               name = cummy
+               target_country = c:MAD
+               type = dp_annex_war
+               war = no
+               target_state = s:STATE_NORTH_MADAGASCAR.region_state:MAD
+               escalation = 40
+               add_war_goal = {
+                holder = c:MAD
+                type = conquer_state
+                target_state = s:STATE_SOUTH_MADAGASCAR.region_state:SMD
+              }
+        }
+    }
+}
