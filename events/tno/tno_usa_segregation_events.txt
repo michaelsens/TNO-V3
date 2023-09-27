@@ -1,0 +1,269 @@
+namespace = tno_usa_segregation_events
+
+tno_usa_segregation_events.1 = { # civil rights act
+    type = country_event
+    placement = ROOT
+
+	title = tno_usa_segregation_events.1
+	desc = tno_usa_segregation_events.1.d
+    flavor = tno_usa_segregation_events.1.f	
+
+	event_image = {
+		texture  = "gfx/event_pictures/super_pictures/liberty.dds"
+	}
+
+    icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	trigger = {
+		this ?= c:USA
+	}	
+	
+	duration = 1
+
+	option = { # pass civil rights act
+		name = tno_usa_segregation_events.1.a
+		activate_law = law_type:law_multicultural
+
+        add_journal_entry = { type = je_southernriots }
+
+        add_loyalists = {
+            value = 0.20
+            culture = cu:afro_american
+        }
+        add_radicals = {
+            value = 0.05
+            culture = cu:yankee
+        }
+	}
+
+    option = { # Veto civil rights act
+		name = tno_usa_segregation_events.1.b
+
+        add_radicals = {
+            value = 0.30
+            culture = cu:afro_american
+        }
+        add_loyalists = {
+            value = 0.10
+            culture = cu:yankee
+        }
+        add_radicals = {
+            value = 0.03
+            culture = cu:yankee
+        }
+		
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+}
+
+
+tno_usa_segregation_events.2 = { # riot over jimcrow
+    type = country_event
+    placement = ROOT
+
+	title = tno_usa_segregation_events.2
+	desc = tno_usa_segregation_events.2.d
+    flavor = tno_usa_segregation_events.2.f	
+
+	event_image = {
+		texture  = "gfx/event_pictures/super_pictures/seg.4.dds"
+	}
+
+    icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	trigger = {
+		this ?= c:USA
+	}	
+	
+	duration = 1
+
+	option = {
+		name = tno_usa_segregation_events.2.a
+		random_scope_state = {
+            limit = {
+                is_incorporated = yes
+            }
+            save_scope_as = riot_state
+        }
+        scope:riot_state.state_region = {
+                add_devastation = 35
+      }
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+}
+
+tno_usa_segregation_events.3 = { # buissness turns away black men
+    type = country_event
+    placement = ROOT
+
+	title = tno_usa_segregation_events.3
+	desc = tno_usa_segregation_events.3.d
+    flavor = tno_usa_segregation_events.3.f	
+
+	event_image = {
+		texture  = "gfx/event_pictures/super_pictures/seg.3.dds"
+	}
+
+    icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	trigger = {
+		this ?= c:USA
+	}	
+	
+	duration = 1
+
+	option = {
+		name = tno_usa_segregation_events.3.a
+
+		add_radicals = {
+            value = 0.02
+            culture = cu:afro_american
+        }
+        
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+}
+}
+
+tno_usa_segregation_events.4 = { # police burtalize blackman
+    type = country_event
+    placement = ROOT
+
+	title = tno_usa_segregation_events.4
+	desc = tno_usa_segregation_events.4.d
+    flavor = tno_usa_segregation_events.4.f	
+
+	event_image = {
+		texture  = "gfx/event_pictures/super_pictures/seg.2.dds"
+	}
+
+    icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	trigger = {
+		this ?= c:USA
+	}	
+	
+	duration = 1
+
+	option = {
+		name = tno_usa_segregation_events.4.a
+
+		add_radicals = {
+            value = 0.04
+            culture = cu:afro_american
+        }
+        
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+}
+
+option = {
+    name = tno_usa_segregation_events.4.b
+
+    add_radicals = {
+        value = 0.02
+        culture = cu:yankee
+    }
+}
+}   
+
+tno_usa_segregation_events.5 = { # police kill unarmed black man
+    type = country_event
+    placement = ROOT
+
+	title = tno_usa_segregation_events.5
+	desc = tno_usa_segregation_events.5.d
+    flavor = tno_usa_segregation_events.5.f	
+
+	event_image = {
+		texture  = "gfx/event_pictures/super_pictures/seg.5.dds"
+	}
+
+    icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	trigger = {
+		this ?= c:USA
+	}	
+	
+	duration = 1
+
+	option = {
+		name = tno_usa_segregation_events.5.a
+
+		add_radicals = {
+            value = 0.04
+            culture = cu:afro_american
+        }
+        
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+}
+}
+
+tno_usa_segregation_events.6 = { # civil rights sit in
+    type = country_event
+    placement = ROOT
+
+	title = tno_usa_segregation_events.6
+	desc = tno_usa_segregation_events.6.d
+    flavor = tno_usa_segregation_events.6.f	
+
+	event_image = {
+		texture  = "gfx/event_pictures/super_pictures/seg.1.dds"
+	}
+
+    icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	trigger = {
+		this ?= c:USA
+	}	
+	
+	duration = 1
+
+	option = {
+		name = tno_usa_segregation_events.6.a
+
+		add_radicals = {
+            value = 0.03
+            culture = cu:afro_american
+        }
+        
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+}
+}
+
+tno_usa_segregation_events.7 = { # event that fires after southern riots
+    type = country_event
+    placement = ROOT
+
+	title = tno_usa_segregation_events.7
+	desc = tno_usa_segregation_events.7.d
+    flavor = tno_usa_segregation_events.7.f	
+
+	event_image = {
+		texture  = "gfx/event_pictures/super_pictures/liberty.dds"
+	}
+
+    icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	trigger = {
+		this ?= c:USA
+	}	
+	
+	duration = 1
+
+	option = {
+		name = tno_usa_segregation_events.7.a
+
+		add_radicals = {
+            value = 0.03
+            culture = cu:afro_american
+        }
+        
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+}
+}
