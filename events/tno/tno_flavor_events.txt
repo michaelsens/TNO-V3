@@ -394,14 +394,11 @@ tno_flavor_events.8 = {
 	trigger = {
 		exists = c:ENG
 		this ?= c:ENG
-		OR = {
-			exists = c:ENG
-			this ?= c:ENG
-			OR = {
+	   	OR = {
 				exists = c:GBR
 				this ?= c:GBR
 			}
-		}
+	
 	}	
 	
 	duration = 3
@@ -434,14 +431,10 @@ tno_flavor_events.9 = {
 	trigger = {
 		exists = c:ENG
 		this ?= c:ENG
-		OR = {
-			exists = c:ENG
-			this ?= c:ENG
 			OR = {
 				exists= c:GBR
 				this ?= c:GBR
 			}
-		}
 	}	
 	
 	duration = 3
@@ -645,21 +638,140 @@ tno_flavor_events.11 = {
 	}
 }
 
-tno_flavour_events.12 = {
+tno_flavor_events.12 = {
 	type = country_event
     placement = ROOT
 
+	title = mad_flavor.1.t
+	desc = mad_flavor.1.d
+    flavor = mad_flavor.1.f
+	
+	event_image = {
+		texture  = "gfx/event_pictures/event_pictures/jungle_warfare.dds"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/middleeast/courtroom_upheaval" 
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
 	trigger = {
+		OR = {
+			this ?= c:GER
+			this ?= c:JAP
+		}
 	}	
 	
 	duration = 3
 
 	option = {
+		name = mad_flavor.1.a
 		default_option = yes
+		trigger = {
+			owns_entire_state_region = STATE_BRANDENBURG
+		}
+		add_treasury = -50000
+		c:MAD = { add_treasury = 50000 } 	
+		}
+	option = {
+		name = mad_flavor.1.b
+		default_option = yes
+		trigger = {
+			owns_entire_state_region = STATE_KYUSHU
+		}
+		c:MAD = {	
+		add_radicals = {
+			pop_type = peasants
+			value = medium_radicals
+		}}
+	}
+}
+
+tno_flavor_events.13 = {
+	type = country_event
+    placement = ROOT
+
+	title = mad_flavor.2.t
+	desc = mad_flavor.2.d
+    flavor = mad_flavor.2.f
+	
+	event_image = {
+		texture  = "gfx/event_pictures/event_pictures/jungle_warfare.dds"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/middleeast/courtroom_upheaval" 
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	trigger = {
+		OR = {
+			this ?= c:GER
+			this ?= c:JAP
+		}
+	}	
+	
+	duration = 3
+
+	immediate = {
 		create_country = {
 			tag = SMD
-			origin = this
+			origin = c:MAD
 			state = s:STATE_SOUTH_MADAGASCAR.region_state:MAD
 		}
 	}
-}
+	
+	option = {
+		name = mad_flavor.2.a
+		default_option = yes
+		trigger = {
+			owns_entire_state_region = STATE_BRANDENBURG
+		}
+		add_treasury = -50000
+		c:MAD = { 
+			add_treasury = 50000
+			random_scope_state = {
+				limit = {
+					is_incorporated = yes
+				}
+				save_scope_as = volunteer_state
+			}
+			scope:volunteer_state = {
+				create_building={
+				building = "building_volunteer_barracks"
+				level=5
+				reserves=1 
+				activate_production_methods= { "pm_volunteer_battle_rifle_infantry" "pm_volunteer_gen1_tank" "pm_volunteer_airborne_fac" "pm_no_specialists" "pm_volunteer_ww_doctrine" "pm_wound_dressing"}
+				}
+			}
+		}
+	}	
+	option = {
+		name = mad_flavor.2.b
+		default_option = yes
+		add_treasury = -50000
+		trigger = {
+			owns_entire_state_region = STATE_KYUSHU
+		}
+		create_diplomatic_pact = {
+			country = c:SMD
+			type = imperial_subject
+		}
+		c:SMD = {
+			add_treasury = 50000  	
+			random_scope_state = {
+				limit = {
+					is_incorporated = yes
+				}
+				save_scope_as = volunteer_state
+			}
+			scope:volunteer_state = {
+				create_building={
+				building = "building_volunteer_barracks"
+				level=10
+				reserves=1 
+				activate_production_methods= { "pm_volunteer_battle_rifle_infantry" "pm_volunteer_gen1_tank" "pm_volunteer_airborne_fac" "pm_no_specialists" "pm_volunteer_ww_doctrine" "pm_wound_dressing"}
+				}
+			}
+		}
+	}
+  }

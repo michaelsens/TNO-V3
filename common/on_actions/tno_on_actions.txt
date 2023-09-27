@@ -155,7 +155,6 @@
 
 
 
-
         #War Events
         #SAF
         if = {
@@ -292,6 +291,42 @@
            }
             trigger_event = { id = tno_war_help.2 popup = yes }
         }
+    
+       #MADAGASCAR 
+       if = {
+         limit = {
+            game_date >= 1973.3.1
+            NOT = { has_variable = mad_war_var}
+         }
+        set_variable = mad_war_var
+        trigger_event = { id = tno_flavor_events.12 days = 0 popup = yes }
+       }
+
+       if = {
+        limit = {
+           game_date >= 1974.8.1
+           NOT = { has_variable = madder_war_var }
+        }
+       set_variable = madder_war_var
+       trigger_event = { id = tno_flavor_events.13 days = 0 popup = yes }
+      }
+      if = {
+        limit = {
+            c:SMD ?= this
+            game_date >= 1975.4.1
+            NOT = { has_global_variable = maddener_war_var }
+        }
+        set_global_variable = maddener_war_var
+        trigger_event = { id = tno_war_events.6 }
+       }
+       if = {
+        limit = {
+           has_global_variable = maddener_war_var
+           NOT = { has_variable = mad_supersss_war_var }
+        }
+        set_variable = mad_supersss_war_var
+        trigger_event = { id = tno_super_events.9 days = 0 popup = yes }
+    }
     }
 }  
 
