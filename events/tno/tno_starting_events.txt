@@ -592,4 +592,71 @@ tno_starting_events.18 = {
     }
 }
 
+tno_starting_events.19 = {
+	type = country_event
+    placement = ROOT
+ 
+    title = kon.1
+    desc = kon.1.d
+    flavor = kon.1.f 
+    event_image = {
+		texture  = "gfx/event_pictures/super_pictures/soldier.dds"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_map.dds"
+
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 6
+
+
+    trigger = {
+        this ?= c:KON
+		game_date <= 1963.2.1
+    }
+
+   option = {
+        name = kon.1.a
+		add_modifier = { name = brutal_repression }
+		add_modifier = { name = the_unending_war }
+		add_modifier = { name = heart_of_afrika  }
+    }
+}
+
+tno_starting_events.20 = {
+	type = country_event
+    placement = ROOT
+ 
+    title = saf.1
+    desc = saf.1.d
+    flavor = saf.1.f 
+    event_image = {
+		texture  = "gfx/event_pictures/super_pictures/soldier.dds"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_map.dds"
+
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 6
+
+
+    trigger = {
+        this ?= c:SAF
+		game_date <= 1963.2.1
+    }
+
+   option = {
+        name = saf.1.a
+		add_modifier = { name = racial_tentions }
+		add_radicals = {
+			value = large_radicals
+			culture = cu:boer
+			}
+	}
+}
+
+
+
+
 #add_modifier = { name =  }
