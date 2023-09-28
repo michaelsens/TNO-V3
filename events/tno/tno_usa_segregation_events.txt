@@ -28,6 +28,8 @@ tno_usa_segregation_events.1 = { # civil rights act
 
         add_modifier = southern_riots
 
+        trigger_event = { id = tno_usa_segregation_events.8 } #triggers southern riots across all states
+
         add_loyalists = {
             value = 0.20
             culture = cu:afro_american
@@ -46,7 +48,7 @@ tno_usa_segregation_events.1 = { # civil rights act
             culture = cu:afro_american
         }
         add_loyalists = {
-            value = 0.8
+            value = 0.08
             culture = cu:yankee
         }
 		
@@ -78,6 +80,11 @@ tno_usa_segregation_events.2 = { # riot over jimcrow
 
 	option = {
 		name = tno_usa_segregation_events.2.a
+
+        add_modifier = {
+            name = nat_gaurdcalledin
+            months = 3
+        } 
 		random_scope_state = {
             limit = {
                 is_incorporated = yes
@@ -208,6 +215,16 @@ tno_usa_segregation_events.5 = { # police kill unarmed black man
 
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 }
+
+option = {
+    name = tno_usa_segregation_events.5.b
+
+     # not that racist but still bad response 
+     add_modifier = {
+        name = officers_malding
+        months = 3
+    } 
+}
 }
 
 tno_usa_segregation_events.6 = { # civil rights sit in
@@ -266,6 +283,8 @@ tno_usa_segregation_events.7 = { # event that fires after southern riots
 	}
 
     icon = "gfx/interface/icons/event_icons/event_default.dds"
+
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 	
 	trigger = {
 		this ?= c:USA
@@ -276,12 +295,175 @@ tno_usa_segregation_events.7 = { # event that fires after southern riots
 	option = {
 		name = tno_usa_segregation_events.7.a
 
-		add_radicals = {
-            value = 0.03
-            culture = cu:afro_american
+        remove_modifier = southern_riots
+}
+}
+
+tno_usa_segregation_events.8 = { # first riot of all the southern states
+    type = country_event
+    placement = ROOT
+
+	title = tno_usa_segregation_events.8
+	desc = tno_usa_segregation_events.8.d
+    flavor = tno_usa_segregation_events.8.f	
+
+	event_image = {
+		texture  = "gfx/event_pictures/super_pictures/seg.4.dds"
+	}
+
+    icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	trigger = {
+		this ?= c:USA
+	}	
+	
+	duration = 1
+
+	option = {
+		name = tno_usa_segregation_events.8.a
+        s:STATE_TEXAS = {
+            add_devastation = 25
         }
-        
+        s:STATE_SOUTH_CAROLINA = {
+            add_devastation = 25
+        }
+        s:STATE_LOUISIANA = {
+            add_devastation = 25
+        }
+        s:STATE_MISSISSIPPI = {
+            add_devastation = 25
+        }
+        s:STATE_MISSOURI = {
+            add_devastation = 25
+        }
+        s:STATE_ARKANSAS = {
+            add_devastation = 25
+        }
+        s:STATE_ALABAMA = {
+            add_devastation = 25
+        }
+        s:STATE_GEORGIA = {
+            add_devastation = 25
+        }
+        s:STATE_FLORIDA = {
+            add_devastation = 25
+        }
+        s:STATE_TENNESSEE = {
+            add_devastation = 25
+        }
+        s:STATE_KENTUCKY = {
+            add_devastation = 25
+        }
+        s:STATE_NORTH_CAROLINA = {
+            add_devastation = 25
+        }
+        s:STATE_VIRGINIA = {
+            add_devastation = 25
+        }
+	}
 
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 }
+
+tno_usa_segregation_events.9 = { # small bit more riots not to bad
+    type = country_event
+    placement = ROOT
+
+	title = tno_usa_segregation_events.9
+	desc = tno_usa_segregation_events.9.d
+    flavor = tno_usa_segregation_events.9.f	
+
+	event_image = {
+		texture  = "gfx/event_pictures/super_pictures/seg.4.dds"
+	}
+
+    icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	trigger = {
+		this ?= c:USA
+	}	
+	
+	duration = 1
+
+	option = {
+		name = tno_usa_segregation_events.9.a
+        s:STATE_TEXAS = {
+            add_devastation = 25
+        }
+        s:STATE_LOUISIANA = {
+            add_devastation = 25
+	    }
+        s:STATE_ARKANSAS = {
+            add_devastation = 25
+        }
+    
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+}
+}
+
+tno_usa_segregation_events.10 = { # Riots intesify across the south
+    type = country_event
+    placement = ROOT
+
+	title = tno_usa_segregation_events.10
+	desc = tno_usa_segregation_events.10.d
+    flavor = tno_usa_segregation_events.10.f	
+
+	event_image = {
+		texture  = "gfx/event_pictures/super_pictures/seg.4.dds"
+	}
+
+    icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	trigger = {
+		this ?= c:USA
+	}	
+	
+	duration = 1
+
+	option = {
+		name = tno_usa_segregation_events.10.a
+        s:STATE_TEXAS = {
+            add_devastation = 15
+        }
+        s:STATE_SOUTH_CAROLINA = {
+            add_devastation = 15
+        }
+        s:STATE_LOUISIANA = {
+            add_devastation = 15
+        }
+        s:STATE_MISSISSIPPI = {
+            add_devastation = 15
+        }
+        s:STATE_MISSOURI = {
+            add_devastation = 15
+        }
+        s:STATE_ARKANSAS = {
+            add_devastation = 15
+        }
+        s:STATE_ALABAMA = {
+            add_devastation = 15
+        }
+        s:STATE_GEORGIA = {
+            add_devastation = 15
+        }
+        s:STATE_FLORIDA = {
+            add_devastation = 15
+        }
+        s:STATE_TENNESSEE = {
+            add_devastation = 15
+        }
+        s:STATE_KENTUCKY = {
+            add_devastation = 15
+        }
+        s:STATE_NORTH_CAROLINA = {
+            add_devastation = 15
+        }
+        s:STATE_VIRGINIA = {
+            add_devastation = 15
+        }
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 }
