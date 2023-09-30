@@ -68,14 +68,19 @@ modifier_political_failure = {
 	country_prestige_mult = -0.1
 }
 
-modifier_lost_oil_revenue = {
-	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_negative.dds
-    country_expenses_add = 5000
+italian_oil_exploitation = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
+    country_expenses_add = 10000
 }
 
-modifier_gained_oil_revenue = {
-	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_negative.dds
-    country_tax_income_add = 5000
+turkish_oil_revenue = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds
+    country_tax_income_add = 10000
+}
+
+oil_transition_modifier = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
+	building_oil_rig_throughput_mult = -0.25
 }
 
 modifier_masters_of_europe = {
@@ -190,9 +195,11 @@ sphere_overreliance = {
 
 fading_fascism = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
-	country_opposition_ig_approval_add = -2
+	country_opposition_ig_approval_add = 1
 	state_radicals_from_sol_change_mult = 0.05
-	country_aristocrats_pol_str_mult = -0.33
+	interest_group_ig_landowners_pop_attraction_mult = -0.25
+	political_movement_radicalism_mult = 0.25
+	state_radicals_from_sol_change_mult = 0.25
 }
 
 masters_of_the_med = {
@@ -587,6 +594,7 @@ imperskiye_shturmoviki = {
 }
 
 japans_breadbasket = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_positive.dds
 	building_group_bg_agriculture_throughput_mult = 0.35
 	interest_group_ig_rural_folk_pop_attraction_mult = 0.25
 	building_input_mult = -0.05
@@ -594,13 +602,15 @@ japans_breadbasket = {
 }
 
 restricted_army = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_negative.dds
 	country_army_power_projection_mult = -0.2
-	state_conscription_rate_mult = -0.65
-	unit_morale_loss_mult = 0.15
+	state_conscription_rate_mult = -0.50
+	unit_morale_loss_mult = 0.1
 }
 
 slave_of_the_samurai = {
-	country_authority_mult = -0.25
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	country_authority_mult = -0.2
 	country_prestige_mult = -0.15
 	country_legitimacy_base_add = -10
 	state_radicals_from_sol_change_mult = -0.2
@@ -670,7 +680,6 @@ economic_upturn = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
 	state_construction_mult = 0.1
 	building_production_mult = 0.1
-	building_production_mult = 0.1
 }
 
 les_annees_noires = {
@@ -725,4 +734,86 @@ effective_bureaucracy = {
 	state_tax_capacity_mult = 0.05
 	country_bureaucracy_mult = 0.05
 	state_construction_mult = 0.05
+}
+
+birthplace_of_fascism = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_negative.dds
+	interest_group_ig_landowners_pop_attraction_mult = 1.25
+	country_aristocrats_pol_str_mult = 1.25
+	political_movement_radicalism_mult = -0.5
+	state_radicals_from_sol_change_mult = -0.5
+	country_opposition_ig_approval_add = -3
+	interest_group_in_government_attraction_mult = 0.33
+}
+
+battle_for_grain = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_positive.dds
+	building_group_bg_agriculture_throughput_mult = 0.15
+	state_construction_mult = 0.05
+}
+
+nissan = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds
+	building_group_bg_manufacturing_throughput_mult = 0.30
+	building_group_bg_manufacturing_laborers_mortality_mult = 0.25
+	state_radicals_from_discrimination_mult = 0.50
+	state_construction_mult = 0.25
+	building_group_bg_construction_laborers_mortality_mult = 0.4
+}
+
+complete_monopoly = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_negative.dds
+	interest_group_ig_industrialists_pol_str_mult = 0.50
+	tax_dividends_add = 0.2
+	tax_income_add = 0.2
+	tax_consumption_add = 0.12
+	tax_land_add = 0.1
+	tax_per_capita_add = 0.2
+	building_minimum_wage_mult = -0.25
+	country_disable_investment_pool = yes
+}
+
+grand_council_of_fascism = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_negative.dds	
+	state_radicals_from_discrimination_mult = 0.5
+	country_authority_mult = 0.2
+	state_turmoil_effects_mult = 0.15
+	interest_group_ig_landowners_pop_attraction_mult = 0.35
+	country_institution_size_change_speed_mult = 0.2
+}
+
+kemalism = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_lightbulb_positive.dds
+	state_pop_qualifications_mult = 0.05
+	country_legitimacy_govt_total_votes_add = 15
+	state_loyalists_from_sol_change_accepted_culture_mult = 0.15
+	interest_group_ig_devout_pop_attraction_mult = -0.25
+	country_bureaucracy_mult = 0.05
+	country_law_enactment_success_add = 0.05
+}
+
+ineffective_union = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_negative.dds
+	country_institution_size_change_speed_mult = -0.3
+	country_law_enactment_success_add = -0.1
+	country_law_enactment_time_mult = 0.4
+	country_bureaucracy_mult = -0.1
+	country_authority_mult = -0.1
+	political_movement_radicalism_mult = 0.2
+	state_radicals_from_sol_change_mult = 0.05
+}
+
+revived_union = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+	country_institution_size_change_speed_mult = 0.15
+	country_law_enactment_success_add = 5
+	country_bureaucracy_mult = 0.1
+	country_authority_mult = 0.1
+	political_movement_radicalism_mult = -0.15
+	state_loyalists_from_sol_change_mult = 0.05
+}
+
+risk_of_famine = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_negative.dds
+	building_group_bg_subsistence_agriculture_throughput_mult = -0.35
 }

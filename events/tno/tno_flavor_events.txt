@@ -293,10 +293,7 @@ tno_flavor_events.6 = {
 			name = modifier_political_failure
 			months = 12
 		}
-		add_modifier = {
-			name = modifier_lost_oil_revenue
-			months = 8
-		}
+		remove_modifier = turkish_oil_revenue
         change_infamy = -5
 	}
     option = {
@@ -305,10 +302,7 @@ tno_flavor_events.6 = {
 			country = c:TUR
 			type = embargo
 		}
-		add_modifier = {
-			name = modifier_lost_oil_revenue
-			months = 8
-		}
+		remove_modifier = turkish_oil_revenue
 		change_relations = {
             country = c:TUR
             value = -50
@@ -344,33 +338,33 @@ tno_flavor_events.7 = {
 		name = tur_flavor.1.a
 		default_option = yes
 		add_modifier = {
-			name = oil_production_modifier
-			months = 8
+			name = oil_transition_modifier
+			months = 6
+			is_decaying = yes
 		}
 		change_relations = {
             country = c:ITA
             value = -25
         }
+		remove_modifier = italian_oil_exploitation
         
 	}
     option = {
 		name = tur_flavor.1.b
 		add_modifier = {
-			name = oil_production_modifier
+			name = oil_transition_modifier
 			months = 10
+			is_decaying = yes
 		}
 		change_relations = {
             country = c:ITA
             value = -50
         }
-		add_radicals = {
+		add_loyalists = {
 			value = 0.005
 		}
-		add_modifier = {
-			name = modifier_gained_oil_revenue
-			months = 8
-		}
-		change_infamy = 10
+		remove_modifier = italian_oil_exploitation
+		change_infamy = 5
 	}
 }
 

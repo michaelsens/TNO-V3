@@ -18,10 +18,16 @@ tno_starting_events.1 = {
 		this ?= c:GER
 	}	
 	
-	duration = 6
+	duration = 3
 
 	option = {
 		name = ger.1.a
+		hidden_effect = {
+			remove_modifier = modifier_masters_of_europe
+			remove_modifier = bloated_whermacht
+			remove_modifier = slavery_dependence
+			remove_modifier = war_spoils
+		}
 		add_modifier = {
     		name = modifier_masters_of_europe
   	    }
@@ -58,10 +64,17 @@ tno_starting_events.2 = {
 		this ?= c:USA
 	}	
 	
-	duration = 6
+	duration = 3
 
 	option = {
 		name = usa.1.a
+		hidden_effect = {
+			remove_modifier = american_dream
+			remove_modifier = national_humiliation
+			remove_modifier = military_industrial
+			remove_modifier = hollywood
+			remove_modifier = last_bastion_democracy
+		}
 		add_modifier = { name = american_dream }
 		add_modifier = { 
 			name = national_humiliation 
@@ -97,10 +110,16 @@ tno_starting_events.3 = {
 		this ?= c:JAP
 	}	
 	
-	duration = 6
+	duration = 3
 
 	option = {
 		name = jap.1.a
+		hidden_effect = {
+			remove_modifier = japanese_efficiency
+			remove_modifier = sphere_overreliance
+			remove_modifier = military_industrial
+			remove_modifier = unchecked_corruption
+		}
 		add_modifier = { name = japanese_efficiency }
 		add_modifier = { name = sphere_overreliance }
 		add_modifier = { name = unchecked_corruption }
@@ -129,13 +148,26 @@ tno_starting_events.4 = {
 		this ?= c:ITA
 	}	
 	
-	duration = 6
+	duration = 3
 
 	option = {
 		name = ita.1.a
+		hidden_effect = {
+			remove_modifier = fading_fascism
+			remove_modifier = masters_of_the_med
+			remove_modifier = birthplace_of_fascism
+			remove_modifier = battle_for_grain
+			remove_modifier = turkish_oil_revenue
+		}
 		add_modifier = { name = fading_fascism }
 		add_modifier = { name = masters_of_the_med }
-		add_modifier = { name = atlantropa_disaster }
+		add_modifier = { name = battle_for_grain }
+		add_modifier = { 
+			name = birthplace_of_fascism 
+			years = 10
+			is_decaying = yes
+		}
+		add_modifier = { name = turkish_oil_revenue }
 	}
 
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
@@ -160,10 +192,16 @@ tno_starting_events.5 = {
 		this ?= c:BGD
 	}	
 	
-	duration = 6
+	duration = 3
 
 	option = {
 		name = bgd.1.a
+		hidden_effect = {
+			remove_modifier = shadow_state
+			remove_modifier = shadow_economy
+			remove_modifier = national_purity
+			remove_modifier = armed_against_democracy
+		}
 		add_modifier = { 
 			name = shadow_state
 			years = 20
@@ -194,10 +232,17 @@ tno_starting_events.6 = {
 		this ?= c:YUE
 	}	
 	
-	duration = 6
+	duration = 3
 
 	option = {
 		name = yue.1.a
+		hidden_effect = {
+			remove_modifier = unchecked_capitalism
+			remove_modifier = sony
+			remove_modifier = fujitsu
+			remove_modifier = matsushia
+			remove_modifier = hitachi
+		}
 		add_modifier = {
 			name = unchecked_capitalism 
 		}
@@ -236,10 +281,16 @@ tno_starting_events.7 = {
 		this ?= c:AMR
 	}	
 	
-	duration = 6
+	duration = 3
 
 	option = {
 		name = amr.1.a
+		hidden_effect = {
+			remove_modifier = all_russian_repopulation_program
+			remove_modifier = russian_fascist_stronghold
+			remove_modifier = the_flight_east
+			remove_modifier = paranoia_of_the_vozhd
+		}
 		add_modifier = { name = all_russian_repopulation_program }
 		add_modifier = { name = russian_fascist_stronghold }
 		add_modifier = { 
@@ -274,10 +325,16 @@ tno_starting_events.8 = {
 		game_date <= 1963.2.1
 	}	
 	
-	duration = 6
+	duration = 3
 
 	option = {
 		name = eng.1.a
+		hidden_effect = {
+			remove_modifier = shattered_union
+			remove_modifier = the_broken_navy
+			remove_modifier = emergency_powers
+			remove_modifier = empire_remnants
+		}
 		add_modifier = { name = shattered_union }
 		add_modifier = { name = the_broken_navy }
 		add_modifier = { 
@@ -307,7 +364,7 @@ tno_starting_events.9 = {
 		this ?= c:DIV
 	}	
 	
-	duration = 6
+	duration = 3
 
 	option = {
 		name = div.1.a
@@ -319,7 +376,7 @@ tno_starting_events.9 = {
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 }
 
-tno_starting_events.10 ={
+tno_starting_events.10 = {
     type = country_event
     placement = ROOT
  
@@ -334,16 +391,24 @@ tno_starting_events.10 ={
 
     on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 
-    duration = 6
+    duration = 3
 
     trigger = {
         this ?= c:IBE
-
     }
 
    option = {
         name = ibe.1.a
-
+		hidden_effect = {
+			remove_modifier = ineffective_union
+			remove_modifier = economic_meltdown
+		}
+		add_modifier = {
+			name = ineffective_union
+		}
+		add_modifier = {
+			name = economic_meltdown
+		}
     }
 }
 
@@ -362,16 +427,22 @@ tno_starting_events.11 ={
 
     on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 
-    duration = 6
+    duration = 3
 
     trigger = {
         this ?= c:TUR
-
     }
 
    option = {
         name = tur.1.a
-
+		hidden_effect = {
+			remove_modifier = grand_council_of_fascism
+			remove_modifier = kemalism
+			remove_modifier = italian_oil_exploitation
+		}
+		add_modifier = { name = grand_council_of_fascism }
+		add_modifier = { name = kemalism }
+		add_modifier = { name = italian_oil_exploitation }
     }
 }
 
@@ -394,10 +465,16 @@ tno_starting_events.12 = {
 		this ?= c:FRA
 	}	
 	
-	duration = 6
+	duration = 3
 
 	option = {
 		name = fra.1.a
+		hidden_effect = {
+			remove_modifier = french_irredentism
+			remove_modifier = les_annees_noires
+			remove_modifier = treaty_of_vichy
+			remove_modifier = economic_meltdown
+		}
 		add_modifier = { name = french_irredentism }
 		add_modifier = { name = les_annees_noires }
 		add_modifier = { name = treaty_of_vichy }
@@ -422,15 +499,19 @@ tno_starting_events.13 ={
 
     on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 
-    duration = 6
+    duration = 3
 
     trigger = {
         this ?= c:BHT
-
     }
 
    option = {
         name = bht.1.a
+		hidden_effect = {
+			remove_modifier = worlds_factory
+			remove_modifier = end_of_colonial
+			remove_modifier = two_state_solution
+		}
 		add_modifier = { name = worlds_factory }
 		add_modifier = { name = end_of_colonial }
 		add_modifier = { name = two_state_solution }
@@ -452,7 +533,7 @@ tno_starting_events.14 ={
 
     on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 
-    duration = 6
+    duration = 3
 
     trigger = {
         this ?= c:OSK
@@ -461,6 +542,10 @@ tno_starting_events.14 ={
 
    option = {
         name = osk.1.a
+		hidden_effect = {
+			remove_modifier = fueled_by_hate
+			remove_modifier = nothing_to_lose
+		}
 		add_modifier = { name = fueled_by_hate }
 		add_modifier = { name = nothing_to_lose }
     }
@@ -481,7 +566,7 @@ tno_starting_events.15 = {
 
     on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 
-    duration = 6
+    duration = 3
 
     trigger = {
         this ?= c:WST
@@ -490,6 +575,11 @@ tno_starting_events.15 = {
 
    option = {
         name = wst.1.a
+		hidden_effect = {
+			remove_modifier = veterans
+			remove_modifier = frozen_wasteland
+			remove_modifier = soviet_successors
+		}
 		add_modifier = { name = veterans }
 		add_modifier = { name = frozen_wasteland }
 		add_modifier = { name = soviet_successors }
@@ -511,7 +601,7 @@ tno_starting_events.16 = {
 
     on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 
-    duration = 6
+    duration = 3
 
     trigger = {
         this ?= c:HRE
@@ -520,6 +610,13 @@ tno_starting_events.16 = {
 
    option = {
         name = hre.1.a
+		hidden_effect = {
+			remove_modifier = absolute_purity
+			remove_modifier = cathedrals_of_industry
+			remove_modifier = absolute_truth
+			remove_modifier = salted_earth
+			remove_modifier = imperskiye_shturmoviki
+		}
 		add_modifier = { name = absolute_purity }
 		add_modifier = { name = cathedrals_of_industry }
 		add_modifier = { name = absolute_truth }
@@ -543,7 +640,7 @@ tno_starting_events.17 = {
 
     on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 
-    duration = 6
+    duration = 3
 
     trigger = {
         this ?= c:CHI
@@ -552,6 +649,11 @@ tno_starting_events.17 = {
 
    option = {
         name = chi.1.a
+		hidden_effect = {
+			remove_modifier = japans_breadbasket
+			remove_modifier = restricted_army
+			remove_modifier = slave_of_the_samurai
+		}
 		add_modifier = { name = japans_breadbasket }
 		add_modifier = { name = restricted_army }
 		add_modifier = { name = slave_of_the_samurai }
@@ -573,7 +675,7 @@ tno_starting_events.18 = {
 
     on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 
-    duration = 6
+    duration = 3
 
     trigger = {
         this ?= c:BRZ
@@ -582,6 +684,11 @@ tno_starting_events.18 = {
 
    option = {
         name = brz.1.a
+		hidden_effect = {
+			remove_modifier = rapid_industrialization
+			remove_modifier = unchecked_corruption
+			remove_modifier = ecos_do_imperio
+		}
 		add_modifier = { 
 			name = rapid_industrialization 
 			is_decaying = yes
@@ -592,4 +699,40 @@ tno_starting_events.18 = {
     }
 }
 
+tno_starting_events.19 = {
+    type = country_event
+    placement = ROOT
+
+	title = mch.1
+	desc = mch.1.d
+    flavor = mch.1.f	
+
+	event_image = {
+		texture  = "gfx/event_pictures/super_pictures/guangcolor.dds"
+	}
+
+    icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	trigger = {
+		this ?= c:MCH
+	}	
+	
+	duration = 3
+
+	option = {
+		name = mch.1.a
+		hidden_effect = {
+			remove_modifier = nissan
+			remove_modifier = complete_monopoly
+		}
+		add_modifier = {
+			name = nissan
+		}
+		add_modifier = {
+			name = complete_monopoly
+		}
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+}
 #add_modifier = { name =  }
