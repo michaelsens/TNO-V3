@@ -808,3 +808,36 @@ tno_flavor_events.14 = {
 		default_option = yes 
 	}
 }
+
+tno_flavor_events.15 = {
+	type = country_event
+	placement = ROOT
+	
+	title = egy_flavor.1.t
+	desc = egy_flavor.1.d
+	flavor = egy_flavor.1.f
+	event_image = {
+		texture  =  "gfx/event_pictures/super_pictures/summit_1.dds"
+	}
+	
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/middleeast/courtroom_upheaval" 
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	trigger = {
+		exists = c:EGY
+		this ?= c:EGY
+	}	
+	
+	duration = 3
+	
+	option = {
+		name = egy_flavor.1.a
+		default_option = yes 
+		ruler = {
+			kill_character = yes
+		}
+		activate_law = law_type:law_presidential_republic
+		remove_modifier = farouks_hedonism
+	}
+}
