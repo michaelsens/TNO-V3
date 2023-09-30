@@ -384,3 +384,63 @@ je_ease_tentions = {
     should_be_pinned_by_default = yes
 }
 
+je_salafi_removed = {
+    icon = "gfx/interface/icons/event_icons/tutorial_icon.dds"
+    
+    is_shown_when_inactive = {
+        has_modifier = salafi_ascendancy
+    }
+
+    complete = {
+       OR = {
+        has_law = law_type:law_presidential_republic
+        has_law = law_type:law_parliamentary_republic
+       }
+       OR = {
+        has_law = law_type:law_census_voting
+        has_law = law_type:law_universal_suffrage
+       }
+
+    }
+
+    on_complete = {
+        remove_modifier = salafi_ascendancy
+        add_modifier = { name = salafi_elected }
+    }
+
+    weight = 100
+
+    progressbar = no
+    
+    should_be_pinned_by_default = no
+}
+
+je_mosaddeghs_forgotten = {
+    icon = "gfx/interface/icons/event_icons/tutorial_icon.dds"
+    
+    is_shown_when_inactive = {
+        has_modifier = mosaddeghs_legacy
+    }
+
+    complete = {
+       OR = {
+        has_law = law_type:law_presidential_republic
+        has_law = law_type:law_parliamentary_republic
+       }
+       OR = {
+        has_law = law_type:law_census_voting
+        has_law = law_type:law_universal_suffrage
+       }
+
+    }
+
+    on_complete = {
+        remove_modifier = mosaddeghs_legacy
+    }
+
+    weight = 100
+
+    progressbar = no
+    
+    should_be_pinned_by_default = no
+}
