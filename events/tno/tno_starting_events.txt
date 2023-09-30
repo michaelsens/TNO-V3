@@ -366,7 +366,6 @@ tno_starting_events.11 ={
 
     trigger = {
         this ?= c:TUR
-
     }
 
    option = {
@@ -591,5 +590,134 @@ tno_starting_events.18 = {
 		add_modifier = { name = ecos_do_imperio }
     }
 }
+
+tno_starting_events.19 = {
+	type = country_event
+    placement = ROOT
+ 
+    title = kon.1
+    desc = kon.1.d
+    flavor = kon.1.f 
+    event_image = {
+		texture  = "gfx/event_pictures/super_pictures/soldier.dds"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_map.dds"
+
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 6
+
+
+    trigger = {
+        this ?= c:KON
+		game_date <= 1963.2.1
+    }
+
+   option = {
+        name = kon.1.a
+		add_modifier = { name = brutal_repression }
+		add_modifier = { name = the_unending_war }
+		add_modifier = { name = heart_of_afrika  }
+    }
+}
+
+tno_starting_events.20 = {
+	type = country_event
+    placement = ROOT
+ 
+    title = saf.1
+    desc = saf.1.d
+    flavor = saf.1.f 
+    event_image = {
+		texture  = "gfx/event_pictures/super_pictures/soldier.dds"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_map.dds"
+
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 6
+
+
+    trigger = {
+        this ?= c:SAF
+		game_date <= 1963.2.1
+    }
+
+   option = {
+        name = saf.1.a
+		add_modifier = { name = racial_tentions }
+		add_modifier = { name = south_africa_diamond_mines }
+		add_radicals = {
+			value = large_radicals
+			culture = cu:boer
+			}
+	}
+}
+
+tno_starting_events.21 = {
+	type = country_event
+    placement = ROOT
+ 
+    title = nej.1
+    desc = nej.1.d
+    flavor = nej.1.f 
+    event_image = {
+		texture  = "gfx/event_pictures/super_pictures/oilwell.dds"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_map.dds"
+
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 6
+
+
+    trigger = {
+        this ?= c:NEJ
+		game_date <= 1963.2.1
+    }
+
+   option = {
+        name = nej.1.a
+		add_modifier = { name = defenders_of_umma }
+		add_modifier = { name = salafi_ascendancy }
+		add_modifier = { name = kingdom_of_black_gold }
+	}
+}
+
+tno_starting_events.22 = {
+	type = country_event
+    placement = ROOT
+ 
+    title = per.1
+    desc = per.1.d
+    flavor = per.1.f 
+    event_image = {
+		texture  = "gfx/event_pictures/super_pictures/oilwell.dds"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_map.dds"
+
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 6
+
+
+    trigger = {
+        this ?= c:PER
+		game_date <= 1963.2.1
+    }
+
+   option = {
+        name = per.1.a
+		add_modifier = { name = the_imperial_guard }
+		add_modifier = { name = mosaddeghs_legacy }
+		add_modifier = { name = deutsch_persische_oelgesellschaft }
+	}
+}
+
+
 
 #add_modifier = { name =  }

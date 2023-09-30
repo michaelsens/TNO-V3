@@ -639,15 +639,15 @@ tno_flavor_events.11 = {
 }
 
 tno_flavor_events.12 = {
+
 	type = country_event
     placement = ROOT
 
-	title = mad_flavor.1.t
-	desc = mad_flavor.1.d
-    flavor = mad_flavor.1.f
-	
+	title = rus_flavor.3.t
+	desc = rus_flavor.3.d
+    flavor = rus_flavor.3.f
 	event_image = {
-		texture  = "gfx/event_pictures/event_pictures/jungle_warfare.dds"
+		texture  = "gfx/event_pictures/super_pictures/rusvic.dds"
 	}
 
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
@@ -656,10 +656,12 @@ tno_flavor_events.12 = {
 	icon = "gfx/interface/icons/event_icons/event_default.dds"
 	
 	trigger = {
+
 		OR = {
 			this ?= c:GER
 			this ?= c:JAP
 		}
+
 	}	
 	
 	duration = 3
@@ -775,3 +777,31 @@ tno_flavor_events.13 = {
 		}
 	}
   }
+
+tno_flavor_events.14 = {
+	type = country_event
+	placement = ROOT
+	
+	title = rus_flavor.3.t
+	desc = rus_flavor.3.d
+	flavor = rus_flavor.3.f
+	event_image = {
+		texture  = "gfx/event_pictures/super_pictures/rusvic.dds"
+	}
+	
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/middleeast/courtroom_upheaval" 
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	trigger = {
+		exists = c:PRO
+		this ?= c:PRO
+	}	
+	
+	duration = 3
+	
+	option = {
+		name = rus_flavor.3.a
+		default_option = yes 
+	}
+}

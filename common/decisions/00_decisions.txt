@@ -181,3 +181,31 @@ the_great_trial = {
 		base = 100
 	}
 }
+
+german_helping = {
+    is_shown = {
+		exists = c:KON
+		ROOT = c:KON
+	}
+
+    possible = {
+		exists = c:GER
+		exists = c:KON
+		NOT = { has_modifier = german_help }
+	}
+	
+	when_taken = {
+		add_modifier = { 
+			name = german_help
+			years = 1
+		}
+		add_treasury = 50000
+		c:GER = {
+			add_treasury = -50000
+		}
+	}
+	
+	ai_chance = {
+		base = 100
+	}
+}
