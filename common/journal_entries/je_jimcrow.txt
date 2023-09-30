@@ -143,3 +143,59 @@ je_southernriots = { # Riots when civil rights is passed
     
 }
 
+je_northernriots = { # Riots when civil rights is passed
+
+    icon = "gfx/interface/icons/event_icons/tutorial_icon.dds"
+
+    
+    
+    immediate = {
+
+		set_variable = {
+			name = civil_rights_timer
+			value = 0
+		}
+	}
+    
+    complete = {
+		scope:journal_entry = {
+			is_goal_complete = yes
+		}
+	}
+
+    on_complete = {
+        trigger_event = { id = tno_usa_segregation_events.11 popup = yes }
+        remove_modifier = northern_riots
+    }
+
+    on_monthly_pulse = {
+        random_events = {
+            10 = 0
+            15 = tno_usa_segregation_events.8
+            15 = tno_usa_segregation_events.9
+            15 = tno_usa_segregation_events.10
+        }
+        effect = {
+			change_variable = {
+				name = civil_rights_timer
+				add = 1
+			}
+		}
+    }
+
+    current_value = {
+		value = root.var:civil_rights_timer
+	}
+
+    goal_add_value = {
+		value = 6
+	}
+
+    progressbar = yes
+    
+    weight = 100
+    
+    should_be_pinned_by_default = yes
+    
+}
+

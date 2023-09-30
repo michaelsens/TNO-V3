@@ -43,6 +43,12 @@ tno_usa_segregation_events.1 = { # civil rights act
     option = { # Veto civil rights act
 		name = tno_usa_segregation_events.1.b
 
+        add_journal_entry = { type = je_northernriots }
+
+        add_modifier = northern_riots
+
+        trigger_event = { id = tno_usa_segregation_events.12 } #triggers northern riots across all states
+
         add_radicals = {
             value = 0.25
             culture = cu:afro_american
@@ -290,7 +296,7 @@ tno_usa_segregation_events.7 = { # event that fires after southern riots
 		this ?= c:USA
 	}	
 	
-	duration = 1
+	duration = 2
 
 	option = {
 		name = tno_usa_segregation_events.7.a
@@ -462,6 +468,102 @@ tno_usa_segregation_events.10 = { # Riots intesify across the south
         }
         s:STATE_VIRGINIA = {
             add_devastation = 15
+        }
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+}
+
+tno_usa_segregation_events.11 = { # event that fires after northern riots
+    type = country_event
+    placement = ROOT
+
+	title = tno_usa_segregation_events.11
+	desc = tno_usa_segregation_events.11.d
+    flavor = tno_usa_segregation_events.11.f	
+
+	event_image = {
+		texture  = "gfx/event_pictures/super_pictures/liberty.dds"
+	}
+
+    icon = "gfx/interface/icons/event_icons/event_default.dds"
+
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	
+	trigger = {
+		this ?= c:USA
+	}	
+	
+	duration = 2
+
+	option = {
+		name = tno_usa_segregation_events.11.a
+    }
+}
+
+tno_usa_segregation_events.12 = { # Riots start in the north
+    type = country_event
+    placement = ROOT
+
+	title = tno_usa_segregation_events.12
+	desc = tno_usa_segregation_events.12.d
+    flavor = tno_usa_segregation_events.12.f	
+
+	event_image = {
+		texture  = "gfx/event_pictures/super_pictures/seg.4.dds"
+	}
+
+    icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	trigger = {
+		this ?= c:USA
+	}	
+	
+	duration = 1
+
+	option = {
+		name = tno_usa_segregation_events.12.a
+        s:STATE_MAINE = {
+            add_devastation = 20
+        }
+        s:STATE_NEW_HAMPSHIRE = {
+            add_devastation = 20
+        }
+        s:STATE_MASSACHUSETTS = {
+            add_devastation = 25
+        }
+        s:STATE_RHODE_ISLAND = {
+            add_devastation = 25
+        }
+        s:STATE_VERMONT = {
+            add_devastation = 25
+        }
+        s:STATE_NEW_YORK = {
+            add_devastation = 30
+        }
+        s:STATE_NEW_JERSEY = {
+            add_devastation = 25
+        }
+        s:STATE_DELAWARE = {
+            add_devastation = 25
+        }
+        s:STATE_PENNSYLVANIA = {
+            add_devastation = 25
+        }
+        s:STATE_OHIO = {
+            add_devastation = 25
+        }
+        s:STATE_MICHIGAN = {
+            add_devastation = 25
+        }
+        s:STATE_CALIFORNIA = {
+            add_devastation = 30
+        }
+        s:STATE_WASHINGTON = {
+            add_devastation = 25
+        }
+        s:STATE_MARYLAND = {
+            add_devastation = 25
         }
 	}
 
