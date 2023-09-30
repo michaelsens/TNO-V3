@@ -718,6 +718,38 @@ tno_starting_events.22 = {
 	}
 }
 
+tno_starting_events.23 = {
+	type = country_event
+    placement = ROOT
+ 
+    title = egy.1
+    desc = egy.1.d
+    flavor = egy.1.f 
+    event_image = {
+		texture  = "gfx/event_pictures/super_pictures/oilwell.dds"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_map.dds"
+
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 6
+
+
+    trigger = {
+        this ?= c:EGY
+		game_date <= 1963.2.1
+    }
+
+   option = {
+        name = egy.1.a
+		add_modifier = { name = farouks_hedonism }
+		add_modifier = { name = arab_socalist_union }
+		add_modifier = { name = muslim_brotherhood }
+		add_modifier = { name = colonial_government }
+	}
+}
+
 
 
 #add_modifier = { name =  }
