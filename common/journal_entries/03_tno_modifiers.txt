@@ -36,9 +36,6 @@ je_stabilizing_the_economy = {
     icon = "gfx/interface/icons/event_icons/tutorial_icon.dds"
    
     is_shown_when_inactive = {
-        has_technology_researched = democracy
-        exists = c:FRA
-		ROOT = c:FRA
 		has_modifier = economic_meltdown
     }
 
@@ -64,6 +61,8 @@ je_stabilizing_the_economy = {
     should_be_pinned_by_default = yes
 
 }
+
+
 
 je_vichy_treaty = {
 
@@ -221,13 +220,11 @@ je_spur_economic_growth = {
    
     is_shown_when_inactive = {
         has_modifier = economic_stagnation
-        exists = c:FRA
-		ROOT = c:FRA
     }
 
     complete = {
-        GDP >= 7500000
-        root.average_sol > 16
+        GDP >= 75000000
+        root.average_sol > 15
 
     }
 
@@ -340,6 +337,34 @@ je_corruption = {
     should_be_pinned_by_default = yes
 }
 
+je_revive_the_union = {
+    icon = "gfx/interface/icons/event_icons/tutorial_icon.dds"
+   
+    is_shown_when_inactive = {
+        has_modifier = ineffective_union
+    }
+
+    complete = {
+        OR = {
+            has_law = law_type:law_single_party_state
+            has_law = law_type:law_universal_suffrage
+        }
+        
+    }
+
+    on_complete = {
+        remove_modifier = ineffective_union
+		add_modifier = {
+			name = revived_union
+		}
+    }
+    weight = 100
+
+    progressbar = no
+    
+    should_be_pinned_by_default = yes
+}
+
 je_end_oppression = {
     icon = "gfx/interface/icons/event_icons/tutorial_icon.dds"
     
@@ -412,7 +437,7 @@ je_salafi_removed = {
 
     progressbar = no
     
-    should_be_pinned_by_default = no
+    should_be_pinned_by_default = yes
 }
 
 je_mosaddeghs_forgotten = {
@@ -442,5 +467,5 @@ je_mosaddeghs_forgotten = {
 
     progressbar = no
     
-    should_be_pinned_by_default = no
+    should_be_pinned_by_default = yes
 }
