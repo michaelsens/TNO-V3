@@ -11,9 +11,15 @@
 		activate_law = law_type:law_women_in_the_workplace
 		activate_law = law_type:law_debt_slavery
 		activate_law = law_type:law_graduated_taxation
+		
+	    set_variable = omsk_provisional 
+		
 		add_modifier = {
 			name = modifier_offensive_footing
 		}
+
+		add_modifier = { name = fueled_by_hate }
+		add_modifier = { name = nothing_to_lose }
 		
 
 		add_modifier = {
@@ -22,6 +28,14 @@
 
 		ig:ig_armed_forces = {
 			add_ruling_interest_group = yes
+			add_ideology = ideology_patriotic
+		}
+		ig:ig_landowners = {
+			add_ideology = ideology_patriotic
+			remove_ideology = ideology_stratocratic
+		}
+		ig:ig_rural_folk = {
+			add_ideology = ideology_patriotic
 		}
 
     }

@@ -3,7 +3,7 @@
         #Starting Events
         if = {
 			limit = {
-               game_date >= 1962.2.1
+               game_date >= 1962.1.1
                game_date <= 1962.5.1
                NOT = { has_variable = start_var }
             }
@@ -18,7 +18,7 @@
             trigger_event = { id = tno_starting_events.8 popup = yes }
             trigger_event = { id = tno_starting_events.9 popup = yes }
             trigger_event = { id = tno_starting_events.10 popup = yes }
-            trigger_event = { id = tno_starting_events.11 popup = yes }
+            #trigger_event = { id = tno_starting_events.11 popup = yes }
             trigger_event = { id = tno_starting_events.12 popup = yes }
             trigger_event = { id = tno_starting_events.13 popup = yes }
             trigger_event = { id = tno_starting_events.14 popup = yes }
@@ -26,6 +26,12 @@
             trigger_event = { id = tno_starting_events.16 popup = yes }
             trigger_event = { id = tno_starting_events.17 popup = yes }
             trigger_event = { id = tno_starting_events.18 popup = yes }
+            trigger_event = { id = tno_starting_events.19 popup = yes }
+            trigger_event = { id = tno_starting_events.20 popup = yes }
+            trigger_event = { id = tno_starting_events.21 popup = yes }
+            trigger_event = { id = tno_starting_events.22 popup = yes }
+            trigger_event = { id = tno_starting_events.23 popup = yes }
+            trigger_event = { id = tno_starting_events.24 popup = yes }
         }
         
 
@@ -42,6 +48,54 @@
             set_variable = rus_super_var
             trigger_event = { id = tno_super_events.1 days = 0 popup = yes }
         }
+
+        if = {
+            limit = {
+                c:PRO ?= THIS
+                NOT = { has_global_variable = pro_var }
+            }
+            set_global_variable = pro_var
+            trigger_event = { id = tno_flavor_events.14 days = 0 popup = yes }
+        }
+        if = {
+			limit = {
+               has_global_variable = pro_var
+               NOT = { has_variable = pro_super_var }
+            }
+            set_variable = pro_super_var
+            trigger_event = { id = tno_super_events.6 days = 0 popup = yes }
+        }
+
+        if = {
+			limit = {
+               has_global_variable = great_trial
+               NOT = { has_variable = great_trial_var }
+               NOT = {  c:RUS ?= THIS}
+            }
+            set_variable = great_trial_var
+            trigger_event = { id = tno_super_events.7 days = 0 popup = yes }
+        }
+
+        if = {
+			limit = {
+               has_global_variable = great_trial_win
+               NOT = { has_variable = great_trial_win_var }
+            }
+            set_variable = great_trial_win_var
+            trigger_event = { id = tno_super_events.8 days = 0 popup = yes }
+        }
+         
+        if = {
+			limit = {
+               has_modifier = rebuilding_russia
+               NOT = { has_variable = rebuilding_russia_var }
+            }
+            set_variable = rebuilding_russia_var
+            trigger_event = { id = tno_flavor_events.11 popup = yes }
+        }
+         
+        
+        
         #SAF
         if = {
 			limit = {
@@ -108,7 +162,6 @@
 
 
 
-
         #War Events
         #SAF
         if = {
@@ -119,6 +172,17 @@
             }
             set_global_variable = saf_war_var
             trigger_event = { id = tno_war_events.1 }
+
+        }
+        #Egypt
+        if = {
+            limit = {
+                c:EGY?= this
+                game_date >= 1964.3.1
+                NOT = { has_variable = egyp_leader_dead_var }
+            }
+            set_variable = egyp_leader_dead_var
+            trigger_event = { id = tno_flavor_events.15 }
 
         }
 
@@ -245,35 +309,63 @@
            }
             trigger_event = { id = tno_war_help.2 popup = yes }
         }
+    
+       #MADAGASCAR 
+       if = {
+         limit = {
+            game_date >= 1973.3.1
+            NOT = { has_variable = mad_war_var}
+         }
+        set_variable = mad_war_var
+        trigger_event = { id = tno_flavor_events.12 days = 0 popup = yes }
+       }
+
+       if = {
+        limit = {
+           game_date >= 1974.8.1
+           NOT = { has_variable = madder_war_var }
+        }
+       set_variable = madder_war_var
+       trigger_event = { id = tno_flavor_events.13 days = 0 popup = yes }
+      }
+      if = {
+        limit = {
+            c:SMD ?= this
+            game_date >= 1975.4.1
+            NOT = { has_global_variable = maddener_war_var }
+        }
+        set_global_variable = maddener_war_var
+        trigger_event = { id = tno_war_events.6 }
+       }
+       if = {
+        limit = {
+           has_global_variable = maddener_war_var
+           NOT = { has_variable = mad_supersss_war_var }
+        }
+        set_variable = mad_supersss_war_var
+        trigger_event = { id = tno_super_events.9 days = 0 popup = yes }
+    }
     }
 }  
 
 on_war_end = {
 	effect = {
         scope:actor = {
-			if = {
-                limit = {
-                    has_modifier = volunteers
-                }
-            remove_modifier = volunteers
             add_modifier = {
                 name = volunteers_leaving
                 is_decaying = yes
-                months = 5
+                months = 2
             }
         }  
-		}
+	
 		scope:target = {
-			if = {
-                limit = {
-                    has_modifier = volunteers
-                }remove_modifier = volunteers
             add_modifier = {
                 name = volunteers_leaving
                 is_decaying = yes
-                months = 5
+                months = 2
             }
-        }   
-		}
-	}	
+        } 
+    }
 }
+	
+

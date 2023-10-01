@@ -43,13 +43,13 @@ tno_war_help.2 = {
     placement = ROOT
     hidden = yes
 	immediate = {	
-		random_scope_state = {
+		every_scope_state = {
 			limit = {
-				has_building = building_volunteer_barracks
+				any_scope_building = { is_building_group = bg_volunteer}
 			}
-		save_scope_as = volunteer_state
+			remove_building = building_volunteer_barracks
+			remove_modifier = volunteers
 		}
-		scope:volunteer_state = { remove_building = building_volunteer_barracks }
     }
 }
 

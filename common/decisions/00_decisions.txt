@@ -145,8 +145,6 @@ reform_the_navy = {
 		GDP >= 40000000
 	}
 		
-	
-
 	when_taken = {
 		remove_modifier = the_broken_navy
 		add_modifier = {
@@ -162,3 +160,52 @@ reform_the_navy = {
 	}
 }
 
+the_great_trial = {
+    is_shown = {
+		exists = c:PRO
+		ROOT = c:PRO
+		NOT = {exists = c:RUS}
+		NOT = { has_global_variable = great_trial }
+	}
+
+    possible = {
+		exists = c:GER
+	}
+	
+	when_taken = {
+		trigger_event = { id = tno_war_events.5 }
+		set_global_variable = great_trial
+	}
+	
+	ai_chance = {
+		base = 100
+	}
+}
+
+german_helping = {
+    is_shown = {
+		exists = c:KON
+		ROOT = c:KON
+	}
+
+    possible = {
+		exists = c:GER
+		exists = c:KON
+		NOT = { has_modifier = german_help }
+	}
+	
+	when_taken = {
+		add_modifier = { 
+			name = german_help
+			years = 1
+		}
+		add_treasury = 50000
+		c:GER = {
+			add_treasury = -50000
+		}
+	}
+	
+	ai_chance = {
+		base = 100
+	}
+}

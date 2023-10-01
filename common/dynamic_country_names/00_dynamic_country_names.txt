@@ -38,8 +38,8 @@ MCH = {
 
 PAL = { # Levante
 	dynamic_country_name = {
-		name = "Levant"
-		adjective = "Levant"
+		name = "Governatorato del Levante"
+		adjective = "Governatorato del Levante"
 		
 		is_main_tag_only = yes
 		priority = 1
@@ -60,6 +60,40 @@ PAL = { # Levante
 					}
 					has_diplomatic_pact = {
 						who = c:PAL
+						type = dominion
+						is_initiator = yes
+					}
+				}
+				
+			}
+		}
+	}
+}
+
+EGY = {
+	dynamic_country_name = {
+		name = "Regno D'Egitto"
+		adjective = "Egyptian"
+		
+		is_main_tag_only = yes
+		priority = 1
+		
+		trigger = {
+			exists = c:ITA
+			c:ITA = {
+				OR = {
+					has_diplomatic_pact = {
+						who = c:EGY
+						type = protectorate
+						is_initiator = yes
+					}
+					has_diplomatic_pact = {
+						who = c:EGY
+						type = puppet
+						is_initiator = yes
+					}
+					has_diplomatic_pact = {
+						who = c:EGY
 						type = dominion
 						is_initiator = yes
 					}
@@ -137,7 +171,7 @@ KON = {
         }
     }	
     dynamic_country_name = {
-        name = "Mittelafrika" 
+        name = "Reichskommissariat Zentralafrika" 
         
         is_main_tag_only = yes
         priority = 1
@@ -150,6 +184,80 @@ KON = {
                     type = dominion
                     is_initiator = yes
                 }
+            }
+        }
+    }	
+}
+
+GRE = {	
+    dynamic_country_name = {
+        name = "Hellenic State" 
+        
+        is_main_tag_only = yes
+        priority = 1
+        
+        trigger = {
+            exists = c:ITA
+            c:ITA = {
+                OR = {
+					has_diplomatic_pact = {
+						who = c:GRE
+						type = protectorate
+						is_initiator = yes
+					}
+					has_diplomatic_pact = {
+						who = c:GRE
+						type = puppet
+						is_initiator = yes
+					}
+					has_diplomatic_pact = {
+						who = c:GRE
+						type = dominion
+						is_initiator = yes
+					}
+				}
+            }
+        }
+    }	
+}
+
+ETH = {
+    dynamic_country_name = {
+        name = "Republic of Ethiopia"
+        
+        is_main_tag_only = yes
+        priority = 0
+        
+        trigger = {
+            scope:actor = { has_law = law_type:law_freedom_of_conscience }
+        }
+    }	
+    dynamic_country_name = {
+        name = "Africa Orientale Italiana" 
+        
+        is_main_tag_only = yes
+        priority = 1
+        
+        trigger = {
+            exists = c:ITA
+            c:ITA = {
+                OR = {
+					has_diplomatic_pact = {
+						who = c:ETH
+						type = protectorate
+						is_initiator = yes
+					}
+					has_diplomatic_pact = {
+						who = c:ETH
+						type = puppet
+						is_initiator = yes
+					}
+					has_diplomatic_pact = {
+						who = c:ETH
+						type = dominion
+						is_initiator = yes
+					}
+				}
             }
         }
     }	
@@ -424,14 +532,14 @@ SPA = { # Spain
 
 TUR = { # Turkey
 	dynamic_country_name = {
-		name = "Turkey"
+		name = "Republic of Turkey"
 		adjective = Turkish
 		
 		is_main_tag_only = yes
 		priority = 1
 		
 		trigger = {
-			scope:actor = { has_law = law_type:law_landed_voting }
+			coa_def_republic_flag_trigger = yes
 		}
 	}
 	dynamic_country_name = {
@@ -1585,6 +1693,40 @@ NET = { # Netherlands
 			}
 		}
 	}
+	dynamic_country_name = {
+        name = "Reichskommissariat Niederlande" 
+        
+        is_main_tag_only = yes
+        priority = 1
+        
+        trigger = {
+            exists = c:GER
+            c:GER = {
+                OR = {
+					has_diplomatic_pact = {
+						who = c:NET
+						type = protectorate
+						is_initiator = yes
+					}
+					has_diplomatic_pact = {
+						who = c:NET
+						type = puppet
+						is_initiator = yes
+					}
+					has_diplomatic_pact = {
+						who = c:NET
+						type = dominion
+						is_initiator = yes
+					}
+					has_diplomatic_pact = {
+						who = c:NET
+						type = reichskommissariat
+						is_initiator = yes
+					}
+				}
+            }
+        }
+    }
 }
 
 ONT = { # Ontario

@@ -1,40 +1,4 @@
-﻿RUS = {
-	use_culture_states = yes
-	
-	is_major_formation = yes
-	
-	unification_play = dp_unify_russia
-
-	required_states_fraction = 0.8
-	
-	ai_will_do = { always = yes }
-
-	possible = {
-		country_has_primary_culture = cu:russian
-        has_state_in_state_region = STATE_ARKHANGELSK
-        has_state_in_state_region = STATE_TOMSK
-        has_state_in_state_region = STATE_GALICH
-        has_state_in_state_region = STATE_KAZAN
-        has_state_in_state_region = STATE_SAMARA
-        has_state_in_state_region = STATE_NENETSIA
-        has_state_in_state_region = STATE_PERM
-        has_state_in_state_region = STATE_URAL
-        has_state_in_state_region = STATE_TOBOLSK
-        has_state_in_state_region = STATE_OB
-        has_state_in_state_region = STATE_UPPER_YENISEYSK
-        has_state_in_state_region = STATE_IRKUTSK
-        has_state_in_state_region = STATE_YAKUTSK
-        has_state_in_state_region = STATE_TRANS_BAIKAL
-        has_state_in_state_region = STATE_OKHOTSK
-        has_state_in_state_region = STATE_CHUKOTKA
-        has_state_in_state_region = STATE_KAMCHATKA
-		any_country = {
-				country_has_primary_culture = cu:russian
-		}
-	}	
-}
-
-ARA = {
+﻿ARA = {
 	states = {
 		STATE_YEMEN
 		STATE_OMAN
@@ -65,5 +29,50 @@ ARA = {
 
 	possible = {
 		has_technology_researched = pan-nationalism
+	}
+}
+
+PRO = {
+  
+	states = {
+	 STATE_ARKHANGELSK
+	 STATE_TOMSK
+	 STATE_GALICH
+	 STATE_KAZAN
+	 STATE_SAMARA
+	 STATE_NENETSIA
+	 STATE_PERM
+	 STATE_URAL
+	 STATE_TOBOLSK
+     STATE_OB
+	 STATE_UPPER_YENISEYSK
+	 STATE_IRKUTSK
+	 STATE_YAKUTSK
+	 STATE_TRANS_BAIKAL
+	 STATE_OKHOTSK
+	 STATE_CHUKOTKA
+	 STATE_KAMCHATKA
+	 STATE_URALSK
+	 STATE_KHIVA
+	 STATE_UZBEKIA
+	 STATE_KIRGHIZIA
+	 STATE_AKMOLINSK
+	 STATE_SEMIRECHE
+	 STATE_JETISY
+	 STATE_TURKMENIA
+	 STATE_TAJIKISTAN
+	 STATE_TUVA
+   }
+    required_states_fraction = 0.9
+
+	unification_play = dp_unify_russia
+
+    is_major_formation = yes
+	
+	ai_will_do = { always = yes }
+
+	possible = {
+		country_has_primary_culture = cu:russian
+		country_rank >= rank_value:major_power
 	}
 }

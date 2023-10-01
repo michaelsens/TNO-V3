@@ -293,10 +293,7 @@ tno_flavor_events.6 = {
 			name = modifier_political_failure
 			months = 12
 		}
-		add_modifier = {
-			name = modifier_lost_oil_revenue
-			months = 8
-		}
+		remove_modifier = turkish_oil_revenue
         change_infamy = -5
 	}
     option = {
@@ -305,10 +302,7 @@ tno_flavor_events.6 = {
 			country = c:TUR
 			type = embargo
 		}
-		add_modifier = {
-			name = modifier_lost_oil_revenue
-			months = 8
-		}
+		remove_modifier = turkish_oil_revenue
 		change_relations = {
             country = c:TUR
             value = -50
@@ -344,33 +338,33 @@ tno_flavor_events.7 = {
 		name = tur_flavor.1.a
 		default_option = yes
 		add_modifier = {
-			name = oil_production_modifier
-			months = 8
+			name = oil_transition_modifier
+			months = 6
+			is_decaying = yes
 		}
 		change_relations = {
             country = c:ITA
             value = -25
         }
+		remove_modifier = italian_oil_exploitation
         
 	}
     option = {
 		name = tur_flavor.1.b
 		add_modifier = {
-			name = oil_production_modifier
+			name = oil_transition_modifier
 			months = 10
+			is_decaying = yes
 		}
 		change_relations = {
             country = c:ITA
             value = -50
         }
-		add_radicals = {
+		add_loyalists = {
 			value = 0.005
 		}
-		add_modifier = {
-			name = modifier_gained_oil_revenue
-			months = 8
-		}
-		change_infamy = 10
+		remove_modifier = italian_oil_exploitation
+		change_infamy = 5
 	}
 }
 
@@ -394,10 +388,11 @@ tno_flavor_events.8 = {
 	trigger = {
 		exists = c:ENG
 		this ?= c:ENG
-		OR = {
-			exists = c:GBR
-			this ?= c:GBR
-		}
+	   	OR = {
+				exists = c:GBR
+				this ?= c:GBR
+			}
+	
 	}	
 	
 	duration = 3
@@ -428,11 +423,12 @@ tno_flavor_events.9 = {
 	icon = "gfx/interface/icons/event_icons/event_default.dds"
 	
 	trigger = {
-		OR = {
-			this ?= c:ENG
-			this ?= c:GBR
-		}
-		
+		exists = c:ENG
+		this ?= c:ENG
+			OR = {
+				exists= c:GBR
+				this ?= c:GBR
+			}
 	}	
 	
 	duration = 3
@@ -443,5 +439,399 @@ tno_flavor_events.9 = {
 		add_modifier = { 
 			name = big_again
 		}	
+	}
+}
+
+tno_flavor_events.10 = {
+    type = country_event
+    placement = ROOT
+
+	title = rus_flavor.1.t
+	desc = rus_flavor.1.d
+    flavor = rus_flavor.1.f
+	event_image = {
+		texture  = "gfx/event_pictures/super_pictures/trial.dds"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/middleeast/courtroom_upheaval" 
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	trigger = {
+	}	
+	
+	duration = 3
+	immediate = {
+		random_state = {
+			limit = {
+				state_region = s:STATE_TVER
+			}
+			set_state_owner = c:PRO
+			set_state_type = incorporated
+		}	
+		random_state = {
+			limit = {
+				state_region = s:STATE_NOVGOROD
+			}
+			set_state_owner = c:PRO
+			set_state_type = incorporated
+		}
+		random_state = {
+			limit = {
+				state_region = s:STATE_SMOLENSK
+			}
+			set_state_owner = c:PRO
+			set_state_type = incorporated
+		}
+		random_state = {
+			limit = {
+				state_region = s:STATE_BRYANSK
+			}
+			set_state_owner = c:PRO
+			set_state_type = incorporated
+		}
+		random_state = {
+			limit = {
+				state_region = s:STATE_KURSK
+			}
+			set_state_owner = c:PRO
+			set_state_type = incorporated
+		}
+		random_state = {
+			limit = {
+				state_region = s:STATE_TARTARIA
+			}
+			set_state_owner = c:PRO
+			set_state_type = incorporated
+		}
+		random_state = {
+			limit = {
+				state_region = s:STATE_ROSTOV
+			}
+			set_state_owner = c:PRO
+			set_state_type = incorporated
+		}
+		random_state = {
+			limit = {
+				state_region = s:STATE_ASTRAKHAN
+			}
+			set_state_owner = c:PRO
+			set_state_type = incorporated
+		}
+		random_state = {
+			limit = {
+				state_region = s:STATE_DAGESTAN
+			}
+			set_state_owner = c:PRO
+			set_state_type = incorporated
+		}
+		random_state = {
+			limit = {
+				state_region = s:STATE_CRIMEA
+			}
+			set_state_owner = c:PRO
+			set_state_type = incorporated
+		}
+		random_state = {
+			limit = {
+				state_region = s:STATE_CRIMEA
+			}
+			set_state_owner = c:PRO
+			set_state_type = incorporated
+		}
+		random_state = {
+			limit = {
+				state_region = s:STATE_LUHANSK
+			}
+			set_state_owner = c:PRO
+			set_state_type = incorporated
+		}
+		random_state = {
+			limit = {
+				state_region = s:STATE_CHERSON
+			}
+			set_state_owner = c:PRO
+			set_state_type = incorporated
+		}
+		random_state = {
+			limit = {
+				state_region = s:STATE_VOLHYNIA
+			}
+			set_state_owner = c:PRO
+			set_state_type = incorporated
+		}
+		random_state = {
+			limit = {
+				state_region = s:STATE_MINSK
+			}
+			set_state_owner = c:PRO
+			set_state_type = incorporated
+		}
+		random_state = {
+			limit = {
+				state_region = s:STATE_ORSHA
+			}
+			set_state_owner = c:PRO
+			set_state_type = incorporated
+		}
+		random_state = {
+			limit = {
+				state_region = s:STATE_LITHUANIA
+			}
+			set_state_owner = c:PRO
+			set_state_type = incorporated
+		}
+		random_state = {
+			limit = {
+				state_region = s:STATE_ESTONIA
+			}
+			set_state_owner = c:PRO
+			set_state_type = incorporated
+		}
+		random_state = {
+			limit = {
+				state_region = s:STATE_INGRIA
+			}
+			set_state_owner = c:PRO
+			set_state_type = incorporated
+		}
+	}
+
+	option = { 
+		name = rus_flavor.1.a
+		default_option = yes
+	}
+}
+
+tno_flavor_events.11 = {
+    type = country_event
+    placement = ROOT
+
+	title = rus_flavor.2.t
+	desc = rus_flavor.2.d
+    flavor = rus_flavor.2.f
+	event_image = {
+		texture  = "gfx/event_pictures/super_pictures/rusvic.dds"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/middleeast/courtroom_upheaval" 
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	trigger = {
+	}	
+	
+	duration = 3
+
+	option = {
+		name = rus_flavor.2.a
+		default_option = yes
+		change_tag = RUS 
+	}
+}
+
+tno_flavor_events.12 = {
+
+	type = country_event
+    placement = ROOT
+
+	title = rus_flavor.3.t
+	desc = rus_flavor.3.d
+    flavor = rus_flavor.3.f
+	event_image = {
+		texture  = "gfx/event_pictures/super_pictures/rusvic.dds"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/middleeast/courtroom_upheaval" 
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	trigger = {
+
+		OR = {
+			this ?= c:GER
+			this ?= c:JAP
+		}
+
+	}	
+	
+	duration = 3
+
+	option = {
+		name = mad_flavor.1.a
+		default_option = yes
+		trigger = {
+			owns_entire_state_region = STATE_BRANDENBURG
+		}
+		add_treasury = -50000
+		c:MAD = { add_treasury = 50000 } 	
+		}
+	option = {
+		name = mad_flavor.1.b
+		default_option = yes
+		trigger = {
+			owns_entire_state_region = STATE_KYUSHU
+		}
+		c:MAD = {	
+		add_radicals = {
+			pop_type = peasants
+			value = medium_radicals
+		}}
+	}
+}
+
+tno_flavor_events.13 = {
+	type = country_event
+    placement = ROOT
+
+	title = mad_flavor.2.t
+	desc = mad_flavor.2.d
+    flavor = mad_flavor.2.f
+	
+	event_image = {
+		texture  = "gfx/event_pictures/event_pictures/jungle_warfare.dds"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/middleeast/courtroom_upheaval" 
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	trigger = {
+		OR = {
+			this ?= c:GER
+			this ?= c:JAP
+		}
+	}	
+	
+	duration = 3
+
+	immediate = {
+		create_country = {
+			tag = SMD
+			origin = c:MAD
+			state = s:STATE_SOUTH_MADAGASCAR.region_state:MAD
+		}
+	}
+	
+	option = {
+		name = mad_flavor.2.a
+		default_option = yes
+		trigger = {
+			owns_entire_state_region = STATE_BRANDENBURG
+		}
+		add_treasury = -50000
+		c:MAD = { 
+			add_treasury = 50000
+			random_scope_state = {
+				limit = {
+					is_incorporated = yes
+				}
+				save_scope_as = volunteer_state
+			}
+			scope:volunteer_state = {
+				create_building={
+				building = "building_volunteer_barracks"
+				level=5
+				reserves=1 
+				activate_production_methods= { "pm_volunteer_battle_rifle_infantry" "pm_volunteer_gen1_tank" "pm_volunteer_airborne_fac" "pm_no_specialists" "pm_volunteer_ww_doctrine" "pm_wound_dressing"}
+				}
+			}
+		}
+	}	
+	option = {
+		name = mad_flavor.2.b
+		default_option = yes
+		add_treasury = -50000
+		trigger = {
+			owns_entire_state_region = STATE_KYUSHU
+		}
+		create_diplomatic_pact = {
+			country = c:SMD
+			type = imperial_subject
+		}
+		c:SMD = {
+			add_modifier = {
+				name = modifier_least_developed_economy
+			}
+			add_treasury = 50000  	
+			random_scope_state = {
+				limit = {
+					is_incorporated = yes
+				}
+				save_scope_as = volunteer_state
+			}
+			scope:volunteer_state = {
+				create_building={
+				building = "building_volunteer_barracks"
+				level=10
+				reserves=1 
+				activate_production_methods= { "pm_volunteer_battle_rifle_infantry" "pm_volunteer_gen1_tank" "pm_volunteer_airborne_fac" "pm_no_specialists" "pm_volunteer_ww_doctrine" "pm_wound_dressing"}
+				}
+			}
+		}
+	}
+  }
+
+tno_flavor_events.14 = {
+	type = country_event
+	placement = ROOT
+	
+	title = rus_flavor.3.t
+	desc = rus_flavor.3.d
+	flavor = rus_flavor.3.f
+	event_image = {
+		texture  = "gfx/event_pictures/super_pictures/rusvic.dds"
+	}
+	
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/middleeast/courtroom_upheaval" 
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	trigger = {
+		exists = c:PRO
+		this ?= c:PRO
+	}	
+	
+	duration = 3
+	
+	option = {
+		name = rus_flavor.3.a
+		default_option = yes 
+	}
+}
+
+tno_flavor_events.15 = {
+	type = country_event
+	placement = ROOT
+	
+	title = egy_flavor.1.t
+	desc = egy_flavor.1.d
+	flavor = egy_flavor.1.f
+	event_image = {
+		texture  =  "gfx/event_pictures/super_pictures/summit_1.dds"
+	}
+	
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/middleeast/courtroom_upheaval" 
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	trigger = {
+		exists = c:EGY
+		this ?= c:EGY
+	}	
+	
+	duration = 3
+	
+	option = {
+		name = egy_flavor.1.a
+		default_option = yes 
+		ruler = {
+			kill_character = yes
+		}
+		activate_law = law_type:law_presidential_republic
+		remove_modifier = farouks_hedonism
 	}
 }

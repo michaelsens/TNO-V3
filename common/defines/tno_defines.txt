@@ -72,6 +72,15 @@ NMilitary = {
 	GENERAL_TRAVEL_CAP = 25                         # Limits the travel time to GENERAL_TRAVEL_CAP days. The overseas penalty (GENERAL_TRAVEL_OVERSEAS_SCALE) is still applied.
     GENERAL_AUTO_TRAVEL_MAX_DAYS = 15               # Disables auto traveling if the travel takes more than `GENERAL_AUTO_TRAVEL_MAX_DAYS`. Makes general standby the nearest HQ.
     GENERAL_TRAVEL_OVERSEAS_SCALE = 1
+
+	CONVOY_RAIDING_NUM_POSSIBLE_ATTACK_NODES = 5			# How many sea zones will be shown as possible attack sites for convoy raided player
+	CONVOY_RAIDING_DELAY_BASE_DAYS = 4						# atleast this many days between each admiral raiding attempt
+	CONVOY_RAIDING_DELAY_MAX_RANDOM_DAYS_FACTOR = 6		# up to this many extra days between each admiral raiding attempt
+	CONVOY_RAIDING_CONVOY_ATTACK_CHANCE = 0.6				# Chance each attempt that convoy raiders find convoys to attack from each country along the shipping lane (1 = 100%)
+	CONVOY_RAIDING_STRENGTH_MULT = 0.26						# How strong each Convoy raiding point is ( num flotillas * ce offense )
+	CONVOY_RAIDING_DAMAGE_RANDOM_FACTOR = 0.4				# Actual convoy raiding damage is increased by up to this to provide some random variability
+	CONVOY_RAIDING_DEFENSE_MULT = 0.15						# How much is Convoy raiding strength reduced by patrolling flotillas  ( num flotillas * ce defense )
+	CONVOY_RAIDING_MAX_DEFENSE = 0.8						# Convoy raiding damage cannot be reduced below this by convoy raiding defense
 }
 
 NPolitics = {

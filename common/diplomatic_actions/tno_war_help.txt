@@ -5,7 +5,6 @@
 	possible = {
 		scope:target_country = { 
 			is_at_war = yes
-			is_war_leader = scope:target_country
 			NOT = { is_diplomatic_play_enemy_of = ROOT }
 		}
 		scope:target_country = {
@@ -88,6 +87,7 @@ more_war_help = {
 		accept_effect = {
 			scope:target_country = {
 				trigger_event = { id = tno_war_help.3 popup = yes }
+				add_treasury = 50000
 			}
 		}
 			   
