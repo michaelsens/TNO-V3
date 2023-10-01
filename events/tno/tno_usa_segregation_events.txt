@@ -569,3 +569,114 @@ tno_usa_segregation_events.12 = { # Riots start in the north
 
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 }
+
+tno_usa_segregation_events.13 = { # Riots intesfiy in the whole  north 
+    type = country_event
+    placement = ROOT
+
+	title = tno_usa_segregation_events.13
+	desc = tno_usa_segregation_events.13.d
+    flavor = tno_usa_segregation_events.13.f	
+
+	event_image = {
+		texture  = "gfx/event_pictures/super_pictures/seg.4.dds"
+	}
+
+    icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	trigger = {
+		this ?= c:USA
+	}	
+	
+	duration = 1
+
+	option = {
+		name = tno_usa_segregation_events.13.a
+        s:STATE_MAINE = {
+            add_devastation = 10
+        }
+        s:STATE_NEW_HAMPSHIRE = {
+            add_devastation = 10
+        }
+        s:STATE_MASSACHUSETTS = {
+            add_devastation = 10
+        }
+        s:STATE_RHODE_ISLAND = {
+            add_devastation = 10
+        }
+        s:STATE_VERMONT = {
+            add_devastation = 10
+        }
+        s:STATE_NEW_YORK = {
+            add_devastation = 10
+        }
+        s:STATE_NEW_JERSEY = {
+            add_devastation = 10
+        }
+        s:STATE_DELAWARE = {
+            add_devastation = 10
+        }
+        s:STATE_PENNSYLVANIA = {
+            add_devastation = 15
+        }
+        s:STATE_OHIO = {
+            add_devastation = 10
+        }
+        s:STATE_MICHIGAN = {
+            add_devastation = 5
+        }
+        s:STATE_CALIFORNIA = {
+            add_devastation = 10
+        }
+        s:STATE_WASHINGTON = {
+            add_devastation = 5
+        }
+        s:STATE_MARYLAND = {
+            add_devastation = 5
+        }
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+}
+
+tno_usa_segregation_events.14 = { # Riots intesfiy in the some  north 
+    type = country_event
+    placement = ROOT
+
+	title = tno_usa_segregation_events.14
+	desc = tno_usa_segregation_events.14.d
+    flavor = tno_usa_segregation_events.14.f	
+
+	event_image = {
+		texture  = "gfx/event_pictures/super_pictures/seg.4.dds"
+	}
+
+    icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	trigger = {
+		this ?= c:USA
+	}	
+	
+	duration = 1
+
+	option = {
+		name = tno_usa_segregation_events.13.a
+        s:STATE_NEW_YORK = {
+            add_devastation = 15
+        }
+        s:STATE_NEW_JERSEY = {
+            add_devastation = 10
+        }
+        s:STATE_PENNSYLVANIA = {
+            add_devastation = 15
+        }
+        s:STATE_CALIFORNIA = {
+            add_devastation = 15
+        }
+        s:STATE_WASHINGTON = {
+            add_devastation = 5
+        }
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+}
