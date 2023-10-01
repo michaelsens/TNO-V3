@@ -284,26 +284,6 @@
         } 
         
         if = {
-			limit = {
-               owns_entire_state_region = STATE_HIGHLANDS
-               owns_entire_state_region = STATE_LOWLANDS 
-               NOT = { has_variable = eng_var_2 }
-            }
-            set_variable = eng_var_2
-            trigger_event = { id = tno_flavor_events.8 popup = yes }
-        }
-        if = {
-			limit = {
-               owns_entire_state_region = STATE_CONNAUGHT
-               owns_entire_state_region = STATE_LEINSTER
-               owns_entire_state_region = STATE_MUNSTER
-               owns_entire_state_region = STATE_ULSTER
-               NOT = { has_variable = eng_var_3 }
-            }
-            set_variable = eng_var_3
-            trigger_event = { id = tno_flavor_events.9 popup = yes }
-        }
-        if = {
             limit = {
              has_modifier= volunteers_leaving
            }
@@ -350,21 +330,11 @@
 
 on_war_end = {
 	effect = {
-        scope:actor = {
-            add_modifier = {
-                name = volunteers_leaving
-                is_decaying = yes
-                months = 2
-            }
-        }  
-	
-		scope:target = {
-            add_modifier = {
-                name = volunteers_leaving
-                is_decaying = yes
-                months = 2
-            }
-        } 
+        add_modifier = {
+         name = volunteers_leaving
+         is_decaying = yes
+            months = 2
+         }
     }
 }
 	

@@ -469,3 +469,27 @@ je_mosaddeghs_forgotten = {
     
     should_be_pinned_by_default = yes
 }
+
+je_mended_union = {
+    icon = "gfx/interface/icons/event_icons/tutorial_icon.dds"
+    
+    is_shown_when_inactive = {
+        has_modifier = shattered_union
+    }
+
+    complete = {
+        owns_entire_state_region = STATE_HIGHLANDS
+        owns_entire_state_region = STATE_LOWLANDS 
+    }
+
+    on_complete = {
+        trigger_event = { id = tno_flavor_events.8 }
+    }
+
+    weight = 100
+
+    progressbar = no
+    
+    should_be_pinned_by_default = yes
+
+}
