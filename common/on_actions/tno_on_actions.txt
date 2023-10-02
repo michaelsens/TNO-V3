@@ -329,13 +329,20 @@
 }  
 
 on_war_end = {
-	effect = {
-        add_modifier = {
-         name = volunteers_leaving
-         is_decaying = yes
-            months = 2
-         }
-    }
+    effect = {
+		scope:actor = {
+			add_modifier = {
+                name = volunteers_leaving
+                is_decaying = yes
+                   months = 2
+                }
+            }
+		scope:target = {
+			add_modifier = {
+                name = volunteers_leaving
+                is_decaying = yes
+                   months = 2
+                }
+		}
+	}
 }
-	
-
