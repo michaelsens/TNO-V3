@@ -362,32 +362,7 @@ tno_war_events.10 = { # US retakes newengland
     }
 }
 
-tno_war_events.9 = { # US attacks southern clament
-	type = country_event
-    hidden = yes
 
-	 
-
-	trigger = {
-        exists = c:USA
-		exists = c:USU
-		ROOT = c:USA
-	}	
-	
-    immediate = {
-        remove_modifier = modifier_usa_crushusu
-        create_diplomatic_play = {
-            name = saf
-            target_country = c:USU
-                type = dp_annex_war
-                war = yes
-                initiator = c:USA
-        }
-        hidden_effect = {
-				change_infamy = -40
-		}
-    }
-}
 
 tno_war_events.6 = { # US attacks southern clament
 	type = country_event
