@@ -1,4 +1,4 @@
-namespace = tno_usa_events
+﻿namespace = tno_usa_events
 
 tno_usa_events.8 = { #southern collapse
 	type = country_event
@@ -35,7 +35,7 @@ tno_usa_events.8 = { #southern collapse
 
 		add_journal_entry = { type = je_2acw }
 
-		trigger_event = { id = tno_usa_events.10 }
+		trigger_event = { id = tno_usa_events.9 }
 		
         create_country = { #tennesee state authoirty
             tag = TEN
@@ -784,7 +784,7 @@ tno_usa_events.9 = { #pacific colapse
     option = {
         name = tno_usa_events.9.a
 
-		trigger_event = { id = tno_usa_events.8 }
+		trigger_event = { id = tno_usa_events.10 }
 
 		add_modifier = {
     		name = modifier_usa_cali
@@ -1090,7 +1090,12 @@ tno_usa_events.14 = { # Southern theocrat civil war
 
     on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 
-    duration = 1
+   trigger = {
+	exists = c:UST
+	ROOT = c:UST
+   }
+	
+	duration = 1
 
     option = {
         name = tno_usa_events.14.a
@@ -1101,7 +1106,6 @@ tno_usa_events.14 = { # Southern theocrat civil war
 				type = dp_annex_war
 				war = yes
 				escalation = 90
-				initiator = c:UST
 				add_war_goal = {
                     holder = c:USS
                     type = annex_country
@@ -1126,7 +1130,12 @@ tno_usa_events.15 = { # Missouri civil war
 
     on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 
-    duration = 1
+	trigger = {
+		exists = c:MSA
+		ROOT = c:MSA
+	   }
+	
+	duration = 1
 
     option = {
         name = tno_usa_events.15.a
@@ -1137,7 +1146,6 @@ tno_usa_events.15 = { # Missouri civil war
 				type = dp_annex_war
 				war = yes
 				escalation = 90
-				initiator = c:MSA
 				add_war_goal = {
                     holder = c:USS
                     type = annex_country
@@ -1155,7 +1163,7 @@ tno_usa_events.16 = { # Florida battle royal
     desc = tno_usa_events.16.d
     flavor = tno_usa_events.16.f 
     event_image = {
-        texture = "gfx/event_pictures/super_pictures/civilrights.3.png"
+        texture = "gfx/event_pictures/super_pictures/seg.4.dds"
     }
 
     icon = "gfx/interface/icons/event_icons/event_fire.dds"
@@ -1164,7 +1172,12 @@ tno_usa_events.16 = { # Florida battle royal
 
     duration = 1
 
-    option = {
+	trigger = {
+		exists = c:KKK
+		ROOT = c:KKK
+	   }
+	
+	option = {
         name = tno_usa_events.16.a
 
 		create_diplomatic_play = {
@@ -1173,7 +1186,6 @@ tno_usa_events.16 = { # Florida battle royal
 				type = dp_annex_war
 				war = yes
 				escalation = 90
-				initiator = c:KKK
 				add_war_goal = {
                     holder = c:FLR
                     type = annex_country
@@ -1199,6 +1211,11 @@ tno_usa_events.17 = { # USU internal wars
     on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 
     duration = 1
+	
+	trigger = {
+		exists = c:USU
+		ROOT = c:USU
+	   }
 
     option = {
         name = tno_usa_events.17.a
@@ -1208,7 +1225,6 @@ tno_usa_events.17 = { # USU internal wars
 			target_country = c:USB
 				type = dp_annex_war
 				war = yes
-				initiator = c:USU
 				add_target_backers = { c:WVW }
 				add_war_goal = {
 					holder = c:USB
@@ -1242,7 +1258,12 @@ tno_usa_events.18 = { # USA attacks south
 
     duration = 1
 
-    option = {
+	trigger = {
+		exists = c:USA
+		ROOT = c:USA
+	   }
+	
+	option = {
         name = tno_usa_events.18.a
 
 		remove_modifier = modifier_usa_crushsouth
@@ -1252,7 +1273,6 @@ tno_usa_events.18 = { # USA attacks south
 			target_country = c:DIX
 				type = dp_annex_war
 				war = yes
-				initiator = c:USA
 				add_target_backers = { c:WVW c:USB c:KKK c:FLR c:UST c:USS c:SAD }
 				add_war_goal = {
 					holder = c:USA
@@ -1310,6 +1330,10 @@ tno_usa_events.19 = { # USA attacks paccific
     on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 
     duration = 1
+	trigger = {
+		exists = c:USA
+		ROOT = c:USA
+	   }
 
     option = {
         name = tno_usa_events.19.a
@@ -1321,7 +1345,6 @@ tno_usa_events.19 = { # USA attacks paccific
 			target_country = c:CLT
 				type = dp_annex_war
 				war = yes
-				initiator = c:USA
 				add_target_backers = { c:FTW c:CAC c:LEG }
 				add_war_goal = {
 					holder = c:USA
@@ -1359,7 +1382,12 @@ tno_usa_events.20 = { # USA attacks gov leauge
 
     duration = 1
 
-    option = {
+	trigger = {
+		exists = c:USA
+		ROOT = c:USA
+	   }
+	
+	   option = {
         name = tno_usa_events.20.a
 
 		remove_modifier = modifier_usa_gov
@@ -1369,7 +1397,6 @@ tno_usa_events.20 = { # USA attacks gov leauge
 			target_country = c:KEN
 				type = dp_annex_war
 				war = yes
-				initiator = c:USA
 				add_target_backers = { c:TEN c:MSD c:MSA c:UHL c:MSM c:FKU }
 				add_war_goal = {
 					holder = c:USA

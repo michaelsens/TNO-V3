@@ -1,4 +1,4 @@
-namespace = tno_usa_segregation_events
+﻿namespace = tno_usa_segregation_events
 
 tno_usa_segregation_events.1 = { # civil rights act
     type = country_event
@@ -21,7 +21,8 @@ tno_usa_segregation_events.1 = { # civil rights act
 	duration = 1
 
 	option = { # pass civil rights act
-		name = tno_usa_segregation_events.1.a
+		default_option = yes
+        name = tno_usa_segregation_events.1.a
 		activate_law = law_type:law_multicultural
 
         add_journal_entry = { type = je_southernriots }
@@ -85,7 +86,8 @@ tno_usa_segregation_events.2 = { # riot over jimcrow
 	duration = 1
 
 	option = {
-		name = tno_usa_segregation_events.2.a
+		default_option = yes
+        name = tno_usa_segregation_events.2.a
 
         add_modifier = {
             name = nat_gaurdcalledin
@@ -117,6 +119,9 @@ tno_usa_segregation_events.3 = { # buissness turns away black men
 		texture  = "gfx/event_pictures/super_pictures/seg.3.dds"
 	}
 
+    
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
     icon = "gfx/interface/icons/event_icons/event_default.dds"
 	
 	trigger = {
@@ -126,15 +131,13 @@ tno_usa_segregation_events.3 = { # buissness turns away black men
 	duration = 1
 
 	option = {
-		name = tno_usa_segregation_events.3.a
+		default_option = yes
+        name = tno_usa_segregation_events.3.a
 
 		add_radicals = { #racist response 
             value = 0.02
             culture = cu:afro_american
         }
-        
-
-	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 }
 
 option = {
@@ -165,7 +168,7 @@ tno_usa_segregation_events.4 = { # police burtalize blackman
 	trigger = {
 		this ?= c:USA
 	}	
-	
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 	duration = 1
 
 	option = {
@@ -175,12 +178,10 @@ tno_usa_segregation_events.4 = { # police burtalize blackman
             value = 0.04
             culture = cu:afro_american
         }
-        
-
-	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 }
 
 option = {
+    default_option = yes
     name = tno_usa_segregation_events.4.b
 
     add_radicals = {
@@ -203,7 +204,7 @@ tno_usa_segregation_events.5 = { # police kill unarmed black man
 	}
 
     icon = "gfx/interface/icons/event_icons/event_default.dds"
-	
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 	trigger = {
 		this ?= c:USA
 	}	
@@ -211,7 +212,8 @@ tno_usa_segregation_events.5 = { # police kill unarmed black man
 	duration = 1
 
 	option = {
-		name = tno_usa_segregation_events.5.a
+		default_option = yes
+        name = tno_usa_segregation_events.5.a
 
 		add_radicals = {
             value = 0.04
@@ -219,7 +221,7 @@ tno_usa_segregation_events.5 = { # police kill unarmed black man
         }
         
 
-	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
 }
 
 option = {
@@ -247,6 +249,7 @@ tno_usa_segregation_events.6 = { # civil rights sit in
 
     icon = "gfx/interface/icons/event_icons/event_default.dds"
 	
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 	trigger = {
 		this ?= c:USA
 	}	
@@ -254,15 +257,14 @@ tno_usa_segregation_events.6 = { # civil rights sit in
 	duration = 1
 
 	option = {
-		name = tno_usa_segregation_events.6.a
+		default_option = yes
+        name = tno_usa_segregation_events.6.a
 
 		add_radicals = {
             value = 0.03
             culture = cu:afro_american
         }
         
-
-	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 }
 
     option = {
@@ -382,7 +384,7 @@ tno_usa_segregation_events.9 = { # small bit more riots not to bad
 	event_image = {
 		texture  = "gfx/event_pictures/super_pictures/seg.4.dds"
 	}
-
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
     icon = "gfx/interface/icons/event_icons/event_default.dds"
 	
 	trigger = {
@@ -404,7 +406,6 @@ tno_usa_segregation_events.9 = { # small bit more riots not to bad
         }
     
 
-	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 }
 }
 
