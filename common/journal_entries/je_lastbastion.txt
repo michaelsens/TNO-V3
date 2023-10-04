@@ -1,0 +1,22 @@
+je_lastbastion = {
+
+	icon = "gfx/interface/icons/event_icons/tutorial_icon.dds"
+
+	complete = {
+        OR = { 
+            has_law = law_type:law_autocracy
+			has_law = law_type:law_oligarchy
+			has_law = law_type:law_single_party_state
+        }
+    }
+	
+	on_complete = {
+		trigger_event = { id = tno_usa_events.8 days = 0 popup = yes }
+	}
+		
+	weight = 100
+	
+	
+	should_be_pinned_by_default = yes
+	
+}
