@@ -1,0 +1,36 @@
+tno_oil_crisis.1 = {
+	type = country_event
+    placement = ROOT
+
+	title = mad_flavor.2.t
+	desc = mad_flavor.2.d
+    flavor = mad_flavor.2.f
+	
+	event_image = {
+		texture  = "gfx/event_pictures/event_pictures/jungle_warfare.dds"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/middleeast/courtroom_upheaval" 
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	trigger = {
+	}	
+	
+	duration = 3
+
+	immediate = {
+		create_country = {
+			tag = SMD
+			origin = c:MAD
+			state = s:STATE_SOUTH_MADAGASCAR.region_state:MAD
+		}
+	}
+	
+	option = {
+		name = mad_flavor.2.a
+		default_option = yes
+	}	
+
+  }
