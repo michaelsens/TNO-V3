@@ -423,7 +423,7 @@ tno_usa_events.8 = { #southern collapse
 			province = p:x9e96b6
 			province = p:xB20F72
 			province = p:x18d465
-			province = p:x9e96b6
+			province = p:x3d2fd4
 			province = p:xac4818
 			province = p:x68c793
 			province = p:x216122
@@ -1247,17 +1247,8 @@ tno_usa_events.17 = { # USU internal wars
 tno_usa_events.18 = { # USA attacks south
 	type = country_event
     placement = ROOT
- 
-    title = tno_usa_events.18
-    desc = tno_usa_events.18.d
-    flavor = tno_usa_events.18.f 
-    event_image = {
-        texture = "gfx/event_pictures/super_pictures/seg.4.dds"
-    }
-
-    icon = "gfx/interface/icons/event_icons/event_fire.dds"
-
-    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	
+	hidden = yes
 
     duration = 1
 
@@ -1266,8 +1257,7 @@ tno_usa_events.18 = { # USA attacks south
 		ROOT = c:USA
 	   }
 	
-	option = {
-        name = tno_usa_events.18.a
+	   immediate = {
 
 		remove_modifier = modifier_usa_crushsouth
 
@@ -1321,16 +1311,7 @@ tno_usa_events.19 = { # USA attacks paccific
 	type = country_event
     placement = ROOT
  
-    title = tno_usa_events.19
-    desc = tno_usa_events.19.d
-    flavor = tno_usa_events.19.f 
-    event_image = {
-        texture = "gfx/event_pictures/super_pictures/seg.4.dds"
-    }
-
-    icon = "gfx/interface/icons/event_icons/event_fire.dds"
-
-    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+    hidden = yes
 
     duration = 1
 	trigger = {
@@ -1338,8 +1319,7 @@ tno_usa_events.19 = { # USA attacks paccific
 		ROOT = c:USA
 	   }
 
-    option = {
-        name = tno_usa_events.19.a
+	   immediate = {
 
 		remove_modifier = modifier_usa_cali
 
@@ -1372,16 +1352,7 @@ tno_usa_events.20 = { # USA attacks gov leauge
 	type = country_event
     placement = ROOT
  
-    title = tno_usa_events.20
-    desc = tno_usa_events.20.d
-    flavor = tno_usa_events.20.f 
-    event_image = {
-        texture = "gfx/event_pictures/super_pictures/seg.4.dds"
-    }
-
-    icon = "gfx/interface/icons/event_icons/event_fire.dds"
-
-    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+    hidden = yes
 
     duration = 1
 
@@ -1390,9 +1361,8 @@ tno_usa_events.20 = { # USA attacks gov leauge
 		ROOT = c:USA
 	   }
 	
-	   option = {
-        name = tno_usa_events.20.a
-
+	   immediate = {
+       
 		remove_modifier = modifier_usa_gov
 
 		create_diplomatic_play = {
