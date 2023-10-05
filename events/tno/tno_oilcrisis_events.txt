@@ -1,3 +1,6 @@
+﻿
+namespace = tno_oil.crisis
+
 tno_oil_crisis.1 = {
 	type = country_event
     placement = ROOT
@@ -31,8 +34,35 @@ tno_oil_crisis.1 = {
 		create_country = { #Yemen Arab Democratic Republic
 			tag = YED
 			origin = c:YEM
-			provinces = { "x9D8A78" "xF86F58" "xCF6C49" "xFE5027" "x02F9FF" "x7EC879" "xE5892F" "xCF401E" "x625380" "xEF2E43" "x075453" "x2576C1" "x6290E6" "x68B524" "xBB387A" "x84FA60" "x8B1488" "x49FCAB" "xE5DF3B" "x1A7BB0" "x7C3EA9" "x567A83" "x00E3EF" "xB79DED" "x8436FE" "x54840B" }
 		  
+			province = p:x9D8A78
+			province = p:xF86F58
+			province = p:xCF6C49
+			province = p:xFE5027
+			province = p:x02F9FF
+			province = p:x7EC879
+			province = p:xE5892F
+			province = p:xCF401E
+			province = p:x625380
+			province = p:xEF2E43
+			province = p:x075453
+			province = p:x2576C1
+			province = p:x6290E6
+			province = p:x68B524
+			province = p:xBB387A
+			province = p:x84FA60
+			province = p:x8B1488
+			province = p:x49FCAB
+			province = p:xE5DF3B
+			province = p:x1A7BB0
+			province = p:x7C3EA9
+			province = p:x567A83
+			province = p:x00E3EF
+			province = p:xB79DED
+			province = p:x8436FE
+			province = p:x54840B
+
+
 			on_created = {
             activate_law = law_type:law_appointed_bureaucrats
     
@@ -42,10 +72,15 @@ tno_oil_crisis.1 = {
 			tag = EGR
 			origin = c:EGY
 			state = s:STATE_MATRUH.region_state:EGY
-			provinces = {
-				"xC7858D" "xA050A0" "x08B43B" "x5050E0" "x11D0E0" "x919B7D" "xC35ABD"
-			}
-		  
+
+			province = p:xC7858D
+			province = p:xA050A0
+			province = p:x08B43B
+			province = p:x11D0E0
+			province = p:x5050E0
+			province = p:x919B7D
+		
+
 			on_created = {
             activate_law = law_type:law_appointed_bureaucrats
     
@@ -55,22 +90,57 @@ tno_oil_crisis.1 = {
 			tag = EGM
 			origin = c:EGY
 			state = s:STATE_EGYPTIAN_DESERT.region_state:EGY
-			provinces = {
-				"x50D060" "xD26E7A" "xF32C0A" "xD0D060" "xA75EBA" "x3CD16F" "xE1FB56" "x4D2090" "x709020" "x4249C3" "xACD490" "xC83592" "x2A731C" "x44702D" "x7B75E6" "xF01121" "x78104A" "x7E0628" "xC304C5"
-			} 
-		  
+			state = s:STATE_DONGOLA.region_state:EGY
+			province = p:x50D060
+			province = p:xD26E7A
+			province = p:xF32C0A
+			province = p:xD0D060
+			province = p:xA75EBA
+			province = p:x3CD16F
+			province = p:xE1FB56
+			province = p:x4D2090
+			province = p:x709020
+			province = p:x4249C3
+			province = p:xC83592
+			province = p:x2A731C
+			province = p:x44702D
+			province = p:x7B75E6
+			province = p:xF01121
+			province = p:x78104A
+			province = p:x7E0628
+			province = p:xC304C5
+
 			on_created = {
             activate_law = law_type:law_appointed_bureaucrats
     
          }
 		} 
+		create_country = { #Egyptian Blue Nile Goverment
+		tag = EGN
+		origin = c:EGY
+		state = s:STATE_DARFUR.region_state:EGY
+		state = s:STATE_KORDOFAN.region_state:EGY
+		state = s:STATE_BLUE_NILE.region_state:EGY
+			on_created = {
+			activate_law = law_type:law_appointed_bureaucrats
+		 }
+		} 
 		create_country = { #Iraqi Republic
 			tag = IIR
-			origin = c:IRQ
-			provinces = {
-				"xEE1814" "x1EDF69" "xA4A407" "x54DF0B" "x92702E" "xE090E0" "xA05060" "x1EC145" "x205060" "x5F9550" "x396DB2"
-			}  
-		  
+			origin = c:IRQ  
+			province = p:xEE1814
+			province = p:x1EDF69
+			province = p:xA4A407
+			province = p:x54DF0B
+			province = p:x92702E
+			province = p:xE090E0
+			province = p:xA05060
+			province = p:x1EC145
+			province = p:x205060
+			province = p:x5F9550
+			province = p:x396DB2
+			province = p:x0B769F
+			
 			on_created = {
             activate_law = law_type:law_appointed_bureaucrats
     
@@ -79,11 +149,20 @@ tno_oil_crisis.1 = {
 		create_country = { #Islamic Republic of Iraq
 			tag = IRI
 			origin = c:IRQ
-			provinces = {
-				"x1CC9CC" "x41F864" "xFE18C1" "xF1BF17" "x7CAD29" "xBE6A23" "x1D7F5E" "x93CB74" "x312AA2" "x34A371"
-			} 
-		  
-			on_created = {
+		    province = p:x1CC9CC
+			province = p:x41F864
+			province = p:xFE18C1
+			province = p:xF1BF17
+			province = p:x7CAD29
+			province = p:xBE6A23
+			province = p:x1D7F5E
+			province = p:x93CB74
+			province = p:x34A371
+			province = p:x312AA2
+			province = p:x9F9CCA
+			province = p:x88ADC8
+			
+		on_created = {
             activate_law = law_type:law_appointed_bureaucrats
     
          }
@@ -149,10 +228,43 @@ tno_oil_crisis.1 = {
 		create_country = { #Imamate of Oman
 			tag = OMI
 			origin = c:OMA
-			provinces = {
-				"x5FCC2E" "x794443" "xCD06CE" "xB6755D" "x68646C" "xAAFA29" "x13506D" "x589BAF" "xB6FBDA" "xEFD0A0" "xB70CA0" "x02FBFB" "xE4E126" "xCB50CF" "x8941AF" "x5AF663" "xC1BD52" "x1B25E6" "xC790A2" "xFD7FD6" "x79A9F3" "xF656B5" "xF7E8FC" "x7BE5F4" "xF44B1E" "x377D71" "x075D78" "xC273D0" "x07D89B" "x17CD85" "x8BA0D5" "x2DB9C1" "x48AF9C" "x1EA1F1" "x84FDD6" "x42A960"
-			}
-		  
+			province = p:x5FCC2E
+			province = p:x794443
+			province = p:xCD06CE
+			province = p:xB6755D
+			province = p:x68646C
+			province = p:xAAFA29
+			province = p:x13506D
+			province = p:x589BAF
+			province = p:xB6FBDA
+			province = p:xEFD0A0
+			province = p:xB70CA0
+			province = p:x02FBFB
+			province = p:xE4E126
+			province = p:xCB50CF
+			province = p:x8941AF
+			province = p:x5AF663
+			province = p:xC1BD52
+			province = p:x1B25E6
+			province = p:xC790A2
+			province = p:xFD7FD6
+			province = p:x79A9F3
+			province = p:xF656B5
+			province = p:xF7E8FC
+			province = p:x7BE5F4
+			province = p:xF44B1E
+			province = p:x377D71
+			province = p:x075D78
+			province = p:xC273D0
+			province = p:x07D89B
+			province = p:x17CD85
+			province = p:x8BA0D5
+			province = p:x2DB9C1
+			province = p:x48AF9C
+			province = p:x84FDD6
+			province = p:x1EA1F1
+			province = p:x42A960
+
 			on_created = {
             activate_law = law_type:law_appointed_bureaucrats
     
@@ -161,10 +273,27 @@ tno_oil_crisis.1 = {
 		create_country = { #Dhofar Rebellion
 			tag = ODR
 			origin = c:OMA
-			provinces = {
-				"x06581E" "xA3015F" "x030A95" "x00BADA" "x093AC3" "xB82286" "xBFD3D7" "x85D4B9" "xF963C3" "x6E2CE7" "x2EDA6E" "xEDE86E" "x05983E" "xBC6325" "x0289EB" "x3C2FE8" "xF89153" "x85E141" "xD9AF1E" "x5627A0"
-			} 
-		  
+			province = p:x06581E
+			province = p:xA3015F
+			province = p:x030A95
+			province = p:x00BADA
+			province = p:x093AC3
+			province = p:xB82286
+			province = p:xBFD3D7
+			province = p:x85D4B9
+			province = p:xF963C3
+			province = p:x6E2CE7
+			province = p:x2EDA6E
+			province = p:xEDE86E
+			province = p:x05983E
+			province = p:xBC6325
+			province = p:x0289EB
+			province = p:x3C2FE8
+			province = p:xF89153
+			province = p:x85E141
+			province = p:xD9AF1E
+			province = p:x5627A0
+
 			on_created = {
             activate_law = law_type:law_appointed_bureaucrats
     
