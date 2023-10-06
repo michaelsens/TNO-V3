@@ -1,5 +1,5 @@
 ﻿
-namespace = tno_oil.crisis
+namespace = tno_oil_crisis
 
 tno_oil_crisis.1 = {
 	type = country_event
@@ -24,9 +24,15 @@ tno_oil_crisis.1 = {
 	duration = 3
 
 	immediate = {
-	
+	c:EGY  = {
+		random_scope_state = {
+			limit = {
+				state_region = s:STATE_MATRUH
+			}
+			save_scope_as = egr_spawn
+		}
 	}
-	
+	}
 	option = {
 		name = mad_flavor.2.a
 		default_option = yes
@@ -71,8 +77,8 @@ tno_oil_crisis.1 = {
 		create_country = { #Egyptian Revolutionary Command Council
 			tag = EGR
 			origin = c:EGY
-			state = s:STATE_MATRUH.region_state:EGY
-
+			state = scope:egr_spawn
+			
 			province = p:xC7858D
 			province = p:xA050A0
 			province = p:x08B43B
@@ -298,6 +304,25 @@ tno_oil_crisis.1 = {
             activate_law = law_type:law_appointed_bureaucrats
     
          }
-		} 	
+		} 
+		create_country = { #Saudi Repulican Revolt
+		tag = NEZ
+		origin = c:NEJ
+		state = s:STATE_HEDJAZ.region_state:NEJ
+		
+		on_created = {
+		activate_law = law_type:law_appointed_bureaucrats
+		 }
+		}
+		create_country = { #Saudi Repulican Revolt
+		tag = SRY
+		origin = c:TUR
+		state = s:STATE_SYRIA.region_state:TUR
+		state = s:STATE_LEBANON.region_state:TUR
+		state = s:STATE_DEIR_EZ_ZOR.region_state:TUR
+		on_created = {
+		activate_law = law_type:law_appointed_bureaucrats
+		 }
+		} 	 	
 	}	
 }
