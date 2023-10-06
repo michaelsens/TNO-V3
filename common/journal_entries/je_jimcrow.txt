@@ -1,0 +1,200 @@
+﻿je_jimcrow = { # Jim crow itself not civil rights act
+
+    icon = "gfx/interface/icons/new_event_icons/event_jimcrow.dds"
+
+    
+    
+    complete = {
+        OR = { 
+            has_law = law_type:law_multicultural
+        }
+    }
+
+    on_complete = {
+        remove_modifier = jim_crow
+
+        add_radicals = {
+            value = 0.05
+            culture = cu:yankee
+        }
+        add_loyalists = {
+            value = 0.05
+            culture = cu:afro_american
+        }
+    }
+
+    on_monthly_pulse = {
+        random_events = {
+            6 = 0
+            3 = tno_usa_segregation_events.2
+            3 = tno_usa_segregation_events.3
+            3 = tno_usa_segregation_events.4
+            3 = tno_usa_segregation_events.5
+            3 = tno_usa_segregation_events.6
+        }
+    }
+    
+    weight = 100
+    
+    should_be_pinned_by_default = yes
+    
+}
+
+je_civil_rights_act = { # civil rights act
+
+    icon = "gfx/interface/icons/new_event_icons/event_bill.dds"
+
+    immediate = {
+
+		set_variable = {
+			name = civil_rights_timer
+			value = 0
+		}
+	}
+    
+    complete = {
+		scope:journal_entry = {
+			is_goal_complete = yes
+		}
+	}
+
+    on_complete = {
+        trigger_event = { id = tno_usa_segregation_events.1 popup = yes }
+    }
+
+    on_monthly_pulse = {
+        effect = {
+			change_variable = {
+				name = civil_rights_timer
+				add = 1
+			}
+		}
+    }
+
+    current_value = {
+		value = root.var:civil_rights_timer
+	}
+
+    goal_add_value = {
+		value = 24
+	}
+
+    progressbar = yes
+    
+    weight = 100
+    
+    should_be_pinned_by_default = yes
+    
+}
+
+je_southernriots = { # Riots when civil rights is passed
+
+    icon = "gfx/interface/icons/new_event_icons/event_riot.2dds.dds"
+
+    
+    
+    immediate = {
+
+		set_variable = {
+			name = civil_rights_timer
+			value = 0
+		}
+	}
+    
+    complete = {
+		scope:journal_entry = {
+			is_goal_complete = yes
+		}
+	}
+
+    on_complete = {
+        trigger_event = { id = tno_usa_segregation_events.7 popup = yes }
+        remove_modifier = southern_riots
+    }
+
+    on_monthly_pulse = {
+        random_events = {
+            10 = 0
+            15 = tno_usa_segregation_events.8
+            15 = tno_usa_segregation_events.9
+            15 = tno_usa_segregation_events.10
+        }
+        effect = {
+			change_variable = {
+				name = civil_rights_timer
+				add = 1
+			}
+		}
+    }
+
+    current_value = {
+		value = root.var:civil_rights_timer
+	}
+
+    goal_add_value = {
+		value = 6
+	}
+
+    progressbar = yes
+    
+    weight = 100
+    
+    should_be_pinned_by_default = yes
+    
+}
+
+je_northernriots = { # Riots when civil rights is vetoed
+
+    icon = "gfx/interface/icons/new_event_icons/event_riot.dds"
+
+    
+    
+    immediate = {
+
+		set_variable = {
+			name = civil_rights_timer
+			value = 0
+		}
+	}
+    
+    complete = {
+		scope:journal_entry = {
+			is_goal_complete = yes
+		}
+	}
+
+    on_complete = {
+        trigger_event = { id = tno_usa_segregation_events.11 popup = yes }
+        remove_modifier = northern_riots
+    }
+
+    on_monthly_pulse = {
+        random_events = {
+            10 = 0
+            15 = tno_usa_segregation_events.13
+            15 = tno_usa_segregation_events.14
+        }
+        effect = {
+			change_variable = {
+				name = civil_rights_timer
+				add = 1
+			}
+		}
+    }
+
+    current_value = {
+		value = root.var:civil_rights_timer
+	}
+
+    goal_add_value = {
+		value = 6
+	}
+
+    progressbar = yes
+    
+    weight = 100
+    
+    should_be_pinned_by_default = yes
+    
+}
+

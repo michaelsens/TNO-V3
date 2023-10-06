@@ -343,3 +343,114 @@ tno_war_events.6 = {
         }
     }
 }
+tno_war_events.10 = { # US retakes newengland 
+	type = country_event
+    hidden = yes
+
+	 
+
+	trigger = {
+        exists = c:USA
+		exists = c:NYR
+		ROOT = c:USA
+	}	
+	
+    immediate = {
+        remove_modifier = modifier_usa_newengland
+        create_diplomatic_play = {
+            name = saf
+            target_country = c:NYR
+                type = dp_humiliation
+                war = yes
+                add_target_backers = { c:USX c:NYP }
+                add_war_goal = {
+                    holder = c:USA
+                    type = conquer_state
+                    target_state = s:STATE_NEW_YORK.region_state:NYR
+                }
+                add_war_goal = {
+                    holder = c:USA
+                    type = conquer_state
+                    target_state = s:STATE_NEW_YORK.region_state:NYP
+                }
+                add_war_goal = {
+                    holder = c:USA
+                    type = conquer_state
+                    target_state = s:STATE_MASSACHUSETTS.region_state:USX
+                }
+                
+        }
+        hidden_effect = {
+				change_infamy = -40
+		}
+    }
+}
+
+
+
+tno_war_events.8 = { # US attacks southern clament
+	type = country_event
+    hidden = yes
+
+	 
+
+	trigger = {
+        exists = c:USA
+		exists = c:USU
+		ROOT = c:USA
+	}	
+	
+    immediate = {
+        remove_modifier = modifier_usa_crushusu
+        create_diplomatic_play = {
+            name = saf
+            target_country = c:USU
+                type = dp_annex_war
+                war = yes
+                escalation = 80
+        
+        }
+        hidden_effect = {
+				change_infamy = -40
+		}
+    }
+}
+
+tno_war_events.7 = { # US attacks rustbelt
+	type = country_event
+    hidden = yes
+
+	 
+
+	trigger = {
+        exists = c:USA
+		exists = c:USU
+		ROOT = c:USA
+	}	
+	
+    immediate = {
+        remove_modifier = modifier_usa_rustbelt
+        create_diplomatic_play = {
+            name = rust
+        
+            add_target_backers = { c:USH c:UUH }
+            target_country = c:USI
+                type = dp_annex_war
+                war = yes
+         
+                add_war_goal = {
+                    holder = c:USA
+                    type = conquer_state
+                    target_state = s:STATE_OHIO.region_state:USH
+                }
+                add_war_goal = {
+                    holder = c:USA
+                    type = conquer_state
+                    target_state = s:STATE_INDIANA.region_state:UUH
+                }
+        }
+        hidden_effect = {
+				change_infamy = -40
+		}
+    }
+}

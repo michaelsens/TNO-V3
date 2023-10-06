@@ -273,40 +273,6 @@ je_dependence_on_slavery = {
 
 }
 
-
-je_jim_crow = {
-    icon = "gfx/interface/icons/event_icons/tutorial_icon.dds"
-   
-    is_shown_when_inactive = {
-        exists = c:USA
-		ROOT = c:USA
-        has_modifier = jim_crow
-    }
-
-    complete = {
-        has_law = law_type:law_multicultural
-    }
-
-    on_complete = {
-        remove_modifier = jim_crow
-        add_radicals = {
-            value = 0.05
-            culture = cu:yankee
-        }
-        add_loyalists = {
-            value = 0.15
-            culture = cu:afro_american
-        }
-    }
-
-
-    weight = 100
-
-    progressbar = no
-    
-    should_be_pinned_by_default = yes
-}
-
 je_corruption = {
     icon = "gfx/interface/icons/event_icons/tutorial_icon.dds"
    
@@ -491,5 +457,27 @@ je_mended_union = {
     progressbar = no
     
     should_be_pinned_by_default = yes
+}
 
+je_lastbastion = {
+
+    icon = "gfx/interface/icons/event_icons/tutorial_icon.dds"
+    
+    complete = {
+        OR = { 
+            has_law = law_type:law_technocracy
+            has_law = law_type:law_autocracy
+            has_law = law_type:law_single_party_state
+            has_law = law_type:law_oligarchy
+        }
+    }
+
+    on_complete = {
+        remove_modifier = last_bastion_democracy
+    }
+
+    weight = 100
+    
+    should_be_pinned_by_default = no
+    
 }
