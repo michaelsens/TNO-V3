@@ -87,6 +87,21 @@ BGD = {
 			}
 		}
 	}
+	flag_definition = {
+		coa = BGD_democratic
+		priority = 2000
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				OR = {
+					has_law = law_type:law_parliamentary_republic
+					has_law = law_type:law_presidential_republic
+				}
+				NOT = { has_law = law_type:law_autocracy }
+					
+			}
+		}
+	}
 }
 
 
@@ -3186,6 +3201,19 @@ GER = { # Germany
 			coa_def_republic_flag_trigger = yes
 		}
 	}
+	flag_definition = { #strasserite
+		coa = GER_strasser
+		priority = 2000
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_law = law_type:law_council_republic
+				has_law = law_type:law_ethnostate
+				has_law = law_type:law_autocracy
+				
+			}
+		}
+	}
 	flag_definition = {
 		coa = GER
 		subject_canton = GER_dictatorship
@@ -3197,7 +3225,7 @@ GER = { # Germany
 	flag_definition = {
 		coa = GER_communist
 		subject_canton = GER_communist
-		priority = 1500
+		priority = 5
 		trigger = { 
 			coa_def_communist_flag_trigger = yes
 		}

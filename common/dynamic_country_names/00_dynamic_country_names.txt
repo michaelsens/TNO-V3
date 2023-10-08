@@ -378,6 +378,23 @@ GER = { # Germany
 		}
 	}
 	dynamic_country_name = {
+		name = "Strasserite Germany"
+		adjective = Großgermanisches
+		
+		is_main_tag_only = yes
+		priority = 2
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_law = law_type:law_council_republic
+				has_law = law_type:law_ethnostate
+				has_law = law_type:law_autocracy
+				
+			}
+		}
+	}
+	dynamic_country_name = {
 		name = dyn_c_german_empire
 		
 		is_main_tag_only = yes
