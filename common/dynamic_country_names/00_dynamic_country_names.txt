@@ -541,7 +541,27 @@ BGD = { # Burgundy
 					has_law = law_type:law_parliamentary_republic
 					has_law = law_type:law_presidential_republic
 				}
-				NOT = { has_law = law_type:law_autocracy}
+				NOT = { has_law = law_type:law_autocracy
+						has_law = law_type:law_ethnostate }
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = "Republic of Burgundy"
+		adjective = "Burgundian"
+		
+		is_main_tag_only = yes
+		priority = 3
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				OR = {
+					has_law = law_type:law_parliamentary_republic
+					has_law = law_type:law_presidential_republic
+				}
+				NOT = { has_law = law_type:law_autocracy }
+					
 			}
 		}
 	}
