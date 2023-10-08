@@ -516,36 +516,35 @@ BGD = { # Burgundy
 		}
 	}
 	dynamic_country_name = {
-		name = "Kiserstat Burgund"
-		adjective = "Burgundian"
-		
-		is_main_tag_only = yes
-		priority = 1
-		
-		trigger = {
-			scope:actor = { has_law = law_type:law_ethnostate }
-			scope:actor = { has_law = law_type:law_monarchy }
-	
-		}
-	}
-	
-}
-
-BGD = { # Burgundy
-	
-	dynamic_country_name = {
 		name = "Kingdom of Burgund"
 		adjective = "Burgundian"
 		
 		is_main_tag_only = yes
-		priority = 1
+		priority = 2
 		
 		trigger = {
 			scope:actor = { has_law = law_type:law_monarchy }
 	
 		}
 	}
-	
+	dynamic_country_name = {
+		name = "Reformed Republic of Burgundy"
+		adjective = "Burgundian"
+		
+		is_main_tag_only = yes
+		priority = 3
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				OR = {
+					has_law = law_type:law_parliamentary_republic
+					has_law = law_type:law_presidential_republic
+				}
+				NOT = { has_law = law_type:law_autocracy}
+			}
+		}
+	}
 }
 
 SPA = { # Spain
