@@ -34,7 +34,22 @@
             trigger_event = { id = tno_starting_events.24 popup = yes }
         }
         
-
+        if = {
+			limit = {
+               game_date >= 1962.4.1
+               game_date <= 1962.6.1
+               NOT = { has_variable = letsgoooooo_var }
+            }
+            set_variable = letsgoooooo_var
+            trigger_event = { id = tno_oil_crisis.1 days = 0 }
+            trigger_event = { id = tno_oil_crisis.2 days = 0 }
+            trigger_event = { id = tno_oil_crisis.3 days = 0 }
+            trigger_event = { id = tno_oil_crisis.4 days = 0 }
+            trigger_event = { id = tno_oil_crisis.5 days = 0 }
+            trigger_event = { id = tno_oil_crisis.6 days = 0 }
+            trigger_event = { id = tno_oil_crisis.7 days = 0 }
+            trigger_event = { id = tno_oil_crisis.8 days = 0 }
+        }
 
 
         #Super events

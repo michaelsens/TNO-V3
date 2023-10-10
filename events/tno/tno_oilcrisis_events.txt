@@ -1,7 +1,7 @@
 ﻿
 namespace = tno_oil_crisis
 
-tno_oil_crisis.1 = {
+tno_oil_crisis.1 = {   #Yemen Civil War
 	type = country_event
     placement = ROOT
 
@@ -19,24 +19,13 @@ tno_oil_crisis.1 = {
 	icon = "gfx/interface/icons/event_icons/event_default.dds"
 	
 	trigger = {
+		exists = c:YEM
+		root = c:YEM
 	}	
 	
 	duration = 3
 
 	immediate = {
-	c:EGY  = {
-		random_scope_state = {
-			limit = {
-				state_region = s:STATE_MATRUH
-			}
-			save_scope_as = egr_spawn
-		}
-	}
-	}
-	option = {
-		name = mad_flavor.2.a
-		default_option = yes
-		
 		create_country = { #Yemen Arab Democratic Republic
 			tag = YED
 			origin = c:YEM
@@ -71,554 +60,1097 @@ tno_oil_crisis.1 = {
 
 			on_created = {
             activate_law = law_type:law_appointed_bureaucrats
-    
          }
 		} 
-		create_country = { #Egyptian Revolutionary Command Council
-			tag = EGR
-			origin = c:EGY
-			state = scope:egr_spawn
-			
-			province = p:xC7858D
-			province = p:xA050A0
-			province = p:x08B43B
-			province = p:x11D0E0
-			province = p:x5050E0
-			province = p:x919B7D
+	}
+	option = {
+		name = mad_flavor.2.a
+		default_option = yes
+		create_diplomatic_play = {
+			name = oil_war
+			target_country = c:YED
+			type = dp_annex_war
+			war = no
+			target_state = s:STATE_YEMEN.region_state:YED
+			escalation = 50
+			add_war_goal = {
+			 holder = c:YED
+			 type = annex_country
+			 target_state = s:STATE_YEMEN.region_state:YEM
+		   }
+	 }
+	}
+}		
 		
+tno_oil_crisis.2 = {   #Egypt Civil War
+	type = country_event
+    placement = ROOT
 
-			on_created = {
-            activate_law = law_type:law_appointed_bureaucrats
-    
-         }
-		} 
-		create_country = { #Muslim Brotherhood 
-			tag = EGM
-			origin = c:EGY
-			province = p:x03534F
-			province = p:x1106F7
-			province = p:x1403CE
-			province = p:x150086
-			province = p:x1741F9
-			province = p:x1B8AFB
-			province = p:x1C0C7D
-			province = p:x1CDFF0
-			province = p:x1DF813
-			province = p:x1F1C45
-			province = p:x20FBA0
-			province = p:x221888
-			province = p:x22B654
-			province = p:x2578C4
-			province = p:x27571E
-			province = p:x27C39D
-			province = p:x2B6F28
-			province = p:x2FA8B3
-			province = p:x331A56
-			province = p:x36E64E
-			province = p:x3940DA
-			province = p:x3C21A0
-			province = p:x3FFE56
-			province = p:x448F8B
-			province = p:x46C8F9
-			province = p:x48152A
-			province = p:x4B8A20
-			province = p:x54C854
-			province = p:x54D103
-			province = p:x559DD9
-			province = p:x581E1A
-			province = p:x5D6A34
-			province = p:x66AEE5
-			province = p:x6AF576
-			province = p:x6C5890
-			province = p:x6D12E3
-			province = p:x741E9E
-			province = p:x7514D7
-			province = p:x7CEEDA
-			province = p:x807EFF
-			province = p:x811823
-			province = p:x83E020
-			province = p:x88E19F
-			province = p:x8BEC52
-			province = p:x8D6726
-			province = p:x8F31B0
-			province = p:x9130F8
-			province = p:x91BF54
-			province = p:x941E53
-			province = p:x99610C
-			province = p:x9A6DB5
-			province = p:x9D3831
-			province = p:x9D6B88
-			province = p:xA14C64
-			province = p:xA8FA0A
-			province = p:xAA1826
-			province = p:xACEBEA
-			province = p:xB01121
-			province = p:xB05020
-			province = p:xB23CCA
-			province = p:xB2E150
-			province = p:xB32C4A
-			province = p:xB5BED4
-			province = p:xB9EBE6
-			province = p:xBA5529
-			province = p:xBBEAA1
-			province = p:xBCE332
-			province = p:xBD1C16
-			province = p:xBD5993
-			province = p:xC48A06
-			province = p:xC87A53
-			province = p:xC943B1
-			province = p:xCA855F
-			province = p:xCAE0D2
-			province = p:xCC0432
-			province = p:xCE519C
-			province = p:xD03CB6
-			province = p:xD0D0E0
-			province = p:xD91602
-			province = p:xE03FA1
-			province = p:xE12C26
-			province = p:xE18FD5
-			province = p:xE1F55D
-			province = p:xE21A78
-			province = p:xE565E4
-			province = p:xE853CA
-			province = p:xE95AD6
-			province = p:xF0B8A3
-			province = p:xF21A84
-			province = p:xF3B9CD
-			province = p:xF55182
-			province = p:xF63E3C
-			province = p:xF87E36
-			province = p:xFA5382
-			province = p:xFA85DD
-			province = p:xFF4484
-			province = p:x50D060
-			province = p:xD26E7A
-			province = p:xF32C0A
-			province = p:xD0D060
-			province = p:xA75EBA
-			province = p:x3CD16F
-			province = p:xE1FB56
-			province = p:x4D2090
-			province = p:x709020
-			province = p:x4249C3
-			province = p:xC83592
-			province = p:x2A731C
-			province = p:x44702D
-			province = p:x7B75E6
-			province = p:xF01121
-			province = p:x78104A
-			province = p:x7E0628
-			province = p:xC304C5
-			province = p:x007E00
-			province = p:x04CAF0
-			province = p:x054B09
-			province = p:x0BFED1
-			province = p:x0DF96C
-			province = p:x1090F8
-			province = p:x10DCE6
-			province = p:x11C147
-			province = p:x150E1A
-			province = p:x161776
-			province = p:x1766AF
-			province = p:x1A8ACE
-			province = p:x1CF8E6
-			province = p:x1EA562
-			province = p:x2093F8
-			province = p:x20F9A6
-			province = p:x222DE0
-			province = p:x225A59
-			province = p:x2550D2
-			province = p:x266C2B
-			province = p:x27F228
-			province = p:x283C56
-			province = p:x2BFA5C
-			province = p:x2F0B7E
-			province = p:x31A8AF
-			province = p:x3231D7
-			province = p:x324CD5
-			province = p:x32DB72
-			province = p:x36EACA
-			province = p:x3795A7
-			province = p:x3B5DB2
-			province = p:x3B8BED
-			province = p:x3CE268
-			province = p:x3E717B
-			province = p:x3FB182
-			province = p:x42F208
-			province = p:x44C39B
-			province = p:x455297
-			province = p:x484F69
-			province = p:x4B0B6D
-			province = p:x4D1F29
-			province = p:x4E155E
-			province = p:x4E37E0
-			province = p:x4E6485
-			province = p:x51D68A
-			province = p:x550B5E
-			province = p:x5532D7
-			province = p:x56EB87
-			province = p:x58DC7E
-			province = p:x59CB2E
-			province = p:x5C4782
-			province = p:x5C9678
-			province = p:x5D63E5
-			province = p:x660662
-			province = p:x6846D2
-			province = p:x6D0641
-			province = p:x6F53E7
-			province = p:x7011A0
-			province = p:x71CE61
-			province = p:x746936
-			province = p:x76A5E2
-			province = p:x77680E
-			province = p:x77814B
-			province = p:x799DA6
-			province = p:x7A81FC
-			province = p:x7B8083
-			province = p:x7B85E1
-			province = p:x7F40DC
-			province = p:x851A9F
-			province = p:x856C77
-			province = p:x86281A
-			province = p:x8C56D8
-			province = p:x8C708E
-			province = p:x8CCFBA
-			province = p:x8EBBA0
-			province = p:x8FB172
-			province = p:x9030E0
-			province = p:x911D8A
-			province = p:x957D19
-			province = p:x9D7E6E
-			province = p:x9DD70D
-			province = p:x9E053B
-			province = p:xA09909
-			province = p:xA32C94
-			province = p:xA62EDD
-			province = p:xA7E315
-			province = p:xA86A12
-			province = p:xAADC57
-			province = p:xB060C3
-			province = p:xB1A5A5
-			province = p:xB4CFDD
-			province = p:xB89427
-			province = p:xB911BF
-			province = p:xBC0905
-			province = p:xBF4351
-			province = p:xBFE20B
-			province = p:xC1B811
-			province = p:xCC661D
-			province = p:xCED49F
-			province = p:xCF32AB
-			province = p:xD09060
-			province = p:xD14C83
-			province = p:xD1DBCB
-			province = p:xD6CE98
-			province = p:xD77A80
-			province = p:xD781FF
-			province = p:xDA9F36
-			province = p:xDE20CA
-			province = p:xDF3230
-			province = p:xE43B56
-			province = p:xE4A226
-			province = p:xE53B02
-			province = p:xE5D4C9
-			province = p:xE5DB69
-			province = p:xE7E845
-			province = p:xEAC7A6
-			province = p:xECB353
-			province = p:xEEA896
-			province = p:xF011A0
-			province = p:xF09021
-			province = p:xF16CDA
-			province = p:xF1B993
-			province = p:xF4022B
-			province = p:xF51BB4
-			province = p:xF53975
-			province = p:xF6E39D
-			province = p:xFAA9A3
-			province = p:xFBB239
-			province = p:xFD501A
-			province = p:xFE44B7
-			province = p:xFF331C
-			province = p:xFF4AEC
-			province = p:xFF4E48
-			province = p:xFFC1F5
+	title = mad_flavor.2.t
+	desc = mad_flavor.2.d
+    flavor = mad_flavor.2.f
+	
+	event_image = {
+		texture  = "gfx/event_pictures/event_pictures/jungle_warfare.dds"
+	}
 
-			on_created = {
-            activate_law = law_type:law_appointed_bureaucrats
-    
-         }
-		} 
-		create_country = { #Egyptian Blue Nile Goverment
-			tag = EGN
-			origin = c:EGY
-			state = s:STATE_DARFUR.region_state:EGY
-			state = s:STATE_KORDOFAN.region_state:EGY
-			province = p:x058803
-			province = p:x06007E
-			province = p:x06C449
-			province = p:x0F7EE3
-			province = p:x13E4B8
-			province = p:x15DB9C
-			province = p:x16A922
-			province = p:x17A459
-			province = p:x1C4271
-			province = p:x206A2D
-			province = p:x225C9E
-			province = p:x240F36
-			province = p:x2C750A
-			province = p:x2DE57E
-			province = p:x3E70FF
-			province = p:x424711
-			province = p:x450DB6
-			province = p:x484A75
-			province = p:x4A3631
-			province = p:x4AB4A0
-			province = p:x4D7EAD
-			province = p:x517433
-			province = p:x51CD3D
-			province = p:x533C5E
-			province = p:x562EFC
-			province = p:x58F15D
-			province = p:x5EF146
-			province = p:x680B5B
-			province = p:x6A5420
-			province = p:x6BEF7F
-			province = p:x6FE98F
-			province = p:x714535
-			province = p:x725B86
-			province = p:x729E50
-			province = p:x7379D7
-			province = p:x7E0600
-			province = p:x7E7A63
-			province = p:x808221
-			province = p:x8091D6
-			province = p:x81160E
-			province = p:x8154A6
-			province = p:x8281B5
-			province = p:x8CA984
-			province = p:x9A504A
-			province = p:x9B9266
-			province = p:x9BAA9B
-			province = p:xA3CA85
-			province = p:xA91158
-			province = p:xB4B090
-			province = p:xBBA32C
-			province = p:xC0D1A9
-			province = p:xC356F5
-			province = p:xCF2126
-			province = p:xD07ADF
-			province = p:xD25051
-			province = p:xD35B56
-			province = p:xD36817
-			province = p:xD42E9B
-			province = p:xDAD386
-			province = p:xDFDE9B
-			province = p:xE0A090
-			province = p:xE4297F
-			province = p:xE53ACB
-			province = p:xE55E00
-			province = p:xE8E92A
-			province = p:xEE4B02
-			province = p:xEF7C3C
-			province = p:xF47F03
-			province = p:xF7B5CB
-			province = p:xFAD09B
-			province = p:xFC0FEA
-			province = p:xFE3C3F
-				on_created = {
-				activate_law = law_type:law_appointed_bureaucrats
-		 }
-		} 
-		create_country = { #Iraqi Republic
-			tag = IIR
-			origin = c:IRQ  
-			province = p:xEE1814
-			province = p:x1EDF69
-			province = p:xA4A407
-			province = p:x54DF0B
-			province = p:x92702E
-			province = p:xE090E0
-			province = p:xA05060
-			province = p:x1EC145
-			province = p:x205060
-			province = p:x5F9550
-			province = p:x396DB2
-			province = p:x0B769F
-			
-			on_created = {
-            activate_law = law_type:law_appointed_bureaucrats
-    
-         }
-		} 
-		create_country = { #Islamic Republic of Iraq
-			tag = IRI
-			origin = c:IRQ
-		    province = p:x1CC9CC
-			province = p:x41F864
-			province = p:xFE18C1
-			province = p:xF1BF17
-			province = p:x7CAD29
-			province = p:xBE6A23
-			province = p:x1D7F5E
-			province = p:x93CB74
-			province = p:x34A371
-			province = p:x312AA2
-			province = p:x9F9CCA
-			province = p:x88ADC8
-			
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/middleeast/courtroom_upheaval" 
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	trigger = {
+		exists = c:EGY
+		root = c:EGY
+	}	
+	
+	duration = 3
+
+	immediate = { 
+		create_country = { #Egyptian Revolutionary Command Council
+		tag = EGR
+		origin = c:EGY
+		
+		province = p:x05BD60
+
+		province = p:x05FF42
+		province = p:x06DF39
+		province = p:x0C6712
+		province = p:x0D56B2
+		province = p:x0EE79F
+		province = p:x20CF20
+		province = p:x20D0A0
+		province = p:x246457
+		province = p:x252184
+		province = p:x25523D
+		province = p:x272AAD
+		province = p:x3955E4
+		province = p:x3DCE56
+		province = p:x45DB44
+		province = p:x48B0D1
+		province = p:x53834E
+		province = p:x5713ED
+		province = p:x5E1EA3
+		province = p:x69BCDD
+		province = p:x6EB0BA
+		province = p:x7F64AC
+		province = p:x80A9AC
+		province = p:x87D6C4
+		province = p:x8A68C1
+		province = p:x8AC4E0
+		province = p:x8E30B0
+		province = p:x908947
+		province = p:x93D215
+		province = p:x98DFE2
+		province = p:xA05020
+		province = p:xA0ECF8
+		province = p:xB5420C
+		province = p:xB5969E
+		province = p:xBB2E89
+		province = p:xBE3AC5
+		province = p:xBFC9C0
+		province = p:xC1822C
+		province = p:xC2176F
+		province = p:xD83883
+		province = p:xDF5EBB
+		province = p:xE0D021
+		province = p:xE68265
+		province = p:xEBB23F
+		province = p:xEC728B
+		province = p:xF901CB
+		province = p:xF942C3
+		
+		province = p:xC7858D
+		province = p:xA050A0
+		province = p:x08B43B
+		province = p:x11D0E0
+		province = p:x5050E0
+		province = p:x919B7D
+	
+
 		on_created = {
-            activate_law = law_type:law_appointed_bureaucrats
-    
-         }
-		} 
-		create_country = { #Republic of Kurdistan
-			tag = IRR
-			origin = c:IRQ
-			province = p:x00B0A0
-			province = p:x029A2B
-			province = p:x07BB1D
-			province = p:x0A79A0
-			province = p:x111137
-			province = p:x130A78
-			province = p:x1F3350
-			province = p:x2090E0
-			province = p:x2F0CE8
-			province = p:x389F34
-			province = p:x4BE9F1
-			province = p:x6F55BA
-			province = p:xA2BD38
-			province = p:xB09D9C
-			province = p:xBAF0C7
-			province = p:xC11149
-			province = p:xD097E1
-			province = p:xE4E63B
-		  
+		activate_law = law_type:law_appointed_bureaucrats
+
+	 }
+	} 
+	
+	create_country = { #Muslim Brotherhood 
+		tag = EGM
+		origin = c:EGY
+		province = p:x03534F
+		province = p:x1106F7
+		province = p:x1403CE
+		province = p:x150086
+		province = p:x1741F9
+		province = p:x1B8AFB
+		province = p:x1C0C7D
+		province = p:x1CDFF0
+		province = p:x1DF813
+		province = p:x1F1C45
+		province = p:x20FBA0
+		province = p:x221888
+		province = p:x22B654
+		province = p:x2578C4
+		province = p:x27571E
+		province = p:x27C39D
+		province = p:x2B6F28
+		province = p:x2FA8B3
+		province = p:x331A56
+		province = p:x36E64E
+		province = p:x3940DA
+		province = p:x3C21A0
+		province = p:x3FFE56
+		province = p:x448F8B
+		province = p:x46C8F9
+		province = p:x48152A
+		province = p:x4B8A20
+		province = p:x54C854
+		province = p:x54D103
+		province = p:x559DD9
+		province = p:x581E1A
+		province = p:x5D6A34
+		province = p:x66AEE5
+		province = p:x6AF576
+		province = p:x6C5890
+		province = p:x6D12E3
+		province = p:x741E9E
+		province = p:x7514D7
+		province = p:x7CEEDA
+		province = p:x807EFF
+		province = p:x811823
+		province = p:x83E020
+		province = p:x88E19F
+		province = p:x8BEC52
+		province = p:x8D6726
+		province = p:x8F31B0
+		province = p:x9130F8
+		province = p:x91BF54
+		province = p:x941E53
+		province = p:x99610C
+		province = p:x9A6DB5
+		province = p:x9D3831
+		province = p:x9D6B88
+		province = p:xA14C64
+		province = p:xA8FA0A
+		province = p:xAA1826
+		province = p:xACEBEA
+		province = p:xB01121
+		province = p:xB05020
+		province = p:xB23CCA
+		province = p:xB2E150
+		province = p:xB32C4A
+		province = p:xB5BED4
+		province = p:xB9EBE6
+		province = p:xBA5529
+		province = p:xBBEAA1
+		province = p:xBCE332
+		province = p:xBD1C16
+		province = p:xBD5993
+		province = p:xC48A06
+		province = p:xC87A53
+		province = p:xC943B1
+		province = p:xCA855F
+		province = p:xCAE0D2
+		province = p:xCC0432
+		province = p:xCE519C
+		province = p:xD03CB6
+		province = p:xD0D0E0
+		province = p:xD91602
+		province = p:xE03FA1
+		province = p:xE12C26
+		province = p:xE18FD5
+		province = p:xE1F55D
+		province = p:xE21A78
+		province = p:xE565E4
+		province = p:xE853CA
+		province = p:xE95AD6
+		province = p:xF0B8A3
+		province = p:xF21A84
+		province = p:xF3B9CD
+		province = p:xF55182
+		province = p:xF63E3C
+		province = p:xF87E36
+		province = p:xFA5382
+		province = p:xFA85DD
+		province = p:xFF4484
+		province = p:x50D060
+		province = p:xD26E7A
+		province = p:xF32C0A
+		province = p:xD0D060
+		province = p:xA75EBA
+		province = p:x3CD16F
+		province = p:xE1FB56
+		province = p:x4D2090
+		province = p:x709020
+		province = p:x4249C3
+		province = p:xC83592
+		province = p:x2A731C
+		province = p:x44702D
+		province = p:x7B75E6
+		province = p:xF01121
+		province = p:x78104A
+		province = p:x7E0628
+		province = p:xC304C5
+		province = p:x007E00
+		province = p:x04CAF0
+		province = p:x054B09
+		province = p:x0BFED1
+		province = p:x0DF96C
+		province = p:x1090F8
+		province = p:x10DCE6
+		province = p:x11C147
+		province = p:x150E1A
+		province = p:x161776
+		province = p:x1766AF
+		province = p:x1A8ACE
+		province = p:x1CF8E6
+		province = p:x1EA562
+		province = p:x2093F8
+		province = p:x20F9A6
+		province = p:x222DE0
+		province = p:x225A59
+		province = p:x2550D2
+		province = p:x266C2B
+		province = p:x27F228
+		province = p:x283C56
+		province = p:x2BFA5C
+		province = p:x2F0B7E
+		province = p:x31A8AF
+		province = p:x3231D7
+		province = p:x324CD5
+		province = p:x32DB72
+		province = p:x36EACA
+		province = p:x3795A7
+		province = p:x3B5DB2
+		province = p:x3B8BED
+		province = p:x3CE268
+		province = p:x3E717B
+		province = p:x3FB182
+		province = p:x42F208
+		province = p:x44C39B
+		province = p:x455297
+		province = p:x484F69
+		province = p:x4B0B6D
+		province = p:x4D1F29
+		province = p:x4E155E
+		province = p:x4E37E0
+		province = p:x4E6485
+		province = p:x51D68A
+		province = p:x550B5E
+		province = p:x5532D7
+		province = p:x56EB87
+		province = p:x58DC7E
+		province = p:x59CB2E
+		province = p:x5C4782
+		province = p:x5C9678
+		province = p:x5D63E5
+		province = p:x660662
+		province = p:x6846D2
+		province = p:x6D0641
+		province = p:x6F53E7
+		province = p:x7011A0
+		province = p:x71CE61
+		province = p:x746936
+		province = p:x76A5E2
+		province = p:x77680E
+		province = p:x77814B
+		province = p:x799DA6
+		province = p:x7A81FC
+		province = p:x7B8083
+		province = p:x7B85E1
+		province = p:x7F40DC
+		province = p:x851A9F
+		province = p:x856C77
+		province = p:x86281A
+		province = p:x8C56D8
+		province = p:x8C708E
+		province = p:x8CCFBA
+		province = p:x8EBBA0
+		province = p:x8FB172
+		province = p:x9030E0
+		province = p:x911D8A
+		province = p:x957D19
+		province = p:x9D7E6E
+		province = p:x9DD70D
+		province = p:x9E053B
+		province = p:xA09909
+		province = p:xA32C94
+		province = p:xA62EDD
+		province = p:xA7E315
+		province = p:xA86A12
+		province = p:xAADC57
+		province = p:xB060C3
+		province = p:xB1A5A5
+		province = p:xB4CFDD
+		province = p:xB89427
+		province = p:xB911BF
+		province = p:xBC0905
+		province = p:xBF4351
+		province = p:xBFE20B
+		province = p:xC1B811
+		province = p:xCC661D
+		province = p:xCED49F
+		province = p:xCF32AB
+		province = p:xD09060
+		province = p:xD14C83
+		province = p:xD1DBCB
+		province = p:xD6CE98
+		province = p:xD77A80
+		province = p:xD781FF
+		province = p:xDA9F36
+		province = p:xDE20CA
+		province = p:xDF3230
+		province = p:xE43B56
+		province = p:xE4A226
+		province = p:xE53B02
+		province = p:xE5D4C9
+		province = p:xE5DB69
+		province = p:xE7E845
+		province = p:xEAC7A6
+		province = p:xECB353
+		province = p:xEEA896
+		province = p:xF011A0
+		province = p:xF09021
+		province = p:xF16CDA
+		province = p:xF1B993
+		province = p:xF4022B
+		province = p:xF51BB4
+		province = p:xF53975
+		province = p:xF6E39D
+		province = p:xFAA9A3
+		province = p:xFBB239
+		province = p:xFD501A
+		province = p:xFE44B7
+		province = p:xFF331C
+		province = p:xFF4AEC
+		province = p:xFF4E48
+		province = p:xFFC1F5
+
+		on_created = {
+		activate_law = law_type:law_appointed_bureaucrats
+
+	 }
+	} 
+	create_country = { #Egyptian Blue Nile Goverment
+		tag = EGN
+		origin = c:EGY
+		state = s:STATE_DARFUR.region_state:EGY
+		state = s:STATE_KORDOFAN.region_state:EGY
+		province = p:x058803
+		province = p:x06007E
+		province = p:x06C449
+		province = p:x0F7EE3
+		province = p:x13E4B8
+		province = p:x15DB9C
+		province = p:x16A922
+		province = p:x17A459
+		province = p:x1C4271
+		province = p:x206A2D
+		province = p:x225C9E
+		province = p:x240F36
+		province = p:x2C750A
+		province = p:x2DE57E
+		province = p:x3E70FF
+		province = p:x424711
+		province = p:x450DB6
+		province = p:x484A75
+		province = p:x4A3631
+		province = p:x4AB4A0
+		province = p:x4D7EAD
+		province = p:x517433
+		province = p:x51CD3D
+		province = p:x533C5E
+		province = p:x562EFC
+		province = p:x58F15D
+		province = p:x5EF146
+		province = p:x680B5B
+		province = p:x6A5420
+		province = p:x6BEF7F
+		province = p:x6FE98F
+		province = p:x714535
+		province = p:x725B86
+		province = p:x729E50
+		province = p:x7379D7
+		province = p:x7E0600
+		province = p:x7E7A63
+		province = p:x808221
+		province = p:x8091D6
+		province = p:x81160E
+		province = p:x8154A6
+		province = p:x8281B5
+		province = p:x8CA984
+		province = p:x9A504A
+		province = p:x9B9266
+		province = p:x9BAA9B
+		province = p:xA3CA85
+		province = p:xA91158
+		province = p:xB4B090
+		province = p:xBBA32C
+		province = p:xC0D1A9
+		province = p:xC356F5
+		province = p:xCF2126
+		province = p:xD07ADF
+		province = p:xD25051
+		province = p:xD35B56
+		province = p:xD36817
+		province = p:xD42E9B
+		province = p:xDAD386
+		province = p:xDFDE9B
+		province = p:xE0A090
+		province = p:xE4297F
+		province = p:xE53ACB
+		province = p:xE55E00
+		province = p:xE8E92A
+		province = p:xEE4B02
+		province = p:xEF7C3C
+		province = p:xF47F03
+		province = p:xF7B5CB
+		province = p:xFAD09B
+		province = p:xFC0FEA
+		province = p:xFE3C3F
 			on_created = {
-            activate_law = law_type:law_appointed_bureaucrats
-    
-         }
-		} 
-		create_country = { #Socialist Federation of Iran
-			tag = PEF
-			origin = c:PER
-			state = s:STATE_TABRIZ.region_state:PER
-			state = s:STATE_LURISTAN.region_state:PER
-		 
-		  
-			on_created = {
-            activate_law = law_type:law_appointed_bureaucrats
-    
-         }
-		} 
-		create_country = { #Shahdom of Iran
-			tag = PES
-			origin = c:PER
-			state = s:STATE_ISFAHAN.region_state:PER
-			state = s:STATE_KHORASAN.region_state:PER
-		 
-			on_created = {
-            activate_law = law_type:law_appointed_bureaucrats
-    
-         }
-		} 
-		create_country = { #Democratic Republic of Iran
-			tag = PED
-			origin = c:PER
-			state = s:STATE_KHUZESTAN.region_state:PER
-			state = s:STATE_FARS.region_state:PER
-	 
-		  
-			on_created = {
-            activate_law = law_type:law_appointed_bureaucrats
-    
-         }
-		} 
-		create_country = { #Islamic Republic of Iran
-			tag = PEI
-			origin = c:PER
-			state = s:STATE_LARISTAN.region_state:PER
-			state = s:STATE_SISTAN.region_state:PER
+			activate_law = law_type:law_appointed_bureaucrats
+	 }
+	} 
+	}
+	option = {
+		name = mad_flavor.2.a
+		default_option = yes
+	c:EGY = {
+		create_diplomatic_play = {
+			name = oil_war
+			target_country = c:EGR
+			type = dp_annex_war
+			war = no
+			target_state = s:STATE_MATRUH.region_state:EGR
+			escalation = 50
+			add_war_goal = {
+			 holder = c:EGR
+			 type = annex_country
+			 target_state = s:STATE_LOWER_EGYPT.region_state:EGY
+		 	  }
+		 }
+		create_diplomatic_play = {
+			name = oil_war
+			target_country = c:EGM
+			type = dp_annex_war
+			war = no
+			target_state = s:STATE_EGYPTIAN_DESERT.region_state:EGM
+			escalation = 50
+			add_war_goal = {
+				holder = c:EGM
+				type = annex_country
+				target_state = s:STATE_LOWER_EGYPT.region_state:EGY
+				 }
+		 }
+		}
+	c:EGR = {
+		create_diplomatic_play = {
+			name = oil_war
+			target_country = c:EGM
+			type = dp_annex_war
+			war = no
+			target_state = s:STATE_EGYPTIAN_DESERT.region_state:EGM
+			escalation = 50
+			add_war_goal = {
+			 holder = c:EGM
+			 type = annex_country
+			 target_state = s:STATE_MATRUH.region_state:EGR
+		 	  }
+		 }
+	}
+	}
+}		
 			
-			on_created = {
-            activate_law = law_type:law_appointed_bureaucrats
-    
-         }
-		} 
+tno_oil_crisis.3 = {   #Iraq Civil War
+	type = country_event
+    placement = ROOT
+
+	title = mad_flavor.2.t
+	desc = mad_flavor.2.d
+    flavor = mad_flavor.2.f
+	
+	event_image = {
+		texture  = "gfx/event_pictures/event_pictures/jungle_warfare.dds"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/middleeast/courtroom_upheaval" 
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	trigger = {
+		exists = c:IRQ
+		root = c:IRQ
+	}	
+	
+	duration = 3
+
+	immediate = { 
+		create_country = { #Iraqi Republic
+		tag = IIR
+		origin = c:IRQ  
+		province = p:xEE1814
+		province = p:x1EDF69
+		province = p:xA4A407
+		province = p:x54DF0B
+		province = p:x92702E
+		province = p:xE090E0
+		province = p:xA05060
+		province = p:x1EC145
+		province = p:x205060
+		province = p:x5F9550
+		province = p:x396DB2
+		province = p:x0B769F
+		
+		on_created = {
+		activate_law = law_type:law_appointed_bureaucrats
+
+	 }
+	} 
+	create_country = { #Islamic Republic of Iraq
+		tag = IRI
+		origin = c:IRQ
+		province = p:x1CC9CC
+		province = p:x41F864
+		province = p:xFE18C1
+		province = p:xF1BF17
+		province = p:x7CAD29
+		province = p:xBE6A23
+		province = p:x1D7F5E
+		province = p:x93CB74
+		province = p:x34A371
+		province = p:x312AA2
+		province = p:x9F9CCA
+		province = p:x88ADC8
+		
+	on_created = {
+		activate_law = law_type:law_appointed_bureaucrats
+	 }
+	} 
+	create_country = { #Republic of Kurdistan
+		tag = IRR
+		origin = c:IRQ
+		province = p:x00B0A0
+		province = p:x029A2B
+		province = p:x07BB1D
+		province = p:x0A79A0
+		province = p:x111137
+		province = p:x130A78
+		province = p:x1F3350
+		province = p:x2090E0
+		province = p:x2F0CE8
+		province = p:x389F34
+		province = p:x4BE9F1
+		province = p:x6F55BA
+		province = p:xA2BD38
+		province = p:xB09D9C
+		province = p:xBAF0C7
+		province = p:xC11149
+		province = p:xD097E1
+		province = p:xE4E63B
+	  
+		on_created = {
+		activate_law = law_type:law_appointed_bureaucrats
+
+	 }
+	}
+	}
+	option = {
+		name = mad_flavor.2.a
+		default_option = yes
+	c:IRQ = {
+		create_diplomatic_play = {
+			name = oil_war
+			target_country = c:IRR
+			type = dp_annex_war
+			war = no
+			target_state = s:STATE_MOSUL.region_state:IRR
+			escalation = 50
+			add_war_goal = {
+			 holder = c:IRR
+			 type = annex_country
+			 target_state = s:STATE_BAGHDAD.region_state:IRQ
+		   }
+		 }
+		 create_diplomatic_play = {
+			name = oil_war
+			target_country = c:IIR
+			type = dp_annex_war
+			war = no
+			target_state = s:STATE_BAGHDAD.region_state:IIR
+			escalation = 50
+			add_war_goal = {
+			 holder = c:IIR
+			 type = annex_country
+			 target_state = s:STATE_BAGHDAD.region_state:IRQ
+		   }
+		 }
+		 create_diplomatic_play = {
+			name = oil_war
+			target_country = c:IRI
+			type = dp_annex_war
+			war = no
+			target_state = s:STATE_BASRA.region_state:IRI
+			escalation = 50
+			add_war_goal = {
+			 holder = c:IRI
+			 type = annex_country
+			 target_state = s:STATE_BAGHDAD.region_state:IRQ
+		   }
+		 }
+		}
+	c:KUW = {
+		create_diplomatic_play = {
+			name = oil_war
+			target_country = c:IRI
+			type = dp_annex_war
+			war = no
+			target_state = s:STATE_BASRA.region_state:IRI
+			escalation = 50
+			add_war_goal = {
+			 holder = c:IRI
+			 type = annex_country
+			 target_state = s:STATE_BASRA.region_state:KUW
+		   }
+		 }
+		}
+	c:IIR = {
+		create_diplomatic_play = {
+			name = oil_war
+			target_country = c:IRI
+			type = dp_annex_war
+			war = no
+			target_state = s:STATE_BASRA.region_state:IRI
+			escalation = 50
+			add_war_goal = {
+			 holder = c:IRI
+			 type = annex_country
+			 target_state = s:STATE_BAGHDAD.region_state:IIR
+		   }
+		 }
+		 create_diplomatic_play = {
+			name = oil_war
+			target_country = c:IRR
+			type = dp_annex_war
+			war = no
+			target_state = s:STATE_MOSUL.region_state:IRR
+			escalation = 50
+			add_war_goal = {
+			 holder = c:IRI
+			 type = annex_country
+			 target_state = s:STATE_BAGHDAD.region_state:IIR
+		   }
+		 }
+	 c:IRR = {
+		create_diplomatic_play = {
+			name = oil_war
+			target_country = c:IRI
+			type = dp_annex_war
+			war = no
+			target_state = s:STATE_BASRA.region_state:IRI
+			escalation = 50
+			add_war_goal = {
+			 holder = c:IRI
+			 type = annex_country
+			 target_state = s:STATE_MOSUL.region_state:IRR
+		   }
+		 }
+		}
+	}
+	}	
+}	
+		
+tno_oil_crisis.4 = {   #Iran Civil War
+	type = country_event
+    placement = ROOT
+
+	title = mad_flavor.2.t
+	desc = mad_flavor.2.d
+    flavor = mad_flavor.2.f
+	
+	event_image = {
+		texture  = "gfx/event_pictures/event_pictures/jungle_warfare.dds"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/middleeast/courtroom_upheaval" 
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	trigger = {
+		exists = c:PER
+		root = c:PER
+	}	
+	
+	duration = 3
+
+	immediate = { 
+		create_country = { #Socialist Federation of Iran
+		tag = PEF
+		origin = c:PER
+		state = s:STATE_TABRIZ.region_state:PER
+		state = s:STATE_LURISTAN.region_state:PER
+	 
+	  
+		on_created = {
+		activate_law = law_type:law_appointed_bureaucrats
+
+	 }
+	} 
+		create_country = { #Shahdom of Iran
+		tag = PES
+		origin = c:PER
+		state = s:STATE_ISFAHAN.region_state:PER
+		state = s:STATE_KHORASAN.region_state:PER
+	 
+		on_created = {
+		activate_law = law_type:law_appointed_bureaucrats
+
+	 }
+	} 
+		create_country = { #Democratic Republic of Iran
+		tag = PED
+		origin = c:PER
+		state = s:STATE_KHUZESTAN.region_state:PER
+		state = s:STATE_FARS.region_state:PER
+ 
+	  
+		on_created = {
+		activate_law = law_type:law_appointed_bureaucrats
+
+	 }
+	} 
+		create_country = { #Islamic Republic of Iran
+		tag = PEI
+		origin = c:PER
+		state = s:STATE_LARISTAN.region_state:PER
+		state = s:STATE_SISTAN.region_state:PER
+		
+		on_created = {
+		activate_law = law_type:law_appointed_bureaucrats
+
+	 }
+	} 
+	}
+	option = {
+		name = mad_flavor.2.a
+		default_option = yes
+	c:PER = {
+		create_diplomatic_play = {
+			name = oil_war
+			target_country = c:PEF
+			type = dp_annex_war
+			war = no
+			target_state = s:STATE_TABRIZ.region_state:PEF
+			escalation = 50
+			add_war_goal = {
+			 holder = c:PEF
+			 type = annex_country
+			 target_state = s:STATE_MAZANDARAN.region_state:PER
+		   }
+		 }
+		 create_diplomatic_play = {
+			name = oil_war
+			target_country = c:PES
+			type = dp_annex_war
+			war = no
+			target_state = s:STATE_KHORASAN.region_state:PES
+			escalation = 50
+			add_war_goal = {
+			 holder = c:PES
+			 type = annex_country
+			 target_state = s:STATE_MAZANDARAN.region_state:PER
+		   }
+		 }
+		 create_diplomatic_play = {
+			name = oil_war
+			target_country = c:PED
+			type = dp_annex_war
+			war = no
+			target_state = s:STATE_FARS.region_state:PED
+			escalation = 50
+			add_war_goal = {
+			 holder = c:PED
+			 type = annex_country
+			 target_state = s:STATE_MAZANDARAN.region_state:PER
+		   }
+		 }
+		 create_diplomatic_play = {
+			name = oil_war
+			target_country = c:PEI
+			type = dp_annex_war
+			war = no
+			target_state = s:STATE_LARISTAN.region_state:PEI
+			escalation = 50
+			add_war_goal = {
+			 holder = c:PEI
+			 type = annex_country
+			 target_state = s:STATE_MAZANDARAN.region_state:PER
+		   }
+		 }
+		}
+	c:PED = { 
+		create_diplomatic_play = {
+			name = oil_war
+			target_country = c:PEF
+			type = dp_annex_war
+			war = no
+			target_state = s:STATE_TABRIZ.region_state:PEF
+			escalation = 50
+			add_war_goal = {
+			 holder = c:PEF
+			 type = annex_country
+			 target_state = s:STATE_FARS.region_state:PED
+		   }
+		 }
+		 create_diplomatic_play = {
+			name = oil_war
+			target_country = c:PES
+			type = dp_annex_war
+			war = no
+			target_state = s:STATE_KHORASAN.region_state:PES
+			escalation = 50
+			add_war_goal = {
+			 holder = c:PES
+			 type = annex_country
+			 target_state = s:STATE_FARS.region_state:PED
+		   }
+		 }
+		 create_diplomatic_play = {
+			name = oil_war
+			target_country = c:PEI
+			type = dp_annex_war
+			war = no
+			target_state = s:STATE_LARISTAN.region_state:PEI
+			escalation = 50
+			add_war_goal = {
+			 holder = c:PEI
+			 type = annex_country
+			 target_state = s:STATE_FARS.region_state:PED
+		   }
+		 }
+		}
+	c:PES = {
+		create_diplomatic_play = {
+			name = oil_war
+			target_country = c:PEF
+			type = dp_annex_war
+			war = no
+			target_state = s:STATE_TABRIZ.region_state:PEF
+			escalation = 50
+			add_war_goal = {
+			 holder = c:PEF
+			 type = annex_country
+			 target_state = s:STATE_KHORASAN.region_state:PES
+		   }
+		 }
+		 create_diplomatic_play = {
+			name = oil_war
+			target_country = c:PEI
+			type = dp_annex_war
+			war = no
+			target_state = s:STATE_LARISTAN.region_state:PEI
+			escalation = 50
+			add_war_goal = {
+			 holder = c:PEI
+			 type = annex_country
+			 target_state = s:STATE_KHORASAN.region_state:PES
+		   }
+		 }
+		}
+	c:PEI = {
+		create_diplomatic_play = {
+			name = oil_war
+			target_country = c:PEF
+			type = dp_annex_war
+			war = no
+			target_state = s:STATE_TABRIZ.region_state:PEF
+			escalation = 50
+			add_war_goal = {
+			 holder = c:PEF
+			 type = annex_country
+			 target_state = s:STATE_LARISTAN.region_state:PEI
+		   }
+		 }
+	}
+	}
+}		
+			
+tno_oil_crisis.5 = {   #Oman Civil War
+	type = country_event
+    placement = ROOT
+
+	title = mad_flavor.2.t
+	desc = mad_flavor.2.d
+    flavor = mad_flavor.2.f
+	
+	event_image = {
+		texture  = "gfx/event_pictures/event_pictures/jungle_warfare.dds"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/middleeast/courtroom_upheaval" 
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	trigger = {
+		exists = c:OMA
+		root = c:OMA
+	}	
+	
+	duration = 3
+
+	immediate = { 
 		create_country = { #Imamate of Oman
-			tag = OMI
-			origin = c:OMA
-			province = p:x5FCC2E
-			province = p:x794443
-			province = p:xCD06CE
-			province = p:xB6755D
-			province = p:x68646C
-			province = p:xAAFA29
-			province = p:x13506D
-			province = p:x589BAF
-			province = p:xB6FBDA
-			province = p:xEFD0A0
-			province = p:xB70CA0
-			province = p:x02FBFB
-			province = p:xE4E126
-			province = p:xCB50CF
-			province = p:x8941AF
-			province = p:x5AF663
-			province = p:xC1BD52
-			province = p:x1B25E6
-			province = p:xC790A2
-			province = p:xFD7FD6
-			province = p:x79A9F3
-			province = p:xF656B5
-			province = p:xF7E8FC
-			province = p:x7BE5F4
-			province = p:xF44B1E
-			province = p:x377D71
-			province = p:x075D78
-			province = p:xC273D0
-			province = p:x07D89B
-			province = p:x17CD85
-			province = p:x8BA0D5
-			province = p:x2DB9C1
-			province = p:x48AF9C
-			province = p:x84FDD6
-			province = p:x1EA1F1
-			province = p:x42A960
+		tag = OMI
+		origin = c:OMA
+		province = p:x5FCC2E
+		province = p:x794443
+		province = p:xCD06CE
+		province = p:xB6755D
+		province = p:x68646C
+		province = p:xAAFA29
+		province = p:x13506D
+		province = p:x589BAF
+		province = p:xB6FBDA
+		province = p:xEFD0A0
+		province = p:xB70CA0
+		province = p:x02FBFB
+		province = p:xE4E126
+		province = p:xCB50CF
+		province = p:x8941AF
+		province = p:x5AF663
+		province = p:xC1BD52
+		province = p:x1B25E6
+		province = p:xC790A2
+		province = p:xFD7FD6
+		province = p:x79A9F3
+		province = p:xF656B5
+		province = p:xF7E8FC
+		province = p:x7BE5F4
+		province = p:xF44B1E
+		province = p:x377D71
+		province = p:x075D78
+		province = p:xC273D0
+		province = p:x07D89B
+		province = p:x17CD85
+		province = p:x8BA0D5
+		province = p:x2DB9C1
+		province = p:x48AF9C
+		province = p:x84FDD6
+		province = p:x1EA1F1
+		province = p:x42A960
 
-			on_created = {
-            activate_law = law_type:law_appointed_bureaucrats
-    
-         }
-		} 
-		create_country = { #Dhofar Rebellion
-			tag = ODR
-			origin = c:OMA
-			province = p:x06581E
-			province = p:xA3015F
-			province = p:x030A95
-			province = p:x00BADA
-			province = p:x093AC3
-			province = p:xB82286
-			province = p:xBFD3D7
-			province = p:x85D4B9
-			province = p:xF963C3
-			province = p:x6E2CE7
-			province = p:x2EDA6E
-			province = p:xEDE86E
-			province = p:x05983E
-			province = p:xBC6325
-			province = p:x0289EB
-			province = p:x3C2FE8
-			province = p:xF89153
-			province = p:x85E141
-			province = p:xD9AF1E
-			province = p:x5627A0
+		on_created = {
+		activate_law = law_type:law_appointed_bureaucrats
 
-			on_created = {
-            activate_law = law_type:law_appointed_bureaucrats
-    
-         }
-		} 
+	 }
+	} 
+	create_country = { #Dhofar Rebellion
+		tag = ODR
+		origin = c:OMA
+		province = p:x06581E
+		province = p:xA3015F
+		province = p:x030A95
+		province = p:x00BADA
+		province = p:x093AC3
+		province = p:xB82286
+		province = p:xBFD3D7
+		province = p:x85D4B9
+		province = p:xF963C3
+		province = p:x6E2CE7
+		province = p:x2EDA6E
+		province = p:xEDE86E
+		province = p:x05983E
+		province = p:xBC6325
+		province = p:x0289EB
+		province = p:x3C2FE8
+		province = p:xF89153
+		province = p:x85E141
+		province = p:xD9AF1E
+		province = p:x5627A0
+
+		on_created = {
+		activate_law = law_type:law_appointed_bureaucrats
+
+	 }
+	} 
+	}
+	option = {
+		name = mad_flavor.2.a
+		default_option = yes
+		c:OMA = {
+			create_diplomatic_play = {
+				name = oil_war
+				target_country = c:OMI
+				type = dp_annex_war
+				war = no
+				target_state = s:STATE_OMAN.region_state:OMI
+				escalation = 50
+				add_war_goal = {
+				 holder = c:OMI
+				 type = annex_country
+				 target_state = s:STATE_OMAN.region_state:OMA
+			   }
+			 }
+			 create_diplomatic_play = {
+				name = oil_war
+				target_country = c:ODR
+				type = dp_annex_war
+				war = no
+				target_state = s:STATE_OMAN.region_state:ODR
+				escalation = 50
+				add_war_goal = {
+				 holder = c:ODR
+				 type = annex_country
+				 target_state = s:STATE_OMAN.region_state:OMA
+			   }
+			 }
+		}
+		c:ODR = {
+			create_diplomatic_play = {
+				name = oil_war
+				target_country = c:OMI
+				type = dp_annex_war
+				war = no
+				target_state = s:STATE_OMAN.region_state:OMI
+				escalation = 50
+				add_war_goal = {
+				 holder = c:OMI
+				 type = annex_country
+				 target_state = s:STATE_OMAN.region_state:ODR
+			   }
+			}
+		}
+	}
+}		
+	
+tno_oil_crisis.6 = {   #Saudi Civil War
+	type = country_event
+    placement = ROOT
+
+	title = mad_flavor.2.t
+	desc = mad_flavor.2.d
+    flavor = mad_flavor.2.f
+	
+	event_image = {
+		texture  = "gfx/event_pictures/event_pictures/jungle_warfare.dds"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/middleeast/courtroom_upheaval" 
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	trigger = {
+		exists = c:NEJ
+		root = c:NEJ
+	}	
+	
+	duration = 3
+
+	immediate = { 
 		create_country = { #Saudi Repulican Revolt
 		tag = NEZ
 		origin = c:NEJ
@@ -709,6 +1241,64 @@ tno_oil_crisis.1 = {
 		activate_law = law_type:law_appointed_bureaucrats
 		 }
 		}
+	}
+	option = {
+		name = mad_flavor.2.a
+		default_option = yes
+		create_diplomatic_play = {
+			name = oil_war
+			target_country = c:NEZ
+			type = dp_annex_war
+			war = no
+			target_state = s:STATE_HEDJAZ.region_state:NEZ
+			escalation = 50
+			add_war_goal = {
+			 holder = c:NEJ
+			 type = conquer_state
+			 target_state = s:STATE_NEJD.region_state:NEZ
+		   }
+		   add_war_goal = {
+			holder = c:NEZ
+			type = conquer_state
+			target_state = s:STATE_NEJD.region_state:NEJ
+		  }
+		  add_war_goal = {
+			holder = c:NEZ
+			type = conquer_state
+			target_state = s:STATE_HAIL.region_state:NEJ
+	 	 }
+	 }
+	}
+}		
+			
+tno_oil_crisis.7 = {   #Syria Revolt
+	type = country_event
+    placement = ROOT
+
+	title = mad_flavor.2.t
+	desc = mad_flavor.2.d
+    flavor = mad_flavor.2.f
+	
+	event_image = {
+		texture  = "gfx/event_pictures/event_pictures/jungle_warfare.dds"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/middleeast/courtroom_upheaval" 
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	trigger = {
+		c:PAL = {
+			owns_entire_state_region = STATE_SYRIA
+		}
+		exists = c:PAL
+		root = c:PAL
+	}	
+	
+	duration = 3
+
+	immediate = { 
 		create_country = { #Syrian Revolt
 		tag = SRY
 		origin = c:TUR
@@ -764,6 +1354,70 @@ tno_oil_crisis.1 = {
 		on_created = {
 		activate_law = law_type:law_appointed_bureaucrats
 		 }
-		} 	 	
+		} 
+	}
+	option = {
+		name = mad_flavor.2.a
+		default_option = yes
+		create_diplomatic_play = {
+			name = oil_war
+			target_country = c:SRY
+			type = dp_annex_war
+			war = no
+			target_state = s:STATE_LEBANON.region_state:SRY
+			escalation = 50
+			add_war_goal = {
+			 holder = c:SRY
+			 type = annex_country
+			 target_state = s:STATE_PALESTINE.region_state:PAL
+		   }
+	 }
+	}
+}		
+			
+tno_oil_crisis.8 = {   #Trucian Coast/Qatar war
+	type = country_event
+    placement = ROOT
+
+	title = mad_flavor.2.t
+	desc = mad_flavor.2.d
+    flavor = mad_flavor.2.f
+	
+	event_image = {
+		texture  = "gfx/event_pictures/event_pictures/jungle_warfare.dds"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/middleeast/courtroom_upheaval" 
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	trigger = {
+		exists = c:BHN
+		exists = c:ABU
+		root = c:ABU
 	}	
+	
+	duration = 3
+
+	immediate = { 
+	}
+	option = {
+		name = mad_flavor.2.a
+		default_option = yes
+		
+		create_diplomatic_play = {
+			name = oil_war
+			target_country = c:BHN
+			type = dp_annex_war
+			war = no
+			target_state = s:STATE_ABU_DHABI.region_state:BHN
+			escalation = 50
+			add_war_goal = {
+			 holder = c:BHN
+			 type = annex_country
+			 target_state = s:STATE_ABU_DHABI.region_state:ABU
+		   }
+		 }
+	}
 }
