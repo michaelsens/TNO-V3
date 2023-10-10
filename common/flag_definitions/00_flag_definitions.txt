@@ -4655,6 +4655,17 @@ JOH = { # Johore
 			coa_def_theocracy_flag_trigger = yes
 		}
 	}	
+	flag_definition = {
+		coa = JOH_japan
+		priority = 700
+		allow_overlord_canton = no	
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_law = law_type:law_autocracy 
+			}
+		}
+	}	
 }
 
 KAL = { # Kalat
