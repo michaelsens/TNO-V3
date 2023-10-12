@@ -1,31 +1,56 @@
-je_remove_oil_crisis = {
+﻿je_remove_oil_crisis = {
 	icon = "gfx/interface/icons/event_icons/event_protest.dds"
 	
 	scripted_button = je_oil_crisis_remove_button_a
 	scripted_button = je_oil_crisis_remove_button_b
+	scripted_button = je_oil_crisis_remove_button_c
+	scripted_button = je_oil_crisis_remove_button_d
 
 	is_shown_when_inactive = {
-		has_modifier = oil_crisis_global
+		is_player = yes
+		OR = {
+			has_modifier = oil_crisis_global
+			has_modifier = oil_crisis_ger
+			has_modifier = oil_crisis_jap
+			has_modifier = oil_crisis_usa
+	 }
 	}
 	
 	possible = {
-		has_modifier = oil_crisis_global
+		is_player = yes
+		OR = {
+			has_modifier = oil_crisis_global
+			has_modifier = oil_crisis_ger
+			has_modifier = oil_crisis_jap
+			has_modifier = oil_crisis_usa
+		 }
 	}
 	
 	immediate = {
+		set_variable = { name = oil_crisis_removed_drift value = -50 }
 		set_variable = { name = oil_crisis_removed_var value = 0 }
 	}
 
-	complete = {
+	fail = {
 		custom_tooltip = {
-			#text = je_the_paris_commune_communard_complete
-			var:oil_crisis_removed_var = 100
+			text = oil_crisis_removed_failed
+			var:oil_crisis_removed_var <= -100
 		}
 	}
 
-	on_complete = {
-		show_as_tooltip ={
-			remove_modifier = oil_crisis_global
+	on_fail = {
+		remove_variable = oil_crisis_removed_drift
+		remove_variable = oil_crisis_removed_var
+		trigger_event = { id = tno_oil_crisis.14 popup = yes }
+	}
+
+
+	on_monthly_pulse = {
+		effect = {
+			change_variable = {
+				name = oil_crisis_removed_var
+				add = var:oil_crisis_removed_drift
+			}
 		}
 	}
 	
@@ -38,7 +63,7 @@ je_remove_oil_crisis = {
 	}
 
 	goal_add_value = {
-		add = 100
+		add = 1000
 	}
 
 	progressbar = yes

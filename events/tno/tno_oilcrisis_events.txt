@@ -1718,7 +1718,7 @@ tno_oil_crisis.9 = {   #Superevent Oil Crisis (move to super events eventually)
 		}
 		add_modifier = {
 			name = oil_crisis_usa
-			years = 6
+			years = 7
 			is_decaying = yes
 		}
 	}
@@ -2018,5 +2018,40 @@ tno_oil_crisis.13 = {  #Information for Majors
 	option = {
 		name = mad_flavor.2.a
 		default_option = yes
+	}
+}
+
+tno_oil_crisis.14 = {  #Country Collapse from not enough Oil
+type = country_event
+    placement = ROOT
+
+	title = mad_flavor.2.t
+	desc = mad_flavor.2.d
+    flavor = mad_flavor.2.f
+	
+	event_image = {
+		texture  = "gfx/event_pictures/event_pictures/jungle_warfare.dds"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/middleeast/courtroom_upheaval" 
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	trigger = {
+	}	
+	
+	duration = 3
+
+	immediate = { 	
+	}
+	option = {
+		name = mad_flavor.2.a
+		default_option = yes
+		add_modifier = {
+			name = ran_out_of_oil
+			years = 10
+			is_decaying = yes
+		}
 	}
 }
