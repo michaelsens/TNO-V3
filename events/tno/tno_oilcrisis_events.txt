@@ -1669,7 +1669,7 @@ tno_oil_crisis.9 = {   #Superevent Oil Crisis (move to super events eventually)
 		name = mad_flavor.2.a
 		default_option = yes
 		trigger = {
-		NOT = {
+			NOT = {
 			OR = {
 				this ?= c:GER
 				this ?= c:USA
@@ -1691,6 +1691,7 @@ tno_oil_crisis.9 = {   #Superevent Oil Crisis (move to super events eventually)
 		trigger = {
 			this ?= c:GER
 		}
+		set_global_variable = { name = oil_crisis_removed_var value = 10 } 
 		add_modifier = {
 			name = oil_crisis_ger
 			years = 10

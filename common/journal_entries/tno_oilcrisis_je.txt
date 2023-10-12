@@ -1,0 +1,54 @@
+je_remove_oil_crisis = {
+	icon = "gfx/interface/icons/event_icons/event_protest.dds"
+	
+	scripted_button = je_the_paris_commune_france_button_a
+	scripted_button = je_the_paris_commune_france_button_b
+
+	is_shown_when_inactive = {
+		c:GER ?= this
+	}
+
+	possible = {
+		c:GER ?= this
+	}
+	
+	immediate = {
+	}
+
+	complete = {
+	}
+
+	on_complete = {
+		trigger_event = { id = paris_commune.2 popup = yes }
+	}
+
+	fail = {
+	
+	}
+
+	on_fail = {
+	}
+
+	invalid = {	
+	}
+
+	on_timeout = {	
+	}
+
+	on_monthly_pulse = {
+	}
+
+	should_be_pinned_by_default = yes
+
+	weight = 8000
+
+	current_value = {
+		value = global_var:oil_crisis_removed_var
+	}
+
+	goal_add_value = {
+		add = 100
+	}
+
+	progressbar = yes
+}
