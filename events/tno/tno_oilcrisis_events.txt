@@ -1656,6 +1656,9 @@ tno_oil_crisis.9 = {   #Superevent Oil Crisis (move to super events eventually)
 				region = sr:region_arabic
 				state_region = s:STATE_LOWER_EGYPT
 				state_region = s:STATE_IRAKAJEMI
+				region = sr:region_russia
+				region = sr:region_west_siberia
+				region = sr:region_east_siberia
 			}
 		   }	
 		 }
@@ -1674,8 +1677,6 @@ tno_oil_crisis.9 = {   #Superevent Oil Crisis (move to super events eventually)
 				this ?= c:GER
 				this ?= c:USA
 				this ?= c:JAP
-				this ?= c:PRO
-				this ?= c:RUS
 				}
 			}	
 		}
@@ -1691,7 +1692,6 @@ tno_oil_crisis.9 = {   #Superevent Oil Crisis (move to super events eventually)
 		trigger = {
 			this ?= c:GER
 		}
-		set_global_variable = { name = oil_crisis_removed_var value = 10 } 
 		add_modifier = {
 			name = oil_crisis_ger
 			years = 10

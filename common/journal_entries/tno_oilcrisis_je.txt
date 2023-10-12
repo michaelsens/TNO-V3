@@ -1,49 +1,40 @@
 je_remove_oil_crisis = {
 	icon = "gfx/interface/icons/event_icons/event_protest.dds"
 	
-	scripted_button = je_the_paris_commune_france_button_a
-	scripted_button = je_the_paris_commune_france_button_b
+	scripted_button = je_oil_crisis_remove_button_a
+	scripted_button = je_oil_crisis_remove_button_b
 
 	is_shown_when_inactive = {
-		c:GER ?= this
+		has_modifier = oil_crisis_global
 	}
-
+	
 	possible = {
-		c:GER ?= this
+		has_modifier = oil_crisis_global
 	}
 	
 	immediate = {
+		set_variable = { name = oil_crisis_removed_var value = 0 }
 	}
 
 	complete = {
+		custom_tooltip = {
+			#text = je_the_paris_commune_communard_complete
+			var:oil_crisis_removed_var = 100
+		}
 	}
 
 	on_complete = {
-		trigger_event = { id = paris_commune.2 popup = yes }
+		show_as_tooltip ={
+			remove_modifier = oil_crisis_global
+		}
 	}
-
-	fail = {
 	
-	}
-
-	on_fail = {
-	}
-
-	invalid = {	
-	}
-
-	on_timeout = {	
-	}
-
-	on_monthly_pulse = {
-	}
-
 	should_be_pinned_by_default = yes
 
 	weight = 8000
 
 	current_value = {
-		value = global_var:oil_crisis_removed_var
+		value = var:oil_crisis_removed_var
 	}
 
 	goal_add_value = {
