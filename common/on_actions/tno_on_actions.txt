@@ -33,24 +33,6 @@
             trigger_event = { id = tno_starting_events.23 popup = yes }
             trigger_event = { id = tno_starting_events.24 popup = yes }
         }
-        
-        if = {
-			limit = {
-               game_date >= 1962.4.1
-               game_date <= 1962.6.1
-               NOT = { has_variable = letsgoooooo_var }
-            }
-            set_variable = letsgoooooo_var
-            trigger_event = { id = tno_oil_crisis.1 days = 0 }
-            trigger_event = { id = tno_oil_crisis.2 days = 0 }
-            trigger_event = { id = tno_oil_crisis.3 days = 0 }
-            trigger_event = { id = tno_oil_crisis.4 days = 0 }
-            trigger_event = { id = tno_oil_crisis.5 days = 0 }
-            trigger_event = { id = tno_oil_crisis.6 days = 0 }
-            trigger_event = { id = tno_oil_crisis.7 days = 0 }
-            trigger_event = { id = tno_oil_crisis.8 days = 0 }
-        }
-
 
         #Super events
 
@@ -304,7 +286,7 @@
        #MADAGASCAR 
        if = {
          limit = {
-            game_date >= 1975.3.1
+            game_date >= 1975.12.1
             NOT = { has_variable = mad_war_var}
          }
         set_variable = mad_war_var
@@ -351,14 +333,6 @@
        
         if = {
             limit = {
-                game_date >= 1975.5.1
-                NOT = { has_global_variable = oil_crisis_superevent_var }
-            }
-            set_global_variable = oil_crisis_superevent_var
-            trigger_event = { id = tno_oil_crisis.9 }
-           }
-        if = {
-            limit = {
                game_date >= 1975.2.1
                NOT = { has_variable = oil_crisis_war_1_var}
             }
@@ -370,7 +344,8 @@
                game_date >= 1975.4.1
                NOT = { has_variable = oil_crisis_war_2_var}
             }
-           set_variable = oil_crisis_war_2_var
+            set_global_variable = oil_crisis_start
+            set_variable = oil_crisis_war_2_var
            trigger_event = { id = tno_oil_crisis.3 days = 0 popup = yes }
           }    
         if = {
@@ -420,7 +395,15 @@
             }
            set_variable = oil_crisis_war_8_var
            trigger_event = { id = tno_oil_crisis.8 days = 0 popup = yes }
-          }    
+          } 
+        if = {
+            limit = {
+                has_global_variable =  oil_crisis_start
+                NOT = { has_variable = oil_crisis_superevent_var }
+            }
+            set_variable = oil_crisis_superevent_var
+            trigger_event = { id = tno_oil_crisis.9 }
+           }   
 
         
     }
@@ -429,7 +412,7 @@
     #Oil Crisis Random Events
     
     random_events = {
-        20 = 0
+        10 = 0
         1 = tno_oil_crisis.10
         1 = tno_oil_crisis.11
         1 = tno_oil_crisis.12
