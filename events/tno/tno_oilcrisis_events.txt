@@ -2055,3 +2055,37 @@ type = country_event
 		}
 	}
 }
+
+tno_oil_crisis.15 = {  #Winter of 1978
+	type = country_event
+    placement = ROOT
+
+	title = mad_flavor.2.t
+	desc = mad_flavor.2.d
+    flavor = mad_flavor.2.f
+	
+	event_image = {
+		texture  = "gfx/event_pictures/event_pictures/jungle_warfare.dds"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/middleeast/courtroom_upheaval" 
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	trigger = {
+	}	
+	
+	duration = 3
+
+	immediate = { 	
+	}
+	option = {
+		name = mad_flavor.2.a
+		default_option = yes
+		change_variable = {
+			name = oil_crisis_oil_supply_var
+			add = -400
+		}
+	}
+}

@@ -1,10 +1,13 @@
-﻿je_remove_oil_crisis = {
+﻿je_oil_supply_oil_crisis = {
 	icon = "gfx/interface/icons/event_icons/event_protest.dds"
 	
-	scripted_button = je_oil_crisis_remove_button_a
-	scripted_button = je_oil_crisis_remove_button_b
-	scripted_button = je_oil_crisis_remove_button_c
-	scripted_button = je_oil_crisis_remove_button_d
+	scripted_button = je_oil_crisis_oil_supply_button_button_a
+	scripted_button = je_oil_crisis_oil_supply_button_button_b
+	scripted_button = je_oil_crisis_oil_supply_button_button_c
+	scripted_button = je_oil_crisis_oil_supply_button_button_d
+	scripted_button = je_oil_crisis_oil_supply_button_button_e
+	
+	can_revolution_inherit = yes
 
 	is_shown_when_inactive = {
 		is_player = yes
@@ -27,20 +30,32 @@
 	}
 	
 	immediate = {
-		set_variable = { name = oil_crisis_removed_drift value = -50 }
-		set_variable = { name = oil_crisis_removed_var value = 0 }
+		set_variable = { name = oil_crisis_oil_supply_drift value = -50 }
+		set_variable = { name = oil_crisis_oil_supply_var value = 0 }
 	}
 
+	complete = {
+		custom_tooltip = {
+			text = je_oil_crisis_oil_supply_succeded
+			NOT = {
+				OR = {
+					has_modifier = oil_crisis_global
+					has_modifier = oil_crisis_ger
+					has_modifier = oil_crisis_jap
+					has_modifier = oil_crisis_usa
+				 }
+			}
+		}
+	}
+	
 	fail = {
 		custom_tooltip = {
-			text = oil_crisis_removed_failed
-			var:oil_crisis_removed_var <= -100
+			text = je_oil_crisis_oil_supply_failed
+			var:oil_crisis_oil_supply_var <= -100
 		}
 	}
 
 	on_fail = {
-		remove_variable = oil_crisis_removed_drift
-		remove_variable = oil_crisis_removed_var
 		trigger_event = { id = tno_oil_crisis.14 popup = yes }
 	}
 
@@ -48,8 +63,8 @@
 	on_monthly_pulse = {
 		effect = {
 			change_variable = {
-				name = oil_crisis_removed_var
-				add = var:oil_crisis_removed_drift
+				name = oil_crisis_oil_supply_var
+				add = var:oil_crisis_oil_supply_drift
 			}
 		}
 	}
@@ -59,7 +74,7 @@
 	weight = 8000
 
 	current_value = {
-		value = var:oil_crisis_removed_var
+		value = root.var:oil_crisis_oil_supply_var
 	}
 
 	goal_add_value = {
