@@ -2363,9 +2363,11 @@ DAI = { # Dai Nam
 		subject_canton = DAI_start
 		allow_overlord_canton = no	
 		priority = 200
-		scope:actor = {
-			has_law = law_type:law_autocracy
-			
+		trigger = {
+			scope:actor = {
+				exists = scope:actor
+				has_law = law_type:law_autocracy	
+			}	
 		}
 	}
 	flag_definition = {
