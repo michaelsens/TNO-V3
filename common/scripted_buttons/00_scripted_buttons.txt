@@ -459,12 +459,7 @@ french_monarchy_bonapartist_button = {
 	name = "bonapartist_button"
 	desc = "bonapartist_button_desc"
 
-	visible = {
-		owner = { 
-			has_variable = chose_initial_french_dynasty 
-			NOT = { has_variable = fra_divided_monarchists_freeze } 
-		}
-	}
+	visible = { always = yes }
 
 	possible = {
 		trigger_if = {
@@ -507,12 +502,7 @@ french_monarchy_orleanist_button = {
 	name = "orleanist_button"
 	desc = "orleanist_button_desc"
 
-	visible = {
-		owner = { 
-			has_variable = chose_initial_french_dynasty 
-			NOT = { has_variable = fra_divided_monarchists_freeze } 
-		}
-	}
+	visible = { always = yes }
 
 	possible = {
 		trigger_if = {
@@ -556,12 +546,7 @@ french_monarchy_legitimist_button = {
 	name = "legitimist_button"
 	desc = "legitimist_button_desc"
 
-	visible = {
-		owner = { 
-			has_variable = chose_initial_french_dynasty 
-			NOT = { has_variable = fra_divided_monarchists_freeze } 
-		}
-	}
+	visible = { always = yes }
 
 	possible = {
 		trigger_if = {
@@ -576,7 +561,7 @@ french_monarchy_legitimist_button = {
 		any_interest_group = {
 			is_in_government = yes
 			leader = {
-				has_ideology = ideology:ideology_legitimist
+				has_ideology = ideology:ideology_fascist
 			}
 		}
 		custom_tooltip = {
@@ -627,5 +612,39 @@ je_the_krakow_uprising_annex_button = {
 			}
 			annex = c:KRA
 		}
+	}
+}
+
+je_gerstruggle_a = {
+	name = "je_civil_rights_stall"
+	desc = "je_we_racist"
+
+	visible = { always = yes }
+
+	possible = {
+		scope:journal_entry = {
+				not = {
+				custom_tooltip = {
+					text = civil_rights_cooldown
+					has_variable = je_civil_rights_act_cooldown
+				}
+			}
+		}
+	}
+
+	effect = {
+        custom_tooltip = cooldown_three_balls_tt
+		scope:journal_entry = {
+			set_variable = { name = je_civil_rights_act_cooldown months = 3 }
+		}	
+        add_radicals = {
+            value = 0.03
+            culture = cu:afro_american
+        }
+        custom_tooltip = civil_rights_act_stall_10
+        change_variable = {
+            name = civil_rights_timer
+            add = -3
+        }
 	}
 }
