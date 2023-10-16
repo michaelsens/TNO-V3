@@ -3198,6 +3198,20 @@ GEO = { # Georgia
 	}		
 }
 
+SBA = { # siberian black army
+	flag_definition = { # SBA starting flagg
+		coa = SBA_start
+		priority = 2000
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_law = law_type:law_council_republic
+				has_law = law_type:law_anarchy
+			}
+		}
+	}
+}
+
 GER = { # Germany
 	flag_definition = {
 		coa = GER_modern
