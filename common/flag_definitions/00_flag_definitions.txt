@@ -3224,6 +3224,19 @@ VOR = { # vorkuta
 		}
 	}
 }
+WST = { # west rev front
+	flag_definition = { # starting flagg
+		coa = WST_start
+		priority = 2000
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_law = law_type:law_council_republic
+				has_law = law_type:law_autocracy
+			}
+		}
+	}
+}
 OEN = { # orenburg
 	flag_definition = { # starting flagg
 		coa = OEN_start
