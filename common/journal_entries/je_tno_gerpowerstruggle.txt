@@ -1,0 +1,41 @@
+je_tno_gerpowerstruggle = { # oh boy power struggle!
+
+    icon = "gfx/interface/icons/new_event_icons/event_jimcrow.dds"
+
+    
+    
+    complete = {
+        OR = { 
+            has_law = law_type:law_multicultural
+        }
+    }
+
+    on_complete = {
+        remove_modifier = jim_crow
+
+        add_radicals = {
+            value = 0.05
+            culture = cu:yankee
+        }
+        add_loyalists = {
+            value = 0.05
+            culture = cu:afro_american
+        }
+    }
+
+    on_monthly_pulse = {
+        random_events = {
+            6 = 0
+            3 = tno_usa_segregation_events.2
+            3 = tno_usa_segregation_events.3
+            3 = tno_usa_segregation_events.4
+            3 = tno_usa_segregation_events.5
+            3 = tno_usa_segregation_events.6
+        }
+    }
+    
+    weight = 30
+    
+    should_be_pinned_by_default = no
+    
+}

@@ -1,0 +1,92 @@
+namespace = tno_germany_events
+
+tno_germany_events.1 = { # burgundy sends assgign  #burgundy gets this event not germany
+	type = country_event
+    placement = ROOT
+ 
+    title = tno_germany_events.1
+    desc = tno_germany_events.1.d
+    flavor = tno_germany_events.1.f 
+
+   event_image = {
+		texture  = "gfx/event_pictures/super_pictures/lasthope.dds"
+	}
+    icon = "gfx/interface/icons/event_icons/event_fire.dds"
+
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 3
+
+    option = {
+        name = tno_germany_events.1.a
+
+		hidden_effect = {
+			c:GER = {
+				trigger_event = { id = tno_germany_events.3 days = 0 popup = yes }
+			} 
+
+
+		}
+		
+
+	}
+
+}
+
+tno_germany_events.2 = { # burgundy sends assgign  #burgundy gets this event not germany
+	type = country_event
+    placement = ROOT
+ 
+    title = tno_germany_events.2
+    desc = tno_germany_events.2.d
+    flavor = tno_germany_events.2.f 
+
+   event_image = {
+		texture  = "gfx/event_pictures/super_pictures/lasthope.dds"
+	}
+    icon = "gfx/interface/icons/event_icons/event_fire.dds"
+
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 3
+
+    option = {
+        name = tno_germany_events.2.a
+	}
+
+}
+
+tno_germany_events.3 = { # germanys event telling them that a japanise (burgundian) attacker tried to kill hitler
+	type = country_event
+    placement = ROOT
+ 
+    title = tno_germany_events.3
+    desc = tno_germany_events.3.d
+    flavor = tno_germany_events.3.f 
+
+   event_image = {
+		texture  = "gfx/event_pictures/event_pictures/ass.dds"
+	}
+    icon = "gfx/interface/icons/event_icons/event_fire.dds"
+
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 3
+
+    option = {
+        name = tno_germany_events.3.a
+
+		hidden_effect = {
+			c:BGD = {
+				trigger_event = { id = tno_germany_events.2 days = 0 popup = yes }
+			} 
+		}
+		
+
+	}
+
+}
+	
+	
+		
+        
