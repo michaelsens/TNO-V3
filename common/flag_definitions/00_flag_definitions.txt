@@ -1144,6 +1144,19 @@ BOH = { # Bohemia
 
 BOL = { # Bolivia
 	flag_definition = {
+		coa = BOL_ofn
+		subject_canton = BOL_ofn
+		allow_overlord_canton = no		
+		priority = 999
+		trigger = {
+            OR = {
+                scope:actor = {
+                    is_subject_of = c:USA
+                }
+            }
+        }
+	}
+	flag_definition = {
 		coa = BOL
 		subject_canton = BOL
 		allow_overlord_canton = yes	
@@ -1690,6 +1703,18 @@ CAN = { # Canada
 		trigger = { 
 			coa_def_republic_flag_trigger = yes
 		}
+	}	
+	flag_definition = {
+		coa = CAN_ofn
+		subject_canton = CAN_ofn
+		priority = 99
+		trigger = {
+            OR = {
+                scope:actor = {
+                    is_subject_of = c:USA
+                }
+            }
+        }
 	}	
 	flag_definition = {
 		coa = CAN_theocracy
@@ -5371,6 +5396,21 @@ MEX = { # Mexico
 		}
 	}	
 	flag_definition = {
+		coa = MEX_ofn
+		subject_canton = MEX_ofn
+		allow_overlord_canton = no
+		coa_with_overlord_canton = MEX_ofn			
+		priority = 99
+		trigger = {
+			OR = {
+				scope:actor = {
+					is_subject_of = c:USA
+				}
+			}
+		}
+	}	
+	
+	flag_definition = {
 		coa = MEX_dictatorship
 		subject_canton = MEX_dictatorship
 		priority = 20
@@ -6571,6 +6611,20 @@ PEU = { # Peru
 		allow_overlord_canton = yes	
 		coa_with_overlord_canton = PEU_subject			
 		priority = 1
+	}
+	flag_definition = {
+		coa = PEU_ofn
+		subject_canton = PEU_ofn
+		allow_overlord_canton = no	
+		coa_with_overlord_canton = PEU_ofn			
+		priority = 999
+		trigger = {
+            OR = {
+                scope:actor = {
+                    is_subject_of = c:USA
+                }
+            }
+        }
 	}
 	flag_definition = {
 		coa = PEU_monarchy
