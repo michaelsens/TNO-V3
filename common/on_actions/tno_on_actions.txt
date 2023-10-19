@@ -398,6 +398,14 @@
           } 
         if = {
             limit = {
+               game_date >= 1979.2.1
+               NOT = { has_variable = oil_crisis_war_15_var}
+            }
+           set_variable = oil_crisis_war_15_var
+           trigger_event = { id = tno_oil_crisis.15 days = 0 popup = yes }
+          }
+        if = {
+            limit = {
                 has_global_variable =  oil_crisis_start
                 NOT = { has_variable = oil_crisis_superevent_var }
             }
