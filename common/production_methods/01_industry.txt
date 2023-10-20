@@ -687,9 +687,6 @@ pm_mechanized_workshops = {
 					state_pollution_generation_add  = 5
 		}
 	}
-		}
-	}
-	
 	unlocking_technologies = {
 		mechanized_workshops
 	}
@@ -800,8 +797,6 @@ pm_rotary_valve_engine_building_furniture_manufacturies = {
 	state_modifiers = {
 		workforce_scaled = {
 					state_pollution_generation_add  = 10
-		}
-	}
 		}
 	}
 	
@@ -1778,9 +1773,7 @@ pm_ammonia-soda_process = {
 					state_pollution_generation_add  = 15
 		}
 	}
-		}
-	}
-
+		
 	unlocking_technologies = {
 		nitroglycerin
 	}
@@ -1801,38 +1794,6 @@ pm_ammonia-soda_process = {
 		level_scaled = {
 			# employment
 			building_employment_engineers_add = 500
-		}
-	}
-}
-
-pm_vacuum_evaporation = {
-	texture = "gfx/interface/icons/production_method_icons/vaccum_evaporation.dds"
-	state_modifiers = {
-		workforce_scaled = {
-					state_pollution_generation_add  = 20
-		}
-	}
-	
-	unlocking_technologies = {
-		dynamite
-	}
-
-	building_modifiers = {
-		workforce_scaled = {
-			# input goods
-			goods_input_sulfur_add = 30 
-			goods_input_coal_add = 15
-			goods_input_oil_add = 5
-			goods_input_electricity_add = 10
-			goods_output_fertilizer_add = -30
-
-			# output goods
-			goods_output_explosives_add = 70
-		}
-
-		level_scaled = {
-			# employment
-			building_employment_engineers_add = 750
 		}
 	}
 }
@@ -2577,23 +2538,6 @@ pm_military_shipbuilding_steam = {
 	}
 }
 
-pm_military_shipbuilding_steam_2 = {
-	texture = "gfx/interface/icons/production_method_icons/military_shipbuilding_steam_2.dds"
-	
-	unlocking_production_methods = {
-		pm_metal_shipbuilding
-		pm_arc_welding_shipbuilding
-	}
-	
-	building_modifiers = {
-		workforce_scaled = {
-			# output goods
-			goods_output_steamers_add = -25
-			goods_output_ironclads_add = 25
-		}
-	}
-}			
-
 pm_merchant_guilds_building_shipyards = {
 	texture = "gfx/interface/icons/production_method_icons/merchant_guilds.dds"
 
@@ -2953,17 +2897,16 @@ pm_smoothbores = {
 	building_modifiers = {
 		workforce_scaled = {
 			# input goods
-			goods_output_small_arms_add = -15
-			goods_input_steel_add = 15
-			goods_input_electricity_add = 5
-			goods_input_oil_add = 5
+			goods_input_iron_add = 25
+			goods_input_hardwood_add = 15
 
 			# output goods
 			goods_output_artillery_add = 45
 		}
 
 		level_scaled = {
-			building_employment_machinists_add = 500
+			building_employment_laborers_add = 3750
+			building_employment_machinists_add = 1000
 			building_employment_engineers_add = 250
 		}
 	}
@@ -3440,4 +3383,94 @@ pm_publicly_traded_building_munition_plants = {
 			building_capitalists_shares_add = 10
 		}
 	}
+}
+
+pm_crystal_glass = {
+	texture = "gfx/interface/icons/production_method_icons/crystal_glass.dds"
+	
+	unlocking_technologies = {
+		crystal_glass
+	}
+	
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = 10
+		}
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_lead_add = 35
+			
+			# output goods
+			goods_output_glass_add = 70
+		}
+
+		level_scaled = {
+			building_employment_laborers_add = 3000
+			building_employment_machinists_add = 1000
+			building_employment_engineers_add = 500
+		}
+	}
+}
+
+pm_vacuum_evaporation = {
+	texture = "gfx/interface/icons/production_method_icons/vaccum_evaporation.dds"
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = 20
+		}
+	}
+	
+	unlocking_technologies = {
+		dynamite
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_sulfur_add = 40
+			goods_input_fertilizer_add = 40
+			goods_input_paper_add = 20
+
+			# output goods
+			goods_output_explosives_add = 110
+		}
+
+		level_scaled = {
+			# employment
+			building_employment_laborers_add = 2500
+			building_employment_machinists_add = 1000
+			building_employment_engineers_add = 1200
+		}
+	}
+}
+
+pm_military_shipbuilding_steam_2 = {
+	texture = "gfx/interface/icons/production_method_icons/military_shipbuilding_steam_2.dds"
+	
+	unlocking_technologies = {
+		arc_welding
+	}
+	
+	building_modifiers = {
+		workforce_scaled = {
+			#input
+			goods_input_steel_add = 50
+			goods_input_electricity_add = 35
+			goods_input_engines_add = 15
+
+			# output goods
+			goods_output_ironclads_add = 70
+		}
+		level_scaled = {
+			# employment
+			building_employment_laborers_add = 2000
+			building_employment_machinists_add = 1500
+			building_employment_engineers_add = 1000
+		}
+	}
+
+	required_input_goods = electricity
 }
