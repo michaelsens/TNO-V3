@@ -127,6 +127,15 @@ tno_usa_segregation_events.3 = { # buissness turns away black men
 	trigger = {
 		this ?= c:USA
 	}	
+
+    immediate = {
+        random_scope_state = {
+            limit = {
+                is_incorporated = yes
+            }
+            save_scope_as = turnaway_state
+        }
+	}
 	
 	duration = 1
 
@@ -134,9 +143,12 @@ tno_usa_segregation_events.3 = { # buissness turns away black men
 		default_option = yes
         name = tno_usa_segregation_events.3.a
 
-		add_radicals = { #racist response 
-            value = 0.02
-            culture = cu:afro_american
+        scope:turnaway_state = {
+            add_radicals_in_state = {
+                value = 0.09
+                culture = cu:afro_american
+               
+            }
         }
 }
 
@@ -146,7 +158,7 @@ option = {
      # not that racist but still bad response 
      add_modifier = {
         name = buissness_mad
-        months = 3
+        months = 12
     } 
 }
 }
@@ -253,6 +265,15 @@ tno_usa_segregation_events.6 = { # civil rights sit in
 	trigger = {
 		this ?= c:USA
 	}	
+
+    immediate = {
+        random_scope_state = {
+            limit = {
+                is_incorporated = yes
+            }
+            save_scope_as = protest_state
+        }
+	}
 	
 	duration = 1
 
@@ -260,12 +281,17 @@ tno_usa_segregation_events.6 = { # civil rights sit in
 		default_option = yes
         name = tno_usa_segregation_events.6.a
 
-		add_radicals = {
-            value = 0.03
-            culture = cu:afro_american
-        }
+            scope:protest_state = {
+                add_radicals_in_state = {
+                    value = 0.07
+                    culture = cu:afro_american
+                   
+                }
+            }
+            
+    }
         
-}
+    
 
     option = {
     name = tno_usa_segregation_events.6.b
@@ -273,9 +299,9 @@ tno_usa_segregation_events.6 = { # civil rights sit in
      # not that racist but still bad response 
      add_modifier = {
         name = buissness_mad
-        months = 3
-    } 
-}
+        months = 8
+     } 
+    }
 }
 
 tno_usa_segregation_events.7 = { # event that fires after southern riots
@@ -720,6 +746,84 @@ tno_usa_segregation_events.15 = { # civil rights act is stalled
         add_radicals = {
             value = 0.30
             culture = cu:afro_american
+        }
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+}
+
+tno_usa_segregation_events.16 = { # protest over jimcrow
+    type = country_event
+    placement = ROOT
+
+	title = tno_usa_segregation_events.16
+	desc = tno_usa_segregation_events.16.d
+    flavor = tno_usa_segregation_events.16.f	
+
+	event_image = { 
+		texture  = "gfx/event_pictures/event_pictures/protestseg.dds"
+	}
+
+    icon = "gfx/interface/icons/tno_event_icons/bicorne_jim_crow_protest.2.dds"
+	
+	trigger = {
+		this ?= c:USA
+	}	
+
+    immediate = {
+        random_scope_state = {
+            save_scope_as = protest_state
+            limit = {
+              OR = {
+                state_region = s:STATE_TEXAS
+                state_region = s:STATE_OKLAHOMA
+                state_region = s:STATE_LOUISIANA
+                state_region = s:STATE_ARKANSAS
+                state_region = s:STATE_MISSOURI
+                state_region = s:STATE_MISSISSIPPI
+                state_region = s:STATE_TENNESSEE
+                state_region = s:STATE_ALABAMA
+                state_region = s:STATE_FLORIDA
+                state_region = s:STATE_GEORGIA
+                state_region = s:STATE_SOUTH_CAROLINA
+                state_region = s:STATE_NORTH_CAROLINA
+                state_region = s:STATE_OKLAHOMA
+              }
+            }
+        }
+
+    }
+	
+	duration = 1
+
+	option = {
+		default_option = yes
+        name = tno_usa_segregation_events.16.a
+
+        scope:protest_state = {
+            add_radicals_in_state = {
+                value = 0.03
+                culture = cu:yankee
+               
+            }
+        }
+        
+	}
+    option = {
+		default_option = yes
+        name = tno_usa_segregation_events.16.b
+
+        add_modifier = {
+            name = protesters_counterd
+            months = 7
+        } 
+
+        scope:protest_state = {
+            add_radicals_in_state = {
+             value = 0.07
+             culture = cu:afro_american
+               
+            }
         }
 	}
 
