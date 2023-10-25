@@ -116,12 +116,12 @@ je_oil_crisis_oil_supply_button_button_e = {  # Research new Technologies
 	visible = { always = yes }
 
 	possible = {
-	scope:journal_entry = {
 		NOT = {
-		  OR = {
-			has_technology_researched = combustion_engine
-			has_technology_researched = nuclear_times
-		  }
+			OR = {
+			  has_technology_researched = combustion_engine
+			  has_technology_researched = nuclear_times
+			}
+		scope:journal_entry = {
 		  custom_tooltip = {
 			text = oil_supply_tt
 			has_variable = je_oil_supply_cooldown
