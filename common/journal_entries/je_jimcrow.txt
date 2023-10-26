@@ -34,15 +34,18 @@
         }
     }
     
-    weight = 100
+    weight = 30
     
-    should_be_pinned_by_default = yes
+    should_be_pinned_by_default = no
     
 }
 
 je_civil_rights_act = { # civil rights act
 
     icon = "gfx/interface/icons/new_event_icons/event_bill.dds"
+
+    scripted_button = je_civil_rights_a
+    scripted_button = je_civil_rights_b
 
     immediate = {
 
@@ -75,6 +78,10 @@ je_civil_rights_act = { # civil rights act
 		value = root.var:civil_rights_timer
 	}
 
+    on_timeout = {
+		trigger_event = { id = tno_usa_segregation_events.15 popup = yes }
+	}
+
     goal_add_value = {
 		value = 24
 	}
@@ -82,6 +89,8 @@ je_civil_rights_act = { # civil rights act
     progressbar = yes
     
     weight = 100
+
+    timeout = 730
     
     should_be_pinned_by_default = yes
     
@@ -192,7 +201,7 @@ je_northernriots = { # Riots when civil rights is vetoed
 
     progressbar = yes
     
-    weight = 100
+    weight = 50
     
     should_be_pinned_by_default = yes
     

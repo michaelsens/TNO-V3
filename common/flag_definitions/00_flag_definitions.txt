@@ -2357,7 +2357,19 @@ DAI = { # Dai Nam
 		trigger = { 
 			coa_def_absolute_monarchy_flag_trigger = yes
 		}		
-	}		
+	}	
+	flag_definition = {
+		coa = DAI_start
+		subject_canton = DAI_start
+		allow_overlord_canton = no	
+		priority = 200
+		trigger = {
+			scope:actor = {
+				exists = scope:actor
+				has_law = law_type:law_autocracy	
+			}	
+		}
+	}
 	flag_definition = {
 		coa = DAI_monarchy
 		subject_canton = DAI_monarchy
@@ -3227,16 +3239,17 @@ GER = { # Germany
 			}
 		}
 	}
-	flag_definition = { #democracit but still ethnostate
-		coa = GER_democratic_racist
-		priority = 2000
+	flag_definition = { #democracit 
+		coa = GER_democratic
+		priority = 2500
 		trigger = {
 			exists = scope:actor
 			scope:actor = {
 				NOT = { has_law = law_type:law_autocracy
 				has_law = law_type:law_technocracy
 				has_law = law_type:law_oligarchy
-				has_law = law_type:law_council_republic }
+				has_law = law_type:law_council_republic
+				has_law = law_type:law_ethnostate }
 			}
 		}
 	}
@@ -4642,6 +4655,17 @@ JOH = { # Johore
 		priority = 20
 		trigger = { 
 			coa_def_theocracy_flag_trigger = yes
+		}
+	}	
+	flag_definition = {
+		coa = JOH_japan
+		priority = 700
+		allow_overlord_canton = no	
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_law = law_type:law_autocracy 
+			}
 		}
 	}	
 }
