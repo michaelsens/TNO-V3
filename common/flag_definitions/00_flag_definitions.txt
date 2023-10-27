@@ -8739,9 +8739,35 @@ trigger = {
 }
 }
 
+EGR = { # COM EGYPT
+flag_definition = { #COM EGYPT
+coa = EGR
+priority = 2000
+trigger = {
+	exists = scope:actor
+	scope:actor = {
+		has_law = law_type:law_council_republic
+	}
+}
+}
+}
+
 PEI = { # islamic IRAN
 flag_definition = { #islamic IRAN
 coa = PEI
+priority = 2000
+trigger = {
+	exists = scope:actor
+	scope:actor = {
+		has_law = law_type:law_theocracy
+	}
+}
+}
+}
+
+EGM = { # islamic EGYPT
+flag_definition = { #islamic EGYPT
+coa = EGM
 priority = 2000
 trigger = {
 	exists = scope:actor
@@ -8773,6 +8799,32 @@ trigger = {
 	exists = scope:actor
 	scope:actor = {
 		has_law = law_type:law_universal_suffrage
+	}
+}
+}
+}
+
+EGN = { # OFN SUDAN
+flag_definition = { #OFN SUDAN
+coa = EGN
+priority = 2000
+trigger = {
+	exists = scope:actor
+	scope:actor = {
+		has_law = law_type:law_universal_suffrage
+	}
+}
+}
+}
+
+YED = { # Communist yemen 
+flag_definition = { # Communist yemen 
+coa = YED
+priority = 2000
+trigger = {
+	exists = scope:actor
+	scope:actor = {
+		has_law = law_type:law_council_republic
 	}
 }
 }
