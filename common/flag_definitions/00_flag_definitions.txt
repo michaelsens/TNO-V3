@@ -8804,6 +8804,8 @@ trigger = {
 }
 }
 
+
+
 EGN = { # OFN SUDAN
 flag_definition = { #OFN SUDAN
 coa = EGN
@@ -8820,6 +8822,19 @@ trigger = {
 YED = { # Communist yemen 
 flag_definition = { # Communist yemen 
 coa = YED
+priority = 2000
+trigger = {
+	exists = scope:actor
+	scope:actor = {
+		has_law = law_type:law_council_republic
+	}
+}
+}
+}
+
+ODR = { # Communist oman 
+flag_definition = { # Communist oman 
+coa = ODR
 priority = 2000
 trigger = {
 	exists = scope:actor
