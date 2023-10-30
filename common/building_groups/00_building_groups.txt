@@ -61,6 +61,20 @@ bg_heavy_industry = {
 	infrastructure_usage_per_level = 3
 }
 
+bg_shipyards = {
+	parent_group = bg_heavy_industry
+	
+	urbanization = 20
+	infrastructure_usage_per_level = 1
+}
+
+bg_military_shipyards = {
+	parent_group = bg_heavy_industry
+		
+	urbanization = 20
+	infrastructure_usage_per_level = 2
+}
+
 # Agriculture
 
 bg_agriculture = {
@@ -139,6 +153,14 @@ bg_subsistence_agriculture = {
 	fired_pops_become_radical = no
 	
 	hires_unemployed_only = yes
+}
+
+bg_vineyard_plantations = {
+	parent_group = bg_agriculture
+	
+	default_building = building_vineyard_plantation
+
+	cash_reserves_max = 25000
 }
 
 # Ranching

@@ -1736,10 +1736,6 @@ pm_nitrogen_fixation = {
 	}
 }
 
-pm_no_explosives_production = {
-	texture = "gfx/interface/icons/production_method_icons/no_explosives.dds"
-}
-
 pm_leblanc_process = {
 	texture = "gfx/interface/icons/production_method_icons/leblanc_process.dds"
 	state_modifiers = {
@@ -1753,7 +1749,6 @@ pm_leblanc_process = {
 			# input goods
 			goods_input_coal_add = 15
 			goods_input_oil_add = 5
-			goods_output_fertilizer_add = -15
 
 			# output goods
 			goods_output_explosives_add = 20
@@ -1785,7 +1780,6 @@ pm_ammonia-soda_process = {
 			goods_input_coal_add = 15 
 			goods_input_oil_add = 5
 			goods_input_electricity_add = 5
-			goods_output_fertilizer_add = -15 
 
 			# output goods
 			goods_output_explosives_add = 40
@@ -1817,42 +1811,10 @@ pm_brine_electrolysis = {
 			goods_input_oil_add = 5
 			goods_input_electricity_add = 25
 			goods_input_coal_add = 15
-			goods_output_fertilizer_add = -50
+			goods_input_electricity_add = 10
 
 			# output goods
 			goods_output_explosives_add = 150
-		}
-
-		level_scaled = {
-			# employment
-			building_employment_engineers_add = 1000
-		}
-	}
-}
-
-pm_brine_electrolysis_2 = {
-	texture = "gfx/interface/icons/production_method_icons/vaccum_brine_electrolysis.dds"
-	state_modifiers = {
-		workforce_scaled = {
-					state_pollution_generation_add  = 25
-		}
-	}
-
-	unlocking_technologies = {
-		electrical_capacitors
-	}
-	
-	building_modifiers = {
-		workforce_scaled = {
-			# input goods
-			goods_input_sulfur_add = 50
-			goods_input_oil_add = 10
-			goods_input_electricity_add = 35
-			goods_input_coal_add = 25
-			goods_output_fertilizer_add = -200
-
-			# output goods
-			goods_output_explosives_add = 350
 		}
 
 		level_scaled = {
@@ -2873,7 +2835,6 @@ pm_cannons = {
 	building_modifiers = {
 		workforce_scaled = {
 			# input goods
-			goods_output_small_arms_add = -10
 			goods_input_iron_add = 10
 			goods_input_oil_add = 5
 
@@ -2922,18 +2883,44 @@ pm_breech_loaders = {
 	building_modifiers = {
 		workforce_scaled = {
 			# input goods
-			goods_output_small_arms_add = -45
 			goods_input_steel_add = 25
 			goods_input_electricity_add = 10
 			goods_input_oil_add = 5
 
 			# output goods
-			goods_output_artillery_add = 70
+			goods_output_artillery_add = 75
 		}
 
 		level_scaled = {
 			building_employment_machinists_add = 500
 			building_employment_engineers_add = 500
+		}
+	}
+}
+
+pm_recoiled_barrels = {
+	texture = "gfx/interface/icons/production_method_icons/recoil_mechanism_artillery_production.dds"
+	
+	unlocking_technologies = {
+		automatic_machine_guns
+	}
+	
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_steel_add = 40
+			goods_input_tools_add = 20
+			goods_input_oil_add = 10
+			goods_input_electricity_add = 20
+
+			# output goods
+			goods_output_artillery_add = 110
+		}
+
+		level_scaled = {
+			building_employment_laborers_add = 2500
+			building_employment_machinists_add = 1500
+			building_employment_engineers_add = 1000
 		}
 	}
 }
