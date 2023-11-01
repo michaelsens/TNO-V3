@@ -17,6 +17,8 @@ combat_unit_type_irregular_infantry = {
     }
 	
     upkeep_modifier = {
+        goods_input_small_arms_add = 1
+        goods_input_ammunition_add = 0.5
     }
 
     # scope = country
@@ -76,7 +78,8 @@ combat_unit_type_line_infantry = {
     group = combat_unit_group_infantry
 
     upkeep_modifier = {
-        goods_input_small_arms_add = 1
+        goods_input_small_arms_add = 2
+        goods_input_ammunition_add = 1
     }
 
     battle_modifier = {
@@ -85,7 +88,7 @@ combat_unit_type_line_infantry = {
         unit_morale_loss_add = 10
     }
 
-	unlocking_technologies = { line_infantry }
+	unlocking_technologies = { military_statistics }
 
     combat_unit_image = {
         trigger = { 
@@ -137,8 +140,9 @@ combat_unit_type_skirmish_infantry = {
     group = combat_unit_group_infantry
 
     upkeep_modifier = {
-        goods_input_small_arms_add = 1
-        goods_input_ammunition_add = 1
+        goods_input_small_arms_add = 2
+        goods_input_ammunition_add = 2.5
+        goods_input_artillery_add = 0.5
     }
     
     battle_modifier = {
@@ -147,7 +151,7 @@ combat_unit_type_skirmish_infantry = {
         unit_morale_loss_add = 10
     }
 
-	unlocking_technologies = { general_staff }
+	unlocking_technologies = { trench_works }
 
     combat_unit_image = {
         trigger = { 
@@ -198,8 +202,9 @@ combat_unit_type_trench_infantry = {
     group = combat_unit_group_infantry
 
     upkeep_modifier = {
-        goods_input_small_arms_add = 1
-        goods_input_ammunition_add = 2
+        goods_input_small_arms_add = 3
+        goods_input_ammunition_add = 3
+        goods_input_artillery_add = 1
     }
     
     battle_modifier = {
@@ -208,7 +213,7 @@ combat_unit_type_trench_infantry = {
         unit_morale_loss_add = 8
     }
 
-	unlocking_technologies = { trench_works }
+	unlocking_technologies = { nco_training }
 
     combat_unit_image = {
         trigger = { 
@@ -258,18 +263,19 @@ combat_unit_type_cannon_artillery = {
     group = combat_unit_group_artillery
 
     upkeep_modifier = {
-        goods_input_artillery_add = 0.5
+        goods_input_artillery_add = 1
+        goods_input_ammunition_add = 1
     }
     
     battle_modifier = {
         unit_offense_add = 25
         unit_defense_add = 15
         unit_morale_loss_add = 10
-        unit_kill_rate_add = 0.1
-        unit_devastation_mult = 0.1
+        unit_kill_rate_add = 0.2
+        unit_devastation_mult = 0.2
     }
 
-	unlocking_technologies = { artillery }
+	unlocking_technologies = { shell_gun }
 
     combat_unit_image = {
         trigger = { 
@@ -322,18 +328,19 @@ combat_unit_type_mobile_artillery = {
     group = combat_unit_group_artillery
 
     upkeep_modifier = {
-        goods_input_artillery_add = 1
+        goods_input_artillery_add = 1.5
+        goods_input_ammunition_add = 1.5
     }
     
     battle_modifier = {
         unit_offense_add = 35
         unit_defense_add = 20
         unit_morale_loss_add = 8
-        unit_kill_rate_add = 0.2
-        unit_devastation_mult = 0.15
+        unit_kill_rate_add = 0.25
+        unit_devastation_mult = 0.25
     }
 
-	unlocking_technologies = { napoleonic_warfare }
+	unlocking_technologies = { rifling }
 
     combat_unit_image = {
         trigger = { 
@@ -385,8 +392,9 @@ combat_unit_type_shrapnel_artillery = {
     group = combat_unit_group_artillery
     
     upkeep_modifier = {
-        goods_input_artillery_add = 1
-        goods_input_ammunition_add = 1
+        goods_input_artillery_add = 2
+        goods_input_ammunition_add = 2
+        goods_input_tanks_add = 1
     }
 
     battle_modifier = {
@@ -394,10 +402,10 @@ combat_unit_type_shrapnel_artillery = {
         unit_defense_add = 25
         unit_morale_loss_add = 6
         unit_kill_rate_add = 0.3
-        unit_devastation_mult = 0.15
+        unit_devastation_mult = 0.3
     }
 
-	unlocking_technologies = { breech_loading_artillery }
+	unlocking_technologies = { repeaters }
 
     combat_unit_image = {
         trigger = { 
@@ -448,19 +456,20 @@ combat_unit_type_siege_artillery = {
     group = combat_unit_group_artillery
     
     upkeep_modifier = {
-        goods_input_artillery_add = 1
+        goods_input_artillery_add = 3
         goods_input_ammunition_add = 3
+        goods_input_tanks_add = 1
     }
 
     battle_modifier = {
         unit_offense_add = 55
         unit_defense_add = 30
         unit_morale_loss_add = 6
-        unit_kill_rate_add = 0.25
-        unit_devastation_mult = 0.2
+        unit_kill_rate_add = 0.35
+        unit_devastation_mult = 0.35
     }
 
-	unlocking_technologies = { wargaming }
+	unlocking_technologies = { automatic_machine_guns }
 
     combat_unit_image = {
         trigger = { 
@@ -507,17 +516,18 @@ combat_unit_type_heavy_tank = {
     group = combat_unit_group_artillery
     
     upkeep_modifier = {
+        goods_input_artillery_add = 3.5
+        goods_input_ammunition_add = 3.5
         goods_input_tanks_add = 1
-        goods_input_ammunition_add = 3
     }
 
     battle_modifier = {
         unit_offense_add = 70
         unit_defense_add = 35
         unit_morale_loss_add = 4
-        unit_kill_rate_add = 0.25
+        unit_kill_rate_add = 0.45
         unit_morale_damage_mult = 0.15
-        unit_devastation_mult = 0.2
+        unit_devastation_mult = 0.5
     }
 
 	unlocking_technologies = { mobile_armor }
@@ -533,17 +543,22 @@ combat_unit_type_hussars = {
     group = combat_unit_group_cavalry
     
     upkeep_modifier = {
-        goods_input_grain_add = 2
-        goods_input_small_arms_add = 2
+        goods_input_tanks_add = 2
+        goods_input_small_arms_add = 1
+        goods_input_ammunition_add = 2
+        goods_input_radios_add = 1
+        goods_input_oil_add = 0.5
     }
 
     battle_modifier = {
-        unit_offense_add = 25
-        unit_defense_add = 25
+        unit_offense_add = 15
+        unit_defense_add = 15
         unit_morale_loss_add = 10
+        unit_occupation_mult = 0.2
+        unit_provinces_captured_mult = 0.2
     }
 
-	unlocking_technologies = { standing_army }
+	unlocking_technologies = { shell_gun }
 
     combat_unit_image = {
         trigger = { 
@@ -586,6 +601,7 @@ combat_unit_type_hussars = {
     }
 
     upgrades = {
+        combat_unit_type_light_tanks
         combat_unit_type_dragoons
         combat_unit_type_cuirassiers
         combat_unit_type_lancers
@@ -596,19 +612,22 @@ combat_unit_type_dragoons = {
     group = combat_unit_group_cavalry
     
     upkeep_modifier = {
-        goods_input_grain_add = 2
-        goods_input_small_arms_add = 2
+        goods_input_tanks_add = 2
+        goods_input_ammunition_add = 2
+        goods_input_oil_add = 1
+        goods_input_radios_add = 2
     }
 
     battle_modifier = {
-        unit_offense_add = 25
-        unit_defense_add = 25
+        unit_offense_add = 20
+        unit_defense_add = 20
         unit_morale_loss_add = 10
         unit_occupation_mult = 0.3
+        unit_provinces_captured_mult = 0.3
         #should get modifiers to mobile/surprise battle conditions appearing
     }
 
-	unlocking_technologies = { standing_army }
+	unlocking_technologies = { breech_loading_artillery }
 
     combat_unit_image = {
         trigger = { 
@@ -651,7 +670,7 @@ combat_unit_type_dragoons = {
     }
 
     upgrades = {
-        combat_unit_type_hussars
+        combat_unit_type_light_tanks
         combat_unit_type_cuirassiers
         combat_unit_type_lancers
     }
@@ -661,19 +680,22 @@ combat_unit_type_cuirassiers = {
     group = combat_unit_group_cavalry
     
     upkeep_modifier = {
-        goods_input_grain_add = 2
-        goods_input_small_arms_add = 2
-        goods_input_iron_add = 1
+        goods_input_tanks_add = 3
+        goods_input_ammunition_add = 3
+        goods_input_oil_add = 1
+        goods_input_radios_add = 2
     }
 
     battle_modifier = {
         unit_offense_add = 25
         unit_defense_add = 25
-        unit_morale_loss_add = 6
+        unit_morale_loss_add = 8
         unit_occupation_mult = 0.3
+        unit_provinces_captured_mult = 0.3
+        unit_kill_rate_add = 0.15
     }
 
-	unlocking_technologies = { standing_army }
+	unlocking_technologies = { handcranked_machine_gun }
 
     combat_unit_image = {
         trigger = { 
@@ -716,8 +738,7 @@ combat_unit_type_cuirassiers = {
     }
 
     upgrades = {
-        combat_unit_type_hussars
-        combat_unit_type_dragoons
+        combat_unit_type_light_tanks
         combat_unit_type_lancers
     }
 }
@@ -726,20 +747,23 @@ combat_unit_type_lancers = {
     group = combat_unit_group_cavalry
     
     upkeep_modifier = {
-        goods_input_grain_add = 2
-        goods_input_small_arms_add = 2
+        goods_input_tanks_add = 4
+        goods_input_ammunition_add = 4
+        goods_input_oil_add = 1
+        goods_input_radios_add = 2.5
     }
 
     battle_modifier = {
         unit_offense_add = 30
-        unit_defense_add = 20
-        unit_morale_loss_add = 10
-        unit_kill_rate_add = 0.05
+        unit_defense_add = 30
+        unit_morale_loss_add = 6
+        unit_kill_rate_add = 0.25
         unit_morale_loss_mult = 0.05
-        unit_occupation_mult = 0.3
+        unit_occupation_mult = 0.35
+        unit_provinces_captured_mult = 0.35
     }
 
-	unlocking_technologies = { standing_army }
+	unlocking_technologies = { automatic_machine_guns }
 
     combat_unit_image = {
         trigger = { 
@@ -782,27 +806,28 @@ combat_unit_type_lancers = {
     }
 
     upgrades = {
-        combat_unit_type_hussars
-        combat_unit_type_dragoons
-        combat_unit_type_cuirassiers
+        combat_unit_type_light_tanks
     }
 }
 
-combat_unit_light_tanks = {
+combat_unit_type_light_tanks = {
     group = combat_unit_group_cavalry
     
     upkeep_modifier = {
-        goods_input_tanks_add = 3
-        goods_input_small_arms_add = 2
-        goods_input_radios_add = 1
+        goods_input_tanks_add = 5
+        goods_input_ammunition_add = 5
+        goods_input_oil_add = 1.5
+        goods_input_radios_add = 3
     }
 
     battle_modifier = {
-        unit_offense_add = 45
-        unit_defense_add = 45
+        unit_offense_add = 40
+        unit_defense_add = 40
         unit_morale_loss_add = 4
-        unit_devastation_mult = 0.1
-        unit_occupation_mult = 0.3
+        unit_kill_rate_add = 0.1
+        unit_morale_loss_mult = 0.1
+        unit_occupation_mult = 0.4
+        unit_provinces_captured_mult = 0.4
     }
 
 	unlocking_technologies = { mobile_armor }
@@ -810,6 +835,7 @@ combat_unit_light_tanks = {
     combat_unit_image = {
         texture = "gfx/unit_illustrations/cavalry_light_tank.dds"
     }
+    
 }
 
 ### NAVY
@@ -820,7 +846,8 @@ combat_unit_type_frigate = {
     group = combat_unit_group_light_ship
 
     upkeep_modifier = {
-        goods_input_manowars_add = 1
+        goods_input_ironclads_add = 1
+        goods_input_ammunition_add = 1
     }
 
     battle_modifier = {
@@ -829,7 +856,7 @@ combat_unit_type_frigate = {
         unit_morale_loss_add = 10
     }
 
-	unlocking_technologies = { navigation }
+	unlocking_technologies = { jeune_ecole }
 	
     combat_unit_image = {
         texture = "gfx/unit_illustrations/capital_ships_battleship.dds"
@@ -888,7 +915,7 @@ combat_unit_type_torpedo_boat = {
     }
 	
 	upgrades = {
-		combat_unit_type_destroyer
+		carrier_tech
 	}
 }
 
@@ -898,7 +925,10 @@ combat_unit_type_man_o_war = {
     group = combat_unit_group_capital_ship
 
     upkeep_modifier = {
-        goods_input_manowars_add = 2
+        goods_input_ironclads_add = 1
+        goods_input_ammunition_add = 2
+        goods_input_radios_add = 1
+        goods_input_aeroplanes_add = 2
     }
 
     battle_modifier = {
@@ -907,7 +937,7 @@ combat_unit_type_man_o_war = {
         unit_morale_loss_add = 10
     }
 
-	unlocking_technologies = { drydocks }
+	unlocking_technologies = { ironclad_tech }
 
     combat_unit_image = {
         texture = "gfx/unit_illustrations/capital_ships_manowar.dds"
@@ -923,7 +953,9 @@ combat_unit_type_ironclad = {
 
     upkeep_modifier = {
         goods_input_ironclads_add = 2
-        goods_input_ammunition_add = 1
+        goods_input_ammunition_add = 2.5
+        goods_input_radios_add = 2
+        goods_input_aeroplanes_add = 3
     }
 
     battle_modifier = {
@@ -932,7 +964,7 @@ combat_unit_type_ironclad = {
         unit_morale_loss_add = 8
     }
 
-	unlocking_technologies = { ironclad_tech }
+	unlocking_technologies = { monitor_tech }
 
     combat_unit_image = {
         texture = "gfx/unit_illustrations/capital_ships_ironclad.dds"
@@ -948,7 +980,9 @@ combat_unit_type_monitor = {
 
     upkeep_modifier = {
         goods_input_ironclads_add = 3
-        goods_input_ammunition_add = 2
+        goods_input_ammunition_add = 3
+        goods_input_radios_add = 2.5
+        goods_input_aeroplanes_add = 4
     }
 
     battle_modifier = {
@@ -957,7 +991,7 @@ combat_unit_type_monitor = {
         unit_morale_loss_add = 6
     }
 
-	unlocking_technologies = { monitor_tech }
+	unlocking_technologies = { dreadnought }
 
     combat_unit_image = {
         texture = "gfx/unit_illustrations/capital_ships_monitor.dds"
@@ -970,8 +1004,8 @@ combat_unit_type_dreadnought = {
     upkeep_modifier = {
         goods_input_ironclads_add = 4
         goods_input_ammunition_add = 4
-        goods_input_radios_add = 1
-        goods_input_artillery_add = 0.5
+        goods_input_radios_add = 3
+        goods_input_aeroplanes_add = 5
     }
 
     battle_modifier = {
@@ -980,7 +1014,7 @@ combat_unit_type_dreadnought = {
         unit_morale_loss_add = 6
     }
 
-	unlocking_technologies = { dreadnought }
+	unlocking_technologies = { battleship_tech }
 
     combat_unit_image = {
         texture = "gfx/unit_illustrations/capital_ships_dreadnought.dds"
@@ -1003,7 +1037,7 @@ combat_unit_type_submarine = {
         unit_morale_loss_add = 8
     }
 
-	unlocking_technologies = { submarine }
+	unlocking_technologies = { jeune_ecole }
 
     combat_unit_image = {
         texture = "gfx/unit_illustrations/support_ships_submarine.dds"
@@ -1017,7 +1051,6 @@ combat_unit_type_carrier = {
         goods_input_ironclads_add = 2
         goods_input_ammunition_add = 2
         goods_input_radios_add = 2
-        goods_input_aeroplanes_add = 2
     }
 
     battle_modifier = {
@@ -1026,7 +1059,7 @@ combat_unit_type_carrier = {
         unit_morale_loss_add = 4
     }
 
-	unlocking_technologies = { carrier_tech }
+	unlocking_technologies = { submarine }
 
     combat_unit_image = {
         texture = "gfx/unit_illustrations/support_ships_carrier.dds"
@@ -1040,7 +1073,6 @@ combat_unit_type_nuclear_submarine = {
         goods_input_ironclads_add = 3
         goods_input_ammunition_add = 3
         goods_input_radios_add = 3
-        goods_input_aeroplanes_add = 3
     }
 
     battle_modifier = {
