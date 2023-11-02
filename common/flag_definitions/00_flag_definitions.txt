@@ -4794,14 +4794,15 @@ ONG = { # onega
 	}
 }
 
-WST = { # west revolunary front
-	flag_definition = {
-		coa = WST
-		allow_overlord_canton = yes			
-		subject_canton = KAS		
-		priority = 1
-		trigger = { 
-			law_council_republic = yes
+WST = { # WST start
+	flag_definition = { # starting flagg
+		coa = WST_start
+		priority = 2000
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_law = law_type:law_council_republic
+			}
 		}
 	}
 }
