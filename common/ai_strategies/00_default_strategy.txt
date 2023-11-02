@@ -2343,23 +2343,6 @@ ai_strategy_default = {
 
 			if = {
 				limit = {
-					exists = c:FRA
-					c:FRA = this
-					ruler = {
-						has_variable = legitimist_leader
-					}
-
-					exists = c:SPA
-					scope:target_country = {
-						c:SPA = this
-						has_law = law_type:law_monarchy
-					}
-				}
-				multiply = 1.5
-			}
-			
-			if = {
-				limit = {
 					harsh_ai_behavior_trigger = yes
 				}
 				multiply = 0.75
@@ -2592,26 +2575,6 @@ ai_strategy_default = {
 				multiply = 0.5
 			}	
 
-			if = {
-				limit = {
-					exists = c:FRA
-					c:FRA = this
-					ruler = {
-						OR = {
-							has_variable = legitimist_leader
-							has_variable = bonapartist_leader
-						}
-					}
-
-					exists = c:PAP
-					scope:target_country = {
-						c:PAP = this
-						has_law = law_type:law_theocracy
-					}
-				}
-				multiply = 1.5
-			}
-			
 			if = { 
 				limit = {
 					exists = c:RSM
