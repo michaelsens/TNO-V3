@@ -169,28 +169,7 @@ ai_strategy_default = {
 			}
 			add = 0.25
 		}		
-		
-		# French Natural Borders
-		if = {
-			limit = {
-				has_journal_entry = je_french_natural_borders
-				has_strategy = ai_strategy_territorial_expansion
-				scope:enemy_country = {
-					any_scope_state = {
-						OR = {
-							state_region = {
-								is_homeland = cu:french
-							}
-							state_region = s:STATE_WALLONIA
-							state_region = s:STATE_FLANDERS
-							state_region = s:STATE_RHINELAND
-							state_region = s:STATE_NORTH_RHINE
-						}
-					}
-				}
-			}
-			add = 0.15
-		}			
+				
 	}
 	
 	# Chance each update that the AI is willing to start changing a law (1 = 1%)
@@ -447,24 +426,6 @@ ai_strategy_default = {
 				}
 				multiply = 0.5
 			}
-		}
-
-		if = {
-			limit = {
-				has_journal_entry = je_scramble_for_africa
-
-				# Scramble for Africa powers should only care about the Boers once diamonds are found
-				scope:subject = {
-					country_is_in_africa = yes
-					any_scope_building = {
-						OR = {
-							is_building_type = building_gold_mine
-							is_building_type = building_gold_fields
-						}
-					}
-				}
-			}
-			add = 50
 		}
 
 		min = 0
@@ -799,27 +760,6 @@ ai_strategy_default = {
 			add = 0.5
 		}
 
-		# French Natural Borders
-		if = {
-			limit = {
-				has_journal_entry = je_french_natural_borders
-				has_strategy = ai_strategy_territorial_expansion
-				scope:target_country = {
-					any_scope_state = {
-						OR = {
-							state_region = {
-								is_homeland = cu:french
-							}
-							state_region = s:STATE_WALLONIA
-							state_region = s:STATE_FLANDERS
-							state_region = s:STATE_RHINELAND
-							state_region = s:STATE_NORTH_RHINE
-						}
-					}
-				}
-			}
-			add = 0.5
-		}	
 
 		#Taiping
 		if = { 
@@ -1200,28 +1140,7 @@ ai_strategy_default = {
 			add = 5
 		}
 
-		# French Natural Borders
-		if = {
-			limit = {
-				has_journal_entry = je_french_natural_borders
-				has_strategy = ai_strategy_territorial_expansion
-				scope:target_country = {
-					any_scope_state = {
-						OR = {
-							state_region = {
-								is_homeland = cu:french
-							}
-							state_region = s:STATE_WALLONIA
-							state_region = s:STATE_FLANDERS
-							state_region = s:STATE_RHINELAND
-							state_region = s:STATE_NORTH_RHINE
-						}
-					}
-				}
-			}
-			add = 25
-		}
-		
+
         # Neutral Switzerland
         if = {
             limit = {
@@ -1230,24 +1149,6 @@ ai_strategy_default = {
             }
             add = -25
         }
-        # France should very aggressively go for Algeria.
-		if = {
-			limit = {
-				has_journal_entry = je_conquest_of_algeria
-				scope:target_country = {
-					any_scope_state = {
-						OR = {
-							state_region = s:STATE_ALGIERS
-							state_region = s:STATE_CONSTANTINE
-							state_region = s:STATE_ORAN
-							state_region = s:STATE_SAHARA
-							state_region = s:STATE_EAST_SAHARA
-						}
-					}
-				}
-			}
-			add = 10
-		}
 		# Russia should very aggressively go for the Caucasus if it's still a great power.
 		if = {
 			limit = {
@@ -1286,26 +1187,7 @@ ai_strategy_default = {
 			add = 50
 		}
 
-		# Scramble for Africa participants want everything
-		if = {
-			limit = {
-				has_journal_entry = je_scramble_for_africa
-				scope:target_country = {
-					capital = {
-						# Africa, omitting North Africa and the Nile Basin
-						OR = {
-							region = sr:region_ethiopia
-							region = sr:region_senegal
-							region = sr:region_niger
-							region = sr:region_congo
-							region = sr:region_southern_africa
-							region = sr:region_zanj		
-						}
-					}
-				}
-			}
-			add = 50
-		}
+
 	}
 	
 	# How much construction output should the AI aim for
@@ -1852,104 +1734,6 @@ ai_strategy_default = {
 				add = -50
 			}				
 		}				
-		region_nile_basin = {
-			if = {
-				limit = {
-					OR = {
-						AND = {
-							country_rank = rank_value:great_power
-							has_technology_researched = malaria_prevention
-						}
-						has_journal_entry = je_scramble_for_africa
-					}						
-				}
-				add = 200
-			}		
-		}
-		region_north_africa = {
-			if = {
-				limit = {
-					OR = {
-						AND = {
-							country_rank = rank_value:great_power
-							has_technology_researched = malaria_prevention
-						}
-						has_journal_entry = je_scramble_for_africa
-					}		
-				}
-				add = 200
-			}		
-		}
-		region_senegal = {
-			if = {
-				limit = {
-					OR = {
-						AND = {
-							country_rank = rank_value:great_power
-							has_technology_researched = malaria_prevention
-						}
-						has_journal_entry = je_scramble_for_africa
-					}		
-				}
-				add = 200
-			}		
-		}
-		region_niger = {
-			if = {
-				limit = {
-					OR = {
-						AND = {
-							country_rank = rank_value:great_power
-							has_technology_researched = malaria_prevention
-						}
-						has_journal_entry = je_scramble_for_africa
-					}		
-				}
-				add = 200
-			}		
-		}
-		region_congo = {
-			if = {
-				limit = {
-					OR = {
-						AND = {
-							country_rank = rank_value:great_power
-							has_technology_researched = malaria_prevention
-						}
-						has_journal_entry = je_scramble_for_africa
-					}		
-				}
-				add = 200
-			}		
-		}
-		region_southern_africa = {
-			if = {
-				limit = {
-					OR = {
-						AND = {
-							country_rank = rank_value:great_power
-							has_technology_researched = malaria_prevention
-						}
-						has_journal_entry = je_scramble_for_africa
-					}		
-				}
-				add = 200
-			}		
-		}
-		region_zanj = {
-			if = {
-				limit = {
-					OR = {
-						AND = {
-							country_rank = rank_value:great_power
-							has_technology_researched = malaria_prevention
-						}
-						has_journal_entry = je_scramble_for_africa
-					}		
-				}
-				add = 200
-			}		
-		}
 		region_north_germany = {
 			if = {
 				limit = {
@@ -3013,27 +2797,7 @@ ai_strategy_default = {
 						}
 					}
 					add = 50
-				}
-				
-	
-
-				if = {
-					limit = {
-						has_journal_entry = je_conquest_of_algeria
-						scope:target_country = {
-							any_scope_state = {
-								OR = {
-									state_region = s:STATE_ALGIERS
-									state_region = s:STATE_CONSTANTINE
-									state_region = s:STATE_ORAN
-									state_region = s:STATE_SAHARA
-									state_region = s:STATE_EAST_SAHARA
-								}
-							}
-						}
-					}
-					add = 1000
-				}			
+				}		
 			}
 		
 			multiply = {
@@ -3725,21 +3489,6 @@ ai_strategy_default = {
 				add = 50
 			}
 
-			if = {
-				limit = {
-					has_journal_entry = je_conquest_of_algeria
-					scope:target_state = {
-						OR = {
-							state_region = s:STATE_ALGIERS
-							state_region = s:STATE_CONSTANTINE
-							state_region = s:STATE_ORAN
-							state_region = s:STATE_SAHARA
-							state_region = s:STATE_EAST_SAHARA
-						}
-					}
-				}
-				add = 100
-			}
 
 			if = { #Russian Central Asia
 				limit = {
