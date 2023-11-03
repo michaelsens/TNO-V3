@@ -1,5 +1,5 @@
 ﻿modifier_offensive_footing = {
-	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+	icon = gfx/interface/icons/tno_modifier_icons/modifier_reunifcation.dds
 	unit_army_offense_mult = 0.1
 	unit_army_defense_mult = -0.1
 	country_diplomatic_play_maneuvers_add = 60
@@ -12,6 +12,52 @@ modifier_advanced_economy = {
 	state_middle_standard_of_living_add = 2
 	state_poor_standard_of_living_add = 2
 	building_group_bg_subsistence_agriculture_throughput_add = 0.85
+}
+
+modifier_zla_arms = {
+	icon = gfx/interface/icons/tno_modifier_icons/modifier_ZLAarm.dds
+	building_arms_industry_throughput_mult = 0.15
+}
+
+modifier_gor_combat = {
+	icon = gfx/interface/icons/tno_modifier_icons/modifier_ZLAarm.dds
+	unit_army_offense_mult = 0.20
+	unit_army_defense_mult = 0.10
+	interest_group_ig_armed_forces_pol_str_mult = 0.3
+}
+
+modifier_gor_anger = {
+	icon = gfx/interface/icons/tno_modifier_icons/modifier_fire.dds
+	country_legitimacy_base_add = -20
+}
+
+modifier_def_weak = {
+	icon = gfx/interface/icons/tno_modifier_icons/modifier_fire.dds
+	country_legitimacy_base_add = 20
+	unit_army_defense_mult = 0.20
+}
+
+modifier_warrior_order= {
+	icon = gfx/interface/icons/tno_modifier_icons/modifier_cross.dds
+	state_conscription_rate_mult = 0.50
+	
+}
+
+modifier_forgien_army = {
+	icon = gfx/interface/icons/tno_modifier_icons/modifier_dirwenger.dds
+	building_arms_industry_throughput_mult = 0.20
+	country_legitimacy_base_add = -90
+	state_middle_standard_of_living_add = -5
+	state_poor_standard_of_living_add = -5
+	unit_army_offense_mult = 0.1
+	state_radicals_from_discrimination_mult = 0.75
+	interest_group_ig_armed_forces_pol_str_mult = 1
+}
+
+modifier_heros_russia = {
+	icon = gfx/interface/icons/tno_modifier_icons/modifier_hero_russia.dds
+	country_influence_mult = 0.25
+	country_infamy_generation_mult = -0.5
 }
 
 modifier_very_developed_economy = {
@@ -655,11 +701,30 @@ frozen_wasteland = {
 }
 
 soviet_successors = {
-	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+	icon = gfx/interface/icons/tno_modifier_icons/modifier_soviet_suc.dds
 	country_legitimacy_base_add = 15
 	country_authority_mult = 0.1
 	country_war_exhaustion_casualties_mult = -0.25
 	country_prestige_mult = 0.1
+}
+
+scietnce_state = {
+	icon = gfx/interface/icons/tno_modifier_icons/modifier_scietnce_state.dds
+	country_legitimacy_base_add = -15
+	country_authority_mult = 0.15
+	country_war_exhaustion_casualties_mult = -0.25
+	country_weekly_innovation_mult = 0.10
+}
+
+volunteers = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+	country_war_exhaustion_casualties_mult = -0.05
+	unit_army_offense_mult = 0.04
+	unit_army_defense_mult = 0.04
+}
+
+volunteers_leaving = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
 }
 
 absolute_purity = {
