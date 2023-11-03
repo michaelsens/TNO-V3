@@ -774,17 +774,7 @@ ai_strategy_default = {
 			}
 			add = 0.5
 		}
-		
-		# Schleswig-Holstein question
-		if = {
-			limit = { 
-				wants_to_solve_schleswig_holstein = yes
-				scope:target_country = { 
-					is_oppressor_of_schleswig_holstein = yes
-				}
-			}
-			add = 0.5
-		}			
+			
 
 		#Italian Nightmare
 		if = {
@@ -911,17 +901,7 @@ ai_strategy_default = {
 			add = 100
 		}
 		
-		# Schleswig-Holstein question
-		if = {
-			limit = { 
-				wants_to_solve_schleswig_holstein = yes	
-				scope:target_country = { 
-					is_oppressor_of_schleswig_holstein = yes
-				}
-			}
-			add = 10
-		}		
-
+			
 		if = { #Carving up China
 			limit = {
 				country_rank >= rank_value:great_power
@@ -2009,14 +1989,6 @@ ai_strategy_default = {
 				add = 100
 			}
 		}
-		region_baltic = {
-			if = {
-				limit = { 
-					wants_to_solve_schleswig_holstein = yes			
-				}			
-				add = 100
-			}
-		}
 		region_balkans = {
 			if = {
 				limit = {
@@ -3043,15 +3015,7 @@ ai_strategy_default = {
 					add = 50
 				}
 				
-				if = {
-					limit = { 
-						wants_to_solve_schleswig_holstein = yes
-						scope:target_country = { 
-							is_oppressor_of_schleswig_holstein = yes
-						}
-					}
-					add = 500
-				}
+	
 
 				if = {
 					limit = {
@@ -3825,26 +3789,7 @@ ai_strategy_default = {
 				}
 				add = 50
 			}
-			
-			if = {
-				limit = { 
-					wants_to_solve_schleswig_holstein = yes
-					scope:target_country = {
-						is_oppressor_of_schleswig_holstein = yes
-					}
-					can_reach_target_country = yes
-				}
-				
-				if = {
-					limit = {
-						scope:target_state = { state_region = s:STATE_SCHLESWIG_HOLSTEIN }				
-					}				
-					add = 50
-				}
-				else = {
-					multiply = 0.0
-				}
-			}			
+						
 			
 			if = {
 				limit = {
@@ -3980,14 +3925,7 @@ ai_strategy_default = {
 					}
 				}			
 			
-				if = {
-					limit = { 
-						wants_to_solve_schleswig_holstein = yes			
-						scope:target_state = { state_region = s:STATE_SCHLESWIG_HOLSTEIN }				
-						can_reach_target_state = yes
-					}
-					add = 100
-				}
+
 
 				if = {
 					limit = {
@@ -4337,15 +4275,6 @@ ai_strategy_default = {
 				}			
 			}				
 		
-			if = {
-				limit = { 
-					wants_to_solve_schleswig_holstein = yes
-					scope:target_country = { this = c:HOL }
-					can_reach_target_country = yes
-				}
-				add = 100
-			}			
-			
 			min = 0
 			max = 100			
 		}		
@@ -5028,14 +4957,6 @@ ai_strategy_default = {
 				}				
 			}
 			
-			if = {
-				limit = { 
-					wants_to_solve_schleswig_holstein = yes
-					scope:target_country = { this = c:HOL }
-					can_reach_target_country = no
-				}
-				add = 100
-			}
 
 			min = 0
 			max = 100				
