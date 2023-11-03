@@ -16,7 +16,7 @@ modifier_advanced_economy = {
 
 modifier_zla_arms = {
 	icon = gfx/interface/icons/tno_modifier_icons/modifier_ZLAarm.dds
-	building_arms_industry_throughput_mult = 0.15
+	building_arms_industry_throughput_add = 0.15
 }
 
 modifier_gor_combat = {
@@ -45,7 +45,7 @@ modifier_warrior_order= {
 
 modifier_forgien_army = {
 	icon = gfx/interface/icons/tno_modifier_icons/modifier_dirwenger.dds
-	building_arms_industry_throughput_mult = 0.20
+	building_arms_industry_throughput_add = 0.20
 	country_legitimacy_base_add = -90
 	state_middle_standard_of_living_add = -5
 	state_poor_standard_of_living_add = -5
@@ -146,7 +146,7 @@ bloated_whermacht = {
 	interest_group_ig_armed_forces_approval_add = 5
 	country_expenses_add = 40000
 	unit_offense_mult = 0.1
-	country_army_power_projection_mult = 0.1
+	country_prestige_from_army_power_projection_mult = 0.1
 	unit_morale_recovery_mult = 0.1
 	country_military_goods_cost_mult = 0.2
 	country_military_wages_mult = 0.2
@@ -361,7 +361,6 @@ japanese_efficiency = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_positive.dds
 	building_group_bg_manufacturing_throughput_add = 0.20
 	building_group_bg_manufacturing_laborers_mortality_mult = 0.02
-	country_trade_route_exports_add = 10
 	country_loan_interest_rate_mult = -0.20
 	building_minimum_wage_mult = -0.1
 }
@@ -386,7 +385,7 @@ fading_fascism = {
 
 masters_of_the_med = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
-	country_navy_power_projection_mult = 0.15
+	country_prestige_from_navy_power_projection_mult = 0.15
 	unit_navy_offense_mult = 0.1
 	unit_navy_defense_mult = 0.1
 	building_shipyards_throughput_add = 0.25
@@ -467,7 +466,7 @@ the_broken_navy = {
     unit_navy_defense_mult = -0.4
 	unit_navy_offense_mult = -0.4
 	country_military_wages_mult	= -0.2
-	country_navy_power_projection_mult = -0.2
+	country_prestige_from_navy_power_projection_mult = -0.2
 	building_shipyards_throughput_add = -0.15
 	building_port_throughput_add = -0.1
 	building_naval_base_throughput_add = -0.10
@@ -478,7 +477,7 @@ the_british_navy = {
     unit_navy_defense_mult = 0.15
 	unit_navy_offense_mult = 0.15
 	country_military_wages_mult	= 0.1
-	country_navy_power_projection_mult = 0.2
+	country_prestige_from_navy_power_projection_mult = 0.2
 	building_shipyards_throughput_add = 0.15
 	building_port_throughput_add = 0.1
 	building_naval_base_throughput_add = 0.10
@@ -602,7 +601,7 @@ worlds_factory = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_positive.dds
 	building_group_bg_manufacturing_throughput_add = 0.10
 	building_minimum_wage_mult = -0.15
-	goods_input_mult = -0.15
+	building_goods_input_mult = -0.15
 	country_tech_spread_mult = -0.25
 }
 
@@ -636,8 +635,6 @@ emergency_powers = {
 empire_remnants = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_positive.dds
 	country_convoys_capacity_mult = 0.1
-	country_trade_route_exports_add = 10
-	country_trade_route_imports_add = 20
 	country_trade_route_quantity_mult = 0.15
 	building_group_bg_manufacturing_throughput_add = 0.1
 	building_group_bg_plantations_throughput_add = -0.1
@@ -766,7 +763,7 @@ salted_earth = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
 	state_construction_mult = -0.10
 	building_group_bg_agriculture_throughput_add = -0.25
-	goods_input_mult = -0.05
+	building_goods_input_mult = -0.05
 	country_loan_interest_rate_mult = 0.4
 }
 
@@ -785,13 +782,13 @@ japans_breadbasket = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_positive.dds
 	building_group_bg_agriculture_throughput_add = 0.35
 	interest_group_ig_rural_folk_pop_attraction_mult = 0.25
-	goods_input_mult = -0.05
+	building_goods_input_mult = -0.05
 	building_minimum_wage_mult = -0.05
 }
 
 restricted_army = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_negative.dds
-	country_army_power_projection_mult = -0.2
+	country_prestige_from_army_power_projection_mult = -0.2
 	state_conscription_rate_mult = -0.50
 	unit_morale_loss_mult = 0.1
 }
@@ -815,8 +812,8 @@ french_irredentism = {
 treaty_of_vichy = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
 	country_military_goods_cost_mult = 0.5
-	country_army_power_projection_mult = -0.5
-	country_navy_power_projection_mult = -0.5
+	country_prestige_from_army_power_projection_mult = -0.5
+	country_prestige_from_navy_power_projection_mult = -0.5
 	state_conscription_rate_mult = -0.5
 	unit_army_offense_mult = -0.1
 	unit_army_defense_mult = -0.1
@@ -825,8 +822,8 @@ treaty_of_vichy = {
 armed_forces_in_disarray = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
 	country_military_goods_cost_mult = -0.1
-	country_army_power_projection_mult = -0.15
-	country_navy_power_projection_mult = -0.5
+	country_prestige_from_army_power_projection_mult = -0.15
+	country_prestige_from_navy_power_projection_mult = -0.5
 	state_conscription_rate_mult = -0.5
 	unit_army_offense_mult = -0.05
 	unit_army_defense_mult = -0.05
@@ -932,8 +929,8 @@ ecos_do_imperio = {
 	country_prestige_mult = 0.1
 	country_influence_mult = 0.2
 	country_improve_relations_speed_mult = 0.2
-	country_army_power_projection_mult = 0.2
-	country_navy_power_projection_mult = 0.2
+	country_prestige_from_army_power_projection_mult = 0.2
+	country_prestige_from_navy_power_projection_mult = 0.2
 }
 
 rebuilding_russia = {
