@@ -66,66 +66,6 @@ je_civil_rights_b = {
 	}
 }
 
-je_insur_ost_a = {
-	name = "je_civil_rights_stall"
-	desc = "je_we_racist"
-
-	visible = { always = yes }
-
-	possible = {
-		scope:journal_entry = {
-				not = {
-				custom_tooltip = {
-					text = civil_rights_cooldown
-					has_variable = chaos_ost_timer_cooldown
-				}
-			}
-		}
-	}
-
-	effect = {
-        custom_tooltip = cooldown_three_balls_tt
-		scope:journal_entry = {
-			set_variable = { name = chaos_ost_timer_cooldown months = 2 }
-		}	
-        custom_tooltip = civil_rights_act_stall_10
-        change_variable = {
-            name = chaos_ost_timer
-            add = -10
-        }
-	}
-}
-
-je_insur_ost_b = {
-	name = "je_civil_rights_stall"
-	desc = "je_we_racist"
-
-	visible = { always = yes }
-
-	possible = {
-		scope:journal_entry = {
-				not = {
-				custom_tooltip = {
-					text = civil_rights_cooldown
-					has_variable = chaos_ost_timer_cooldown
-				}
-			}
-		}
-	}
-
-	effect = {
-        custom_tooltip = cooldown_three_balls_tt
-		scope:journal_entry = {
-			set_variable = { name = chaos_ost_timer_cooldown months = 2 }
-		}	
-        custom_tooltip = civil_rights_act_stall_10
-        change_variable = {
-            name = chaos_ost_timer
-            add = -10
-        }
-	}
-}
-
 je_hollywood_a = { #start of hollywood movies ###############################################################
 	name = "je_glorify_millitary" #glorify millitary
 	desc = "je_glorify_millitary_desc"
