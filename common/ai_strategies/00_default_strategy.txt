@@ -117,19 +117,6 @@ ai_strategy_default = {
 			}
 			add = 1000
 		}
-		# Italian minors should be willing to fight Austria
-		if = { 
-			limit = {
-				exists = c:RSM
-				THIS = {
-					has_journal_entry = je_risorgimento
-				}
-				any_country = {
-					is_diplomatic_play_enemy_of = c:RSM
-				}
-			}
-			add = 50
-		}
 	} 
 		
 	# How many maneuvers are we OK with using up in the initial phase to add more wargoals
@@ -876,19 +863,6 @@ ai_strategy_default = {
 				}
 			}
 			add = 5
-		}
-		# Italian minors will want to help San Marco if involved
-		if = { 
-			limit = {
-				exists = c:RSM
-				THIS = {
-					has_journal_entry = je_risorgimento
-				}
-				scope:target_country = {
-					is_diplomatic_play_enemy_of = c:RSM
-				}
-			}
-			add = 2
 		}
 	}
 	
@@ -2343,23 +2317,6 @@ ai_strategy_default = {
 
 			if = {
 				limit = {
-					exists = c:FRA
-					c:FRA = this
-					ruler = {
-						has_variable = legitimist_leader
-					}
-
-					exists = c:SPA
-					scope:target_country = {
-						c:SPA = this
-						has_law = law_type:law_monarchy
-					}
-				}
-				multiply = 1.5
-			}
-			
-			if = {
-				limit = {
 					harsh_ai_behavior_trigger = yes
 				}
 				multiply = 0.75
@@ -2591,37 +2548,6 @@ ai_strategy_default = {
 				}
 				multiply = 0.5
 			}	
-
-			if = {
-				limit = {
-					exists = c:FRA
-					c:FRA = this
-					ruler = {
-						OR = {
-							has_variable = legitimist_leader
-							has_variable = bonapartist_leader
-						}
-					}
-
-					exists = c:PAP
-					scope:target_country = {
-						c:PAP = this
-						has_law = law_type:law_theocracy
-					}
-				}
-				multiply = 1.5
-			}
-			
-			if = { 
-				limit = {
-					exists = c:RSM
-					THIS = {
-						has_journal_entry = je_risorgimento
-					}
-					has_variable = rsm_friendship
-				}
-				add = 100
-			}
 
 			if = {
 				limit = {
