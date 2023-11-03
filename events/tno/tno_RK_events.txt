@@ -149,3 +149,143 @@ tno_RK_events.1 = { # baltic upriseing
 		}
     } 
 }
+
+tno_RK_events.2 = { # batlic arms raid
+    type = country_event
+    placement = ROOT
+
+	title = tno_RK_events.2
+	desc = tno_RK_events.2.d
+    flavor = tno_RK_events.2.f	
+
+	event_image = { 
+		texture  = "gfx/event_pictures/event_pictures/protestseg.dds"
+	}
+
+    icon = "gfx/interface/icons/tno_event_icons/bicorne_jim_crow_protest.2.dds"
+	
+	trigger = {
+		this ?= c:USA
+	}	
+
+    immediate = {
+        random_scope_state = {
+            save_scope_as = arms_raid_state
+            limit = {
+              OR = {
+                state_region = s:STATE_ESTONIA
+                state_region = s:STATE_LATVIA
+                state_region = s:STATE_LITHUANIA
+              }
+            }
+        }
+
+		change_variable = {
+            name = chaos_ost_timer
+            add = 5
+        }
+
+    }
+	
+	duration = 1
+
+	option = {
+		default_option = yes
+        name = tno_usa_segregation_events.2.a
+
+        scope:arms_raid_state = {
+            add_radicals_in_state = {
+                value = 0.03
+            }
+        }
+        
+	}
+    option = {
+		default_option = yes
+        name = tno_usa_segregation_events.2.b
+
+        add_modifier = {
+            name = protesters_counterd
+            months = 7
+        } 
+
+        scope:arms_raid_state = {
+            add_radicals_in_state = {
+             value = 0.07
+               
+            }
+        }
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+}
+
+tno_RK_events.3 = { # batlic attack on police station
+    type = country_event
+    placement = ROOT
+
+	title = tno_RK_events.3
+	desc = tno_RK_events.3.d
+    flavor = tno_RK_events.3.f	
+
+	event_image = { 
+		texture  = "gfx/event_pictures/event_pictures/protestseg.dds"
+	}
+
+    icon = "gfx/interface/icons/tno_event_icons/bicorne_jim_crow_protest.2.dds"
+	
+	trigger = {
+		this ?= c:USA
+	}	
+
+    immediate = {
+        random_scope_state = {
+            save_scope_as = arms_raid_state
+            limit = {
+              OR = {
+                state_region = s:STATE_ESTONIA
+                state_region = s:STATE_LATVIA
+                state_region = s:STATE_LITHUANIA
+              }
+            }
+        }
+		
+		change_variable = {
+            name = chaos_ost_timer
+            add = 2
+        }
+
+    }
+	
+	duration = 1
+
+	option = {
+		default_option = yes
+        name = tno_usa_segregation_events.3.a
+
+        scope:arms_raid_state = {
+            add_radicals_in_state = {
+                value = 0.03
+            }
+        }
+        
+	}
+    option = {
+		default_option = yes
+        name = tno_usa_segregation_events.3.b
+
+        add_modifier = {
+            name = protesters_counterd
+            months = 7
+        } 
+
+        scope:arms_raid_state = {
+            add_radicals_in_state = {
+             value = 0.07
+               
+            }
+        }
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+}
