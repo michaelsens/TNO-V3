@@ -289,3 +289,353 @@ tno_RK_events.3 = { # batlic attack on police station
 
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 }
+
+tno_RK_events.4 = { # batlic IED attack
+    type = country_event
+    placement = ROOT
+
+	title = tno_RK_events.4
+	desc = tno_RK_events.4.d
+    flavor = tno_RK_events.4.f	
+
+	event_image = { 
+		texture  = "gfx/event_pictures/event_pictures/protestseg.dds"
+	}
+
+    icon = "gfx/interface/icons/tno_event_icons/bicorne_jim_crow_protest.2.dds"
+	
+	trigger = {
+		this ?= c:USA
+	}	
+
+    immediate = {
+        random_scope_state = {
+            save_scope_as = arms_raid_state
+            limit = {
+              OR = {
+                state_region = s:STATE_ESTONIA
+                state_region = s:STATE_LATVIA
+                state_region = s:STATE_LITHUANIA
+              }
+            }
+        }
+		
+		change_variable = {
+            name = chaos_ost_timer
+            add = 2
+        }
+
+    }
+	
+	duration = 1
+
+	option = {
+		default_option = yes
+        name = tno_usa_segregation_events.4.a
+
+        scope:arms_raid_state = {
+            add_radicals_in_state = {
+                value = 0.03
+            }
+        }
+        
+	}
+    option = {
+		default_option = yes
+        name = tno_usa_segregation_events.4.b
+
+        add_modifier = {
+            name = protesters_counterd
+            months = 7
+        } 
+
+        scope:arms_raid_state = {
+            add_radicals_in_state = {
+             value = 0.07
+               
+            }
+        }
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+}
+
+tno_RK_events.5 = { # batlic resistence recruits civilians 
+    type = country_event
+    placement = ROOT
+
+	title = tno_RK_events.5
+	desc = tno_RK_events.5.d
+    flavor = tno_RK_events.5.f	
+
+	event_image = { 
+		texture  = "gfx/event_pictures/event_pictures/protestseg.dds"
+	}
+
+    icon = "gfx/interface/icons/tno_event_icons/bicorne_jim_crow_protest.2.dds"
+	
+	trigger = {
+		this ?= c:USA
+	}	
+
+    immediate = {
+        random_scope_state = {
+            save_scope_as = arms_raid_state
+            limit = {
+              OR = {
+                state_region = s:STATE_ESTONIA
+                state_region = s:STATE_LATVIA
+                state_region = s:STATE_LITHUANIA
+              }
+            }
+        }
+		
+		change_variable = {
+            name = chaos_ost_timer
+            add = 2
+        }
+
+    }
+	
+	duration = 1
+
+	option = {
+		default_option = yes
+        name = tno_usa_segregation_events.5.a
+
+        scope:arms_raid_state = {
+            add_radicals_in_state = {
+                value = 0.03
+            }
+        }
+        
+	}
+    option = {
+		default_option = yes
+        name = tno_usa_segregation_events.5.b
+
+        add_modifier = {
+            name = protesters_counterd
+            months = 7
+        } 
+
+        scope:arms_raid_state = {
+            add_radicals_in_state = {
+             value = 0.07
+               
+            }
+        }
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+}
+
+tno_RK_events.6 = { # batlic protest for freedom and remform
+    type = country_event
+    placement = ROOT
+
+	title = tno_RK_events.6
+	desc = tno_RK_events.6.d
+    flavor = tno_RK_events.6.f	
+
+	event_image = { 
+		texture  = "gfx/event_pictures/event_pictures/protestseg.dds"
+	}
+
+    icon = "gfx/interface/icons/tno_event_icons/bicorne_jim_crow_protest.2.dds"
+	
+	trigger = {
+		this ?= c:USA
+	}	
+
+    immediate = {
+        random_scope_state = {
+            save_scope_as = arms_raid_state
+            limit = {
+              OR = {
+                state_region = s:STATE_ESTONIA
+                state_region = s:STATE_LATVIA
+                state_region = s:STATE_LITHUANIA
+              }
+            }
+        }
+		
+		change_variable = {
+            name = chaos_ost_timer
+            add = 2
+        }
+
+    }
+	
+	duration = 1
+
+	option = {
+		default_option = yes
+        name = tno_usa_segregation_events.6.a
+
+        scope:arms_raid_state = {
+            add_radicals_in_state = {
+                value = 0.03
+            }
+        }
+        
+	}
+    option = {
+		default_option = yes
+        name = tno_usa_segregation_events.6.b
+
+        add_modifier = {
+            name = protesters_counterd
+            months = 7
+        } 
+
+        scope:arms_raid_state = {
+            add_radicals_in_state = {
+             value = 0.07
+               
+            }
+        }
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+}
+
+tno_RK_events.7 = { # batlic forest base located
+    type = country_event
+    placement = ROOT
+
+	title = tno_RK_events.7
+	desc = tno_RK_events.7.d
+    flavor = tno_RK_events.7.f	
+
+	event_image = { 
+		texture  = "gfx/event_pictures/event_pictures/protestseg.dds"
+	}
+
+    icon = "gfx/interface/icons/tno_event_icons/bicorne_jim_crow_protest.2.dds"
+	
+	trigger = {
+		this ?= c:USA
+	}	
+
+    immediate = {
+        random_scope_state = {
+            save_scope_as = arms_raid_state
+            limit = {
+              OR = {
+                state_region = s:STATE_ESTONIA
+                state_region = s:STATE_LATVIA
+                state_region = s:STATE_LITHUANIA
+              }
+            }
+        }
+		
+		change_variable = {
+            name = chaos_ost_timer
+            add = 2
+        }
+
+    }
+	
+	duration = 1
+
+	option = {
+		default_option = yes
+        name = tno_usa_segregation_events.7.a
+
+        scope:arms_raid_state = {
+            add_radicals_in_state = {
+                value = 0.03
+            }
+        }
+        
+	}
+    option = {
+		default_option = yes
+        name = tno_usa_segregation_events.7.b
+
+        add_modifier = {
+            name = protesters_counterd
+            months = 7
+        } 
+
+        scope:arms_raid_state = {
+            add_radicals_in_state = {
+             value = 0.07
+               
+            }
+        }
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+}
+
+tno_RK_events.8 = { # batlic forest base location
+    type = country_event
+    placement = ROOT
+
+	title = tno_RK_events.8
+	desc = tno_RK_events.8.d
+    flavor = tno_RK_events.8.f	
+
+	event_image = { 
+		texture  = "gfx/event_pictures/event_pictures/protestseg.dds"
+	}
+
+    icon = "gfx/interface/icons/tno_event_icons/bicorne_jim_crow_protest.2.dds"
+	
+	trigger = {
+		this ?= c:USA
+	}	
+
+    immediate = {
+        random_scope_state = {
+            save_scope_as = arms_raid_state
+            limit = {
+              OR = {
+                state_region = s:STATE_ESTONIA
+                state_region = s:STATE_LATVIA
+                state_region = s:STATE_LITHUANIA
+              }
+            }
+        }
+		
+		change_variable = {
+            name = chaos_ost_timer
+            add = 2
+        }
+
+    }
+	
+	duration = 1
+
+	option = {
+		default_option = yes
+        name = tno_usa_segregation_events.8.a
+
+        scope:arms_raid_state = {
+            add_radicals_in_state = {
+                value = 0.03
+            }
+        }
+        
+	}
+    option = {
+		default_option = yes
+        name = tno_usa_segregation_events.8.b
+
+        add_modifier = {
+            name = protesters_counterd
+            months = 7
+        } 
+
+        scope:arms_raid_state = {
+            add_radicals_in_state = {
+             value = 0.07
+               
+            }
+        }
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+}
