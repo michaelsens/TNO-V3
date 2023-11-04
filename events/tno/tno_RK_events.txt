@@ -570,7 +570,7 @@ tno_RK_events.7 = { # batlic forest base located
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 }
 
-tno_RK_events.8 = { # batlic forest base location
+tno_RK_events.8 = { # batlic forest base located
     type = country_event
     placement = ROOT
 
@@ -623,6 +623,146 @@ tno_RK_events.8 = { # batlic forest base location
     option = {
 		default_option = yes
         name = tno_usa_segregation_events.8.b
+
+        add_modifier = {
+            name = protesters_counterd
+            months = 7
+        } 
+
+        scope:arms_raid_state = {
+            add_radicals_in_state = {
+             value = 0.07
+               
+            }
+        }
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+}
+
+tno_RK_events.9 = { # batlic garrison attacked
+    type = country_event
+    placement = ROOT
+
+	title = tno_RK_events.9
+	desc = tno_RK_events.9.d
+    flavor = tno_RK_events.9.f	
+
+	event_image = { 
+		texture  = "gfx/event_pictures/event_pictures/protestseg.dds"
+	}
+
+    icon = "gfx/interface/icons/tno_event_icons/bicorne_jim_crow_protest.2.dds"
+	
+	trigger = {
+		this ?= c:USA
+	}	
+
+    immediate = {
+        random_scope_state = {
+            save_scope_as = arms_raid_state
+            limit = {
+              OR = {
+                state_region = s:STATE_ESTONIA
+                state_region = s:STATE_LATVIA
+                state_region = s:STATE_LITHUANIA
+              }
+            }
+        }
+		
+		change_variable = {
+            name = chaos_ost_timer
+            add = 10
+        }
+
+    }
+	
+	duration = 1
+
+	option = {
+		default_option = yes
+        name = tno_usa_segregation_events.9.a
+
+        scope:arms_raid_state = {
+            add_radicals_in_state = {
+                value = 0.03
+            }
+        }
+        
+	}
+    option = {
+		default_option = yes
+        name = tno_usa_segregation_events.9.b
+
+        add_modifier = {
+            name = protesters_counterd
+            months = 7
+        } 
+
+        scope:arms_raid_state = {
+            add_radicals_in_state = {
+             value = 0.07
+               
+            }
+        }
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+}
+
+tno_RK_events.10 = { # batlic garrison attacked
+    type = country_event
+    placement = ROOT
+
+	title = tno_RK_events.10
+	desc = tno_RK_events.10.d
+    flavor = tno_RK_events.10.f	
+
+	event_image = { 
+		texture  = "gfx/event_pictures/event_pictures/protestseg.dds"
+	}
+
+    icon = "gfx/interface/icons/tno_event_icons/bicorne_jim_crow_protest.2.dds"
+	
+	trigger = {
+		this ?= c:USA
+	}	
+
+    immediate = {
+        random_scope_state = {
+            save_scope_as = arms_raid_state
+            limit = {
+              OR = {
+                state_region = s:STATE_ESTONIA
+                state_region = s:STATE_LATVIA
+                state_region = s:STATE_LITHUANIA
+              }
+            }
+        }
+		
+		change_variable = {
+            name = chaos_ost_timer
+            add = 10
+        }
+
+    }
+	
+	duration = 1
+
+	option = {
+		default_option = yes
+        name = tno_usa_segregation_events.10.a
+
+        scope:arms_raid_state = {
+            add_radicals_in_state = {
+                value = 0.03
+            }
+        }
+        
+	}
+    option = {
+		default_option = yes
+        name = tno_usa_segregation_events.10.b
 
         add_modifier = {
             name = protesters_counterd
