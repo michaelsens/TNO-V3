@@ -3,7 +3,7 @@ je_tno_insergency_ost = { # ostland insurgency
     icon = "gfx/interface/icons/new_event_icons/event_ost_insur.dds"
 
     scripted_button = je_insur_ost_a
-    scripted_button = je_insur_ost_B
+    scripted_button = je_insur_ost_b
 
     immediate = {
 
@@ -20,32 +20,31 @@ je_tno_insergency_ost = { # ostland insurgency
 	}
 
     on_complete = {
-        trigger_event = { id = tno_usa_segregation_events.1 popup = yes }
+        trigger_event = { id = tno_RK_events.1 popup = yes }
     }
 
     on_monthly_pulse = {
         effect = {
 			change_variable = {
 				name = chaos_ost_timer
-				add = -1
+				add = 0.05
 			}
 		}
 		random_events = {
-            6 = 0
-            3 = tno_usa_segregation_events.2
-            3 = tno_usa_segregation_events.3
-            3 = tno_usa_segregation_events.4
-            3 = tno_usa_segregation_events.5
-            3 = tno_usa_segregation_events.6
+            1 = 0
+            15 = tno_RK_events.2
+            15 = tno_RK_events.3
+            15 = tno_RK_events.4
+            15 = tno_RK_events.5
+            15 = tno_RK_events.6
+			15 = tno_RK_events.8
+			15 = tno_RK_events.9
+			15 = tno_RK_events.10
         }
     }
 
     current_value = {
 		value = root.var:chaos_ost_timer
-	}
-
-    on_timeout = {
-		trigger_event = { id = tno_usa_segregation_events.15 popup = yes }
 	}
 
     goal_add_value = {
