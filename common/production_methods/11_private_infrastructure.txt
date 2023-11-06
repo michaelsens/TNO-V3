@@ -1,4 +1,28 @@
-﻿pm_steam_trains = {
+﻿pm_early_trains = {
+	texture = "gfx/interface/icons/production_method_icons/experimental_trains.dds"
+
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_engines_add = 8
+			goods_input_coal_add = 2
+			goods_output_transportation_add = 25
+		}
+		level_scaled = {
+			building_employment_laborers_add = 3000
+			building_employment_machinists_add = 1000
+			building_employment_clerks_add = 750
+		}
+	}
+
+	state_modifiers = {
+		workforce_scaled = {
+			state_infrastructure_add = 20
+			state_pollution_generation_add = 25
+		}
+	}
+}
+
+pm_steam_trains = {
 	texture = "gfx/interface/icons/production_method_icons/trains_steam.dds"
 	state_modifiers = {
 		workforce_scaled = {

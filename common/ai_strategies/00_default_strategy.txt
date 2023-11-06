@@ -150,25 +150,7 @@ ai_strategy_default = {
 			add = 0.25
 		}
 
-		# USA should Manifest a lot of Destiny
-		if = {
-			limit = {
-				has_journal_entry = je_manifest_destiny_mexico
-				scope:enemy_country = {
-					any_scope_state = {
-						OR = {
-							state_region = s:STATE_CALIFORNIA
-							state_region = s:STATE_NEVADA
-							state_region = s:STATE_UTAH
-							state_region = s:STATE_ARIZONA
-							state_region = s:STATE_NEW_MEXICO
-							state_region = s:STATE_TEXAS
-						}
-					}
-				}
-			}
-			add = 0.25
-		}		
+		
 				
 	}
 	
@@ -648,105 +630,12 @@ ai_strategy_default = {
 			}
 			add = 1
 		}		
-	
-		# Opium wars participants should both be confident
-		if = {
-			limit = {
-				has_journal_entry = je_opium_wars
-				scope:target_country = {
-					has_variable = opium_wars_target
-					is_banning_goods = g:opium
-				}
-			}
-			add = 1
-		}
 		
-		if = {
-			limit = {
-				has_variable = opium_wars_target
-				is_banning_goods = g:opium
-				scope:target_country = {
-					has_journal_entry = je_opium_wars
-				}
-			}
-			add = 1
-		}		
+
 	
-		# Ottomans should be extremely confident against owners of Syria and Egypt when they have the relevant JE's
-		if = {
-			limit = {
-				OR = {
-					AND = {
-						has_journal_entry = je_sick_man_syria
-						scope:target_country = {
-							OR = {
-								owns_entire_state_region = STATE_ALEPPO
-								owns_entire_state_region = STATE_SYRIA
-								owns_entire_state_region = STATE_LEBANON
-								owns_entire_state_region = STATE_PALESTINE
-								owns_entire_state_region = STATE_TRANSJORDAN
-								owns_entire_state_region = STATE_ADANA
-							}
-						}
-					}
-					AND = {
-						has_journal_entry = je_sick_man_egypt
-						scope:target_country = {
-							OR = {
-								owns_entire_state_region = STATE_SINAI
-								owns_entire_state_region = STATE_UPPER_EGYPT
-								owns_entire_state_region = STATE_MIDDLE_EGYPT
-								owns_entire_state_region = STATE_LOWER_EGYPT
-							}
-						}
-					}
-				}
-			}
-			add = 10
-		}
-
-		# USA should be confident against owners of their Manifest Destiny states
-		if = {
-			limit = {
-				has_journal_entry = je_manifest_destiny_mexico
-				scope:target_country = {
-					any_scope_state = {
-						OR = {
-							state_region = s:STATE_CALIFORNIA
-							state_region = s:STATE_NEVADA
-							state_region = s:STATE_UTAH
-							state_region = s:STATE_ARIZONA
-							state_region = s:STATE_NEW_MEXICO
-							state_region = s:STATE_TEXAS
-						}
-					}
-				}
-			}
-			add = 1
-		}		
-
-		# Ethiopian Thunderdome
-		if = {
-			limit = {
-				has_journal_entry = je_age_of_princes
-				scope:target_country = {
-					has_journal_entry = je_age_of_princes
-				}
-			}
-			add = 0.5
-		}
 			
 
-		#Italian Nightmare
-		if = {
-			limit = {
-				has_journal_entry = je_risorgimento
-				scope:target_country = {
-					has_journal_entry = je_risorgimento
-				}
-			}
-			add = 0.5
-		}
+	
 
 		# Warlord China Thunderdome
 		if = {
@@ -761,17 +650,6 @@ ai_strategy_default = {
 		}
 
 
-		#Taiping
-		if = { 
-			limit = {
-				exists = c:TPG
-				THIS = c:TPG
-				scope:target_country = {
-					has_journal_entry = je_taiping
-				}
-			}
-			add = 3
-		}	
 
 		#Caucasus
 		if = { 
@@ -829,17 +707,7 @@ ai_strategy_default = {
 			add = 25
 		}		
 		
-		# Opium wars aggressor should be very, very aggressive against target if they're banning opium
-		if = {
-			limit = {
-				has_journal_entry = je_opium_wars
-				scope:target_country = {
-					has_variable = opium_wars_target
-					is_banning_goods = g:opium
-				}
-			}
-			add = 100
-		}
+	
 		
 			
 		if = { #Carving up China
@@ -920,25 +788,7 @@ ai_strategy_default = {
 			add = 25
 		}
 
-		# USA should be extremely aggressive against owners of their Manifest Destiny states
-		if = {
-			limit = {
-				has_journal_entry = je_manifest_destiny_mexico
-				scope:target_country = {
-					any_scope_state = {
-						OR = {
-							state_region = s:STATE_CALIFORNIA
-							state_region = s:STATE_NEVADA
-							state_region = s:STATE_UTAH
-							state_region = s:STATE_ARIZONA
-							state_region = s:STATE_NEW_MEXICO
-							state_region = s:STATE_TEXAS
-						}
-					}
-				}
-			}
-			add = 25
-		}
+
 
 		# Extra french aggression for Haiti renouncing debt payments
 		if = {
@@ -954,55 +804,7 @@ ai_strategy_default = {
 			add = 5
 		}
 
-		# Extra aggression against Peru-Bolivia
-		if = {
-			limit = {
-				scope:target_country = {
-					has_journal_entry = je_peru_bolivia
-				}
-				OR = {
-					country_has_primary_culture = cu:south_andean
-					country_has_primary_culture = cu:north_andean
-				}
-			}
-			add = 25
-		}
 
-		# Veiled Protectorate
-		if = {
-			limit = {
-				has_journal_entry = je_veiled_protectorate
-				exists = c:EGY
-				scope:target_country = {
-					THIS = c:EGY
-				}
-			}
-			add = 5
-		}
-
-		# East India Company vs its neighbors
-		if = {
-			limit = {
-				has_journal_entry = je_consolidate_colonial_rule
-				scope:target_country = {
-					NOT = { is_subject_of = ROOT }
-					any_scope_state = {
-						OR = {
-							state_region = s:STATE_BURMA
-							state_region = s:STATE_KACHIN
-							state_region = s:STATE_SHAN_STATES
-							state_region = s:STATE_SINDH
-							state_region = s:STATE_PUNJAB
-							state_region = s:STATE_KASHMIR
-							state_region = s:STATE_PASHTUNISTAN
-							state_region = s:STATE_BALUCHISTAN
-							state_region = s:STATE_HIMALAYAS
-						}
-					}
-				}
-			}
-			add = 5
-		}
 
 		if = { #Russian Caucasus
 			limit = {
@@ -1020,22 +822,7 @@ ai_strategy_default = {
 			add = 10
 		}
 
-		if = { #Russian Far East
-			limit = {
-				has_journal_entry = je_the_eastern_border
-				scope:target_country = {
-					any_scope_state = {
-						OR = {
-							state_region = s:STATE_OUTER_MANCHURIA
-							state_region = s:STATE_JETISY
-							state_region = s:STATE_TOMSK
-							state_region = s:STATE_KIRGHIZIA
-						}
-					}
-				}
-			}
-			add = 10
-		}
+
 
 		if = { #Russian Central Asia
 			limit = {
@@ -1173,20 +960,6 @@ ai_strategy_default = {
 			add = 100
 		}
 
-		if = {
-			limit = {
-				has_journal_entry = je_the_krakow_uprising
-				country_rank >= rank_value:major_power
-				scope:target_country = {
-					this = c:KRA
-					NOT = {
-						is_subject_of = root
-					}
-				}
-			}
-			add = 50
-		}
-
 
 	}
 	
@@ -1319,10 +1092,6 @@ ai_strategy_default = {
 			limit = { 
 				OR = {
 					has_strategy = ai_strategy_territorial_expansion 
-					has_strategy = ai_strategy_unify_germany
-					has_strategy = ai_strategy_unify_italy
-					has_strategy = ai_strategy_unify_ethiopia
-					has_strategy = ai_strategy_unify_china
 				}
 			}
 			multiply = 1.25
@@ -1841,28 +1610,6 @@ ai_strategy_default = {
 				add = 50
 			}
 		}	
-		region_south_china = {
-			if = {
-				limit = {
-					has_journal_entry = je_opium_wars	
-				}
-				add = 1000
-			}	
-			if = {
-				limit = {
-					country_is_in_europe = yes
-					country_rank >= rank_value:great_power
-					any_country = {
-						country_rank >= rank_value:great_power
-						any_scope_state = {
-							region = sr:region_south_china
-							is_treaty_port = yes
-						}
-					}
-				}
-				add = 50
-			}
-		}
 		region_pacific_coast = {
 			if = {
 				limit = {
@@ -2559,25 +2306,6 @@ ai_strategy_default = {
 				limit = { is_still_learning = yes }
 				multiply = 0
 			}	
-
-			if = {
-				limit = {
-					THIS = {
-						has_journal_entry = je_risorgimento
-					}
-					scope:target_country = {
-						any_scope_state = {
-							state_region = {
-								OR = {
-									is_homeland = cu:north_italian
-									is_homeland = cu:south_italian
-								}
-							}
-						}
-					}
-				}
-				add = 50
-			}
 		}
 		conquer = {
 			value = 0
@@ -2634,125 +2362,11 @@ ai_strategy_default = {
 					}
 					add = 200
 				}
+			
 				
-				if = {
-					limit = {
-						has_journal_entry = je_opium_wars
-						scope:target_country = {
-							has_variable = opium_wars_target
-						}
-					}
-					add = 200
-				}
+		
 				
-				if = {
-					limit = {
-						has_journal_entry = je_boxer_rebellion
-						scope:target_country = {
-							any_scope_state = {
-								state_region = { is_homeland = cu:han }
-							}
-						}
-					}
-					add = 200
-				}
-				
-				if = {
-					limit = {
-						has_journal_entry = je_greek_nationalism
-						scope:target_country = {
-							any_scope_state = {
-								state_region = { is_homeland = cu:greek }
-							}
-						}
-					}
-					add = 200
-				}
-				
-				if = {
-					limit = {
-						has_journal_entry = je_consolidate_colonial_rule
-						scope:target_country = {
-							any_scope_state = {
-								OR = {
-									state_region = s:STATE_BURMA
-									state_region = s:STATE_KACHIN
-									state_region = s:STATE_SHAN_STATES
-									state_region = s:STATE_SINDH
-									state_region = s:STATE_PUNJAB
-									state_region = s:STATE_KASHMIR
-									state_region = s:STATE_PASHTUNISTAN
-									state_region = s:STATE_BALUCHISTAN
-									state_region = s:STATE_HIMALAYAS
-								}
-							}
-						}
-					}
-					add = 200
-				}
-				
-				if = {
-					limit = {
-						has_journal_entry = je_age_of_princes
-						scope:target_country = {
-							any_scope_state = {
-								OR = {
-									state_region = s:STATE_AMHARA
-									state_region = s:STATE_GONDER
-								}
-							}
-						}
-					}
-					add = 200
-				}
-				
-				if = {
-					limit = {
-						has_journal_entry = je_manifest_destiny_mexico
-						scope:target_country = {
-							any_scope_state = {
-								OR = {
-									state_region = s:STATE_CALIFORNIA
-									state_region = s:STATE_NEVADA
-									state_region = s:STATE_UTAH
-									state_region = s:STATE_ARIZONA
-									state_region = s:STATE_NEW_MEXICO
-									state_region = s:STATE_TEXAS
-								}
-							}
-						}
-					}
-					add = 1000
-				}
-				
-				if = {
-					limit = {
-						has_journal_entry = je_conquer_oregon
-						scope:target_country = {
-							any_scope_state = {
-								OR = {
-									state_region = s:STATE_WASHINGTON
-									state_region = s:STATE_IDAHO
-									state_region = s:STATE_OREGON
-								}
-							}
-						}
-					}
-					add = 1000
-				}
-				
-				if = {
-					limit = {
-						has_journal_entry = je_alaska
-						scope:target_country = {
-							any_scope_state = {
-								state_region = s:STATE_ALASKA
-							}
-						}
-					}
-					add = 1000
-				}
-
+							
 				if = {
 					limit = {
 						country_has_primary_culture = cu:russian
@@ -2993,17 +2607,6 @@ ai_strategy_default = {
 				add = 25
 			}
 			
-			if = {
-				limit = {
-					OR = {
-						has_journal_entry = je_sick_man_syria
-						has_journal_entry = je_veiled_protectorate
-					}
-					exists = c:EGY
-					scope:target_country = c:EGY
-				}
-				add = 200
-			}
 			
 			multiply = {
 				value = "ai_ideological_opinion(scope:target_country)"
@@ -3384,112 +2987,8 @@ ai_strategy_default = {
 				}
 			}				
 
-			if = {
-				limit = {
-					has_journal_entry = je_boxer_rebellion
-					scope:target_state.state_region = { is_homeland = cu:han }
-				}
-				add = 50
-			}
 
-			if = {
-				limit = {
-					has_journal_entry = je_greek_nationalism
-					scope:target_state.state_region = { is_homeland = cu:greek }
-				}
-				add = 50
-			}
-
-			if = {
-				limit = {
-					has_journal_entry = je_consolidate_colonial_rule
-					scope:target_state = {
-						OR = {
-							state_region = s:STATE_BURMA
-							state_region = s:STATE_KACHIN
-							state_region = s:STATE_SHAN_STATES
-							state_region = s:STATE_SINDH
-							state_region = s:STATE_PUNJAB
-							state_region = s:STATE_KASHMIR
-							state_region = s:STATE_PASHTUNISTAN
-							state_region = s:STATE_BALUCHISTAN
-							state_region = s:STATE_HIMALAYAS
-						}
-					}
-				}
-				add = 50
-			}
-
-			if = {
-				limit = {
-					has_journal_entry = je_age_of_princes
-					scope:target_state = {
-						OR = {
-							state_region = s:STATE_AMHARA
-							state_region = s:STATE_GONDER
-						}
-					}
-				}
-				add = 50
-			}
-
-			if = {
-				limit = {
-					has_journal_entry = je_manifest_destiny_mexico
-					scope:target_state = {
-						OR = {
-							state_region = s:STATE_CALIFORNIA
-							state_region = s:STATE_NEVADA
-							state_region = s:STATE_UTAH
-							state_region = s:STATE_ARIZONA
-							state_region = s:STATE_NEW_MEXICO
-							state_region = s:STATE_TEXAS
-						}
-					}
-				}
-				add = 50
-			}
-
-			if = {
-				limit = {
-					has_journal_entry = je_conquer_oregon
-					scope:target_state = {
-						OR = {
-							state_region = s:STATE_WASHINGTON
-							state_region = s:STATE_IDAHO
-							state_region = s:STATE_OREGON
-						}
-					}
-				}
-				add = 50
-			}
-
-			if = {
-				limit = {
-					has_journal_entry = je_alaska
-					scope:target_state = {
-						state_region = s:STATE_ALASKA
-					}
-				}
-				add = 50
-			}
-
-			if = {
-				limit = {
-					has_journal_entry = je_the_eastern_border
-					scope:target_state = {
-						OR = {
-							state_region = s:STATE_OUTER_MANCHURIA
-							state_region = s:STATE_JETISY
-							state_region = s:STATE_TOMSK
-							state_region = s:STATE_KIRGHIZIA
-						}
-					}
-				}
-				add = 50
-			}
-
-
+	
 			if = { #Russian Central Asia
 				limit = {
 					owns_entire_state_region = STATE_URALSK
@@ -3548,15 +3047,7 @@ ai_strategy_default = {
 				multiply = 0.0
 			}
 
-			if = {
-				limit = {
-					has_journal_entry = je_opium_wars
-					scope:target_country = {
-						has_variable = opium_wars_target
-					}
-				}
-				multiply = 0
-			}
+		
 			
 			if = { #Do Not Take Chinese States In Full, unless another power has already done so
 				limit = {
@@ -3597,16 +3088,6 @@ ai_strategy_default = {
 				multiply = 0
 			}
 			
-			if = {
-				limit = {
-					has_journal_entry = je_the_krakow_uprising
-					country_rank >= rank_value:major_power
-					scope:target_state = {
-						owner = { this = c:KRA }
-					}
-				}
-				add = 50
-			}				
 			
 			min = 0
 			max = 100			
@@ -3845,39 +3326,7 @@ ai_strategy_default = {
 				}										
 			}
 						
-			if = {
-				limit = {
-					has_journal_entry = je_opium_wars
-					scope:target_country = {
-						has_variable = opium_wars_target
-					}
-				}
-				add = 25
-			}
-			if = {
-				limit = {
-					has_journal_entry = je_opium_wars
-					scope:target_country = {
-						has_variable = opium_wars_target
-					}
-					scope:target_state = {
-						state_region = s:STATE_SHAOZHOU
-					}					
-				}
-				add = 1000
-			}
-			if = {
-				limit = {
-					has_journal_entry = je_opium_wars
-					scope:target_country = {
-						has_variable = opium_wars_target
-					}
-					scope:target_state = {
-						state_region = s:STATE_FORMOSA
-					}					
-				}
-				add = -100
-			}
+	
 
 			if = { #Carving up China
 				limit = {
@@ -4054,18 +3503,7 @@ ai_strategy_default = {
 					}
 				}			
 			}			
-			
-			if = {
-				limit = {
-					OR = {
-						has_journal_entry = je_sick_man_egypt
-						has_journal_entry = je_veiled_protectorate
-					}
-					exists = c:EGY
-					scope:target_country = c:EGY
-				}
-				add = 100
-			}			
+				
 
 			# Russian expansion into Central Asia
 			if = {
@@ -4234,17 +3672,6 @@ ai_strategy_default = {
 				}
 			}
 			
-			if = {
-				limit = {
-					OR = {
-						has_journal_entry = je_sick_man_egypt
-						has_journal_entry = je_veiled_protectorate
-					}
-					exists = c:EGY
-					scope:target_country = c:EGY
-				}
-				add = 100
-			}	
 
 			if = {
 				limit = {
@@ -4313,26 +3740,7 @@ ai_strategy_default = {
 				}
 			}
 			
-			if = {
-				limit = {
-					has_journal_entry = je_opium_wars
-					scope:target_country = {
-						has_variable = opium_wars_target
-					}
-				}
-				add = 50
-			}	
-
-			if = {
-				limit = {
-					has_journal_entry = je_opium_obsession
-					scope:target_country = {
-						has_variable = opium_wars_aggressor
-					}
-				}
-				add = 50
-			}
-
+		
 			min = 0
 			max = 100			
 		}	
@@ -4401,15 +3809,7 @@ ai_strategy_default = {
 				add = 50
 			}			
 		
-			if = {
-				limit = {
-					has_journal_entry = je_opium_wars
-					scope:target_country = {
-						has_variable = opium_wars_target
-					}
-				}
-				add = 75
-			}
+	
 
 			if = {
 				limit = {

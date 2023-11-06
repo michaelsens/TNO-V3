@@ -189,13 +189,6 @@ on_monthly_pulse_country = {
 }
 
 on_yearly_pulse_country = {
-	random_events = {
-		11 = 0
-		1 = tunguska.1
-	}
-}
-
-on_yearly_pulse_country = {
 	effect = {
 		# IG leader death
 		random_list = {
@@ -380,7 +373,6 @@ on_yearly_pulse_country = {
 		50 = strike.6
 		50 = strike.7
 
-		20 = communism.9
 		20 = communism.7
 		
 		#psychology
@@ -439,11 +431,6 @@ on_yearly_pulse_country = {
 		20 = pm_events.2
 		20 = pm_events.4
 		20 = pm_events.5
-
-		# French Pretenders
-		10 = french_pretenders.2
-		10 = french_pretenders.3
-		10 = french_pretenders.4
 
 		# Additional 1848
 		10 = 1848.10
@@ -2077,17 +2064,6 @@ on_revolution_start = {
 			}
 			set_variable = china_warlord_explosion_revolution
 		}
-		if = {
-			limit = {
-				has_journal_entry = je_meiji_restoration
-				scope:target = {
-					ig:ig_landowners = {
-						is_in_government = yes
-					}
-				}
-			}
-			set_variable = anti_shogunate_civil_war
-		}
 	}
 }
 
@@ -2105,18 +2081,6 @@ on_civil_war_won = {
 				has_global_variable = achievement_revo_needed
 			}
 			set_global_variable = achievement_revolutionary
-		}
-		if = {
-			limit = {
-				has_journal_entry = je_meiji_restoration
-				has_variable = anti_shogunate_civil_war
-				has_variable = shogunate_var
-			}
-			change_variable = {
-				name = shogunate_var
-				add = 120
-			}
-			remove_variable = anti_shogunate_civil_war
 		}
 		if = {
 			limit = {
