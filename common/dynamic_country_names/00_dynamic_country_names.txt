@@ -20,6 +20,29 @@ BHT = {
 	}
 }
 
+CAN = {
+	dynamic_country_name = {
+		name = "OFN mandate - Canada"
+		
+		
+		is_main_tag_only = yes
+		priority = 1
+		
+
+		is_main_tag_only = yes
+		priority = 1
+		
+		trigger = {
+            OR = {
+                scope:actor = {
+                    is_subject_of = c:USA
+                }
+            }
+        }
+	}
+}
+
+
 MCH = { 
 	dynamic_country_name = {
 		name = "Empire of Manchuria"
@@ -503,6 +526,16 @@ ITA = { # Italy
 		
 		trigger = {
 			scope:actor = { has_law = law_type:law_autocracy }
+		}
+	}
+	dynamic_country_name = {
+		name = "Union of Italy"
+		
+		is_main_tag_only = yes
+		priority = 1
+		
+		trigger = {
+			scope:actor = { has_law = law_type:law_council_republic}
 		}
 	}
 	dynamic_country_name = { # Papal Italy
@@ -1225,7 +1258,24 @@ BOL = {
 			}
 		}
 	}
+	dynamic_country_name = {
+		name = "OFN mandate - Bolivia"
+		adjective = "Bolivian"
+		
+		is_main_tag_only = yes
+		priority = 1
+		
+		trigger = {
+			OR = {
+				scope:actor = {
+					is_subject_of = c:USA
+				}
+			}
+		}
+	}
 }
+
+
 
 BRE = { # Bremen
 	dynamic_country_name = {
@@ -1648,6 +1698,20 @@ MEX = { # Mexico
 			coa_def_monarchy_flag_trigger = yes
 		}
 	}
+	dynamic_country_name = {
+		name = "OFN mandate - Mexico"
+		
+		is_main_tag_only = yes
+		priority = 0
+		
+		trigger = {
+			OR = {
+				scope:actor = {
+					is_subject_of = c:USA
+				}
+			}
+		}
+	}
 
 	dynamic_country_name = {
 		name = dyn_c_new_spain
@@ -1943,6 +2007,29 @@ PEU = {
 				owns_entire_state_region = STATE_LIMA
 			}
 		}
+	}
+	dynamic_country_name = {
+		name = "OFN mandate - Peru"
+		
+		
+		is_main_tag_only = yes
+		priority = 1
+		
+		dynamic_country_name = {
+		name = dyn_c_peru_bolivia
+		adjective = dyn_c_peru_bolivia_adj
+		
+		is_main_tag_only = yes
+		priority = 1
+		
+		trigger = {
+            OR = {
+                scope:actor = {
+                    is_subject_of = c:USA
+                }
+            }
+        }
+	}
 	}
 }
 

@@ -66,6 +66,66 @@ je_civil_rights_b = {
 	}
 }
 
+je_insur_ost_a = {
+	name = "je_civil_rights_stall"
+	desc = "je_we_racist"
+
+	visible = { always = yes }
+
+	possible = {
+		scope:journal_entry = {
+				not = {
+				custom_tooltip = {
+					text = civil_rights_cooldown
+					has_variable = chaos_ost_timer_cooldown
+				}
+			}
+		}
+	}
+
+	effect = {
+        custom_tooltip = cooldown_three_balls_tt
+		scope:journal_entry = {
+			set_variable = { name = chaos_ost_timer_cooldown months = 2 }
+		}	
+        custom_tooltip = civil_rights_act_stall_10
+        change_variable = {
+            name = chaos_ost_timer
+            add = -10
+        }
+	}
+}
+
+je_insur_ost_b = {
+	name = "je_civil_rights_stall"
+	desc = "je_we_racist"
+
+	visible = { always = yes }
+
+	possible = {
+		scope:journal_entry = {
+				not = {
+				custom_tooltip = {
+					text = civil_rights_cooldown
+					has_variable = chaos_ost_timer_cooldown
+				}
+			}
+		}
+	}
+
+	effect = {
+        custom_tooltip = cooldown_three_balls_tt
+		scope:journal_entry = {
+			set_variable = { name = chaos_ost_timer_cooldown months = 2 }
+		}	
+        custom_tooltip = civil_rights_act_stall_10
+        change_variable = {
+            name = chaos_ost_timer
+            add = -10
+        }
+	}
+}
+
 je_hollywood_a = { #start of hollywood movies ###############################################################
 	name = "je_glorify_military" #glorify millitary
 	desc = "je_glorify_military_desc"
@@ -451,166 +511,6 @@ je_hollywood_l = {
 	}
 }
 
-french_monarchy_bonapartist_button = {
-	name = "bonapartist_button"
-	desc = "bonapartist_button_desc"
-
-	visible = { always = yes }
-
-	possible = {
-		trigger_if = {
-			limit = {
-				has_variable = has_selected_bonapartist_once_var
-			}
-			custom_tooltip = {
-				text = cannot_choose_bonapartist_twice_tt
-				always = no
-			}
-		}
-		any_interest_group = {
-			is_in_government = yes
-			leader = {
-				has_ideology = ideology:ideology_bonapartist
-			}
-		}
-		custom_tooltip = {
-			text = not_already_supporting_bonapartism
-			NOT = { has_variable = supporting_bonapartist_var }
-		}
-	}
-
-	effect = {
-		set_variable = supporting_bonapartist_var
-		set_variable = has_selected_bonapartist_once_var
-		remove_variable = supporting_orleanist_var
-		remove_variable = supporting_legitimist_var
-		custom_tooltip = {
-			text = supporting_bonapartist_tt
-		}
-		custom_tooltip = {
-			text = bonapartist_progress_increase_10_tt
-			change_variable = { name = bonapartist_progress add = 10 }
-		}
-	}
-}
-
-french_monarchy_orleanist_button = {
-	name = "orleanist_button"
-	desc = "orleanist_button_desc"
-
-	visible = { always = yes }
-
-	possible = {
-		trigger_if = {
-			limit = {
-				has_variable = has_selected_orleanist_once_var
-			}
-			custom_tooltip = {
-				text = cannot_choose_orleanist_twice_tt
-				always = no
-			}
-		}
-		any_interest_group = {
-			is_in_government = yes
-			leader = {
-				has_ideology = ideology:ideology_orleanist
-			}
-		}
-		custom_tooltip = {
-			text = not_already_supporting_orleanism
-			NOT = { has_variable = supporting_orleanist_var }
-		}
-	}
-
-	effect = {
-		# Only one of these variables can be active at a time
-		set_variable = supporting_orleanist_var
-		set_variable = has_selected_orleanist_once_var
-		remove_variable = supporting_bonapartist_var
-		remove_variable = supporting_legitimist_var
-		custom_tooltip = {
-			text = supporting_orleanism_tt
-		}
-		custom_tooltip = {
-			text = orleanist_progress_increase_10_tt
-			change_variable = { name = orleanist_progress add = 10 }
-		}
-	}
-}
-
-french_monarchy_legitimist_button = {
-	name = "legitimist_button"
-	desc = "legitimist_button_desc"
-
-	visible = { always = yes }
-
-	possible = {
-		trigger_if = {
-			limit = {
-				has_variable = has_selected_legitimist_once_var
-			}
-			custom_tooltip = {
-				text = cannot_choose_legitimist_twice_tt
-				always = no
-			}
-		}
-		any_interest_group = {
-			is_in_government = yes
-			leader = {
-				has_ideology = ideology:ideology_fascist
-			}
-		}
-		custom_tooltip = {
-			text = not_already_supporting_legitimist
-			NOT = { has_variable = supporting_legitimist_var }
-		}
-	}
-
-	effect = {
-		set_variable = supporting_legitimist_var
-		set_variable = has_selected_legitimist_once_var
-		remove_variable = supporting_bonapartist_var
-		remove_variable = supporting_orleanist_var
-		custom_tooltip = {
-			text = supporting_legitimists_tt
-		}
-		custom_tooltip = {
-			text = legitimist_progress_increase_10_tt
-			change_variable = { name = legitimist_progress add = 10 }
-		}
-	}
-}
-
-je_the_krakow_uprising_annex_button = {
-	name = "je_the_krakow_uprising_annex_button"
-	desc = "je_the_krakow_uprising_annex_button_desc"
-
-	visible = { always = yes }
-	
-	ai_chance = {
-		base = 100
-	}
-
-	possible = {
-		c:KRA ?= {
-			is_subject_of = c:AUS
-			has_revolution = no
-		}
-		is_at_war = no
-	}
-
-	effect = {
-		if = {
-			limit = {
-				c:KRA = {
-					exists = yes
-				}
-			}
-			annex = c:KRA
-		}
-	}
-}
-
 je_gerstruggle_a = {
 	name = "je_civil_rights_stall"
 	desc = "je_we_racist"
@@ -642,5 +542,169 @@ je_gerstruggle_a = {
             name = civil_rights_timer
             add = -3
         }
+	}
+}
+
+je_oil_crisis_oil_supply_button_button_a = {  # Squeeze the Workers
+	name = "je_oil_crisis_oil_supply_name_1"
+	desc = "je_oil_crisis_oil_supply_name_1_desc"
+
+	visible = { always = yes }
+
+	possible = {
+		NOT = {
+			has_modifier = squeeze_the_workers
+		}
+	}
+
+	effect = {
+		change_variable = {
+			name = oil_crisis_oil_supply_var
+			add = 150
+		}
+		add_modifier = {
+			name = squeeze_the_workers
+			months = 6
+			is_decaying = yes
+		}
+	}
+}
+
+je_oil_crisis_oil_supply_button_button_b = {  # Build more Pumps
+	name = "je_oil_crisis_oil_supply_name_2"
+	desc = "je_oil_crisis_oil_supply_name_2_desc"
+
+	visible = { always = yes }
+
+	possible = {
+		NOT = {
+			has_modifier = more_oil_pumps
+		}
+	}
+
+	effect = {
+		change_variable = {
+			name = oil_crisis_oil_supply_var
+			add = 150
+		}
+		add_modifier = {
+			name = more_oil_pumps
+			months = 6
+			is_decaying = yes
+		}
+	}
+}
+
+je_oil_crisis_oil_supply_button_button_c = {  # Ration the Oil Supply
+	name = "je_oil_crisis_oil_supply_name_3"
+	desc = "je_oil_crisis_oil_supply_name_3_desc"
+
+	visible = { always = yes }
+
+	possible = {
+		NOT = {
+			has_modifier = ration_oil_supply
+		}
+	}
+
+	effect = {
+		change_variable = {
+			name = oil_crisis_oil_supply_var
+			add = 150
+		}
+		add_modifier = {
+			name = ration_oil_supply
+			months = 6
+			is_decaying = yes
+		}
+	}
+
+}
+
+je_oil_crisis_oil_supply_button_button_d = {  # Nationalize the Oil Production
+	name = "je_oil_crisis_oil_supply_name_4"
+	desc = "je_oil_crisis_oil_supply_name_4_desc"
+
+	visible = { always = yes }
+
+	possible = {
+		scope:journal_entry = {
+		NOT = {
+			custom_tooltip = {
+				text = oil_supply_nationalization_tt
+				has_variable = je_oil_supply_nationalization
+			}
+			}
+		}
+	}
+
+	effect = {
+		change_variable = {
+			name = oil_crisis_oil_supply_var
+			add = 500
+		}
+		hidden_effect= {
+			scope:journal_entry = {
+				set_variable = { name = je_oil_supply_nationalization }
+			}
+		}
+		add_technology_researched = oil_crisis_nationalization
+		activate_production_method = { 
+			building_type = building_oil_rig
+			production_method = pm_tno_oil_government_run_industry
+		}	
+}
+}
+
+je_oil_crisis_oil_supply_button_button_e = {  # Research new Technologies
+	name = "je_oil_crisis_oil_supply_name_5" 
+	desc = "je_oil_crisis_oil_supply_name_5_desc"
+
+	visible = { always = yes }
+
+	possible = {
+		NOT = {
+			OR = {
+			  has_technology_researched = combustion_engine
+			  has_technology_researched = nuclear_times
+			}
+		scope:journal_entry = {
+		  custom_tooltip = {
+			text = oil_supply_tt
+			has_variable = je_oil_supply_cooldown
+		}
+		}
+	}
+	}
+
+	effect = {
+		change_variable = {
+			name = oil_crisis_oil_supply_var
+			add = 50
+		}
+		scope:journal_entry = {
+			custom_tooltip = cooldown_three_months_oil_supply_tt
+			set_variable = { name = je_oil_supply_cooldown months = 3 }
+		}	
+		if = {
+         limit = {
+			NOT = {
+				has_technology_researched = combustion_engine
+			  }
+			 }
+			 add_technology_progress = { 
+				progress = 5000 technology = combustion_engine
+			}
+		}
+		if = {
+			limit = {
+			   NOT = {
+				   has_technology_researched = nuclear_times
+				 }
+				}
+				add_technology_progress = { 
+				   progress = 5000 technology = nuclear_times
+			   }
+		   }
 	}
 }

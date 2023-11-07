@@ -415,3 +415,21 @@ pm_tno_analytical_philosophy_department = {
 pm_no_artillery_production = {
 	texture = "gfx/interface/icons/production_method_icons/no_artillery_production.dds"
 }
+
+pm_tno_oil_government_run_industry = {
+	texture = "gfx/interface/icons/production_method_icons/government_run.dds"
+
+	unlocking_technologies = {
+		oil_crisis_nationalization
+	}
+	
+	building_modifiers = {
+		level_scaled = {
+			building_employment_bureaucrats_add = 120
+			building_employment_capitalists_add = 30
+		}
+		unscaled = {
+			building_government_shares_add = 0.7
+		}
+	}
+}
