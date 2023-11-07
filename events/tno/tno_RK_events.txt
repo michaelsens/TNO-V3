@@ -8,7 +8,7 @@ tno_RK_events.1 = { # baltic upriseing
     desc = tno_RK_events.1.d
     flavor = tno_RK_events.1.f 
     event_image = {
-        texture = "gfx/event_pictures/super_pictures/seg.4.dds"
+        texture = "gfx/event_pictures/event_pictures/ost_colapse.dds"
     }
 
     icon = "gfx/interface/icons/event_icons/event_fire.dds"
@@ -380,7 +380,7 @@ tno_RK_events.5 = { # batlic resistence recruits civilians
     flavor = tno_RK_events.5.f	
 
 	event_image = { 
-		texture  = "gfx/event_pictures/event_pictures/protestseg.dds"
+		texture  = "gfx/event_pictures/event_pictures/recruiting_ost.dds"
 	}
 
     icon = "gfx/interface/icons/tno_event_icons/bicorne_jim_crow_protest.2.dds"
@@ -420,23 +420,22 @@ tno_RK_events.5 = { # batlic resistence recruits civilians
 
         scope:arms_raid_state = {
             add_radicals_in_state = {
-                value = 0.03
+                value = 0.02
             }
         }
+
+		scope:arms_raid_state.state_region = {
+			add_devastation = 7
+  		}
         
 	}
     option = {
 		default_option = yes
         name = tno_RK_events.5.b
 
-        add_modifier = {
-            name = protesters_counterd
-            months = 7
-        } 
-
         scope:arms_raid_state = {
             add_radicals_in_state = {
-             value = 0.07
+             value = 0.01
                
             }
         }
@@ -602,7 +601,7 @@ tno_RK_events.7 = { # batlic forest base located
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 }
 
-tno_RK_events.8 = { # batlic forest base located
+tno_RK_events.8 = { #   base located
     type = country_event
     placement = ROOT
 
@@ -728,14 +727,13 @@ tno_RK_events.9 = { #  garrison attacked
 		default_option = no
         name = tno_RK_events.9.a
 
-        scope:arms_raid_state = {
-            add_radicals_in_state = {
-                value = 0.03
-            }
-        }
+        add_modifier = {
+            name = rebuilding_garrison_locals
+            months = 12
+        } 
 
 		scope:arms_raid_state.state_region = {
-			add_devastation = 10
+			add_devastation = 15
   		}
         
 	}
@@ -743,91 +741,14 @@ tno_RK_events.9 = { #  garrison attacked
 		default_option = yes
         name = tno_RK_events.9.b
 
-        add_modifier = {
-            name = protesters_counterd
-            months = 7
+		add_modifier = {
+            name = rebuilding_garrison_germans
+            months = 12
         } 
-
-        scope:arms_raid_state = {
-            add_radicals_in_state = {
-             value = 0.07
-               
-            }
-        }
 
 		scope:arms_raid_state.state_region = {
-			add_devastation = 10
+			add_devastation = 15
   		}
-	}
-
-	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
-}
-
-tno_RK_events.10 = { # batlic garrison attacked
-    type = country_event
-    placement = ROOT
-
-	title = tno_RK_events.10
-	desc = tno_RK_events.10.d
-    flavor = tno_RK_events.10.f	
-
-	event_image = { 
-		texture  = "gfx/event_pictures/event_pictures/protestseg.dds"
-	}
-
-    icon = "gfx/interface/icons/tno_event_icons/bicorne_jim_crow_protest.2.dds"
-	
-	trigger = {
-		this ?= c:RKO
-	}	
-
-    immediate = {
-        random_scope_state = {
-            save_scope_as = arms_raid_state
-            limit = {
-              OR = {
-                state_region = s:STATE_ESTONIA
-                state_region = s:STATE_LATVIA
-                state_region = s:STATE_LITHUANIA
-              }
-            }
-        }
-		
-		change_variable = {
-            name = chaos_ost_timer
-            add = 10
-        }
-
-    }
-	
-	duration = 1
-
-	option = {
-		default_option = yes
-        name = tno_RK_events.10.a
-
-        scope:arms_raid_state = {
-            add_radicals_in_state = {
-                value = 0.03
-            }
-        }
-        
-	}
-    option = {
-		default_option = yes
-        name = tno_RK_events.10.b
-
-        add_modifier = {
-            name = protesters_counterd
-            months = 7
-        } 
-
-        scope:arms_raid_state = {
-            add_radicals_in_state = {
-             value = 0.07
-               
-            }
-        }
 	}
 
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
