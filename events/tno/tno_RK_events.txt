@@ -241,6 +241,10 @@ tno_RK_events.3 = { # batlic attack on police station
                 state_region = s:STATE_ESTONIA
                 state_region = s:STATE_LATVIA
                 state_region = s:STATE_LITHUANIA
+				state_region = s:STATE_INGRIA
+				state_region = s:STATE_MINSK
+				state_region = s:STATE_BREST
+				state_region = s:STATE_ORSHA
               }
             }
         }
@@ -681,6 +685,80 @@ tno_RK_events.8 = { #   base located
 }
 
 tno_RK_events.9 = { #  garrison attacked
+    type = country_event
+    placement = ROOT
+
+	title = tno_RK_events.9
+	desc = tno_RK_events.9.d
+    flavor = tno_RK_events.9.f	
+
+	event_image = { 
+		texture  = "gfx/event_pictures/event_pictures/base_attacked_ost.dds"
+	}
+
+    icon = "gfx/interface/icons/tno_event_icons/bicorne_jim_crow_protest.2.dds"
+	
+	trigger = {
+		this ?= c:RKO
+	}	
+
+    immediate = {
+        random_scope_state = {
+            save_scope_as = arms_raid_state
+            limit = {
+              OR = {
+                state_region = s:STATE_ESTONIA
+                state_region = s:STATE_LATVIA
+                state_region = s:STATE_LITHUANIA
+				state_region = s:STATE_INGRIA
+				state_region = s:STATE_MINSK
+				state_region = s:STATE_BREST
+				state_region = s:STATE_ORSHA
+              }
+            }
+        }
+		
+		change_variable = {
+            name = chaos_ost_timer
+            add = 15
+        }
+
+    }
+	
+	duration = 1
+
+	option = {
+		default_option = no
+        name = tno_RK_events.9.a
+
+        add_modifier = {
+            name = rebuilding_garrison_locals
+            months = 12
+        } 
+
+		scope:arms_raid_state.state_region = {
+			add_devastation = 15
+  		}
+        
+	}
+    option = {
+		default_option = yes
+        name = tno_RK_events.9.b
+
+		add_modifier = {
+            name = rebuilding_garrison_germans
+            months = 12
+        } 
+
+		scope:arms_raid_state.state_region = {
+			add_devastation = 15
+  		}
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+}
+
+tno_RK_events.10 = { # German event for when OST ask for medium funding
     type = country_event
     placement = ROOT
 
