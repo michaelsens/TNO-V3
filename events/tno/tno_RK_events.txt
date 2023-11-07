@@ -150,7 +150,7 @@ tno_RK_events.2 = { # batlic arms raid
     flavor = tno_RK_events.2.f	
 
 	event_image = { 
-		texture  = "gfx/event_pictures/event_pictures/protestseg.dds"
+		texture  = "gfx/event_pictures/event_pictures/arms_raid.dds"
 	}
 
     icon = "gfx/interface/icons/tno_event_icons/bicorne_jim_crow_protest.2.dds"
@@ -167,6 +167,10 @@ tno_RK_events.2 = { # batlic arms raid
                 state_region = s:STATE_ESTONIA
                 state_region = s:STATE_LATVIA
                 state_region = s:STATE_LITHUANIA
+				state_region = s:STATE_INGRIA
+				state_region = s:STATE_MINSK
+				state_region = s:STATE_BREST
+				state_region = s:STATE_ORSHA
               }
             }
         }
@@ -186,26 +190,26 @@ tno_RK_events.2 = { # batlic arms raid
 
         scope:arms_raid_state = {
             add_radicals_in_state = {
-                value = 0.03
+                value = 0.02
             }
         }
+		scope:arms_raid_state.state_region = {
+			add_devastation = 35
+  		}
+
+		  add_modifier = {
+            name = harsh_reprisals
+            months = 12
+        } 
         
 	}
     option = {
 		default_option = yes
         name = tno_RK_events.2.b
 
-        add_modifier = {
-            name = protesters_counterd
-            months = 7
-        } 
-
-        scope:arms_raid_state = {
-            add_radicals_in_state = {
-             value = 0.07
-               
-            }
-        }
+		scope:arms_raid_state.state_region = {
+			add_devastation = 10
+  		}
 	}
 
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
@@ -214,13 +218,13 @@ tno_RK_events.2 = { # batlic arms raid
 tno_RK_events.3 = { # batlic attack on police station
     type = country_event
     placement = ROOT
-
+	
 	title = tno_RK_events.3
 	desc = tno_RK_events.3.d
     flavor = tno_RK_events.3.f	
 
 	event_image = { 
-		texture  = "gfx/event_pictures/event_pictures/protestseg.dds"
+		texture  = "gfx/event_pictures/event_pictures/baltic_police_attack.dds"
 	}
 
     icon = "gfx/interface/icons/tno_event_icons/bicorne_jim_crow_protest.2.dds"
@@ -243,7 +247,7 @@ tno_RK_events.3 = { # batlic attack on police station
 		
 		change_variable = {
             name = chaos_ost_timer
-            add = 2
+            add = 7
         }
 
     }
@@ -251,14 +255,17 @@ tno_RK_events.3 = { # batlic attack on police station
 	duration = 1
 
 	option = {
-		default_option = yes
+		default_option = no
         name = tno_RK_events.3.a
 
-        scope:arms_raid_state = {
-            add_radicals_in_state = {
-                value = 0.03
-            }
-        }
+        add_modifier = {
+            name = bloated_locals_recurited
+            months = 17
+        } 
+
+		scope:arms_raid_state.state_region = {
+			add_devastation = 5
+  		}
         
 	}
     option = {
@@ -266,13 +273,22 @@ tno_RK_events.3 = { # batlic attack on police station
         name = tno_RK_events.3.b
 
         add_modifier = {
-            name = protesters_counterd
-            months = 7
+            name = modifier_germans_reinforce
+            months = 12
         } 
+
+		change_variable = {
+            name = chaos_ost_timer
+            add = 2
+        }
+
+		scope:arms_raid_state.state_region = {
+			add_devastation = 5
+  		}
 
         scope:arms_raid_state = {
             add_radicals_in_state = {
-             value = 0.07
+             value = 0.05
                
             }
         }
@@ -290,7 +306,7 @@ tno_RK_events.4 = { # batlic IED attack
     flavor = tno_RK_events.4.f	
 
 	event_image = { 
-		texture  = "gfx/event_pictures/event_pictures/protestseg.dds"
+		texture  = "gfx/event_pictures/event_pictures/ied_attack.dds"
 	}
 
     icon = "gfx/interface/icons/tno_event_icons/bicorne_jim_crow_protest.2.dds"
@@ -300,20 +316,24 @@ tno_RK_events.4 = { # batlic IED attack
 	}	
 
     immediate = {
-        random_scope_state = {
+		random_scope_state = {
             save_scope_as = arms_raid_state
             limit = {
               OR = {
                 state_region = s:STATE_ESTONIA
                 state_region = s:STATE_LATVIA
                 state_region = s:STATE_LITHUANIA
+				state_region = s:STATE_INGRIA
+				state_region = s:STATE_MINSK
+				state_region = s:STATE_BREST
+				state_region = s:STATE_ORSHA
               }
             }
         }
 		
 		change_variable = {
             name = chaos_ost_timer
-            add = 2
+            add = 5
         }
 
     }
@@ -321,14 +341,17 @@ tno_RK_events.4 = { # batlic IED attack
 	duration = 1
 
 	option = {
-		default_option = yes
+		default_option = no
         name = tno_RK_events.4.a
 
-        scope:arms_raid_state = {
-            add_radicals_in_state = {
-                value = 0.03
-            }
-        }
+		add_modifier = {
+            name = wont_fund_op
+            months = 12
+        } 
+
+		scope:arms_raid_state.state_region = {
+			add_devastation = 5
+  		}
         
 	}
     option = {
@@ -336,16 +359,13 @@ tno_RK_events.4 = { # batlic IED attack
         name = tno_RK_events.4.b
 
         add_modifier = {
-            name = protesters_counterd
-            months = 7
+            name = funding_operation
+            months = 12
         } 
 
-        scope:arms_raid_state = {
-            add_radicals_in_state = {
-             value = 0.07
-               
-            }
-        }
+		scope:arms_raid_state.state_region = {
+			add_devastation = 5
+  		}
 	}
 
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
@@ -377,6 +397,10 @@ tno_RK_events.5 = { # batlic resistence recruits civilians
                 state_region = s:STATE_ESTONIA
                 state_region = s:STATE_LATVIA
                 state_region = s:STATE_LITHUANIA
+				state_region = s:STATE_INGRIA
+				state_region = s:STATE_MINSK
+				state_region = s:STATE_BREST
+				state_region = s:STATE_ORSHA
               }
             }
         }
@@ -430,7 +454,7 @@ tno_RK_events.6 = { # batlic protest for freedom and remform
     flavor = tno_RK_events.6.f	
 
 	event_image = { 
-		texture  = "gfx/event_pictures/event_pictures/protestseg.dds"
+		texture  = "gfx/event_pictures/event_pictures/student_protest_armed_ost.dds"
 	}
 
     icon = "gfx/interface/icons/tno_event_icons/bicorne_jim_crow_protest.2.dds"
@@ -447,9 +471,14 @@ tno_RK_events.6 = { # batlic protest for freedom and remform
                 state_region = s:STATE_ESTONIA
                 state_region = s:STATE_LATVIA
                 state_region = s:STATE_LITHUANIA
+				state_region = s:STATE_INGRIA
+				state_region = s:STATE_MINSK
+				state_region = s:STATE_BREST
+				state_region = s:STATE_ORSHA
               }
             }
         }
+
 		
 		change_variable = {
             name = chaos_ost_timer
@@ -470,22 +499,30 @@ tno_RK_events.6 = { # batlic protest for freedom and remform
             }
         }
         
+		add_modifier = {
+            name = protesters_allowed
+            months = 12
+        } 
 	}
     option = {
 		default_option = yes
         name = tno_RK_events.6.b
 
         add_modifier = {
-            name = protesters_counterd
-            months = 7
+            name = protesters_killed
+            months = 12
         } 
 
         scope:arms_raid_state = {
             add_radicals_in_state = {
-             value = 0.07
+             value = 0.05
                
             }
         }
+
+		scope:arms_raid_state.state_region = {
+			add_devastation = 5
+  		}
 	}
 
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
@@ -510,13 +547,17 @@ tno_RK_events.7 = { # batlic forest base located
 	}	
 
     immediate = {
-        random_scope_state = {
+		random_scope_state = {
             save_scope_as = arms_raid_state
             limit = {
               OR = {
                 state_region = s:STATE_ESTONIA
                 state_region = s:STATE_LATVIA
                 state_region = s:STATE_LITHUANIA
+				state_region = s:STATE_INGRIA
+				state_region = s:STATE_MINSK
+				state_region = s:STATE_BREST
+				state_region = s:STATE_ORSHA
               }
             }
         }
@@ -570,7 +611,7 @@ tno_RK_events.8 = { # batlic forest base located
     flavor = tno_RK_events.8.f	
 
 	event_image = { 
-		texture  = "gfx/event_pictures/event_pictures/protestseg.dds"
+		texture  = "gfx/event_pictures/event_pictures/baltic_forest_attack.dds"
 	}
 
     icon = "gfx/interface/icons/tno_event_icons/bicorne_jim_crow_protest.2.dds"
@@ -580,83 +621,17 @@ tno_RK_events.8 = { # batlic forest base located
 	}	
 
     immediate = {
-        random_scope_state = {
+		random_scope_state = {
             save_scope_as = arms_raid_state
             limit = {
               OR = {
                 state_region = s:STATE_ESTONIA
                 state_region = s:STATE_LATVIA
                 state_region = s:STATE_LITHUANIA
-              }
-            }
-        }
-		
-		change_variable = {
-            name = chaos_ost_timer
-            add = 2
-        }
-
-    }
-	
-	duration = 1
-
-	option = {
-		default_option = yes
-        name = tno_RK_events.8.a
-
-        scope:arms_raid_state = {
-            add_radicals_in_state = {
-                value = 0.03
-            }
-        }
-        
-	}
-    option = {
-		default_option = yes
-        name = tno_RK_events.8.b
-
-        add_modifier = {
-            name = protesters_counterd
-            months = 7
-        } 
-
-        scope:arms_raid_state = {
-            add_radicals_in_state = {
-             value = 0.07
-               
-            }
-        }
-	}
-
-	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
-}
-
-tno_RK_events.9 = { # batlic garrison attacked
-    type = country_event
-    placement = ROOT
-
-	title = tno_RK_events.9
-	desc = tno_RK_events.9.d
-    flavor = tno_RK_events.9.f	
-
-	event_image = { 
-		texture  = "gfx/event_pictures/event_pictures/protestseg.dds"
-	}
-
-    icon = "gfx/interface/icons/tno_event_icons/bicorne_jim_crow_protest.2.dds"
-	
-	trigger = {
-		this ?= c:RKO
-	}	
-
-    immediate = {
-        random_scope_state = {
-            save_scope_as = arms_raid_state
-            limit = {
-              OR = {
-                state_region = s:STATE_ESTONIA
-                state_region = s:STATE_LATVIA
-                state_region = s:STATE_LITHUANIA
+				state_region = s:STATE_INGRIA
+				state_region = s:STATE_MINSK
+				state_region = s:STATE_BREST
+				state_region = s:STATE_ORSHA
               }
             }
         }
@@ -672,6 +647,85 @@ tno_RK_events.9 = { # batlic garrison attacked
 
 	option = {
 		default_option = yes
+        name = tno_RK_events.8.a
+
+		add_modifier = {
+            name = focus_on_intel
+            months = 12
+        } 
+
+        scope:arms_raid_state = {
+            add_radicals_in_state = {
+                value = 0.01
+            }
+        }
+        
+	}
+    option = {
+		default_option = yes
+        name = tno_RK_events.8.b
+
+        add_modifier = {
+            name = killed_all
+            months = 12
+        } 
+
+        scope:arms_raid_state = {
+            add_radicals_in_state = {
+             value = 0.06
+               
+            }
+        }
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+}
+
+tno_RK_events.9 = { #  garrison attacked
+    type = country_event
+    placement = ROOT
+
+	title = tno_RK_events.9
+	desc = tno_RK_events.9.d
+    flavor = tno_RK_events.9.f	
+
+	event_image = { 
+		texture  = "gfx/event_pictures/event_pictures/base_attacked_ost.dds"
+	}
+
+    icon = "gfx/interface/icons/tno_event_icons/bicorne_jim_crow_protest.2.dds"
+	
+	trigger = {
+		this ?= c:RKO
+	}	
+
+    immediate = {
+        random_scope_state = {
+            save_scope_as = arms_raid_state
+            limit = {
+              OR = {
+                state_region = s:STATE_ESTONIA
+                state_region = s:STATE_LATVIA
+                state_region = s:STATE_LITHUANIA
+				state_region = s:STATE_INGRIA
+				state_region = s:STATE_MINSK
+				state_region = s:STATE_BREST
+				state_region = s:STATE_ORSHA
+              }
+            }
+        }
+		
+		change_variable = {
+            name = chaos_ost_timer
+            add = 15
+        }
+
+    }
+	
+	duration = 1
+
+	option = {
+		default_option = no
         name = tno_RK_events.9.a
 
         scope:arms_raid_state = {
@@ -679,6 +733,10 @@ tno_RK_events.9 = { # batlic garrison attacked
                 value = 0.03
             }
         }
+
+		scope:arms_raid_state.state_region = {
+			add_devastation = 10
+  		}
         
 	}
     option = {
@@ -696,6 +754,10 @@ tno_RK_events.9 = { # batlic garrison attacked
                
             }
         }
+
+		scope:arms_raid_state.state_region = {
+			add_devastation = 10
+  		}
 	}
 
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
