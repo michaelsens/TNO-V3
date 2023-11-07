@@ -2531,13 +2531,6 @@ fra_clear_divided_monarchist_variables = { #Clears all variables, to save memory
 	remove_variable = ig_weight 
 }
 
-fra_freeze_divided_monarchist_progress = { #Used upon initiation of cement_the_rightful_dynasty, to prevent the bars from excessively accumulating.
-	set_variable = fra_divided_monarchists_freeze
-	set_variable = { name = bonapartist_progress_next value = 0 }
-	set_variable = { name = orleanist_progress_next value = 0 }
-	set_variable = { name = legitimist_progress_next value = 0 }
-}
-
 fra_define_leading_dynasty = { #This scripted effect determines which dynasty is the most powerful one, and sets fra_leading_dynasty_progress to be equal to that dynasty's progress variable. This allows the bar to work, and much easier calculation to take place.
 	if = {
 		limit = {
