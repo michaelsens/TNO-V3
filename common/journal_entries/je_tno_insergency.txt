@@ -4,12 +4,17 @@ je_tno_insergency_ost = { # ostland insurgency
 
     scripted_button = je_insur_ost_a
     scripted_button = je_insur_ost_b
+	scripted_button = je_insur_ost_c
+	scripted_button = je_insur_ost_d
+	scripted_button = je_insur_ost_e
+	scripted_button = je_insur_ost_f
+	scripted_button = je_insur_ost_g
 
     immediate = {
 
 		set_variable = {
 			name = chaos_ost_timer
-			value = 0
+			value = 3
 		}
 	}
     
@@ -54,6 +59,45 @@ je_tno_insergency_ost = { # ostland insurgency
     
     weight = 100
 
+    should_be_pinned_by_default = yes
+    
+}
+
+je_tno_request_funding_ost = { 
+
+    icon = "gfx/interface/icons/new_event_icons/event_hollywood.dds"
+
+    scripted_button = je_funding_a
+    scripted_button = je_funding_b
+    scripted_button = je_funding_c
+   
+
+    immediate = {
+	}
+    
+    complete = {
+	}
+
+    on_complete = {
+    }
+
+    on_monthly_pulse = {
+    }
+
+    current_value = {
+		
+	}
+
+
+    goal_add_value = {
+		
+	}
+
+    progressbar = no
+    
+    weight = 100
+
+    
     should_be_pinned_by_default = yes
     
 }
