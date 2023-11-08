@@ -1431,37 +1431,7 @@ ai_strategy_default = {
 				}
 				add = -50
 			}				
-		}				
-		region_north_germany = {
-			if = {
-				limit = {
-					country_is_in_europe = yes
-					country_rank >= rank_value:great_power
-				}
-				add = 100
-			}
-			if = {
-				limit = {
-					has_journal_entry = je_german_unification
-				}
-				add = 1000
-			}			
-		}
-		region_south_germany = {
-			if = {
-				limit = {
-					country_is_in_europe = yes
-					country_rank >= rank_value:great_power
-				}
-				add = 100
-			}
-			if = {
-				limit = {
-					has_journal_entry = je_german_unification
-				}
-				add = 1000
-			}				
-		}		
+		}					
 		region_italy = {
 			if = {
 				limit = {
@@ -2970,46 +2940,6 @@ ai_strategy_default = {
 			}
 
 		
-			
-			if = { #Do Not Take Chinese States In Full, unless another power has already done so
-				limit = {
-					country_rank >= rank_value:major_power
-					scope:target_state = {
-						owner = { has_journal_entry = je_warlord_china }
-						OR = {
-							region = sr:region_north_china
-							region = sr:region_south_china
-							region = sr:region_manchuria
-						}
-					}				
-					OR = {
-						country_is_in_north_america = yes
-						country_is_in_europe = yes
-						country_is_in_south_america = yes
-					}					
-					NOT = {
-						any_country = {
-							NOT = { THIS = ROOT }
-							country_rank >= rank_value:major_power
-							OR = {
-								country_is_in_north_america = yes
-								country_is_in_europe = yes
-								country_is_in_south_america = yes
-							}
-							any_scope_state = {
-								NOT = { is_treaty_port = yes }
-								OR = {
-									region = sr:region_north_china
-									region = sr:region_south_china
-									region = sr:region_manchuria
-								}
-							}
-						}					
-					}
-				}
-				multiply = 0
-			}
-			
 			
 			min = 0
 			max = 100			
