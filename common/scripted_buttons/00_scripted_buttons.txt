@@ -127,8 +127,8 @@ je_insur_ost_b = {
 }
 
 je_funding_a = {  #small funding
-	name = "je_glorify_military" 
-	desc = "je_glorify_military_desc"
+	name = "Request small amount of funding " 
+	desc = "We will request a small amount of funding from Germany"
 
 	visible = { always = yes }
 
@@ -136,7 +136,7 @@ je_funding_a = {  #small funding
 		scope:journal_entry = {
 				not = {
 				custom_tooltip = {
-					text = cooldown_hollywood
+					text = "Has not requested funding in the last 12 months"
 					has_variable = je_funding_cooldown
 				}
 			}
@@ -148,13 +148,17 @@ je_funding_a = {  #small funding
 		scope:journal_entry = {
 			set_variable = { name = je_funding_cooldown months = 12  }
 		}	
-		add_modifier = {
-			name = small_funding_ost
-			months = 12
-		} 
-	}
+		custom_tooltip = {
+			text = "We will ask Germany for money"
+	
+		}
+		hidden_effect = {
+			c:GER = {
+				trigger_event = { id = tno_RK_events.10 days = 0 popup = yes }
+			} 
+		}
 }
-
+}
 je_hollywood_a = { #start of hollywood movies ###############################################################
 	name = "je_glorify_military" #glorify millitary
 	desc = "je_glorify_military_desc"
