@@ -1,6 +1,8 @@
 je_tno_insergency_ost = { # ostland insurgency
 
     icon = "gfx/interface/icons/new_event_icons/event_ost_insur.dds"
+    
+  
 
     scripted_button = je_insur_ost_a
     scripted_button = je_insur_ost_b
@@ -13,15 +15,22 @@ je_tno_insergency_ost = { # ostland insurgency
     immediate = {
 
 		set_variable = {
+            
 			name = chaos_ost_timer
 			value = 0
 		}
+        ig_armed_forces = {
+	
+			save_scope_as = coup_ig
+	
+        }
 	}
     
     complete = {
 		scope:journal_entry = {
 			is_goal_complete = yes
 		}
+
 	}
 
     on_complete = {
@@ -34,6 +43,59 @@ je_tno_insergency_ost = { # ostland insurgency
 				name = chaos_ost_timer
 				add = 0.5
 			}
+            if = {
+                scope:coup_ig = {
+                    OR = {
+                        ig_approval > 0
+                    }
+                }
+            change_variable = {
+                name = chaos_ost_timer
+                add = -0.5
+            }
+        }
+        if = {
+            scope:coup_ig = {
+                OR = {
+                    ig_approval > 5
+                }
+            }
+        change_variable = {
+            name = chaos_ost_timer
+            add = -2
+        }
+        }
+        if = {
+            scope:coup_ig = {
+                OR = {
+                    ig_approval > 10
+                }
+            }
+        change_variable = {
+            name = chaos_ost_timer
+            add = -5
+        }
+        }
+        if = {
+                scope:coup_ig = {
+
+                    ig_approval < 0
+                }
+            change_variable = {
+                name = chaos_ost_timer
+                add = 4
+            }
+        }
+        if = {
+            scope:coup_ig = {
+
+                ig_approval < 0
+            }
+        change_variable = {
+            name = chaos_ost_timer
+            add = 4
+        }
+    }
 		}
 		random_events = {
             20 = 0
@@ -47,11 +109,15 @@ je_tno_insergency_ost = { # ostland insurgency
         }
     }
 
+    
+
     current_value = {
+        
 		value = root.var:chaos_ost_timer
 	}
 
     goal_add_value = {
+        
 		value = 150
 	}
 
@@ -62,6 +128,7 @@ je_tno_insergency_ost = { # ostland insurgency
     should_be_pinned_by_default = yes
     
 }
+
 
 je_tno_request_funding_ost = { 
 
