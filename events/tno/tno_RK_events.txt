@@ -767,10 +767,10 @@ tno_RK_events.10 = { # German event for when OST ask for small funding
     flavor = tno_RK_events.10.f	
 
 	event_image = { 
-		texture  = "gfx/event_pictures/event_pictures/base_attacked_ost.dds"
+		texture  = "gfx/event_pictures/event_pictures/ost_money.dds"
 	}
 
-    icon = "gfx/interface/icons/tno_event_icons/bicorne_jim_crow_protest.2.dds"
+    icon = "gfx/interface/icons/tno_event_icons/gold.dds"
 	
 	trigger = {
 		this ?= c:GER
@@ -787,6 +787,12 @@ tno_RK_events.10 = { # German event for when OST ask for small funding
             name = very_small_funding_ger
             months = 12
         } 
+			c:RKO = {
+				add_modifier = {
+					name = very_small_funding_ost
+					months = 12
+				} 
+			} 
 
 	}
 	option = { #small funding
@@ -797,6 +803,14 @@ tno_RK_events.10 = { # German event for when OST ask for small funding
             name = small_funding_ger
             months = 12
         } 
+
+		c:RKO = {
+			add_modifier = {
+				name = small_funding_ost
+				months = 12
+			} 
+		} 
+
 	}
     option = { #medium funding
 		default_option = no
@@ -807,15 +821,31 @@ tno_RK_events.10 = { # German event for when OST ask for small funding
             months = 12
         } 
 
+		c:RKO = {
+			add_modifier = {
+				name = mid_funding_ost
+				months = 12
+			} 
+		} 
+
+
 	}
 	option = { #large funding
 		default_option = no
-		name = tno_RK_events.10.d
+		name = tno_RK_events.10.dd
 
 		add_modifier = {
             name = large_funding_ger
             months = 12
         } 
+
+		c:RKO = {
+			add_modifier = {
+				name = large_funding_ost
+				months = 12
+			} 
+		} 
+
 	}
 
 	
@@ -896,3 +926,194 @@ tno_RK_events.11 = { # skirmish in local state
 
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 }
+
+tno_RK_events.12 = { # German event for when OST ask for mid funding
+    type = country_event
+    placement = ROOT
+
+	title = tno_RK_events.10
+	desc = tno_RK_events.10.d
+    flavor = tno_RK_events.10.f	
+
+	event_image = { 
+		texture  = "gfx/event_pictures/event_pictures/ost_money.dds"
+	}
+
+    icon = "gfx/interface/icons/tno_event_icons/gold.dds"
+	
+	trigger = {
+		this ?= c:GER
+	}	
+
+    
+	duration = 5
+
+	option = { # very small funding
+		default_option = no
+        name = tno_RK_events.10.a
+
+		add_modifier = {
+            name = very_small_funding_ger
+            months = 12
+        } 
+			c:RKO = {
+				add_modifier = {
+					name = very_small_funding_ost
+					months = 12
+				} 
+			} 
+
+	}
+	option = { #small funding
+		default_option = no
+        name = tno_RK_events.10.b
+
+		add_modifier = {
+            name = small_funding_ger
+            months = 12
+        } 
+
+		c:RKO = {
+			add_modifier = {
+				name = small_funding_ost
+				months = 12
+			} 
+		} 
+
+	}
+    option = { #medium funding
+		default_option = yes
+        name = tno_RK_events.10.c
+
+		add_modifier = {
+            name = mid_funding_ger
+            months = 12
+        } 
+
+		c:RKO = {
+			add_modifier = {
+				name = mid_funding_ost
+				months = 12
+			} 
+		} 
+
+
+	}
+	option = { #large funding
+		default_option = no
+		name = tno_RK_events.10.dd
+
+		add_modifier = {
+            name = large_funding_ger
+            months = 12
+        } 
+
+		c:RKO = {
+			add_modifier = {
+				name = large_funding_ost
+				months = 12
+			} 
+		} 
+
+	}
+
+	
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+}
+
+tno_RK_events.13 = { # German event for when OST ask for large funding
+    type = country_event
+    placement = ROOT
+
+	title = tno_RK_events.10
+	desc = tno_RK_events.10.d
+    flavor = tno_RK_events.10.f	
+
+	event_image = { 
+		texture  = "gfx/event_pictures/event_pictures/ost_money.dds"
+	}
+
+    icon = "gfx/interface/icons/tno_event_icons/gold.dds"
+	
+	trigger = {
+		this ?= c:GER
+	}	
+
+    
+	duration = 5
+
+	option = { # very small funding
+		default_option = no
+        name = tno_RK_events.10.a
+
+		add_modifier = {
+            name = very_small_funding_ger
+            months = 12
+        } 
+			c:RKO = {
+				add_modifier = {
+					name = very_small_funding_ost
+					months = 12
+				} 
+			} 
+
+	}
+	option = { #small funding
+		default_option = no
+        name = tno_RK_events.10.b
+
+		add_modifier = {
+            name = small_funding_ger
+            months = 12
+        } 
+
+		c:RKO = {
+			add_modifier = {
+				name = small_funding_ost
+				months = 12
+			} 
+		} 
+
+	}
+    option = { #medium funding
+		default_option = no
+        name = tno_RK_events.10.c
+
+		add_modifier = {
+            name = mid_funding_ger
+            months = 12
+        } 
+
+		c:RKO = {
+			add_modifier = {
+				name = mid_funding_ost
+				months = 12
+			} 
+		} 
+
+
+	}
+	option = { #large funding
+		default_option = yes
+		name = tno_RK_events.10.dd
+
+		add_modifier = {
+            name = large_funding_ger
+            months = 12
+        } 
+
+		c:RKO = {
+			add_modifier = {
+				name = large_funding_ost
+				months = 12
+			} 
+		} 
+
+	}
+
+	
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+}
+

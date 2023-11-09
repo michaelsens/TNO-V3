@@ -159,6 +159,73 @@ je_funding_a = {  #small funding
 		}
 }
 }
+je_funding_b = {  #mid funding
+	name = "Request a medium amount of funding " 
+	desc = "We will request a small amount of funding from Germany"
+
+	visible = { always = yes }
+
+	possible = {
+		scope:journal_entry = {
+				not = {
+				custom_tooltip = {
+					text = "Has not requested funding in the last 12 months"
+					has_variable = je_funding_cooldown
+				}
+			}
+		}
+	}
+
+	effect = {
+
+		scope:journal_entry = {
+			set_variable = { name = je_funding_cooldown months = 12  }
+		}	
+		custom_tooltip = {
+			text = "We will ask Germany for money"
+	
+		}
+		hidden_effect = {
+			c:GER = {
+				trigger_event = { id = tno_RK_events.10 days = 0 popup = yes }
+			} 
+		}
+}
+}
+je_funding_c = {  #large funding
+	name = "Request a large amount of funding " 
+	desc = "We will request a small amount of funding from Germany"
+
+	visible = { always = yes }
+
+	possible = {
+		scope:journal_entry = {
+				not = {
+				custom_tooltip = {
+					text = "Has not requested funding in the last 12 months"
+					has_variable = je_funding_cooldown
+				}
+			}
+		}
+	}
+
+	effect = {
+
+		scope:journal_entry = {
+			set_variable = { name = je_funding_cooldown months = 12  }
+		}	
+		custom_tooltip = {
+			text = "We will ask Germany for money"
+	
+		}
+		hidden_effect = {
+			c:GER = {
+				trigger_event = { id = tno_RK_events.10 days = 0 popup = yes }
+			} 
+		}
+}
+}
+
 je_hollywood_a = { #start of hollywood movies ###############################################################
 	name = "je_glorify_military" #glorify millitary
 	desc = "je_glorify_military_desc"
