@@ -1,1 +1,103 @@
-﻿
+﻿helping_war = {
+	requires_approval = yes
+	show_confirmation_box = yes
+
+	possible = {
+		scope:target_country = { 
+			is_at_war = yes
+			NOT = { is_diplomatic_play_enemy_of = ROOT }
+		}
+		scope:target_country = {
+			NOT = {
+				has_diplomatic_pact = {
+					who = root
+					type = rivalry
+				}					
+			}					
+		}
+		root = {
+			NOT = {
+				has_diplomatic_pact = {
+					who = scope:target_country
+					type = rivalry
+				}					
+			}					
+		}
+		has_diplomatic_relevance = scope:target_country
+	}
+	
+	accept_effect = {
+		
+		scope:target_country = {
+		trigger_event = { id = tno_war_help.1 popup = yes }
+		}
+	}
+	
+	pact = {	
+		cost = 200
+		is_two_sided_pact = no
+		show_in_outliner = yes
+		
+		relations_progress_per_day = 3  #at 100, +1 relations
+		relations_improvement_max = 80
+		
+		income_transfer = 0.10
+		recipient_gets_income_transfer = yes
+		income_transfer_based_on_recipient = yes
+
+		should_auto_break = {
+			scope:target_country = { 
+				is_at_war = no
+			}
+		}	
+	}
+	
+	ai = {
+		propose_score = {
+		value = 10
+		}	
+
+		will_propose = { 
+			always = no
+		}
+	}
+}
+
+more_war_help = {
+	requires_approval = yes
+	possible = {
+		scope:target_country = { 
+			is_at_war = yes
+			NOT = { is_diplomatic_play_enemy_of = ROOT }
+		}
+		scope:target_country = {
+			NOT = {
+				has_diplomatic_pact = {
+					who = root
+					type = rivalry
+				}					
+			}					
+		}
+		scope:target_country = {
+			has_modifier = volunteers
+				}					
+			has_diplomatic_relevance = scope:target_country
+		}					
+	 
+		accept_effect = {
+			scope:target_country = {
+				trigger_event = { id = tno_war_help.3 popup = yes }
+				add_treasury = 50000
+			}
+		}
+			   
+	ai = {
+			propose_score = {
+			value = 10
+			}	
+	
+			will_propose = { 
+				always = no
+			}
+		}
+	}

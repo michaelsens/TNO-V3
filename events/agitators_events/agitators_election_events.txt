@@ -27,9 +27,6 @@ agitators_election_events.1 = {
 		in_election_campaign = yes
 		any_scope_character = {
 			has_role = agitator
-			NOT = {
-				has_variable = agitator_election_participation
-			}
 		}
 	}
 
@@ -47,9 +44,6 @@ agitators_election_events.1 = {
 
 	immediate = {
 		save_agitator_election_scopes = yes
-		scope:agitator_scope = {
-			set_variable = { name = agitator_election_participation days = 180 }
-		}
 	}
 	
 	option = {
@@ -102,9 +96,6 @@ agitators_election_events.2 = {
 		in_election_campaign = yes
 		any_scope_character = {
 			has_role = agitator
-			NOT = {
-				has_variable = agitator_election_participation
-			}
 			save_temporary_scope_as = first_agitator
 		}
 		OR = {
@@ -286,9 +277,6 @@ agitators_election_events.2 = {
 	
 	immediate = {
 		save_agitator_election_scopes = yes
-		scope:agitator_scope = {
-			set_variable = { name = agitator_election_participation days = 180 }
-		}
 		random_scope_character = {
 			limit = {	
 				has_role = agitator
@@ -525,9 +513,6 @@ agitators_election_events.3 = {
 		in_election_campaign = yes
 		any_scope_character = {
 			has_role = agitator
-			NOT = {
-				has_variable = agitator_election_participation
-			}
 			OR = {
 				has_socialist_ideology = yes
 				has_ideology = ideology:ideology_radical
@@ -558,9 +543,6 @@ agitators_election_events.3 = {
 				}
 			}
 			save_scope_as = agitator_scope
-		}
-		scope:agitator_scope = {
-			set_variable = { name = agitator_election_participation days = 180 }
 		}
 		save_agitator_election_scopes = yes
 	}
@@ -664,9 +646,6 @@ agitators_election_events.4 = {
 		}
 		any_scope_character = {
 			has_role = agitator
-			NOT = {
-				has_variable = agitator_election_participation
-			}
 		}
 	}
 
@@ -696,9 +675,6 @@ agitators_election_events.4 = {
 				}
 			}
 			save_scope_as = opposition_party_scope
-		}
-		scope:agitator_scope = {
-			set_variable = { name = agitator_election_participation days = 180 }
 		}
 	}
 	
@@ -749,9 +725,6 @@ agitators_election_events.5 = {
 			has_party = yes
 			any_scope_character = {	
 				has_role = agitator
-				NOT = {
-					has_variable = agitator_election_participation
-				}
 			}
 			leader = {
 				OR = {
@@ -781,9 +754,6 @@ agitators_election_events.5 = {
 			leader = {
 				save_scope_as = agitator_ig_leader_scope
 			}
-		}
-		scope:agitator_scope = {
-			set_variable = { name = agitator_election_participation days = 180 }
 		}
 	}
 	
@@ -866,9 +836,6 @@ agitators_election_events.6 = {
 		has_law = law_type:law_womens_suffrage
 		any_scope_character = {
 			has_role = agitator
-			NOT = {
-				has_variable = agitator_election_participation
-			}
 			OR = {
 				law_stance = {
 					law = law_type:law_womens_suffrage
@@ -944,9 +911,6 @@ agitators_election_events.6 = {
 			save_scope_as = agitator_scope
 		}
 		save_agitator_election_scopes = yes
-		scope:agitator_scope = {
-			set_variable = { name = agitator_election_participation days = 180 }
-		}
 	}
 	
 	option = {
@@ -1000,9 +964,6 @@ agitators_election_events.7 = {
 		in_election_campaign = yes
 		any_scope_character = {
 			has_role = agitator
-			NOT = {
-				has_variable = agitator_election_participation
-			}
 		}
 	}
 
@@ -1020,9 +981,6 @@ agitators_election_events.7 = {
 	
 	immediate = {
 		save_agitator_election_scopes = yes
-		scope:agitator_scope = {
-			set_variable = { name = agitator_election_participation days = 180 }
-		}
 	}
 	
 	option = {
@@ -1077,56 +1035,11 @@ agitators_election_events.8 = {
 		in_election_campaign = yes
 		any_scope_character = {
 			has_role = agitator
-			NOT = {
-				has_variable = agitator_election_participation
-			}
 			this.interest_group = {
 				has_party = yes
 				this.party = {
 					any_member = {
 						count >= 2
-					}
-				}
-			}
-			OR = {
-				AND = {
-					has_socialist_ideology = yes
-					this.interest_group = {
-						leader = {
-							has_socialist_ideology = yes
-						}
-					}
-				}
-				AND = {
-					has_progressive_ideology = yes
-					this.interest_group = {
-						leader = {
-							has_progressive_ideology = yes
-						}
-					}
-				}
-				AND = {
-					has_liberal_ideology = yes
-					this.interest_group = {
-						leader = {
-							has_liberal_ideology = yes
-						}
-					}
-				}
-				AND = {
-					has_reactionary_ideology = yes
-					this.interest_group = {
-						leader = {
-							has_reactionary_ideology = yes
-						}
-					}
-				}
-				AND = {
-					has_conservative_ideology = yes
-					this.interest_group = {
-						leader = {
-							has_conservative_ideology = yes
-						}
 					}
 				}
 			}
@@ -1146,67 +1059,7 @@ agitators_election_events.8 = {
 	}
 	
 	immediate = {
-		random_scope_character = {
-			limit = {
-				has_role = agitator
-				this.interest_group = {
-					has_party = yes
-					this.party = {
-						any_member = {
-							count >= 2
-						}
-					}
-				}
-				OR = {
-					AND = {
-						has_socialist_ideology = yes
-						this.interest_group = {
-							leader = {
-								has_socialist_ideology = yes
-							}
-						}
-					}
-					AND = {
-						has_progressive_ideology = yes
-						this.interest_group = {
-							leader = {
-								has_progressive_ideology = yes
-							}
-						}
-					}
-					AND = {
-						has_liberal_ideology = yes
-						this.interest_group = {
-							leader = {
-								has_liberal_ideology = yes
-							}
-						}
-					}
-					AND = {
-						has_reactionary_ideology = yes
-						this.interest_group = {
-							leader = {
-								has_reactionary_ideology = yes
-							}
-						}
-					}
-					AND = {
-						has_conservative_ideology = yes
-						this.interest_group = {
-							leader = {
-								has_conservative_ideology = yes
-							}
-						}
-					}
-				}
-			}
-			this.interest_group = {
-				save_scope_as = agitator_ig_scope
-				party = {
-					save_scope_as = agitator_party_scope
-				}
-			}
-		}
+		save_agitator_election_scopes = yes
 		scope:agitator_party_scope = {
 			random_member = {
 				limit = {
@@ -1216,9 +1069,6 @@ agitators_election_events.8 = {
 				}
 				save_scope_as = snubbed_ig_scope
 			}
-		}
-		scope:agitator_scope = {
-			set_variable = { name = agitator_election_participation days = 180 }
 		}
 	}
 	
@@ -1284,9 +1134,6 @@ agitators_election_events.9 = {
 		in_election_campaign = yes
 		any_scope_character = {
 			has_role = agitator
-			NOT = {
-				has_variable = agitator_election_participation
-			}
 			OR = {
 				law_stance = {
 					law = law_type:law_census_voting
@@ -1359,9 +1206,6 @@ agitators_election_events.9 = {
 			save_scope_as = agitator_scope
 		}
 		save_agitator_election_scopes = yes
-		scope:agitator_scope = {
-			set_variable = { name = agitator_election_participation days = 180 }
-		}
 	}
 	
 	option = {
@@ -1412,9 +1256,6 @@ agitators_election_events.10 = {
 		in_election_campaign = yes
 		any_scope_character = {
 			has_role = agitator
-			NOT = {
-				has_variable = agitator_election_participation
-			}
 		}
 		any_scope_state = {
 			is_incorporated = yes
@@ -1441,9 +1282,6 @@ agitators_election_events.10 = {
 				turmoil >= 0.30
 			}
 			save_scope_as = tumultuous_state_scope
-		}
-		scope:agitator_scope = {
-			set_variable = { name = agitator_election_participation days = 180 }
 		}
 	}
 	
@@ -1513,9 +1351,6 @@ agitators_election_events.11 = {
 		in_election_campaign = yes
 		any_scope_character = {
 			has_role = agitator
-			NOT = {
-				has_variable = agitator_election_participation
-			}
 			OR = {
 				has_ideology = ideology:ideology_communist
 				has_ideology = ideology:ideology_vanguardist
@@ -1593,9 +1428,6 @@ agitators_election_events.11 = {
 				}
 			}
 			save_scope_as = communist_agitation_state
-		}
-		scope:agitator_scope = {
-			set_variable = { name = agitator_election_participation days = 180 }
 		}
 	}
 	
@@ -1681,9 +1513,6 @@ agitators_election_events.12 = {
 		in_election_campaign = yes
 		any_scope_character = {
 			has_role = agitator
-			NOT = {
-				has_variable = agitator_election_participation
-			}
 			OR = {
 				has_ideology = ideology:ideology_communist
 				has_ideology = ideology:ideology_vanguardist
@@ -1745,9 +1574,6 @@ agitators_election_events.12 = {
 	
 	immediate = {
 		communist_agitator_election_scope_effect = yes
-		scope:agitator_scope = {
-			set_variable = { name = agitator_election_participation days = 180 }
-		}
 	}
 	
 	option = {
@@ -1828,9 +1654,6 @@ agitators_election_events.13 = {
 		in_election_campaign = yes
 		any_scope_character = {
 			has_role = agitator
-			NOT = {
-				has_variable = agitator_election_participation
-			}
 			OR = {
 				has_ideology = ideology:ideology_communist
 				has_ideology = ideology:ideology_vanguardist
@@ -1905,9 +1728,6 @@ agitators_election_events.13 = {
 			}
 			save_scope_as = peasant_agitation_state
 		}
-		scope:agitator_scope = {
-			set_variable = { name = agitator_election_participation days = 180 }
-		}
 	}
 	
 	option = {
@@ -1971,9 +1791,6 @@ agitators_election_events.14 = {
 		in_election_campaign = yes
 		any_scope_character = {
 			has_role = agitator
-			NOT = {
-				has_variable = agitator_election_participation
-			}
 			OR = {
 				has_ideology = ideology:ideology_communist
 				has_ideology = ideology:ideology_vanguardist
@@ -2052,9 +1869,6 @@ agitators_election_events.14 = {
 				is_party_type = fascist_party
 			}
 			save_scope_as = fascist_party_scope
-		}
-		scope:agitator_scope = {
-			set_variable = { name = agitator_election_participation days = 180 }
 		}
 	}
 	
@@ -2167,9 +1981,6 @@ agitators_election_events.15 = {
 		in_election_campaign = yes
 		any_scope_character = {
 			has_role = agitator
-			NOT = {
-				has_variable = agitator_election_participation
-			}
 			OR = {
 				has_ideology = ideology:ideology_communist
 				has_ideology = ideology:ideology_vanguardist
@@ -2240,9 +2051,6 @@ agitators_election_events.15 = {
 			}
 			save_scope_as = fascist_party_scope
 		}
-		scope:agitator_scope = {
-			set_variable = { name = agitator_election_participation days = 180 }
-		}
 	}
 	
 	option = {
@@ -2307,9 +2115,6 @@ agitators_election_events.16 = {
 		in_election_campaign = yes
 		any_scope_character = {
 			has_role = agitator
-			NOT = {
-				has_variable = agitator_election_participation
-			}
 			OR = {
 				has_ideology = ideology:ideology_fascist
 				has_ideology = ideology:ideology_ethno_nationalist
@@ -2381,9 +2186,6 @@ agitators_election_events.16 = {
 			random_member = {
 				save_scope_as = communist_party_ig
 			}
-		}
-		scope:agitator_scope = {
-			set_variable = { name = agitator_election_participation days = 180 }
 		}
 	}
 	
@@ -2512,9 +2314,6 @@ agitators_election_events.17 = {
 		in_election_campaign = yes
 		any_scope_character = {
 			has_role = agitator
-			NOT = {
-				has_variable = agitator_election_participation
-			}
 			OR = {
 				has_ideology = ideology:ideology_fascist
 				has_ideology = ideology:ideology_ethno_nationalist
@@ -2581,9 +2380,6 @@ agitators_election_events.17 = {
 		ig:ig_industrialists = {
 			save_scope_as = industrialists_scope
 		}
-		scope:agitator_scope = {
-			set_variable = { name = agitator_election_participation days = 180 }
-		}
 	}
 	
 	option = {
@@ -2648,9 +2444,6 @@ agitators_election_events.18 = {
 		in_election_campaign = yes
 		any_scope_character = {
 			has_role = agitator
-			NOT = {
-				has_variable = agitator_election_participation
-			}
 			OR = {
 				has_ideology = ideology:ideology_fascist
 				has_ideology = ideology:ideology_ethno_nationalist
@@ -2711,9 +2504,6 @@ agitators_election_events.18 = {
 	
 	immediate = {
 		fascist_agitator_election_scope_effect = yes
-		scope:agitator_scope = {
-			set_variable = { name = agitator_election_participation days = 180 }
-		}
 	}
 	
 	option = {
@@ -2787,9 +2577,6 @@ agitators_election_events.19 = {
 		in_election_campaign = yes
 		any_scope_character = {
 			has_role = agitator
-			NOT = {
-				has_variable = agitator_election_participation
-			}
 			OR = {
 				has_ideology = ideology:ideology_fascist
 				has_ideology = ideology:ideology_ethno_nationalist
@@ -2860,9 +2647,6 @@ agitators_election_events.19 = {
 			order_by = country_rank
 
 			save_scope_as = scary_communist_country
-		}
-		scope:agitator_scope = {
-			set_variable = { name = agitator_election_participation days = 180 }
 		}
 	}
 	
@@ -2941,9 +2725,6 @@ agitators_election_events.20 = {
 		in_election_campaign = yes
 		any_scope_character = {
 			has_role = agitator
-			NOT = {
-				has_variable = agitator_election_participation
-			}
 			OR = {
 				has_ideology = ideology:ideology_fascist
 				has_ideology = ideology:ideology_ethno_nationalist
@@ -3037,9 +2818,6 @@ agitators_election_events.20 = {
 			}
 			save_scope_as = hate_crime_state
 		}	
-		scope:agitator_scope = {
-			set_variable = { name = agitator_election_participation days = 180 }
-		}
 	}
 	
 	option = {
@@ -3129,9 +2907,6 @@ agitators_election_events.21 = {
 		in_election_campaign = yes
 		any_scope_character = {
 			has_role = agitator
-			NOT = {
-				has_variable = agitator_election_participation
-			}
 			OR = {
 				has_ideology = ideology:ideology_agrarian
 				trigger_if = {
@@ -3165,9 +2940,6 @@ agitators_election_events.21 = {
 	
 	immediate = {
 		agrarian_agitator_election_scope_effect = yes
-		scope:agitator_scope = {
-			set_variable = { name = agitator_election_participation days = 180 }
-		}
 	}
 	
 	option = {
@@ -3215,9 +2987,6 @@ agitators_election_events.22 = {
 		in_election_campaign = yes
 		any_scope_character = {
 			has_role = agitator
-			NOT = {
-				has_variable = agitator_election_participation
-			}
 			OR = {
 				has_ideology = ideology:ideology_agrarian
 				trigger_if = {
@@ -3251,9 +3020,6 @@ agitators_election_events.22 = {
 	
 	immediate = {
 		agrarian_agitator_election_scope_effect = yes
-		scope:agitator_scope = {
-			set_variable = { name = agitator_election_participation days = 180 }
-		}
 	}
 	
 	option = {
@@ -3311,9 +3077,6 @@ agitators_election_events.23 = {
 		in_election_campaign = yes
 		any_scope_character = {
 			has_role = agitator
-			NOT = {
-				has_variable = agitator_election_participation
-			}
 			OR = {
 				has_ideology = ideology:ideology_agrarian
 				trigger_if = {
@@ -3374,9 +3137,6 @@ agitators_election_events.23 = {
 				save_scope_as = armed_forces_party_scope
 			}
 		}
-		scope:agitator_scope = {
-			set_variable = { name = agitator_election_participation days = 180 }
-		}
 	}
 	
 	option = {
@@ -3432,9 +3192,6 @@ agitators_election_events.24 = {
 		in_election_campaign = yes
 		any_scope_character = {
 			has_role = agitator
-			NOT = {
-				has_variable = agitator_election_participation
-			}
 			OR = {
 				has_ideology = ideology:ideology_agrarian
 				trigger_if = {
@@ -3471,9 +3228,6 @@ agitators_election_events.24 = {
 	
 	immediate = {
 		agrarian_agitator_election_scope_effect = yes
-		scope:agitator_scope = {
-			set_variable = { name = agitator_election_participation days = 180 }
-		}
 	}
 	
 	option = {
@@ -3521,9 +3275,6 @@ agitators_election_events.25 = {
 		in_election_campaign = yes
 		any_scope_character = {
 			has_role = agitator
-			NOT = {
-				has_variable = agitator_election_participation
-			}
 			OR = {
 				has_ideology = ideology:ideology_agrarian
 				trigger_if = {
@@ -3579,9 +3330,6 @@ agitators_election_events.25 = {
 		}
 		ig:ig_industrialists = {
 			save_scope_as = industrialists_ig
-		}
-		scope:agitator_scope = {
-			set_variable = { name = agitator_election_participation days = 180 }
 		}
 	}
 	
@@ -3644,9 +3392,6 @@ agitators_election_events.26 = {
 		in_election_campaign = yes
 		any_scope_character = {
 			has_role = agitator
-			NOT = {
-				has_variable = agitator_election_participation
-			}
 			OR = {
 				has_ideology = ideology:ideology_social_democrat
 				trigger_if = {
@@ -3688,9 +3433,6 @@ agitators_election_events.26 = {
 				is_party_type = communist_party
 			}
 			save_scope_as = communist_party_scope
-		}
-		scope:agitator_scope = {
-			set_variable = { name = agitator_election_participation days = 180 }
 		}
 	}
 	
@@ -3742,9 +3484,6 @@ agitators_election_events.27 = {
 		in_election_campaign = yes
 		any_scope_character = {
 			has_role = agitator
-			NOT = {
-				has_variable = agitator_election_participation
-			}
 			OR = {
 				has_ideology = ideology:ideology_social_democrat
 				trigger_if = {
@@ -3794,9 +3533,6 @@ agitators_election_events.27 = {
 				}
 			}
 			save_scope_as = socdem_agitation_state
-		}
-		scope:agitator_scope = {
-			set_variable = { name = agitator_election_participation days = 180 }
 		}
 	}
 	
@@ -3856,9 +3592,6 @@ agitators_election_events.28 = {
 		in_election_campaign = yes
 		any_scope_character = {
 			has_role = agitator
-			NOT = {
-				has_variable = agitator_election_participation
-			}
 			OR = {
 				has_ideology = ideology:ideology_social_democrat
 				trigger_if = {
@@ -3897,9 +3630,6 @@ agitators_election_events.28 = {
 		socdem_agitator_election_scope_effect = yes
 		ig:ig_trade_unions = {
 			save_scope_as = trade_union_ig
-		}
-		scope:agitator_scope = {
-			set_variable = { name = agitator_election_participation days = 180 }
 		}
 	}
 	
@@ -3954,9 +3684,6 @@ agitators_election_events.29 = {
 		in_election_campaign = yes
 		any_scope_character = {
 			has_role = agitator
-			NOT = {
-				has_variable = agitator_election_participation
-			}
 			OR = {
 				has_ideology = ideology:ideology_social_democrat
 				trigger_if = {
@@ -3990,9 +3717,6 @@ agitators_election_events.29 = {
 	
 	immediate = {
 		socdem_agitator_election_scope_effect = yes
-		scope:agitator_scope = {
-			set_variable = { name = agitator_election_participation days = 180 }
-		}
 	}
 	
 	option = {
@@ -4040,9 +3764,6 @@ agitators_election_events.30 = {
 		in_election_campaign = yes
 		any_scope_character = {
 			has_role = agitator
-			NOT = {
-				has_variable = agitator_election_participation
-			}
 			OR = {
 				has_ideology = ideology:ideology_social_democrat
 				trigger_if = {
@@ -4076,9 +3797,6 @@ agitators_election_events.30 = {
 	
 	immediate = {
 		socdem_agitator_election_scope_effect = yes
-		scope:agitator_scope = {
-			set_variable = { name = agitator_election_participation days = 180 }
-		}
 	}
 	
 	option = {
@@ -4131,9 +3849,6 @@ agitators_election_events.31 = {
 		in_election_campaign = yes
 		any_scope_character = {
 			has_role = agitator
-			NOT = {
-				has_variable = agitator_election_participation
-			}
 			OR = {
 				has_ideology = ideology:ideology_reformer
 				has_ideology = ideology:ideology_humanitarian
@@ -4171,9 +3886,6 @@ agitators_election_events.31 = {
 		liberal_agitator_election_scope_effect = yes
 		capital = {
 			save_scope_as = capital_scope
-		}
-		scope:agitator_scope = {
-			set_variable = { name = agitator_election_participation days = 180 }
 		}
 	}
 	
@@ -4244,9 +3956,6 @@ agitators_election_events.32 = {
 		in_election_campaign = yes
 		any_scope_character = {
 			has_role = agitator
-			NOT = {
-				has_variable = agitator_election_participation
-			}
 			OR = {
 				has_ideology = ideology:ideology_reformer
 				has_ideology = ideology:ideology_humanitarian
@@ -4340,9 +4049,6 @@ agitators_election_events.32 = {
 		capital = {
 			save_scope_as = capital_scope
 		}
-		scope:agitator_scope = {
-			set_variable = { name = agitator_election_participation days = 180 }
-		}
 	}
 	
 	option = {
@@ -4402,9 +4108,6 @@ agitators_election_events.33 = {
 		in_election_campaign = yes
 		any_scope_character = {
 			has_role = agitator
-			NOT = {
-				has_variable = agitator_election_participation
-			}
 			OR = {
 				has_ideology = ideology:ideology_reformer
 				has_ideology = ideology:ideology_humanitarian
@@ -4460,16 +4163,11 @@ agitators_election_events.33 = {
 		random_interest_group = {
 			limit = {
 				has_party = yes
-				trigger_if = {
-					limit = {
-						has_party = yes
+				NOT = {
+					party = {
+						is_party_type = liberal_party
 					}
-					NOT = {
-						this.party = {
-							is_party_type = liberal_party
-						}
-					}
-				} 
+				}
 				leader = {
 					OR = {
 						has_trait = reserved
@@ -4484,9 +4182,6 @@ agitators_election_events.33 = {
 			party = {
 				save_scope_as = opposition_party_scope
 			}
-		}
-		scope:agitator_scope = {
-			set_variable = { name = agitator_election_participation days = 180 }
 		}
 	}
 	
@@ -4540,9 +4235,6 @@ agitators_election_events.34 = {
 		in_election_campaign = yes
 		any_scope_character = {
 			has_role = agitator
-			NOT = {
-				has_variable = agitator_election_participation
-			}
 			OR = {
 				has_ideology = ideology:ideology_reformer
 				has_ideology = ideology:ideology_humanitarian
@@ -4590,9 +4282,6 @@ agitators_election_events.34 = {
 		}
 		capital = {
 			save_scope_as = capital_scope
-		}
-		scope:agitator_scope = {
-			set_variable = { name = agitator_election_participation days = 180 }
 		}
 	}
 	
@@ -4652,9 +4341,6 @@ agitators_election_events.35 = {
 		in_election_campaign = yes
 		any_scope_character = {
 			has_role = agitator
-			NOT = {
-				has_variable = agitator_election_participation
-			}
 			OR = {
 				has_ideology = ideology:ideology_reformer
 				has_ideology = ideology:ideology_humanitarian
@@ -4705,9 +4391,6 @@ agitators_election_events.35 = {
 				}
 			}
 			save_scope_as = rally_state
-		}
-		scope:agitator_scope = {
-			set_variable = { name = agitator_election_participation days = 180 }
 		}
 	}
 	
@@ -4838,9 +4521,6 @@ agitators_election_events.36 = {
 		in_election_campaign = yes
 		any_scope_character = {
 			has_role = agitator
-			NOT = {
-				has_variable = agitator_election_participation
-			}
 			OR = {
 				has_ideology = ideology:ideology_traditionalist
 				has_ideology = ideology:ideology_slaver
@@ -4884,9 +4564,6 @@ agitators_election_events.36 = {
 		conservative_agitator_election_scope_effect = yes
 		ig:ig_devout = {
 			save_scope_as = devout_ig
-		}
-		scope:agitator_scope = {
-			set_variable = { name = agitator_election_participation days = 180 }
 		}
 	}
 	
@@ -4957,9 +4634,6 @@ agitators_election_events.37 = {
 		in_election_campaign = yes
 		any_scope_character = {
 			has_role = agitator
-			NOT = {
-				has_variable = agitator_election_participation
-			}
 			OR = {
 				has_ideology = ideology:ideology_traditionalist
 				has_ideology = ideology:ideology_slaver
@@ -5086,9 +4760,6 @@ agitators_election_events.37 = {
 			limit = { is_same_interest_group_type = scope:revolutionary_ig }
 			save_scope_as = patsy_ig
 		}
-		scope:agitator_scope = {
-			set_variable = { name = agitator_election_participation days = 180 }
-		}
 	}
 	
 	option = {
@@ -5116,13 +4787,8 @@ agitators_election_events.37 = {
 		random_interest_group = {
 			limit = {
 				has_party = yes
-				trigger_if = {
-					limit = {
-						has_party = yes
-					}
-					this.party = {
-						is_party_type = conservative_party
-					}
+				this.party = {
+					is_party_type = conservative_party
 				}
 			}
 			add_modifier = {
@@ -5156,13 +4822,8 @@ agitators_election_events.37 = {
 		random_interest_group = {
 			limit = {
 				has_party = yes
-				trigger_if = {
-					limit = {
-						has_party = yes
-					}
-					this.party = {
-						is_party_type = conservative_party
-					}
+				this.party = {
+					is_party_type = conservative_party
 				}
 			}
 			add_modifier = {
@@ -5198,9 +4859,6 @@ agitators_election_events.38 = {
 		in_election_campaign = yes
 		any_scope_character = {
 			has_role = agitator
-			NOT = {
-				has_variable = agitator_election_participation
-			}
 			OR = {
 				has_ideology = ideology:ideology_traditionalist
 				has_ideology = ideology:ideology_slaver
@@ -5235,9 +4893,6 @@ agitators_election_events.38 = {
 	
 	immediate = {
 		conservative_agitator_election_scope_effect = yes
-		scope:agitator_scope = {
-			set_variable = { name = agitator_election_participation days = 180 }
-		}
 	}
 	
 	option = {
@@ -5356,9 +5011,6 @@ agitators_election_events.39 = {
 		in_election_campaign = yes
 		any_scope_character = {
 			has_role = agitator
-			NOT = {
-				has_variable = agitator_election_participation
-			}
 			OR = {
 				has_ideology = ideology:ideology_traditionalist
 				has_ideology = ideology:ideology_slaver
@@ -5407,9 +5059,6 @@ agitators_election_events.39 = {
 			leader = {
 				save_scope_as = rf_leader_scope
 			}
-		}
-		scope:agitator_scope = {
-			set_variable = { name = agitator_election_participation days = 180 }
 		}
 	}
 	
@@ -5473,9 +5122,6 @@ agitators_election_events.40 = {
 		in_election_campaign = yes
 		any_scope_character = {
 			has_role = agitator
-			NOT = {
-				has_variable = agitator_election_participation
-			}
 			OR = {
 				has_ideology = ideology:ideology_traditionalist
 				has_ideology = ideology:ideology_slaver
@@ -5539,9 +5185,6 @@ agitators_election_events.40 = {
 				}
 			}
 			save_scope_as = discrim_culture
-		}
-		scope:agitator_scope = {
-			set_variable = { name = agitator_election_participation days = 180 }
 		}
 	}
 	
@@ -5610,9 +5253,6 @@ agitators_election_events.41 = {
 		in_election_campaign = yes
 		any_scope_character = {
 			has_role = agitator
-			NOT = {
-				has_variable = agitator_election_participation
-			}
 			OR = {
 				has_ideology = ideology:ideology_radical
 				trigger_if = {
@@ -5651,9 +5291,6 @@ agitators_election_events.41 = {
 		}
 		ig:ig_devout = {
 			save_scope_as = devout_ig
-		}
-		scope:agitator_scope = {
-			set_variable = { name = agitator_election_participation days = 180 }
 		}
 	}
 	
@@ -5739,9 +5376,6 @@ agitators_election_events.42 = {
 		any_scope_character = {
 			has_role = agitator
 			NOT = {
-				has_variable = agitator_election_participation
-			}
-			NOT = {
 				is_interest_group_type = ig_intelligentsia
 			}
 			OR = {
@@ -5784,9 +5418,6 @@ agitators_election_events.42 = {
 		}
 		ig:ig_intelligentsia = {
 			save_scope_as = intelligentsia_ig
-		}
-		scope:agitator_scope = {
-			set_variable = { name = agitator_election_participation days = 180 }
 		}
 	}
 	
@@ -5861,9 +5492,6 @@ agitators_election_events.43 = {
 		in_election_campaign = yes
 		any_scope_character = {
 			has_role = agitator
-			NOT = {
-				has_variable = agitator_election_participation
-			}
 			OR = {
 				has_ideology = ideology:ideology_radical
 				trigger_if = {
@@ -5941,9 +5569,6 @@ agitators_election_events.43 = {
 		ig:ig_petty_bourgeoisie = {
 			save_scope_as = pb_scope
 		}
-		scope:agitator_scope = {
-			set_variable = { name = agitator_election_participation days = 180 }
-		}
 	}
 	
 	option = {
@@ -6007,9 +5632,6 @@ agitators_election_events.44 = {
 		in_election_campaign = yes
 		any_scope_character = {
 			has_role = agitator
-			NOT = {
-				has_variable = agitator_election_participation
-			}
 			OR = {
 				has_ideology = ideology:ideology_radical
 				trigger_if = {
@@ -6129,9 +5751,6 @@ agitators_election_events.44 = {
 			save_scope_as = anti_democratic_character
 		}
 		save_scope_as = self_referential_reference
-		scope:agitator_scope = {
-			set_variable = { name = agitator_election_participation days = 180 }
-		}
 	}
 	
 	option = {
@@ -6213,9 +5832,6 @@ agitators_election_events.45 = {
 		in_election_campaign = yes
 		any_scope_character = {
 			has_role = agitator
-			NOT = {
-				has_variable = agitator_election_participation
-			}
 			OR = {
 				has_ideology = ideology:ideology_radical
 				trigger_if = {
@@ -6255,9 +5871,6 @@ agitators_election_events.45 = {
 		}
 		capital = {
 			save_scope_as = capital_scope
-		}
-		scope:agitator_scope = {
-			set_variable = { name = agitator_election_participation days = 180 }
 		}
 	}
 	
@@ -6337,9 +5950,6 @@ agitators_election_events.46 = {
 		in_election_campaign = yes
 		any_scope_character = {
 			has_role = agitator
-			NOT = {
-				has_variable = agitator_election_participation
-			}
 			OR = {
 				has_ideology = ideology:ideology_market_liberal
 				trigger_if = {
@@ -6375,9 +5985,6 @@ agitators_election_events.46 = {
 		free_trade_agitator_election_scope_effect = yes
 		ig:ig_industrialists = {
 			save_scope_as = industrialists_ig
-		}
-		scope:agitator_scope = {
-			set_variable = { name = agitator_election_participation days = 180 }
 		}
 	}
 	
@@ -6448,9 +6055,6 @@ agitators_election_events.47 = {
 		in_election_campaign = yes
 		any_scope_character = {
 			has_role = agitator
-			NOT = {
-				has_variable = agitator_election_participation
-			}
 			OR = {
 				has_ideology = ideology:ideology_market_liberal
 				trigger_if = {
@@ -6493,9 +6097,6 @@ agitators_election_events.47 = {
 				relations:root >= relations_threshold:cordial
 			}
 			save_scope_as = friendly_country_scope
-		}
-		scope:agitator_scope = {
-			set_variable = { name = agitator_election_participation days = 180 }
 		}
 	}
 	
@@ -6585,9 +6186,6 @@ agitators_election_events.48 = {
 		in_election_campaign = yes
 		any_scope_character = {
 			has_role = agitator
-			NOT = {
-				has_variable = agitator_election_participation
-			}
 			OR = {
 				has_ideology = ideology:ideology_market_liberal
 				trigger_if = {
@@ -6612,7 +6210,7 @@ agitators_election_events.48 = {
 				limit = {
 					has_party = yes
 				}
-				this.party = {
+				this.interest_group.party = {
 					is_party_type = free_trade_party
 				}
 			}
@@ -6649,9 +6247,6 @@ agitators_election_events.48 = {
 				is_interest_group_type = ig_armed_forces
 			}
 			save_scope_as = armed_forces_char
-		}
-		scope:agitator_scope = {
-			set_variable = { name = agitator_election_participation days = 180 }
 		}
 	}
 	
@@ -6726,9 +6321,6 @@ agitators_election_events.49 = {
 		in_election_campaign = yes
 		any_scope_character = {
 			has_role = agitator
-			NOT = {
-				has_variable = agitator_election_participation
-			}
 			OR = {
 				has_ideology = ideology:ideology_market_liberal
 				trigger_if = {
@@ -6770,9 +6362,6 @@ agitators_election_events.49 = {
 			leader = {
 				save_scope_as = trade_union_leader_scope
 			}
-		}
-		scope:agitator_scope = {
-			set_variable = { name = agitator_election_participation days = 180 }
 		}
 	}
 	
@@ -6840,9 +6429,6 @@ agitators_election_events.50 = {
 		in_election_campaign = yes
 		any_scope_character = {
 			has_role = agitator
-			NOT = {
-				has_variable = agitator_election_participation
-			}
 			OR = {
 				has_ideology = ideology:ideology_market_liberal
 				trigger_if = {
@@ -6881,9 +6467,6 @@ agitators_election_events.50 = {
 			leader = {
 				save_scope_as = trade_union_leader_scope
 			}
-		}
-		scope:agitator_scope = {
-			set_variable = { name = agitator_election_participation days = 180 }
 		}
 	}
 	

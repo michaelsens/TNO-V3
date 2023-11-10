@@ -4210,6 +4210,13 @@ RU_CL_RP = {
 	}
 	text = {
 		trigger = {
+			exists = c:PRM
+			this = c:PRM
+		}
+		localization_key = RU_CL_RP_PRM # genitive
+	}
+	text = {
+		trigger = {
 			exists = c:HZJ
 			this = c:HZJ
 		}
@@ -9329,7 +9336,13 @@ RU_CL_DP = {
 		}
 		localization_key = RU_CL_DP_UYA # dative
 	}
-
+	text = {
+		trigger = {
+			exists = c:PRM
+			this = c:PRM
+		}
+		localization_key = RU_CL_DP_PRM # dative
+	}
 	text = {
 		trigger = {
 			exists = c:HZJ
@@ -14455,7 +14468,13 @@ RU_CL_VP = {
 		}
 		localization_key = RU_CL_VP_UYA # accusative
 	}
-
+	text = {
+		trigger = {
+			exists = c:PRM
+			this = c:PRM
+		}
+		localization_key = RU_CL_VP_PRM # accusative
+	}
 	text = {
 		trigger = {
 			exists = c:HZJ
@@ -19577,7 +19596,13 @@ RU_CL_TP = {
 		}
 		localization_key = RU_CL_TP_UYA # instrumental
 	}
-
+	text = {
+		trigger = {
+			exists = c:PRM
+			this = c:PRM
+		}
+		localization_key = RU_CL_TP_PRM # instrumental
+	}
 	text = {
 		trigger = {
 			exists = c:HZJ
@@ -24699,7 +24724,13 @@ RU_CL_PP = {
 		}
 		localization_key = RU_CL_PP_UYA # prepositional
 	}
-
+	text = {
+		trigger = {
+			exists = c:PRM
+			this = c:PRM
+		}
+		localization_key = RU_CL_PP_PRM # prepositional
+	}
 	text = {
 		trigger = {
 			exists = c:HZJ
@@ -32877,6 +32908,26 @@ RU_CL_END = {
 						initiator = root										
 						exists = c:XHO										
 						target = c:XHO										
+						OR = {
+							is_diplomatic_play_type = dp_revolution									
+							is_diplomatic_play_type = dp_secession									
+						}
+					}
+				}
+		}
+		localization_key = RU_CL_YA # а
+	}
+	text = { # а
+		trigger = {	
+				OR = {
+					AND = {
+					exists = c:PRM
+					this = c:PRM
+					}
+					any_diplomatic_play = {
+						initiator = root										
+						exists = c:PRM										
+						target = c:PRM										
 						OR = {
 							is_diplomatic_play_type = dp_revolution									
 							is_diplomatic_play_type = dp_secession									
@@ -47168,7 +47219,26 @@ RU_CL_END_FEM = {
 		}
 		localization_key = RU_CL_FEM_A # а
 	}
-
+	text = { # а
+		trigger = {	
+				OR = {
+					AND = {
+					exists = c:PRM
+					this = c:PRM
+					}
+					any_diplomatic_play = {
+						initiator = root										
+						exists = c:PRM										
+						target = c:PRM										
+						OR = {
+							is_diplomatic_play_type = dp_revolution									
+							is_diplomatic_play_type = dp_secession									
+						}
+					}
+				}
+		}
+		localization_key = RU_CL_FEM_A # а
+	}
 	text = { # а
 		trigger = {	
 				OR = {
@@ -61775,6 +61845,26 @@ RU_CL_END_T = {
 		trigger = {	
 				OR = {
 					AND = {
+					exists = c:PRM
+					this = c:PRM
+					}
+					any_diplomatic_play = {
+						initiator = root										
+						exists = c:PRM										
+						target = c:PRM										
+						OR = {
+							is_diplomatic_play_type = dp_revolution									
+							is_diplomatic_play_type = dp_secession									
+						}
+					}
+				}
+		}
+		localization_key = RU_CL_ET # ет
+	}
+	text = { # а
+		trigger = {	
+				OR = {
+					AND = {
 					exists = c:TRC
 					this = c:TRC
 					}
@@ -76325,6 +76415,26 @@ RU_CL_END_GUT = {
 		trigger = {	
 				OR = {
 					AND = {
+					exists = c:PRM
+					this = c:PRM
+					}
+					any_diplomatic_play = {
+						initiator = root										
+						exists = c:PRM										
+						target = c:PRM										
+						OR = {
+							is_diplomatic_play_type = dp_revolution									
+							is_diplomatic_play_type = dp_secession									
+						}
+					}
+				}
+		}
+		localization_key = RU_CL_GE # же
+	}
+	text = { # а
+		trigger = {	
+				OR = {
+					AND = {
 					exists = c:TRC
 					this = c:TRC
 					}
@@ -90862,6 +90972,26 @@ RU_CL_END_UT = {
 						initiator = root										
 						exists = c:XHO										
 						target = c:XHO										
+						OR = {
+							is_diplomatic_play_type = dp_revolution									
+							is_diplomatic_play_type = dp_secession									
+						}
+					}
+				}
+		}
+		localization_key = RU_CL_ET # ет
+	}
+	text = { # а
+		trigger = {	
+				OR = {
+					AND = {
+					exists = c:PRM
+					this = c:PRM
+					}
+					any_diplomatic_play = {
+						initiator = root										
+						exists = c:PRM										
+						target = c:PRM										
 						OR = {
 							is_diplomatic_play_type = dp_revolution									
 							is_diplomatic_play_type = dp_secession									
@@ -110463,6 +110593,16 @@ RU_ML_ADJ = {
 			}
 		}
 		localization_key = RU_ML_ADJ_UYA # market adjective
+	}
+	text = {
+		trigger = {
+			exists = market
+			market.owner = {
+			exists = c:PRM
+			this = c:PRM
+			}
+		}
+		localization_key = RU_ML_ADJ_PRM # market adjective
 	}
 	text = {
 		trigger = {

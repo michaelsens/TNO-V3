@@ -12,12 +12,15 @@
 		is_at_war = no
 		custom_tooltip = {
 			text = belle_epoque_sol_trigger
-			any_scope_state = {
-				filter = {
-					is_incorporated = yes
+			OR = {
+				any_state = {
+					filter = {
+						is_incorporated = yes
+						owner = ROOT
+					}
+					average_sol >= 15
+					percent > 0.5
 				}
-				average_sol >= 15
-				percent > 0.5
 			}
 		}
 		capital = {
@@ -60,7 +63,7 @@
 				c:USA ?= this
 				owns_entire_state_region = STATE_NEW_YORK
 				s:STATE_NEW_YORK = {
-					any_scope_state = { average_sol >= 15 }
+					average_sol >= 15
 				}
 			}
 			s:STATE_NEW_YORK = {
@@ -72,7 +75,7 @@
 				c:USA ?= this
 				owns_entire_state_region = STATE_CALIFORNIA
 				s:CALIFORNIA = {
-					any_scope_state = { average_sol >= 15 }
+					average_sol >= 15
 				}
 			}
 			s:STATE_CALIFORNIA = {
@@ -84,7 +87,7 @@
 				c:USA ?= this
 				owns_entire_state_region = STATE_PENNSYLVANIA
 				s:STATE_PENNSLYVANIA = {
-					any_scope_state = { average_sol >= 15 }
+					average_sol >= 15
 				}
 			}
 			s:STATE_PENNSLYVANIA = {
@@ -100,7 +103,7 @@
 				}
 				owns_entire_state_region = STATE_GUANGDONG
 				s:STATE_GUANGDONG = {
-					any_scope_state = { average_sol >= 15 }
+					average_sol >= 15
 				}
 			}
 			s:STATE_GUANGDONG = {
@@ -115,7 +118,7 @@
 				}
 				owns_entire_state_region = STATE_SUZHOU
 				s:STATE_SUZHOU = {
-					any_scope_state = { average_sol >= 15 }
+					average_sol >= 15
 				}
 			}
 			s:STATE_SUZHOU = {
@@ -130,7 +133,7 @@
 				}
 				owns_entire_state_region = STATE_NANJING
 				s:STATE_NANJING = {
-					any_scope_state = { average_sol >= 15 }
+					average_sol >= 15
 				}
 			}
 			s:STATE_NANJING = {
@@ -159,37 +162,23 @@
 	}
 
 	fail = {
-		OR = {
-			trigger_if = {
-				limit = {
-					has_variable = belle_epoque_var
-				}
-				custom_tooltip = {
-					text = belle_epoque_fail_tt
-					any_scope_war = {
-						any_scope_front = {
-							any_scope_state = {
-								this = scope:belle_epoque_state
-							}
-						}
-					}
-				}
+		trigger_if = {
+			limit = {
+				has_variable = belle_epoque_var
 			}
-			trigger_if = {
-				limit = {
-					has_variable = belle_epoque_var
-				}
-				custom_tooltip = {
-					text = belle_epoque_invalid_tt
-					scope:belle_epoque_state = {
-						NOT = {
-							owner = root
+			custom_tooltip = {
+				text = belle_epoque_fail_tt
+				any_scope_war = {
+					any_scope_front = {
+						any_scope_state = {
+							this = scope:belle_epoque_state
 						}
 					}
 				}
 			}
 		}
 	}
+
 	on_monthly_pulse = {
 		random_events = {
 			100 = 0
@@ -242,17 +231,24 @@
 		}
 	}
 
-	current_value = {
-		value = var:belle_epoque_var
-	}
-
 	invalid = {
 		trigger_if = {
 			limit = {
 				has_variable = belle_epoque_var
 			}
-			not = { exists = scope:belle_epoque_state }
+			custom_tooltip = {
+				text = belle_epoque_invalid_tt
+				NOT = {
+					any_scope_state = {
+						this = scope:belle_epoque_state
+					}
+				}
+			}
 		}
+	}
+
+	current_value = {
+		value = var:belle_epoque_var
 	}
 	
 	progressbar = yes

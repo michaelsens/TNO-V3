@@ -78,6 +78,11 @@ je_vichy_treaty = {
     complete = {
         army_size > 150
         has_technology_researched = breech_loading_artillery
+        country_pm_usage = {
+            target = ROOT
+            production_method = pm_gen2_early_tank
+            value > 0.75
+        }
     }
 
     on_complete = {
@@ -139,6 +144,17 @@ je_reforming_the_army = {
 
     complete = {
         has_technology_researched = repeaters
+        country_pm_usage = {
+            target = ROOT
+            production_method = pm_gen2_mid_tank
+            value > 0.75
+        }
+        country_pm_usage = {
+            target = ROOT
+            production_method = pm_assault_rifle_infantry
+            value > 0.75
+        }
+
         army_size > 200
     }
 
@@ -168,6 +184,18 @@ je_professional_army_corps = {
     }
 
     complete = {
+
+        country_pm_usage = {
+            target = ROOT
+            production_method = pm_gen2_late_tank
+            value > 0.75
+        }
+        country_pm_usage = {
+            target = ROOT
+            production_method = pm_integrated_fireteam_infantry
+            value > 0.75
+        }
+
         army_size > 250
     }
 
