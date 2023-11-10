@@ -1,5 +1,5 @@
 ﻿modifier_offensive_footing = {
-	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+	icon = gfx/interface/icons/tno_modifier_icons/modifier_reunifcation.dds
 	unit_army_offense_mult = 0.1
 	unit_army_defense_mult = -0.1
 	country_diplomatic_play_maneuvers_add = 60
@@ -11,14 +11,60 @@ modifier_advanced_economy = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds
 	state_middle_standard_of_living_add = 2
 	state_poor_standard_of_living_add = 2
-	building_group_bg_subsistence_agriculture_throughput_mult = 0.85
+	building_group_bg_subsistence_agriculture_throughput_add = 0.85
+}
+
+modifier_zla_arms = {
+	icon = gfx/interface/icons/tno_modifier_icons/modifier_ZLAarm.dds
+	building_arms_industry_throughput_add = 0.15
+}
+
+modifier_gor_combat = {
+	icon = gfx/interface/icons/tno_modifier_icons/modifier_ZLAarm.dds
+	unit_army_offense_mult = 0.20
+	unit_army_defense_mult = 0.10
+	interest_group_ig_armed_forces_pol_str_mult = 0.3
+}
+
+modifier_gor_anger = {
+	icon = gfx/interface/icons/tno_modifier_icons/modifier_fire.dds
+	country_legitimacy_base_add = -20
+}
+
+modifier_def_weak = {
+	icon = gfx/interface/icons/tno_modifier_icons/modifier_fire.dds
+	country_legitimacy_base_add = 20
+	unit_army_defense_mult = 0.20
+}
+
+modifier_warrior_order= {
+	icon = gfx/interface/icons/tno_modifier_icons/modifier_cross.dds
+	state_conscription_rate_mult = 0.50
+	
+}
+
+modifier_forgien_army = {
+	icon = gfx/interface/icons/tno_modifier_icons/modifier_dirwenger.dds
+	building_arms_industry_throughput_add = 0.20
+	country_legitimacy_base_add = -90
+	state_middle_standard_of_living_add = -5
+	state_poor_standard_of_living_add = -5
+	unit_army_offense_mult = 0.1
+	state_radicals_from_discrimination_mult = 0.75
+	interest_group_ig_armed_forces_pol_str_mult = 1
+}
+
+modifier_heros_russia = {
+	icon = gfx/interface/icons/tno_modifier_icons/modifier_hero_russia.dds
+	country_influence_mult = 0.25
+	country_infamy_generation_mult = -0.5
 }
 
 modifier_very_developed_economy = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds
 	state_middle_standard_of_living_add = 2
 	state_poor_standard_of_living_add = 2
-	building_group_bg_subsistence_agriculture_throughput_mult = 0.65
+	building_group_bg_subsistence_agriculture_throughput_add = 0.65
 }
 
 modifier_developed_economy = {
@@ -26,28 +72,28 @@ modifier_developed_economy = {
 	state_middle_standard_of_living_add = 1
 	state_poor_standard_of_living_add = 1
 	state_birth_rate_mult = 0.05
-	building_group_bg_subsistence_agriculture_throughput_mult = 0.35
+	building_group_bg_subsistence_agriculture_throughput_add = 0.35
 }
 
 modifier_developing_economy = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
 	state_poor_standard_of_living_add = 2
 	state_birth_rate_mult = 0.25
-	building_group_bg_subsistence_agriculture_throughput_mult = -0.35
+	building_group_bg_subsistence_agriculture_throughput_add = -0.35
 }
 
 modifier_undeveloped_economy = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
 	state_poor_standard_of_living_add = 2
 	state_birth_rate_mult = 0.55
-	building_group_bg_subsistence_agriculture_throughput_mult = -0.65
+	building_group_bg_subsistence_agriculture_throughput_add = -0.65
 }
 
 modifier_least_developed_economy = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
 	state_poor_standard_of_living_add = 2
 	state_birth_rate_mult = 0.70
-	building_group_bg_subsistence_agriculture_throughput_mult = -0.95
+	building_group_bg_subsistence_agriculture_throughput_add = -0.95
 	
 }
 
@@ -80,7 +126,7 @@ turkish_oil_revenue = {
 
 oil_transition_modifier = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
-	building_oil_rig_throughput_mult = -0.25
+	building_oil_rig_throughput_add = -0.25
 }
 
 modifier_masters_of_europe = {
@@ -100,7 +146,7 @@ bloated_whermacht = {
 	interest_group_ig_armed_forces_approval_add = 5
 	country_expenses_add = 40000
 	unit_offense_mult = 0.1
-	country_army_power_projection_mult = 0.1
+	country_prestige_from_army_power_projection_mult = 0.1
 	unit_morale_recovery_mult = 0.1
 	country_military_goods_cost_mult = 0.2
 	country_military_wages_mult = 0.2
@@ -142,8 +188,8 @@ national_humiliation = {
 
 military_industrial = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
-	building_arms_industry_throughput_mult = 0.15
-	building_munition_plants_throughput_mult = 0.15
+	building_arms_industry_throughput_add = 0.15
+	building_munition_plants_throughput_add = 0.15
 	country_military_tech_research_speed_mult = 0.15
 	country_military_goods_cost_mult = 0.15
 	country_military_wages_mult = 0.2
@@ -151,7 +197,7 @@ military_industrial = {
 
 hollywood = {
 	icon = gfx/interface/icons/tno_modifier_icons/modifier_hollywood.dds
-	building_arts_academy_throughput_mult = 0.5
+	building_arts_academy_throughput_add = 0.5
 	state_loyalists_from_sol_change_mult = 0.1
 	country_prestige_mult = 0.02
 	state_assimilation_mult = 0.25
@@ -206,7 +252,7 @@ ruel_folk_movie = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_lightbulb_positive.dds
 	interest_group_ig_rural_folk_pol_str_mult = 0.15
 	interest_group_ig_rural_folk_approval_add = 3
-	building_group_bg_agriculture_throughput_mult = 0.05
+	building_group_bg_agriculture_throughput_add = 0.05
 
 }
 
@@ -223,14 +269,6 @@ petit_bousgwabee_movie = {
 	interest_group_ig_petty_bourgeoisie_pol_str_mult = 0.15
 	interest_group_ig_petty_bourgeoisie_approval_add = 3
 	state_shopkeepers_investment_pool_efficiency_mult = 0.15
-
-}
-
-protesters_counterd = {
-	icon = gfx/interface/icons/timed_modifier_icons/modifier_lightbulb_positive.dds
-	interest_group_ig_petty_bourgeoisie_pol_str_mult = 0.15
-	interest_group_ig_petty_bourgeoisie_approval_add = 3
-	interest_group_ig_armed_forces_pol_str_mult = 0.05
 
 }
 
@@ -274,6 +312,10 @@ prestige_movie = {
 
 }
 
+
+
+
+
 buissness_mad = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_lightbulb_positive.dds
 	interest_group_ig_landowners_approval_add = -2
@@ -281,8 +323,8 @@ buissness_mad = {
 
 officers_malding = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_lightbulb_positive.dds
-	interest_group_ig_landowners_approval_add = -6
-	interest_group_ig_armed_forces_approval_add = -7
+	interest_group_ig_landowners_approval_add = -1
+	interest_group_ig_armed_forces_approval_add = -1
 	country_expenses_add = 5000
 }
 
@@ -317,20 +359,19 @@ last_bastion_democracy = {
 
 japanese_efficiency = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_positive.dds
-	building_group_bg_manufacturing_throughput_mult = 0.20
+	building_group_bg_manufacturing_throughput_add = 0.20
 	building_group_bg_manufacturing_laborers_mortality_mult = 0.02
-	country_trade_route_exports_add = 10
 	country_loan_interest_rate_mult = -0.20
 	building_minimum_wage_mult = -0.1
 }
 
 sphere_overreliance = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
-	building_group_bg_mining_throughput_mult = -0.33
-	building_group_bg_logging_throughput_mult = -0.33
-	building_group_bg_fishing_throughput_mult = -0.33
-	building_group_bg_whaling_throughput_mult = -0.33
-	building_group_bg_oil_extraction_throughput_mult = -0.33
+	building_group_bg_mining_throughput_add = -0.33
+	building_group_bg_logging_throughput_add = -0.33
+	building_group_bg_fishing_throughput_add = -0.33
+	building_group_bg_whaling_throughput_add = -0.33
+	building_group_bg_oil_extraction_throughput_add = -0.33
 }
 
 fading_fascism = {
@@ -344,22 +385,22 @@ fading_fascism = {
 
 masters_of_the_med = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
-	country_navy_power_projection_mult = 0.15
+	country_prestige_from_navy_power_projection_mult = 0.15
 	unit_navy_offense_mult = 0.1
 	unit_navy_defense_mult = 0.1
-	building_shipyards_throughput_mult = 0.25
-	building_port_throughput_mult = 0.2
+	building_shipyards_throughput_add = 0.25
+	building_port_throughput_add = 0.2
 }
 
 atlantropa_disaster = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
 	state_poor_standard_of_living_add = -1
-	building_group_bg_agriculture_throughput_mult = -0.15
+	building_group_bg_agriculture_throughput_add = -0.15
 }
 
 atlantropa_dam = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_positive.dds
-	building_electrics_industry_throughput_mult = 0.4
+	building_electrics_industry_throughput_add = 0.4
 }
 
 national_purity = {
@@ -392,12 +433,12 @@ shadow_economy = {
 	country_loan_interest_rate_mult = 0.9
 	country_trade_route_quantity_mult = -0.5
 	country_trade_route_cost_mult = 0.5
-	building_steel_mills_throughput_mult = 0.25
-	building_arms_industry_throughput_mult = 0.3
-	building_munition_plants_throughput_mult = 0.3
-	building_tooling_workshops_throughput_mult = 0.3
-	building_logging_camp_throughput_mult = 0.3
-	building_iron_mine_throughput_mult = 0.4
+	building_steel_mills_throughput_add = 0.25
+	building_arms_industry_throughput_add = 0.3
+	building_munition_plants_throughput_add = 0.3
+	building_tooling_workshops_throughput_add = 0.3
+	building_logging_camp_throughput_add = 0.3
+	building_iron_mine_throughput_add = 0.4
 	building_group_bg_iron_mining_mortality_mult = 0.25
 	state_construction_mult = -0.30
 	state_mortality_mult = 0.2
@@ -425,10 +466,10 @@ the_broken_navy = {
     unit_navy_defense_mult = -0.4
 	unit_navy_offense_mult = -0.4
 	country_military_wages_mult	= -0.2
-	country_navy_power_projection_mult = -0.2
-	building_shipyards_throughput_mult = -0.15
-	building_port_throughput_mult = -0.1
-	building_naval_base_throughput_mult = -0.10
+	country_prestige_from_navy_power_projection_mult = -0.2
+	building_shipyards_throughput_add = -0.15
+	building_port_throughput_add = -0.1
+	building_naval_base_throughput_add = -0.10
 }
 
 the_british_navy = {
@@ -436,10 +477,10 @@ the_british_navy = {
     unit_navy_defense_mult = 0.15
 	unit_navy_offense_mult = 0.15
 	country_military_wages_mult	= 0.1
-	country_navy_power_projection_mult = 0.2
-	building_shipyards_throughput_mult = 0.15
-	building_port_throughput_mult = 0.1
-	building_naval_base_throughput_mult = 0.10
+	country_prestige_from_navy_power_projection_mult = 0.2
+	building_shipyards_throughput_add = 0.15
+	building_port_throughput_add = 0.1
+	building_naval_base_throughput_add = 0.10
 }
 
 pay_up = {
@@ -526,9 +567,9 @@ sony = {
 fujitsu = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_lightbulb_positive.dds
 	country_loan_interest_rate_mult = -0.3
-	building_group_bg_agriculture_throughput_mult = -1
-	building_group_bg_plantations_throughput_mult = -1
-	building_group_bg_logging_throughput_mult = -1
+	building_group_bg_agriculture_throughput_add = -1
+	building_group_bg_plantations_throughput_add = -1
+	building_group_bg_logging_throughput_add = -1
 	country_weekly_innovation_mult = 0.4
 	country_production_tech_research_speed_mult = 0.2
 }
@@ -544,7 +585,7 @@ matsushia = {
 
 hitachi = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds
-	building_group_bg_manufacturing_throughput_mult = 0.20
+	building_group_bg_manufacturing_throughput_add = 0.20
 	building_group_bg_manufacturing_laborers_mortality_mult = 0.15
 	state_radicals_from_discrimination_mult = 0.30
 	state_construction_mult = 0.10
@@ -558,9 +599,9 @@ agrarian_economy = {
 
 worlds_factory = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_positive.dds
-	building_group_bg_manufacturing_throughput_mult = 0.10
+	building_group_bg_manufacturing_throughput_add = 0.10
 	building_minimum_wage_mult = -0.15
-	building_input_mult = -0.15
+	building_goods_input_mult = -0.15
 	country_tech_spread_mult = -0.25
 }
 
@@ -594,11 +635,9 @@ emergency_powers = {
 empire_remnants = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_positive.dds
 	country_convoys_capacity_mult = 0.1
-	country_trade_route_exports_add = 10
-	country_trade_route_imports_add = 20
 	country_trade_route_quantity_mult = 0.15
-	building_group_bg_manufacturing_throughput_mult = 0.1
-	building_group_bg_plantations_throughput_mult = -0.1
+	building_group_bg_manufacturing_throughput_add = 0.1
+	building_group_bg_plantations_throughput_add = -0.1
 }
 
 fueled_by_hate = {
@@ -653,17 +692,25 @@ veterans = {
 
 frozen_wasteland = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_negative.dds
-	building_group_bg_agriculture_throughput_mult = -0.33
-	building_group_bg_manufacturing_throughput_mult = 0.05
+	building_group_bg_agriculture_throughput_add = -0.33
+	building_group_bg_manufacturing_throughput_add = 0.05
 	state_standard_of_living_add = -1
 }
 
 soviet_successors = {
-	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+	icon = gfx/interface/icons/tno_modifier_icons/modifier_soviet_suc.dds
 	country_legitimacy_base_add = 15
 	country_authority_mult = 0.1
 	country_war_exhaustion_casualties_mult = -0.25
 	country_prestige_mult = 0.1
+}
+
+scietnce_state = {
+	icon = gfx/interface/icons/tno_modifier_icons/modifier_scietnce_state.dds
+	country_legitimacy_base_add = -15
+	country_authority_mult = 0.15
+	country_war_exhaustion_casualties_mult = -0.25
+	country_weekly_innovation_mult = 0.10
 }
 
 volunteers = {
@@ -692,10 +739,10 @@ cathedrals_of_industry = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_positive.dds
 	state_laborers_mortality_mult = 0.5
 	state_slaves_mortality_mult = 0.5
-	building_steel_mills_throughput_mult = 0.15
-	building_arms_industry_throughput_mult = 0.15
-	building_munition_plants_throughput_mult = 0.15
-	building_tooling_workshops_throughput_mult = 0.1
+	building_steel_mills_throughput_add = 0.15
+	building_arms_industry_throughput_add = 0.15
+	building_munition_plants_throughput_add = 0.15
+	building_tooling_workshops_throughput_add = 0.1
 	tax_per_capita_add = 0.75
 	building_group_bg_construction_laborers_mortality_mult = 0.2
 	building_minimum_wage_mult = -0.2
@@ -715,8 +762,8 @@ absolute_truth = {
 salted_earth = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
 	state_construction_mult = -0.10
-	building_group_bg_agriculture_throughput_mult = -0.25
-	building_input_mult = -0.05
+	building_group_bg_agriculture_throughput_add = -0.25
+	building_goods_input_mult = -0.05
 	country_loan_interest_rate_mult = 0.4
 }
 
@@ -733,15 +780,15 @@ imperskiye_shturmoviki = {
 
 japans_breadbasket = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_positive.dds
-	building_group_bg_agriculture_throughput_mult = 0.35
+	building_group_bg_agriculture_throughput_add = 0.35
 	interest_group_ig_rural_folk_pop_attraction_mult = 0.25
-	building_input_mult = -0.05
+	building_goods_input_mult = -0.05
 	building_minimum_wage_mult = -0.05
 }
 
 restricted_army = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_negative.dds
-	country_army_power_projection_mult = -0.2
+	country_prestige_from_army_power_projection_mult = -0.2
 	state_conscription_rate_mult = -0.50
 	unit_morale_loss_mult = 0.1
 }
@@ -765,8 +812,8 @@ french_irredentism = {
 treaty_of_vichy = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
 	country_military_goods_cost_mult = 0.5
-	country_army_power_projection_mult = -0.5
-	country_navy_power_projection_mult = -0.5
+	country_prestige_from_army_power_projection_mult = -0.5
+	country_prestige_from_navy_power_projection_mult = -0.5
 	state_conscription_rate_mult = -0.5
 	unit_army_offense_mult = -0.1
 	unit_army_defense_mult = -0.1
@@ -775,8 +822,8 @@ treaty_of_vichy = {
 armed_forces_in_disarray = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
 	country_military_goods_cost_mult = -0.1
-	country_army_power_projection_mult = -0.15
-	country_navy_power_projection_mult = -0.5
+	country_prestige_from_army_power_projection_mult = -0.15
+	country_prestige_from_navy_power_projection_mult = -0.5
 	state_conscription_rate_mult = -0.5
 	unit_army_offense_mult = -0.05
 	unit_army_defense_mult = -0.05
@@ -864,7 +911,7 @@ rapid_industrialization = {
 	state_poor_standard_of_living_add = -3
 	building_minimum_wage_mult = -0.15
 	state_pop_qualifications_mult = -0.15
-	building_group_bg_manufacturing_throughput_mult = 0.1
+	building_group_bg_manufacturing_throughput_add = 0.1
 	interest_group_ig_industrialists_pol_str_mult = 0.2
 }
 
@@ -882,8 +929,8 @@ ecos_do_imperio = {
 	country_prestige_mult = 0.1
 	country_influence_mult = 0.2
 	country_improve_relations_speed_mult = 0.2
-	country_army_power_projection_mult = 0.2
-	country_navy_power_projection_mult = 0.2
+	country_prestige_from_army_power_projection_mult = 0.2
+	country_prestige_from_navy_power_projection_mult = 0.2
 }
 
 rebuilding_russia = {
@@ -910,13 +957,13 @@ birthplace_of_fascism = {
 
 battle_for_grain = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_positive.dds
-	building_group_bg_agriculture_throughput_mult = 0.15
+	building_group_bg_agriculture_throughput_add = 0.15
 	state_construction_mult = 0.05
 }
 
 nissan = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds
-	building_group_bg_manufacturing_throughput_mult = 0.30
+	building_group_bg_manufacturing_throughput_add = 0.30
 	building_group_bg_manufacturing_laborers_mortality_mult = 0.25
 	state_radicals_from_discrimination_mult = 0.50
 	state_construction_mult = 0.25
@@ -977,7 +1024,7 @@ revived_union = {
 
 risk_of_famine = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_negative.dds
-	building_group_bg_subsistence_agriculture_throughput_mult = -0.35
+	building_group_bg_subsistence_agriculture_throughput_add = -0.35
 }
 
 brutal_repression = {
@@ -1015,9 +1062,9 @@ the_unending_war = {
 
 heart_of_afrika = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds
-	building_group_bg_manufacturing_throughput_mult = -0.25
-	building_group_bg_plantations_throughput_mult = 0.25
-	building_group_bg_agriculture_throughput_mult = 0.25
+	building_group_bg_manufacturing_throughput_add = -0.25
+	building_group_bg_plantations_throughput_add = 0.25
+	building_group_bg_agriculture_throughput_add = 0.25
 	country_resource_discovery_chance_mult = 0.3	
 }
 
@@ -1037,7 +1084,7 @@ racial_tentions = {
 south_africa_diamond_mines = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds
 	building_group_bg_gold_mining_mortality_mult = 0.2
-	building_group_bg_gold_mining_throughput_mult = 0.15
+	building_group_bg_gold_mining_throughput_add = 0.15
 	state_construction_mult = 0.05
 	country_minting_mult = 0.1
 }
@@ -1071,10 +1118,10 @@ salafi_elected = {
 
 kingdom_of_black_gold = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds
-	building_group_bg_plantations_throughput_mult = -0.15
-	building_group_bg_agriculture_throughput_mult = -0.15
-	building_group_bg_oil_extraction_throughput_mult = 0.10
-	building_group_bg_manufacturing_throughput_mult = -0.15
+	building_group_bg_plantations_throughput_add = -0.15
+	building_group_bg_agriculture_throughput_add = -0.15
+	building_group_bg_oil_extraction_throughput_add = 0.10
+	building_group_bg_manufacturing_throughput_add = -0.15
 	state_poor_standard_of_living_add = 1
 }
 
@@ -1093,7 +1140,7 @@ mosaddeghs_legacy = {
 
 deutsch_persische_oelgesellschaft = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
-	building_group_bg_oil_extraction_throughput_mult = 0.05
+	building_group_bg_oil_extraction_throughput_add = 0.05
 	state_poor_standard_of_living_add = -2
 	building_minimum_wage_mult = -0.05
 	country_resource_discovery_chance_mult = 0.1
@@ -1132,47 +1179,47 @@ destroyed_infrastructure = {
 	state_infrastructure_mult = -0.75
 	state_infrastructure_from_population_mult = -0.6
 	state_construction_mult = -0.2	
-	country_trade_route_exports_add	= -15
-	building_group_bg_oil_extraction_throughput_mult = -0.3
+	#country_trade_route_exports_add	= -15
+	building_group_bg_oil_extraction_throughput_add = -0.3
 	unit_provinces_captured_mult = -0.5
 }
 
 oil_crisis_global = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
-	state_radicals_from_sol_change_mult = 0.4
+	state_radicals_from_sol_change_mult = 0.3
 	country_legitimacy_base_add = -15
-	building_throughput_mult = -0.1
-	state_middle_standard_of_living_add	= -1
-	state_poor_standard_of_living_add = -1
+	building_throughput_add = -0.1
+	state_middle_standard_of_living_add	= -2
+	state_poor_standard_of_living_add = -2
 }
 
 oil_crisis_ger = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
-	state_radicals_from_sol_change_mult = 0.6
+	state_radicals_from_sol_change_mult = 0.5
 	country_legitimacy_base_add = -20
 	country_authority_add = -200
-	building_throughput_mult = -0.2
-	state_middle_standard_of_living_add	= -2
-	state_poor_standard_of_living_add = -1
+	building_throughput_add = -0.2
+	state_middle_standard_of_living_add	= -3
+	state_poor_standard_of_living_add = -2
 }
 
 oil_crisis_jap = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
 	country_authority_add = -200
-	state_radicals_from_sol_change_mult = 0.5
+	state_radicals_from_sol_change_mult = 0.4
 	country_legitimacy_base_add = -20
-	building_throughput_mult = -0.15
+	building_throughput_add = -0.15
 	state_middle_standard_of_living_add	= -2
-	state_poor_standard_of_living_add = -1
+	state_poor_standard_of_living_add = -2
 }
 
 oil_crisis_usa = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
-	state_radicals_from_sol_change_mult = 0.2
+	state_radicals_from_sol_change_mult = 0.1
 	country_legitimacy_base_add = -10
 	state_middle_standard_of_living_add	= -1
 	state_poor_standard_of_living_add = -1
-	building_throughput_mult = -0.05
+	building_throughput_add = -0.05
 }
 
 oil_crisis_ig_intelligentsia = {
@@ -1206,22 +1253,29 @@ ran_out_of_oil = {
 	unit_defense_mult = -0.5
 	state_radicals_from_sol_change_mult = 1.0
 	state_construction_mult = -0.75
-	building_throughput_mult = -0.50
+	building_throughput_add = -0.50
 	state_middle_standard_of_living_add	= -4
 	state_poor_standard_of_living_add = -6
 }
 
 ration_oil_supply = {
-	building_input_oil_add = -2
-	building_throughput_mult = -0.05
+	goods_input_oil_add = -2
+	building_throughput_add = -0.05
 }
 
 squeeze_the_workers = {
-	building_group_bg_oil_extraction_throughput_mult = 0.1
+	building_group_bg_oil_extraction_throughput_add = 0.1
 	building_group_bg_oil_extraction_mortality_mult = 0.3
 }
 
 more_oil_pumps= {
-	building_group_bg_oil_extraction_throughput_mult = 0.05
+	building_group_bg_oil_extraction_throughput_add = 0.05
 	country_expenses_add = 20000
+}
+
+civiL_war_never_ends = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
+	state_conscription_rate_mult = 0.4
+	country_war_exhaustion_casualties_mult = -0.9
+	country_military_wages_mult = -0.1
 }

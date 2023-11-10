@@ -275,13 +275,6 @@
             set_variable = ger_flavor_var
             trigger_event = { id = tno_flavor_events.3 days = 0 popup = yes }
         } 
-        
-        if = {
-            limit = {
-             has_modifier= volunteers_leaving
-           }
-            trigger_event = { id = tno_war_help.2 popup = yes }
-        }
     
        #MADAGASCAR 
        if = {
@@ -426,22 +419,3 @@
         1 = tno_oil_crisis.12
     }
 }  
-
-on_war_end = {
-    effect = {
-		scope:actor = {
-			add_modifier = {
-                name = volunteers_leaving
-                is_decaying = yes
-                   months = 2
-                }
-            }
-		scope:target = {
-			add_modifier = {
-                name = volunteers_leaving
-                is_decaying = yes
-                   months = 2
-                }
-		}
-	}
-}
