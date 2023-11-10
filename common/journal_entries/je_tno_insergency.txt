@@ -5,12 +5,6 @@ je_tno_insergency_ost = { # ostland insurgency
   
 
     scripted_button = je_insur_ost_a
-    scripted_button = je_insur_ost_b
-	scripted_button = je_insur_ost_c
-	scripted_button = je_insur_ost_d
-	scripted_button = je_insur_ost_e
-	scripted_button = je_insur_ost_f
-	scripted_button = je_insur_ost_g
 
     status_desc = {
 	
@@ -76,7 +70,7 @@ je_tno_insergency_ost = { # ostland insurgency
         effect = {
 			change_variable = {
 				name = chaos_ost_timer
-				add = 0.5
+				add = 1
 			}
             if = {
                 ig:ig_armed_forces = {
@@ -97,7 +91,7 @@ je_tno_insergency_ost = { # ostland insurgency
             }
         change_variable = {
             name = chaos_ost_timer
-            add = -
+            add = -4
         }
         }
         if = {
@@ -116,7 +110,7 @@ je_tno_insergency_ost = { # ostland insurgency
        
 		}
 		random_events = {
-            20 = 0
+            150 = 0
             15 = tno_RK_events.2
             15 = tno_RK_events.3
             15 = tno_RK_events.4
@@ -143,6 +137,72 @@ je_tno_insergency_ost = { # ostland insurgency
     
     weight = 100
 
+    should_be_pinned_by_default = yes
+    
+}
+
+je_ost_reform_racism = { # Ostland reforms Racism laws
+
+    icon = "gfx/interface/icons/new_event_icons/event_jimcrow.dds"
+
+    
+    
+    complete = {
+        OR = { 
+            has_law = law_type:law_multicultural
+            has_law = law_type:law_racial_segregation
+            has_law = law_type:law_cultural_exclusion
+        }
+    }
+
+    on_complete = {
+       
+    }
+
+    weight = 30
+    
+    should_be_pinned_by_default = no
+    
+}
+
+je_ost_reform_main = { # Main JE that trakcs progress of reforms
+
+    icon = "gfx/interface/icons/new_event_icons/event_bill.dds"
+
+
+    immediate = {
+
+		set_variable = {
+			name = reform_bar_timer
+			value = 0
+		}
+	}
+    
+    complete = {
+		scope:journal_entry = {
+			is_goal_complete = yes
+		}
+	}
+
+    on_complete = {
+        trigger_event = { id = tno_usa_segregation_events.1 popup = yes }
+    }
+
+    
+
+    current_value = {
+		value = root.var:reform_bar_timer
+	}
+
+    goal_add_value = {
+		value = 50
+	}
+
+    progressbar = yes
+    
+    weight = 100
+
+    
     should_be_pinned_by_default = yes
     
 }

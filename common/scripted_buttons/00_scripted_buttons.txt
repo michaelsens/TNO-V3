@@ -67,8 +67,8 @@ je_civil_rights_b = {
 }
 
 je_insur_ost_a = {
-	name = "je_civil_rights_stall"
-	desc = "je_we_racist"
+	name = "Anti insurgent campaign"
+	desc = "We will launch a campaign against the insurgency to boost stability"
 
 	visible = { always = yes }
 
@@ -76,7 +76,7 @@ je_insur_ost_a = {
 		scope:journal_entry = {
 				not = {
 				custom_tooltip = {
-					text = civil_rights_cooldown
+					text = "Hasnt launched a campaign in the last 12 months"
 					has_variable = chaos_ost_timer_cooldown
 				}
 			}
@@ -84,11 +84,10 @@ je_insur_ost_a = {
 	}
 
 	effect = {
-        custom_tooltip = cooldown_three_balls_tt
+        custom_tooltip = "Will lower chaos by 10"
 		scope:journal_entry = {
-			set_variable = { name = chaos_ost_timer_cooldown months = 2 }
+			set_variable = { name = chaos_ost_timer_cooldown months = 12 }
 		}	
-        custom_tooltip = civil_rights_act_stall_10
         change_variable = {
             name = chaos_ost_timer
             add = -10
@@ -96,35 +95,6 @@ je_insur_ost_a = {
 	}
 }
 
-je_insur_ost_b = {
-	name = "je_civil_rights_stall"
-	desc = "je_we_racist"
-
-	visible = { always = yes }
-
-	possible = {
-		scope:journal_entry = {
-				not = {
-				custom_tooltip = {
-					text = civil_rights_cooldown
-					has_variable = chaos_ost_timer_cooldown
-				}
-			}
-		}
-	}
-
-	effect = {
-        custom_tooltip = cooldown_three_balls_tt
-		scope:journal_entry = {
-			set_variable = { name = chaos_ost_timer_cooldown months = 2 }
-		}	
-        custom_tooltip = civil_rights_act_stall_10
-        change_variable = {
-            name = chaos_ost_timer
-            add = -10
-        }
-	}
-}
 
 je_funding_a = {  #small funding
 	name = "Request small amount of funding " 
@@ -609,7 +579,7 @@ je_hollywood_l = {
 			months = 10
 		} 
 	}
-}
+} #END OF HOLLYWOOD #######################################################################################################################################
 
 je_gerstruggle_a = {
 	name = "je_civil_rights_stall"
