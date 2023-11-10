@@ -1144,6 +1144,19 @@ BOH = { # Bohemia
 
 BOL = { # Bolivia
 	flag_definition = {
+		coa = BOL_ofn
+		subject_canton = BOL_ofn
+		allow_overlord_canton = no		
+		priority = 999
+		trigger = {
+            OR = {
+                scope:actor = {
+                    is_subject_of = c:USA
+                }
+            }
+        }
+	}
+	flag_definition = {
 		coa = BOL
 		subject_canton = BOL
 		allow_overlord_canton = yes	
@@ -1690,6 +1703,18 @@ CAN = { # Canada
 		trigger = { 
 			coa_def_republic_flag_trigger = yes
 		}
+	}	
+	flag_definition = {
+		coa = CAN_ofn
+		subject_canton = CAN_ofn
+		priority = 99
+		trigger = {
+            OR = {
+                scope:actor = {
+                    is_subject_of = c:USA
+                }
+            }
+        }
 	}	
 	flag_definition = {
 		coa = CAN_theocracy
@@ -4343,134 +4368,68 @@ ISR = { # Israel
 
 ITA = { # Italy
 	flag_definition = {
-		coa = ITA_republic
-		subject_canton = ITA_republic
-		priority = 1
-	}
-	flag_definition = {
-		coa = ITA_papal
-		subject_canton = ITA_papal
-		priority = 15
-		
-		trigger = {
-			NOT = { exists = c:PAP } # Can't be Pope if the Pope is still in control of another country!
-			coa_def_theocracy_flag_trigger = yes
-		}
-	}
-
-	### Different monarchist Italies ###
-
-	# Sardinia-Piedmont Italy
-	flag_definition = {
-		coa = ITA
-		priority = 15
-		trigger = {
-			exists = scope:actor
-			scope:actor = {
-				has_law = law_type:law_monarchy
-				was_formed_from = SAR
-			}
-		}
-	}
-
-	## Two Sicilies Italy
-	flag_definition = {
-		coa = ITA_sicilian
-		subject_canton = ITA_sicilian
-		priority = 15
-		trigger = { 
-			exists = scope:actor
-			scope:actor = {
-				has_law = law_type:law_monarchy
-				was_formed_from = SIC
-			}
-		}
-	}
-
-	# Tuscany Italy
-	flag_definition = {
-		coa = ITA_tuscan
-		priority = 15
-		trigger = {
-			exists = scope:actor
-			scope:actor = {
-				has_law = law_type:law_monarchy
-				was_formed_from = TUS
-			}
-		}
-	}
-
-	# Modena Italy
-	flag_definition = {
-		coa = ITA_modenan
-		priority = 15
-		trigger = {
-			exists = scope:actor
-			scope:actor = {
-				has_law = law_type:law_monarchy
-				was_formed_from = MOD
-			}
-		}
-	}
-
-	# Parma Italy
-	flag_definition = {
-		coa = ITA_parmesan
-		priority = 15
-		trigger = {
-			exists = scope:actor
-			scope:actor = {
-				has_law = law_type:law_monarchy
-				was_formed_from = PAR
-			}
-		}
-	}
-
-	# Lucca Italy
-	flag_definition = {
-		coa = ITA_luccan
-		priority = 15
-		trigger = {
-			exists = scope:actor
-			scope:actor = {
-				has_law = law_type:law_monarchy
-				was_formed_from = LUC
-			}
-		}
-	}
-
-	### end of country-specific flags ###
-
-	flag_definition = {
-		coa = ITA_republic
-		priority = 10
-		trigger = { 
-			coa_def_republic_flag_trigger = yes
-		}
-	}
-	flag_definition = {
 		coa = ITA_dictatorship
 		subject_canton = ITA_dictatorship
-		priority = 20
+		priority = 30
 		trigger = {
-			coa_def_dictatorship_flag_trigger = yes
-		}
-	}	
+			exists = scope:actor
+			scope:actor = {
+				OR = {
+					has_law = law_type:law_monarchy
+					has_law = law_type:law_autocracy
+				}
+				
+				NOT = { has_law = law_type:law_council_republic}
+				NOT = { has_law = law_type:law_theocracy}
+
+			}
+		} 
+	}
 	flag_definition = {
-		coa = ITA_communist
-		priority = 1500
-		trigger = { 
-			coa_def_communist_flag_trigger = yes
-		}
-	}	
+		coa = ITA_com
+		subject_canton = ITA_com
+		priority = 9999
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				NOT = { has_law = law_type:law_presidential_republic}
+				NOT = {has_law = law_type:law_parliamentary_republic}
+				NOT = { has_law = law_type:law_theocracy}
+				NOT = { has_law = law_type:law_monarchy}
+
+			}
+		} 
+	}
 	flag_definition = {
-		coa = ITA_fascist
-		subject_canton = ITA_fascist
-		priority = 1500
-		trigger = { 
-			coa_def_fascist_flag_trigger = yes
-		}
-	}	
+		coa = ITA_theo
+		subject_canton = ITA_theo
+		priority = 999
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_law = law_type:law_theocracy
+				
+			}
+		} 
+	}
+	flag_definition = {
+		coa = ITA_dem
+		subject_canton = ITA_dem
+		priority = 30
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				OR = {
+					has_law = law_type:law_presidential_republic
+					has_law = law_type:law_parliamentary_republic
+				}
+				NOT = { has_law = law_type:law_autocracy }
+				NOT = { has_law = law_type:law_technocracy}
+				NOT = { has_law = law_type:law_oligarchy}
+
+			}
+		} 
+	}
 }
 
 IUS = { # Idel-Ural State
@@ -5599,6 +5558,21 @@ MEX = { # Mexico
 			coa_def_absolute_monarchy_flag_trigger = yes
 		}
 	}	
+	flag_definition = {
+		coa = MEX_ofn
+		subject_canton = MEX_ofn
+		allow_overlord_canton = no
+		coa_with_overlord_canton = MEX_ofn			
+		priority = 99
+		trigger = {
+			OR = {
+				scope:actor = {
+					is_subject_of = c:USA
+				}
+			}
+		}
+	}	
+	
 	flag_definition = {
 		coa = MEX_dictatorship
 		subject_canton = MEX_dictatorship
@@ -6800,6 +6774,20 @@ PEU = { # Peru
 		allow_overlord_canton = yes	
 		coa_with_overlord_canton = PEU_subject			
 		priority = 1
+	}
+	flag_definition = {
+		coa = PEU_ofn
+		subject_canton = PEU_ofn
+		allow_overlord_canton = no	
+		coa_with_overlord_canton = PEU_ofn			
+		priority = 999
+		trigger = {
+            OR = {
+                scope:actor = {
+                    is_subject_of = c:USA
+                }
+            }
+        }
 	}
 	flag_definition = {
 		coa = PEU_monarchy
