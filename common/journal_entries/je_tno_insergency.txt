@@ -56,14 +56,23 @@ je_tno_insergency_ost = { # ostland insurgency
 	}
     
     complete = {
-		scope:journal_entry = {
-			is_goal_complete = yes
-		}
+        has_variable =  ost_reformed
 
 	}
 
-    on_complete = {
+    fail = {
+        scope:journal_entry = {
+			is_goal_complete = yes
+		}
+        
+    }
+
+    on_fail = {
         trigger_event = { id = tno_RK_events.1 popup = yes }
+    }
+
+    on_complete = {
+       
     }
 
     on_monthly_pulse = {
@@ -310,10 +319,6 @@ je_ost_reform_police_01 = { # Needed to complete Police reform
 
     on_complete = {
 
-        change_variable = {
-            name = reform_bar_timer
-            add = 10
-        }
         set_variable = police_reform
        
     }
@@ -334,7 +339,7 @@ je_ost_reform_police_01 = { # Needed to complete Police reform
 
    
     goal_add_value = {
-		value = 24
+		value = 30
 	}
 
     progressbar = yes
@@ -367,7 +372,7 @@ je_ost_reform_main = { # Main JE that trakcs progress of reforms
 	}
 
     on_complete = {
-        trigger_event = { id = tno_usa_segregation_events.1 popup = yes }
+      set_variable = ost_reformed
     }
 
     
