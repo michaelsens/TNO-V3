@@ -95,6 +95,35 @@ je_insur_ost_a = {
 	}
 }
 
+je_police_reform_ost_a = {
+	name = "TBD"
+	desc = "TBD"
+
+	visible = { always = yes }
+
+	possible = {
+		scope:journal_entry = {
+				not = {
+				custom_tooltip = {
+					text = "TBD"
+					has_variable = chaos_ost_police_reform_cooldown
+				}
+			}
+		}
+	}
+
+	effect = {
+        custom_tooltip = "TBD"
+		scope:journal_entry = {
+			set_variable = { name = chaos_ost_police_reform_cooldown months = 4 }
+		}	
+        change_variable = {
+            name = police_reform_bar_timer
+            add = 10
+        }
+	}
+}
+
 
 je_funding_a = {  #small funding
 	name = "Request small amount of funding " 
