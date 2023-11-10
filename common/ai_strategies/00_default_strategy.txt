@@ -132,23 +132,6 @@ ai_strategy_default = {
 			add = -0.1
 		}
 
-		# Ottomans should want Syria back
-		if = {
-			limit = {
-				has_journal_entry = je_sick_man_syria
-				scope:enemy_country = {
-					OR = {
-						owns_entire_state_region = STATE_ALEPPO
-						owns_entire_state_region = STATE_SYRIA
-						owns_entire_state_region = STATE_LEBANON
-						owns_entire_state_region = STATE_PALESTINE
-						owns_entire_state_region = STATE_TRANSJORDAN
-						owns_entire_state_region = STATE_ADANA
-					}
-				}
-			}
-			add = 0.25
-		}
 
 		
 				
@@ -755,38 +738,6 @@ ai_strategy_default = {
 			add = 25
 		}
 
-		# Ottomans should be very aggressive against owners of Syria and Egypt when they have the relevant JE's
-		if = {
-			limit = {
-				OR = {
-					AND = {
-						has_journal_entry = je_sick_man_syria
-						scope:target_country = {
-							OR = {
-								owns_entire_state_region = STATE_ALEPPO
-								owns_entire_state_region = STATE_SYRIA
-								owns_entire_state_region = STATE_LEBANON
-								owns_entire_state_region = STATE_PALESTINE
-								owns_entire_state_region = STATE_TRANSJORDAN
-								owns_entire_state_region = STATE_ADANA
-							}
-						}
-					}
-					AND = {
-						has_journal_entry = je_sick_man_egypt
-						scope:target_country = {
-							OR = {
-								owns_entire_state_region = STATE_SINAI
-								owns_entire_state_region = STATE_UPPER_EGYPT
-								owns_entire_state_region = STATE_MIDDLE_EGYPT
-								owns_entire_state_region = STATE_LOWER_EGYPT
-							}
-						}
-					}
-				}
-			}
-			add = 25
-		}
 
 
 
@@ -1471,28 +1422,6 @@ ai_strategy_default = {
 	# How important is it that the AI maintains an interest in a specific strategic region (added on top of region value calculations set in defines)
 	# Using this value in other strategies will function additively
 	strategic_region_scores = {
-		region_anatolia = {
-			if = {
-				limit = { # Great Powers care about Egyptian-Ottoman conflict in Arabia/Anatolia early game
-					exists = c:TUR
-					c:TUR = { has_journal_entry = je_sick_man_syria }
-					country_rank = rank_value:great_power
-					navy_size >= 50
-				}
-				add = 1000
-			}
-		}	
-		region_arabic = {
-			if = {
-				limit = { # Great Powers care about Egyptian-Ottoman conflict in Arabia/Anatolia early game
-					exists = c:TUR
-					c:TUR = { has_journal_entry = je_sick_man_syria }
-					country_rank = rank_value:great_power
-					navy_size >= 50
-				}
-				add = 1000
-			}
-		}
 		region_japan = {	
 			if = {
 				limit = {
@@ -1502,37 +1431,7 @@ ai_strategy_default = {
 				}
 				add = -50
 			}				
-		}				
-		region_north_germany = {
-			if = {
-				limit = {
-					country_is_in_europe = yes
-					country_rank >= rank_value:great_power
-				}
-				add = 100
-			}
-			if = {
-				limit = {
-					has_journal_entry = je_german_unification
-				}
-				add = 1000
-			}			
-		}
-		region_south_germany = {
-			if = {
-				limit = {
-					country_is_in_europe = yes
-					country_rank >= rank_value:great_power
-				}
-				add = 100
-			}
-			if = {
-				limit = {
-					has_journal_entry = je_german_unification
-				}
-				add = 1000
-			}				
-		}		
+		}					
 		region_italy = {
 			if = {
 				limit = {
@@ -2354,14 +2253,7 @@ ai_strategy_default = {
 					add = 200
 				}
 				
-				if = {
-					limit = {
-						has_journal_entry = je_sick_man_syria
-						exists = c:EGY
-						scope:target_country = c:EGY
-					}
-					add = 200
-				}
+			
 			
 				
 		
@@ -3049,46 +2941,6 @@ ai_strategy_default = {
 
 		
 			
-			if = { #Do Not Take Chinese States In Full, unless another power has already done so
-				limit = {
-					country_rank >= rank_value:major_power
-					scope:target_state = {
-						owner = { has_journal_entry = je_warlord_china }
-						OR = {
-							region = sr:region_north_china
-							region = sr:region_south_china
-							region = sr:region_manchuria
-						}
-					}				
-					OR = {
-						country_is_in_north_america = yes
-						country_is_in_europe = yes
-						country_is_in_south_america = yes
-					}					
-					NOT = {
-						any_country = {
-							NOT = { THIS = ROOT }
-							country_rank >= rank_value:major_power
-							OR = {
-								country_is_in_north_america = yes
-								country_is_in_europe = yes
-								country_is_in_south_america = yes
-							}
-							any_scope_state = {
-								NOT = { is_treaty_port = yes }
-								OR = {
-									region = sr:region_north_china
-									region = sr:region_south_china
-									region = sr:region_manchuria
-								}
-							}
-						}					
-					}
-				}
-				multiply = 0
-			}
-			
-			
 			min = 0
 			max = 100			
 		}
@@ -3156,23 +3008,7 @@ ai_strategy_default = {
 				}			
 			
 
-
-				if = {
-					limit = {
-						has_journal_entry = je_sick_man_syria
-						scope:target_state = {
-							OR = {
-								state_region = s:STATE_ALEPPO
-								state_region = s:STATE_SYRIA
-								state_region = s:STATE_LEBANON
-								state_region = s:STATE_PALESTINE
-								state_region = s:STATE_TRANSJORDAN
-								state_region = s:STATE_ADANA
-							}
-						}
-					}
-					add = 100
-				}				
+			
 			
 				if = {
 					limit = { 

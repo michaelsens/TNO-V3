@@ -319,6 +319,14 @@ glorify_millitary = {
 
 }
 
+protesters_counterd = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_lightbulb_positive.dds
+    interest_group_ig_petty_bourgeoisie_pol_str_mult = 0.15
+    interest_group_ig_petty_bourgeoisie_approval_add = 3
+    interest_group_ig_armed_forces_pol_str_mult = 0.05
+
+}
+
 intelligentsia_movie = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_lightbulb_positive.dds
 	interest_group_ig_intelligentsia_pol_str_mult = 0.15
@@ -1297,34 +1305,35 @@ destroyed_infrastructure = {
 	state_infrastructure_mult = -0.75
 	state_infrastructure_from_population_mult = -0.6
 	state_construction_mult = -0.2	
-	country_trade_route_exports_add	= -15
 	building_group_bg_oil_extraction_throughput_mult = -0.3
+	#country_trade_route_exports_add	= -15
+	building_group_bg_oil_extraction_throughput_add = -0.3
 	unit_provinces_captured_mult = -0.5
 }
 
 oil_crisis_global = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
-	state_radicals_from_sol_change_mult = 0.4
+	state_radicals_from_sol_change_mult = 0.2
 	country_legitimacy_base_add = -15
 	building_throughput_mult = -0.1
-	state_middle_standard_of_living_add	= -1
+	state_middle_standard_of_living_add	= -2
 	state_poor_standard_of_living_add = -1
 }
 
 oil_crisis_ger = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
-	state_radicals_from_sol_change_mult = 0.6
-	country_legitimacy_base_add = -20
+	state_radicals_from_sol_change_mult = 0.2
+	country_legitimacy_base_add = -15
 	country_authority_add = -200
-	building_throughput_mult = -0.2
+	building_throughput_add = -0.15
 	state_middle_standard_of_living_add	= -2
 	state_poor_standard_of_living_add = -1
 }
 
 oil_crisis_jap = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
-	country_authority_add = -200
-	state_radicals_from_sol_change_mult = 0.5
+	country_authority_add = -100
+	state_radicals_from_sol_change_mult = 0.2
 	country_legitimacy_base_add = -20
 	building_throughput_mult = -0.15
 	state_middle_standard_of_living_add	= -2
@@ -1333,11 +1342,11 @@ oil_crisis_jap = {
 
 oil_crisis_usa = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
-	state_radicals_from_sol_change_mult = 0.2
+	state_radicals_from_sol_change_mult = 0.15
 	country_legitimacy_base_add = -10
 	state_middle_standard_of_living_add	= -1
 	state_poor_standard_of_living_add = -1
-	building_throughput_mult = -0.05
+	building_throughput_add = -0.05
 }
 
 oil_crisis_ig_intelligentsia = {
@@ -1366,14 +1375,14 @@ oil_crisis_ig_armed_forces = {
 
 ran_out_of_oil = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_negative.dds
-	country_prestige_mult = -0.5
-	unit_offense_mult = -0.5
-	unit_defense_mult = -0.5
-	state_radicals_from_sol_change_mult = 1.0
+	country_prestige_mult = -0.3
+	unit_offense_mult = -0.4
+	unit_defense_mult = -0.4
+	state_radicals_from_sol_change_mult = 0.4
 	state_construction_mult = -0.75
-	building_throughput_mult = -0.50
-	state_middle_standard_of_living_add	= -4
-	state_poor_standard_of_living_add = -6
+	building_throughput_mult = -0.35
+	state_middle_standard_of_living_add	= -3
+	state_poor_standard_of_living_add = -2
 }
 
 ration_oil_supply = {
@@ -1383,10 +1392,23 @@ ration_oil_supply = {
 
 squeeze_the_workers = {
 	building_group_bg_oil_extraction_throughput_mult = 0.1
+	goods_input_oil_add = -2
+	building_throughput_add = -0.05
+}
+
+squeeze_the_workers = {
+	building_group_bg_oil_extraction_throughput_add = 0.1
 	building_group_bg_oil_extraction_mortality_mult = 0.3
 }
 
 more_oil_pumps= {
-	building_group_bg_oil_extraction_throughput_mult = 0.05
+	building_group_bg_oil_extraction_throughput_add = 0.05
 	country_expenses_add = 20000
+}
+
+civiL_war_never_ends = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
+	state_conscription_rate_mult = 0.4
+	country_war_exhaustion_casualties_mult = -0.9
+	country_military_wages_mult = -0.15
 }
