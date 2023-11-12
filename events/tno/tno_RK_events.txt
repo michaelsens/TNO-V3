@@ -17,8 +17,13 @@ tno_RK_events.1 = { # baltic upriseing
 
     duration = 3
 
+	
+
     option = {
         name = tno_RK_events.1.a
+		
+		
+
 
 		create_country = { # Student reformers
 		tag = RKS
@@ -49,7 +54,11 @@ tno_RK_events.1 = { # baltic upriseing
 		tag = GMG
 		origin = c:RKO
 		state = s:STATE_LATVIA.region_state:RKO
+
+		
+
 		on_created = {
+		
 		activate_law = law_type:law_appointed_bureaucrats
 		activate_law = law_type:law_child_labor_allowed
 		activate_law = law_type:law_ethnostate
@@ -65,6 +74,19 @@ tno_RK_events.1 = { # baltic upriseing
 		activate_law = law_type:law_militarized_police
 		activate_law = law_type:law_women_in_the_workplace
 		activate_law = law_type:law_autocracy
+
+		create_diplomatic_play = {
+			name = ostland_war.1
+			target_country = c:LLL
+				type = dp_annex_war
+				war = yes
+				add_war_goal = {
+					holder = c:LLL
+					type = annex_country
+					target_state = s:STATE_LATVIA.region_state:RKO
+				}
+			
+		}
 	 }
 	}
         create_country = { # United parizan organaztion
@@ -137,7 +159,23 @@ tno_RK_events.1 = { # baltic upriseing
 				activate_law = law_type:law_women_in_the_workplace
 				activate_law = law_type:law_autocracy
 			 }
+			 
 		} 
+
+		c:LLL = {
+			trigger_event = { id = tno_RK_events.16 days = 0 popup = yes }
+		} 
+		c:LLL = {
+			trigger_event = { id = tno_RK_events.18 days = 0 popup = yes }
+		} 
+	
+		trigger_event = { id = tno_RK_events.19 days = 0 popup = yes }
+		
+		c:LLL = {
+			trigger_event = { id = tno_RK_events.20 days = 0 popup = yes }
+		}  
+		trigger_event = { id = tno_RK_events.15 days = 0 popup = yes }
+	
     } 
 }
 
@@ -1133,7 +1171,7 @@ tno_RK_events.14 = { # Ostland starting event
     flavor = tno_RK_events.14.f	
 
 	event_image = { 
-		texture  = "gfx/event_pictures/event_pictures/ied_attack.dds"
+		texture  = "gfx/event_pictures/event_pictures/ost_start.dds"
 	}
 
     icon = "gfx/interface/icons/tno_event_icons/bicorne_jim_crow_protest.2.dds"
@@ -1189,9 +1227,179 @@ tno_RK_events.14 = { # Ostland starting event
 		default_option = yes
         name = tno_RK_events.14.b
 
-
+		custom_tooltip = "NOT FINISHED"
 	}
 
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 }
+
+tno_RK_events.15 = { # Ostland civil war
+    type = country_event
+    placement = ROOT
+
+	hidden = yes
+
+
+	trigger = {
+		this ?= c:RKO
+	}	
+
+    immediate = {
+		create_diplomatic_play = {
+			name = ostland_war
+			target_country = c:GMG
+				type = dp_annex_war
+				war = yes
+				add_war_goal = {
+					holder = c:GMG
+					type = annex_country
+					target_state = s:STATE_INGRIA.region_state:RKO
+				}
+			
+		}
+    }
+	
+	duration = 1
+
+	
+   
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+}
+
+tno_RK_events.17 = { # Ostland civil war between latvia and SS
+	type = country_event
+	hidden = yes
+
+
+
+	trigger = {
+		this ?= c:LLL
+	}	
+
+    immediate = {
+		create_diplomatic_play = {
+			name = ostland_war.1
+			target_country = c:GMG
+				type = dp_annex_war
+				war = yes
+				add_war_goal = {
+					holder = c:GMG
+					type = annex_country
+					target_state = s:STATE_LATVIA.region_state:LLL
+				}
+			
+		}
+    }
+	
+	duration = 1
+
+	
+   
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+}
+
+tno_RK_events.18 = { # Ostland civil war between STUDENTS and SS
+	type = country_event
+	hidden = yes
+
+
+
+	trigger = {
+		this ?= c:LLL
+	}	
+
+    immediate = {
+		create_diplomatic_play = {
+			name = ostland_war.2
+			target_country = c:RKS
+				type = dp_annex_war
+				war = yes
+				add_war_goal = {
+					holder = c:RKS
+					type = annex_country
+					target_state = s:STATE_LATVIA.region_state:LLL
+				}
+			
+		}
+    }
+	
+	duration = 1
+
+	
+   
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+}
+
+tno_RK_events.19 = { # Ostland civil war between ostland and SS
+	type = country_event
+	hidden = yes
+
+
+
+	trigger = {
+		this ?= c:RKO
+	}	
+
+    immediate = {
+		create_diplomatic_play = {
+			name = ostland_war.3
+			target_country = c:LLL
+				type = dp_annex_war
+				war = yes
+				add_war_goal = {
+					holder = c:LLL
+					type = annex_country
+					target_state = s:STATE_INGRIA.region_state:LLL
+				}
+			
+		}
+    }
+	
+	duration = 1
+
+	
+   
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+}
+
+tno_RK_events.20 = { # Ostland civil war between partizans and SS
+	type = country_event
+	hidden = yes
+
+
+
+	trigger = {
+		this ?= c:LLL
+	}	
+
+    immediate = {
+		create_diplomatic_play = {
+			name = ostland_war.3
+			target_country = c:UPO
+				type = dp_annex_war
+				war = yes
+				add_war_goal = {
+					holder = c:UPO
+					type = annex_country
+					target_state = s:STATE_LATVIA.region_state:LLL
+				}
+			
+		}
+    }
+	
+	duration = 1
+
+	
+   
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+}
+
+
+
+
 
