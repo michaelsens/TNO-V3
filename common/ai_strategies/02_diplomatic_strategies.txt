@@ -305,11 +305,13 @@ ai_strategy_unify_britian = {
 			if = {
 				limit = {
 					scope:target_state = {
-						OR = {
-							is_homeland = cu:british
-							is_homeland = cu:scottish
-							is_homeland = cu:irish
-						}	
+						state_region = {
+							OR = {
+								is_homeland = cu:british
+								is_homeland = cu:scottish
+								is_homeland = cu:irish
+							}
+						}
 					}
 					can_reach_target_state = yes
 				}
