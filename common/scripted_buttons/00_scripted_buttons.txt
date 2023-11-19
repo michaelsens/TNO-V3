@@ -1145,4 +1145,107 @@ je_devout_ger_e = {  # SS Suppys waffen
 		
 }
 }
+je_borman_ger_a = {  #  borman alternative
+	name = "Present the Alternative" 
+	desc = "Unlike his opponets, the Chancellerys leader is largely viewed as a pragmatic National Socialist."
+
+	visible = { always = yes }
+
+	possible = {
+		scope:journal_entry = {
+				not = {
+				custom_tooltip = {
+					text = "Has not already Presented the Alternative"
+					has_variable = je_alternative
+				}
+			}
+		}
+	}
+
+	effect = {
+
+		scope:journal_entry = {
+			set_variable = { name = je_alternative months = 9999  }
+		}	
+		custom_tooltip = {
+			text = "Increase Chancellery infulence by 10"
+			
+	
+		}
+		change_variable = {
+			name =  boreman_ger_struggle_timer
+			   add = 10
+			 }
+		
+		
+}
+}
+je_borman_ger_b = {  # Increase the budget
+	name = "Increase the Budget" 
+	desc = "To secure loyality in the army we will increase funding."
+
+	visible = { always = yes }
+
+	possible = {
+		scope:journal_entry = {
+				not = {
+				custom_tooltip = {
+					text = "Has not already increased the budget"
+					has_variable = je_im_sleepy
+				}
+			}
+		}
+	}
+
+	effect = {
+
+		scope:journal_entry = {
+			set_variable = { name = je_im_sleepy months = 9999  }
+		}	
+		custom_tooltip = {
+			text = "Increase Chancellery infulence by 10"
+			
+		}
+		change_variable = {
+			name =  boreman_ger_struggle_timer
+			   add = 10
+			 }
+		
+		
+}
+}
+je_borman_ger_d = {  # borman blackmale
+	name = "Use blackmail" 
+	desc = "We will blackmail those who refuse to pick a side."
+
+	visible = { always = yes }
+
+	possible = {
+		scope:journal_entry = {
+				not = {
+				custom_tooltip = {
+					text = "Has not already used blackmail"
+					has_variable = je_blackmail
+				}
+			}
+		}
+	}
+
+	effect = {
+
+		scope:journal_entry = {
+			set_variable = { name = je_blackmail months = 9999  }
+		}	
+		custom_tooltip = {
+			text = "Increase Chancellery infulence by 10"
+			
+		}
+		change_variable = {
+			name =  boreman_ger_struggle_timer
+			   add = 10
+			 }
+		
+		
+}
+}
 
