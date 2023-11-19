@@ -23,20 +23,22 @@ types naval_invasion_types
 		}
 
 		blockoverride "window_header_name_line_two" {
+			visible = "[Not(NavalInvasion.HasEnded)]"
 			text = "NAVAL_INVASION_PANEL_SUBTITLE"
 		}
 
 		blockoverride "goto_visibility" {}
 
 		blockoverride "goto_properties" {
-			### TODO add a function to zoom to the current location of the Naval Invasion
-			#onclick = "[NavalInvasion.ZoomToMapMarkerPosition]"
+            visible = "[Not(NavalInvasion.HasEnded)]"
+			onclick = "[NavalInvasion.ZoomToMapMarkerPosition]"
 			tooltip = "ZOOM_TO_NAVAL_INVASION"
-			#enabled = "[Not( NavalInvasion.IsZoomingToMapMarkerPosition )]"
+			enabled = "[Not( NavalInvasion.IsZoomingToMapMarkerPosition )]"
 		}
 
 		blockoverride "goto_button" {
 			button_icon_goto = {
+                visible = "[Not(NavalInvasion.HasEnded)]"
 				size = { 30 30 }
 				datacontext = "[NavalInvasion.GetInvadedCountry]"
 				tooltip = "GO_TO_BUTTON_COUNTRY"
@@ -88,45 +90,25 @@ types naval_invasion_types
 				blockoverride "second_button_name" {
 					name = "tutorial_highlight_naval_invasion_battles_tab"
 				}
-
-				# Modifiers
-				blockoverride "third_button" {
-					text = "MILITARY_FORMATION_PANEL_MODIFIERS_TAB"
-				}
-				blockoverride "third_button_tooltip" {
-					tooltip = "MILITARY_FORMATION_PANEL_MODIFIERS_TAB"
-				}
-				blockoverride "third_button_click" {
-					onclick = "[InformationPanel.SelectTab('modifiers')]"
-				}
-				blockoverride "third_button_visibility" {
-					visible = "[InformationPanel.IsTabSelected('modifiers')]"
-				}
-				blockoverride "third_button_visibility_checked" {
-					visible = "[Not( InformationPanel.IsTabSelected('modifiers') )]"
-				}
-				blockoverride "third_button_selected" {
-					text = "MILITARY_FORMATION_PANEL_MODIFIERS_TAB_SELECTED"
-				}
 			}
 		}
 
 		blockoverride "scrollarea_content"
 		{
 			naval_invasion_panel_overview_content = {
-				visible = "[InformationPanel.IsTabSelected('default')]"
+				visible = "[And(Not(NavalInvasion.HasEnded), InformationPanel.IsTabSelected('default'))]"
 				using = default_content_fade
 			}
 
 			naval_invasion_panel_battles_content = {
-				visible = "[InformationPanel.IsTabSelected('battles')]"
+				visible = "[And(Not(NavalInvasion.HasEnded),InformationPanel.IsTabSelected('battles'))]"
 				using = default_content_fade
 			}
 
-			modifier_list = {
-				visible = "[InformationPanel.IsTabSelected('modifiers')]"
-				using = default_content_fade
-			}
+			naval_invasion_concluded = {
+                visible = "[Not(Not(NavalInvasion.HasEnded))]"
+                using = default_content_fade
+            }
 		}
 
 		### BOTTOM PART
@@ -150,19 +132,6 @@ types naval_invasion_types
 		margin_top = 20
 		spacing = 10
 
-		# todo PRCAL-29752 - Remove this whole textbox and the loc-key when code support is in
-		textbox = {
-			visible = no
-			parentanchor = hcenter
-			autoresize = yes
-			align = hcenter|nobaseline
-			using = fontsize_xl
-			elide = right
-			fontsize_min = 14
-			max_width = @panel_width
-			raw_text = "PANEL_DISCLAIMER"
-		}
-
 		flowcontainer = {
 			direction = vertical
 			parentanchor = hcenter
@@ -172,7 +141,7 @@ types naval_invasion_types
 
 				blockoverride "text"
 				{
-					text = "SEA_REGION_HEADER"
+					text = "[NavalInvasion.GetSeaNodeName]"
 				}
 			}
 	    	
@@ -244,55 +213,20 @@ types naval_invasion_types
 						}
 
 						textbox = {
-							#visible = "[Not(NavalInvasion.Failed)]" # todo PRCAL-29752
+							visible = "[Not(NavalInvasion.HasEnded)]"
 							margin = { 10 10 }
 							parentanchor = center
 							position = { 0 20 }
 							autoresize = yes
 							align = nobaseline
 							using = fontsize_xl
-							text = "NAVAL_INVASION_SEA_REGION_STATUS" # todo PRCAL-29752 - Make this check for if there are any defending fleets or not instead!
+							text = "NAVAL_INVASION_SEA_REGION_STATUS"
+							tooltip = "NAVAL_INVASION_SEA_REGION_STATUS_TOOLTIP"
 
 							background = {
 								using = dark_area
 							}
 						}
-
-						textbox = {
-							#visible = "[NavalInvasion.Failed]" # todo PRCAL-29752
-							visible = no
-							margin = { 10 10 }
-							parentanchor = center
-							position = { 0 20 }
-							autoresize = yes
-							align = nobaseline
-							using = fontsize_xl
-							text = "NAVAL_INVASION_FAILED" # todo PRCAL-29752
-
-							background = {
-								using = dark_area
-							}
-						}
-					}
-
-					# todo PRCAL-29752 - Remove this item in favor for the dynamixgridbox below
-					battle_item = {
-						#visible = "[NavalInvasion.IsFightingNavalBattle]"
-						visible = no
-						datacontext = "[NavalInvasion.GetNavalBattle]"
-					}
-
-					dynamicgridbox = {
-						parentanchor = hcenter
-
-						#visible = "[Not(IsDataModelEmpty(NavalInvasion.AccessActiveNavalBattles))]" # todo PRCAL-29752
-						visible = no
-
-						#datamodel = "[NavalInvasion.AccessActiveNavalBattles]" # todo PRCAL-29752
-
-						#item = {
-						#	battle_item = {}
-						#}
 					}
 
 					flowcontainer = {
@@ -306,7 +240,7 @@ types naval_invasion_types
 							section_header_button = {
 								parentanchor = hcenter
 								size = { 260 38 }
-								tooltip = "NAVAL_INVASION_INVADING_FLEETS_TOOLTIP"
+								# tooltip = "NAVAL_INVASION_INVADING_FLEETS_TOOLTIP" # todo PRCAL-29752
 								
 								blockoverride "onclick" {
 									onclick = "[GetVariableSystem.Toggle( 'naval_invasion_fleets' )]"
@@ -343,23 +277,10 @@ types naval_invasion_types
 								direction = vertical
 								using = default_fade_in_out
 
-								#datamodel = "[NavalInvasion.GetInvadingFleets]" # todo PRCAL-29752
+								datamodel = "[NavalInvasion.GetInvadingFleets]"
 
-								#item = {
-								#	naval_invasion_formation = {} # todo PRCAL-29752
-								#}
-
-								# todo PRCAL-29752 - Remove all the naval_invasion_formation below in favor for the datamodel above
-								naval_invasion_formation = {
-									datacontext = "[NavalInvasion.GetFleet]"
-								}
-
-								naval_invasion_formation = {
-									datacontext = "[NavalInvasion.GetFleet]"
-								}
-
-								naval_invasion_formation = {
-									datacontext = "[NavalInvasion.GetFleet]"
+								item = {
+									naval_invasion_formation = {}
 								}
 							}
 						}
@@ -367,15 +288,13 @@ types naval_invasion_types
 						vertical_divider = {}
 
 						flowcontainer = {
-							#visible = "[Not(IsDataModelEmpty(NavalInvasion.GetDefendingFleets))]" # todo PRCAL-29752
-							visible = no
 							direction = vertical
 							spacing = 5
 
 							section_header_button = {
 								parentanchor = hcenter
 								size = { 260 38 }
-								tooltip = "NAVAL_INVASION_DEFENDING_FLEETS_TOOLTIP"
+								# tooltip = "NAVAL_INVASION_DEFENDING_FLEETS_TOOLTIP" # todo PRCAL-29752
 								
 								blockoverride "onclick" {
 									onclick = "[GetVariableSystem.Toggle( 'naval_invasion_fleets' )]"
@@ -396,6 +315,14 @@ types naval_invasion_types
 									align = nobaseline
 									text = "NAVAL_INVASION_NUMBER_OF_DEFENDING_FLEETS"
 								}
+
+                                textbox = {
+                                    parentanchor = right|vcenter
+                                    autoresize = yes
+                                    position = { -10 0 }
+                                    align = nobaseline
+                                    text = "NAVAL_INVASION_NUMBER_OF_UNITS_IN_DEFENDING_FLEETS"
+                                }
 							}
 
 							flowcontainer = {
@@ -404,108 +331,76 @@ types naval_invasion_types
 								direction = vertical
 								using = default_fade_in_out
 
-								#datamodel = "[NavalInvasion.GetDefendingFleets]" # todo PRCAL-29752
+								datamodel = "[NavalInvasion.GetDefendingFleets]"
 
-								#item = {
-								#	naval_invasion_formation = {} # todo PRCAL-29752
-								#}
-
-								# todo PRCAL-29752 - Remove all the naval_invasion_formation below in favor for the datamodel above
-								naval_invasion_formation = {
-									datacontext = "[NavalInvasion.GetFleet]"
-								}
-
-								naval_invasion_formation = {
-									datacontext = "[NavalInvasion.GetFleet]"
-								}
-
-								naval_invasion_formation = {
-									datacontext = "[NavalInvasion.GetFleet]"
+								item = {
+									naval_invasion_formation = {}
 								}
 							}
+
+                            flowcontainer = {
+                                parentanchor = hcenter
+                                direction = vertical
+                                margin_top = 10
+                                spacing = 10
+
+                                ### ADD DEFENDING FLEETS BUTTON
+                                button = {
+                                    visible = "[NavalInvasion.GetInvadedCountry.IsLocalPlayer]"
+                                    parentanchor = hcenter
+                                    using = default_button
+                                    size = { 250 40 }
+                                    onclick = "[RightClickMenuManager.ToggleAddFleetToNavalInvasion(NavalInvasion.AccessSelf, PdxGuiWidget.AccessSelf)]"
+                                    enabled = yes
+                                    using = default_content_fade
+                                    tooltip = "ADD_DEFENDING_FLEET_TO_NAVAL_INVASION_TOOLTIP"
+
+                                    flowcontainer = {
+                                        parentanchor = center
+
+                                        icon = {
+                                            size = { 30 30 }
+                                            texture = "gfx/interface/buttons/button_icons/plus.dds"
+                                            parentanchor = vcenter
+                                        }
+
+                                        textbox = {
+                                            visible = "[IsDataModelEmpty(NavalInvasion.GetDefendingFleets)]"
+                                            parentanchor = vcenter
+                                            autoresize = yes
+                                            align = center|nobaseline
+                                            max_width = 240
+                                            elide = right
+                                            fontsize_min = 14
+                                            text = "ADD_DEFENDING_FLEET_TO_NAVAL_INVASION"
+                                        }
+
+                                        textbox = {
+                                            visible = "[Not(IsDataModelEmpty(NavalInvasion.GetDefendingFleets))]"
+                                            parentanchor = vcenter
+                                            autoresize = yes
+                                            align = center|nobaseline
+                                            max_width = 240
+                                            elide = right
+                                            fontsize_min = 14
+                                            text = "ADD_ADDITIONAL_DEFENDING_FLEETS_TO_NAVAL_INVASION"
+                                        }
+                                    }
+                                }
+                            }
 						}
-
-						flowcontainer = {
-							direction = vertical
-							margin_top = 10
-							spacing = 10
-
-							### EMPTY STATE - NO DEFENDING FLEETS
-							textbox = {
-								#visible = "[IsDataModelEmpty(NavalInvasion.GetDefendingFleets)]" # todo PRCAL-29752
-								minimumsize = { 260 -1 }
-								maximumsize = { 260 -1 }
-								autoresize = yes
-								using = empty_state_text_properties
-								align = hcenter|nobaseline
-								raw_text = "NO_DEFENDING_FLEETS"
-							}
-
-							### ADD DEFENDING FLEETS BUTTON
-							button = {
-								visible = "[NavalInvasion.GetInvadedCountry.IsLocalPlayer]"
-								parentanchor = hcenter
-								using = default_button
-								size = { 250 40 }
-								onclick = "[RightClickMenuManager.ShowForAddFleetToNavalInvasion(NavalInvasion.AccessSelf)]"
-								enabled = yes
-								using = default_content_fade
-								tooltip = "ADD_DEFENDING_FLEET_TO_NAVAL_INVASION_TOOLTIP"
-
-								flowcontainer = {
-									parentanchor = center
-
-									icon = {
-										size = { 30 30 }
-										texture = "gfx/interface/buttons/button_icons/plus.dds"
-										parentanchor = vcenter
-									}
-									
-									textbox = {
-											#visible = "[IsDataModelEmpty(NavalInvasion.GetDefendingFleets)]" # todo PRCAL-29752
-											parentanchor = vcenter
-											autoresize = yes
-											align = center|nobaseline
-											max_width = 240
-											elide = right
-											fontsize_min = 14
-											text = "ADD_DEFENDING_FLEET_TO_NAVAL_INVASION"
-										}
-
-										textbox = {
-											#visible = "[Not(IsDataModelEmpty(NavalInvasion.GetDefendingFleets))]" # todo PRCAL-29752
-											visible = no
-											parentanchor = vcenter
-											autoresize = yes
-											align = center|nobaseline
-											max_width = 240
-											elide = right
-											fontsize_min = 14
-											text = "ADD_ADDITIONAL_DEFENDING_FLEETS_TO_NAVAL_INVASION"
-										}
-								}
-							}
-						}
-					}
-
-					# todo PRCAL-29752 - Remove this item in favor for the dynamixgridbox below
-					battle_item = {
-						parentanchor = hcenter
-						visible = "[NavalInvasion.IsFightingNavalBattle]"
-						datacontext = "[NavalInvasion.GetNavalBattle]"
 					}
 
 					dynamicgridbox = {
 						parentanchor = hcenter
 
-						#visible = "[Not(IsDataModelEmpty(NavalInvasion.AccessActiveNavalBattles))]" # todo PRCAL-29752
-						visible = no
+						visible = "[Not(IsDataModelEmpty(NavalInvasion.GetActiveNavalBattles))]"
 
-						#datamodel = "[NavalInvasion.AccessActiveNavalBattles]" # todo PRCAL-29752
+						datamodel = "[NavalInvasion.GetActiveNavalBattles]"
 
-						#item = {
-						#	battle_item = {}
-						#}
+						item = {
+							battle_item = {}
+						}
 					}
 				}
 			}
@@ -514,7 +409,7 @@ types naval_invasion_types
 		flowcontainer = {
 			direction = vertical
 			parentanchor = hcenter
-			#alpha = "[TransparentIfTrue(NavalInvasion.Failed)]" # todo PRCAL-29752
+			alpha = "[TransparentIfTrue(NavalInvasion.HasEnded)]"
 
 			default_header = {
 				parentanchor = hcenter
@@ -539,7 +434,7 @@ types naval_invasion_types
 							size = { 25 25 }
 							datacontext = "[NavalInvasion.GetEnemyState]"
 							tooltip = "GO_TO_BUTTON_STATE"
-							onclick = "[InformationPanelBar.OpenStatePanel(State.Self)]"
+							onclick = "[InformationPanelBar.OpenStatePanel(State.AccessSelf)]"
 						}
 					}
 				}
@@ -660,21 +555,19 @@ types naval_invasion_types
 						battle_progressbar = {
 							position = { 0 -5 }
 							parentanchor = bottom|hcenter
-							tooltip = "NAVAL_INVASION_LANDING_PROGRESS_BAR_TOOLTIP" # todo PRCAL-29752
+							tooltip = "NAVAL_INVASION_LANDING_PROGRESS_BAR_TOOLTIP"
 							using = tooltip_above
 
 							blockoverride "fire_vfx" {}
 							
-							# todo PRCAL-29752 - Make these progressbar values make sense
 							blockoverride "values" {
-								value = 0
-								min = -1
+								value = "[FixedPointToFloat(NavalInvasion.GetLandingProgress)]"
+								min = 0
 								max = 1
 							}
 
 							blockoverride "progress_icon" {
 								texture = "gfx/interface/icons/commander_order_icons/advance.dds"
-								position = { 265 12 }
 							}
 						}
 					}
@@ -695,7 +588,7 @@ types naval_invasion_types
 								section_header_button = {
 									parentanchor = hcenter
 									size = { 260 38 }
-									tooltip = "NAVAL_INVASION_INVADING_ARMIES_TOOLTIP"
+									# tooltip = "NAVAL_INVASION_INVADING_ARMIES_TOOLTIP" # todo PRCAL-29752
 									
 									blockoverride "onclick" {
 										onclick = "[GetVariableSystem.Toggle( 'naval_invasion_armies' )]"
@@ -732,23 +625,10 @@ types naval_invasion_types
 									direction = vertical
 									using = default_fade_in_out
 
-									#datamodel = "[NavalInvasion.GetInvadingArmies]" # todo PRCAL-29752
+									datamodel = "[NavalInvasion.GetInvadingArmies]"
 
-									#item = {
-									#	naval_invasion_formation = {} # todo PRCAL-29752
-									#}
-
-									# todo PRCAL-29752 - Remove all the naval_invasion_formation below in favor for the datamodel above
-									naval_invasion_formation = {
-										datacontext = "[NavalInvasion.GetArmy]"
-									}
-
-									naval_invasion_formation = {
-										datacontext = "[NavalInvasion.GetArmy]"
-									}
-
-									naval_invasion_formation = {
-										datacontext = "[NavalInvasion.GetArmy]"
+									item = {
+										naval_invasion_formation = {}
 									}
 								}
 							}
@@ -760,14 +640,13 @@ types naval_invasion_types
 								spacing = 10
 
 								flowcontainer = {
-									#visible = "[Not(IsDataModelEmpty(NavalInvasion.GetDefendingArmies))]" # todo PRCAL-29752
 									direction = vertical
 									spacing = 5
 
 									section_header_button = {
 										parentanchor = hcenter
 										size = { 260 38 }
-										tooltip = "NAVAL_INVASION_DEFENDING_ARMIES_TOOLTIP"
+										# tooltip = "NAVAL_INVASION_DEFENDING_ARMIES_TOOLTIP" # todo PRCAL-29752
 										
 										blockoverride "onclick" {
 											onclick = "[GetVariableSystem.Toggle( 'naval_invasion_armies' )]"
@@ -804,38 +683,12 @@ types naval_invasion_types
 										direction = vertical
 										using = default_fade_in_out
 
-										#datamodel = "[NavalInvasion.GetDefendingArmies]" # todo PRCAL-29752
+										datamodel = "[NavalInvasion.GetDefendingArmies]"
 
-										#item = {
-										#	naval_invasion_formation = {} # todo PRCAL-29752
-										#}
-
-										# todo PRCAL-29752 - Remove all the naval_invasion_formation below in favor for the datamodel above
-										naval_invasion_formation = {
-											datacontext = "[NavalInvasion.GetArmy]"
-										}
-
-										naval_invasion_formation = {
-											datacontext = "[NavalInvasion.GetArmy]"
-										}
-
-										naval_invasion_formation = {
-											datacontext = "[NavalInvasion.GetArmy]"
+										item = {
+											naval_invasion_formation = {}
 										}
 									}
-								}
-
-								### EMPTY STATE - NO DEFENDING ARMIES
-								textbox = {
-									#visible = "[IsDataModelEmpty(NavalInvasion.GetDefendingArmies)]" # todo PRCAL-29752
-									visible = no
-									margin_top = 10
-									minimumsize = { 260 -1 }
-									maximumsize = { 260 -1 }
-									autoresize = yes
-									using = empty_state_text_properties
-									align = hcenter|nobaseline
-									raw_text = "NO_DEFENDING_ARMIES"
 								}
 
 								### ADD DEFENDING ARMIES BUTTON
@@ -844,7 +697,7 @@ types naval_invasion_types
 									parentanchor = hcenter
 									using = default_button
 									size = { 250 40 }
-									onclick = "[RightClickMenuManager.ShowForAddArmyToNavalInvasion(NavalInvasion.AccessSelf)]"
+									onclick = "[RightClickMenuManager.ToggleAddArmyToNavalInvasion(NavalInvasion.AccessSelf, PdxGuiWidget.AccessSelf)]"
 									enabled = yes
 									using = default_content_fade
 									tooltip = "ADD_DEFENDING_ARMY_TO_NAVAL_INVASION_TOOLTIP"
@@ -859,8 +712,7 @@ types naval_invasion_types
 										}
 										
 										textbox = {
-											#visible = "[IsDataModelEmpty(NavalInvasion.GetDefendingArmies)]" # todo PRCAL-29752
-											visible = no
+											visible = "[IsDataModelEmpty(NavalInvasion.GetDefendingArmies)]"
 											parentanchor = vcenter
 											autoresize = yes
 											align = center|nobaseline
@@ -871,7 +723,7 @@ types naval_invasion_types
 										}
 
 										textbox = {
-											#visible = "[Not(IsDataModelEmpty(NavalInvasion.GetDefendingArmies))]" # todo PRCAL-29752
+											visible = "[Not(IsDataModelEmpty(NavalInvasion.GetDefendingArmies))]"
 											parentanchor = vcenter
 											autoresize = yes
 											align = center|nobaseline
@@ -885,29 +737,35 @@ types naval_invasion_types
 							}
 						}
 
-						# todo PRCAL-29752 - Remove this item in favor for the dynamixgridbox below
-						battle_item = {
-							parentanchor = hcenter
-							visible = "[NavalInvasion.IsFightingLandBattle]"
-							datacontext = "[NavalInvasion.GetLandBattle]"
-						}
-
 						dynamicgridbox = {
 							parentanchor = hcenter
 
-							#visible = "[Not(IsDataModelEmpty(NavalInvasion.AccessActiveLandBattles))]" # todo PRCAL-29752
-							visible = no
+							visible = "[Not(IsDataModelEmpty(NavalInvasion.GetActiveLandBattles))]"
 
-							#datamodel = "[NavalInvasion.AccessActiveLandBattles]" # todo PRCAL-29752
+							datamodel = "[NavalInvasion.GetActiveLandBattles]"
 
-							#item = {
-							#	battle_item = {}
-							#}
+							item = {
+								battle_item = {}
+							}
 						}
 					}
 				}
 			}
 		}
+    }
+
+    type naval_invasion_concluded = flowcontainer {
+        using = default_list_position
+        direction = vertical
+
+        empty_state = {
+            blockoverride "visible" {
+                visible = yes
+            }
+            blockoverride "text" {
+                text = "NAVAL_INVASION_HAS_CONCLUDED"
+            }
+        }
     }
 
     type naval_invasion_panel_battles_content = flowcontainer {
@@ -931,32 +789,23 @@ types naval_invasion_types
 
 			widget = { size = { 5 5 } }
 
-			# todo PRCAL-29752 - Remove this item in favor for the dynamixgridbox below
-			battle_item = {
-				parentanchor = hcenter
-				visible = "[NavalInvasion.IsFightingNavalBattle]"
-				datacontext = "[NavalInvasion.GetNavalBattle]"
-			}
-
 			dynamicgridbox = {
 				parentanchor = hcenter
 
-				#visible = "[Not(IsDataModelEmpty(NavalInvasion.AccessActiveNavalBattles))]" # todo PRCAL-29752
-				visible = no
+				visible = "[Not(IsDataModelEmpty(NavalInvasion.GetActiveNavalBattles))]"
 
-				#datamodel = "[NavalInvasion.AccessActiveNavalBattles]" # todo PRCAL-29752
+				datamodel = "[NavalInvasion.GetActiveNavalBattles]"
 
-				#item = {
-				#	battle_item = {}
-				#}
+				item = {
+					battle_item = {}
+				}
 			}
 
 			empty_state = {
 				parentanchor = hcenter
 
 				blockoverride "visible" {
-					#visible = "[IsDataModelEmpty(NavalInvasion.AccessActiveNavalBattles)]" # todo PRCAL-29752
-					visible = "[Not(NavalInvasion.IsFightingNavalBattle)]"
+					visible = "[IsDataModelEmpty(NavalInvasion.GetActiveNavalBattles)]"
 				}
 
 				blockoverride "text" {
@@ -982,32 +831,23 @@ types naval_invasion_types
 
 			widget = { size = { 5 5 } }
 
-			# todo PRCAL-29752 - Remove this item in favor for the dynamixgridbox below
-			battle_item = {
-				parentanchor = hcenter
-				visible = "[NavalInvasion.IsFightingLandBattle]"
-				datacontext = "[NavalInvasion.GetLandBattle]"
-			}
-
 			dynamicgridbox = {
 				parentanchor = hcenter
 
-				#visible = "[Not(IsDataModelEmpty(NavalInvasion.AccessActiveLandBattles))]" # todo PRCAL-29752
-				visible = no
+				visible = "[Not(IsDataModelEmpty(NavalInvasion.GetActiveLandBattles))]"
 
-				#datamodel = "[NavalInvasion.AccessActiveLandBattles]" # todo PRCAL-29752
+				datamodel = "[NavalInvasion.GetActiveLandBattles]"
 
-				#item = {
-				#	battle_item = {}
-				#}
+				item = {
+					battle_item = {}
+				}
 			}
 
 			empty_state = {
 				parentanchor = hcenter
 
 				blockoverride "visible" {
-					#visible = "[IsDataModelEmpty(NavalInvasion.AccessActiveLandBattles)]" # todo PRCAL-29752
-					visible = "[Not(NavalInvasion.IsFightingLandBattle)]"
+					visible = "[IsDataModelEmpty(NavalInvasion.GetActiveLandBattles)]"
 				}
 
 				blockoverride "text" {
@@ -1038,21 +878,20 @@ types naval_invasion_types
 			dynamicgridbox = {
 				parentanchor = hcenter
 
-				#visible = "[Not(IsDataModelEmpty(NavalInvasion.AccessEndedNavalBattles))]" # todo PRCAL-29752
-				visible = no
+				visible = "[Not(IsDataModelEmpty(NavalInvasion.GetEndedNavalBattles))]"
 
-				#datamodel = "[NavalInvasion.AccessEndedNavalBattles]" # todo PRCAL-29752
+				datamodel = "[NavalInvasion.GetEndedNavalBattles]"
 
-				#item = {
-				#	ended_battle_item = {}
-				#}
+				item = {
+                    ended_battle_item = {}
+				}
 			}
 
 			empty_state = {
 				parentanchor = hcenter
 
 				blockoverride "visible" {
-					#visible = "[IsDataModelEmpty(NavalInvasion.AccessEndedNavalBattles)]" # todo PRCAL-29752
+					visible = "[IsDataModelEmpty(NavalInvasion.GetEndedNavalBattles)]"
 				}
 
 				blockoverride "text" {
@@ -1080,21 +919,20 @@ types naval_invasion_types
 			dynamicgridbox = {
 				parentanchor = hcenter
 
-				#visible = "[Not(IsDataModelEmpty(NavalInvasion.AccessEndedLandBattles))]" # todo PRCAL-29752
-				visible = no
+				visible = "[Not(IsDataModelEmpty(NavalInvasion.GetEndedLandBattles))]"
 
-				#datamodel = "[NavalInvasion.AccessEndedLandBattles]" # todo PRCAL-29752
+				datamodel = "[NavalInvasion.GetEndedLandBattles]"
 
-				#item = {
-				#	ended_battle_item = {}
-				#}
+				item = {
+					ended_battle_item = {}
+				}
 			}
 
 			empty_state = {
 				parentanchor = hcenter
 
 				blockoverride "visible" {
-					#visible = "[IsDataModelEmpty(NavalInvasion.AccessEndedLandBattles)]" # todo PRCAL-29752
+					visible = "[IsDataModelEmpty(NavalInvasion.GetEndedLandBattles)]"
 				}
 
 				blockoverride "text" {
@@ -1107,6 +945,7 @@ types naval_invasion_types
     type naval_invasion_formation = button {
 		using = default_button
 		size = { 250 60 }
+		onclick = "[InformationPanelBar.OpenMilitaryFormationPanel(MilitaryFormation.AccessSelf)]"
 
 		tooltipwidget = {
 			FancyTooltip_MilitaryFormation = {}
@@ -1120,7 +959,8 @@ types naval_invasion_types
 			icon = {
 				parentanchor = vcenter
 				size = { 40 40 }
-				texture = "gfx/interface/icons/military_icons/military_formation_identity_icons/army_01.dds"
+				texture = "[MilitaryFormation.GetFlag]"
+				color = "[MilitaryFormation.GetFlagColor]"
 			}
 
 			flowcontainer = { 
@@ -1230,6 +1070,7 @@ types naval_invasion_types
 		}
 
 		textbox = {
+            visible = "[Not(NavalInvasion.HasEnded)]"
 			parentanchor = hcenter
 			maximumsize = { @panel_width_minus_30 -1 }
 			align = nobaseline
