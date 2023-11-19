@@ -197,11 +197,15 @@ je_tno_gerpowerstruggle_hitler_stats = { # status of hitler JE
                 desc = "Hitler is unwell "
                 trigger = {
                     has_variable = hitler_unwell
+                    NOT = {
+                        has_variable = hitler_coma
+                    }
                 }
             }
             triggered_desc = {
                 desc = custom_hitler_tt
 				trigger = {
+                    has_variable = hitler_coma
                     
                 }
            
@@ -251,7 +255,7 @@ je_tno_gerpowerstruggle_hitler_stats = { # status of hitler JE
 		value = 150
 	}
 
-    progressbar = yes
+   
     
     weight = 30
     

@@ -96,7 +96,9 @@ tno_germany_events.3 = { # germanys event telling them that a japanise (burgundi
             add_journal_entry = {
                 type = je_tno_gerpowerstruggle_boreman
             }
-            trigger_event = { id = tno_germany_events.8 days = 0 popup = yes }
+            trigger_event = { id = tno_germany_events.8 days = 2 popup = yes }
+            trigger_event = { id = tno_germany_events.9 days = 170 popup = yes } #hitler in comma
+
 
             set_variable = {
             
@@ -285,6 +287,30 @@ tno_germany_events.8 = { # hitler picks sucsesser
     }
 
 }
+
+tno_germany_events.9 = { # puts hitler in coma
+	type = country_event
+    placement = ROOT
+ 
+    hidden = yes
+
+    trigger = {
+		this ?= c:GER
+	}	
+
+    immediate = {
+        set_variable = {
+            
+            name = hitler_coma
+            value = 0
+        }
+    
+    }
+
+   
+
+}
+
 
 
 
