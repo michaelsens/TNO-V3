@@ -1513,4 +1513,181 @@ je_speer_ger_e = {  # Speer
 		
 }
 }
+je_goreing_ger_a = {  # goreing
+	name = "Bolster the Luftwaffe"
+	desc = "We will bolster the Luftwaffe to increase our infulence."
+
+	visible = { always = yes }
+
+	possible = {
+		scope:journal_entry = {
+				not = {
+				custom_tooltip = {
+					text = "Has not already bolsterd the Luftwaffe or defunded it "
+					has_variable = je_bolster_fat
+					has_variable = je_defund_fat
+					
+				}
+				has_variable = {
+            
+					name = je_bolster_fat
+					value = 0
+				}
+			}
+		}
+	}
+
+	effect = {
+
+		scope:journal_entry = {
+			set_variable = { name = je_bolster_fat	 months = 9999  }
+		}	
+		custom_tooltip = {
+			text = "Increase Militarists infulence by 10"
+			
+		}
+		change_variable = {
+			name =  goreing_ger_struggle_timer
+			   add = 10
+			 }
+		
+		
+}
+}
+je_goreing_ger_b = {  # goreing
+	name = "Train all day every day"
+	desc = "To ensure that the Wehrmacht is in top physical shape in the unfortunate event of an armed conflict over who the next Fuhrer shall be."
+
+	visible = { always = yes }
+
+	possible = {
+		scope:journal_entry = {
+				not = {
+				custom_tooltip = {
+					text = "Has not already gave the order to train"
+					has_variable = je_train_allday
+				}
+			}
+		}
+	}
+
+	effect = {
+
+		scope:journal_entry = {
+			set_variable = { name = je_train_allday	 months = 9999  }
+		}	
+		custom_tooltip = {
+			text = "Increase Militarists infulence by 10"
+			
+		}
+		change_variable = {
+			name =  goreing_ger_struggle_timer
+			   add = 10
+			 }
+		
+		
+}
+}
+je_goreing_ger_c = {  # goreing
+	name = "Dominate on Television"
+	desc = "We will launch a propaganda campaign on the television."
+
+	visible = { always = yes }
+
+	possible = {
+		scope:journal_entry = {
+				not = {
+				custom_tooltip = {
+					text = "Has not already started a propaganda campaign"
+					has_variable = je_campaign_prop_tele
+				}
+			}
+		}
+	}
+
+	effect = {
+
+		scope:journal_entry = {
+			set_variable = { name = je_campaign_prop_tele months = 9999  }
+		}	
+		custom_tooltip = {
+			text = "Increase Militarists infulence by 10"
+			
+		}
+		change_variable = {
+			name =  goreing_ger_struggle_timer
+			   add = 10
+			 }
+		
+		
+}
+}
+je_goreing_ger_d = {  # goreing
+	name = "Raido propaganda campaign"
+	desc = "We will launch a propaganda campaign on the raido."
+
+	visible = { always = yes }
+
+	possible = {
+		scope:journal_entry = {
+				not = {
+				custom_tooltip = {
+					text = "Has not already started a propaganda campaign on the raido"
+					has_variable = je_campaign_prop_raido
+				}
+			}
+		}
+	}
+
+	effect = {
+
+		scope:journal_entry = {
+			set_variable = { name = je_campaign_prop_raido months = 9999  }
+		}	
+		custom_tooltip = {
+			text = "Increase Militarists infulence by 10"
+			
+		}
+		change_variable = {
+			name =  goreing_ger_struggle_timer
+			   add = 10
+			 }
+		
+		
+}
+}
+je_goreing_ger_e = {  # goreing
+	name = "Dine with high society"
+	desc = "We will get the support from the upper class."
+
+	visible = { always = yes }
+
+	possible = {
+		scope:journal_entry = {
+				not = {
+				custom_tooltip = {
+					text = "Has not already dined with high society"
+					has_variable = je_dine_bruh
+				}
+			}
+		}
+	}
+
+	effect = {
+
+		scope:journal_entry = {
+			set_variable = { name = je_dine_bruh months = 9999  }
+		}	
+		custom_tooltip = {
+			text = "Increase Militarists infulence by 10"
+			
+		}
+		change_variable = {
+			name =  goreing_ger_struggle_timer
+			   add = 10
+			 }
+		
+		
+}
+}
 
