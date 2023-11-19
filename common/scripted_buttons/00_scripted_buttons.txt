@@ -1110,4 +1110,39 @@ je_devout_ger_d = {  # SS frames militarasists
 		
 }
 }
+je_devout_ger_e = {  # SS Suppys waffen
+	name = "Supply the Waffen SS" 
+	desc = "With our newfound influence over matters of governance in the Reich, its time we implement a policy of favoritism with regard to supply."
+
+	visible = { always = yes }
+
+	possible = {
+		scope:journal_entry = {
+				not = {
+				custom_tooltip = {
+					text = "Has not already supplied the Waffen SS"
+					has_variable = je_supply_waf
+				}
+			}
+		}
+	}
+
+	effect = {
+
+		scope:journal_entry = {
+			set_variable = { name = je_supply_waf months = 9999  }
+		}	
+		custom_tooltip = {
+			text = "Increase SS infulence by 10"
+			
+	
+		}
+		change_variable = {
+			name =  devout_ger_struggle_timer
+			   add = 10
+			 }
+		
+		
+}
+}
 
