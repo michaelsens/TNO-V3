@@ -1001,7 +1001,7 @@ je_devout_ger_a = {  # SS dissoilve riechstag
 		}
 		change_variable = {
 			name =  devout_ger_struggle_timer
-			   add = 5
+			   add = 10
 			 }
 		
 }
@@ -1034,7 +1034,78 @@ je_devout_ger_b = {  # SS mobalizes
 		}
 		change_variable = {
 			name =  devout_ger_struggle_timer
-			   add = 5
+			   add = 10
+			 }
+		
+}
+}
+je_devout_ger_c = {  # SS intimidates poloticions
+	name = "Intimidate the Politicians" 
+	desc = "Regardless of race, creed, and ethnicity, politicians are all alike in one regard - they're all spineless lying cowards. It's clear to the SS that if we are to convince the Reich's politicians to join us in our crusade against degeneracy and anti-NSDAP sentiment, we must use intimidation tactics."
+
+	visible = { always = yes }
+
+	possible = {
+		scope:journal_entry = {
+				not = {
+				custom_tooltip = {
+					text = "Has not already intimidated politicians "
+					has_variable = je_poli_ss
+				}
+			}
+		}
+	}
+
+	effect = {
+
+		scope:journal_entry = {
+			set_variable = { name = je_poli_ss months = 9999  }
+		}	
+		custom_tooltip = {
+			text = "Increase SS infulence by 10"
+	
+		}
+		change_variable = {
+			name =  devout_ger_struggle_timer
+			   add = 10
+			 }
+		
+}
+}
+je_devout_ger_d = {  # SS frames militarasists
+	name = "Implicate the Militarists" 
+	desc = "To successfully seize the apparatus of state, we must first do away with our opponets in the Wehrmacht who continue to cause us considerable headaches. We can easily falsify evidence and issue arrest warrants with little resistance."
+
+	visible = { always = yes }
+
+	possible = {
+		scope:journal_entry = {
+				not = {
+				custom_tooltip = {
+					text = "Has not already implicated the Militarists "
+					has_variable = je_implicate_mill
+				}
+			}
+		}
+	}
+
+	effect = {
+
+		scope:journal_entry = {
+			set_variable = { name = je_implicate_mill months = 9999  }
+		}	
+		custom_tooltip = {
+			text = "Increase SS infulence by 10"
+			text = "Decrease Militarists infulence by 5"
+	
+		}
+		change_variable = {
+			name =  devout_ger_struggle_timer
+			   add = 10
+			 }
+			change_variable = {
+			name =  goreing_ger_struggle_timer
+			   add = -5
 			 }
 		
 }
