@@ -973,3 +973,70 @@ je_oil_crisis_oil_supply_button_button_e = {  # Research new Technologies
 	}
 }
 
+je_devout_ger_a = {  # SS dissoilve riechstag
+	name = "Dissolve the Reichstag " 
+	desc = "We will dissolve the Reichstag"
+
+	visible = { always = yes }
+
+	possible = {
+		scope:journal_entry = {
+				not = {
+				custom_tooltip = {
+					text = "Has not already dissolved the Reichstag"
+					has_variable = je_disolved_richstag
+				}
+			}
+		}
+	}
+
+	effect = {
+
+		scope:journal_entry = {
+			set_variable = { name = je_disolved_richstag months = 9999  }
+		}	
+		custom_tooltip = {
+			text = "Increase SS infulence by 10"
+	
+		}
+		change_variable = {
+			name =  devout_ger_struggle_timer
+			   add = 5
+			 }
+		
+}
+}
+je_devout_ger_b = {  # SS mobalizes
+	name = "Mobilize the SS " 
+	desc = "The SS will mobilize the Schutzstaffel to counter the Heer"
+
+	visible = { always = yes }
+
+	possible = {
+		scope:journal_entry = {
+				not = {
+				custom_tooltip = {
+					text = "Has not already mobalized the SS"
+					has_variable = je_moab_ss
+				}
+			}
+		}
+	}
+
+	effect = {
+
+		scope:journal_entry = {
+			set_variable = { name = je_moab_ss months = 9999  }
+		}	
+		custom_tooltip = {
+			text = "Increase SS infulence by 10"
+	
+		}
+		change_variable = {
+			name =  devout_ger_struggle_timer
+			   add = 5
+			 }
+		
+}
+}
+

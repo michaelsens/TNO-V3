@@ -98,6 +98,7 @@ tno_germany_events.3 = { # germanys event telling them that a japanise (burgundi
             }
             trigger_event = { id = tno_germany_events.8 days = 2 popup = yes }
             trigger_event = { id = tno_germany_events.9 days = 170 popup = yes } #hitler in comma
+            trigger_event = { id = tno_germany_events.10 days = 80 popup = yes }
 
 
             set_variable = {
@@ -229,7 +230,7 @@ tno_germany_events.8 = { # hitler picks sucsesser
         name = "The Autarks have a good canidate"
         change_variable = {
             name = speer_ger_struggle_timer
-            add = 5
+            add = 10
          }
 
          custom_tooltip = speer_tip.a
@@ -237,7 +238,7 @@ tno_germany_events.8 = { # hitler picks sucsesser
          custom_tooltip = "The Autarks will try to abolish slavery"
          custom_tooltip = "The Autarks will review the aryan racial codes"
          custom_tooltip = "The Autarks will rein in the megacorporation's"
-         custom_tooltip = "Will boost Autark influence by 5"
+         custom_tooltip = "Will boost Autark influence by 10"
          
         
         
@@ -248,12 +249,12 @@ tno_germany_events.8 = { # hitler picks sucsesser
        default_option = yes
        change_variable = {
         name = boreman_ger_struggle_timer
-        add = 5
+        add = 10
      }
      custom_tooltip = "The Chancellery will deal with the students the traditional way"
      custom_tooltip = "The Chancellery will focus on stability within the rich and continuing hitler's policies"
      custom_tooltip = "The Chancellery will focus on winning the cold war"
-     custom_tooltip = "The Chancellerys influence will increase by 5 "
+     custom_tooltip = "The Chancellerys influence will increase by 10 "
 	}
     option = { # goreing 
      name = "Germany became great through militarism"
@@ -261,12 +262,12 @@ tno_germany_events.8 = { # hitler picks sucsesser
      custom_tooltip = milltooltip.2
      custom_tooltip = "The Militarists will make Germany a stratocratic nation rulled through fear"
      custom_tooltip = "The students will be crushed by the millitary"
-     custom_tooltip = "Militarists influence will increase by 5"
+     custom_tooltip = "Militarists influence will increase by 10"
      
       
      change_variable = {
         name = goreing_ger_struggle_timer
-        add = 5
+        add = 10
      }
     }
 
@@ -274,12 +275,12 @@ tno_germany_events.8 = { # hitler picks sucsesser
     name = tno_germany_events.8.d
      change_variable = {
      name =  devout_ger_struggle_timer
-        add = 5
+        add = 10
       }
       custom_tooltip = godhelpus.1
       custom_tooltip = godhelpus.2
       custom_tooltip = godhelpus.3
-      custom_tooltip = "SS influence will increase by 5"
+      custom_tooltip = "SS influence will increase by 10"
 
      
    
@@ -308,6 +309,75 @@ tno_germany_events.9 = { # puts hitler in coma
     }
 
    
+
+}
+
+tno_germany_events.10 = { # hitler picks sucsesser 
+	type = country_event
+    placement = ROOT
+ 
+    
+ 
+    title = "SS acting up"
+    desc = "The Schutzstaffel are once again stirring up trouble within the Reich. While this isn't exactly uncommon or new, the SS couldn't have chosen a worse time to re-commence their usal antics. "
+    flavor = "All across Germany the SS have been putting up their noses in where it doesn't belong, causing a great deal of disruption throughout the Reich. Stormtroopers have bullied troops from the regular army out of several armories across Germany, mostly concentrated in the Rhine."
+
+   event_image = {
+		texture  = "gfx/event_pictures/event_pictures/hitler_suc.dds"
+	}
+    icon = "gfx/interface/icons/event_icons/event_fire.dds"
+
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 3
+    trigger = {
+		this ?= c:GER
+	}	
+
+    option = { # Boost spear
+        name = "Root SS influence out of the civilian sector!"
+        change_variable = {
+            name = speer_ger_struggle_timer
+            add = 5
+         }
+         custom_tooltip = "Will boost Autark influence by 5"
+         
+        
+        
+	}
+
+    option = { # Borman 
+     name = "Resist the SS with help from party loyalists"
+       default_option = yes
+       change_variable = {
+        name = boreman_ger_struggle_timer
+        add = 5
+     }
+     custom_tooltip = "The Chancellerys influence will increase by 5 "
+	}
+    option = { # goreing 
+     name = "Restrict SS movements around Heer and civilian infastructure!"
+     custom_tooltip = "Militarists influence will increase by 5"
+     
+      
+     change_variable = {
+        name = goreing_ger_struggle_timer
+        add = 5
+     }
+    }
+
+   option = { # hydrick 
+    name = "Excellent. All according to plan"
+     change_variable = {
+     name =  devout_ger_struggle_timer
+        add = 5
+      }
+      custom_tooltip = "SS influence will increase by 5"
+
+     
+   
+     
+    }
 
 }
 
