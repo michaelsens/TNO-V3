@@ -662,7 +662,7 @@ tno_germany_events.15 = { # Hitler youth review
     
  
     title = "Hitler Youth Review"
-    desc = "he Hitlerjugend, or Hitler Youth, is Germany's largest youth organization. The group is one of the few public organizations that weathered the economic crash last decade with a semblance of grace. They have always had funding, if not from the state than from fundraising they do themselves. This has allowed them to continue to operate, and has also given them some autonomy from the government "
+    desc = "The Hitlerjugend, or Hitler Youth, is Germany's largest youth organization. The group is one of the few public organizations that weathered the economic crash last decade with a semblance of grace. They have always had funding, if not from the state than from fundraising they do themselves. This has allowed them to continue to operate, and has also given them some autonomy from the government "
     flavor = "The Hitlerjugend has naturally evolved; it is not the same youth group of the 1940s. After a decade of (relative) peace throughout Germany, the program began to de-militarized. They are now more akin to the American or British scouts than the group of old, though they still honor their material traditions.\n\nWe have on our desks a couple of proposals to mold the Hitlerjugend into something more of our liking. Every year, high standing party officials review the scout's training regimates. If we so chose, we can lean on these members to influence the structure, and therefore future of the Hitlerjugend"
 
    event_image = {
@@ -794,17 +794,101 @@ tno_germany_events.16 = { # slave camp expansion
       custom_tooltip = "SS influence will increase by 5"
 
      
-   
-     
     }
 
 }
 
 
+tno_germany_events.17 = { # German Civil War 
+	type = country_event
+    placement = ROOT
+ 
+    trigger = {
+		this ?= c:GER
+	}	
 
-
-
-	
-	
-		
-        
+    immediate = {
+    }
+    option = {
+        every_scope_state = {
+			limit = {
+                state_region = s:STATE_WESTPHALIA
+			}
+			set_variable = state_to_cede
+		}
+		create_dynamic_country = {
+			origin = root
+			country_type = recognized
+			tier = empire
+			capital = STATE_WESTPHALIA
+			cede_state_trigger = {
+				has_variable = state_to_cede
+			}
+			on_created = { 
+				every_scope_state = {
+					remove_variable = state_to_cede
+				}
+			}
+		}
+        every_scope_state = {
+			limit = {
+                state_region = s:STATE_SAXONY
+			}
+			set_variable = state_to_cede_2
+		}
+		create_dynamic_country = {
+			origin = root
+			country_type = recognized
+			tier = empire
+			capital = STATE_WESTPHALIA
+			cede_state_trigger = {
+				has_variable = state_to_cede_2
+			}
+			on_created = { 
+				every_scope_state = {
+					remove_variable = state_to_cede_2
+				}
+			}
+		}
+        every_scope_state = {
+			limit = {
+                state_region = s:STATE_POMERANIA
+			}
+			set_variable = state_to_cede_3
+		}
+		create_dynamic_country = {
+			origin = root
+			country_type = recognized
+			tier = empire
+			capital = STATE_WESTPHALIA
+			cede_state_trigger = {
+				has_variable = state_to_cede_3
+			}
+			on_created = { 
+				every_scope_state = {
+					remove_variable = state_to_cede_3
+				}
+			}
+		}
+        every_scope_state = {
+			limit = {
+                state_region = s:STATE_FRANCONIA
+			}
+			set_variable = state_to_cede_4
+		}
+		create_dynamic_country = {
+			origin = root
+			country_type = recognized
+			tier = empire
+			capital = STATE_WESTPHALIA
+			cede_state_trigger = {
+				has_variable = state_to_cede_4
+			}
+			on_created = { 
+				every_scope_state = {
+					remove_variable = state_to_cede_4
+				}
+			}
+		}
+    }
+}
