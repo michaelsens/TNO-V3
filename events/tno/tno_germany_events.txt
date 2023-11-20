@@ -808,87 +808,116 @@ tno_germany_events.17 = { # German Civil War
 	}	
 
     immediate = {
+        create_country = { #Martin bormann
+		tag = GMB
+		origin = c:GER 
+       
+        state = s:STATE_BAVARIA.region_state:GER
+        state = s:STATE_BADEN.region_state:GER
+        state = s:STATE_WURTTEMBERG.region_state:GER
+        state = s:STATE_TYROL.region_state:GER
+        state = s:STATE_AUSTRIA.region_state:GER
+        state = s:STATE_SAXONY.region_state:GER
+        state = s:STATE_FRANCONIA.region_state:GER
+        state = s:STATE_STYRIA.region_state:GER
+        state = s:STATE_TABRIZ.region_state:GER
+        state = s:STATE_TABRIZ.region_state:GER
+        state = s:STATE_TABRIZ.region_state:GER
+        state = s:STATE_TABRIZ.region_state:GER
+        state = s:STATE_TABRIZ.region_state:GER
+
+        province = p:x400226
+        province = p:x1D6B94
+        province = p:x716141
+        province = p:xA40163
+        province = p:x67FE18
+
+		on_created = {
+            add_modifier = {
+				name = civiL_war_never_ends
+				years = 2
+			}
+	        }
+	    } 
+        create_country = { #Albert speer
+		tag = GAS
+		origin = c:GER 
+       
+        state = s:STATE_HESSE.region_state:GER
+        state = s:STATE_BRUNSWICK.region_state:GER
+        state = s:STATE_ANHALT.region_state:GER
+        state = s:STATE_ELBE.region_state:GER
+        state = s:STATE_HANNOVER.region_state:GER
+        state = s:STATE_WESTPHALIA.region_state:GER
+        state = s:STATE_RUHR.region_state:GER
+        state = s:STATE_NORTH_RHINE.region_state:GER
+        state = s:STATE_WALLONIA.region_state:GER
+
+        on_created = {
+            add_modifier = {
+				name = civiL_war_never_ends
+				years = 2
+			}
+	        }
+	    } 
+        create_country = { #Hermann Göring
+		tag = GHG
+		origin = c:GER 
+        
+        state = s:STATE_SCHLESWIG_HOLSTEIN.region_state:GER
+        state = s:STATE_MECKLENBURG.region_state:GER
+        state = s:STATE_POMERANIA.region_state:GER
+        state = s:STATE_POSEN.region_state:GER
+        state = s:STATE_GREATER_POLAND.region_state:GER 
+        state = s:STATE_SILESIA.region_state:GER 
+        state = s:STATE_SLOVENIA.region_state:GER 
+        
+        province = p:x611F2F
+        province = p:x7CB839
+        province = p:x0180A0
+        province = p:x945000
+        province = p:x178C99
+        province = p:xBAF66D
+        province = p:x3E3572
+        province = p:x4B3444
+        province = p:xF0E080
+
+		on_created = {
+            add_modifier = {
+				name = civiL_war_never_ends
+				years = 2
+			}
+	        }
+	    } 
+        create_country = { #Reinhard Heydrich
+		tag = GRH
+		origin = c:GER 
+        
+        state = s:STATE_EAST_PRUSSIA.region_state:GER
+        state = s:STATE_MAZOVIA.region_state:GER
+        state = s:STATE_WEST_PRUSSIA.region_state:GER
+        state = s:STATE_ALSACE_LORRAINE.region_state:GER
+        state = s:STATE_RHINELAND.region_state:GER
+        state = s:STATE_BREST.region_state:GER
+        province = p:x802161
+        province = p:xE165F5
+		
+        on_created = {
+            add_modifier = {
+				name = civiL_war_never_ends
+				years = 2
+			}
+	        }
+	    } 
+        create_country = { #Wehrkreis XIX
+		tag = GWZ
+		origin = c:GER 
+        state = s:STATE_BOHEMIA.region_state:GER
+        state = s:STATE_MORAVIA.region_state:GER
+		on_created = {
+	        }
+	    } 
     }
     option = {
-        every_scope_state = {
-			limit = {
-                state_region = s:STATE_WESTPHALIA
-			}
-			set_variable = state_to_cede
-		}
-		create_dynamic_country = {
-			origin = root
-			country_type = recognized
-			tier = empire
-			capital = STATE_WESTPHALIA
-			cede_state_trigger = {
-				has_variable = state_to_cede
-			}
-			on_created = { 
-				every_scope_state = {
-					remove_variable = state_to_cede
-				}
-			}
-		}
-        every_scope_state = {
-			limit = {
-                state_region = s:STATE_SAXONY
-			}
-			set_variable = state_to_cede_2
-		}
-		create_dynamic_country = {
-			origin = root
-			country_type = recognized
-			tier = empire
-			capital = STATE_WESTPHALIA
-			cede_state_trigger = {
-				has_variable = state_to_cede_2
-			}
-			on_created = { 
-				every_scope_state = {
-					remove_variable = state_to_cede_2
-				}
-			}
-		}
-        every_scope_state = {
-			limit = {
-                state_region = s:STATE_POMERANIA
-			}
-			set_variable = state_to_cede_3
-		}
-		create_dynamic_country = {
-			origin = root
-			country_type = recognized
-			tier = empire
-			capital = STATE_WESTPHALIA
-			cede_state_trigger = {
-				has_variable = state_to_cede_3
-			}
-			on_created = { 
-				every_scope_state = {
-					remove_variable = state_to_cede_3
-				}
-			}
-		}
-        every_scope_state = {
-			limit = {
-                state_region = s:STATE_FRANCONIA
-			}
-			set_variable = state_to_cede_4
-		}
-		create_dynamic_country = {
-			origin = root
-			country_type = recognized
-			tier = empire
-			capital = STATE_WESTPHALIA
-			cede_state_trigger = {
-				has_variable = state_to_cede_4
-			}
-			on_created = { 
-				every_scope_state = {
-					remove_variable = state_to_cede_4
-				}
-			}
-		}
     }
 }
