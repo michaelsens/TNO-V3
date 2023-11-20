@@ -1368,9 +1368,8 @@ je_speer_ger_b = {  # Speer
 		scope:journal_entry = {
 				not = {
 				custom_tooltip = {
-					text = "Has not already reeled appealed to the Reichstag or dissolved it"
+					text = "Has not already reeled appealed to the Reichstag "
 					has_variable = je_appeal 
-					has_variable = je_disolved_richstag
 				}
 			}
 		}
@@ -1437,9 +1436,8 @@ je_speer_ger_d = {  # Speer
 		scope:journal_entry = {
 				not = {
 				custom_tooltip = {
-					text = "Has not already restricted SS Recruitmment or mobalized the SS"
+					text = "Has not already restricted SS Recruitmment"
 					has_variable = je_restrict_ss
-					has_variable = je_moab_ss
 					
 				}
 			}
@@ -1509,47 +1507,6 @@ je_speer_ger_e = {  # Speer
 				name =  goreing_ger_struggle_timer
 				   add = -10
 				 }
-		
-		
-}
-}
-je_goreing_ger_a = {  # goreing
-	name = "Bolster the Luftwaffe"
-	desc = "We will bolster the Luftwaffe to increase our infulence."
-
-	visible = { always = yes }
-
-	possible = {
-		scope:journal_entry = {
-				not = {
-				custom_tooltip = {
-					text = "Has not already bolsterd the Luftwaffe or defunded it "
-					has_variable = je_bolster_fat
-					has_variable = je_defund_fat
-					
-				}
-				has_variable = {
-            
-					name = je_bolster_fat
-					value = 0
-				}
-			}
-		}
-	}
-
-	effect = {
-
-		scope:journal_entry = {
-			set_variable = { name = je_bolster_fat	 months = 9999  }
-		}	
-		custom_tooltip = {
-			text = "Increase Militarists infulence by 10"
-			
-		}
-		change_variable = {
-			name =  goreing_ger_struggle_timer
-			   add = 10
-			 }
 		
 		
 }
@@ -1690,4 +1647,42 @@ je_goreing_ger_e = {  # goreing
 		
 }
 }
+je_goreing_ger_a = {  # goreing
+	name = "Bolster the Luftwaffe"
+	desc = "We will bolster the Luftwaffe to increase our infulence."
+
+	visible = { always = yes }
+
+	possible = {
+		scope:journal_entry = {
+				not = {
+				custom_tooltip = {
+					text = "Has not already bolsterd the Luftwaffe "
+					has_variable = je_bolster_fat
+			
+					
+				}
+		}
+	}
+}
+
+	effect = {
+
+		scope:journal_entry = {
+			set_variable = { name = je_bolster_fat	 months = 9999  }
+		}	
+		custom_tooltip = {
+			text = "Increase Militarists infulence by 10"
+			
+		}
+		change_variable = {
+			name =  goreing_ger_struggle_timer
+			   add = 10
+			 }
+		
+		
+}
+}
+
+
 
