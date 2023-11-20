@@ -99,6 +99,7 @@ tno_germany_events.3 = { # germanys event telling them that a japanise (burgundi
             trigger_event = { id = tno_germany_events.8 days = 2 popup = yes }
             trigger_event = { id = tno_germany_events.9 days = 170 popup = yes } #hitler in comma
             trigger_event = { id = tno_germany_events.10 days = 80 popup = yes }
+            trigger_event = { id = tno_germany_events.11 days = 160 popup = yes }
 
 
             set_variable = {
@@ -312,7 +313,7 @@ tno_germany_events.9 = { # puts hitler in coma
 
 }
 
-tno_germany_events.10 = { # hitler picks sucsesser 
+tno_germany_events.10 = { # SS acting up 
 	type = country_event
     placement = ROOT
  
@@ -368,6 +369,408 @@ tno_germany_events.10 = { # hitler picks sucsesser
 
    option = { # hydrick 
     name = "Excellent. All according to plan"
+     change_variable = {
+     name =  devout_ger_struggle_timer
+        add = 5
+      }
+      custom_tooltip = "SS influence will increase by 5"
+
+     
+   
+     
+    }
+
+}
+
+tno_germany_events.11 = { # Autobahn renewel
+	type = country_event
+    placement = ROOT
+ 
+    
+ 
+    title = "Autobahn Renewal project"
+    desc = "Germany's famous highway system, the Autobahn, has seen better days. When Hitler took the project over in the early 30s he greatly expanded the system to encompass the entirety of the Reich, making it the largest highway syestem in the world. "
+    flavor = "The great economic crash of the 50's put a quick stop to everything. Funding was massivly cut, making the planned expansions simply impossible. The highway has begun to decay from chronic lack of maintenance."
+
+   event_image = {
+		texture  = "gfx/event_pictures/event_pictures/hitler_suc.dds"
+	}
+    icon = "gfx/interface/icons/event_icons/event_fire.dds"
+
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 3
+    trigger = {
+		this ?= c:GER
+	}	
+
+    option = { # Boost spear
+        name = "A tragic oversight that we will repair"
+        change_variable = {
+            name = speer_ger_struggle_timer
+            add = 5
+         }
+         custom_tooltip = "Will boost Autark influence by 5"
+         
+        
+        
+	}
+
+    option = { # Borman 
+     name = "We'll put the Heer to work."
+       default_option = yes
+       change_variable = {
+        name = boreman_ger_struggle_timer
+        add = 5
+     }
+     custom_tooltip = "Militarists influence will increase by 5"
+     
+     change_variable = {
+        name = goreing_ger_struggle_timer
+        add = 5
+     }
+     custom_tooltip = "The Chancellerys influence will increase by 5 "
+	}
+   option = { # hydrick 
+    name = "There is no need, it would be a waste"
+     change_variable = {
+     name =  devout_ger_struggle_timer
+        add = 5
+      }
+      custom_tooltip = "SS influence will increase by 5"
+
+     
+   
+     
+    }
+
+}
+
+tno_germany_events.12 = { # Vets demand their share
+	type = country_event
+    placement = ROOT
+ 
+    
+ 
+    title = "Veterans demand their share"
+    desc = "Millions of German soldiers were rewarded after our glorious victory in the Second World War. Our loyal troops oversaw the creation of the greatest empire the world has yet seen; it was therefore only fitting to reward them accordingly. Many veterans were givin lands to settle, positions of power and influence, prestige and more than their share of wealth. This was easy enough to handle following the days of our great victory. "
+    flavor = "This has set a precedent of entitlement. Yet another generation of soldiers are retiring. and there isn't near the amount of wealth to go around; there simply hasn't been any new conquests. Still, they expect, and even DEMAND the same compensation the hereos of the last war were gifted, even the men who havn't seen a lick of battle!"
+
+   event_image = {
+		texture  = "gfx/event_pictures/event_pictures/hitler_suc.dds"
+	}
+    icon = "gfx/interface/icons/event_icons/event_fire.dds"
+
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 3
+    trigger = {
+		this ?= c:GER
+	}	
+
+    option = { # Boost spear
+        name = "Times are diffrent now"
+        change_variable = {
+            name = speer_ger_struggle_timer
+            add = 5
+         }
+         custom_tooltip = "Will boost Autark influence by 5"
+         
+        
+        
+	}
+
+    option = { # the rest 
+     name = "It is their right, earned in blood"
+       default_option = yes
+       change_variable = {
+        name = boreman_ger_struggle_timer
+        add = 5
+     }
+     custom_tooltip = "Militarists influence will increase by 5"
+     
+     change_variable = {
+        name = goreing_ger_struggle_timer
+        add = 5
+     }
+     change_variable = {
+        name =  devout_ger_struggle_timer
+           add = 5
+         }
+         custom_tooltip = "SS influence will increase by 5"
+     custom_tooltip = "The Chancellerys influence will increase by 5 "
+	}
+
+
+}
+
+tno_germany_events.13 = { # Demands for womens rights 
+	type = country_event
+    placement = ROOT
+ 
+    
+ 
+    title = "Demands for Women's Rights"
+    desc = "Students whining on the streets isn't anything new to our administration. Spearheaded by a large group of female college students, the new group has been organizing marches, rallies, and meetings in a number of major cities. "
+    flavor = "Reactions are mixed; many conservative NSDAP members are disgusted, arguing that women's purity needs to be preserved and that the German woman's purpose is to be a caretaker. Some of the more traditional women wholeheartedly agree, seeing their place in Germany as an essential pillar of the German family. On the flip side, many younger women chaff at the thought of remaining second class citizens in their own country, and demand more freedoms and acceptance from the population at large. Many reformers, and even more than a few (silent) conservatives are in agreement and see the grievances laid out as valid. With popular opinion split and marches and rallies becoming more frenzied, the government needs to step in and offer guidance, one way or another "
+
+   event_image = {
+		texture  = "gfx/event_pictures/event_pictures/hitler_suc.dds"
+	}
+    icon = "gfx/interface/icons/event_icons/event_fire.dds"
+
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 3
+    trigger = {
+		this ?= c:GER
+	}	
+
+    option = { # Boost spear
+        name = "Pay them lip service, promise vague reforms"
+        change_variable = {
+            name = speer_ger_struggle_timer
+            add = 5
+         }
+         custom_tooltip = "Will boost Autark influence by 5"
+         
+        
+        
+	}
+
+    option = { # Borman 
+     name = "Let the people choose, wait it out"
+       default_option = yes
+       change_variable = {
+        name = boreman_ger_struggle_timer
+        add = 5
+     }
+     custom_tooltip = "The Chancellerys influence will increase by 5 "
+	}
+    option = { # goreing 
+     name = "We are not changing the status quo, break up the marches!"
+     custom_tooltip = "Militarists influence will increase by 5"
+     
+      
+     change_variable = {
+        name = goreing_ger_struggle_timer
+        add = 5
+     }
+    }
+
+   option = { # hydrick 
+    name = "Women? Rights? Stop the marches, arrest all of their leaders!"
+     change_variable = {
+     name =  devout_ger_struggle_timer
+        add = 5
+      }
+      custom_tooltip = "SS influence will increase by 5"
+
+     
+   
+     
+    }
+
+}
+
+tno_germany_events.14 = { # mill budget review
+	type = country_event
+    placement = ROOT
+ 
+    
+ 
+    title = "Military Budget Review"
+    desc = "After the Second World War, the German military bore no rival. Our military spending was second to none, as was our might! We proved the world our strength by accomplishing what many considered impossible; we retained tight control over our conquests, then expanded our empire even more by occupying the entire middle section of the dark continent! Since then, we've spent the better part of two decades crushing army after army of partisans, as well as a Russian invasion. The economic collapse of the 50s made the burden of maintaining the Heer's budget a titanic struggle. Although many begged for funds to be funneled elsewhere, Hitler stood by the Wehrmacht and would not hear of it. Therefore, for the last two decades, Germany has somehow miraculously maintained its military budget, for better or worse without another major economic crisis.Militarists in both the Wehrmacht and administration continue to lobby to maintain current spending to this day. On the other side of the aisle, a coalition of reformers, civilian interests, industrialists, and even limited numbers of conservatives from the NSDAP beg us to cut the Wehrmact's budget for much needed allocation of funds elsewhere. Being in a position of power ourselves combined with Hitler's ailing health allows us to now make a change in policy, if we so choose. "
+    flavor = " "
+
+   event_image = {
+		texture  = "gfx/event_pictures/event_pictures/hitler_suc.dds"
+	}
+    icon = "gfx/interface/icons/event_icons/event_fire.dds"
+
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 3
+    trigger = {
+		this ?= c:GER
+	}	
+
+    option = { # Boost spear
+        name = "We will invest in the economy instead!"
+        change_variable = {
+            name = speer_ger_struggle_timer
+            add = 5
+         }
+         custom_tooltip = "Will boost Autark influence by 5"
+         
+        
+        
+	}
+
+    option = { # Borman 
+     name = "Our enemies grow stronger everyday, the budget remains"
+       default_option = yes
+       change_variable = {
+        name = boreman_ger_struggle_timer
+        add = 5
+     }
+     custom_tooltip = "Militarists influence will increase by 5"
+     
+      
+     change_variable = {
+        name = goreing_ger_struggle_timer
+        add = 5
+     }
+     custom_tooltip = "The Chancellerys influence will increase by 5 "
+	}
+
+   option = { # hydrick 
+    name = "Funnel more money to the SS"
+     change_variable = {
+     name =  devout_ger_struggle_timer
+        add = 5
+      }
+      custom_tooltip = "SS influence will increase by 5"
+
+     
+   
+     
+    }
+
+}
+
+tno_germany_events.15 = { # Hitler youth review
+	type = country_event
+    placement = ROOT
+ 
+    
+ 
+    title = "Hitler Youth Review"
+    desc = "he Hitlerjugend, or Hitler Youth, is Germany's largest youth organization. The group is one of the few public organizations that weathered the economic crash last decade with a semblance of grace. They have always had funding, if not from the state than from fundraising they do themselves. This has allowed them to continue to operate, and has also given them some autonomy from the government "
+    flavor = "The Hitlerjugend has naturally evolved; it is not the same youth group of the 1940s. After a decade of (relative) peace throughout Germany, the program began to de-militarized. They are now more akin to the American or British scouts than the group of old, though they still honor their material traditions.\n\nWe have on our desks a couple of proposals to mold the Hitlerjugend into something more of our liking. Every year, high standing party officials review the scout's training regimates. If we so chose, we can lean on these members to influence the structure, and therefore future of the Hitlerjugend"
+
+   event_image = {
+		texture  = "gfx/event_pictures/event_pictures/hitler_suc.dds"
+	}
+    icon = "gfx/interface/icons/event_icons/event_fire.dds"
+
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 3
+    trigger = {
+		this ?= c:GER
+	}	
+
+    option = { # Boost spear
+        name = "Let them be children; stay away from politics"
+        change_variable = {
+            name = speer_ger_struggle_timer
+            add = 5
+         }
+         custom_tooltip = "Will boost Autark influence by 5"
+         
+        
+        
+	}
+
+    option = { # Borman 
+     name = "The Scouts should be Scouts, nothing more, nothing less"
+       default_option = yes
+       change_variable = {
+        name = boreman_ger_struggle_timer
+        add = 5
+     }
+     custom_tooltip = " The Chancellerys influence will increase by 5"
+     
+      
+
+	}
+    option = { # goreing 
+    name = "Nothing is quite as inspiring as a parading column of youth!"
+    change_variable = {
+        name = goreing_ger_struggle_timer
+        add = 5
+     }
+     custom_tooltip = "The Militarists influence will increase by 5 "
+     
+   
+     
+    }
+
+   option = { # hydrick 
+    name = "We could have the SS oversee them instead..."
+     change_variable = {
+     name =  devout_ger_struggle_timer
+        add = 5
+      }
+      custom_tooltip = "SS influence will increase by 5"
+
+     
+   
+     
+    }
+
+}
+
+tno_germany_events.16 = { # slave camp expansion
+	type = country_event
+    placement = ROOT
+ 
+    
+ 
+    title = "Expansion of Slave Camps"
+    desc = "Slavery has been a fact of life in the Reich for well over a decade now. Slave labor dominates most labor intensive sectors of our economy, and it represents a huge portion of our GDP. The institution is old enough to contain a new generation that only knows the walls and barbed wire of the labor camps. For a while now, the slave population has been slowly but steadily rising, and it is apparent that we now need more living space for the increased number of laborers."
+    flavor = "The camps are starting to overflow with people, and their living conditions are steadily declining.\n\nAlthough it is inconvenient, something should be done now. Living conditions aren't safe for the slaves, which makes it dangerous for the Germans that guard and employ them. The most simple option available to us is to build new labor camps, but there are also more... creative approaches we can consider"
+   event_image = {
+		texture  = "gfx/event_pictures/event_pictures/hitler_suc.dds"
+	}
+    icon = "gfx/interface/icons/event_icons/event_fire.dds"
+
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 3
+    trigger = {
+		this ?= c:GER
+	}	
+
+    option = { # Boost spear
+        name = "Improve conditions and sanitation at the existing camps."
+        change_variable = {
+            name = speer_ger_struggle_timer
+            add = 5
+         }
+         custom_tooltip = "Will boost Autark influence by 5"
+         
+        
+        
+	}
+
+    option = { # Borman 
+     name = "Hand some of the slaves over to the Heer for laborers!"
+       default_option = yes
+       change_variable = {
+        name = boreman_ger_struggle_timer
+        add = 5
+     }
+     custom_tooltip = " The Chancellerys influence will increase by 5"
+     
+      
+
+	}
+    option = { # goreing 
+    name = "Begin construction of new facilities."
+    change_variable = {
+        name = goreing_ger_struggle_timer
+        add = 5
+     }
+     custom_tooltip = "The Militarists influence will increase by 5 "
+     
+   
+     
+    }
+
+   option = { # hydrick 
+    name = "Our men will take care of the situation... discreetly."
      change_variable = {
      name =  devout_ger_struggle_timer
         add = 5
