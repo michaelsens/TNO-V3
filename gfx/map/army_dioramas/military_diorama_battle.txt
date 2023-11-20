@@ -460,18 +460,17 @@ diorama_battle_skirmish_01 = {
 	attach = { name = flag_01 		flag_01_loc = "flag" }
 }
 
-
-diorama_battle_squad_01 = {
+diorama_battle_trench_01 = {
 
 	# Army composition is checked when picking a diorama for a certain province
 	# The closer the composition of the army in the province corresponds to the percentage, the higher the chance of choosing this diorama
 	army_composition = {
-		combat_unit_group_infantry = 0.7272727272727273
-		combat_unit_group_artillery = 0.13636363636363635
-		combat_unit_group_cavalry = 0.13636363636363635
+		combat_unit_group_infantry = 0.8
+		combat_unit_group_artillery = 0.08
+		combat_unit_group_cavalry = 0.12
 	}
 
-	required_unit_types = { combat_unit_type_squad_infantry }
+	required_unit_types = { combat_unit_type_trench_infantry }
 
 	# Distance between the center of the diorama and the frontline
 	distance = 5
@@ -480,96 +479,102 @@ diorama_battle_squad_01 = {
 
 	# Define all locators for the different assets
 
-	#####		SQUAD LOCATORS		#####
-	locator = { name = "squad_ground_loc" 
+	#####		TRENCH LOCATORS		#####
+	locator = { name = "trench_ground_loc" 
 				position = { 0.0 0.0 -0.0 } 
 				rotation = { -0.0 0.0 0.0 } 
 				scale = 1.0 }
 
 	#####		INFANTRY LOCATORS		#####
 	locator = { name = "infantry_01_loc" 
-				position = { -1.432 -0.0 -2.36 } 
+				position = { -0.255 0.558 -2.056 } 
 				rotation = { -0.0 0.0 0.0 } 
 				scale = 1.0 }
 
 	locator = { name = "infantry_02_loc" 
-				position = { -2.118 -0.0 -1.714 } 
+				position = { 0.694 0.511 -2.113 } 
 				rotation = { -0.0 0.0 0.0 } 
 				scale = 1.0 }
 
 	locator = { name = "infantry_03_loc" 
-				position = { -2.997 -0.0 -0.978 } 
+				position = { -1.613 0.498 -1.175 } 
 				rotation = { -0.0 0.0 0.0 } 
 				scale = 1.0 }
 
 	locator = { name = "infantry_04_loc" 
-				position = { -0.565 -0.0 -1.784 } 
+				position = { 2.531 0.545 -1.196 } 
 				rotation = { -0.0 0.0 0.0 } 
 				scale = 1.0 }
 
 	locator = { name = "infantry_05_loc" 
-				position = { 1.616 0.253 -0.964 } 
+				position = { -2.746 -0.0 -1.467 } 
 				rotation = { -0.0 0.0 0.0 } 
 				scale = 1.0 }
 
 	locator = { name = "infantry_06_loc" 
-				position = { 2.186 0.253 -0.638 } 
+				position = { 1.051 0.114 1.084 } 
 				rotation = { -0.0 0.0 0.0 } 
 				scale = 1.0 }
 
 	locator = { name = "infantry_07_loc" 
-				position = { 0.474 0.253 -0.43 } 
+				position = { 4.672 -0.0 0.078 } 
 				rotation = { -0.0 0.0 0.0 } 
 				scale = 1.0 }
 
 	locator = { name = "infantry_08_loc" 
-				position = { 3.049 0.253 0.078 } 
+				position = { 1.638 0.406 3.05 } 
+				rotation = { -0.0 0.0 0.0 } 
+				scale = 1.0 }
+
+	locator = { name = "infantry_09_loc" 
+				position = { -1.345 0.427 -2.332 } 
+				rotation = { -0.0 0.0 0.0 } 
+				scale = 1.0 }
+
+	locator = { name = "infantry_10_loc" 
+				position = { 0.15 0.453 -0.564 } 
 				rotation = { -0.0 0.0 0.0 } 
 				scale = 1.0 }
 
 	#####		ARTILLERY LOCATORS		#####
 	locator = { name = "artillery_01_loc" 
-				position = { -0.379 0.5 3.0 } 
-				rotation = { -6.851 0.0 0.0 } 
+				position = { -2.368 0.346 0.85 } 
+				rotation = { -0.0 0.0 5.015 } 
 				scale = 1.0 }
 
 	locator = { name = "artillery_02_loc" 
-				position = { -1.878 0.5 2.182 } 
-				rotation = { -0.0 0.0 0.0 } 
-				scale = 1.0 }
-
-	locator = { name = "artillery_03_loc" 
-				position = { -3.309 0.5 3.0 } 
-				rotation = { 5.7 0.0 0.0 } 
+				position = { 2.516 0.47 1.063 } 
+				rotation = { -0.0 0.0 -9.847 } 
 				scale = 1.0 }
 
 	#####		CAVALRY LOCATORS		#####
 	locator = { name = "cavalry_01_loc" 
-				position = { 2.962 -0.0 -2.932 } 
-				rotation = { 21.486 0.0 0.0 } 
+				position = { -3.505 -0.0 -0.84 } 
+				rotation = { -0.0 0.0 0.0 } 
 				scale = 1.0 }
 
 	locator = { name = "cavalry_02_loc" 
-				position = { 3.564 0.253 1.757 } 
+				position = { 3.984 -0.0 -2.101 } 
 				rotation = { -0.0 0.0 0.0 } 
 				scale = 1.0 }
 
 	locator = { name = "cavalry_03_loc" 
-				position = { -0.776 0.253 0.227 } 
-				rotation = { -0.0 0.0 0.0 } 
+				position = { -1.848 0.0 3.071 } 
+				rotation = { -42.494 0.0 0.0 } 
 				scale = 1.0 }
 
 	#####		GENERAL LOCATORS		#####
 	locator = { name = "general_01_loc" 
-				position = { 1.357 0.253 1.014 } 
+				position = { -0.877 0.0 1.714 } 
 				rotation = { -0.0 0.0 0.0 } 
 				scale = 1.0 }
 
 	#####		FLAG LOCATORS		#####
 	locator = { name = "flag_01_loc" 
-				position = { 0.586 0.0 1.794 } 
+				position = { -1.27 0.0 1.008 } 
 				rotation = { -0.0 0.0 0.0 } 
 				scale = 1.0 }
+
 
 
 
@@ -577,7 +582,7 @@ diorama_battle_squad_01 = {
 
 
 	#####		FLAG ATTACHMENTS		#####
-	attach = { name = squad_ground 		combat_unit_group = combat_unit_group_infantry	squad_ground_loc = "ground" }
+	attach = { name = trench_ground 		combat_unit_group = combat_unit_group_infantry	trench_ground_loc = "ground" }
 
 	#####		FLAG ATTACHMENTS		#####
 	attach = { name = infantry_01 		combat_unit_group = combat_unit_group_infantry  		infantry_01_loc = "infantry" 	 can_be_defeated = yes	is_visible = { scope:num_units > 0 } }
@@ -588,11 +593,12 @@ diorama_battle_squad_01 = {
 	attach = { name = infantry_06 		combat_unit_group = combat_unit_group_infantry  		infantry_06_loc = "infantry" 	 can_be_defeated = yes	is_visible = { scope:num_units > 0 } }
 	attach = { name = infantry_07 		combat_unit_group = combat_unit_group_infantry  		infantry_07_loc = "infantry" 	 can_be_defeated = yes	is_visible = { scope:num_units > 0 } }
 	attach = { name = infantry_08 		combat_unit_group = combat_unit_group_infantry  		infantry_08_loc = "infantry" 	 can_be_defeated = yes	is_visible = { scope:num_units > 0 } }
+	attach = { name = infantry_09 		combat_unit_group = combat_unit_group_infantry  		infantry_09_loc = "infantry" 	 can_be_defeated = yes	is_visible = { scope:num_units > 0 } }
+	attach = { name = infantry_10 		combat_unit_group = combat_unit_group_infantry  		infantry_10_loc = "infantry" 	 can_be_defeated = yes	is_visible = { scope:num_units > 0 } }
 
 	#####		FLAG ATTACHMENTS		#####
 	attach = { name = artillery_01 		combat_unit_group = combat_unit_group_artillery  		artillery_01_loc = "artillery" 	 can_be_defeated = yes	is_visible = { scope:num_units > 0 } }
 	attach = { name = artillery_02 		combat_unit_group = combat_unit_group_artillery  		artillery_02_loc = "artillery" 	 can_be_defeated = yes	is_visible = { scope:num_units > 0 } }
-	attach = { name = artillery_03 		combat_unit_group = combat_unit_group_artillery  		artillery_03_loc = "artillery" 	 can_be_defeated = yes	is_visible = { scope:num_units > 0 } }
 
 	#####		FLAG ATTACHMENTS		#####
 	attach = { name = cavalry_01 		combat_unit_group = combat_unit_group_cavalry  		cavalry_01_loc = "cavalry" 	 can_be_defeated = yes	is_visible = { scope:num_units > 0 } }

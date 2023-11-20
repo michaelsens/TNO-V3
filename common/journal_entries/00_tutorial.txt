@@ -1584,3 +1584,60 @@ je_tutorial_research_technology = {
 	transferable = yes
 	should_be_pinned_by_default = yes
 }
+
+je_tutorial_establish_company = {
+	how_tutorial = lesson_establish_company_how
+
+	should_be_pinned_by_default = yes
+
+	icon = "gfx/interface/icons/event_icons/tutorial_icon.dds"
+
+	group = je_group_tutorial
+
+	complete = {
+		NOT = { can_establish_company = YES }
+	}
+	
+	current_value = {
+	}
+
+	goal_add_value = {
+	}
+
+	on_complete = {
+	}
+	
+	weight = 1002
+	transferable = yes
+}
+
+je_tutorial_create_formation = {
+	how_tutorial = lesson_create_formation_how
+
+	should_be_pinned_by_default = yes
+
+	icon = "gfx/interface/icons/event_icons/tutorial_icon.dds"
+
+	group = je_group_tutorial
+
+	complete = { #TODO placeholder will code support
+		custom_tooltip = {
+			text = je_tutorial_create_formation_complete_trigger
+			NOT = {
+				has_variable = formation_tutorial_ongoing
+			}
+		}
+	}
+	
+	current_value = {
+	}
+
+	goal_add_value = {
+	}
+
+	on_complete = {
+	}
+	
+	weight = 1002
+	transferable = yes
+}
