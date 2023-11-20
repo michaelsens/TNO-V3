@@ -2,15 +2,10 @@
 
     icon = "gfx/interface/icons/new_event_icons/event_ost_insur.dds"
     
-  
+    group = je_group_crises
 
     scripted_button = je_insur_ost_a
     scripted_button = je_insur_ost_b
-	scripted_button = je_insur_ost_c
-	scripted_button = je_insur_ost_d
-	scripted_button = je_insur_ost_e
-	scripted_button = je_insur_ost_f
-	scripted_button = je_insur_ost_g
 
     status_desc = {
 	
@@ -91,9 +86,9 @@
         }
         if = {
             ig:ig_armed_forces  = {
-                OR = {
-                    ig_approval > 10
-                }
+            
+              ig_approval > 10
+                
             }
         change_variable = {
             name = chaos_ost_timer
@@ -102,10 +97,9 @@
         }
         if = {
             ig:ig_armed_forces  = {
-                OR = {
-                    ig_approval < 1
-              
-                }
+                
+                ig_approval < 1
+             
             }
         change_variable = {
             name = chaos_ost_timer
@@ -153,7 +147,7 @@
 je_tno_request_funding_ost = { 
 
     icon = "gfx/interface/icons/new_event_icons/rquest_funding.dds"
-
+    group = je_group_crises
     scripted_button = je_funding_a
     scripted_button = je_funding_b
     scripted_button = je_funding_c
@@ -193,7 +187,7 @@ je_tno_request_funding_ost = {
 je_tno_ost_stabbility = { # ostland insurgency
 
     icon = "gfx/interface/icons/new_event_icons/ost.dds"
-    
+    group = je_group_crises
     status_desc = {
 	
         first_valid = {
@@ -201,7 +195,7 @@ je_tno_ost_stabbility = { # ostland insurgency
                 desc =  millitary_happy_tt
                 trigger = {
                     
-                 chaos_ost_timer <0
+                 chaos_ost_timer <= 0
                   
                     
                 }
@@ -211,7 +205,7 @@ je_tno_ost_stabbility = { # ostland insurgency
         triggered_desc = {
             desc = millitary_angry_tt
             trigger = {
-                chaos_ost_timer >0
+                chaos_ost_timer >= 0
             }
        
         }
@@ -234,7 +228,7 @@ je_tno_ost_stabbility = { # ostland insurgency
 je_tno_request_funding_ost = { 
 
     icon = "gfx/interface/icons/new_event_icons/rquest_funding.dds"
-
+    group = je_group_crises
     scripted_button = je_funding_a
     scripted_button = je_funding_b
     scripted_button = je_funding_c
