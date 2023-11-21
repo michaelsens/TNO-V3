@@ -249,7 +249,8 @@ tno_germany_events.8 = { # hitler picks sucsesser
             name = speer_ger_struggle_timer
             add = 10
          }
-
+         set_variable = speer_chosen
+        
          custom_tooltip = speer_tip.a
          custom_tooltip = speer_tip.b
          custom_tooltip = "The Autarks will try to abolish slavery"
@@ -268,11 +269,14 @@ tno_germany_events.8 = { # hitler picks sucsesser
         name = boreman_ger_struggle_timer
         add = 10
      }
+     set_variable = borman_chosen
      custom_tooltip = "The Chancellery will deal with the students the traditional way"
      custom_tooltip = "The Chancellery will focus on stability within the rich and continuing hitler's policies"
      custom_tooltip = "The Chancellery will focus on winning the cold war"
      custom_tooltip = "The Chancellerys influence will increase by 10 "
 	}
+    
+    
     option = { # goreing 
      name = "Germany became great through militarism"
      custom_tooltip = milltooltip.1
@@ -280,7 +284,7 @@ tno_germany_events.8 = { # hitler picks sucsesser
      custom_tooltip = "The Militarists will make Germany a stratocratic nation rulled through fear"
      custom_tooltip = "The students will be crushed by the millitary"
      custom_tooltip = "Militarists influence will increase by 10"
-     
+     set_variable = goering_chosen
       
      change_variable = {
         name = goreing_ger_struggle_timer
@@ -294,16 +298,13 @@ tno_germany_events.8 = { # hitler picks sucsesser
      name =  devout_ger_struggle_timer
         add = 10
       }
+      set_variable = heydrich_chosen
       custom_tooltip = godhelpus.1
       custom_tooltip = godhelpus.2
       custom_tooltip = godhelpus.3
       custom_tooltip = "SS influence will increase by 10"
-
-     
-   
      
     }
-
 }
 
 tno_germany_events.9 = { # puts hitler in coma
@@ -808,6 +809,9 @@ tno_germany_events.17 = { # German Civil War
 	}	
 
     immediate = {
+        c:GER = {
+            set_immune_to_revolutions = yes
+        }
         create_country = { #Martin bormann
 		tag = GMB
 		origin = c:GER 
@@ -831,8 +835,9 @@ tno_germany_events.17 = { # German Civil War
         province = p:x716141
         province = p:xA40163
         province = p:x67FE18
-
+        
 		on_created = {
+            set_immune_to_revolutions = yes
             add_modifier = {
 				name = civiL_war_never_ends
 				years = 2
@@ -852,8 +857,9 @@ tno_germany_events.17 = { # German Civil War
         state = s:STATE_RUHR.region_state:GER
         state = s:STATE_NORTH_RHINE.region_state:GER
         state = s:STATE_WALLONIA.region_state:GER
-
+        
         on_created = {
+            set_immune_to_revolutions = yes
             add_modifier = {
 				name = civiL_war_never_ends
 				years = 2
@@ -881,8 +887,9 @@ tno_germany_events.17 = { # German Civil War
         province = p:x3E3572
         province = p:x4B3444
         province = p:xF0E080
-
+        
 		on_created = {
+            set_immune_to_revolutions = yes
             add_modifier = {
 				name = civiL_war_never_ends
 				years = 2
@@ -903,11 +910,13 @@ tno_germany_events.17 = { # German Civil War
         province = p:xE165F5
 		
         on_created = {
+            set_immune_to_revolutions = yes
             add_modifier = {
 				name = civiL_war_never_ends
 				years = 2
 			}
 	        }
+
 	    } 
         create_country = { #Wehrkreis XIX
 		tag = GWZ
@@ -915,9 +924,40 @@ tno_germany_events.17 = { # German Civil War
         state = s:STATE_BOHEMIA.region_state:GER
         state = s:STATE_MORAVIA.region_state:GER
 		on_created = {
+            set_immune_to_revolutions = yes
 	        }
 	    } 
     }
     option = {
+        name = "Borman won"
+        trigger = {
+            has_variable = borman_chosen
+       }
+        play_as = c:GMB
+        remove_variable = borman_chosen
     }
+    option = {
+        name = "Speer won"
+        trigger = {
+            has_variable = speer_chosen
+        }
+        play_as = c:GAS
+        remove_variable = speer_chosen
+     }
+     option = {
+        name = "Göring won"
+        trigger = {
+            has_variable = goering_chosen
+        }
+        play_as = c:GHG
+        remove_variable = goering_chosen
+     }
+     option = {
+        name = "Heydrich won"
+        trigger = {
+            has_variable = heydrich_chosen
+        }
+        play_as = c:GRH
+        remove_variable = heydrich_chosen
+     }
 }
