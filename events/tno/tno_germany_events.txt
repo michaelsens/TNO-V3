@@ -600,7 +600,7 @@ tno_germany_events.14 = { # mill budget review
     desc = "After the Second World War, the German military bore no rival. Our military spending was second to none, as was our might! We proved the world our strength by accomplishing what many considered impossible; we retained tight control over our conquests, then expanded our empire even more by occupying the entire middle section of the dark continent! Since then, we've spent the better part of two decades crushing army after army of partisans, as well as a Russian invasion. The economic collapse of the 50s made the burden of maintaining the Heer's budget a titanic struggle. Although many begged for funds to be funneled elsewhere, Hitler stood by the Wehrmacht and would not hear of it. Therefore, for the last two decades, Germany has somehow miraculously maintained its military budget, for better or worse without another major economic crisis.Militarists in both the Wehrmacht and administration continue to lobby to maintain current spending to this day. On the other side of the aisle, a coalition of reformers, civilian interests, industrialists, and even limited numbers of conservatives from the NSDAP beg us to cut the Wehrmact's budget for much needed allocation of funds elsewhere. Being in a position of power ourselves combined with Hitler's ailing health allows us to now make a change in policy, if we so choose. "
     flavor = " "
 
-   event_image = {
+    event_image = {
 		texture  = "gfx/event_pictures/event_pictures/hitler_suc.dds"
 	}
     icon = "gfx/interface/icons/event_icons/event_fire.dds"
@@ -938,7 +938,10 @@ tno_germany_events.17 = { # German Civil War
        }
         play_as = c:GMB
         remove_variable = borman_chosen
+        trigger_event = { id = tno_germany_events.18 days = 10 popup = yes }
     }
+   
+   
     option = {
         name = "Speer won"
         trigger = {
@@ -946,7 +949,10 @@ tno_germany_events.17 = { # German Civil War
         }
         play_as = c:GAS
         remove_variable = speer_chosen
+        trigger_event = { id = tno_germany_events.18 days = 10 popup = yes }
      }
+     
+     
      option = {
         name = "Göring won"
         trigger = {
@@ -954,7 +960,10 @@ tno_germany_events.17 = { # German Civil War
         }
         play_as = c:GHG
         remove_variable = goering_chosen
+        trigger_event = { id = tno_germany_events.18 days = 10 popup = yes }
      }
+    
+    
      option = {
         name = "Heydrich won"
         trigger = {
@@ -962,5 +971,122 @@ tno_germany_events.17 = { # German Civil War
         }
         play_as = c:GRH
         remove_variable = heydrich_chosen
+        trigger_event = { id = tno_germany_events.18 days = 10 popup = yes }
      }
+}
+
+tno_germany_events.18 = {   #Civil war start
+    type = country_event
+    placement = ROOT
+
+    hidden = yes
+
+    immediate = {
+        c:GMB = {
+            create_diplomatic_play = {
+                type = dp_annex_war
+                name = german_civil_war
+                target_country = c:GAS
+                war = yes
+                target_state = s:STATE_WESTPHALIA.region_state:GAS
+                add_war_goal = {
+                    holder = c:GAS
+                    type = annex_country
+                    target_state = s:STATE_SAXONY.region_state:GMB
+                  }
+            }
+            create_diplomatic_play = {
+                type = dp_annex_war
+                name = german_civil_war
+                target_country = c:GHG
+                war = yes
+                target_state = s:STATE_SILESIA.region_state:GHG
+                add_war_goal = {
+                    holder = c:GHG
+                    type = annex_country
+                    target_state = s:STATE_SAXONY.region_state:GMB
+                  }
+            }
+            create_diplomatic_play = {
+                type = dp_annex_war
+                name = german_civil_war
+                target_country = c:GRH
+                war = yes
+                target_state = s:STATE_ALSACE_LORRAINE.region_state:GRH
+                add_war_goal = {
+                    holder = c:GRH
+                    type = annex_country
+                    target_state = s:STATE_SAXONY.region_state:GMB
+                  }
+            }
+        }
+        c:GAS = {
+            create_diplomatic_play = {
+                type = dp_annex_war
+                name = german_civil_war
+                target_country = c:GHG
+                war = yes
+                target_state = s:STATE_SILESIA.region_state:GHG
+                add_war_goal = {
+                    holder = c:GHG
+                    type = annex_country
+                    target_state = s:STATE_WESTPHALIA.region_state:GAS
+                  }
+            }
+            create_diplomatic_play = {
+                type = dp_annex_war
+                name = german_civil_war
+                target_country = c:GRH
+                war = yes
+                target_state = s:STATE_ALSACE_LORRAINE.region_state:GRH
+                add_war_goal = {
+                    holder = c:GRH
+                    type = annex_country
+                    target_state = s:STATE_WESTPHALIA.region_state:GAS
+                  }
+            }
+        }
+        c:GHG = {
+            create_diplomatic_play = {
+                type = dp_annex_war
+                name = german_civil_war
+                target_country = c:GRH
+                war = yes
+                target_state = s:STATE_ALSACE_LORRAINE.region_state:GRH
+                add_war_goal = {
+                    holder = c:GRH
+                    type = annex_country
+                    target_state = s:STATE_SILESIA.region_state:GRH
+                  }
+            }
+        }
+    }
+}
+
+tno_germany_events.19 = {   #German Civil War WIn
+
+    type = country_event
+    placement = ROOT
+
+    title = ""
+    desc = ""
+    flavor = ""
+
+    event_image = {
+		texture  = "gfx/event_pictures/event_pictures/hitler_suc.dds"
+	}
+    icon = "gfx/interface/icons/event_icons/event_fire.dds"
+
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 3
+    trigger = {
+		
+	}	
+
+    option = { # Annex Brandenburg
+        name = "We have won at last!"
+        annex = c:GER
+        #change_tag = GER       maybe?
+	}
 }
