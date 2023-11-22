@@ -56,7 +56,7 @@
 
     goal_add_value = {
         
-		value = 150
+		value = 60
 	}
 
     progressbar = yes
@@ -120,7 +120,7 @@ je_tno_gerpowerstruggle_devout = { # SS JE
 
     goal_add_value = {
         
-		value = 150
+		value = 60
 	}
 
     progressbar = yes
@@ -184,7 +184,7 @@ je_tno_gerpowerstruggle_speer= { # industralists JE
 
     goal_add_value = {
         
-		value = 150
+		value = 60
 	}
 
     progressbar = yes
@@ -251,7 +251,7 @@ je_tno_gerpowerstruggle_boreman= { # boreman JE
 
     goal_add_value = {
         
-		value = 150
+		value = 60
 	}
 
     progressbar = yes
@@ -295,7 +295,7 @@ je_tno_gerpowerstruggle_hitler_stats = { # status of hitler JE
 	
         first_valid = {
             triggered_desc = {
-                desc = "Hitler is unwell "
+                desc = "Hitler is unwell"
                 trigger = {
                     has_variable = hitler_unwell
                     NOT = {
@@ -309,19 +309,6 @@ je_tno_gerpowerstruggle_hitler_stats = { # status of hitler JE
                     has_variable = hitler_coma
                     
                 }
-           
-            }
-            triggered_desc = {
-                desc = millitary_angry_tt
-                trigger = {
-                    ig:ig_armed_forces  = {
-                        OR = {
-                            ig_approval < 1
-                      
-                        }
-                    }
-                }
-           
             }
         }
     }   
@@ -343,7 +330,8 @@ je_tno_gerpowerstruggle_hitler_stats = { # status of hitler JE
 	}
 
     on_complete = {
-        trigger_event = { id = tno_RK_events.1 popup = yes }
+        trigger_event = { id = tno_germany_events.17 popup = yes }
+        custom_description = "Germany will colapse"
     }
 
     current_value = {
@@ -358,7 +346,7 @@ je_tno_gerpowerstruggle_hitler_stats = { # status of hitler JE
 
    
     
-    weight = 30
+    weight = 190
     
     should_be_pinned_by_default = yes
     
