@@ -1,4 +1,4 @@
-﻿check_investable_reverse = {
+check_investable_reverse = {
         exists = market_capital
         OR = {
                 market_capital = {
@@ -111,6 +111,10 @@ AND = {
         level > state.building_rice_farm_total_number
 }
 AND = {
+        is_building_type = building_vineyard_plantation
+        level > state.building_vineyard_plantation_total_number
+}
+AND = {
         is_building_type = building_maize_farm
         level > state.building_maize_farm_total_number
 }
@@ -190,6 +194,20 @@ AND = {
         is_building_type = building_power_plant
         level > state.building_power_plant_total_number
 }
+AND = {
+        is_building_type = building_explosives_factory
+        level > state.building_explosives_factory_total_number
+}
+AND = {
+        is_building_type = building_military_shipyards
+        level > state.building_military_shipyards_total_number
+}
+AND = {
+        is_building_type = building_artillery_foundries
+        level > state.building_artillery_foundries_total_number
+}
+
+
 	}
 }
 
@@ -289,6 +307,10 @@ AND = {
         level > state.rice_farm_total_item
 }
 AND = {
+        is_building_type = building_vineyard_plantation
+        level > state.vineyard_plantation_total_item
+}
+AND = {
         is_building_type = building_maize_farm
         level > state.maize_farm_total_item
 }
@@ -367,6 +389,18 @@ AND = {
 AND = {
         is_building_type = building_power_plant
         level > state.power_plant_total_item
+}
+AND = {
+        is_building_type = building_explosives_factory
+        level > state.explosives_factory_total_item
+}
+AND = {
+        is_building_type = building_military_shipyards
+        level > state.military_shipyards_total_item
+}
+AND = {
+        is_building_type = building_artillery_foundries
+        level > state.artillery_foundries_total_item
 }
         }
 }

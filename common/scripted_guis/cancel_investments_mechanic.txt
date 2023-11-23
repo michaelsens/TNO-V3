@@ -870,6 +870,44 @@ cancel_investments_rice_farm = {
 		
 	}
 }
+cancel_investments_vineyard_plantation = {
+        scope = country
+        saved_scopes = {
+                invested_state
+                investor_country
+                invested_building
+    }
+
+        is_shown = {
+                exists = scope:invested_building
+                scope:invested_building = {
+                        is_building_type = building_vineyard_plantation
+                }
+                scope:invested_state = {
+                        vineyard_plantation_total_item > 0 
+                }
+        }
+        
+        is_valid = {
+                scope:investor_country = {
+                        any_scope_building = {
+                                is_building_type = building_investment_industry
+                                is_under_construction = no
+                                state = { scope:investor_country.capital = this }
+                        }
+                }
+        }
+
+        effect = {
+                
+                scope:invested_state = {
+                        fi_cancel_construction = {
+                                BUILDING = building_vineyard_plantation
+                        }
+                }
+                
+        }
+}
 cancel_investments_maize_farm = {
 	scope = country
 	saved_scopes = {
@@ -1536,6 +1574,138 @@ cancel_investments_power_plant = {
                 scope:invested_state = {
                         fi_cancel_construction = {
                                 BUILDING = building_power_plant
+                        }
+                }
+        }
+}
+cancel_investments_explosives_factory = {
+        scope = country
+        saved_scopes = {
+                invested_state
+                investor_country
+                invested_building
+    }
+        is_shown = {
+                exists = scope:invested_building
+                scope:invested_building = {
+                        is_building_type = building_explosives_factory
+                }
+                scope:invested_state = {
+                       explosives_factory_total_item > 0 
+                }
+        }
+        is_valid = {
+                scope:investor_country = {
+                        any_scope_building = {
+                                is_building_type = building_investment_industry
+                                is_under_construction = no
+                                state = { scope:investor_country.capital = this }
+                        }
+                }
+        }
+        effect = {
+                scope:invested_state = {
+                        fi_cancel_construction = {
+                                BUILDING = building_explosives_factory
+                        }
+                }
+        }
+}
+cancel_investments_military_shipyards = {
+        scope = country
+        saved_scopes = {
+                invested_state
+                investor_country
+                invested_building
+    }
+        is_shown = {
+                exists = scope:invested_building
+                scope:invested_building = {
+                        is_building_type = building_military_shipyards
+                }
+                scope:invested_state = {
+                       military_shipyards_total_item > 0 
+                }
+        }
+        is_valid = {
+                scope:investor_country = {
+                        any_scope_building = {
+                                is_building_type = building_investment_industry
+                                is_under_construction = no
+                                state = { scope:investor_country.capital = this }
+                        }
+                }
+        }
+        effect = {
+                scope:invested_state = {
+                        fi_cancel_construction = {
+                                BUILDING = building_military_shipyards
+                        }
+                }
+        }
+}
+cancel_investments_artillery_foundries = {
+        scope = country
+        saved_scopes = {
+                invested_state
+                investor_country
+                invested_building
+    }
+        is_shown = {
+                exists = scope:invested_building
+                scope:invested_building = {
+                        is_building_type = building_artillery_foundries
+                }
+                scope:invested_state = {
+                       artillery_foundries_total_item > 0 
+                }
+        }
+        is_valid = {
+                scope:investor_country = {
+                        any_scope_building = {
+                                is_building_type = building_investment_industry
+                                is_under_construction = no
+                                state = { scope:investor_country.capital = this }
+                        }
+                }
+        }
+        effect = {
+                scope:invested_state = {
+                        fi_cancel_construction = {
+                                BUILDING = building_artillery_foundries
+                        }
+                }
+        }
+}
+cancel_investments_vineyard_plantation = {
+        scope = country
+        saved_scopes = {
+                invested_state
+                investor_country
+                invested_building
+    }
+        is_shown = {
+                exists = scope:invested_building
+                scope:invested_building = {
+                        is_building_type = building_vineyard_plantation
+                }
+                scope:invested_state = {
+                       vineyard_plantation_total_item > 0 
+                }
+        }
+        is_valid = {
+                scope:investor_country = {
+                        any_scope_building = {
+                                is_building_type = building_investment_industry
+                                is_under_construction = no
+                                state = { scope:investor_country.capital = this }
+                        }
+                }
+        }
+        effect = {
+                scope:invested_state = {
+                        fi_cancel_construction = {
+                                BUILDING = building_vineyard_plantation
                         }
                 }
         }
