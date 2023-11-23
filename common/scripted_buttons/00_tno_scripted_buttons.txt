@@ -127,8 +127,8 @@ je_insur_ost_b = {
 }
 
 je_funding_a = {  #small funding
-	name = "Request small amount of funding " 
-	desc = "We will request a small amount of funding from Germany"
+	name = "je_funding_a_loc" 
+	desc = "je_funding_a_loc_desc"
 
 	visible = { always = yes }
 
@@ -136,7 +136,7 @@ je_funding_a = {  #small funding
 		scope:journal_entry = {
 				not = {
 				custom_tooltip = {
-					text = "Has not requested funding in the last 12 months"
+					text = button_request_money_12_months
 					has_variable = je_funding_cooldown
 				}
 			}
@@ -149,7 +149,7 @@ je_funding_a = {  #small funding
 			set_variable = { name = je_funding_cooldown months = 12  }
 		}	
 		custom_tooltip = {
-			text = "We will ask Germany for money"
+			text = button_ask_for_money
 	
 		}
 		hidden_effect = {
@@ -160,8 +160,8 @@ je_funding_a = {  #small funding
 }
 }
 je_funding_b = {  #mid funding
-	name = "Request a medium amount of funding " 
-	desc = "We will request a small amount of funding from Germany"
+	name = "je_funding_b_loc" 
+	desc = "je_funding_b_loc_desc"
 
 	visible = { always = yes }
 
@@ -169,7 +169,7 @@ je_funding_b = {  #mid funding
 		scope:journal_entry = {
 				not = {
 				custom_tooltip = {
-					text = "Has not requested funding in the last 12 months"
+					text = button_request_money_12_months
 					has_variable = je_funding_cooldown
 				}
 			}
@@ -182,7 +182,7 @@ je_funding_b = {  #mid funding
 			set_variable = { name = je_funding_cooldown months = 12  }
 		}	
 		custom_tooltip = {
-			text = "We will ask Germany for money"
+			text = button_ask_for_money
 	
 		}
 		hidden_effect = {
@@ -193,8 +193,8 @@ je_funding_b = {  #mid funding
 }
 }
 je_funding_c = {  #large funding
-	name = "Request a large amount of funding " 
-	desc = "We will request a small amount of funding from Germany"
+	name = "je_funding_c_loc" 
+	desc = "je_funding_c_loc_desc"
 
 	visible = { always = yes }
 
@@ -202,7 +202,7 @@ je_funding_c = {  #large funding
 		scope:journal_entry = {
 				not = {
 				custom_tooltip = {
-					text = "Has not requested funding in the last 12 months"
+					text = button_request_money_12_months
 					has_variable = je_funding_cooldown
 				}
 			}
@@ -215,7 +215,7 @@ je_funding_c = {  #large funding
 			set_variable = { name = je_funding_cooldown months = 12  }
 		}	
 		custom_tooltip = {
-			text = "We will ask Germany for money"
+			text = button_ask_for_money
 	
 		}
 		hidden_effect = {

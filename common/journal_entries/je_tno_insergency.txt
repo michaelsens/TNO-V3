@@ -74,10 +74,12 @@
 				add = 0.5
 			}
             if = {
+              limit = {
                 ig:ig_armed_forces = {
                     ig_approval > 1
                     ig_approval < 9
-            }
+                    }
+              }
             change_variable = {
                 name = chaos_ost_timer
                 add = -2
@@ -85,22 +87,24 @@
             
         }
         if = {
+           limit = {
             ig:ig_armed_forces  = {
             
-              ig_approval > 10
-                
-            }
+                ig_approval > 10
+                  
+              }
+           }
         change_variable = {
             name = chaos_ost_timer
-            add = -
+            add = -1
         }
         }
         if = {
+           limit = {
             ig:ig_armed_forces  = {
-                
-                ig_approval < 1
-             
-            }
+                   ig_approval < 1
+                 }
+           }
         change_variable = {
             name = chaos_ost_timer
             add = 4
@@ -195,7 +199,7 @@ je_tno_ost_stabbility = { # ostland insurgency
                 desc =  millitary_happy_tt
                 trigger = {
                     
-                 chaos_ost_timer <= 0
+                    var:chaos_ost_timer <= 0
                   
                     
                 }
@@ -205,7 +209,7 @@ je_tno_ost_stabbility = { # ostland insurgency
         triggered_desc = {
             desc = millitary_angry_tt
             trigger = {
-                chaos_ost_timer >= 0
+                var:chaos_ost_timer >= 0
             }
        
         }
