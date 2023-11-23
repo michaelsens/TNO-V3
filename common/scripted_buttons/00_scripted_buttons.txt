@@ -1,0 +1,65 @@
+﻿je_positivist_movement_embrace_positivism_button = {
+	name = "je_positivist_movement_embrace_positivism_button"
+	desc = "je_positivist_movement_embrace_positivism_button_desc"
+
+	visible = { always = yes }
+
+	possible = {
+		scope:journal_entry = {
+			not = {
+				custom_tooltip = {
+					text = positivist_cooldown_tt
+					has_variable = positivist_cooldown_var
+				}
+			}
+		}
+	}
+
+	effect = {
+		custom_tooltip = {
+			text = positivists_advance_10
+			change_variable = { name = positivism_progress_var add = 10 }
+		}
+		add_radicals = {
+			value = small_radicals
+			strata = poor
+		}
+		scope:journal_entry = {
+			custom_tooltip = cooldown_year_tt
+			set_variable = { name = positivist_cooldown_var years = 1 }
+		}
+	}
+}
+
+je_positivist_movement_suppress_positivism_button = {
+	name = "je_positivist_movement_suppress_positivism_button"
+	desc = "je_positivist_movement_suppress_positivism_button_desc"
+
+	visible = { always = yes }
+
+	possible = {
+		scope:journal_entry = {
+			not = {
+				custom_tooltip = {
+					text = positivist_cooldown_tt
+					has_variable = positivist_cooldown_var
+				}
+			}
+		}
+	}
+
+	effect = {
+		custom_tooltip = {
+			text = positivists_retreat_10
+			change_variable = { name = positivism_progress_var subtract = 10 }
+		}
+		add_radicals = {
+			value = small_radicals
+			strata = middle
+		}
+		scope:journal_entry = {
+			custom_tooltip = cooldown_year_tt
+			set_variable = { name = positivist_cooldown_var years = 1 }
+		}
+	}
+}
