@@ -840,10 +840,6 @@ duration = 3
         state = s:STATE_FRANCONIA.region_state:GER
         state = s:STATE_STYRIA.region_state:GER
         state = s:STATE_TABRIZ.region_state:GER
-        state = s:STATE_TABRIZ.region_state:GER
-        state = s:STATE_TABRIZ.region_state:GER
-        state = s:STATE_TABRIZ.region_state:GER
-        state = s:STATE_TABRIZ.region_state:GER
 
         province = p:x400226
         province = p:x1D6B94
@@ -1080,9 +1076,9 @@ tno_germany_events.19 = {   #German Civil War WIn
     type = country_event
     placement = ROOT
 
-    title = ""
-    desc = ""
-    flavor = ""
+    title = tno_germany_events.19
+    desc = tno_germany_events.19.d
+    flavor = tno_germany_events.19.f
 
     event_image = {
 		texture  = "gfx/event_pictures/event_pictures/hitler_suc.dds"
@@ -1097,8 +1093,39 @@ tno_germany_events.19 = {   #German Civil War WIn
 	}	
 
     option = { # Annex Brandenburg
-        name = "We have won at last!"
+    trigger = {
+        OR = {
+            this = c:GAS
+            this = c:GMB
+            this = c:GHG
+        }
+    }
+        name = tno_germany_events.19.a
         annex = c:GER
-        #change_tag = GER       maybe?
+        change_tag = GER  # maybe?
+        set_immune_to_revolutions = no
 	}
+
+    option = { # Annex Brandenburg
+        trigger = {
+            this = c:GRH
+        }
+        name = tno_germany_events.19.b
+        c:GRH = {
+            create_diplomatic_play = {
+                type = dp_annex_war
+                name = german_civil_war
+                target_country = c:GER
+                war = yes
+                target_state = s:STATE_BRANDENBURG.region_state:GER
+                add_war_goal = {
+                    holder = c:GER
+                    type = annex_country
+                    target_state = s:STATE_ALSACE_LORRAINE.region_state:GRH
+                  }
+            }
+        }
+        change_tag = GER  # maybe?
+        set_immune_to_revolutions = no
+}
 }
