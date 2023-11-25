@@ -1,1 +1,49 @@
-﻿
+﻿namespace = tno_war_help
+
+tno_war_help.1 = {
+	type = country_event
+    placement = ROOT
+ 
+    title = tno_germany_events.1
+    desc = tno_germany_events.1.d
+    flavor = tno_germany_events.1.f 
+
+   event_image = {
+		texture  = "gfx/event_pictures/super_pictures/lasthope.dds"
+	}
+    icon = "gfx/interface/icons/event_icons/event_fire.dds"
+
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 3
+	option = {
+		random_scope_state = {
+			limit = {
+				is_incorporated = yes
+			}
+			save_scope_as = volunteer_state
+		}
+	
+		scope:volunteer_state = {
+			create_building={
+				building= building_volunteer_barracks
+				level=30
+				reserves=1
+			}
+		}
+	}
+}
+
+tno_war_help.2 = {
+    type = country_event
+    placement = ROOT
+    hidden = yes
+	immediate = {	
+		every_scope_state = {
+			limit = {
+				any_scope_building = { is_building_type = building_volunteer_barracks }
+			}
+			remove_building = building_volunteer_barracks
+		}
+    }
+}
