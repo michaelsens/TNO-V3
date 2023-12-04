@@ -582,6 +582,12 @@ country_gdp_dividend_penalty_cancel = {
 	}
 }
 
+fi_dividend_collect_sum_max = {
+	value = var:dividend_collect_sum
+	divide = 200
+	subtract = 1
+	max = 5
+}
 
 share_multiplier ={
 	value = local_var:total_share_calc_store
@@ -616,6 +622,7 @@ building_silk_plantation_id = { value = 29}
 building_rye_farm_id = { value = 29}
 building_wheat_farm_id = { value = 29}
 building_rice_farm_id = { value = 29}
+building_vineyard_plantation_id = { value = 29}
 building_maize_farm_id = { value = 29}
 building_millet_farm_id = { value = 29 }
 building_livestock_ranch_id = { value = 29 }
@@ -626,13 +633,16 @@ building_glassworks_id = { value = 43 }
 building_tooling_workshops_id = { value = 44 }
 building_paper_mills_id = { value = 45 }
 building_chemical_plants_id = { value = 46 }
+building_explosives_factory_id = { value = 46 }
 building_synthetics_plants_id = { value = 47 }
 building_steel_mills_id = { value = 48 }
 building_motor_industry_id = { value = 49 }
 building_shipyards_id = { value = 50 }
+building_military_shipyards_id = { value = 50 }
 building_war_machine_industry_id = { value = 51 }
 building_electrics_industry_id = { value = 52 }
 building_arms_industry_id = { value = 53 }
+building_artillery_foundries_id = { value = 53 }
 building_munition_plants_id = { value = 54 }
 building_arts_academy_id = { value = 55 }
 building_power_plant_id = { value = 56 }
@@ -647,7 +657,7 @@ building_fishing_wharf_cost_value = { value = construction_cost_low }
 building_whaling_station_cost_value = { value = construction_cost_low }
 building_rubber_plantation_cost_value = { value = construction_cost_low }
 building_oil_rig_cost_value = { value = construction_cost_medium }
-building_railway_cost_value = { value = construction_cost_high }
+building_railway_cost_value = { value = construction_cost_very_high }
 building_coffee_plantation_cost_value = { value = construction_cost_low }
 building_cotton_plantation_cost_value = { value = construction_cost_low }
 building_dye_plantation_cost_value = { value = construction_cost_low }
@@ -660,6 +670,7 @@ building_silk_plantation_cost_value = { value = construction_cost_low }
 building_rye_farm_cost_value = { value = construction_cost_low }
 building_wheat_farm_cost_value = { value = construction_cost_low }
 building_rice_farm_cost_value = { value = construction_cost_low }
+building_vineyard_plantation_cost_value = { value = construction_cost_low }
 building_maize_farm_cost_value = { value = construction_cost_low }
 building_millet_farm_cost_value = { value = construction_cost_low }
 building_livestock_ranch_cost_value = { value = construction_cost_low }
@@ -669,14 +680,17 @@ building_furniture_manufacturies_cost_value = { value = construction_cost_high }
 building_glassworks_cost_value = { value = construction_cost_high }
 building_tooling_workshops_cost_value = { value = construction_cost_high }
 building_paper_mills_cost_value = { value = construction_cost_high }
-building_chemical_plants_cost_value = { value = construction_cost_high }
+building_chemical_plants_cost_value = { value = construction_cost_very_high }
 building_synthetics_plants_cost_value = { value = construction_cost_high }
-building_steel_mills_cost_value = { value = construction_cost_high }
-building_motor_industry_cost_value = { value = construction_cost_high }
+building_steel_mills_cost_value = { value = construction_cost_very_high }
+building_motor_industry_cost_value = { value = construction_cost_very_high }
 building_shipyards_cost_value = { value = construction_cost_high }
 building_war_machine_industry_cost_value = { value = construction_cost_very_high }
 building_electrics_industry_cost_value = { value = construction_cost_very_high }
 building_arms_industry_cost_value = { value = construction_cost_very_high }
 building_munition_plants_cost_value = { value = construction_cost_very_high }
-building_arts_academy_cost_value = { value = construction_cost_high }
+building_arts_academy_cost_value = { value = construction_cost_medium }
 building_power_plant_cost_value = { value = construction_cost_very_high }
+building_explosives_factory_cost_value = { value = construction_cost_very_high }
+building_military_shipyards_cost_value = { value = construction_cost_very_high }
+building_artillery_foundries_cost_value = { value = construction_cost_high }

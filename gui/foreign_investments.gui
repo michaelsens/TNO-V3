@@ -1273,6 +1273,58 @@ types foreign_investments_types
                 }
                 container ={
                         position = { 11 -15 }                        
+                        visible = "[And(Building.IsBuildingType('building_vineyard_plantation'), Or(NotEqualTo_CFixedPoint(Building.GetState.MakeScope.ScriptValue('vineyard_plantation_total_item'),'(CFixedPoint)0'), NotEqualTo_CFixedPoint(Building.GetState.MakeScope.ScriptValue('vineyard_plantation_queued_item'),'(CFixedPoint)0')))]"
+                        textbox = {
+                                visible = "[And(NotEqualTo_CFixedPoint(Building.GetState.MakeScope.ScriptValue('vineyard_plantation_total_item'), '(CFixedPoint)0'), EqualTo_CFixedPoint(Building.GetState.MakeScope.ScriptValue('vineyard_plantation_queued_item'),'(CFixedPoint)0'))]"
+                                raw_text = "#bold #gold [Building.GetState.MakeScope.ScriptValue('vineyard_plantation_total_item')|0]#!#!"
+                        }
+                        textbox = {
+                                visible = "[NotEqualTo_CFixedPoint(Building.GetState.MakeScope.ScriptValue('vineyard_plantation_queued_item'),'(CFixedPoint)0')]"
+                                raw_text = "#bold #gold [Building.GetState.MakeScope.ScriptValue('vineyard_plantation_total_item')|0]+[Building.GetState.MakeScope.ScriptValue('vineyard_plantation_queued_item')|0]#!#!"
+                        }
+                }
+                fi_button_icon_minus_action = {
+                        blockoverride "building_type" {
+                                datacontext = "[GetScriptedGui('cancel_investments_vineyard_plantation')]"
+                                visible = "[And(Building.IsBuildingType('building_vineyard_plantation'),ScriptedGui.IsShown(GuiScope.AddScope('invested_building', Building.MakeScope).AddScope('invested_state', State.MakeScope).AddScope('investor_country', GetPlayer.MakeScope).End))]"
+                        }
+                }
+                default_progressbar_horizontal = {
+                        size = { 60 12 }
+                        position = { 38 8 }
+                        fi_bar_textbox = {
+                                blockoverride "building_type" {
+                                        visible = "[And(NotEqualTo_CFixedPoint(Building.GetState.MakeScope.ScriptValue('building_vineyard_plantation_total_number'), '(CFixedPoint)0'), EqualTo_CFixedPoint(Building.GetState.MakeScope.ScriptValue('building_vineyard_plantation_total_queued'),'(CFixedPoint)0'))]"
+                                        raw_text = "#bold [Building.GetState.MakeScope.ScriptValue('building_vineyard_plantation_total_number')|0]#!"
+                                        tooltip = "vineyard_plantation_CONSTRUCTION_TOOLTIP"
+                                }
+                        }
+                        fi_bar_textbox = {
+                                blockoverride "building_type" {
+                                        visible = "[NotEqualTo_CFixedPoint(Building.GetState.MakeScope.ScriptValue('building_vineyard_plantation_total_queued'),'(CFixedPoint)0')]"
+                                        raw_text = "#bold [Building.GetState.MakeScope.ScriptValue('building_vineyard_plantation_total_number')|0] + [Building.GetState.MakeScope.ScriptValue('building_vineyard_plantation_total_queued')|0]#!"
+                                        tooltip = "vineyard_plantation_CONSTRUCTION_TOOLTIP"
+                                }
+                        }
+                        datacontext = "[GetScriptedGui('buy_share_scripted_gui')]"
+                        visible = "[And(Building.IsBuildingType('building_vineyard_plantation'), Or(ScriptedGui.IsValid(GuiScope.AddScope('invested_building', Building.MakeScope).AddScope('investor_country', GetPlayer.MakeScope).End),Or(NotEqualTo_CFixedPoint(Building.GetState.MakeScope.ScriptValue('building_vineyard_plantation_total_number'),'(CFixedPoint)0'), NotEqualTo_CFixedPoint(Building.GetState.MakeScope.ScriptValue('building_vineyard_plantation_total_queued'),'(CFixedPoint)0'))))]"
+                        button = {
+                                size = {100% 100%}
+                                enabled = "[ScriptedGui.IsValid(GuiScope.AddScope('invested_building', Building.MakeScope).AddScope('investor_country', GetPlayer.MakeScope).End)]"
+                                onclick = "[ScriptedGui.Execute(GuiScope.AddScope('invested_building', Building.MakeScope).AddScope('investor_country', GetPlayer.MakeScope).End)]"
+                        }
+                        blockoverride "values" {
+                                value = 100
+                        }
+                }
+                fi_button_icon_plus_action = {
+                        blockoverride "building_type" {
+                                datacontext = "[GetScriptedGui('foreign_investments_vineyard_plantation')]"
+                                visible = "[And(Building.IsBuildingType('building_vineyard_plantation'),ScriptedGui.IsShown(GuiScope.AddScope('invested_building', Building.MakeScope).AddScope('invested_state', State.MakeScope).AddScope('investor_country', GetPlayer.MakeScope).End))]"
+                        }
+                }
+                container ={
+                        position = { 11 -15 }                        
                         visible = "[And(Building.IsBuildingType('building_maize_farm'), Or(NotEqualTo_CFixedPoint(Building.GetState.MakeScope.ScriptValue('maize_farm_total_item'),'(CFixedPoint)0'), NotEqualTo_CFixedPoint(Building.GetState.MakeScope.ScriptValue('maize_farm_queued_item'),'(CFixedPoint)0')))]"
                         textbox = {
                                 visible = "[And(NotEqualTo_CFixedPoint(Building.GetState.MakeScope.ScriptValue('maize_farm_total_item'), '(CFixedPoint)0'), EqualTo_CFixedPoint(Building.GetState.MakeScope.ScriptValue('maize_farm_queued_item'),'(CFixedPoint)0'))]"
@@ -2309,6 +2361,162 @@ types foreign_investments_types
                         blockoverride "building_type" {
                                 datacontext = "[GetScriptedGui('foreign_investments_power_plant')]"
                                 visible = "[And(Building.IsBuildingType('building_power_plant'),ScriptedGui.IsShown(GuiScope.AddScope('invested_building', Building.MakeScope).AddScope('invested_state', State.MakeScope).AddScope('investor_country', GetPlayer.MakeScope).End))]"
+                        }
+                }
+                container ={
+                        position = { 11 -15 }                        
+                        visible = "[And(Building.IsBuildingType('building_explosives_factory'), Or(NotEqualTo_CFixedPoint(Building.GetState.MakeScope.ScriptValue('explosives_factory_total_item'),'(CFixedPoint)0'), NotEqualTo_CFixedPoint(Building.GetState.MakeScope.ScriptValue('explosives_factory_queued_item'),'(CFixedPoint)0')))]"
+                        textbox = {
+                                visible = "[And(NotEqualTo_CFixedPoint(Building.GetState.MakeScope.ScriptValue('explosives_factory_total_item'), '(CFixedPoint)0'), EqualTo_CFixedPoint(Building.GetState.MakeScope.ScriptValue('explosives_factory_queued_item'),'(CFixedPoint)0'))]"
+                                raw_text = "#bold #gold [Building.GetState.MakeScope.ScriptValue('explosives_factory_total_item')|0]#!#!"
+                        }
+                        textbox = {
+                                visible = "[NotEqualTo_CFixedPoint(Building.GetState.MakeScope.ScriptValue('explosives_factory_queued_item'),'(CFixedPoint)0')]"
+                                raw_text = "#bold #gold [Building.GetState.MakeScope.ScriptValue('explosives_factory_total_item')|0]+[Building.GetState.MakeScope.ScriptValue('explosives_factory_queued_item')|0]#!#!"
+                        }
+                }
+                fi_button_icon_minus_action = {
+                        blockoverride "building_type" {
+                                datacontext = "[GetScriptedGui('cancel_investments_explosives_factory')]"
+                                visible = "[And(Building.IsBuildingType('building_explosives_factory'),ScriptedGui.IsShown(GuiScope.AddScope('invested_building', Building.MakeScope).AddScope('invested_state', State.MakeScope).AddScope('investor_country', GetPlayer.MakeScope).End))]"
+                        }
+                }
+                default_progressbar_horizontal = {
+                        size = { 60 12 }
+                        position = { 38 8 }
+                        fi_bar_textbox = {
+                                blockoverride "building_type" {
+                                        visible = "[And(NotEqualTo_CFixedPoint(Building.GetState.MakeScope.ScriptValue('building_explosives_factory_total_number'), '(CFixedPoint)0'), EqualTo_CFixedPoint(Building.GetState.MakeScope.ScriptValue('building_explosives_factory_total_queued'),'(CFixedPoint)0'))]"
+                                        raw_text = "#bold [Building.GetState.MakeScope.ScriptValue('building_explosives_factory_total_number')|0]#!"
+                                        tooltip = "explosives_factory_CONSTRUCTION_TOOLTIP"
+                                }
+                        }
+                        fi_bar_textbox = {
+                                blockoverride "building_type" {
+                                        visible = "[NotEqualTo_CFixedPoint(Building.GetState.MakeScope.ScriptValue('building_explosives_factory_total_queued'),'(CFixedPoint)0')]"
+                                        raw_text = "#bold [Building.GetState.MakeScope.ScriptValue('building_explosives_factory_total_number')|0] + [Building.GetState.MakeScope.ScriptValue('building_explosives_factory_total_queued')|0]#!"
+                                        tooltip = "explosives_factory_CONSTRUCTION_TOOLTIP"
+                                }
+                        }
+                        datacontext = "[GetScriptedGui('buy_share_scripted_gui')]"
+                        visible = "[And(Building.IsBuildingType('building_explosives_factory'), Or(ScriptedGui.IsValid(GuiScope.AddScope('invested_building', Building.MakeScope).AddScope('investor_country', GetPlayer.MakeScope).End),Or(NotEqualTo_CFixedPoint(Building.GetState.MakeScope.ScriptValue('building_explosives_factory_total_number'),'(CFixedPoint)0'), NotEqualTo_CFixedPoint(Building.GetState.MakeScope.ScriptValue('building_explosives_factory_total_queued'),'(CFixedPoint)0'))))]"
+                        button = {
+                                size = {100% 100%}
+                                enabled = "[ScriptedGui.IsValid(GuiScope.AddScope('invested_building', Building.MakeScope).AddScope('investor_country', GetPlayer.MakeScope).End)]"
+                                onclick = "[ScriptedGui.Execute(GuiScope.AddScope('invested_building', Building.MakeScope).AddScope('investor_country', GetPlayer.MakeScope).End)]"
+                        }
+                        blockoverride "values" {
+                                value = 100
+                        }
+                }
+                fi_button_icon_plus_action = {
+                        blockoverride "building_type" {
+                                datacontext = "[GetScriptedGui('foreign_investments_explosives_factory')]"
+                                visible = "[And(Building.IsBuildingType('building_explosives_factory'),ScriptedGui.IsShown(GuiScope.AddScope('invested_building', Building.MakeScope).AddScope('invested_state', State.MakeScope).AddScope('investor_country', GetPlayer.MakeScope).End))]"
+                        }
+                }
+container ={
+                        position = { 11 -15 }                        
+                        visible = "[And(Building.IsBuildingType('building_military_shipyards'), Or(NotEqualTo_CFixedPoint(Building.GetState.MakeScope.ScriptValue('military_shipyards_total_item'),'(CFixedPoint)0'), NotEqualTo_CFixedPoint(Building.GetState.MakeScope.ScriptValue('military_shipyards_queued_item'),'(CFixedPoint)0')))]"
+                        textbox = {
+                                visible = "[And(NotEqualTo_CFixedPoint(Building.GetState.MakeScope.ScriptValue('military_shipyards_total_item'), '(CFixedPoint)0'), EqualTo_CFixedPoint(Building.GetState.MakeScope.ScriptValue('military_shipyards_queued_item'),'(CFixedPoint)0'))]"
+                                raw_text = "#bold #gold [Building.GetState.MakeScope.ScriptValue('military_shipyards_total_item')|0]#!#!"
+                        }
+                        textbox = {
+                                visible = "[NotEqualTo_CFixedPoint(Building.GetState.MakeScope.ScriptValue('military_shipyards_queued_item'),'(CFixedPoint)0')]"
+                                raw_text = "#bold #gold [Building.GetState.MakeScope.ScriptValue('military_shipyards_total_item')|0]+[Building.GetState.MakeScope.ScriptValue('military_shipyards_queued_item')|0]#!#!"
+                        }
+                }
+                fi_button_icon_minus_action = {
+                        blockoverride "building_type" {
+                                datacontext = "[GetScriptedGui('cancel_investments_military_shipyards')]"
+                                visible = "[And(Building.IsBuildingType('building_military_shipyards'),ScriptedGui.IsShown(GuiScope.AddScope('invested_building', Building.MakeScope).AddScope('invested_state', State.MakeScope).AddScope('investor_country', GetPlayer.MakeScope).End))]"
+                        }
+                }
+                default_progressbar_horizontal = {
+                        size = { 60 12 }
+                        position = { 38 8 }
+                        fi_bar_textbox = {
+                                blockoverride "building_type" {
+                                        visible = "[And(NotEqualTo_CFixedPoint(Building.GetState.MakeScope.ScriptValue('building_military_shipyards_total_number'), '(CFixedPoint)0'), EqualTo_CFixedPoint(Building.GetState.MakeScope.ScriptValue('building_military_shipyards_total_queued'),'(CFixedPoint)0'))]"
+                                        raw_text = "#bold [Building.GetState.MakeScope.ScriptValue('building_military_shipyards_total_number')|0]#!"
+                                        tooltip = "military_shipyards_CONSTRUCTION_TOOLTIP"
+                                }
+                        }
+                        fi_bar_textbox = {
+                                blockoverride "building_type" {
+                                        visible = "[NotEqualTo_CFixedPoint(Building.GetState.MakeScope.ScriptValue('building_military_shipyards_total_queued'),'(CFixedPoint)0')]"
+                                        raw_text = "#bold [Building.GetState.MakeScope.ScriptValue('building_military_shipyards_total_number')|0] + [Building.GetState.MakeScope.ScriptValue('building_military_shipyards_total_queued')|0]#!"
+                                        tooltip = "military_shipyards_CONSTRUCTION_TOOLTIP"
+                                }
+                        }
+                        datacontext = "[GetScriptedGui('buy_share_scripted_gui')]"
+                        visible = "[And(Building.IsBuildingType('building_military_shipyards'), Or(ScriptedGui.IsValid(GuiScope.AddScope('invested_building', Building.MakeScope).AddScope('investor_country', GetPlayer.MakeScope).End),Or(NotEqualTo_CFixedPoint(Building.GetState.MakeScope.ScriptValue('building_military_shipyards_total_number'),'(CFixedPoint)0'), NotEqualTo_CFixedPoint(Building.GetState.MakeScope.ScriptValue('building_military_shipyards_total_queued'),'(CFixedPoint)0'))))]"
+                        button = {
+                                size = {100% 100%}
+                                enabled = "[ScriptedGui.IsValid(GuiScope.AddScope('invested_building', Building.MakeScope).AddScope('investor_country', GetPlayer.MakeScope).End)]"
+                                onclick = "[ScriptedGui.Execute(GuiScope.AddScope('invested_building', Building.MakeScope).AddScope('investor_country', GetPlayer.MakeScope).End)]"
+                        }
+                        blockoverride "values" {
+                                value = 100
+                        }
+                }
+                fi_button_icon_plus_action = {
+                        blockoverride "building_type" {
+                                datacontext = "[GetScriptedGui('foreign_investments_military_shipyards')]"
+                                visible = "[And(Building.IsBuildingType('building_military_shipyards'),ScriptedGui.IsShown(GuiScope.AddScope('invested_building', Building.MakeScope).AddScope('invested_state', State.MakeScope).AddScope('investor_country', GetPlayer.MakeScope).End))]"
+                        }
+                }
+container ={
+                        position = { 11 -15 }                        
+                        visible = "[And(Building.IsBuildingType('building_artillery_foundries'), Or(NotEqualTo_CFixedPoint(Building.GetState.MakeScope.ScriptValue('artillery_foundries_total_item'),'(CFixedPoint)0'), NotEqualTo_CFixedPoint(Building.GetState.MakeScope.ScriptValue('artillery_foundries_queued_item'),'(CFixedPoint)0')))]"
+                        textbox = {
+                                visible = "[And(NotEqualTo_CFixedPoint(Building.GetState.MakeScope.ScriptValue('artillery_foundries_total_item'), '(CFixedPoint)0'), EqualTo_CFixedPoint(Building.GetState.MakeScope.ScriptValue('artillery_foundries_queued_item'),'(CFixedPoint)0'))]"
+                                raw_text = "#bold #gold [Building.GetState.MakeScope.ScriptValue('artillery_foundries_total_item')|0]#!#!"
+                        }
+                        textbox = {
+                                visible = "[NotEqualTo_CFixedPoint(Building.GetState.MakeScope.ScriptValue('artillery_foundries_queued_item'),'(CFixedPoint)0')]"
+                                raw_text = "#bold #gold [Building.GetState.MakeScope.ScriptValue('artillery_foundries_total_item')|0]+[Building.GetState.MakeScope.ScriptValue('artillery_foundries_queued_item')|0]#!#!"
+                        }
+                }
+                fi_button_icon_minus_action = {
+                        blockoverride "building_type" {
+                                datacontext = "[GetScriptedGui('cancel_investments_artillery_foundries')]"
+                                visible = "[And(Building.IsBuildingType('building_artillery_foundries'),ScriptedGui.IsShown(GuiScope.AddScope('invested_building', Building.MakeScope).AddScope('invested_state', State.MakeScope).AddScope('investor_country', GetPlayer.MakeScope).End))]"
+                        }
+                }
+                default_progressbar_horizontal = {
+                        size = { 60 12 }
+                        position = { 38 8 }
+                        fi_bar_textbox = {
+                                blockoverride "building_type" {
+                                        visible = "[And(NotEqualTo_CFixedPoint(Building.GetState.MakeScope.ScriptValue('building_artillery_foundries_total_number'), '(CFixedPoint)0'), EqualTo_CFixedPoint(Building.GetState.MakeScope.ScriptValue('building_artillery_foundries_total_queued'),'(CFixedPoint)0'))]"
+                                        raw_text = "#bold [Building.GetState.MakeScope.ScriptValue('building_artillery_foundries_total_number')|0]#!"
+                                        tooltip = "artillery_foundries_CONSTRUCTION_TOOLTIP"
+                                }
+                        }
+                        fi_bar_textbox = {
+                                blockoverride "building_type" {
+                                        visible = "[NotEqualTo_CFixedPoint(Building.GetState.MakeScope.ScriptValue('building_artillery_foundries_total_queued'),'(CFixedPoint)0')]"
+                                        raw_text = "#bold [Building.GetState.MakeScope.ScriptValue('building_artillery_foundries_total_number')|0] + [Building.GetState.MakeScope.ScriptValue('building_artillery_foundries_total_queued')|0]#!"
+                                        tooltip = "artillery_foundries_CONSTRUCTION_TOOLTIP"
+                                }
+                        }
+                        datacontext = "[GetScriptedGui('buy_share_scripted_gui')]"
+                        visible = "[And(Building.IsBuildingType('building_artillery_foundries'), Or(ScriptedGui.IsValid(GuiScope.AddScope('invested_building', Building.MakeScope).AddScope('investor_country', GetPlayer.MakeScope).End),Or(NotEqualTo_CFixedPoint(Building.GetState.MakeScope.ScriptValue('building_artillery_foundries_total_number'),'(CFixedPoint)0'), NotEqualTo_CFixedPoint(Building.GetState.MakeScope.ScriptValue('building_artillery_foundries_total_queued'),'(CFixedPoint)0'))))]"
+                        button = {
+                                size = {100% 100%}
+                                enabled = "[ScriptedGui.IsValid(GuiScope.AddScope('invested_building', Building.MakeScope).AddScope('investor_country', GetPlayer.MakeScope).End)]"
+                                onclick = "[ScriptedGui.Execute(GuiScope.AddScope('invested_building', Building.MakeScope).AddScope('investor_country', GetPlayer.MakeScope).End)]"
+                        }
+                        blockoverride "values" {
+                                value = 100
+                        }
+                }
+                fi_button_icon_plus_action = {
+                        blockoverride "building_type" {
+                                datacontext = "[GetScriptedGui('foreign_investments_artillery_foundries')]"
+                                visible = "[And(Building.IsBuildingType('building_artillery_foundries'),ScriptedGui.IsShown(GuiScope.AddScope('invested_building', Building.MakeScope).AddScope('invested_state', State.MakeScope).AddScope('investor_country', GetPlayer.MakeScope).End))]"
                         }
                 }
 	}

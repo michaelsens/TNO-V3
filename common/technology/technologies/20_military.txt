@@ -226,7 +226,6 @@ field_works = {
 	modifier = {
 		# defensive bonus, either directly to army or (ideally) a fortifications bonus, if we get forts
 		# Lower kill rate?
-		unit_morale_loss_mult = -0.05
 		unit_army_defense_mult = 0.1
 	}
 	
@@ -342,7 +341,8 @@ screw_frigate = {
 	category = military
 	
 	modifier = {
-		# ship go faster
+		unit_navy_offense_mult = 0.1
+		unit_navy_defense_mult = 0.1
 	}
 	
 	unlocking_technologies = {	
@@ -463,7 +463,7 @@ military_statistics = {
 	category = military
 	
 	modifier = {
-		building_mobilization_cost_mult = -0.2
+		military_formation_organization_gain_mult = 0.2
 	}
 	
 	unlocking_technologies = {	
@@ -710,7 +710,7 @@ wargaming = {
 	category = military
 
 	modifier = {
-		unit_morale_loss_mult = -0.05
+		unit_army_offense_mult = 0.1
 	}
 	
 	unlocking_technologies = {
@@ -732,7 +732,7 @@ defense_in_depth = {
 	modifier = {
 		unit_morale_loss_mult = -0.05
 		# defensive bonus, either to the army or ideally to fortifications
-		unit_army_defense_mult = 0.3
+		unit_army_defense_mult = 0.1
 	}
 	
 	unlocking_technologies = {	
@@ -943,12 +943,19 @@ chemical_warfare = {
 	}
 }
 
+
 stormtroopers = {
-	# #todo#! Does nothing yet
+	# Unlocks Infiltrators PM in Barracks
 	era = era_5
 	texture = "gfx/interface/icons/invention_icons/stormtroopers.dds"
 	category = military
 	
+	modifier = {
+		unit_kill_rate_add = 0.05
+		unit_combat_unit_type_trench_infantry_offense_add = 5
+		unit_combat_unit_type_squad_infantry_offense_add = 5
+		unit_combat_unit_type_mechanized_infantry_offense_add = 5
+	}
 	unlocking_technologies = {	
 		wargaming
 		trench_works
@@ -969,7 +976,7 @@ concrete_fortifications = {
 		unit_morale_loss_mult = -0.05
 		# build the maginot line and be completely unstoppable, forever, especially if you're France
 		# bonus to general defensiveness or specifically to forts if they become a thing
-		unit_army_defense_mult = 0.4
+		unit_army_defense_mult = 0.1
 	}
 	
 	unlocking_technologies = {	
