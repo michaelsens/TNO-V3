@@ -1144,14 +1144,14 @@ je_tutorial_recruit_promote_commander = {
 
 je_tutorial_mobilize_army = {
 	icon = "gfx/interface/icons/event_icons/tutorial_icon.dds"
-	group = je_group_tutorial
 	should_be_pinned_by_default = yes
 
+	group = je_group_tutorial
+
 	complete = {
-		any_scope_character = {
-			has_role = general
-			is_mobilized = yes
-#			fully_mobilized = yes
+		any_military_formation = {
+			is_army = yes
+			is_fully_mobilized = yes
 		}
 	}
 
