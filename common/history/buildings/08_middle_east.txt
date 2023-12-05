@@ -427,7 +427,7 @@
 		}
 	}
 	s:STATE_LEBANON={
-		region_state:TUR={
+		region_state:PAL={
 			create_building={
 				building="building_millet_farm"
 				level=1
@@ -449,7 +449,7 @@
 		}
 	}
 	s:STATE_SYRIA={
-		region_state:TUR={
+		region_state:SYR={
 			create_building={
 				building="building_oil_rig"
 				level=6
@@ -575,7 +575,7 @@
 		}
 	}
 	s:STATE_MOSUL={
-		region_state:IRQ={
+		region_state:IRR={
 			create_building={
 				building="building_sulfur_mine"
 				level=5
@@ -606,7 +606,35 @@
 		region_state:TUR={
 			create_building={
 				building="building_oil_rig"
-				level=3
+				level=1
+				reserves=1	
+				activate_production_methods={ "pm_steam_derricks" "pm_road_carts" }
+			}
+			create_building={
+				building="building_livestock_ranch"
+				level=1
+				reserves=1
+				activate_production_methods={ "pm_simple_ranch" "pm_open_air_stockyards" "pm_standard_fences" "pm_unrefrigerated"  }
+			}
+		}
+		region_state:SYR={
+			create_building={
+				building="building_oil_rig"
+				level=1
+				reserves=1	
+				activate_production_methods={ "pm_steam_derricks" "pm_road_carts" }
+			}
+			create_building={
+				building="building_livestock_ranch"
+				level=1
+				reserves=1
+				activate_production_methods={ "pm_simple_ranch" "pm_open_air_stockyards" "pm_standard_fences" "pm_unrefrigerated"  }
+			}
+		}
+		region_state:IRR={
+			create_building={
+				building="building_oil_rig"
+				level=1
 				reserves=1	
 				activate_production_methods={ "pm_steam_derricks" "pm_road_carts" }
 			}
@@ -619,7 +647,7 @@
 		}
 	}
 	s:STATE_BASRA={
-		region_state:KUW={
+		region_state:IRQ={
 			create_building={
 				building="building_motor_industry"
 				level=1
