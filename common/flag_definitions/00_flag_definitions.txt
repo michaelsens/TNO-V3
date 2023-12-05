@@ -76,6 +76,20 @@ DIV = {
 	}
 }
 
+IRR = {
+	flag_definition = {
+		coa = IRR_start
+		priority = 2000
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_law = law_type:law_oligarchy
+			}
+		}
+	}
+}
+
+
 BGD = {
 	flag_definition = {
 		coa = BGD_absolute_monarchy
@@ -4820,9 +4834,6 @@ WST = { # WST start
 	}
 }
 
-
-
-
 KAL = { # Kalat
 	flag_definition = {
 		coa = KAL
@@ -8062,6 +8073,16 @@ SYR = { # Syria
 		allow_overlord_canton = yes		
 		coa_with_overlord_canton = SYR_subject		
 		priority = 1
+	}
+	flag_definition = { # starting flagg
+		coa = SYR_TUR
+		priority = 2000
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_law = law_type:law_presidential_republic
+			}
+		}
 	}
 	flag_definition = {
 		coa = SYR_republic
