@@ -1231,6 +1231,56 @@
 			}
 		}
 	}
+	s:STATE_RIGA={
+		region_state:RKO={
+			create_building={
+				building="building_naval_base"
+				level=1
+				reserves=1
+				activate_production_methods={ "pm_power_of_the_purse" }
+			}		
+			create_building={
+				building="building_motor_industry"
+				level=4
+				reserves=1
+				activate_production_methods={ "pm_steam_engines" "pm_automobiles_disabled" "pm_automation_disabled" "pm_privately_owned_industry" }
+			}		
+			create_building={
+				building="building_paper_mills"
+				level=2
+				reserves=1
+				activate_production_methods={ "pm_pulp_pressing" "pm_automation_disabled" "pm_merchant_guilds_building_paper_mills" }
+			}	
+			create_building={
+				building="building_port"
+				level=1
+				reserves=1
+				activate_production_methods={ "pm_industrial_port" }
+			}
+		}
+	}
+	s:STATE_KIEW={
+		region_state:RKU={
+			create_building={
+				building="building_paper_mills"
+				level=2
+				reserves=1
+				activate_production_methods={ "pm_pulp_pressing" "pm_automation_disabled" "pm_merchant_guilds_building_paper_mills" }
+			}	
+			create_building={
+				building="building_furniture_manufacturies"
+				level=1
+				reserves=1
+				activate_production_methods={ "pm_handcrafted_furniture" "pm_no_luxuries" "pm_automation_disabled" "pm_merchant_guilds_building_furniture_manufacturies" }
+			}			
+			create_building={
+				building="building_port"
+				level=6
+				reserves=1
+				activate_production_methods={ "pm_industrial_port" }
+			}
+		}
+	}
 	s:STATE_LITHUANIA={
 		region_state:RKO={
 			create_building={
@@ -1246,11 +1296,11 @@
 				activate_production_methods={ "pm_general_training" }
 			}
 			create_building={
-				building="building_port"
+				building="building_paper_mills"
 				level=2
 				reserves=1
-				activate_production_methods={ "pm_industrial_port" }
-			}			
+				activate_production_methods={ "pm_pulp_pressing" "pm_automation_disabled" "pm_merchant_guilds_building_paper_mills" }
+			}		
 		}
 	}
 	s:STATE_MAZOVIA={
