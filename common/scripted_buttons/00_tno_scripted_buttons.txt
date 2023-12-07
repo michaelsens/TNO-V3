@@ -1019,8 +1019,8 @@ je_malaya_ofn_a = {  #funding for malya
 }
 
 je_malaya_ofn_b = {  #advisers for malya
-	name = "je_malaya_ofn_a_loc" 
-	desc = "je_malaya_ofn_a_loc_desc"
+	name = "je_malaya_ofn_b_loc" 
+	desc = "je_malaya_ofn_b_loc_desc"
 
 	visible = { always = yes }
 
@@ -1059,8 +1059,8 @@ je_malaya_ofn_b = {  #advisers for malya
 }
 
 je_malaya_ofn_c = {  #bombing malaya
-	name = "je_malaya_ofn_a_loc" 
-	desc = "je_malaya_ofn_a_loc_desc"
+	name = "je_malaya_ofn_c_loc" 
+	desc = "je_malaya_ofn_c_loc_desc"
 
 	visible = { always = yes }
 
@@ -1102,4 +1102,136 @@ je_malaya_ofn_c = {  #bombing malaya
 		}		
 	}
 }
+
+je_malaya_jap_a = {  #bombing malaya
+	name = "je_malaya_jap_c_loc" 
+	desc = "je_malaya_jap_c_loc_desc"
+
+	visible = { always = yes }
+
+	possible = {
+		scope:journal_entry = {
+				not = {
+				custom_tooltip = {
+					text = "Hasnt taken a support action in the last 2 months "
+					has_variable = je_malaya_jap_cooldown
+				}
+			}
+		}
+	}
+
+	effect = {
+
+		scope:journal_entry = {
+			set_variable = { name = je_malaya_jap_cooldown months = 2 }
+		}	
+		custom_tooltip = {
+			text = "Bombs malaya"
+	
+		}
+
+		change_relations = {
+            country = c:JOH
+            value = 30
+        }
+
+		s:STATE_MALAYA = {
+            add_devastation = 25
+        }
+
+		c:JOL = {
+			add_modifier = {
+				name = japanise_bombing
+				months = 2
+			} 
+		}		
+	}
+}
+
+je_malaya_jap_b = {  # japan sends advisers
+	name = "je_malaya_jap_a_loc" 
+	desc = "je_malaya_jap_a_loc_desc"
+
+	visible = { always = yes }
+
+	possible = {
+		scope:journal_entry = {
+				not = {
+				custom_tooltip = {
+					text = "Hasnt taken a support action in the last 2 months "
+					has_variable = je_malaya_jap_cooldown
+				}
+			}
+		}
+	}
+
+	effect = {
+
+		scope:journal_entry = {
+			set_variable = { name = je_malaya_jap_cooldown months = 2 }
+		}	
+		custom_tooltip = {
+			text = "Sends Japanese advisors to help in the war "
+	
+		}
+
+		change_relations = {
+            country = c:JOH
+            value = 30
+        }
+		c:JOH = {
+			add_modifier = {
+				name = japanese_advisers
+				months = 2
+			} 
+		}		
+	}
+}
+
+je_malaya_jap_c = {  # japan funds JOH
+	name = "je_malaya_jap_b_loc" 
+	desc = "je_malaya_jap_b_loc_desc"
+
+	visible = { always = yes }
+
+	possible = {
+		scope:journal_entry = {
+				not = {
+				custom_tooltip = {
+					text = "Hasnt taken a support action in the last 2 months "
+					has_variable = je_malaya_jap_cooldown
+				}
+			}
+		}
+	}
+
+	effect = {
+
+		scope:journal_entry = {
+			set_variable = { name = je_malaya_ofn_cooldown months = 2  }
+		}	
+		custom_tooltip = {
+			text = "Will Give 20k to the 25th army a month "
+	
+		}
+		add_modifier = {
+			name = mid_funding_ger
+			months = 2
+		} 
+
+	
+		c:JOH = {
+			add_modifier = {
+				name = mid_funding_ost
+				months = 2
+			} 
+		} 
+		change_relations = {
+            country = c:JOH
+            value = 30
+        }
+}
+}
+
+
 
