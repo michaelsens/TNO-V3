@@ -18,28 +18,25 @@ je_tno_malaya_ofn = {
 		
 	}
 
+    fail = {
+        c:JOH = {
+            owns_entire_state_region = STATE_MALAYA
+        } 
+    }
+
+    on_fail = {
+        add_modifier = {
+            name = proxy_lost
+            months = 250
+        } 
+    }
+
     on_complete = {
+        add_modifier = {
+            name = proxy_won
+            months = 250
+        } 
     }
-
-    on_monthly_pulse = {
-    }
-
-    current_value = {
-		
-	}
-
-
-    goal = {
-
-        trigger = {
-			exists = scope:actor
-			scope:actor = {
-				owns_entire_state_region = STATE_ACEH
-				owns_entire_state_region = STATE_NORTH_SUMATRA
-				owns_entire_state_region = STATE_SOUTH_SUMATRA
-			}
-		}
-	}
 
     progressbar = no
     
