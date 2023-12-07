@@ -972,4 +972,78 @@ je_oil_crisis_oil_supply_button_button_e = {  # Research new Technologies
 		   }
 	}
 }
+###############################################################################
+je_malaya_ofn_a = {  #funding for malya
+	name = "je_malaya_ofn_a_loc" 
+	desc = "je_malaya_ofn_a_loc_desc"
 
+	visible = { always = yes }
+
+	possible = {
+		scope:journal_entry = {
+				not = {
+				custom_tooltip = {
+					text = "Hasnt taken a support action in the last month"
+					has_variable = je_malaya_ofn_cooldown
+				}
+			}
+		}
+	}
+
+	effect = {
+
+		scope:journal_entry = {
+			set_variable = { name = je_malaya_ofn_cooldown months = 1  }
+		}	
+		custom_tooltip = {
+			text = "Will Give 20k to the UMAJF a month "
+	
+		}
+		add_modifier = {
+			name = mid_funding_ger
+			months = 4
+		} 
+
+		c:JOL = {
+			add_modifier = {
+				name = mid_funding_ost
+				months = 4
+			} 
+		} 
+}
+}
+
+je_malaya_ofn_b = {  #advisers for malya
+	name = "je_malaya_ofn_a_loc" 
+	desc = "je_malaya_ofn_a_loc_desc"
+
+	visible = { always = yes }
+
+	possible = {
+		scope:journal_entry = {
+				not = {
+				custom_tooltip = {
+					text = "Hasnt taken a support action in the last month"
+					has_variable = je_malaya_ofn_cooldown
+				}
+			}
+		}
+	}
+
+	effect = {
+
+		scope:journal_entry = {
+			set_variable = { name = je_malaya_ofn_cooldown months = 1  }
+		}	
+		custom_tooltip = {
+			text = "Sends US advisors to help "
+	
+		}
+		c:JOL = {
+			add_modifier = {
+				name = american_advisers
+				months = 4
+			} 
+}
+}
+}
