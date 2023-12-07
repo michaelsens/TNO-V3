@@ -983,7 +983,7 @@ je_malaya_ofn_a = {  #funding for malya
 		scope:journal_entry = {
 				not = {
 				custom_tooltip = {
-					text = "Hasnt taken a support action in the last month"
+					text = "Hasnt taken a support action in the last 2 months"
 					has_variable = je_malaya_ofn_cooldown
 				}
 			}
@@ -993,7 +993,7 @@ je_malaya_ofn_a = {  #funding for malya
 	effect = {
 
 		scope:journal_entry = {
-			set_variable = { name = je_malaya_ofn_cooldown months = 1  }
+			set_variable = { name = je_malaya_ofn_cooldown months = 2  }
 		}	
 		custom_tooltip = {
 			text = "Will Give 20k to the UMAJF a month "
@@ -1001,15 +1001,20 @@ je_malaya_ofn_a = {  #funding for malya
 		}
 		add_modifier = {
 			name = mid_funding_ger
-			months = 4
+			months = 2
 		} 
 
+	
 		c:JOL = {
 			add_modifier = {
 				name = mid_funding_ost
-				months = 4
+				months = 2
 			} 
 		} 
+		change_relations = {
+            country = c:JOL
+            value = 30
+        }
 }
 }
 
@@ -1023,7 +1028,7 @@ je_malaya_ofn_b = {  #advisers for malya
 		scope:journal_entry = {
 				not = {
 				custom_tooltip = {
-					text = "Hasnt taken a support action in the last month"
+					text = "Hasnt taken a support action in the last 2 months "
 					has_variable = je_malaya_ofn_cooldown
 				}
 			}
@@ -1033,16 +1038,21 @@ je_malaya_ofn_b = {  #advisers for malya
 	effect = {
 
 		scope:journal_entry = {
-			set_variable = { name = je_malaya_ofn_cooldown months = 1  }
+			set_variable = { name = je_malaya_ofn_cooldown months = 2 }
 		}	
 		custom_tooltip = {
-			text = "Sends US advisors to help "
+			text = "Sends US advisors to help in the war "
 	
 		}
+
+		change_relations = {
+            country = c:JOL
+            value = 30
+        }
 		c:JOL = {
 			add_modifier = {
 				name = american_advisers
-				months = 4
+				months = 2
 			} 
 }
 }

@@ -9,7 +9,24 @@ je_tno_malaya_ofn = {
     immediate = {
 	}
     
+
+    invalid = {
+        c:JOL = {
+            owns_entire_state_region = STATE_MALAYA
+        
+        }
+    }
     complete = {
+       
+	
+		
+		trigger = {
+			c:JOL = {
+				owns_entire_state_region = STATE_MALAYA
+            
+			}
+		
+        }
 	}
 
     on_complete = {
@@ -24,6 +41,15 @@ je_tno_malaya_ofn = {
 
 
     goal = {
+
+        trigger = {
+			exists = scope:actor
+			scope:actor = {
+				owns_entire_state_region = STATE_ACEH
+				owns_entire_state_region = STATE_NORTH_SUMATRA
+				owns_entire_state_region = STATE_SOUTH_SUMATRA
+			}
+		}
 	}
 
     progressbar = no
