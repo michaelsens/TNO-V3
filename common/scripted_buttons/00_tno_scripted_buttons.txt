@@ -1054,6 +1054,52 @@ je_malaya_ofn_b = {  #advisers for malya
 				name = american_advisers
 				months = 2
 			} 
+		}		
+	}
 }
+
+je_malaya_ofn_c = {  #bombing malaya
+	name = "je_malaya_ofn_a_loc" 
+	desc = "je_malaya_ofn_a_loc_desc"
+
+	visible = { always = yes }
+
+	possible = {
+		scope:journal_entry = {
+				not = {
+				custom_tooltip = {
+					text = "Hasnt taken a support action in the last 2 months "
+					has_variable = je_malaya_ofn_cooldown
+				}
+			}
+		}
+	}
+
+	effect = {
+
+		scope:journal_entry = {
+			set_variable = { name = je_malaya_ofn_cooldown months = 2 }
+		}	
+		custom_tooltip = {
+			text = "Bombs malaya"
+	
+		}
+
+		change_relations = {
+            country = c:JOL
+            value = 30
+        }
+
+		s:STATE_MALAYA = {
+            add_devastation = 25
+        }
+
+		c:JOH = {
+			add_modifier = {
+				name = american_bombing
+				months = 2
+			} 
+		}		
+	}
 }
-}
+
