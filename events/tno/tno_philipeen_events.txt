@@ -1,6 +1,6 @@
 namespace = tno_philipeen_events
 
-tno_malaya_events.1 = { # launches the blitz 
+tno_philipeen_events.1 = { # launches the blitz 
     type = country_event
     placement = ROOT
 
@@ -23,6 +23,42 @@ tno_malaya_events.1 = { # launches the blitz
 	option = { 
 		default_option = yes
         name = tno_philipeen_events.1.a
+
+		create_diplomatic_play = {
+            name = gamer_war
+            target_country = c:RNG
+                type = dp_annex_war
+                war = yes
+                add_war_goal = {    
+                    holder = c:RNG
+                    type = conquer_state
+                    target_state = s:STATE_VISAYAS.region_state:PHI
+                }
+                add_war_goal = {
+                    holder = c:RNG
+                    type = return_state
+                    target_state = s:STATE_LUZON.region_state:PHI
+                }
+				add_war_goal = {
+                    holder = c:PHI
+                    type = return_state
+                    target_state = s:STATE_LUZON.region_state:PHI
+                }
+        }
+		create_diplomatic_play = {
+            name = gamer_war2
+            target_country = c:PHC
+                type = dp_annex_war
+                war = yes
+				add_war_goal = {
+                    holder = c:PHC
+                    type = annex_country
+                    target_state = s:STATE_MINDANAO.region_state:PHI
+                }
+        }
+        hidden_effect = {
+				change_infamy = -150
+		}
 
 	}
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
