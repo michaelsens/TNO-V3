@@ -1,0 +1,31 @@
+namespace = tno_philipeen_events
+
+tno_malaya_events.1 = { # launches the blitz 
+    type = country_event
+    placement = ROOT
+
+	title = tno_philipeen_events.1
+	desc = tno_philipeen_events.1.d
+    flavor = tno_philipeen_events.1.f	
+
+	event_image = {
+        texture = "gfx/event_pictures/event_pictures/jungle_warfare.dds"
+    }
+
+    icon = "gfx/interface/icons/tno_event_icons/malaya.dds"
+	
+	trigger = {
+		this ?= c:USA
+	}	
+	
+	duration = 1
+
+	option = { 
+		default_option = yes
+        name = tno_philipeen_events.1.a
+
+	}
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+}
+
+
