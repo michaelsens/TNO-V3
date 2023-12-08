@@ -1,5 +1,5 @@
 ﻿ig_Bureaucrats = {
-	color = hsv{ 0.13 0.64 0.99 }
+	color = hsv{ 0.0 0.0 0.50 }
 	texture = "gfx/interface/icons/ig_icons/TNO_Bureaucrats.dds"
 	layer = ""
 	index = 3
@@ -21,6 +21,24 @@
 		ig_trait_lost_in_bureaucracy
 	}
 
+	on_enable = {
+		ig:ig_Bureaucrats = {
+			if = {
+				limit = {
+					has_dlc_feature = voice_of_the_people_content
+					owner = { c:FRA ?= this }
+				}
+				set_ig_trait = ig_trait:ig_trait_efficient_bureaucracy
+				set_ig_trait = ig_trait:ig_trait_running_smoothly
+				set_ig_trait = ig_trait:ig_trait_lost_in_bureaucracy
+			}
+			else = {
+				set_ig_trait = ig_trait:ig_trait_efficient_bureaucracy
+				set_ig_trait = ig_trait:ig_trait_running_smoothly
+				set_ig_trait = ig_trait:ig_trait_lost_in_bureaucracy
+			}
+		}
+	}
 	on_disable = {}
 	on_character_ig_membership = {}
 
