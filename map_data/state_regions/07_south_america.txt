@@ -317,31 +317,11 @@ STATE_PASTAZA = {
     }
 }
 
-STATE_TARAPACA = {
-    id = 361
-    subsistence_building = "building_subsistence_rice_paddies"
-    provinces = { "x1040D0" "x2F3768" "x2FB295" "x380AE9" "x49DD3B" "x79C7F7" "x8733A4" "xA00070" "xB3DA33" "xC9DDC4" "xCB9DD5" "xD46425" "xF391A7" }
-    traits = { "state_trait_andes" "state_trait_atacama_desert" "state_trait_cordillera_de_la_costa" }
-    city = "x380AE9"
-    port = "xA00070"
-    farm = "x49DD3B"
-    mine = "x8733A4"
-    wood = "x49DD3B"
-    arable_land = 10
-    arable_resources = { "bg_livestock_ranches" "bg_dye_plantations" "bg_banana_plantations" }
-    capped_resources = {
-        bg_iron_mining = 18
-        bg_sulfur_mining = 24
-        bg_whaling = 3
-        bg_fishing = 5
-    }
-    naval_exit_id = 3152
-}
 
 STATE_ANTOFAGASTA = {
     id = 362
     subsistence_building = "building_subsistence_farms"
-    provinces = { "x1B2EC2" "x2000F0" "x208070" "x20E574" "x291C71" "x2DF128" "x3FDC05" "x40D35C" "x4DCF72" "x694D06" "x6B33D0" "x71C02C" "x7984DF" "x8238EF" "x82A274" "x8BA717" "x8F918A" "xCAECEF" "xCC472E" "xCE7F3B" "xDE43F7" "xE96CF4" "xEE0067" "xF39FDA" "xF5E20E" }
+    provinces = { "x1B2EC2" "x2000F0" "x208070" "x20E574" "x1040D0" "x2F3768" "x2FB295" "x380AE9" "x49DD3B" "x79C7F7" "x8733A4" "xA00070" "xB3DA33" "xC9DDC4" "xCB9DD5" "xD46425" "xF391A7" "x291C71" "x2DF128" "x3FDC05" "x40D35C" "x4DCF72" "x694D06" "x6B33D0" "x71C02C" "x7984DF" "x8238EF" "x82A274" "x8BA717" "x8F918A" "xCAECEF" "xCC472E" "xCE7F3B" "xDE43F7" "xE96CF4" "xEE0067" "xF39FDA" "xF5E20E" }
     traits = { "state_trait_andes" "state_trait_atacama_desert" }
     city = "x7984DF"
     port = "x2000F0"
@@ -351,9 +331,9 @@ STATE_ANTOFAGASTA = {
     arable_land = 10
     arable_resources = { "bg_livestock_ranches" }
     capped_resources = {
-        bg_iron_mining = 30
-        bg_sulfur_mining = 48
-        bg_fishing = 5
+        bg_iron_mining = 48
+        bg_sulfur_mining = 68
+        bg_fishing = 10
     }
     resource = {
         type = "bg_gold_fields"
@@ -1013,40 +993,19 @@ STATE_RIO_GRANDE_DO_SUL = {
 STATE_PARANA = {
     id = 389
     subsistence_building = "building_subsistence_farms"
-    provinces = { "x003689" "x01887B" "x1340B9" "x1CF076" "x1D2749" "x32FF03" "x38FE72" "x3A6B08" "x3B0630" "x44FB4A" "x492CDF" "x535BBC" "x53CD15" "x5A3B50" "x5CDB1F" "x666C0F" "x6806EF" "x6A63A4" "x6B95AD" "x7B795B" "x859E23" "x8A1D55" "x946DFF" "x966EB0" "x9A966C" "xA30827" "xA7D75D" "xAAF4D8" "xB6F7AD" "xB989FC" "xB9F1A1" "xBACBB5" "xC4A130" "xC550D6" "xC8530D" "xDB9540" "xDF9E45" "xE122FE" "xE80B69" "xE9A1A3" "xF98F63" }
+    provinces = { "x003689" "x01887B" "x1340B9" "x1CF076" "x02483B" "x06999F" "x09803F" "x2DA91C" "x3066EF" "x4538A5" "x600573" "x8A5C63" "x8D6AA3" "x9937ED" "x9DE26B" "xA57238" "xA88387" "xC550DC" "xC7B370" "xDF5E13" "xEB0D5F" "xEDCD15" "xF3F10A" "xF6A625" "x1D2749" "x32FF03" "x38FE72" "x3A6B08" "x3B0630" "x44FB4A" "x492CDF" "x535BBC" "x53CD15" "x5A3B50" "x5CDB1F" "x666C0F" "x6806EF" "x6A63A4" "x6B95AD" "x7B795B" "x859E23" "x8A1D55" "x946DFF" "x966EB0" "x9A966C" "xA30827" "xA7D75D" "xAAF4D8" "xB6F7AD" "xB989FC" "xB9F1A1" "xBACBB5" "xC4A130" "xC550D6" "xC8530D" "xDB9540" "xDF9E45" "xE122FE" "xE80B69" "xE9A1A3" "xF98F63" }
     traits = { "state_trait_parana_river" state_trait_terra_roxa }
     city = "x003689"
     port = "xC550DC"
     farm = "x8A1D55"
     mine = "x38FE72"
     wood = "x492CDF"
-    arable_land = 40
+    arable_land = 60
     arable_resources = { "bg_maize_farms" "bg_livestock_ranches" "bg_coffee_plantations" "bg_cotton_plantations" "bg_dye_plantations" "bg_tea_plantations" "bg_sugar_plantations" "bg_banana_plantations" "bg_vineyard_plantations" }
     capped_resources = {
         bg_coal_mining = 20
         bg_logging = 30
-        bg_fishing = 3
-        bg_whaling = 2
-    }
-    naval_exit_id = 3064
-}
-
-STATE_SANTA_CATARINA = {
-    id = 663
-    subsistence_building = "building_subsistence_farms"
-    provinces = { "x02483B" "x06999F" "x09803F" "x2DA91C" "x3066EF" "x4538A5" "x600573" "x8A5C63" "x8D6AA3" "x9937ED" "x9DE26B" "xA57238" "xA88387" "xC550DC" "xC7B370" "xDF5E13" "xEB0D5F" "xEDCD15" "xF3F10A" "xF6A625" }
-    traits = { state_trait_terra_roxa }
-    city = "x8A5C63"
-    port = "x02483B"
-    farm = "xF3F10A"
-    mine = "xF6A625"
-    wood = "x2DA91C"
-    arable_land = 40
-    arable_resources = { "bg_maize_farms" "bg_livestock_ranches" "bg_coffee_plantations" "bg_cotton_plantations" "bg_dye_plantations" "bg_tea_plantations" "bg_sugar_plantations" "bg_banana_plantations" "bg_vineyard_plantations" }
-    capped_resources = {
-        bg_coal_mining = 20
-        bg_logging = 7
-        bg_fishing = 2
+        bg_fishing = 5
         bg_whaling = 2
     }
     naval_exit_id = 3064
