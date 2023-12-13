@@ -93,6 +93,40 @@ PAL = { # Levante
 	}
 }
 
+KON = { # ofn mandate Kongo
+	dynamic_country_name = {
+		name = "East African Interim Unity Government"
+		adjective = "Mandate"
+		
+		is_main_tag_only = yes
+		priority = 1
+		
+		trigger = {
+			exists = c:USA
+			c:USA = {
+				OR = {
+					has_diplomatic_pact = {
+						who = c:KON
+						type = protectorate
+						is_initiator = yes
+					}
+					has_diplomatic_pact = {
+						who = c:KON
+						type = puppet
+						is_initiator = yes
+					}
+					has_diplomatic_pact = {
+						who = c:KON
+						type = dominion
+						is_initiator = yes
+					}
+				}
+				
+			}
+		}
+	}
+}
+
 EGY = {
 	dynamic_country_name = {
 		name = "Regno D'Egitto"
