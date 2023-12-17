@@ -973,3 +973,71 @@ je_oil_crisis_oil_supply_button_button_e = {  # Research new Technologies
 	}
 }
 
+je_ru_launch_raid = {
+	name = "je_ru_launch_raid"
+	desc = "je_ru_launch_raid_desc"
+
+	possible = {
+		is_at_war = no
+		root = {
+			has_modifier = modifier_developing_economy
+		}
+		is_diplomatic_play_target = no
+		is_diplomatic_play_initiator = no
+		any_country = {
+			has_strategic_adjacency = root
+			is_at_war = no
+			save_scope_as = raid_target
+			NOT = {
+				has_modifier = recently_raided
+			}
+		}
+	}
+
+	effect = {
+		custom_tooltip = je_ru_launch_raid_tt
+  		random_country = {
+    		limit = {
+    	  		has_strategic_adjacency = root
+    			is_at_war = no
+    			has_modifier = modifier_developing_economy
+    			NOT = {
+				has_modifier = recently_raided
+				}
+   			}
+   			save_scope_as = raid_target
+  		}
+
+  		scope:raid_target = {
+  			add_modifier = {
+        		name = recently_raided
+       			months = 13
+    		}
+  		}
+
+  		scope:root = {
+  			add_modifier = {
+        		name = recently_looted_neighbor
+       			months = 13
+    		}
+  		}
+
+        create_diplomatic_play = {
+            name = theo
+            target_country = scope:raid_target
+                type = dp_humiliation
+                war = no
+                escalation = 85
+                add_war_goal = {
+                    holder = scope:raid_target
+                    type = humiliation
+                    target_country = root
+                }
+                add_war_goal = {
+                    holder = root
+                    type = war_reparations
+                    target_country = scope:raid_target
+                }
+        }
+	}
+}
