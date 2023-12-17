@@ -1,0 +1,38 @@
+﻿namespace = tno_irk_events
+
+tno_irk_events.1 = { #Crushed mutiny
+	type = country_event
+	placement = root
+	title = tno_irk_events.1.t
+	desc = tno_irk_events.1.d
+	flavor = tno_irk_events.1.f
+	icon = "gfx/interface/icons/event_icons/event_protest.dds"
+
+	duration = 3
+
+	immediate = {
+    }
+    
+    trigger = {
+        exists = c:IRK
+        this = c:IRK
+	}
+
+	event_image = {
+        texture = "gfx/event_pictures/event_pictures/great_purge.dds"
+    }
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	option = {
+		name = tno_irk_events.1.1
+		highlighted_option = yes
+		custom_tooltip = irk_great_purge_intro_tt
+    }
+
+    option = {
+		name = tno_irk_events.1.2
+		highlighted_option = no
+    }
+}
+

@@ -406,7 +406,15 @@
             trigger_event = { id = tno_oil_crisis.9 }
            }   
 
-        
+        if = { #Irkutsk: Crushed Mutiny (Buryatia Conquered)
+            limit = {
+               owns_entire_state_region = STATE_IRKUTSK
+               NOT = { has_variable = irk_obry_var }
+            }
+            set_variable = irk_obry_var
+            trigger_event = { id = tno_irk_events.1 days = 2 popup = yes }
+        }
+
     }
     
     
