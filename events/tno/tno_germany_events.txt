@@ -932,6 +932,19 @@ duration = 3
             set_immune_to_revolutions = yes
 	        }
 	    } 
+        create_country = { # CRIMIEA
+		tag = GEE
+		origin = c:GER 
+        state = s:STATE_CRIMEA.region_state:GER
+		on_created = {
+            set_immune_to_revolutions = yes
+	        }
+	    } 
+        create_country = { # eng treaty port
+			tag = GEL
+			origin = c:GER
+			province = p:x1E38F8
+		} 
     }
     option = {
         name = "Borman won"
@@ -944,6 +957,14 @@ duration = 3
             trigger_event = { id = tno_germany_events.18 days = 10 popup = yes }  
         }
         default_option = yes
+        create_country = { # brandembrerg
+		tag = GEQ
+		origin = c:GER 
+        state = s:STATE_BRANDENBURG.region_state:GER
+		on_created = {
+            set_immune_to_revolutions = yes
+	        }
+	    } 
     }
    
    
@@ -957,6 +978,14 @@ duration = 3
         hidden_effect = {
             trigger_event = { id = tno_germany_events.18 days = 10 popup = yes }  
         }
+        create_country = { # brandembrerg
+		tag = GEQ
+		origin = c:GER 
+        state = s:STATE_BRANDENBURG.region_state:GER
+		on_created = {
+            set_immune_to_revolutions = yes
+	        }
+	    } 
      }
      
      
@@ -970,6 +999,14 @@ duration = 3
         hidden_effect = {
             trigger_event = { id = tno_germany_events.18 days = 10 popup = yes }  
         }
+        create_country = { # brandembrerg
+		tag = GEQ
+		origin = c:GER 
+        state = s:STATE_BRANDENBURG.region_state:GER
+		on_created = {
+            set_immune_to_revolutions = yes
+	        }
+	    } 
      }
     
     
@@ -983,6 +1020,14 @@ duration = 3
         hidden_effect = {
             trigger_event = { id = tno_germany_events.18 days = 10 popup = yes }  
         }
+        create_country = { # brandembrerg
+		tag = GEQ
+		origin = c:GER 
+        state = s:STATE_BRANDENBURG.region_state:GER
+		on_created = {
+            set_immune_to_revolutions = yes
+	        }
+	    } 
      }
 }
 
@@ -1122,7 +1167,7 @@ tno_germany_events.19 = {   #German Civil War WIn
         }
     }
         name = tno_germany_events.19.a
-        annex = c:GER
+        annex = c:GEQ
         change_tag = GER  # maybe?
         set_immune_to_revolutions = no
 	}
@@ -1137,11 +1182,11 @@ tno_germany_events.19 = {   #German Civil War WIn
             create_diplomatic_play = {
                 type = dp_annex_war
                 name = german_civil_war
-                target_country = c:GER
+                target_country = c:GEQ
                 war = yes
-                target_state = s:STATE_BRANDENBURG.region_state:GER
+                target_state = s:STATE_BRANDENBURG.region_state:GEQ
                 add_war_goal = {
-                    holder = c:GER
+                    holder = c:GEQ
                     type = annex_country
                     target_state = s:STATE_ALSACE_LORRAINE.region_state:GRH
                   }
