@@ -809,16 +809,27 @@ tno_germany_events.17 = { # German Civil War
 
     on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 
-duration = 3
+    duration = 3
     
-
     trigger = {
 		this ?= c:GER
 	}	
 
     immediate = {
+
         c:GER = {
             set_immune_to_revolutions = yes
+            every_subject_or_below = {
+                trigger_event = { id = tno_germany_events.19 days = 0 popup = yes }
+           } 
+           remove_diplomatic_pact = {
+                country = c:DEN
+                type = customs_union
+            }
+            remove_diplomatic_pact = {
+                country = c:IRE
+                type = protectorate
+            }
         }
 
         create_country = { #Martin bormann
@@ -828,11 +839,10 @@ duration = 3
         state = s:STATE_BAVARIA.region_state:GER
         state = s:STATE_BADEN.region_state:GER
         state = s:STATE_WURTTEMBERG.region_state:GER
-        state = s:STATE_TYROL.region_state:GER
         state = s:STATE_AUSTRIA.region_state:GER
         state = s:STATE_SAXONY.region_state:GER
         state = s:STATE_FRANCONIA.region_state:GER
-        state = s:STATE_STYRIA.region_state:GER
+        state = s:STATE_SLOVENIA.region_state:GER
         state = s:STATE_TABRIZ.region_state:GER
 
         province = p:x400226
@@ -956,15 +966,7 @@ duration = 3
         hidden_effect = {
             trigger_event = { id = tno_germany_events.18 days = 10 popup = yes }  
         }
-        default_option = yes
-        create_country = { # brandembrerg
-		tag = GEQ
-		origin = c:GER 
-        state = s:STATE_BRANDENBURG.region_state:GER
-		on_created = {
-            set_immune_to_revolutions = yes
-	        }
-	    } 
+        default_option = yes    
     }
    
    
@@ -978,14 +980,7 @@ duration = 3
         hidden_effect = {
             trigger_event = { id = tno_germany_events.18 days = 10 popup = yes }  
         }
-        create_country = { # brandembrerg
-		tag = GEQ
-		origin = c:GER 
-        state = s:STATE_BRANDENBURG.region_state:GER
-		on_created = {
-            set_immune_to_revolutions = yes
-	        }
-	    } 
+       
      }
      
      
@@ -999,14 +994,7 @@ duration = 3
         hidden_effect = {
             trigger_event = { id = tno_germany_events.18 days = 10 popup = yes }  
         }
-        create_country = { # brandembrerg
-		tag = GEQ
-		origin = c:GER 
-        state = s:STATE_BRANDENBURG.region_state:GER
-		on_created = {
-            set_immune_to_revolutions = yes
-	        }
-	    } 
+       
      }
     
     
@@ -1020,14 +1008,7 @@ duration = 3
         hidden_effect = {
             trigger_event = { id = tno_germany_events.18 days = 10 popup = yes }  
         }
-        create_country = { # brandembrerg
-		tag = GEQ
-		origin = c:GER 
-        state = s:STATE_BRANDENBURG.region_state:GER
-		on_created = {
-            set_immune_to_revolutions = yes
-	        }
-	    } 
+       
      }
 }
 
@@ -1038,6 +1019,9 @@ tno_germany_events.18 = {   #Civil war start
     hidden = yes
 
     immediate = {
+        c:GER = {
+            change_tag = GEQ
+        }
         c:GMB = {
             create_diplomatic_play = {
                 type = dp_annex_war
@@ -1199,3 +1183,40 @@ tno_germany_events.19 = {   #German Civil War WIn
         set_immune_to_revolutions = no
 }
 }
+
+tno_germany_events.19 = {   #German Vassal Reaction
+        type = country_event
+        placement = ROOT
+        hidden = yes
+    
+        duration = 3
+        trigger = {
+            
+        }	
+        immediate = {
+            if = {
+                limit = {
+                    has_diplomatic_pact = {
+                        who = c:GER
+                         type = reichskommissariat
+                    }
+                }
+                remove_diplomatic_pact = {
+                    country = c:GER
+                    type = reichskommissariat
+                }
+            }
+            if = {
+                limit = {
+                    has_diplomatic_pact = {
+                        who = c:GER
+                         type = puppet
+                    }
+                }
+                remove_diplomatic_pact = {
+                    country = c:GER
+                    type = puppet
+                }
+            }
+        }    
+    }
