@@ -1221,7 +1221,7 @@ tno_germany_events.20 = {   #German Vassal Reaction
     }    
  }
 
- tno_germany_events.21 = {   #ukranian civil war
+tno_germany_events.21 = {   #ukranian civil war
 
     type = country_event
     placement = ROOT
@@ -1234,14 +1234,19 @@ tno_germany_events.20 = {   #German Vassal Reaction
 
     immediate = {
         create_country = { #communist ukraine
-        tag = UKC
-        origin = c:WST
-        state = s:STATE_LUHANSK.region_state:RKU
-        on_created = {
-         }
+            tag = UKC
+            origin = c:WST
+            state = s:STATE_LUHANSK.region_state:RKU
+            state = s:STATE_ROSTOV.region_state:RKU
+       
+        } 
+        create_country = { #UPO ukraine
+        tag = UKP
+        origin = c:SAM
+        state = s:STATE_VOLHYNIA.region_state:RKU
+   
     } 
-}    
-
+    }    
 
 }
 
