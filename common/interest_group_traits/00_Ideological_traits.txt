@@ -1,30 +1,137 @@
-﻿ig_trait_efficient_bureaucracy = { # vary good
+﻿#Leftwing
+
+ig_trait_Leftwing_back_room_dealings = { # vary good
 	icon = "gfx/interface/icons/ig_trait_icons/solidarity.dds"
 	min_approval = loyal
-	
+		
 	modifier = {
-		country_bureaucracy_mult = 0.2
-		country_authority_mult = 0.05
-		country_loan_interest_rate_mult = -0.03		
+		building_group_bg_manufacturing_throughput_add = 0.2
+		state_working_adult_ratio_add = 0.05
+		state_construction_mult = 0.1	
 	}
 }
 
-ig_trait_running_smoothly = { #good
+ig_trait_Peoples_Mandate = { #good
 	icon = "gfx/interface/icons/ig_trait_icons/industrial_organizers.dds"
 	min_approval = happy
 	
 	modifier = {
-		country_bureaucracy_mult = 0.05
+		building_group_bg_manufacturing_throughput_add = 0.1
 	}
 }
 
-ig_trait_lost_in_bureaucracy = { #Negetive 
+ig_trait_Worker_Strikes = { #Negetive 
 	icon = "gfx/interface/icons/ig_trait_icons/work_to_rule.dds"
 	max_approval = unhappy
 	
 	modifier = {
-		state_construction_mult = -0.05
-		country_bureaucracy_mult = -0.1	
-		country_authority_mult = -0.05		
+		state_construction_mult = -0.3
+		building_group_bg_manufacturing_tax_mult = -0.4	
+	}
+}
+
+ig_trait_Leftwing_Protests = { #Negetive 
+	icon = "gfx/interface/icons/ig_trait_icons/work_to_rule.dds"
+	max_approval = unhappy
+	
+	modifier = {
+		state_construction_mult = -0.1
+		building_group_bg_manufacturing_tax_mult = -0.1	
+		country_authority_mult = -0.1
+		state_turmoil_effects_mult = 0.2
+	}
+}
+
+ig_trait_Hippys = { #Negetive 
+	icon = "gfx/interface/icons/ig_trait_icons/work_to_rule.dds"
+	max_approval = unhappy
+	
+	modifier = {
+		state_construction_mult = -0.1
+		building_group_bg_manufacturing_tax_mult = -0.1	
+		country_authority_mult = -0.2		
+		country_prestige_mult = -0.3
+	}
+}
+
+#Centrist scum
+
+ig_trait_back_no_wing_room_dealings = { # vary good
+	icon = "gfx/interface/icons/ig_trait_icons/solidarity.dds"
+	min_approval = loyal
+	
+	modifier = {
+		state_migration_pull_mult = 0.25
+		country_loan_interest_rate_mult = -0.1
+		state_turmoil_effects_mult = -0.5
+	}
+}
+
+ig_trait_rational_compromise = { #good
+	icon = "gfx/interface/icons/ig_trait_icons/industrial_organizers.dds"
+	min_approval = happy
+	
+	modifier = {
+		country_bureaucracy_mult = 0.01
+		country_authority_mult = 0.02
+		state_turmoil_effects_mult = -0.4
+	}
+}
+
+ig_trait_apathy = { #Negetive 
+	icon = "gfx/interface/icons/ig_trait_icons/work_to_rule.dds"
+	max_approval = unhappy
+	
+	modifier = {
+		country_authority_mult = -0.2
+		state_construction_mult = -0.1
+		building_group_bg_manufacturing_tax_mult = -0.1		
+	}
+}
+
+#rightwing
+
+ig_trait_back_Right_wing_room_dealings = { # vary good
+	icon = "gfx/interface/icons/ig_trait_icons/solidarity.dds"
+	min_approval = loyal
+	
+	modifier = {
+		country_loan_interest_rate_mult = -0.2
+		country_bureaucracy_mult = 0.2		
+		state_capitalists_investment_pool_efficiency_mult = 0.2
+		state_aristocrats_investment_pool_efficiency_mult = 0.2		
+	}
+}
+
+ig_trait_patriotic = { #good
+	icon = "gfx/interface/icons/ig_trait_icons/industrial_organizers.dds"
+	min_approval = happy
+	
+	modifier = {
+		country_bureaucracy_mult = 0.1		
+		state_capitalists_investment_pool_efficiency_mult = 0.1
+		state_aristocrats_investment_pool_efficiency_mult = 0.1
+		state_birth_rate_mult = 0.010
+	}
+}
+
+ig_trait_Rightwing_Protests = { #Negetive 
+	icon = "gfx/interface/icons/ig_trait_icons/work_to_rule.dds"
+	max_approval = unhappy
+	
+	modifier = {
+		country_authority_mult = -0.1
+	}
+}
+
+ig_trait_business_of_politics = { #Negetive 
+	icon = "gfx/interface/icons/ig_trait_icons/work_to_rule.dds"
+	max_approval = unhappy
+	
+	modifier = {
+		state_education_access_add = -0.1
+		building_group_bg_manufacturing_tax_mult = -0.1
+		country_prestige_mult = -0.1
+		country_authority_mult = -0.1		
 	}
 }

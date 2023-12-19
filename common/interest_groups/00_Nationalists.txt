@@ -16,6 +16,9 @@
 
 	# Deprecated; use on_enable effect to assign traits instead
 	traits = {
+		ig_trait_back_Right_wing_room_dealings
+		ig_trait_patriotic
+		ig_trait_Rightwing_Protests
 	}
 
 	on_enable = {
@@ -25,8 +28,14 @@
 					has_dlc_feature = voice_of_the_people_content
 					owner = { c:FRA ?= this }
 				}
+				set_ig_trait = ig_trait:ig_trait_back_Right_wing_room_dealings
+				set_ig_trait = ig_trait:ig_trait_patriotic
+				set_ig_trait = ig_trait:ig_trait_Rightwing_Protests
 			}
 			else = {
+				set_ig_trait = ig_trait:ig_trait_back_Right_wing_room_dealings
+				set_ig_trait = ig_trait:ig_trait_patriotic
+				set_ig_trait = ig_trait:ig_trait_Rightwing_Protests
 			}
 		}
 	}

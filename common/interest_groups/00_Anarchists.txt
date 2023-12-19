@@ -16,6 +16,9 @@
 
 	# Deprecated; use on_enable effect to assign traits instead
 	traits = {
+		ig_trait_Leftwing_back_room_dealings
+		ig_trait_Peoples_Mandate
+		ig_trait_Hippys
 	}
 
 	on_enable = {
@@ -25,10 +28,14 @@
 					has_dlc_feature = voice_of_the_people_content
 					owner = { c:FRA ?= this }
 				}
-
+				set_ig_trait = ig_trait:ig_trait_Leftwing_back_room_dealings
+				set_ig_trait = ig_trait:ig_trait_Peoples_Mandate
+				set_ig_trait = ig_trait:ig_trait_Hippys
 			}
 			else = {
-
+				set_ig_trait = ig_trait:ig_trait_Leftwing_back_room_dealings
+				set_ig_trait = ig_trait:ig_trait_Peoples_Mandate
+				set_ig_trait = ig_trait:ig_trait_Hippys
 			}
 		}
 	}
