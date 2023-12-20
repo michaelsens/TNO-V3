@@ -78,7 +78,7 @@
 		}
 	}
 	s:STATE_AZERBAIJAN={
-		region_state:AZB={
+		region_state:RKK={
 			create_building={
 				building="building_oil_rig"
 				level=6
@@ -97,10 +97,16 @@
 				reserves=1
 				activate_production_methods={ "default_building_tea_plantation" "pm_road_carts"  }
 			}
+			create_building={
+				building="building_textile_mills"
+				level=1
+				reserves=1
+				activate_production_methods={ "pm_handsewn_clothes" "pm_no_luxury_clothes" "pm_traditional_looms" "pm_merchant_guilds_building_textile_mills" }
+			}
 		}
 	}
 	s:STATE_GREATER_CAUCASUS={
-		region_state:GEO={
+		region_state:RKK={
 			create_building={
 				building="building_textile_mills"
 				level=1
@@ -117,6 +123,12 @@
 	}
 	s:STATE_SAMARA={
 		region_state:DIR={
+			create_building={
+				building="building_small_workshop"
+				level=1
+				reserves=1
+				activate_production_methods={ "pm_small_workshop" }
+			}
 			create_building={
 				building="building_logging_camp"
 				level=1
@@ -149,6 +161,12 @@
 			}
 		}
 		region_state:BSH={
+			create_building={
+				building="building_small_workshop"
+				level=1
+				reserves=1
+				activate_production_methods={ "pm_small_workshop" }
+			}
 			create_building={
 				building="building_logging_camp"
 				level=1
@@ -187,6 +205,12 @@
 			}
 		}
 		region_state:OEN={
+			create_building={
+				building="building_small_workshop"
+				level=1
+				reserves=1
+				activate_production_methods={ "pm_small_workshop" }
+			}
 			create_building={
 				building="building_iron_mine"
 				level=1
@@ -302,12 +326,24 @@
 		}
 	}
 	s:STATE_ASTRAKHAN={
-		region_state:RKK={
+		region_state:RKM={
 			create_building={
 				building="building_livestock_ranch"
-				level=1
+				level=3
 				reserves=1
 				activate_production_methods={ "pm_simple_ranch" "pm_open_air_stockyards" "pm_standard_fences" "pm_unrefrigerated"  }
+			}
+			create_building={
+				building="building_textile_mills"
+				level=7
+				reserves=1
+				activate_production_methods={ "pm_handsewn_clothes" "pm_no_luxury_clothes" "pm_traditional_looms" "pm_merchant_guilds_building_textile_mills" }
+			}
+			create_building={
+				building="building_barracks"
+				level=5	
+				reserves=1
+				activate_production_methods={ "pm_general_training" }
 			}
 		}
 	}
@@ -659,39 +695,11 @@
 			}
 		}
 	}
-	s:STATE_WESTERN_AFGHANISTAN={
-		region_state:AFG={
-			create_building={
-				building="building_wheat_farm"
-				level=1
-				reserves=1
-				activate_production_methods={ "pm_simple_farming"  "pm_tools_disabled" "pm_citrus_orchards" }
-			}
-			create_building={
-				building="building_opium_plantation"
-				level=1
-				reserves=1
-				activate_production_methods={ "default_building_opium_plantation" "pm_road_carts"  }
-			}
-			create_building={
-				building="building_livestock_ranch"
-				level=1
-				reserves=1
-				activate_production_methods={ "pm_simple_ranch" "pm_open_air_stockyards" "pm_standard_fences" "pm_unrefrigerated"  }
-			}
-			create_building={
-				building="building_barracks"
-				level=5
-				reserves=1
-				activate_production_methods={ "pm_general_training" }
-			}
-		}
-	}
 	s:STATE_EASTERN_AFGHANISTAN={
 		region_state:AFG={	
 			create_building={
 				building="building_logging_camp"
-				level=1
+				level=3
 				reserves=1
 				activate_production_methods={ "pm_simple_forestry" "pm_no_hardwood" "pm_no_equipment" "pm_road_carts" "pm_merchant_guilds_building_logging_camp" }
 			}
@@ -703,19 +711,19 @@
 			}
 			create_building={
 				building="building_livestock_ranch"
-				level=1
+				level=5
 				reserves=1
 				activate_production_methods={ "pm_simple_ranch" "pm_open_air_stockyards" "pm_standard_fences" "pm_unrefrigerated"  }
 			}
 			create_building={
 				building="building_opium_plantation"
-				level=2
+				level=6
 				reserves=1
 				activate_production_methods={ "default_building_opium_plantation" "pm_road_carts"  }
 			}
 			create_building={
 				building="building_barracks"
-				level=5
+				level=9
 				reserves=1
 				activate_production_methods={ "pm_general_training" }
 			}

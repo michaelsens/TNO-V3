@@ -193,6 +193,37 @@ KON = {
             scope:actor = { has_law = law_type:law_state_religion }
         }
     }	
+	dynamic_country_name = {
+		name = "East African Interim Unity Government"
+		adjective = "Mandate"
+		
+		is_main_tag_only = yes
+		priority = 9999
+		
+		trigger = {
+			exists = c:USA
+			c:USA = {
+				OR = {
+					has_diplomatic_pact = {
+						who = c:KON
+						type = protectorate
+						is_initiator = yes
+					}
+					has_diplomatic_pact = {
+						who = c:KON
+						type = puppet
+						is_initiator = yes
+					}
+					has_diplomatic_pact = {
+						who = c:KON
+						type = dominion
+						is_initiator = yes
+					}
+				}
+				
+			}
+		}
+	}
     dynamic_country_name = {
         name = "Reichskommissariat Zentralafrika" 
         
@@ -391,7 +422,7 @@ JAP = { # Japan
 GER = { # Germany
 	dynamic_country_name = {
 		name = "Großgermanisches Reich"
-		adjective = Großgermanisches
+		adjective = German
 		
 		is_main_tag_only = yes
 		priority = 1
@@ -402,7 +433,7 @@ GER = { # Germany
 	}
 	dynamic_country_name = {
 		name = "Strasserite Germany"
-		adjective = Großgermanisches
+		adjective = German
 		
 		is_main_tag_only = yes
 		priority = 2
@@ -555,7 +586,7 @@ ITA = { # Italy
 
 BGD = { # Burgundy
 	dynamic_country_name = {
-		name = "Ordensstaat Burgund"
+		name = "Ordensstaat Burgundy"
 		adjective = "Burgundian"
 		
 		is_main_tag_only = yes
@@ -1409,25 +1440,7 @@ CHI = { # China
 	}
 }
 
-CLM = { # Colombia
-	dynamic_country_name = {
-		name = dyn_c_new_granada
-		adjective = dyn_c_new_granada_adj
 
-		is_main_tag_only = yes
-		priority = 0
-		
-		trigger = {
-			coa_def_republic_flag_trigger = yes
-			scope:actor = {
-				OR = {
-					has_law = law_type:law_legacy_slavery
-					has_law = law_type:law_slave_trade
-				}
-			}
-		}
-	}
-}
 
 COM = { # Comanche
 	dynamic_country_name = {
@@ -1811,24 +1824,10 @@ NEJ = { # Nejd
 
 NET = { # Netherlands
 	dynamic_country_name = {
-		name = dyn_c_united_netherlands
-		
-		is_main_tag_only = yes
-		priority = 0
-		
-		trigger = {
-			exists = scope:actor
-			scope:actor = { 
-				owns_entire_state_region = STATE_FLANDERS
-				owns_entire_state_region = STATE_WALLONIA
-			}
-		}
-	}
-	dynamic_country_name = {
         name = "Reichskommissariat Niederlande" 
         
         is_main_tag_only = yes
-        priority = 1
+        priority = 9999
         
         trigger = {
             exists = c:GER
@@ -2015,13 +2014,6 @@ PEU = {
 		is_main_tag_only = yes
 		priority = 1
 		
-		dynamic_country_name = {
-		name = dyn_c_peru_bolivia
-		adjective = dyn_c_peru_bolivia_adj
-		
-		is_main_tag_only = yes
-		priority = 1
-		
 		trigger = {
             OR = {
                 scope:actor = {
@@ -2029,7 +2021,6 @@ PEU = {
                 }
             }
         }
-	}
 	}
 }
 

@@ -1,4 +1,4 @@
-namespace = tno_RK_events
+﻿namespace = tno_RK_events
 
 tno_RK_events.1 = { # baltic upriseing
 	type = country_event
@@ -591,80 +591,6 @@ tno_RK_events.6 = { # batlic protest for freedom and remform
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 }
 
-tno_RK_events.7 = { # batlic forest base located
-    type = country_event
-    placement = ROOT
-
-	title = tno_RK_events.7
-	desc = tno_RK_events.7.d
-    flavor = tno_RK_events.7.f	
-
-	event_image = { 
-		texture  = "gfx/event_pictures/event_pictures/protestseg.dds"
-	}
-
-    icon = "gfx/interface/icons/tno_event_icons/bicorne_jim_crow_protest.2.dds"
-	
-	trigger = {
-		this ?= c:RKO
-	}	
-
-    immediate = {
-		random_scope_state = {
-            save_scope_as = arms_raid_state
-            limit = {
-              OR = {
-                state_region = s:STATE_ESTONIA
-                state_region = s:STATE_LATVIA
-                state_region = s:STATE_LITHUANIA
-				state_region = s:STATE_INGRIA
-				state_region = s:STATE_MINSK
-				state_region = s:STATE_BREST
-				state_region = s:STATE_ORSHA
-              }
-            }
-        }
-		
-		change_variable = {
-            name = chaos_ost_timer
-            add = 2
-        }
-
-    }
-	
-	duration = 3
-
-	option = {
-		default_option = yes
-        name = tno_RK_events.7.a
-
-        scope:arms_raid_state = {
-            add_radicals_in_state = {
-                value = 0.03
-            }
-        }
-        
-	}
-    option = {
-		default_option = yes
-        name = tno_RK_events.7.b
-
-        add_modifier = {
-            name = protesters_counterd
-            months = 7
-        } 
-
-        scope:arms_raid_state = {
-            add_radicals_in_state = {
-             value = 0.07
-               
-            }
-        }
-	}
-
-	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
-}
-
 tno_RK_events.8 = { #   base located
     type = country_event
     placement = ROOT
@@ -913,79 +839,79 @@ tno_RK_events.10 = { # German event for when OST ask for small funding
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 }
 
-tno_RK_events.11 = { # skirmish in local state
-    type = country_event
-    placement = ROOT
+#tno_RK_events.11 = { # skirmish in local state
+    #type = country_event
+    #placement = ROOT
 
-	title = tno_RK_events.11
-	desc = tno_RK_events.11.d
-    flavor = tno_RK_events.11.f	
+	#title = tno_RK_events.11
+	#desc = tno_RK_events.11.d
+    #flavor = tno_RK_events.11.f	
 
-	event_image = { 
-		texture  = "gfx/event_pictures/event_pictures/base_attacked_ost.dds"
-	}
+	#event_image = { 
+		#texture  = "gfx/event_pictures/event_pictures/base_attacked_ost.dds"
+	#}
 
-    icon = "gfx/interface/icons/tno_event_icons/bicorne_jim_crow_protest.2.dds"
+    #icon = "gfx/interface/icons/tno_event_icons/bicorne_jim_crow_protest.2.dds"
 	
-	trigger = {
-		this ?= c:RKO
-	}	
+	#trigger = {
+		#this ?= c:RKO
+	#}	
 
-    immediate = {
-        random_scope_state = {
-            save_scope_as = arms_raid_state
-            limit = {
-              OR = {
-                state_region = s:STATE_ESTONIA
-                state_region = s:STATE_LATVIA
-                state_region = s:STATE_LITHUANIA
-				state_region = s:STATE_INGRIA
-				state_region = s:STATE_MINSK
-				state_region = s:STATE_BREST
-				state_region = s:STATE_ORSHA
-              }
-            }
-        }
+    #immediate = {
+     #   random_scope_state = {
+      #      save_scope_as = arms_raid_state
+       #     limit = {
+        #      OR = {
+         #       state_region = s:STATE_ESTONIA
+          #      state_region = s:STATE_LATVIA
+            #   state_region = s:STATE_LITHUANIA
+			#	state_region = s:STATE_INGRIA
+			#	state_region = s:STATE_MINSK
+			#	state_region = s:STATE_BREST
+			#	state_region = s:STATE_ORSHA
+             # }
+            #}
+       # }
 		
-		change_variable = {
-            name = chaos_ost_timer
-            add = 10
-        }
+		#change_variable = {
+         #   name = chaos_ost_timer
+          #  add = 10
+        #}
 
-    }
+    #}
 	
-	duration = 1
+	#duration = 1
 
-	option = {
-		default_option = no
-        name = tno_RK_events.11.a
+	#option = {
+	#	default_option = no
+     #   name = tno_RK_events.11.a
 
-        add_modifier = {
-            name = rebuilding_garrison_locals
-            months = 12
-        } 
+     #   add_modifier = {
+      #      name = rebuilding_garrison_locals
+       #     months = 12
+        #} 
 
-		scope:arms_raid_state.state_region = {
-			add_devastation = 15
-  		}
+		#scope:arms_raid_state.state_region = {
+		#	add_devastation = 15
+  		#}
         
-	}
-    option = {
-		default_option = yes
-        name = tno_RK_events.11.b
+	#}
+ #   option = {
+#		default_option = yes
+ #       name = tno_RK_events.11.b
+#
+	#	add_modifier = {
+   #         name = rebuilding_garrison_germans
+  #          months = 12
+ #       } 
+#
+#		scope:arms_raid_state.state_region = {
+#			add_devastation = 15
+ # 		}
+#	}
 
-		add_modifier = {
-            name = rebuilding_garrison_germans
-            months = 12
-        } 
-
-		scope:arms_raid_state.state_region = {
-			add_devastation = 15
-  		}
-	}
-
-	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
-}
+#	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+#}
 
 tno_RK_events.12 = { # German event for when OST ask for mid funding
     type = country_event

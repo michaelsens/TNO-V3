@@ -417,10 +417,21 @@ types state_panel_types
 											parentanchor = hcenter
 
 											textbox = {
+												visible = "[Not(Goods.IsLocal)]"
 												raw_text = "@money![Goods.GetMarketPrice|0v] [Goods.GetCompareIconAgainstBasePriceNoFormatting( Goods.GetMarketPrice )]"
 												align = hcenter|nobaseline
 												autoresize = yes
 												parentanchor = hcenter
+											}
+
+											textbox = {
+												visible = "[Goods.IsLocal]"
+												alpha = "[TransparentIfTrue(Goods.IsLocal)]"
+												align = hcenter|nobaseline
+												autoresize = yes
+												parentanchor = hcenter
+												text = "NOT_AVAILABLE"
+												tooltip = "concept_local_good_desc"
 											}
 
 											double_direction_progressbar_gold = {
@@ -450,13 +461,28 @@ types state_panel_types
 
 									vertical_divider = {}
 									
-									textbox = {
-										align = right|nobaseline
-										text = "[Goods.GetStateToMarketPriceDiff|%0=-]"
+									widget = {
 										size = { 70 40 }
-										margin_right = 10
 										parentanchor = vcenter
-										tooltip = "STATE_TO_MARKET_PRICE_DIFF_TOOLTIP"
+										
+										textbox = {
+											visible = "[Not(Goods.IsLocal)]"
+											align = right|nobaseline
+											text = "[Goods.GetStateToMarketPriceDiff|%0=-]"
+											size = { 70 40 }
+											margin_right = 10
+											tooltip = "STATE_TO_MARKET_PRICE_DIFF_TOOLTIP"
+										}
+
+										textbox = {
+											visible = "[Goods.IsLocal]"
+											alpha = "[TransparentIfTrue(Goods.IsLocal)]"
+											align = right|nobaseline
+											text = "NOT_AVAILABLE"
+											tooltip = "concept_local_good_desc"	
+											size = { 70 40 }
+											margin_right = 10
+										}
 									}
 								}
 							}
@@ -708,6 +734,21 @@ types state_panel_types
 						size = { 30 30 }
 					}
 				}
+			}
+		}
+
+		### NAVAL INVASIONS
+		flowcontainer = {
+			visible = "[Not(IsDataModelEmpty(State.GetActiveNavalInvasions))]"
+			spacing = 10
+			direction = vertical
+			parentanchor = hcenter
+			margin = { 0 10 }
+
+			datamodel = "[State.GetActiveNavalInvasions]"
+
+			item = {
+				naval_invasion_list_item = {}
 			}
 		}
 
@@ -1547,42 +1588,6 @@ types state_panel_types
 					}
 				}
 			}		
-
-			textbox = {
-				text = "HEADER_CULTURAL_COMMUNITIES"
-				autoresize = yes
-				align = left|nobaseline
-				parentanchor = hcenter
-				widgetanchor = center
-			}
-
-			dynamicgridbox = {
-				parentanchor = hcenter
-				datamodel = "[State.GetCulturalCommunities]"
-				datamodel_wrap = 3
-				flipdirection = yes
-				item = {
-					widget = {
-						size = { 180 40 }
-						widget = {
-							parentanchor = center
-						  	size = { 175 35 }
-						 	background = {
-								using = entry_bg_simple
-						  	}
-						  	textbox = {
-								parentanchor = center
-								autoresize = yes
-							  	align = hcenter|nobaseline
-							  	max_width = 165
-							  	fontsize_min = 14
-							  	elide = right
-							  	text = "[CulturalCommunity.GetCulture.GetName]"
-						  	}
-					   	}
-					}
-				}
-			}
 
 			container = {
 				parentanchor = hcenter
@@ -3064,6 +3069,10 @@ types building_item_types
 			parentanchor = vcenter
 			alpha = "[TransparentIfFalse(Building.IsActive)]"
 			onclick = "[InformationPanelBar.OpenBuildingDetailsPanel(Building.AccessSelf)]"
+			#### +++
+			datacontext = "[GetScriptedGui('fi_state_share_list_validation')]"
+			onclick = "[ScriptedGui.Execute(GuiScope.AddScope('invested_state', Building.GetState.MakeScope).AddScope('invested_building', Building.MakeScope).End)]"
+			#### ===
 		}
 
 		flowcontainer = {
@@ -3130,6 +3139,10 @@ types building_item_types
 		distribute_visual_state = no
 		onclick = "[InformationPanelBar.OpenBuildingDetailsPanel(Building.AccessSelf)]"
 		onrightclick = "[RightClickMenuManager.ShowForBuilding(Building.AccessSelf)]"
+		#### +++
+		datacontext = "[GetScriptedGui('fi_state_share_list_validation')]"
+		onclick = "[ScriptedGui.Execute(GuiScope.AddScope('invested_state', Building.GetState.MakeScope).AddScope('invested_building', Building.MakeScope).End )]"
+		#### ===
 		tooltipwidget = {
 			FancyTooltip_Building = {}
 		}
@@ -3163,6 +3176,10 @@ types building_item_types
 		button  = {
 			onclick = "[InformationPanelBar.OpenBuildingDetailsPanel(Building.AccessSelf)]"
 			onrightclick = "[RightClickMenuManager.ShowForBuilding(Building.AccessSelf)]"
+			#### +++
+			datacontext = "[GetScriptedGui('fi_state_share_list_validation')]"
+			onclick = "[ScriptedGui.Execute(GuiScope.AddScope('invested_state', Building.GetState.MakeScope).AddScope('invested_building', Building.MakeScope).End )]"
+			#### ===
 			tooltipwidget = {
 				FancyTooltip_Building = {}
 			}
@@ -3181,7 +3198,10 @@ types building_item_types
 					enabled = "[Building.IsValid]"
 					onclick = "[InformationPanelBar.OpenBuildingDetailsPanel(Building.AccessSelf)]"
 					onrightclick = "[RightClickMenuManager.ShowForBuilding(Building.AccessSelf)]"
-
+					#### +++
+					datacontext = "[GetScriptedGui('fi_state_share_list_validation')]"
+					onclick = "[ScriptedGui.Execute(GuiScope.AddScope('invested_state', Building.GetState.MakeScope).AddScope('invested_building', Building.MakeScope).End )]"
+					#### ===
 					textbox = {
 						resizeparent = yes
 						text = "[Building.GetNameNoFormatting]"
@@ -3240,6 +3260,9 @@ types building_item_types
 						onclick = "[Execute( Building.CancelConstruction )]"
 						using = tooltip_below
 					}
+					#### +++
+					foreign_investments_panel = {}
+					#### ===
 
 					### EXPAND BUTTON
 					button_icon_plus_action = {
@@ -3383,11 +3406,25 @@ types building_item_types
 
 						### EMPLOYMENT WARNING
 						icon = {
-							visible = "[Building.ShouldShowAsNotHiring]"
+							visible = "[And(Building.ShouldShowAsUnableToHire,Building.HasFailedHires)]"
 							size = { 30 30 }
 							texture = "gfx/interface/icons/generic_icons/employment_not_full.dds"
 							tooltip = "NOT_FULLY_EMPLOYED"
 						}
+						
+						icon = {
+							visible = "[And(Building.ShouldShowAsUnableToHire,Not(Building.HasFailedHires))]"
+							size = { 30 30 }
+							texture = "gfx/interface/icons/generic_icons/employment_not_full.dds"
+							tooltip = "NOT_HIRING"
+						}					
+						
+						icon = {
+							visible = "[Building.ShouldShowAsUnwillingToHire]"
+							size = { 30 30 }
+							texture = "gfx/interface/icons/generic_icons/employment_not_hiring.dds"
+							tooltip = "NOT_FULLY_EMPLOYED"
+						}						
 
 						icon = {
 							visible = "[Building.ShouldShowAsHiring]"
@@ -3536,6 +3573,10 @@ types building_item_types
 	type building_item_condensed = button {
 		onclick = "[InformationPanelBar.OpenBuildingDetailsPanel(Building.AccessSelf)]"
 		onrightclick = "[RightClickMenuManager.ShowForBuilding(Building.AccessSelf)]"
+		#### +++
+		datacontext = "[GetScriptedGui('fi_state_share_list_validation')]"
+		onclick = "[ScriptedGui.Execute(GuiScope.AddScope('invested_state', Building.GetState.MakeScope).AddScope('invested_building', Building.MakeScope).End )]"
+		#### ===
 		onmousehierarchyenter = "[AccessHighlightManager.HighlightBuilding(Building.Self)]"
 		onmousehierarchyleave = "[AccessHighlightManager.RemoveHighlight]"
 
@@ -3573,12 +3614,28 @@ types building_item_types
 
 					### EMPLOYMENT WARNING
 					icon = {
-						visible = "[Building.ShouldShowAsNotHiring]"
+						visible = "[And(Building.ShouldShowAsUnableToHire,Building.HasFailedHires)]"
 						texture = "gfx/interface/icons/generic_icons/employment_not_full.dds"
 						tooltip = "NOT_FULLY_EMPLOYED"
 						size = { 30 30 }
 						parentanchor = vcenter
 					}
+					
+					icon = {
+						visible = "[And(Building.ShouldShowAsUnableToHire,Not(Building.HasFailedHires))]"
+						texture = "gfx/interface/icons/generic_icons/employment_not_full.dds"
+						tooltip = "NOT_HIRING"
+						size = { 30 30 }
+						parentanchor = vcenter
+					}					
+					
+					icon = {
+						visible = "[Building.ShouldShowAsUnwillingToHire]"
+						texture = "gfx/interface/icons/generic_icons/employment_not_hiring.dds"
+						tooltip = "NOT_FULLY_EMPLOYED"
+						size = { 30 30 }
+						parentanchor = vcenter
+					}					
 
 					### INPUT WARNING
 					icon = {
@@ -3660,6 +3717,10 @@ types building_item_types
 							parentanchor = center
 							size = { 25 25 }
 							onclick = "[InformationPanelBar.OpenBuildingDetailsPanel(Building.AccessSelf)]"
+							#### +++
+							datacontext = "[GetScriptedGui('fi_state_share_list_validation')]"
+							onclick = "[ScriptedGui.Execute(GuiScope.AddScope('invested_state', Building.GetState.MakeScope).AddScope('invested_building', Building.MakeScope).End )]"
+							#### ===
 						}
 					}
 				}
