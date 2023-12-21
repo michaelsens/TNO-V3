@@ -821,9 +821,17 @@ tno_germany_events.17 = { # German Civil War
             country = c:RKU
             type = reichskommissariat
         }
+        remove_diplomatic_pact = {
+            country = c:RKO
+            type = reichskommissariat
+        }
+
 
         c:RKU = { #22-24
 			trigger_event = { id = tno_germany_events.21 days = 0 popup = yes }
+		} 
+        c:RKO = { #22-24
+			trigger_event = { id = tno_RK_events.1 days = 0 popup = yes }
 		} 
 
         c:UKP = { #22-24
@@ -832,13 +840,16 @@ tno_germany_events.17 = { # German Civil War
         c:UKP = { #22-24
 			trigger_event = { id = tno_germany_events.23 days = 0 popup = yes }
 		} 
-        c:UKM = { #24-
+        c:UKP = { #24-
 			trigger_event = { id = tno_germany_events.24 days = 0 popup = yes }
 		} 
+        c:UKM = { #24-
+			trigger_event = { id = tno_germany_events.27 days = 0 popup = yes }
+		}
         c:UKM = { #22-24
 			trigger_event = { id = tno_germany_events.25 days = 0 popup = yes }
 		} 
-         c:UKC = { #IGNORE COMMITS THEY DUMB AND OUTDATED LMAO
+        c:UKC = { #IGNORE COMMITS THEY DUMB AND OUTDATED LMAO
 			trigger_event = { id = tno_germany_events.26 days = 0 popup = yes }
 		}
 
@@ -1384,7 +1395,7 @@ tno_germany_events.24 = {
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 }
 
-tno_germany_events.24 = { 
+tno_germany_events.27 = { 
 	type = country_event
 	hidden = yes
 
@@ -1396,7 +1407,7 @@ tno_germany_events.24 = {
 
     immediate = {
 		create_diplomatic_play = {
-			name = ukrain_civil.4
+			name = ukrain_civil.9
 			target_country = c:RKU
 				type = dp_annex_war
 				war = yes
