@@ -1,14 +1,24 @@
-﻿#IRK
+#IRK
 je_ru_tno_irk_restore_order_far_east = { 
 
-    icon = "gfx/interface/icons/war_goals/unification.dds"
+    icon = "gfx/interface/icons/alert_icons/idle_mobilized_general.dds"
     group = je_group_historical_content
-    scripted_button = je_ru_launch_raid
+    scripted_button = je_ru_irk_form_far_east
 
     immediate = {
 	}
     
     complete = {
+        owns_entire_state_region = STATE_IRKUTSK
+        owns_entire_state_region = STATE_TRANS_BAIKAL
+        owns_entire_state_region = STATE_OKHOTSK
+        owns_entire_state_region = STATE_CHUKOTKA
+        owns_entire_state_region = STATE_YAKUTSK
+        owns_entire_state_region = STATE_KAMCHATKA
+
+        hidden_trigger = {
+            has_modifier = your_mom
+        }
 	}
 
     on_complete = {
@@ -26,9 +36,9 @@ je_ru_tno_irk_restore_order_far_east = {
 		
 	}
 
-    progressbar = yes
+    progressbar = no
     
-    weight = 100
+    weight = 1000
 
     
     should_be_pinned_by_default = yes
