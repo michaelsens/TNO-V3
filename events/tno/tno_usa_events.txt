@@ -2049,6 +2049,110 @@ tno_usa_events.26 = {  # zambia
 	} 
 }
 
+tno_usa_events.27 = {  # uganda
+	type = country_event
+    placement = ROOT
+ 
+    title = tno_usa_events.27
+    desc = tno_usa_events.27.d
+    flavor = tno_usa_events.27.f 
+    event_image = {
+        texture = "gfx/event_pictures/super_pictures/seg.4.dds"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_fire.dds"
+
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 1
+
+	trigger = {
+		this ?= c:USA
+	}
+	
+    option = { #Liberate and put in market
+        name = tno_usa_events.26.a
+
+		create_country = { 
+        tag = ANK
+        origin = c:USA
+        state = s:STATE_UGANDA.region_state:KON
+	
+    } 
+
+	
+
+	create_diplomatic_pact = {
+		country = c:ANK
+		type = customs_union
+	}
+
+	add_loyalists = {
+		value = 0.01
+		culture = cu:yankee
+	}
+
+	change_infamy = -20
+    } 
+
+	
+
+	option = { # ofn
+	name = tno_usa_events.26.b
+
+	create_country = { 
+        tag = ANK
+        origin = c:USA
+        state = s:STATE_UGANDA.region_state:KON
+	
+    } 
+
+	create_diplomatic_pact = {
+	country = c:ANK
+	type = ofn_partner
+	}
+
+	change_infamy = -20
+	} 
+
+	option = { # protectorate
+	name = tno_usa_events.26.c
+
+	create_country = { 
+        tag = ANK
+        origin = c:USA
+        state = s:STATE_UGANDA.region_state:KON
+	
+    } 
+
+	create_diplomatic_pact = {
+	country = c:ANK
+	type = protectorate
+	}
+} 
+
+	option = { # puppet
+	name = tno_usa_events.26.d
+
+	create_country = { 
+        tag = ANK
+        origin = c:USA
+        state = s:STATE_UGANDA.region_state:KON
+	
+    } 
+
+	create_diplomatic_pact = {
+	country = c:ANK
+	type = puppet
+	}
+
+	change_infamy = 10
+
+	
+	} 
+}
+
+
 
 
 
