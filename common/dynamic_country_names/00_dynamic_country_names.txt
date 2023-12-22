@@ -30,15 +30,31 @@ CAN = {
 		
 
 		is_main_tag_only = yes
-		priority = 1
+		priority = 9999
 		
 		trigger = {
-            OR = {
-                scope:actor = {
-                    is_subject_of = c:USA
-                }
-            }
-        }
+			exists = c:USA
+			c:USA = {
+				OR = {
+					has_diplomatic_pact = {
+						who = c:CAN
+						type = protectorate
+						is_initiator = yes
+					}
+					has_diplomatic_pact = {
+						who = c:CAN
+						type = puppet
+						is_initiator = yes
+					}
+					has_diplomatic_pact = {
+						who = c:CAN
+						type = dominion
+						is_initiator = yes
+					}
+				}
+				
+			}
+		}
 	}
 }
 
@@ -1951,15 +1967,15 @@ PEU = {
 		
 		
 		is_main_tag_only = yes
-		priority = 1
+		priority = 99
 		
 		trigger = {
-            OR = {
-                scope:actor = {
-                    is_subject_of = c:USA
-                }
-            }
-        }
+			OR = {
+				scope:actor = {
+					is_subject_of = c:USA
+				}
+			}
+		}
 	}
 }
 

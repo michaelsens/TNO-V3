@@ -1449,6 +1449,499 @@ tno_usa_events.21 = {
     }
 }
 
+tno_usa_events.22 = {  # Congo
+	type = country_event
+    placement = ROOT
+ 
+    title = tno_usa_events.22
+    desc = tno_usa_events.22.d
+    flavor = tno_usa_events.22.f 
+    event_image = {
+        texture = "gfx/event_pictures/super_pictures/seg.4.dds"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_fire.dds"
+
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 1
+
+	trigger = {
+		this ?= c:USA
+	}
+	
+    option = { #Liberate and put in market
+        name = tno_usa_events.22.a
+
+		create_country = { # full congo
+        tag = PIP
+        origin = c:USA
+        state = s:STATE_BAS_CONGO.region_state:KZA
+		state = s:STATE_EQUATEUR.region_state:KZA
+		state = s:STATE_CONGO_ORIENTALE.region_state:KZA
+		state = s:STATE_KASAI.region_state:KZA
+		state = s:STATE_KATANGA.region_state:KZA
+    } 
+
+	change_relations = {
+		country = c:PIP
+		value = 150
+	}
+
+	trigger_event = { id = tno_usa_events.23 days = 0 popup = yes }
+
+	create_diplomatic_pact = {
+		country = c:PIP
+		type = customs_union
+	}
+
+	add_loyalists = {
+		value = 0.01
+		culture = cu:yankee
+	}
+
+	change_infamy = -20
+    } 
+
+	
+
+	option = { # ofn
+	name = tno_usa_events.22.b
+
+	create_country = { # full congo
+	tag = PIP
+	origin = c:USA
+	state = s:STATE_BAS_CONGO.region_state:KZA
+	state = s:STATE_EQUATEUR.region_state:KZA
+	state = s:STATE_CONGO_ORIENTALE.region_state:KZA
+	state = s:STATE_KASAI.region_state:KZA
+	state = s:STATE_KATANGA.region_state:KZA
+
+	} 
+
+	change_relations = {
+		country = c:PIP
+		value = 150
+	}
+
+	trigger_event = { id = tno_usa_events.23 days = 0 popup = yes }
+
+	create_diplomatic_pact = {
+	country = c:PIP
+	type = ofn_partner
+	}
+
+	change_infamy = -20
+	} 
+
+	option = { # protectorate
+	name = tno_usa_events.22.c
+
+	create_country = { # full congo
+	tag = PIP
+	origin = c:USA
+	state = s:STATE_BAS_CONGO.region_state:KZA
+	state = s:STATE_EQUATEUR.region_state:KZA
+	state = s:STATE_CONGO_ORIENTALE.region_state:KZA
+	state = s:STATE_KASAI.region_state:KZA
+	state = s:STATE_KATANGA.region_state:KZA
+
+	
+
+	} 
+
+	trigger_event = { id = tno_usa_events.23 days = 0 popup = yes }
+
+	create_diplomatic_pact = {
+	country = c:PIP
+	type = protectorate
+	}
+} 
+
+	option = { # puppet
+	name = tno_usa_events.22.d
+
+	create_country = { # full congo
+	tag = PIP
+	origin = c:USA
+	state = s:STATE_BAS_CONGO.region_state:KZA
+	state = s:STATE_EQUATEUR.region_state:KZA
+	state = s:STATE_CONGO_ORIENTALE.region_state:KZA
+	state = s:STATE_KASAI.region_state:KZA
+	state = s:STATE_KATANGA.region_state:KZA
+	
+	} 
+
+	trigger_event = { id = tno_usa_events.23 days = 0 popup = yes }
+
+	create_diplomatic_pact = {
+	country = c:PIP
+	type = puppet
+	}
+
+	change_infamy = 10
+
+	
+	} 
+}
+
+tno_usa_events.23 = {  # katanga
+	type = country_event
+    placement = ROOT
+ 
+    title = tno_usa_events.23
+    desc = tno_usa_events.23.d
+    flavor = tno_usa_events.23.f 
+    event_image = {
+        texture = "gfx/event_pictures/super_pictures/seg.4.dds"
+    }
+
+	trigger = {
+		this ?= c:USA
+	}
+
+    icon = "gfx/interface/icons/event_icons/event_fire.dds"
+
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 1
+	
+	
+
+    option = { #Liberate and put in market
+        name = tno_usa_events.23.a
+
+		create_country = { # Katanga
+        tag = PIL
+        origin = c:USA
+		state = s:STATE_KATANGA.region_state:PIP
+   
+    } 
+
+	change_relations = {
+		country = c:PIL
+		value = 150
+	}
+
+	create_diplomatic_pact = {
+		country = c:PIL
+		type = customs_union
+	}
+
+
+	change_infamy = -3
+    } 
+
+	
+
+	option = { # ofn
+	name = tno_usa_events.22.b
+
+	create_country = { # Katanga
+        tag = PIL
+        origin = c:USA
+		state = s:STATE_KATANGA.region_state:PIP
+   
+    } 
+
+	change_relations = {
+		country = c:PIL
+		value = 150
+	}
+
+
+	create_diplomatic_pact = {
+	country = c:PIL
+	type = ofn_partner
+	}
+
+	change_infamy = -5
+	} 
+
+	option = { # protectorate
+	name = tno_usa_events.23.c
+
+	create_country = { # Katanga
+        tag = PIL
+        origin = c:USA
+		state = s:STATE_KATANGA.region_state:PIP
+   
+    } 
+
+
+	create_diplomatic_pact = {
+	country = c:PIL
+	type = protectorate
+	}
+} 
+
+	option = { # puppet
+	name = tno_usa_events.23.d
+
+	create_country = { # Katanga
+        tag = PIL
+        origin = c:USA
+		state = s:STATE_KATANGA.region_state:PIP
+   
+    } 
+
+
+	create_diplomatic_pact = {
+	country = c:PIL
+	type = puppet
+	}
+
+	change_infamy = 5
+
+	
+	} 
+
+	option = { # no katanga
+	name = tno_usa_events.23.e
+
+	change_relations = {
+		country = c:PIP
+		value = 70
+	}
+
+
+	
+	} 
+}
+
+tno_usa_events.24 = {  # ORUNGU
+	type = country_event
+    placement = ROOT
+ 
+    title = tno_usa_events.24
+    desc = tno_usa_events.24.d
+    flavor = tno_usa_events.24.f 
+    event_image = {
+        texture = "gfx/event_pictures/super_pictures/seg.4.dds"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_fire.dds"
+
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 1
+
+	trigger = {
+		this ?= c:USA
+	}
+	
+    option = { #Liberate and put in market
+        name = tno_usa_events.24.a
+
+		create_country = { 
+        tag = PIU
+        origin = c:USA
+        state = s:STATE_CONGO.region_state:KZA
+		state = s:STATE_GABON.region_state:KZA
+		state = s:STATE_SOUTH_CAMEROON.region_state:KZA
+
+	
+   
+    } 
+
+	change_relations = {
+		country = c:PIU
+		value = 150
+	}
+
+	create_diplomatic_pact = {
+		country = c:PIU
+		type = customs_union
+	}
+
+	add_loyalists = {
+		value = 0.01
+		culture = cu:yankee
+	}
+
+	change_infamy = -20
+    } 
+
+	
+
+	option = { # ofn
+	name = tno_usa_events.24.b
+
+	create_country = { 
+        tag = PIU
+        origin = c:USA
+        state = s:STATE_CONGO.region_state:KZA
+		state = s:STATE_GABON.region_state:KZA
+		state = s:STATE_SOUTH_CAMEROON.region_state:KZA
+	
+
+	
+   
+    } 
+
+	hange_relations = {
+		country = c:PIU
+		value = 150
+	}
+
+	create_diplomatic_pact = {
+		country = c:PIU
+		type = ofn_partner
+		}
+
+	change_infamy = -20
+	} 
+
+	option = { # protectorate
+	name = tno_usa_events.24.c
+
+	create_country = { 
+        tag = PIU
+        origin = c:USA
+        state = s:STATE_CONGO.region_state:KZA
+		state = s:STATE_GABON.region_state:KZA
+		state = s:STATE_SOUTH_CAMEROON.region_state:KZA
+	
+
+	
+   
+    } 
+
+	create_diplomatic_pact = {
+	country = c:PIU
+	type = protectorate
+	}
+} 
+
+	option = { # puppet
+	name = tno_usa_events.24.d
+
+	create_country = { 
+        tag = PIU
+        origin = c:USA
+        state = s:STATE_CONGO.region_state:KZA
+		state = s:STATE_GABON.region_state:KZA
+		state = s:STATE_SOUTH_CAMEROON.region_state:KZA
+	
+
+	
+   
+    } 
+
+	create_diplomatic_pact = {
+	country = c:PIU
+	type = puppet
+	}
+
+	change_infamy = 10
+
+	
+	} 
+}
+
+tno_usa_events.25 = {  # central africa
+	type = country_event
+    placement = ROOT
+ 
+    title = tno_usa_events.25
+    desc = tno_usa_events.25.d
+    flavor = tno_usa_events.25.f 
+    event_image = {
+        texture = "gfx/event_pictures/super_pictures/seg.4.dds"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_fire.dds"
+
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 1
+
+	trigger = {
+		this ?= c:USA
+	}
+	
+    option = { #Liberate and put in market
+        name = tno_usa_events.25.a
+
+		create_country = { 
+        tag = PIK
+        origin = c:USA
+        state = s:STATE_UBANGI_SHARI.region_state:KZA
+	
+    } 
+
+	
+
+	create_diplomatic_pact = {
+		country = c:PIK
+		type = customs_union
+	}
+
+	add_loyalists = {
+		value = 0.01
+		culture = cu:yankee
+	}
+
+	change_infamy = -20
+    } 
+
+	
+
+	option = { # ofn
+	name = tno_usa_events.25.b
+
+	create_country = { 
+        tag = PIK
+        origin = c:USA
+        state = s:STATE_UBANGI_SHARI.region_state:KZA
+	
+    } 
+
+	create_diplomatic_pact = {
+	country = c:PIK
+	type = ofn_partner
+	}
+
+	change_infamy = -20
+	} 
+
+	option = { # protectorate
+	name = tno_usa_events.25.c
+
+	create_country = { 
+        tag = PIK
+        origin = c:USA
+        state = s:STATE_UBANGI_SHARI.region_state:KZA
+	
+    } 
+
+	create_diplomatic_pact = {
+	country = c:PIK
+	type = protectorate
+	}
+} 
+
+	option = { # puppet
+	name = tno_usa_events.25.d
+
+	create_country = { 
+        tag = PIK
+        origin = c:USA
+        state = s:STATE_UBANGI_SHARI.region_state:KZA
+	
+    } 
+
+	create_diplomatic_pact = {
+	country = c:PIK
+	type = puppet
+	}
+
+	change_infamy = 10
+
+	
+	} 
+}
+
 
 
 
