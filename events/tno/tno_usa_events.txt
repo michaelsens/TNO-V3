@@ -1418,35 +1418,37 @@ tno_usa_events.20 = { # USA attacks gov leauge
     } 
 }
 
+
 tno_usa_events.21 = {
-	type = country_event
+    type = country_event
     hidden = yes
 
-	 
 
-	trigger = {
-		exists = c:KON
-		ROOT = c:USA
 
-		c:KON = {
-			has_diplomatic_pact = {
-				who = c:USA
-				 type = protectorate
-			}
-			
-		}
-	
+    trigger = {
+        exists = c:KON
+        ROOT = c:USA
 
-		
-	}	
-	
+        c:KON = {
+            has_diplomatic_pact = {
+				country = c:KON
+                 type = protectorate
+            }
+
+        }
+
+
+
+    }
+
     immediate = {
-		remove_diplomatic_pact = {
-			country = c:USA
-			type = protectorate
-		}
+        remove_diplomatic_pact = {
+            country = c:KON
+            type = protectorate
+        }
     }
 }
+
 
 
 
