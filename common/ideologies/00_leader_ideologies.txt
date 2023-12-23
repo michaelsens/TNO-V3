@@ -3874,6 +3874,162 @@ ideology_ethno_nationalist = {
 	}
 }
 
+ideology_objectivist = {
+	icon = "gfx/interface/icons/ideology_icons/ideology_leader/ideology_leader_vanguardist.dds"
+	
+	character_ideology = yes
+	
+	lawgroup_governance_principles = {
+		law_monarchy = strongly_disapprove
+		law_presidential_republic = approve
+		law_parliamentary_republic = strongly_approve
+		law_theocracy = strongly_disapprove
+		law_council_republic = strongly_disapprove
+	}
+	
+	lawgroup_bureaucracy = {
+		law_elected_bureaucrats = strongly_approve
+		law_appointed_bureaucrats = strongly_disapprove
+		law_hereditary_bureaucrats = strongly_disapprove
+	}	
+	
+	lawgroup_citizenship = {
+		law_ethnostate = strongly_disapprove
+		law_national_supremacy = strongly_disapprove
+		law_racial_segregation = strongly_disapprove
+		law_cultural_exclusion = strongly_disapprove
+		law_multicultural = strongly_approve	
+	}	
+
+	lawgroup_distribution_of_power = {
+		law_oligarchy = strongly_disapprove
+		law_autocracy = strongly_disapprove		
+		law_anarchy = strongly_disapprove
+		law_universal_suffrage = strongly_approve
+		law_census_voting = strongly_approve
+		law_wealth_voting = strongly_disapprove
+		law_landed_voting = strongly_disapprove
+		law_technocracy = strongly_disapprove
+		law_single_party_state = strongly_disapprove
+	}
+	
+	lawgroup_economic_system = {	
+		law_command_economy = strongly_disapprove
+		law_cooperative_ownership = strongly_disapprove
+		law_interventionism = strongly_disapprove
+		law_agrarianism = strongly_disapprove
+		law_traditionalism = strongly_disapprove	
+		law_laissez_faire = strongly_approve
+		law_industry_banned = strongly_disapprove
+	}
+	
+	lawgroup_trade_policy = {		
+		law_protectionism = strongly_disapprove
+		law_mercantilism = strongly_disapprove		
+		law_isolationism = neutral
+		law_free_trade = strongly_approve
+	}
+
+	lawgroup_land_reform = {
+		law_commercialized_agriculture = strongly_disapprove
+		law_serfdom = strongly_disapprove
+		law_tenant_farmers = strongly_disapprove
+		law_homesteading = strongly_approve
+		law_collectivized_agriculture = strongly_disapprove
+	}			
+	
+	possible = {
+		owner = { has_technology_researched = democracy }
+		# Agitator ideologies should disapprove of a current law
+		NAND = {
+			has_role = agitator
+			owner = {
+				has_law = law_type:law_protectionism
+				has_law = law_type:law_cooperative_ownership
+				has_law = law_type:law_command_economy
+				has_law = law_type:law_council_republic
+			}
+		}
+		# Monarchs cannot be republicans
+		NAND = {
+			owner = {
+				has_law = law_type:law_monarchy
+			}
+			OR = {
+				is_ruler = yes
+				is_heir = yes
+			}
+		}
+		scope:interest_group = {
+			OR = {
+				is_interest_group_type = ig_rural_folk
+				is_interest_group_type = ig_intelligentsia
+				is_interest_group_type = ig_trade_unions
+			}
+		}
+		scope:interest_group = {
+			NOR = {
+				has_variable = chose_vanguardism
+				has_variable = chose_communism
+				has_variable = chose_fascism
+				has_variable = chose_conservatism
+				has_variable = chose_ethno_nationalism
+			}
+		}
+	}	
+	
+	leader_weight = {
+		value = 100
+		# More likely for angry IG's outside of council republic
+		if = {
+			limit = {
+				owner = {
+					NOT = { has_law = law_type:law_council_republic }
+				}
+				scope:interest_group = {
+					ig_approval <= -5
+					NOT = { is_interest_group_type = ig_armed_forces }
+				}
+			}
+			add = 100
+		}
+		# More likely when SoL is low outside of council republic
+		if = {
+			limit = {
+				owner = {
+					NOT = { has_law = law_type:law_council_republic }
+					average_sol <= 10
+				}
+			}
+			add = 50
+		}
+		# More likely in an autocracy
+		if = {
+			limit = {
+				owner = {
+					OR = {
+						has_law = law_type:law_autocracy
+						has_law = law_type:law_oligarchy
+					}
+				}
+			}
+			add = 50
+		}
+		# Unlikely for content IG's under anarchism
+		if = {
+			limit = {
+				owner = {
+					has_law = law_type:law_anarchy
+				}
+				scope:interest_group = {
+					ig_approval >= 5
+				}
+			}
+			add = -100
+		}
+	}
+}
+
 ideology_theocrat = {
 	icon = "gfx/interface/icons/ideology_icons/ideology_leader/ideology_leader_theocrat.dds"
 	
