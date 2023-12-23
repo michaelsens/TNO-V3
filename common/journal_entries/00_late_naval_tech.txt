@@ -1,6 +1,7 @@
-﻿
-je_dreadnoughts = {
+﻿je_dreadnoughts = {
 	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+  group = je_group_technology
 
 	is_shown_when_inactive = {
 		is_player = yes
@@ -15,25 +16,26 @@ je_dreadnoughts = {
 
 	complete = {
 		is_at_war = yes
-		country_pm_usage = {
-			target = ROOT
-			production_method = pm_nuclear_carriers
-			value > 0.25
-		}
+	   country_navy_unit_type_fraction = {  
+		   target = unit_type:combat_unit_type_dreadnought  
+		   value >= 0.2  
+	   }
 		# for these JE's we would want this to be true for X months, but excluding that for the sake of readability
-		any_scope_character = {
-			has_role = admiral
-			OR = {
-				has_commander_order = patrol_coast
-				has_commander_order = raid_convoys
-				has_commander_order = naval_invasion
-			}
-			commander_pm_usage = {
-				target = ROOT
-				production_method = pm_nuclear_carriers
-				value > 0.5
-			}
-		}
+	   any_military_formation = {
+		   filter = {
+			   is_fleet = yes
+		   }
+		   any_scope_character = {
+			   has_role = admiral
+			  commander_military_formation = {
+				  formation_navy_unit_type_fraction = {  
+					  target = unit_type:combat_unit_type_dreadnought  
+					  value >= 0.2  
+				  }
+			  }
+		   }
+		   percent >= 0.25
+	   }
 	}
 
 	on_complete = {
@@ -45,6 +47,8 @@ je_dreadnoughts = {
 
 je_destroyers = {
 	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+  group = je_group_technology
 
 	is_shown_when_inactive = {
 		is_player = yes
@@ -60,25 +64,26 @@ je_destroyers = {
 
 	complete = {
 		is_at_war = yes
-		country_pm_usage = {
-			target = ROOT
-			production_method = pm_cold_war_cruisers
-			value > 0.25
-		}
+		country_navy_unit_type_fraction = {  
+		   target = unit_type:combat_unit_type_destroyer
+		   value >= 0.2  
+	   }
 		# for these JE's we would want this to be true for X months, but excluding that for the sake of readability
-		any_scope_character = {
-			has_role = admiral
-			OR = {
-				has_commander_order = patrol_coast
-				has_commander_order = raid_convoys
-				has_commander_order = naval_invasion
-			}
-			commander_pm_usage = {
-				target = ROOT
-				production_method = pm_cold_war_cruisers
-				value > 0.5
-			}
-		}
+		any_military_formation = {
+		   filter = {
+			   is_fleet = yes
+		   }
+		   any_scope_character = {
+			   has_role = admiral
+			  commander_military_formation = {
+				  formation_navy_unit_type_fraction = {  
+					  target = unit_type:combat_unit_type_destroyer  
+					  value >= 0.2  
+				  }
+			  }
+		   }
+		   percent >= 0.25
+	   }
 	}
 
 	on_complete = {
@@ -88,9 +93,10 @@ je_destroyers = {
 	timeout = 3650
 }
 
-
 je_battleships = {
 	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+  group = je_group_technology
 
 	is_shown_when_inactive = {
 		is_player = yes
@@ -105,25 +111,26 @@ je_battleships = {
 
 	complete = {
 		is_at_war = yes
-		country_pm_usage = {
-			target = ROOT
-			production_method = pm_modern_carriers
-			value > 0.25
-		}
+		country_navy_unit_type_fraction = {  
+		   target = unit_type:combat_unit_type_battleship
+		   value >= 0.2  
+	   }
 		# for these JE's we would want this to be true for X months, but excluding that for the sake of readability
-		any_scope_character = {
-			has_role = admiral
-			OR = {
-				has_commander_order = patrol_coast
-				has_commander_order = raid_convoys
-				has_commander_order = naval_invasion
-			}
-			commander_pm_usage = {
-				target = ROOT
-				production_method = pm_modern_carriers
-				value > 0.5
-			}
-		}
+		any_military_formation = {
+		   filter = {
+			   is_fleet = yes
+		   }
+		   any_scope_character = {
+			   has_role = admiral
+			  commander_military_formation = {
+				  formation_navy_unit_type_fraction = {  
+					  target = unit_type:combat_unit_type_battleship  
+					  value >= 0.2  
+				  }
+			  }
+		   }
+		   percent >= 0.25
+	   }
 	}
 
 	on_complete = {

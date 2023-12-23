@@ -63,6 +63,7 @@ fi_dividend_collector.1 = {
 		every_scope_building = {
 			limit = {
 				is_building_type = building_investment_industry
+				level > 0
 			}
 			state = {
 				if = {
@@ -107,20 +108,12 @@ fi_dividend_collector.1 = {
 					name = dividend_collect_sum
 					divide = fi_occupancy_min
 				}
-				change_variable = {
-					name = dividend_collect_sum
-					divide = 200
-				}
-				change_variable = {
-					name = dividend_collect_sum
-					subtract = 1
-				}
 			}
 			
 			remove_modifier = investment_dividend_paid
 			add_modifier = {
 				name = investment_dividend_paid
-				multiplier = root.var:dividend_collect_sum
+				multiplier = root.fi_dividend_collect_sum_max
 			}
 		}
 		
@@ -299,8 +292,10 @@ fi_dividend_collector.7 = {
 			remove_building = building_investment_industry_high
 			remove_building = building_investment_industry_very_high
 		}
-		every_id_building_executor = {
-			FUNCTION = clean_up_investment
+		every_state = {
+			every_id_building_executor = {
+				FUNCTION = clean_up_investment
+			}
 		}
 	}
 }

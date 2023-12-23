@@ -3,7 +3,7 @@
 je_reforming_the_oas = {
 
     icon = "gfx/interface/icons/event_icons/tutorial_icon.dds"
-   
+   group = je_group_historical_content
     is_shown_when_inactive = {
 		has_technology_researched = democracy
         exists = c:FRA
@@ -34,7 +34,7 @@ je_reforming_the_oas = {
 je_stabilizing_the_economy = {
 
     icon = "gfx/interface/icons/event_icons/tutorial_icon.dds"
-   
+    group = je_group_internal_affairs
     is_shown_when_inactive = {
 		has_modifier = economic_meltdown
     }
@@ -67,7 +67,7 @@ je_stabilizing_the_economy = {
 je_vichy_treaty = {
 
     icon = "gfx/interface/icons/event_icons/tutorial_icon.dds"
-   
+    group = je_group_historical_content
     is_shown_when_inactive = {
         has_technology_researched = democracy
 		exists = c:FRA
@@ -78,11 +78,6 @@ je_vichy_treaty = {
     complete = {
         army_size > 150
         has_technology_researched = breech_loading_artillery
-        country_pm_usage = {
-            target = ROOT
-            production_method = pm_gen2_early_tank
-            value > 0.75
-        }
     }
 
     on_complete = {
@@ -103,7 +98,7 @@ je_vichy_treaty = {
 je_dealing_with_noires = {
 
     icon = "gfx/interface/icons/event_icons/tutorial_icon.dds"
-   
+    group = je_group_historical_content
     is_shown_when_inactive = {
         has_technology_researched = democracy
         exists = c:FRA
@@ -135,7 +130,7 @@ je_dealing_with_noires = {
 je_reforming_the_army = {
 
     icon = "gfx/interface/icons/event_icons/tutorial_icon.dds"
-   
+    group = je_group_crises
     is_shown_when_inactive = {
         has_modifier = armed_forces_in_disarray 
         exists = c:FRA
@@ -144,17 +139,6 @@ je_reforming_the_army = {
 
     complete = {
         has_technology_researched = repeaters
-        country_pm_usage = {
-            target = ROOT
-            production_method = pm_gen2_mid_tank
-            value > 0.75
-        }
-        country_pm_usage = {
-            target = ROOT
-            production_method = pm_assault_rifle_infantry
-            value > 0.75
-        }
-
         army_size > 200
     }
 
@@ -176,7 +160,7 @@ je_reforming_the_army = {
 je_professional_army_corps = {
 
     icon = "gfx/interface/icons/event_icons/tutorial_icon.dds"
-   
+    group = je_group_crises
     is_shown_when_inactive = {
         has_modifier = armed_forces_reorganization
         exists = c:FRA
@@ -184,18 +168,6 @@ je_professional_army_corps = {
     }
 
     complete = {
-
-        country_pm_usage = {
-            target = ROOT
-            production_method = pm_gen2_late_tank
-            value > 0.75
-        }
-        country_pm_usage = {
-            target = ROOT
-            production_method = pm_integrated_fireteam_infantry
-            value > 0.75
-        }
-
         army_size > 250
     }
 
@@ -217,7 +189,7 @@ je_professional_army_corps = {
 je_spur_economic_growth = {
 
     icon = "gfx/interface/icons/event_icons/tutorial_icon.dds"
-   
+    group = je_group_internal_affairs
     is_shown_when_inactive = {
         has_modifier = economic_stagnation
     }
@@ -248,7 +220,7 @@ je_spur_economic_growth = {
 je_dependence_on_slavery = {
 
     icon = "gfx/interface/icons/event_icons/tutorial_icon.dds"
-   
+    group = je_group_internal_affairs
     is_shown_when_inactive = {
         exists = c:GER
 		ROOT = c:GER
@@ -275,7 +247,7 @@ je_dependence_on_slavery = {
 
 je_corruption = {
     icon = "gfx/interface/icons/event_icons/tutorial_icon.dds"
-   
+    group = je_group_crises
     is_shown_when_inactive = {
         has_modifier = unchecked_corruption
     }
@@ -305,7 +277,7 @@ je_corruption = {
 
 je_revive_the_union = {
     icon = "gfx/interface/icons/event_icons/tutorial_icon.dds"
-   
+    group = je_group_crises
     is_shown_when_inactive = {
         has_modifier = ineffective_union
     }
@@ -333,7 +305,7 @@ je_revive_the_union = {
 
 je_end_oppression = {
     icon = "gfx/interface/icons/event_icons/tutorial_icon.dds"
-    
+    group = je_group_historical_content
     is_shown_when_inactive = {
         has_modifier = brutal_repression
     }
@@ -355,7 +327,7 @@ je_end_oppression = {
 
 je_ease_tentions = {
     icon = "gfx/interface/icons/event_icons/tutorial_icon.dds"
-    
+    group = je_group_historical_content
     is_shown_when_inactive = {
         has_modifier = racial_tentions
     }
@@ -377,7 +349,7 @@ je_ease_tentions = {
 
 je_salafi_removed = {
     icon = "gfx/interface/icons/event_icons/tutorial_icon.dds"
-    
+    group = je_group_historical_content
     is_shown_when_inactive = {
         has_modifier = salafi_ascendancy
     }
@@ -408,7 +380,7 @@ je_salafi_removed = {
 
 je_mosaddeghs_forgotten = {
     icon = "gfx/interface/icons/event_icons/tutorial_icon.dds"
-    
+    group = je_group_historical_content
     is_shown_when_inactive = {
         has_modifier = mosaddeghs_legacy
     }
@@ -438,7 +410,7 @@ je_mosaddeghs_forgotten = {
 
 je_mended_union = {
     icon = "gfx/interface/icons/event_icons/tutorial_icon.dds"
-    
+    group = je_group_crises
     is_shown_when_inactive = {
         has_modifier = shattered_union
     }
@@ -461,23 +433,25 @@ je_mended_union = {
 
 je_lastbastion = {
 
-    icon = "gfx/interface/icons/event_icons/tutorial_icon.dds"
-    
-    complete = {
+	icon = "gfx/interface/icons/new_event_icons/event_usa.dds"
+    group = je_group_historical_content
+	complete = {
         OR = { 
-            has_law = law_type:law_technocracy
             has_law = law_type:law_autocracy
-            has_law = law_type:law_single_party_state
-            has_law = law_type:law_oligarchy
+			has_law = law_type:law_oligarchy
+			has_law = law_type:law_single_party_state
+			has_law = law_type:law_technocracy
         }
     }
-
-    on_complete = {
-        remove_modifier = last_bastion_democracy
-    }
-
-    weight = 100
-    
-    should_be_pinned_by_default = no
-    
+	
+	on_complete = {
+		trigger_event = { id = tno_usa_events.8 days = 0 popup = yes }
+		remove_modifier = last_bastion_democracy
+	}
+		
+	weight = 100
+	
+	
+	should_be_pinned_by_default = yes
+	
 }

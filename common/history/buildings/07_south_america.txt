@@ -41,7 +41,7 @@
 				building="building_barracks"
 				level=5
 				reserves=1
-				activate_production_methods={ "pm_wound_dressing" "pm_battle_rifle_infantry" "pm_no_aircraft" "pm_no_specialists" "pm_no_tanks" }
+				activate_production_methods={ "pm_general_training" }
 			}
 		}
 	}
@@ -56,6 +56,38 @@
 			create_building={
 				building="building_port"
 				level=3
+				reserves=1
+				activate_production_methods={ "pm_anchorage" }
+			}
+		}
+	}
+	s:STATE_GUIANA_CAYENNE={
+		region_state:GBA={
+			create_building={
+				building="building_sugar_plantation"
+				level=1
+				reserves=1
+				activate_production_methods={ "default_building_sugar_plantation" "pm_road_carts"  }
+			}
+			create_building={
+				building="building_port"
+				level=1
+				reserves=1
+				activate_production_methods={ "pm_anchorage" }
+			}
+		}
+	}
+	s:STATE_SURINAME={
+		region_state:GDY={
+			create_building={
+				building="building_sugar_plantation"
+				level=1
+				reserves=1
+				activate_production_methods={ "default_building_sugar_plantation" "pm_road_carts"  }
+			}
+			create_building={
+				building="building_port"
+				level=2
 				reserves=1
 				activate_production_methods={ "pm_anchorage" }
 			}
@@ -85,7 +117,7 @@
 				building="building_barracks"
 				level=3
 				reserves=1
-				activate_production_methods={ "pm_wound_dressing" "pm_battle_rifle_infantry" "pm_no_aircraft" "pm_no_specialists" "pm_no_tanks" }
+				activate_production_methods={ "pm_general_training" }
 			}
 		}
 	}
@@ -131,7 +163,7 @@
 				building="building_barracks"
 				level=3
 				reserves=1
-				activate_production_methods={ "pm_battle_rifle_infantry" "pm_no_tanks" "pm_no_aircraft" "pm_no_specialists" "pm_wound_dressing" }
+				activate_production_methods={ "pm_general_training" }
 			}
 			create_building={
 				building="building_port"
@@ -187,7 +219,7 @@
 				building="building_barracks"
 				level=3
 				reserves=1
-				activate_production_methods={ "pm_wound_dressing" "pm_battle_rifle_infantry" "pm_no_aircraft" "pm_no_specialists" "pm_no_tanks" }
+				activate_production_methods={ "pm_general_training" }
 			}
 			create_building={
 				building="building_port"
@@ -227,7 +259,7 @@
 				building="building_barracks"
 				level=1
 				reserves=1
-				activate_production_methods={ "pm_wound_dressing" "pm_battle_rifle_infantry" "pm_no_aircraft" "pm_no_specialists" "pm_no_tanks" }
+				activate_production_methods={ "pm_general_training" }
 			}			
 		}
 	}
@@ -267,7 +299,7 @@
 				building="building_barracks"
 				level=3
 				reserves=1
-				activate_production_methods={ "pm_battle_rifle_infantry" "pm_no_tanks" "pm_no_aircraft" "pm_no_specialists" "pm_wound_dressing" }
+				activate_production_methods={ "pm_general_training" }
 			}
 			create_building={
 				building="building_furniture_manufacturies"
@@ -308,22 +340,12 @@
 				building="building_barracks"
 				level=2
 				reserves=1
-				activate_production_methods={ "pm_battle_rifle_infantry" "pm_no_tanks" "pm_no_aircraft" "pm_no_specialists" "pm_wound_dressing" }
+				activate_production_methods={ "pm_general_training" }
 			}
 		}
 	}
 	s:STATE_PASTAZA={
-		region_state:BOL={
-		}
-	}
-	s:STATE_TARAPACA={
-		region_state:BOL={
-			create_building={
-				building="building_livestock_ranch"
-				level=1
-				reserves=1
-				activate_production_methods={ "pm_simple_ranch" "pm_open_air_stockyards" "pm_standard_fences" "pm_unrefrigerated"  }
-			}
+		region_state:PEU={
 		}
 	}
 	s:STATE_ANTOFAGASTA={
@@ -333,6 +355,12 @@
 				level=1
 				reserves=1
 				activate_production_methods={ "pm_simple_fishing" "pm_unrefrigerated" "pm_merchant_guilds_building_fishing_wharf" }
+			}
+			create_building={
+				building="building_livestock_ranch"
+				level=1
+				reserves=1
+				activate_production_methods={ "pm_simple_ranch" "pm_open_air_stockyards" "pm_standard_fences" "pm_unrefrigerated"  }
 			}
 			create_building={
 				building="building_port"
@@ -366,7 +394,7 @@
 				building="building_barracks"
 				level=2
 				reserves=1
-				activate_production_methods={ "pm_wound_dressing" "pm_battle_rifle_infantry" "pm_no_aircraft" "pm_no_specialists" "pm_no_tanks" }
+				activate_production_methods={ "pm_general_training" }
 			}
 		}
 	}
@@ -443,7 +471,7 @@
 				building="building_barracks"
 				level=5
 				reserves=1
-				activate_production_methods={ "pm_battle_rifle_infantry" "pm_no_tanks" "pm_no_aircraft" "pm_no_specialists" "pm_wound_dressing" }
+				activate_production_methods={ "pm_general_training" }
 			}
 		}
 	}
@@ -477,12 +505,12 @@
 				building="building_barracks"
 				level=1
 				reserves=1
-				activate_production_methods={ "pm_battle_rifle_infantry" "pm_no_tanks" "pm_no_aircraft" "pm_no_specialists" "pm_wound_dressing" }
+				activate_production_methods={ "pm_general_training" }
 			}			
 		}
 	}
 	s:STATE_CAJAMARCA={
-		region_state:BOL={
+		region_state:PEU={
 			create_building={
 				building="building_government_administration"
 				level=1
@@ -511,12 +539,12 @@
 				building="building_barracks"
 				level=2
 				reserves=1
-				activate_production_methods={ "pm_wound_dressing" "pm_battle_rifle_infantry" "pm_no_aircraft" "pm_no_specialists" "pm_no_tanks" }
+				activate_production_methods={ "pm_general_training" }
 			}
 		}
 	}
 	s:STATE_LIMA={
-		region_state:BOL={
+		region_state:PEU={
 			create_building={
 				building="building_government_administration"
 				level=2
@@ -545,7 +573,7 @@
 				building="building_maize_farm"
 				level=3
 				reserves=1
-				activate_production_methods={ "pm_simple_farming"  "pm_tools_disabled" "pm_vineyards_building_maize_farm" }
+				activate_production_methods={ "pm_simple_farming"  "pm_tools_disabled" }
 			}
 			create_building={
 				building="building_fishing_wharf"
@@ -563,7 +591,7 @@
 				building="building_barracks"
 				level=3
 				reserves=1
-				activate_production_methods={ "pm_battle_rifle_infantry" "pm_no_tanks" "pm_no_aircraft" "pm_no_specialists" "pm_wound_dressing" }
+				activate_production_methods={ "pm_general_training" }
 			}
 			create_building={
 				building="building_port"
@@ -574,7 +602,7 @@
 		}
 	}
 	s:STATE_ICA={
-		region_state:BOL={
+		region_state:PEU={
 			create_building={
 				building="building_government_administration"
 				level=1
@@ -615,7 +643,7 @@
 				building="building_barracks"
 				level=2
 				reserves=1
-				activate_production_methods={ "pm_battle_rifle_infantry" "pm_no_tanks" "pm_no_aircraft" "pm_no_specialists" "pm_wound_dressing" }
+				activate_production_methods={ "pm_general_training" }
 			}
 			create_building={
 				building= "building_machu_picchu"
@@ -623,7 +651,7 @@
 		}
 	}
 	s:STATE_AREQUIPA={
-		region_state:BOL={
+		region_state:PEU={
 			create_building={
 				building="building_livestock_ranch"
 				level=1
@@ -646,7 +674,7 @@
 				building="building_barracks"
 				level=1
 				reserves=1
-				activate_production_methods={ "pm_wound_dressing" "pm_battle_rifle_infantry" "pm_no_aircraft" "pm_no_specialists" "pm_no_tanks" }
+				activate_production_methods={ "pm_general_training" }
 			}			
 		}
 	}
@@ -662,7 +690,7 @@
 				building="building_barracks"
 				level=1
 				reserves=1
-				activate_production_methods={ "pm_wound_dressing" "pm_battle_rifle_infantry" "pm_no_aircraft" "pm_no_specialists" "pm_no_tanks" }
+				activate_production_methods={ "pm_general_training" }
 			}
 			create_building={
 				building="building_port"
@@ -701,7 +729,7 @@
 				level=1
 				reserves=1
 				subsidized = yes
-				activate_production_methods={ "pm_muskets" "pm_merchant_guilds_building_arms_industry" "pm_cannons" }
+				activate_production_methods={ "pm_muskets" "pm_merchant_guilds_building_arms_industry" }
 			}
 			create_building={
 				building="building_tooling_workshops"
@@ -756,7 +784,7 @@
 				building="building_barracks"
 				level=7
 				reserves=1
-				activate_production_methods={ "pm_wound_dressing" "pm_battle_rifle_infantry" "pm_no_aircraft" "pm_no_specialists" "pm_no_tanks" }
+				activate_production_methods={ "pm_general_training" }
 			}
 		}
 	}
@@ -797,7 +825,7 @@
 				building="building_naval_base"
 				level=3
 				reserves=1
-				activate_production_methods={ "pm_tno_carriers" "pm_tno_battleship" "pm_tno_submarine" "pm_no_naval_theory" }
+				activate_production_methods={ "pm_power_of_the_purse" }
 			}
 			create_building={
 				building="building_port"
@@ -809,7 +837,7 @@
 				building="building_barracks"
 				level=3
 				reserves=1
-				activate_production_methods={ "pm_wound_dressing" "pm_battle_rifle_infantry" "pm_no_aircraft" "pm_no_specialists" "pm_no_tanks" }
+				activate_production_methods={ "pm_general_training" }
 			}
 		}
 	}
@@ -845,7 +873,7 @@
 				building="building_wheat_farm"
 				level=3
 				reserves=1
-				activate_production_methods={ "pm_simple_farming"  "pm_tools_disabled" "pm_vineyards" }
+				activate_production_methods={ "pm_simple_farming"  "pm_tools_disabled"  }
 			}			
 			create_building={
 				building="building_textile_mills"
@@ -863,7 +891,7 @@
 				building="building_barracks"
 				level=2
 				reserves=1
-				activate_production_methods={ "pm_battle_rifle_infantry" "pm_no_tanks" "pm_no_aircraft" "pm_no_specialists" "pm_wound_dressing" }
+				activate_production_methods={ "pm_general_training" }
 			}
 		}
 	}
@@ -967,7 +995,7 @@
 				building="building_wheat_farm"
 				level=1
 				reserves=1
-				activate_production_methods={ "pm_simple_farming"  "pm_tools_disabled" "pm_vineyards" }
+				activate_production_methods={ "pm_simple_farming"  "pm_tools_disabled"  }
 			}
 			create_building={
 				building="building_livestock_ranch"
@@ -985,13 +1013,13 @@
 				building="building_naval_base"
 				level=3
 				reserves=1
-				activate_production_methods={ "pm_tno_carriers" "pm_tno_battleship" "pm_tno_submarine" "pm_no_naval_theory" }
+				activate_production_methods={ "pm_power_of_the_purse" }
 			}			
 			create_building={
 				building="building_barracks"
 				level=2
 				reserves=1
-				activate_production_methods={ "pm_wound_dressing" "pm_battle_rifle_infantry" "pm_no_aircraft" "pm_no_specialists" "pm_no_tanks" }
+				activate_production_methods={ "pm_general_training" }
 			}
 		}
 	}
@@ -1019,7 +1047,7 @@
 				building="building_barracks"
 				level=3
 				reserves=1
-				activate_production_methods={ "pm_battle_rifle_infantry" "pm_no_tanks" "pm_no_aircraft" "pm_no_specialists" "pm_wound_dressing" }
+				activate_production_methods={ "pm_general_training" }
 			}
 		}
 	}
@@ -1035,10 +1063,6 @@
 				reserves=1
 				activate_production_methods={ "pm_anchorage" }
 			}
-		}
-	}
-	s:STATE_ACRE={
-		region_state:BRZ={
 		}
 	}
 	s:STATE_AMAZONAS={
@@ -1099,7 +1123,7 @@
 				building="building_barracks"
 				level=5
 				reserves=1
-				activate_production_methods={ "pm_wound_dressing" "pm_battle_rifle_infantry" "pm_no_aircraft" "pm_no_specialists" "pm_no_tanks" }
+				activate_production_methods={ "pm_general_training" }
 			}
 			create_building={
 				building="building_port"
@@ -1113,13 +1137,13 @@
 		region_state:BRZ={
 			create_building={
 				building="building_dye_plantation"
-				level=6
+				level=12
 				reserves=1
 				activate_production_methods={ "default_building_dye_plantation" "pm_road_carts"  }
 			}
 			create_building={
 				building="building_logging_camp"
-				level=1
+				level=3
 				reserves=1
 				activate_production_methods={ "pm_saw_mills" "pm_no_hardwood" "pm_no_equipment" "pm_road_carts" "pm_privately_owned_building_logging_camp" }
 			}
@@ -1128,28 +1152,6 @@
 				level=1
 				reserves=1
 				activate_production_methods={ "default_building_banana_plantation" "pm_road_carts"  }
-			}
-		}
-	}
-	s:STATE_SANTA_CATARINA={
-		region_state:BRZ={
-			create_building={
-				building="building_dye_plantation"
-				level=6
-				reserves=1
-				activate_production_methods={ "default_building_dye_plantation" "pm_road_carts"  }
-			}
-			create_building={
-				building="building_logging_camp"
-				level=1
-				reserves=1
-				activate_production_methods={ "pm_saw_mills" "pm_no_hardwood" "pm_no_equipment" "pm_road_carts" "pm_privately_owned_building_logging_camp" }
-			}
-			create_building={
-				building="building_livestock_ranch"
-				level=1
-				reserves=1
-				activate_production_methods={ "pm_simple_ranch" "pm_open_air_stockyards" "pm_standard_fences" "pm_unrefrigerated"  }
 			}
 		}
 	}
@@ -1253,7 +1255,7 @@
 				building="building_barracks"
 				level=3
 				reserves=1
-				activate_production_methods={ "pm_wound_dressing" "pm_battle_rifle_infantry" "pm_no_aircraft" "pm_no_specialists" "pm_no_tanks" }
+				activate_production_methods={ "pm_general_training" }
 			}
 			create_building={
 				building="building_sugar_plantation"
@@ -1269,8 +1271,7 @@
 				building="building_chemical_plants"
 				level=1
 				reserves=1
-				activate_production_methods={ "pm_artificial_fertilizers" "pm_privately_owned_industry" "pm_no_explosives_production" }
-			}
+		activate_production_methods={ "pm_artificial_fertilizers" "pm_privately_owned_industry" }			}
 			create_building={
 				building="building_steel_mills"
 				level=1
@@ -1347,7 +1348,7 @@
 				building="building_barracks"
 				level=2
 				reserves=1
-				activate_production_methods={ "pm_battle_rifle_infantry" "pm_no_tanks" "pm_no_aircraft" "pm_no_specialists" "pm_wound_dressing" }
+				activate_production_methods={ "pm_general_training" }
 			}
 			create_building={
 				building="building_port"
@@ -1377,13 +1378,13 @@
 				building="building_shipyards"
 				level=1
 				reserves=1
-				activate_production_methods={ "pm_basic_shipbuilding" "pm_merchant_guilds_building_shipyards" "pm_military_shipbuilding_steam_2" }
+				activate_production_methods={ "pm_basic_shipbuilding" "pm_merchant_guilds_building_shipyards" }
 			}				
 			create_building={
 				building="building_barracks"
 				level=3
 				reserves=1
-				activate_production_methods={ "pm_battle_rifle_infantry" "pm_no_tanks" "pm_no_aircraft" "pm_no_specialists" "pm_wound_dressing" }
+				activate_production_methods={ "pm_general_training" }
 			}
 			create_building={
 				building="building_coffee_plantation"
@@ -1419,7 +1420,7 @@
 				building="building_naval_base"
 				level=10
 				reserves=1
-				activate_production_methods={ "pm_tno_carriers" "pm_tno_battleship" "pm_tno_submarine" "pm_no_naval_theory" }
+				activate_production_methods={ "pm_power_of_the_purse" }
 			}
 			create_building={
 				building="building_port"
@@ -1525,7 +1526,7 @@
 				building="building_barracks"
 				level=1
 				reserves=1
-				activate_production_methods={ "pm_battle_rifle_infantry" "pm_no_tanks" "pm_no_aircraft" "pm_no_specialists" "pm_wound_dressing" }
+				activate_production_methods={ "pm_general_training" }
 			}
 		}
 	}
@@ -1535,7 +1536,7 @@
 				building="building_shipyards"
 				level=2
 				reserves=1
-				activate_production_methods={ "pm_basic_shipbuilding" "pm_merchant_guilds_building_shipyards" "pm_military_shipbuilding_steam_2" }
+				activate_production_methods={ "pm_basic_shipbuilding" "pm_merchant_guilds_building_shipyards" }
 			}
 			create_building={
 				building="building_rubber_plantation"
@@ -1577,7 +1578,7 @@
 				building="building_barracks"
 				level=2
 				reserves=1
-				activate_production_methods={ "pm_battle_rifle_infantry" "pm_no_tanks" "pm_no_aircraft" "pm_no_specialists" "pm_wound_dressing" }
+				activate_production_methods={ "pm_general_training" }
 			}
 			create_building={
 				building="building_port"
@@ -1606,6 +1607,12 @@
 	s:STATE_GOIAS={
 		region_state:BRZ={
 			create_building={
+				building="building_explosives_factory"
+				level=1
+				reserves=1
+				activate_production_methods={ "pm_vacuum_evaporation" }
+			}
+			create_building={
 				building="building_sugar_plantation"
 				level=7
 				reserves=1
@@ -1615,7 +1622,7 @@
 				building="building_arms_industry"
 				level=1
 				reserves=1
-				activate_production_methods={ "pm_muskets" "pm_merchant_guilds_building_arms_industry" "pm_cannons" }
+				activate_production_methods={ "pm_muskets" "pm_merchant_guilds_building_arms_industry" }
 			}
 			create_building={
 				building="building_munition_plants"
@@ -1649,7 +1656,7 @@
 				building="building_barracks"
 				level=5
 				reserves=1
-				activate_production_methods={ "pm_wound_dressing" "pm_battle_rifle_infantry" "pm_no_aircraft" "pm_no_specialists" "pm_no_tanks" }
+				activate_production_methods={ "pm_general_training" }
 			}
 			create_building={
 				building="building_port"

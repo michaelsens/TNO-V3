@@ -275,13 +275,6 @@
             set_variable = ger_flavor_var
             trigger_event = { id = tno_flavor_events.3 days = 0 popup = yes }
         } 
-        
-        if = {
-            limit = {
-             has_modifier= volunteers_leaving
-           }
-            trigger_event = { id = tno_war_help.2 popup = yes }
-        }
     
        #MADAGASCAR 
        if = {
@@ -427,21 +420,69 @@
     }
 }  
 
-on_war_end = {
+on_wargoal_enforced = {
     effect = {
-		scope:actor = {
-			add_modifier = {
-                name = volunteers_leaving
-                is_decaying = yes
-                   months = 2
+        if = {
+            limit = {
+                owner = {
+                    c:GMB ?= this
+                    NOT = {
+                        exists = c:GAS
+                        exists = c:GHG
+                        exists = c:GRH
+                    }
                 }
-            }
-		scope:target = {
-			add_modifier = {
-                name = volunteers_leaving
-                is_decaying = yes
-                   months = 2
+             }
+           owner = {
+            trigger_event = { id = tno_germany_events.19 days = 0 popup = yes }
+           }
+        }
+        if = {
+            limit = {
+                owner = {
+                    c:GAS ?= this
+                    NOT = {
+                        exists = c:GMB
+                        exists = c:GHG
+                        exists = c:GRH
+                    }
                 }
-		}
-	}
+             }
+             owner = {
+                trigger_event = { id = tno_germany_events.19 days = 0 popup = yes }
+               }
+        }
+        if = {
+            limit = {
+                owner = {
+                    c:GHG ?= this
+                    NOT = {
+                        exists = c:GAS
+                        exists = c:GMB
+                        exists = c:GRH
+                    }
+                }
+             }
+             owner = {
+                trigger_event = { id = tno_germany_events.19 days = 0 popup = yes }
+               }
+        }
+        if = {
+            limit = {
+                owner = {
+                    c:GRH ?= this
+                    NOT = {
+                        exists = c:GAS
+                        exists = c:GHG
+                        exists = c:GMB
+                    }
+                }
+             }
+             owner = {
+                trigger_event = { id = tno_germany_events.19 days = 0 popup = yes }
+               }
+        }
+    }
+
+
 }
