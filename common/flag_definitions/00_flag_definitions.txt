@@ -3292,6 +3292,18 @@ WST = { # west rev front
 		}
 	}
 }
+UKC = { # com ukraine
+	flag_definition = { # starting flagg
+		coa = UKC_COM
+		priority = 2000
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_law = law_type:law_council_republic
+			}
+		}
+	}
+}
 OEN = { # orenburg
 	flag_definition = { # starting flagg
 		coa = OEN_start
@@ -4992,6 +5004,59 @@ KLM = { # Kalmykia
 		priority = 1
 	}
 }
+
+KON = {
+flag_definition = {
+	coa = KON_OFN
+	subject_canton = KON_OFN
+	allow_overlord_canton = no
+	coa_with_overlord_canton = KON_OFN			
+	priority = 99
+	trigger = {
+		OR = {
+			scope:actor = {
+				is_subject_of = c:USA
+			}
+		}
+	}
+}	
+}
+
+KSA = {
+	flag_definition = {
+		coa = KSA_OFN
+		subject_canton = KSA_OFN
+		allow_overlord_canton = no
+		coa_with_overlord_canton = KSA_OFN			
+		priority = 99
+		trigger = {
+			OR = {
+				scope:actor = {
+					is_subject_of = c:USA
+				}
+			}
+		}
+	}	
+}
+
+KZA = {
+	flag_definition = {
+		coa = KZA_OFN
+		subject_canton = KZA_OFN
+		allow_overlord_canton = no
+		coa_with_overlord_canton = KZA_OFN			
+		priority = 99
+		trigger = {
+			OR = {
+				scope:actor = {
+					is_subject_of = c:USA
+				}
+			}
+		}
+	}	
+}
+
+
 
 KOK = { # Kokand
 	flag_definition = {
