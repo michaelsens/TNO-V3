@@ -817,6 +817,42 @@ tno_germany_events.17 = { # German Civil War
 
     immediate = {
 
+        remove_diplomatic_pact = {
+            country = c:RKU
+            type = reichskommissariat
+        }
+        remove_diplomatic_pact = {
+            country = c:RKO
+            type = reichskommissariat
+        }
+
+
+        c:RKU = { #22-24
+			trigger_event = { id = tno_germany_events.21 days = 0 popup = yes }
+		} 
+        c:RKO = { #22-24
+			trigger_event = { id = tno_RK_events.1 days = 0 popup = yes }
+		} 
+
+        c:UKP = { #22-24
+			trigger_event = { id = tno_germany_events.22 days = 0 popup = yes }
+		} 
+        c:UKP = { #22-24
+			trigger_event = { id = tno_germany_events.23 days = 0 popup = yes }
+		} 
+        c:UKP = { #24-
+			trigger_event = { id = tno_germany_events.24 days = 0 popup = yes }
+		} 
+        c:UKM = { #24-
+			trigger_event = { id = tno_germany_events.27 days = 0 popup = yes }
+		}
+        c:UKM = { #22-24
+			trigger_event = { id = tno_germany_events.25 days = 0 popup = yes }
+		} 
+        c:UKC = { #IGNORE COMMITS THEY DUMB AND OUTDATED LMAO
+			trigger_event = { id = tno_germany_events.26 days = 0 popup = yes }
+		}
+
         c:GER = {
             set_immune_to_revolutions = yes
             every_subject_or_below = {
@@ -1244,10 +1280,216 @@ tno_germany_events.21 = {   #ukranian civil war
         tag = UKP
         origin = c:SAM
         state = s:STATE_VOLHYNIA.region_state:RKU
+        state = s:STATE_EAST_GALICIA.region_state:GOV
    
     } 
-    }    
+    create_country = { #UPO ukraine
+        tag = UKM
+        origin = c:USA
+        state = s:STATE_CHERSON.region_state:RKU
+   
+    } 
+    
+    
+    
 
 }
+}
 
+tno_germany_events.22 = { 
+	type = country_event
+	hidden = yes
+
+
+
+	trigger = {
+		this ?= c:UKP
+	}	
+
+    immediate = {
+		create_diplomatic_play = {
+			name = ukrain_civil.1
+			target_country = c:RKU
+				type = dp_annex_war
+				war = yes
+				add_war_goal = {
+					holder = c:RKU
+					type = annex_country
+					target_state = s:STATE_VOLHYNIA.region_state:UKP
+				}
+			
+		}
+    }
+	
+	duration = 1
+
+	
    
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+}
+
+tno_germany_events.23 = { 
+	type = country_event
+	hidden = yes
+
+
+
+	trigger = {
+		this ?= c:UKP
+	}	
+
+    immediate = {
+		create_diplomatic_play = {
+			name = ukrain_civil.2
+			target_country = c:UKM
+				type = dp_annex_war
+				war = yes
+				add_war_goal = {
+					holder = c:UKM
+					type = annex_country
+					target_state = s:STATE_VOLHYNIA.region_state:UKP
+				}
+			
+		}
+    }
+	
+	duration = 1
+
+	
+   
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+}
+
+tno_germany_events.24 = { 
+	type = country_event
+	hidden = yes
+
+
+
+	trigger = {
+		this ?= c:UKP
+	}	
+
+    immediate = {
+		create_diplomatic_play = {
+			name = ukrain_civil.3
+			target_country = c:UKC
+				type = dp_annex_war
+				war = yes
+				add_war_goal = {
+					holder = c:UKC
+					type = annex_country
+					target_state = s:STATE_VOLHYNIA.region_state:UKP
+				}
+			
+		}
+    }
+	
+	duration = 1
+
+	
+   
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+}
+
+tno_germany_events.27 = { 
+	type = country_event
+	hidden = yes
+
+
+
+	trigger = {
+		this ?= c:UKM
+	}	
+
+    immediate = {
+		create_diplomatic_play = {
+			name = ukrain_civil.9
+			target_country = c:RKU
+				type = dp_annex_war
+				war = yes
+				add_war_goal = {
+					holder = c:RKU
+					type = annex_country
+					target_state = s:STATE_CHERSON.region_state:UKM
+				}
+			
+		}
+    }
+	
+	duration = 1
+
+	
+   
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+}
+
+tno_germany_events.25 = { 
+	type = country_event
+	hidden = yes
+
+
+
+	trigger = {
+		this ?= c:UKM
+	}	
+
+    immediate = {
+		create_diplomatic_play = {
+			name = ukrain_civil.5
+			target_country = c:UKC
+				type = dp_annex_war
+				war = yes
+				add_war_goal = {
+					holder = c:UKC
+					type = annex_country
+					target_state = s:STATE_CHERSON.region_state:UKM
+				}
+			
+		}
+    }
+	
+	duration = 1
+
+	
+   
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+}
+
+tno_germany_events.26 = { 
+	type = country_event
+	hidden = yes
+
+
+
+	trigger = {
+		this ?= c:UKC
+	}	
+
+    immediate = {
+		create_diplomatic_play = {
+			name = ukrain_civil.6
+			target_country = c:RKU
+				type = dp_annex_war
+				war = yes
+				add_war_goal = {
+					holder = c:RKU
+					type = annex_country
+					target_state = s:STATE_LUHANSK.region_state:UKM
+				}
+			
+		}
+    }
+	
+	duration = 1
+
+	
+   
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+}
