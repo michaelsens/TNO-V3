@@ -4,7 +4,7 @@
 	why_tutorial = lesson_expand_building_why
 
 	icon = "gfx/interface/icons/event_icons/tutorial_icon.dds"
-	group = je_group_tutorial
+
 	immediate = {
 		scope:target.state = {
 			unset_available_for_autonomous_investment = scope:target.type
@@ -73,7 +73,6 @@ je_tutorial_establish_trade_route = {
 	should_be_pinned_by_default = yes
 
 	icon = "gfx/interface/icons/event_icons/tutorial_icon.dds"
-	group = je_group_tutorial
 	
 	status_desc = {
 		first_valid = {
@@ -150,7 +149,6 @@ je_tutorial_fix_budget_deficit = {
 	should_be_pinned_by_default = yes
 
 	icon = "gfx/interface/icons/event_icons/tutorial_icon.dds"
-	group = je_group_tutorial
 
 	immediate = {
 		set_variable = {
@@ -203,7 +201,6 @@ je_tutorial_change_production_method = {
 	should_be_pinned_by_default = yes
 
 	icon = "gfx/interface/icons/event_icons/tutorial_icon.dds"
-	group = je_group_tutorial
 	
 	immediate = {
 		scope:journal_entry = {
@@ -266,7 +263,6 @@ je_tutorial_expand_productive_building = {
 	should_be_pinned_by_default = yes
 
 	icon = "gfx/interface/icons/event_icons/tutorial_icon.dds"
-	group = je_group_tutorial
 
 	immediate = {
 		scope:target.state = {
@@ -329,7 +325,6 @@ je_tutorial_fix_unproductive_building = {
 	should_be_pinned_by_default = yes
 
 	icon = "gfx/interface/icons/event_icons/tutorial_icon.dds"
-	group = je_group_tutorial
 
 	immediate = {
 		scope:journal_entry = {
@@ -409,7 +404,6 @@ je_tutorial_grow_gdp = {
 	should_be_pinned_by_default = yes
 
 	icon = "gfx/interface/icons/event_icons/tutorial_icon.dds"
-	group = je_group_tutorial
 
 	complete = {
 		scope:journal_entry = { is_goal_complete = yes }
@@ -443,7 +437,6 @@ je_tutorial_promote_ig = {
 	should_be_pinned_by_default = yes
 
 	icon = "gfx/interface/icons/event_icons/tutorial_icon.dds"
-	group = je_group_tutorial
 
 	complete = {
 		scope:journal_entry = { is_goal_complete = yes }
@@ -498,7 +491,6 @@ je_tutorial_increase_market_access_by_decree = {
 	should_be_pinned_by_default = yes
 
 	icon = "gfx/interface/icons/event_icons/tutorial_icon.dds"
-	group = je_group_tutorial
 
 	immediate = {
 		scope:journal_entry = {
@@ -585,7 +577,6 @@ je_tutorial_improve_market_access_with_railways = {
 	should_be_pinned_by_default = yes
 
 	icon = "gfx/interface/icons/event_icons/tutorial_icon.dds"
-	group = je_group_tutorial
 
 	immediate = {
 	}
@@ -635,7 +626,6 @@ je_tutorial_increase_immigration = {
 	should_be_pinned_by_default = yes
 	
 	icon = "gfx/interface/icons/event_icons/tutorial_icon.dds"
-	group = je_group_tutorial
 
 	complete = {
 		scope:journal_entry = { is_goal_complete = yes }
@@ -669,7 +659,6 @@ je_tutorial_increase_immigration = {
 
 je_tutorial_expend_investment_pool = {
 	icon = "gfx/interface/icons/event_icons/tutorial_icon.dds"
-	group = je_group_tutorial
 	should_be_pinned_by_default = yes
 
 	complete = {
@@ -682,7 +671,6 @@ je_tutorial_expend_investment_pool = {
 
 je_tutorial_improve_supply_network = {
 	icon = "gfx/interface/icons/event_icons/tutorial_icon.dds"
-	group = je_group_tutorial
 	should_be_pinned_by_default = yes
 
 	complete = {
@@ -707,7 +695,6 @@ je_tutorial_improve_supply_network = {
 
 je_tutorial_improve_consumer_goods_access = {
 	icon = "gfx/interface/icons/event_icons/tutorial_icon.dds"
-	group = je_group_tutorial
 	should_be_pinned_by_default = yes
 		
 	complete = {
@@ -721,7 +708,6 @@ je_tutorial_improve_consumer_goods_access = {
 
 je_tutorial_make_interest_group_happy = {
 	icon = "gfx/interface/icons/event_icons/tutorial_icon.dds"
-	group = je_group_tutorial
 	should_be_pinned_by_default = yes
 		
 	complete = {
@@ -739,7 +725,6 @@ je_tutorial_enact_institution_law = {
 	should_be_pinned_by_default = yes
 
 	icon = "gfx/interface/icons/event_icons/tutorial_icon.dds"
-	group = je_group_tutorial
 		
 	complete = {
 		NOT = { has_law = scope:target }
@@ -771,7 +756,6 @@ je_tutorial_invest_into_an_institution = {
 	should_be_pinned_by_default = yes
 
 	icon = "gfx/interface/icons/event_icons/tutorial_icon.dds"
-	group = je_group_tutorial
 	
 	current_value = scope:target.investment
 	
@@ -807,7 +791,6 @@ je_tutorial_reform_government = {
 	should_be_pinned_by_default = yes
 
 	icon = "gfx/interface/icons/event_icons/tutorial_icon.dds"
-	group = je_group_tutorial
 		
 	complete = {
 		government_legitimacy >= 60 
@@ -836,7 +819,6 @@ je_tutorial_increase_relations = {
 	should_be_pinned_by_default = yes
 
 	icon = "gfx/interface/icons/event_icons/tutorial_icon.dds"
-	group = je_group_tutorial
 		
 	complete = {
 		scope:journal_entry = { is_goal_complete = yes }
@@ -916,7 +898,6 @@ je_tutorial_increase_relations = {
 
 je_tutorial_improve_rank = {
 	icon = "gfx/interface/icons/event_icons/tutorial_icon.dds"
-	group = je_group_tutorial
 	should_be_pinned_by_default = yes
 		
 	immediate = {
@@ -1027,7 +1008,6 @@ je_tutorial_improve_rank = {
 
 je_tutorial_prevent_revolution = {
 	icon = "gfx/interface/icons/event_icons/tutorial_icon.dds"
-	group = je_group_tutorial
 	should_be_pinned_by_default = yes
 		
 	complete = {
@@ -1043,7 +1023,6 @@ je_tutorial_prevent_revolution = {
 
 je_tutorial_earn_obligation = {
 	icon = "gfx/interface/icons/event_icons/tutorial_icon.dds"
-	group = je_group_tutorial
 	should_be_pinned_by_default = yes
 
 	complete = {
@@ -1069,7 +1048,6 @@ je_tutorial_expand_military = {
 	should_be_pinned_by_default = yes
 
 	icon = "gfx/interface/icons/event_icons/tutorial_icon.dds"
-	group = je_group_tutorial
 
 	complete = {
 		scope:journal_entry = {
@@ -1107,7 +1085,6 @@ je_tutorial_expand_military = {
 
 je_tutorial_recruit_promote_commander = {
 	icon = "gfx/interface/icons/event_icons/tutorial_icon.dds"
-	group = je_group_tutorial
 	should_be_pinned_by_default = yes
 
 	how_tutorial = lesson_recruit_promote_commander_how
@@ -1146,12 +1123,11 @@ je_tutorial_mobilize_army = {
 	icon = "gfx/interface/icons/event_icons/tutorial_icon.dds"
 	should_be_pinned_by_default = yes
 
-	group = je_group_tutorial
-
 	complete = {
-		any_military_formation = {
-			is_army = yes
-			is_fully_mobilized = yes
+		any_scope_character = {
+			has_role = general
+			is_mobilized = yes
+#			fully_mobilized = yes
 		}
 	}
 
@@ -1162,7 +1138,6 @@ je_tutorial_mobilize_army = {
 
 je_tutorial_send_general_to_front = {
 	icon = "gfx/interface/icons/event_icons/tutorial_icon.dds"
-	group = je_group_tutorial
 	should_be_pinned_by_default = yes
 
 	complete = {
@@ -1179,9 +1154,8 @@ je_tutorial_send_general_to_front = {
 
 je_tutorial_convoy_raiding = {
 	icon = "gfx/interface/icons/event_icons/tutorial_icon.dds"
-	group = je_group_tutorial
 	should_be_pinned_by_default = yes
-	group = je_group_tutorial
+
 	complete = {
 		scope:target = {
 			has_commander_order = raid_convoys
@@ -1196,7 +1170,6 @@ je_tutorial_convoy_raiding = {
 
 je_tutorial_recover_from_default = {
 	icon = "gfx/interface/icons/event_icons/tutorial_icon.dds"
-	group = je_group_tutorial
 	should_be_pinned_by_default = yes
 
 	immediate = {
@@ -1249,7 +1222,6 @@ je_tutorial_start_diplomatic_play = {
 	how_tutorial = lesson_start_diplomatic_play_how
 
 	icon = "gfx/interface/icons/event_icons/tutorial_icon.dds"
-	group = je_group_tutorial
 	should_be_pinned_by_default = yes
 
 	complete = {
@@ -1263,7 +1235,6 @@ je_tutorial_start_diplomatic_play = {
 
 je_tutorial_is_play_target = {
 	icon = "gfx/interface/icons/event_icons/tutorial_icon.dds"
-	group = je_group_tutorial
 	should_be_pinned_by_default = yes
 
 	complete = { #needs triggers
@@ -1279,7 +1250,6 @@ je_tutorial_capacity_deficit = {
 	how_tutorial = lesson_fix_capacity_deficit_how
 	
 	icon = "gfx/interface/icons/event_icons/tutorial_icon.dds"
-	group = je_group_tutorial
 	should_be_pinned_by_default = yes
 
 
@@ -1401,7 +1371,6 @@ je_tutorial_incorporate_state = {
 	how_tutorial = lesson_incorporate_state_how
 
 	icon = "gfx/interface/icons/event_icons/tutorial_icon.dds"
-	group = je_group_tutorial
 	should_be_pinned_by_default = yes
 
 	current_value = num_incorporated_states
@@ -1452,7 +1421,6 @@ je_tutorial_declare_an_interest = {
 	why_tutorial = lesson_declare_interest_why
 
 	icon = "gfx/interface/icons/event_icons/tutorial_icon.dds"
-	group = je_group_tutorial
 
 	complete = {
 		scope:journal_entry = { is_goal_complete = yes }
@@ -1482,7 +1450,6 @@ je_tutorial_declare_an_interest = {
 
 je_tutorial_colonize_state = {
 	icon = "gfx/interface/icons/event_icons/tutorial_icon.dds"
-	group = je_group_tutorial
 
 	status_desc = {
 		first_valid = {
@@ -1523,7 +1490,6 @@ je_tutorial_colonize_state = {
 
 je_tutorial_make_peace = {
 	icon = "gfx/interface/icons/event_icons/tutorial_icon.dds"
-	group = je_group_tutorial
 		
 	complete = {
 		is_at_war = no
@@ -1537,7 +1503,6 @@ je_tutorial_make_peace = {
 
 je_tutorial_reach_end_date = {
 	icon = "gfx/interface/icons/event_icons/tutorial_icon.dds"
-	group = je_group_tutorial
 	should_be_pinned_by_default = yes
 	active_update_frequency = 1
 	
@@ -1552,7 +1517,6 @@ je_tutorial_reach_end_date = {
 
 je_tutorial_research_technology = {
 	icon = "gfx/interface/icons/event_icons/tutorial_icon.dds"
-	group = je_group_tutorial
 
 	complete = {
 		custom_tooltip = {
@@ -1583,61 +1547,4 @@ je_tutorial_research_technology = {
 	weight = 1070
 	transferable = yes
 	should_be_pinned_by_default = yes
-}
-
-je_tutorial_establish_company = {
-	how_tutorial = lesson_establish_company_how
-
-	should_be_pinned_by_default = yes
-
-	icon = "gfx/interface/icons/event_icons/tutorial_icon.dds"
-
-	group = je_group_tutorial
-
-	complete = {
-		NOT = { can_establish_company = YES }
-	}
-	
-	current_value = {
-	}
-
-	goal_add_value = {
-	}
-
-	on_complete = {
-	}
-	
-	weight = 1002
-	transferable = yes
-}
-
-je_tutorial_create_formation = {
-	how_tutorial = lesson_create_formation_how
-
-	should_be_pinned_by_default = yes
-
-	icon = "gfx/interface/icons/event_icons/tutorial_icon.dds"
-
-	group = je_group_tutorial
-
-	complete = { #TODO placeholder will code support
-		custom_tooltip = {
-			text = je_tutorial_create_formation_complete_trigger
-			NOT = {
-				has_variable = formation_tutorial_ongoing
-			}
-		}
-	}
-	
-	current_value = {
-	}
-
-	goal_add_value = {
-	}
-
-	on_complete = {
-	}
-	
-	weight = 1002
-	transferable = yes
 }

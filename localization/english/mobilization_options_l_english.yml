@@ -1,17 +1,12 @@
 ﻿l_english:
 
- MOBILIZATION_OPTION_UPKEEP_SHORT: "[ConcatIfNeitherEmpty(MobilizationOption.GetUpkeepModifier.GetDesc,'\n')][MobilizationOption.GetUpkeepUnscaledModifier.GetDesc]"
  MOBILIZATION_OPTION_GROUP_TOOLTIP: "[MobilizationOptionGroup.GetDesc]"
- MOBILIZATION_OPTION_TOOLTIP: "[AddLocalizationIf(Not(MobilizationOption.GetUnitModifier.IsEmpty),'MOBILIZATION_OPTION_EFFECTS_HEADER')][MobilizationOption.GetUnitModifier.GetDesc][AddLocalizationIf(Not(MobilizationOption.GetUnitModifier.IsEmpty),'\n\n')][AddLocalizationIf(Not(MobilizationOption.GetUpkeepModifier.IsEmpty),'MOBILIZATION_OPTION_UPKEEP_HEADER')]$MOBILIZATION_OPTION_UPKEEP_SHORT$[AddLocalizationIf(Not(MobilizationOption.GetUpkeepModifier.IsEmpty),'\n\n')][MobilizationOption.GetDesc]"
- MOBILIZATION_OPTION_EFFECTS_HEADER: "#title Effects on all @battalions![Nbsp][Concept('concept_battalion','$concept_battalions$')] in [concept_army]:#!\n"
- MOBILIZATION_OPTION_UPKEEP_HEADER: "#title Upkeep per @battalions![Nbsp][concept_battalion] during [Concept('concept_mobilize_army','$concept_mobilize_army_mobilization$')]:#!\n"
-
- ACTIVATE_MOBILIZATION_OPTION_BUTTON_TOOLTIP: "#header Activate [MobilizationOption.GetName]#![ConcatIfNeitherEmpty('\n', AddLocalizationIf(MobilizationOption.IsActivated(MilitaryFormation.AccessSelf), 'ALREADY_ACTIVATED'))]\n$TOOLTIP_DELIMITER$\n[MobilizationOption.GetTooltipWithActivateDesc(MilitaryFormation.AccessSelf)]"
- ALREADY_ACTIVATED: "#i Already activated#!"
- DEACTIVATE_MOBILIZATION_OPTION_BUTTON_TOOLTIP: "#header Deactivate [MobilizationOption.GetName]#!\n$TOOLTIP_DELIMITER$\n[MobilizationOption.GetTooltipWithDeactivateDesc(MilitaryFormation.AccessSelf)]"
+ MOBILIZATION_OPTION_TOOLTIP: "[AddLocalizationIf(Not(MobilizationOption.GetUnitModifier.IsEmpty),'MOBILIZATION_OPTION_EFFECTS_HEADER')][MobilizationOption.GetUnitModifier.GetDesc][AddLocalizationIf(Not(MobilizationOption.GetUnitModifier.IsEmpty),'\n\n')][AddLocalizationIf(Not(MobilizationOption.GetUpkeepModifier.IsEmpty),'MOBILIZATION_OPTION_UPKEEP_HEADER')][MobilizationOption.GetUpkeepModifier.GetDesc][AddLocalizationIf(Not(MobilizationOption.GetUpkeepModifier.IsEmpty),'\n\n')][MobilizationOption.GetDesc]"
+ MOBILIZATION_OPTION_EFFECTS_HEADER: "#header Effects on all @battalions![Nbsp][Concept('concept_battalion','$concept_battalions$')] in [concept_army]#!\n"
+ MOBILIZATION_OPTION_UPKEEP_HEADER: "#header Upkeep per @battalions![Nbsp][concept_battalion] during [Concept('concept_mobilize_army','$concept_mobilize_army_mobilization$')]#!\n"
  
- MOBILIZATION_OPTION_TOOLTIP_WITH_TOGGLE_DESC: "[ConcatIfNeitherEmpty('$TOGGLE_DESC$','\n\n')]$TOOLTIP$[ConcatIfNeitherEmpty('\n\n','$EFFECT_HEADER$')]$EFFECT$"
- MOBILIZATION_OPTION_TOOLTIP_WITH_TOGGLE_DESC_WARNING_HEADER: "#title @warning! Would result in the following effects:#!\n"
+ MOBILIZATION_OPTION_TOOLTIP_WITH_TOGGLE_DESC: "$TOGGLE_DESC$\n\n$TOOLTIP$"
+ TOGGLE_MOBILIZATION_OPTION_NOT_WHILE_MOBILIZED: "$OPTION$ cannot be changed while [MilitaryFormation.GetName] is [Concept('concept_mobilize_army','$concept_mobilize_army_mobilized$')]"
 
  MOBILIZATION_OPTIONS_HEADER: "Mobilization Options"
  MOBILIZATION_SUMMARY_HEADER: "Mobilization Summary"
@@ -21,19 +16,9 @@
  MOBILIZATION_OPTION_GROUP_UPKEEP_SUMMARY_UPKEEP: "Upkeep: "
  MOBILIZATION_OPTION_GROUP_UPKEEP_SUMMARY_ITEM: "$ICON$ $VALUE|-=1$"
 
- COMMAND_CONFIRMATION_TOGGLE_MOBILIZATION_OPTION: "Are you sure you want to turn $TOGGLE_DIRECTION$ [MobilizationOption.GetName] for [MilitaryFormation.GetName]?\n\n#indent_newline:3 It would impose the following effects:\n$EFFECT_BREAKDOWN$#!"
- COMMAND_CONFIRMATION_TOGGLE_MOBILIZATION_OPTION_ON: "#positive_value ON#!"
- COMMAND_CONFIRMATION_TOGGLE_MOBILIZATION_OPTION_OFF: "#negative_value OFF#!"
-
  mobilization_option_basic_supplies: "Basic Supplies"
  mobilization_option_basic_supplies_desc: "The bare minimum that soldiers need to survive in the field."
- mobilization_option_basic_supplies_can_be_turned_off_tt: "$mobilization_option_basic_supplies$ are mandatory and always active"
- mobilization_option_it_hurts_morale_when_you_remove_supplies_while_in_combat_tt: "Reduces every [Concept('concept_unit','$concept_unit_possessive$')] current [concept_morale] by #v 50%#! when removed from a [Concept('concept_mobilize_army','$concept_mobilize_army_mobilized$')] [concept_army]"
- mobilization_option_it_hurts_morale_when_you_force_people_to_march_faster_while_in_combat_tt: "Reduces every [Concept('concept_unit','$concept_unit_possessive$')] current [concept_morale] by #v 50%#! when imposed on a [Concept('concept_mobilize_army','$concept_mobilize_army_mobilized$')] [concept_army]"
- mobilization_option_it_hurts_organization_when_you_adjust_equipment_tt: "Reduces the current [concept_organization] of the [concept_army] by #v 50%#! when turned on or off"
- mobilization_option_it_hurts_organization_to_add_medic_support_tt: "Reduces the current [concept_organization] of the [concept_army] by #v 25%#! when turned on"
- mobilization_option_it_hurts_morale_and_organization_when_you_remove_medic_support_tt: "Reduces every [Concept('concept_unit','$concept_unit_possessive$')] current [concept_morale] by #v 50%#! and the current [concept_organization] of the [concept_army] by #v 25%#! when removed from a [Concept('concept_mobilize_army','$concept_mobilize_army_mobilized$')] [concept_army]"
-
+ mobilization_option_basic_supplies_can_be_turned_off_tt: "$mobilization_option_basic_supplies$ are mandatory"
  
  mobilization_option_extra_supplies: "Extra Supplies"
  mobilization_option_extra_supplies_desc: "Additional supplies for improved morale."

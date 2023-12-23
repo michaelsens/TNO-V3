@@ -441,6 +441,13 @@ on_yearly_pulse_country = {
 		1 = vampire_panic.1
 	}
 
+	# Springtime of the Peoples
+	random_events = {
+		5 = 0
+		1 = peoples_springtime.6
+	}
+
+
 	# Exiles
 	random_events = {
 		200 = 0
@@ -1046,8 +1053,8 @@ on_country_released_as_independent = {
 				}
 			}
 			s:STATE_PALESTINE = {
-				add_homeland = cu:sephardic
-				add_homeland = cu:ashkenazi
+				add_homeland = sephardic
+				add_homeland = ashkenazi
 			}
 		}
 		if = {
@@ -1101,8 +1108,8 @@ on_country_released_as_own_subject = {
 				}
 			}
 			s:STATE_PALESTINE = {
-				add_homeland = cu:sephardic
-				add_homeland = cu:ashkenazi
+				add_homeland = sephardic
+				add_homeland = ashkenazi
 			}
 		}
 		scope:target = {
@@ -1116,7 +1123,31 @@ on_country_released_as_own_subject = {
 					add_ideology = ideology_buddhist_moralist
 				}
 			}
-		
+			if = {
+				limit = {
+					exists = c:RUS
+					c:RUS = scope:target
+				}
+				ig:ig_devout = {
+					set_interest_group_name = ig_orthodox_church
+					remove_ideology = ideology_patriarchal
+					add_ideology = ideology_russian_patriarch
+				}
+			}
+			if = {
+				limit = {
+					country_has_state_religion = rel:orthodox
+					OR = {
+						NOT = { exists = c:RUS }
+						NOT = { c:RUS = scope:target }
+					}
+				}
+				ig:ig_devout = {
+					set_interest_group_name = ig_orthodox_church
+					remove_ideology = ideology_patriarchal
+					add_ideology = ideology_orthodox_patriarch
+				}
+			}
 			if = {
 				limit = {
 					country_has_state_religion = rel:hindu
@@ -1155,6 +1186,16 @@ on_country_released_as_own_subject = {
 					set_interest_group_name = ig_sikh_priesthood
 					remove_ideology = ideology_moralist
 					add_ideology = ideology_sikh_moralist
+				}
+			}
+			if = {
+				limit = {
+					country_has_state_religion = rel:oriental_orthodox
+				}
+				ig:ig_devout = {
+					set_interest_group_name = ig_oriental_orthodox_church
+					remove_ideology = ideology_patriarchal
+					add_ideology = ideology_oriental_orthodox_patriarch
 				}
 			}
 		}
@@ -1177,8 +1218,8 @@ on_country_released_as_overlord_subject = {
 				}
 			}
 			s:STATE_PALESTINE = {
-				add_homeland = cu:sephardic
-				add_homeland = cu:ashkenazi
+				add_homeland = sephardic
+				add_homeland = ashkenazi
 			}
 		}
 		scope:target = {
@@ -1192,7 +1233,31 @@ on_country_released_as_overlord_subject = {
 					add_ideology = ideology_buddhist_moralist
 				}
 			}
-		
+			if = {
+				limit = {
+					country_has_state_religion = rel:orthodox
+					OR = {
+						NOT = { exists = c:RUS }
+						NOT = { c:RUS = scope:target }
+					}
+				}
+				ig:ig_devout = {
+					set_interest_group_name = ig_orthodox_church
+					remove_ideology = ideology_patriarchal
+					add_ideology = ideology_orthodox_patriarch
+				}
+			}
+			if = {
+				limit = {
+					exists = c:RUS
+					c:RUS = scope:target
+				}
+				ig:ig_devout = {
+					set_interest_group_name = ig_orthodox_church
+					remove_ideology = ideology_patriarchal
+					add_ideology = ideology_russian_patriarch
+				}
+			}
 			if = {
 				limit = {
 					country_has_state_religion = rel:hindu
@@ -1231,6 +1296,16 @@ on_country_released_as_overlord_subject = {
 					set_interest_group_name = ig_sikh_priesthood
 					remove_ideology = ideology_moralist
 					add_ideology = ideology_sikh_moralist
+				}
+			}
+			if = {
+				limit = {
+					country_has_state_religion = rel:oriental_orthodox
+				}
+				ig:ig_devout = {
+					set_interest_group_name = ig_oriental_orthodox_church
+					remove_ideology = ideology_patriarchal
+					add_ideology = ideology_oriental_orthodox_patriarch
 				}
 			}
 		}

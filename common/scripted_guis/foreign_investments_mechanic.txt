@@ -816,151 +816,6 @@ foreign_investments_power_plant = {
         }
 }
 
-foreign_investments_explosives_factory = {
-        scope = country
-        saved_scopes = {
-                invested_state
-                investor_country
-                invested_building
-                is_right_click
-    }
-        is_shown = {
-                scope:invested_state = {
-                        NOT = { owner = scope:investor_country}
-                }
-        }
-        is_valid = {
-                scope:investor_country = {
-                        capital = { owner = scope:investor_country }
-                        has_technology_researched = intensive_agriculture
-                }
-                scope:invested_state ={
-                        owner = {
-                                check_investable = yes
-                        }
-                }
-        }
-        effect = {
-                scope:investor_country = {
-                        set_variable = is_right_click_check
-                        while = {
-                                count = 5
-                                limit = { 
-                                        has_variable = is_right_click_check
-                                }
-                                
-                                scope:invested_state = {
-                                        
-                                        fi_construct_stock_exchange = { 
-                                                BUILDING = building_explosives_factory
-                                        }
-                                }
-                                if = {
-                                        limit = { NOT ={ exists = scope:is_right_click } }
-                                        remove_variable = is_right_click_check
-                                }
-                        }
-                        remove_variable = is_right_click_check
-                }
-        }
-}
-foreign_investments_military_shipyards = {
-        scope = country
-        saved_scopes = {
-                invested_state
-                investor_country
-                invested_building
-                is_right_click
-    }
-        is_shown = {
-                scope:invested_state = {
-                        NOT = { owner = scope:investor_country}
-                }
-        }
-        is_valid = {
-                scope:investor_country = {
-                        capital = { owner = scope:investor_country }
-                        has_technology_researched = navigation
-                }
-                scope:invested_state ={
-                        owner = {
-                                check_investable = yes
-                        }
-                }
-        }
-        effect = {
-                scope:investor_country = {
-                        set_variable = is_right_click_check
-                        while = {
-                                count = 5
-                                limit = { 
-                                        has_variable = is_right_click_check
-                                }
-                                
-                                scope:invested_state = {
-                                        
-                                        fi_construct_stock_exchange = { 
-                                                BUILDING = building_military_shipyards
-                                        }
-                                }
-                                if = {
-                                        limit = { NOT ={ exists = scope:is_right_click } }
-                                        remove_variable = is_right_click_check
-                                }
-                        }
-                        remove_variable = is_right_click_check
-                }
-        }
-}
-foreign_investments_artillery_foundries = {
-        scope = country
-        saved_scopes = {
-                invested_state
-                investor_country
-                invested_building
-                is_right_click
-    }
-        is_shown = {
-                scope:invested_state = {
-                        NOT = { owner = scope:investor_country}
-                }
-        }
-        is_valid = {
-                scope:investor_country = {
-                        capital = { owner = scope:investor_country }
-                        has_technology_researched = gunsmithing
-                }
-                scope:invested_state ={
-                        owner = {
-                                check_investable = yes
-                        }
-                }
-        }
-        effect = {
-                scope:investor_country = {
-                        set_variable = is_right_click_check
-                        while = {
-                                count = 5
-                                limit = { 
-                                        has_variable = is_right_click_check
-                                }
-                                
-                                scope:invested_state = {
-                                        
-                                        fi_construct_stock_exchange = { 
-                                                BUILDING = building_artillery_foundries
-                                        }
-                                }
-                                if = {
-                                        limit = { NOT ={ exists = scope:is_right_click } }
-                                        remove_variable = is_right_click_check
-                                }
-                        }
-                        remove_variable = is_right_click_check
-                }
-        }
-}
-
 foreign_investments_coal_mine = {
 	scope = country
 	saved_scopes = {
@@ -985,7 +840,7 @@ foreign_investments_coal_mine = {
 				exists = scope:invested_building
 				scope:invested_building = {
 					is_building_type = building_coal_mine
-					resource_building_can_queue = {BUILDING=building_coal_mine}
+					building_coal_mine_can_queue = yes
 				}
 			}
 		}	
@@ -1024,7 +879,7 @@ foreign_investments_coal_mine = {
 							exists = scope:invested_building
 							scope:invested_building = {
 								is_building_type = building_coal_mine
-								resource_building_can_queue = {BUILDING=building_coal_mine}
+								building_coal_mine_can_queue = yes
 							}
 						}
 					}
@@ -1069,7 +924,7 @@ foreign_investments_iron_mine = {
 				exists = scope:invested_building
 				scope:invested_building = {
 					is_building_type = building_iron_mine
-					resource_building_can_queue = {BUILDING=building_iron_mine}
+					building_iron_mine_can_queue = yes
 				}
 			}
 		}	
@@ -1108,7 +963,7 @@ foreign_investments_iron_mine = {
 							exists = scope:invested_building
 							scope:invested_building = {
 								is_building_type = building_iron_mine
-								resource_building_can_queue = {BUILDING=building_iron_mine}
+								building_iron_mine_can_queue = yes
 							}
 						}
 					}
@@ -1155,7 +1010,7 @@ foreign_investments_lead_mine = {
 				exists = scope:invested_building
 				scope:invested_building = {
 					is_building_type = building_lead_mine
-					resource_building_can_queue = {BUILDING=building_lead_mine}
+					building_lead_mine_can_queue = yes
 				}
 			}
 		}	
@@ -1194,7 +1049,7 @@ foreign_investments_lead_mine = {
 							exists = scope:invested_building
 							scope:invested_building = {
 								is_building_type = building_lead_mine
-								resource_building_can_queue = {BUILDING=building_lead_mine}
+								building_lead_mine_can_queue = yes
 							}
 						}
 					}
@@ -1241,7 +1096,7 @@ foreign_investments_sulfur_mine = {
 				exists = scope:invested_building
 				scope:invested_building = {
 					is_building_type = building_sulfur_mine
-					resource_building_can_queue = {BUILDING=building_sulfur_mine}
+					building_sulfur_mine_can_queue = yes
 				}
 			}
 		}	
@@ -1280,7 +1135,7 @@ foreign_investments_sulfur_mine = {
 							exists = scope:invested_building
 							scope:invested_building = {
 								is_building_type = building_sulfur_mine
-								resource_building_can_queue = {BUILDING=building_sulfur_mine}
+								building_sulfur_mine_can_queue = yes
 							}
 						}
 					}
@@ -1327,7 +1182,7 @@ foreign_investments_logging_camp = {
 				exists = scope:invested_building
 				scope:invested_building = {
 					is_building_type = building_logging_camp
-					resource_building_can_queue = {BUILDING=building_logging_camp}
+					building_logging_camp_can_queue = yes
 				}
 			}
 		}	
@@ -1362,7 +1217,7 @@ foreign_investments_logging_camp = {
 							exists = scope:invested_building
 							scope:invested_building = {
 								is_building_type = building_logging_camp
-								resource_building_can_queue = {BUILDING=building_logging_camp}
+								building_logging_camp_can_queue = yes
 							}
 						}
 					}
@@ -1410,7 +1265,7 @@ foreign_investments_rubber_plantation = {
 				exists = scope:invested_building
 				scope:invested_building = {
 					is_building_type = building_rubber_plantation
-					resource_building_can_queue = {BUILDING=building_rubber_plantation}
+					building_rubber_plantation_can_queue = yes
 				}
 			}
 		}	
@@ -1445,7 +1300,7 @@ foreign_investments_rubber_plantation = {
 							exists = scope:invested_building
 							scope:invested_building = {
 								is_building_type = building_rubber_plantation
-								resource_building_can_queue = {BUILDING=building_rubber_plantation}
+								building_rubber_plantation_can_queue = yes
 							}
 						}
 					}
@@ -1491,7 +1346,7 @@ foreign_investments_fishing_wharf = {
 				exists = scope:invested_building
 				scope:invested_building = {
 					is_building_type = building_fishing_wharf
-					resource_building_can_queue = {BUILDING=building_fishing_wharf}
+					building_fishing_wharf_can_queue = yes
 				}
 			}
 		}	
@@ -1526,7 +1381,7 @@ foreign_investments_fishing_wharf = {
 							exists = scope:invested_building
 							scope:invested_building = {
 								is_building_type = building_fishing_wharf
-								resource_building_can_queue = {BUILDING=building_fishing_wharf}
+								building_fishing_wharf_can_queue = yes
 							}
 						}
 					}
@@ -1571,7 +1426,7 @@ foreign_investments_whaling_station = {
 				exists = scope:invested_building
 				scope:invested_building = {
 					is_building_type = building_whaling_station
-					resource_building_can_queue = {BUILDING=building_whaling_station}
+					building_whaling_station_can_queue = yes
 				}
 			}
 		}	
@@ -1606,7 +1461,7 @@ foreign_investments_whaling_station = {
 							exists = scope:invested_building
 							scope:invested_building = {
 								is_building_type = building_whaling_station
-								resource_building_can_queue = {BUILDING=building_whaling_station}
+								building_whaling_station_can_queue = yes
 							}
 						}
 					}
@@ -1655,7 +1510,7 @@ foreign_investments_oil_rig = {
 				exists = scope:invested_building
 				scope:invested_building = {
 					is_building_type = building_oil_rig
-					resource_building_can_queue = {BUILDING=building_oil_rig}
+					building_oil_rig_can_queue = yes
 				}
 			}
 		}	
@@ -1690,7 +1545,7 @@ foreign_investments_oil_rig = {
 							exists = scope:invested_building
 							scope:invested_building = {
 								is_building_type = building_oil_rig
-								resource_building_can_queue = {BUILDING=building_oil_rig}
+								building_oil_rig_can_queue = yes
 							}
 						}
 					}
@@ -1737,7 +1592,7 @@ foreign_investments_gold_mine = {
 				exists = scope:invested_building
 				scope:invested_building = {
 					is_building_type = building_gold_mine
-					resource_building_can_queue = {BUILDING=building_gold_mine}
+					building_gold_mine_can_queue = yes
 				}
 			}
 		}	
@@ -1776,7 +1631,7 @@ foreign_investments_gold_mine = {
 							exists = scope:invested_building
 							scope:invested_building = {
 								is_building_type = building_gold_mine
-								resource_building_can_queue = {BUILDING=building_gold_mine}
+								building_gold_mine_can_queue = yes
 							}
 						}
 					}
@@ -1885,7 +1740,7 @@ foreign_investments_coffee_plantation = {
 				exists = scope:invested_building
 				scope:invested_building = {
 					is_building_type = building_coffee_plantation
-					resource_building_can_queue = {BUILDING=building_coffee_plantation}
+					building_coffee_plantation_can_queue = yes
 				}
 			}
 		}	
@@ -1920,7 +1775,7 @@ foreign_investments_coffee_plantation = {
 							exists = scope:invested_building
 							scope:invested_building = {
 								is_building_type = building_coffee_plantation
-								resource_building_can_queue = {BUILDING=building_coffee_plantation}
+								building_coffee_plantation_can_queue = yes
 							}
 						}
 					}
@@ -1966,7 +1821,7 @@ foreign_investments_cotton_plantation = {
 				exists = scope:invested_building
 				scope:invested_building = {
 					is_building_type = building_cotton_plantation
-					resource_building_can_queue = {BUILDING=building_cotton_plantation}
+					building_cotton_plantation_can_queue = yes
 				}
 			}
 		}	
@@ -2001,7 +1856,7 @@ foreign_investments_cotton_plantation = {
 							exists = scope:invested_building
 							scope:invested_building = {
 								is_building_type = building_cotton_plantation
-								resource_building_can_queue = {BUILDING=building_cotton_plantation}
+								building_cotton_plantation_can_queue = yes
 							}
 						}
 					}
@@ -2047,7 +1902,7 @@ foreign_investments_dye_plantation = {
 				exists = scope:invested_building
 				scope:invested_building = {
 					is_building_type = building_dye_plantation
-					resource_building_can_queue = {BUILDING=building_dye_plantation}
+					building_dye_plantation_can_queue = yes
 				}
 			}
 		}	
@@ -2082,7 +1937,7 @@ foreign_investments_dye_plantation = {
 							exists = scope:invested_building
 							scope:invested_building = {
 								is_building_type = building_dye_plantation
-								resource_building_can_queue = {BUILDING=building_dye_plantation}
+								building_dye_plantation_can_queue = yes
 							}
 						}
 					}
@@ -2128,7 +1983,7 @@ foreign_investments_opium_plantation = {
 				exists = scope:invested_building
 				scope:invested_building = {
 					is_building_type = building_opium_plantation
-					resource_building_can_queue = {BUILDING=building_opium_plantation}
+					building_opium_plantation_can_queue = yes
 				}
 			}
 		}	
@@ -2163,7 +2018,7 @@ foreign_investments_opium_plantation = {
 							exists = scope:invested_building
 							scope:invested_building = {
 								is_building_type = building_opium_plantation
-								resource_building_can_queue = {BUILDING=building_opium_plantation}
+								building_opium_plantation_can_queue = yes
 							}
 						}
 					}
@@ -2209,7 +2064,7 @@ foreign_investments_tea_plantation = {
 				exists = scope:invested_building
 				scope:invested_building = {
 					is_building_type = building_tea_plantation
-					resource_building_can_queue = {BUILDING=building_tea_plantation}
+					building_tea_plantation_can_queue = yes
 				}
 			}
 		}	
@@ -2244,7 +2099,7 @@ foreign_investments_tea_plantation = {
 							exists = scope:invested_building
 							scope:invested_building = {
 								is_building_type = building_tea_plantation
-								resource_building_can_queue = {BUILDING=building_tea_plantation}
+								building_tea_plantation_can_queue = yes
 							}
 						}
 					}
@@ -2290,7 +2145,7 @@ foreign_investments_tobacco_plantation = {
 				exists = scope:invested_building
 				scope:invested_building = {
 					is_building_type = building_tobacco_plantation
-					resource_building_can_queue = {BUILDING=building_tobacco_plantation}
+					building_tobacco_plantation_can_queue = yes
 				}
 			}
 		}	
@@ -2325,7 +2180,7 @@ foreign_investments_tobacco_plantation = {
 							exists = scope:invested_building
 							scope:invested_building = {
 								is_building_type = building_tobacco_plantation
-								resource_building_can_queue = {BUILDING=building_tobacco_plantation}
+								building_tobacco_plantation_can_queue = yes
 							}
 						}
 					}
@@ -2371,7 +2226,7 @@ foreign_investments_sugar_plantation = {
 				exists = scope:invested_building
 				scope:invested_building = {
 					is_building_type = building_sugar_plantation
-					resource_building_can_queue = {BUILDING=building_sugar_plantation}
+					building_sugar_plantation_can_queue = yes
 				}
 			}
 		}	
@@ -2406,7 +2261,7 @@ foreign_investments_sugar_plantation = {
 							exists = scope:invested_building
 							scope:invested_building = {
 								is_building_type = building_sugar_plantation
-								resource_building_can_queue = {BUILDING=building_sugar_plantation}
+								building_sugar_plantation_can_queue = yes
 							}
 						}
 					}
@@ -2452,7 +2307,7 @@ foreign_investments_banana_plantation = {
 				exists = scope:invested_building
 				scope:invested_building = {
 					is_building_type = building_banana_plantation
-					resource_building_can_queue = {BUILDING=building_banana_plantation}
+					building_banana_plantation_can_queue = yes
 				}
 			}
 		}	
@@ -2487,7 +2342,7 @@ foreign_investments_banana_plantation = {
 							exists = scope:invested_building
 							scope:invested_building = {
 								is_building_type = building_banana_plantation
-								resource_building_can_queue = {BUILDING=building_banana_plantation}
+								building_banana_plantation_can_queue = yes
 							}
 						}
 					}
@@ -2533,7 +2388,7 @@ foreign_investments_silk_plantation = {
 				exists = scope:invested_building
 				scope:invested_building = {
 					is_building_type = building_silk_plantation
-					resource_building_can_queue = {BUILDING=building_silk_plantation}
+					building_silk_plantation_can_queue = yes
 				}
 			}
 		}	
@@ -2568,7 +2423,7 @@ foreign_investments_silk_plantation = {
 							exists = scope:invested_building
 							scope:invested_building = {
 								is_building_type = building_silk_plantation
-								resource_building_can_queue = {BUILDING=building_silk_plantation}
+								building_silk_plantation_can_queue = yes
 							}
 						}
 					}
@@ -2614,7 +2469,7 @@ foreign_investments_rye_farm = {
 				exists = scope:invested_building
 				scope:invested_building = {
 					is_building_type = building_rye_farm
-					resource_building_can_queue = {BUILDING=building_rye_farm}
+					building_rye_farm_can_queue = yes
 				}
 			}
 		}	
@@ -2649,7 +2504,7 @@ foreign_investments_rye_farm = {
 							exists = scope:invested_building
 							scope:invested_building = {
 								is_building_type = building_rye_farm
-								resource_building_can_queue = {BUILDING=building_rye_farm}
+								building_rye_farm_can_queue = yes
 							}
 						}
 					}
@@ -2695,7 +2550,7 @@ foreign_investments_wheat_farm = {
 				exists = scope:invested_building
 				scope:invested_building = {
 					is_building_type = building_wheat_farm
-					resource_building_can_queue = {BUILDING=building_wheat_farm}
+					building_wheat_farm_can_queue = yes
 				}
 			}
 		}	
@@ -2730,7 +2585,7 @@ foreign_investments_wheat_farm = {
 							exists = scope:invested_building
 							scope:invested_building = {
 								is_building_type = building_wheat_farm
-								resource_building_can_queue = {BUILDING=building_wheat_farm}
+								building_wheat_farm_can_queue = yes
 							}
 						}
 					}
@@ -2776,7 +2631,7 @@ foreign_investments_rice_farm = {
 				exists = scope:invested_building
 				scope:invested_building = {
 					is_building_type = building_rice_farm
-					resource_building_can_queue = {BUILDING=building_rice_farm}
+					building_rice_farm_can_queue = yes
 				}
 			}
 		}	
@@ -2811,7 +2666,7 @@ foreign_investments_rice_farm = {
 							exists = scope:invested_building
 							scope:invested_building = {
 								is_building_type = building_rice_farm
-								resource_building_can_queue = {BUILDING=building_rice_farm}
+								building_rice_farm_can_queue = yes
 							}
 						}
 					}
@@ -2832,87 +2687,6 @@ foreign_investments_rice_farm = {
 			remove_variable = is_right_click_check
 		}
 	}
-}
-foreign_investments_vineyard_plantation = {
-        scope = country
-        saved_scopes = {
-                invested_state
-                investor_country
-                invested_building
-                is_right_click
-    }
-
-        is_shown = {
-                scope:invested_state = {
-                        NOT = { owner = scope:investor_country}
-                }
-                OR = {
-                        AND = {
-                                NOT = { exists = scope:invested_building }
-                                scope:invested_state = { 
-                                        building_vineyard_plantation_total_queued < 1
-                                }
-                        }
-                        AND = {
-                                exists = scope:invested_building
-                                scope:invested_building = {
-                                        is_building_type = building_vineyard_plantation
-                                        resource_building_can_queue = {BUILDING=building_vineyard_plantation}
-                                }
-                        }
-                }       
-        }
-        
-        is_valid = {
-                scope:investor_country = {
-                        capital = { owner = scope:investor_country }
-                }
-                scope:invested_state ={
-                        owner = {
-                                check_investable = yes
-                        }
-                }
-        }
-
-        effect = {
-                scope:investor_country = {
-                        set_variable = is_right_click_check
-                        while = {
-                                count = 5
-                                limit = { 
-                                        has_variable = is_right_click_check
-                                        OR = {
-                                                AND = {
-                                                        NOT = { exists = scope:invested_building }
-                                                        scope:invested_state = { 
-                                                                building_vineyard_plantation_total_queued < 1
-                                                        }
-                                                }
-                                                AND = {
-                                                        exists = scope:invested_building
-                                                        scope:invested_building = {
-                                                                is_building_type = building_vineyard_plantation
-                                                                resource_building_can_queue = {BUILDING=building_vineyard_plantation}
-                                                        }
-                                                }
-                                        }
-                                }
-                                
-                                
-                                scope:invested_state = {
-                                        
-                                        fi_construct_stock_exchange = {
-                                                BUILDING = building_vineyard_plantation
-                                        }
-                                }
-                                if = {
-                                        limit = { NOT ={ exists = scope:is_right_click } }
-                                        remove_variable = is_right_click_check  
-                                }
-                        }
-                        remove_variable = is_right_click_check
-                }
-        }
 }
 foreign_investments_maize_farm = {
 	scope = country
@@ -2938,7 +2712,7 @@ foreign_investments_maize_farm = {
 				exists = scope:invested_building
 				scope:invested_building = {
 					is_building_type = building_maize_farm
-					resource_building_can_queue = {BUILDING=building_maize_farm}
+					building_maize_farm_can_queue = yes
 				}
 			}
 		}	
@@ -2973,7 +2747,7 @@ foreign_investments_maize_farm = {
 							exists = scope:invested_building
 							scope:invested_building = {
 								is_building_type = building_maize_farm
-								resource_building_can_queue = {BUILDING=building_maize_farm}
+								building_maize_farm_can_queue = yes
 							}
 						}
 					}
@@ -3019,7 +2793,7 @@ foreign_investments_millet_farm = {
 				exists = scope:invested_building
 				scope:invested_building = {
 					is_building_type = building_millet_farm
-					resource_building_can_queue = {BUILDING=building_millet_farm}
+					building_millet_farm_can_queue = yes
 				}
 			}
 		}	
@@ -3054,7 +2828,7 @@ foreign_investments_millet_farm = {
 							exists = scope:invested_building
 							scope:invested_building = {
 								is_building_type = building_millet_farm
-								resource_building_can_queue = {BUILDING=building_millet_farm}
+								building_millet_farm_can_queue = yes
 							}
 						}
 					}
@@ -3100,7 +2874,7 @@ foreign_investments_livestock_ranch = {
 				exists = scope:invested_building
 				scope:invested_building = {
 					is_building_type = building_livestock_ranch
-					resource_building_can_queue = {BUILDING=building_livestock_ranch}
+					building_livestock_ranch_can_queue = yes
 				}
 			}
 		}	
@@ -3135,7 +2909,7 @@ foreign_investments_livestock_ranch = {
 							exists = scope:invested_building
 							scope:invested_building = {
 								is_building_type = building_livestock_ranch
-								resource_building_can_queue = {BUILDING=building_livestock_ranch}
+								building_livestock_ranch_can_queue = yes
 							}
 						}
 					}

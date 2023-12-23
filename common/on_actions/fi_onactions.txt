@@ -11,7 +11,6 @@ on_building_expanded = {
 }
 fi_construction_actions = {
 	effect = {
-
 		if = {
 			limit ={
 				is_building_type = building_investment_industry
@@ -51,6 +50,7 @@ on_monthly_pulse_country = {
 	on_actions = {
 		collect_dividend_actions
 		fi_construction_queue_clear_actions
+		fi_diplomatic_actions
 	}
 }
 collect_dividend_actions = {
@@ -64,7 +64,24 @@ fi_construction_queue_clear_actions ={
 		fi_dividend_collector.6
 	}
 }
-
+fi_diplomatic_actions = {
+	effect = {
+		ROOT = {
+			if = {
+				limit  = {
+					is_subject = no
+					country_rank <= rank_value:minor_power
+					NOT = { has_variable = fi_protectorate_target }
+					any_country = {
+			        	has_variable = fi_identification
+			        	is_owed_obligation_by = root
+			        }
+				}
+				add_journal_entry = {type = je_fi_protectorate}
+			}
+		}
+	}
+}
 on_yearly_pulse_country = {
 	on_actions = {
 		ai_construct_actions

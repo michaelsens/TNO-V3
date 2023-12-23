@@ -11,97 +11,86 @@
 
 types state_panel_types {
 	### WORKFORCE
-	type state_panel_buildings_fixed_bottom = flowcontainer {
-		direction = vertical
-		margin = { 10 5 }
+	type state_panel_buildings_fixed_bottom = container {
+		tooltip = "STATE_AVAILABLE_LABOR_TOOLTIP"
 		minimumsize = { @panel_width -1 }
-		spacing = 4
-
+		
 		background = {
 			using = entry_bg_simple
 		}
-
-		container = {
-			tooltip = "STATE_AVAILABLE_LABOR_TOOLTIP"
-			minimumsize = { 520 -1 }
-			
-			flowcontainer = {
-				direction = vertical
-				spacing = 2
-
-				flowcontainer = {
-					spacing = 7
-					tooltip = "[State.GetJobseekersDesc]"
-				
-					textbox = {
-						text = "JOBSEEKERS"
-						autoresize = yes
-						align = nobaseline
-						elide = right
-						maximumsize = { 130 -1 }
-					}
-
-					textbox = {
-						raw_text = "#variable [State.GetNumJobseekers|D]#!"
-						autoresize = yes
-						align = nobaseline
-					}
-				}
-			}
+		flowcontainer = {
+			direction = vertical
+			margin = { 10 5 }
+			spacing = 2
 
 			flowcontainer = {
 				spacing = 7
-				parentanchor = right|vcenter
-				margin_right = 10
+				visible = "[GreaterThan_int64(State.GetNumUnemployedWorkingAdults, '(int64)0')]"
 
 				textbox = {
-					raw_text = "[concept_pop_qualifications]: "
+					text = "UNEMPLOYED_TITLE"
 					autoresize = yes
 					align = nobaseline
 					elide = right
 					maximumsize = { 130 -1 }
 				}
-				
+
 				textbox = {
-					visible = "[Not(State.HasInsufficientQualificationsForAvailablePositions)]"
-					raw_text = "@green_checkmark!"
+					raw_text = "#variable [State.GetNumUnemployedWorkingAdults|D]#!"
 					autoresize = yes
 					align = nobaseline
-					maximumsize = { 130 -1 }
-					tooltip = "[State.GetPotentialQualificationsDesc]"
 				}
-				
+			}
+
+			# Right-aligned if there are unemployed
+			flowcontainer = {
+				spacing = 7
+
 				textbox = {
-					visible = "[State.HasInsufficientQualificationsForAvailablePositions]"
-					raw_text = "@red_cross!"
+					raw_text = "[GetPopType('peasants').GetName]:"
 					autoresize = yes
 					align = nobaseline
+					elide = right
 					maximumsize = { 130 -1 }
-					tooltip = "[State.GetPotentialQualificationsDesc]"
+				}
+
+				textbox = {
+					text = "[State.GetNumSubsistenceWorkingAdults|Dv]"
+					autoresize = yes
+					align = right|nobaseline
 				}
 			}
 		}
 
-		divider_clean = {
-			maximumsize = { 520 -1 }
-		}
-
 		flowcontainer = {
-			parentanchor = hcenter
-			datamodel = "[StatesPanel.AccessLocalGoods]"
+			spacing = 7
+			parentanchor = right|vcenter
+			margin_right = 10
 
-			item = {
-				textbox = {
-					minimumsize = { 170 -1 }
-					visible = "[Goods.IsLocal]"
-					raw_text = "STATE_BUILDING_TAB_LOCAL_GOODS_INFO"
-					autoresize = yes
-					align = center|nobaseline
-
-					tooltipwidget = {
-						FancyTooltip_Goods = {}
-					}
-				}
+			textbox = {
+				raw_text = "[concept_pop_qualifications]: "
+				autoresize = yes
+				align = nobaseline
+				elide = right
+				maximumsize = { 130 -1 }
+			}
+			
+			textbox = {
+				visible = "[Not(State.HasInsufficientQualificationsForAvailablePositions)]"
+				raw_text = "@green_checkmark!"
+				autoresize = yes
+				align = nobaseline
+				maximumsize = { 130 -1 }
+				tooltip = "[State.GetPotentialQualificationsDesc]"
+			}
+			
+			textbox = {
+				visible = "[State.HasInsufficientQualificationsForAvailablePositions]"
+				raw_text = "@red_cross!"
+				autoresize = yes
+				align = nobaseline
+				maximumsize = { 130 -1 }
+				tooltip = "[State.GetPotentialQualificationsDesc]"
 			}
 		}
 	}
@@ -758,7 +747,7 @@ types state_buildings
 						parentanchor = left|vcenter
 						size = { 29 29 }
 						tooltip = "[Building.GetCancelConstructionTooltip]"
-						visible = "[And(IsValid( Building.CancelConstruction ), Not(Building.IsMilitaryBuilding))]"
+						visible = "[IsValid( Building.CancelConstruction )]"
 						onclick = "[Execute( Building.CancelConstruction )]"
 						using = tooltip_below
 					}
@@ -766,7 +755,7 @@ types state_buildings
 					### EXPAND BUTTON
 					button_icon_plus_action = {
 						parentanchor = right|vcenter
-						visible = "[And(Or( And( Not( Building.IsValid ), IsValid( Building.QueueConstruction ) ), Not(Building.HasReachedLevelCap) ), Not(Building.IsMilitaryBuilding))]"
+						visible = "[Or( And( Not( Building.IsValid ), IsValid( Building.QueueConstruction ) ), Not(Building.HasReachedLevelCap) )]"
 						tooltip = "[Building.GetQueueConstructionTooltip]"
 						size = { 29 29 }
 						onclick = "[Execute( Building.QueueConstruction )]"

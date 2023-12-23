@@ -286,9 +286,12 @@ sol_events.3 = { #church wants to help
 	}
 	event_image = {
 		trigger = {
-		
-			religion = rel:catholic
-		
+			OR = {
+				religion = rel:protestant
+				religion = rel:catholic
+				religion = rel:orthodox
+				religion = rel:oriental_orthodox
+			}
 		}
 		video = "southamerica_christianity"
 	}
@@ -330,7 +333,10 @@ sol_events.3 = { #church wants to help
 		trigger = {
 			NOR = {
 				religion = rel:jewish
+				religion = rel:protestant
 				religion = rel:catholic
+				religion = rel:orthodox
+				religion = rel:oriental_orthodox
 				religion = rel:mahayana
 				religion = rel:gelugpa
 				religion = rel:theravada

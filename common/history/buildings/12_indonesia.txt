@@ -20,34 +20,26 @@
 				activate_production_methods={ "pm_simple_farming_building_rice_farm" "pm_no_secondary" "pm_tools_disabled"  }
 			}
 			create_building={
-				building="building_barracks"
-				level=7
+				building="building_fishing_wharf"
+				level=1
 				reserves=1
-				activate_production_methods={ "pm_general_training" }
+				activate_production_methods={ "pm_simple_fishing" "pm_unrefrigerated" "pm_merchant_guilds_building_fishing_wharf" }
 			}
-		}
-		region_state:JOL={
 			create_building={
-				building="building_logging_camp"
+				building="building_barracks"
 				level=3
 				reserves=1
-				activate_production_methods={ "pm_simple_forestry" "pm_hardwood" "pm_no_equipment" "pm_road_carts" "pm_merchant_guilds_building_logging_camp" }
-			}
-			create_building={
-				building="building_small_workshop"
-				level=4
-				reserves=1
-				activate_production_methods={ "pm_small_workshop" }
-			}
-			create_building={
-				building="building_barracks"
-				level=30
-				reserves=1
 				activate_production_methods={ "pm_general_training" }
 			}
 		}
-	}
-	s:STATE_SINGAPORE={
+		region_state:SIA={
+			create_building={
+				building="building_banana_plantation"
+				level=1
+				reserves=1
+				activate_production_methods={ "default_building_banana_plantation" "pm_road_carts"  }
+			}
+		}
 		region_state:JAP={
 			create_building={
 				building="building_tea_plantation"
@@ -60,16 +52,6 @@
 				level=1
 				reserves=1
 				activate_production_methods={ "pm_industrial_port" }
-			}
-		}
-	}
-	s:STATE_EAST_MALAYA={
-		region_state:SIA={
-			create_building={
-				building="building_banana_plantation"
-				level=2
-				reserves=1
-				activate_production_methods={ "default_building_banana_plantation" "pm_road_carts"  }
 			}
 		}
 	}
@@ -89,7 +71,7 @@
 			}
 			create_building={
 				building="building_barracks"
-				level=26
+				level=1
 				reserves=1
 				activate_production_methods={ "pm_general_training" }
 			}
@@ -530,7 +512,7 @@
 		}
 	}
 	s:STATE_WESTERN_NEW_GUINEA={
-		region_state:IDN={
+		region_state:AST={
 			create_building={
 				building="building_banana_plantation"
 				level=1
@@ -602,7 +584,7 @@
 		}
 	}
 	s:STATE_EASTERN_NEW_GUINEA={
-		region_state:JAP={
+		region_state:AST={
 			create_building={
 				building="building_port"
 				level=1
@@ -652,6 +634,34 @@
 		}
 	}
 	s:STATE_MINDANAO={
+		region_state:PHI={
+			create_building={
+				building="building_dye_plantation"
+				level=5
+				reserves=1
+				activate_production_methods={ "default_building_dye_plantation" "pm_road_carts"  }
+			}
+			create_building={
+				building="building_rubber_plantation"
+				level=4
+				reserves=1
+				activate_production_methods={ "default_building_rubber_plantation" "pm_road_carts"  }
+			}
+			create_building={
+				building="building_rice_farm"
+				level=1
+				reserves=1
+				activate_production_methods={ "pm_simple_farming_building_rice_farm" "pm_no_secondary" "pm_tools_disabled"  }
+			}
+		}
+		region_state:JAP={
+			create_building={
+				building="building_port"
+				level=1
+				reserves=1
+				activate_production_methods={ "pm_industrial_port" }
+			}
+		}
 		region_state:RNG={
 			create_building={
 				building="building_dye_plantation"
@@ -748,29 +758,9 @@
 				activate_production_methods={ "pm_industrial_port" }
 			}
 		}
-		region_state:PHC ={
-			create_building={
-				building="building_barracks"
-				level=28
-				reserves=1
-				activate_production_methods={ "pm_general_training" }
-			}
-			create_building={
-				building="building_logging_camp"
-				level=10
-				reserves=1
-				activate_production_methods={ "pm_simple_forestry" "pm_hardwood" "pm_no_equipment" "pm_road_carts" "pm_merchant_guilds_building_logging_camp" }
-			}
-			create_building={
-				building="building_small_workshop"
-				level=8
-				reserves=1
-				activate_production_methods={ "pm_small_workshop" }
-			}
-		}
 	}
 	s:STATE_VISAYAS={
-		region_state:RNG={
+		region_state:PHI={
 			create_building={
 				building="building_sugar_plantation"
 				level=3

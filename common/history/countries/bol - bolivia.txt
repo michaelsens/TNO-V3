@@ -4,22 +4,29 @@
 		effect_starting_politics_conservative = yes
 		
 		activate_law = law_type:law_presidential_republic
-		activate_law = law_type:law_census_voting
+		activate_law = law_type:law_autocracy 
 		activate_law = law_type:law_racial_segregation
-		activate_law = law_type:law_free_trade
+		activate_law = law_type:law_mercantilism
 		activate_law = law_type:law_interventionism
 		activate_law = law_type:law_censorship
 		activate_law = law_type:law_per_capita_based_taxation
-		activate_law = law_type:law_private_schools
-		activate_law = law_type:law_local_police
-		activate_law = law_type:law_slavery_banned
+		activate_law = law_type:law_no_schools
+		activate_law = law_type:law_no_police
 
 		add_modifier = {
             name = modifier_developing_economy
         } 
 
 
-		
+		ig:ig_armed_forces = {
+			add_ideology = ideology_caudillismo
+			add_ruling_interest_group = yes
+		}
+
+		ig:ig_landowners = {
+			remove_ideology = ideology_paternalistic
+			add_ideology = ideology_caudillismo
+		}
 
 		ig:ig_devout = {
 			set_interest_group_name = ig_catholic_church

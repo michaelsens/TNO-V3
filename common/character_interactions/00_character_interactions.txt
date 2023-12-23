@@ -18,9 +18,8 @@ grant_command_to_ruler = {
 
 	potential = {
 		is_ruler = yes
-		NOR = {
+		NOT = {
 			has_role = general
-			has_role = admiral
 		}
 		owner = scope:actor
 	}
@@ -95,9 +94,7 @@ remove_command_from_ruler = {
 	}
 
 	possible = {
-		commander_military_formation = {
-			is_mobilized = no
-		}
+		is_mobilized = no
 	}
 
 	effect = {
@@ -324,6 +321,7 @@ abdicate_monarch = {
 	clicksound = "event:/SFX/UI/Military/command_grant"
 
 	potential = {
+		has_dlc_feature = voice_of_the_people_content
 		owner = scope:actor
 		is_ruler = yes
 		owner = {
@@ -411,7 +409,6 @@ exile_character = {
 
 	potential = {
 		is_in_exile_pool = no
-		is_in_void = no
 		is_ruler = no
 		is_heir = no
 		# Cannot exile pure commanders, we have the retire interaction for that
@@ -889,7 +886,7 @@ retire_commander = {
 			limit = {
 				OR = {	
 					has_trait = expert_convoy_raider
-					has_trait = expert_artillery_commander
+					# has_trait = expert_artillery_commander
 					has_trait = expert_offensive_planner
 					has_trait = expert_defensive_strategist
 					has_trait = expert_naval_commander
@@ -901,7 +898,7 @@ retire_commander = {
 			limit = {
 				OR = {	
 					has_trait = experienced_convoy_raider
-					has_trait = experienced_artillery_commander
+					# has_trait = experienced_artillery_commander
 					has_trait = experienced_offensive_planner
 					has_trait = experienced_defensive_strategist
 					has_trait = experienced_naval_commander

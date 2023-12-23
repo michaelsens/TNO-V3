@@ -98,7 +98,7 @@ revolution_pulse2_events.1 = {
 			trigger_event = { id = revolution_pulse2_events.2 days = 365 popup = yes }
 		}
 		scope:army_lad_leader_scope = { 
-			set_character_busy_and_immortal = yes 
+			set_character_busy = yes 
 			set_variable = army_lad_leader_var
 		}
 	}
@@ -184,7 +184,7 @@ revolution_pulse2_events.2 = {
 	option = {
 		name = revolution_pulse2_events.2.a 
 		default_option = yes
-		scope:army_lad_leader_scope = { set_character_busy_and_immortal = no }
+		scope:army_lad_leader_scope = { set_character_busy = no }
 		add_modifier = {
 			name = results_of_the_fact_finding_mission
 			months = normal_modifier_time
@@ -531,7 +531,6 @@ revolution_pulse2_events.4 = {
 		}
 		revolution_progress_low = yes
 		any_scope_state = {
-			is_incorporated = yes
 			turmoil >= 0.10
 			any_scope_building = {
 				OR = {
@@ -552,7 +551,6 @@ revolution_pulse2_events.4 = {
 		save_revolution_scopes = yes
 		random_scope_state = {
 			limit = {
-				is_incorporated = yes
 				turmoil >= 0.10
 				any_scope_building = {
 					OR = {
@@ -631,7 +629,7 @@ revolution_pulse2_events.4 = {
 				months = normal_modifier_time
 			}
 		}
-		scope:ongoing_revolution_movement = {
+		scope:ongoing_revolution = {
 			add_modifier = {
 				name = abolished_scrip_wages
 				months = normal_modifier_time
@@ -640,7 +638,6 @@ revolution_pulse2_events.4 = {
 		set_variable = abolished_scrip_wages_var
 	}
 }
-
 
 revolution_pulse2_events.5 = {
 	type = country_event
