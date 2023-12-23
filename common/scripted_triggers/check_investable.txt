@@ -6,6 +6,13 @@
 		}
 		has_law = law_type:law_free_trade
 		scope:investor_country.market_capital.owner = { has_treaty_port_in_country = prev }
+		AND = {
+			has_variable = mine_exclusive
+			scope:investor_country.market_capital.owner = {
+				has_variable = fi_identification
+			}
+			var:mine_exclusive = scope:investor_country.market_capital.owner.var:fi_identification
+		}
 		overlord = {
 			has_diplomatic_pact = {
 				who = scope:investor_country.market_capital.owner

@@ -1,5 +1,7 @@
-﻿fi_id_select_building_1 = {
+﻿
 
+fi_id_select_building_1 = {
+      
 if = {
           limit = {
                any_state ={
@@ -555,6 +557,30 @@ else_if = {
 else_if = {
           limit = {
                any_state ={
+                    has_variable = $ID$_building_vineyard_plantation_picked
+               }
+          }
+          random_state = {
+               limit = {
+                     has_variable = $ID$_building_vineyard_plantation_picked
+               }
+               save_scope_as = buy_share_target_state
+               random_scope_building = {
+                    limit = { is_building_type = building_vineyard_plantation }
+                    save_scope_as = buy_share_target_building
+               }
+               set_variable = {
+                    name = $ID$_building_vineyard_plantation_sell
+                    value = 1
+                    months = 2
+               }
+               remove_variable = $ID$_building_vineyard_plantation_picked
+               
+          }
+     }
+else_if = {
+          limit = {
+               any_state ={
                     has_variable = $ID$_building_maize_farm_picked
                }
           }
@@ -1032,7 +1058,78 @@ else_if = {
                
           }
      }
-     
+else_if = {
+          limit = {
+               any_state ={
+                    has_variable = $ID$_building_explosives_factory_picked
+               }
+          }
+          random_state = {
+               limit = {
+                     has_variable = $ID$_building_explosives_factory_picked
+               }
+               save_scope_as = buy_share_target_state
+               random_scope_building = {
+                    limit = { is_building_type = building_explosives_factory }
+                    save_scope_as = buy_share_target_building
+               }
+               set_variable = {
+                    name = $ID$_building_explosives_factory_sell
+                    value = 1
+                    months = 2
+               }
+               remove_variable = $ID$_building_explosives_factory_picked
+               
+          }
+     }
+else_if = {
+          limit = {
+               any_state ={
+                    has_variable = $ID$_building_military_shipyards_picked
+               }
+          }
+          random_state = {
+               limit = {
+                     has_variable = $ID$_building_military_shipyards_picked
+               }
+               save_scope_as = buy_share_target_state
+               random_scope_building = {
+                    limit = { is_building_type = building_military_shipyards }
+                    save_scope_as = buy_share_target_building
+               }
+               set_variable = {
+                    name = $ID$_building_military_shipyards_sell
+                    value = 1
+                    months = 2
+               }
+               remove_variable = $ID$_building_military_shipyards_picked
+               
+          }
+     }
+else_if = {
+          limit = {
+               any_state ={
+                    has_variable = $ID$_building_artillery_foundries_picked
+               }
+          }
+          random_state = {
+               limit = {
+                     has_variable = $ID$_building_artillery_foundries_picked
+               }
+               save_scope_as = buy_share_target_state
+               random_scope_building = {
+                    limit = { is_building_type = building_artillery_foundries }
+                    save_scope_as = buy_share_target_building
+               }
+               set_variable = {
+                    name = $ID$_building_artillery_foundries_sell
+                    value = 1
+                    months = 2
+               }
+               remove_variable = $ID$_building_artillery_foundries_picked
+               
+          }
+     }
 }
 
 
@@ -1457,6 +1554,24 @@ else_if = {
 }
 else_if = {
         limit = {
+                any_state={has_variable = $ID$_building_vineyard_plantation_sell}
+        }
+        random_state = {
+                limit = {has_variable = $ID$_building_vineyard_plantation_sell}
+                remove_variable = $ID$_building_vineyard_plantation_sell
+                save_scope_as = buy_share_target_state
+                random_scope_building = {
+                        limit = { is_building_type = building_vineyard_plantation }
+                        save_scope_as = buy_share_target_building
+                }
+                set_local_variable = {
+                        name = building_number_store
+                        value = var:$ID$_building_vineyard_plantation_number
+                }
+        }
+}
+else_if = {
+        limit = {
                 any_state={has_variable = $ID$_building_maize_farm_sell}
         }
         random_state = {
@@ -1812,6 +1927,60 @@ else_if = {
                 set_local_variable = {
                         name = building_number_store
                         value = var:$ID$_building_power_plant_number
+                }
+        }
+}
+else_if = {
+        limit = {
+                any_state={has_variable = $ID$_building_explosives_factory_sell}
+        }
+        random_state = {
+                limit = {has_variable = $ID$_building_explosives_factory_sell}
+                remove_variable = $ID$_building_explosives_factory_sell
+                save_scope_as = buy_share_target_state
+                random_scope_building = {
+                        limit = { is_building_type = building_explosives_factory }
+                        save_scope_as = buy_share_target_building
+                }
+                set_local_variable = {
+                        name = building_number_store
+                        value = var:$ID$_building_explosives_factory_number
+                }
+        }
+}
+else_if = {
+        limit = {
+                any_state={has_variable = $ID$_building_military_shipyards_sell}
+        }
+        random_state = {
+                limit = {has_variable = $ID$_building_military_shipyards_sell}
+                remove_variable = $ID$_building_military_shipyards_sell
+                save_scope_as = buy_share_target_state
+                random_scope_building = {
+                        limit = { is_building_type = building_military_shipyards }
+                        save_scope_as = buy_share_target_building
+                }
+                set_local_variable = {
+                        name = building_number_store
+                        value = var:$ID$_building_military_shipyards_number
+                }
+        }
+}
+else_if = {
+        limit = {
+                any_state={has_variable = $ID$_building_artillery_foundries_sell}
+        }
+        random_state = {
+                limit = {has_variable = $ID$_building_artillery_foundries_sell}
+                remove_variable = $ID$_building_artillery_foundries_sell
+                save_scope_as = buy_share_target_state
+                random_scope_building = {
+                        limit = { is_building_type = building_artillery_foundries }
+                        save_scope_as = buy_share_target_building
+                }
+                set_local_variable = {
+                        name = building_number_store
+                        value = var:$ID$_building_artillery_foundries_number
                 }
         }
 }
@@ -2375,6 +2544,30 @@ else_if = {
 else_if = {
           limit = {
                any_state ={
+                    has_variable = building_vineyard_plantation_picked
+               }
+          }
+          random_state = {
+               limit = {
+                     has_variable = building_vineyard_plantation_picked
+               }
+               save_scope_as = buy_share_target_state
+               random_scope_building = {
+                    limit = { is_building_type = building_vineyard_plantation }
+                    save_scope_as = buy_share_target_building
+               }
+               set_variable = {
+                    name = building_vineyard_plantation_sell
+                    value = 1
+                    months = 2
+               }
+               remove_variable = building_vineyard_plantation_picked
+               
+          }
+     }
+else_if = {
+          limit = {
+               any_state ={
                     has_variable = building_maize_farm_picked
                }
           }
@@ -2852,7 +3045,78 @@ else_if = {
                
           }
      }
-     
+else_if = {
+          limit = {
+               any_state ={
+                    has_variable = building_explosives_factory_picked
+               }
+          }
+          random_state = {
+               limit = {
+                     has_variable = building_explosives_factory_picked
+               }
+               save_scope_as = buy_share_target_state
+               random_scope_building = {
+                    limit = { is_building_type = building_explosives_factory }
+                    save_scope_as = buy_share_target_building
+               }
+               set_variable = {
+                    name = building_explosives_factory_sell
+                    value = 1
+                    months = 2
+               }
+               remove_variable = building_explosives_factory_picked
+               
+          }
+     }
+else_if = {
+          limit = {
+               any_state ={
+                    has_variable = building_military_shipyards_picked
+               }
+          }
+          random_state = {
+               limit = {
+                     has_variable = building_military_shipyards_picked
+               }
+               save_scope_as = buy_share_target_state
+               random_scope_building = {
+                    limit = { is_building_type = building_military_shipyards }
+                    save_scope_as = buy_share_target_building
+               }
+               set_variable = {
+                    name = building_military_shipyards_sell
+                    value = 1
+                    months = 2
+               }
+               remove_variable = building_military_shipyards_picked
+               
+          }
+     }
+else_if = {
+          limit = {
+               any_state ={
+                    has_variable = building_artillery_foundries_picked
+               }
+          }
+          random_state = {
+               limit = {
+                     has_variable = building_artillery_foundries_picked
+               }
+               save_scope_as = buy_share_target_state
+               random_scope_building = {
+                    limit = { is_building_type = building_artillery_foundries }
+                    save_scope_as = buy_share_target_building
+               }
+               set_variable = {
+                    name = building_artillery_foundries_sell
+                    value = 1
+                    months = 2
+               }
+               remove_variable = building_artillery_foundries_picked
+               
+          }
+     }
 }
 
 
@@ -3369,6 +3633,28 @@ else_if = {
 }
 else_if = {
      limit = {
+          any_state={has_variable = building_vineyard_plantation_sell}
+     }
+     random_state = {
+          limit = {has_variable = building_vineyard_plantation_sell}
+          remove_variable = building_vineyard_plantation_sell
+          save_scope_as = buy_share_target_state
+          random_scope_building = {
+               limit = { is_building_type = building_vineyard_plantation }
+               save_scope_as = buy_share_target_building
+               set_local_variable = {
+                    name = building_number_store
+                    value = level
+               }
+          }
+          every_id_executor = {
+               FUNCTION = fi_id_select_building_5
+               BUILDING = building_vineyard_plantation
+          }
+     }
+}
+else_if = {
+     limit = {
           any_state={has_variable = building_maize_farm_sell}
      }
      random_state = {
@@ -3804,6 +4090,72 @@ else_if = {
           every_id_executor = {
                FUNCTION = fi_id_select_building_5
                BUILDING = building_power_plant
+          }
+     }
+}
+else_if = {
+     limit = {
+          any_state={has_variable = building_explosives_factory_sell}
+     }
+     random_state = {
+          limit = {has_variable = building_explosives_factory_sell}
+          remove_variable = building_explosives_factory_sell
+          save_scope_as = buy_share_target_state
+          random_scope_building = {
+               limit = { is_building_type = building_explosives_factory }
+               save_scope_as = buy_share_target_building
+               set_local_variable = {
+                    name = building_number_store
+                    value = level
+               }
+          }
+          every_id_executor = {
+               FUNCTION = fi_id_select_building_5
+               BUILDING = building_explosives_factory
+          }
+     }
+}
+else_if = {
+     limit = {
+          any_state={has_variable = building_military_shipyards_sell}
+     }
+     random_state = {
+          limit = {has_variable = building_military_shipyards_sell}
+          remove_variable = building_military_shipyards_sell
+          save_scope_as = buy_share_target_state
+          random_scope_building = {
+               limit = { is_building_type = building_military_shipyards }
+               save_scope_as = buy_share_target_building
+               set_local_variable = {
+                    name = building_number_store
+                    value = level
+               }
+          }
+          every_id_executor = {
+               FUNCTION = fi_id_select_building_5
+               BUILDING = building_military_shipyards
+          }
+     }
+}
+else_if = {
+     limit = {
+          any_state={has_variable = building_artillery_foundries_sell}
+     }
+     random_state = {
+          limit = {has_variable = building_artillery_foundries_sell}
+          remove_variable = building_artillery_foundries_sell
+          save_scope_as = buy_share_target_state
+          random_scope_building = {
+               limit = { is_building_type = building_artillery_foundries }
+               save_scope_as = buy_share_target_building
+               set_local_variable = {
+                    name = building_number_store
+                    value = level
+               }
+          }
+          every_id_executor = {
+               FUNCTION = fi_id_select_building_5
+               BUILDING = building_artillery_foundries
           }
      }
 }
@@ -4356,6 +4708,29 @@ else_if = {
 else_if = {
      limit = {
           any_state ={
+               has_variable = $ID$_building_vineyard_plantation_SELL_SHARE
+          }
+     }
+     random_state = {
+          limit = {
+                has_variable = $ID$_building_vineyard_plantation_SELL_SHARE
+          }
+          save_scope_as = buy_share_target_state
+          random_scope_building = {
+               limit = { is_building_type = building_vineyard_plantation }
+               save_scope_as = buy_share_target_building
+          }
+          set_variable = {
+               name = $ID$_building_vineyard_plantation_sell_share_2
+               value = var:$ID$_building_vineyard_plantation_SELL_SHARE
+               months = 2
+          }
+          remove_variable = $ID$_building_vineyard_plantation_SELL_SHARE
+     }
+}
+else_if = {
+     limit = {
+          any_state ={
                has_variable = $ID$_building_maize_farm_SELL_SHARE
           }
      }
@@ -4813,6 +5188,75 @@ else_if = {
           remove_variable = $ID$_building_power_plant_SELL_SHARE
      }
 }
+else_if = {
+     limit = {
+          any_state ={
+               has_variable = $ID$_building_explosives_factory_SELL_SHARE
+          }
+     }
+     random_state = {
+          limit = {
+                has_variable = $ID$_building_explosives_factory_SELL_SHARE
+          }
+          save_scope_as = buy_share_target_state
+          random_scope_building = {
+               limit = { is_building_type = building_explosives_factory }
+               save_scope_as = buy_share_target_building
+          }
+          set_variable = {
+               name = $ID$_building_explosives_factory_sell_share_2
+               value = var:$ID$_building_explosives_factory_SELL_SHARE
+               months = 2
+          }
+          remove_variable = $ID$_building_explosives_factory_SELL_SHARE
+     }
+}
+else_if = {
+     limit = {
+          any_state ={
+               has_variable = $ID$_building_military_shipyards_SELL_SHARE
+          }
+     }
+     random_state = {
+          limit = {
+                has_variable = $ID$_building_military_shipyards_SELL_SHARE
+          }
+          save_scope_as = buy_share_target_state
+          random_scope_building = {
+               limit = { is_building_type = building_military_shipyards }
+               save_scope_as = buy_share_target_building
+          }
+          set_variable = {
+               name = $ID$_building_military_shipyards_sell_share_2
+               value = var:$ID$_building_military_shipyards_SELL_SHARE
+               months = 2
+          }
+          remove_variable = $ID$_building_military_shipyards_SELL_SHARE
+     }
+}
+else_if = {
+     limit = {
+          any_state ={
+               has_variable = $ID$_building_artillery_foundries_SELL_SHARE
+          }
+     }
+     random_state = {
+          limit = {
+                has_variable = $ID$_building_artillery_foundries_SELL_SHARE
+          }
+          save_scope_as = buy_share_target_state
+          random_scope_building = {
+               limit = { is_building_type = building_artillery_foundries }
+               save_scope_as = buy_share_target_building
+          }
+          set_variable = {
+               name = $ID$_building_artillery_foundries_sell_share_2
+               value = var:$ID$_building_artillery_foundries_SELL_SHARE
+               months = 2
+          }
+          remove_variable = $ID$_building_artillery_foundries_SELL_SHARE
+     }
+}
      
 }
 
@@ -5233,6 +5677,24 @@ else_if = {
 }
 else_if = {
      limit = {
+          any_state={has_variable = $ID$_building_vineyard_plantation_sell_share_2}
+     }
+     random_state = {
+          limit = {has_variable = $ID$_building_vineyard_plantation_sell_share_2}
+          save_scope_as = buy_share_target_state
+          random_scope_building = {
+               limit = { is_building_type = building_vineyard_plantation }
+               save_scope_as = buy_share_target_building
+          }
+          set_local_variable = {
+               name = building_number_store
+               value = var:$ID$_building_vineyard_plantation_sell_share_2
+          }
+          remove_variable = $ID$_building_vineyard_plantation_sell_share_2
+     }
+}
+else_if = {
+     limit = {
           any_state={has_variable = $ID$_building_maize_farm_sell_share_2}
      }
      random_state = {
@@ -5589,6 +6051,60 @@ else_if = {
                value = var:$ID$_building_power_plant_sell_share_2
           }
           remove_variable = $ID$_building_power_plant_sell_share_2
+     }
+}
+else_if = {
+     limit = {
+          any_state={has_variable = $ID$_building_explosives_factory_sell_share_2}
+     }
+     random_state = {
+          limit = {has_variable = $ID$_building_explosives_factory_sell_share_2}
+          save_scope_as = buy_share_target_state
+          random_scope_building = {
+               limit = { is_building_type = building_explosives_factory }
+               save_scope_as = buy_share_target_building
+          }
+          set_local_variable = {
+               name = building_number_store
+               value = var:$ID$_building_explosives_factory_sell_share_2
+          }
+          remove_variable = $ID$_building_explosives_factory_sell_share_2
+     }
+}
+else_if = {
+     limit = {
+          any_state={has_variable = $ID$_building_military_shipyards_sell_share_2}
+     }
+     random_state = {
+          limit = {has_variable = $ID$_building_military_shipyards_sell_share_2}
+          save_scope_as = buy_share_target_state
+          random_scope_building = {
+               limit = { is_building_type = building_military_shipyards }
+               save_scope_as = buy_share_target_building
+          }
+          set_local_variable = {
+               name = building_number_store
+               value = var:$ID$_building_military_shipyards_sell_share_2
+          }
+          remove_variable = $ID$_building_military_shipyards_sell_share_2
+     }
+}
+else_if = {
+     limit = {
+          any_state={has_variable = $ID$_building_artillery_foundries_sell_share_2}
+     }
+     random_state = {
+          limit = {has_variable = $ID$_building_artillery_foundries_sell_share_2}
+          save_scope_as = buy_share_target_state
+          random_scope_building = {
+               limit = { is_building_type = building_artillery_foundries }
+               save_scope_as = buy_share_target_building
+          }
+          set_local_variable = {
+               name = building_number_store
+               value = var:$ID$_building_artillery_foundries_sell_share_2
+          }
+          remove_variable = $ID$_building_artillery_foundries_sell_share_2
      }
 }
 
