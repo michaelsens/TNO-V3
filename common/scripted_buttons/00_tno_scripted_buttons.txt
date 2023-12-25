@@ -1002,7 +1002,7 @@ je_ru_launch_raid = {
     			is_at_war = no
     			has_modifier = modifier_developing_economy
     			NOT = {
-				has_modifier = recently_raided
+					has_modifier = recently_raided
 				}
    			}
    			save_scope_as = raid_target
@@ -1037,5 +1037,38 @@ je_ru_launch_raid = {
                     target_country = scope:raid_target
                 }
         }
+	}
+}
+
+je_ru_irk_restore_far_east = {
+	name = "je_ru_irk_restore_far_east"
+	desc = "je_ru_irk_restore_far_east_desc"
+
+	possible = {
+		owns_entire_state_region = STATE_IRKUTSK
+        owns_entire_state_region = STATE_TRANS_BAIKAL
+        owns_entire_state_region = STATE_OKHOTSK
+        owns_entire_state_region = STATE_CHUKOTKA
+        owns_entire_state_region = STATE_YAKUTSK
+        owns_entire_state_region = STATE_KAMCHATKA
+	}
+
+	effect = {
+		custom_tooltip = je_ru_irk_restore_far_east_tt_1
+
+
+  		scope:raid_target = {
+  			add_modifier = {
+        		name = recently_raided
+       			months = 61
+    		}
+  		}
+
+  		add_modifier = {
+        	name = recently_looted_neighbor
+       		months = 13
+    	}
+
+    	custom_tooltip = je_ru_irk_restore_far_east_tt_2
 	}
 }
