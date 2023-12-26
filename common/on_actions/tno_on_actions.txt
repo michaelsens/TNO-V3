@@ -429,11 +429,16 @@
             trigger_event = { id = tno_irk_events.4 days = 60 popup = no }
         }
 
-        if = { #Irkutsk: No longer has law Autocracy
+        if = { #Irkutsk: No longer has law Autocracy, but yagoda is still alive.  The party came into power and overthrew him.
             limit = {
                NOT = {has_law = law_type:law_autocracy}
                NOT = { has_variable = irk_noat_var }
+               every_scope_character = {
+                    has_variable = is_genrikh
+                    is_character_alive = yes
+                }
             }
+
             set_variable = irk_noat_var
 
             trigger_event = { id = tno_irk_events.5 days = 2 popup = no }

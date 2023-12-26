@@ -14,6 +14,10 @@
 		value = 0
 	}
 	
+	disallowing_laws = {
+        law_nkvd_securocracy
+    }
+
 	# AI shouldn't try to abolish institutions
 	ai_will_do = {
 		always = no
@@ -42,6 +46,10 @@ law_national_guard = {
 	unlocking_technologies = {
 		law_enforcement
 	}
+
+	disallowing_laws = {
+        law_nkvd_securocracy
+    }
 
 	modifier = {
 		country_institution_home_affairs_max_investment_add = 2
@@ -118,6 +126,13 @@ law_nkvd_securocracy = {
 		ROOT = c:IRK
 	}
 
+	disallowing_laws = {
+        law_national_guard
+        law_no_home_affairs
+        law_secret_police
+        law_guaranteed_liberties
+    }
+
 	unlocking_technologies = {
 		central_archives
 	}
@@ -125,12 +140,21 @@ law_nkvd_securocracy = {
 	modifier = {
 		country_institution_home_affairs_max_investment_add = 2
 		state_mortality_turmoil_mult = 0.001
+		interest_group_ig_trade_unions_pol_str_mult = 500
+		interest_group_ig_devout_pol_str_mult = -10
+		interest_group_ig_industrialists_pol_str_mult = -10
+		interest_group_ig_rural_folk_pol_str_mult = -10
+		interest_group_ig_petty_bourgeoisie_pol_str_mult = -10
+		interest_group_ig_landowners_pol_str_mult = -10
+		interest_group_ig_intelligentsia_pol_str_mult = -10
 	}
 	
 	institution = institution_nkvd_securocracy
 	institution_modifier = {
 		country_suppression_ig_attraction_mult = -0.05
 		political_movement_radicalism_mult = -0.1
+
+		interest_group_ig_armed_forces_pol_str_mult = 0.05
 	}
 	
 	possible_political_movements = {
@@ -170,6 +194,10 @@ law_secret_police = {
 	unlocking_technologies = {
 		central_archives
 	}
+
+	disallowing_laws = {
+        law_nkvd_securocracy
+    }
 
 	modifier = {
 		country_institution_home_affairs_max_investment_add = 2
