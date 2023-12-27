@@ -1051,30 +1051,23 @@ je_ru_irk_restore_far_east = {
 	desc = "je_ru_irk_restore_far_east_desc"
 
 	possible = {
-		owns_entire_state_region = STATE_IRKUTSK
-        owns_entire_state_region = STATE_TRANS_BAIKAL
-        owns_entire_state_region = STATE_OKHOTSK
-        owns_entire_state_region = STATE_CHUKOTKA
-        owns_entire_state_region = STATE_YAKUTSK
-        owns_entire_state_region = STATE_KAMCHATKA
+		#owns_entire_state_region = STATE_IRKUTSK
+        #owns_entire_state_region = STATE_TRANS_BAIKAL
+        #owns_entire_state_region = STATE_OKHOTSK
+        #owns_entire_state_region = STATE_CHUKOTKA
+        #owns_entire_state_region = STATE_YAKUTSK
+        #owns_entire_state_region = STATE_KAMCHATKA
 	}
 
 	effect = {
 		custom_tooltip = je_ru_irk_restore_far_east_tt_1
 
-
-  		scope:raid_target = {
-  			add_modifier = {
-        		name = recently_raided
-       			months = 61
-    		}
-  		}
-
-  		add_modifier = {
-        	name = recently_looted_neighbor
-       		months = 13
-    	}
+		set_variable = {
+            name = irk_form_far_east
+        } 
 
     	custom_tooltip = je_ru_irk_restore_far_east_tt_2
+    	custom_tooltip = je_ru_irk_restore_far_east_tt_3
+    	custom_tooltip = je_ru_irk_restore_far_east_tt_4
 	}
 }

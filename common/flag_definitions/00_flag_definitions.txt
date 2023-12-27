@@ -3306,7 +3306,17 @@ IRK = { # irkust
 		trigger = {
 			exists = scope:actor
 			scope:actor = {
-				has_law = law_type:law_council_republic
+				NOT = { has_variable = irk_form_far_east }
+			}
+		}
+	}
+	flag_definition = { # starting flagg
+		coa = RUS_soviet_union
+		priority = 3000
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_variable = irk_form_far_east
 			}
 		}
 	}
