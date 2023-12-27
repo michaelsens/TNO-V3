@@ -1,0 +1,46 @@
+je_reclaim_ger = { 
+
+    icon = "gfx/interface/icons/new_event_icons/malaya.dds"
+    group = je_group_historical_content
+    scripted_button = je_malaya_ofn_a
+    scripted_button = je_malaya_ofn_b
+    scripted_button = je_malaya_ofn_c
+
+    complete = {
+       
+        #c:RKO = {
+        #    owns_entire_state_region = STATE_LATVIA
+        #}
+		
+		
+	}
+
+    fail = {
+        c:JOH = {
+            owns_entire_state_region = STATE_MALAYA
+        } 
+    }
+
+    on_fail = {
+        add_modifier = {
+            name = proxy_lost
+            months = 250
+        } 
+    }
+
+    on_complete = {
+        add_modifier = {
+            name = proxy_won
+            months = 250
+        } 
+    }
+
+    progressbar = no
+    
+    weight = 100
+
+    
+    should_be_pinned_by_default = yes
+    
+}
+
