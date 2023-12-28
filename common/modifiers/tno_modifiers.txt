@@ -272,6 +272,13 @@ slavery_dependence = {
 	building_minimum_wage_mult = -0.05
 }
 
+decaying_infrastructure = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
+	state_infrastructure_mult = -0.15
+	state_tax_waste_add = 0.05
+	state_construction_mult = -0.05
+}
+
 war_spoils = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds
 	country_tax_income_add = 50000
@@ -357,38 +364,37 @@ protesters_counterd = {
 
 hitler_youth_speer = {
     icon = gfx/interface/icons/timed_modifier_icons/modifier_lightbulb_positive.dds
-	interest_group_ig_armed_forces_approval_add = -10
+	interest_group_ig_armed_forces_approval_add = -7
 	interest_group_ig_industrialists_pol_str_mult = 0.15 
-	interest_group_ig_landowners_approval_add = -10
-	interest_group_ig_petty_bourgeoisie_approval_add = -10
-
+	interest_group_ig_landowners_approval_add = -7
+	interest_group_ig_petty_bourgeoisie_approval_add = -7
 }
 
 hitler_youth_bore = {
     icon = gfx/interface/icons/timed_modifier_icons/modifier_lightbulb_positive.dds
 	interest_group_ig_landowners_pol_str_mult = 0.15
-	interest_group_ig_petty_bourgeoisie_approval_add = -10
-	interest_group_ig_industrialists_approval_add = -10
-	interest_group_ig_armed_forces_approval_add = -10
+	interest_group_ig_petty_bourgeoisie_approval_add = -4
+	interest_group_ig_industrialists_approval_add = -4
+	interest_group_ig_intelligencia_approval_add = -4
+	interest_group_ig_armed_forces_approval_add = -4
 }
 
 hitler_youth_gore = {
     icon = gfx/interface/icons/timed_modifier_icons/modifier_lightbulb_positive.dds
 	interest_group_ig_armed_forces_pol_str_mult = 0.15
-	interest_group_ig_petty_bourgeoisie_approval_add = -10
-	interest_group_ig_industrialists_approval_add = -10
-	interest_group_ig_landowners_approval_add = -10
-
+	interest_group_ig_petty_bourgeoisie_approval_add = -7
+	interest_group_ig_industrialists_approval_add = -7
+	interest_group_ig_intelligencia_approval_add = -7
+	interest_group_ig_landowners_approval_add = -7
 }
 
 hitler_youth_ss = {
     icon = gfx/interface/icons/timed_modifier_icons/modifier_lightbulb_positive.dds
     interest_group_ig_petty_bourgeoisie_pol_str_mult = 0.25
-    interest_group_ig_armed_forces_approval_add = -15
-	interest_group_ig_landowners_approval_add = -15
-	interest_group_ig_industrialists_approval_add = -15
-
-
+    interest_group_ig_armed_forces_approval_add = -10
+	interest_group_ig_landowners_approval_add = -10
+	interest_group_ig_industrialists_approval_add = -12
+	interest_group_ig_intelligencia_approval_add = -12
 }
 
 
@@ -396,19 +402,18 @@ hitler_youth_ss = {
 ss_counterd_speer = {
     icon = gfx/interface/icons/timed_modifier_icons/modifier_lightbulb_positive.dds
     interest_group_ig_petty_bourgeoisie_pol_str_mult = -0.25
-    interest_group_ig_petty_bourgeoisie_approval_add = -10
+    interest_group_ig_petty_bourgeoisie_approval_add = -5
 	interest_group_ig_industrialists_pol_str_mult = 0.15 
-
-
+	state_turmoil_effects_mult = 0.05
+	state_mortality_turmoil_mult = -0.02
+	state_construction_mult = 0.05
 }
 
 ss_counterd_bore = {
     icon = gfx/interface/icons/timed_modifier_icons/modifier_lightbulb_positive.dds
     interest_group_ig_petty_bourgeoisie_pol_str_mult = -0.25
-    interest_group_ig_petty_bourgeoisie_approval_add = -10
+    interest_group_ig_petty_bourgeoisie_approval_add = -5
 	interest_group_ig_landowners_pol_str_mult = 0.15
-
-
 }
 
 ss_counterd_gore = {
@@ -416,8 +421,9 @@ ss_counterd_gore = {
     interest_group_ig_petty_bourgeoisie_pol_str_mult = -0.25
     interest_group_ig_petty_bourgeoisie_approval_add = -10
 	interest_group_ig_armed_forces_pol_str_mult = 0.15
-
-
+	state_turmoil_effects_mult = 0.05
+	state_mortality_turmoil_mult = -0.02
+	country_military_goods_cost_mult = -0.05
 }
 
 ss_counterd_ss = {
@@ -426,52 +432,59 @@ ss_counterd_ss = {
     interest_group_ig_armed_forces_approval_add = -5
 	interest_group_ig_landowners_approval_add = -5
 	interest_group_ig_industrialists_approval_add = -5
-
-
+	interest_group_ig_intelligencia_approval_add = -5
+	state_turmoil_effects_mult = -0.08
+	state_mortality_turmoil_mult = 0.05
+	country_military_goods_cost_mult = 0.05
+	state_construction_mult = -0.05
 }
 
 full_funding_auto = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_negative.dds
-	country_tax_income_add = -50000
+	country_expenses_add = 50000
 	interest_group_ig_industrialists_pol_str_mult = 0.15 
-	interest_group_ig_armed_forces_approval_add = -5
-	interest_group_ig_landowners_approval_add = -5
-	interest_group_ig_petty_bourgeoisie_approval_add = -5
-
+	interest_group_ig_armed_forces_approval_add = -3
+	interest_group_ig_landowners_approval_add = -3
+	interest_group_ig_petty_bourgeoisie_approval_add = -3
 }
 
 heer_funding_auto = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_negative.dds
-	country_tax_income_add = -40000
+	country_expenses_add = 25000
 	interest_group_ig_armed_forces_pol_str_mult = 0.1
 	interest_group_ig_landowners_pol_str_mult = 0.05
-	interest_group_ig_petty_bourgeoisie_approval_add = -10
-	interest_group_ig_industrialists_approval_add = -10
-
+	interest_group_ig_petty_bourgeoisie_approval_add = -5
+	interest_group_ig_industrialists_approval_add = -5
+	interest_group_ig_intelligencia_approval_add = -5
+	
 }
 
 none_funding_auto = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_negative.dds
-	interest_group_ig_armed_forces_approval_add = -8
-	interest_group_ig_landowners_approval_add = -8
-	interest_group_ig_industrialists_approval_add = -8
+	interest_group_ig_armed_forces_approval_add = -3
+	interest_group_ig_landowners_approval_add = -3
+	interest_group_ig_industrialists_approval_add = -3
+	interest_group_ig_intelligencia_approval_add = -3
 }
 
 fuck_vets_speer = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_negative.dds
-	interest_group_ig_armed_forces_approval_add = -10
+	interest_group_ig_armed_forces_approval_add = -8
 	interest_group_ig_industrialists_pol_str_mult = 0.15 
-	interest_group_ig_landowners_approval_add = -10
-	interest_group_ig_petty_bourgeoisie_approval_add = -10
+	interest_group_ig_landowners_approval_add = -5
+	interest_group_ig_petty_bourgeoisie_approval_add = -6
+	country_military_wages_mult = -0.15
+	country_soldiers_standard_of_living_add	= -1
 }
 
 yay_vets_balls = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_negative.dds
-	country_tax_income_add = -40000
 	interest_group_ig_armed_forces_pol_str_mult = 0.1
 	interest_group_ig_landowners_pol_str_mult = 0.1
 	interest_group_ig_petty_bourgeoisie_pol_str_mult = 0.1
-	interest_group_ig_industrialists_approval_add = -10
+	interest_group_ig_industrialists_approval_add = -4
+	interest_group_ig_intelligencia_approval_add = -4
+	country_military_wages_mult = 0.25
 }
 
 intelligentsia_movie = {
@@ -479,38 +492,89 @@ intelligentsia_movie = {
 	interest_group_ig_intelligentsia_pol_str_mult = 0.15
 	interest_group_ig_intelligentsia_approval_add = 3
 	state_pop_qualifications_mult = 0.1
-
 }
 
 heer_funding_mill = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_negative.dds
-	country_tax_income_add = -30000
 	interest_group_ig_armed_forces_pol_str_mult = 0.25
-	interest_group_ig_landowners_pol_str_mult = 0.1
-	interest_group_ig_petty_bourgeoisie_approval_add = -10
-	interest_group_ig_industrialists_approval_add = -10
-
+	interest_group_ig_petty_bourgeoisie_approval_add = -6
+	interest_group_ig_industrialists_approval_add = -6
+	interest_group_ig_intelligencia_approval_add = -6
+	interest_group_ig_landowners_approval_add = -4
+	country_military_wages_mult = 0.05
+	country_military_goods_cost_mult = 0.05
+	state_tax_waste_add = 0.02
 }
 
 speer_funding_mill = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_negative.dds
-	country_tax_income_add = -30000
-	interest_group_ig_armed_forces_approval_add = -10
+	country_military_wages_mult = -0.20
+	country_military_goods_cost_mult = -0.15
+	unit_morale_recovery_mult = -0.1
+	unit_army_offense_mult = -0.1
+	unit_army_defense_mult = -0.1
+	interest_group_ig_armed_forces_approval_add = -12
 	interest_group_ig_industrialists_pol_str_mult = 0.15 
-	interest_group_ig_landowners_approval_add = -10
+	interest_group_ig_landowners_approval_add = -7
 	interest_group_ig_petty_bourgeoisie_approval_add = -10
+	state_construction_mult = 0.10
+}
 
+borman_funding_mill = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_negative.dds
+	interest_group_ig_armed_forces_approval_add = -4
+	interest_group_ig_landowners_pol_str_mult = 0.15 
+	interest_group_ig_industrialists_approval_add = -3
+	interest_group_ig_intelligencia_approval_add = -3
+	interest_group_ig_petty_bourgeoisie_approval_add = -5
 }
 
 ss_funding_mill = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_negative.dds
-	country_tax_income_add = -30000
 	interest_group_ig_petty_bourgeoisie_pol_str_mult = 0.25
     interest_group_ig_armed_forces_approval_add = -10
 	interest_group_ig_landowners_approval_add = -10
 	interest_group_ig_industrialists_approval_add = -10
-
+	interest_group_ig_intelligencia_approval_add = -10
+	state_radicals_from_discrimination_mult = 0.1
+	state_turmoil_effects_mult = -0.1
+	unit_morale_recovery_mult = -0.05
+	unit_army_offense_mult = -0.05
+	unit_army_defense_mult = -0.05
+	state_mortality_turmoil_mult = 0.1
+	state_tax_waste_add = 0.05
 }
+
+speer_womens_rights = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_lightbulb_positive.dds
+	interest_group_ig_armed_forces_approval_add = -3
+	interest_group_ig_landowners_approval_add = -3
+	interest_group_ig_devout_approval_add = -7
+	interest_group_ig_intelligencia_approval_add = 3
+	interest_group_ig_rural_folk_approval_add = -3
+	interest_group_ig_industrialists_pol_str_mult = 0.15
+	state_working_adult_ratio_add = 0.03
+	state_birth_rate_mult = -0.01
+}
+
+goring_womens_rights = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_lightbulb_positive.dds
+	interest_group_ig_industrialists_approval_add = -3
+	interest_group_ig_intelligencia_approval_add = -6
+	interest_group_ig_armed_forces_pol_str_mult = 0.15
+	state_working_adult_ratio_add = -0.03
+	state_birth_rate_mult = 0.01
+}
+
+ss_womens_rights = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_lightbulb_positive.dds
+	interest_group_ig_industrialists_approval_add = -6
+	interest_group_ig_intelligencia_approval_add = -12
+	interest_group_ig_petty_bourgeoisie_pol_str_mult = 0.15
+	state_working_adult_ratio_add = -0.06
+	state_birth_rate_mult = 0.02
+}
+
 
 trade_union_movie = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_lightbulb_positive.dds

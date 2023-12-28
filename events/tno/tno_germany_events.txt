@@ -447,6 +447,11 @@ tno_germany_events.11 = { # Autobahn renewel
             name = full_funding_auto
             years = 2
         }
+
+        add_modifier = {
+            name = decaying_infrastructure
+            multiplier = 0.5
+        }
         
 	}
 
@@ -468,6 +473,10 @@ tno_germany_events.11 = { # Autobahn renewel
         name = heer_funding_auto
         years = 2
     }
+    add_modifier = {
+            name = decaying_infrastructure
+            multiplier = 0.75
+    }
      custom_tooltip = "The Chancellerys influence will increase by 5 "
 	}
    option = { # hydrick 
@@ -479,6 +488,10 @@ tno_germany_events.11 = { # Autobahn renewel
       add_modifier = {
         name = none_funding_auto
         years = 2
+    }
+    add_modifier = {
+            name = decaying_infrastructure
+            multiplier = 1.5
     }
       custom_tooltip = "SS influence will increase by 5"
 
@@ -523,6 +536,10 @@ tno_germany_events.12 = { # Vets demand their share
             name = fuck_vets_speer
             years = 2
         }
+        add_radicals = {
+            value = 0.1
+            interest_group = ig:ig_armed_forces
+        }
          
         
         
@@ -549,6 +566,10 @@ tno_germany_events.12 = { # Vets demand their share
          add_modifier = {
             name = yay_vets_balls
             years = 2
+        }
+        add_loyalists = {
+            value = 0.1
+            interest_group = ig:ig_armed_forces
         }
          custom_tooltip = "SS influence will increase by 5"
      custom_tooltip = "The Chancellerys influence will increase by 5 "
@@ -586,14 +607,13 @@ tno_germany_events.13 = { # Demands for womens rights
             add = 5
          }
          custom_tooltip = "Will boost Autark influence by 5"
-
          add_radicals = {
-            value = 0.1
-        
+            value = 0.02
         }
-         
-        
-        
+        add_modifier = {
+            name = speer_womens_rights
+            years = 2
+        }
 	}
 
     option = { # Borman 
@@ -607,8 +627,10 @@ tno_germany_events.13 = { # Demands for womens rights
 
      add_radicals = {
         value = 0.05
-    
     }
+    
+    
+
 	}
     option = { # goreing 
      name = "We are not changing the status quo, break up the marches!"
@@ -621,9 +643,14 @@ tno_germany_events.13 = { # Demands for womens rights
      }
 
      add_radicals = {
-        value = 0.06
-    
+        value = 0.07
     }
+
+    add_modifier = {
+        name = goring_womens_rights
+        years = 2
+    }
+
     }
 
    option = { # hydrick 
@@ -639,7 +666,10 @@ tno_germany_events.13 = { # Demands for womens rights
     
     }
 
-     
+    add_modifier = {
+        name = ss_womens_rights
+        years = 2
+    }
    
      
     }
@@ -680,18 +710,25 @@ tno_germany_events.14 = { # mill budget review
             name = speer_funding_mill
             years = 2
         }
-         
-        
-        
 	}
 
-    option = { # Borman 
+    option = { #Borman
+        name = "Slightly restructure the budget."
+        change_variable = {
+            name = boreman_ger_struggle_timer
+            add = 5
+         }
+        custom_tooltip = "The Chancellerys influence will increase by 5 "
+
+         add_modifier = {
+            name = borman_funding_mill
+            years = 2
+        }
+	}
+
+    option = { # Goring 
      name = "Our enemies grow stronger everyday, the budget remains"
-       default_option = yes
-       change_variable = {
-        name = boreman_ger_struggle_timer
-        add = 5
-     }
+        default_option = yes
      custom_tooltip = "Militarists influence will increase by 5"
 
      add_modifier = {
@@ -759,7 +796,9 @@ tno_germany_events.15 = { # Hitler youth review
             name = hitler_youth_speer
             years = 2
         }
-        
+        add_radicals = {
+            value = 0.05
+        }
 	}
 
     option = { # Borman 
@@ -789,6 +828,9 @@ tno_germany_events.15 = { # Hitler youth review
         name = hitler_youth_gore
         years = 2
     }
+    add_loyalists = {
+            value = 0.05
+        }
      
     }
 
