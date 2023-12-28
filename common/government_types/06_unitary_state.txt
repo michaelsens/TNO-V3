@@ -27,21 +27,49 @@
 	}
 }
 
+gov_NSDAP_dictatorship = {
+	transfer_of_power = dictatorial
+	male_ruler = "RULER_FUHRER_TRUE"
+	female_ruler = "RULER_FUHRER_TRUE"
+
+	possible = {
+		has_law = law_type:law_unitary_state	
+		has_law = law_type:law_colonial_exploitation
+		has_law = law_type:law_single_party_state			
+		has_law = law_type:law_ethnostate
+		has_law = law_type:law_outlawed_dissent
+		has_law = law_type:law_secret_police
+		has_law = law_type:law_public_schools
+		has_law = law_type:law_regulatory_bodies
+		has_law = law_type:law_migration_controls
+		has_law = law_type:law_mercantilism
+		has_law = law_type:law_slave_trade	
+		has_law = law_type:law_professional_army
+		
+	}
+
+	on_government_type_change = {
+		change_to_dictatorial = yes
+	}
+}
+
 gov_fascist_dictatorship = {
 	transfer_of_power = dictatorial
 	male_ruler = "RULER_FUHRER_TRUE"
 	female_ruler = "RULER_FUHRER_TRUE"
 
 	possible = {
-		law_colonial_exploitation
-		law_protectionism
-		law_single_party_state
-		law_ethnostate
-		law_unitary_state
-		law_autocracy
-		law_outlawed_dissent
-		law_secret_police
-		law_public_schools
+		has_law = law_type:law_total_separation
+		has_law = law_type:law_colonial_exploitation
+		has_law = law_type:law_protectionism
+		has_law = law_type:law_single_party_state
+		has_law = law_type:law_national_supremacy
+		has_law = law_type:law_unitary_state
+		has_law = law_type:law_outlawed_dissent
+		has_law = law_type:law_secret_police
+		has_law = law_type:law_public_schools
+		has_law = law_type:law_worker_protections
+		has_law = law_type:law_command_economy
 	}
 
 	on_government_type_change = {
@@ -60,6 +88,7 @@ gov_Unitary_dictatorship = {
 		law_outlawed_dissent
 		law_secret_police
 		law_public_schools
+		law_oligarchy
 	}
 
 	on_government_type_change = {
