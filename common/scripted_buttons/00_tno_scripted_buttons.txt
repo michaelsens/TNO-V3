@@ -980,14 +980,16 @@ je_ru_launch_raid = {
 	possible = {
 		is_at_war = no
 		root = {
-			has_modifier = modifier_developing_economy
+        	has_modifier = russian_warlord
 		}
 		is_diplomatic_play_target = no
 		is_diplomatic_play_initiator = no
 		any_country = {
 			has_strategic_adjacency = root
-			is_at_war = no
+			is_diplomatic_play_target = no
+			is_diplomatic_play_initiator = no
 			save_scope_as = raid_target
+            has_modifier = russian_warlord
 			NOT = {
 				has_modifier = recently_raided
 			}
@@ -999,8 +1001,9 @@ je_ru_launch_raid = {
   		random_country = {
     		limit = {
     	  		has_strategic_adjacency = root
-    			is_at_war = no
-    			has_modifier = modifier_developing_economy
+    			is_diplomatic_play_target = no
+				is_diplomatic_play_initiator = no
+            	has_modifier = russian_warlord
     			NOT = {
 					has_modifier = recently_raided
 				}
@@ -1066,6 +1069,10 @@ je_ru_irk_restore_far_east = {
             name = irk_form_far_east
         } 
 
+        hidden_effect = {
+        	remove_modifier = russian_warlord
+        }
+
     	custom_tooltip = je_ru_irk_restore_far_east_tt_2
     	custom_tooltip = je_ru_irk_restore_far_east_tt_3
     	custom_tooltip = je_ru_irk_restore_far_east_tt_4
@@ -1076,6 +1083,7 @@ je_ru_irk_restore_far_east = {
     	}
 
     	add_journal_entry = { type = je_ru_tno_sakha_expedition }
+    	add_journal_entry = { type = je_ru_tno_repair_transib }
 	}
 }
 
@@ -1084,6 +1092,7 @@ je_ru_gen_sakha_expedition = {
 	desc = "sakha_expedition_desc"
 
 	possible = {
+		bureaucracy >= 200
 		custom_tooltip = {
             text = tt.formed_far_east
             has_variable = irk_form_far_east

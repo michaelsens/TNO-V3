@@ -69,6 +69,12 @@ je_ru_tno_sakha_expedition = {
     status_desc = {
         first_valid = {
             triggered_desc = {
+                desc = expedition_not_begun
+                trigger = {
+                    NOT = { has_variable = on_expedition }
+                }
+            }
+            triggered_desc = {
                 desc = expedition_low_peril_loc
                 trigger = {
                     var:expedition_peril < 4
@@ -139,5 +145,30 @@ je_ru_tno_sakha_expedition = {
     
     weight = 200
     transferable = no
+    should_be_pinned_by_default = yes
+}
+
+je_ru_tno_repair_transib = {
+    icon = "gfx/interface/icons/invention_icons/railways.dds"
+    group = je_group_technology
+
+    possible = {
+        NOT = { has_variable = transsib_done }
+    }
+
+    complete = {
+        any_scope_state = {
+            state_region = s:STATE_IRKUTSK
+            has_building = building_railway
+        }
+    }
+
+    on_complete = {
+        set_variable = transsib_done
+        trigger_event = { id = major_railways.2 }
+        #add paris of siberia if they are irkutsk
+    }
+
+    weight = 50
     should_be_pinned_by_default = yes
 }
