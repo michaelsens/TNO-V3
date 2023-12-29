@@ -221,9 +221,9 @@ tno_germany_events.8 = { # hitler picks sucsesser
  
     
  
-    title = "Choosing a Successor"
-    desc = "The time has come for Hitler to choose his successor "
-    flavor = "After the recent assassination attempt on the fuhrer's life must choose his successor to ensure the reich is in good hands"
+    title = "Hitler Chooses a Successor"
+    desc = "Today, the world watches as one of the most significant moments of the twentieth century prepares to take place."
+    flavor = "Almost a week after the Führer was shot in an attempted assassination, Hitler today appeared on national television. With the necessity for an appointed successor being exposed by the incident, following days of heated debate Hitler stood before the Reichstag to announce his choice."
 
    event_image = {
 		texture  = "gfx/event_pictures/event_pictures/hitler_suc.dds"
@@ -238,7 +238,7 @@ tno_germany_events.8 = { # hitler picks sucsesser
 	}	
 
     option = { # Boost spear
-        name = "The Autarks have a good canidate"
+        name = "The Reformer, Albert Speer"
         change_variable = {
             name = speer_ger_struggle_timer
             add = 10
@@ -246,37 +246,33 @@ tno_germany_events.8 = { # hitler picks sucsesser
          set_variable = speer_chosen
         
          custom_tooltip = speer_tip.a
-         custom_tooltip = speer_tip.b
-         custom_tooltip = "The Autarks will try to abolish slavery"
-         custom_tooltip = "The Autarks will review the aryan racial codes"
-         custom_tooltip = "The Autarks will rein in the megacorporation's"
          custom_tooltip = "Will boost Autark influence by 10"
          
+        add_radicals = {
+            value = 0.10
+        }
         
         
 	}
 
     option = { # Borman 
-     name = "The Chancellery hasnt let us down before"
+     name = "The Conservative, Martin Bormann"
        default_option = yes
        change_variable = {
         name = boreman_ger_struggle_timer
         add = 10
      }
      set_variable = borman_chosen
-     custom_tooltip = "The Chancellery will deal with the students the traditional way"
-     custom_tooltip = "The Chancellery will focus on stability within the rich and continuing hitler's policies"
-     custom_tooltip = "The Chancellery will focus on winning the cold war"
-     custom_tooltip = "The Chancellerys influence will increase by 10 "
+     custom_tooltip = "Borman will maintain the status quo"
+     add_radicals = {
+            value = 0.05
+     }
 	}
     
     
     option = { # goreing 
-     name = "Germany became great through militarism"
+     name = "The Militarist, Hermann Göring"
      custom_tooltip = milltooltip.1
-     custom_tooltip = milltooltip.2
-     custom_tooltip = "The Militarists will make Germany a stratocratic nation rulled through fear"
-     custom_tooltip = "The students will be crushed by the millitary"
      custom_tooltip = "Militarists influence will increase by 10"
      set_variable = goering_chosen
       
@@ -284,6 +280,9 @@ tno_germany_events.8 = { # hitler picks sucsesser
         name = goreing_ger_struggle_timer
         add = 10
      }
+     add_radicals = {
+            value = 0.15
+        }
     }
 
    option = { # hydrick 
@@ -293,11 +292,11 @@ tno_germany_events.8 = { # hitler picks sucsesser
         add = 10
       }
       set_variable = heydrich_chosen
-      custom_tooltip = godhelpus.1
       custom_tooltip = godhelpus.2
-      custom_tooltip = godhelpus.3
       custom_tooltip = "SS influence will increase by 10"
-     
+     add_radicals = {
+            value = 0.25
+        }
     }
 }
 
@@ -330,7 +329,7 @@ tno_germany_events.10 = { # SS acting up
  
     
  
-    title = "SS acting up"
+    title = "SS Acting up"
     desc = "The Schutzstaffel are once again stirring up trouble within the Reich. While this isn't exactly uncommon or new, the SS couldn't have chosen a worse time to re-commence their usal antics. "
     flavor = "All across Germany the SS have been putting up their noses in where it doesn't belong, causing a great deal of disruption throughout the Reich. Stormtroopers have bullied troops from the regular army out of several armories across Germany, mostly concentrated in the Rhine."
 
