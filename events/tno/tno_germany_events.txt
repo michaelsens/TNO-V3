@@ -75,8 +75,46 @@ tno_germany_events.3 = { # germanys event telling them that a japanise (burgundi
 
     option = {
         name = tno_germany_events.3.a
+        
+            custom_tooltip = "A power struggle will begin"
+            custom_tooltip = "Journal entries will appear that track the support for each candidate"
 
+        
+
+            add_journal_entry = {
+                type = je_tno_gerpowerstruggle_goreing
+            }
+            add_journal_entry = {
+                type = je_tno_gerpowerstruggle_hitler_stats
+            }
+            add_journal_entry = {
+                type = je_tno_gerpowerstruggle_devout
+            }
+            add_journal_entry = {
+                type = je_tno_gerpowerstruggle_speer
+            }
+            add_journal_entry = {
+                type = je_tno_gerpowerstruggle_boreman
+            }
+            hidden_effect = {
+                trigger_event = { id = tno_germany_events.8 days = 2 popup = yes }
+                trigger_event = { id = tno_germany_events.9 days = 170 popup = yes } #hitler in comma
+                trigger_event = { id = tno_germany_events.10 days = 80 popup = yes }
+                trigger_event = { id = tno_germany_events.11 days = 160 popup = yes }
+                trigger_event = { id = tno_germany_events.12 days = 190 popup = yes }
+                trigger_event = { id = tno_germany_events.13 days = 220 popup = yes }
+                trigger_event = { id = tno_germany_events.14 days = 270 popup = yes }
+                trigger_event = { id = tno_germany_events.15 days = 320 popup = yes }  
+            }
+            
+            set_variable = {
+            
+                name = hitler_unwell
+                value = 0
+            }
+            
 		hidden_effect = {
+    
 			c:BGD = {
 				trigger_event = { id = tno_germany_events.2 days = 0 popup = yes }
 			} 
@@ -86,7 +124,1459 @@ tno_germany_events.3 = { # germanys event telling them that a japanise (burgundi
 	}
 
 }
-	
-	
-		
+
+tno_germany_events.4 = { # speer wins power struggle
+	type = country_event
+    placement = ROOT
+ 
+    hidden = yes
+
+    trigger = {
+		this ?= c:GER
+	}	
+
+    immediate = {
+        ig:ig_industrialists  = {
+            leader = {
+          
+              set_character_as_ruler = yes
+            }
+            set_variable = {
+                name = speer_dub
+             }
+        }
+    }
+
+}
+
+tno_germany_events.5 = { # goreing wins power struggle
+	type = country_event
+    placement = ROOT
+    hidden = yes
+
+  
+
+
+    immediate = {
+        ig:ig_armed_forces  = {
+            leader = {
+          
+              set_character_as_ruler = yes
+            }
+            set_variable = {
+                name = goreing_dub
+             }
+        }
+    }
+
+}
+
+tno_germany_events.6 = { # SS wins power struggle
+	type = country_event
+    placement = ROOT
+    hidden = yes
+
+  
+
+
+    immediate = {
+        ig:ig_petty_bourgeoisie= {
+            leader = {
+          
+              set_character_as_ruler = yes
+            }
+        }
+        set_variable = {
+            name = ss_dub
+         }
+    }
+
+}
+
+tno_germany_events.7 = { # landowners wins power struggle
+	type = country_event
+    placement = ROOT
+    hidden = yes
+
+  
+
+
+    immediate = {
+        ig:ig_landowners = {
+            leader = {
+          
+              set_character_as_ruler = yes
+            }
+        }
+        set_variable = {
+            name = landowner_dub
+         }
+    }
+
+}
+
+tno_germany_events.8 = { # hitler picks sucsesser 
+	type = country_event
+    placement = ROOT
+ 
+    
+ 
+    title = "Choosing a Successor"
+    desc = "The time has come for Hitler to choose his successor "
+    flavor = "After the recent assassination attempt on the fuhrer's life must choose his successor to ensure the reich is in good hands"
+
+   event_image = {
+		texture  = "gfx/event_pictures/event_pictures/hitler_suc.dds"
+	}
+    icon = "gfx/interface/icons/event_icons/event_fire.dds"
+
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 3
+    trigger = {
+		this ?= c:GER
+	}	
+
+    option = { # Boost spear
+        name = "The Autarks have a good canidate"
+        change_variable = {
+            name = speer_ger_struggle_timer
+            add = 10
+         }
+         set_variable = speer_chosen
         
+         custom_tooltip = speer_tip.a
+         custom_tooltip = speer_tip.b
+         custom_tooltip = "The Autarks will try to abolish slavery"
+         custom_tooltip = "The Autarks will review the aryan racial codes"
+         custom_tooltip = "The Autarks will rein in the megacorporation's"
+         custom_tooltip = "Will boost Autark influence by 10"
+         
+        
+        
+	}
+
+    option = { # Borman 
+     name = "The Chancellery hasnt let us down before"
+       default_option = yes
+       change_variable = {
+        name = boreman_ger_struggle_timer
+        add = 10
+     }
+     set_variable = borman_chosen
+     custom_tooltip = "The Chancellery will deal with the students the traditional way"
+     custom_tooltip = "The Chancellery will focus on stability within the rich and continuing hitler's policies"
+     custom_tooltip = "The Chancellery will focus on winning the cold war"
+     custom_tooltip = "The Chancellerys influence will increase by 10 "
+	}
+    
+    
+    option = { # goreing 
+     name = "Germany became great through militarism"
+     custom_tooltip = milltooltip.1
+     custom_tooltip = milltooltip.2
+     custom_tooltip = "The Militarists will make Germany a stratocratic nation rulled through fear"
+     custom_tooltip = "The students will be crushed by the millitary"
+     custom_tooltip = "Militarists influence will increase by 10"
+     set_variable = goering_chosen
+      
+     change_variable = {
+        name = goreing_ger_struggle_timer
+        add = 10
+     }
+    }
+
+   option = { # hydrick 
+    name = tno_germany_events.8.d
+     change_variable = {
+     name =  devout_ger_struggle_timer
+        add = 10
+      }
+      set_variable = heydrich_chosen
+      custom_tooltip = godhelpus.1
+      custom_tooltip = godhelpus.2
+      custom_tooltip = godhelpus.3
+      custom_tooltip = "SS influence will increase by 10"
+     
+    }
+}
+
+tno_germany_events.9 = { # puts hitler in coma
+	type = country_event
+    placement = ROOT
+ 
+    hidden = yes
+
+    trigger = {
+		this ?= c:GER
+	}	
+
+    immediate = {
+        set_variable = {
+            
+            name = hitler_coma
+            value = 0
+        }
+    
+    }
+
+   
+
+}
+
+tno_germany_events.10 = { # SS acting up 
+	type = country_event
+    placement = ROOT
+ 
+    
+ 
+    title = "SS acting up"
+    desc = "The Schutzstaffel are once again stirring up trouble within the Reich. While this isn't exactly uncommon or new, the SS couldn't have chosen a worse time to re-commence their usal antics. "
+    flavor = "All across Germany the SS have been putting up their noses in where it doesn't belong, causing a great deal of disruption throughout the Reich. Stormtroopers have bullied troops from the regular army out of several armories across Germany, mostly concentrated in the Rhine."
+
+   event_image = {
+		texture  = "gfx/event_pictures/event_pictures/hitler_suc.dds"
+	}
+    icon = "gfx/interface/icons/event_icons/event_fire.dds"
+
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 3
+    trigger = {
+		this ?= c:GER
+	}	
+
+    option = { # Boost spear
+        name = "Root SS influence out of the civilian sector!"
+        change_variable = {
+            name = speer_ger_struggle_timer
+            add = 5
+         }
+         custom_tooltip = "Will boost Autark influence by 5"
+
+         add_modifier = {
+            name = ss_counterd_speer
+            years = 2
+        }
+         
+        
+        
+	}
+
+    option = { # Borman 
+     name = "Resist the SS with help from party loyalists"
+       default_option = yes
+       change_variable = {
+        name = boreman_ger_struggle_timer
+        add = 5
+     }
+
+     add_modifier = {
+        name = ss_counterd_bore
+        years = 2
+    }
+     custom_tooltip = "The Chancellerys influence will increase by 5 "
+	}
+    option = { # goreing 
+     name = "Restrict SS movements around Heer and civilian infastructure!"
+     custom_tooltip = "Militarists influence will increase by 5"
+     
+      
+     change_variable = {
+        name = goreing_ger_struggle_timer
+        add = 5
+     }
+
+     add_modifier = {
+        name = ss_counterd_gore
+        years = 2
+    }
+    }
+
+   option = { # hydrick 
+    name = "Excellent. All according to plan"
+     change_variable = {
+     name =  devout_ger_struggle_timer
+        add = 5
+      }
+      custom_tooltip = "SS influence will increase by 5"
+
+      add_modifier = {
+        name = ss_counterd_ss
+        years = 2
+    }
+
+     
+   
+     
+    }
+
+}
+
+tno_germany_events.11 = { # Autobahn renewel
+	type = country_event
+    placement = ROOT
+ 
+    
+ 
+    title = "Autobahn Renewal project"
+    desc = "Germany's famous highway system, the Autobahn, has seen better days. When Hitler took the project over in the early 30s he greatly expanded the system to encompass the entirety of the Reich, making it the largest highway syestem in the world. "
+    flavor = "The great economic crash of the 50's put a quick stop to everything. Funding was massivly cut, making the planned expansions simply impossible. The highway has begun to decay from chronic lack of maintenance."
+
+   event_image = {
+		texture  = "gfx/event_pictures/event_pictures/hitler_suc.dds"
+	}
+    icon = "gfx/interface/icons/event_icons/event_fire.dds"
+
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 3
+    trigger = {
+		this ?= c:GER
+	}	
+
+    option = { # Boost spear
+        name = "A tragic oversight that we will repair"
+        change_variable = {
+            name = speer_ger_struggle_timer
+            add = 5
+         }
+         custom_tooltip = "Will boost Autark influence by 5"
+         
+         add_modifier = {
+            name = full_funding_auto
+            years = 2
+        }
+        
+	}
+
+    option = { # Borman 
+     name = "We'll put the Heer to work."
+       default_option = yes
+       change_variable = {
+        name = boreman_ger_struggle_timer
+        add = 5
+     }
+     custom_tooltip = "Militarists influence will increase by 5"
+     
+     change_variable = {
+        name = goreing_ger_struggle_timer
+        add = 5
+     }
+
+     add_modifier = {
+        name = heer_funding_auto
+        years = 2
+    }
+     custom_tooltip = "The Chancellerys influence will increase by 5 "
+	}
+   option = { # hydrick 
+    name = "There is no need, it would be a waste"
+     change_variable = {
+     name =  devout_ger_struggle_timer
+        add = 5
+      }
+      add_modifier = {
+        name = none_funding_auto
+        years = 2
+    }
+      custom_tooltip = "SS influence will increase by 5"
+
+     
+   
+     
+    }
+
+}
+
+tno_germany_events.12 = { # Vets demand their share
+	type = country_event
+    placement = ROOT
+ 
+    
+ 
+    title = "Veterans demand their share"
+    desc = "Millions of German soldiers were rewarded after our glorious victory in the Second World War. Our loyal troops oversaw the creation of the greatest empire the world has yet seen; it was therefore only fitting to reward them accordingly. Many veterans were givin lands to settle, positions of power and influence, prestige and more than their share of wealth. This was easy enough to handle following the days of our great victory. "
+    flavor = "This has set a precedent of entitlement. Yet another generation of soldiers are retiring. and there isn't near the amount of wealth to go around; there simply hasn't been any new conquests. Still, they expect, and even DEMAND the same compensation the hereos of the last war were gifted, even the men who havn't seen a lick of battle!"
+
+   event_image = {
+		texture  = "gfx/event_pictures/event_pictures/hitler_suc.dds"
+	}
+    icon = "gfx/interface/icons/event_icons/event_fire.dds"
+
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 3
+    trigger = {
+		this ?= c:GER
+	}	
+
+    option = { # Boost spear
+        name = "Times are diffrent now"
+        change_variable = {
+            name = speer_ger_struggle_timer
+            add = 5
+         }
+         custom_tooltip = "Will boost Autark influence by 5"
+
+         add_modifier = {
+            name = fuck_vets_speer
+            years = 2
+        }
+         
+        
+        
+	}
+
+    option = { # the rest 
+     name = "It is their right, earned in blood"
+       default_option = yes
+       change_variable = {
+        name = boreman_ger_struggle_timer
+        add = 5
+     }
+     custom_tooltip = "Militarists influence will increase by 5"
+     
+     change_variable = {
+        name = goreing_ger_struggle_timer
+        add = 5
+     }
+     change_variable = {
+        name =  devout_ger_struggle_timer
+           add = 5
+         }
+
+         add_modifier = {
+            name = yay_vets_balls
+            years = 2
+        }
+         custom_tooltip = "SS influence will increase by 5"
+     custom_tooltip = "The Chancellerys influence will increase by 5 "
+	}
+
+
+}
+
+tno_germany_events.13 = { # Demands for womens rights 
+	type = country_event
+    placement = ROOT
+ 
+    
+ 
+    title = "Demands for Women's Rights"
+    desc = "Students whining on the streets isn't anything new to our administration. Spearheaded by a large group of female college students, the new group has been organizing marches, rallies, and meetings in a number of major cities. "
+    flavor = "Reactions are mixed; many conservative NSDAP members are disgusted, arguing that women's purity needs to be preserved and that the German woman's purpose is to be a caretaker. Some of the more traditional women wholeheartedly agree, seeing their place in Germany as an essential pillar of the German family. On the flip side, many younger women chaff at the thought of remaining second class citizens in their own country, and demand more freedoms and acceptance from the population at large. Many reformers, and even more than a few (silent) conservatives are in agreement and see the grievances laid out as valid. With popular opinion split and marches and rallies becoming more frenzied, the government needs to step in and offer guidance, one way or another "
+
+   event_image = {
+		texture  = "gfx/event_pictures/event_pictures/hitler_suc.dds"
+	}
+    icon = "gfx/interface/icons/event_icons/event_fire.dds"
+
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 3
+    trigger = {
+		this ?= c:GER
+	}	
+
+    option = { # Boost spear
+        name = "Pay them lip service, promise vague reforms"
+        change_variable = {
+            name = speer_ger_struggle_timer
+            add = 5
+         }
+         custom_tooltip = "Will boost Autark influence by 5"
+
+         add_radicals = {
+            value = 0.1
+        
+        }
+         
+        
+        
+	}
+
+    option = { # Borman 
+     name = "Let the people choose, wait it out"
+       default_option = yes
+       change_variable = {
+        name = boreman_ger_struggle_timer
+        add = 5
+     }
+     custom_tooltip = "The Chancellerys influence will increase by 5 "
+
+     add_radicals = {
+        value = 0.05
+    
+    }
+	}
+    option = { # goreing 
+     name = "We are not changing the status quo, break up the marches!"
+     custom_tooltip = "Militarists influence will increase by 5"
+     
+      
+     change_variable = {
+        name = goreing_ger_struggle_timer
+        add = 5
+     }
+
+     add_radicals = {
+        value = 0.06
+    
+    }
+    }
+
+   option = { # hydrick 
+    name = "Women? Rights? Stop the marches, arrest all of their leaders!"
+     change_variable = {
+     name =  devout_ger_struggle_timer
+        add = 5
+      }
+      custom_tooltip = "SS influence will increase by 5"
+
+      add_radicals = {
+        value = 0.1
+    
+    }
+
+     
+   
+     
+    }
+
+}
+
+tno_germany_events.14 = { # mill budget review
+	type = country_event
+    placement = ROOT
+ 
+    
+ 
+    title = "Military Budget Review"
+    desc = " Although many begged for funds to be funneled elsewhere, Hitler stood by the Wehrmacht and would not hear of it. Therefore, for the last two decades, Germany has somehow miraculously maintained its military budget, for better or worse without another major economic crisis. Militarists in both the Wehrmacht and administration continue to lobby to maintain current spending to this day. On the other side of the aisle, a coalition of reformers, civilian interests, industrialists, and even limited numbers of conservatives from the NSDAP beg us to cut the Wehrmact's budget for much needed allocation of funds elsewhere. Being in a position of power ourselves combined with Hitler's ailing health allows us to now make a change in policy, if we so choose. "
+    flavor = " After the Second World War, the German military bore no rival. Our military spending was second to none, as was our might! We proved the world our strength by accomplishing what many considered impossible; we retained tight control over our conquests, then expanded our empire even more by occupying the entire middle section of the dark continent! Since then, we've spent the better part of two decades crushing army after army of partisans, as well as a Russian invasion. The economic collapse of the 50s made the burden of maintaining the Heer's budget a titanic struggle"
+
+    event_image = {
+		texture  = "gfx/event_pictures/event_pictures/hitler_suc.dds"
+	}
+    icon = "gfx/interface/icons/event_icons/event_fire.dds"
+
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 3
+    trigger = {
+		this ?= c:GER
+	}	
+
+    option = { # Boost spear
+        name = "We will invest in the economy instead!"
+        change_variable = {
+            name = speer_ger_struggle_timer
+            add = 5
+         }
+         custom_tooltip = "Will boost Autark influence by 5"
+
+         add_modifier = {
+            name = speer_funding_mill
+            years = 2
+        }
+         
+        
+        
+	}
+
+    option = { # Borman 
+     name = "Our enemies grow stronger everyday, the budget remains"
+       default_option = yes
+       change_variable = {
+        name = boreman_ger_struggle_timer
+        add = 5
+     }
+     custom_tooltip = "Militarists influence will increase by 5"
+
+     add_modifier = {
+        name = heer_funding_mill
+        years = 2
+    }
+     
+      
+     change_variable = {
+        name = goreing_ger_struggle_timer
+        add = 5
+     }
+     custom_tooltip = "The Chancellerys influence will increase by 5 "
+	}
+
+   option = { # hydrick 
+    name = "Funnel more money to the SS"
+     change_variable = {
+     name =  devout_ger_struggle_timer
+        add = 5
+      }
+      custom_tooltip = "SS influence will increase by 5"
+
+      add_modifier = {
+        name = ss_funding_mill
+        years = 2
+    }
+   
+     
+    }
+
+}
+
+tno_germany_events.15 = { # Hitler youth review
+	type = country_event
+    placement = ROOT
+ 
+    
+ 
+    title = "Hitler Youth Review"
+    desc = "The Hitlerjugend, or Hitler Youth, is Germany's largest youth organization. The group is one of the few public organizations that weathered the economic crash last decade with a semblance of grace. They have always had funding, if not from the state than from fundraising they do themselves. This has allowed them to continue to operate, and has also given them some autonomy from the government "
+    flavor = "The Hitlerjugend has naturally evolved; it is not the same youth group of the 1940s. After a decade of (relative) peace throughout Germany, the program began to de-militarized. They are now more akin to the American or British scouts than the group of old, though they still honor their material traditions. We have on our desks a couple of proposals to mold the Hitlerjugend into something more of our liking. Every year, high standing party officials review the scout's training regimates. If we so chose, we can lean on these members to influence the structure, and therefore future of the Hitlerjugend"
+
+   event_image = {
+		texture  = "gfx/event_pictures/event_pictures/hitler_suc.dds"
+	}
+    icon = "gfx/interface/icons/event_icons/event_fire.dds"
+
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 3
+    trigger = {
+		this ?= c:GER
+	}	
+
+    option = { # Boost spear
+        name = "Let them be children; stay away from politics"
+        change_variable = {
+            name = speer_ger_struggle_timer
+            add = 5
+         }
+         custom_tooltip = "Will boost Autark influence by 5"
+         
+         add_modifier = {
+            name = hitler_youth_speer
+            years = 2
+        }
+        
+	}
+
+    option = { # Borman 
+     name = "The Scouts should be Scouts, nothing more, nothing less"
+       default_option = yes
+       change_variable = {
+        name = boreman_ger_struggle_timer
+        add = 5
+     }
+     custom_tooltip = " The Chancellerys influence will increase by 5"
+     
+     add_modifier = {
+        name = hitler_youth_bore
+        years = 2
+    }
+
+	}
+    option = { # goreing 
+    name = "Nothing is quite as inspiring as a parading column of youth!"
+    change_variable = {
+        name = goreing_ger_struggle_timer
+        add = 5
+     }
+     custom_tooltip = "The Militarists influence will increase by 5 "
+     
+     add_modifier = {
+        name = hitler_youth_gore
+        years = 2
+    }
+     
+    }
+
+   option = { # hydrick 
+    name = "We could have the SS oversee them instead..."
+     change_variable = {
+     name =  devout_ger_struggle_timer
+        add = 5
+      }
+      custom_tooltip = "SS influence will increase by 5"
+
+     
+      add_modifier = {
+        name = hitler_youth_ss
+        years = 2
+    }
+     
+    }
+
+}
+
+tno_germany_events.16 = { # slave camp expansion
+	type = country_event
+    placement = ROOT
+ 
+    
+ 
+    title = "Expansion of Slave Camps"
+    desc = "Slavery has been a fact of life in the Reich for well over a decade now. Slave labor dominates most labor intensive sectors of our economy, and it represents a huge portion of our GDP. The institution is old enough to contain a new generation that only knows the walls and barbed wire of the labor camps. For a while now, the slave population has been slowly but steadily rising, and it is apparent that we now need more living space for the increased number of laborers."
+    flavor = "The camps are starting to overflow with people, and their living conditions are steadily declining.\n\nAlthough it is inconvenient, something should be done now. Living conditions aren't safe for the slaves, which makes it dangerous for the Germans that guard and employ them. The most simple option available to us is to build new labor camps, but there are also more... creative approaches we can consider"
+   event_image = {
+		texture  = "gfx/event_pictures/event_pictures/hitler_suc.dds"
+	}
+    icon = "gfx/interface/icons/event_icons/event_fire.dds"
+
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 3
+    trigger = {
+		this ?= c:GER
+	}	
+
+    option = { # Boost spear
+        name = "Improve conditions and sanitation at the existing camps."
+        change_variable = {
+            name = speer_ger_struggle_timer
+            add = 5
+         }
+         custom_tooltip = "Will boost Autark influence by 5"
+         
+        
+        
+	}
+
+    option = { # Borman 
+     name = "Hand some of the slaves over to the Heer for laborers!"
+       default_option = yes
+       change_variable = {
+        name = boreman_ger_struggle_timer
+        add = 5
+     }
+     custom_tooltip = " The Chancellerys influence will increase by 5"
+     
+      
+
+	}
+    option = { # goreing 
+    name = "Begin construction of new facilities."
+    change_variable = {
+        name = goreing_ger_struggle_timer
+        add = 5
+     }
+     custom_tooltip = "The Militarists influence will increase by 5 "
+     
+   
+     
+    }
+
+   option = { # hydrick 
+    name = "Our men will take care of the situation... discreetly."
+     change_variable = {
+     name =  devout_ger_struggle_timer
+        add = 5
+      }
+      custom_tooltip = "SS influence will increase by 5"
+
+     
+    }
+
+}
+
+
+tno_germany_events.17 = { # German Civil War 
+    type = country_event
+    placement = ROOT
+
+    title = tno_germany_events.17
+    desc = tno_germany_events.17.d
+    flavor = tno_germany_events.17.f 
+
+    event_image = {
+        texture  = "gfx/event_pictures/event_pictures/ass.dds"
+    }
+    icon = "gfx/interface/icons/event_icons/event_fire.dds"
+
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 3
+    
+    trigger = {
+		this ?= c:GER
+	}	
+
+    immediate = {
+
+        remove_diplomatic_pact = {
+            country = c:RKU
+            type = reichskommissariat
+        }
+        remove_diplomatic_pact = {
+            country = c:RKO
+            type = reichskommissariat
+        }
+
+
+        c:RKU = { #22-24
+			trigger_event = { id = tno_germany_events.21 days = 0 popup = yes }
+		} 
+        c:RKO = { #22-24
+			trigger_event = { id = tno_RK_events.1 days = 0 popup = yes }
+		} 
+
+        c:UKP = { #22-24
+			trigger_event = { id = tno_germany_events.22 days = 0 popup = yes }
+		} 
+        c:UKP = { #22-24
+			trigger_event = { id = tno_germany_events.23 days = 0 popup = yes }
+		} 
+        c:UKP = { #24-
+			trigger_event = { id = tno_germany_events.24 days = 0 popup = yes }
+		} 
+        c:UKM = { #24-
+			trigger_event = { id = tno_germany_events.27 days = 0 popup = yes }
+		}
+        c:UKM = { #22-24
+			trigger_event = { id = tno_germany_events.25 days = 0 popup = yes }
+		} 
+        c:UKC = { #IGNORE COMMITS THEY DUMB AND OUTDATED LMAO
+			trigger_event = { id = tno_germany_events.26 days = 0 popup = yes }
+		}
+
+        c:GER = {
+            set_immune_to_revolutions = yes
+            every_subject_or_below = {
+                trigger_event = { id = tno_germany_events.20 days = 0 popup = yes }
+           } 
+           remove_diplomatic_pact = {
+                country = c:DEN
+                type = customs_union
+            }
+            remove_diplomatic_pact = {
+                country = c:IRE
+                type = protectorate
+            }
+        }
+
+        create_country = { #Martin bormann
+		tag = GMB
+		origin = c:GER 
+       
+        state = s:STATE_BAVARIA.region_state:GER
+        state = s:STATE_BADEN.region_state:GER
+        state = s:STATE_WURTTEMBERG.region_state:GER
+        state = s:STATE_AUSTRIA.region_state:GER
+        state = s:STATE_SAXONY.region_state:GER
+        state = s:STATE_FRANCONIA.region_state:GER
+        state = s:STATE_SLOVENIA.region_state:GER
+        state = s:STATE_TABRIZ.region_state:GER
+
+        province = p:x400226
+        province = p:x1D6B94
+        province = p:x716141
+        province = p:xA40163
+        province = p:x67FE18
+        
+		on_created = {
+            set_immune_to_revolutions = yes
+            add_modifier = {
+				name = civiL_war_never_ends
+				years = 2
+			}
+	        }
+	    } 
+        create_country = { #Albert speer
+		tag = GAS
+		origin = c:GER 
+       
+        state = s:STATE_HESSE.region_state:GER
+        state = s:STATE_BRUNSWICK.region_state:GER
+        state = s:STATE_ANHALT.region_state:GER
+        state = s:STATE_ELBE.region_state:GER
+        state = s:STATE_HANNOVER.region_state:GER
+        state = s:STATE_WESTPHALIA.region_state:GER
+        state = s:STATE_RUHR.region_state:GER
+        state = s:STATE_NORTH_RHINE.region_state:GER
+        state = s:STATE_WALLONIA.region_state:GER
+        
+        on_created = {
+            set_immune_to_revolutions = yes
+            add_modifier = {
+				name = civiL_war_never_ends
+				years = 2
+			}
+	        }
+	    } 
+        create_country = { #Hermann Göring
+		tag = GHG
+		origin = c:GER 
+        
+        state = s:STATE_SCHLESWIG_HOLSTEIN.region_state:GER
+        state = s:STATE_MECKLENBURG.region_state:GER
+        state = s:STATE_POMERANIA.region_state:GER
+        state = s:STATE_POSEN.region_state:GER
+        state = s:STATE_GREATER_POLAND.region_state:GER 
+        state = s:STATE_SILESIA.region_state:GER 
+        state = s:STATE_SLOVENIA.region_state:GER 
+        
+        province = p:x611F2F
+        province = p:x7CB839
+        province = p:x0180A0
+        province = p:x945000
+        province = p:x178C99
+        province = p:xBAF66D
+        province = p:x3E3572
+        province = p:x4B3444
+        province = p:xF0E080
+        
+		on_created = {
+            set_immune_to_revolutions = yes
+            add_modifier = {
+				name = civiL_war_never_ends
+				years = 2
+			}
+	        }
+	    } 
+        create_country = { #Reinhard Heydrich
+		tag = GRH
+		origin = c:GER 
+        
+        state = s:STATE_EAST_PRUSSIA.region_state:GER
+        state = s:STATE_MAZOVIA.region_state:GER
+        state = s:STATE_WEST_PRUSSIA.region_state:GER
+        state = s:STATE_ALSACE_LORRAINE.region_state:GER
+        state = s:STATE_RHINELAND.region_state:GER
+        state = s:STATE_BREST.region_state:GER
+        province = p:x802161
+        province = p:xE165F5
+		
+        on_created = {
+            set_immune_to_revolutions = yes
+            add_modifier = {
+				name = civiL_war_never_ends
+				years = 2
+			}
+	        }
+
+	    } 
+        create_country = { #Wehrkreis XIX
+		tag = GWZ
+		origin = c:GER 
+        state = s:STATE_BOHEMIA.region_state:GER
+        state = s:STATE_MORAVIA.region_state:GER
+		on_created = {
+            set_immune_to_revolutions = yes
+	        }
+	    } 
+        create_country = { # CRIMIEA
+		tag = GEE
+		origin = c:GER 
+        state = s:STATE_CRIMEA.region_state:GER
+		on_created = {
+            set_immune_to_revolutions = yes
+	        }
+	    } 
+        create_country = { # eng treaty port
+			tag = GEL
+			origin = c:GER
+			province = p:x1E38F8
+		} 
+    }
+    option = {
+        name = "Borman won"
+        trigger = {
+            has_variable = borman_chosen
+       }
+        play_as = c:GMB
+        remove_variable = borman_chosen
+        hidden_effect = {
+            trigger_event = { id = tno_germany_events.18 days = 10 popup = yes }  
+        }
+        default_option = yes    
+    }
+   
+   
+    option = {
+        name = "Speer won"
+        trigger = {
+            has_variable = speer_chosen
+        }
+        play_as = c:GAS
+        remove_variable = speer_chosen
+        hidden_effect = {
+            trigger_event = { id = tno_germany_events.18 days = 10 popup = yes }  
+        }
+       
+     }
+     
+     
+     option = {
+        name = "Göring won"
+        trigger = {
+            has_variable = goering_chosen
+        }
+        play_as = c:GHG
+        remove_variable = goering_chosen
+        hidden_effect = {
+            trigger_event = { id = tno_germany_events.18 days = 10 popup = yes }  
+        }
+       
+     }
+    
+    
+     option = {
+        name = "Heydrich won"
+        trigger = {
+            has_variable = heydrich_chosen
+        }
+        play_as = c:GRH
+        remove_variable = heydrich_chosen
+        hidden_effect = {
+            trigger_event = { id = tno_germany_events.18 days = 10 popup = yes }  
+        }
+       
+     }
+}
+
+tno_germany_events.18 = {   #Civil war start
+    type = country_event
+    placement = ROOT
+
+    hidden = yes
+
+    immediate = {
+        c:GER = {
+            change_tag = GEQ
+        }
+        c:GMB = {
+            create_diplomatic_play = {
+                type = dp_annex_war
+                name = german_civil_war
+                target_country = c:GAS
+                war = yes
+                target_state = s:STATE_WESTPHALIA.region_state:GAS
+                add_war_goal = {
+                    holder = c:GAS
+                    type = annex_country
+                    target_state = s:STATE_SAXONY.region_state:GMB
+                  }
+            }
+            hidden_effect = {
+				change_infamy = -999
+		    }
+            create_diplomatic_play = {
+                type = dp_annex_war
+                name = german_civil_war
+                target_country = c:GHG
+                war = yes
+                target_state = s:STATE_SILESIA.region_state:GHG
+                add_war_goal = {
+                    holder = c:GHG
+                    type = annex_country
+                    target_state = s:STATE_SAXONY.region_state:GMB
+                  }
+            }
+            hidden_effect = {
+				change_infamy = -999
+		    }
+            create_diplomatic_play = {
+                type = dp_annex_war
+                name = german_civil_war
+                target_country = c:GRH
+                war = yes
+                target_state = s:STATE_ALSACE_LORRAINE.region_state:GRH
+                add_war_goal = {
+                    holder = c:GRH
+                    type = annex_country
+                    target_state = s:STATE_SAXONY.region_state:GMB
+                  }
+            }
+            hidden_effect = {
+				change_infamy = -999
+		    }
+        }
+        c:GAS = {
+            create_diplomatic_play = {
+                type = dp_annex_war
+                name = german_civil_war
+                target_country = c:GHG
+                war = yes
+                target_state = s:STATE_SILESIA.region_state:GHG
+                add_war_goal = {
+                    holder = c:GHG
+                    type = annex_country
+                    target_state = s:STATE_WESTPHALIA.region_state:GAS
+                  }
+            }
+            hidden_effect = {
+				change_infamy = -999
+		    }
+            create_diplomatic_play = {
+                type = dp_annex_war
+                name = german_civil_war
+                target_country = c:GRH
+                war = yes
+                target_state = s:STATE_ALSACE_LORRAINE.region_state:GRH
+                add_war_goal = {
+                    holder = c:GRH
+                    type = annex_country
+                    target_state = s:STATE_WESTPHALIA.region_state:GAS
+                  }
+            }
+            hidden_effect = {
+				change_infamy = -999
+		    }
+        }
+        c:GHG = {
+            create_diplomatic_play = {
+                type = dp_annex_war
+                name = german_civil_war
+                target_country = c:GRH
+                war = yes
+                target_state = s:STATE_ALSACE_LORRAINE.region_state:GRH
+                add_war_goal = {
+                    holder = c:GRH
+                    type = annex_country
+                    target_state = s:STATE_SILESIA.region_state:GHG
+                  }
+            }
+            hidden_effect = {
+				change_infamy = -999
+		    }
+        }
+    }
+}
+
+tno_germany_events.19 = {   #German Civil War WIn
+
+    type = country_event
+    placement = ROOT
+
+    title = tno_germany_events.19
+    desc = tno_germany_events.19.d
+    flavor = tno_germany_events.19.f
+
+    event_image = {
+		texture  = "gfx/event_pictures/event_pictures/hitler_suc.dds"
+	}
+    icon = "gfx/interface/icons/event_icons/event_fire.dds"
+
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 3
+    trigger = {
+		
+	}	
+
+    option = { # Annex Brandenburg
+    trigger = {
+        OR = {
+            this = c:GAS
+            this = c:GMB
+            this = c:GHG
+        }
+    }
+        name = tno_germany_events.19.a
+        annex = c:GEQ
+        change_tag = GER  # maybe?
+        set_immune_to_revolutions = no
+	}
+
+    option = { # Annex Brandenburg
+        trigger = {
+            this = c:GRH
+        }
+        name = tno_germany_events.19.b
+        default_option = yes
+        c:GRH = {
+            create_diplomatic_play = {
+                type = dp_annex_war
+                name = german_civil_war
+                target_country = c:GEQ
+                war = yes
+                target_state = s:STATE_BRANDENBURG.region_state:GEQ
+                add_war_goal = {
+                    holder = c:GEQ
+                    type = annex_country
+                    target_state = s:STATE_ALSACE_LORRAINE.region_state:GRH
+                  }
+            }
+            hidden_effect = {
+				change_infamy = -999
+		    }
+        }
+        change_tag = GER  # maybe?
+        set_immune_to_revolutions = no
+   }
+}
+
+tno_germany_events.20 = {   #German Vassal Reaction
+     type = country_event
+        placement = ROOT
+        hidden = yes
+    
+        duration = 3
+        trigger = {
+            
+        }	
+        immediate = {
+            if = {
+                limit = {
+                    has_diplomatic_pact = {
+                        who = c:GER
+                         type = reichskommissariat
+                    }
+                }
+                remove_diplomatic_pact = {
+                    country = c:GER
+                    type = reichskommissariat
+                }
+            }
+            if = {
+                limit = {
+                    has_diplomatic_pact = {
+                        who = c:GER
+                         type = puppet
+                    }
+                }
+                remove_diplomatic_pact = {
+                    country = c:GER
+                    type = puppet
+            }
+       }
+    }    
+ }
+
+tno_germany_events.21 = {   #ukranian civil war
+
+    type = country_event
+    placement = ROOT
+
+    hidden = yes
+   
+    duration = 3
+    trigger = {
+	}	
+
+    immediate = {
+        create_country = { #communist ukraine
+            tag = UKC
+            origin = c:WST
+            state = s:STATE_LUHANSK.region_state:RKU
+            state = s:STATE_ROSTOV.region_state:RKU
+       
+        } 
+        create_country = { #UPO ukraine
+        tag = UKP
+        origin = c:SAM
+        state = s:STATE_VOLHYNIA.region_state:RKU
+        state = s:STATE_EAST_GALICIA.region_state:GOV
+   
+    } 
+    create_country = { # ukraine
+        tag = UKM
+        origin = c:USA
+        state = s:STATE_CHERSON.region_state:RKU
+   
+    } 
+    
+    
+    
+
+}
+}
+
+tno_germany_events.22 = { 
+	type = country_event
+	hidden = yes
+
+
+
+	trigger = {
+		this ?= c:UKP
+	}	
+
+    immediate = {
+		create_diplomatic_play = {
+			name = ukrain_civil.1
+			target_country = c:RKU
+				type = dp_annex_war
+				war = yes
+				add_war_goal = {
+					holder = c:RKU
+					type = annex_country
+					target_state = s:STATE_VOLHYNIA.region_state:UKP
+				}
+			
+		}
+    }
+	
+	duration = 1
+
+	
+   
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+}
+
+tno_germany_events.23 = { 
+	type = country_event
+	hidden = yes
+
+
+
+	trigger = {
+		this ?= c:UKP
+	}	
+
+    immediate = {
+		create_diplomatic_play = {
+			name = ukrain_civil.2
+			target_country = c:UKM
+				type = dp_annex_war
+				war = yes
+				add_war_goal = {
+					holder = c:UKM
+					type = annex_country
+					target_state = s:STATE_VOLHYNIA.region_state:UKP
+				}
+			
+		}
+    }
+	
+	duration = 1
+
+	
+   
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+}
+
+tno_germany_events.24 = { 
+	type = country_event
+	hidden = yes
+
+
+
+	trigger = {
+		this ?= c:UKP
+	}	
+
+    immediate = {
+		create_diplomatic_play = {
+			name = ukrain_civil.3
+			target_country = c:UKC
+				type = dp_annex_war
+				war = yes
+				add_war_goal = {
+					holder = c:UKC
+					type = annex_country
+					target_state = s:STATE_VOLHYNIA.region_state:UKP
+				}
+			
+		}
+    }
+	
+	duration = 1
+
+	
+   
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+}
+
+tno_germany_events.27 = { 
+	type = country_event
+	hidden = yes
+
+
+
+	trigger = {
+		this ?= c:UKM
+	}	
+
+    immediate = {
+		create_diplomatic_play = {
+			name = ukrain_civil.9
+			target_country = c:RKU
+				type = dp_annex_war
+				war = yes
+				add_war_goal = {
+					holder = c:RKU
+					type = annex_country
+					target_state = s:STATE_CHERSON.region_state:UKM
+				}
+			
+		}
+    }
+	
+	duration = 1
+
+	
+   
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+}
+
+tno_germany_events.25 = { 
+	type = country_event
+	hidden = yes
+
+
+
+	trigger = {
+		this ?= c:UKM
+	}	
+
+    immediate = {
+		create_diplomatic_play = {
+			name = ukrain_civil.5
+			target_country = c:UKC
+				type = dp_annex_war
+				war = yes
+				add_war_goal = {
+					holder = c:UKC
+					type = annex_country
+					target_state = s:STATE_CHERSON.region_state:UKM
+				}
+			
+		}
+    }
+	
+	duration = 1
+
+	
+   
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+}
+
+tno_germany_events.26 = { 
+	type = country_event
+	hidden = yes
+
+
+
+	trigger = {
+		this ?= c:UKC
+	}	
+
+    immediate = {
+		create_diplomatic_play = {
+			name = ukrain_civil.6
+			target_country = c:RKU
+				type = dp_annex_war
+				war = yes
+				add_war_goal = {
+					holder = c:RKU
+					type = annex_country
+					target_state = s:STATE_LUHANSK.region_state:UKM
+				}
+			
+		}
+    }
+	
+	duration = 1
+
+	
+   
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+}

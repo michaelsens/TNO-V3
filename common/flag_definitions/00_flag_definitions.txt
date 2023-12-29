@@ -76,6 +76,20 @@ DIV = {
 	}
 }
 
+IRR = {
+	flag_definition = {
+		coa = IRR_start
+		priority = 2000
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_law = law_type:law_oligarchy
+			}
+		}
+	}
+}
+
+
 BGD = {
 	flag_definition = {
 		coa = BGD_absolute_monarchy
@@ -99,6 +113,32 @@ BGD = {
 				}
 				NOT = { has_law = law_type:law_autocracy }
 					
+			}
+		}
+	}
+}
+
+PAL = {
+	flag_definition = {
+		coa = PAL_subject_ita
+		priority = 50000
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				is_subject_of = c:ITA
+			}
+		}
+	}
+}
+
+ETH = {
+	flag_definition = {
+		coa = ETH
+		priority = 50000
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				is_subject_of = c:ITA
 			}
 		}
 	}
@@ -537,29 +577,7 @@ ARM = { # Armenia
 	}	
 }	
 
-ASH = { # Ashanti
-	flag_definition = {
-		coa = ASH
-		subject_canton = ASH
-		priority = 1
-	}
-	flag_definition = {
-		coa = ASH_republic
-		subject_canton = ASH_republic
-		priority = 10
-		trigger = { 
-			coa_def_republic_flag_trigger = yes
-		}
-	}	
-	flag_definition = {
-		coa = ASH_absolute_monarchy
-		subject_canton = ASH_absolute_monarchy
-		priority = 20
-		trigger = { 
-			coa_def_absolute_monarchy_flag_trigger = yes
-		}
-	}
-}
+
 
 ASS = { # Assyria
 	flag_definition = {
@@ -2756,16 +2774,16 @@ EST = { # Estonia
 	}	
 }
 
-ETH = { # Ethiopia
+ITO = { # Ethiopia
 	flag_definition = {
-		coa = ETH
+		coa = ITO
 		subject_canton = ETH		
 		allow_overlord_canton = yes	
 		coa_with_overlord_canton = ETH_subject		
 		priority = 1
 	}
 	flag_definition = {
-		coa = ETH_absolute_monarchy
+		coa = ITO_absolute_monarchy
 		subject_canton = ETH_absolute_monarchy
 		priority = 20
 		trigger = { 
@@ -2773,7 +2791,7 @@ ETH = { # Ethiopia
 		}
 	}	
 	flag_definition = {
-		coa = ETH_republic
+		coa = ITO_republic
 		subject_canton = ETH_republic
 		priority = 10
 		trigger = { 
@@ -3270,6 +3288,18 @@ WST = { # west rev front
 			scope:actor = {
 				has_law = law_type:law_council_republic
 				has_law = law_type:law_autocracy
+			}
+		}
+	}
+}
+UKC = { # com ukraine
+	flag_definition = { # starting flagg
+		coa = UKC_COM
+		priority = 2000
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_law = law_type:law_council_republic
 			}
 		}
 	}
@@ -4777,6 +4807,45 @@ ONG = { # onega
 	}
 }
 
+VIT = { # vietcong
+	flag_definition = { # starting flag
+		coa = VIT
+		priority = 2000
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_law = law_type:law_council_republic
+			}
+		}
+	}
+}
+
+PHC = { # communist philpeens
+	flag_definition = { # starting flag
+		coa = PHC
+		priority = 2000
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_law = law_type:law_council_republic
+			}
+		}
+	}
+}
+
+JOL = { # umajf
+	flag_definition = { # starting flag
+		coa = JOL
+		priority = 2000
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_law = law_type:law_council_republic
+			}
+		}
+	}
+}
+
 WST = { # WST start
 	flag_definition = { # starting flagg
 		coa = WST_start
@@ -4789,8 +4858,6 @@ WST = { # WST start
 		}
 	}
 }
-
-
 
 KAL = { # Kalat
 	flag_definition = {
@@ -4937,6 +5004,59 @@ KLM = { # Kalmykia
 		priority = 1
 	}
 }
+
+KON = {
+flag_definition = {
+	coa = KON_OFN
+	subject_canton = KON_OFN
+	allow_overlord_canton = no
+	coa_with_overlord_canton = KON_OFN			
+	priority = 99
+	trigger = {
+		OR = {
+			scope:actor = {
+				is_subject_of = c:USA
+			}
+		}
+	}
+}	
+}
+
+KSA = {
+	flag_definition = {
+		coa = KSA_OFN
+		subject_canton = KSA_OFN
+		allow_overlord_canton = no
+		coa_with_overlord_canton = KSA_OFN			
+		priority = 99
+		trigger = {
+			OR = {
+				scope:actor = {
+					is_subject_of = c:USA
+				}
+			}
+		}
+	}	
+}
+
+KZA = {
+	flag_definition = {
+		coa = KZA_OFN
+		subject_canton = KZA_OFN
+		allow_overlord_canton = no
+		coa_with_overlord_canton = KZA_OFN			
+		priority = 99
+		trigger = {
+			OR = {
+				scope:actor = {
+					is_subject_of = c:USA
+				}
+			}
+		}
+	}	
+}
+
+
 
 KOK = { # Kokand
 	flag_definition = {
@@ -7748,21 +7868,7 @@ SIK = { # Sikkim
 	}	
 }
 
-SIL = { # Sierra Leone
-	flag_definition = {
-		coa = SIL
-		coa_with_overlord_canton = SIL_subject
-		allow_overlord_canton = yes
-	}
-	flag_definition = {
-		coa = SIL_republic
-		priority = 10
-		trigger = { 
-			coa_def_independent_trigger = yes
-			coa_def_republic_flag_trigger = yes
-		}
-	}
-}
+
 
 SIN = { # Sindh
 	flag_definition = {
@@ -8045,6 +8151,16 @@ SYR = { # Syria
 		allow_overlord_canton = yes		
 		coa_with_overlord_canton = SYR_subject		
 		priority = 1
+	}
+	flag_definition = { # starting flagg
+		coa = SYR_TUR
+		priority = 2000
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_law = law_type:law_presidential_republic
+			}
+		}
 	}
 	flag_definition = {
 		coa = SYR_republic
