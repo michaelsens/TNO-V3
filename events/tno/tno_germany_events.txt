@@ -98,18 +98,22 @@ tno_germany_events.3 = { # germanys event telling them that a japanise (burgundi
             }
             hidden_effect = {
                 trigger_event = { id = tno_germany_events.8 days = 2 popup = yes }
-                trigger_event = { id = tno_germany_events.9 days = 170 popup = yes } #hitler in comma
                 trigger_event = { id = tno_germany_events.10 days = 80 popup = yes }
                 trigger_event = { id = tno_germany_events.11 days = 160 popup = yes }
                 trigger_event = { id = tno_germany_events.12 days = 190 popup = yes }
                 trigger_event = { id = tno_germany_events.13 days = 220 popup = yes }
                 trigger_event = { id = tno_germany_events.14 days = 270 popup = yes }
                 trigger_event = { id = tno_germany_events.15 days = 320 popup = yes }  
+                trigger_event = { id = tno_germany_events.30 days = 40 popup = yes }
+                trigger_event = { id = tno_germany_events.31 days = 90 popup = yes }
+                trigger_event = { id = tno_germany_events.32 days = 150 popup = yes }
+                trigger_event = { id = tno_germany_events.33 days = 230 popup = yes }
+                trigger_event = { id = tno_germany_events.34 days = 300 popup = yes }
+                trigger_event = { id = tno_germany_events.35 days = 360 popup = yes }
             }
             
             set_variable = {
-            
-                name = hitler_unwell
+                name = hitler_good
                 value = 0
             }
             
@@ -123,6 +127,146 @@ tno_germany_events.3 = { # germanys event telling them that a japanise (burgundi
 
 	}
 
+}
+
+tno_germany_events.30 = {
+	type = country_event
+    placement = ROOT
+ 
+    hidden = yes
+
+    trigger = {
+		this ?= c:GER
+	}	
+
+    immediate = {
+        set_variable = {
+            name = hitler_fair
+            value = 0
+        }
+    
+    }
+}
+
+tno_germany_events.31 = {
+	type = country_event
+    placement = ROOT
+ 
+    hidden = yes
+
+    trigger = {
+		this ?= c:GER
+	}	
+
+    immediate = {
+        set_variable = {
+            name = hitler_unwell
+            value = 0
+        }
+    
+    }
+}
+
+tno_germany_events.32 = {
+	type = country_event
+    placement = ROOT
+ 
+    hidden = yes
+
+    trigger = {
+		this ?= c:GER
+	}	
+
+    immediate = {
+        set_variable = {
+            name = hitler_severe
+            value = 0
+        }
+    
+    }
+}
+
+tno_germany_events.33 = {
+	type = country_event
+    placement = ROOT
+ 
+    hidden = yes
+
+    trigger = {
+		this ?= c:GER
+	}	
+
+    immediate = {
+        set_variable = {
+            name = hitler_severe
+            value = 0
+        }
+    
+    }
+}
+
+tno_germany_events.34 = {
+	type = country_event
+    placement = ROOT
+ 
+    hidden = yes
+
+    trigger = {
+		this ?= c:GER
+	}	
+
+    immediate = {
+        set_variable = {
+            name = hitler_coma
+            value = 0
+        }
+    
+    }
+}
+
+tno_germany_events.35 = {
+	type = country_event
+    placement = ROOT
+ 
+    trigger = {
+		this ?= c:GER
+	}	
+
+    immediate = {
+        set_variable = {
+            name = hitler_dead
+            value = 0
+        }
+    
+    }
+
+    title = "Adolf Hitler Is Dead"
+    desc = "The funeral for Adolf Hitler was possibly the largest and most extravagant in history. Thousands of Germans stood in attendance, with nearly an entire division of soldiers just for the funeral march, not to mention endless flyovers by the Luftwaffe and the constant jockeying for the best spots to show off by over a dozen military units."
+    flavor = "Even stand out figures such as John F. Kennedy and a representative of Emperor Hirohito were in attendance. Heydrich, Speer, Göring and Bormann were all in attendance, and all gave their words on their leader's passing. And then they were gone. Not even half an hour after the body was lowered, four staff cars and their convoys were speeding off to parts unknown, preparing for plans no doubt only just beginning..."
+
+    event_image = {
+		texture  = "gfx/event_pictures/event_pictures/hitler_suc.dds"
+	}
+    icon = "gfx/interface/icons/event_icons/event_fire.dds"
+
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 3
+    trigger = {
+		this ?= c:GER
+	}	
+
+    option = {
+        name = "The Beginning of the End"
+        add_loyalists = {
+            value = 0.05
+        }
+        add_radicals = {
+            value = 0.10
+        }
+        
+        
+	}
 }
 
 tno_germany_events.4 = { # speer wins power struggle
@@ -298,29 +442,6 @@ tno_germany_events.8 = { # hitler picks sucsesser
             value = 0.25
         }
     }
-}
-
-tno_germany_events.9 = { # puts hitler in coma
-	type = country_event
-    placement = ROOT
- 
-    hidden = yes
-
-    trigger = {
-		this ?= c:GER
-	}	
-
-    immediate = {
-        set_variable = {
-            
-            name = hitler_coma
-            value = 0
-        }
-    
-    }
-
-   
-
 }
 
 tno_germany_events.10 = { # SS acting up 
@@ -1121,7 +1242,7 @@ tno_germany_events.17 = { # German Civil War
 		} 
     }
     option = {
-        name = "Borman won"
+        name = "There will be blood."
         trigger = {
             has_variable = borman_chosen
        }
@@ -1135,7 +1256,7 @@ tno_germany_events.17 = { # German Civil War
    
    
     option = {
-        name = "Speer won"
+        name = "There will be blood."
         trigger = {
             has_variable = speer_chosen
         }
@@ -1149,7 +1270,7 @@ tno_germany_events.17 = { # German Civil War
      
      
      option = {
-        name = "Göring won"
+        name = "There will be blood."
         trigger = {
             has_variable = goering_chosen
         }
@@ -1163,7 +1284,7 @@ tno_germany_events.17 = { # German Civil War
     
     
      option = {
-        name = "Heydrich won"
+        name = "There will be blood."
         trigger = {
             has_variable = heydrich_chosen
         }
