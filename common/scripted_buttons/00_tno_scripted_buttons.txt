@@ -1072,7 +1072,62 @@ je_ru_irk_restore_far_east = {
     	custom_tooltip = je_ru_irk_restore_far_east_tt_5
 
     	hidden_effect = {
-    		trigger_event = { id = tno_ru_events.1 days = 2 popup = yes } # event for selecting new economic law
+    		trigger_event = { id = tno_ru_events.1 popup = yes } # event for selecting new economic law
     	}
+
+    	add_journal_entry = { type = je_ru_tno_sakha_expedition }
+	}
+}
+
+je_ru_gen_sakha_expedition = {
+	name = "sakha_expedition"
+	desc = "sakha_expedition_desc"
+
+	possible = {
+		custom_tooltip = {
+            text = tt.formed_far_east
+            has_variable = irk_form_far_east
+        }
+        NOT = {
+        	custom_tooltip = {
+        	    text = tt.not_on_expedition
+        	    has_variable = on_expedition
+        	}
+    	}
+    	hidden_trigger = {
+    		NOT = {
+    			has_variable = sakha_expedition_done
+    		}
+    	}
+	}
+
+	effect = {
+		if = {
+			limit = {
+				is_player = yes
+			}
+			trigger_event = { id = tno_ru_events.2 popup = yes }
+
+			add_modifier = {
+        		name = the_sakha_expedition
+    		}
+    		custom_tooltip = sakha.tt.2
+
+			set_variable = {
+				name = on_expedition
+				value = yes
+			}
+
+			set_variable = {
+				name = expedition_peril
+				value = 0
+			}
+
+			custom_tooltip = sakha.tt.3
+		}
+		else = {
+			trigger_event = { id = tno_ru_events.8 days = 2 popup = yes }
+			set_variable = sakha_expedition_done
+		}	
 	}
 }

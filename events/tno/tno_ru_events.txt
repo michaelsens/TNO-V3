@@ -71,7 +71,7 @@ tno_ru_events.1 = { # Choose Economic law after uniting region
 
 tno_ru_events.2 = { # Begin expedition
     type = country_event
-	placement = root
+	placement = s:STATE_UPPER_YENISEYSK.region_state:IRK
 	title = tno_ru_events.2.t
 	desc = tno_ru_events.2.d
 	flavor = tno_ru_events.2.f
@@ -106,7 +106,7 @@ tno_ru_events.2 = { # Begin expedition
 
 tno_ru_events.3 = { #bandits raid
 	type = country_event
-    #placement = scope:current_expedition_location
+    placement = s:STATE_UPPER_YENISEYSK.region_state:IRK
 
     title = tno_ru_events.3.t
     desc = tno_ru_events.3.d
@@ -124,6 +124,7 @@ tno_ru_events.3 = { #bandits raid
 	
 	trigger = {
 		has_variable = sakha_bandits
+        has_variable = on_expedition
 	}
 
     immediate = {
@@ -175,7 +176,7 @@ tno_ru_events.3 = { #bandits raid
 
 tno_ru_events.4 = { #corruption takes stuff
 	type = country_event
-    #placement = scope:current_expedition_location
+    placement = s:STATE_UPPER_YENISEYSK.region_state:IRK
 
     title = tno_ru_events.4.t
     desc = tno_ru_events.4.d
@@ -193,6 +194,7 @@ tno_ru_events.4 = { #corruption takes stuff
 	
 	trigger = {
 		has_variable = sakha_corruption
+		has_variable = on_expedition
 	}
 
     immediate = {
@@ -239,7 +241,7 @@ tno_ru_events.4 = { #corruption takes stuff
 
 tno_ru_events.5 = { #snowstorm
 	type = country_event
-    #placement = scope:current_expedition_location
+    placement = s:STATE_UPPER_YENISEYSK.region_state:IRK
 
     title = tno_ru_events.5.t
     desc = tno_ru_events.5.d
@@ -256,6 +258,7 @@ tno_ru_events.5 = { #snowstorm
     duration = 3
 	
 	trigger = {
+		has_variable = on_expedition
 	}
 
     immediate = {
@@ -280,7 +283,7 @@ tno_ru_events.5 = { #snowstorm
 
 tno_ru_events.6 = { #additional funding for expedition
 	type = country_event
-    #placement = scope:current_expedition_location
+    placement = s:STATE_UPPER_YENISEYSK.region_state:IRK
 
     title = tno_ru_events.6.t
     desc = tno_ru_events.6.d
@@ -297,6 +300,7 @@ tno_ru_events.6 = { #additional funding for expedition
     duration = 3
 	
 	trigger = {
+		has_variable = on_expedition
 	}
 
     immediate = {
@@ -321,7 +325,7 @@ tno_ru_events.6 = { #additional funding for expedition
 
 tno_ru_events.7 = { # Expedition failed
     type = country_event
-	placement = root
+	placement = s:STATE_UPPER_YENISEYSK.region_state:IRK
 	title = tno_ru_events.7.t
 	desc = tno_ru_events.7.d
 	flavor = tno_ru_events.7.f
@@ -344,6 +348,7 @@ tno_ru_events.7 = { # Expedition failed
 	option = {
 		name = tno_ru_events.7.1
 		highlighted_option = yes
+		custom_tooltip = tno_ru_events.8.1.1.tt
 		custom_tooltip = tno_ru_events.7.1.1.tt
 		custom_tooltip = tno_ru_events.7.1.2.tt
     }
@@ -351,7 +356,7 @@ tno_ru_events.7 = { # Expedition failed
 
 tno_ru_events.8 = { # Expedition succeeded
     type = country_event
-	placement = root
+	placement = s:STATE_UPPER_YENISEYSK.region_state:IRK
 	title = tno_ru_events.8.t
 	desc = tno_ru_events.8.d
 	flavor = tno_ru_events.8.f
