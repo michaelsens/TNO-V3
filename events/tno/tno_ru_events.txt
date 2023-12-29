@@ -374,28 +374,29 @@ tno_ru_events.8 = { # Expedition succeeded
 		name = tno_ru_events.8.1
 		custom_tooltip = tno_ru_events.8.1.1.tt
 		s:STATE_UPPER_YENISEYSK.region_state:IRK = {
-			#add_state_trait = <state_trait_name>	
 			force_resource_discovery = bg_coal_mining
 			force_resource_discovery = bg_lead_mining
 			force_resource_discovery = bg_iron_mining
 			force_resource_discovery = bg_sulfur_mining
 			add_modifier = {
 				name = state_sakha_complete
+				months = 25
 			}
 		}
-		s:STATE_IRKUTSK.region_state:IRK = {
-			#add_state_trait = <state_trait_name>	
-			#force_resource_discovery = bg_oil_extraction
-			add_modifier = {
-				name = state_sakha_complete
+		random_scope_state = {
+			limit = {
+				state_region = s:STATE_UPPER_YENISEYSK
+			}
+			save_scope_as = upper_yeniseysk_state_scope
+		}
+
+
+
+		hidden_effect = {
+			scope:upper_yeniseysk_state_scope.state_region = {
+				add_state_trait = state_trait_sakha_expedition	
 			}
 		}
-		s:STATE_UPPER_YENISEYSK.region_state:IRK = {
-			#add_state_trait = <state_trait_name>	
-			#force_resource_discovery = bg_oil_extraction
-			add_modifier = {
-				name = state_sakha_complete
-			}
-		}
+		custom_tooltip = tno_ru_events.8.1.2.tt
     }
 }
