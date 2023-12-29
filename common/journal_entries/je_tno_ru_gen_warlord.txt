@@ -33,3 +33,109 @@
     should_be_pinned_by_default = yes
     
 }
+
+je_ru_tno_sakha_expedition = {
+    icon = "gfx/interface/icons/invention_icons/prospecting_tech.dds"
+    group = je_group_expeditions
+
+    on_monthly_pulse = {
+        random_events = {
+            80 = 0
+
+            20 = tno_ru_events.3
+            20 = tno_ru_events.4
+            20 = tno_ru_events.5
+            20 = tno_ru_events.6
+        }
+    }
+    
+    immediate = { 
+        set_variable = {
+            name = sakha_progress
+            value = 0
+        }
+        set_variable = {
+            name = sakha_bandits
+            value = yes
+        }
+        set_variable = {
+            name = expedition_peril
+            value = 0
+        }
+    }
+    
+    status_desc = {
+        first_valid = {
+            triggered_desc = {
+                desc = expedition_low_peril_loc
+                trigger = {
+                    var:expedition_peril < 4
+                }
+            }
+            triggered_desc = {
+                desc = expedition_medium_peril_loc
+                trigger = {
+                    var:expedition_peril <= 5
+                }
+            }
+            triggered_desc = {
+                desc = expedition_high_peril_loc
+                trigger = {
+                    var:expedition_peril >= 6
+                }
+            }
+        }
+    }
+    
+    complete = {
+        custom_tooltip = {
+            text = je_expedition_success
+            scope:journal_entry = {
+                is_goal_complete = yes
+            }
+        }
+    }
+    
+    on_complete = {
+        trigger = { NOT = { has_global_variable = buenaventura_river_disproven } }
+        trigger_event = { id = tno_ru_events.8 popup = yes }
+
+        remove_variable = on_expedition
+        remove_modifier = the_sakha_expedition
+        remove_modifier = sakha_hiring_security
+        remove_modifier = sakha_corruption_investigation
+        set_variable = {
+            name = sakha_expedition_done
+            value = yes
+        }
+    }
+    
+   fail = {
+        custom_tooltip = {
+            text = je_expedition_fail
+            var:expedition_peril >= 8
+        }
+    }
+    
+    on_fail = {
+        trigger_event = { id = tno_ru_events.7 popup = yes }
+        remove_variable = on_expedition
+        remove_modifier = the_sakha_expedition
+        remove_modifier = sakha_hiring_security
+        remove_modifier = sakha_corruption_investigation
+    }
+    
+    current_value = {
+        value = var:sakha_progress
+    }
+
+    goal_add_value = {
+        add = 8
+    }
+    
+    progressbar = yes
+    
+    weight = 200
+    transferable = no
+    should_be_pinned_by_default = yes
+}

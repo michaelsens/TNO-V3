@@ -1,0 +1,62 @@
+﻿sakha_expedition = {
+	is_shown = {
+		has_variable = irk_form_far_east
+		NAND = { 
+			has_variable = sakha_expedition_done
+	    }	
+		has_technology_researched = colonization
+		NOT = {  has_variable = on_expedition }
+		OR = {
+			is_ai = no
+			NOT = { has_variable = ai_expedition_cooldown }
+		}				
+	}
+
+	possible = {
+		custom_tooltip = sakha.tt.1
+		hidden_effect = {
+			has_variable = irk_form_far_east
+		}
+	}
+
+	when_taken = {
+		if = {
+			limit = {
+				is_player = yes
+			}
+			trigger_event = { id = tno_ru_events.2 days = 2 popup = yes }
+
+			add_modifier = {
+        		name = the_sakha_expedition
+    		}
+    		custom_tooltip = sakha.tt.2
+
+			add_journal_entry = {
+				type = je_ru_tno_sakha_expedition
+			}
+
+			set_variable = {
+				name = on_expedition
+				value = yes
+			}
+
+			set_variable = {
+				name = expedition_peril
+				value = 4
+			}
+
+			set_variable = {
+				name = expedition_peril
+				value = 4
+			}
+		}
+		else = {
+			trigger_event = { id = tno_ru_events.8 days = 2 popup = yes }
+			set_variable = sakha_expedition_done
+		}		
+	}
+
+	ai_chance = {
+		base = 1000		
+	}
+}

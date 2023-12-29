@@ -1,1419 +1,401 @@
-﻿namespace = tno_usa_events
+﻿namespace = tno_ru_events
 
-tno_usa_events.8 = { #southern collapse
-	type = country_event
-    placement = ROOT
- 
-    title = tno_usa_events.8
-    desc = tno_usa_events.8.d
-    flavor = tno_usa_events.8.f 
-    event_image = {
-        texture = "gfx/event_pictures/super_pictures/seg.4.dds"
+tno_ru_events.1 = { # Choose Economic law after uniting region
+    type = country_event
+	placement = root
+	title = tno_ru_events.1.t
+	desc = tno_ru_events.1.d
+	flavor = tno_ru_events.1.f
+	icon = "gfx/interface/icons/goods_icons/gold.dds"
+
+	duration = 5
+
+	immediate = {
+    }
+    
+    trigger = {
+	}
+
+	event_image = {
+        texture = "gfx/event_pictures/super_pictures/russians_wait_in_line.dds"
     }
 
-    icon = "gfx/interface/icons/event_icons/event_fire.dds"
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 
-    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
-
-    duration = 3
-
-    option = {
-        name = tno_usa_events.8.a
-
+	option = { #Interventionism
+		name = tno_ru_events.1.1
+		highlighted_option = yes
+		activate_law = law_type:law_interventionism
 		add_modifier = {
-    		name = modifier_usa_newengland
-  	    }
-		  add_modifier = {
-    		name = modifier_usa_crushusu
-  	    }
-		  add_modifier = {
-    		name =  modifier_usa_crushsouth
-  	    }
-		  add_modifier = {
-    		name =  modifier_usa_gov
-  	    }
-
-		add_journal_entry = { type = je_2acw }
-
-		trigger_event = { id = tno_usa_events.9 }
-		
-        create_country = { #tennesee state authoirty
-            tag = TEN
-            origin = c:USA
-            state = s:STATE_TENNESSEE.region_state:USA
-			on_created = {activate_law = law_type:law_wage_subsidies
-            activate_law = law_type:law_elected_bureaucrats
-            activate_law = law_type:law_compulsory_primary_school
-            activate_law = law_type:law_universal_suffrage
-            activate_law = law_type:law_cultural_exclusion
-            activate_law = law_type:law_presidential_republic
-            activate_law = law_type:law_total_separation
-            activate_law = law_type:law_no_colonial_affairs
-            activate_law = law_type:law_interventionism
-            activate_law = law_type:law_public_schools
-            activate_law = law_type:law_protected_speech
-            activate_law = law_type:law_national_guard
-            activate_law = law_type:law_homesteading
-            activate_law = law_type:law_migration_controls
-            activate_law = law_type:law_dedicated_police
-            activate_law = law_type:law_womens_suffrage
-         }
-        } 
-        create_country = { #kentucky state authoirty
-            tag = KEN
-            origin = c:USA
-            state = s:STATE_KENTUCKY.region_state:USA
-			on_created = {activate_law = law_type:law_wage_subsidies
-            activate_law = law_type:law_elected_bureaucrats
-            activate_law = law_type:law_compulsory_primary_school
-            activate_law = law_type:law_universal_suffrage
-            activate_law = law_type:law_cultural_exclusion
-            activate_law = law_type:law_presidential_republic
-            activate_law = law_type:law_total_separation
-            activate_law = law_type:law_no_colonial_affairs
-            activate_law = law_type:law_interventionism
-            activate_law = law_type:law_public_schools
-            activate_law = law_type:law_protected_speech
-            activate_law = law_type:law_national_guard
-            activate_law = law_type:law_homesteading
-            activate_law = law_type:law_migration_controls
-            activate_law = law_type:law_dedicated_police
-            activate_law = law_type:law_womens_suffrage
-         }
-        } 
-        create_country = { #kkk bastards
-			tag = KKK
-			origin = c:USA
-			state = s:STATE_FLORIDA.region_state:USA
-			province = p:x40F040  
-			province = p:xC07040  
-			province = p:xbe8916  
-			province = p:x14a138  
-			province = p:xc2859c  
-			province = p:x9bea44  
-			province = p:x476de4  
-			province = p:xe2e34a  
-			province = p:x391cfa  
-			province = p:x56dbda   
-			on_created = {
-            activate_law = law_type:law_appointed_bureaucrats
-            activate_law = law_type:law_child_labor_allowed
-            activate_law = law_type:law_autocracy
-            activate_law = law_type:law_ethnostate
-            activate_law = law_type:law_presidential_republic
-            activate_law = law_type:law_state_religion
-            activate_law = law_type:law_no_colonial_affairs
-            activate_law = law_type:law_interventionism
-            activate_law = law_type:law_public_schools
-            activate_law = law_type:law_outlawed_dissent
-            activate_law = law_type:law_no_health_system
-            activate_law = law_type:law_national_guard
-            activate_law = law_type:law_no_workers_rights
-            activate_law = law_type:law_homesteading
-            activate_law = law_type:law_closed_borders
-            activate_law = law_type:law_militarized_police
-            activate_law = law_type:law_women_own_property
-
-			trigger_event = { id = tno_usa_events.16 }
-         }
-		} 
-        create_country = { #black revolt
-			tag = USB
-			origin = c:USA
-			province = p:x7aaa59  
-			province = p:xf83d99  
-			province = p:xf5b3a1  
-			province = p:x1fa379  
-			province = p:x644a75  
-			province = p:x807040  
-			province = p:x7bf507  
-			province = p:xdbbf9f  
-			province = p:xf3c9d3  
-			province = p:x785402  
-			province = p:x5961f9  
-			province = p:xd01c13  
-			province = p:x0f9a00  
-			province = p:xe631d3  
-			province = p:x39e367  
-			province = p:xb3d9d8  
-			province = p:x169e1f  
-			province = p:x0c4d39  
-			province = p:x0da56a  
-			province = p:xe2e34a  
-			province = p:xe2e34a  
-			province = p:xe2e34a  
-			province = p:xe2e34a  
-			on_created = {activate_law = law_type:law_wage_subsidies
-            activate_law = law_type:law_elected_bureaucrats
-            activate_law = law_type:law_compulsory_primary_school
-            activate_law = law_type:law_universal_suffrage
-            activate_law = law_type:law_multicultural
-            activate_law = law_type:law_parliamentary_republic
-            activate_law = law_type:law_total_separation
-            activate_law = law_type:law_no_colonial_affairs
-            activate_law = law_type:law_interventionism
-            activate_law = law_type:law_public_schools
-            activate_law = law_type:law_protected_speech
-            activate_law = law_type:law_public_health_insurance
-            activate_law = law_type:law_national_guard
-            activate_law = law_type:law_worker_protections
-            activate_law = law_type:law_homesteading
-            activate_law = law_type:law_no_migration_controls
-            activate_law = law_type:law_dedicated_police
-            activate_law = law_type:law_womens_suffrage
-            activate_law = law_type:law_graduated_taxation
-            activate_law = law_type:law_old_age_pension
-         }
-		} 
-        create_country = { #miami warlord
-			tag = SAD
-			origin = c:USA
-			province = p:xf0b481  
-			on_created = {
-            activate_law = law_type:law_appointed_bureaucrats
-            activate_law = law_type:law_child_labor_allowed
-            activate_law = law_type:law_oligarchy
-            activate_law = law_type:law_national_supremacy
-            activate_law = law_type:law_presidential_republic
-            activate_law = law_type:law_total_separation
-            activate_law = law_type:law_no_colonial_affairs
-            activate_law = law_type:law_interventionism
-            activate_law = law_type:law_public_schools
-            activate_law = law_type:law_national_guard
-            activate_law = law_type:law_no_workers_rights
-            activate_law = law_type:law_homesteading
-            activate_law = law_type:law_no_migration_controls
-            activate_law = law_type:law_dedicated_police
-         }
-		} 
-        create_country = { #missouri state authoirty
-			tag = MSA
-			origin = c:USA
-			province = p:xff9f56  
-			province = p:xf279b1  
-			province = p:xcdc95a  
-			province = p:x948616  
-			province = p:xea9822  
-			province = p:x84487e  
-			province = p:xd3f59d  
-			province = p:x591e45  
-			province = p:x1bb57f 
-			province = p:x1b4f2d 
-			province = p:x53bf8b 
-			province = p:xf5005e 
-			province = p:xf23379 
-			province = p:xbf3ff3 
-			province = p:x0ac4e5 
-			province = p:x67104c 
-			province = p:x4d6def 
-			province = p:x8adb9a 
-			province = p:x7b0051 
-			province = p:x701948 
-			on_created = {activate_law = law_type:law_wage_subsidies
-            activate_law = law_type:law_elected_bureaucrats
-            activate_law = law_type:law_compulsory_primary_school
-            activate_law = law_type:law_universal_suffrage
-            activate_law = law_type:law_cultural_exclusion
-            activate_law = law_type:law_presidential_republic
-            activate_law = law_type:law_total_separation
-            activate_law = law_type:law_no_colonial_affairs
-            activate_law = law_type:law_interventionism
-            activate_law = law_type:law_public_schools
-            activate_law = law_type:law_protected_speech
-            activate_law = law_type:law_national_guard
-            activate_law = law_type:law_homesteading
-            activate_law = law_type:law_migration_controls
-            activate_law = law_type:law_dedicated_police
-            activate_law = law_type:law_womens_suffrage
-
-			trigger_event = { id = tno_usa_events.15 }
-         }
-		}
-        create_country = { #missouri freedom millita 
-			tag = MSM
-			origin = c:USA
-			province = p:x67dc9a 
-			on_created = {
-            activate_law = law_type:law_appointed_bureaucrats
-            activate_law = law_type:law_compulsory_primary_school
-            activate_law = law_type:law_oligarchy
-            activate_law = law_type:law_homesteading
-         }
-		} 
-        create_country = { #missouri dixie republic puppet
-			tag = MSD
-			origin = c:USA
-			province = p:x50c080
-			province = p:xe30dbe
-			province = p:x5171f6
-			province = p:x91a469
-			province = p:x5cb3af
-			province = p:x0e60ea
-			province = p:xd04080
-			province = p:xe73161
-			province = p:x547eee
-			province = p:x5e76cb
-			province = p:x65632b
-			province = p:x852923
-			province = p:x724bc4
-			province = p:x508040
-			province = p:x1be410
-			province = p:x9ea16e
-			province = p:xcc0fca
-			province = p:x9dc7ae
-			province = p:x6ed39c
-			province = p:xd00040
-			province = p:x0dafae
-			on_created = {
-				activate_law = law_type:law_appointed_bureaucrats
-				activate_law = law_type:law_child_labor_allowed
-				activate_law = law_type:law_census_voting
-				activate_law = law_type:law_racial_segregation
-				activate_law = law_type:law_presidential_republic
-				activate_law = law_type:law_state_religion
-				activate_law = law_type:law_no_colonial_affairs
-				activate_law = law_type:law_interventionism
-				activate_law = law_type:law_public_schools
-				activate_law = law_type:law_censorship
-				activate_law = law_type:law_no_health_system
-				activate_law = law_type:law_national_guard
-				activate_law = law_type:law_no_workers_rights
-				activate_law = law_type:law_homesteading
-				activate_law = law_type:law_protectionism
-				activate_law = law_type:law_militarized_police
-				activate_law = law_type:law_women_own_property
-			 }
-		} 
-        create_country = { #missouri shity small millita
-			tag = UHL
-			origin = c:USA
-			province = p:xa5afe3
-		} 
-        create_country = { #florida warlord
-			tag = FLR
-			origin = c:USA
-			province = p:xaaf2af
-			province = p:x4407a0
-			province = p:xe740e5
-			province = p:x3126ca
-			province = p:xc60d66
-			province = p:x9088d5
-			province = p:x65ecbe
-			province = p:xed77fb
-			province = p:xfe627b
-			province = p:xf41cc0
-			province = p:x3556e5
-
-		} 
-        create_country = { # southern us claiment
-			tag = USU
-			origin = c:USA
-			province = p:x3d2d7d
-			province = p:x69faa9
-			province = p:x6d8a9f
-			province = p:xfcecd3
-			province = p:xabcc5e
-			province = p:x21e256
-			province = p:xd66e1c
-			province = p:xbdb2ba
-			province = p:xe2f040
-			province = p:xaf8c38
-			province = p:x2c6aa0
-			province = p:x0070c0
-			province = p:x8e69fe
-			province = p:x6f7b23
-			province = p:xd4d27e
-			province = p:x007602
-			province = p:x8998f6
-			province = p:x47bf09
-			province = p:x31e5d4
-			province = p:x9b1b8b
-			province = p:xf93340
-			province = p:xd641cb
-			province = p:x3b0fae
-			province = p:x00f040
-			province = p:x758494
-			province = p:x8070c0
-			province = p:x338bd7
-			province = p:xabf402
-			province = p:x228851
-			province = p:x5b809b
-			province = p:x7f5918
-			province = p:x007040
-			province = p:x7342e7
-			province = p:x81aaed
-			province = p:x58a1c9
-			province = p:xa59977
-			province = p:x6fbf63
-			province = p:xc58daf
-			province = p:xe5da13
-			province = p:x1b47bd
-			province = p:x7de315
-			province = p:x3ea432
-			province = p:x4dc66c
-			province = p:x711cb6
-			state = s:STATE_VIRGINIA.region_state:USA
-			on_created = {
-				activate_law = law_type:law_appointed_bureaucrats
-				activate_law = law_type:law_child_labor_allowed
-				activate_law = law_type:law_oligarchy
-				activate_law = law_type:law_racial_segregation
-				activate_law = law_type:law_presidential_republic
-				activate_law = law_type:law_freedom_of_conscience
-				activate_law = law_type:law_no_colonial_affairs
-				activate_law = law_type:law_laissez_faire
-				activate_law = law_type:law_public_schools
-				activate_law = law_type:law_censorship
-				activate_law = law_type:law_no_health_system
-				activate_law = law_type:law_national_guard
-				activate_law = law_type:law_no_workers_rights
-				activate_law = law_type:law_homesteading
-				activate_law = law_type:law_protectionism
-				activate_law = law_type:law_militarized_police
-				activate_law = law_type:law_women_in_the_workplace
-				activate_law = law_type:law_mass_conscription
-
-				trigger_event = { id = tno_usa_events.17 }
-			 }
-		}  
-        s:STATE_VIRGINIA = {
-			set_owner_of_provinces = {
-				country = c:USA
-				provinces = {
-					x79ac2a x304080 x056ba1 x90316a x08c98c xf00080 xb5b538 x76d2b5
-				}
-			}
-		}
-        create_country = { # west virginia workers union
-			tag = WVW
-			origin = c:USA
-			province = p:xb865a2
-			province = p:x366df2
-			province = p:x38925b
-			province = p:x8e2b78
-			province = p:xaa8809
-			province = p:x06d57e
-			province = p:x2ea16c
-			on_created = {activate_law = law_type:law_wage_subsidies
-            activate_law = law_type:law_elected_bureaucrats
-            activate_law = law_type:law_compulsory_primary_school
-            activate_law = law_type:law_council_republic
-            activate_law = law_type:law_multicultural
-            activate_law = law_type:law_universal_suffrage
-            activate_law = law_type:law_total_separation
-            activate_law = law_type:law_no_colonial_affairs
-            activate_law = law_type:law_cooperative_ownership
-            activate_law = law_type:law_public_schools
-            activate_law = law_type:law_protected_speech
-            activate_law = law_type:law_public_health_insurance
-            activate_law = law_type:law_no_home_affairs
-            activate_law = law_type:law_worker_protections
-            activate_law = law_type:law_collectivized_agriculture
-            activate_law = law_type:law_no_migration_controls
-            activate_law = law_type:law_no_police
-            activate_law = law_type:law_womens_suffrage
-         }
-		} 
-        
-        create_country = { # dixie republic
-			tag = DIX
-			origin = c:USA
-			state = s:STATE_TEXAS.region_state:USA
-			state = s:STATE_OKLAHOMA.region_state:USA
-			province = p:x9e96b6
-			province = p:xB20F72
-			province = p:x18d465
-			province = p:x3d2fd4
-			province = p:xac4818
-			province = p:x68c793
-			province = p:x216122
-			province = p:xc62139
-			province = p:x7ef4b8
-			province = p:x1bf244
-			province = p:x0cf7a4
-			province = p:xee0faa
-			province = p:xbf79f5
-			province = p:x476DE4
-			province = p:x391cfa
-			province = p:xa496a6
-			province = p:xe933f3
-			province = p:xfd85d7
-			province = p:xa86682
-			province = p:x19efc6
-			province = p:xcd4c42
-			province = p:x98a030
-			province = p:x7b295a
-			province = p:xee9338
-			province = p:x4ea3ca
-			province = p:x407040
-			province = p:xcb1a53
-			province = p:x13b302
-			province = p:x802080
-			province = p:xcd4c42
-			province = p:xf0cb48
-			province = p:xf205e8
-			province = p:x637a11
-			province = p:x8f2def
-			province = p:xda6506
-			province = p:x9ae3bd
-			province = p:x1402bf
-			province = p:x316588
-			province = p:x5f4c23
-			province = p:xb7fd4e
-			province = p:x1cf8d9
-			province = p:x181555
-			province = p:x58998b
-			province = p:x4887ac
-			province = p:x2126ad
-			province = p:x070c9d
-			province = p:x5b4e4d
-			province = p:xc8f21f
-			province = p:x69827a
-			province = p:xc8fd36
-			province = p:x63aa76
-			province = p:x19e16b
-			province = p:xfd9d2f
-			province = p:x6b20e7
-			province = p:x46c455
-			province = p:xb636e0 
-			province = p:x99c48c
-			province = p:xeed52d
-			province = p:xae2568
-			province = p:x38bb61
-			province = p:x40b080
-			province = p:x9660d3
-			province = p:x7d2451
-			province = p:x59e5c4
-			province = p:xf9f60a
-			province = p:x418b71
-			province = p:xd3d517
-			province = p:xeb0deb
-			province = p:x405bb7
-			province = p:x94cb2d
-			province = p:x432b51
-			province = p:x6377bb
-			province = p:x5a143b
-			province = p:x10c0c0
-			province = p:xe80f7d
-			province = p:x876bd0
-			province = p:x9040c0
-			province = p:x0364b8
-			province = p:x4a5328
-			province = p:x08a728
-			province = p:x76a411
-			province = p:x25c814
-			province = p:xab5e06
-
-			on_created = {
-				activate_law = law_type:law_appointed_bureaucrats
-				activate_law = law_type:law_child_labor_allowed
-				activate_law = law_type:law_census_voting
-				activate_law = law_type:law_racial_segregation
-				activate_law = law_type:law_presidential_republic
-				activate_law = law_type:law_state_religion
-				activate_law = law_type:law_no_colonial_affairs
-				activate_law = law_type:law_interventionism
-				activate_law = law_type:law_public_schools
-				activate_law = law_type:law_censorship
-				activate_law = law_type:law_no_health_system
-				activate_law = law_type:law_national_guard
-				activate_law = law_type:law_no_workers_rights
-				activate_law = law_type:law_homesteading
-				activate_law = law_type:law_protectionism
-				activate_law = law_type:law_militarized_police
-				activate_law = law_type:law_women_own_property
-			 }
-		} 
-        create_country = { # arkansas ordenstat
-			tag = USQ
-			origin = c:USA
-			province = p:x9ca0ed
-			province = p:xc5becd
-			province = p:x40f000
-			on_created = {
-				activate_law = law_type:law_appointed_bureaucrats
-				activate_law = law_type:law_child_labor_allowed
-				activate_law = law_type:law_single_party_state
-				activate_law = law_type:law_ethnostate
-				activate_law = law_type:law_presidential_republic
-				activate_law = law_type:law_state_religion
-				activate_law = law_type:law_command_economy
-				activate_law = law_type:law_no_schools
-				activate_law = law_type:law_outlawed_dissent
-				activate_law = law_type:law_no_health_system
-				activate_law = law_type:law_national_guard
-				activate_law = law_type:law_no_workers_rights
-				activate_law = law_type:law_serfdom
-				activate_law = law_type:law_isolationism
-				activate_law = law_type:law_militarized_police
-				activate_law = law_type:law_debt_slavery
-			 }
-		} 
-        create_country = { # southern theocracy
-			tag = UST
-			origin = c:USA
-			state = s:STATE_MISSISSIPPI.region_state:USA
-			province = p:x9DD556
-			province = p:x98A56F
-			province = p:x3837AA
-			province = p:x20B000
-			province = p:x807000
-			province = p:x43AAC6
-			province = p:x656E7D
-			province = p:xE8D1CA
-			province = p:x53C044
-			province = p:x6510ED
-			province = p:x00f000
-			province = p:xcc3103
-			province = p:x31044f
-			province = p:x3e5afe
-			province = p:xa50be3
-			province = p:x489df2
-			province = p:x913125
-			province = p:x168ae9
-			province = p:x6d9811
-			province = p:xC85beb
-			province = p:x807080
-			province = p:x8b0210
-			province = p:x4ef632
-			province = p:xbaad96
-			province = p:xedb65f
-			province = p:x29e11f
-			province = p:xc671e3
-			province = p:x407080
-			province = p:xbcaf1a
-			province = p:xc0f000
-			province = p:x4b4adb
-			province = p:xa09531
-			province = p:xba821e
-			province = p:xf51011
-			province = p:xb058b0
-			province = p:x13b0c7
-			province = p:x9a7554
-			province = p:x39d7a2
-			province = p:xc0f080
-			province = p:x371b1b
-			province = p:xc51912
-			province = p:x86bc13
-			province = p:xc1273e
-			province = p:xc07080
-			province = p:xd658e7
-			province = p:x403095
-			province = p:x2bebae
-			province = p:x131940
-			province = p:x71bec1
-			province = p:xa4ee3c
-			province = p:x4fa3c4
-			province = p:xefb99c
-			on_created = {
-				activate_law = law_type:law_appointed_bureaucrats
-				activate_law = law_type:law_child_labor_allowed
-				activate_law = law_type:law_single_party_state
-				activate_law = law_type:law_national_supremacy
-				activate_law = law_type:law_theocracy
-				activate_law = law_type:law_state_religion
-				activate_law = law_type:law_religious_schools
-				activate_law = law_type:law_censorship
-				activate_law = law_type:law_charitable_health_system
-				activate_law = law_type:law_no_workers_rights
-				activate_law = law_type:law_homesteading
-				activate_law = law_type:law_protectionism
-				activate_law = law_type:law_local_police
-
-				trigger_event = { id = tno_usa_events.14 }
-			}
-		} 
-        create_country = { #anti theocrat southerners
-			tag = USS
-			origin = c:USA
-			province = p:x3837AA
-			province = p:x20b000
-			province = p:xee9129
-			province = p:x6510ed
-			province = p:xcde01b
-			province = p:x492b79
-			province = p:x40a911
-			province = p:x489df2
-			province = p:xbd9f23
-			province = p:x913125
-			province = p:x8e9218
-			province = p:x966d03
-			province = p:xc8bb61
-			province = p:x5462c6
-			province = p:x12deaf
-			province = p:xA03000
-			province = p:xd0761d
-			province = p:x23b4d0
-			province = p:x6e31de
-			province = p:x976584
-			province = p:x8c16f9
-			province = p:xe36367
-			province = p:x5e6b4d
-			province = p:xee80a0
-			province = p:x4ef632
-			province = p:x8a22c2
-			province = p:x758310
-			province = p:x8c50e2
-			on_created = {
-				activate_law = law_type:law_elected_bureaucrats
-				activate_law = law_type:law_compulsory_primary_school
-				activate_law = law_type:law_single_party_state
-				activate_law = law_type:law_racial_segregation
-				activate_law = law_type:law_presidential_republic
-				activate_law = law_type:law_total_separation
-				activate_law = law_type:law_public_schools
-				activate_law = law_type:law_censorship
-				activate_law = law_type:law_no_health_system
-				activate_law = law_type:law_no_workers_rights
-				activate_law = law_type:law_homesteading
-				activate_law = law_type:law_protectionism
-				activate_law = law_type:law_local_police
-			 }
-		} 
-        create_country = { #Austin safe zone
-			tag = ASZ
-			origin = c:USA
-			province = p:xd15251
-			province = p:x402088
-			province = p:x5c7ea4
-			province = p:x1b9e2a
-			province = p:x18ec9c
-			province = p:x89e3c9
-			province = p:xeb7b97
-			province = p:x2cbc3b
-			on_created = {
-				activate_law = law_type:law_oligarchy
-			 }
-		} 
-        create_country = { #st louis free zone
-			tag = FKU
-			origin = c:USA
-			province = p:x971521
-			on_created = {
-				activate_law = law_type:law_oligarchy
-			 }
-		} 
-        create_country = { # NYPD
-			tag = NYP
-			origin = c:USA
-			province = p:x377e55
-			on_created = {
-				activate_law = law_type:law_appointed_bureaucrats
-				activate_law = law_type:law_no_schools
-				activate_law = law_type:law_oligarchy
-				activate_law = law_type:law_interventionism
-				activate_law = law_type:law_censorship
-				activate_law = law_type:law_no_health_system
-				activate_law = law_type:law_no_workers_rights
-				activate_law = law_type:law_militarized_police
-			 }
-		} 
-        create_country = { # new york republic
-			tag = NYR
-			origin = c:USA
-			province = p:x1bad55
-			province = p:x300080
-			province = p:xb08000
-			on_created = {
-            activate_law = law_type:law_elected_bureaucrats
-            activate_law = law_type:law_compulsory_primary_school
-            activate_law = law_type:law_universal_suffrage
-            activate_law = law_type:law_multicultural
-            activate_law = law_type:law_parliamentary_republic
-            activate_law = law_type:law_total_separation
-            activate_law = law_type:law_no_colonial_affairs
-            activate_law = law_type:law_interventionism
-            activate_law = law_type:law_public_schools
-            activate_law = law_type:law_protected_speech
-            activate_law = law_type:law_public_health_insurance
-            activate_law = law_type:law_national_guard
-            activate_law = law_type:law_worker_protections
-            activate_law = law_type:law_homesteading
-            activate_law = law_type:law_no_migration_controls
-            activate_law = law_type:law_dedicated_police
-            activate_law = law_type:law_womens_suffrage
-            activate_law = law_type:law_graduated_taxation
-            activate_law = law_type:law_old_age_pension
-         }
-		} 
-        create_country = { # boston upriseing
-			tag = USX
-			origin = c:USA
-			province = p:x13444d
-			province = p:x211ecf
-			province = p:xa58ed2
-			on_created = {
-            activate_law = law_type:law_elected_bureaucrats
-            activate_law = law_type:law_compulsory_primary_school
-            activate_law = law_type:law_universal_suffrage
-            activate_law = law_type:law_multicultural
-            activate_law = law_type:law_parliamentary_republic
-            activate_law = law_type:law_total_separation
-            activate_law = law_type:law_no_colonial_affairs
-            activate_law = law_type:law_interventionism
-            activate_law = law_type:law_public_schools
-            activate_law = law_type:law_protected_speech
-            activate_law = law_type:law_public_health_insurance
-            activate_law = law_type:law_national_guard
-            activate_law = law_type:law_worker_protections
-            activate_law = law_type:law_homesteading
-            activate_law = law_type:law_no_migration_controls
-            activate_law = law_type:law_dedicated_police
-            activate_law = law_type:law_womens_suffrage
-            activate_law = law_type:law_graduated_taxation
-            activate_law = law_type:law_old_age_pension
-         }
-		}
-    } 
-}
-
-tno_usa_events.9 = { #pacific colapse
-	type = country_event
-    placement = ROOT
- 
-    title = tno_usa_events.9
-    desc = tno_usa_events.9.d
-    flavor = tno_usa_events.9.f 
-    event_image = {
-        texture = "gfx/event_pictures/super_pictures/seg.4.dds"
+        	name = transition_from_warlordism
+       		months = 6
+    	}
     }
-
-    icon = "gfx/interface/icons/event_icons/event_fire.dds"
-
-    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
-
-    duration = 3
-
-    option = {
-        name = tno_usa_events.9.a
-
-		trigger_event = { id = tno_usa_events.10 }
-
+    option = { #Agrarianism
+		name = tno_ru_events.1.2
+		highlighted_option = yes
+		activate_law = law_type:law_agrarianism
 		add_modifier = {
-    		name = modifier_usa_cali
-  	    }
-
-        create_country = { #cali leuge of democracy
-			tag = CLT
-			origin = c:USA
-			state = s:STATE_CALIFORNIA.region_state:USA
-			state = s:STATE_OREGON.region_state:USA
-			state = s:STATE_IDAHO.region_state:USA
-			state = s:STATE_WYOMING.region_state:USA
-			state = s:STATE_WASHINGTON.region_state:USA
-			state = s:STATE_NEVADA.region_state:USA
-			state = s:STATE_MONTANA.region_state:USA
-			state = s:STATE_ARIZONA.region_state:USA
-			state = s:STATE_NEW_MEXICO.region_state:USA
-			state = s:STATE_COLORADO.region_state:USA
-			state = s:STATE_KANSAS.region_state:USA
-			state = s:STATE_NEBRASKA.region_state:USA
-			state = s:STATE_SOUTH_DAKOTA.region_state:USA
-			state = s:STATE_NORTH_DAKOTA.region_state:USA
-			state = s:STATE_MINNESOTA.region_state:USA
-			state = s:STATE_IOWA.region_state:USA
-            on_created = {activate_law = law_type:law_wage_subsidies
-            activate_law = law_type:law_elected_bureaucrats
-            activate_law = law_type:law_compulsory_primary_school
-            activate_law = law_type:law_universal_suffrage
-            activate_law = law_type:law_multicultural
-            activate_law = law_type:law_parliamentary_republic
-            activate_law = law_type:law_total_separation
-            activate_law = law_type:law_no_colonial_affairs
-            activate_law = law_type:law_interventionism
-            activate_law = law_type:law_public_schools
-            activate_law = law_type:law_protected_speech
-            activate_law = law_type:law_public_health_insurance
-            activate_law = law_type:law_national_guard
-            activate_law = law_type:law_worker_protections
-            activate_law = law_type:law_homesteading
-            activate_law = law_type:law_no_migration_controls
-            activate_law = law_type:law_dedicated_police
-            activate_law = law_type:law_womens_suffrage
-            activate_law = law_type:law_graduated_taxation
-            activate_law = law_type:law_old_age_pension
-			activate_law = law_type:law_mass_conscription
-
-         }
-		 
-        
-		} 
-        
-        create_country = { #anarchist washington
-			tag = FTW
-			origin = c:USA
-			province = p:xcf4646  
-			province = p:xa4dd56
-			province = p:x3a17a7
-            on_created = {activate_law = law_type:law_wage_subsidies
-            activate_law = law_type:law_elected_bureaucrats
-            activate_law = law_type:law_compulsory_primary_school
-            activate_law = law_type:law_council_republic
-            activate_law = law_type:law_multicultural
-            activate_law = law_type:law_anarchy
-            activate_law = law_type:law_total_separation
-            activate_law = law_type:law_no_colonial_affairs
-            activate_law = law_type:law_cooperative_ownership
-            activate_law = law_type:law_public_schools
-            activate_law = law_type:law_protected_speech
-            activate_law = law_type:law_public_health_insurance
-            activate_law = law_type:law_no_home_affairs
-            activate_law = law_type:law_worker_protections
-            activate_law = law_type:law_homesteading
-            activate_law = law_type:law_no_migration_controls
-            activate_law = law_type:law_no_police
-            activate_law = law_type:law_womens_suffrage
-            activate_law = law_type:law_graduated_taxation
-         }
-		}
-
-        create_country = { # morman state
-			tag = LEG
-			origin = c:USA
-			state = s:STATE_UTAH.region_state:USA
-            on_created = {
-            activate_law = law_type:law_child_labor_allowed
-            activate_law = law_type:law_presidential_republic
-            activate_law = law_type:law_multicultural
-            activate_law = law_type:law_state_religion
-            activate_law = law_type:law_no_colonial_affairs
-            activate_law = law_type:law_laissez_faire
-            activate_law = law_type:law_private_schools
-            activate_law = law_type:law_protected_speech
-            activate_law = law_type:law_private_health_insurance
-            activate_law = law_type:law_no_home_affairs
-            activate_law = law_type:law_no_workers_rights
-            activate_law = law_type:law_commercialized_agriculture
-            activate_law = law_type:law_no_migration_controls
-            activate_law = law_type:law_local_police
-            activate_law = law_type:law_women_in_the_workplace
-            activate_law = law_type:law_free_trade
-            activate_law = law_type:law_consumption_based_taxation
-         }
-		} 
-        create_country = { #communist california
-			tag = CAC
-			origin = c:USA
-			province = p:x8cfb9b  
-			province = p:x108080  
-			province = p:xdbcbc6  
-			province = p:x2099c1  
-			province = p:x2f3b45  
-            on_created = {activate_law = law_type:law_wage_subsidies
-            activate_law = law_type:law_appointed_bureaucrats
-            activate_law = law_type:law_compulsory_primary_school
-            activate_law = law_type:law_council_republic
-            activate_law = law_type:law_multicultural
-            activate_law = law_type:law_single_party_state
-            activate_law = law_type:law_state_atheism
-            activate_law = law_type:law_no_colonial_affairs
-            activate_law = law_type:law_command_economy
-            activate_law = law_type:law_public_schools
-            activate_law = law_type:law_censorship
-            activate_law = law_type:law_public_health_insurance
-            activate_law = law_type:law_national_guard
-            activate_law = law_type:law_worker_protections
-            activate_law = law_type:law_collectivized_agriculture
-            activate_law = law_type:law_no_migration_controls
-            activate_law = law_type:law_militarized_police
-            activate_law = law_type:law_womens_suffrage
-            activate_law = law_type:law_graduated_taxation
-         }
-		} 
-    } 
-}
-
-tno_usa_events.10 = { #colapse of the rust belt
-	type = country_event
-    placement = ROOT
- 
-    title = tno_usa_events.10
-    desc = tno_usa_events.10.d
-    flavor = tno_usa_events.10.f 
-    event_image = {
-        texture = "gfx/event_pictures/super_pictures/seg.4.dds"
+        	name = transition_from_warlordism
+       		months = 6
+    	}
     }
-
-    icon = "gfx/interface/icons/event_icons/event_fire.dds"
-
-    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
-
-    duration = 3
-
-    option = {
-        name = tno_usa_events.10.a
-
+    option = { #Laissez-Faire
+		name = tno_ru_events.1.3
+		highlighted_option = yes
+		activate_law = law_type:law_laissez_faire
 		add_modifier = {
-    		name = modifier_usa_rustbelt
-  	    }
-
-        create_country = { #Industrial free zone
-			tag = USI
-			origin = c:USA
-			state = s:STATE_MICHIGAN.region_state:USA
-			state = s:STATE_ILLINOIS.region_state:USA
-			state = s:STATE_WISCONSIN.region_state:USA
-			province = p:x4a3037  
-			province = p:xe236dd  
-			province = p:xe39685  
-			province = p:x214d38  
-			province = p:xfc90a5  
-			province = p:xd0c0c0  
-			province = p:x8b892b  
-			province = p:x8b892b  
-			province = p:xb61c8a  
-			province = p:xc08bcd  
-			province = p:x02ec28  
-			province = p:xed4d2b  
-			province = p:x71af12  
-			province = p:xc72917  
-			province = p:xc02000  
-			province = p:x886ca2  
-			province = p:xe2e68f  
-			province = p:xe12b89  
-			province = p:x9ce5f6  
-			province = p:x30d889  
-		
-            on_created = {
-				activate_law = law_type:law_child_labor_allowed
-				activate_law = law_type:law_presidential_republic
-				activate_law = law_type:law_multicultural
-				activate_law = law_type:law_total_separation
-				activate_law = law_type:law_no_colonial_affairs
-				activate_law = law_type:law_laissez_faire
-				activate_law = law_type:law_private_schools
-				activate_law = law_type:law_protected_speech
-				activate_law = law_type:law_private_health_insurance
-				activate_law = law_type:law_no_home_affairs
-				activate_law = law_type:law_no_workers_rights
-				activate_law = law_type:law_commercialized_agriculture
-				activate_law = law_type:law_no_migration_controls
-				activate_law = law_type:law_local_police
-				activate_law = law_type:law_women_in_the_workplace
-				activate_law = law_type:law_free_trade
-				activate_law = law_type:law_consumption_based_taxation
-			}
-        
-		} 
-        create_country = { # sintific instutuite of michigan
-			tag = UUH
-			origin = c:USA
-			province = p:x708040  
-			province = p:x27ef03  
-			province = p:xc9a306  
-			province = p:x2a554c  
-			province = p:xf13865  
-			province = p:xf04080  
-			province = p:x4baf24  
-			province = p:xe36812  
-			province = p:x005339  
-			province = p:x89d198  
-			province = p:x5da55b  
-			province = p:x26b0df  
-			province = p:x9977a5  
-			province = p:xed4d2b  
-			province = p:x71af12  
-			province = p:x285a9a  
-			province = p:x73be17  
-            on_created = {
-            activate_law = law_type:law_appointed_bureaucrats
-            activate_law = law_type:law_compulsory_primary_school
-            activate_law = law_type:law_council_republic
-            activate_law = law_type:law_multicultural
-            activate_law = law_type:law_technocracy
-            activate_law = law_type:law_state_atheism
-            activate_law = law_type:law_no_colonial_affairs
-            activate_law = law_type:law_public_schools
-            activate_law = law_type:law_protected_speech
-            activate_law = law_type:law_no_home_affairs
-            activate_law = law_type:law_homesteading
-            activate_law = law_type:law_no_migration_controls
-            activate_law = law_type:law_no_police
-            activate_law = law_type:law_womens_suffrage
-            activate_law = law_type:law_proportional_taxation
-         }
-		} 
-        create_country = { # Ohio blue colar union
-			tag = USH
-			origin = c:USA
-			province = p:xd043d4 
-			province = p:xb0c080 
-			province = p:x74a939 
-			province = p:xa92d73 
-			province = p:x2158fb 
-			province = p:x704000 
-			province = p:xf04000 
-			province = p:x638c4b 
-			province = p:x000090 
-			province = p:xa73d1f 
-			province = p:x131587 
-			province = p:xc8b64b 
-			province = p:xedceda 
-			province = p:xbf2d59 
-			province = p:xc31f42 
-			province = p:xad9f9f 
-			province = p:xe4c01c 
-			province = p:xa8c954
-			province = p:x255558
-            on_created = {activate_law = law_type:law_wage_subsidies
-            activate_law = law_type:law_elected_bureaucrats
-            activate_law = law_type:law_compulsory_primary_school
-            activate_law = law_type:law_universal_suffrage
-            activate_law = law_type:law_cultural_exclusion
-            activate_law = law_type:law_presidential_republic
-            activate_law = law_type:law_total_separation
-            activate_law = law_type:law_no_colonial_affairs
-            activate_law = law_type:law_interventionism
-            activate_law = law_type:law_public_schools
-            activate_law = law_type:law_protected_speech
-            activate_law = law_type:law_national_guard
-            activate_law = law_type:law_homesteading
-            activate_law = law_type:law_migration_controls
-            activate_law = law_type:law_dedicated_police
-            activate_law = law_type:law_womens_suffrage
-         }
-		}
-    } 
+        	name = transition_from_warlordism
+       		months = 6
+    	}
+    }
+    option = { #Cooperative Ownership
+		name = tno_ru_events.1.4
+		highlighted_option = yes
+		activate_law = law_type:law_cooperative_ownership
+		add_modifier = {
+        	name = transition_from_warlordism
+       		months = 6
+    	}
+    }
+    option = { #Command Economy
+		name = tno_ru_events.1.5
+		highlighted_option = yes
+		activate_law = law_type:law_command_economy
+		add_modifier = {
+        	name = transition_from_warlordism
+       		months = 6
+    	}
+    }
 }
 
-tno_usa_events.14 = { # Southern theocrat civil war
-	type = country_event
-    placement = ROOT
- 
-    title = tno_usa_events.14
-    desc = tno_usa_events.14.d
-    flavor = tno_usa_events.14.f 
-    event_image = {
-        texture = "gfx/event_pictures/super_pictures/seg.4.dds"
+tno_ru_events.2 = { # Begin expedition
+    type = country_event
+	placement = root
+	title = tno_ru_events.2.t
+	desc = tno_ru_events.2.d
+	flavor = tno_ru_events.2.f
+	icon = "gfx/interface/icons/invention_icons/prospecting_tech.dds"
+
+	duration = 5
+
+	immediate = {
+    }
+    
+    trigger = {
+	}
+
+	event_image = {
+        texture = "gfx/event_pictures/super_pictures/sakha_expedition_start.dds"
     }
 
-    icon = "gfx/interface/icons/event_icons/event_fire.dds"
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 
-    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
-
-   trigger = {
-	exists = c:UST
-	ROOT = c:UST
-   }
-	
-	duration = 1
-
-    option = {
-        name = tno_usa_events.14.a
-
-		create_diplomatic_play = {
-			name = theo
-			target_country = c:USS
-				type = dp_annex_war
-				war = yes
-				escalation = 90
-				add_war_goal = {
-                    holder = c:USS
-                    type = annex_country
-                    target_state = s:STATE_MISSISSIPPI.region_state:UST
-                }
-		}
-    } 
-}
-
-tno_usa_events.15 = { # Missouri civil war
-	type = country_event
-    placement = ROOT
- 
-    title = tno_usa_events.15
-    desc = tno_usa_events.15.d
-    flavor = tno_usa_events.15.f 
-    event_image = {
-        texture = "gfx/event_pictures/super_pictures/seg.4.dds"
-    }
-
-    icon = "gfx/interface/icons/event_icons/event_fire.dds"
-
-    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
-
-	trigger = {
-		exists = c:MSA
-		ROOT = c:MSA
-	   }
-	
-	duration = 1
-
-    option = {
-        name = tno_usa_events.15.a
-
-		create_diplomatic_play = {
-			name = theo
-			target_country = c:MSD
-				type = dp_annex_war
-				war = yes
-				escalation = 90
-				add_war_goal = {
-                    holder = c:USS
-                    type = annex_country
-                    target_state = s:STATE_MISSOURI.region_state:MSA
-                }
-		}
-    } 
-}
-
-tno_usa_events.16 = { # Florida battle royal
-	type = country_event
-    placement = ROOT
- 
-    title = tno_usa_events.16
-    desc = tno_usa_events.16.d
-    flavor = tno_usa_events.16.f 
-    event_image = {
-        texture = "gfx/event_pictures/super_pictures/seg.4.dds"
-    }
-
-    icon = "gfx/interface/icons/event_icons/event_fire.dds"
-
-    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
-
-    duration = 1
-
-	trigger = {
-		exists = c:KKK
-		ROOT = c:KKK
-	   }
-	
 	option = {
-        name = tno_usa_events.16.a
-
-		create_diplomatic_play = {
-			name = florida
-			target_country = c:FLR
-				type = dp_annex_war
-				war = yes
-				escalation = 90
-				add_war_goal = {
-                    holder = c:FLR
-                    type = annex_country
-                    target_state = s:STATE_FLORIDA.region_state:KKK
-                }
-		}
-    } 
+		name = tno_ru_events.2.1
+		highlighted_option = yes
+		custom_tooltip = tno_ru_events.2.1.1.tt
+		custom_tooltip = tno_ru_events.2.1.2.tt
+		custom_tooltip = tno_ru_events.2.1.3.tt
+		set_variable = {
+            name = expedition_peril
+            value = 0
+        }
+    }
 }
 
-tno_usa_events.17 = { # USU internal wars
+tno_ru_events.3 = { #bandits raid
 	type = country_event
-    placement = ROOT
- 
-    title = tno_usa_events.17
-    desc = tno_usa_events.17.d
-    flavor = tno_usa_events.17.f 
+    #placement = scope:current_expedition_location
+
+    title = tno_ru_events.3.t
+    desc = tno_ru_events.3.d
+    flavor = tno_ru_events.3.f
+
     event_image = {
-        texture = "gfx/event_pictures/super_pictures/seg.4.dds"
+		texture = "gfx/event_pictures/super_pictures/bandits_ru.dds"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/invention_icons/logistics_tech.dds"
+
+    duration = 3
+	
+	trigger = {
+		has_variable = sakha_bandits
+	}
+
+    immediate = {
     }
 
-    icon = "gfx/interface/icons/event_icons/event_fire.dds"
-
-    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
-
-    duration = 1
-	
-	trigger = {
-		exists = c:USU
-		ROOT = c:USU
-	   }
-
-    option = {
-        name = tno_usa_events.17.a
-
-		create_diplomatic_play = {
-			name = usuattack
-			target_country = c:USB
-				type = dp_annex_war
-				war = yes
-				add_target_backers = { c:WVW }
-				add_war_goal = {
-					holder = c:USB
-					type = annex_country
-					target_state = s:STATE_VIRGINIA.region_state:USU
-				}
-				add_war_goal = {
-					holder = c:USU
-					type = annex_country
-					target_state = s:STATE_VIRGINIA.region_state:WVW
-				}
-				
+	option = { # Do not implement security teams (bandit events can happen again)
+		name = tno_ru_events.3.a
+		default_option = yes
+		custom_tooltip = expedition_event_ongoing_tt
+		custom_tooltip = sakha_big_progress
+		custom_tooltip = sakha_reset_peril
+		set_variable = {
+			name = sakha_progress
+			value = 4
 		}
-    } 
-}
-
-tno_usa_events.18 = { # USA attacks south
-	type = country_event
-    placement = ROOT
-	
-	hidden = yes
-
-    duration = 1
-
-	trigger = {
-		exists = c:USA
-		ROOT = c:USA
-	   }
-	
-	   immediate = {
-
-		remove_modifier = modifier_usa_crushsouth
-
-		create_diplomatic_play = {
-			name = usuattacksouth
-			target_country = c:DIX
-				type = dp_annex_war
-				war = yes
-				add_target_backers = { c:WVW c:USB c:KKK c:FLR c:UST c:USS c:SAD }
-				add_war_goal = {
-					holder = c:USA
-					type = annex_country
-					target_state = s:STATE_MISSISSIPPI.region_state:UST
-				}
-				add_war_goal = {
-					holder = c:USA
-					type = annex_country
-					target_state = s:STATE_VIRGINIA.region_state:WVW
-				}
-				add_war_goal = {
-					holder = c:USA
-					type = annex_country
-					target_state = s:STATE_ALABAMA.region_state:USS
-				}
-				add_war_goal = {
-					holder = c:USA
-					type = annex_country
-					target_state = s:STATE_SOUTH_CAROLINA.region_state:USB
-				}
-				add_war_goal = {
-					holder = c:USA
-					type = annex_country
-					target_state = s:STATE_FLORIDA.region_state:KKK
-				}
-				add_war_goal = {
-					holder = c:USA
-					type = annex_country
-					target_state = s:STATE_FLORIDA.region_state:FLR
-				}
-				add_war_goal = {
-					holder = c:USA
-					type = annex_country
-					target_state = s:STATE_FLORIDA.region_state:SAD
-				}
-				
+		set_variable = {
+			name = expedition_peril
+			value = 0
 		}
-    } 
-}
-
-tno_usa_events.19 = { # USA attacks paccific
-	type = country_event
-    placement = ROOT
- 
-    hidden = yes
-
-    duration = 1
-	trigger = {
-		exists = c:USA
-		ROOT = c:USA
-	   }
-
-	   immediate = {
-
-		remove_modifier = modifier_usa_cali
-
-		create_diplomatic_play = {
-			name = usuendscivilwar
-			target_country = c:CLT
-				type = dp_annex_war
-				war = yes
-				add_target_backers = { c:FTW c:CAC c:LEG }
-				add_war_goal = {
-					holder = c:USA
-					type = annex_country
-					target_state = s:STATE_WASHINGTON.region_state:FTW
-				}
-				add_war_goal = {
-					holder = c:USA
-					type = annex_country
-					target_state = s:STATE_NEVADA.region_state:LEG
-				}
-				add_war_goal = {
-					holder = c:USA
-					type = annex_country
-					target_state = s:STATE_CALIFORNIA.region_state:CAC
-				}
-				
-				
-		}
-		hidden_effect = {
-			change_infamy = -140
 	}
-    } 
+
+	option = { # Implement security teams (bandit events impossible)
+		name = tno_ru_events.3.b
+		custom_tooltip = expedition_event_ongoing_tt
+
+		custom_tooltip = sakha_reset_progress
+		set_variable = {
+			name = sakha_progress
+			value = 0
+		}
+		set_variable = {
+			name = expedition_peril
+			value = 0
+		}
+		custom_tooltip = sakha_reset_peril
+		custom_tooltip = sakha_no_more_bandits
+		remove_variable = sakha_bandits
+		set_variable = {
+            name = sakha_corruption
+            value = yes
+        }
+        add_modifier = {
+        	name = sakha_hiring_security
+    	}
+    	custom_tooltip = sakha.tt.2
+	}
 }
 
-tno_usa_events.20 = { # USA attacks gov leauge
+tno_ru_events.4 = { #corruption takes stuff
 	type = country_event
-    placement = ROOT
- 
-    hidden = yes
+    #placement = scope:current_expedition_location
 
-    duration = 1
+    title = tno_ru_events.4.t
+    desc = tno_ru_events.4.d
+    flavor = tno_ru_events.4.f
 
-	trigger = {
-		exists = c:USA
-		ROOT = c:USA
-	   }
-	
-	   immediate = {
-       
-		remove_modifier = modifier_usa_gov
-
-		create_diplomatic_play = {
-			name = usuendscivilwar
-			target_country = c:KEN
-				type = dp_annex_war
-				war = yes
-				add_target_backers = { c:TEN c:MSD c:MSA c:UHL c:MSM c:FKU }
-				add_war_goal = {
-					holder = c:USA
-					type = annex_country
-					target_state = s:STATE_TENNESSEE.region_state:TEN
-				}
-		
-				add_war_goal = {
-					holder = c:USA
-					type = annex_country
-					target_state = s:STATE_MISSOURI.region_state:UHL
-				}
-				add_war_goal = {
-					holder = c:USA
-					type = annex_country
-					target_state = s:STATE_MISSOURI.region_state:MSD
-				}
-				add_war_goal = {
-					holder = c:USA
-					type = annex_country
-					target_state = s:STATE_MISSOURI.region_state:MSD
-				}
-				add_war_goal = {
-					holder = c:USA
-					type = annex_country
-					target_state = s:STATE_MISSOURI.region_state:MSA
-				}
-				add_war_goal = {
-					holder = c:USA
-					type = annex_country
-					target_state = s:STATE_MISSOURI.region_state:MSM
-				}
-				add_war_goal = {
-					holder = c:USA
-					type = annex_country
-					target_state = s:STATE_MISSOURI.region_state:FKU
-				}
-			
-		}
-		hidden_effect = {
-			change_infamy = -80
+    event_image = {
+		texture = "gfx/event_pictures/super_pictures/corruption_ru.dds"
 	}
-    } 
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/invention_icons/logistics_tech.dds"
+
+    duration = 3
+	
+	trigger = {
+		has_variable = sakha_corruption
+	}
+
+    immediate = {
+    }
+
+	option = { # Investigate corruption (corruption events impossible)
+		name = tno_ru_events.4.a
+		custom_tooltip = expedition_event_ongoing_tt
+
+		custom_tooltip = sakha_reset_progress
+		set_variable = {
+			name = sakha_progress
+			value = 0
+		}
+		change_variable = {
+			name = expedition_peril
+			add = 2
+		}
+		custom_tooltip = sakha_small_peril
+		custom_tooltip = sakha_no_more_corruption
+		remove_variable = sakha_corruption
+		add_modifier = {
+        	name = sakha_corruption_investigation
+    	}
+    	custom_tooltip = sakha.tt.2
+	}
+
+	option = { # Do not investigate corruption (corruption events can happen again)
+		name = tno_ru_events.4.b
+		default_option = yes
+		custom_tooltip = expedition_event_ongoing_tt
+		custom_tooltip = sakha_big_progress
+		custom_tooltip = sakha_small_peril
+		change_variable = {
+			name = sakha_progress
+			add = 4
+		}
+		change_variable = {
+			name = expedition_peril
+			add = 2
+		}
+	}
+}
+
+tno_ru_events.5 = { #snowstorm
+	type = country_event
+    #placement = scope:current_expedition_location
+
+    title = tno_ru_events.5.t
+    desc = tno_ru_events.5.d
+    flavor = tno_ru_events.5.f
+
+    event_image = {
+		texture = "gfx/event_pictures/super_pictures/snowstorm_ru.dds"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_skull.dds"
+
+    duration = 3
+	
+	trigger = {
+	}
+
+    immediate = {
+    }
+
+	option = { # There is nothing we can do
+		name = tno_ru_events.5.a
+		default_option = yes
+		custom_tooltip = expedition_event_ongoing_tt
+		custom_tooltip = sakha_minus_small_progress
+		custom_tooltip = sakha_big_peril
+		change_variable = {
+			name = sakha_progress
+			add = -1
+		}
+		change_variable = {
+			name = expedition_peril
+			add = 4
+		}
+	}
+}
+
+tno_ru_events.6 = { #additional funding for expedition
+	type = country_event
+    #placement = scope:current_expedition_location
+
+    title = tno_ru_events.6.t
+    desc = tno_ru_events.6.d
+    flavor = tno_ru_events.6.f
+
+    event_image = {
+		texture = "gfx/event_pictures/super_pictures/supreme_soviet.dds"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/invention_icons/currency_standards.dds"
+
+    duration = 3
+	
+	trigger = {
+	}
+
+    immediate = {
+    }
+
+	option = { # Truly a miracle
+		name = tno_ru_events.6.a
+		default_option = yes
+		custom_tooltip = expedition_event_ongoing_tt
+		custom_tooltip = sakha_big_progress
+		custom_tooltip = sakha_reset_peril
+		change_variable = {
+			name = sakha_progress
+			add = 4
+		}
+		set_variable = {
+			name = expedition_peril
+			value = 0
+		}
+	}
+}
+
+tno_ru_events.7 = { # Expedition failed
+    type = country_event
+	placement = root
+	title = tno_ru_events.7.t
+	desc = tno_ru_events.7.d
+	flavor = tno_ru_events.7.f
+	icon = "gfx/interface/icons/invention_icons/prospecting_tech.dds"
+
+	duration = 5
+
+	immediate = {
+    }
+    
+    trigger = {
+	}
+
+	event_image = {
+        texture = "gfx/event_pictures/super_pictures/sakha_expedition_failed.dds"
+    }
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	option = {
+		name = tno_ru_events.7.1
+		highlighted_option = yes
+		custom_tooltip = tno_ru_events.7.1.1.tt
+		custom_tooltip = tno_ru_events.7.1.2.tt
+    }
+}
+
+tno_ru_events.8 = { # Expedition succeeded
+    type = country_event
+	placement = root
+	title = tno_ru_events.8.t
+	desc = tno_ru_events.8.d
+	flavor = tno_ru_events.8.f
+	icon = "gfx/interface/icons/invention_icons/prospecting_tech.dds"
+
+	duration = 5
+
+	immediate = {
+    }
+    
+    trigger = {
+	}
+
+	event_image = {
+        texture = "gfx/event_pictures/super_pictures/excavation.dds"
+    }
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	option = {
+		name = tno_ru_events.8.1
+		custom_tooltip = tno_ru_events.8.1.1.tt
+		s:STATE_UPPER_YENISEYSK.region_state:IRK = {
+			#add_state_trait = <state_trait_name>	
+			force_resource_discovery = bg_coal_mining
+			force_resource_discovery = bg_lead_mining
+			force_resource_discovery = bg_iron_mining
+			force_resource_discovery = bg_sulfur_mining
+			add_modifier = {
+				name = state_sakha_complete
+			}
+		}
+		s:STATE_IRKUTSK.region_state:IRK = {
+			#add_state_trait = <state_trait_name>	
+			#force_resource_discovery = bg_oil_extraction
+			add_modifier = {
+				name = state_sakha_complete
+			}
+		}
+		s:STATE_UPPER_YENISEYSK.region_state:IRK = {
+			#add_state_trait = <state_trait_name>	
+			#force_resource_discovery = bg_oil_extraction
+			add_modifier = {
+				name = state_sakha_complete
+			}
+		}
+    }
 }

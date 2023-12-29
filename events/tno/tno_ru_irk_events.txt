@@ -176,7 +176,13 @@ tno_irk_events.4 = { # Yagoda's succession, he's dead but still autocracy
 		name = tno_irk_events.4.2
 		custom_tooltip = tno_irk_events.5.1.tt
 		activate_law = law_type:law_no_home_affairs
-		custom_tooltip = tno_irk_events.5.2.tt
+		activate_law = law_type:law_single_party_state
+		ig:ig_trade_unions = {
+			add_ruling_interest_group = yes
+		}
+		ig:ig_armed_forces = {
+			remove_ruling_interest_group = yes
+		}
 		every_scope_character = {
 			if = {
 				limit = {
@@ -219,9 +225,12 @@ tno_irk_events.5 = { # Lost autocracy law - yagoda overthrown
 		name = tno_irk_events.5.1
 		custom_tooltip = tno_irk_events.5.1.tt
 		activate_law = law_type:law_no_home_affairs
-		scope:ig:ig_trade_unions = {
+		activate_law = law_type:law_single_party_state
+		ig:ig_trade_unions = {
 			add_ruling_interest_group = yes
 		}
-		custom_tooltip = tno_irk_events.5.2.tt
+		ig:ig_armed_forces = {
+			remove_ruling_interest_group = yes
+		}
     }
 }
