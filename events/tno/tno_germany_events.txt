@@ -1102,6 +1102,8 @@ tno_germany_events.17 = { # German Civil War
 			trigger_event = { id = tno_germany_events.26 days = 0 popup = yes }
 		}
 
+      
+
         c:GER = {
             set_immune_to_revolutions = yes
             every_subject_or_below = {
@@ -1116,6 +1118,8 @@ tno_germany_events.17 = { # German Civil War
                 type = protectorate
             }
         }
+
+        
 
         create_country = { #Martin bormann
 		tag = GMB
@@ -1252,6 +1256,13 @@ tno_germany_events.17 = { # German Civil War
             trigger_event = { id = tno_germany_events.18 days = 10 popup = yes }  
         }
         default_option = yes    
+
+        c:BGD = { 
+            create_diplomatic_pact = {
+                country = c:GRH
+                type = customs_union
+            }
+        }
     }
    
    
@@ -1264,6 +1275,13 @@ tno_germany_events.17 = { # German Civil War
         remove_variable = speer_chosen
         hidden_effect = {
             trigger_event = { id = tno_germany_events.18 days = 10 popup = yes }  
+        }
+
+        c:BGD = { 
+            create_diplomatic_pact = {
+                country = c:GRH
+                type = customs_union
+            }
         }
        
      }
@@ -1279,6 +1297,13 @@ tno_germany_events.17 = { # German Civil War
         hidden_effect = {
             trigger_event = { id = tno_germany_events.18 days = 10 popup = yes }  
         }
+
+        c:BGD = { 
+            create_diplomatic_pact = {
+                country = c:GRH
+                type = customs_union
+            }
+        }
        
      }
     
@@ -1292,6 +1317,13 @@ tno_germany_events.17 = { # German Civil War
         remove_variable = heydrich_chosen
         hidden_effect = {
             trigger_event = { id = tno_germany_events.18 days = 10 popup = yes }  
+        }
+
+        c:BGD = { 
+            create_diplomatic_pact = {
+                country = c:GRH
+                type = customs_union
+            }
         }
        
      }
@@ -1403,6 +1435,8 @@ tno_germany_events.18 = {   #Civil war start
 				change_infamy = -999
 		    }
         }
+
+        --
     }
 }
 
@@ -1742,3 +1776,4 @@ tno_germany_events.26 = {
 
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 }
+
