@@ -4,9 +4,7 @@ tno_RK_events.1 = { # baltic upriseing
 	type = country_event
     placement = ROOT
  
-    title = tno_RK_events.1
-    desc = tno_RK_events.1.d
-    flavor = tno_RK_events.1.f 
+   hidden = yes
     event_image = {
         texture = "gfx/event_pictures/event_pictures/ost_colapse.dds"
     }
@@ -17,10 +15,9 @@ tno_RK_events.1 = { # baltic upriseing
 
     duration = 3
 
-    option = {
-        name = tno_RK_events.1.a
 
-		create_country = { # Student reformers
+    immediate = {
+        create_country = { # Student reformers
 		tag = RKS
 		origin = c:RKO
 		state = s:STATE_MINSK.region_state:RKO
@@ -138,7 +135,9 @@ tno_RK_events.1 = { # baltic upriseing
 				activate_law = law_type:law_autocracy
 			 }
 		} 
-    } 
+
+    }
+   
 }
 
 tno_RK_events.2 = { # batlic arms raid
