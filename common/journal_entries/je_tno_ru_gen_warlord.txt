@@ -152,23 +152,186 @@ je_ru_tno_repair_transib = {
     icon = "gfx/interface/icons/invention_icons/railways.dds"
     group = je_group_technology
 
+    #scripted_button = je_ru_gen_transsib_finish
+
     possible = {
         NOT = { has_variable = transsib_done }
     }
 
+    immediate = {
+        random_scope_state = {
+            limit = {
+                state_region = s:STATE_IRKUTSK
+            }
+            save_scope_as = irkutsk_state_scope
+        }
+        random_scope_state = {
+            limit = {
+                state_region = s:STATE_TRANS_BAIKAL
+            }
+            save_scope_as = trans_baikal_state_scope
+        }
+        random_scope_state = {
+            limit = {
+                state_region = s:STATE_OKHOTSK
+            }
+            save_scope_as = okhotsk_state_scope
+        }
+        random_scope_state = {
+            limit = {
+                state_region = s:STATE_UPPER_YENISEYSK
+            }
+            save_scope_as = upper_yeniseysk_state_scope
+        }
+        random_scope_state = {
+            limit = {
+                state_region = s:STATE_YAKUTSK
+            }
+            save_scope_as = yakutsk_state_scope
+        }
+        random_scope_state = {
+            limit = {
+                state_region = s:STATE_CHUKOTKA
+            }
+            save_scope_as = chukotka_state_scope
+        }
+        random_scope_state = {
+            limit = {
+                state_region = s:STATE_KAMCHATKA
+            }
+            save_scope_as = kamchatka_state_scope
+        }
+    }
+
     complete = {
-        any_scope_state = {
-            state_region = s:STATE_IRKUTSK
-            has_building = building_railway
+        
+        custom_tooltip = {
+            text = je_transib_irkutsk_tt
+            any_scope_state = {
+                state_region = s:STATE_IRKUTSK
+                state_has_building_group_levels = {
+                    type = bg_private_infrastructure
+                    value  >= 4
+                } 
+            }
+        }
+        custom_tooltip = {
+            text = je_transib_trans_baikal_tt
+            any_scope_state = {
+                state_region = s:STATE_TRANS_BAIKAL
+                state_has_building_group_levels = {
+                    type = bg_private_infrastructure
+                    value  >= 4
+                } 
+            }
+        }
+        custom_tooltip = {
+            text = je_transib_okhotsk_tt
+            any_scope_state = {
+                state_region = s:STATE_OKHOTSK
+                state_has_building_group_levels = {
+                    type = bg_private_infrastructure
+                    value  >= 4
+                } 
+            }
         }
     }
 
     on_complete = {
-        set_variable = transsib_done
-        trigger_event = { id = major_railways.2 }
-        #add paris of siberia if they are irkutsk
-    }
+        if = {
+             limit = {
+                scope:irkutsk_state_scope = {
+                    is_capital = yes
+                }
+            }
+            add_journal_entry = { type = je_ru_tno_irk_paris_of_siberia }
+        }
+        custom_tooltip = transsib_complete_tt
+        hidden_effect = {
+            scope:irkutsk_state_scope = {
+                add_modifier = {
+                    name = state_transsib
+                    years = 10
+                    is_decaying = yes
+                }
+            }
+            scope:trans_baikal_state_scope = {
+                add_modifier = {
+                    name = state_transsib
+                    years = 10
+                    is_decaying = yes
+                }
+            }
+            scope:okhotsk_state_scope = {
+                add_modifier = {
+                    name = state_transsib
+                    years = 10
+                    is_decaying = yes
+                }
+            }
 
+            scope:upper_yeniseysk_state_scope = {
+                if = {
+                    limit = {
+                        state_has_building_group_levels = {
+                            type = bg_private_infrastructure
+                            value  >= 4
+                        }
+                    }
+                    add_modifier = {
+                        name = state_transsib
+                        years = 10
+                        is_decaying = yes
+                    }
+                }
+            }
+            scope:yakutsk_state_scope = {
+                if = {
+                    limit = {
+                        state_has_building_group_levels = {
+                            type = bg_private_infrastructure
+                            value  >= 4
+                        }
+                    }
+                    add_modifier = {
+                        name = state_transsib
+                        years = 10
+                        is_decaying = yes
+                    }
+                }
+            }
+            scope:chukotka_state_scope = {
+                if = {
+                    limit = {
+                        state_has_building_group_levels = {
+                            type = bg_private_infrastructure
+                            value  >= 4
+                        }
+                    }
+                    add_modifier = {
+                        name = state_transsib
+                        years = 10
+                        is_decaying = yes
+                    }
+                }
+            }
+            scope:kamchatka_state_scope = {
+                if = {
+                    limit = {
+                        state_has_building_group_levels = {
+                            type = bg_private_infrastructure
+                            value  >= 4
+                        }
+                    }
+                    add_modifier = {
+                        name = state_transsib
+                        years = 10
+                        is_decaying = yes
+                    }
+                }
+            }
+        }
+    }
     weight = 50
     should_be_pinned_by_default = yes
 }
