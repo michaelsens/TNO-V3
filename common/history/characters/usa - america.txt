@@ -136,6 +136,35 @@
 			}
 		}
 		
+		create_character = {
+			
+			first_name = "William_first_name"
+			last_name = "William_last_name"
+			culture = cu:yankee
+			ruler = no
+			ig_leader = yes
+			interest_group = ig_Progressives
+			ideology = ideology_social_democrat
+			age = 42
+			traits = {
+				expert_political_operator
+			}
+		}		
+		
+		create_character = {
+			
+			first_name = "Gus_first_name"
+			last_name = "Gus_last_name"
+			culture = cu:yankee
+			ruler = no
+			ig_leader = yes
+			interest_group = ig_Communists
+			ideology = ideology_marxist
+			age = 51
+			traits = {
+				expert_political_operator
+			}
+		}	
 		
 		create_character = {
 
@@ -160,6 +189,43 @@
 
 			}
 		}
+
+		agitator_Martin_Luther_King_Jr  = {
+			first_name = Martin Luther 
+			last_name = King Jr
+			historical = yes
+			culture = cu:yankee
+			religion = rel:protestant
+			female = no
+			interest_group = ig_Progressives
+			ideology = ideology_social_democrat
+			birth_date = 1929.1.15
+			dna = 
+			traits = {
+			persistent
+			imposing
+			pious
+			}
+			agitator_usage = {
+				country_trigger = {
+					has_dlc_feature = voice_of_the_people_content
+					OR = {
+						c:USA ?= this
+					}
+				}
+				interest_group_trigger = {
+					is_marginal = no
+					OR = {
+						is_interest_group_type = ig_trade_unions
+						is_interest_group_type = ig_Socialist
+						is_interest_group_type = ig_Progressives						
+					} 
+				}   
+				earliest_usage_date = 1962.1.1
+				latest_usage_date = 1962.1.1
+				chance = 100
+			}
+		}	
 
 		create_character = {
 

@@ -1,11 +1,11 @@
 ﻿# Bastion of the Landowners
 
-Coalition_party = {
+NPP_party = {
 	color = { 108 64 179 }
 	name = {
 		first_valid = {
 			triggered_desc = {
-				desc = party_RDCS
+				desc = party_NPP
 				trigger = {
 					exists = c:USA
 					THIS = c:USA
@@ -23,17 +23,17 @@ Coalition_party = {
 	available_for_interest_group = {
 		owner = {
 			country_has_voting_franchise = yes
-			ig:ig_Moderates = {
+			ig:ig_Progressives = {
 				is_marginal = no
 			}			
 		}
-		# unions can never be conservative
-		NOT = { is_interest_group_type = ig_Nationalists }		
-		NOT = { is_interest_group_type = ig_Fascists }	
-		NOT = { is_interest_group_type = ig_trade_unions }
-		NOT = { is_interest_group_type = ig_Communists }
-		NOT = { is_interest_group_type = ig_Socialist }		
-		NOT = { is_interest_group_type = ig_Anarchists }		
+		owner = {
+			country_has_voting_franchise = yes
+			ig:ig_Nationalists = {
+				is_marginal = no
+			}			
+		}
+		NOT = { is_interest_group_type = ig_Anarchists }	
 		
 		OR = {
 	     	NOT = {
@@ -42,7 +42,7 @@ Coalition_party = {
 	         	}
 	        }
 	        owner.var:only_valid_party = {
-	        	is_party_type = Coalition_party
+	        	is_party_type = NPP_party
 	        }
 	    }
 	}
@@ -58,11 +58,7 @@ Coalition_party = {
 			limit = {
 				leader = { 
 					OR = {
-						has_ideology = ideology:ideology_communist
-						has_ideology = ideology:ideology_vanguardist
-						has_ideology = ideology:ideology_anarchist
-						has_ideology = ideology:ideology_radical
-						has_ideology = ideology:ideology_atheist
+
 					}
 				}
 			}
@@ -88,45 +84,49 @@ Coalition_party = {
 				desc = "from_conservative_leader"
 			}
 		}
-		if = { # RDC loves centrists
+		if = { # NPP loves radicals
 			limit = {
 				OR = {
-					has_ideology = ideology:ideology_republican
-					has_ideology = ideology:ideology_individualist
-					has_ideology = ideology:ideology_patriarchal
-					has_ideology = ideology:ideology_liberal
 					has_ideology = ideology:ideology_egalitarian
+					has_ideology = ideology:ideology_individualist
+					has_ideology = ideology:ideology_liberal
+					has_ideology = ideology:ideology_populist
+					has_ideology = ideology:ideology_socialist
 				}
 			}
 			add = {
 				value = 5
-				desc = "from_conservative_ig"
+				desc = "from_Progressives_ig"
 			}
 		}
-		if = { # Goldwater wing of the RDC
+		if = { # NPP loves radicals
 			limit = {
 				OR = {
-					has_ideology = ideology:ideology_laissez_faire
+					has_ideology = ideology:ideology_paternalistic
+					has_ideology = ideology:ideology_reactionary
+					has_ideology = ideology:ideology_patriarchal
+					has_ideology = ideology:ideology_populist
+					has_ideology = ideology:ideology_plutocratic
 				}
 			}
 			add = {
 				value = 5
-				desc = "from_conservative_ig"
+				desc = "from_Nationalists_ig"
 			}
 		}		
 		
-			if = { # a party for powerful farmers
+		if = { # a party for powerful farmers
 			limit = {
-				is_interest_group_type = ig_Conservatives
+				is_interest_group_type = Progressives
 				is_powerful = yes
 			}
 			add = {
 				value = 10
 			}
 		}
-			if = { # a party for powerful farmers
+		if = { # a party for powerful farmers
 			limit = {
-				is_interest_group_type = ig_Liberals
+				is_interest_group_type = ig_Socialist
 				is_powerful = yes
 			}
 			add = {
@@ -135,7 +135,7 @@ Coalition_party = {
 		}	
 		if = { # a party for powerful farmers
 			limit = {
-				is_interest_group_type = ig_Moderates
+				is_interest_group_type = ig_Communists
 				is_powerful = yes
 			}
 			add = {
@@ -144,13 +144,31 @@ Coalition_party = {
 		}	
 		if = { # a party for powerful farmers
 			limit = {
-				is_interest_group_type = ig_Libertarians
+				is_interest_group_type = ig_Nationalists
 				is_powerful = yes
 			}
 			add = {
 				value = 10
 			}
 		}		
+		if = { # a party for powerful farmers
+			limit = {
+				is_interest_group_type = ig_Reactionary
+				is_powerful = yes
+			}
+			add = {
+				value = 10
+			}
+		}	
+		if = { # a party for powerful farmers
+			limit = {
+				is_interest_group_type = ig_Fascists
+				is_powerful = yes
+			}
+			add = {
+				value = 10
+			}
+		}			
 
 		if = {
 			limit = {
