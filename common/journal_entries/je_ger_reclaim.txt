@@ -1,18 +1,20 @@
 
 
-je_ger_reclaim_ost = { # civil rights act
+je_ger_reclaim_ost = { 
 
     icon = "gfx/interface/icons/new_event_icons/event_bill.dds"
 
     scripted_button = je_ger_reclaim_ost_a
+	scripted_button = je_ger_reclaim_ost_b
+	scripted_button = je_ger_reclaim_ost_c
+	
+
+
 
     group = je_group_internal_affairs
     immediate = {
 
-		set_variable = {
-			name = civil_rights_timer
-			value = 0
-		}
+		
 	}
     
     complete = {
@@ -22,35 +24,83 @@ je_ger_reclaim_ost = { # civil rights act
 	}
 
     on_complete = {
-        trigger_event = { id = tno_usa_segregation_events.1 popup = yes }
+      
     }
 
     on_monthly_pulse = {
-        effect = {
-			change_variable = {
-				name = civil_rights_timer
-				add = 1
-			}
-		}
+       
     }
 
     current_value = {
-		value = root.var:civil_rights_timer
+	
 	}
 
-    on_timeout = {
-		trigger_event = { id = tno_usa_segregation_events.15 popup = yes }
-	}
+   
 
     goal_add_value = {
 		value = 24
 	}
 
-    progressbar = yes
+   
     
     weight = 100
 
-    timeout = 730
+   
+    
+    should_be_pinned_by_default = yes
+    
+}
+
+je_ger_reclaim_ukc = { # reclaim ukraine
+
+    icon = "gfx/interface/icons/new_event_icons/event_bill.dds"
+
+    scripted_button = je_ger_reclaim_ost_a
+	scripted_button = je_ger_reclaim_ost_b
+	scripted_button = je_ger_reclaim_ost_c
+	
+
+
+
+    group = je_group_internal_affairs
+    immediate = {
+
+		
+	}
+    
+    complete = {
+		owns_entire_state_region = STATE_VOLHYNIA
+		owns_entire_state_region = STATE_KIEV
+		owns_entire_state_region = STATE_CHERSON 
+		owns_entire_state_region = s:STATE_LUHANSK
+
+		
+	}
+
+    on_complete = {
+		trigger_event = { id = tno_germany_events.40 days = 0 popup = yes }
+      
+    }
+
+    on_monthly_pulse = {
+       
+    }
+
+    current_value = {
+	
+	}
+
+   
+
+    goal_add_value = {
+		value = 24
+	}
+
+   
+    
+    weight = 100
+
+   
     
     should_be_pinned_by_default = yes
     

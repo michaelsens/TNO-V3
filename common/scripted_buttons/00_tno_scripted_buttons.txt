@@ -1304,3 +1304,76 @@ je_ger_reclaim_ost_a = {  # if RKO is still alive
 	}
 }
 
+je_ger_reclaim_ost_b = {  # ANNEX moravia
+	name = "je_malaya_jap_b_loc" 
+	desc = "je_malaya_jap_b_loc_desc"
+
+	visible = { always = yes }
+
+	possible = {
+		scope:journal_entry = {
+				not = {
+				custom_tooltip = {
+					text = "Hasnt already retook or tried to retake Ostland"
+					has_variable = JE_already_annex_mor
+				}
+			}
+		}
+	}
+
+	ai_chance = {
+		base = 100
+	}
+
+	effect = {
+
+		scope:journal_entry = {
+			set_variable = { name = JE_already_annex_mor months = 99999  }
+		}	
+		custom_tooltip = {
+			text = "Will bring Ostland back into the fold and will start a full scale invasion with the goal of retakeing Ostland."
+	
+		
+			annex = c:GWZ
+
+			
+		}
+	}
+}
+
+je_ger_reclaim_ost_c = {  # annex gotland
+	name = "je_malaya_jap_b_loc" 
+	desc = "je_malaya_jap_b_loc_desc"
+
+	visible = { always = yes }
+
+	possible = {
+		scope:journal_entry = {
+				not = {
+				custom_tooltip = {
+					text = "Hasnt already retook or tried to retake Ostland"
+					has_variable = je_annex_got
+				}
+			}
+		}
+	}
+
+	ai_chance = {
+		base = 100
+	}
+
+	effect = {
+
+		scope:journal_entry = {
+			set_variable = { name = je_annex_got months = 99999  }
+		}	
+		custom_tooltip = {
+			text = "Will bring Ostland back into the fold and will start a full scale invasion with the goal of retakeing Ostland."
+	
+			annex = c:GEE
+			
+		}
+	}
+}
+
+
