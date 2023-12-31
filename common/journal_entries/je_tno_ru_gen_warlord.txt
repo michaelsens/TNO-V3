@@ -110,7 +110,6 @@ je_ru_tno_sakha_expedition = {
     }
     
     on_complete = {
-        trigger = { NOT = { has_global_variable = buenaventura_river_disproven } }
         trigger_event = { id = tno_ru_events.8 popup = yes }
 
         remove_variable = on_expedition
@@ -341,44 +340,3 @@ je_ru_tno_repair_transib = {
     should_be_pinned_by_default = yes
 }
 
-je_ru_tno_finish_sib_plan = { 
-
-    icon = "gfx/interface/icons/tno_event_icons/sib_plan.dds"
-    group = je_group_technology
-
-    scripted_button = je_ru_gen_complete_sib_plan
-
-    immediate = {
-    }
-    
-    complete = {
-
-
-        hidden_trigger = {
-            has_modifier = your_mom
-        }
-    }
-
-    on_complete = {
-    }
-
-    on_monthly_pulse = {
-    }
-
-    current_value = {
-        
-    }
-
-
-    goal_add_value = {
-        
-    }
-
-    progressbar = no
-    
-    weight = 40000
-
-    
-    should_be_pinned_by_default = yes
-    
-}

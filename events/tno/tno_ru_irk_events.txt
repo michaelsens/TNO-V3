@@ -291,3 +291,100 @@ tno_irk_events.7 = { # Aftermath of 1st Jan 1966 (begin reunification wars in Ru
 		name = tno_irk_events.7.1
     }
 }
+
+tno_irk_events.8 = { # Invite Boeing
+    type = country_event
+	placement = root
+	title = tno_irk_events.8.t
+	desc = tno_irk_events.8.d
+	flavor = tno_irk_events.8.f
+	icon = "gfx/interface/icons/invention_icons/corporate_management.dds"
+
+	duration = 6
+
+	immediate = {
+		c:USA = {
+            save_scope_as = usa_nation_scope
+        }
+    }
+    
+    trigger = {
+	}
+
+	event_image = {
+        texture = "gfx/event_pictures/super_pictures/boeing_737.dds"
+    }
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	option = {
+		name = tno_irk_events.8.1
+		custom_tooltip = {
+			text = tno_irk_events.8.1.tt
+			c:USA = {
+				trigger_event = { id = tno_usa_events.21 popup = yes }
+			}
+		}
+    }
+}
+
+tno_irk_events.9 = { # Americans accept to allow Boeing to operate in Russia
+    type = country_event
+	placement = root
+	title = tno_irk_events.9.t
+	desc = tno_irk_events.9.d
+	flavor = tno_irk_events.9.f
+	icon = "gfx/interface/icons/invention_icons/corporate_management.dds"
+
+	duration = 6
+
+	immediate = {
+		c:USA = {
+            save_scope_as = usa_nation_scope
+        }
+    }
+    
+    trigger = {
+	}
+
+	event_image = {
+        texture = "gfx/event_pictures/super_pictures/boeing_737_2.dds"
+    }
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	option = {
+		name = tno_irk_events.9.1
+    }
+}
+
+tno_irk_events.10 = { # Americans decline to allow Boeing to operate in Russia
+    type = country_event
+	placement = root
+	title = tno_irk_events.10.t
+	desc = tno_irk_events.10.d
+	flavor = tno_irk_events.10.f
+	icon = "gfx/interface/icons/invention_icons/corporate_management.dds"
+
+	duration = 6
+
+	immediate = {
+		c:USA = {
+            save_scope_as = usa_nation_scope
+        }
+    }
+    
+    trigger = {
+	}
+
+	event_image = {
+        texture = "gfx/event_pictures/super_pictures/boeing_737_2.dds"
+    }
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	option = {
+		name = tno_irk_events.10.1
+		custom_tooltip = tno_irk_events.10.1.tt
+    }
+}

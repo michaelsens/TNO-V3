@@ -1090,7 +1090,7 @@ je_ru_irk_restore_far_east = {
     	}
 
     	add_journal_entry = { type = je_ru_tno_irk_restore_ussr }
-    	add_journal_entry = { type = je_ru_tno_finish_sib_plan }
+    	add_journal_entry = { type = je_ru_tno_irk_finish_sib_plan }
     	add_journal_entry = { type = je_ru_tno_sakha_expedition }
     	add_journal_entry = { type = je_ru_tno_repair_transib }
 	}
@@ -1155,7 +1155,9 @@ je_ru_gen_complete_sib_plan = {
 	desc = "je_ru_gen_complete_sib_plan_desc"
 
 	possible = {
-		has_variable = your_mother
+		has_variable = sakha_expedition_done
+        has_variable = transsib_done
+        has_variable = paris_of_siberia_done
 	}
 
 	effect = {
@@ -1168,12 +1170,11 @@ je_ru_irk_restore_ussr = {
 	desc = "je_ru_irk_restore_ussr_desc"
 
 	possible = {
-		#owns_entire_state_region = STATE_IRKUTSK
-        #owns_entire_state_region = STATE_TRANS_BAIKAL
-        #owns_entire_state_region = STATE_OKHOTSK
-        #owns_entire_state_region = STATE_CHUKOTKA
-        #owns_entire_state_region = STATE_YAKUTSK
-        #owns_entire_state_region = STATE_KAMCHATKA
+		#owns_entire_state_region = STATE_MOSCOW
+
+        #hidden_trigger = {
+        #    has_variable = irk_form_ussr
+        #}
 	}
 
 	effect = {
@@ -1198,8 +1199,10 @@ je_ru_irk_restore_ussr = {
 
     	add_journal_entry = { type = je_ru_tno_sakha_expedition }
     	add_journal_entry = { type = je_ru_tno_repair_transib }
-    	add_journal_entry = { type = je_ru_tno_finish_sib_plan }
+    	add_journal_entry = { type = je_ru_tno_irk_finish_sib_plan }
     	add_journal_entry = { type = je_ru_tno_irk_restore_ussr }
     	add_journal_entry = { type = je_ru_tno_irk_paris_of_siberia }
+    	add_journal_entry = { type = je_ru_tno_irk_restore_order_far_east }
+    	add_journal_entry = { type = je_ru_tno_launch_raid }
 	}
 }

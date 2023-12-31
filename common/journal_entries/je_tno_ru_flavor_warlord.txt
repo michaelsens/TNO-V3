@@ -1,4 +1,4 @@
-#IRK
+﻿#IRK
 je_ru_tno_irk_restore_order_far_east = { 
 
     icon = "gfx/interface/icons/alert_icons/idle_mobilized_general.dds"
@@ -81,23 +81,44 @@ je_ru_tno_irk_paris_of_siberia = {
     }
     
     complete = {
-        irkutsk_state_scope = {
-            state_has_building_group_levels = {
-                type = bg_private_infrastructure
-                value  >= 4
-            } 
-        }
-
-
-        hidden_trigger = {
-            has_modifier = your_mom
+        custom_tooltip = {
+            text = je_paris_of_siberia_rq
+            any_scope_state = {
+                state_region = s:STATE_IRKUTSK
+                state_has_building_group_levels = {
+                    type = bg_technology
+                    value  >= 2
+                }
+                has_decree = decree_encourage_manufacturing_industry
+                total_urbanization >= 10
+            }
         }
     }
 
     on_complete = {
-    }
+        custom_tooltip = {
+            text = je_paris_of_siberia_complete
+            scope:irkutsk_state_scope.state_region = {
+                add_state_trait = state_trait_paris_of_siberia
+            }
+        }
+        if = {
+             limit = {
+                scope:irkutsk_state_scope = {
+                    state_has_building_group_levels = {
+                        type = bg_bureaucracy
+                        value  >= 4
+                    }
+                }
+            }
 
-    on_monthly_pulse = {
+            custom_tooltip = {
+                text = je_paris_of_siberia_complete_extra
+                add_modifier = {
+                    name = the_irkutsk_model
+                }
+            }
+        }
     }
 
     current_value = {
@@ -128,12 +149,8 @@ je_ru_tno_irk_restore_ussr = {
     }
     
     complete = {
-        owns_entire_state_region = STATE_IRKUTSK
-        owns_entire_state_region = STATE_TRANS_BAIKAL
-        owns_entire_state_region = STATE_OKHOTSK
-        owns_entire_state_region = STATE_CHUKOTKA
-        owns_entire_state_region = STATE_YAKUTSK
-        owns_entire_state_region = STATE_KAMCHATKA
+    
+        owns_entire_state_region = STATE_MOSCOW
 
         hidden_trigger = {
             has_variable = irk_form_ussr
@@ -158,6 +175,71 @@ je_ru_tno_irk_restore_ussr = {
     progressbar = no
     
     weight = 1000
+
+    
+    should_be_pinned_by_default = yes
+    
+}
+
+je_ru_tno_irk_finish_sib_plan = { 
+
+    icon = "gfx/interface/icons/tno_event_icons/sib_plan.dds"
+    group = je_group_technology
+
+    scripted_button = je_ru_gen_complete_sib_plan
+
+    immediate = {
+        c:USA = {
+            save_scope_as = usa_nation_scope
+        }
+    }
+    
+    complete = {
+        custom_tooltip = {
+            text = fin_sib_sakha_done
+            has_variable = sakha_expedition_done
+        }
+        custom_tooltip = {
+            text = fin_sib_transsib_done
+            has_variable = transsib_done
+        }
+        custom_tooltip = {
+            text = fin_sib_paris_of_siberia_done
+            has_variable = paris_of_siberia_done
+        }
+        custom_tooltip = {
+            text = fin_sib_usa_relations
+            c:USA = {
+                relations:root >= 50
+            }
+        }   
+    }
+
+    on_complete = {
+        custom_tooltip = {
+            text = sib_plan_complete
+            add_modifier = {
+                name = sib_plan_complete
+            }
+        }
+        trigger_event = { id = tno_irk_events.8 popup = yes }
+    }
+
+    on_monthly_pulse = {
+    }
+
+    current_value = {
+        
+    }
+
+
+    goal_add_value = {
+        
+    }
+
+    progressbar = no
+    
+    weight = 4000
 
     
     should_be_pinned_by_default = yes

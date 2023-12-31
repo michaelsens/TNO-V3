@@ -1417,3 +1417,48 @@ tno_usa_events.20 = { # USA attacks gov leauge
 	}
     } 
 }
+
+tno_usa_events.21 = { # Irkutsk asks to use boeing
+    type = country_event
+	placement = root
+	title = tno_usa_events.21.t
+	desc = tno_usa_events.21.d
+	flavor = tno_usa_events.21.f
+	icon = "gfx/interface/icons/invention_icons/corporate_management.dds"
+
+	duration = 6
+
+	immediate = {
+		c:IRK = {
+            save_scope_as = irk_nation_scope
+        }
+    }
+    
+    trigger = {
+	}
+
+	event_image = {
+        texture = "gfx/event_pictures/super_pictures/boeing_737.dds"
+    }
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	option = {
+		name = tno_usa_events.21.a
+		c:IRK = {
+			trigger_event = { id = tno_irk_events.9 popup = yes }
+		}
+    }
+
+	option = {
+		default_option = yes
+		name = tno_usa_events.21.b
+		c:IRK = {
+			change_relations = {
+				country = ROOT
+				value = -20
+			}
+			trigger_event = { id = tno_irk_events.10 popup = yes }
+		}
+    }
+}
