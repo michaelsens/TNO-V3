@@ -351,6 +351,9 @@ tno_ru_events.7 = { # Expedition failed
 		custom_tooltip = tno_ru_events.8.1.1.tt
 		custom_tooltip = tno_ru_events.7.1.1.tt
 		custom_tooltip = tno_ru_events.7.1.2.tt
+		hidden_effect = {
+			add_journal_entry = { type = je_ru_tno_sakha_expedition }
+		}
     }
 }
 
@@ -402,7 +405,34 @@ tno_ru_events.8 = { # Expedition succeeded
 			scope:upper_yeniseysk_state_scope.state_region = {
 				add_state_trait = state_trait_sakha_expedition	
 			}
+			trigger_event = { id = tno_ru_events.9 days = 60 popup = no }
 		}
 		custom_tooltip = tno_ru_events.8.1.2.tt
+    }
+}
+
+tno_ru_events.9 = { # Aftermath of expedition
+    type = country_event
+	title = tno_ru_events.9.t
+	desc = tno_ru_events.9.d
+	flavor = tno_ru_events.9.f
+	icon = "gfx/interface/icons/invention_icons/corporatism.dds"
+
+	duration = 5
+
+	immediate = {
+    }
+    
+    trigger = {
+	}
+
+	event_image = {
+        texture = "gfx/event_pictures/super_pictures/home.dds"
+    }
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	option = {
+		name = tno_ru_events.9.1
     }
 }

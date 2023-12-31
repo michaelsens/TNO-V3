@@ -443,6 +443,14 @@
 
             trigger_event = { id = tno_irk_events.5 days = 2 popup = yes }
         }
+        if = { #Irkutsk: Get flavor event abt beginning of invasion of Far East.
+            limit = {
+               game_date >= 1966.1.1
+               NOT = { has_variable = irk_inv_var }
+            }
+            set_variable = irk_inv_var
+            trigger_event = { id = tno_irk_events.7 days = 180 popup = yes }
+        } 
 
     }
     

@@ -1054,12 +1054,19 @@ je_ru_irk_restore_far_east = {
 	desc = "je_ru_irk_restore_far_east_desc"
 
 	possible = {
-		#owns_entire_state_region = STATE_IRKUTSK
-        #owns_entire_state_region = STATE_TRANS_BAIKAL
-        #owns_entire_state_region = STATE_OKHOTSK
-        #owns_entire_state_region = STATE_CHUKOTKA
-        #owns_entire_state_region = STATE_YAKUTSK
-        #owns_entire_state_region = STATE_KAMCHATKA
+		owns_entire_state_region = STATE_IRKUTSK
+        owns_entire_state_region = STATE_TRANS_BAIKAL
+        owns_entire_state_region = STATE_OKHOTSK
+        owns_entire_state_region = STATE_CHUKOTKA
+        owns_entire_state_region = STATE_YAKUTSK
+        owns_entire_state_region = STATE_KAMCHATKA
+       	
+       	custom_tooltip = {
+            text = je_ru_tno_irk_owns_chernyshevsky
+            any_scope_state = {
+                state_region = s:STATE_UPPER_YENISEYSK
+            }
+        }
 	}
 
 	effect = {
@@ -1082,6 +1089,8 @@ je_ru_irk_restore_far_east = {
     		trigger_event = { id = tno_ru_events.1 popup = yes } # event for selecting new economic law
     	}
 
+    	add_journal_entry = { type = je_ru_tno_irk_restore_ussr }
+    	add_journal_entry = { type = je_ru_tno_finish_sib_plan }
     	add_journal_entry = { type = je_ru_tno_sakha_expedition }
     	add_journal_entry = { type = je_ru_tno_repair_transib }
 	}
@@ -1141,15 +1150,56 @@ je_ru_gen_sakha_expedition = {
 	}
 }
 
-je_ru_gen_transsib_finish = {
-	name = "je_ru_gen_transsib_finish"
-	desc = "je_ru_gen_transsib_finish_desc"
+je_ru_gen_complete_sib_plan = {
+	name = "je_ru_gen_complete_sib_plan"
+	desc = "je_ru_gen_complete_sib_plan_desc"
 
 	possible = {
-		NOT = { has_variable = transsib_done }
+		has_variable = your_mother
 	}
 
 	effect = {
 		custom_tooltip = sakha.tt.3
+	}
+}
+
+je_ru_irk_restore_ussr = {
+	name = "je_ru_irk_restore_ussr"
+	desc = "je_ru_irk_restore_ussr_desc"
+
+	possible = {
+		#owns_entire_state_region = STATE_IRKUTSK
+        #owns_entire_state_region = STATE_TRANS_BAIKAL
+        #owns_entire_state_region = STATE_OKHOTSK
+        #owns_entire_state_region = STATE_CHUKOTKA
+        #owns_entire_state_region = STATE_YAKUTSK
+        #owns_entire_state_region = STATE_KAMCHATKA
+	}
+
+	effect = {
+		custom_tooltip = je_ru_irk_restore_far_east_tt_1
+
+		set_variable = {
+            name = irk_form_far_east
+        } 
+
+        hidden_effect = {
+        	remove_modifier = russian_warlord
+        }
+
+    	custom_tooltip = je_ru_irk_restore_far_east_tt_2
+    	custom_tooltip = je_ru_irk_restore_far_east_tt_3
+    	custom_tooltip = je_ru_irk_restore_far_east_tt_4
+    	#custom_tooltip = je_ru_irk_restore_far_east_tt_5
+
+    	hidden_effect = {
+    		trigger_event = { id = tno_ru_events.1 popup = yes } # event for selecting new economic law
+    	}
+
+    	add_journal_entry = { type = je_ru_tno_sakha_expedition }
+    	add_journal_entry = { type = je_ru_tno_repair_transib }
+    	add_journal_entry = { type = je_ru_tno_finish_sib_plan }
+    	add_journal_entry = { type = je_ru_tno_irk_restore_ussr }
+    	add_journal_entry = { type = je_ru_tno_irk_paris_of_siberia }
 	}
 }

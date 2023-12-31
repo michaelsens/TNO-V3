@@ -234,3 +234,60 @@ tno_irk_events.5 = { # Lost autocracy law - yagoda overthrown
 		}
     }
 }
+
+tno_irk_events.6 = { # Aftermath of Far Eastern unification
+    type = country_event
+	placement = root
+	title = tno_irk_events.6.t
+	desc = tno_irk_events.6.d
+	flavor = tno_irk_events.6.f
+	icon = "gfx/interface/icons/invention_icons/philosophical_pragmatism.dds"
+
+	duration = 6
+
+	immediate = {
+    }
+    
+    trigger = {
+	}
+
+	event_image = {
+        texture = "gfx/event_pictures/super_pictures/civilian_soviet.dds"
+    }
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	option = {
+		name = tno_irk_events.6.1
+    }
+}
+
+tno_irk_events.7 = { # Aftermath of 1st Jan 1966 (begin reunification wars in Russia)
+    type = country_event
+	placement = root
+	title = tno_irk_events.7.t
+	desc = tno_irk_events.7.d
+	flavor = tno_irk_events.7.f
+	icon = "gfx/interface/icons/invention_icons/wargaming.dds"
+
+	duration = 6
+
+	immediate = {
+		ruler = {
+            save_scope_as = irkutsk_leader
+        }
+    }
+    
+    trigger = {
+	}
+
+	event_image = {
+        texture = "gfx/event_pictures/super_pictures/ru_war.dds"
+    }
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	option = {
+		name = tno_irk_events.7.1
+    }
+}
