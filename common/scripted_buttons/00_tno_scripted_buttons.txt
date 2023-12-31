@@ -1211,7 +1211,7 @@ je_ru_gen_complete_sib_plan = {
         }
         custom_tooltip = {
             text = fin_sib_paris_of_siberia_done
-            has_variable = paris_of_siberia_done
+            #has_variable = paris_of_siberia_done
         }
         custom_tooltip = {
             text = fin_sib_usa_relations
@@ -1222,27 +1222,78 @@ je_ru_gen_complete_sib_plan = {
 	}
 
 	effect = {
-		#custom_tooltip = { 
-            #text = sib_plan_complete
-            scope:irkutsk_state_scope = {
+		hidden_effect = {
+            add_modifier = {
+                name = the_siberian_plan
+            }
+        }
+		custom_tooltip = { 
+            text = sib_plan_complete
+            random_scope_state = {
+            	limit = {
+                	state_region = s:STATE_IRKUTSK
+            	}
                 add_modifier = {
-                    name = state_transsib
-                    years = 10
-                    is_decaying = yes
+                    name = state_siberian_plan
                 }
             }
-        #}
-        #custom_tooltip = { 
-        #    text = sib_plan_complete_2
-        #}
-        #custom_tooltip = { 
-        #    text = sib_plan_complete_3
-        #}
-        #hidden_effect = {
-        #    add_modifier = {
-        #        name = the_siberian_plan
-        #    }
-        #}
+            random_scope_state = {
+            	limit = {
+                	state_region = s:STATE_TRANS_BAIKAL
+            	}
+                add_modifier = {
+                    name = state_siberian_plan
+                }
+            }
+            random_scope_state = {
+            	limit = {
+                	state_region = s:STATE_OKHOTSK
+            	}
+                add_modifier = {
+                    name = state_siberian_plan
+                }
+            }
+            random_scope_state = {
+            	limit = {
+                	state_region = s:STATE_KAMCHATKA
+            	}
+                add_modifier = {
+                    name = state_siberian_plan
+                }
+            }
+            random_scope_state = {
+            	limit = {
+                	state_region = s:STATE_CHUKOTKA
+            	}
+                add_modifier = {
+                    name = state_siberian_plan
+                }
+            }
+            random_scope_state = {
+            	limit = {
+                	state_region = s:STATE_YAKUTSK
+            	}
+                add_modifier = {
+                    name = state_siberian_plan
+                }
+            }
+            random_scope_state = {
+            	limit = {
+                	state_region = s:STATE_UPPER_YENISEYSK
+            	}
+                add_modifier = {
+                    name = state_siberian_plan
+                }
+            }
+
+        }
+        custom_tooltip = { 
+            text = sib_plan_complete_2
+            activate_law = law_type:law_socialist_market_economy
+        }
+        custom_tooltip = { 
+            text = sib_plan_complete_3
+        }
 
         trigger_event = { id = tno_irk_events.8 popup = yes }
 	}
