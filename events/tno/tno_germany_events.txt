@@ -1926,3 +1926,60 @@ tno_germany_events.26 = {
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 }
 
+tno_germany_events.39 = {   # rko retakes ostland
+    type = country_event
+    placement = ROOT
+
+    hidden = yes
+
+    immediate = {
+       
+        c:RKO = {
+            create_diplomatic_play = {
+                type = dp_annex_war
+                name = ost_land_fuckwar
+                target_country = c:GMG
+                add_initiator_backers = { c:GER }
+                war = no
+                escalation = 93
+                target_state = s:STATE_LATVIA.region_state:GMG
+            }
+            create_diplomatic_play = {
+                type = dp_annex_war
+                name = ost_land_fuckwar
+                target_country = c:LLL
+                add_initiator_backers = { c:GER }
+                war = no
+                escalation = 93
+                target_state = s:STATE_LATVIA.region_state:LLL
+            }
+            create_diplomatic_play = {
+                type = dp_annex_war
+                name = ost_land_fuckwar
+                target_country = c:RKS
+                add_initiator_backers = { c:GER }
+                war = no
+                escalation = 93
+                target_state = s:STATE_BREST.region_state:RKS
+            }
+            create_diplomatic_play = {
+                type = dp_annex_war
+                name = ost_land_fuckwar
+                target_country = c:UPO
+                add_initiator_backers = { c:GER }
+                war = no
+                escalation = 93
+                target_state = s:STATE_ORSHA.region_state:UPO
+            }
+            hidden_effect = {
+				change_infamy = -999
+		    }
+
+        }
+          
+
+        
+    }
+}
+
+
