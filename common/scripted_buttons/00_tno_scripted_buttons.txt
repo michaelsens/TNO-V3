@@ -1078,6 +1078,7 @@ je_ru_irk_restore_far_east = {
 
         hidden_effect = {
         	remove_modifier = russian_warlord
+        	trigger_event = { id = tno_irk_events.6 days = 180 popup = no }
         }
 
     	custom_tooltip = je_ru_irk_restore_far_east_tt_2
@@ -1154,14 +1155,96 @@ je_ru_gen_complete_sib_plan = {
 	name = "je_ru_gen_complete_sib_plan"
 	desc = "je_ru_gen_complete_sib_plan_desc"
 
+	immediate = {
+        random_scope_state = {
+            limit = {
+                state_region = s:STATE_IRKUTSK
+            }
+            save_scope_as = irkutsk_state_scope
+        }
+        random_scope_state = {
+            limit = {
+                state_region = s:STATE_TRANS_BAIKAL
+            }
+            save_scope_as = trans_baikal_state_scope
+        }
+        random_scope_state = {
+            limit = {
+                state_region = s:STATE_OKHOTSK
+            }
+            save_scope_as = okhotsk_state_scope
+        }
+        random_scope_state = {
+            limit = {
+                state_region = s:STATE_UPPER_YENISEYSK
+            }
+            save_scope_as = upper_yeniseysk_state_scope
+        }
+        random_scope_state = {
+            limit = {
+                state_region = s:STATE_YAKUTSK
+            }
+            save_scope_as = yakutsk_state_scope
+        }
+        random_scope_state = {
+            limit = {
+                state_region = s:STATE_CHUKOTKA
+            }
+            save_scope_as = chukotka_state_scope
+        }
+        random_scope_state = {
+            limit = {
+                state_region = s:STATE_KAMCHATKA
+            }
+            save_scope_as = kamchatka_state_scope
+        }
+    }
+
 	possible = {
-		has_variable = sakha_expedition_done
-        has_variable = transsib_done
-        has_variable = paris_of_siberia_done
+		custom_tooltip = {
+            text = fin_sib_sakha_done
+            has_variable = sakha_expedition_done
+        }
+        custom_tooltip = {
+            text = fin_sib_transsib_done
+            has_variable = transsib_done
+        }
+        custom_tooltip = {
+            text = fin_sib_paris_of_siberia_done
+            has_variable = paris_of_siberia_done
+        }
+        custom_tooltip = {
+            text = fin_sib_usa_relations
+            c:USA = {
+                relations:root >= 50
+            }
+        }
 	}
 
 	effect = {
-		custom_tooltip = sakha.tt.3
+		#custom_tooltip = { 
+            #text = sib_plan_complete
+            scope:irkutsk_state_scope = {
+                add_modifier = {
+                    name = state_transsib
+                    years = 10
+                    is_decaying = yes
+                }
+            }
+        #}
+        #custom_tooltip = { 
+        #    text = sib_plan_complete_2
+        #}
+        #custom_tooltip = { 
+        #    text = sib_plan_complete_3
+        #}
+        #hidden_effect = {
+        #    add_modifier = {
+        #        name = the_siberian_plan
+        #    }
+        #}
+
+        trigger_event = { id = tno_irk_events.8 popup = yes }
 	}
 }
 

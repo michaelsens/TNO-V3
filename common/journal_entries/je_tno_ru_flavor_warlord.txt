@@ -212,16 +212,30 @@ je_ru_tno_irk_finish_sib_plan = {
             c:USA = {
                 relations:root >= 50
             }
+        }
+        hidden_trigger = {
+            has_modifier = {
+                the_siberian_plan
+            }
         }   
     }
 
     on_complete = {
-        custom_tooltip = {
+        custom_tooltip = { 
             text = sib_plan_complete
+        }
+        custom_tooltip = { 
+            text = sib_plan_complete_2
+        }
+        custom_tooltip = { 
+            text = sib_plan_complete_3
+        }
+        hidden_effect = {
             add_modifier = {
-                name = sib_plan_complete
+                name = the_siberian_plan
             }
         }
+
         trigger_event = { id = tno_irk_events.8 popup = yes }
     }
 
