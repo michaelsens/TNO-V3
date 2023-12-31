@@ -1272,8 +1272,8 @@ je_ger_reclaim_ost_a = {  # if RKO is still alive
 		scope:journal_entry = {
 				not = {
 				custom_tooltip = {
-					text = "Hasnt taken a support action in the last 2 months "
-					has_variable = je_malaya_jap_cooldown
+					text = "Hasnt already retook or tried to retake Ostland"
+					has_variable = je_already_pupped_ost
 				}
 			}
 		}
@@ -1286,16 +1286,17 @@ je_ger_reclaim_ost_a = {  # if RKO is still alive
 	effect = {
 
 		scope:journal_entry = {
-			set_variable = { name = je_malaya_jap_cooldown months = 2  }
+			set_variable = { name = je_already_pupped_ost months = 99999  }
 		}	
 		custom_tooltip = {
-			text = "Will Give 20k to the 25th army a month "
+			text = "Will bring Ostland back into the fold and will start a full scale invasion with the goal of retakeing Ostland."
 	
 		
-		change_relations = {
-            country = c:JOH
-            value = 30
-        }
-}
+			create_diplomatic_pact = {
+                country = c:RKO
+                type = reichskommissariat
+            }
+		}
+	}
 }
 
