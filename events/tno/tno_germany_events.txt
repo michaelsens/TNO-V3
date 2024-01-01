@@ -105,11 +105,11 @@ tno_germany_events.3 = { # germanys event telling them that a japanise (burgundi
                 trigger_event = { id = tno_germany_events.14 days = 270 popup = yes }
                 trigger_event = { id = tno_germany_events.15 days = 320 popup = yes }  
                 trigger_event = { id = tno_germany_events.30 days = 40 popup = yes }
-                trigger_event = { id = tno_germany_events.31 days = 90 popup = yes }
-                trigger_event = { id = tno_germany_events.32 days = 150 popup = yes }
-                trigger_event = { id = tno_germany_events.33 days = 230 popup = yes }
-                trigger_event = { id = tno_germany_events.34 days = 300 popup = yes }
-                trigger_event = { id = tno_germany_events.35 days = 360 popup = yes }
+                trigger_event = { id = tno_germany_events.31 days = 110 popup = yes }
+                trigger_event = { id = tno_germany_events.32 days = 160 popup = yes }
+                trigger_event = { id = tno_germany_events.33 days = 250 popup = yes }
+                trigger_event = { id = tno_germany_events.34 days = 340 popup = yes }
+                trigger_event = { id = tno_germany_events.35 days = 400 popup = yes }
             }
             
             set_variable = {
@@ -1800,46 +1800,31 @@ tno_germany_events.18 = {   #Civil war start
         }
         c:GMB = {
             create_diplomatic_play = {
-                type = dp_annex_war
+                type = dp_revolution
                 name = german_civil_war
                 target_country = c:GAS
                 war = yes
                 target_state = s:STATE_WESTPHALIA.region_state:GAS
-                add_war_goal = {
-                    holder = c:GAS
-                    type = annex_country
-                    target_state = s:STATE_SAXONY.region_state:GMB
-                  }
             }
             hidden_effect = {
 				change_infamy = -999
 		    }
             create_diplomatic_play = {
-                type = dp_annex_war
+                type = dp_revolution
                 name = german_civil_war
                 target_country = c:GHG
                 war = yes
                 target_state = s:STATE_SILESIA.region_state:GHG
-                add_war_goal = {
-                    holder = c:GHG
-                    type = annex_country
-                    target_state = s:STATE_SAXONY.region_state:GMB
-                  }
             }
             hidden_effect = {
 				change_infamy = -999
 		    }
             create_diplomatic_play = {
-                type = dp_annex_war
+                type = dp_revolution
                 name = german_civil_war
                 target_country = c:GRH
                 war = yes
                 target_state = s:STATE_ALSACE_LORRAINE.region_state:GRH
-                add_war_goal = {
-                    holder = c:GRH
-                    type = annex_country
-                    target_state = s:STATE_SAXONY.region_state:GMB
-                  }
             }
             hidden_effect = {
 				change_infamy = -999
@@ -1847,31 +1832,21 @@ tno_germany_events.18 = {   #Civil war start
         }
         c:GAS = {
             create_diplomatic_play = {
-                type = dp_annex_war
+                type = dp_revolution
                 name = german_civil_war
                 target_country = c:GHG
                 war = yes
                 target_state = s:STATE_SILESIA.region_state:GHG
-                add_war_goal = {
-                    holder = c:GHG
-                    type = annex_country
-                    target_state = s:STATE_WESTPHALIA.region_state:GAS
-                  }
             }
             hidden_effect = {
 				change_infamy = -999
 		    }
             create_diplomatic_play = {
-                type = dp_annex_war
+                type = dp_revolution
                 name = german_civil_war
                 target_country = c:GRH
                 war = yes
                 target_state = s:STATE_ALSACE_LORRAINE.region_state:GRH
-                add_war_goal = {
-                    holder = c:GRH
-                    type = annex_country
-                    target_state = s:STATE_WESTPHALIA.region_state:GAS
-                  }
             }
             hidden_effect = {
 				change_infamy = -999
@@ -1879,16 +1854,11 @@ tno_germany_events.18 = {   #Civil war start
         }
         c:GHG = {
             create_diplomatic_play = {
-                type = dp_annex_war
+                type = dp_revolution
                 name = german_civil_war
                 target_country = c:GRH
                 war = yes
                 target_state = s:STATE_ALSACE_LORRAINE.region_state:GRH
-                add_war_goal = {
-                    holder = c:GRH
-                    type = annex_country
-                    target_state = s:STATE_SILESIA.region_state:GHG
-                  }
             }
             hidden_effect = {
 				change_infamy = -999
@@ -1944,16 +1914,10 @@ tno_germany_events.19 = {   #German Civil War WIn
         default_option = yes
         c:GRH = {
             create_diplomatic_play = {
-                type = dp_annex_war
+                type = dp_revolution
                 name = german_civil_war
                 target_country = c:GEQ
                 war = yes
-                target_state = s:STATE_BRANDENBURG.region_state:GEQ
-                add_war_goal = {
-                    holder = c:GEQ
-                    type = annex_country
-                    target_state = s:STATE_ALSACE_LORRAINE.region_state:GRH
-                  }
             }
             hidden_effect = {
 				change_infamy = -999
@@ -2056,13 +2020,8 @@ tno_germany_events.22 = {
 		create_diplomatic_play = {
 			name = ukrain_civil.1
 			target_country = c:RKU
-				type = dp_annex_war
+				type = dp_revolution
 				war = yes
-				add_war_goal = {
-					holder = c:RKU
-					type = annex_country
-					target_state = s:STATE_VOLHYNIA.region_state:UKP
-				}
 			
 		}
     }
@@ -2089,13 +2048,8 @@ tno_germany_events.23 = {
 		create_diplomatic_play = {
 			name = ukrain_civil.2
 			target_country = c:UKM
-				type = dp_annex_war
+				type = dp_revolution
 				war = yes
-				add_war_goal = {
-					holder = c:UKM
-					type = annex_country
-					target_state = s:STATE_VOLHYNIA.region_state:UKP
-				}
 			
 		}
     }
@@ -2122,13 +2076,8 @@ tno_germany_events.24 = {
 		create_diplomatic_play = {
 			name = ukrain_civil.3
 			target_country = c:UKC
-				type = dp_annex_war
+				type = dp_revolution
 				war = yes
-				add_war_goal = {
-					holder = c:UKC
-					type = annex_country
-					target_state = s:STATE_VOLHYNIA.region_state:UKP
-				}
 			
 		}
     }
@@ -2155,13 +2104,8 @@ tno_germany_events.27 = {
 		create_diplomatic_play = {
 			name = ukrain_civil.9
 			target_country = c:RKU
-				type = dp_annex_war
+				type = dp_revolution
 				war = yes
-				add_war_goal = {
-					holder = c:RKU
-					type = annex_country
-					target_state = s:STATE_CHERSON.region_state:UKM
-				}
 			
 		}
     }
@@ -2188,13 +2132,8 @@ tno_germany_events.25 = {
 		create_diplomatic_play = {
 			name = ukrain_civil.5
 			target_country = c:UKC
-				type = dp_annex_war
+				type = dp_revolution
 				war = yes
-				add_war_goal = {
-					holder = c:UKC
-					type = annex_country
-					target_state = s:STATE_CHERSON.region_state:UKM
-				}
 			
 		}
     }
@@ -2221,13 +2160,8 @@ tno_germany_events.26 = {
 		create_diplomatic_play = {
 			name = ukrain_civil.6
 			target_country = c:RKU
-				type = dp_annex_war
+				type = dp_revolution
 				war = yes
-				add_war_goal = {
-					holder = c:RKU
-					type = annex_country
-					target_state = s:STATE_LUHANSK.region_state:UKM
-				}
 			
 		}
     }
@@ -2250,7 +2184,7 @@ tno_germany_events.39 = {   # rko retakes ostland
        
         c:RKO = {
             create_diplomatic_play = {
-                type = dp_annex_war
+                type = dp_revolution
                 name = ost_land_fuckwar
                 target_country = c:GMG
                 add_initiator_backers = { c:GER }
@@ -2259,7 +2193,7 @@ tno_germany_events.39 = {   # rko retakes ostland
                 target_state = s:STATE_LATVIA.region_state:GMG
             }
             create_diplomatic_play = {
-                type = dp_annex_war
+                type = dp_revolution
                 name = ost_land_fuckwar
                 target_country = c:LLL
                 add_initiator_backers = { c:GER }
@@ -2268,7 +2202,7 @@ tno_germany_events.39 = {   # rko retakes ostland
                 target_state = s:STATE_LATVIA.region_state:LLL
             }
             create_diplomatic_play = {
-                type = dp_annex_war
+                type = dp_revolution
                 name = ost_land_fuckwar
                 target_country = c:RKS
                 add_initiator_backers = { c:GER }
@@ -2277,7 +2211,7 @@ tno_germany_events.39 = {   # rko retakes ostland
                 target_state = s:STATE_BREST.region_state:RKS
             }
             create_diplomatic_play = {
-                type = dp_annex_war
+                type = dp_revolution
                 name = ost_land_fuckwar
                 target_country = c:UPO
                 add_initiator_backers = { c:GER }
