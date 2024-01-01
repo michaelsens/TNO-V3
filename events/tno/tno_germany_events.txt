@@ -1903,6 +1903,7 @@ tno_germany_events.19 = {   #German Civil War WIn
         change_tag = GER  # maybe?
         set_immune_to_revolutions = no
         add_journal_entry = {type = je_ger_reclaim_ost}
+        add_journal_entry = {type = je_ger_reclaim_ukc}
 	}
 
     option = { # Annex Brandenburg
@@ -1925,6 +1926,7 @@ tno_germany_events.19 = {   #German Civil War WIn
         change_tag = GER  # maybe?
         set_immune_to_revolutions = no
         add_journal_entry = {type = je_ger_reclaim_ost}
+        add_journal_entry = {type = je_ger_reclaim_ukc}
    }
 }
 
@@ -2226,6 +2228,38 @@ tno_germany_events.39 = {   # rko retakes ostland
 
         
     }
+}
+
+tno_germany_events.40 = {   
+
+    type = country_event
+    placement = ROOT
+
+    hidden = yes
+   
+    duration = 3
+    trigger = {
+	}	
+
+    immediate = {
+        create_country = { #communist ukraine
+            tag = RKU
+            origin = c:GER
+            state = s:STATE_LUHANSK.region_state:GER
+            state = s:STATE_ROSTOV.region_state:GER
+            state = s:STATE_CHERSON.region_state:GER
+            state = s:STATE_KIEV.region_state:GER
+            state = s:STATE_VOLHYNIA.region_state:GER
+            state = s:STATE_EAST_GALICIA.region_state:GER
+       
+        } 
+        
+    
+    
+    
+    
+
+}
 }
 
 
