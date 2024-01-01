@@ -76,8 +76,8 @@ tno_germany_events.3 = { # germanys event telling them that a japanise (burgundi
     option = {
         name = tno_germany_events.3.a
         
-            custom_tooltip = "A power struggle will begin"
-            custom_tooltip = "Journal entries will appear that track the support for each candidate"
+            custom_tooltip = tno_germany_events.3.a.tooltip1
+            custom_tooltip = tno_germany_events.3.a.tooltip2
 
         
 
@@ -240,9 +240,9 @@ tno_germany_events.35 = {
     
     }
 
-    title = "Adolf Hitler Is Dead"
-    desc = "The funeral for Adolf Hitler was possibly the largest and most extravagant in history. Thousands of Germans stood in attendance, with nearly an entire division of soldiers just for the funeral march, not to mention endless flyovers by the Luftwaffe and the constant jockeying for the best spots to show off by over a dozen military units."
-    flavor = "Even stand out figures such as John F. Kennedy and a representative of Emperor Hirohito were in attendance. Heydrich, Speer, Göring and Bormann were all in attendance, and all gave their words on their leader's passing. And then they were gone. Not even half an hour after the body was lowered, four staff cars and their convoys were speeding off to parts unknown, preparing for plans no doubt only just beginning..."
+    title = tno_germany_events.35
+    desc = tno_germany_events.35.d
+    flavor = tno_germany_events.35.f
 
     event_image = {
 		texture  = "gfx/event_pictures/event_pictures/hitler_suc.dds"
@@ -359,90 +359,71 @@ tno_germany_events.7 = { # landowners wins power struggle
 
 }
 
-tno_germany_events.8 = { # hitler picks sucsesser 
-	type = country_event
+tno_germany_events.8 = { # Hitler picks successor
+    type = country_event
     placement = ROOT
- 
-    
- 
-    title = "Hitler Chooses a Successor"
-    desc = "Today, the world watches as one of the most significant moments of the twentieth century prepares to take place."
-    flavor = "Almost a week after the Führer was shot in an attempted assassination, Hitler today appeared on national television. With the necessity for an appointed successor being exposed by the incident, following days of heated debate Hitler stood before the Reichstag to announce his choice."
 
-   event_image = {
-		texture  = "gfx/event_pictures/event_pictures/hitler_suc.dds"
-	}
+    title = tno_germany_events.8
+    desc = tno_germany_events.8.d
+    flavor = tno_germany_events.8.f
+
+    event_image = {
+        texture  = "gfx/event_pictures/event_pictures/hitler_suc.dds"
+    }
     icon = "gfx/interface/icons/event_icons/event_fire.dds"
 
     on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 
     duration = 3
     trigger = {
-		this ?= c:GER
-	}	
+        this ?= c:GER
+    }   
 
-    option = { # Boost spear
-        name = "The Reformer, Albert Speer"
+    option = { # Boost Speer
+        name = tno_germany_events.8.a
         change_variable = {
             name = speer_ger_struggle_timer
             add = 10
-         }
-         set_variable = speer_chosen
-        
-         custom_tooltip = speer_tip.a
-         custom_tooltip = "Will boost Autark influence by 10"
-         
-        add_radicals = {
-            value = 0.10
         }
-        
-        
-	}
-
-    option = { # Borman 
-     name = "The Conservative, Martin Bormann"
-       default_option = yes
-       change_variable = {
-        name = boreman_ger_struggle_timer
-        add = 10
-     }
-     set_variable = borman_chosen
-     custom_tooltip = "Borman will maintain the status quo"
-     add_radicals = {
-            value = 0.05
-     }
-	}
-    
-    
-    option = { # goreing 
-     name = "The Militarist, Hermann Göring"
-     custom_tooltip = milltooltip.1
-     custom_tooltip = "Militarists influence will increase by 10"
-     set_variable = goering_chosen
-      
-     change_variable = {
-        name = goreing_ger_struggle_timer
-        add = 10
-     }
-     add_radicals = {
-            value = 0.15
-        }
+        set_variable = speer_chosen
+        custom_tooltip = speer_tip.a
+        custom_tooltip = tno_germany_events.8.a.tooltip
     }
 
-   option = { # hydrick 
-    name = tno_germany_events.8.d
-     change_variable = {
-     name =  devout_ger_struggle_timer
-        add = 10
-      }
-      set_variable = heydrich_chosen
-      custom_tooltip = godhelpus.2
-      custom_tooltip = "SS influence will increase by 10"
-     add_radicals = {
-            value = 0.25
+    option = { # Bormann
+        name = tno_germany_events.8.b
+        default_option = yes
+        change_variable = {
+            name = boreman_ger_struggle_timer
+            add = 10
         }
+        set_variable = borman_chosen
+        custom_tooltip = tno_germany_events.8.b.tooltip
+    }
+
+    option = { # Göring
+        name = tno_germany_events.8.c
+        change_variable = {
+            name = goreing_ger_struggle_timer
+            add = 10
+        }
+        custom_tooltip = milltooltip.1
+        set_variable = goering_chosen
+        custom_tooltip = tno_germany_events.8.c.tooltip
+    }
+
+    option = { # Heydrich
+        name = tno_germany_events.8.e
+        change_variable = {
+            name = devout_ger_struggle_timer
+            add = 10
+        }
+        custom_tooltip = godhelpus.2
+        set_variable = heydrich_chosen
+        custom_tooltip = tno_germany_events.8.e.tooltip
     }
 }
+
 
 tno_germany_events.10 = { # SS acting up 
 	type = country_event
@@ -450,9 +431,9 @@ tno_germany_events.10 = { # SS acting up
  
     
  
-    title = "SS Acting up"
-    desc = "The Schutzstaffel are once again stirring up trouble within the Reich. While this isn't exactly uncommon or new, the SS couldn't have chosen a worse time to re-commence their usal antics. "
-    flavor = "All across Germany the SS have been putting up their noses in where it doesn't belong, causing a great deal of disruption throughout the Reich. Stormtroopers have bullied troops from the regular army out of several armories across Germany, mostly concentrated in the Rhine."
+    title = tno_germany_events.10
+    desc = tno_germany_events.10.d
+    flavor = tno_germany_events.10.f
 
    event_image = {
 		texture  = "gfx/event_pictures/event_pictures/hitler_suc.dds"
@@ -467,12 +448,12 @@ tno_germany_events.10 = { # SS acting up
 	}	
 
     option = { # Boost spear
-        name = "Root SS influence out of the civilian sector!"
+        name = tno_germany_events.10.a
         change_variable = {
             name = speer_ger_struggle_timer
             add = 5
          }
-         custom_tooltip = "Will boost Autark influence by 5"
+         custom_tooltip = autark.tooltip
 
          add_modifier = {
             name = ss_counterd_speer
@@ -484,7 +465,7 @@ tno_germany_events.10 = { # SS acting up
 	}
 
     option = { # Borman 
-     name = "Resist the SS with help from party loyalists"
+     name = tno_germany_events.10.b
        default_option = yes
        change_variable = {
         name = boreman_ger_struggle_timer
@@ -495,11 +476,11 @@ tno_germany_events.10 = { # SS acting up
         name = ss_counterd_bore
         years = 2
     }
-     custom_tooltip = "The Chancellerys influence will increase by 5 "
+     custom_tooltip = chancellery.tooltip
 	}
     option = { # goreing 
-     name = "Restrict SS movements around Heer and civilian infastructure!"
-     custom_tooltip = "Militarists influence will increase by 5"
+     name = tno_germany_events.10.c
+     custom_tooltip = militarist.tooltip
      
       
      change_variable = {
@@ -514,12 +495,12 @@ tno_germany_events.10 = { # SS acting up
     }
 
    option = { # hydrick 
-    name = "Excellent. All according to plan"
+    name = tno_germany_events.10.e
      change_variable = {
      name =  devout_ger_struggle_timer
         add = 5
       }
-      custom_tooltip = "SS influence will increase by 5"
+      custom_tooltip = ss.tooltip
 
       add_modifier = {
         name = ss_counterd_ss
@@ -539,9 +520,9 @@ tno_germany_events.11 = { # Autobahn renewel
  
     
  
-    title = "Autobahn Renewal project"
-    desc = "Germany's famous highway system, the Autobahn, has seen better days. When Hitler took the project over in the early 30s he greatly expanded the system to encompass the entirety of the Reich, making it the largest highway syestem in the world. "
-    flavor = "The great economic crash of the 50's put a quick stop to everything. Funding was massivly cut, making the planned expansions simply impossible. The highway has begun to decay from chronic lack of maintenance."
+    title = tno_germany_events.11
+    desc = tno_germany_events.11.d
+    flavor = tno_germany_events.11.f
 
    event_image = {
 		texture  = "gfx/event_pictures/event_pictures/hitler_suc.dds"
@@ -556,12 +537,12 @@ tno_germany_events.11 = { # Autobahn renewel
 	}	
 
     option = { # Boost spear
-        name = "A tragic oversight that we will repair"
+        name = tno_germany_events.11.a
         change_variable = {
             name = speer_ger_struggle_timer
             add = 5
          }
-         custom_tooltip = "Will boost Autark influence by 5"
+         custom_tooltip = autark.tooltip
          
          add_modifier = {
             name = full_funding_auto
@@ -576,13 +557,13 @@ tno_germany_events.11 = { # Autobahn renewel
 	}
 
     option = { # Borman 
-     name = "We'll put the Heer to work."
+     name = tno_germany_events.11.b
        default_option = yes
        change_variable = {
         name = boreman_ger_struggle_timer
         add = 5
      }
-     custom_tooltip = "Militarists influence will increase by 5"
+     custom_tooltip = militarist.tooltip
      
      change_variable = {
         name = goreing_ger_struggle_timer
@@ -597,10 +578,10 @@ tno_germany_events.11 = { # Autobahn renewel
             name = decaying_infrastructure
             multiplier = 0.75
     }
-     custom_tooltip = "The Chancellerys influence will increase by 5 "
+     custom_tooltip = chancellery.tooltip
 	}
    option = { # hydrick 
-    name = "There is no need, it would be a waste"
+    name = tno_germany_events.11.c
      change_variable = {
      name =  devout_ger_struggle_timer
         add = 5
@@ -613,7 +594,7 @@ tno_germany_events.11 = { # Autobahn renewel
             name = decaying_infrastructure
             multiplier = 1.5
     }
-      custom_tooltip = "SS influence will increase by 5"
+      custom_tooltip = ss.tooltip
 
      
    
@@ -623,36 +604,34 @@ tno_germany_events.11 = { # Autobahn renewel
 }
 
 tno_germany_events.12 = { # Vets demand their share
-	type = country_event
+    type = country_event
     placement = ROOT
- 
     
- 
-    title = "Veterans demand their share"
-    desc = "Millions of German soldiers were rewarded after our glorious victory in the Second World War. Our loyal troops oversaw the creation of the greatest empire the world has yet seen; it was therefore only fitting to reward them accordingly. Many veterans were givin lands to settle, positions of power and influence, prestige and more than their share of wealth. This was easy enough to handle following the days of our great victory. "
-    flavor = "This has set a precedent of entitlement. Yet another generation of soldiers are retiring. and there isn't near the amount of wealth to go around; there simply hasn't been any new conquests. Still, they expect, and even DEMAND the same compensation the hereos of the last war were gifted, even the men who havn't seen a lick of battle!"
+    title = tno_germany_events.12
+    desc = tno_germany_events.12.d
+    flavor = tno_germany_events.12.f
 
-   event_image = {
-		texture  = "gfx/event_pictures/event_pictures/hitler_suc.dds"
-	}
+    event_image = {
+        texture  = "gfx/event_pictures/event_pictures/hitler_suc.dds"
+    }
     icon = "gfx/interface/icons/event_icons/event_fire.dds"
 
     on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 
     duration = 3
     trigger = {
-		this ?= c:GER
-	}	
+        this ?= c:GER
+    }   
 
     option = { # Boost spear
-        name = "Times are diffrent now"
+        name = tno_germany_events.12.a
         change_variable = {
             name = speer_ger_struggle_timer
             add = 5
-         }
-         custom_tooltip = "Will boost Autark influence by 5"
+        }
+        custom_tooltip = tno_germany_events.12.a.tooltip
 
-         add_modifier = {
+        add_modifier = {
             name = fuck_vets_speer
             years = 2
         }
@@ -660,30 +639,27 @@ tno_germany_events.12 = { # Vets demand their share
             value = 0.1
             interest_group = ig:ig_armed_forces
         }
-         
-        
-        
-	}
+    }
 
     option = { # the rest 
-     name = "It is their right, earned in blood"
-       default_option = yes
-       change_variable = {
-        name = boreman_ger_struggle_timer
-        add = 5
-     }
-     custom_tooltip = "Militarists influence will increase by 5"
-     
-     change_variable = {
-        name = goreing_ger_struggle_timer
-        add = 5
-     }
-     change_variable = {
-        name =  devout_ger_struggle_timer
-           add = 5
-         }
+        name = tno_germany_events.12.b
+        default_option = yes
+        change_variable = {
+            name = boreman_ger_struggle_timer
+            add = 5
+        }
+        custom_tooltip = tno_germany_events.12.b.tooltip1
 
-         add_modifier = {
+        change_variable = {
+            name = goreing_ger_struggle_timer
+            add = 5
+        }
+        change_variable = {
+            name =  devout_ger_struggle_timer
+            add = 5
+        }
+
+        add_modifier = {
             name = yay_vets_balls
             years = 2
         }
@@ -691,356 +667,325 @@ tno_germany_events.12 = { # Vets demand their share
             value = 0.1
             interest_group = ig:ig_armed_forces
         }
-         custom_tooltip = "SS influence will increase by 5"
-     custom_tooltip = "The Chancellerys influence will increase by 5 "
-	}
-
-
+        custom_tooltip = tno_germany_events.12.b.tooltip2
+        custom_tooltip = tno_germany_events.12.b.tooltip3
+    }
 }
 
-tno_germany_events.13 = { # Demands for womens rights 
-	type = country_event
-    placement = ROOT
- 
-    
- 
-    title = "Demands for Women's Rights"
-    desc = "Students whining on the streets isn't anything new to our administration. Spearheaded by a large group of female college students, the new group has been organizing marches, rallies, and meetings in a number of major cities. "
-    flavor = "Reactions are mixed; many conservative NSDAP members are disgusted, arguing that women's purity needs to be preserved and that the German woman's purpose is to be a caretaker. Some of the more traditional women wholeheartedly agree, seeing their place in Germany as an essential pillar of the German family. On the flip side, many younger women chaff at the thought of remaining second class citizens in their own country, and demand more freedoms and acceptance from the population at large. Many reformers, and even more than a few (silent) conservatives are in agreement and see the grievances laid out as valid. With popular opinion split and marches and rallies becoming more frenzied, the government needs to step in and offer guidance, one way or another "
 
-   event_image = {
-		texture  = "gfx/event_pictures/event_pictures/hitler_suc.dds"
-	}
+tno_germany_events.13 = { # Demands for women's rights 
+    type = country_event
+    placement = ROOT
+
+    title = tno_germany_events.13
+    desc = tno_germany_events.13.d
+    flavor = tno_germany_events.13.f
+
+    event_image = {
+        texture  = "gfx/event_pictures/event_pictures/hitler_suc.dds"
+    }
     icon = "gfx/interface/icons/event_icons/event_fire.dds"
 
     on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 
     duration = 3
     trigger = {
-		this ?= c:GER
-	}	
+        this ?= c:GER
+    }   
 
     option = { # Boost spear
-        name = "Pay them lip service, promise vague reforms"
+        name = tno_germany_events.13.a
         change_variable = {
             name = speer_ger_struggle_timer
             add = 5
-         }
-         custom_tooltip = "Will boost Autark influence by 5"
-         add_radicals = {
+        }
+        custom_tooltip = tno_germany_events.13.a.tooltip
+
+        add_radicals = {
             value = 0.02
         }
         add_modifier = {
             name = speer_womens_rights
             years = 2
         }
-	}
-
-    option = { # Borman 
-     name = "Let the people choose, wait it out"
-       default_option = yes
-       change_variable = {
-        name = boreman_ger_struggle_timer
-        add = 5
-     }
-     custom_tooltip = "The Chancellerys influence will increase by 5 "
-
-     add_radicals = {
-        value = 0.05
-    }
-    
-    
-
-	}
-    option = { # goreing 
-     name = "We are not changing the status quo, break up the marches!"
-     custom_tooltip = "Militarists influence will increase by 5"
-     
-      
-     change_variable = {
-        name = goreing_ger_struggle_timer
-        add = 5
-     }
-
-     add_radicals = {
-        value = 0.07
     }
 
-    add_modifier = {
-        name = goring_womens_rights
-        years = 2
-    }
-
-    }
-
-   option = { # hydrick 
-    name = "Women? Rights? Stop the marches, arrest all of their leaders!"
-     change_variable = {
-     name =  devout_ger_struggle_timer
-        add = 5
-      }
-      custom_tooltip = "SS influence will increase by 5"
-
-      add_radicals = {
-        value = 0.1
-    
-    }
-
-    add_modifier = {
-        name = ss_womens_rights
-        years = 2
-    }
-   
-     
-    }
-
-}
-
-tno_germany_events.14 = { # mill budget review
-	type = country_event
-    placement = ROOT
- 
-    
- 
-    title = "Military Budget Review"
-    desc = " Although many begged for funds to be funneled elsewhere, Hitler stood by the Wehrmacht and would not hear of it. Therefore, for the last two decades, Germany has somehow miraculously maintained its military budget, for better or worse without another major economic crisis. Militarists in both the Wehrmacht and administration continue to lobby to maintain current spending to this day. On the other side of the aisle, a coalition of reformers, civilian interests, industrialists, and even limited numbers of conservatives from the NSDAP beg us to cut the Wehrmact's budget for much needed allocation of funds elsewhere. Being in a position of power ourselves combined with Hitler's ailing health allows us to now make a change in policy, if we so choose. "
-    flavor = " After the Second World War, the German military bore no rival. Our military spending was second to none, as was our might! We proved the world our strength by accomplishing what many considered impossible; we retained tight control over our conquests, then expanded our empire even more by occupying the entire middle section of the dark continent! Since then, we've spent the better part of two decades crushing army after army of partisans, as well as a Russian invasion. The economic collapse of the 50s made the burden of maintaining the Heer's budget a titanic struggle"
-
-    event_image = {
-		texture  = "gfx/event_pictures/event_pictures/hitler_suc.dds"
-	}
-    icon = "gfx/interface/icons/event_icons/event_fire.dds"
-
-    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
-
-    duration = 3
-    trigger = {
-		this ?= c:GER
-	}	
-
-    option = { # Boost spear
-        name = "We will invest in the economy instead!"
-        change_variable = {
-            name = speer_ger_struggle_timer
-            add = 5
-         }
-         custom_tooltip = "Will boost Autark influence by 5"
-
-         add_modifier = {
-            name = speer_funding_mill
-            years = 2
-        }
-	}
-
-    option = { #Borman
-        name = "Slightly restructure the budget."
+    option = { # Bormann
+        name = tno_germany_events.13.b
+        default_option = yes
         change_variable = {
             name = boreman_ger_struggle_timer
             add = 5
-         }
-        custom_tooltip = "The Chancellerys influence will increase by 5 "
+        }
+        custom_tooltip = tno_germany_events.13.b.tooltip
 
-         add_modifier = {
-            name = borman_funding_mill
+        add_radicals = {
+            value = 0.05
+        }
+    }
+
+    option = { # Göring
+        name = tno_germany_events.13.c
+        custom_tooltip = tno_germany_events.13.c.tooltip
+
+        change_variable = {
+            name = goreing_ger_struggle_timer
+            add = 5
+        }
+
+        add_radicals = {
+            value = 0.07
+        }
+
+        add_modifier = {
+            name = goring_womens_rights
             years = 2
         }
-	}
-
-    option = { # Goring 
-     name = "Our enemies grow stronger everyday, the budget remains"
-        default_option = yes
-     custom_tooltip = "Militarists influence will increase by 5"
-
-     add_modifier = {
-        name = heer_funding_mill
-        years = 2
-    }
-     
-      
-     change_variable = {
-        name = goreing_ger_struggle_timer
-        add = 5
-     }
-     custom_tooltip = "The Chancellerys influence will increase by 5 "
-	}
-
-   option = { # hydrick 
-    name = "Funnel more money to the SS"
-     change_variable = {
-     name =  devout_ger_struggle_timer
-        add = 5
-      }
-      custom_tooltip = "SS influence will increase by 5"
-
-      add_modifier = {
-        name = ss_funding_mill
-        years = 2
-    }
-   
-     
     }
 
+    option = { # Heydrich
+        name = tno_germany_events.13.e
+        change_variable = {
+            name = devout_ger_struggle_timer
+            add = 5
+        }
+        custom_tooltip = tno_germany_events.13.e.tooltip
+
+        add_radicals = {
+            value = 0.1
+        }
+
+        add_modifier = {
+            name = ss_womens_rights
+            years = 2
+        }
+    }
 }
 
-tno_germany_events.15 = { # Hitler youth review
-	type = country_event
-    placement = ROOT
- 
-    
- 
-    title = "Hitler Youth Review"
-    desc = "The Hitlerjugend, or Hitler Youth, is Germany's largest youth organization. The group is one of the few public organizations that weathered the economic crash last decade with a semblance of grace. They have always had funding, if not from the state than from fundraising they do themselves. This has allowed them to continue to operate, and has also given them some autonomy from the government "
-    flavor = "The Hitlerjugend has naturally evolved; it is not the same youth group of the 1940s. After a decade of (relative) peace throughout Germany, the program began to de-militarized. They are now more akin to the American or British scouts than the group of old, though they still honor their material traditions. We have on our desks a couple of proposals to mold the Hitlerjugend into something more of our liking. Every year, high standing party officials review the scout's training regimates. If we so chose, we can lean on these members to influence the structure, and therefore future of the Hitlerjugend"
 
-   event_image = {
-		texture  = "gfx/event_pictures/event_pictures/hitler_suc.dds"
-	}
+tno_germany_events.14 = { # Military Budget Review
+    type = country_event
+    placement = ROOT
+
+    title = tno_germany_events.14
+    desc = tno_germany_events.14.d
+    flavor = tno_germany_events.14.f
+
+    event_image = {
+        texture  = "gfx/event_pictures/event_pictures/hitler_suc.dds"
+    }
     icon = "gfx/interface/icons/event_icons/event_fire.dds"
 
     on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 
     duration = 3
     trigger = {
-		this ?= c:GER
-	}	
+        this ?= c:GER
+    }   
 
-    option = { # Boost spear
-        name = "Let them be children; stay away from politics"
+    option = { # Boost Speer
+        name = tno_germany_events.14.a
         change_variable = {
             name = speer_ger_struggle_timer
             add = 5
-         }
-         custom_tooltip = "Will boost Autark influence by 5"
-         
-         add_modifier = {
+        }
+        custom_tooltip = tno_germany_events.14.a.tooltip
+
+        add_modifier = {
+            name = speer_funding_mill
+            years = 2
+        }
+    }
+
+    option = { # Bormann
+        name = tno_germany_events.14.b
+        change_variable = {
+            name = boreman_ger_struggle_timer
+            add = 5
+        }
+        custom_tooltip = tno_germany_events.14.b.tooltip
+
+        add_modifier = {
+            name = borman_funding_mill
+            years = 2
+        }
+    }
+
+    option = { # Göring
+        name = tno_germany_events.14.c
+        default_option = yes
+        custom_tooltip = tno_germany_events.14.c.tooltip
+
+        add_modifier = {
+            name = heer_funding_mill
+            years = 2
+        }
+
+        change_variable = {
+            name = goreing_ger_struggle_timer
+            add = 5
+        }
+    }
+
+    option = { # Heydrich
+        name = tno_germany_events.14.e
+        change_variable = {
+            name = devout_ger_struggle_timer
+            add = 5
+        }
+        custom_tooltip = tno_germany_events.14.e.tooltip
+
+        add_modifier = {
+            name = ss_funding_mill
+            years = 2
+        }
+    }
+}
+
+
+tno_germany_events.15 = { # Hitler Youth Review
+    type = country_event
+    placement = ROOT
+
+    title = tno_germany_events.15
+    desc = tno_germany_events.15.d
+    flavor = tno_germany_events.15.f
+
+    event_image = {
+        texture  = "gfx/event_pictures/event_pictures/hitler_suc.dds"
+    }
+    icon = "gfx/interface/icons/event_icons/event_fire.dds"
+
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 3
+    trigger = {
+        this ?= c:GER
+    }   
+
+    option = { # Boost Speer
+        name = tno_germany_events.15.a
+        change_variable = {
+            name = speer_ger_struggle_timer
+            add = 5
+        }
+        custom_tooltip = tno_germany_events.15.a.tooltip
+
+        add_modifier = {
             name = hitler_youth_speer
             years = 2
         }
         add_radicals = {
             value = 0.05
         }
-	}
-
-    option = { # Borman 
-     name = "The Scouts should be Scouts, nothing more, nothing less"
-       default_option = yes
-       change_variable = {
-        name = boreman_ger_struggle_timer
-        add = 5
-     }
-     custom_tooltip = " The Chancellerys influence will increase by 5"
-     
-     add_modifier = {
-        name = hitler_youth_bore
-        years = 2
     }
 
-	}
-    option = { # goreing 
-    name = "Nothing is quite as inspiring as a parading column of youth!"
-    change_variable = {
-        name = goreing_ger_struggle_timer
-        add = 5
-     }
-     custom_tooltip = "The Militarists influence will increase by 5 "
-     
-     add_modifier = {
-        name = hitler_youth_gore
-        years = 2
+    option = { # Bormann
+        name = tno_germany_events.15.b
+        default_option = yes
+        change_variable = {
+            name = boreman_ger_struggle_timer
+            add = 5
+        }
+        custom_tooltip = tno_germany_events.15.b.tooltip
+
+        add_modifier = {
+            name = hitler_youth_bore
+            years = 2
+        }
     }
-    add_loyalists = {
+
+    option = { # Göring
+        name = tno_germany_events.15.c
+        change_variable = {
+            name = goreing_ger_struggle_timer
+            add = 5
+        }
+        custom_tooltip = tno_germany_events.15.c.tooltip
+
+        add_modifier = {
+            name = hitler_youth_gore
+            years = 2
+        }
+        add_loyalists = {
             value = 0.05
         }
-     
     }
 
-   option = { # hydrick 
-    name = "We could have the SS oversee them instead..."
-     change_variable = {
-     name =  devout_ger_struggle_timer
-        add = 5
-      }
-      custom_tooltip = "SS influence will increase by 5"
+    option = { # Heydrich
+        name = tno_germany_events.15.e
+        change_variable = {
+            name = devout_ger_struggle_timer
+            add = 5
+        }
+        custom_tooltip = tno_germany_events.15.e.tooltip
 
-     
-      add_modifier = {
-        name = hitler_youth_ss
-        years = 2
+        add_modifier = {
+            name = hitler_youth_ss
+            years = 2
+        }
     }
-     
-    }
-
 }
 
-tno_germany_events.16 = { # slave camp expansion
-	type = country_event
+
+tno_germany_events.16 = { # Slave Camp Expansion
+    type = country_event
     placement = ROOT
- 
-    
- 
-    title = "Expansion of Slave Camps"
-    desc = "Slavery has been a fact of life in the Reich for well over a decade now. Slave labor dominates most labor intensive sectors of our economy, and it represents a huge portion of our GDP. The institution is old enough to contain a new generation that only knows the walls and barbed wire of the labor camps. For a while now, the slave population has been slowly but steadily rising, and it is apparent that we now need more living space for the increased number of laborers."
-    flavor = "The camps are starting to overflow with people, and their living conditions are steadily declining.\n\nAlthough it is inconvenient, something should be done now. Living conditions aren't safe for the slaves, which makes it dangerous for the Germans that guard and employ them. The most simple option available to us is to build new labor camps, but there are also more... creative approaches we can consider"
-   event_image = {
-		texture  = "gfx/event_pictures/event_pictures/hitler_suc.dds"
-	}
+
+    title = tno_germany_events.16
+    desc = tno_germany_events.16.d
+    flavor = tno_germany_events.16.f
+
+    event_image = {
+        texture  = "gfx/event_pictures/event_pictures/hitler_suc.dds"
+    }
     icon = "gfx/interface/icons/event_icons/event_fire.dds"
 
     on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 
     duration = 3
     trigger = {
-		this ?= c:GER
-	}	
+        this ?= c:GER
+    }   
 
-    option = { # Boost spear
-        name = "Improve conditions and sanitation at the existing camps."
+    option = { # Boost Speer
+        name = tno_germany_events.16.a
         change_variable = {
             name = speer_ger_struggle_timer
             add = 5
-         }
-         custom_tooltip = "Will boost Autark influence by 5"
-         
-        
-        
-	}
-
-    option = { # Borman 
-     name = "Hand some of the slaves over to the Heer for laborers!"
-       default_option = yes
-       change_variable = {
-        name = boreman_ger_struggle_timer
-        add = 5
-     }
-     custom_tooltip = " The Chancellerys influence will increase by 5"
-     
-      
-
-	}
-    option = { # goreing 
-    name = "Begin construction of new facilities."
-    change_variable = {
-        name = goreing_ger_struggle_timer
-        add = 5
-     }
-     custom_tooltip = "The Militarists influence will increase by 5 "
-     
-   
-     
+        }
+        custom_tooltip = tno_germany_events.16.a.tooltip
     }
 
-   option = { # hydrick 
-    name = "Our men will take care of the situation... discreetly."
-     change_variable = {
-     name =  devout_ger_struggle_timer
-        add = 5
-      }
-      custom_tooltip = "SS influence will increase by 5"
-
-     
+    option = { # Bormann
+        name = tno_germany_events.16.b
+        default_option = yes
+        change_variable = {
+            name = boreman_ger_struggle_timer
+            add = 5
+        }
+        custom_tooltip = tno_germany_events.16.b.tooltip
     }
 
+    option = { # Göring
+        name = tno_germany_events.16.c
+        change_variable = {
+            name = goreing_ger_struggle_timer
+            add = 5
+        }
+        custom_tooltip = tno_germany_events.16.c.tooltip
+    }
+
+    option = { # Heydrich
+        name = tno_germany_events.16.e
+        change_variable = {
+            name = devout_ger_struggle_timer
+            add = 5
+        }
+        custom_tooltip = tno_germany_events.16.e.tooltip
+    }
 }
+
 
 tno_germany_events.17 = { # German Civil War 
     type = country_event
@@ -1248,7 +1193,7 @@ tno_germany_events.17 = { # German Civil War
          
     }
     option = {
-        name = "There will be blood."
+        name = tno_germany_events.17.a
         trigger = {
             has_variable = borman_chosen
        }
@@ -1382,7 +1327,7 @@ tno_germany_events.17 = { # German Civil War
    
    
     option = {
-        name = "There will be blood."
+        name = tno_germany_events.17.a
         trigger = {
             has_variable = speer_chosen
         }
@@ -1519,7 +1464,7 @@ tno_germany_events.17 = { # German Civil War
      
      
      option = {
-        name = "There will be blood."
+        name = tno_germany_events.17.a
         trigger = {
             has_variable = goering_chosen
         }
@@ -1654,7 +1599,7 @@ tno_germany_events.17 = { # German Civil War
     
     
      option = {
-        name = "There will be blood."
+        name = tno_germany_events.17.a
         trigger = {
             has_variable = heydrich_chosen
         }
