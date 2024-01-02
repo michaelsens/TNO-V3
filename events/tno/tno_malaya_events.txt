@@ -27,5 +27,31 @@ tno_malaya_events.1 = { # OFN event
 	}
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 }
+tno_malaya_events.2 = { # JAP event
+    type = country_event
+    placement = ROOT
 
+	title = tno_malaya_events.2
+	desc = tno_malaya_events.2.d
+    flavor = tno_malaya_events.2.f	
+
+	event_image = {
+        texture = "gfx/event_pictures/event_pictures/jungle_warfare.dds"
+    }
+
+    icon = "gfx/interface/icons/tno_event_icons/malaya.dds"
+	
+	trigger = {
+		this ?= c:JAP
+	}	
+	
+	duration = 1
+
+	option = { 
+		default_option = yes
+        name = tno_malaya_events.2.a
+
+	}
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+}
 
