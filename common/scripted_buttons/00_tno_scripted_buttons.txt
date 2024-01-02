@@ -973,150 +973,132 @@ je_oil_crisis_oil_supply_button_button_e = {  # Research new Technologies
 	}
 }
 ###############################################################################
-je_malaya_ofn_a = {  #funding for malya
-	name = "je_malaya_ofn_a_loc" 
-	desc = "je_malaya_ofn_a_loc_desc"
+je_malaya_ofn_a = {  #funding for Malaya
+    name = je_malaya_ofn_a.name
+    desc = je_malaya_ofn_a.desc
 
-	visible = { always = yes }
+    visible = { always = yes }
 
-	possible = {
-		scope:journal_entry = {
-				not = {
-				custom_tooltip = {
-					text = "Hasnt taken a support action in the last 2 months"
-					has_variable = je_malaya_ofn_cooldown
-				}
-			}
-		}
-	}
+    possible = {
+        scope:journal_entry = {
+            not = {
+                custom_tooltip = je_tooltip_cooldown
+                has_variable = je_malaya_ofn_cooldown
+            }
+        }
+    }
 
-	ai_chance = {
-		base = 80
-	}
+    ai_chance = {
+        base = 80
+    }
 
+    effect = {
+        scope:journal_entry = {
+            set_variable = { name = je_malaya_ofn_cooldown months = 2 }
+        }   
+        custom_tooltip = je_malaya_ofn_a.tooltip_effect
 
-	effect = {
+        add_modifier = {
+            name = mid_funding_ger
+            months = 2
+        } 
 
-		scope:journal_entry = {
-			set_variable = { name = je_malaya_ofn_cooldown months = 2  }
-		}	
-		custom_tooltip = {
-			text = "Will Give 20k to the UMAJF a month "
-	
-		}
-		add_modifier = {
-			name = mid_funding_ger
-			months = 2
-		} 
-
-	
-		c:JOL = {
-			add_modifier = {
-				name = mid_funding_ost
-				months = 2
-			} 
-		} 
-		change_relations = {
+        c:JOL = {
+            add_modifier = {
+                name = mid_funding_ost
+                months = 2
+            } 
+        } 
+        change_relations = {
             country = c:JOL
             value = 30
         }
+    }
 }
-}
-
-je_malaya_ofn_b = {  #advisers for malya
-	name = "je_malaya_ofn_b_loc" 
-	desc = "je_malaya_ofn_b_loc_desc"
-
-	visible = { always = yes }
-
-	possible = {
-		scope:journal_entry = {
-				not = {
-				custom_tooltip = {
-					text = "Hasnt taken a support action in the last 2 months "
-					has_variable = je_malaya_ofn_cooldown
-				}
-			}
-		}
-	}
-
-	ai_chance = {
-		base = 50
-	}
 
 
-	effect = {
+je_malaya_ofn_b = {  # Advisers for Malaya
+    name = "je_malaya_ofn_b_loc" 
+    desc = "je_malaya_ofn_b_loc_desc"
 
-		scope:journal_entry = {
-			set_variable = { name = je_malaya_ofn_cooldown months = 2 }
-		}	
-		custom_tooltip = {
-			text = "Sends US advisors to help in the war "
-	
-		}
+    visible = { always = yes }
 
-		change_relations = {
+    possible = {
+        scope:journal_entry = {
+            not = {
+                custom_tooltip = "je_tooltip_cooldown"
+                has_variable = je_malaya_ofn_cooldown
+            }
+        }
+    }
+
+    ai_chance = {
+        base = 50
+    }
+
+    effect = {
+        scope:journal_entry = {
+            set_variable = { name = je_malaya_ofn_cooldown months = 2 }
+        }   
+        custom_tooltip = "je_malaya_ofn_b.tooltip_effect"
+
+        change_relations = {
             country = c:JOL
             value = 30
         }
-		c:JOL = {
-			add_modifier = {
-				name = american_advisers
-				months = 2
-			} 
-		}		
-	}
+        c:JOL = {
+            add_modifier = {
+                name = american_advisers
+                months = 2
+            } 
+        }       
+    }
 }
 
-je_malaya_ofn_c = {  #bombing malaya
-	name = "je_malaya_ofn_c_loc" 
-	desc = "je_malaya_ofn_c_loc_desc"
 
-	visible = { always = yes }
+je_malaya_ofn_c = {  # Bombing Malaya
+    name = "je_malaya_ofn_c_loc" 
+    desc = "je_malaya_ofn_c_loc_desc"
 
-	possible = {
-		scope:journal_entry = {
-				not = {
-				custom_tooltip = {
-					text = "Hasnt taken a support action in the last 2 months "
-					has_variable = je_malaya_ofn_cooldown
-				}
-			}
-		}
-	}
+    visible = { always = yes }
 
-	ai_chance = {
-		base = 60
-	}
+    possible = {
+        scope:journal_entry = {
+            not = {
+                custom_tooltip = "je_tooltip_cooldown"
+                has_variable = je_malaya_ofn_cooldown
+            }
+        }
+    }
 
+    ai_chance = {
+        base = 60
+    }
 
-	effect = {
+    effect = {
+        scope:journal_entry = {
+            set_variable = { name = je_malaya_ofn_cooldown months = 2 }
+        }   
+        custom_tooltip = "je_malaya_ofn_c.tooltip_effect"
 
-		scope:journal_entry = {
-			set_variable = { name = je_malaya_ofn_cooldown months = 2 }
-		}	
-		custom_tooltip = {
-			text = "Bombs malaya"
-	
-		}
-
-		change_relations = {
+        change_relations = {
             country = c:JOL
             value = 30
         }
 
-		s:STATE_MALAYA = {
+        s:STATE_MALAYA = {
             add_devastation = 25
         }
 
-		c:JOH = {
-			add_modifier = {
-				name = american_bombing
-				months = 2
-			} 
-		}		
-	}
+        c:JOH = {
+            add_modifier = {
+                name = american_bombing
+                months = 2
+            } 
+        }       
+    }
 }
+
 
 je_malaya_jap_a = {  #bombing malaya
 	name = "je_malaya_jap_c_loc" 
@@ -1128,7 +1110,7 @@ je_malaya_jap_a = {  #bombing malaya
 		scope:journal_entry = {
 				not = {
 				custom_tooltip = {
-					text = "Hasnt taken a support action in the last 2 months "
+					text = je_tooltip_cooldown
 					has_variable = je_malaya_jap_cooldown
 				}
 			}
@@ -1146,7 +1128,7 @@ je_malaya_jap_a = {  #bombing malaya
 			set_variable = { name = je_malaya_jap_cooldown months = 2 }
 		}	
 		custom_tooltip = {
-			text = "Bombs malaya"
+			text = je_malaya_ofn_c.tooltip_effect
 	
 		}
 
@@ -1178,7 +1160,7 @@ je_malaya_jap_b = {  # japan sends advisers
 		scope:journal_entry = {
 				not = {
 				custom_tooltip = {
-					text = "Hasnt taken a support action in the last 2 months "
+					text = je_tooltip_cooldown
 					has_variable = je_malaya_jap_cooldown
 				}
 			}
@@ -1196,7 +1178,7 @@ je_malaya_jap_b = {  # japan sends advisers
 			set_variable = { name = je_malaya_jap_cooldown months = 2 }
 		}	
 		custom_tooltip = {
-			text = "Sends Japanese advisors to help in the war "
+			text = je_event_specific.tooltip_japanese_advisors
 	
 		}
 
@@ -1223,7 +1205,7 @@ je_malaya_jap_c = {  # japan funds JOH
 		scope:journal_entry = {
 				not = {
 				custom_tooltip = {
-					text = "Hasnt taken a support action in the last 2 months "
+					text = je_tooltip_cooldown
 					has_variable = je_malaya_jap_cooldown
 				}
 			}
@@ -1240,7 +1222,7 @@ je_malaya_jap_c = {  # japan funds JOH
 			set_variable = { name = je_malaya_jap_cooldown months = 2  }
 		}	
 		custom_tooltip = {
-			text = "Will Give 20k to the 25th army a month "
+			text = je_event_specific.tooltip_give_20k
 	
 		}
 		add_modifier = {
@@ -1261,3 +1243,222 @@ je_malaya_jap_c = {  # japan funds JOH
         }
 }
 }
+
+je_ger_reclaim_ost_a = {  # If RKO is still alive
+    name = "je_malaya_jap_b_loc" 
+    desc = "je_malaya_jap_b_loc_desc"
+
+    visible = { always = yes }
+
+    possible = {
+        scope:journal_entry = {
+            not = {
+                custom_tooltip = "je_ger_reclaim_ost_a.tooltip_condition"
+                has_variable = je_already_pupped_ost
+            }
+        }
+    }
+
+    ai_chance = {
+        base = 100
+    }
+
+    effect = {
+        scope:journal_entry = {
+            set_variable = { name = je_already_pupped_ost months = 99999 }
+        }   
+        custom_tooltip = "je_ger_reclaim_ost_a.tooltip_effect"
+
+        create_diplomatic_pact = {
+            country = c:RKO
+            type = reichskommissariat
+        }
+
+        c:RKO = {
+            trigger_event = { id = tno_germany_events.39 days = 0 popup = yes }
+        } 
+    }
+}
+
+
+je_ger_reclaim_ost_L = {  # Attack Ukraine
+    name = "je_malaya_jap_b_loc" 
+    desc = "je_malaya_jap_b_loc_desc"
+
+    visible = { always = yes }
+
+    possible = {
+        scope:journal_entry = {
+            not = {
+                custom_tooltip = "je_ger_reclaim_ost_L.tooltip_condition"
+                has_variable = je_already_pupped_ukraine
+            }
+        }
+    }
+
+    ai_chance = {
+        base = 100
+    }
+
+    effect = {
+        scope:journal_entry = {
+            set_variable = { name = je_already_pupped_ukraine months = 99999 }
+        }   
+        custom_tooltip = "je_ger_reclaim_ost_L.tooltip_effect"
+
+        create_diplomatic_play = {
+            type = dp_annex_war
+            name = ukraine_war_fUCK
+            target_country = c:UKC
+            war = no
+            escalation = 93
+            target_state = s:STATE_LUHANSK.region_state:UKC
+        }
+        create_diplomatic_play = {
+            type = dp_annex_war
+            name = ukraine_war_fUCK
+            target_country = c:UKM
+            war = no
+            escalation = 93
+            target_state = s:STATE_CHERSON.region_state:UKM
+        }
+        create_diplomatic_play = {
+            type = dp_annex_war
+            name = ukraine_war_fUCK
+            target_country = c:UKP
+            war = no
+            escalation = 93
+            target_state = s:STATE_VOLHYNIA.region_state:UKP
+        }
+    }
+}
+
+
+je_ger_reclaim_ost_b = {  # ANNEX Moravia
+    name = "je_malaya_jap_b_loc" 
+    desc = "je_malaya_jap_b_loc_desc"
+
+    visible = { always = yes }
+
+    possible = {
+        scope:journal_entry = {
+            not = {
+                custom_tooltip = "je_ger_reclaim_ost_b.tooltip_condition"
+                has_variable = JE_already_annex_mor
+            }
+        }
+    }
+
+    ai_chance = {
+        base = 100
+    }
+
+    effect = {
+        scope:journal_entry = {
+            set_variable = { name = JE_already_annex_mor months = 99999 }
+        }   
+        custom_tooltip = "je_ger_reclaim_ost_b.tooltip_effect"
+
+        annex = c:GWZ
+    }
+}
+
+
+je_ger_reclaim_ost_c = {  # Annex Gotland
+    name = "je_malaya_jap_b_loc" 
+    desc = "je_malaya_jap_b_loc_desc"
+
+    visible = { always = yes }
+
+    possible = {
+        scope:journal_entry = {
+            not = {
+                custom_tooltip = "je_ger_reclaim_ost_c.tooltip_condition"
+                has_variable = je_annex_got
+            }
+        }
+    }
+
+    ai_chance = {
+        base = 100
+    }
+
+    effect = {
+        scope:journal_entry = {
+            set_variable = { name = je_annex_got months = 99999 }
+        }   
+        custom_tooltip = "je_ger_reclaim_ost_c.tooltip_effect"
+
+        annex = c:GEE
+    }
+}
+
+
+je_ger_reclaim_ost_d = {  # Puppet Moskowien
+    name = "je_malaya_jap_b_loc" 
+    desc = "je_malaya_jap_b_loc_desc"
+
+    visible = { always = yes }
+
+    possible = {
+        scope:journal_entry = {
+            not = {
+                custom_tooltip = "je_ger_reclaim_ost_d.tooltip_condition"
+                has_variable = je_moskowen_sex
+            }
+        }
+    }
+
+    ai_chance = {
+        base = 100
+    }
+
+    effect = {
+        scope:journal_entry = {
+            set_variable = { name = je_moskowen_sex months = 99999 }
+        }   
+        custom_tooltip = "je_ger_reclaim_ost_d.tooltip_effect"
+
+        create_diplomatic_pact = {
+            country = c:RKM
+            type = reichskommissariat
+        }
+    }
+}
+
+
+je_ger_reclaim_ost_e = {  # Puppet Moskowien Alternative
+    name = "je_malaya_jap_b_loc" 
+    desc = "je_malaya_jap_b_loc_desc"
+
+    visible = { always = yes }
+
+    possible = {
+        scope:journal_entry = {
+            not = {
+                custom_tooltip = "je_ger_reclaim_ost_e.tooltip_condition"
+                has_variable = je_cock_retken_cum
+            }
+        }
+    }
+
+    ai_chance = {
+        base = 100
+    }
+
+    effect = {
+        scope:journal_entry = {
+            set_variable = { name = je_cock_retken_cum months = 99999 }
+        }   
+        custom_tooltip = "je_ger_reclaim_ost_e.tooltip_effect"
+
+        create_diplomatic_pact = {
+            country = c:RKK
+            type = reichskommissariat
+        }
+    }
+}
+
+
+
+

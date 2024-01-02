@@ -1,0 +1,199 @@
+﻿### State geography triggers
+
+state_is_in_europe = {
+	OR = {
+		region = sr:region_north_germany
+		region = sr:region_france
+		region = sr:region_italy	
+		region = sr:region_poland
+		region = sr:region_russia
+	}
+}
+
+state_is_in_north_america = {
+	OR = {
+		region = sr:region_new_england
+	}
+}
+
+state_is_in_central_america = {
+	OR = {
+		region = sr:region_central_america
+	}
+}
+
+state_is_in_south_america = {
+	OR = {
+		region = sr:region_brazil	
+	}
+}
+
+state_is_in_americas = {
+	OR = {
+		state_is_in_north_america = yes
+		state_is_in_central_america = yes
+		state_is_in_south_america = yes
+	}
+}
+
+state_is_in_africa = {
+	OR = {
+		region = sr:region_north_africa
+		region = sr:region_senegal
+		region = sr:region_southern_africa
+	}
+}
+
+state_is_in_middle_east = {
+	OR = {
+		region = sr:region_arabic
+	}
+}
+
+state_is_in_central_asia = {
+	OR = {
+		region = sr:region_central_asia
+	}
+}
+
+state_is_in_india = {
+	OR = {
+		region = sr:region_north_india		
+	}
+}
+
+state_is_in_east_asia = {
+	OR = {
+		region = sr:region_north_china
+		region = sr:region_japan
+	}
+}
+
+state_is_in_china = {
+	OR = {
+		region = sr:region_north_china
+		# not counting manchuria here deliberately
+	}
+}
+
+state_is_in_southeast_asia = {
+	OR = {
+		region = sr:region_indonesia
+	}
+}
+### Country geography triggers
+# exists = capital checks are necessary only because we may test these triggers and scope switch to capitals before states are initialized properly
+
+country_is_in_china = {
+	exists = capital
+	capital = {
+		state_is_in_china = yes
+	}
+}
+
+country_is_in_europe = {
+	exists = capital
+	capital = {
+		state_is_in_europe = yes
+	}
+}
+
+country_is_in_north_america = {
+	exists = capital
+	capital = {
+		state_is_in_north_america = yes
+	}
+}
+
+country_is_in_central_america = {
+	exists = capital
+	capital = {
+		state_is_in_central_america = yes
+	}
+}
+
+country_is_in_south_america = {
+	exists = capital
+	capital = {
+		state_is_in_south_america = yes
+	}
+}
+
+country_is_in_africa = {
+	exists = capital
+	capital = {
+		state_is_in_africa = yes
+	}
+}
+
+country_is_in_middle_east = {
+	exists = capital
+	capital = {
+		state_is_in_middle_east = yes
+	}
+}
+
+country_is_in_central_asia = {
+	exists = capital
+	capital = {
+		state_is_in_central_asia = yes
+	}
+}
+
+country_is_in_india = {
+	exists = capital
+	capital = {
+		state_is_in_india = yes
+	}
+}
+
+country_is_in_east_asia = {
+	exists = capital
+	capital = {
+		state_is_in_east_asia = yes
+	}
+}
+
+country_is_in_southeast_asia = {
+	exists = capital
+	capital = {
+		state_is_in_southeast_asia = yes
+	}
+}
+
+### Climate triggers
+
+is_arabic_farmland = {
+	OR = {
+		region = sr:region_arabic
+		region = sr:region_central_asia
+		region = sr:region_north_africa
+		region = sr:region_senegal
+		region = sr:region_southern_africa
+	}
+}
+
+is_asian_farmland = {
+	OR = {
+		region = sr:region_indonesia
+		region = sr:region_north_china
+		region = sr:region_japan
+	}
+}
+
+is_subtropic_farmland = {
+	OR = {
+		region = sr:region_central_america
+		region = sr:region_brazil
+	}
+}
+
+is_arid_region = {
+	OR = {
+		region = sr:region_oceania
+		region = sr:region_southern_africa
+		region = sr:region_north_africa
+		region = sr:region_senegal
+		region = sr:region_arabic
+	}
+}

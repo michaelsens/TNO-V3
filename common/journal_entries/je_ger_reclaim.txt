@@ -1,0 +1,107 @@
+
+
+je_ger_reclaim_ost = { 
+
+    icon = "gfx/interface/icons/new_event_icons/event_bill.dds"
+
+    scripted_button = je_ger_reclaim_ost_a
+	scripted_button = je_ger_reclaim_ost_b
+	scripted_button = je_ger_reclaim_ost_c
+	scripted_button = je_ger_reclaim_ost_d
+	scripted_button = je_ger_reclaim_ost_e
+	
+
+
+
+    group = je_group_internal_affairs
+    immediate = {
+
+		
+	}
+    
+    complete = {
+		scope:journal_entry = {
+			is_goal_complete = yes
+		}
+	}
+
+    on_complete = {
+      
+    }
+
+    on_monthly_pulse = {
+       
+    }
+
+    current_value = {
+	
+	}
+
+   
+
+    goal_add_value = {
+		value = 24
+	}
+
+   
+    
+    weight = 100
+
+   
+    
+    should_be_pinned_by_default = yes
+    
+}
+
+je_ger_reclaim_ukc = { # reclaim ukraine
+
+    icon = "gfx/interface/icons/new_event_icons/event_bill.dds"
+
+
+	scripted_button = je_ger_reclaim_ost_L
+
+
+
+    group = je_group_internal_affairs
+    immediate = {
+
+		
+	}
+    
+    complete = {
+		owns_entire_state_region = STATE_VOLHYNIA
+		owns_entire_state_region = STATE_KIEV
+		owns_entire_state_region = STATE_CHERSON 
+		owns_entire_state_region = s:STATE_LUHANSK
+		
+	}
+
+    on_complete = {
+		trigger_event = { id = tno_germany_events.40 days = 0 popup = yes }
+      
+    }
+
+    on_monthly_pulse = {
+       
+    }
+
+    current_value = {
+	
+	}
+
+   
+
+    goal_add_value = {
+		value = 24
+	}
+
+   
+    
+    weight = 100
+
+   
+    
+    should_be_pinned_by_default = yes
+    
+}
+
