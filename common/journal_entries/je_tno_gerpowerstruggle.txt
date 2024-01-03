@@ -3,14 +3,7 @@
     icon = "gfx/interface/icons/new_event_icons/ger_struggle_gor.dds"
 
     group = je_group_internal_affairs
-
-    scripted_button = je_goreing_ger_a
-    scripted_button = je_goreing_ger_b
-    scripted_button = je_goreing_ger_c
-    scripted_button = je_goreing_ger_d
-    scripted_button = je_goreing_ger_e
    
-
     invalid = {
         OR = {
             
@@ -76,11 +69,6 @@ je_tno_gerpowerstruggle_devout = { # SS JE
 
     icon = "gfx/interface/icons/new_event_icons/ger_struggle_ss.dds"
     group = je_group_internal_affairs
-    scripted_button = je_devout_ger_a
-    scripted_button = je_devout_ger_b
-    scripted_button = je_devout_ger_c
-    scripted_button = je_devout_ger_d
-    scripted_button = je_devout_ger_e
     
     invalid = {
         OR = {
@@ -145,11 +133,6 @@ je_tno_gerpowerstruggle_speer= { # industralists JE
 
     icon = "gfx/interface/icons/new_event_icons/ger_struggle_speer.dds"
     group = je_group_internal_affairs
-    scripted_button = je_speer_ger_a
-    scripted_button = je_speer_ger_b
-    scripted_button = je_speer_ger_c
-    scripted_button = je_speer_ger_d
-    scripted_button = je_speer_ger_e
 
     invalid = {
         OR = {
@@ -214,13 +197,6 @@ je_tno_gerpowerstruggle_boreman= { # boreman JE
 
     icon = "gfx/interface/icons/new_event_icons/ger_struggle_bor.dds"
     group = je_group_internal_affairs
-    scripted_button = je_borman_ger_a
-    scripted_button = je_borman_ger_b
-    scripted_button = je_borman_ger_c
-    scripted_button = je_borman_ger_d
-    scripted_button = je_borman_ger_e
-    scripted_button = je_borman_ger_f
-    scripted_button = je_borman_ger_g
 
     invalid = {
         OR = {
@@ -315,19 +291,54 @@ je_tno_gerpowerstruggle_hitler_stats = { # status of hitler JE
 	
         first_valid = {
             triggered_desc = {
-                desc = "Hitler is unwell"
+                desc = custom_hitler_tt.1
+                trigger = {
+                    has_variable = hitler_good
+                    NOT = {
+                        has_variable = hitler_fair
+                    }
+                }
+            }
+            triggered_desc = {
+                desc = custom_hitler_tt.2
+                trigger = {
+                    has_variable = hitler_fair
+                    NOT = {
+                        has_variable = hitler_unwell
+                    }
+                }
+            }
+            triggered_desc = {
+                desc = custom_hitler_tt.3
                 trigger = {
                     has_variable = hitler_unwell
+                    NOT = {
+                        has_variable = hitler_severe
+                    }
+                }
+            }
+            triggered_desc = {
+                desc = custom_hitler_tt.4
+                trigger = {
+                    has_variable = hitler_severe
                     NOT = {
                         has_variable = hitler_coma
                     }
                 }
             }
             triggered_desc = {
-                desc = custom_hitler_tt
-				trigger = {
+                desc = custom_hitler_tt.5
+                trigger = {
                     has_variable = hitler_coma
-                    
+                    NOT = {
+                        has_variable = hitler_dead
+                    }
+                }
+            }
+            triggered_desc = {
+                desc = custom_hitler_tt.6
+                trigger = {
+                    has_variable = hitler_dead
                 }
             }
         }
