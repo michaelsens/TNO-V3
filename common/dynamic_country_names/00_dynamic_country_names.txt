@@ -2536,6 +2536,24 @@ PRK = {
 	}
 }
 
+FPR = { 
+	dynamic_country_name = {
+		name = "Frontier Provinces"
+		adjective = "Afghan"
+		
+		is_main_tag_only = yes
+		priority = 5
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_law = law_type:law_council_republic
+				
+			}
+		}
+	}
+}
+
 USA = { # United States of America
 	dynamic_country_name = {
 		name = dyn_c_united_states
