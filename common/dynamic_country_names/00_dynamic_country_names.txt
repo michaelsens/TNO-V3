@@ -2434,6 +2434,24 @@ UKR = { # Ukraine
 	}
 }
 
+PRZ = { 
+	dynamic_country_name = {
+		name = "People's Republic of Uzbekistan"
+		adjective = "Uzbek"
+		
+		is_main_tag_only = yes
+		priority = 0
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_law = law_type:law_council_republic
+				
+			}
+		}
+	}
+}
+
 USA = { # United States of America
 	dynamic_country_name = {
 		name = dyn_c_united_states

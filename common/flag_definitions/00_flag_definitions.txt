@@ -5005,6 +5005,8 @@ KLM = { # Kalmykia
 	}
 }
 
+
+
 FER = { # Kalmykia
 	flag_definition = {
 		coa = FER
@@ -8642,6 +8644,20 @@ UKR = { # Ukraine
 		trigger = { 
 			coa_def_fascist_flag_trigger = yes
 		}
+	}
+}
+
+PRZ = { # Kalmykia
+	flag_definition = {
+	coa = PRZ_COM
+	priority = 1600
+	trigger = {
+		exists = scope:actor
+		scope:actor = {
+			has_law = law_type:law_council_republic
+			
+		}
+	}
 	}
 }
 
