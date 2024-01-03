@@ -2485,6 +2485,39 @@ KSR = {
 	}
 }
 
+TSR = { 
+	dynamic_country_name = {
+		name = "Tajik Soviet Socialist Republic"
+		adjective = "Tajikistani"
+		
+		is_main_tag_only = yes
+		priority = 5
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_law = law_type:law_council_republic
+				
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = "Islamic State of Tajikistan"
+		adjective = "Tajikistani"
+		
+		is_main_tag_only = yes
+		priority = 5
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_law = law_type:law_theocracy
+				
+			}
+		}
+	}
+}
+
 USA = { # United States of America
 	dynamic_country_name = {
 		name = dyn_c_united_states
