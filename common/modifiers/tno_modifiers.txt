@@ -1499,3 +1499,75 @@ state_siberian_plan = {
 the_siberian_plan = {
 	icon = "gfx/interface/icons/tno_event_icons/sib_plan.dds"
 }
+
+victory_in_karelia = {
+	icon = "gfx/interface/icons/invention_icons/sea_lane_strategies.dds"
+	country_prestige_mult = 0.05
+}
+
+#russian army reform levels (0-3, aka level 1 to level 4)
+
+ru_no_army_reform = { #No army reforms
+	icon = "gfx/interface/icons/invention_icons/mandatory_service.dds"
+	unit_army_offense_mult = -0.1
+	unit_army_defense_mult = -0.1
+	unit_morale_damage_mult = -0.1
+	unit_morale_loss_mult = 0.25
+}
+
+ru_basic_army_reform = { #Basic army reforms
+	icon = "gfx/interface/icons/invention_icons/mandatory_service.dds"
+	unit_morale_loss_mult = 0.05
+	#Russian partisans mechanic enabled
+}
+
+ru_significant_army_reform = { #Significant army reforms
+	icon = "gfx/interface/icons/invention_icons/mandatory_service.dds"
+	unit_army_offense_mult = 0.1
+	#unit_army_defense_mult = 0.1
+	unit_morale_damage_mult = 0.1
+	unit_morale_loss_mult = -0.15
+}
+
+ru_full_army_reform = { #Full army reforms
+	icon = "gfx/interface/icons/invention_icons/mandatory_service.dds"
+	unit_army_offense_mult = 0.15
+	unit_army_defense_mult = 0.05
+	unit_morale_damage_mult = 0.1
+	unit_morale_loss_mult = -0.15
+	country_prestige_from_army_power_projection_mult = 0.05
+	#unit_combat_unit_type_heavy_tank_offense_mult = 0.1
+	unit_kill_rate_add = 0.05
+	#unit_morale_recovery_mult = 0.05
+	#unit_recovery_rate_add = 0.1
+}
+
+ru_partisan_connections = { 
+	icon = "gfx/interface/icons/invention_icons/telephone.dds"
+	# -75% Partisan activities cost
+}
+
+level_one_partisan = {
+	icon = "gfx/interface/icons/invention_icons/anarchy.dds"
+	unit_morale_loss_mult = 0.05
+}
+
+level_two_partisan = {
+	icon = "gfx/interface/icons/invention_icons/anarchy.dds"
+	unit_morale_loss_mult = 0.1
+}
+
+level_three_partisan = {
+	icon = "gfx/interface/icons/invention_icons/anarchy.dds"
+	unit_morale_loss_mult = 0.15
+}
+
+level_four_partisan = {
+	icon = "gfx/interface/icons/invention_icons/anarchy.dds"
+	unit_morale_loss_mult = 0.2
+}
+
+level_five_partisan = {
+	icon = "gfx/interface/icons/invention_icons/anarchy.dds"
+	unit_morale_loss_mult = 0.25
+}

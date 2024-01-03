@@ -1067,6 +1067,12 @@ je_ru_irk_restore_far_east = {
                 state_region = s:STATE_UPPER_YENISEYSK
             }
         }
+
+        hidden_trigger = {
+        	NOT = {
+        		has_variable = irk_form_far_east
+        	}
+        }
 	}
 
 	effect = {
@@ -1082,7 +1088,7 @@ je_ru_irk_restore_far_east = {
         }
 
     	custom_tooltip = je_ru_irk_restore_far_east_tt_2
-    	custom_tooltip = je_ru_irk_restore_far_east_tt_3
+    	#custom_tooltip = je_ru_irk_restore_far_east_tt_3
     	custom_tooltip = je_ru_irk_restore_far_east_tt_4
     	#custom_tooltip = je_ru_irk_restore_far_east_tt_5
 
@@ -1216,7 +1222,7 @@ je_ru_gen_complete_sib_plan = {
         custom_tooltip = {
             text = fin_sib_usa_relations
             c:USA = {
-                relations:root >= 50
+                relations:root >= 20
             }
         }
 	}
@@ -1303,40 +1309,245 @@ je_ru_irk_restore_ussr = {
 	name = "je_ru_irk_restore_ussr"
 	desc = "je_ru_irk_restore_ussr_desc"
 
+	immediate = {
+	}
+
 	possible = {
 		#owns_entire_state_region = STATE_MOSCOW
 
         #hidden_trigger = {
-        #    has_variable = irk_form_ussr
+        #	NOT = {
+        #    	has_variable = irk_form_ussr
+        #    }
         #}
 	}
 
 	effect = {
-		custom_tooltip = je_ru_irk_restore_far_east_tt_1
+		c:GER = {
+			save_scope_as = ger_nation_scope
+		}
+		custom_tooltip = {
+			text = je_ru_irk_restore_ussr_desc_tt_1
+			set_variable = {
+            	name = irk_form_ussr
+        	} 
+			change_tag = RUS
+		}
+		custom_tooltip = je_ru_irk_restore_ussr_desc_tt_2
 
-		set_variable = {
-            name = irk_form_far_east
-        } 
+		add_journal_entry = { type = je_ru_tno_army_reform }
+		hidden_effect = {
+			add_modifier = ru_no_army_reform
+		}
+		add_journal_entry = { type = je_ru_repair_magadan }
 
-        hidden_effect = {
-        	remove_modifier = russian_warlord
+		#OR = {
+		#	c:FIN = {
+		#		owns_entire_state_region = STATE_EAST_KARELIA
+		#	}	
+		#	c:FIN = {
+		#		has_modifier = victory_in_karelia
+		#	}
+		#}
+
+		if = {
+			limit = {
+				c:FIN = {
+					owns_entire_state_region = STATE_EAST_KARELIA
+				}	
+				NOT = {
+					has_modifier = victory_in_karelia
+				}
+			}
+			add_journal_entry = { type = je_ru_take_karelia }
+		}
+
+		custom_tooltip = {
+			text = je_ru_irk_restore_ussr_desc_tt_3
+			create_diplomatic_pact = {
+     			country = GER
+    			type = rivalry
+     		}
+	     	c:GER = {
+	     		create_diplomatic_pact = {
+	     			country = RUS
+	    			type = rivalry
+	     		}
+	     	}
+		}
+	}
+}
+
+je_ru_take_karelia_button = {
+	name = "je_ru_take_karelia_button"
+	desc = "je_ru_take_karelia_button_desc"
+
+	possible = {
+		is_at_war = no
+	}
+
+	effect = {
+        create_diplomatic_play = {
+            #name = jack
+            target_country = c:ONG
+            type = dp_return_state
+            target_state = s:STATE_ARKHANGELSK.region_state:ONG
+            war = no
+            escalation = 85
+			add_war_goal = {
+				holder = root
+				type = return_state
+				target_state = s:STATE_EAST_KARELIA.region_state:FIN
+			}
+			add_war_goal = {
+				holder = c:FIN
+				target_country = root
+				type = war_reparations
+			}
         }
+        custom_tooltip = je_ru_take_karelia_button_tt
+	}
+}
 
-    	custom_tooltip = je_ru_irk_restore_far_east_tt_2
-    	custom_tooltip = je_ru_irk_restore_far_east_tt_3
-    	custom_tooltip = je_ru_irk_restore_far_east_tt_4
-    	#custom_tooltip = je_ru_irk_restore_far_east_tt_5
+je_ru_gen_reform_army_advance = {
+	name = "je_ru_gen_reform_army_advance"
+	desc = "je_ru_gen_reform_army_advance_desc"
 
-    	hidden_effect = {
-    		trigger_event = { id = tno_ru_events.1 popup = yes } # event for selecting new economic law
-    	}
+	possible = {
+       	custom_tooltip = {
+            text = ru_army_reform_rq_tt
+            has_variable = ru_army_reform_ready
+        }
+	}
 
-    	add_journal_entry = { type = je_ru_tno_sakha_expedition }
-    	add_journal_entry = { type = je_ru_tno_repair_transib }
-    	add_journal_entry = { type = je_ru_tno_irk_finish_sib_plan }
-    	add_journal_entry = { type = je_ru_tno_irk_restore_ussr }
-    	add_journal_entry = { type = je_ru_tno_irk_paris_of_siberia }
-    	add_journal_entry = { type = je_ru_tno_irk_restore_order_far_east }
-    	add_journal_entry = { type = je_ru_tno_launch_raid }
+	effect = {
+            remove_variable = ru_army_reform_ready
+           	custom_tooltip = {
+            	text = ru_army_reform_completion_tt
+            	if = {
+	            	limit = {
+	            		has_modifier = ru_no_army_reform
+	            	}
+	            	add_journal_entry = { type = je_ru_tno_partisan }
+	            	remove_modifier = ru_no_army_reform
+	            	add_modifier = ru_basic_army_reform
+            	}
+	            else = {
+	            	if = {
+		            	limit = {
+		            		has_modifier = ru_basic_army_reform
+		            	}
+		            	remove_modifier = ru_basic_army_reform
+		            	add_modifier = ru_significant_army_reform
+	            	}
+	            	else = {
+	            		if = {
+			            	limit = {
+			            		has_modifier = ru_significant_army_reform
+			            	}
+			            	remove_modifier = ru_significant_army_reform
+			            	add_modifier = ru_full_army_reform
+			            }
+	            	}
+	            }
+            }
+            change_variable = {
+				name = army_reform_progress
+				add = 1
+			}
+	}
+}
+
+je_ru_gen_partisan_strengthen = {
+	name = "je_ru_gen_partisan_strengthen"
+	desc = "je_ru_gen_partisan_strengthen_desc"
+
+	possible = {
+        c:RKM = {
+        	NOT = {
+        		has_modifier = level_five_partisan
+        	}
+        }
+	}
+
+	effect = {
+		custom_tooltip = {
+			text = je_ru_tno_partisan_complete
+	        remove_variable = ru_army_reform_ready
+	        if = {
+		        limit = {
+		           	c:RKM = {
+		            	has_modifier = level_one_partisan
+		            }
+		        }
+		        c:RKM = {
+			        remove_modifier = level_one_partisan
+			        add_modifier = { 
+			           	name = level_two_partisan
+			       	}
+		        }
+		        set_global_variable = {
+					name = partisan_strength
+					value = 2
+				}
+	        }
+		    else = {
+		        if = {
+			        limit = {
+			            c:RKM = {
+			                has_modifier = level_two_partisan
+			            }
+			        }
+			        c:RKM = {
+				        remove_modifier = level_two_partisan
+				        add_modifier = { 
+				            name = level_three_partisan
+				        }
+			        }
+			        set_global_variable = {
+						name = partisan_strength
+						value = 3
+					}
+		        }
+		        else = {
+		            if = {
+				        limit = {
+				            c:RKM = {
+				            	has_modifier = level_three_partisan
+				            }
+				        }
+				        c:RKM = {
+					        remove_modifier = level_three_partisan
+					        add_modifier = { 
+					        	name = level_four_partisan
+					        }
+				        }
+				        set_global_variable = {
+							name = partisan_strength
+							value = 4
+						}
+			        }
+			        else = {
+			            if = {
+					        limit = {
+					            c:RKM = {
+					            has_modifier = level_four_partisan
+					            }
+					        }
+					        c:RKM = {
+						        remove_modifier = level_four_partisan
+						        add_modifier = { 
+						            name = level_five_partisan
+						        }
+					        }
+					        set_global_variable = {
+								name = partisan_strength
+								value = 5
+							}
+				        }
+		          	}
+		        }
+		    }
+		}
 	}
 }

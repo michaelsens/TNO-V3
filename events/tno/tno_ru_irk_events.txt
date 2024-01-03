@@ -388,3 +388,35 @@ tno_irk_events.10 = { # Americans decline to allow Boeing to operate in Russia
 		custom_tooltip = tno_irk_events.10.1.tt
     }
 }
+
+tno_irk_events.11 = { # Dev event
+    type = country_event
+	placement = root
+	title = tno_irk_events.11.t
+	desc = tno_irk_events.11.d
+	flavor = tno_irk_events.11.f
+	icon = "gfx/interface/icons/invention_icons/corporate_management.dds"
+
+	duration = 6
+
+	immediate = {
+    }
+    
+    trigger = {
+	}
+
+	event_image = {
+        texture = "gfx/event_pictures/super_pictures/boeing_737_2.dds"
+    }
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	option = {
+		name = tno_irk_events.11.1
+		#change_global_variable = {
+        #    name = partisan_strength
+        #    add = 1
+        #}
+        add_modifier = level_one_partisan
+    }
+}
