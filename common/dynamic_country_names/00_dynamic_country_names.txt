@@ -127,6 +127,40 @@ TRG = {
 	}
 }
 
+ULS = { 
+	dynamic_country_name = {
+		name = "N.C.S.Z"
+		adjective = "Irish"
+		
+		is_main_tag_only = yes
+		priority = 1
+		
+		trigger = {
+			exists = c:IRE
+			c:IRE = {
+				OR = {
+					has_diplomatic_pact = {
+						who = c:ULS
+						type = protectorate
+						is_initiator = yes
+					}
+					has_diplomatic_pact = {
+						who = c:ULS
+						type = puppet
+						is_initiator = yes
+					}
+					has_diplomatic_pact = {
+						who = c:ULS
+						type = dominion
+						is_initiator = yes
+					}
+				}
+				
+			}
+		}
+	}
+}
+
 
 EGY = {
 	dynamic_country_name = {

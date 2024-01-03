@@ -1902,16 +1902,30 @@ tno_germany_events.20 = {   #German Vassal Reaction
                 limit = {
                     has_diplomatic_pact = {
                         who = c:GER
+                         type = customs_union
+                    }
+                }
+                remove_diplomatic_pact = {
+                    country = c:GER
+                    type = customs_union
+                }
+            }
+            if = {
+                limit = {
+                    has_diplomatic_pact = {
+                        who = c:GER
                          type = puppet
                     }
                 }
                 remove_diplomatic_pact = {
                     country = c:GER
                     type = puppet
+               }
+               
             }
-       }
-    }    
- }
+
+       }    
+}
 
 tno_germany_events.21 = {   #ukranian civil war
 
