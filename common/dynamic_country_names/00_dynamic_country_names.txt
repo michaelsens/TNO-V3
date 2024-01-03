@@ -2542,12 +2542,28 @@ FPR = {
 		adjective = "Afghan"
 		
 		is_main_tag_only = yes
-		priority = 5
+		priority = 1
 		
 		trigger = {
-			exists = scope:actor
-			scope:actor = {
-				has_law = law_type:law_council_republic
+			exists = c:AFG
+			c:AFG = {
+				OR = {
+					has_diplomatic_pact = {
+						who = c:FPR
+						type = protectorate
+						is_initiator = yes
+					}
+					has_diplomatic_pact = {
+						who = c:FPR
+						type = puppet
+						is_initiator = yes
+					}
+					has_diplomatic_pact = {
+						who = c:FPR
+						type = dominion
+						is_initiator = yes
+					}
+				}
 				
 			}
 		}
