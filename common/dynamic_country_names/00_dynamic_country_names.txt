@@ -93,6 +93,41 @@ PAL = { # Levante
 	}
 }
 
+TRG = { 
+	dynamic_country_name = {
+		name = "Transnistria Governorate"
+		adjective = "Transnistria Governorate"
+		
+		is_main_tag_only = yes
+		priority = 1
+		
+		trigger = {
+			exists = c:ROM
+			c:ROM = {
+				OR = {
+					has_diplomatic_pact = {
+						who = c:TRG
+						type = protectorate
+						is_initiator = yes
+					}
+					has_diplomatic_pact = {
+						who = c:TRG
+						type = puppet
+						is_initiator = yes
+					}
+					has_diplomatic_pact = {
+						who = c:TRG
+						type = dominion
+						is_initiator = yes
+					}
+				}
+				
+			}
+		}
+	}
+}
+
+
 EGY = {
 	dynamic_country_name = {
 		name = "Regno D'Egitto"
