@@ -1305,11 +1305,12 @@
  NO_BATTALIONS_IN_HQ:0 "No @battalions! [Concept('concept_battalion', '$concept_battalions$')] in this [concept_hq]"
 
  ORIGIN_STATE_NAME:0 "[State.GetName]"
- ORIGIN_STATE_NUMBER_OF_SHIPPING_LANES:0 "(#v [GetDataModelSize( State.AccessShippingLanesFromThisState )]#!)"
+ ORIGIN_STATE_NUMBER_OF_SHIPPING_LANES:0 "(#v [GetDataModelSize( State.AccessShippingLanesFromThisState(SeaRegionPanel.GetProvince.Self) )]#!)"
  ORIGIN_STATE_NUMBER_OF_SHIPPING_LANES_TOOLTIP:0 "The total number of [Concept('concept_shipping_lane', '$concept_shipping_lanes$')] to/from [State.GetName] through this sea region"
- ORIGIN_STATE_TOTAL_CONVOYS_USED:0 "@convoys! #v [State.GetTotalConvoysFromShippingLanesViaState|D]#!"
+ ORIGIN_STATE_TOTAL_CONVOYS_USED:0 "@convoys! #v [State.GetTotalConvoysFromShippingLanesViaState(SeaRegionPanel.GetProvince.Self)|D]#!"
  ORIGIN_STATE_TOTAL_CONVOYS_USED_TOOLTIP:0 "Total number of [concept_convoys] used by [Concept('concept_shipping_lane', '$concept_shipping_lanes$')] to/from [State.GetName] through this sea region"
- ORIGIN_STATE_TOTAL_NUMBER_OF_PORT_CONNECTIONS:0 "#v [State.GetTotalPortConnectionsViaState]#! [SelectLocalization(GreaterThan_int32( State.GetTotalPortConnectionsViaState, '(int32)1'), Concept('concept_port_connection', '$concept_port_connections$'), concept_port_connection )]"
+ ORIGIN_STATE_TOTAL_NUMBER_OF_PORT_CONNECTIONS:0 "#v [State.GetTotalPortConnectionsViaState(SeaRegionPanel.GetProvince.Self)]#! [SelectLocalization(GreaterThan_int32( State.GetTotalPortConnectionsViaState(SeaRegionPanel.GetProvince.Self), '(int32)1'), Concept('concept_port_connection', '$concept_port_connections$'), concept_port_connection )]"
+
 
  COUNTRY_SHIPPING_LANES:0 "[Country.GetAdjectiveNoFlag] [Concept('concept_shipping_lane', '$concept_shipping_lanes$')]"
  COUNTRY_SHIPPING_LANES_NETWORK_STRENGTH:0 "#$SUPPLY_NETWORK_STRENGTH_COLOR$ [Country.GetSupplyNetworkStrength|%0]#!"
