@@ -131,6 +131,8 @@ PAL = {
 	}
 }
 
+
+
 MGL = {
 	flag_definition = {
 		coa = MGL_CHI
@@ -242,6 +244,16 @@ ABU = { # Abu Dhabi
 		overlord_canton_offset = { 0.067 0.1 }
 		overlord_canton_scale = { 0.4 0.4 }			
 		priority = 1
+	}
+	flag_definition = {
+		coa = ABU_subject_ITA
+		priority = 50000
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				is_subject_of = c:ITA
+			}
+		}
 	}
 	flag_definition = {
 		coa = ABU_subject_GBR

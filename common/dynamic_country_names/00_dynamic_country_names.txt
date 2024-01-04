@@ -390,6 +390,40 @@ YUN = {
 	}
 }
 
+ABU = { 
+	dynamic_country_name = {
+		name = "Governatorato del Golfo"
+		adjective = "Governatorato del Golfo"
+		
+		is_main_tag_only = yes
+		priority = 5
+		
+		trigger = {
+			exists = c:ITA
+			c:ITA = {
+				OR = {
+					has_diplomatic_pact = {
+						who = c:ABU
+						type = protectorate
+						is_initiator = yes
+					}
+					has_diplomatic_pact = {
+						who = c:ABU
+						type = puppet
+						is_initiator = yes
+					}
+					has_diplomatic_pact = {
+						who = c:ABU
+						type = dominion
+						is_initiator = yes
+					}
+				}
+				
+			}
+		}
+	}
+}
+
 
 
 EGY = {
