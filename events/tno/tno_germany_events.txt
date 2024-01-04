@@ -1128,6 +1128,7 @@ tno_germany_events.17 = { # German Civil War
         state = s:STATE_GREATER_POLAND.region_state:GER 
         state = s:STATE_SILESIA.region_state:GER 
         state = s:STATE_SLOVENIA.region_state:GER 
+        state = s:STATE_JUTLAND.region_state:GER
         
         province = p:x611F2F
         province = p:x7CB839
@@ -1138,6 +1139,7 @@ tno_germany_events.17 = { # German Civil War
         province = p:x3E3572
         province = p:x4B3444
         province = p:xF0E080
+       
         
 		on_created = {
             set_immune_to_revolutions = yes
@@ -1182,6 +1184,7 @@ tno_germany_events.17 = { # German Civil War
 		tag = GEE
 		origin = c:GER 
         state = s:STATE_CRIMEA.region_state:GER
+        state = s:STATE_LUHANSK.region_state:GER
 		on_created = {
             set_immune_to_revolutions = yes
 	        }
@@ -2202,7 +2205,7 @@ tno_germany_events.40 = {
 	}	
 
     immediate = {
-        create_country = { #communist ukraine
+        create_country = { 
             tag = RKU
             origin = c:GER
             state = s:STATE_LUHANSK.region_state:GER
@@ -2213,6 +2216,11 @@ tno_germany_events.40 = {
             state = s:STATE_EAST_GALICIA.region_state:GER
        
         } 
+
+        create_diplomatic_pact = {
+            country = c:RKU
+            type = reichskommissariat
+        }
         
     
     
