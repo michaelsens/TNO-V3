@@ -161,6 +161,40 @@ ULS = {
 	}
 }
 
+HOT = { 
+	dynamic_country_name = {
+		name = "British Honduras"
+		adjective = "Honduras"
+		
+		is_main_tag_only = yes
+		priority = 3
+		
+		trigger = {
+			exists = c:CAN
+			c:CAN = {
+				OR = {
+					has_diplomatic_pact = {
+						who = c:HOT
+						type = protectorate
+						is_initiator = yes
+					}
+					has_diplomatic_pact = {
+						who = c:HOT
+						type = puppet
+						is_initiator = yes
+					}
+					has_diplomatic_pact = {
+						who = c:HOT
+						type = dominion
+						is_initiator = yes
+					}
+				}
+				
+			}
+		}
+	}
+}
+
 
 EGY = {
 	dynamic_country_name = {
