@@ -305,16 +305,20 @@ national_humiliation = {
 
 proxy_won = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
-	country_prestige_mult = 0.1
-	country_legitimacy_base_add = 10
-	country_influence_mult = 0.2
+	country_prestige_mult = 0.05
+	country_legitimacy_base_add = 3
+	country_influence_mult = 0.12
+	unit_morale_recovery_mult = 0.05
+
+	is_decaying = yes
 }
 
 proxy_lost = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
-	country_prestige_mult = -0.1
-	country_legitimacy_base_add = -10
-	country_influence_mult = -0.2
+	country_prestige_mult = -0.05
+	country_legitimacy_base_add = -3
+	country_influence_mult = -0.12
+	unit_morale_recovery_mult = -0.05
 }
 
 military_industrial = {
@@ -1031,8 +1035,9 @@ fueled_by_hate = {
 american_advisers = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
 	country_legitimacy_base_add = -5
-	unit_devastation_mult = 0.25
-	unit_kill_rate_add = 0.1
+	country_military_goods_cost_mult = -0.1
+	unit_army_offense_mult = 0.8
+	unit_army_defense_mult = 0.8
 	unit_morale_recovery_mult = 0.15
 	state_conscription_rate_mult = 0.45
 }
@@ -1040,24 +1045,18 @@ american_advisers = {
 japanese_advisers = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
 	country_legitimacy_base_add = -5
-	unit_devastation_mult = 0.25
-	unit_kill_rate_add = 0.1
-	unit_morale_recovery_mult = 0.15
+	unit_devastation_mult = 0.3
+	unit_kill_rate_add = 0.2
+	unit_morale_recovery_mult = 0.2
 	state_conscription_rate_mult = 0.45
 }
 
-american_bombing = {
+proxy_war_bombing = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
 	country_legitimacy_base_add = -10
 	unit_morale_recovery_mult = -0.1
-	unit_army_offense_mult = -0.15
-}
-
-japanise_bombing = {
-	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
-	country_legitimacy_base_add = -10
-	unit_morale_recovery_mult = -0.1
-	unit_army_offense_mult = -0.15
+	unit_army_offense_mult = -0.10
+	unit_army_defense_mult = -0.10
 }
 
 nothing_to_lose = {

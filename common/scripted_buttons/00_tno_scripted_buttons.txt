@@ -1005,25 +1005,28 @@ je_malaya_ofn_a = {  #funding for malya
 	
 		}
 		add_modifier = {
-			name = mid_funding_ger
+			name = very_small_funding_ger
 			months = 2
 		} 
 
-	
+		 add_radicals = {
+            value = 0.005
+
+		}
 		c:JOL = {
 			add_modifier = {
-				name = mid_funding_ost
+				name = very_small_funding_ost
 				months = 2
 			} 
 		} 
 		change_relations = {
             country = c:JOL
-            value = 30
+            value = 10
         }
 }
 }
 
-je_malaya_ofn_b = {  #advisers for malya
+je_malaya_ofn_b = {  #advisers for malaya
 	name = "je_malaya_ofn_b_loc" 
 	desc = "je_malaya_ofn_b_loc_desc"
 
@@ -1057,8 +1060,13 @@ je_malaya_ofn_b = {  #advisers for malya
 
 		change_relations = {
             country = c:JOL
-            value = 30
+            value = 10
         }
+
+		 add_radicals = {
+            value = 0.005
+		}
+
 		c:JOL = {
 			add_modifier = {
 				name = american_advisers
@@ -1095,23 +1103,22 @@ je_malaya_ofn_c = {  #bombing malaya
 		scope:journal_entry = {
 			set_variable = { name = je_malaya_ofn_cooldown months = 2 }
 		}	
-		custom_tooltip = {
-			text = je_malaya_ofn_c.tooltip_effect
-	
-		}
 
 		change_relations = {
             country = c:JOL
-            value = 30
+            value = 10
         }
 
 		s:STATE_MALAYA = {
-            add_devastation = 25
+            add_devastation = 12
         }
+		 add_radicals = {
+            value = 0.005
+		}
 
 		c:JOH = {
 			add_modifier = {
-				name = american_bombing
+				name = proxy_war_bombing
 				months = 2
 			} 
 		}		
@@ -1144,24 +1151,25 @@ je_malaya_jap_a = {  #bombing malaya
 
 		scope:journal_entry = {
 			set_variable = { name = je_malaya_jap_cooldown months = 2 }
-		}	
-		custom_tooltip = {
-			text = je_malaya_ofn_c.tooltip_effect
-	
+
 		}
 
 		change_relations = {
             country = c:JOH
-            value = 30
+            value = 10
         }
 
 		s:STATE_MALAYA = {
             add_devastation = 25
         }
+		
+		 add_radicals = {
+            value = 0.005
+		}
 
 		c:JOL = {
 			add_modifier = {
-				name = japanise_bombing
+				name = proxy_war_bombing
 				months = 2
 			} 
 		}		
@@ -1202,8 +1210,12 @@ je_malaya_jap_b = {  # japan sends advisers
 
 		change_relations = {
             country = c:JOH
-            value = 30
+            value = 10
         }
+
+		 add_radicals = {
+            value = 0.005
+		}
 		c:JOH = {
 			add_modifier = {
 				name = japanese_advisers
@@ -1244,20 +1256,20 @@ je_malaya_jap_c = {  # japan funds JOH
 	
 		}
 		add_modifier = {
-			name = mid_funding_ger
+			name = very_small_funding_ger
 			months = 2
 		} 
 
 	
 		c:JOH = {
 			add_modifier = {
-				name = mid_funding_ost
+				name = very_small_funding_ost
 				months = 2
 			} 
 		} 
 		change_relations = {
             country = c:JOH
-            value = 30
+            value = 10
         }
 }
 }

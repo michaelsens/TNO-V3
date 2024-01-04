@@ -32,14 +32,30 @@ je_tno_malaya_ofn = {
         add_modifier = {
             name = proxy_lost
             months = 250
+            is_decaying = yes
+        
         } 
+        add_radicals = {
+            value = 0.05
+        }
+        add_loyalists = {
+            value = -0.05
+        }
     }
 
     on_complete = {
         add_modifier = {
             name = proxy_won
             months = 250
+            is_decaying = yes
         } 
+        add_radicals = {
+            value = -0.05
+        
+        }
+        add_loyalists = {
+            value = 0.05
+        }
     }
 
     progressbar = no
@@ -88,14 +104,34 @@ je_tno_malaya_jap = {
         add_modifier = {
             name = proxy_lost
             months = 250
+            is_decaying = yes
         } 
+
+        add_loyalists = {
+            value = 0.05
+        }
+
+        add_radicals = {
+            value = -0.05
+        }
     }
 
     on_complete = {
         add_modifier = {
             name = proxy_won
             months = 250
+            is_decaying = yes
         } 
+
+        add_loyalists = {
+            value = 0.05
+
+        }
+
+        add_radicals = {
+            value = -0.05
+
+        }
     }
 
     progressbar = no
