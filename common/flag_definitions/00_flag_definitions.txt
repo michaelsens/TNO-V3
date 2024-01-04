@@ -131,6 +131,20 @@ PAL = {
 	}
 }
 
+MGL = {
+	flag_definition = {
+		coa = MGL_CHI
+		priority = 50000
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				is_subject_of = c:MGL
+			}
+		}
+	}
+}
+
+
 HOT = {
 	flag_definition = {
 		coa = HOT_CAN
@@ -5750,12 +5764,15 @@ MGD = { # Maguindanao
 
 MGL = { # Mongolia
 	flag_definition = {
-		coa = MGL
-		allow_overlord_canton = yes		
-		coa_with_overlord_canton = MGL_subject			
-		subject_canton = MGL
-		priority = 1
-	}	
+	coa = MGL_CHI
+	priority = 50000
+	trigger = {
+		exists = scope:actor
+		scope:actor = {
+			is_subject_of = c:CHI
+		}
+	}
+}
 	flag_definition = {
 		coa = MGL_republic
 		subject_canton = MGL_republic
