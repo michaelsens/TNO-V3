@@ -115,7 +115,7 @@ PixelShader = {
 
 	Code
 	[[
-		#define LAND_COLOR ToLinear( HSVtoRGB( float3( 0.0f, 0.0f, 0.8f ) ) )
+		#define LAND_COLOR ToLinear( HSVtoRGB( float3( 0.1f, 0.23f, 0.77f ) ) )
 		#define HIGHLIGHT_RANGE 0.5f
 
 		int SampleCountryIndex( float2 MapCoords )
@@ -367,6 +367,9 @@ PixelShader = {
 
 				GetGradiantBorderBlendValues( ProvinceOverlayColorWithAlpha, PreLightingBlend, PostLightingBlend );
 			}
+
+			// Apply stylised noise
+
 
 			if ( _UseStripeOccupation == true )
 			{
