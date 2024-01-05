@@ -7316,12 +7316,23 @@ PRG = { # Paraguay
 	}	
 }
 
-PRK = { # Perak
+SEX = { 
 	flag_definition = {
-		coa = PRK
-		subject_canton = PRK
+		coa = SEX
+		subject_canton = SEX
 		priority = 1
 	}	
+	flag_definition = {
+		coa = SEX_COM
+		priority = 1600
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_law = law_type:law_council_republic
+				
+			}
+		}
+		}
 }
 
 PRU = { # Prussia
@@ -8826,20 +8837,7 @@ TSR = {
 		}
 }
 
-PRK = { 
-	flag_definition = {
-	coa = PRK_COM
-	priority = 1600
-	trigger = {
-		exists = scope:actor
-		scope:actor = {
-			has_law = law_type:law_council_republic
-			
-		}
-	}
-	}
 
-}
 
 ULS = { # Ulster / Northern Ireland flegs
 	flag_definition = {
