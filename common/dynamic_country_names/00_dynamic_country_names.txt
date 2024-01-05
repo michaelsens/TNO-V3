@@ -134,6 +134,45 @@ PAL = { # Levante
 	}
 }
 
+NOR = { 
+	dynamic_country_name = {
+		name = "Reichskommissariat Norwegen"
+		adjective = "Norwegen"
+		
+		is_main_tag_only = yes
+		priority = 5	
+		
+		trigger = {
+			exists = c:GER
+			c:GER = {
+				OR = {
+					has_diplomatic_pact = {
+						who = c:NOR
+						type = protectorate
+						is_initiator = yes
+					}
+					has_diplomatic_pact = {
+						who = c:NOR
+						type = puppet
+						is_initiator = yes
+					}
+					has_diplomatic_pact = {
+						who = c:NOR
+						type = dominion
+						is_initiator = yes
+					}
+					has_diplomatic_pact = {
+						who = c:NOR
+						type = reichskommissariat
+						is_initiator = yes
+					}
+				}
+				
+			}
+		}
+	}
+}
+
 TRG = { 
 	dynamic_country_name = {
 		name = "Transnistria Governorate"
