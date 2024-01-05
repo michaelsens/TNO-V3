@@ -115,7 +115,7 @@ PixelShader = {
 
 	Code
 	[[
-		#define LAND_COLOR ToLinear( HSVtoRGB( float3( 0.1f, 0.23f, 0.77f ) ) )
+		#define LAND_COLOR ToLinear( HSVtoRGB( float3( 0.58f, 0.05f, 0.75f ) ) )
 		#define HIGHLIGHT_RANGE 0.5f
 
 		int SampleCountryIndex( float2 MapCoords )
