@@ -139,48 +139,6 @@ je_ru_tno_irk_paris_of_siberia = {
     
 }
 
-je_ru_tno_irk_restore_ussr = { 
-
-    icon = "gfx/interface/icons/tno_event_icons/reunify_russia.dds"
-    group = je_group_historical_content
-    scripted_button = je_ru_irk_restore_ussr
-
-    immediate = {
-    }
-    
-    complete = {
-    
-        owns_entire_state_region = STATE_MOSCOW
-
-        hidden_trigger = {
-            has_variable = irk_form_ussr
-        }
-    }
-
-    on_complete = {
-    }
-
-    on_monthly_pulse = {
-    }
-
-    current_value = {
-        
-    }
-
-
-    goal_add_value = {
-        
-    }
-
-    progressbar = no
-    
-    weight = 1000
-
-    
-    should_be_pinned_by_default = yes
-    
-}
-
 je_ru_tno_irk_finish_sib_plan = { 
 
     icon = "gfx/interface/icons/tno_event_icons/sib_plan.dds"
@@ -245,6 +203,62 @@ je_ru_tno_irk_finish_sib_plan = {
     progressbar = no
     
     weight = 4000
+
+    
+    should_be_pinned_by_default = yes
+    
+}
+
+je_ru_tno_second_great_patriotic_war = { 
+
+    icon = "gfx/interface/icons/lens_toolbar_icons/recruit_generals_lens_option.dds"
+    group = je_group_historical_content
+    scripted_button = je_ru_irk_second_great_patriotic_war
+
+    immediate = {
+        c:USA = {
+            save_scope_as = usa_nation_scope
+        }
+    }
+    
+    complete = {
+        custom_tooltip = {
+            text = complete_one_army_reform_rq
+            OR = {
+                has_modifier = ru_basic_army_reform
+                has_modifier = ru_significant_army_reform
+                has_modifier = ru_full_army_reform
+            }
+        }
+        custom_tooltip = {
+            text = complete_request_american_aid_and_magadan
+            has_variable = je_request_american_aid_tried
+        }
+        hidden_trigger = {
+            ROOT = {
+                has_war_with = c:GER
+            }
+        }
+    }
+
+    on_complete = {
+    }
+
+    on_monthly_pulse = {
+    }
+
+    current_value = {
+        
+    }
+
+
+    goal_add_value = {
+        
+    }
+
+    progressbar = no
+    
+    weight = 1000
 
     
     should_be_pinned_by_default = yes

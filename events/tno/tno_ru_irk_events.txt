@@ -420,3 +420,33 @@ tno_irk_events.11 = { # Dev event
         add_modifier = level_one_partisan
     }
 }
+
+tno_irk_events.12 = { # The Great Anti-Fascist War
+    type = country_event
+	placement = root
+	title = tno_irk_events.12.t
+	desc = tno_irk_events.12.d
+	flavor = tno_irk_events.12.f
+	icon = "gfx/interface/icons/lens_toolbar_icons/recruit_generals_lens_option.dds"
+
+	duration = 6
+
+	immediate = {
+		ruler = {
+            save_scope_as = irkutsk_leader
+        }
+    }
+    
+    trigger = {
+	}
+
+	event_image = {
+        texture = "gfx/event_pictures/super_pictures/russianwar.dds"
+    }
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	option = {
+		name = tno_irk_events.12.a
+    }
+}

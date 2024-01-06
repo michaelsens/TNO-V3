@@ -380,6 +380,53 @@ je_ru_tno_army_reform = {
     should_be_pinned_by_default = yes
 }
 
+je_ru_tno_com_restore_ussr = { 
+
+    icon = "gfx/interface/icons/tno_event_icons/reunify_russia.dds"
+    group = je_group_historical_content
+    scripted_button = je_ru_com_restore_ussr
+
+    immediate = {
+        random_scope_state = {
+            limit = {
+                state_region = s:STATE_IRKUTSK
+            }
+            save_scope_as = irkutsk_state_scope
+        }
+    }
+    
+    complete = {
+        custom_tooltip = {
+            text = formed_russia_rq_tt
+            c:RUS ?= THIS
+        }
+    }
+
+    on_complete = {
+        set_global_variable = irk_rus_formed
+    }
+
+    on_monthly_pulse = {
+    }
+
+    current_value = {
+        
+    }
+
+
+    goal_add_value = {
+        
+    }
+
+    progressbar = no
+    
+    weight = 1000
+
+    
+    should_be_pinned_by_default = yes
+    
+}
+
 je_ru_repair_magadan = { 
 
     icon = "gfx/interface/icons/invention_icons/hydraulic_cranes.dds"
@@ -424,6 +471,7 @@ je_ru_repair_magadan = {
 
     on_complete = {
         add_journal_entry = { type = je_ru_buy_supplies_usa }
+        custom_tooltip = je_repair_magadan_complete_tt
     }
 
     on_monthly_pulse = {
@@ -489,17 +537,23 @@ je_ru_buy_supplies_usa = {
 
     icon = "gfx/interface/icons/tno_event_icons/usa_buy_supplies.dds"
     group = je_group_historical_content
-    scripted_button = je_ru_take_karelia_button
+
+    scripted_button = je_ru_request_american_support
 
     immediate = {
+        c:USA = {
+            save_scope_as = usa_nation_scope
+        }
     }
     
     complete = {
-        
+        custom_tooltip = {
+            text = complete_request_american_aid
+            has_variable = je_request_american_aid_tried
+        }
     }
 
     on_complete = {
-        add_modifier = victory_in_karelia
     }
 
     on_monthly_pulse = {
@@ -522,85 +576,92 @@ je_ru_buy_supplies_usa = {
     
 }
 
-je_ru_tno_partisan = {
-    icon = "gfx/interface/icons/invention_icons/anarchy.dds"
-    group = je_group_historical_content
+#je_ru_tno_partisan = {
+#    icon = "gfx/interface/icons/invention_icons/anarchy.dds"
+#    group = je_group_historical_content
+#
+#    scripted_button = je_ru_gen_partisan_strengthen
+#    
+#    immediate = { 
+#        set_global_variable = {
+#            name = partisan_strength
+#            value = 0
+#        }
+#        clamp_global_variable = {
+#            name = partisan_strength
+#            max = 5
+#            min = 0
+#        }
+#        c:GER = {
+#            save_scope_as = ger_nation_scope
+#        }
+#    }
+#    
+#    complete = {
+#        hidden_trigger = {
+#            has_modifier = ru_won_second_great_patriotic_war
+#        }
+#        
+#    }
+#    
+#    on_complete = {
+#        custom_tooltip = ru_army_reform_completion_tt
+#    }
+#    
+#    current_value = {
+#        value = global_var:partisan_strength
+#    }
+#
+#    goal_add_value = {
+#        add = 5
+#    }
+#    
+#    progressbar = yes
+#    
+#    weight = 200
+#    transferable = no
+#    should_be_pinned_by_default = yes
+#}
 
-    scripted_button = je_ru_gen_partisan_strengthen
-    
-    immediate = { 
-        set_global_variable = {
-            name = partisan_strength
-            value = 0
-        }
-        clamp_global_variable = {
-            name = partisan_strength
-            max = 5
-            min = 0
-        }
-        c:GER = {
-            save_scope_as = ger_nation_scope
-        }
-    }
-    
-    complete = {
-        hidden_trigger = {
-            has_modifier = ru_won_second_great_patriotic_war
-        }
-        
-    }
-    
-    on_complete = {
-        custom_tooltip = ru_army_reform_completion_tt
-    }
-    
-    current_value = {
-        value = global_var:partisan_strength
-    }
-
-    goal_add_value = {
-        add = 5
-    }
-    
-    progressbar = yes
-    
-    weight = 200
-    transferable = no
-    should_be_pinned_by_default = yes
-}
-
-je_ger_tno_partisan = {
-    icon = "gfx/interface/icons/invention_icons/anarchy.dds"
-    group = je_group_historical_content
-
-    scripted_button = je_ru_gen_partisan_weaken
-    
-    immediate = { 
-    }
-    
-    complete = {
-        custom_tooltip = {
-            text = ru_army_reform_rq_tt
-            has_modifier = ru_full_army_reform
-        }
-        
-    }
-    
-    on_complete = {
-        custom_tooltip = ru_army_reform_completion_tt
-    }
-    
-    current_value = {
-        value = var:army_reform_progress
-    }
-
-    goal_add_value = {
-        add = 3
-    }
-    
-    progressbar = yes
-    
-    weight = 200
-    transferable = no
-    should_be_pinned_by_default = yes
-}
+#je_ru_project_zimneye_solntse = { # - develop nukes as russia
+#
+#    icon = "gfx/interface/icons/tno_event_icons/usa_buy_supplies.dds"
+#    group = je_group_historical_content
+#
+#    scripted_button = je_ru_nuke_begin
+#
+#    immediate = {
+#        c:RUS = {
+#            save_scope_as = rus_nation_scope
+#        }
+#    }
+#    
+#    complete = {
+#        custom_tooltip = {
+#            text = complete_zimneye_solntse
+#            has_variable = ru_has_nuke
+#        }
+#    }
+#
+#    on_complete = {
+#    }
+#
+#    on_monthly_pulse = {
+#    }
+#
+#    current_value = {
+#        
+#    }
+#
+#    goal_add_value = {
+#        
+#    }
+#
+#    progressbar = no
+#    
+#    weight = 100
+#
+#    
+#    should_be_pinned_by_default = yes
+#    
+#}

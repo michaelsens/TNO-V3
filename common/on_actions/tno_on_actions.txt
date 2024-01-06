@@ -46,6 +46,24 @@
             trigger_event = { id = tno_super_events.1 days = 0 popup = yes }
         }
 
+        if = { #USSR formed under Irkutsk (RUSSIA)
+            limit = {
+               has_global_variable = irk_rus_formed
+               NOT = { has_variable = irk_rus_event }
+            }
+            set_variable = irk_rus_event
+            trigger_event = { id = tno_super_events.10 days = 0 popup = yes }
+        }
+        if = {  #Irkutsk launches 2WRW (Second Great Patriotic War) (2WRW)
+            limit = {
+               has_global_variable = second_great_patriotic_war
+               NOT = { has_variable = second_great_patriotic_war_event }
+            }
+            set_variable = second_great_patriotic_war_event
+            trigger_event = { id = tno_super_events.11 days = 0 popup = yes }
+        }
+
+
         if = {
             limit = {
                 c:PRO ?= THIS

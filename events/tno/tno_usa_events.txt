@@ -1462,3 +1462,37 @@ tno_usa_events.21 = { # Irkutsk asks to use boeing
 		}
     }
 }
+
+tno_usa_events.22 = { # Begins JE for intervention in Russia
+    type = country_event
+	placement = root
+	title = tno_usa_events.22.t
+	desc = tno_usa_events.22.d
+	flavor = tno_usa_events.22.f
+	icon = "gfx/interface/icons/invention_icons/sea_lane_strategies.dds"
+
+	duration = 6
+
+	immediate = {
+		c:RUS = {
+            save_scope_as = rus_nation_scope
+        }
+		ruler = {
+            save_scope_as = usa_current_president
+        }
+    }
+    
+    trigger = {
+	}
+
+	event_image = {
+        texture = "gfx/event_pictures/super_pictures/oval_office.dds"
+    }
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	option = {
+		default_option = yes
+		name = tno_usa_events.22.a
+    }
+}
