@@ -997,7 +997,9 @@ je_ru_launch_raid = {
 	}
 
 	effect = {
-		trigger_event = { id = tno_super_events.11 popup = yes }
+		hidden_effect = {
+			set_immune_to_revolutions = yes
+		}
 		custom_tooltip = je_ru_launch_raid_tt
   		random_country = {
     		limit = {
@@ -1041,12 +1043,6 @@ je_ru_launch_raid = {
                     target_country = scope:raid_target
                 }
         }
-        scope:raid_target = {
-	        create_truce = {
-	 			country = root
-	 			months = 1
-			}
-		}	
 	}
 }
 
