@@ -1313,13 +1313,34 @@ je_ru_com_restore_ussr = {
 	}
 
 	possible = {
-		#owns_entire_state_region = STATE_MOSCOW
+		#Far-East
+		owns_entire_state_region = STATE_IRKUTSK
+        owns_entire_state_region = STATE_TRANS_BAIKAL
+        owns_entire_state_region = STATE_OKHOTSK
+        owns_entire_state_region = STATE_CHUKOTKA
+        owns_entire_state_region = STATE_YAKUTSK
+        owns_entire_state_region = STATE_KAMCHATKA
+        owns_entire_state_region = STATE_UPPER_YENISEYSK
+        #Central Sib
+        owns_entire_state_region = STATE_TOMSK
+        owns_entire_state_region = STATE_TOBOLSK
+        owns_entire_state_region = STATE_TUVA
+        #West Sib
+        owns_entire_state_region = STATE_OB
+        owns_entire_state_region = STATE_NENETSIA
+        owns_entire_state_region = STATE_URAL
+        #West Russia
+        owns_entire_state_region = STATE_SAMARA
+        owns_entire_state_region = STATE_PERM
+        owns_entire_state_region = STATE_KAZAN
+        owns_entire_state_region = STATE_GALICH
 
-        #hidden_trigger = {
-        #	NOT = {
-        #    	has_variable = irk_form_ussr
-        #    }
-        #}
+        custom_tooltip = {
+            text = je_ru_tno_rus_owns_wrrf
+            any_scope_state = {
+                state_region = s:STATE_ARKHANGELSK
+            }
+        }
 	}
 
 	effect = {
@@ -1594,65 +1615,63 @@ je_ru_irk_second_great_patriotic_war = {
 	possible = {
 		custom_tooltip = {
             text = complete_one_army_reform_rq
-            OR = {
-                has_modifier = ru_basic_army_reform
-                has_modifier = ru_significant_army_reform
-                has_modifier = ru_full_army_reform
-            }
+            #OR = {
+            #    has_modifier = ru_basic_army_reform
+            #    has_modifier = ru_significant_army_reform
+            #    has_modifier = ru_full_army_reform
+            #}
         }
         custom_tooltip = {
             text = complete_request_american_aid_and_magadan
-            has_variable = je_request_american_aid_tried
+            #has_variable = je_request_american_aid_tried
         }
+        owns_entire_state_region = STATE_EAST_KARELIA
 	}
 
 	effect = {
-		        create_diplomatic_play = {
+		create_diplomatic_play = {
             name = gtr1
             target_country = c:GER
-              type = dp_conquer_state
-              war = no
-              escalation = 20
-              target_state = s:STATE_BREST.region_state:GER
-              add_target_backers = { c:FIN c:HUN c:SLV c:DEN c:NET }
-              add_war_goal = {
-                holder = c:GER
-                type = contain_threat
-              }
-              add_war_goal = {
-                holder = c:PRO
-                type = annex_country
-                target_state = s:STATE_LATVIA.region_state:RKO
-              }
-              add_war_goal = {
-                holder = c:PRO
-                type = conquer_state
-                target_state = s:STATE_EAST_KARELIA.region_state:FIN
-              }
-              add_war_goal = {
-                holder = c:PRO
-                type = annex_country
-                target_state = s:STATE_MOSCOW.region_state:RKM
-              }
-              add_war_goal = {
-                holder = c:PRO
-                type = annex_country
-                target_state = s:STATE_KIEV.region_state:RKU
-              }
-              add_war_goal = {
-                holder = c:PRO
-                type = annex_country
-                target_state = s:STATE_KUBAN.region_state:RKK
-              }
-              add_war_goal = {
-                holder = c:PRO
-                type = annex_country
-                target_state = s:STATE_BREST.region_state:RKO
-              }
+            type = dp_conquer_state
+            war = no
+            escalation = 26
+            target_state = s:STATE_BREST.region_state:GER
+            add_target_backers = { c:FIN c:HUN c:SLV c:DEN c:NET c:ROM }
+            add_war_goal = {
+	            holder = c:GER
+	            type = conquer_state
+	            target_state = s:STATE_ARKHANGELSK.region_state:RUS
+            }
+            add_war_goal = {
+	            holder = c:FIN
+	            type = conquer_state
+	            target_state = s:STATE_EAST_KARELIA.region_state:RUS
+            }
+            add_war_goal = {
+	            holder = c:RUS
+	            type = annex_country
+	            target_state = s:STATE_LATVIA.region_state:RKO
+            }
+            add_war_goal = {
+	            holder = c:RUS
+	            type = annex_country
+	            target_state = s:STATE_MOSCOW.region_state:RKM
+            }
+            add_war_goal = {
+	            holder = c:RUS
+	            type = annex_country
+	            target_state = s:STATE_KIEV.region_state:RKU
+            }
+            add_war_goal = {
+            	holder = c:RUS
+            	type = annex_country
+            	target_state = s:STATE_KUBAN.region_state:RKK
+            }
         }
         set_global_variable = second_great_patriotic_war
+        custom_tooltip = warning_2wrw
         hidden_effect = {
-            change_infamy = -150
+            change_infamy = -1500
             trigger_event = { id = tno_irk_events.12 popup = yes } #The Great Anti-Fascist War
         }
 	}

@@ -393,13 +393,46 @@ je_ru_tno_com_restore_ussr = {
             }
             save_scope_as = irkutsk_state_scope
         }
+        c:WST = {
+            save_scope_as = wrrf_nation
+        }
     }
     
     complete = {
+        #Far-East
+        owns_entire_state_region = STATE_IRKUTSK
+        owns_entire_state_region = STATE_TRANS_BAIKAL
+        owns_entire_state_region = STATE_OKHOTSK
+        owns_entire_state_region = STATE_CHUKOTKA
+        owns_entire_state_region = STATE_YAKUTSK
+        owns_entire_state_region = STATE_KAMCHATKA
+        owns_entire_state_region = STATE_UPPER_YENISEYSK
+        #Central Sib
+        owns_entire_state_region = STATE_TOMSK
+        owns_entire_state_region = STATE_TOBOLSK
+        owns_entire_state_region = STATE_TUVA
+        #West Sib
+        owns_entire_state_region = STATE_OB
+        owns_entire_state_region = STATE_NENETSIA
+        owns_entire_state_region = STATE_URAL
+        #West Russia
+        owns_entire_state_region = STATE_SAMARA
+        owns_entire_state_region = STATE_PERM
+        owns_entire_state_region = STATE_KAZAN
+        owns_entire_state_region = STATE_GALICH
+
         custom_tooltip = {
-            text = formed_russia_rq_tt
+            text = je_ru_tno_rus_owns_wrrf
+            any_scope_state = {
+                state_region = s:STATE_ARKHANGELSK
+            }
+        }
+        #custom_tooltip = {
+            #text = formed_russia_rq_tt
+        hidden_trigger = {
             c:RUS ?= THIS
         }
+        #}
     }
 
     on_complete = {
