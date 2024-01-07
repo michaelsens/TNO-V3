@@ -1615,15 +1615,15 @@ je_ru_irk_second_great_patriotic_war = {
 	possible = {
 		custom_tooltip = {
             text = complete_one_army_reform_rq
-            #OR = {
-            #    has_modifier = ru_basic_army_reform
-            #    has_modifier = ru_significant_army_reform
-            #    has_modifier = ru_full_army_reform
-            #}
+            OR = {
+                has_modifier = ru_basic_army_reform
+                has_modifier = ru_significant_army_reform
+                has_modifier = ru_full_army_reform
+            }
         }
         custom_tooltip = {
             text = complete_request_american_aid_and_magadan
-            #has_variable = je_request_american_aid_tried
+            has_variable = je_request_american_aid_tried
         }
         owns_entire_state_region = STATE_EAST_KARELIA
 	}
@@ -1667,6 +1667,12 @@ je_ru_irk_second_great_patriotic_war = {
             	type = annex_country
             	target_state = s:STATE_KUBAN.region_state:RKK
             }
+            add_war_goal = {
+            	holder = c:RUS
+            	type = conquer_state
+            	target_state = s:STATE_WEST_KARELIA.region_state:FIN
+            }
+
         }
         set_global_variable = second_great_patriotic_war
         custom_tooltip = warning_2wrw
