@@ -1081,10 +1081,16 @@
 		region_state:JAP={
 			create_building={
 				building="building_government_administration"
-				level=9
+				level=7
 				reserves=1
 				activate_production_methods={ "pm_horizontal_drawer_cabinets" }
 			}
+			create_building={
+				building="building_military_shipyards"
+				level=6
+				reserves=1
+				activate_production_methods={ "pm_merchant_guilds_building_military_shipyards" "pm_military_shipbuilding_steam" }
+			}	
 			create_building={
 				building="building_fishing_wharf"
 				level=10
@@ -1394,6 +1400,14 @@
 				level=10
 				reserves=1
 			activate_production_methods={ "pm_general_training" }
+			}
+		}
+		region_state:VIT={
+			create_building={
+				building="building_barracks"
+				level=10
+				reserves=1
+				activate_production_methods={ "pm_general_training" }
 			}
 		}
 	}
@@ -1777,9 +1791,21 @@
 		region_state:JAP={
 			create_building={
 				building="building_explosives_factory"
-				level=7
+				level=6
 				reserves=1
 				activate_production_methods={ "pm_vacuum_evaporation" }
+			}
+			create_building={
+				building="building_military_shipyards"
+				level=7
+				reserves=1
+				activate_production_methods={ "pm_merchant_guilds_building_military_shipyards" "pm_military_shipbuilding_steam" }
+			}	
+			create_building={
+				building="building_artillery_foundries"
+				level=5
+				reserves=1
+				activate_production_methods={ "pm_cannons" "pm_automation_disabled" "pm_merchant_guilds_building_artillery_foundries" }
 			}
 			create_building={
 				building="building_railway"
@@ -1795,7 +1821,7 @@
 			}
 			create_building={
 				building="building_steel_mills"
-				level=20
+				level=18
 				reserves=1
 				activate_production_methods={ "pm_blister_steel_process" "pm_automation_disabled" "pm_privately_owned_industry" }
 			}
@@ -2093,6 +2119,12 @@
 				reserves=1
 				activate_production_methods={ "pm_telephones" "pm_radios" "pm_privately_owned_industry"}
 			}
+			create_building={
+				building="building_military_shipyards"
+				level=3
+				reserves=1
+				activate_production_methods={ "pm_merchant_guilds_building_military_shipyards" "pm_military_shipbuilding_steam" }
+			}	
 			create_building={
 				building="building_university"
 				level=4

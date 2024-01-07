@@ -664,7 +664,7 @@ je_oil_crisis_oil_supply_button_button_a = {  # Squeeze the Workers
 		}
 		add_modifier = {
 			name = squeeze_the_workers
-			months = 6
+			months = 2
 			is_decaying = yes
 		}
 	}
@@ -689,7 +689,7 @@ je_oil_crisis_oil_supply_button_button_b = {  # Build more Pumps
 		}
 		add_modifier = {
 			name = more_oil_pumps
-			months = 6
+			months = 2
 			is_decaying = yes
 		}
 	}
@@ -714,7 +714,7 @@ je_oil_crisis_oil_supply_button_button_c = {  # Ration the Oil Supply
 		}
 		add_modifier = {
 			name = ration_oil_supply
-			months = 6
+			months = 2
 			is_decaying = yes
 		}
 	}
@@ -828,7 +828,7 @@ je_oil_crisis_oil_supply_button_button_a = {  # Squeeze the Workers
 		}
 		add_modifier = {
 			name = squeeze_the_workers
-			months = 6
+			months = 2
 			is_decaying = yes
 		}
 	}
@@ -853,7 +853,7 @@ je_oil_crisis_oil_supply_button_button_b = {  # Build more Pumps
 		}
 		add_modifier = {
 			name = more_oil_pumps
-			months = 6
+			months = 2
 			is_decaying = yes
 		}
 	}
@@ -878,7 +878,7 @@ je_oil_crisis_oil_supply_button_button_c = {  # Ration the Oil Supply
 		}
 		add_modifier = {
 			name = ration_oil_supply
-			months = 6
+			months = 2
 			is_decaying = yes
 		}
 	}
@@ -972,6 +972,824 @@ je_oil_crisis_oil_supply_button_button_e = {  # Research new Technologies
 		   }
 	}
 }
+###############################################################################
+je_malaya_ofn_a = {  #funding for malya
+	name = "je_malaya_ofn_a_loc" 
+	desc = "je_malaya_ofn_a_loc_desc"
+
+	visible = { always = yes }
+
+	possible = {
+		scope:journal_entry = {
+				not = {
+				custom_tooltip = {
+					text = je_tooltip_cooldown
+					has_variable = je_malaya_ofn_cooldown
+				}
+			}
+		}
+	}
+
+	ai_chance = {
+		base = 80
+	}
+
+
+	effect = {
+
+		scope:journal_entry = {
+			set_variable = { name = je_malaya_ofn_cooldown months = 2  }
+		}	
+		custom_tooltip = {
+			text = je_malaya_ofn_a.tooltip_effect
+	
+		}
+		add_modifier = {
+			name = very_small_funding_ger
+			months = 2
+		} 
+
+		 add_radicals = {
+            value = 0.005
+
+		}
+		c:JOL = {
+			add_modifier = {
+				name = very_small_funding_ost
+				months = 2
+			} 
+		} 
+		change_relations = {
+            country = c:JOL
+            value = 10
+        }
+}
+}
+
+je_malaya_ofn_b = {  #advisers for malaya
+	name = "je_malaya_ofn_b_loc" 
+	desc = "je_malaya_ofn_b_loc_desc"
+
+	visible = { always = yes }
+
+	possible = {
+		scope:journal_entry = {
+				not = {
+				custom_tooltip = {
+					text = je_tooltip_cooldown
+					has_variable = je_malaya_ofn_cooldown
+				}
+			}
+		}
+	}
+
+	ai_chance = {
+		base = 50
+	}
+
+
+	effect = {
+
+		scope:journal_entry = {
+			set_variable = { name = je_malaya_ofn_cooldown months = 2 }
+		}	
+		custom_tooltip = {
+			text = je_malaya_ofn_b.tooltip_effect
+	
+		}
+
+		change_relations = {
+            country = c:JOL
+            value = 10
+        }
+
+		 add_radicals = {
+            value = 0.005
+		}
+
+		c:JOL = {
+			add_modifier = {
+				name = american_advisers
+				months = 2
+			} 
+		}		
+	}
+}
+
+je_malaya_ofn_c = {  #bombing malaya
+	name = "je_malaya_ofn_c_loc" 
+	desc = "je_malaya_ofn_c_loc_desc"
+
+	visible = { always = yes }
+
+	possible = {
+		scope:journal_entry = {
+				not = {
+				custom_tooltip = {
+					text = je_tooltip_cooldown
+					has_variable = je_malaya_ofn_cooldown
+				}
+			}
+		}
+	}
+
+	ai_chance = {
+		base = 60
+	}
+
+
+	effect = {
+
+		scope:journal_entry = {
+			set_variable = { name = je_malaya_ofn_cooldown months = 2 }
+		}	
+
+		change_relations = {
+            country = c:JOL
+            value = 10
+        }
+
+		s:STATE_MALAYA = {
+            add_devastation = 12
+        }
+		 add_radicals = {
+            value = 0.005
+		}
+
+		c:JOH = {
+			add_modifier = {
+				name = proxy_war_bombing
+				months = 2
+			} 
+		}		
+	}
+}
+
+je_malaya_ofn_d = {  #bombing malaya
+	name = "je_malaya_ofn_d_loc" 
+	desc = "je_malaya_ofn_d_loc_desc"
+
+	visible = { always = yes }
+
+	possible = {
+		scope:journal_entry = {
+				not = {
+				custom_tooltip = {
+					text = je_tooltip_cooldown
+					has_variable = je_malaya_ofn_cooldown
+				}
+			}
+		}
+	}
+
+	ai_chance = {
+		base = 60
+	}
+
+
+	effect = {
+
+		scope:journal_entry = {
+			set_variable = { name = je_malaya_ofn_cooldown months = 2 }
+		}	
+
+		c:JOH = {
+			add_modifier = {
+				name = war_machine_sabatoged
+				months = 2
+			} 
+		}
+		
+		 add_radicals = {
+            value = 0.005
+		}
+
+		change_relations = {
+            country = c:JOL
+            value = 10
+        }		
+	}
+}
+
+je_malaya_ofn_e = {  #bombing malaya
+	name = "je_malaya_ofn_e_loc" 
+	desc = "je_malaya_ofn_e_loc_desc"
+
+	visible = { always = yes }
+
+	possible = {
+		scope:journal_entry = {
+				not = {
+				custom_tooltip = {
+					text = je_tooltip_cooldown
+					has_variable = je_malaya_ofn_cooldown
+				}
+			}
+		}
+	}
+
+	ai_chance = {
+		base = 60
+	}
+
+
+	effect = {
+
+		scope:journal_entry = {
+			set_variable = { name = je_malaya_ofn_cooldown months = 2 }
+		}	
+
+		c:JOH = {
+			add_modifier = {
+				name = receiving_military_supplies
+				months = 2
+			} 
+		}
+
+		 add_radicals = {
+            value = 0.005
+		}	
+
+		change_relations = {
+            country = c:JOL
+            value = 10
+        }
+	}
+}
+
+je_malaya_ofn_f = {  #bombing malaya
+	name = "je_malaya_ofn_f_loc" 
+	desc = "je_malaya_ofn_f_loc_desc"
+
+	visible = { always = yes }
+
+	possible = {
+		scope:journal_entry = {
+				not = {
+				custom_tooltip = {
+					text = je_tooltip_cooldown
+					has_variable = je_malaya_ofn_cooldown
+				}
+			}
+		}
+	}
+
+	ai_chance = {
+		base = 60
+	}
+
+
+	effect = {
+
+		scope:journal_entry = {
+			set_variable = { name = je_malaya_ofn_cooldown months = 2 }
+		}	
+        c:JOH = {
+			add_modifier = {
+				name = combat_engineers
+				months = 2
+			}
+		}
+
+		add_radicals = {
+            value = 0.005
+		}
+
+		change_relations = {
+            country = c:JOL
+            value = 10
+	}
+}
+}
+je_malaya_jap_a = {  #bombing malaya
+	name = "je_malaya_jap_c_loc" 
+	desc = "je_malaya_jap_c_loc_desc"
+
+	visible = { always = yes }
+
+	possible = {
+		scope:journal_entry = {
+				not = {
+				custom_tooltip = {
+					text = je_tooltip_cooldown
+					has_variable = je_malaya_jap_cooldown
+				}
+			}
+		}
+	}
+
+	ai_chance = {
+		base = 50
+	}
+
+
+	effect = {
+
+		scope:journal_entry = {
+			set_variable = { name = je_malaya_jap_cooldown months = 2 }
+
+		}
+
+		change_relations = {
+            country = c:JOH
+            value = 10
+        }
+
+		s:STATE_MALAYA = {
+            add_devastation = 25
+        }
+		
+		 add_radicals = {
+            value = 0.005
+		}
+
+		c:JOL = {
+			add_modifier = {
+				name = proxy_war_bombing
+				months = 2
+			} 
+		}		
+	}
+}
+
+je_malaya_jap_b = {  # japan sends advisers
+	name = "je_malaya_jap_a_loc" 
+	desc = "je_malaya_jap_a_loc_desc"
+
+	visible = { always = yes }
+
+	possible = {
+		scope:journal_entry = {
+				not = {
+				custom_tooltip = {
+					text = je_tooltip_cooldown
+					has_variable = je_malaya_jap_cooldown
+				}
+			}
+		}
+	}
+
+	ai_chance = {
+		base = 50
+	}
+
+
+	effect = {
+
+		scope:journal_entry = {
+			set_variable = { name = je_malaya_jap_cooldown months = 2 }
+		}	
+		custom_tooltip = {
+			text = je_event_specific.tooltip_japanese_advisors
+	
+		}
+
+		c:JOH = {
+			add_modifier = {
+				name = japanese_advisers
+				months = 2
+		} 
+		
+			add_radicals = {
+            value = 0.005
+		}
+
+		    change_relations = {
+            country = c:JOH
+            value = 10
+        }
+	}
+}
+}
+
+je_malaya_jap_c = {  # japan funds JOH
+	name = "je_malaya_jap_b_loc" 
+	desc = "je_malaya_jap_b_loc_desc"
+
+	visible = { always = yes }
+
+	possible = {
+		scope:journal_entry = {
+				not = {
+				custom_tooltip = {
+					text = je_tooltip_cooldown
+					has_variable = je_malaya_jap_cooldown
+				}
+			}
+		}
+	}
+
+	ai_chance = {
+		base = 50
+	}
+
+	effect = {
+
+		scope:journal_entry = {
+			set_variable = { name = je_malaya_jap_cooldown months = 2  }
+		}	
+		custom_tooltip = {
+			text = je_event_specific.tooltip_give_20k
+	
+		}
+		add_modifier = {
+			name = very_small_funding_ger
+			months = 2
+		} 
+	
+		c:JOH = {
+		add_modifier = {
+				name = very_small_funding_ost
+				months = 2
+			} 
+		} 
+		
+		add_radicals = {
+            value = 0.005
+		}
+		change_relations = {
+            country = c:JOH
+            value = 10
+        }
+    }
+}
+
+je_malaya_jap_d = {  # japan funds JOH
+	name = "je_malaya_jap_d_loc" 
+	desc = "je_malaya_jap_d_loc_desc"
+
+	visible = { always = yes }
+
+	possible = {
+		scope:journal_entry = {
+				not = {
+				custom_tooltip = {
+					text = je_tooltip_cooldown
+					has_variable = je_malaya_jap_cooldown
+				}
+			}
+		}
+	}
+
+	ai_chance = {
+		base = 50
+	}
+
+	effect = {
+
+		scope:journal_entry = {
+			set_variable = { name = je_malaya_jap_cooldown months = 2
+		}
+	}
+		c:JOH = {
+			add_modifier = {
+				name = war_machine_sabatoged
+				months = 2
+		   } 
+		}
+	    
+		add_radicals = {
+			value = 0.005
+		}
+		change_relations = {
+            country = c:JOH
+            value = 10
+        }
+    }
+}
+
+
+je_malaya_jap_e = {  # japan funds JOH
+	name = "je_malaya_jap_e_loc" 
+	desc = "je_malaya_jap_e_loc_desc"
+
+	visible = { always = yes }
+
+	possible = {
+		scope:journal_entry = {
+				not = {
+				custom_tooltip = {
+					text = je_tooltip_cooldown
+					has_variable = je_malaya_jap_cooldown
+				}
+			}
+		}
+	}
+
+	ai_chance = {
+		base = 50
+	}
+
+	effect = {
+
+		scope:journal_entry = {
+			set_variable = { name = je_malaya_jap_cooldown months = 2
+		}
+	}
+		c:JOH = {
+			add_modifier = {
+				name = receiving_military_supplies
+				months = 2
+		   } 
+		}
+	    
+		add_radicals = {
+			value = 0.005
+		}
+		change_relations = {
+            country = c:JOH
+            value = 10
+        }
+    }
+}
+
+je_malaya_jap_f = {  # japan funds JOH
+	name = "je_malaya_jap_f_loc" 
+	desc = "je_malaya_jap_f_loc_desc"
+
+	visible = { always = yes }
+
+	possible = {
+		scope:journal_entry = {
+				not = {
+				custom_tooltip = {
+					text = je_tooltip_cooldown
+					has_variable = je_malaya_jap_cooldown
+				}
+			}
+		}
+	}
+
+	ai_chance = {
+		base = 50
+	}
+
+	effect = {
+
+		scope:journal_entry = {
+			set_variable = { name = je_malaya_jap_cooldown months = 2  }
+		}	
+	
+		c:JOH = {
+			add_modifier = {
+				name = combat_engineers
+				months = 2
+			} 
+		} 
+		add_radicals = {
+			value = 0.005
+		}
+		change_relations = {
+            country = c:JOH
+            value = 10
+        }
+    }
+}
+je_ger_reclaim_ost_a = {  # if RKO is still alive
+	name = "je_ost_a_sex" 
+	desc = "je_ost_a_sex_desc"
+
+	visible = { always = yes }
+
+	possible = {
+		scope:journal_entry = {
+				not = {
+				custom_tooltip = {
+					text = "Hasnt already retook or tried to retake Ostland"
+					has_variable = je_already_pupped_ost
+				}
+			}
+		}
+	}
+
+	ai_chance = {
+		base = 100
+	}
+
+	effect = {
+
+		scope:journal_entry = {
+			set_variable = { name = je_already_pupped_ost months = 99999  }
+		}	
+		custom_tooltip = {
+			text = "Will bring Ostland back into the fold and will start a full scale invasion with the goal of retakeing Ostland."
+	
+		
+			annex = c:RKO
+
+			c:RKO = {
+				trigger_event = { id = tno_germany_events.39 days = 0 popup = yes }
+			} 
+		}
+	}
+}
+
+je_ger_reclaim_ost_L = {  # attack ukraine
+	name = "je_attack_ukraine" 
+	desc = "je_attack_ukraine_desc"
+
+	visible = { always = yes }
+
+	possible = {
+		scope:journal_entry = {
+				not = {
+				custom_tooltip = {
+					text = je_ger_reclaim_ost_v.tooltip_condition
+					has_variable = je_already_pupped_ost
+				}
+			}
+		}
+	}
+
+	ai_chance = {
+		base = 100
+	}
+
+	effect = {
+
+		scope:journal_entry = {
+			set_variable = { name = je_already_pupped_ost months = 99999  }
+		}	
+		custom_tooltip = {
+			text = je_ger_reclaim_ost_a.tooltip_effect
+	
+			annex = c:RKU
+			create_diplomatic_play = {
+                type = dp_annex_war
+                name = ukraine_war_fUCK
+                target_country = c:UKC
+                war = no
+                escalation = 93
+                target_state = s:STATE_LUHANSK.region_state:UKC
+            }
+			create_diplomatic_play = {
+                type = dp_annex_war
+                name = ukraine_war_fUCK
+                target_country = c:UKM
+                war = no
+                escalation = 93
+                target_state = s:STATE_CHERSON.region_state:UKM
+            }
+			create_diplomatic_play = {
+                type = dp_annex_war
+                name = ukraine_war_fUCK
+                target_country = c:UKP
+                war = no
+                escalation = 93
+                target_state = s:STATE_VOLHYNIA.region_state:UKP
+            }
+		}
+		
+	}
+}
+
+je_ger_reclaim_ost_b = {  # ANNEX moravia
+	name = "je_reclaim_mor" 
+	desc = "je_reclaim_mor_desc"
+
+	visible = { always = yes }
+
+	possible = {
+		scope:journal_entry = {
+				not = {
+				custom_tooltip = {
+					text = je_ger_reclaim_ost_b.tooltip_condition
+					has_variable = JE_already_annex_mor
+				}
+			}
+		}
+	}
+
+	ai_chance = {
+		base = 100
+	}
+
+	effect = {
+
+		scope:journal_entry = {
+			set_variable = { name = JE_already_annex_mor months = 99999  }
+		}	
+		custom_tooltip = {
+			text = je_ger_reclaim_ost_b.tooltip_effect
+	
+		
+			annex = c:GWZ
+
+			
+		}
+	}
+}
+
+je_ger_reclaim_ost_c = {  # annex gotland
+	name = "je_annex_gotland" 
+	desc = "je_annex_gotland_desc"
+
+	visible = { always = yes }
+
+	possible = {
+		scope:journal_entry = {
+				not = {
+				custom_tooltip = {
+					text = je_ger_reclaim_ost_c.tooltip_condition
+					has_variable = je_annex_got
+				}
+			}
+		}
+	}
+
+	ai_chance = {
+		base = 100
+	}
+
+	effect = {
+
+		scope:journal_entry = {
+			set_variable = { name = je_annex_got months = 99999  }
+		}	
+		custom_tooltip = {
+			text = je_ger_reclaim_ost_c.tooltip_effect
+	
+			annex = c:GEE
+			
+		}
+	}
+}
+
+je_ger_reclaim_ost_d = {  #puppet moskowen
+	name = "je_puppet_moskown" 
+	desc = "je_puppet_moskown_desc"
+
+	visible = { always = yes }
+
+	possible = {
+		scope:journal_entry = {
+				not = {
+				custom_tooltip = {
+					text = je_ger_reclaim_ost_d.tooltip_condition
+					has_variable = je_moskowen_sex
+				}
+			}
+		}
+	}
+
+	ai_chance = {
+		base = 100
+	}
+
+	effect = {
+
+		scope:journal_entry = {
+			set_variable = { name = je_moskowen_sex months = 99999  }
+		}	
+		custom_tooltip = {
+			text = je_ger_reclaim_ost_d.tooltip_effect
+		}
+		create_diplomatic_pact = {
+			country = c:RKM
+			type = reichskommissariat
+		}
+
+	}
+}
+
+je_ger_reclaim_ost_e = {  #puppet kakaus
+	name = "je_kakasus" 
+	desc = "je_kakasus_desc"
+
+	visible = { always = yes }
+
+	possible = {
+		scope:journal_entry = {
+				not = {
+				custom_tooltip = {
+					text = je_ger_reclaim_ost_e.tooltip_condition
+					has_variable = je_cock_retken_cum
+				}
+			}
+		}
+	}
+
+	ai_chance = {
+		base = 100
+	}
+
+	effect = {
+
+		scope:journal_entry = {
+			set_variable = { name = je_cock_retken_cum months = 99999  }
+		}	
+		custom_tooltip = {
+			text = je_ger_reclaim_ost_p.tooltip_effect
+		}
+		create_diplomatic_pact = {
+			country = c:RKK
+			type = reichskommissariat
+		}
+
+	}
+}
+
+
 
 je_ru_launch_raid = {
 	name = "je_ru_launch_raid"
