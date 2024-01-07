@@ -1575,10 +1575,7 @@ je_ger_reclaim_ost_a = {  # if RKO is still alive
 			text = "Will bring Ostland back into the fold and will start a full scale invasion with the goal of retakeing Ostland."
 	
 		
-			create_diplomatic_pact = {
-                country = c:RKO
-                type = reichskommissariat
-            }
+			annex = c:RKO
 
 			c:RKO = {
 				trigger_event = { id = tno_germany_events.39 days = 0 popup = yes }
@@ -1588,8 +1585,8 @@ je_ger_reclaim_ost_a = {  # if RKO is still alive
 }
 
 je_ger_reclaim_ost_L = {  # attack ukraine
-	name = "je_malaya_jap_b_loc" 
-	desc = "je_malaya_jap_b_loc_desc"
+	name = "je_attack_ukraine" 
+	desc = "je_attack_ukraine_desc"
 
 	visible = { always = yes }
 
@@ -1597,7 +1594,7 @@ je_ger_reclaim_ost_L = {  # attack ukraine
 		scope:journal_entry = {
 				not = {
 				custom_tooltip = {
-					text = je_ger_reclaim_ost_a.tooltip_condition
+					text = je_ger_reclaim_ost_v.tooltip_condition
 					has_variable = je_already_pupped_ost
 				}
 			}
@@ -1616,7 +1613,7 @@ je_ger_reclaim_ost_L = {  # attack ukraine
 		custom_tooltip = {
 			text = je_ger_reclaim_ost_a.tooltip_effect
 	
-		
+			annex = c:RKU
 			create_diplomatic_play = {
                 type = dp_annex_war
                 name = ukraine_war_fUCK
@@ -1755,9 +1752,9 @@ je_ger_reclaim_ost_d = {  #puppet moskowen
 	}
 }
 
-je_ger_reclaim_ost_e = {  #puppet moskowen
-	name = "je_malaya_jap_b_loc" 
-	desc = "je_malaya_jap_b_loc_desc"
+je_ger_reclaim_ost_e = {  #puppet kakaus
+	name = "je_kakasus" 
+	desc = "je_kakasus_desc"
 
 	visible = { always = yes }
 
@@ -1782,7 +1779,7 @@ je_ger_reclaim_ost_e = {  #puppet moskowen
 			set_variable = { name = je_cock_retken_cum months = 99999  }
 		}	
 		custom_tooltip = {
-			text = je_ger_reclaim_ost_e.tooltip_effect
+			text = je_ger_reclaim_ost_p.tooltip_effect
 		}
 		create_diplomatic_pact = {
 			country = c:RKK
