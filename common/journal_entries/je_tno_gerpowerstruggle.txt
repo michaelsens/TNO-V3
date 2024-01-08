@@ -1,0 +1,389 @@
+﻿je_tno_gerpowerstruggle_goreing = { # goreings JE
+
+    icon = "gfx/interface/icons/new_event_icons/ger_struggle_gor.dds"
+
+    group = je_group_internal_affairs
+   
+    invalid = {
+        OR = {
+            
+        
+            has_variable = landowner_dub
+            
+            has_variable = speer_dub
+
+            has_variable = goreing_dub
+
+            has_variable = ss_dub
+            
+        }
+        
+    }
+    
+    
+    immediate = {
+
+		set_variable = {
+            
+			name = goreing_ger_struggle_timer
+			value = 0
+        }
+	}
+    
+    complete = {
+		scope:journal_entry = {
+			is_goal_complete = yes
+		}
+
+	}
+
+    on_complete = {
+        trigger_event = { id = tno_germany_events.5 popup = yes }
+        set_variable = {
+            
+			name = ss_dub
+			value = 0
+        }
+    }
+
+    
+    current_value = {
+        
+		value = root.var:goreing_ger_struggle_timer
+	}
+
+    goal_add_value = {
+        
+		value = 60
+	}
+
+    progressbar = yes
+    
+    weight = 30
+    
+    should_be_pinned_by_default = yes
+    
+}
+
+je_tno_gerpowerstruggle_devout = { # SS JE
+
+    icon = "gfx/interface/icons/new_event_icons/ger_struggle_ss.dds"
+    group = je_group_internal_affairs
+    
+    invalid = {
+        OR = {
+            
+        
+            has_variable = landowner_dub
+            
+            has_variable = speer_dub
+
+            has_variable = goreing_dub
+
+            has_variable = ss_dub
+            
+        }
+        
+    }
+
+    immediate = {
+
+		set_variable = {
+            
+			name = devout_ger_struggle_timer
+			value = 0
+        }
+	}
+    
+    complete = {
+		scope:journal_entry = {
+			is_goal_complete = yes
+		}
+
+	}
+
+    on_complete = {
+        trigger_event = { id = tno_germany_events.6 popup = yes }
+        set_variable = {
+            
+			name = ss_dub
+			value = 0
+        }
+    }
+
+    current_value = {
+        
+		value = root.var:devout_ger_struggle_timer
+	}
+
+    goal_add_value = {
+        
+		value = 60
+	}
+
+    progressbar = yes
+    
+    weight = 30
+    
+    should_be_pinned_by_default = yes
+    
+}
+
+je_tno_gerpowerstruggle_speer= { # industralists JE
+
+    icon = "gfx/interface/icons/new_event_icons/ger_struggle_speer.dds"
+    group = je_group_internal_affairs
+
+    invalid = {
+        OR = {
+            
+        
+            has_variable = landowner_dub
+
+            has_variable = speer_dub
+
+            has_variable = goreing_dub
+
+            has_variable = ss_dub
+            
+        }
+        
+    }
+
+    immediate = {
+
+		set_variable = {
+            
+			name = speer_ger_struggle_timer
+			value = 0
+        }
+	}
+    
+    complete = {
+		scope:journal_entry = {
+			is_goal_complete = yes
+		}
+
+	}
+
+    on_complete = {
+        trigger_event = { id = tno_germany_events.4 popup = yes }
+        set_variable = {
+            
+			name = ss_dub
+			value = 0
+        }
+    }
+
+    current_value = {
+        
+		value = root.var:speer_ger_struggle_timer
+	}
+
+    goal_add_value = {
+        
+		value = 60
+	}
+
+    progressbar = yes
+    
+    weight = 30
+    
+    should_be_pinned_by_default = yes
+    
+}
+
+je_tno_gerpowerstruggle_boreman= { # boreman JE
+
+    icon = "gfx/interface/icons/new_event_icons/ger_struggle_bor.dds"
+    group = je_group_internal_affairs
+
+    invalid = {
+        OR = {
+            
+        
+            has_variable = landowner_dub
+            
+            has_variable = speer_dub
+
+            has_variable = goreing_dub
+
+            has_variable = ss_dub
+            
+        }
+        
+    }
+    
+    immediate = {
+
+		set_variable = {
+            
+			name = boreman_ger_struggle_timer
+			value = 0
+        }
+	}
+    
+    complete = {
+		scope:journal_entry = {
+			is_goal_complete = yes
+		}
+
+	}
+
+    on_complete = {
+        trigger_event = { id = tno_germany_events.7 popup = yes }
+        set_variable = {
+            
+			name = ss_dub
+			value = 0
+        }
+       
+    }
+
+    current_value = {
+        
+		value = root.var:boreman_ger_struggle_timer
+	}
+
+    goal_add_value = {
+        
+		value = 60
+	}
+
+    progressbar = yes
+    
+    weight = 30
+    
+    should_be_pinned_by_default = yes
+    
+}
+
+je_tno_gerpowerstruggle_hitler_stats = { # status of hitler JE
+
+    icon = "gfx/interface/icons/new_event_icons/hitler_sick.dds"
+    group = je_group_internal_affairs
+    invalid = {
+        OR = {
+            
+        
+            has_variable = landowner_dub
+            
+            has_variable = speer_dub
+
+            has_variable = goreing_dub
+
+            has_variable = ss_dub
+            
+        }
+        
+    }
+    
+    immediate = {
+
+		set_variable = {
+            
+			name = hitler_ger_struggle_timer
+			value = 0
+        }
+	}
+
+	status_desc = {
+	
+        first_valid = {
+            triggered_desc = {
+                desc = custom_hitler_tt.1
+                trigger = {
+                    has_variable = hitler_good
+                    NOT = {
+                        has_variable = hitler_fair
+                    }
+                }
+            }
+            triggered_desc = {
+                desc = custom_hitler_tt.2
+                trigger = {
+                    has_variable = hitler_fair
+                    NOT = {
+                        has_variable = hitler_unwell
+                    }
+                }
+            }
+            triggered_desc = {
+                desc = custom_hitler_tt.3
+                trigger = {
+                    has_variable = hitler_unwell
+                    NOT = {
+                        has_variable = hitler_severe
+                    }
+                }
+            }
+            triggered_desc = {
+                desc = custom_hitler_tt.4
+                trigger = {
+                    has_variable = hitler_severe
+                    NOT = {
+                        has_variable = hitler_coma
+                    }
+                }
+            }
+            triggered_desc = {
+                desc = custom_hitler_tt.5
+                trigger = {
+                    has_variable = hitler_coma
+                    NOT = {
+                        has_variable = hitler_dead
+                    }
+                }
+            }
+            triggered_desc = {
+                desc = custom_hitler_tt.6
+                trigger = {
+                    has_variable = hitler_dead
+                }
+            }
+        }
+    }   
+
+	on_weekly_pulse = {
+		effect = {
+		change_variable = {
+            name = hitler_ger_struggle_timer
+            add = 2
+        }
+		}
+	}
+    
+    complete = {
+		scope:journal_entry = {
+			is_goal_complete = yes
+		}
+
+	}
+
+    on_complete = {
+        trigger_event = { id = tno_germany_events.17 popup = yes }
+       
+        set_variable = {
+            
+			name = ss_dub
+			value = 0
+        }
+    }
+
+    current_value = {
+        
+		value = root.var:hitler_ger_struggle_timer
+	}
+
+    goal_add_value = {
+        
+		value = 120
+	}
+
+   
+    
+    weight = 190
+    
+    should_be_pinned_by_default = yes
+    
+}

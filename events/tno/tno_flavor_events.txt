@@ -388,11 +388,6 @@ tno_flavor_events.8 = {
 	trigger = {
 		exists = c:ENG
 		this ?= c:ENG
-	   	OR = {
-				exists = c:GBR
-				this ?= c:GBR
-			}
-	
 	}	
 	
 	duration = 3
@@ -467,133 +462,163 @@ tno_flavor_events.10 = {
 			limit = {
 				state_region = s:STATE_TVER
 			}
-			set_state_owner = c:PRO
+			
 			set_state_type = incorporated
 		}	
 		random_state = {
 			limit = {
 				state_region = s:STATE_NOVGOROD
 			}
-			set_state_owner = c:PRO
+			
 			set_state_type = incorporated
 		}
 		random_state = {
 			limit = {
 				state_region = s:STATE_SMOLENSK
 			}
-			set_state_owner = c:PRO
+			
 			set_state_type = incorporated
 		}
 		random_state = {
 			limit = {
 				state_region = s:STATE_BRYANSK
 			}
-			set_state_owner = c:PRO
+			
 			set_state_type = incorporated
 		}
 		random_state = {
 			limit = {
 				state_region = s:STATE_KURSK
 			}
-			set_state_owner = c:PRO
+			
 			set_state_type = incorporated
 		}
 		random_state = {
 			limit = {
 				state_region = s:STATE_TARTARIA
 			}
-			set_state_owner = c:PRO
+			
 			set_state_type = incorporated
 		}
 		random_state = {
 			limit = {
 				state_region = s:STATE_ROSTOV
 			}
-			set_state_owner = c:PRO
+			
 			set_state_type = incorporated
 		}
 		random_state = {
 			limit = {
 				state_region = s:STATE_ASTRAKHAN
 			}
-			set_state_owner = c:PRO
+			
 			set_state_type = incorporated
 		}
 		random_state = {
 			limit = {
 				state_region = s:STATE_DAGESTAN
 			}
-			set_state_owner = c:PRO
+			
 			set_state_type = incorporated
 		}
 		random_state = {
 			limit = {
 				state_region = s:STATE_CRIMEA
 			}
-			set_state_owner = c:PRO
+			
 			set_state_type = incorporated
 		}
 		random_state = {
 			limit = {
 				state_region = s:STATE_CRIMEA
 			}
-			set_state_owner = c:PRO
+			
 			set_state_type = incorporated
 		}
 		random_state = {
 			limit = {
 				state_region = s:STATE_LUHANSK
 			}
-			set_state_owner = c:PRO
+			
 			set_state_type = incorporated
 		}
 		random_state = {
 			limit = {
 				state_region = s:STATE_CHERSON
 			}
-			set_state_owner = c:PRO
+			
 			set_state_type = incorporated
 		}
 		random_state = {
 			limit = {
 				state_region = s:STATE_VOLHYNIA
 			}
-			set_state_owner = c:PRO
+			
 			set_state_type = incorporated
 		}
 		random_state = {
 			limit = {
 				state_region = s:STATE_MINSK
 			}
-			set_state_owner = c:PRO
+			
 			set_state_type = incorporated
 		}
 		random_state = {
 			limit = {
 				state_region = s:STATE_ORSHA
 			}
-			set_state_owner = c:PRO
+			
 			set_state_type = incorporated
 		}
 		random_state = {
 			limit = {
 				state_region = s:STATE_LITHUANIA
 			}
-			set_state_owner = c:PRO
+			
 			set_state_type = incorporated
 		}
 		random_state = {
 			limit = {
 				state_region = s:STATE_ESTONIA
 			}
-			set_state_owner = c:PRO
+			
 			set_state_type = incorporated
 		}
 		random_state = {
 			limit = {
 				state_region = s:STATE_INGRIA
 			}
-			set_state_owner = c:PRO
+			
+			set_state_type = incorporated
+		}
+		random_state = {
+			limit = {
+				state_region = s:STATE_KIEV
+			}
+			set_state_type = incorporated
+		}
+		random_state = {
+			limit = {
+				state_region = s:STATE_KUBAN
+			}
+			set_state_type = incorporated
+		}
+		random_state = {
+			limit = {
+				state_region = s:STATE_MOSCOW
+			}
+			set_state_type = incorporated
+		}
+		random_state = {
+			limit = {
+				state_region = s:STATE_BREST
+			}
+			set_state_type = incorporated
+		}
+		random_state = {
+			limit = {
+				state_region = s:STATE_LATVIA
+			}
 			set_state_type = incorporated
 		}
 	}
@@ -664,7 +689,7 @@ tno_flavor_events.12 = {
 		name = mad_flavor.1.a
 		default_option = yes
 		trigger = {
-			owns_entire_state_region = STATE_BRANDENBURG
+			this ?= c:GER
 		}
 		add_treasury = -50000
 		c:MAD = { add_treasury = 50000 } 	
@@ -673,7 +698,7 @@ tno_flavor_events.12 = {
 		name = mad_flavor.1.b
 		default_option = yes
 		trigger = {
-			owns_entire_state_region = STATE_KYUSHU
+			this ?= c:JAP
 		}
 		c:MAD = {	
 		add_radicals = {
@@ -720,7 +745,7 @@ tno_flavor_events.13 = {
 		name = mad_flavor.2.a
 		default_option = yes
 		trigger = {
-			owns_entire_state_region = STATE_BRANDENBURG
+			this ?= c:GER
 		}
 		add_treasury = -50000
 		c:MAD = { 
@@ -731,14 +756,14 @@ tno_flavor_events.13 = {
 				}
 				save_scope_as = volunteer_state
 			}
-			scope:volunteer_state = {
-				create_building={
-				building = "building_volunteer_barracks"
-				level=5
-				reserves=1 
-				activate_production_methods= { "pm_volunteer_battle_rifle_infantry" "pm_volunteer_gen1_tank" "pm_volunteer_airborne_fac" "pm_no_specialists" "pm_volunteer_ww_doctrine" "pm_wound_dressing"}
-				}
-			}
+			#scope:volunteer_state = {
+				#create_building={
+				#building = "building_volunteer_barracks"
+				#level=5
+				#reserves=1 
+				#activate_production_methods= { "pm_volunteer_battle_rifle_infantry" "pm_volunteer_gen1_tank" "pm_volunteer_airborne_fac" "pm_no_specialists" "pm_volunteer_ww_doctrine" "pm_wound_dressing"}
+				#}
+			#}
 		}
 	}	
 	option = {
@@ -746,11 +771,11 @@ tno_flavor_events.13 = {
 		default_option = yes
 		add_treasury = -50000
 		trigger = {
-			owns_entire_state_region = STATE_KYUSHU
+			this ?= c:JAP
 		}
 		create_diplomatic_pact = {
 			country = c:SMD
-			type = imperial_subject
+			type = independent_member
 		}
 		c:SMD = {
 			add_modifier = {
@@ -763,14 +788,14 @@ tno_flavor_events.13 = {
 				}
 				save_scope_as = volunteer_state
 			}
-			scope:volunteer_state = {
-				create_building={
-				building = "building_volunteer_barracks"
-				level=10
-				reserves=1 
-				activate_production_methods= { "pm_volunteer_battle_rifle_infantry" "pm_volunteer_gen1_tank" "pm_volunteer_airborne_fac" "pm_no_specialists" "pm_volunteer_ww_doctrine" "pm_wound_dressing"}
-				}
-			}
+			# scope:volunteer_state = {
+				#create_building={
+				#building = "building_volunteer_barracks"
+				#level=10
+				#reserves=1 
+				#activate_production_methods= { "pm_volunteer_battle_rifle_infantry" "pm_volunteer_gen1_tank" "pm_volunteer_airborne_fac" "pm_no_specialists" "pm_volunteer_ww_doctrine" "pm_wound_dressing"}
+				#}
+			#}
 		}
 	}
   }

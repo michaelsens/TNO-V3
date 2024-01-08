@@ -5,7 +5,6 @@
 
 NWar = {
     DAYS_BETWEEN_WAR_EXHAUSTION = 10 # Every this many days war support will be reduced by the war exhaustion formula
-	MAX_SIMULTANEOUS_BATTLES = 3
 	DEVASTATION_INCREASE_RATE = 0.1
 	DEVASTATION_FROM_BATTLES = 2.5
 	DEVASTATION_MAX = 250.0
@@ -24,15 +23,11 @@ NAI = {
 }
 
 NEconomy = {
-	MAX_WEEKLY_CONSTRUCTION_PROGRESS = 60
-	MAX_WEEKLY_CONSTRUCTION_ALLOCATION = 60
 	AI_PEACE_AGREEMENT_BASE_VALUE = -100
     TRADE_ROUTE_MIN_SCORE_TO_CREATE_BASE = 500 # If a potential trade route is scored less than this, don't create it
 	AI_PEACE_AGREEMENT_WHITE_PEACE_BASE = 0 # If no wargoals are being enforced on either side
 	AI_PEACE_AGREEMENT_WHITE_PEACE_WAR_DURATION = 0.1 # For each month the war goes on add this to the acceptance for a white peace
 	AI_CAPITULATE_BASE_VALUE = -50
-	HIRING_RATE = 0.1 							# Weekly hiring limit applied in a building per profession as a ratio of full employment
-	EMPLOYMENT_PROPORTIONALITY_LIMIT = 0.1
 	COUNTRY_GDP_MODIFIER_MAX_MULTIPLIER = 200000000
 }
 
@@ -59,28 +54,6 @@ NDiplomacy = {
 	WAR_GOAL_BAN_SLAVERY_MONTHS = 18
 	WAR_GOAL_OPEN_MARKET_MONTHS = 18
 	WAR_GOAL_REGIME_CHANGE_MONTHS = 18
-	DIPLOMATIC_PLAY_ESCALATION_DAILY = 2
-}
-
-NMilitary = {
-	MIN_MOBILIZATION_PER_DAY = 0.15				# minimum mobilization gained per day by each mobilizing battalion (the last unit to gain mobilization in a state might have to do with whatever is left)
-	MAX_MOBILIZATION_PER_DAY = 0.60				# maximum mobilization gained per day by each mobilizing battalion
-	MIN_MANPOWER_CASUALTY_PER_ROUND = 15
-	BATTLE_PLAN_ADVANCE_PROGRESS_TO_LAUNCH = 50
-	BATTLE_PLAN_SWITCH_ORDER_LOST_PROGRESS_PERCENT = 0.25
-	GENERAL_TRAVEL_PIXELS_TO_DAYS_SCALE = 0.005
-	GENERAL_TRAVEL_CAP = 25                         # Limits the travel time to GENERAL_TRAVEL_CAP days. The overseas penalty (GENERAL_TRAVEL_OVERSEAS_SCALE) is still applied.
-    GENERAL_AUTO_TRAVEL_MAX_DAYS = 15               # Disables auto traveling if the travel takes more than `GENERAL_AUTO_TRAVEL_MAX_DAYS`. Makes general standby the nearest HQ.
-    GENERAL_TRAVEL_OVERSEAS_SCALE = 1
-
-	CONVOY_RAIDING_NUM_POSSIBLE_ATTACK_NODES = 5			# How many sea zones will be shown as possible attack sites for convoy raided player
-	CONVOY_RAIDING_DELAY_BASE_DAYS = 4						# atleast this many days between each admiral raiding attempt
-	CONVOY_RAIDING_DELAY_MAX_RANDOM_DAYS_FACTOR = 6		# up to this many extra days between each admiral raiding attempt
-	CONVOY_RAIDING_CONVOY_ATTACK_CHANCE = 0.6				# Chance each attempt that convoy raiders find convoys to attack from each country along the shipping lane (1 = 100%)
-	CONVOY_RAIDING_STRENGTH_MULT = 0.26						# How strong each Convoy raiding point is ( num flotillas * ce offense )
-	CONVOY_RAIDING_DAMAGE_RANDOM_FACTOR = 0.4				# Actual convoy raiding damage is increased by up to this to provide some random variability
-	CONVOY_RAIDING_DEFENSE_MULT = 0.15						# How much is Convoy raiding strength reduced by patrolling flotillas  ( num flotillas * ce defense )
-	CONVOY_RAIDING_MAX_DEFENSE = 0.8						# Convoy raiding damage cannot be reduced below this by convoy raiding defense
 }
 
 NPolitics = {

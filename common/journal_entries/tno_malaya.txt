@@ -1,0 +1,136 @@
+je_tno_malaya_ofn = { 
+
+    icon = "gfx/interface/icons/new_event_icons/malaya.dds"
+    group = je_group_historical_content
+    scripted_button = je_malaya_ofn_a
+    scripted_button = je_malaya_ofn_b
+    scripted_button = je_malaya_ofn_c
+    scripted_button = je_malaya_ofn_d
+    scripted_button = je_malaya_ofn_e
+    scripted_button = je_malaya_ofn_f
+
+
+    invalid = {
+        c:JOL = {
+            is_at_war = no
+        }
+	}
+    
+    complete = {
+       
+        c:JOL = {
+            owns_entire_state_region = STATE_MALAYA
+        }
+		
+		
+	}
+
+    fail = {
+        c:JOH = {
+            owns_entire_state_region = STATE_MALAYA
+        } 
+    }
+
+    on_fail = {
+        add_modifier = {
+            name = proxy_lost
+            months = 250
+            is_decaying = yes
+        
+        }
+
+        add_radicals = {
+            value = 0.1
+        }
+    }
+
+    on_complete = {
+        add_modifier = {
+            name = proxy_won
+            months = 250
+            is_decaying = yes
+        } 
+        
+        add_loyalists = {
+            value = 0.1
+        }
+    }
+
+    progressbar = no
+    
+    weight = 100
+
+    
+    should_be_pinned_by_default = yes
+    
+}
+
+je_tno_malaya_jap = { 
+
+    icon = "gfx/interface/icons/new_event_icons/malaya.dds"
+    group = je_group_historical_content
+    scripted_button = je_malaya_jap_a
+    scripted_button = je_malaya_jap_b
+    scripted_button = je_malaya_jap_c
+    scripted_button = je_malaya_jap_d
+    scripted_button = je_malaya_jap_e
+    scripted_button = je_malaya_jap_f
+
+
+    invalid = {
+        c:JOL = {
+            is_at_war = no
+        }
+    }
+
+    immediate = {
+	}
+    
+    complete = {
+       
+        c:JOH = {
+            owns_entire_state_region = STATE_MALAYA
+        }
+		
+		
+	}
+
+    fail = {
+        c:JOL = {
+            owns_entire_state_region = STATE_MALAYA
+        } 
+    }
+
+    on_fail = {
+        add_modifier = {
+            name = proxy_lost
+            months = 250
+            is_decaying = yes
+        } 
+
+        add_radicals = {
+            value = 0.1
+        }
+    }
+
+    on_complete = {
+        add_modifier = {
+            name = proxy_won
+            months = 250
+            is_decaying = yes
+        } 
+
+        add_loyalists = {
+            value = 0.1
+
+        }
+    }
+
+    progressbar = no
+    
+    weight = 100
+
+    
+    should_be_pinned_by_default = yes
+    
+}

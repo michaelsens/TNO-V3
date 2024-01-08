@@ -119,6 +119,10 @@ fi_remove_all_from_state_country = {
                 remove_variable = $ID$_building_rice_farm_number
         }
         if = {
+                limit = {has_variable = $ID$_building_vineyard_plantation_number}
+                remove_variable = $ID$_building_vineyard_plantation_number
+        }
+        if = {
                 limit = {has_variable = $ID$_building_maize_farm_number}
                 remove_variable = $ID$_building_maize_farm_number
         }
@@ -197,5 +201,17 @@ if = {
 if = {
                 limit = {has_variable = $ID$_building_power_plant_number}
                 remove_variable = $ID$_building_power_plant_number
+        }
+if = {
+                limit = {has_variable = $ID$_building_explosives_factory_number}
+                remove_variable = $ID$_building_explosives_factory_number
+        }
+if = {
+                limit = {has_variable = $ID$_building_military_shipyards_number}
+                remove_variable = $ID$_building_military_shipyards_number
+        }
+if = {
+                limit = {has_variable = $ID$_building_artillery_foundries_number}
+                remove_variable = $ID$_building_artillery_foundries_number
         }
 }

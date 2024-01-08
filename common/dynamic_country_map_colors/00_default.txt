@@ -164,6 +164,16 @@ soviet_red = {
 	}
 }
 
+communust_equadar = {
+	color = "red_dark"
+
+	possible = {
+		exists = c:ECU
+		THIS = c:ECU
+		has_law = law_type:law_council_republic
+	}
+}
+
 communist_china = {
 	color = "communist_china_red"
 	possible = {
@@ -174,7 +184,7 @@ communist_china = {
 }
 
 republican_china = {
-	color = "azure"
+	color = { 190 51 60 }
 
 	possible = {
 		exists = c:CHI
@@ -182,6 +192,55 @@ republican_china = {
 		OR = {
 			has_law = law_type:law_parliamentary_republic
 			has_law = law_type:law_presidential_republic
+		}
+	}
+}
+
+strasserite_black = {
+	color = { 0 0 0 }
+
+	possible = {
+		exists = c:GER
+		THIS = c:GER
+			has_law = law_type:law_ethnostate
+			has_law = law_type:law_council_republic
+	}
+}
+
+corprate_goungdong = {
+	color = { 130 26 32 }
+
+	possible = {
+		exists = c:YUE
+		THIS = c:YUE
+		OR = {
+			has_law = law_type:law_parliamentary_republic
+			has_law = law_type:law_presidential_republic
+		}
+	}
+}
+
+manchura = {
+	color = { 160 56 70 }
+
+	possible = {
+		exists = c:MCH
+		THIS = c:MCH
+		OR = {
+			has_law = law_type:law_parliamentary_republic
+			has_law = law_type:law_presidential_republic
+		}
+	}
+}
+
+evil_japan = {
+	color = { 140 32 45 }
+
+	possible = {
+		exists = c:JAP
+		THIS = c:JAP
+		OR = {
+			has_law = law_type:law_autocracy
 		}
 	}
 }
@@ -196,6 +255,69 @@ han_imperial_china = {
 		has_law = law_type:law_monarchy
 	}
 }
+
+communist_italy = {
+	color = { 167 26 23 }
+
+	possible = {
+		exists = c:ITA
+		THIS = c:ITA
+		has_law = law_type:law_council_republic
+	}
+}
+
+communist_tsr = {
+	color = { 58 21 20 }
+
+	possible = {
+		exists = c:TSR
+		THIS = c:TSR	
+		has_law = law_type:law_council_republic
+	}
+}
+
+communist_prz = {
+	color = { 155 43 64 }
+
+	possible = {
+		exists = c:PRZ
+		THIS = c:PRZ
+		has_law = law_type:law_council_republic
+	}
+}
+
+communist_khi = {
+	color = { 142 44 35 }
+
+	possible = {
+		exists = c:KHI
+		THIS = c:KHI
+		has_law = law_type:law_council_republic
+	}
+}
+
+
+communist_sex = {
+	color = { 216 43 64 }
+
+	possible = {
+		exists = c:SEX
+		THIS = c:SEX
+		has_law = law_type:law_council_republic
+	}
+}
+
+communist_kirghizia = {
+	color = { 216 43 64 }
+
+	possible = {
+		exists = c:KSR
+		THIS = c:KSR	
+		has_law = law_type:law_council_republic
+	}
+}
+
+
 
 fascist_spain = {
 	color = "orange"
@@ -249,6 +371,138 @@ ddr_germany = {
 		exists = c:GER
 		THIS = c:GER
 		has_law = law_type:law_council_republic
+	}
+}
+
+muslim_brotherhood = {
+	color = { 167 255 137 }
+
+	possible = {
+		exists = c:EGM
+		THIS = c:EGM
+		has_law = law_type:law_theocracy
+	}
+}
+
+
+com_yemen = {
+	color = { 255 93 20 }
+
+	possible = {
+		exists = c:YED
+		THIS = c:YED
+		has_law = law_type:law_council_republic
+	}
+}
+
+com_egypt = {
+	color = { 255 93 20 }
+
+	possible = {
+		exists = c:EGR
+		THIS = c:EGR
+		has_law = law_type:law_council_republic
+	}
+}
+
+com_iran = {
+	color = { 255 93 20 }
+
+	possible = {
+		exists = c:PEF
+		THIS = c:PEF
+		has_law = law_type:law_council_republic
+	}
+}
+
+com_oman = {
+	color = { 255 93 20 }
+
+	possible = {
+		exists = c:ODR
+		THIS = c:ODR
+		has_law = law_type:law_council_republic
+	}
+}
+
+islamic_iran = {
+	color = { 167 255 137 }
+
+	possible = {
+		exists = c:PEI
+		THIS = c:PEI
+		has_law = law_type:law_theocracy
+	}
+}
+
+islamic_oman = {
+	color = { 167 255 137 }
+
+	possible = {
+		exists = c:OMI
+		THIS = c:OMI
+		has_law = law_type:law_theocracy
+	}
+}
+
+islamic_iraq = {
+	color = { 167 255 137 }
+
+	possible = {
+		exists = c:IRI
+		THIS = c:IRI
+		has_law = law_type:law_theocracy
+	}
+}
+
+sha_iran = {
+	color = { 255 204 132 }
+
+	possible = {
+		exists = c:PES
+		THIS = c:PES
+		has_law = law_type:law_monarchy
+	}
+}
+
+
+OFN_iran = {
+	color = { 128 190 178 }
+
+	possible = {
+		exists = c:PED
+		THIS = c:PED
+		has_law = law_type:law_universal_suffrage
+	}
+}
+
+REP_arabia = {
+	color = { 128 190 178 }
+
+	possible = {
+		exists = c:NEZ
+		THIS = c:NEZ
+		has_law = law_type:law_universal_suffrage
+	}
+}
+
+OFN_iraq = {
+	color = { 128 190 178 }
+
+	possible = {
+		exists = c:IIR
+		THIS = c:IIR
+		has_law = law_type:law_universal_suffrage
+	}
+}
+
+OFN_sudan = {
+	color = { 128 190 178 }
+
+	possible = {
+		exists = c:EGN
+		THIS = c:EGN
+		has_law = law_type:law_universal_suffrage
 	}
 }
 

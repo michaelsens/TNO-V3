@@ -96,7 +96,130 @@ lowlands_land_reclamation = {
 	}
 }
 
-abolish_tangena_ordeal = {
+crush_newengland = { #usa attacks newengland breakaways
+		is_shown = {
+			exists = c:USA
+			ROOT = c:USA
+			has_modifier = modifier_usa_newengland
+		}
+	
+		possible = {
+			exists = c:USA
+			ROOT = c:USA
+			has_modifier = modifier_usa_newengland
+		}
+	
+		when_taken = {
+			trigger_event = { id = tno_war_events.10 days = 0 popup = yes }
+		}
+		ai_chance = {
+			base = 100
+		}
+	}
+
+crush_thesouth = { #usa attacks the south
+		is_shown = {
+			exists = c:USA
+			ROOT = c:USA
+			has_modifier = modifier_usa_crushsouth
+		}
+	
+		possible = {
+			exists = c:USA
+			ROOT = c:USA
+			has_modifier = modifier_usa_crushsouth
+		}
+	
+		when_taken = {
+			trigger_event = { id = tno_usa_events.18 days = 0 popup = yes }
+		}
+		ai_chance = {
+			base = 100
+		}
+	}
+	crush_rustbelt = { #usa attacks the rustbelt
+		is_shown = {
+			exists = c:USA
+			ROOT = c:USA
+			has_modifier = modifier_usa_rustbelt
+		}
+	
+		possible = {
+			exists = c:USA
+			ROOT = c:USA
+			has_modifier = modifier_usa_rustbelt
+		}
+	
+		when_taken = {
+			trigger_event = { id = tno_war_events.7 days = 0 popup = yes }
+		}
+		ai_chance = {
+			base = 100
+		}
+	}
+crush_pacific = { #usa attacks the paccific
+		is_shown = {
+			exists = c:USA
+			ROOT = c:USA
+			has_modifier = modifier_usa_cali
+		}
+	
+		possible = {
+			exists = c:USA
+			ROOT = c:USA
+			has_modifier = modifier_usa_cali
+		}
+	
+		when_taken = {
+			trigger_event = { id = tno_usa_events.19 days = 0 popup = yes }
+		}
+		ai_chance = {
+			base = 100
+		}
+	}
+crush_govleauge = { #usa attacks govners lauge
+		is_shown = {
+			exists = c:USA
+			ROOT = c:USA
+			has_modifier = modifier_usa_gov
+		}
+	
+		possible = {
+			exists = c:USA
+			ROOT = c:USA
+			has_modifier = modifier_usa_gov
+		}
+	
+		when_taken = {
+			trigger_event = { id = tno_usa_events.20 days = 0 popup = yes }
+		}
+		ai_chance = {
+			base = 100
+		}
+
+	}
+crush_usu = { #USA ATTACks USU
+			is_shown = {
+				exists = c:USA
+				ROOT = c:USA
+				has_modifier = modifier_usa_crushusu
+			}
+		
+			possible = {
+				exists = c:USA
+				ROOT = c:USA
+				has_modifier = modifier_usa_crushusu
+			}
+		
+			when_taken = {
+				trigger_event = { id = tno_war_events.8 days = 0 popup = yes }
+			}
+			ai_chance = {
+				base = 100
+			}
+		}
+
+		abolish_tangena_ordeal = {
 	is_shown = {
 		exists = c:MAD
 		ROOT = c:MAD

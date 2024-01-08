@@ -20,38 +20,50 @@
 				activate_production_methods={ "pm_simple_farming_building_rice_farm" "pm_no_secondary" "pm_tools_disabled"  }
 			}
 			create_building={
-				building="building_fishing_wharf"
-				level=1
+				building="building_barracks"
+				level=7
 				reserves=1
-				activate_production_methods={ "pm_simple_fishing" "pm_unrefrigerated" "pm_merchant_guilds_building_fishing_wharf" }
+				activate_production_methods={ "pm_general_training" }
+			}
+		}
+		region_state:JOL={
+			create_building={
+				building="building_logging_camp"
+				level=3
+				reserves=1
+				activate_production_methods={ "pm_simple_forestry" "pm_hardwood" "pm_no_equipment" "pm_road_carts" "pm_merchant_guilds_building_logging_camp" }
+			}
+			create_building={
+				building="building_small_workshop"
+				level=4
+				reserves=1
+				activate_production_methods={ "pm_small_workshop" }
 			}
 			create_building={
 				building="building_barracks"
-				level=3
+				level=30
 				reserves=1
-				activate_production_methods={ "pm_battle_rifle_infantry" "pm_wound_dressing" "pm_no_aircraft" "pm_no_specialists" "pm_no_tanks" }
+				activate_production_methods={ "pm_general_training" }
 			}
 		}
-		region_state:SIA={
-			create_building={
-				building="building_banana_plantation"
-				level=1
-				reserves=1
-				activate_production_methods={ "default_building_banana_plantation" "pm_road_carts"  }
-			}
-		}
+	}
+	s:STATE_SINGAPORE={
 		region_state:JAP={
-			create_building={
-				building="building_tea_plantation"
-				level=1
-				reserves=1
-				activate_production_methods={ "default_building_tea_plantation" "pm_road_carts"  }
-			}
 			create_building={
 				building="building_port"
 				level=1
 				reserves=1
 				activate_production_methods={ "pm_industrial_port" }
+			}
+		}
+	}
+	s:STATE_EAST_MALAYA={
+		region_state:SIA={
+			create_building={
+				building="building_banana_plantation"
+				level=2
+				reserves=1
+				activate_production_methods={ "default_building_banana_plantation" "pm_road_carts"  }
 			}
 		}
 	}
@@ -71,9 +83,9 @@
 			}
 			create_building={
 				building="building_barracks"
-				level=1
+				level=26
 				reserves=1
-				activate_production_methods={ "pm_battle_rifle_infantry" "pm_no_tanks" "pm_no_aircraft" "pm_no_specialists" "pm_wound_dressing" }
+				activate_production_methods={ "pm_general_training" }
 			}
 			create_building={
 				building="building_tobacco_plantation"
@@ -101,7 +113,7 @@
 				building="building_barracks"
 				level=2
 				reserves=1
-				activate_production_methods={ "pm_battle_rifle_infantry" "pm_no_tanks" "pm_no_aircraft" "pm_no_specialists" "pm_wound_dressing" }
+				activate_production_methods={ "pm_general_training" }
 			}
 			create_building={
 				building="building_port"
@@ -119,7 +131,7 @@
 				building="building_rice_farm"
 				level=2
 				reserves=1
-				activate_production_methods={ "pm_simple_farming_building_rice_farm"  "pm_tools_disabled" "pm_fig_orchards" }
+				activate_production_methods={ "pm_simple_farming_building_rice_farm"  "pm_tools_disabled" "pm_fig_orchards_building_rice_farm" }
 			}	
 		}
 	}
@@ -141,7 +153,7 @@
 				building="building_rice_farm"
 				level=1
 				reserves=1
-				activate_production_methods={ "pm_simple_farming_building_rice_farm"  "pm_tools_disabled" "pm_fig_orchards" }
+				activate_production_methods={ "pm_simple_farming_building_rice_farm"  "pm_tools_disabled" "pm_fig_orchards_building_rice_farm" }
 			}
 			create_building={
 				building="building_port"
@@ -153,7 +165,7 @@
 				building="building_barracks"
 				level=5
 				reserves=1
-				activate_production_methods={ "pm_battle_rifle_infantry" "pm_no_tanks" "pm_no_aircraft" "pm_no_specialists" "pm_wound_dressing" }
+				activate_production_methods={ "pm_general_training" }
 			}
 			create_building={
 				building="building_tea_plantation"
@@ -241,7 +253,7 @@
 				building="building_barracks"
 				level=5
 				reserves=1
-				activate_production_methods={ "pm_wound_dressing" "pm_battle_rifle_infantry" "pm_no_aircraft" "pm_no_specialists" "pm_gen2_early_tank" }
+				activate_production_methods={ "pm_general_training" }
 			}
 			create_building={
 				building="building_port"
@@ -311,7 +323,7 @@
 				building="building_barracks"
 				level=5
 				reserves=1
-				activate_production_methods={ "pm_battle_rifle_infantry" "pm_no_tanks" "pm_no_aircraft" "pm_no_specialists" "pm_wound_dressing" "pm_ww_doctrine" }
+				activate_production_methods={ "pm_general_training" }
 			}
 		}
 	}
@@ -375,7 +387,7 @@
 				building="building_barracks"
 				level=6
 				reserves=1
-				activate_production_methods={ "pm_battle_rifle_infantry" "pm_no_tanks" "pm_no_aircraft" "pm_no_specialists" "pm_wound_dressing" "pm_ww_doctrine" }
+				activate_production_methods={ "pm_general_training" }
 			}
 		}
 	}
@@ -403,7 +415,7 @@
 				building="building_barracks"
 				level=5
 				reserves=1
-				activate_production_methods={ "pm_battle_rifle_infantry" "pm_no_tanks" "pm_no_aircraft" "pm_no_specialists" "pm_wound_dressing" "pm_ww_doctrine" }
+				activate_production_methods={ "pm_general_training" }
 			}
 			create_building={
 				building="building_port"
@@ -415,7 +427,7 @@
 				building="building_rice_farm"
 				level=2
 				reserves=1
-				activate_production_methods={ "pm_simple_farming_building_rice_farm"  "pm_tools_disabled" "pm_fig_orchards" }
+				activate_production_methods={ "pm_simple_farming_building_rice_farm"  "pm_tools_disabled" "pm_fig_orchards_building_rice_farm" }
 			}
 			create_building={
 				building="building_tobacco_plantation"
@@ -467,7 +479,7 @@
 				building="building_barracks"
 				level=3
 				reserves=1
-				activate_production_methods={ "pm_battle_rifle_infantry" "pm_no_tanks" "pm_no_aircraft" "pm_no_specialists" "pm_wound_dressing" "pm_ww_doctrine" }
+				activate_production_methods={ "pm_general_training" }
 			}
 			create_building={
 				building="building_port"
@@ -495,7 +507,7 @@
 				building="building_barracks"
 				level=2
 				reserves=1
-				activate_production_methods={ "pm_battle_rifle_infantry" "pm_wound_dressing" "pm_no_aircraft" "pm_no_specialists" "pm_no_tanks" }
+				activate_production_methods={ "pm_general_training" }
 			}
 			create_building={
 				building="building_port"
@@ -512,7 +524,7 @@
 		}
 	}
 	s:STATE_WESTERN_NEW_GUINEA={
-		region_state:AST={
+		region_state:IDN={
 			create_building={
 				building="building_banana_plantation"
 				level=1
@@ -557,7 +569,7 @@
 				building="building_barracks"
 				level=3
 				reserves=1
-				activate_production_methods={ "pm_battle_rifle_infantry" "pm_no_tanks" "pm_no_aircraft" "pm_no_specialists" "pm_wound_dressing" }
+				activate_production_methods={ "pm_general_training" }
 			}
 		}
 	}
@@ -579,12 +591,12 @@
 				building="building_barracks"
 				level=1
 				reserves=1
-				activate_production_methods={ "pm_battle_rifle_infantry" "pm_no_tanks" "pm_no_aircraft" "pm_no_specialists" "pm_wound_dressing" }
+				activate_production_methods={ "pm_general_training" }
 			}
 		}
 	}
 	s:STATE_EASTERN_NEW_GUINEA={
-		region_state:AST={
+		region_state:JAP={
 			create_building={
 				building="building_port"
 				level=1
@@ -617,7 +629,7 @@
 				building="building_barracks"
 				level=2
 				reserves=1
-				activate_production_methods={ "pm_battle_rifle_infantry" "pm_no_tanks" "pm_no_aircraft" "pm_no_specialists" "pm_wound_dressing" }
+				activate_production_methods={ "pm_general_training" }
 			}
 			create_building={
 				building="building_dye_plantation"
@@ -634,34 +646,6 @@
 		}
 	}
 	s:STATE_MINDANAO={
-		region_state:PHI={
-			create_building={
-				building="building_dye_plantation"
-				level=5
-				reserves=1
-				activate_production_methods={ "default_building_dye_plantation" "pm_road_carts"  }
-			}
-			create_building={
-				building="building_rubber_plantation"
-				level=4
-				reserves=1
-				activate_production_methods={ "default_building_rubber_plantation" "pm_road_carts"  }
-			}
-			create_building={
-				building="building_rice_farm"
-				level=1
-				reserves=1
-				activate_production_methods={ "pm_simple_farming_building_rice_farm" "pm_no_secondary" "pm_tools_disabled"  }
-			}
-		}
-		region_state:JAP={
-			create_building={
-				building="building_port"
-				level=1
-				reserves=1
-				activate_production_methods={ "pm_industrial_port" }
-			}
-		}
 		region_state:RNG={
 			create_building={
 				building="building_dye_plantation"
@@ -679,7 +663,7 @@
 				building="building_barracks"
 				level=3
 				reserves=1
-				activate_production_methods={ "pm_battle_rifle_infantry" "pm_no_tanks" "pm_no_aircraft" "pm_no_specialists" "pm_wound_dressing" }
+				activate_production_methods={ "pm_general_training" }
 			}
 			create_building={
 				building="building_rice_farm"
@@ -691,7 +675,7 @@
 				building="building_barracks"
 				level=1
 				reserves=1
-				activate_production_methods={ "pm_battle_rifle_infantry" "pm_no_tanks" "pm_no_aircraft" "pm_no_specialists" "pm_wound_dressing" }
+				activate_production_methods={ "pm_general_training" }
 			}
 			create_building={
 				building="building_tobacco_plantation"
@@ -749,7 +733,7 @@
 				building="building_barracks"
 				level=5
 				reserves=1
-				activate_production_methods={ "pm_wound_dressing" "pm_battle_rifle_infantry" "pm_no_aircraft" "pm_no_specialists" "pm_no_tanks" }
+				activate_production_methods={ "pm_general_training" }
 			}
 			create_building={
 				building="building_port"
@@ -758,9 +742,29 @@
 				activate_production_methods={ "pm_industrial_port" }
 			}
 		}
+		region_state:PHC ={
+			create_building={
+				building="building_barracks"
+				level=28
+				reserves=1
+				activate_production_methods={ "pm_general_training" }
+			}
+			create_building={
+				building="building_logging_camp"
+				level=10
+				reserves=1
+				activate_production_methods={ "pm_simple_forestry" "pm_hardwood" "pm_no_equipment" "pm_road_carts" "pm_merchant_guilds_building_logging_camp" }
+			}
+			create_building={
+				building="building_small_workshop"
+				level=8
+				reserves=1
+				activate_production_methods={ "pm_small_workshop" }
+			}
+		}
 	}
 	s:STATE_VISAYAS={
-		region_state:PHI={
+		region_state:RNG={
 			create_building={
 				building="building_sugar_plantation"
 				level=3
@@ -783,7 +787,7 @@
 				building="building_barracks"
 				level=3
 				reserves=1
-				activate_production_methods={ "pm_battle_rifle_infantry" "pm_no_tanks" "pm_no_aircraft" "pm_no_specialists" "pm_wound_dressing" }
+				activate_production_methods={ "pm_general_training" }
 			}
 		}
 	}

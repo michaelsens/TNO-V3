@@ -1,0 +1,817 @@
+﻿###
+### Keep "unit tiers" per group in ascending order; the system will determine the default unit type for a country
+### by the last defined unit type that it can build
+###
+
+### ARMY
+
+### Infantry
+
+combat_unit_type_irregular_infantry = {
+    group = combat_unit_group_infantry
+
+    battle_modifier = {
+        unit_offense_add = 10
+        unit_defense_add = 15
+        unit_morale_loss_add = 15
+    }
+	
+    upkeep_modifier = {
+        goods_input_small_arms_add = 2
+        goods_input_ammunition_add = 2
+        goods_input_artillery_add = 1
+    }
+
+    # scope = country
+    # both this and "can_build" needs to be true to build conscripts
+    can_build_conscript = {
+        always = yes
+    }
+    
+    combat_unit_image = {
+        trigger = { 
+            has_culture_graphics = decentralised_americas
+        }
+        texture = "gfx/unit_illustrations/infantry_decentralised_americas_irregular.dds"
+    }
+
+    combat_unit_image = {
+        trigger = { 
+            has_culture_graphics = east_asian
+        }
+        texture = "gfx/unit_illustrations/infantry_east_asian_irregular.dds"
+    }
+
+    combat_unit_image = {
+        trigger = { 
+            has_culture_graphics = south_asian
+        }
+        texture = "gfx/unit_illustrations/infantry_south_asian_irregular.dds"
+    }
+
+    combat_unit_image = {
+        trigger = { 
+            has_culture_graphics = african
+        }
+        texture = "gfx/unit_illustrations/infantry_african_irregular.dds"
+    }
+
+    combat_unit_image = {
+        trigger = { 
+            has_culture_graphics = arabic
+        }
+        texture = "gfx/unit_illustrations/infantry_arabic_irregular.dds"
+    }
+
+    combat_unit_image = {
+		# fallback
+        texture = "gfx/unit_illustrations/infantry_eu_irregular.dds"
+    }
+	
+	upgrades = {
+		combat_unit_type_line_infantry
+		combat_unit_type_skirmish_infantry
+        combat_unit_type_trench_infantry
+	}
+}
+
+combat_unit_type_line_infantry = {
+    group = combat_unit_group_infantry
+
+    upkeep_modifier = {
+        goods_input_small_arms_add = 3
+        goods_input_ammunition_add = 3
+        goods_input_artillery_add = 1
+    }
+
+    battle_modifier = {
+        unit_offense_add = 10
+        unit_defense_add = 25
+        unit_morale_loss_add = 10
+    }
+
+	unlocking_technologies = { military_statistics }
+
+    combat_unit_image = {
+        trigger = { 
+            has_culture_graphics = decentralised_americas
+        }
+        texture = "gfx/unit_illustrations/unit_illustration_placeholder.dds"
+    }
+
+    combat_unit_image = {
+        trigger = { 
+            has_culture_graphics = east_asian
+        }
+        texture = "gfx/unit_illustrations/infantry_east_asian_line.dds"
+    }
+
+    combat_unit_image = {
+        trigger = { 
+            has_culture_graphics = south_asian
+        }
+        texture = "gfx/unit_illustrations/infantry_south_asian_line.dds"
+    }
+
+    combat_unit_image = {
+        trigger = { 
+            has_culture_graphics = african
+        }
+        texture = "gfx/unit_illustrations/infantry_african_line.dds"
+    }
+
+    combat_unit_image = {
+        trigger = { 
+            has_culture_graphics = arabic
+        }
+        texture = "gfx/unit_illustrations/infantry_arabic_line.dds"
+    }
+
+    combat_unit_image = {
+		# fallback
+        texture = "gfx/unit_illustrations/infantry_eu_line.dds"
+    }
+	
+	upgrades = {	
+		combat_unit_type_skirmish_infantry
+        combat_unit_type_trench_infantry
+	}
+}
+
+combat_unit_type_skirmish_infantry = {
+    group = combat_unit_group_infantry
+
+    upkeep_modifier = {
+        goods_input_small_arms_add = 3
+        goods_input_ammunition_add = 4
+        goods_input_oil_add = 1
+        goods_input_radios_add = 1
+        goods_input_artillery_add = 2
+    }
+    
+    battle_modifier = {
+        unit_offense_add = 15
+        unit_defense_add = 35
+        unit_morale_loss_add = 10
+    }
+
+	unlocking_technologies = { trench_works }
+
+    combat_unit_image = {
+        trigger = { 
+            has_culture_graphics = decentralised_americas
+        }
+        texture = "gfx/unit_illustrations/unit_illustration_placeholder.dds"
+    }
+
+    combat_unit_image = {
+        trigger = { 
+            has_culture_graphics = east_asian
+        }
+        texture = "gfx/unit_illustrations/infantry_east_asian_skirmish.dds"
+    }
+
+    combat_unit_image = {
+        trigger = { 
+            has_culture_graphics = south_asian
+        }
+        texture = "gfx/unit_illustrations/infantry_south_asian_skirmish.dds"
+    }
+
+    combat_unit_image = {
+        trigger = { 
+            has_culture_graphics = african
+        }
+        texture = "gfx/unit_illustrations/infantry_african_skirmish.dds"
+    }
+
+    combat_unit_image = {
+        trigger = { 
+            has_culture_graphics = arabic
+        }
+        texture = "gfx/unit_illustrations/infantry_arabic_skirmish.dds"
+    }
+	
+    combat_unit_image = {
+		# fallback
+        texture = "gfx/unit_illustrations/infantry_eu_skirmish.dds"
+    }
+	
+	upgrades = {	
+		combat_unit_type_trench_infantry
+	}
+}
+
+combat_unit_type_trench_infantry = {
+    group = combat_unit_group_infantry
+
+    upkeep_modifier = {
+        goods_input_small_arms_add = 4
+        goods_input_ammunition_add = 4
+        goods_input_tanks_add = 1.5
+        goods_input_oil_add = 1
+        goods_input_radios_add = 3
+        goods_input_artillery_add = 3
+    }
+    
+    battle_modifier = {
+        unit_offense_add = 20
+        unit_defense_add = 40
+        unit_morale_loss_add = 8
+    }
+
+	unlocking_technologies = { nco_training }
+
+    combat_unit_image = {
+        trigger = { 
+            has_culture_graphics = decentralised_americas
+        }
+        texture = "gfx/unit_illustrations/unit_illustration_placeholder.dds"
+    }
+
+    combat_unit_image = {
+        trigger = { 
+            has_culture_graphics = east_asian
+        }
+        texture = "gfx/unit_illustrations/infantry_east_asian_trench.dds"
+    }
+
+    combat_unit_image = {
+        trigger = { 
+            has_culture_graphics = south_asian
+        }
+        texture = "gfx/unit_illustrations/infantry_south_asian_trench.dds"
+    }
+
+    combat_unit_image = {
+        trigger = { 
+            has_culture_graphics = african
+        }
+        texture = "gfx/unit_illustrations/infantry_african_trench.dds"
+    }
+
+    combat_unit_image = {
+        trigger = { 
+            has_culture_graphics = arabic
+        }
+        texture = "gfx/unit_illustrations/infantry_arabic_trench.dds"
+    }
+	
+    combat_unit_image = {
+		# fallback
+        texture = "gfx/unit_illustrations/infantry_eu_trench.dds"
+    }
+
+}
+
+### Artillery
+
+combat_unit_type_cannon_artillery = {
+    group = combat_unit_group_artillery
+
+    upkeep_modifier = {
+        goods_input_artillery_add = 2
+        goods_input_ammunition_add = 3
+    }
+    
+    battle_modifier = {
+        unit_offense_add = 30
+        unit_defense_add = 15
+        unit_morale_loss_add = 10
+        unit_kill_rate_add = 0.2
+        unit_devastation_mult = 0.2
+    }
+
+	unlocking_technologies = { shell_gun }
+
+    combat_unit_image = {
+        texture = "gfx/unit_illustrations/ww2-artillery.dds"
+    }
+
+    upgrades = {
+        combat_unit_type_mobile_artillery
+        combat_unit_type_shrapnel_artillery
+        combat_unit_type_siege_artillery
+        combat_unit_type_heavy_tank
+    }
+}
+
+combat_unit_type_mobile_artillery = {
+    group = combat_unit_group_artillery
+
+    upkeep_modifier = {
+        goods_input_artillery_add = 2
+        goods_input_ammunition_add = 4
+    }
+    
+    battle_modifier = {
+        unit_offense_add = 40
+        unit_defense_add = 20
+        unit_morale_loss_add = 8
+        unit_kill_rate_add = 0.25
+        unit_devastation_mult = 0.25
+    }
+
+	unlocking_technologies = { rifling }
+
+    combat_unit_image = {
+        texture = "gfx/unit_illustrations/rocket-artillery.dds"
+    }
+
+    upgrades = {
+        combat_unit_type_shrapnel_artillery
+        combat_unit_type_siege_artillery
+        combat_unit_type_heavy_tank
+    }
+}
+
+combat_unit_type_shrapnel_artillery = {
+    group = combat_unit_group_artillery
+    
+    upkeep_modifier = {
+        goods_input_artillery_add = 3
+        goods_input_ammunition_add = 4
+        goods_input_tanks_add = 1
+    }
+
+    battle_modifier = {
+        unit_offense_add = 50
+        unit_defense_add = 25
+        unit_morale_loss_add = 6
+        unit_kill_rate_add = 0.3
+        unit_devastation_mult = 0.3
+    }
+
+	unlocking_technologies = { repeaters }
+
+    combat_unit_image = {
+        texture = "gfx/unit_illustrations/self_propelled_howitzer.dds"
+    }
+
+    upgrades = {
+        combat_unit_type_siege_artillery
+        combat_unit_type_heavy_tank
+    }
+}
+
+combat_unit_type_siege_artillery = {
+    group = combat_unit_group_artillery
+    
+    upkeep_modifier = {
+        goods_input_artillery_add = 3
+        goods_input_ammunition_add = 4
+        goods_input_tanks_add = 2
+    }
+
+    battle_modifier = {
+        unit_offense_add = 50
+        unit_defense_add = 25
+        unit_morale_loss_add = 6
+        unit_kill_rate_add = 0.30
+        unit_devastation_mult = 0.30
+        unit_provinces_captured_mult = 0.15
+    }
+
+	unlocking_technologies = { automatic_machine_guns }
+
+    combat_unit_image = {
+        texture = "gfx/unit_illustrations/self_propelled_mortar.dds"
+    }
+
+    upgrades = {
+        combat_unit_type_heavy_tank
+    }
+}
+
+combat_unit_type_heavy_tank = {
+    group = combat_unit_group_artillery
+    
+    upkeep_modifier = {
+        goods_input_artillery_add = 3
+        goods_input_ammunition_add = 5
+        goods_input_tanks_add = 3
+        goods_input_electricity_add = 1
+    }
+
+    battle_modifier = {
+        unit_offense_add = 70
+        unit_defense_add = 35
+        unit_morale_loss_add = 4
+        unit_kill_rate_add = 0.45
+        unit_morale_damage_mult = 0.15
+        unit_devastation_mult = 0.3
+    }
+
+	unlocking_technologies = { mobile_armor }
+
+    combat_unit_image = {
+        texture = "gfx/unit_illustrations/modern-artillery.dds"
+    }
+}
+
+### Cavalry
+
+combat_unit_type_hussars = {
+    group = combat_unit_group_cavalry
+    
+    upkeep_modifier = {
+        goods_input_tanks_add = 2
+        goods_input_small_arms_add = 1
+        goods_input_ammunition_add = 2
+        goods_input_radios_add = 1
+        goods_input_oil_add = 0.5
+    }
+
+    battle_modifier = {
+        unit_offense_add = 25
+        unit_defense_add = 15
+        unit_morale_loss_add = 10
+        unit_occupation_mult = 0.2
+        unit_provinces_captured_mult = 0.2
+    }
+
+	unlocking_technologies = { shell_gun }
+
+    combat_unit_image = {
+        texture = "gfx/unit_illustrations/tank-gen-1.dds"
+    }
+
+    upgrades = {
+        combat_unit_type_light_tanks
+        combat_unit_type_dragoons
+        combat_unit_type_cuirassiers
+        combat_unit_type_lancers
+    }
+}
+
+combat_unit_type_dragoons = {
+    group = combat_unit_group_cavalry
+    
+    upkeep_modifier = {
+        goods_input_tanks_add = 2
+        goods_input_ammunition_add = 2
+        goods_input_oil_add = 1
+        goods_input_radios_add = 2
+    }
+
+    battle_modifier = {
+        unit_offense_add = 25
+        unit_defense_add = 15
+        unit_morale_loss_add = 10
+        unit_occupation_mult = 0.3
+        unit_provinces_captured_mult = 0.3
+        #should get modifiers to mobile/surprise battle conditions appearing
+    }
+
+	unlocking_technologies = { breech_loading_artillery }
+
+    combat_unit_image = {
+        texture = "gfx/unit_illustrations/tank-gen-2-early.dds"
+    }
+
+    upgrades = {
+        combat_unit_type_light_tanks
+        combat_unit_type_cuirassiers
+        combat_unit_type_lancers
+    }
+}
+
+combat_unit_type_cuirassiers = {
+    group = combat_unit_group_cavalry
+    
+    upkeep_modifier = {
+        goods_input_tanks_add = 3
+        goods_input_ammunition_add = 3
+        goods_input_oil_add = 1
+        goods_input_radios_add = 2
+    }
+
+    battle_modifier = {
+        unit_offense_add = 30
+        unit_defense_add = 20
+        unit_morale_loss_add = 8
+        unit_occupation_mult = 0.3
+        unit_provinces_captured_mult = 0.3
+        unit_kill_rate_add = 0.15
+    }
+
+	unlocking_technologies = { handcranked_machine_gun }
+
+    combat_unit_image = {
+        texture = "gfx/unit_illustrations/tank-gen-2.dds"
+    }
+
+    upgrades = {
+        combat_unit_type_light_tanks
+        combat_unit_type_lancers
+    }
+}
+
+combat_unit_type_lancers = {
+    group = combat_unit_group_cavalry
+    
+    upkeep_modifier = {
+        goods_input_tanks_add = 4
+        goods_input_ammunition_add = 4
+        goods_input_oil_add = 1
+        goods_input_radios_add = 2.5
+    }
+
+    battle_modifier = {
+        unit_offense_add = 35
+        unit_defense_add = 25
+        unit_morale_loss_add = 6
+        unit_kill_rate_add = 0.25
+        unit_morale_loss_mult = 0.05
+        unit_occupation_mult = 0.35
+        unit_provinces_captured_mult = 0.35
+    }
+
+	unlocking_technologies = { automatic_machine_guns }
+
+    combat_unit_image = {
+        texture = "gfx/unit_illustrations/tank-gen-2-late.dds"
+    }
+
+    upgrades = {
+        combat_unit_type_light_tanks
+    }
+}
+
+combat_unit_type_light_tanks = {
+    group = combat_unit_group_cavalry
+    
+    upkeep_modifier = {
+        goods_input_tanks_add = 5
+        goods_input_ammunition_add = 5
+        goods_input_oil_add = 1.5
+        goods_input_radios_add = 3
+    }
+
+    battle_modifier = {
+        unit_offense_add = 45
+        unit_defense_add = 35
+        unit_morale_loss_add = 4
+        unit_kill_rate_add = 0.1
+        unit_morale_loss_mult = 0.1
+        unit_occupation_mult = 0.4
+        unit_provinces_captured_mult = 0.4
+    }
+
+	unlocking_technologies = { mobile_armor }
+
+    combat_unit_image = {
+        texture = "gfx/unit_illustrations/tank-gen-3.dds"
+    }
+    
+}
+
+### NAVY
+
+### Light ship group
+
+combat_unit_type_frigate = {
+    group = combat_unit_group_light_ship
+
+    upkeep_modifier = {
+        goods_input_ironclads_add = 1
+        goods_input_ammunition_add = 1
+    }
+
+    battle_modifier = {
+        unit_offense_add = 10
+        unit_defense_add = 10
+        unit_morale_loss_add = 10
+    }
+
+	unlocking_technologies = { jeune_ecole }
+	
+    combat_unit_image = {
+        texture = "gfx/unit_illustrations/capital_ships_battleship.dds"
+    }
+	
+	upgrades = {
+		combat_unit_type_destroyer
+		combat_unit_type_torpedo_boat
+	}
+}
+
+combat_unit_type_destroyer = {
+    group = combat_unit_group_light_ship
+
+    upkeep_modifier = {
+        goods_input_ironclads_add = 1
+        goods_input_ammunition_add = 2
+    }
+
+    battle_modifier = {
+        unit_offense_add = 15
+        unit_defense_add = 25
+        unit_morale_loss_add = 8
+    }
+
+	unlocking_technologies = { destroyer }
+    combat_unit_image = {
+        texture = "gfx/unit_illustrations/light_ships_scout_cruiser.dds"
+    }
+	
+	upgrades = {
+		combat_unit_type_torpedo_boat
+	}
+}
+
+combat_unit_type_torpedo_boat = {
+    group = combat_unit_group_light_ship
+
+    upkeep_modifier = {
+        goods_input_ironclads_add = 1
+        goods_input_ammunition_add = 2
+        goods_input_explosives_add = 2
+    }
+
+    battle_modifier = {
+        unit_offense_add = 30
+        unit_defense_add = 20
+        unit_morale_loss_add = 8
+        # unit_convoy_raiding_mult = 0.25 Needs code support
+    }
+
+	unlocking_technologies = { self_propelled_torpedoes }
+
+    combat_unit_image = {
+        texture = "gfx/unit_illustrations/light_ships_scout_cruiser.dds"
+    }
+	
+	upgrades = {
+		carrier_tech
+	}
+}
+
+### Flagship group
+
+combat_unit_type_man_o_war = {
+    group = combat_unit_group_capital_ship
+
+    upkeep_modifier = {
+        goods_input_ironclads_add = 1
+        goods_input_ammunition_add = 2
+        goods_input_radios_add = 1
+        goods_input_aeroplanes_add = 2
+    }
+
+    battle_modifier = {
+        unit_offense_add = 15
+        unit_defense_add = 15
+        unit_morale_loss_add = 10
+    }
+
+	unlocking_technologies = { ironclad_tech }
+
+    combat_unit_image = {
+        texture = "gfx/unit_illustrations/support_ships_carrier.dds"
+    }
+	
+	upgrades = {
+		combat_unit_type_ironclad
+	}
+}
+
+combat_unit_type_ironclad = {
+    group = combat_unit_group_capital_ship
+
+    upkeep_modifier = {
+        goods_input_ironclads_add = 2
+        goods_input_ammunition_add = 2.5
+        goods_input_radios_add = 2
+        goods_input_aeroplanes_add = 3
+    }
+
+    battle_modifier = {
+        unit_offense_add = 25
+        unit_defense_add = 25
+        unit_morale_loss_add = 8
+    }
+
+	unlocking_technologies = { monitor_tech }
+
+    combat_unit_image = {
+        texture = "gfx/unit_illustrations/support_ships_carrier.dds"
+    }
+	
+	upgrades = {
+		combat_unit_type_monitor
+	}
+}
+
+combat_unit_type_monitor = {
+    group = combat_unit_group_capital_ship
+
+    upkeep_modifier = {
+        goods_input_ironclads_add = 3
+        goods_input_ammunition_add = 3
+        goods_input_radios_add = 2.5
+        goods_input_aeroplanes_add = 4
+    }
+
+    battle_modifier = {
+        unit_offense_add = 35
+        unit_defense_add = 35
+        unit_morale_loss_add = 6
+    }
+
+	unlocking_technologies = { dreadnought }
+
+    combat_unit_image = {
+        texture = "gfx/unit_illustrations/support_ships_carrier.dds"
+    }
+}
+
+combat_unit_type_dreadnought = {
+    group = combat_unit_group_capital_ship
+
+    upkeep_modifier = {
+        goods_input_ironclads_add = 4
+        goods_input_ammunition_add = 4
+        goods_input_radios_add = 3
+        goods_input_aeroplanes_add = 5
+    }
+
+    battle_modifier = {
+        unit_offense_add = 50
+        unit_defense_add = 50
+        unit_morale_loss_add = 6
+    }
+
+	unlocking_technologies = { battleship_tech }
+
+    combat_unit_image = {
+        texture = "gfx/unit_illustrations/support_ships_carrier.dds"
+    }
+}
+
+### Support Ship group
+
+combat_unit_type_submarine = {
+    group = combat_unit_group_support_ship
+
+    upkeep_modifier = {
+        goods_input_ironclads_add = 1
+        goods_input_ammunition_add = 1
+    }
+
+    battle_modifier = {
+        unit_offense_add = 40
+        unit_defense_add = 20
+        unit_morale_loss_add = 8
+    }
+
+	unlocking_technologies = { jeune_ecole }
+
+    combat_unit_image = {
+        texture = "gfx/unit_illustrations/support_ships_submarine.dds"
+    }
+}
+
+combat_unit_type_carrier = {
+    group = combat_unit_group_support_ship
+
+    upkeep_modifier = {
+        goods_input_ironclads_add = 2
+        goods_input_ammunition_add = 2
+        goods_input_radios_add = 2
+    }
+
+    battle_modifier = {
+        unit_offense_add = 65
+        unit_defense_add = 40
+        unit_morale_loss_add = 4
+    }
+
+	unlocking_technologies = { submarine }
+
+    combat_unit_image = {
+        texture = "gfx/unit_illustrations/support_ships_carrier.dds"
+    }
+}
+
+combat_unit_type_nuclear_submarine = {
+    group = combat_unit_group_support_ship
+
+    upkeep_modifier = {
+        goods_input_ironclads_add = 3
+        goods_input_ammunition_add = 3
+        goods_input_radios_add = 3
+    }
+
+    battle_modifier = {
+        unit_offense_add = 65
+        unit_defense_add = 40
+        unit_morale_loss_add = 4
+    }
+
+	unlocking_technologies = { carrier_tech }
+
+    combat_unit_image = {
+        texture = "gfx/unit_illustrations/support_ships_carrier.dds"
+    }
+}

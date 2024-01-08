@@ -1,0 +1,98 @@
+namespace = tno_philipeen_events
+
+tno_philipeen_events.1 = { #  RNG launches the blitz 
+    type = country_event
+    placement = ROOT
+
+	title = tno_philipeen_events.1
+	desc = tno_philipeen_events.1.d
+    flavor = tno_philipeen_events.1.f	
+
+	event_image = {
+        texture = "gfx/event_pictures/event_pictures/jungle_warfare.dds"
+    }
+
+    icon = "gfx/interface/icons/tno_event_icons/malaya.dds"
+	
+	duration = 1
+
+	option = { 
+		default_option = yes
+        name = tno_philipeen_events.1.a
+
+		create_diplomatic_play = {
+            add_initiator_backers = { c:USA }
+            add_target_backers = { c:JAP }
+            name = gamer_war
+            target_country = c:PHI
+                type = dp_annex_war
+                war = yes
+				add_war_goal = {
+                    holder = c:PHI
+                    type = annex_country
+                    target_state = s:STATE_VISAYAS.region_state:RNG
+                }
+        }
+		create_diplomatic_play = {
+            name = gamer_war2
+            target_country = c:PHC
+                type = dp_annex_war
+                war = yes
+                add_initiator_backers = { c:USA }
+				add_war_goal = {
+                    holder = c:PHC
+                    type = annex_country
+                    target_state = s:STATE_MINDANAO.region_state:RNG
+                }
+        }
+        hidden_effect = {
+				change_infamy = -150
+		}
+
+	}
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+}
+
+tno_philipeen_events.2 = { #  Communist blitz
+    type = country_event
+    placement = ROOT
+
+	title = tno_philipeen_events.2
+	desc = tno_philipeen_events.2.d
+    flavor = tno_philipeen_events.2.f	
+
+	event_image = {
+        texture = "gfx/event_pictures/event_pictures/jungle_warfare.dds"
+    }
+
+    icon = "gfx/interface/icons/tno_event_icons/malaya.dds"
+	
+	
+	duration = 1
+
+	option = { 
+		default_option = yes
+        name = tno_philipeen_events.2.a
+
+		create_diplomatic_play = {
+            name = gamer_war3
+            target_country = c:PHI
+                type = dp_annex_war
+                war = yes
+                add_target_backers = { c:JAP }
+				add_war_goal = {
+                    holder = c:PHI
+                    type = annex_country
+                    target_state = s:STATE_LUZON.region_state:PHC
+                }
+        }
+        hidden_effect = {
+				change_infamy = -150
+		}
+
+	}
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+}
+
+
+

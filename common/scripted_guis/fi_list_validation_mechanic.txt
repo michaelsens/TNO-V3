@@ -1007,6 +1007,20 @@ else_if = {
 }
 else_if = {
         limit = {
+                scope:invested_building = {is_building_type = building_vineyard_plantation}
+        }
+        owner = {
+                change_variable = {
+                        name = fi_target_state_number
+                        subtract = scope:invested_state.building_vineyard_plantation_total_number
+                }
+        }
+        fi_list_validation = {
+                BUILDING = building_vineyard_plantation
+        }
+}
+else_if = {
+        limit = {
                 scope:invested_building = {is_building_type = building_maize_farm}
         }
         owner = {

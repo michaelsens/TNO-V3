@@ -1,0 +1,47 @@
+﻿je_tno_gerlasthope = {
+
+	icon = "gfx/interface/icons/new_event_icons/event_lasthope.dds"
+
+	group = je_group_internal_affairs
+    immediate = {
+
+		set_variable = {
+			name = lasthope_timer
+			value = 0
+		}
+	}
+    
+    complete = {
+		scope:journal_entry = {
+			is_goal_complete = yes
+		}
+	}
+
+    on_complete = {
+        trigger_event = { id = tno_germany_events.1 popup = yes }
+    }
+
+    on_monthly_pulse = {
+        effect = {
+			change_variable = {
+				name = lasthope_timer
+				add = 5
+			}
+		}
+    }
+
+    current_value = {
+		value = root.var:lasthope_timer
+	}
+
+    goal_add_value = {
+		value = 10
+	}
+
+    progressbar = yes
+    
+    weight = 100
+    
+    should_be_pinned_by_default = yes
+	
+}

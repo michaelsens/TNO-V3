@@ -1,0 +1,85 @@
+﻿je_oil_supply_oil_crisis = {
+	icon = "gfx/interface/icons/event_icons/event_fire.dds"
+	group = je_group_crises
+	scripted_button = je_oil_crisis_oil_supply_button_button_a
+	scripted_button = je_oil_crisis_oil_supply_button_button_b
+	scripted_button = je_oil_crisis_oil_supply_button_button_c
+	scripted_button = je_oil_crisis_oil_supply_button_button_d
+	scripted_button = je_oil_crisis_oil_supply_button_button_e
+	
+	can_revolution_inherit = yes
+
+	is_shown_when_inactive = {
+		is_player = yes
+		OR = {
+			has_modifier = oil_crisis_global
+			has_modifier = oil_crisis_ger
+			has_modifier = oil_crisis_jap
+			has_modifier = oil_crisis_usa
+	 }
+	}
+	
+	possible = {
+		is_player = yes
+		OR = {
+			has_modifier = oil_crisis_global
+			has_modifier = oil_crisis_ger
+			has_modifier = oil_crisis_jap
+			has_modifier = oil_crisis_usa
+		 }
+	}
+	
+	immediate = {
+		set_variable = { name = oil_crisis_oil_supply_drift value = -50 }
+		set_variable = { name = oil_crisis_oil_supply_var value = 0 }
+	}
+
+	complete = {
+		custom_tooltip = {
+			text = je_oil_crisis_oil_supply_succeded
+			NOT = {
+				OR = {
+					has_modifier = oil_crisis_global
+					has_modifier = oil_crisis_ger
+					has_modifier = oil_crisis_jap
+					has_modifier = oil_crisis_usa
+				 }
+			}
+		}
+	}
+	
+	fail = {
+		custom_tooltip = {
+			text = je_oil_crisis_oil_supply_failed
+			var:oil_crisis_oil_supply_var <= -100
+		}
+	}
+
+	on_fail = {
+		trigger_event = { id = tno_oil_crisis.14 popup = yes }
+	}
+
+
+	on_monthly_pulse = {
+		effect = {
+			change_variable = {
+				name = oil_crisis_oil_supply_var
+				add = var:oil_crisis_oil_supply_drift
+			}
+		}
+	}
+	
+	should_be_pinned_by_default = yes
+
+	weight = 8000
+
+	current_value = {
+		value = root.var:oil_crisis_oil_supply_var
+	}
+
+	goal_add_value = {
+		add = 1000
+	}
+
+	progressbar = yes
+}

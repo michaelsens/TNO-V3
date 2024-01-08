@@ -1,0 +1,2171 @@
+﻿namespace = tno_oil_crisis
+
+tno_oil_crisis.1 = {   #Yemen Civil War
+	type = country_event
+    placement = ROOT
+
+	title = oil_flavor.1.t
+	desc = oil_flavor.1.d
+    flavor = oil_flavor.1.f
+	
+	event_image = {
+		texture  = "gfx/event_pictures/super_pictures/oilwell.dds"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/middleeast/courtroom_upheaval" 
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	trigger = {
+		exists = c:YEM
+		root = c:YEM
+	}	
+	
+	duration = 3
+
+	immediate = {
+		create_country = { #Yemen Arab Democratic Republic
+			tag = YED
+			origin = c:YEM
+		  
+			province = p:x9D8A78
+			province = p:xF86F58
+			province = p:xCF6C49
+			province = p:xFE5027
+			province = p:x02F9FF
+			province = p:x7EC879
+			province = p:xE5892F
+			province = p:xCF401E
+			province = p:x625380
+			province = p:xEF2E43
+			province = p:x075453
+			province = p:x2576C1
+			province = p:x6290E6
+			province = p:x68B524
+			province = p:xBB387A
+			province = p:x84FA60
+			province = p:x8B1488
+			province = p:x49FCAB
+			province = p:xE5DF3B
+			province = p:x1A7BB0
+			province = p:x7C3EA9
+			province = p:x567A83
+			province = p:x00E3EF
+			province = p:xB79DED
+			province = p:x8436FE
+			province = p:x54840B
+
+
+			on_created = {
+            activate_law = law_type:law_appointed_bureaucrats
+			activate_law = law_type:law_council_republic
+			activate_law = law_type:law_universal_suffrage
+			activate_law = law_type:law_slavery_banned
+			activate_law = law_type:law_collectivized_agriculture
+			activate_law = law_type:law_command_economy
+			activate_law = law_type:law_censorship
+			activate_law = law_type:law_multicultural
+			add_modifier = {
+				name = destroyed_infrastructure
+				years = 6
+				is_decaying = yes
+			}
+			add_modifier = {
+				name = civiL_war_never_ends
+				years = 2
+			}
+         }
+		} 
+		c:YEM = {
+		add_modifier = {
+				name = destroyed_infrastructure
+				years = 6
+				is_decaying = yes
+			}
+			add_modifier = {
+				name = civiL_war_never_ends
+				years = 2
+			}
+		}
+	}
+	option = {
+		name = oil_flavor.1.a
+		default_option = yes
+		create_diplomatic_play = {
+			name = oil_war
+			target_country = c:YED
+			type = dp_annex_war
+			war = no
+			target_state = s:STATE_YEMEN.region_state:YED
+			escalation = 40
+			add_war_goal = {
+			 holder = c:YED
+			 type = annex_country
+			 target_state = s:STATE_YEMEN.region_state:YEM
+		   }
+	 }
+	}
+}		
+		
+tno_oil_crisis.2 = {   #Egypt Civil War
+	type = country_event
+    placement = ROOT
+
+	title = oil_flavor.2.t
+	desc = oil_flavor.2.d
+    flavor = oil_flavor.2.f
+	
+	event_image = {
+		texture  = "gfx/event_pictures/super_pictures/oilwell.dds"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/middleeast/courtroom_upheaval" 
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	trigger = {
+		exists = c:EGY
+		root = c:EGY
+	}	
+	
+	duration = 3
+
+	immediate = { 
+		create_country = { #Egyptian Revolutionary Command Council
+		tag = EGR
+		origin = c:EGY
+		
+		province = p:x05BD60
+
+		province = p:x05FF42
+		province = p:x06DF39
+		province = p:x0C6712
+		province = p:x0D56B2
+		province = p:x0EE79F
+		province = p:x20CF20
+		province = p:x20D0A0
+		province = p:x246457
+		province = p:x252184
+		province = p:x25523D
+		province = p:x272AAD
+		province = p:x3955E4
+		province = p:x3DCE56
+		province = p:x45DB44
+		province = p:x48B0D1
+		province = p:x53834E
+		province = p:x5713ED
+		province = p:x5E1EA3
+		province = p:x69BCDD
+		province = p:x6EB0BA
+		province = p:x7F64AC
+		province = p:x80A9AC
+		province = p:x87D6C4
+		province = p:x8A68C1
+		province = p:x8AC4E0
+		province = p:x8E30B0
+		province = p:x908947
+		province = p:x93D215
+		province = p:x98DFE2
+		province = p:xA05020
+		province = p:xA0ECF8
+		province = p:xB5420C
+		province = p:xB5969E
+		province = p:xBB2E89
+		province = p:xBE3AC5
+		province = p:xBFC9C0
+		province = p:xC1822C
+		province = p:xC2176F
+		province = p:xD83883
+		province = p:xDF5EBB
+		province = p:xE0D021
+		province = p:xE68265
+		province = p:xEBB23F
+		province = p:xEC728B
+		province = p:xF901CB
+		province = p:xF942C3
+		
+		province = p:xC7858D
+		province = p:xA050A0
+		province = p:x08B43B
+		province = p:x11D0E0
+		province = p:x5050E0
+		province = p:x919B7D
+	
+
+		on_created = {
+			activate_law = law_type:law_appointed_bureaucrats
+			activate_law = law_type:law_council_republic
+			activate_law = law_type:law_oligarchy
+			activate_law = law_type:law_slavery_banned
+			activate_law = law_type:law_collectivized_agriculture
+			activate_law = law_type:law_command_economy
+			activate_law = law_type:law_censorship
+			activate_law = law_type:law_multicultural
+	 }
+	} 
+	
+	create_country = { #Muslim Brotherhood 
+		tag = EGM
+		origin = c:EGY
+		province = p:x03534F
+		province = p:x1106F7
+		province = p:x1403CE
+		province = p:x150086
+		province = p:x1741F9
+		province = p:x1B8AFB
+		province = p:x1C0C7D
+		province = p:x1CDFF0
+		province = p:x1DF813
+		province = p:x1F1C45
+		province = p:x20FBA0
+		province = p:x221888
+		province = p:x22B654
+		province = p:x2578C4
+		province = p:x27571E
+		province = p:x27C39D
+		province = p:x2B6F28
+		province = p:x2FA8B3
+		province = p:x331A56
+		province = p:x36E64E
+		province = p:x3940DA
+		province = p:x3C21A0
+		province = p:x3FFE56
+		province = p:x448F8B
+		province = p:x46C8F9
+		province = p:x48152A
+		province = p:x4B8A20
+		province = p:x54C854
+		province = p:x54D103
+		province = p:x559DD9
+		province = p:x581E1A
+		province = p:x5D6A34
+		province = p:x66AEE5
+		province = p:x6AF576
+		province = p:x6C5890
+		province = p:x6D12E3
+		province = p:x741E9E
+		province = p:x7514D7
+		province = p:x7CEEDA
+		province = p:x807EFF
+		province = p:x811823
+		province = p:x83E020
+		province = p:x88E19F
+		province = p:x8BEC52
+		province = p:x8D6726
+		province = p:x8F31B0
+		province = p:x9130F8
+		province = p:x91BF54
+		province = p:x941E53
+		province = p:x99610C
+		province = p:x9A6DB5
+		province = p:x9D3831
+		province = p:x9D6B88
+		province = p:xA14C64
+		province = p:xA8FA0A
+		province = p:xAA1826
+		province = p:xACEBEA
+		province = p:xB01121
+		province = p:xB05020
+		province = p:xB23CCA
+		province = p:xB2E150
+		province = p:xB32C4A
+		province = p:xB5BED4
+		province = p:xB9EBE6
+		province = p:xBA5529
+		province = p:xBBEAA1
+		province = p:xBCE332
+		province = p:xBD1C16
+		province = p:xBD5993
+		province = p:xC48A06
+		province = p:xC87A53
+		province = p:xC943B1
+		province = p:xCA855F
+		province = p:xCAE0D2
+		province = p:xCC0432
+		province = p:xCE519C
+		province = p:xD03CB6
+		province = p:xD0D0E0
+		province = p:xD91602
+		province = p:xE03FA1
+		province = p:xE12C26
+		province = p:xE18FD5
+		province = p:xE1F55D
+		province = p:xE21A78
+		province = p:xE565E4
+		province = p:xE853CA
+		province = p:xE95AD6
+		province = p:xF0B8A3
+		province = p:xF21A84
+		province = p:xF3B9CD
+		province = p:xF55182
+		province = p:xF63E3C
+		province = p:xF87E36
+		province = p:xFA5382
+		province = p:xFA85DD
+		province = p:xFF4484
+		province = p:x50D060
+		province = p:xD26E7A
+		province = p:xF32C0A
+		province = p:xD0D060
+		province = p:xA75EBA
+		province = p:x3CD16F
+		province = p:xE1FB56
+		province = p:x4D2090
+		province = p:x709020
+		province = p:x4249C3
+		province = p:xC83592
+		province = p:x2A731C
+		province = p:x44702D
+		province = p:x7B75E6
+		province = p:xF01121
+		province = p:x78104A
+		province = p:x7E0628
+		province = p:xC304C5
+		province = p:x007E00
+		province = p:x04CAF0
+		province = p:x054B09
+		province = p:x0BFED1
+		province = p:x0DF96C
+		province = p:x1090F8
+		province = p:x10DCE6
+		province = p:x11C147
+		province = p:x150E1A
+		province = p:x161776
+		province = p:x1766AF
+		province = p:x1A8ACE
+		province = p:x1CF8E6
+		province = p:x1EA562
+		province = p:x2093F8
+		province = p:x20F9A6
+		province = p:x222DE0
+		province = p:x225A59
+		province = p:x2550D2
+		province = p:x266C2B
+		province = p:x27F228
+		province = p:x283C56
+		province = p:x2BFA5C
+		province = p:x2F0B7E
+		province = p:x31A8AF
+		province = p:x3231D7
+		province = p:x324CD5
+		province = p:x32DB72
+		province = p:x36EACA
+		province = p:x3795A7
+		province = p:x3B5DB2
+		province = p:x3B8BED
+		province = p:x3CE268
+		province = p:x3E717B
+		province = p:x3FB182
+		province = p:x42F208
+		province = p:x44C39B
+		province = p:x455297
+		province = p:x484F69
+		province = p:x4B0B6D
+		province = p:x4D1F29
+		province = p:x4E155E
+		province = p:x4E37E0
+		province = p:x4E6485
+		province = p:x51D68A
+		province = p:x550B5E
+		province = p:x5532D7
+		province = p:x56EB87
+		province = p:x58DC7E
+		province = p:x59CB2E
+		province = p:x5C4782
+		province = p:x5C9678
+		province = p:x5D63E5
+		province = p:x660662
+		province = p:x6846D2
+		province = p:x6D0641
+		province = p:x6F53E7
+		province = p:x7011A0
+		province = p:x71CE61
+		province = p:x746936
+		province = p:x76A5E2
+		province = p:x77680E
+		province = p:x77814B
+		province = p:x799DA6
+		province = p:x7A81FC
+		province = p:x7B8083
+		province = p:x7B85E1
+		province = p:x7F40DC
+		province = p:x851A9F
+		province = p:x856C77
+		province = p:x86281A
+		province = p:x8C56D8
+		province = p:x8C708E
+		province = p:x8CCFBA
+		province = p:x8EBBA0
+		province = p:x8FB172
+		province = p:x9030E0
+		province = p:x911D8A
+		province = p:x957D19
+		province = p:x9D7E6E
+		province = p:x9DD70D
+		province = p:x9E053B
+		province = p:xA09909
+		province = p:xA32C94
+		province = p:xA62EDD
+		province = p:xA7E315
+		province = p:xA86A12
+		province = p:xAADC57
+		province = p:xB060C3
+		province = p:xB1A5A5
+		province = p:xB4CFDD
+		province = p:xB89427
+		province = p:xB911BF
+		province = p:xBC0905
+		province = p:xBF4351
+		province = p:xBFE20B
+		province = p:xC1B811
+		province = p:xCC661D
+		province = p:xCED49F
+		province = p:xCF32AB
+		province = p:xD09060
+		province = p:xD14C83
+		province = p:xD1DBCB
+		province = p:xD6CE98
+		province = p:xD77A80
+		province = p:xD781FF
+		province = p:xDA9F36
+		province = p:xDE20CA
+		province = p:xDF3230
+		province = p:xE43B56
+		province = p:xE4A226
+		province = p:xE53B02
+		province = p:xE5D4C9
+		province = p:xE5DB69
+		province = p:xE7E845
+		province = p:xEAC7A6
+		province = p:xECB353
+		province = p:xEEA896
+		province = p:xF011A0
+		province = p:xF09021
+		province = p:xF16CDA
+		province = p:xF1B993
+		province = p:xF4022B
+		province = p:xF51BB4
+		province = p:xF53975
+		province = p:xF6E39D
+		province = p:xFAA9A3
+		province = p:xFBB239
+		province = p:xFD501A
+		province = p:xFE44B7
+		province = p:xFF331C
+		province = p:xFF4AEC
+		province = p:xFF4E48
+		province = p:xFFC1F5
+
+		on_created = {
+			activate_law = law_type:law_appointed_bureaucrats
+			activate_law = law_type:law_theocracy
+			activate_law = law_type:law_autocracy
+			activate_law = law_type:law_slavery_banned
+			activate_law = law_type:law_homesteading
+			activate_law = law_type:law_interventionism
+			activate_law = law_type:law_censorship
+			activate_law = law_type:law_national_supremacy
+	 }
+	} 
+	create_country = { #Sudan
+		tag = EGN
+		origin = c:EGY
+		state = s:STATE_DARFUR.region_state:EGY
+		state = s:STATE_KORDOFAN.region_state:EGY
+		province = p:x058803
+		province = p:x06007E
+		province = p:x06C449
+		province = p:x0F7EE3
+		province = p:x13E4B8
+		province = p:x15DB9C
+		province = p:x16A922
+		province = p:x17A459
+		province = p:x1C4271
+		province = p:x206A2D
+		province = p:x225C9E
+		province = p:x240F36
+		province = p:x2C750A
+		province = p:x2DE57E
+		province = p:x3E70FF
+		province = p:x424711
+		province = p:x450DB6
+		province = p:x484A75
+		province = p:x4A3631
+		province = p:x4AB4A0
+		province = p:x4D7EAD
+		province = p:x517433
+		province = p:x51CD3D
+		province = p:x533C5E
+		province = p:x562EFC
+		province = p:x58F15D
+		province = p:x5EF146
+		province = p:x680B5B
+		province = p:x6A5420
+		province = p:x6BEF7F
+		province = p:x6FE98F
+		province = p:x714535
+		province = p:x725B86
+		province = p:x729E50
+		province = p:x7379D7
+		province = p:x7E0600
+		province = p:x7E7A63
+		province = p:x808221
+		province = p:x8091D6
+		province = p:x81160E
+		province = p:x8154A6
+		province = p:x8281B5
+		province = p:x8CA984
+		province = p:x9A504A
+		province = p:x9B9266
+		province = p:x9BAA9B
+		province = p:xA3CA85
+		province = p:xA91158
+		province = p:xB4B090
+		province = p:xBBA32C
+		province = p:xC0D1A9
+		province = p:xC356F5
+		province = p:xCF2126
+		province = p:xD07ADF
+		province = p:xD25051
+		province = p:xD35B56
+		province = p:xD36817
+		province = p:xD42E9B
+		province = p:xDAD386
+		province = p:xDFDE9B
+		province = p:xE0A090
+		province = p:xE4297F
+		province = p:xE53ACB
+		province = p:xE55E00
+		province = p:xE8E92A
+		province = p:xEE4B02
+		province = p:xEF7C3C
+		province = p:xF47F03
+		province = p:xF7B5CB
+		province = p:xFAD09B
+		province = p:xFC0FEA
+		province = p:xFE3C3F
+		on_created = {
+			activate_law = law_type:law_elected_bureaucrats
+			activate_law = law_type:law_presidential_republic
+			activate_law = law_type:law_universal_suffrage
+			activate_law = law_type:law_slavery_banned
+			activate_law = law_type:law_homesteading
+			activate_law = law_type:law_interventionism
+			activate_law = law_type:law_guaranteed_liberties
+			activate_law = law_type:law_cultural_exclusion
+ 		}
+		} 
+	}
+	option = {
+		name = oil_flavor.2.a
+		default_option = yes
+	c:EGY = {
+		create_diplomatic_play = {
+			name = oil_war
+			target_country = c:EGR
+			type = dp_annex_war
+			war = no
+			target_state = s:STATE_MATRUH.region_state:EGR
+			escalation = 40
+			add_war_goal = {
+			 holder = c:EGR
+			 type = annex_country
+			 target_state = s:STATE_LOWER_EGYPT.region_state:EGY
+		 	  }
+		 }
+		create_diplomatic_play = {
+			name = oil_war
+			target_country = c:EGM
+			type = dp_annex_war
+			war = no
+			target_state = s:STATE_EGYPTIAN_DESERT.region_state:EGM
+			escalation = 40
+			add_war_goal = {
+				holder = c:EGM
+				type = annex_country
+				target_state = s:STATE_LOWER_EGYPT.region_state:EGY
+				 }
+		 }
+		}
+	c:EGR = {
+		create_diplomatic_play = {
+			name = oil_war
+			target_country = c:EGM
+			type = dp_annex_war
+			war = no
+			target_state = s:STATE_EGYPTIAN_DESERT.region_state:EGM
+			escalation = 40
+			add_war_goal = {
+			 holder = c:EGM
+			 type = annex_country
+			 target_state = s:STATE_MATRUH.region_state:EGR
+		 	  }
+		 }
+	}
+	}
+}		
+			
+tno_oil_crisis.3 = {   #Iraq Civil War
+	type = country_event
+    placement = ROOT
+
+	title = oil_flavor.3.t
+	desc = oil_flavor.3.d
+    flavor = oil_flavor.3.f
+	
+	event_image = {
+		texture  = "gfx/event_pictures/super_pictures/oilwell.dds"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/middleeast/courtroom_upheaval" 
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	trigger = {
+		exists = c:IRQ
+		root = c:IRQ
+	}	
+	
+	duration = 3
+
+	immediate = { 
+		create_country = { #Iraqi Republic
+		tag = IIR
+		origin = c:IRQ  
+		province = p:xEE1814
+		province = p:x1EDF69
+		province = p:xA4A407
+		province = p:x54DF0B
+		province = p:x92702E
+		province = p:xE090E0
+		province = p:xA05060
+		province = p:x1EC145
+		province = p:x205060
+		province = p:x5F9550
+		province = p:x396DB2
+		province = p:x0B769F
+		
+		on_created = {
+			activate_law = law_type:law_elected_bureaucrats
+			activate_law = law_type:law_presidential_republic
+			activate_law = law_type:law_universal_suffrage
+			activate_law = law_type:law_slavery_banned
+			activate_law = law_type:law_homesteading
+			activate_law = law_type:law_interventionism
+			activate_law = law_type:law_guaranteed_liberties
+			activate_law = law_type:law_cultural_exclusion
+      add_modifier = {
+				name = destroyed_infrastructure
+				years = 6
+				is_decaying = yes
+			}
+			add_modifier = {
+				name = civiL_war_never_ends
+				years = 2
+			}
+	 }
+	} 
+	create_country = { #Islamic Republic of Iraq
+		tag = IRI
+		origin = c:IRQ
+		province = p:x1CC9CC
+		province = p:x41F864
+		province = p:xFE18C1
+		province = p:xF1BF17
+		province = p:x7CAD29
+		province = p:xBE6A23
+		province = p:x1D7F5E
+		province = p:x93CB74
+		province = p:x34A371
+		province = p:x312AA2
+		province = p:x9F9CCA
+		province = p:x88ADC8
+		
+		on_created = {
+			activate_law = law_type:law_appointed_bureaucrats
+			activate_law = law_type:law_theocracy
+			activate_law = law_type:law_autocracy
+			activate_law = law_type:law_slavery_banned
+			activate_law = law_type:law_homesteading
+			activate_law = law_type:law_interventionism
+			activate_law = law_type:law_censorship
+			activate_law = law_type:law_national_supremacy
+      add_modifier = {
+				name = destroyed_infrastructure
+				years = 6
+				is_decaying = yes
+			}
+			add_modifier = {
+				name = civiL_war_never_ends
+				years = 2
+			}
+      }
+	} 
+	create_country = { #Republic of Kurdistan
+		tag = IRR
+		origin = c:IRQ
+		province = p:x00B0A0
+		province = p:x029A2B
+		province = p:x07BB1D
+		province = p:x0A79A0
+		province = p:x111137
+		province = p:x130A78
+		province = p:x1F3350
+		province = p:x2090E0
+		province = p:x2F0CE8
+		province = p:x389F34
+		province = p:x4BE9F1
+		province = p:x6F55BA
+		province = p:xA2BD38
+		province = p:xB09D9C
+		province = p:xBAF0C7
+		province = p:xC11149
+		province = p:xD097E1
+		province = p:xE4E63B
+	  
+		on_created = {
+			activate_law = law_type:law_elected_bureaucrats
+			activate_law = law_type:law_presidential_republic
+			activate_law = law_type:law_universal_suffrage
+			activate_law = law_type:law_slavery_banned
+			activate_law = law_type:law_homesteading
+			activate_law = law_type:law_interventionism
+			activate_law = law_type:law_guaranteed_liberties
+			activate_law = law_type:law_cultural_exclusion
+      add_modifier = {
+				name = destroyed_infrastructure
+				years = 6
+				is_decaying = yes
+			}
+			add_modifier = {
+				name = civiL_war_never_ends
+				years = 2
+			}
+	 }
+	}
+	c:IRQ = {
+		add_modifier = {
+			name = destroyed_infrastructure
+			years = 6
+			is_decaying = yes
+		}
+	}
+	}
+	option = {
+		name = oil_flavor.3.a
+		default_option = yes
+	c:IRQ = {
+		create_diplomatic_play = {
+			name = oil_war
+			target_country = c:IRR
+			type = dp_annex_war
+			war = no
+			target_state = s:STATE_MOSUL.region_state:IRR
+			escalation = 40
+			add_war_goal = {
+			 holder = c:IRR
+			 type = annex_country
+			 target_state = s:STATE_BAGHDAD.region_state:IRQ
+		   }
+		 }
+		 create_diplomatic_play = {
+			name = oil_war
+			target_country = c:IIR
+			type = dp_annex_war
+			war = no
+			target_state = s:STATE_BAGHDAD.region_state:IIR
+			escalation = 40
+			add_war_goal = {
+			 holder = c:IIR
+			 type = annex_country
+			 target_state = s:STATE_BAGHDAD.region_state:IRQ
+		   }
+		 }
+		 create_diplomatic_play = {
+			name = oil_war
+			target_country = c:IRI
+			type = dp_annex_war
+			war = no
+			target_state = s:STATE_BASRA.region_state:IRI
+			escalation = 40
+			add_war_goal = {
+			 holder = c:IRI
+			 type = annex_country
+			 target_state = s:STATE_BAGHDAD.region_state:IRQ
+		   }
+		 }
+		}
+	c:KUW = {
+		create_diplomatic_play = {
+			name = oil_war
+			target_country = c:IRI
+			type = dp_annex_war
+			war = no
+			target_state = s:STATE_BASRA.region_state:IRI
+			escalation = 40
+			add_war_goal = {
+			 holder = c:IRI
+			 type = annex_country
+			 target_state = s:STATE_BASRA.region_state:KUW
+		   }
+		 }
+		}
+	c:IIR = {
+		create_diplomatic_play = {
+			name = oil_war
+			target_country = c:IRI
+			type = dp_annex_war
+			war = no
+			target_state = s:STATE_BASRA.region_state:IRI
+			escalation = 40
+			add_war_goal = {
+			 holder = c:IRI
+			 type = annex_country
+			 target_state = s:STATE_BAGHDAD.region_state:IIR
+		   }
+		 }
+		 create_diplomatic_play = {
+			name = oil_war
+			target_country = c:IRR
+			type = dp_annex_war
+			war = no
+			target_state = s:STATE_MOSUL.region_state:IRR
+			escalation = 40
+			add_war_goal = {
+			 holder = c:IRI
+			 type = annex_country
+			 target_state = s:STATE_BAGHDAD.region_state:IIR
+		   }
+		 }
+	 c:IRR = {
+		create_diplomatic_play = {
+			name = oil_war
+			target_country = c:IRI
+			type = dp_annex_war
+			war = no
+			target_state = s:STATE_BASRA.region_state:IRI
+			escalation = 40
+			add_war_goal = {
+			 holder = c:IRI
+			 type = annex_country
+			 target_state = s:STATE_MOSUL.region_state:IRR
+		   }
+		 }
+		}
+	}
+	}	
+}	
+		
+tno_oil_crisis.4 = {   #Iran Civil War
+	type = country_event
+    placement = ROOT
+
+	title = oil_flavor.4.t
+	desc = oil_flavor.4.d
+    flavor = oil_flavor.4.f
+	
+	event_image = {
+		texture  = "gfx/event_pictures/super_pictures/oilwell.dds"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/middleeast/courtroom_upheaval" 
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	trigger = {
+		exists = c:PER
+		root = c:PER
+	}	
+	
+	duration = 3
+
+	immediate = { 
+		create_country = { #Socialist Federation of Iran
+		tag = PEF
+		origin = c:PER
+		state = s:STATE_TABRIZ.region_state:PER
+		state = s:STATE_LURISTAN.region_state:PER
+	 
+	  
+		on_created = {
+			activate_law = law_type:law_appointed_bureaucrats
+			activate_law = law_type:law_council_republic
+			activate_law = law_type:law_universal_suffrage
+			activate_law = law_type:law_slavery_banned
+			activate_law = law_type:law_collectivized_agriculture
+			activate_law = law_type:law_command_economy
+			activate_law = law_type:law_censorship
+			activate_law = law_type:law_multicultural
+    add_modifier = {
+				name = destroyed_infrastructure
+				years = 6
+				is_decaying = yes
+			}
+			add_modifier = {
+				name = civiL_war_never_ends
+				years = 2
+			}
+	 }
+	} 
+		create_country = { #Shahdom of Iran
+		tag = PES
+		origin = c:PER
+		state = s:STATE_ISFAHAN.region_state:PER
+		state = s:STATE_KHORASAN.region_state:PER
+	 
+		on_created = {
+			activate_law = law_type:law_appointed_bureaucrats
+			activate_law = law_type:law_monarchy
+			activate_law = law_type:law_autocracy
+			activate_law = law_type:law_slavery_banned
+			activate_law = law_type:law_commercialized_agriculture
+			activate_law = law_type:law_laissez_faire
+			activate_law = law_type:law_censorship
+			activate_law = law_type:law_racial_segregation
+      add_modifier = {
+				name = destroyed_infrastructure
+				years = 6
+				is_decaying = yes
+			}
+			add_modifier = {
+				name = civiL_war_never_ends
+				years = 2
+			}
+	 }
+	} 
+		create_country = { #Democratic Republic of Iran
+		tag = PED
+		origin = c:PER
+		state = s:STATE_KHUZESTAN.region_state:PER
+		state = s:STATE_FARS.region_state:PER
+ 
+	  
+		on_created = {
+			activate_law = law_type:law_elected_bureaucrats
+			activate_law = law_type:law_presidential_republic
+			activate_law = law_type:law_universal_suffrage
+			activate_law = law_type:law_slavery_banned
+			activate_law = law_type:law_homesteading
+			activate_law = law_type:law_interventionism
+			activate_law = law_type:law_guaranteed_liberties
+			activate_law = law_type:law_cultural_exclusion
+      add_modifier = {
+				name = destroyed_infrastructure
+				years = 6
+				is_decaying = yes
+			}
+			add_modifier = {
+				name = civiL_war_never_ends
+				years = 2
+			}
+	 }
+	} 
+		create_country = { #Islamic Republic of Iran
+		tag = PEI
+		origin = c:PER
+		state = s:STATE_LARISTAN.region_state:PER
+		state = s:STATE_SISTAN.region_state:PER
+		
+		on_created = {
+			activate_law = law_type:law_appointed_bureaucrats
+			activate_law = law_type:law_theocracy
+			activate_law = law_type:law_autocracy
+			activate_law = law_type:law_slavery_banned
+			activate_law = law_type:law_homesteading
+			activate_law = law_type:law_interventionism
+			activate_law = law_type:law_censorship
+			activate_law = law_type:law_national_supremacy
+      add_modifier = {
+				name = destroyed_infrastructure
+				years = 6
+				is_decaying = yes
+			}
+			add_modifier = {
+				name = civiL_war_never_ends
+				years = 2
+			}
+	 }
+	} 
+	c:PER = {
+		add_modifier = {
+			name = destroyed_infrastructure
+			years = 6
+			is_decaying = yes
+		}
+	}
+	}
+	option = {
+		name = oil_flavor.4.a
+		default_option = yes
+	c:PER = {
+		create_diplomatic_play = {
+			name = oil_war
+			target_country = c:PEF
+			type = dp_annex_war
+			war = no
+			target_state = s:STATE_TABRIZ.region_state:PEF
+			escalation = 40
+			add_war_goal = {
+			 holder = c:PEF
+			 type = annex_country
+			 target_state = s:STATE_MAZANDARAN.region_state:PER
+		   }
+		 }
+		 create_diplomatic_play = {
+			name = oil_war
+			target_country = c:PES
+			type = dp_annex_war
+			war = no
+			target_state = s:STATE_KHORASAN.region_state:PES
+			escalation = 40
+			add_war_goal = {
+			 holder = c:PES
+			 type = annex_country
+			 target_state = s:STATE_MAZANDARAN.region_state:PER
+		   }
+		 }
+		 create_diplomatic_play = {
+			name = oil_war
+			target_country = c:PED
+			type = dp_annex_war
+			war = no
+			target_state = s:STATE_FARS.region_state:PED
+			escalation = 40
+			add_war_goal = {
+			 holder = c:PED
+			 type = annex_country
+			 target_state = s:STATE_MAZANDARAN.region_state:PER
+		   }
+		 }
+		 create_diplomatic_play = {
+			name = oil_war
+			target_country = c:PEI
+			type = dp_annex_war
+			war = no
+			target_state = s:STATE_LARISTAN.region_state:PEI
+			escalation = 40
+			add_war_goal = {
+			 holder = c:PEI
+			 type = annex_country
+			 target_state = s:STATE_MAZANDARAN.region_state:PER
+		   }
+		 }
+		}
+	c:PED = { 
+		create_diplomatic_play = {
+			name = oil_war
+			target_country = c:PEF
+			type = dp_annex_war
+			war = no
+			target_state = s:STATE_TABRIZ.region_state:PEF
+			escalation = 40
+			add_war_goal = {
+			 holder = c:PEF
+			 type = annex_country
+			 target_state = s:STATE_FARS.region_state:PED
+		   }
+		 }
+		 create_diplomatic_play = {
+			name = oil_war
+			target_country = c:PES
+			type = dp_annex_war
+			war = no
+			target_state = s:STATE_KHORASAN.region_state:PES
+			escalation = 40
+			add_war_goal = {
+			 holder = c:PES
+			 type = annex_country
+			 target_state = s:STATE_FARS.region_state:PED
+		   }
+		 }
+		 create_diplomatic_play = {
+			name = oil_war
+			target_country = c:PEI
+			type = dp_annex_war
+			war = no
+			target_state = s:STATE_LARISTAN.region_state:PEI
+			escalation = 40
+			add_war_goal = {
+			 holder = c:PEI
+			 type = annex_country
+			 target_state = s:STATE_FARS.region_state:PED
+		   }
+		 }
+		}
+	c:PES = {
+		create_diplomatic_play = {
+			name = oil_war
+			target_country = c:PEF
+			type = dp_annex_war
+			war = no
+			target_state = s:STATE_TABRIZ.region_state:PEF
+			escalation = 40
+			add_war_goal = {
+			 holder = c:PEF
+			 type = annex_country
+			 target_state = s:STATE_KHORASAN.region_state:PES
+		   }
+		 }
+		 create_diplomatic_play = {
+			name = oil_war
+			target_country = c:PEI
+			type = dp_annex_war
+			war = no
+			target_state = s:STATE_LARISTAN.region_state:PEI
+			escalation = 40
+			add_war_goal = {
+			 holder = c:PEI
+			 type = annex_country
+			 target_state = s:STATE_KHORASAN.region_state:PES
+		   }
+		 }
+		}
+	c:PEI = {
+		create_diplomatic_play = {
+			name = oil_war
+			target_country = c:PEF
+			type = dp_annex_war
+			war = no
+			target_state = s:STATE_TABRIZ.region_state:PEF
+			escalation = 40
+			add_war_goal = {
+			 holder = c:PEF
+			 type = annex_country
+			 target_state = s:STATE_LARISTAN.region_state:PEI
+		   }
+		 }
+	}
+	}
+}		
+			
+tno_oil_crisis.5 = {   #Oman Civil War
+	type = country_event
+    placement = ROOT
+
+	title = oil_flavor.5.t
+	desc = oil_flavor.5.d
+    flavor = oil_flavor.5.f
+	
+	event_image = {
+		texture  = "gfx/event_pictures/super_pictures/oilwell.dds"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/middleeast/courtroom_upheaval" 
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	trigger = {
+		exists = c:OMA
+		root = c:OMA
+	}	
+	
+	duration = 3
+
+	immediate = { 
+		create_country = { #Imamate of Oman
+		tag = OMI
+		origin = c:OMA
+		province = p:x5FCC2E
+		province = p:x794443
+		province = p:xCD06CE
+		province = p:xB6755D
+		province = p:x68646C
+		province = p:xAAFA29
+		province = p:x13506D
+		province = p:x589BAF
+		province = p:xB6FBDA
+		province = p:xEFD0A0
+		province = p:xB70CA0
+		province = p:x02FBFB
+		province = p:xE4E126
+		province = p:xCB50CF
+		province = p:x8941AF
+		province = p:x5AF663
+		province = p:xC1BD52
+		province = p:x1B25E6
+		province = p:xC790A2
+		province = p:xFD7FD6
+		province = p:x79A9F3
+		province = p:xF656B5
+		province = p:xF7E8FC
+		province = p:x7BE5F4
+		province = p:xF44B1E
+		province = p:x377D71
+		province = p:x075D78
+		province = p:xC273D0
+		province = p:x07D89B
+		province = p:x17CD85
+		province = p:x8BA0D5
+		province = p:x2DB9C1
+		province = p:x48AF9C
+		province = p:x84FDD6
+		province = p:x1EA1F1
+		province = p:x42A960
+
+		on_created = {
+			activate_law = law_type:law_appointed_bureaucrats
+			activate_law = law_type:law_theocracy
+			activate_law = law_type:law_autocracy
+			activate_law = law_type:law_slavery_banned
+			activate_law = law_type:law_homesteading
+			activate_law = law_type:law_interventionism
+			activate_law = law_type:law_censorship
+			activate_law = law_type:law_national_supremacy
+      add_modifier = {
+				name = destroyed_infrastructure
+				years = 6
+				is_decaying = yes
+			}
+			add_modifier = {
+				name = civiL_war_never_ends
+				years = 2
+			}
+		}
+	} 
+	create_country = { #Dhofar Rebellion
+		tag = ODR
+		origin = c:OMA
+		province = p:x06581E
+		province = p:xA3015F
+		province = p:x030A95
+		province = p:x00BADA
+		province = p:x093AC3
+		province = p:xB82286
+		province = p:xBFD3D7
+		province = p:x85D4B9
+		province = p:xF963C3
+		province = p:x6E2CE7
+		province = p:x2EDA6E
+		province = p:xEDE86E
+		province = p:x05983E
+		province = p:xBC6325
+		province = p:x0289EB
+		province = p:x3C2FE8
+		province = p:xF89153
+		province = p:x85E141
+		province = p:xD9AF1E
+		province = p:x5627A0
+
+		on_created = {
+			activate_law = law_type:law_appointed_bureaucrats
+			activate_law = law_type:law_council_republic
+			activate_law = law_type:law_universal_suffrage
+			activate_law = law_type:law_slavery_banned
+			activate_law = law_type:law_collectivized_agriculture
+			activate_law = law_type:law_command_economy
+			activate_law = law_type:law_censorship
+			activate_law = law_type:law_multicultural
+      add_modifier = {
+				name = destroyed_infrastructure
+				years = 6
+				is_decaying = yes
+			}
+			add_modifier = {
+				name = civiL_war_never_ends
+				years = 2
+			}
+	 }
+	} 
+	c:OMA = {
+		add_modifier = {
+			name = destroyed_infrastructure
+			years = 6
+			is_decaying = yes
+		}
+	}
+	}
+	option = {
+		name = oil_flavor.5.a
+		default_option = yes
+		c:OMA = {
+			create_diplomatic_play = {
+				name = oil_war
+				target_country = c:OMI
+				type = dp_annex_war
+				war = no
+				target_state = s:STATE_OMAN.region_state:OMI
+				escalation = 40
+				add_war_goal = {
+				 holder = c:OMI
+				 type = annex_country
+				 target_state = s:STATE_OMAN.region_state:OMA
+			   }
+			 }
+			 create_diplomatic_play = {
+				name = oil_war
+				target_country = c:ODR
+				type = dp_annex_war
+				war = no
+				target_state = s:STATE_OMAN.region_state:ODR
+				escalation = 40
+				add_war_goal = {
+				 holder = c:ODR
+				 type = annex_country
+				 target_state = s:STATE_OMAN.region_state:OMA
+			   }
+			 }
+		}
+		c:ODR = {
+			create_diplomatic_play = {
+				name = oil_war
+				target_country = c:OMI
+				type = dp_annex_war
+				war = no
+				target_state = s:STATE_OMAN.region_state:OMI
+				escalation = 40
+				add_war_goal = {
+				 holder = c:OMI
+				 type = annex_country
+				 target_state = s:STATE_OMAN.region_state:ODR
+			   }
+			}
+		}
+	}
+}		
+	
+tno_oil_crisis.6 = {   #Saudi Civil War
+	type = country_event
+    placement = ROOT
+
+	title = oil_flavor.6.t
+	desc = oil_flavor.6.d
+    flavor = oil_flavor.6.f
+	
+	event_image = {
+		texture  = "gfx/event_pictures/super_pictures/oilwell.dds"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/middleeast/courtroom_upheaval" 
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	trigger = {
+		exists = c:NEJ
+		root = c:NEJ
+	}	
+	
+	duration = 3
+
+	immediate = { 
+		create_country = { #Saudi Repulican Revolt
+		tag = NEZ
+		origin = c:NEJ
+		state = s:STATE_HEDJAZ.region_state:NEJ
+		province = p:xBFB998
+			province = p:x1FA718
+			province = p:xBA637E
+			province = p:xB01160
+			province = p:xFA46C5
+			province = p:xA442E6
+			province = p:xF6BC1D
+			province = p:x030A29
+			province = p:x18536F
+			province = p:xDFF432
+			province = p:xD74E77
+			province = p:xDCC93F
+			province = p:x13E2EE
+			province = p:x3EF543
+			province = p:xAEAA42
+			province = p:x7FEB87
+			province = p:xEB098E
+			province = p:x0EE414
+			province = p:x82D00F
+			province = p:xEDF7AC
+			province = p:x7555A8
+			province = p:x701160
+			province = p:x8ACAD4
+			province = p:xEA412C
+			province = p:x382FAD
+			province = p:x92BE4B
+			province = p:x3B0975
+			province = p:xC98450
+			province = p:xA52567
+			province = p:xA3248D
+			province = p:x3554CB
+			province = p:x4B6758
+			province = p:x669166
+			province = p:x7A9AF7
+			province = p:x30E29D
+			province = p:x586525
+			province = p:x6946FC
+			province = p:x60AB0A
+			province = p:x821346
+			province = p:xAB3869
+			province = p:xF7CA2B
+			province = p:x81AD79
+			province = p:x2DA603
+			province = p:x371FC4
+			province = p:x2387F9
+			province = p:x7866FA
+			province = p:xCEC01C
+			province = p:x063D99
+			province = p:x712029
+			province = p:xCA21E2
+			province = p:x014B90
+			province = p:x1411DE
+			province = p:xD2725A
+			province = p:x9AC0EF
+			province = p:xE83C08
+			province = p:xEA70D2
+			province = p:x5461E0
+			province = p:xE8809E
+			province = p:x0F7462
+			province = p:xFB9491
+			province = p:xF77056
+			province = p:x6EA51D
+			province = p:x445868
+			province = p:xFE9B94
+			province = p:x317BEE
+			province = p:xAC17D9
+			province = p:x130065
+			province = p:xB3966A
+			province = p:xB0D0A0
+			province = p:xEBCF1F
+			province = p:x74B16E
+			province = p:x788181
+			province = p:x8CCFC9
+			province = p:xE92E2D
+			province = p:xECABD7
+			province = p:x0276AD
+			province = p:x5C2C37
+			province = p:x0A1C72
+			province = p:x6C493A
+			province = p:x6F3B7D
+			province = p:x8263B3
+			province = p:x52847C
+		on_created = {
+			activate_law = law_type:law_elected_bureaucrats
+			activate_law = law_type:law_presidential_republic
+			activate_law = law_type:law_universal_suffrage
+			activate_law = law_type:law_slavery_banned
+			activate_law = law_type:law_homesteading
+			activate_law = law_type:law_interventionism
+			activate_law = law_type:law_guaranteed_liberties
+			activate_law = law_type:law_cultural_exclusion
+      add_modifier = {
+				name = destroyed_infrastructure
+				years = 6
+				is_decaying = yes
+			}
+			add_modifier = {
+				name = civiL_war_never_ends
+				years = 2
+			}
+		 }
+		}
+		c:NEJ = {
+		add_modifier = {
+				name = destroyed_infrastructure
+				years = 6
+				is_decaying = yes
+			}
+			add_modifier = {
+				name = civiL_war_never_ends
+				years = 2
+			}
+		}
+	}
+	option = {
+		name = oil_flavor.6.a
+		default_option = yes
+		create_diplomatic_play = {
+			name = oil_war
+			target_country = c:NEZ
+			type = dp_annex_war
+			war = no
+			target_state = s:STATE_HEDJAZ.region_state:NEZ
+			escalation = 40
+			add_war_goal = {
+			 holder = c:NEJ
+			 type = conquer_state
+			 target_state = s:STATE_NEJD.region_state:NEZ
+		   }
+		   add_war_goal = {
+			holder = c:NEZ
+			type = conquer_state
+			target_state = s:STATE_NEJD.region_state:NEJ
+		  }
+		  add_war_goal = {
+			holder = c:NEZ
+			type = conquer_state
+			target_state = s:STATE_HAIL.region_state:NEJ
+	 	 }
+	 }
+	}
+}		
+			
+tno_oil_crisis.7 = {   #Syria Revolt
+	type = country_event
+    placement = ROOT
+
+	title = oil_flavor.7.t
+	desc = oil_flavor.7.d
+    flavor = oil_flavor.7.f
+	
+	event_image = {
+		texture  = "gfx/event_pictures/super_pictures/oilwell.dds"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/middleeast/courtroom_upheaval" 
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	trigger = {
+		c:PAL = {
+			owns_entire_state_region = STATE_SYRIA
+		}
+		exists = c:PAL
+		root = c:PAL
+	}	
+	
+	duration = 3
+
+	immediate = { 
+		create_country = { #Syrian Revolt
+		tag = SRY
+		origin = c:TUR
+		province = p:x0F0BCB
+		province = p:x186A43
+		province = p:x2FDA89
+		province = p:x3E0347
+		province = p:x499A08
+		province = p:x6905BC
+		province = p:x7A1679
+		province = p:x80B020
+		province = p:x8EF895
+		province = p:x99646E
+		province = p:x9A258F
+		province = p:x9AAC16
+		province = p:xCB0113
+		province = p:xD1C9DA
+		province = p:xE009D7
+		province = p:xE011E0
+		province = p:xE09060
+		province = p:xE2C7D1
+
+		province = p:x6010E0
+		province = p:x6BA268
+		province = p:xA050E0
+		province = p:xC7ECCB
+		province = p:xECCAC7
+
+		province = p:x0D20D8
+		province = p:x19152C
+		province = p:x1B437C
+		province = p:x1ECFDA
+		province = p:x1F78F4
+		province = p:x205956
+		province = p:x246A9F
+		province = p:x24B968
+		province = p:x479916
+		province = p:x519F26
+		province = p:x56095E
+		province = p:x6BDF5C
+		province = p:x849047
+		province = p:x969057
+		province = p:x97B814
+		province = p:x9A097B
+		province = p:xA6B14C
+		province = p:xBD22F1
+		province = p:xBF549D
+		province = p:xC414B6
+		province = p:xCE5C9A
+		province = p:xE67DB6
+		province = p:xF5D646
+		province = p:xF98995
+		on_created = {
+			activate_law = law_type:law_elected_bureaucrats
+			activate_law = law_type:law_presidential_republic
+			activate_law = law_type:law_autocracy
+			activate_law = law_type:law_slavery_banned
+			activate_law = law_type:law_homesteading
+			activate_law = law_type:law_agrarianism
+			activate_law = law_type:law_national_guard
+			activate_law = law_type:law_national_militia
+      add_modifier = {
+				name = destroyed_infrastructure
+				years = 6
+				is_decaying = yes
+			}
+			add_modifier = {
+				name = civiL_war_never_ends
+				years = 2
+			}
+		 }
+		} 
+		c:PAL = {
+		add_modifier = {
+				name = destroyed_infrastructure
+				years = 6
+				is_decaying = yes
+			}
+			add_modifier = {
+				name = civiL_war_never_ends
+				years = 2
+			}
+		}
+	}
+	option = {
+		name = oil_flavor.7.a
+		default_option = yes
+		create_diplomatic_play = {
+			name = oil_war
+			target_country = c:SRY
+			type = dp_annex_war
+			war = no
+			target_state = s:STATE_LEBANON.region_state:SRY
+			escalation = 40
+			add_war_goal = {
+			 holder = c:SRY
+			 type = annex_country
+			 target_state = s:STATE_PALESTINE.region_state:PAL
+		   }
+	 }
+	}
+}		
+			
+tno_oil_crisis.8 = {   #Trucian Coast/Qatar war
+	type = country_event
+    placement = ROOT
+
+	title = oil_flavor.8.t
+	desc = oil_flavor.8.d
+    flavor = oil_flavor.8.f
+	
+	event_image = {
+		texture  = "gfx/event_pictures/super_pictures/oilwell.dds"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/middleeast/courtroom_upheaval" 
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	trigger = {
+		exists = c:BHN
+		exists = c:ABU
+		root = c:ABU
+	}	
+	
+	duration = 3
+
+	immediate = { 
+		c:ABU = {
+		add_modifier = {
+				name = destroyed_infrastructure
+				years = 6
+				is_decaying = yes
+			}
+			add_modifier = {
+				name = civiL_war_never_ends
+				years = 2
+			}
+		}
+		c:BHN = {
+		add_modifier = {
+				name = destroyed_infrastructure
+				years = 6
+				is_decaying = yes
+			}
+			add_modifier = {
+				name = civiL_war_never_ends
+				years = 2
+			}
+		}
+	}
+	option = {
+		name = oil_flavor.8.a
+		default_option = yes
+		
+		create_diplomatic_play = {
+			name = oil_war
+			target_country = c:BHN
+			type = dp_annex_war
+			war = no
+			target_state = s:STATE_ABU_DHABI.region_state:BHN
+			escalation = 40
+			add_war_goal = {
+			 holder = c:BHN
+			 type = annex_country
+			 target_state = s:STATE_ABU_DHABI.region_state:ABU
+		   }
+		 }
+	}
+}
+
+tno_oil_crisis.9 = {   #Superevent Oil Crisis (move to super events eventually)	
+	type = country_event
+    placement = ROOT
+
+	title = oil_flavor.9.t
+	desc = oil_flavor.9.d
+	
+	gui_window = event_super
+
+	event_image = {
+		texture  = "gfx/event_pictures/super_pictures/oilcrisis.dds"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/middleeast/courtroom_upheaval" 
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	trigger = {
+		capital = {
+		   NOT = {
+			OR = {
+				region = sr:region_arabic
+				state_region = s:STATE_LOWER_EGYPT
+				state_region = s:STATE_IRAKAJEMI
+				region = sr:region_russia
+				region = sr:region_west_siberia
+				region = sr:region_east_siberia
+			}
+		   }	
+		 }
+	}	
+	
+	duration = 3
+
+	immediate = { 
+	}
+	option = {
+		name = oil_flavor.9.a
+		default_option = yes
+		trigger = {
+			NOT = {
+			OR = {
+				this ?= c:GER
+				this ?= c:USA
+				this ?= c:JAP
+				}
+			}	
+		}
+		add_modifier = {
+			name = oil_crisis_global
+			years = 8
+			is_decaying = yes
+			}
+	}
+	option = {
+		name = oil_flavor.9.b
+		default_option = yes
+		trigger = {
+			this ?= c:GER
+		}
+		add_modifier = {
+			name = oil_crisis_ger
+			years = 10
+			is_decaying = yes
+		}
+	}
+	option = {
+		name = oil_flavor.9.c
+		default_option = yes
+		trigger = {
+			this ?= c:JAP
+		}
+		add_modifier = {
+			name = oil_crisis_jap
+			years = 10
+			is_decaying = yes
+		}
+	}
+	option = {
+		name = oil_flavor.9.e
+		default_option = yes
+		trigger = {
+			this ?= c:USA
+		}
+		add_modifier = {
+			name = oil_crisis_usa
+			years = 7
+			is_decaying = yes
+		}
+	}
+}
+
+tno_oil_crisis.10 = {  #Random Radicals
+	type = country_event
+    placement = ROOT
+
+	title = oil_flavor.10.t
+	desc = oil_flavor.10.d
+    flavor = oil_flavor.10.f
+	
+	event_image = {
+		texture  = "gfx/event_pictures/super_pictures/yemenicivilwar.dds"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/middleeast/courtroom_upheaval" 
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	trigger = {
+		game_date >= 1970.1.1
+		game_date <= 1975.8.1 
+		capital = {
+			OR = {
+				region = sr:region_arabic
+				state_region = s:STATE_LOWER_EGYPT
+				state_region = s:STATE_IRAKAJEMI
+			}
+		 }
+	}	
+	
+	duration = 3
+
+	immediate = { 	
+	}
+	option = {
+		name = oil_flavor.10.a
+		default_option = yes
+		random_list = {
+			1 = {
+				add_radicals = {
+					value = large_radicals
+					strata = poor
+				}
+			}
+			1 = {
+				add_radicals = {
+					value = large_radicals
+					strata = middle
+				}
+			}
+			1 = {
+				add_radicals = {
+					value = large_radicals
+					strata = rich
+			}
+			}
+		}
+	}
+}
+
+tno_oil_crisis.11 = {  #Random Party Leader
+	type = country_event
+	placement = ROOT
+
+	title = oil_flavor.11.t
+	desc = oil_flavor.11.d
+	flavor = oil_flavor.11.f
+
+	event_image = {
+		texture  = "gfx/event_pictures/super_pictures/yemenicivilwar.dds"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/middleeast/courtroom_upheaval" 
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+
+	trigger = {
+		game_date >= 1970.1.1
+		game_date <= 1975.8.1 
+		capital = {
+			OR = {
+				region = sr:region_arabic
+				state_region = s:STATE_LOWER_EGYPT
+				state_region = s:STATE_IRAKAJEMI
+			}
+		 }
+	}	
+
+	duration = 3
+
+	immediate = { 	
+	}
+	option = {
+		name = oil_flavor.11.a
+		default_option = yes
+		random_list = {
+	    1 = {
+			create_character = {
+				ig_leader = yes
+				interest_group = ig_intelligentsia
+				ideology = ideology_radical
+				}
+		  }
+		1 = {
+			create_character = {
+				ig_leader = yes
+				interest_group = ig_intelligentsia
+				ideology = ideology_communist
+				}
+		}
+		1 = {
+			create_character = {
+				ig_leader = yes
+				interest_group = ig_intelligentsia
+				ideology = ideology_reformer
+			}
+		}
+		}
+	}
+	option = {
+		name = oil_flavor.11.b
+		default_option = yes
+		random_list = {
+	    1 = {
+			create_character = {
+				ig_leader = yes
+				interest_group = ig_trade_unions
+				ideology = ideology_radical
+				}
+		  }
+		1 = {
+			create_character = {
+				ig_leader = yes
+				interest_group = ig_trade_unions
+				ideology = ideology_communist
+				}
+		}
+		1 = {
+			create_character = {
+				ig_leader = yes
+				interest_group = ig_trade_unions
+				ideology = ideology_vanguardist
+			}
+		}
+		1 = {
+			create_character = {
+				ig_leader = yes
+				interest_group = ig_trade_unions
+				ideology = ideology_reformer
+			}
+		}
+		}
+	}
+	option = {
+		name = oil_flavor.11.c
+		default_option = yes
+		random_list = {
+	    1 = {
+			create_character = {
+				ig_leader = yes
+				interest_group = ig_rural_folk
+				ideology = ideology_radical
+				}
+		  }
+		1 = {
+			create_character = {
+				ig_leader = yes
+				interest_group = ig_rural_folk
+				ideology = ideology_anarchist
+				}
+		}
+		1 = {
+			create_character = {
+				ig_leader = yes
+				interest_group = ig_rural_folk
+				ideology = ideology_communist		
+			}
+		}
+		1 = {
+			create_character = {
+				ig_leader = yes
+				interest_group = ig_rural_folk
+				ideology = ideology_vanguardist
+			}
+		}
+		}
+	}
+}
+
+tno_oil_crisis.12 = {  #Random Party Support
+	type = country_event
+	placement = ROOT
+
+	title = oil_flavor.12.t
+	desc = oil_flavor.12.d
+	flavor = oil_flavor.12.f
+
+	event_image = {
+		texture  = "gfx/event_pictures/super_pictures/yemenicivilwar.dds"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/middleeast/courtroom_upheaval" 
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+
+	trigger = {
+		game_date >= 1970.1.1
+		game_date <= 1975.8.1 
+		capital = {
+			OR = {
+				region = sr:region_arabic
+				state_region = s:STATE_LOWER_EGYPT
+				state_region = s:STATE_IRAKAJEMI
+			}
+		 }
+	}	
+
+	duration = 3
+
+	immediate = { 	
+	}
+	option = {
+		name = oil_flavor.12.a
+		default_option = yes
+		random_list = {
+			1 = {
+				add_modifier = {
+					name = oil_crisis_ig_intelligentsia 
+					is_decaying = yes
+					years = 2
+			  }
+			}
+			1 = {
+				add_modifier = {
+					name = oil_crisis_ig_trade_unions 
+					is_decaying = yes
+					years = 2
+				  }
+			}
+			1 = {
+				add_modifier = {
+					name = oil_crisis_ig_rural_folk
+					is_decaying = yes
+					years = 2
+				  }
+			}
+			1 = {
+				add_modifier = {
+					name = oil_crisis_ig_armed_forces
+					is_decaying = yes
+					years = 2
+				  }
+			}
+		}
+	}
+}
+
+tno_oil_crisis.13 = {  #Information for Majors
+	type = country_event
+	placement = ROOT
+
+	title = oil_flavor.13.t
+	desc = oil_flavor.13.d
+	flavor = oil_flavor.13.f
+
+	event_image = {
+		texture  = "gfx/event_pictures/super_pictures/yemenicivilwar.dds"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/middleeast/courtroom_upheaval" 
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+
+	trigger = {
+		OR = {
+			this ?= c:GER
+			this ?= c:JAP
+			this ?= c:USA
+			this ?= c:ITA
+			this ?= c:FRA
+			this ?= c:IBE
+			this ?= c:TUR
+		} 
+	}	
+
+	duration = 3
+
+	immediate = { 	
+	}
+	option = {
+		name = oil_flavor.13.a
+		default_option = yes
+	}
+}
+
+tno_oil_crisis.14 = {  #Country Collapse from not enough Oil
+	type = country_event
+    placement = ROOT
+
+	title = oil_flavor.14.t
+	desc = oil_flavor.14.d
+    flavor = oil_flavor.14.f
+	
+	event_image = {
+		texture  = "gfx/event_pictures/super_pictures/out_of_oil.dds"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/middleeast/courtroom_upheaval" 
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	trigger = {
+	}	
+	
+	duration = 3
+
+	immediate = { 	
+	}
+	option = {
+		name = oil_flavor.14.a
+		default_option = yes
+		add_modifier = {
+			name = ran_out_of_oil
+			years = 10
+			is_decaying = yes
+		}
+	}
+}
+
+tno_oil_crisis.15 = {  #Winter of 1978
+	type = country_event
+    placement = ROOT
+
+	title = oil_flavor.15.t
+	desc = oil_flavor.15.d
+    flavor = oil_flavor.15.f
+	
+	event_image = {
+		texture  = "gfx/event_pictures/super_pictures/blizzard-of-1978.dds"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/middleeast/courtroom_upheaval" 
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	trigger = {
+		OR = {
+			this ?= c:GER
+			this ?= c:USA
+			this ?= c:FRA
+			this ?= c:ENG
+			this ?= c:SWE
+			this ?= c:NOR
+			this ?= c:DEN
+			this ?= c:CAN
+			this ?= c:BGD
+		} 
+	}	
+	
+	duration = 3
+
+	immediate = { 	
+	}
+	option = {
+		name = oil_flavor.15.a
+		default_option = yes
+		change_variable = {
+			name = oil_crisis_oil_supply_var
+			add = -400
+		}
+	}
+}

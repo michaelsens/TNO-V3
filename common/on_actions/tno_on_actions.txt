@@ -18,7 +18,7 @@
             trigger_event = { id = tno_starting_events.8 popup = yes }
             trigger_event = { id = tno_starting_events.9 popup = yes }
             trigger_event = { id = tno_starting_events.10 popup = yes }
-            #trigger_event = { id = tno_starting_events.11 popup = yes }
+            trigger_event = { id = tno_starting_events.11 popup = yes }
             trigger_event = { id = tno_starting_events.12 popup = yes }
             trigger_event = { id = tno_starting_events.13 popup = yes }
             trigger_event = { id = tno_starting_events.14 popup = yes }
@@ -33,9 +33,6 @@
             trigger_event = { id = tno_starting_events.23 popup = yes }
             trigger_event = { id = tno_starting_events.24 popup = yes }
         }
-        
-
-
 
         #Super events
 
@@ -154,10 +151,6 @@
             set_variable = eng_var_3
             trigger_event = { id = tno_flavor_events.9 popup = yes }
         }
-
-
-
-
 
 
 
@@ -282,38 +275,11 @@
             set_variable = ger_flavor_var
             trigger_event = { id = tno_flavor_events.3 days = 0 popup = yes }
         } 
-        
-        if = {
-			limit = {
-               owns_entire_state_region = STATE_HIGHLANDS
-               owns_entire_state_region = STATE_LOWLANDS 
-               NOT = { has_variable = eng_var_2 }
-            }
-            set_variable = eng_var_2
-            trigger_event = { id = tno_flavor_events.8 popup = yes }
-        }
-        if = {
-			limit = {
-               owns_entire_state_region = STATE_CONNAUGHT
-               owns_entire_state_region = STATE_LEINSTER
-               owns_entire_state_region = STATE_MUNSTER
-               owns_entire_state_region = STATE_ULSTER
-               NOT = { has_variable = eng_var_3 }
-            }
-            set_variable = eng_var_3
-            trigger_event = { id = tno_flavor_events.9 popup = yes }
-        }
-        if = {
-            limit = {
-             has_modifier= volunteers_leaving
-           }
-            trigger_event = { id = tno_war_help.2 popup = yes }
-        }
     
        #MADAGASCAR 
        if = {
          limit = {
-            game_date >= 1973.3.1
+            game_date >= 1975.12.1
             NOT = { has_variable = mad_war_var}
          }
         set_variable = mad_war_var
@@ -322,7 +288,7 @@
 
        if = {
         limit = {
-           game_date >= 1974.8.1
+           game_date >= 1976.8.1
            NOT = { has_variable = madder_war_var }
         }
        set_variable = madder_war_var
@@ -331,7 +297,7 @@
       if = {
         limit = {
             c:SMD ?= this
-            game_date >= 1975.4.1
+            game_date >= 1977.4.1
             NOT = { has_global_variable = maddener_war_var }
         }
         set_global_variable = maddener_war_var
@@ -344,28 +310,179 @@
         }
         set_variable = mad_supersss_war_var
         trigger_event = { id = tno_super_events.9 days = 0 popup = yes }
+        }
+      
+        
+        #Oilcrisis 
+
+        if = {
+            limit = {
+               game_date >= 1973.7.1
+               NOT = { has_variable = oil_crisis_information_var}
+            }
+           set_variable = oil_crisis_information_var
+           trigger_event = { id = tno_oil_crisis.13 days = 0 popup = yes }
+          }
+       
+        if = {
+            limit = {
+               game_date >= 1975.2.1
+               NOT = { has_variable = oil_crisis_war_1_var}
+            }
+           set_variable = oil_crisis_war_1_var
+           trigger_event = { id = tno_oil_crisis.1 days = 0 popup = yes }
+          } 
+        if = {
+            limit = {
+               game_date >= 1975.4.1
+               NOT = { has_variable = oil_crisis_war_2_var}
+            }
+            set_global_variable = oil_crisis_start
+            set_variable = oil_crisis_war_2_var
+           trigger_event = { id = tno_oil_crisis.3 days = 0 popup = yes }
+          }    
+        if = {
+            limit = {
+               game_date >= 1975.5.1
+               NOT = { has_variable = oil_crisis_war_3_var}
+            }
+           set_variable = oil_crisis_war_3_var
+           trigger_event = { id = tno_oil_crisis.5  days = 0 popup = yes }
+          }       
+        if = {
+            limit = {
+               game_date >= 1975.8.1
+               NOT = { has_variable = oil_crisis_war_4_var}
+            }
+           set_variable = oil_crisis_war_4_var
+           trigger_event = { id = tno_oil_crisis.2  days = 0 popup = yes }
+          }    
+        if = {
+            limit = {
+               game_date >= 1975.11.1
+               NOT = { has_variable = oil_crisis_war_5_var}
+            }
+           set_variable = oil_crisis_war_5_var
+           trigger_event = { id = tno_oil_crisis.6  days = 0 popup = yes }
+          }  
+        if = {
+            limit = {
+               game_date >= 1975.12.1
+               NOT = { has_variable = oil_crisis_war_7_var}
+            }
+           set_variable = oil_crisis_war_7_var
+           trigger_event = { id = tno_oil_crisis.7  days = 0 popup = yes }
+          }  
+        if = {
+            limit = {
+               game_date >= 1976.2.1
+               NOT = { has_variable = oil_crisis_war_6_var}
+            }
+           set_variable = oil_crisis_war_6_var
+           trigger_event = { id = tno_oil_crisis.4 days = 0 popup = yes }
+          }  
+        if = {
+            limit = {
+               game_date >= 1975.6.1
+               NOT = { has_variable = oil_crisis_war_8_var}
+            }
+           set_variable = oil_crisis_war_8_var
+           trigger_event = { id = tno_oil_crisis.8 days = 0 popup = yes }
+          } 
+        if = {
+            limit = {
+               game_date >= 1979.2.1
+               NOT = { has_variable = oil_crisis_war_15_var}
+            }
+           set_variable = oil_crisis_war_15_var
+           trigger_event = { id = tno_oil_crisis.15 days = 0 popup = yes }
+          }
+        if = {
+            limit = {
+                has_global_variable =  oil_crisis_start
+                NOT = { has_variable = oil_crisis_superevent_var }
+            }
+            set_variable = oil_crisis_superevent_var
+            trigger_event = { id = tno_oil_crisis.9 }
+           }   
+
+        
     }
+    
+    
+    #Oil Crisis Random Events
+    
+    random_events = {
+        10 = 0
+        1 = tno_oil_crisis.10
+        1 = tno_oil_crisis.11
+        1 = tno_oil_crisis.12
     }
 }  
 
-on_war_end = {
-	effect = {
-        scope:actor = {
-            add_modifier = {
-                name = volunteers_leaving
-                is_decaying = yes
-                months = 2
-            }
-        }  
-	
-		scope:target = {
-            add_modifier = {
-                name = volunteers_leaving
-                is_decaying = yes
-                months = 2
-            }
-        } 
+on_wargoal_enforced = {
+    effect = {
+        if = {
+            limit = {
+                owner = {
+                    c:GMB ?= this
+                    NOT = {
+                        exists = c:GAS
+                        exists = c:GHG
+                        exists = c:GRH
+                    }
+                }
+             }
+           owner = {
+            trigger_event = { id = tno_germany_events.19 days = 0 popup = yes }
+           }
+        }
+        if = {
+            limit = {
+                owner = {
+                    c:GAS ?= this
+                    NOT = {
+                        exists = c:GMB
+                        exists = c:GHG
+                        exists = c:GRH
+                    }
+                }
+             }
+             owner = {
+                trigger_event = { id = tno_germany_events.19 days = 0 popup = yes }
+               }
+        }
+        if = {
+            limit = {
+                owner = {
+                    c:GHG ?= this
+                    NOT = {
+                        exists = c:GAS
+                        exists = c:GMB
+                        exists = c:GRH
+                    }
+                }
+             }
+             owner = {
+                trigger_event = { id = tno_germany_events.19 days = 0 popup = yes }
+               }
+        }
+        if = {
+            limit = {
+                owner = {
+                    c:GRH ?= this
+                    NOT = {
+                        exists = c:GAS
+                        exists = c:GHG
+                        exists = c:GMB
+                    }
+                }
+             }
+             owner = {
+                trigger_event = { id = tno_germany_events.19 days = 0 popup = yes }
+               }
+        }
     }
-}
-	
 
+
+}
