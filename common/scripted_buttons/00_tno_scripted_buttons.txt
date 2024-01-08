@@ -1859,7 +1859,44 @@ je_ger_reclaim_ost_z = {  #puppet poland
 			text = je_ger_reclaim_ost_p.tooltip_effect
 		}
 		create_diplomatic_pact = {
-			country = c:RKK
+			country = c:GOV
+			type = reichskommissariat
+		}
+
+	}
+}
+
+je_ger_reclaim_ost_f = {  #puppet netherlands
+	name = "je_puppet_net" 
+	desc = "je_puppet_net_desc	"
+
+	visible = { always = yes }
+
+	possible = {
+		scope:journal_entry = {
+				not = {
+				custom_tooltip = {
+					text = je_ger_reclaim_ost_e.tooltip_condition
+					has_variable = je_cock_retken_cum
+				}
+			}
+		}
+	}
+
+	ai_chance = {
+		base = 100
+	}
+
+	effect = {
+
+		scope:journal_entry = {
+			set_variable = { name = je_cock_retken_cum months = 99999  }
+		}	
+		custom_tooltip = {
+			text = je_ger_reclaim_ost_p.tooltip_effect
+		}
+		create_diplomatic_pact = {
+			country = c:NET
 			type = reichskommissariat
 		}
 
