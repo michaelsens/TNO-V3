@@ -2163,3 +2163,83 @@ tno_usa_events.27 = {  # uganda
 
 
 
+
+
+tno_usa_events.21 = { # Irkutsk asks to use boeing
+    type = country_event
+	placement = root
+	title = tno_usa_events.21.t
+	desc = tno_usa_events.21.d
+	flavor = tno_usa_events.21.f
+	icon = "gfx/interface/icons/invention_icons/corporate_management.dds"
+
+	duration = 6
+
+	immediate = {
+		c:IRK = {
+            save_scope_as = irk_nation_scope
+        }
+    }
+    
+    trigger = {
+	}
+
+	event_image = {
+        texture = "gfx/event_pictures/super_pictures/boeing_737.dds"
+    }
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	option = {
+		default_option = yes
+		name = tno_usa_events.21.a
+		c:IRK = {
+			trigger_event = { id = tno_irk_events.9 popup = yes }
+		}
+    }
+
+	option = {
+		name = tno_usa_events.21.b
+		c:IRK = {
+			change_relations = {
+				country = ROOT
+				value = -20
+			}
+			trigger_event = { id = tno_irk_events.10 popup = yes }
+		}
+    }
+}
+
+tno_usa_events.22 = { # Begins JE for intervention in Russia
+    type = country_event
+	placement = root
+	title = tno_usa_events.22.t
+	desc = tno_usa_events.22.d
+	flavor = tno_usa_events.22.f
+	icon = "gfx/interface/icons/invention_icons/sea_lane_strategies.dds"
+
+	duration = 6
+
+	immediate = {
+		c:RUS = {
+            save_scope_as = rus_nation_scope
+        }
+		ruler = {
+            save_scope_as = usa_current_president
+        }
+    }
+    
+    trigger = {
+	}
+
+	event_image = {
+        texture = "gfx/event_pictures/super_pictures/oval_office.dds"
+    }
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	option = {
+		default_option = yes
+		name = tno_usa_events.22.a
+    }
+}

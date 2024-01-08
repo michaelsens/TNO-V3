@@ -1,0 +1,700 @@
+﻿je_ru_tno_launch_raid = { 
+
+    icon = "gfx/interface/icons/alert_icons/supply_low.dds"
+    group = je_group_historical_content
+    scripted_button = je_ru_launch_raid
+
+    immediate = {
+	}
+    
+    complete = {
+        hidden_trigger = {
+            NOT = {
+                has_modifier = russian_warlord
+            }
+        }
+	}
+
+    on_complete = {
+    }
+
+    on_monthly_pulse = {
+    }
+
+    current_value = {
+		
+	}
+
+
+    goal_add_value = {
+		
+	}
+
+    progressbar = no
+    
+    weight = 100
+
+    
+    should_be_pinned_by_default = yes
+    
+}
+
+je_ru_tno_sakha_expedition = {
+    icon = "gfx/interface/icons/invention_icons/prospecting_tech.dds"
+    group = je_group_expeditions
+
+    scripted_button = je_ru_gen_sakha_expedition
+
+    on_monthly_pulse = {
+        random_events = {
+            80 = 0 #nothing happens
+
+            20 = tno_ru_events.3 #bandits
+            20 = tno_ru_events.4 #corruption
+            20 = tno_ru_events.5 #snowstorm
+            20 = tno_ru_events.6 #additonal funding
+        }
+    }
+    
+    immediate = { 
+        set_variable = {
+            name = sakha_progress
+            value = 0
+        }
+        set_variable = {
+            name = sakha_bandits
+            value = yes
+        }
+        set_variable = {
+            name = expedition_peril
+            value = 0
+        }
+    }
+    
+    status_desc = {
+        first_valid = {
+            triggered_desc = {
+                desc = expedition_not_begun
+                trigger = {
+                    NOT = { has_variable = on_expedition }
+                }
+            }
+            triggered_desc = {
+                desc = expedition_low_peril_loc
+                trigger = {
+                    var:expedition_peril < 4
+                }
+            }
+            triggered_desc = {
+                desc = expedition_medium_peril_loc
+                trigger = {
+                    var:expedition_peril <= 5
+                }
+            }
+            triggered_desc = {
+                desc = expedition_high_peril_loc
+                trigger = {
+                    var:expedition_peril >= 6
+                }
+            }
+        }
+    }
+    
+    complete = {
+        custom_tooltip = {
+            text = je_expedition_success
+            scope:journal_entry = {
+                is_goal_complete = yes
+            }
+        }
+    }
+    
+    on_complete = {
+        trigger_event = { id = tno_ru_events.8 popup = yes }
+
+        remove_variable = on_expedition
+        remove_modifier = the_sakha_expedition
+        remove_modifier = sakha_hiring_security
+        remove_modifier = sakha_corruption_investigation
+        set_variable = {
+            name = sakha_expedition_done
+            value = yes
+        }
+    }
+    
+   fail = {
+        custom_tooltip = {
+            text = je_expedition_fail
+            var:expedition_peril >= 8
+        }
+    }
+    
+    on_fail = {
+        trigger_event = { id = tno_ru_events.7 popup = yes }
+        remove_variable = on_expedition
+        remove_modifier = the_sakha_expedition
+        remove_modifier = sakha_hiring_security
+        remove_modifier = sakha_corruption_investigation
+    }
+    
+    current_value = {
+        value = var:sakha_progress
+    }
+
+    goal_add_value = {
+        add = 8
+    }
+    
+    progressbar = yes
+    
+    weight = 200
+    transferable = no
+    should_be_pinned_by_default = yes
+}
+
+je_ru_tno_repair_transib = {
+    icon = "gfx/interface/icons/invention_icons/railways.dds"
+    group = je_group_technology
+
+    #scripted_button = je_ru_gen_transsib_finish
+
+    possible = {
+        NOT = { has_variable = transsib_done }
+    }
+
+    immediate = {
+        random_scope_state = {
+            limit = {
+                state_region = s:STATE_IRKUTSK
+            }
+            save_scope_as = irkutsk_state_scope
+        }
+        random_scope_state = {
+            limit = {
+                state_region = s:STATE_TRANS_BAIKAL
+            }
+            save_scope_as = trans_baikal_state_scope
+        }
+        random_scope_state = {
+            limit = {
+                state_region = s:STATE_OKHOTSK
+            }
+            save_scope_as = okhotsk_state_scope
+        }
+        random_scope_state = {
+            limit = {
+                state_region = s:STATE_UPPER_YENISEYSK
+            }
+            save_scope_as = upper_yeniseysk_state_scope
+        }
+        random_scope_state = {
+            limit = {
+                state_region = s:STATE_YAKUTSK
+            }
+            save_scope_as = yakutsk_state_scope
+        }
+        random_scope_state = {
+            limit = {
+                state_region = s:STATE_CHUKOTKA
+            }
+            save_scope_as = chukotka_state_scope
+        }
+        random_scope_state = {
+            limit = {
+                state_region = s:STATE_KAMCHATKA
+            }
+            save_scope_as = kamchatka_state_scope
+        }
+    }
+
+    complete = {
+
+        custom_tooltip = {
+            text = je_transib_irkutsk_tt
+            any_scope_state = {
+                state_region = s:STATE_IRKUTSK
+                state_has_building_group_levels = {
+                    type = bg_private_infrastructure
+                    value  >= 4
+                } 
+            }
+        }
+        custom_tooltip = {
+            text = je_transib_trans_baikal_tt
+            any_scope_state = {
+                state_region = s:STATE_TRANS_BAIKAL
+                state_has_building_group_levels = {
+                    type = bg_private_infrastructure
+                    value  >= 4
+                } 
+            }
+        }
+        custom_tooltip = {
+            text = je_transib_okhotsk_tt
+            any_scope_state = {
+                state_region = s:STATE_OKHOTSK
+                state_has_building_group_levels = {
+                    type = bg_private_infrastructure
+                    value  >= 4
+                } 
+            }
+        }
+    }
+
+    on_complete = {
+        if = {
+             limit = {
+                scope:irkutsk_state_scope = {
+                    is_capital = yes
+                }
+            }
+            add_journal_entry = { type = je_ru_tno_irk_paris_of_siberia }
+        }
+        custom_tooltip = transsib_complete_tt
+        hidden_effect = {
+            scope:irkutsk_state_scope = {
+                add_modifier = {
+                    name = state_transsib
+                    years = 10
+                    is_decaying = yes
+                }
+            }
+            scope:trans_baikal_state_scope = {
+                add_modifier = {
+                    name = state_transsib
+                    years = 10
+                    is_decaying = yes
+                }
+            }
+            scope:okhotsk_state_scope = {
+                add_modifier = {
+                    name = state_transsib
+                    years = 10
+                    is_decaying = yes
+                }
+            }
+
+            scope:upper_yeniseysk_state_scope = {
+                if = {
+                    limit = {
+                        state_has_building_group_levels = {
+                            type = bg_private_infrastructure
+                            value  >= 4
+                        }
+                    }
+                    add_modifier = {
+                        name = state_transsib
+                        years = 10
+                        is_decaying = yes
+                    }
+                }
+            }
+            scope:yakutsk_state_scope = {
+                if = {
+                    limit = {
+                        state_has_building_group_levels = {
+                            type = bg_private_infrastructure
+                            value  >= 4
+                        }
+                    }
+                    add_modifier = {
+                        name = state_transsib
+                        years = 10
+                        is_decaying = yes
+                    }
+                }
+            }
+            scope:chukotka_state_scope = {
+                if = {
+                    limit = {
+                        state_has_building_group_levels = {
+                            type = bg_private_infrastructure
+                            value  >= 4
+                        }
+                    }
+                    add_modifier = {
+                        name = state_transsib
+                        years = 10
+                        is_decaying = yes
+                    }
+                }
+            }
+            scope:kamchatka_state_scope = {
+                if = {
+                    limit = {
+                        state_has_building_group_levels = {
+                            type = bg_private_infrastructure
+                            value  >= 4
+                        }
+                    }
+                    add_modifier = {
+                        name = state_transsib
+                        years = 10
+                        is_decaying = yes
+                    }
+                }
+            }
+        }
+    }
+    weight = 50
+    should_be_pinned_by_default = yes
+}
+
+je_ru_tno_army_reform = {
+    icon = "gfx/interface/icons/invention_icons/mandatory_service.dds"
+    group = je_group_historical_content
+
+    scripted_button = je_ru_gen_reform_army_advance
+    
+    immediate = { 
+        set_variable = {
+            name = army_reform_progress
+            value = 0
+        }
+    }
+    
+    complete = {
+        custom_tooltip = {
+            text = ru_army_reform_rq_tt
+            has_modifier = ru_full_army_reform
+        }
+        
+    }
+    
+    on_complete = {
+        custom_tooltip = ru_army_reform_completion_tt
+    }
+    
+    current_value = {
+        value = var:army_reform_progress
+    }
+
+    goal_add_value = {
+        add = 3
+    }
+    
+    progressbar = yes
+    
+    weight = 200
+    transferable = no
+    should_be_pinned_by_default = yes
+}
+
+je_ru_tno_com_restore_ussr = { 
+
+    icon = "gfx/interface/icons/tno_event_icons/reunify_russia.dds"
+    group = je_group_historical_content
+    scripted_button = je_ru_com_restore_ussr
+
+    immediate = {
+        random_scope_state = {
+            limit = {
+                state_region = s:STATE_IRKUTSK
+            }
+            save_scope_as = irkutsk_state_scope
+        }
+        c:WST = {
+            save_scope_as = wrrf_nation
+        }
+    }
+    
+    complete = {
+        #Far-East
+        owns_entire_state_region = STATE_IRKUTSK
+        owns_entire_state_region = STATE_TRANS_BAIKAL
+        owns_entire_state_region = STATE_OKHOTSK
+        owns_entire_state_region = STATE_CHUKOTKA
+        owns_entire_state_region = STATE_YAKUTSK
+        owns_entire_state_region = STATE_KAMCHATKA
+        owns_entire_state_region = STATE_UPPER_YENISEYSK
+        #Central Sib
+        owns_entire_state_region = STATE_TOMSK
+        owns_entire_state_region = STATE_TOBOLSK
+        owns_entire_state_region = STATE_TUVA
+        #West Sib
+        owns_entire_state_region = STATE_OB
+        owns_entire_state_region = STATE_NENETSIA
+        owns_entire_state_region = STATE_URAL
+        #West Russia
+        owns_entire_state_region = STATE_SAMARA
+        owns_entire_state_region = STATE_PERM
+        owns_entire_state_region = STATE_KAZAN
+        owns_entire_state_region = STATE_GALICH
+
+        custom_tooltip = {
+            text = je_ru_tno_rus_owns_wrrf
+            any_scope_state = {
+                state_region = s:STATE_ARKHANGELSK
+            }
+        }
+        #custom_tooltip = {
+            #text = formed_russia_rq_tt
+        hidden_trigger = {
+            c:RUS ?= THIS
+        }
+        #}
+    }
+
+    on_complete = {
+        set_global_variable = irk_rus_formed
+    }
+
+    on_monthly_pulse = {
+    }
+
+    current_value = {
+        
+    }
+
+
+    goal_add_value = {
+        
+    }
+
+    progressbar = no
+    
+    weight = 1000
+
+    
+    should_be_pinned_by_default = yes
+    
+}
+
+je_ru_repair_magadan = { 
+
+    icon = "gfx/interface/icons/invention_icons/hydraulic_cranes.dds"
+    group = je_group_technology
+
+    immediate = {
+        random_scope_state = {
+            limit = {
+                state_region = s:STATE_OKHOTSK
+            }
+            save_scope_as = okhotsk_state_scope
+        }
+        c:USA = {
+            save_scope_as = usa_nation_scope
+        }
+    }
+    
+    complete = {
+        
+        custom_tooltip = {
+            text = je_repair_magadan_tt
+            any_scope_state = {
+                state_region = s:STATE_OKHOTSK
+                state_has_building_group_levels = {
+                    type = bg_private_infrastructure
+                    value  >= 6
+                }
+                has_building = building_port 
+            }
+        } 
+        c:USA = {
+            has_diplomatic_pact = {
+                who = root
+                type = defensive_pact
+            }
+            custom_tooltip = {
+                text = fin_sib_usa_relations
+                relations:root >= 20
+            }
+        }
+    }
+
+    on_complete = {
+        add_journal_entry = { type = je_ru_buy_supplies_usa }
+        custom_tooltip = je_repair_magadan_complete_tt
+    }
+
+    on_monthly_pulse = {
+    }
+
+    current_value = {
+        
+    }
+
+
+    goal_add_value = {
+        
+    }
+
+    progressbar = no
+    
+    weight = 100
+
+    
+    should_be_pinned_by_default = yes
+    
+}
+
+je_ru_take_karelia = { 
+
+    icon = "gfx/interface/icons/invention_icons/sea_lane_strategies.dds"
+    group = je_group_historical_content
+    scripted_button = je_ru_take_karelia_button
+
+    immediate = {
+    }
+    
+    complete = {
+        owns_entire_state_region = STATE_EAST_KARELIA 
+    }
+
+    on_complete = {
+        add_modifier = victory_in_karelia
+    }
+
+    on_monthly_pulse = {
+    }
+
+    current_value = {
+        
+    }
+
+
+    goal_add_value = {
+        
+    }
+
+    progressbar = no
+    
+    weight = 100
+
+    
+    should_be_pinned_by_default = yes
+    
+}
+
+je_ru_buy_supplies_usa = { 
+
+    icon = "gfx/interface/icons/tno_event_icons/usa_buy_supplies.dds"
+    group = je_group_historical_content
+
+    scripted_button = je_ru_request_american_support
+
+    immediate = {
+        c:USA = {
+            save_scope_as = usa_nation_scope
+        }
+    }
+    
+    complete = {
+        custom_tooltip = {
+            text = complete_request_american_aid
+            has_variable = je_request_american_aid_tried
+        }
+    }
+
+    on_complete = {
+    }
+
+    on_monthly_pulse = {
+    }
+
+    current_value = {
+        
+    }
+
+    goal_add_value = {
+        
+    }
+
+    progressbar = no
+    
+    weight = 100
+
+    
+    should_be_pinned_by_default = yes
+    
+}
+
+#je_ru_tno_partisan = {
+#    icon = "gfx/interface/icons/invention_icons/anarchy.dds"
+#    group = je_group_historical_content
+#
+#    scripted_button = je_ru_gen_partisan_strengthen
+#    
+#    immediate = { 
+#        set_global_variable = {
+#            name = partisan_strength
+#            value = 0
+#        }
+#        clamp_global_variable = {
+#            name = partisan_strength
+#            max = 5
+#            min = 0
+#        }
+#        c:GER = {
+#            save_scope_as = ger_nation_scope
+#        }
+#    }
+#    
+#    complete = {
+#        hidden_trigger = {
+#            has_modifier = ru_won_second_great_patriotic_war
+#        }
+#        
+#    }
+#    
+#    on_complete = {
+#        custom_tooltip = ru_army_reform_completion_tt
+#    }
+#    
+#    current_value = {
+#        value = global_var:partisan_strength
+#    }
+#
+#    goal_add_value = {
+#        add = 5
+#    }
+#    
+#    progressbar = yes
+#    
+#    weight = 200
+#    transferable = no
+#    should_be_pinned_by_default = yes
+#}
+
+#je_ru_project_zimneye_solntse = { # - develop nukes as russia
+#
+#    icon = "gfx/interface/icons/tno_event_icons/usa_buy_supplies.dds"
+#    group = je_group_historical_content
+#
+#    scripted_button = je_ru_nuke_begin
+#
+#    immediate = {
+#        c:RUS = {
+#            save_scope_as = rus_nation_scope
+#        }
+#    }
+#    
+#    complete = {
+#        custom_tooltip = {
+#            text = complete_zimneye_solntse
+#            has_variable = ru_has_nuke
+#        }
+#    }
+#
+#    on_complete = {
+#    }
+#
+#    on_monthly_pulse = {
+#    }
+#
+#    current_value = {
+#        
+#    }
+#
+#    goal_add_value = {
+#        
+#    }
+#
+#    progressbar = no
+#    
+#    weight = 100
+#
+#    
+#    should_be_pinned_by_default = yes
+#    
+#}
