@@ -420,6 +420,20 @@ RUS = {
 			}
 		}
 	}
+	dynamic_country_name = {
+		name = "Union of Soviet Socialist Republics"
+		adjective = "Soviet"
+
+		is_main_tag_only = yes
+		priority = 100000
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_variable = irk_form_ussr 
+			}
+		}
+	}
 }
 
 NEJ = {
@@ -439,4 +453,35 @@ NEJ = {
 	}
 
 
+}
+
+IRK = {
+	dynamic_country_name = {
+		name = "Far Eastern Soviet Socialist Republic"
+		adjective = "Far Eastern"
+
+		is_main_tag_only = yes
+		priority = 1000
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_variable = irk_form_far_east
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = "Union of Soviet Socialist Republics"
+		adjective = "Soviet"
+
+		is_main_tag_only = yes
+		priority = 100000
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_variable = irk_form_ussr 
+			}
+		}
+	}
 }

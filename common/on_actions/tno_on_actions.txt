@@ -46,6 +46,24 @@
             trigger_event = { id = tno_super_events.1 days = 0 popup = yes }
         }
 
+        if = { #USSR formed under Irkutsk (RUSSIA)
+            limit = {
+               has_global_variable = irk_rus_formed
+               NOT = { has_variable = irk_rus_event }
+            }
+            set_variable = irk_rus_event
+            trigger_event = { id = tno_super_events.10 days = 0 popup = yes }
+        }
+        if = {  #Irkutsk launches 2WRW (Second Great Patriotic War) (2WRW)
+            limit = {
+               has_global_variable = second_great_patriotic_war
+               NOT = { has_variable = second_great_patriotic_war_event }
+            }
+            set_variable = second_great_patriotic_war_event
+            trigger_event = { id = tno_super_events.11 days = 0 popup = yes }
+        }
+
+
         if = {
             limit = {
                 c:PRO ?= THIS
@@ -408,6 +426,7 @@
 
         if = { #Irkutsk: Crushed Mutiny (Buryatia Conquered)
             limit = {
+                c:IRK ?= this
                owns_entire_state_region = STATE_IRKUTSK
                NOT = { has_variable = irk_obry_var }
             }
@@ -417,6 +436,7 @@
 
         if = { #Irkutsk: Yagoda is no longer ruler
             limit = {
+                c:IRK ?= this
                 ruler = {
                     NOT = {has_variable = is_genrikh}
                     #check if irkutsk has autocracy so that you can tell if yagoda was ousted or just died of old age. so that we can have "yagoda successor" vs "party takes power"
@@ -426,17 +446,121 @@
             }
             set_variable = irk_lyag_var
 
-            trigger_event = { id = tno_irk_events.4 days = 60 popup = no }
+            trigger_event = { id = tno_irk_events.4 days = 60 popup = yes }
         }
 
-        if = { #Irkutsk: No longer has law Autocracy
+        if = { #Irkutsk: No longer has law Autocracy, but yagoda is still alive.  The party came into power and overthrew him.
             limit = {
-               NOT = {has_law = law_type:law_autocracy}
-               NOT = { has_variable = irk_noat_var }
+                c:IRK ?= this
+                NOT = {has_law = law_type:law_autocracy}
+                NOT = { has_variable = irk_noat_var }
+                every_scope_character = {
+                    has_variable = is_genrikh
+                    is_character_alive = yes
+                }
             }
+
             set_variable = irk_noat_var
 
-            trigger_event = { id = tno_irk_events.5 days = 2 popup = no }
+            trigger_event = { id = tno_irk_events.5 days = 2 popup = yes }
+        }
+        if = { #Irkutsk: Get flavor event abt beginning of invasion of Far East.
+            limit = {
+               c:IRK ?= this
+               game_date >= 1966.1.1
+               NOT = { has_variable = irk_inv_var }
+            }
+            set_variable = irk_inv_var
+            trigger_event = { id = tno_irk_events.7 days = 180 popup = yes }
+        }
+        if = { #Russia: Army Reform 1 ready
+            limit = {
+                c:RUS ?= this
+                has_modifier = ru_no_army_reform
+                has_law = law_type:law_professional_army
+                army_size >= 150
+                has_technology_researched = trench_works
+                NOR = {
+                    any_scope_building = {
+                        is_building_type = building_barracks                
+                        OR = {
+                            building_has_goods_shortage = yes
+                            has_active_production_method = pm_no_organization
+                        }
+                    }
+                    any_military_formation = {
+                        filter = {
+                            is_army = yes
+                        }
+                        any_combat_unit = {
+                            has_unit_type = unit_type:combat_unit_type_skirmish_infantry
+                        }
+                        percent >= 0.75
+                    }
+                }
+            }
+
+            set_variable = ru_army_reform_ready
+        } 
+        if = { #Russia: Army Reform 2 ready
+            limit = {
+                c:RUS ?= this
+                has_modifier = ru_basic_army_reform
+                army_size >= 200
+                has_technology_researched = stormtroopers
+                NOT = {
+                    any_scope_building = {
+                        is_building_type = building_barracks                
+                        OR = {
+                            building_has_goods_shortage = yes
+                            NOT = {
+                                has_active_production_method = pm_nco_incorporation
+                            }
+                        }
+                    }
+                }
+                any_military_formation = {
+                    filter = {
+                        is_army = yes
+                    }
+                    any_combat_unit = {
+                        has_unit_type = unit_type:combat_unit_type_trench_infantry
+                    }
+                    percent >= 0.75
+                }
+            }
+
+            set_variable = ru_army_reform_ready
+        }
+        if = { #Russia: Army Reform 3 ready
+            limit = {
+                c:RUS ?= this
+                has_modifier = ru_significant_army_reform
+                army_size >= 400
+                has_technology_researched = military_aviation
+                NOT = {
+                    any_scope_building = {
+                        is_building_type = building_barracks                
+                        OR = {
+                            building_has_goods_shortage = yes
+                            NOT = {
+                                has_active_production_method = pm_mobile_warfare_tactics
+                            }
+                        }
+                    }
+                }
+                any_military_formation = {
+                    filter = {
+                        is_army = yes
+                    }
+                    any_combat_unit = {
+                        has_unit_type = unit_type:combat_unit_type_heavy_tank
+                    }
+                    percent >= 0.1
+                }
+            }
+
+            set_variable = ru_army_reform_ready
         }
 
     }

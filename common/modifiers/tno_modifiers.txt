@@ -1706,3 +1706,154 @@ recently_looted_neighbor = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_negative.dds
 	country_minting_add = 1000
 }
+
+recently_revolted = {
+	icon = gfx/interface/icons/notification_icons/capitulate.dds
+	interest_group_ig_trade_unions_pol_str_mult = 20
+	interest_group_ig_armed_forces_pol_str_mult = 0.2
+	interest_group_ig_devout_pol_str_mult = -10
+	interest_group_ig_industrialists_pol_str_mult = -10
+	interest_group_ig_rural_folk_pol_str_mult = -10
+	interest_group_ig_petty_bourgeoisie_pol_str_mult = -10
+	interest_group_ig_landowners_pol_str_mult = -10
+	interest_group_ig_intelligentsia_pol_str_mult = -10
+}
+
+transition_from_warlordism = {
+	icon = gfx/interface/icons/notification_icons/trade_route.dds
+	state_market_access_price_impact = 0.15
+	state_construction_mult = -0.1
+	state_mortality_mult = 0.15
+	state_tax_waste_add = 0.1
+	country_bureaucracy_mult = -0.15
+}
+
+the_sakha_expedition = {
+	icon = gfx/interface/icons/invention_icons/prospecting_tech.dds
+	country_bureaucracy_add = -200
+	country_expenses_add = 12000
+}
+
+sakha_corruption_investigation = {
+	icon = gfx/interface/icons/invention_icons/identification_documents.dds
+	country_expenses_add = 4000
+}
+
+sakha_hiring_security = {
+	icon = gfx/interface/icons/invention_icons/law_enforcement.dds
+	country_expenses_add = 3000
+}
+
+state_sakha_complete = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds
+	state_migration_pull_mult = 0.25
+	state_construction_mult = 0.1
+	state_loyalists_from_sol_change_mult = 0.1
+}
+
+russian_warlord = {
+	icon = gfx/interface/icons/goods_icons/unused/food.dds
+}
+
+state_transsib = {
+	icon = gfx/interface/icons/production_method_icons/rail_transport.dds
+	state_birth_rate_mult = 0.2
+	state_migration_pull_mult = 0.2
+}
+
+the_irkutsk_model = {
+	icon = "gfx/interface/icons/tno_event_icons/paris_of_siberia.dds"
+	building_group_bg_bureaucracy_throughput_add = 0.2
+}
+
+state_siberian_plan = {
+	icon = "gfx/interface/icons/tno_event_icons/sib_plan.dds"
+	state_mortality_mult = -0.05
+	state_loyalists_from_sol_change_mult = 0.1
+	state_infrastructure_mult = 0.15
+}
+
+the_siberian_plan = {
+	icon = "gfx/interface/icons/tno_event_icons/sib_plan.dds"
+}
+
+victory_in_karelia = {
+	icon = "gfx/interface/icons/invention_icons/sea_lane_strategies.dds"
+	country_prestige_mult = 0.05
+}
+
+#russian army reform levels (0-3, aka level 1 to level 4)
+
+ru_no_army_reform = { #No army reforms
+	icon = "gfx/interface/icons/invention_icons/mandatory_service.dds"
+	unit_army_offense_mult = -0.1
+	unit_army_defense_mult = -0.1
+	unit_morale_damage_mult = -0.1
+	unit_morale_loss_mult = 0.25
+}
+
+ru_basic_army_reform = { #Basic army reforms
+	icon = "gfx/interface/icons/invention_icons/mandatory_service.dds"
+	unit_morale_loss_mult = 0.05
+	#Russian partisans mechanic enabled
+}
+
+ru_significant_army_reform = { #Significant army reforms
+	icon = "gfx/interface/icons/invention_icons/mandatory_service.dds"
+	unit_army_offense_mult = 0.1
+	#unit_army_defense_mult = 0.1
+	unit_morale_damage_mult = 0.1
+	unit_morale_loss_mult = -0.15
+}
+
+ru_full_army_reform = { #Full army reforms
+	icon = "gfx/interface/icons/invention_icons/mandatory_service.dds"
+	unit_army_offense_mult = 0.15
+	unit_army_defense_mult = 0.05
+	unit_morale_damage_mult = 0.1
+	unit_morale_loss_mult = -0.15
+	country_prestige_from_army_power_projection_mult = 0.05
+	#unit_combat_unit_type_heavy_tank_offense_mult = 0.1
+	unit_kill_rate_add = 0.05
+	#unit_morale_recovery_mult = 0.05
+	#unit_recovery_rate_add = 0.1
+}
+
+ru_partisan_connections = { 
+	icon = "gfx/interface/icons/invention_icons/telephone.dds"
+	# -75% Partisan activities cost
+}
+
+level_one_partisan = {
+	icon = "gfx/interface/icons/invention_icons/anarchy.dds"
+	unit_morale_loss_mult = 0.05
+}
+
+level_two_partisan = {
+	icon = "gfx/interface/icons/invention_icons/anarchy.dds"
+	unit_morale_loss_mult = 0.1
+}
+
+level_three_partisan = {
+	icon = "gfx/interface/icons/invention_icons/anarchy.dds"
+	unit_morale_loss_mult = 0.15
+}
+
+level_four_partisan = {
+	icon = "gfx/interface/icons/invention_icons/anarchy.dds"
+	unit_morale_loss_mult = 0.2
+}
+
+level_five_partisan = {
+	icon = "gfx/interface/icons/invention_icons/anarchy.dds"
+	unit_morale_loss_mult = 0.25
+}
+
+tno_ru_irk_buff_playable = {
+	icon = "gfx/interface/icons/invention_icons/stormtroopers.dds"
+	#hidden_effect = {
+	#	state_radicals_from_sol_change_mult = -1
+	#	state_expected_sol_mult = -50
+	#	state_expected_sol_from_literacy = -1
+	#}
+}

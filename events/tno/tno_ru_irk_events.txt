@@ -96,7 +96,6 @@ tno_irk_events.2 = { #Purge event 1
 
 	option = {
 		name = tno_irk_events.2.1
-		highlighted_option = yes
 		hidden_effect = {
 			trigger_event = { id = tno_irk_events.3 days = 80 popup = no }
 		}
@@ -129,7 +128,6 @@ tno_irk_events.3 = { #Purge event 2
 
 	option = {
 		name = tno_irk_events.3.1
-		highlighted_option = yes
     }
 }
 
@@ -158,9 +156,44 @@ tno_irk_events.4 = { # Yagoda's succession, he's dead but still autocracy
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 
 	option = {
-		name = tno_irk_events.0.1
-		highlighted_option = yes
+		highlighted_option = no
+		name = tno_irk_events.4.1
+		custom_tooltip = tno_irk_events.4.1.1.tt
+		every_scope_character = {
+			if = {
+				limit = {
+					has_variable = is_kobulov
+				}
+				save_scope_as = kobulov
+			}
+        }
+		scope:kobulov = {
+			set_character_as_ruler = yes
+		}
+		custom_tooltip = tno_irk_events.4.1.2.tt
+    }
+    option = {
+		name = tno_irk_events.4.2
+		custom_tooltip = tno_irk_events.5.1.tt
+		activate_law = law_type:law_no_home_affairs
 		activate_law = law_type:law_single_party_state
+		ig:ig_trade_unions = {
+			add_ruling_interest_group = yes
+		}
+		ig:ig_armed_forces = {
+			remove_ruling_interest_group = yes
+		}
+		every_scope_character = {
+			if = {
+				limit = {
+					has_variable = is_bessonov
+				}
+				save_scope_as = bessonov
+			}
+        }
+		scope:bessonov = {
+			set_character_as_ruler = yes
+		}
     }
 }
 
@@ -190,5 +223,226 @@ tno_irk_events.5 = { # Lost autocracy law - yagoda overthrown
 
 	option = {
 		name = tno_irk_events.5.1
+		custom_tooltip = tno_irk_events.5.1.tt
+		activate_law = law_type:law_no_home_affairs
+		activate_law = law_type:law_single_party_state
+		ig:ig_trade_unions = {
+			add_ruling_interest_group = yes
+		}
+		ig:ig_armed_forces = {
+			remove_ruling_interest_group = yes
+		}
+    }
+}
+
+tno_irk_events.6 = { # Aftermath of Far Eastern unification
+    type = country_event
+	placement = root
+	title = tno_irk_events.6.t
+	desc = tno_irk_events.6.d
+	flavor = tno_irk_events.6.f
+	icon = "gfx/interface/icons/invention_icons/philosophical_pragmatism.dds"
+
+	duration = 6
+
+	immediate = {
+    }
+    
+    trigger = {
+	}
+
+	event_image = {
+        texture = "gfx/event_pictures/super_pictures/civilian_soviet.dds"
+    }
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	option = {
+		name = tno_irk_events.6.1
+    }
+}
+
+tno_irk_events.7 = { # Aftermath of 1st Jan 1966 (begin reunification wars in Russia)
+    type = country_event
+	placement = root
+	title = tno_irk_events.7.t
+	desc = tno_irk_events.7.d
+	flavor = tno_irk_events.7.f
+	icon = "gfx/interface/icons/invention_icons/wargaming.dds"
+
+	duration = 6
+
+	immediate = {
+		ruler = {
+            save_scope_as = irkutsk_leader
+        }
+    }
+    
+    trigger = {
+	}
+
+	event_image = {
+        texture = "gfx/event_pictures/super_pictures/ru_war.dds"
+    }
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	option = {
+		name = tno_irk_events.7.1
+    }
+}
+
+tno_irk_events.8 = { # Invite Boeing
+    type = country_event
+	placement = root
+	title = tno_irk_events.8.t
+	desc = tno_irk_events.8.d
+	flavor = tno_irk_events.8.f
+	icon = "gfx/interface/icons/invention_icons/corporate_management.dds"
+
+	duration = 6
+
+	immediate = {
+		c:USA = {
+            save_scope_as = usa_nation_scope
+        }
+    }
+    
+    trigger = {
+	}
+
+	event_image = {
+        texture = "gfx/event_pictures/super_pictures/boeing_737.dds"
+    }
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	option = {
+		name = tno_irk_events.8.1
+		custom_tooltip = {
+			text = tno_irk_events.8.1.tt
+			c:USA = {
+				trigger_event = { id = tno_usa_events.21 popup = yes }
+			}
+		}
+    }
+}
+
+tno_irk_events.9 = { # Americans accept to allow Boeing to operate in Russia
+    type = country_event
+	placement = root
+	title = tno_irk_events.9.t
+	desc = tno_irk_events.9.d
+	flavor = tno_irk_events.9.f
+	icon = "gfx/interface/icons/invention_icons/corporate_management.dds"
+
+	duration = 6
+
+	immediate = {
+		c:USA = {
+            save_scope_as = usa_nation_scope
+        }
+    }
+    
+    trigger = {
+	}
+
+	event_image = {
+        texture = "gfx/event_pictures/super_pictures/boeing_737_2.dds"
+    }
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	option = {
+		name = tno_irk_events.9.1
+    }
+}
+
+tno_irk_events.10 = { # Americans decline to allow Boeing to operate in Russia
+    type = country_event
+	placement = root
+	title = tno_irk_events.10.t
+	desc = tno_irk_events.10.d
+	flavor = tno_irk_events.10.f
+	icon = "gfx/interface/icons/invention_icons/corporate_management.dds"
+
+	duration = 6
+
+	immediate = {
+		c:USA = {
+            save_scope_as = usa_nation_scope
+        }
+    }
+    
+    trigger = {
+	}
+
+	event_image = {
+        texture = "gfx/event_pictures/super_pictures/boeing_737_2.dds"
+    }
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	option = {
+		name = tno_irk_events.10.1
+		custom_tooltip = tno_irk_events.10.1.tt
+    }
+}
+
+tno_irk_events.11 = { # Dev event
+    type = country_event
+	placement = root
+	title = tno_irk_events.11.t
+	desc = tno_irk_events.11.d
+	flavor = tno_irk_events.11.f
+	icon = "gfx/interface/icons/invention_icons/corporate_management.dds"
+
+	duration = 6
+
+	immediate = {
+    }
+    
+    trigger = {
+	}
+
+	event_image = {
+        texture = "gfx/event_pictures/super_pictures/boeing_737_2.dds"
+    }
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	option = {
+		name = tno_irk_events.11.1
+		set_variable = ru_army_reform_ready
+    }
+}
+
+tno_irk_events.12 = { # The Great Anti-Fascist War
+    type = country_event
+	placement = root
+	title = tno_irk_events.12.t
+	desc = tno_irk_events.12.d
+	flavor = tno_irk_events.12.f
+	icon = "gfx/interface/icons/lens_toolbar_icons/recruit_generals_lens_option.dds"
+
+	duration = 6
+
+	immediate = {
+		ruler = {
+            save_scope_as = irkutsk_leader
+        }
+    }
+    
+    trigger = {
+	}
+
+	event_image = {
+        texture = "gfx/event_pictures/super_pictures/russianwar.dds"
+    }
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	option = {
+		name = tno_irk_events.12.a
     }
 }

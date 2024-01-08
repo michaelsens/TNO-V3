@@ -6,22 +6,38 @@
 		activate_law = law_type:law_warlord_economy
 		activate_law = law_type:law_autocracy
 		activate_law = law_type:law_council_republic
-		activate_law = law_type:law_cultural_exclusion
-		activate_law = law_type:law_state_atheism
+		activate_law = law_type:law_multicultural
+		activate_law = law_type:law_total_separation
 		activate_law = law_type:law_appointed_bureaucrats
 		activate_law = law_type:law_mass_conscription
 		activate_law = law_type:law_protectionism
-		activate_law = law_type:law_per_capita_based_taxation
+		activate_law = law_type:law_graduated_taxation
 		activate_law = law_type:law_militarized_police
 		activate_law = law_type:law_public_health_insurance
 		activate_law = law_type:law_public_schools
 		activate_law = law_type:law_women_in_the_workplace
-		activate_law = law_type:law_poor_laws
-		activate_law = law_type:law_migration_controls
+		activate_law = law_type:law_no_social_security
+		activate_law = law_type:law_closed_borders
+		activate_law = law_type:law_censorship
+		activate_law = law_type:law_compulsory_primary_school
+		activate_law = law_type:law_collectivized_agriculture
 
 		add_modifier = {
          name = modifier_developing_economy
     	} 
+
+    	add_modifier = {
+         name = russian_warlord
+    	} 
+
+    	add_modifier = { #removes revolutions, makes sol minimum super low, makes a lot less radicals from standard of living.  all hidden effects btw.
+         name = tno_ru_irk_buff_playable
+    	} 
+
+    	add_modifier = {
+        	name = recently_revolted
+       		months = 60
+    	}
 
 		set_variable = {
             name = russian_warlord
@@ -31,6 +47,17 @@
         add_journal_entry = { type = je_ru_tno_irk_restore_order_far_east }
 
         #trigger_event = { id = tno_irk_events.0 days = 2 popup = yes }
+
+        ig:ig_armed_forces = {
+			add_ruling_interest_group = yes
+			set_interest_group_name = ig_state_faction
+			remove_ideology = ideology_patriotic
+		}
+
+		ig:ig_trade_unions = {
+			add_ruling_interest_group = no
+			set_interest_group_name = ig_party_faction
+		}
 	}
 }
  
