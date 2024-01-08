@@ -1577,9 +1577,45 @@ je_ger_reclaim_ost_a = {  # if RKO is still alive
 		
 			annex = c:RKO
 
-			c:RKO = {
-				trigger_event = { id = tno_germany_events.39 days = 0 popup = yes }
-			} 
+			create_diplomatic_play = {
+                type = dp_revolution
+                name = ost_land_fuckwar
+                target_country = c:GMG
+                war = no
+                escalation = 93
+                target_state = s:STATE_LATVIA.region_state:GMG
+            }
+            create_diplomatic_play = {
+                type = dp_revolution
+                name = ost_land_fuckwar
+                target_country = c:LLL
+                war = no
+                escalation = 93
+                target_state = s:STATE_LATVIA.region_state:LLL
+            }
+            create_diplomatic_play = {
+                type = dp_revolution
+                name = ost_land_fuckwar
+                target_country = c:RKS
+                war = no
+                escalation = 93
+                target_state = s:STATE_BREST.region_state:RKS
+            }
+            create_diplomatic_play = {
+                type = dp_revolution
+                name = ost_land_fuckwar
+                target_country = c:UPO
+                war = no
+                escalation = 93
+                target_state = s:STATE_ORSHA.region_state:UPO
+            }
+            hidden_effect = {
+				change_infamy = -999
+		    }
+		}
+
+		hidden_effect = {
+			change_infamy = -999
 		}
 	}
 }
@@ -1638,6 +1674,10 @@ je_ger_reclaim_ost_L = {  # attack ukraine
                 escalation = 93
                 target_state = s:STATE_VOLHYNIA.region_state:UKP
             }
+		}
+
+		hidden_effect = {
+			change_infamy = -999
 		}
 		
 	}
@@ -1783,6 +1823,80 @@ je_ger_reclaim_ost_e = {  #puppet kakaus
 		}
 		create_diplomatic_pact = {
 			country = c:RKK
+			type = reichskommissariat
+		}
+
+	}
+}
+
+je_ger_reclaim_ost_z = {  #puppet poland
+	name = "je_poland_rk" 
+	desc = "je_poland_rk_desc"
+
+	visible = { always = yes }
+
+	possible = {
+		scope:journal_entry = {
+				not = {
+				custom_tooltip = {
+					text = je_ger_reclaim_ost_e.tooltip_condition
+					has_variable = je_cock_retken_cum
+				}
+			}
+		}
+	}
+
+	ai_chance = {
+		base = 100
+	}
+
+	effect = {
+
+		scope:journal_entry = {
+			set_variable = { name = je_cock_retken_cum months = 99999  }
+		}	
+		custom_tooltip = {
+			text = je_ger_reclaim_ost_p.tooltip_effect
+		}
+		create_diplomatic_pact = {
+			country = c:GOV
+			type = reichskommissariat
+		}
+
+	}
+}
+
+je_ger_reclaim_ost_f = {  #puppet netherlands
+	name = "je_puppet_net" 
+	desc = "je_puppet_net_desc	"
+
+	visible = { always = yes }
+
+	possible = {
+		scope:journal_entry = {
+				not = {
+				custom_tooltip = {
+					text = je_ger_reclaim_ost_e.tooltip_condition
+					has_variable = je_cock_retken_cum
+				}
+			}
+		}
+	}
+
+	ai_chance = {
+		base = 100
+	}
+
+	effect = {
+
+		scope:journal_entry = {
+			set_variable = { name = je_cock_retken_cum months = 99999  }
+		}	
+		custom_tooltip = {
+			text = je_ger_reclaim_ost_p.tooltip_effect
+		}
+		create_diplomatic_pact = {
+			country = c:NET
 			type = reichskommissariat
 		}
 

@@ -8,6 +8,8 @@ je_ger_reclaim_ost = {
 	scripted_button = je_ger_reclaim_ost_c
 	scripted_button = je_ger_reclaim_ost_d
 	scripted_button = je_ger_reclaim_ost_e
+    scripted_button = je_ger_reclaim_ost_f
+    scripted_button = je_ger_reclaim_ost_z
 	
 
 
@@ -69,12 +71,15 @@ je_ger_reclaim_ost_2 = {
 	}
     
     complete = {
-		scope:journal_entry = {
-			is_goal_complete = yes
-		}
+		owns_entire_state_region = STATE_LATVIA
+		owns_entire_state_region = STATE_ESTONIA
+		owns_entire_state_region = STATE_LITHUANIA
+        owns_entire_state_region = STATE_MINSK
+        owns_entire_state_region = STATE_BREST
 	}
 
     on_complete = {
+        trigger_event = { id = tno_germany_events.41 days = 0 popup = yes }
       
     }
 
