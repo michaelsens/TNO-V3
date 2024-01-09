@@ -62,6 +62,14 @@
             set_variable = second_great_patriotic_war_event
             trigger_event = { id = tno_super_events.11 days = 0 popup = yes }
         }
+        if = {  #German civilwar
+            limit = {
+               has_global_variable = german_civil_war_start
+               NOT = { has_variable = german_civilwar_event }
+            }
+            set_variable = german_civilwar_event
+            trigger_event = { id = tno_super_events.12 days = 0 popup = yes }
+        }
 
 
         if = {

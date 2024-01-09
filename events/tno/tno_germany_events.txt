@@ -1010,7 +1010,7 @@ tno_germany_events.17 = { # German Civil War
 	}	
 
     immediate = {
-
+        set_global_variable = german_civil_war_start
         remove_diplomatic_pact = {
             country = c:RKU
             type = reichskommissariat
@@ -1203,6 +1203,7 @@ tno_germany_events.17 = { # German Civil War
        }
         play_as = c:GMB
         remove_variable = borman_chosen
+        set_global_variable = german_civil_war_start
         hidden_effect = {
             trigger_event = { id = tno_germany_events.18 days = 10 popup = yes }  
         }
@@ -1337,6 +1338,7 @@ tno_germany_events.17 = { # German Civil War
         }
         play_as = c:GAS
         remove_variable = speer_chosen
+        set_global_variable = german_civil_war_start
         hidden_effect = {
             trigger_event = { id = tno_germany_events.18 days = 10 popup = yes }  
         }
@@ -1474,6 +1476,7 @@ tno_germany_events.17 = { # German Civil War
         }
         play_as = c:GHG
         remove_variable = goering_chosen
+        set_global_variable = german_civil_war_start
         hidden_effect = {
             trigger_event = { id = tno_germany_events.18 days = 10 popup = yes }  
         }
@@ -1609,6 +1612,7 @@ tno_germany_events.17 = { # German Civil War
         }
         play_as = c:GRH
         remove_variable = heydrich_chosen
+        set_global_variable = german_civil_war_start
         hidden_effect = {
             trigger_event = { id = tno_germany_events.18 days = 10 popup = yes }  
         }
@@ -1744,6 +1748,7 @@ tno_germany_events.18 = {   #Civil war start
     hidden = yes
 
     immediate = {
+        set_global_variable = german_civil_war_start
         c:GER = {
             change_tag = GEQ
         }

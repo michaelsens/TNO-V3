@@ -1961,24 +1961,9 @@ je_ru_launch_raid = {
         create_diplomatic_play = {
             name = theo
             target_country = scope:raid_target
-                type = dp_humiliation
-                war = no
-                escalation = 85
-                add_war_goal = {
-                    holder = scope:raid_target
-                    type = humiliation
-                    target_country = root
-                }
-                add_war_goal = {
-                    holder = root
-                    type = war_reparations
-                    target_country = scope:raid_target
-                }
-                add_war_goal = {
-                    holder = scope:raid_target
-                    type = war_reparations
-                    target_country = root
-                }
+            type = dp_raid
+            war = no
+            escalation = 85
         }
 	}
 }

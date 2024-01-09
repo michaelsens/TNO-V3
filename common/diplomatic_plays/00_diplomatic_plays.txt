@@ -670,12 +670,45 @@ dp_great_trial = {
 	
 	possible = {
 		NOT = { is_country_type = decentralized }
-		NOT = { exists = c:RUS }
+		#NOT = { exists = c:RUS }
 	}
 	
 	on_weekly_pulse = {}
 	
 	on_war_begins = {}
+
+	on_war_end = {
+		set_global_variable = great_trial_over
+	}
+}
+
+dp_raid = {
+	war_goal = war_reparations
+	
+	requires_interest_marker = no
+	blocked_by_diplomatic_status = no
+	enable_switch_sides = yes
+	allow_negotiated_peace = no
+	mirror_war_goal = yes
+	initiator_can_add_war_goals = no
+	target_can_add_war_goals = no
+	add_infamy_for_starting_initiator_wargoals = no
+	
+	texture = "gfx/interface/icons/war_goals/unify_germany.dds"
+	
+	selectable_in_lens = {
+		always = no
+	}
+
+	possible = {
+		NOT = { is_country_type = decentralized }
+		#NOT = { exists = c:RUS }
+	}
+	
+	on_weekly_pulse = {}
+	
+	on_war_begins = {
+	}
 
 	on_war_end = {}
 }
