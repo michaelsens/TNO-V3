@@ -1961,19 +1961,9 @@ je_ru_launch_raid = {
         create_diplomatic_play = {
             name = theo
             target_country = scope:raid_target
-                type = dp_humiliation
-                war = no
-                escalation = 85
-                add_war_goal = {
-                    holder = scope:raid_target
-                    type = humiliation
-                    target_country = root
-                }
-                add_war_goal = {
-                    holder = root
-                    type = war_reparations
-                    target_country = scope:raid_target
-                }
+            type = dp_raid
+            war = no
+            escalation = 85
         }
 	}
 }
@@ -2264,6 +2254,12 @@ je_ru_com_restore_ussr = {
         owns_entire_state_region = STATE_KAZAN
         owns_entire_state_region = STATE_GALICH
 
+        hidden_trigger = {
+        	NOT = {
+            	c:RUS ?= THIS
+            }
+        }
+
         custom_tooltip = {
             text = je_ru_tno_rus_owns_wrrf
             any_scope_state = {
@@ -2336,6 +2332,7 @@ je_ru_take_karelia_button = {
 
 	possible = {
 		is_at_war = no
+		is_diplomatic_play_initiator = no
 	}
 
 	effect = {
@@ -2361,55 +2358,233 @@ je_ru_take_karelia_button = {
 	}
 }
 
-je_ru_gen_reform_army_advance = {
+je_ru_gen_reform_army_advance_basic = {
 	name = "je_ru_gen_reform_army_advance"
 	desc = "je_ru_gen_reform_army_advance_desc"
 
+	visible = {
+		has_modifier = ru_no_army_reform
+	}
+
 	possible = {
-       	custom_tooltip = {
-            text = ru_army_reform_rq_tt
-            has_variable = ru_army_reform_ready
+		hidden_trigger = {
+			has_modifier = ru_no_army_reform
+		}
+       	has_law = law_type:law_professional_army
+        army_size >= 150
+        has_technology_researched = trench_works
+        NOR = {
+            any_scope_building = {
+                is_building_type = building_barracks                
+                OR = {
+                    building_has_goods_shortage = yes
+                    has_active_production_method = pm_no_organization
+                }
+            }
+            any_military_formation = {
+                filter = {
+                    is_army = yes
+                }
+                any_combat_unit = {
+                    OR = {
+                        has_unit_type = unit_type:combat_unit_type_skirmish_infantry
+                        has_unit_type = unit_type:combat_unit_type_trench_infantry
+                    }
+                }
+                percent >= 0.75
+            }
+        }
+        
+	}
+
+	effect = {
+        remove_variable = ru_army_reform_ready
+        custom_tooltip = {
+            text = ru_army_reform_completion_tt
+            if = {
+	            limit = {
+	            	has_modifier = ru_no_army_reform
+	            }
+	            #add_journal_entry = { type = je_ru_tno_army_reform_significant }
+	            remove_modifier = ru_no_army_reform
+	            add_modifier = ru_basic_army_reform
+            }
+	        else = {
+	            if = {
+		            limit = {
+		            	has_modifier = ru_basic_army_reform
+		            }
+		            #add_journal_entry = { type = je_ru_tno_army_reform_full }
+		            remove_modifier = ru_basic_army_reform
+		            add_modifier = ru_significant_army_reform
+	            }
+	            else = {
+	            	if = {
+			            limit = {
+			            	has_modifier = ru_significant_army_reform
+			            }
+			            remove_modifier = ru_significant_army_reform
+			            add_modifier = ru_full_army_reform
+			        }
+	            }
+	        }
+        }
+        change_variable = {
+			name = army_reform_progress
+			add = 1
+		}
+	}
+}
+
+je_ru_gen_reform_army_advance_significant = {
+	name = "je_ru_gen_reform_army_advance"
+	desc = "je_ru_gen_reform_army_advance_desc"
+
+	visible = {
+		has_modifier = ru_basic_army_reform
+	}
+
+	possible = {
+		hidden_trigger = {
+			has_modifier = ru_basic_army_reform
+		}
+        army_size >= 200
+        has_technology_researched = stormtroopers
+        NOT = {
+            any_scope_building = {
+                is_building_type = building_barracks                
+                OR = {
+                    building_has_goods_shortage = yes
+                    NOT = {
+                        has_active_production_method = pm_nco_incorporation
+                    }
+                }
+            }
+        }
+        any_military_formation = {
+            filter = {
+                is_army = yes
+            }
+            any_combat_unit = {
+                has_unit_type = unit_type:combat_unit_type_trench_infantry
+            }
+            percent >= 0.75
         }
 	}
 
 	effect = {
-            remove_variable = ru_army_reform_ready
-           	custom_tooltip = {
-            	text = ru_army_reform_completion_tt
-            	if = {
-	            	limit = {
-	            		has_modifier = ru_no_army_reform
-	            	}
-	            	#add_journal_entry = { type = je_ru_tno_partisan }
-	            	remove_modifier = ru_no_army_reform
-	            	add_modifier = ru_basic_army_reform
-            	}
+        remove_variable = ru_army_reform_ready
+        custom_tooltip = {
+            text = ru_army_reform_completion_tt
+            if = {
+	            limit = {
+	            	has_modifier = ru_no_army_reform
+	            }
+	            add_journal_entry = { type = je_ru_tno_army_reform_significant }
+	            remove_modifier = ru_no_army_reform
+	            add_modifier = ru_basic_army_reform
+            }
+	        else = {
+	            if = {
+		            limit = {
+		            	has_modifier = ru_basic_army_reform
+		            }
+		            add_journal_entry = { type = je_ru_tno_army_reform_full }
+		            remove_modifier = ru_basic_army_reform
+		            add_modifier = ru_significant_army_reform
+	            }
 	            else = {
 	            	if = {
-		            	limit = {
-		            		has_modifier = ru_basic_army_reform
-		            	}
-		            	remove_modifier = ru_basic_army_reform
-		            	add_modifier = ru_significant_army_reform
-	            	}
-	            	else = {
-	            		if = {
-			            	limit = {
-			            		has_modifier = ru_significant_army_reform
-			            	}
-			            	remove_modifier = ru_significant_army_reform
-			            	add_modifier = ru_full_army_reform
+			            limit = {
+			            	has_modifier = ru_significant_army_reform
 			            }
-	            	}
+			            remove_modifier = ru_significant_army_reform
+			            add_modifier = ru_full_army_reform
+			        }
 	            }
-            }
-            change_variable = {
-				name = army_reform_progress
-				add = 1
-			}
+	        }
+        }
+        change_variable = {
+			name = army_reform_progress
+			add = 1
+		}
 	}
 }
 
+je_ru_gen_reform_army_advance_full = {
+	name = "je_ru_gen_reform_army_advance"
+	desc = "je_ru_gen_reform_army_advance_desc"
+
+	visible = {
+		has_modifier = ru_significant_army_reform
+	}
+
+	possible = {
+		hidden_trigger = {
+			has_modifier = ru_significant_army_reform
+		}
+        army_size >= 400
+        has_technology_researched = military_aviation
+        NOT = {
+            any_scope_building = {
+                is_building_type = building_barracks                
+                OR = {
+                    building_has_goods_shortage = yes
+                    NOT = {
+                        has_active_production_method = pm_mobile_warfare_tactics
+                    }
+                }
+            }
+        }
+        any_military_formation = {
+            filter = {
+                is_army = yes
+            }
+            any_combat_unit = {
+                has_unit_type = unit_type:combat_unit_type_heavy_tank
+            }
+            percent >= 0.1
+        }
+	}
+
+	effect = {
+        remove_variable = ru_army_reform_ready
+        custom_tooltip = {
+            text = ru_army_reform_completion_tt
+            if = {
+	            limit = {
+	            	has_modifier = ru_no_army_reform
+	            }
+	            add_journal_entry = { type = je_ru_tno_army_reform_significant }
+	            remove_modifier = ru_no_army_reform
+	            add_modifier = ru_basic_army_reform
+            }
+	        else = {
+	            if = {
+		            limit = {
+		            	has_modifier = ru_basic_army_reform
+		            }
+		            add_journal_entry = { type = je_ru_tno_army_reform_full }
+		            remove_modifier = ru_basic_army_reform
+		            add_modifier = ru_significant_army_reform
+	            }
+	            else = {
+	            	if = {
+			            limit = {
+			            	has_modifier = ru_significant_army_reform
+			            }
+			            remove_modifier = ru_significant_army_reform
+			            add_modifier = ru_full_army_reform
+			        }
+	            }
+	        }
+        }
+        change_variable = {
+			name = army_reform_progress
+			add = 1
+		}
+	}
+}
 #je_ru_gen_partisan_strengthen = {
 #	name = "je_ru_gen_partisan_strengthen"
 #	desc = "je_ru_gen_partisan_strengthen_desc"
@@ -2529,7 +2704,7 @@ je_ru_request_american_support = {
 	effect = {
 		set_variable = { name = je_request_american_aid_tried}
 		c:USA = {
-			trigger_event = { id = tno_usa_events.22 popup = yes }
+			trigger_event = { id = tno_usa_events.30 popup = yes }
 		}
 	}
 }
@@ -2555,6 +2730,8 @@ je_ru_irk_second_great_patriotic_war = {
             has_variable = je_request_american_aid_tried
         }
         owns_entire_state_region = STATE_EAST_KARELIA
+	    #is_at_war = no
+		is_diplomatic_play_initiator = no
 	}
 
 	effect = {

@@ -2165,12 +2165,12 @@ tno_usa_events.27 = {  # uganda
 
 
 
-tno_usa_events.21 = { # Irkutsk asks to use boeing
+tno_usa_events.28 = { # Irkutsk asks to use boeing
     type = country_event
 	placement = root
-	title = tno_usa_events.21.t
-	desc = tno_usa_events.21.d
-	flavor = tno_usa_events.21.f
+	title = tno_usa_events.28.t
+	desc = tno_usa_events.28.d
+	flavor = tno_usa_events.28.f
 	icon = "gfx/interface/icons/invention_icons/corporate_management.dds"
 
 	duration = 6
@@ -2192,14 +2192,14 @@ tno_usa_events.21 = { # Irkutsk asks to use boeing
 
 	option = {
 		default_option = yes
-		name = tno_usa_events.21.a
+		name = tno_usa_events.28.a
 		c:IRK = {
 			trigger_event = { id = tno_irk_events.9 popup = yes }
 		}
     }
 
 	option = {
-		name = tno_usa_events.21.b
+		name = tno_usa_events.28.b
 		c:IRK = {
 			change_relations = {
 				country = ROOT
@@ -2210,12 +2210,57 @@ tno_usa_events.21 = { # Irkutsk asks to use boeing
     }
 }
 
-tno_usa_events.22 = { # Begins JE for intervention in Russia
+tno_usa_events.29 = { # Russia asks to use boeing
     type = country_event
 	placement = root
-	title = tno_usa_events.22.t
-	desc = tno_usa_events.22.d
-	flavor = tno_usa_events.22.f
+	title = tno_usa_events.29.t
+	desc = tno_usa_events.29.d
+	flavor = tno_usa_events.29.f
+	icon = "gfx/interface/icons/invention_icons/corporate_management.dds"
+
+	duration = 6
+
+	immediate = {
+		c:RUS = {
+            save_scope_as = rus_nation_scope
+        }
+    }
+    
+    trigger = {
+	}
+
+	event_image = {
+        texture = "gfx/event_pictures/super_pictures/boeing_737.dds"
+    }
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	option = {
+		default_option = yes
+		name = tno_usa_events.29.a
+		c:RUS = {
+			trigger_event = { id = tno_irk_events.9 popup = yes }
+		}
+    }
+
+	option = {
+		name = tno_usa_events.29.b
+		c:RUS = {
+			change_relations = {
+				country = ROOT
+				value = -20
+			}
+			trigger_event = { id = tno_irk_events.10 popup = yes }
+		}
+    }
+}
+
+tno_usa_events.30 = { # Begins JE for intervention in Russia
+    type = country_event
+	placement = root
+	title = tno_usa_events.30.t
+	desc = tno_usa_events.30.d
+	flavor = tno_usa_events.30.f
 	icon = "gfx/interface/icons/invention_icons/sea_lane_strategies.dds"
 
 	duration = 6
@@ -2240,6 +2285,7 @@ tno_usa_events.22 = { # Begins JE for intervention in Russia
 
 	option = {
 		default_option = yes
-		name = tno_usa_events.22.a
+		name = tno_usa_events.30.a
+		#create JE
     }
 }

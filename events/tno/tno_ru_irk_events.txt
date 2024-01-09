@@ -321,9 +321,19 @@ tno_irk_events.8 = { # Invite Boeing
 		name = tno_irk_events.8.1
 		custom_tooltip = {
 			text = tno_irk_events.8.1.tt
-			c:USA = {
-				trigger_event = { id = tno_usa_events.21 popup = yes }
+			if = { #Is Russia, use russia version of event.
+				limit = {
+					c:RUS ?= this
+				}
+				c:USA = {
+					trigger_event = { id = tno_usa_events.29 popup = yes }
+				}
+			}else = { #Is not Russia, use Irkutsk version of event
+				c:USA = {
+					trigger_event = { id = tno_usa_events.28 popup = yes }
+				}
 			}
+			
 		}
     }
 }

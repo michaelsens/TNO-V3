@@ -62,6 +62,14 @@
             set_variable = second_great_patriotic_war_event
             trigger_event = { id = tno_super_events.11 days = 0 popup = yes }
         }
+        if = {  #German civilwar
+            limit = {
+               has_global_variable = german_civil_war_start
+               NOT = { has_variable = german_civilwar_event }
+            }
+            set_variable = german_civilwar_event
+            trigger_event = { id = tno_super_events.12 days = 0 popup = yes }
+        }
 
 
         if = {
@@ -473,95 +481,95 @@
             set_variable = irk_inv_var
             trigger_event = { id = tno_irk_events.7 days = 180 popup = yes }
         }
-        if = { #Russia: Army Reform 1 ready
-            limit = {
-                c:RUS ?= this
-                has_modifier = ru_no_army_reform
-                has_law = law_type:law_professional_army
-                army_size >= 150
-                has_technology_researched = trench_works
-                NOR = {
-                    any_scope_building = {
-                        is_building_type = building_barracks                
-                        OR = {
-                            building_has_goods_shortage = yes
-                            has_active_production_method = pm_no_organization
-                        }
-                    }
-                    any_military_formation = {
-                        filter = {
-                            is_army = yes
-                        }
-                        any_combat_unit = {
-                            has_unit_type = unit_type:combat_unit_type_skirmish_infantry
-                        }
-                        percent >= 0.75
-                    }
-                }
-            }
-
-            set_variable = ru_army_reform_ready
-        } 
-        if = { #Russia: Army Reform 2 ready
-            limit = {
-                c:RUS ?= this
-                has_modifier = ru_basic_army_reform
-                army_size >= 200
-                has_technology_researched = stormtroopers
-                NOT = {
-                    any_scope_building = {
-                        is_building_type = building_barracks                
-                        OR = {
-                            building_has_goods_shortage = yes
-                            NOT = {
-                                has_active_production_method = pm_nco_incorporation
-                            }
-                        }
-                    }
-                }
-                any_military_formation = {
-                    filter = {
-                        is_army = yes
-                    }
-                    any_combat_unit = {
-                        has_unit_type = unit_type:combat_unit_type_trench_infantry
-                    }
-                    percent >= 0.75
-                }
-            }
-
-            set_variable = ru_army_reform_ready
-        }
-        if = { #Russia: Army Reform 3 ready
-            limit = {
-                c:RUS ?= this
-                has_modifier = ru_significant_army_reform
-                army_size >= 400
-                has_technology_researched = military_aviation
-                NOT = {
-                    any_scope_building = {
-                        is_building_type = building_barracks                
-                        OR = {
-                            building_has_goods_shortage = yes
-                            NOT = {
-                                has_active_production_method = pm_mobile_warfare_tactics
-                            }
-                        }
-                    }
-                }
-                any_military_formation = {
-                    filter = {
-                        is_army = yes
-                    }
-                    any_combat_unit = {
-                        has_unit_type = unit_type:combat_unit_type_heavy_tank
-                    }
-                    percent >= 0.1
-                }
-            }
-
-            set_variable = ru_army_reform_ready
-        }
+        #if = { #Russia: Army Reform 1 ready
+        #    limit = {
+        #        c:RUS ?= this
+        #        has_modifier = ru_no_army_reform
+        #        has_law = law_type:law_professional_army
+        #        army_size >= 150
+        #        has_technology_researched = trench_works
+        #        NOR = {
+        #            any_scope_building = {
+        #                is_building_type = building_barracks                
+        #                OR = {
+        #                    building_has_goods_shortage = yes
+        #                    has_active_production_method = pm_no_organization
+        #                }
+        #            }
+        #            any_military_formation = {
+        #                filter = {
+        #                    is_army = yes
+        #                }
+        #                any_combat_unit = {
+        #                    has_unit_type = unit_type:combat_unit_type_skirmish_infantry
+        #                }
+        #                percent >= 0.75
+        #            }
+        #        }
+        #    }
+        #
+        #    set_variable = ru_army_reform_ready
+        #} 
+        #if = { #Russia: Army Reform 2 ready
+        #    limit = {
+        #        c:RUS ?= this
+        #        has_modifier = ru_basic_army_reform
+        #        army_size >= 200
+        #        has_technology_researched = stormtroopers
+        #        NOT = {
+        #            any_scope_building = {
+        #                is_building_type = building_barracks                
+        #                OR = {
+        #                    building_has_goods_shortage = yes
+        #                    NOT = {
+        #                        has_active_production_method = pm_nco_incorporation
+        #                    }
+        #                }
+        #            }
+        #        }
+        #        any_military_formation = {
+        #            filter = {
+        #                is_army = yes
+        #            }
+        #            any_combat_unit = {
+        #                has_unit_type = unit_type:combat_unit_type_trench_infantry
+        #            }
+        #            percent >= 0.75
+        #        }
+        #    }
+        #
+        #    set_variable = ru_army_reform_ready
+        #}
+        #if = { #Russia: Army Reform 3 ready
+        #    limit = {
+        #        c:RUS ?= this
+        #        has_modifier = ru_significant_army_reform
+        #        army_size >= 400
+        #        has_technology_researched = military_aviation
+        #        NOT = {
+        #            any_scope_building = {
+        #                is_building_type = building_barracks                
+        #                OR = {
+        #                    building_has_goods_shortage = yes
+        #                    NOT = {
+        #                        has_active_production_method = pm_mobile_warfare_tactics
+        #                    }
+        #                }
+        #            }
+        #        }
+        #        any_military_formation = {
+        #            filter = {
+        #                is_army = yes
+        #            }
+        #            any_combat_unit = {
+        #                has_unit_type = unit_type:combat_unit_type_heavy_tank
+        #            }
+        #            percent >= 0.1
+        #        }
+        #    }
+        #
+        #    set_variable = ru_army_reform_ready
+        #}
 
     }
     
