@@ -242,6 +242,7 @@ je_ru_tno_repair_transib = {
     }
 
     on_complete = {
+        set_variable = transsib_done
         if = {
              limit = {
                 scope:irkutsk_state_scope = {
@@ -344,7 +345,9 @@ je_ru_tno_army_reform = {
     icon = "gfx/interface/icons/invention_icons/mandatory_service.dds"
     group = je_group_historical_content
 
-    scripted_button = je_ru_gen_reform_army_advance
+    scripted_button = je_ru_gen_reform_army_advance_basic
+    scripted_button = je_ru_gen_reform_army_advance_significant
+    scripted_button = je_ru_gen_reform_army_advance_full
     
     immediate = { 
         set_variable = {
@@ -355,8 +358,73 @@ je_ru_tno_army_reform = {
     
     complete = {
         custom_tooltip = {
-            text = ru_army_reform_rq_tt
+            text = ru_army_reform_rq
             has_modifier = ru_full_army_reform
+        }
+        
+    }
+    
+    on_complete = {
+        custom_tooltip = ru_army_reform_completion_tt
+    }
+    
+    current_value = {
+        value = var:army_reform_progress
+    }
+
+    goal_add_value = {
+        add = 3
+    }
+    
+    progressbar = yes
+    
+    weight = 200
+    transferable = no
+    should_be_pinned_by_default = yes
+}
+
+je_ru_tno_army_reform_significant = {
+    icon = "gfx/interface/icons/invention_icons/mandatory_service.dds"
+    group = je_group_historical_content
+
+    scripted_button = je_ru_gen_reform_army_advance_significant
+    
+    immediate = { 
+        #set_variable = {
+        #    name = army_reform_progress
+        #    value = 0
+        #}
+    }
+    
+    complete = {
+        hidden_trigger = {
+            NOT = {
+                has_modifier = ru_no_army_reform
+            }
+        }
+        has_law = law_type:law_professional_army
+        army_size >= 150
+        has_technology_researched = trench_works
+        NOR = {
+            any_scope_building = {
+                is_building_type = building_barracks                
+                OR = {
+                    building_has_goods_shortage = yes
+                    has_active_production_method = pm_no_organization
+                }
+            }
+            any_military_formation = {
+                filter = {
+                    is_army = yes
+                }
+                any_combat_unit = {
+                    OR = {
+                        has_unit_type = unit_type:combat_unit_type_skirmish_infantry
+                        has_unit_type = unit_type:combat_unit_type_trench_infantry
+                    }
+                }
+                percent >= 0.75
+            }
         }
         
     }
