@@ -1,14 +1,15 @@
 
 
-je_ger_reclaim_ost = { 
+je_ger_reclaim_ost = { #everybody else
 
-    icon = "gfx/interface/icons/new_event_icons/event_bill.dds"
+    icon = "gfx/interface/icons/new_event_icons/event_reclaim_1.dds"
 
-    scripted_button = je_ger_reclaim_ost_a
 	scripted_button = je_ger_reclaim_ost_b
 	scripted_button = je_ger_reclaim_ost_c
 	scripted_button = je_ger_reclaim_ost_d
 	scripted_button = je_ger_reclaim_ost_e
+    scripted_button = je_ger_reclaim_ost_f
+    scripted_button = je_ger_reclaim_ost_z
 	
 
 
@@ -45,7 +46,60 @@ je_ger_reclaim_ost = {
 
    
     
-    weight = 100
+    weight = 10
+
+   
+    
+    should_be_pinned_by_default = yes
+    
+}
+
+je_ger_reclaim_ost_2 = { #Ostland
+
+    icon = "gfx/interface/icons/new_event_icons/event_reclaim_2.dds"
+
+    scripted_button = je_ger_reclaim_ost_a
+
+	
+
+
+
+    group = je_group_internal_affairs
+    immediate = {
+
+		
+	}
+    
+    complete = {
+		owns_entire_state_region = STATE_LATVIA
+		owns_entire_state_region = STATE_ESTONIA
+		owns_entire_state_region = STATE_LITHUANIA
+        owns_entire_state_region = STATE_MINSK
+        owns_entire_state_region = STATE_BREST
+	}
+
+    on_complete = {
+        trigger_event = { id = tno_germany_events.41 days = 0 popup = yes }
+      
+    }
+
+    on_monthly_pulse = {
+       
+    }
+
+    current_value = {
+	
+	}
+
+   
+
+    goal_add_value = {
+		value = 24
+	}
+
+   
+    
+    weight = 11
 
    
     
@@ -55,7 +109,7 @@ je_ger_reclaim_ost = {
 
 je_ger_reclaim_ukc = { # reclaim ukraine
 
-    icon = "gfx/interface/icons/new_event_icons/event_bill.dds"
+    icon = "gfx/interface/icons/new_event_icons/event_reclaim_3.dds"
 
 
 	scripted_button = je_ger_reclaim_ost_L
@@ -70,9 +124,8 @@ je_ger_reclaim_ukc = { # reclaim ukraine
     
     complete = {
 		owns_entire_state_region = STATE_VOLHYNIA
-		owns_entire_state_region = STATE_KIEV
 		owns_entire_state_region = STATE_CHERSON 
-		owns_entire_state_region = s:STATE_LUHANSK
+		owns_entire_state_region = STATE_LUHANSK
 		
 	}
 
@@ -97,7 +150,7 @@ je_ger_reclaim_ukc = { # reclaim ukraine
 
    
     
-    weight = 100
+    weight = 15
 
    
     

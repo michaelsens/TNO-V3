@@ -902,7 +902,7 @@ types map_list_panel_types {
 				parentanchor = vcenter
 				elide = right
 				using = GDP_tooltip_with_graph
-				raw_text = "#variable [Country.GetGDP|1*]#!"
+				raw_text = "#variable [SelectLocalization(LessThan_CFixedPoint(Country.MakeScope.ScriptValue('cwp_gdp'), '(CFixedPoint)1000000000000'), 'CWP_NORMAL', 'CWP_TRILLION')|Dv]#!"
 			}
 			textbox = {
 				margin = { 5 0 }

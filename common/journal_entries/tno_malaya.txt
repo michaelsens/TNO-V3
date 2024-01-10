@@ -5,6 +5,9 @@ je_tno_malaya_ofn = {
     scripted_button = je_malaya_ofn_a
     scripted_button = je_malaya_ofn_b
     scripted_button = je_malaya_ofn_c
+    scripted_button = je_malaya_ofn_d
+    scripted_button = je_malaya_ofn_e
+    scripted_button = je_malaya_ofn_f
 
 
     invalid = {
@@ -32,14 +35,25 @@ je_tno_malaya_ofn = {
         add_modifier = {
             name = proxy_lost
             months = 250
-        } 
+            is_decaying = yes
+        
+        }
+
+        add_radicals = {
+            value = 0.1
+        }
     }
 
     on_complete = {
         add_modifier = {
             name = proxy_won
             months = 250
+            is_decaying = yes
         } 
+        
+        add_loyalists = {
+            value = 0.1
+        }
     }
 
     progressbar = no
@@ -58,6 +72,9 @@ je_tno_malaya_jap = {
     scripted_button = je_malaya_jap_a
     scripted_button = je_malaya_jap_b
     scripted_button = je_malaya_jap_c
+    scripted_button = je_malaya_jap_d
+    scripted_button = je_malaya_jap_e
+    scripted_button = je_malaya_jap_f
 
 
     invalid = {
@@ -88,14 +105,25 @@ je_tno_malaya_jap = {
         add_modifier = {
             name = proxy_lost
             months = 250
+            is_decaying = yes
         } 
+
+        add_radicals = {
+            value = 0.1
+        }
     }
 
     on_complete = {
         add_modifier = {
             name = proxy_won
             months = 250
+            is_decaying = yes
         } 
+
+        add_loyalists = {
+            value = 0.1
+
+        }
     }
 
     progressbar = no

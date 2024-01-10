@@ -1,0 +1,270 @@
+﻿#IRK
+je_ru_tno_irk_restore_order_far_east = { 
+
+    icon = "gfx/interface/icons/alert_icons/idle_mobilized_general.dds"
+    group = je_group_historical_content
+    scripted_button = je_ru_irk_restore_far_east
+
+    immediate = {
+        c:CHR = {
+            save_scope_as = chr_nation
+        }
+
+        random_scope_state = {
+            limit = {
+                state_region = s:STATE_UPPER_YENISEYSK
+            }
+            save_scope_as = upper_yeniseysk_state_scope
+        }
+	}
+    
+    complete = {
+        owns_entire_state_region = STATE_IRKUTSK
+        owns_entire_state_region = STATE_TRANS_BAIKAL
+        owns_entire_state_region = STATE_OKHOTSK
+        owns_entire_state_region = STATE_CHUKOTKA
+        owns_entire_state_region = STATE_YAKUTSK
+        owns_entire_state_region = STATE_KAMCHATKA
+
+        custom_tooltip = {
+            text = je_ru_tno_irk_owns_chernyshevsky
+            any_scope_state = {
+                state_region = s:STATE_UPPER_YENISEYSK
+            }
+        }
+
+        hidden_trigger = {
+            has_variable = irk_form_far_east
+        }
+	}
+
+    on_complete = {
+    }
+
+    on_monthly_pulse = {
+    }
+
+    current_value = {
+		
+	}
+
+
+    goal_add_value = {
+		
+	}
+
+    progressbar = no
+    
+    weight = 1000
+
+    
+    should_be_pinned_by_default = yes
+    
+}
+
+je_ru_tno_irk_paris_of_siberia = { 
+
+    #icon = "gfx/interface/icons/invention_icons/urbanization.dds"
+    icon = "gfx/interface/icons/tno_event_icons/paris_of_siberia.dds"
+    group = je_group_technology
+
+    immediate = {
+        ruler = {
+            save_scope_as = irkutsk_leader
+        }
+        random_scope_state = {
+            limit = {
+                state_region = s:STATE_IRKUTSK
+            }
+            save_scope_as = irkutsk_state_scope
+        }
+    }
+    
+    complete = {
+        custom_tooltip = {
+            text = je_paris_of_siberia_rq
+            any_scope_state = {
+                state_region = s:STATE_IRKUTSK
+                #state_has_building_group_levels = {
+                #    type = bg_technology
+                #    value  >= 2
+                #}
+                #has_decree = decree_encourage_manufacturing_industry
+                #total_urbanization >= 10
+            }
+        }
+    }
+
+    on_complete = {
+        set_variable = paris_of_siberia_done
+        custom_tooltip = {
+            text = je_paris_of_siberia_complete
+            scope:irkutsk_state_scope.state_region = {
+                add_state_trait = state_trait_paris_of_siberia
+            }
+        }
+        if = {
+             limit = {
+                scope:irkutsk_state_scope = {
+                    state_has_building_group_levels = {
+                        type = bg_bureaucracy
+                        value  >= 4
+                    }
+                }
+            }
+
+            custom_tooltip = {
+                text = je_paris_of_siberia_complete_extra
+                add_modifier = {
+                    name = the_irkutsk_model
+                }
+            }
+        }
+    }
+
+    current_value = {
+        
+    }
+
+
+    goal_add_value = {
+        
+    }
+
+    progressbar = no
+    
+    weight = 1000
+
+    
+    should_be_pinned_by_default = yes
+    
+}
+
+je_ru_tno_irk_finish_sib_plan = { 
+
+    icon = "gfx/interface/icons/tno_event_icons/sib_plan.dds"
+    group = je_group_technology
+
+    scripted_button = je_ru_gen_complete_sib_plan
+
+    immediate = {
+        c:USA = {
+            save_scope_as = usa_nation_scope
+        }
+    }
+    
+    complete = {
+        custom_tooltip = {
+            text = fin_sib_sakha_done
+            has_variable = sakha_expedition_done
+        }
+        custom_tooltip = {
+            text = fin_sib_transsib_done
+            has_variable = transsib_done
+        }
+        custom_tooltip = {
+            text = fin_sib_paris_of_siberia_done
+            has_variable = paris_of_siberia_done
+        }
+        custom_tooltip = {
+            text = fin_sib_usa_relations
+            c:USA = {
+                relations:root >= 20
+            }
+        }
+        hidden_trigger = {
+            has_modifier = the_siberian_plan
+        }   
+    }
+
+    on_complete = {
+        custom_tooltip = { 
+            text = sib_plan_complete
+        }
+        custom_tooltip = { 
+            text = sib_plan_complete_2
+        }
+        custom_tooltip = { 
+            text = sib_plan_complete_3
+        }
+    }
+
+    on_monthly_pulse = {
+    }
+
+    current_value = {
+        
+    }
+
+
+    goal_add_value = {
+        
+    }
+
+    progressbar = no
+    
+    weight = 4000
+
+    
+    should_be_pinned_by_default = yes
+    
+}
+
+je_ru_tno_second_great_patriotic_war = { 
+
+    icon = "gfx/interface/icons/lens_toolbar_icons/recruit_generals_lens_option.dds"
+    group = je_group_historical_content
+    scripted_button = je_ru_irk_second_great_patriotic_war
+
+    immediate = {
+        c:USA = {
+            save_scope_as = usa_nation_scope
+        }
+        c:FIN = {
+            save_scope_as = fin_nation
+        }
+    }
+    
+    complete = {
+        custom_tooltip = {
+            text = complete_one_army_reform_rq
+            OR = {
+                has_modifier = ru_basic_army_reform
+                has_modifier = ru_significant_army_reform
+                has_modifier = ru_full_army_reform
+            }
+        }
+        custom_tooltip = {
+            text = complete_request_american_aid_and_magadan
+            has_variable = je_request_american_aid_tried
+        }
+        owns_entire_state_region = STATE_EAST_KARELIA
+        hidden_trigger = {
+            owns_entire_state_region = STATE_MOSCOW
+        }
+    }
+
+    on_complete = {
+        custom_tooltip = warning_2wrw
+    }
+
+    on_monthly_pulse = {
+    }
+
+    current_value = {
+        
+    }
+
+
+    goal_add_value = {
+        
+    }
+
+    progressbar = no
+    
+    weight = 1000
+
+    
+    should_be_pinned_by_default = yes
+    
+}
