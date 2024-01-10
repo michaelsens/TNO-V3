@@ -1209,21 +1209,6 @@ tno_germany_events.17 = { # German Civil War
         }
         default_option = yes    
 
-        create_country = { #Germania
-		tag = GEQ
-		origin = c:GER 
-       
-        state = s:STATE_BRANDENBURG.region_state:GER
-        
-		on_created = {
-            set_immune_to_revolutions = yes
-            add_modifier = {
-				name = civiL_war_never_ends
-				years = 2
-			}
-	        }
-	    } 
-
         c:BGD = { 
             create_diplomatic_pact = {
                 country = c:GRH
@@ -1357,21 +1342,6 @@ tno_germany_events.17 = { # German Civil War
         hidden_effect = {
             trigger_event = { id = tno_germany_events.18 days = 10 popup = yes }  
         }
-
-        create_country = { #Germania
-		tag = GEQ
-		origin = c:GER 
-       
-        state = s:STATE_BRANDENBURG.region_state:GER
-        
-		on_created = {
-            set_immune_to_revolutions = yes
-            add_modifier = {
-				name = civiL_war_never_ends
-				years = 2
-			}
-	        }
-	    } 
 
         c:BGD = { 
             create_diplomatic_pact = {
@@ -1511,21 +1481,6 @@ tno_germany_events.17 = { # German Civil War
             trigger_event = { id = tno_germany_events.18 days = 10 popup = yes }  
         }
 
-        create_country = { #Germania
-		tag = GEQ
-		origin = c:GER 
-       
-        state = s:STATE_BRANDENBURG.region_state:GER
-        
-		on_created = {
-            set_immune_to_revolutions = yes
-            add_modifier = {
-				name = civiL_war_never_ends
-				years = 2
-			}
-	        }
-	    } 
-
         c:BGD = { 
             create_diplomatic_pact = {
                 country = c:GRH
@@ -1662,21 +1617,6 @@ tno_germany_events.17 = { # German Civil War
             trigger_event = { id = tno_germany_events.18 days = 10 popup = yes }  
         }
 
-        create_country = { #Germania
-		tag = GEQ
-		origin = c:GER 
-       
-        state = s:STATE_BRANDENBURG.region_state:GER
-        
-		on_created = {
-            set_immune_to_revolutions = yes
-            add_modifier = {
-				name = civiL_war_never_ends
-				years = 2
-			}
-	        }
-	    } 
-
         c:BGD = { 
             create_diplomatic_pact = {
                 country = c:GRH
@@ -1809,6 +1749,9 @@ tno_germany_events.18 = {   #Civil war start
 
     immediate = {
         set_global_variable = german_civil_war_start
+        c:GER = {
+            change_tag = GEQ
+        }
         c:GMB = {
             create_diplomatic_play = {
                 type = dp_revolution
