@@ -3412,7 +3412,7 @@ SBA = { # siberian black army
 IBE = { # iberia
 	flag_definition = { 
 		coa = IBE_DEM
-		priority = 2000
+		priority = 400
 		trigger = {
 			exists = scope:actor
 			scope:actor = {
@@ -3420,6 +3420,27 @@ IBE = { # iberia
 				NOT = { has_law = law_type:law_technocracy}
 				NOT = { has_law = law_type:law_oligarchy}
 
+			}
+		}
+	}
+	flag_definition = { 
+		coa = IBE_CNT
+		priority = 99999
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_law = law_type:law_anarchy
+			}
+		}
+	}
+	flag_definition = { 
+		coa = IBE_COM
+		priority = 15500
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_law = law_type:law_council_republic
+				NOT = { has_law = law_type:law_anarchy}
 			}
 		}
 	}
