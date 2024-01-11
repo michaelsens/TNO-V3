@@ -1,4 +1,4 @@
-
+﻿
 
 je_ger_reclaim_ost = { #everybody else
 
@@ -16,8 +16,29 @@ je_ger_reclaim_ost = { #everybody else
 
     group = je_group_internal_affairs
     immediate = {
-
-		
+    	c:GWZ = {
+			save_scope_as = gwz_nation_scope
+		}
+		c:GEE = {
+			save_scope_as = gee_nation_scope
+		}
+		c:RKK = {
+			save_scope_as = rkk_nation_scope
+		}
+		c:GOV = {
+			save_scope_as = gov_nation_scope
+		}
+		c:NET = {
+			save_scope_as = net_nation_scope
+		}
+		c:RKM = {
+			save_scope_as = rkm_nation_scope
+		}
+		c:GEE = {
+			ruler = {
+				save_scope_as = gee_ruler_scope
+			}
+		}
 	}
     
     complete = {
@@ -79,7 +100,9 @@ je_ger_reclaim_ost_2 = { #Ostland
 	}
 
     on_complete = {
-        trigger_event = { id = tno_germany_events.41 days = 0 popup = yes }
+    	hidden_effect = {
+        	trigger_event = { id = tno_germany_events.41 days = 0 popup = yes }
+        }
       
     }
 
