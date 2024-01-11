@@ -1042,6 +1042,8 @@ ITA = { # Italy
 	}
 }
 
+
+
 BGD = { # Burgundy
 	dynamic_country_name = {
 		name = "Ordensstaat Burgundy"
@@ -2902,6 +2904,31 @@ KHI = {
 		}
 	}
 }
+
+IBE = { 
+	dynamic_country_name = {
+		name = "Iberian Federation"
+		adjective = "Iberian "
+		
+		is_main_tag_only = yes
+		priority = 5
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				OR = {
+					has_law = law_type:law_universal_suffrage
+					has_law = law_type:law_census_voting
+					
+				}
+			
+				
+			}
+		}
+	}
+}
+
+
 
 TSR = { 
 	dynamic_country_name = {

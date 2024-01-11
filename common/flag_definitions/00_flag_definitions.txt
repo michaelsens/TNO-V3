@@ -3409,6 +3409,22 @@ SBA = { # siberian black army
 	}
 }
 
+IBE = { # iberia
+	flag_definition = { 
+		coa = IBE_DEM
+		priority = 2000
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				NOT = { has_law = law_type:law_autocracy }
+				NOT = { has_law = law_type:law_technocracy}
+				NOT = { has_law = law_type:law_oligarchy}
+
+			}
+		}
+	}
+}
+
 VOR = { # vorkuta
 	flag_definition = { # starting flagg
 		coa = VOR_start
