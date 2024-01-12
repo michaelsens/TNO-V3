@@ -34,21 +34,38 @@ je_ger_reclaim_ost = { #everybody else
 		c:RKM = {
 			save_scope_as = rkm_nation_scope
 		}
+		c:RKO = {
+			save_scope_as = rko_nation_scope
+		}
+		c:RKU = {
+			save_scope_as = rku_nation_scope
+		}
 		c:GEE = {
 			ruler = {
 				save_scope_as = gee_ruler_scope
 			}
 		}
+		c:GOV = {
+			ruler = {
+				save_scope_as = gov_ruler_scope
+			}
+		}
 	}
     
     complete = {
-		scope:journal_entry = {
-			is_goal_complete = yes
+    	custom_tooltip = {
+	    	text = je_complete_with_buttons
+			country_or_subject_owns_entire_state_region = STATE_ESTONIA
+			country_or_subject_owns_entire_state_region = STATE_MOSCOW
+			country_or_subject_owns_entire_state_region = STATE_HOLLAND
+			country_or_subject_owns_entire_state_region = STATE_BOHEMIA
+			country_or_subject_owns_entire_state_region = STATE_CRIMEA
+			country_or_subject_owns_entire_state_region = STATE_AZERBAIJAN
 		}
 	}
 
     on_complete = {
-      
+    	trigger_event = { id = tno_germany_events.42 popup = yes }
     }
 
     on_monthly_pulse = {
