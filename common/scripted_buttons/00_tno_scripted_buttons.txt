@@ -1567,9 +1567,7 @@ je_ger_reclaim_ost_a = {  # Reclaim Ostland button
 	}
 
 	effect = {
-		scope:journal_entry = {
-			set_variable = je_already_pupped_ost
-		}
+		set_variable = je_already_pupped_ost
 		if = {
 			limit = {
 				exists = c:RKO
@@ -1723,7 +1721,7 @@ je_ger_reclaim_ost_b = {  # ANNEX moravia
 	}
 }
 
-je_ger_reclaim_ost_c = {  # annex gotland
+je_ger_reclaim_ost_c = {  # annex gotland (crimea)
 	name = "je_annex_gotland" 
 	desc = "je_annex_gotland_desc"
 
@@ -1745,20 +1743,24 @@ je_ger_reclaim_ost_c = {  # annex gotland
 	}
 }
 
-je_ger_reclaim_ost_d = {  #puppet moskowen
+je_ger_reclaim_ost_d = {  #puppet moskowien
 	name = "je_puppet_moskown" 
 	desc = "je_puppet_moskown_desc"
 
 	visible = { always = yes }
 
 	possible = {
-		scope:journal_entry = {
-				not = {
-				custom_tooltip = {
-					text = je_ger_reclaim_ost_d.tooltip_condition
-					has_variable = je_moskowen_sex
+		custom_tooltip = {
+			text = je_ger_reclaim_ost_d.tooltip_condition
+			NOT = {
+				c:RKM = {
+					is_direct_subject_of = c:GER
 				}
 			}
+		}
+		custom_tooltip = {
+			text = je_ger_reclaim_ost_d.tooltip_condition_ostland
+			has_variable = je_already_pupped_ost
 		}
 	}
 
@@ -1767,13 +1769,6 @@ je_ger_reclaim_ost_d = {  #puppet moskowen
 	}
 
 	effect = {
-
-		scope:journal_entry = {
-			set_variable = { name = je_moskowen_sex months = 99999  }
-		}	
-		custom_tooltip = {
-			text = je_ger_reclaim_ost_d.tooltip_effect
-		}
 		create_diplomatic_pact = {
 			country = c:RKM
 			type = reichskommissariat
@@ -1782,19 +1777,25 @@ je_ger_reclaim_ost_d = {  #puppet moskowen
 	}
 }
 
-je_ger_reclaim_ost_e = {  #puppet kakaus
+je_ger_reclaim_ost_e = {  #puppet kaukasien
 	name = "je_kakasus" 
 	desc = "je_kakasus_desc"
 
 	visible = { always = yes }
 
 	possible = {
-		scope:journal_entry = {
-				not = {
-				custom_tooltip = {
-					text = je_ger_reclaim_ost_e.tooltip_condition
-					has_variable = je_cock_retken_cum
+		custom_tooltip = {
+			text = je_ger_reclaim_ost_e.tooltip_condition
+			NOT = {
+				c:RKK = {
+					is_direct_subject_of = c:GER
 				}
+			}
+		}
+		custom_tooltip = {
+			text = je_ger_reclaim_ost_d.tooltip_condition_moskowien
+			c:RKM = {
+				is_direct_subject_of = c:GER
 			}
 		}
 	}
@@ -1804,13 +1805,6 @@ je_ger_reclaim_ost_e = {  #puppet kakaus
 	}
 
 	effect = {
-
-		scope:journal_entry = {
-			set_variable = { name = je_cock_retken_cum months = 99999  }
-		}	
-		custom_tooltip = {
-			text = je_ger_reclaim_ost_p.tooltip_effect
-		}
 		create_diplomatic_pact = {
 			country = c:RKK
 			type = reichskommissariat
@@ -1826,11 +1820,11 @@ je_ger_reclaim_ost_z = {  #puppet poland
 	visible = { always = yes }
 
 	possible = {
-		scope:journal_entry = {
-				not = {
-				custom_tooltip = {
-					text = je_ger_reclaim_ost_e.tooltip_condition
-					has_variable = je_cock_retken_cum
+		custom_tooltip = {
+			text = je_ger_reclaim_ost_p.tooltip_condition
+			NOT = {
+				c:GOV = {
+					is_direct_subject_of = c:GER
 				}
 			}
 		}
@@ -1841,13 +1835,7 @@ je_ger_reclaim_ost_z = {  #puppet poland
 	}
 
 	effect = {
-
-		scope:journal_entry = {
-			set_variable = { name = je_cock_retken_cum months = 99999  }
-		}	
-		custom_tooltip = {
-			text = je_ger_reclaim_ost_p.tooltip_effect
-		}
+		set_variable = je_already_pupped_gov
 		create_diplomatic_pact = {
 			country = c:GOV
 			type = reichskommissariat
@@ -1858,16 +1846,16 @@ je_ger_reclaim_ost_z = {  #puppet poland
 
 je_ger_reclaim_ost_f = {  #puppet netherlands
 	name = "je_puppet_net" 
-	desc = "je_puppet_net_desc	"
+	desc = "je_puppet_net_desc"
 
 	visible = { always = yes }
 
 	possible = {
-		scope:journal_entry = {
-				not = {
-				custom_tooltip = {
-					text = je_ger_reclaim_ost_e.tooltip_condition
-					has_variable = je_cock_retken_cum
+		custom_tooltip = {
+			text = je_ger_reclaim_ost_n.tooltip_condition
+			NOT = {
+				c:NET = {
+					is_direct_subject_of = c:GER
 				}
 			}
 		}
@@ -1878,18 +1866,10 @@ je_ger_reclaim_ost_f = {  #puppet netherlands
 	}
 
 	effect = {
-
-		scope:journal_entry = {
-			set_variable = { name = je_cock_retken_cum months = 99999  }
-		}	
-		custom_tooltip = {
-			text = je_ger_reclaim_ost_p.tooltip_effect
-		}
 		create_diplomatic_pact = {
 			country = c:NET
 			type = reichskommissariat
 		}
-
 	}
 }
 

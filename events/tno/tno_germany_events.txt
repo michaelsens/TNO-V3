@@ -2272,3 +2272,66 @@ tno_germany_events.41 = {
 }
 
 
+tno_germany_events.42 = { # Reclaimed all Outstanding Pakt Members
+    type = country_event
+    placement = root
+    title = tno_germany_events.42.t
+    desc = tno_germany_events.42.d
+    flavor = tno_germany_events.42.f
+    icon = "gfx/interface/icons/lens_toolbar_icons/recruit_generals_lens_option.dds"
+
+    duration = 6
+
+    immediate = {
+        ruler = {
+            save_scope_as = ger_leader
+        }
+                c:GWZ = {
+            save_scope_as = gwz_nation_scope
+        }
+        c:GEE = {
+            save_scope_as = gee_nation_scope
+        }
+        c:RKK = {
+            save_scope_as = rkk_nation_scope
+        }
+        c:GOV = {
+            save_scope_as = gov_nation_scope
+        }
+        c:NET = {
+            save_scope_as = net_nation_scope
+        }
+        c:RKM = {
+            save_scope_as = rkm_nation_scope
+        }
+        c:RKO = {
+            save_scope_as = rko_nation_scope
+        }
+        c:RKU = {
+            save_scope_as = rku_nation_scope
+        }
+        c:GEE = {
+            ruler = {
+                save_scope_as = gee_ruler_scope
+            }
+        }
+        c:GOV = {
+            ruler = {
+                save_scope_as = gov_ruler_scope
+            }
+        }
+    }
+    
+    trigger = {
+    }
+
+    event_image = {
+        texture = "gfx/event_pictures/super_pictures/russianwar.dds"
+    }
+
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    option = {
+        name = tno_germany_events.42.a
+    }
+}
