@@ -2806,7 +2806,11 @@ je_liberate_central_a = {  #liberate congo
 					has_variable = je_congo_cooldown
 				
 				}
-				has_variable = je_liberation_cooldown
+				custom_tooltip = {
+					text = butten_liberation_cooldown
+					has_variable = je_liberation_cooldown
+					
+				}
 			}
 		}
 	}
@@ -2835,7 +2839,13 @@ je_liberate_central_b = {  #liberate orungu
 					has_variable = je_orungu_cooldown
 					
 				}
-				has_variable = je_liberation_cooldown
+
+				custom_tooltip = {
+					text = butten_liberation_cooldown
+					has_variable = je_liberation_cooldown
+					
+				}
+			
 			}
 		}
 	}
@@ -2865,7 +2875,11 @@ je_liberate_central_c = {  #liberate central africa
 					has_variable = je_central_africa_cooldown
 					
 				}
-				has_variable = je_liberation_cooldown
+				custom_tooltip = {
+					text = butten_liberation_cooldown
+					has_variable = je_liberation_cooldown
+					
+				}
 			}
 		}
 	}
@@ -2876,10 +2890,7 @@ je_liberate_central_c = {  #liberate central africa
 			set_variable = { name = je_central_africa_cooldown months = 99999  }
 			set_variable = { name = je_liberation_cooldown months = 5 }
 		}	
-		custom_tooltip = {
-			text = button_ask_for_money
-	
-		}
+		
 		trigger_event = { id = tno_usa_events.25 days = 0 popup = yes }
 		
 }

@@ -9,16 +9,14 @@ je_tno_liberate_east_africa = {
 
 
     invalid = {
-        c:JOL = {
-            is_at_war = no
-        }
+       
     }
 
     immediate = {
 	}
     
     complete = {
-       
+		
        
 		
 		
@@ -36,7 +34,7 @@ je_tno_liberate_east_africa = {
     on_complete = {
        
         add_loyalists = {
-            value = 0.1
+            value = 0.05
 
         }
     }
@@ -63,15 +61,33 @@ je_tno_liberate_central_africa = {
 
 
     invalid = {
-        c:JOL = {
-            is_at_war = no
-        }
+        
     }
 
     immediate = {
 	}
     
     complete = {
+
+		
+		
+		
+		custom_tooltip = {
+			text = je_has_liberated_orungu_text
+			has_variable = je_central_africa_cooldown
+			
+		}
+		custom_tooltip = {
+			text = je_has_liberated_congo_text
+			has_variable = je_congo_cooldown
+			
+		}
+
+		custom_tooltip = {
+			text = je_has_liberated_text
+			has_variable = je_central_africa_cooldown
+			
+		}
        
        
 		
@@ -83,14 +99,14 @@ je_tno_liberate_central_africa = {
     on_timeout = {
         
         add_radicals = {
-            value = 0.1
+            value = 0.01
         }
     }
 
     on_complete = {
        
         add_loyalists = {
-            value = 0.1
+            value = 0.05	
 
         }
     }
