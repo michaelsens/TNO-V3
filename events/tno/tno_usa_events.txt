@@ -1431,8 +1431,8 @@ tno_usa_events.21 = {
 
         c:KON = {
             has_diplomatic_pact = {
-				country = c:USA	
-                 type = protectorate
+				who = c:USA	
+                type = protectorate
             }
 
         }
@@ -1472,7 +1472,7 @@ tno_usa_events.22 = {  # Congo
 	
     option = { #Liberate and put in market
         name = tno_usa_events.22.a
-
+        default_option = yes
 		create_country = { # full congo
         tag = PIP
         origin = c:USA
@@ -1610,7 +1610,7 @@ tno_usa_events.23 = {  # katanga
 
     option = { #Liberate and put in market
         name = tno_usa_events.23.a
-
+        default_option = yes
 		create_country = { # Katanga
         tag = PIL
         origin = c:USA
@@ -1732,7 +1732,7 @@ tno_usa_events.24 = {  # ORUNGU
 	
     option = { #Liberate and put in market
         name = tno_usa_events.24.a
-
+        default_option = yes
 		create_country = { 
         tag = PIU
         origin = c:USA
@@ -1862,7 +1862,7 @@ tno_usa_events.25 = {  # central africa
 	
     option = { #Liberate and put in market
         name = tno_usa_events.25.a
-
+        default_option = yes
 		create_country = { 
         tag = PIK
         origin = c:USA
@@ -1965,7 +1965,7 @@ tno_usa_events.26 = {  # zambia
 	
     option = { #Liberate and put in market
         name = tno_usa_events.26.a
-
+        default_option = yes
 		create_country = { 
         tag = PIV
         origin = c:USA
@@ -2072,30 +2072,26 @@ tno_usa_events.27 = {  # uganda
 	
     option = { #Liberate and put in market
         name = tno_usa_events.26.a
-
+        default_option = yes
 		create_country = { 
         tag = ANK
         origin = c:USA
         state = s:STATE_UGANDA.region_state:KON
 	
-    } 
+    	} 
 
-	
+		create_diplomatic_pact = {
+			country = c:ANK
+			type = customs_union
+		}
 
-	create_diplomatic_pact = {
-		country = c:ANK
-		type = customs_union
-	}
+		add_loyalists = {
+			value = 0.01
+			culture = cu:yankee
+		}
 
-	add_loyalists = {
-		value = 0.01
-		culture = cu:yankee
-	}
-
-	change_infamy = -20
-    } 
-
-	
+		change_infamy = -20
+	    } 
 
 	option = { # ofn
 	name = tno_usa_events.26.b
