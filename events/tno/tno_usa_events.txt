@@ -17,6 +17,13 @@ tno_usa_events.8 = { #southern collapse
 
     duration = 3
 
+	trigger = {
+		this ?= c:USA
+		ROOT = c:USA
+
+	}
+
+
     option = {
         name = tno_usa_events.8.a
 
@@ -1429,22 +1436,16 @@ tno_usa_events.21 = {
         exists = c:KON
         ROOT = c:USA
 
-        c:KON = {
-            has_diplomatic_pact = {
-				country = c:USA	
-                 type = protectorate
-            }
-
-        }
-
-
-
-    }
+	}
 
     immediate = {
         remove_diplomatic_pact = {
             country = c:KON
             type = protectorate
+        }
+		create_diplomatic_pact = {
+            country = c:KON
+            type = ofn_millgov
         }
     }
 }
@@ -2289,3 +2290,97 @@ tno_usa_events.30 = { # Begins JE for intervention in Russia
 		#create JE
     }
 }
+
+tno_usa_events.31 = {  # event that gives JE to usa to liberate afirca
+	type = country_event
+    placement = ROOT
+ 
+    title = tno_usa_events.31
+    desc = tno_usa_events.31.d
+    flavor = tno_usa_events.31.f 
+    event_image = {
+        texture = "gfx/event_pictures/super_pictures/seg.4.dds"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_fire.dds"
+
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 1
+
+	trigger = {
+		this ?= c:USA
+	}
+	
+    option = { 
+        name = tno_usa_events.31.a
+
+	
+		add_journal_entry = {
+			type = je_tno_liberate_east_africa
+		}
+	
+    } 
+	
+}
+
+tno_usa_events.32 = {
+    type = country_event
+    hidden = yes
+
+
+
+    trigger = {
+        exists = c:KZA
+        ROOT = c:USA
+
+	}
+
+    immediate = {
+        remove_diplomatic_pact = {
+            country = c:KZA
+            type = protectorate
+        }
+		create_diplomatic_pact = {
+            country = c:KZA
+            type = ofn_millgov
+        }
+    }
+}
+
+tno_usa_events.33 = {  # event that gives JE to usa to liberate afirca
+	type = country_event
+    placement = ROOT
+ 
+    title = tno_usa_events.33
+    desc = tno_usa_events.33.d
+    flavor = tno_usa_events.33.f 
+    event_image = {
+        texture = "gfx/event_pictures/super_pictures/seg.4.dds"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_fire.dds"
+
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 1
+
+	trigger = {
+		this ?= c:USA
+	}
+	
+    option = { 
+        name = tno_usa_events.33.a
+
+	
+		add_journal_entry = {
+			type = je_tno_liberate_central_africa
+		}
+	
+    } 
+	
+}
+
+
+
+

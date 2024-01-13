@@ -2773,3 +2773,96 @@ je_ru_irk_second_great_patriotic_war = {
 #
 #	}
 #}
+
+je_liberate_central_a = {  #liberate congo
+	name = "je_liberate_congo_butten" 
+	desc = "je_liberate_congo_butten_desc"
+
+	visible = { always = yes }
+
+	possible = {
+		scope:journal_entry = {
+				not = {
+				custom_tooltip = {
+					text = butten_liberate_congo
+					has_variable = je_congo_cooldown
+				
+				}
+				has_variable = je_liberation_cooldown
+			}
+		}
+	}
+
+	effect = {
+
+		scope:journal_entry = {
+			set_variable = { name = je_congo_cooldown months = 99999  }
+			set_variable = { name = je_liberation_cooldown months = 5 }
+		}	
+		trigger_event = { id = tno_usa_events.22 days = 0 popup = yes }
+		
+}
+}
+je_liberate_central_b = {  #liberate orungu
+	name = "je_liberate_orungu" 
+	desc = "je_liberate_orungu_desc"
+
+	visible = { always = yes }
+
+	possible = {
+		scope:journal_entry = {
+				not = {
+				custom_tooltip = {
+					text = butten_liberate_congo
+					has_variable = je_orungu_cooldown
+					
+				}
+				has_variable = je_liberation_cooldown
+			}
+		}
+	}
+
+	effect = {
+
+		scope:journal_entry = {
+			set_variable = { name = je_orungu_cooldown months = 99999  }
+			set_variable = { name = je_liberation_cooldown months = 5 }
+		}	
+		trigger_event = { id = tno_usa_events.24 days = 0 popup = yes }
+		
+}
+}
+
+je_liberate_central_c = {  #liberate central africa
+	name = "je_liberiate_central" 
+	desc = "je_liberiate_central_desc"
+
+	visible = { always = yes }
+
+	possible = {
+		scope:journal_entry = {
+				not = {
+				custom_tooltip = {
+					text = button_request_money_12_months
+					has_variable = je_central_africa_cooldown
+					
+				}
+				has_variable = je_liberation_cooldown
+			}
+		}
+	}
+
+	effect = {
+
+		scope:journal_entry = {
+			set_variable = { name = je_central_africa_cooldown months = 99999  }
+			set_variable = { name = je_liberation_cooldown months = 5 }
+		}	
+		custom_tooltip = {
+			text = button_ask_for_money
+	
+		}
+		trigger_event = { id = tno_usa_events.25 days = 0 popup = yes }
+		
+}
+}
