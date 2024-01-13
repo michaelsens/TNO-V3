@@ -1457,11 +1457,17 @@ free_trade_agitator_election_scope_effect = {
 }
 
 gen_ruler_party = {
+	random_character = {
+			limit = {
+				is_ruler = yes
+			}
+			save_scope_as = ruler_scope
+		}
 	if = {
 		limit = {
 			has_technology_researched = socialism
 			OR = {
-				ruler = {
+				scope:ruler_scope = {
 					has_socialist_ideology = yes
 				}
 				ruler.interest_group.leader = {

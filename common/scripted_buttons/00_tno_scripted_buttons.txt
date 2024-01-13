@@ -1643,12 +1643,10 @@ je_ger_reclaim_ost_L = {  # attack ukraine
 	visible = { always = yes }
 
 	possible = {
-		scope:journal_entry = {
-				not = {
-				custom_tooltip = {
-					text = je_ger_reclaim_ost_v.tooltip_condition
-					has_variable = je_already_pupped_ost
-				}
+		NOT = {
+			custom_tooltip = {
+				text = je_ger_reclaim_ost_L.tooltip_condition
+				has_variable = je_already_pupped_ukr
 			}
 		}
 	}
@@ -1658,38 +1656,55 @@ je_ger_reclaim_ost_L = {  # attack ukraine
 	}
 
 	effect = {
-
-		scope:journal_entry = {
-			set_variable = { name = je_already_pupped_ost months = 99999  }
-		}	
+		set_variable = je_already_pupped_ukr
+		if = {
+				limit = {
+					exists = c:RKU
+				}
+				annex = c:RKU
+			}
 		custom_tooltip = {
-			text = je_ger_reclaim_ost_a.tooltip_effect
-	
-			annex = c:RKU
-			create_diplomatic_play = {
-                type = dp_annex_war
-                name = ukraine_war_fUCK
-                target_country = c:UKC
-                war = no
-                escalation = 93
-                target_state = s:STATE_LUHANSK.region_state:UKC
-            }
-			create_diplomatic_play = {
-                type = dp_annex_war
-                name = ukraine_war_fUCK
-                target_country = c:UKM
-                war = no
-                escalation = 93
-                target_state = s:STATE_CHERSON.region_state:UKM
-            }
-			create_diplomatic_play = {
-                type = dp_annex_war
-                name = ukraine_war_fUCK
-                target_country = c:UKP
-                war = no
-                escalation = 93
-                target_state = s:STATE_VOLHYNIA.region_state:UKP
-            }
+			text = je_ger_reclaim_ost_u.tooltip_effect
+			if = {
+				limit = {
+					exists = c:UKC
+				}
+				create_diplomatic_play = {
+	                type = dp_annex_war
+	                name = ukraine_war_fUCK
+	                target_country = c:UKC
+	                war = no
+	                escalation = 93
+	                target_state = s:STATE_LUHANSK.region_state:UKC
+            	}
+			}
+			if = {
+				limit = {
+					exists = c:UKM
+				}
+				create_diplomatic_play = {
+	                type = dp_annex_war
+	                name = ukraine_war_fUCK
+	                target_country = c:UKM
+	                war = no
+	                escalation = 93
+	                target_state = s:STATE_CHERSON.region_state:UKM
+	            }
+			}
+			if = {
+				limit = {
+					exists = c:UKP
+				}
+				create_diplomatic_play = {
+	                type = dp_annex_war
+	                name = ukraine_war_fUCK
+	                target_country = c:UKP
+	                war = no
+	                escalation = 93
+	                target_state = s:STATE_VOLHYNIA.region_state:UKP
+	            }
+			}
+			
 		}
 
 		hidden_effect = {
@@ -1731,6 +1746,10 @@ je_ger_reclaim_ost_c = {  # annex gotland (crimea)
 		custom_tooltip = {
 			text = je_ger_reclaim_ost_c.tooltip_condition
 			exists = c:GEE
+		}
+		custom_tooltip = {
+			text = je_ger_reclaim_ost_d.tooltip_condition_ukraine
+			has_variable = je_already_pupped_ukr
 		}
 	}
 
@@ -1835,7 +1854,6 @@ je_ger_reclaim_ost_z = {  #puppet poland
 	}
 
 	effect = {
-		set_variable = je_already_pupped_gov
 		create_diplomatic_pact = {
 			country = c:GOV
 			type = reichskommissariat
