@@ -1603,7 +1603,7 @@ tno_usa_events.23 = {  # katanga
     desc = tno_usa_events.23.d
     flavor = tno_usa_events.23.f 
     event_image = {
-        texture = "gfx/event_pictures/super_pictures/seg.4.dds"
+        texture = "gfx/event_pictures/event_pictures/katanga.dds"
     }
 
 	trigger = {
@@ -1727,7 +1727,7 @@ tno_usa_events.24 = {  # ORUNGU
     desc = tno_usa_events.24.d
     flavor = tno_usa_events.24.f 
     event_image = {
-        texture = "gfx/event_pictures/super_pictures/seg.4.dds"
+        texture = "gfx/event_pictures/event_pictures/gabon.dds"
     }
 
     icon = "gfx/interface/icons/event_icons/event_fire.dds"
@@ -1857,7 +1857,7 @@ tno_usa_events.25 = {  # central africa
     desc = tno_usa_events.25.d
     flavor = tno_usa_events.25.f 
     event_image = {
-        texture = "gfx/event_pictures/super_pictures/seg.4.dds"
+        texture = "gfx/event_pictures/event_pictures/central_africa.dds"
     }
 
     icon = "gfx/interface/icons/event_icons/event_fire.dds"
@@ -2299,17 +2299,11 @@ tno_usa_events.30 = { # Begins JE for intervention in Russia
 tno_usa_events.31 = {  # event that gives JE to usa to liberate afirca
 	type = country_event
     placement = ROOT
- 
-    title = tno_usa_events.31
-    desc = tno_usa_events.31.d
-    flavor = tno_usa_events.31.f 
-    event_image = {
-        texture = "gfx/event_pictures/super_pictures/seg.4.dds"
-    }
+ hidden = yes 
+   
+   
 
-    icon = "gfx/interface/icons/event_icons/event_fire.dds"
-
-    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+   
 
     duration = 1
 
@@ -2317,15 +2311,13 @@ tno_usa_events.31 = {  # event that gives JE to usa to liberate afirca
 		this ?= c:USA
 	}
 	
-    option = { 
-        name = tno_usa_events.31.a
-
-	
+	immediate = {
 		add_journal_entry = {
 			type = je_tno_liberate_east_africa
 		}
+    }
+
 	
-    } 
 	
 }
 
@@ -2356,33 +2348,22 @@ tno_usa_events.32 = {
 tno_usa_events.33 = {  # event that gives JE to usa to liberate afirca
 	type = country_event
     placement = ROOT
- 
-    title = tno_usa_events.33
-    desc = tno_usa_events.33.d
-    flavor = tno_usa_events.33.f 
-    event_image = {
-        texture = "gfx/event_pictures/super_pictures/seg.4.dds"
-    }
-
-    icon = "gfx/interface/icons/event_icons/event_fire.dds"
-
-    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+ hidden = yes
+   
 
     duration = 1
 
 	trigger = {
 		this ?= c:USA
 	}
-	
-    option = { 
-        name = tno_usa_events.33.a
 
-	
+	immediate = {
 		add_journal_entry = {
 			type = je_tno_liberate_central_africa
 		}
+    }
 	
-    } 
+   
 	
 }
 
