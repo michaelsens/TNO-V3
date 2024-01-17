@@ -2871,6 +2871,41 @@ je_liberate_central_c = {  #liberate central africa
 		scope:journal_entry = {
 				not = {
 				custom_tooltip = {
+					text = butten_liberate_congo
+					has_variable = je_central_africa_cooldown
+					
+				}
+				custom_tooltip = {
+					text = butten_liberation_cooldown
+					has_variable = je_liberation_cooldown
+					
+				}
+			}
+		}
+	}
+
+	effect = {
+
+		scope:journal_entry = {
+			set_variable = { name = je_central_africa_cooldown months = 99999  }
+			set_variable = { name = je_liberation_cooldown months = 5 }
+		}	
+		
+		trigger_event = { id = tno_usa_events.25 days = 0 popup = yes }
+		
+}
+}
+
+je_liberate_uganda = {  
+	name = "je_liberate_uganda" 
+	desc = "je_liberate_uganda_desc"
+
+	visible = { always = yes }
+
+	possible = {
+		scope:journal_entry = {
+				not = {
+				custom_tooltip = {
 					text = button_request_money_12_months
 					has_variable = je_central_africa_cooldown
 					
