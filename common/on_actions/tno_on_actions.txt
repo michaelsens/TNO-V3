@@ -182,6 +182,15 @@
 
 
         #War Events
+        if = {
+            limit = {
+                game_date >= 1965.7.13
+                NOT = { has_global_variable = col_war_var }
+            }
+            set_global_variable = col_war_var
+            trigger_event = { id = tno_war_events.9 }
+
+        }
         #SAF
         if = {
             limit = {

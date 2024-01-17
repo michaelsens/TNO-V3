@@ -3,7 +3,7 @@
 		effect_starting_technology_tier_1_tech = yes
 				
 		# Laws
-		activate_law = law_type:law_unitary_state
+		activate_law = law_type:law_autocracy
 		activate_law = law_type:law_single_party_state		
 		activate_law = law_type:law_outlawed_dissent
 		activate_law = law_type:law_women_own_property
@@ -33,17 +33,6 @@
 		add_modifier = { name = shadow_economy }
 		add_modifier = { name = national_purity  }
 		add_modifier = { name = armed_against_democracy  }
-
-		if = {
-			limit = {
-				ruler.interest_group = {
-					has_party = yes
-				}
-				
-			}
-			set_variable = { name = only_valid_party value = ruler.interest_group.party }
-			
-		}
 
 		set_institution_investment_level = {
 			institution = institution_police
