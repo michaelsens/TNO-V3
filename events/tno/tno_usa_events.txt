@@ -17,6 +17,13 @@ tno_usa_events.8 = { #southern collapse
 
     duration = 3
 
+	trigger = {
+		this ?= c:USA
+		ROOT = c:USA
+
+	}
+
+
     option = {
         name = tno_usa_events.8.a
 
@@ -1431,8 +1438,8 @@ tno_usa_events.21 = {
 
         c:KON = {
             has_diplomatic_pact = {
-				country = c:USA	
-                 type = protectorate
+				who = c:USA	
+                type = protectorate
             }
 
         }
@@ -1446,6 +1453,10 @@ tno_usa_events.21 = {
             country = c:KON
             type = protectorate
         }
+		create_diplomatic_pact = {
+            country = c:KON
+            type = ofn_millgov
+        }
     }
 }
 
@@ -1454,10 +1465,10 @@ tno_usa_events.22 = {  # Congo
     placement = ROOT
  
     title = tno_usa_events.22
-    desc = tno_usa_events.22.d
+	desc = tno_usa_events.22.d
     flavor = tno_usa_events.22.f 
     event_image = {
-        texture = "gfx/event_pictures/super_pictures/seg.4.dds"
+        texture = "gfx/event_pictures/event_pictures/tno_con.dds"
     }
 
     icon = "gfx/interface/icons/event_icons/event_fire.dds"
@@ -1472,7 +1483,7 @@ tno_usa_events.22 = {  # Congo
 	
     option = { #Liberate and put in market
         name = tno_usa_events.22.a
-
+        default_option = yes
 		create_country = { # full congo
         tag = PIP
         origin = c:USA
@@ -1559,7 +1570,7 @@ tno_usa_events.22 = {  # Congo
 } 
 
 	option = { # puppet
-	name = tno_usa_events.22.d
+	name = tno_usa_events.22.e
 
 	create_country = { # full congo
 	tag = PIP
@@ -1593,7 +1604,7 @@ tno_usa_events.23 = {  # katanga
     desc = tno_usa_events.23.d
     flavor = tno_usa_events.23.f 
     event_image = {
-        texture = "gfx/event_pictures/super_pictures/seg.4.dds"
+        texture = "gfx/event_pictures/event_pictures/katanga.dds"
     }
 
 	trigger = {
@@ -1609,8 +1620,8 @@ tno_usa_events.23 = {  # katanga
 	
 
     option = { #Liberate and put in market
-        name = tno_usa_events.23.a
-
+        name = tno_usa_events.22.a
+        default_option = yes
 		create_country = { # Katanga
         tag = PIL
         origin = c:USA
@@ -1659,7 +1670,7 @@ tno_usa_events.23 = {  # katanga
 	} 
 
 	option = { # protectorate
-	name = tno_usa_events.23.c
+	name = tno_usa_events.22.c
 
 	create_country = { # Katanga
         tag = PIL
@@ -1676,7 +1687,7 @@ tno_usa_events.23 = {  # katanga
 } 
 
 	option = { # puppet
-	name = tno_usa_events.23.d
+	name = tno_usa_events.22.d
 
 	create_country = { # Katanga
         tag = PIL
@@ -1697,7 +1708,7 @@ tno_usa_events.23 = {  # katanga
 	} 
 
 	option = { # no katanga
-	name = tno_usa_events.23.e
+	name = tno_usa_events.22.e
 
 	change_relations = {
 		country = c:PIP
@@ -1717,7 +1728,7 @@ tno_usa_events.24 = {  # ORUNGU
     desc = tno_usa_events.24.d
     flavor = tno_usa_events.24.f 
     event_image = {
-        texture = "gfx/event_pictures/super_pictures/seg.4.dds"
+        texture = "gfx/event_pictures/event_pictures/gabon.dds"
     }
 
     icon = "gfx/interface/icons/event_icons/event_fire.dds"
@@ -1731,8 +1742,8 @@ tno_usa_events.24 = {  # ORUNGU
 	}
 	
     option = { #Liberate and put in market
-        name = tno_usa_events.24.a
-
+        name = tno_usa_events.22.a
+        default_option = yes
 		create_country = { 
         tag = PIU
         origin = c:USA
@@ -1765,7 +1776,7 @@ tno_usa_events.24 = {  # ORUNGU
 	
 
 	option = { # ofn
-	name = tno_usa_events.24.b
+	name = tno_usa_events.22.b
 
 	create_country = { 
         tag = PIU
@@ -1793,7 +1804,7 @@ tno_usa_events.24 = {  # ORUNGU
 	} 
 
 	option = { # protectorate
-	name = tno_usa_events.24.c
+	name = tno_usa_events.22.c
 
 	create_country = { 
         tag = PIU
@@ -1814,7 +1825,7 @@ tno_usa_events.24 = {  # ORUNGU
 } 
 
 	option = { # puppet
-	name = tno_usa_events.24.d
+	name = tno_usa_events.22
 
 	create_country = { 
         tag = PIU
@@ -1847,7 +1858,7 @@ tno_usa_events.25 = {  # central africa
     desc = tno_usa_events.25.d
     flavor = tno_usa_events.25.f 
     event_image = {
-        texture = "gfx/event_pictures/super_pictures/seg.4.dds"
+        texture = "gfx/event_pictures/event_pictures/central_africa.dds"
     }
 
     icon = "gfx/interface/icons/event_icons/event_fire.dds"
@@ -1861,8 +1872,8 @@ tno_usa_events.25 = {  # central africa
 	}
 	
     option = { #Liberate and put in market
-        name = tno_usa_events.25.a
-
+        name = tno_usa_events.22.a
+        default_option = yes
 		create_country = { 
         tag = PIK
         origin = c:USA
@@ -1888,7 +1899,7 @@ tno_usa_events.25 = {  # central africa
 	
 
 	option = { # ofn
-	name = tno_usa_events.25.b
+	name = tno_usa_events.22.b
 
 	create_country = { 
         tag = PIK
@@ -1896,6 +1907,11 @@ tno_usa_events.25 = {  # central africa
         state = s:STATE_UBANGI_SHARI.region_state:KZA
 	
     } 
+
+	change_relations = {
+		country = c:PIK
+		value = 150
+	}
 
 	create_diplomatic_pact = {
 	country = c:PIK
@@ -1906,7 +1922,7 @@ tno_usa_events.25 = {  # central africa
 	} 
 
 	option = { # protectorate
-	name = tno_usa_events.25.c
+	name = tno_usa_events.22.c
 
 	create_country = { 
         tag = PIK
@@ -1922,7 +1938,7 @@ tno_usa_events.25 = {  # central africa
 } 
 
 	option = { # puppet
-	name = tno_usa_events.25.d
+	name = tno_usa_events.22.d
 
 	create_country = { 
         tag = PIK
@@ -1965,7 +1981,7 @@ tno_usa_events.26 = {  # zambia
 	
     option = { #Liberate and put in market
         name = tno_usa_events.26.a
-
+        default_option = yes
 		create_country = { 
         tag = PIV
         origin = c:USA
@@ -2072,30 +2088,26 @@ tno_usa_events.27 = {  # uganda
 	
     option = { #Liberate and put in market
         name = tno_usa_events.26.a
-
+        default_option = yes
 		create_country = { 
         tag = ANK
         origin = c:USA
         state = s:STATE_UGANDA.region_state:KON
 	
-    } 
+    	} 
 
-	
+		create_diplomatic_pact = {
+			country = c:ANK
+			type = customs_union
+		}
 
-	create_diplomatic_pact = {
-		country = c:ANK
-		type = customs_union
-	}
+		add_loyalists = {
+			value = 0.01
+			culture = cu:yankee
+		}
 
-	add_loyalists = {
-		value = 0.01
-		culture = cu:yankee
-	}
-
-	change_infamy = -20
-    } 
-
-	
+		change_infamy = -20
+	    } 
 
 	option = { # ofn
 	name = tno_usa_events.26.b
@@ -2289,3 +2301,78 @@ tno_usa_events.30 = { # Begins JE for intervention in Russia
 		#create JE
     }
 }
+
+tno_usa_events.31 = {  # event that gives JE to usa to liberate afirca
+	type = country_event
+    placement = ROOT
+ hidden = yes 
+   
+   
+
+   
+
+    duration = 1
+
+	trigger = {
+		this ?= c:USA
+	}
+	
+	immediate = {
+		add_journal_entry = {
+			type = je_tno_liberate_east_africa
+		}
+    }
+
+	
+	
+}
+
+tno_usa_events.32 = {
+    type = country_event
+    hidden = yes
+
+
+
+    trigger = {
+        exists = c:KZA
+        ROOT = c:USA
+
+	}
+
+    immediate = {
+        remove_diplomatic_pact = {
+            country = c:KZA
+            type = protectorate
+        }
+		create_diplomatic_pact = {
+            country = c:KZA
+            type = ofn_millgov
+        }
+    }
+}
+
+tno_usa_events.33 = {  # event that gives JE to usa to liberate afirca
+	type = country_event
+    placement = ROOT
+ hidden = yes
+   
+
+    duration = 1
+
+	trigger = {
+		this ?= c:USA
+	}
+
+	immediate = {
+		add_journal_entry = {
+			type = je_tno_liberate_central_africa
+		}
+    }
+	
+   
+	
+}
+
+
+
+

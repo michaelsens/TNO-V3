@@ -1545,7 +1545,7 @@ je_malaya_jap_f = {  # japan funds JOH
         }
     }
 }
-je_ger_reclaim_ost_a = {  # if RKO is still alive
+je_ger_reclaim_ost_a = {  # Reclaim Ostland button
 	name = "je_ost_a_sex" 
 	desc = "je_ost_a_sex_desc"
 
@@ -1553,9 +1553,9 @@ je_ger_reclaim_ost_a = {  # if RKO is still alive
 
 	possible = {
 		scope:journal_entry = {
-				not = {
+			not = {
 				custom_tooltip = {
-					text = "Hasnt already retook or tried to retake Ostland"
+					text = je_ger_reclaim_ost_a.tooltip_condition
 					has_variable = je_already_pupped_ost
 				}
 			}
@@ -1567,53 +1567,69 @@ je_ger_reclaim_ost_a = {  # if RKO is still alive
 	}
 
 	effect = {
-
-		scope:journal_entry = {
-			set_variable = { name = je_already_pupped_ost months = 99999  }
-		}	
-		custom_tooltip = {
-			text = "Will bring Ostland back into the fold and will start a full scale invasion with the goal of retakeing Ostland."
-	
-		
+		set_variable = je_already_pupped_ost
+		if = {
+			limit = {
+				exists = c:RKO
+			}
 			annex = c:RKO
-
-			create_diplomatic_play = {
-                type = dp_revolution
-                name = ost_land_fuckwar
-                target_country = c:GMG
-                war = no
-                escalation = 93
-                target_state = s:STATE_LATVIA.region_state:GMG
-            }
-            create_diplomatic_play = {
-                type = dp_revolution
-                name = ost_land_fuckwar
-                target_country = c:LLL
-                war = no
-                escalation = 93
-                target_state = s:STATE_LATVIA.region_state:LLL
-            }
-            create_diplomatic_play = {
-                type = dp_revolution
-                name = ost_land_fuckwar
-                target_country = c:RKS
-                war = no
-                escalation = 93
-                target_state = s:STATE_BREST.region_state:RKS
-            }
-            create_diplomatic_play = {
-                type = dp_revolution
-                name = ost_land_fuckwar
-                target_country = c:UPO
-                war = no
-                escalation = 93
-                target_state = s:STATE_ORSHA.region_state:UPO
-            }
-            hidden_effect = {
-				change_infamy = -999
-		    }
 		}
+		custom_tooltip = {
+			text = je_ger_reclaim_ost_a.tooltip_effect
 
+			if = {
+				limit = {
+					exists = c:GMG
+				}
+				create_diplomatic_play = {
+	                type = dp_revolution
+	                name = ost_land_fuckwar
+	                target_country = c:GMG
+	                war = no
+	                escalation = 93
+	                target_state = s:STATE_LATVIA.region_state:GMG
+            	}
+			}
+			if = {
+				limit = {
+					exists = c:LLL
+				}
+				create_diplomatic_play = {
+	                type = dp_revolution
+	                name = ost_land_fuckwar
+	                target_country = c:LLL
+	                war = no
+	                escalation = 93
+	                target_state = s:STATE_LATVIA.region_state:LLL
+            	}
+			}
+			if = {
+				limit = {
+					exists = c:RKS
+				}
+				create_diplomatic_play = {
+	                type = dp_revolution
+	                name = ost_land_fuckwar
+	                target_country = c:RKS
+	                war = no
+	                escalation = 93
+	                target_state = s:STATE_BREST.region_state:RKS
+            	}
+			}
+			if = {
+				limit = {
+					exists = c:UPO
+				}
+				create_diplomatic_play = {
+	                type = dp_revolution
+	                name = ost_land_fuckwar
+	                target_country = c:UPO
+	                war = no
+	                escalation = 93
+	                target_state = s:STATE_ORSHA.region_state:UPO
+            	}
+			}
+		}
 		hidden_effect = {
 			change_infamy = -999
 		}
@@ -1627,12 +1643,10 @@ je_ger_reclaim_ost_L = {  # attack ukraine
 	visible = { always = yes }
 
 	possible = {
-		scope:journal_entry = {
-				not = {
-				custom_tooltip = {
-					text = je_ger_reclaim_ost_v.tooltip_condition
-					has_variable = je_already_pupped_ost
-				}
+		NOT = {
+			custom_tooltip = {
+				text = je_ger_reclaim_ost_L.tooltip_condition
+				has_variable = je_already_pupped_ukr
 			}
 		}
 	}
@@ -1642,38 +1656,55 @@ je_ger_reclaim_ost_L = {  # attack ukraine
 	}
 
 	effect = {
-
-		scope:journal_entry = {
-			set_variable = { name = je_already_pupped_ost months = 99999  }
-		}	
+		set_variable = je_already_pupped_ukr
+		if = {
+				limit = {
+					exists = c:RKU
+				}
+				annex = c:RKU
+			}
 		custom_tooltip = {
-			text = je_ger_reclaim_ost_a.tooltip_effect
-	
-			annex = c:RKU
-			create_diplomatic_play = {
-                type = dp_annex_war
-                name = ukraine_war_fUCK
-                target_country = c:UKC
-                war = no
-                escalation = 93
-                target_state = s:STATE_LUHANSK.region_state:UKC
-            }
-			create_diplomatic_play = {
-                type = dp_annex_war
-                name = ukraine_war_fUCK
-                target_country = c:UKM
-                war = no
-                escalation = 93
-                target_state = s:STATE_CHERSON.region_state:UKM
-            }
-			create_diplomatic_play = {
-                type = dp_annex_war
-                name = ukraine_war_fUCK
-                target_country = c:UKP
-                war = no
-                escalation = 93
-                target_state = s:STATE_VOLHYNIA.region_state:UKP
-            }
+			text = je_ger_reclaim_ost_u.tooltip_effect
+			if = {
+				limit = {
+					exists = c:UKC
+				}
+				create_diplomatic_play = {
+	                type = dp_annex_war
+	                name = ukraine_war_fUCK
+	                target_country = c:UKC
+	                war = no
+	                escalation = 93
+	                target_state = s:STATE_LUHANSK.region_state:UKC
+            	}
+			}
+			if = {
+				limit = {
+					exists = c:UKM
+				}
+				create_diplomatic_play = {
+	                type = dp_annex_war
+	                name = ukraine_war_fUCK
+	                target_country = c:UKM
+	                war = no
+	                escalation = 93
+	                target_state = s:STATE_CHERSON.region_state:UKM
+	            }
+			}
+			if = {
+				limit = {
+					exists = c:UKP
+				}
+				create_diplomatic_play = {
+	                type = dp_annex_war
+	                name = ukraine_war_fUCK
+	                target_country = c:UKP
+	                war = no
+	                escalation = 93
+	                target_state = s:STATE_VOLHYNIA.region_state:UKP
+	            }
+			}
+			
 		}
 
 		hidden_effect = {
@@ -1690,13 +1721,9 @@ je_ger_reclaim_ost_b = {  # ANNEX moravia
 	visible = { always = yes }
 
 	possible = {
-		scope:journal_entry = {
-				not = {
-				custom_tooltip = {
-					text = je_ger_reclaim_ost_b.tooltip_condition
-					has_variable = JE_already_annex_mor
-				}
-			}
+		custom_tooltip = {
+			text = je_ger_reclaim_ost_b.tooltip_condition
+			exists = c:GWZ
 		}
 	}
 
@@ -1705,35 +1732,24 @@ je_ger_reclaim_ost_b = {  # ANNEX moravia
 	}
 
 	effect = {
-
-		scope:journal_entry = {
-			set_variable = { name = JE_already_annex_mor months = 99999  }
-		}	
-		custom_tooltip = {
-			text = je_ger_reclaim_ost_b.tooltip_effect
-	
-		
-			annex = c:GWZ
-
-			
-		}
+		annex = c:GWZ
 	}
 }
 
-je_ger_reclaim_ost_c = {  # annex gotland
+je_ger_reclaim_ost_c = {  # annex gotland (crimea)
 	name = "je_annex_gotland" 
 	desc = "je_annex_gotland_desc"
 
 	visible = { always = yes }
 
 	possible = {
-		scope:journal_entry = {
-				not = {
-				custom_tooltip = {
-					text = je_ger_reclaim_ost_c.tooltip_condition
-					has_variable = je_annex_got
-				}
-			}
+		custom_tooltip = {
+			text = je_ger_reclaim_ost_c.tooltip_condition
+			exists = c:GEE
+		}
+		custom_tooltip = {
+			text = je_ger_reclaim_ost_d.tooltip_condition_ukraine
+			has_variable = je_already_pupped_ukr
 		}
 	}
 
@@ -1742,33 +1758,28 @@ je_ger_reclaim_ost_c = {  # annex gotland
 	}
 
 	effect = {
-
-		scope:journal_entry = {
-			set_variable = { name = je_annex_got months = 99999  }
-		}	
-		custom_tooltip = {
-			text = je_ger_reclaim_ost_c.tooltip_effect
-	
-			annex = c:GEE
-			
-		}
+		annex = c:GEE
 	}
 }
 
-je_ger_reclaim_ost_d = {  #puppet moskowen
+je_ger_reclaim_ost_d = {  #puppet moskowien
 	name = "je_puppet_moskown" 
 	desc = "je_puppet_moskown_desc"
 
 	visible = { always = yes }
 
 	possible = {
-		scope:journal_entry = {
-				not = {
-				custom_tooltip = {
-					text = je_ger_reclaim_ost_d.tooltip_condition
-					has_variable = je_moskowen_sex
+		custom_tooltip = {
+			text = je_ger_reclaim_ost_d.tooltip_condition
+			NOT = {
+				c:RKM = {
+					is_direct_subject_of = c:GER
 				}
 			}
+		}
+		custom_tooltip = {
+			text = je_ger_reclaim_ost_d.tooltip_condition_ostland
+			has_variable = je_already_pupped_ost
 		}
 	}
 
@@ -1777,13 +1788,6 @@ je_ger_reclaim_ost_d = {  #puppet moskowen
 	}
 
 	effect = {
-
-		scope:journal_entry = {
-			set_variable = { name = je_moskowen_sex months = 99999  }
-		}	
-		custom_tooltip = {
-			text = je_ger_reclaim_ost_d.tooltip_effect
-		}
 		create_diplomatic_pact = {
 			country = c:RKM
 			type = reichskommissariat
@@ -1792,19 +1796,25 @@ je_ger_reclaim_ost_d = {  #puppet moskowen
 	}
 }
 
-je_ger_reclaim_ost_e = {  #puppet kakaus
+je_ger_reclaim_ost_e = {  #puppet kaukasien
 	name = "je_kakasus" 
 	desc = "je_kakasus_desc"
 
 	visible = { always = yes }
 
 	possible = {
-		scope:journal_entry = {
-				not = {
-				custom_tooltip = {
-					text = je_ger_reclaim_ost_e.tooltip_condition
-					has_variable = je_cock_retken_cum
+		custom_tooltip = {
+			text = je_ger_reclaim_ost_e.tooltip_condition
+			NOT = {
+				c:RKK = {
+					is_direct_subject_of = c:GER
 				}
+			}
+		}
+		custom_tooltip = {
+			text = je_ger_reclaim_ost_d.tooltip_condition_moskowien
+			c:RKM = {
+				is_direct_subject_of = c:GER
 			}
 		}
 	}
@@ -1814,13 +1824,6 @@ je_ger_reclaim_ost_e = {  #puppet kakaus
 	}
 
 	effect = {
-
-		scope:journal_entry = {
-			set_variable = { name = je_cock_retken_cum months = 99999  }
-		}	
-		custom_tooltip = {
-			text = je_ger_reclaim_ost_p.tooltip_effect
-		}
 		create_diplomatic_pact = {
 			country = c:RKK
 			type = reichskommissariat
@@ -1836,11 +1839,11 @@ je_ger_reclaim_ost_z = {  #puppet poland
 	visible = { always = yes }
 
 	possible = {
-		scope:journal_entry = {
-				not = {
-				custom_tooltip = {
-					text = je_ger_reclaim_ost_e.tooltip_condition
-					has_variable = je_cock_retken_cum
+		custom_tooltip = {
+			text = je_ger_reclaim_ost_p.tooltip_condition
+			NOT = {
+				c:GOV = {
+					is_direct_subject_of = c:GER
 				}
 			}
 		}
@@ -1851,13 +1854,6 @@ je_ger_reclaim_ost_z = {  #puppet poland
 	}
 
 	effect = {
-
-		scope:journal_entry = {
-			set_variable = { name = je_cock_retken_cum months = 99999  }
-		}	
-		custom_tooltip = {
-			text = je_ger_reclaim_ost_p.tooltip_effect
-		}
 		create_diplomatic_pact = {
 			country = c:GOV
 			type = reichskommissariat
@@ -1868,16 +1864,16 @@ je_ger_reclaim_ost_z = {  #puppet poland
 
 je_ger_reclaim_ost_f = {  #puppet netherlands
 	name = "je_puppet_net" 
-	desc = "je_puppet_net_desc	"
+	desc = "je_puppet_net_desc"
 
 	visible = { always = yes }
 
 	possible = {
-		scope:journal_entry = {
-				not = {
-				custom_tooltip = {
-					text = je_ger_reclaim_ost_e.tooltip_condition
-					has_variable = je_cock_retken_cum
+		custom_tooltip = {
+			text = je_ger_reclaim_ost_n.tooltip_condition
+			NOT = {
+				c:NET = {
+					is_direct_subject_of = c:GER
 				}
 			}
 		}
@@ -1888,18 +1884,10 @@ je_ger_reclaim_ost_f = {  #puppet netherlands
 	}
 
 	effect = {
-
-		scope:journal_entry = {
-			set_variable = { name = je_cock_retken_cum months = 99999  }
-		}	
-		custom_tooltip = {
-			text = je_ger_reclaim_ost_p.tooltip_effect
-		}
 		create_diplomatic_pact = {
 			country = c:NET
 			type = reichskommissariat
 		}
-
 	}
 }
 
@@ -2803,3 +2791,107 @@ je_ru_irk_second_great_patriotic_war = {
 #
 #	}
 #}
+
+je_liberate_central_a = {  #liberate congo
+	name = "je_liberate_congo_butten" 
+	desc = "je_liberate_congo_butten_desc"
+
+	visible = { always = yes }
+
+	possible = {
+		scope:journal_entry = {
+				not = {
+				custom_tooltip = {
+					text = butten_liberate_congo
+					has_variable = je_congo_cooldown
+				
+				}
+				custom_tooltip = {
+					text = butten_liberation_cooldown
+					has_variable = je_liberation_cooldown
+					
+				}
+			}
+		}
+	}
+
+	effect = {
+
+		scope:journal_entry = {
+			set_variable = { name = je_congo_cooldown months = 99999  }
+			set_variable = { name = je_liberation_cooldown months = 5 }
+		}	
+		trigger_event = { id = tno_usa_events.22 days = 0 popup = yes }
+		
+}
+}
+je_liberate_central_b = {  #liberate orungu
+	name = "je_liberate_orungu" 
+	desc = "je_liberate_orungu_desc"
+
+	visible = { always = yes }
+
+	possible = {
+		scope:journal_entry = {
+				not = {
+				custom_tooltip = {
+					text = butten_liberate_congo
+					has_variable = je_orungu_cooldown
+					
+				}
+
+				custom_tooltip = {
+					text = butten_liberation_cooldown
+					has_variable = je_liberation_cooldown
+					
+				}
+			
+			}
+		}
+	}
+
+	effect = {
+
+		scope:journal_entry = {
+			set_variable = { name = je_orungu_cooldown months = 99999  }
+			set_variable = { name = je_liberation_cooldown months = 5 }
+		}	
+		trigger_event = { id = tno_usa_events.24 days = 0 popup = yes }
+		
+}
+}
+
+je_liberate_central_c = {  #liberate central africa
+	name = "je_liberiate_central" 
+	desc = "je_liberiate_central_desc"
+
+	visible = { always = yes }
+
+	possible = {
+		scope:journal_entry = {
+				not = {
+				custom_tooltip = {
+					text = button_request_money_12_months
+					has_variable = je_central_africa_cooldown
+					
+				}
+				custom_tooltip = {
+					text = butten_liberation_cooldown
+					has_variable = je_liberation_cooldown
+					
+				}
+			}
+		}
+	}
+
+	effect = {
+
+		scope:journal_entry = {
+			set_variable = { name = je_central_africa_cooldown months = 99999  }
+			set_variable = { name = je_liberation_cooldown months = 5 }
+		}	
+		
+		trigger_event = { id = tno_usa_events.25 days = 0 popup = yes }
+		
+}
+}

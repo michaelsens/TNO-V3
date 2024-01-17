@@ -1,35 +1,35 @@
 ﻿namespace = tno_irk_events
 
-tno_irk_events.0 = { # Intro to Irkutsk
-    type = country_event
-	placement = root
-	title = tno_irk_events.0.t
-	desc = tno_irk_events.0.d
-	flavor = tno_irk_events.0.f
-	icon = "gfx/interface/icons/generic_icons/truce.dds"
-
-	duration = 5
-
-	immediate = {
-    }
-    
-    trigger = {
-        exists = c:IRK
-        this = c:IRK
-	}
-
-	event_image = {
-        texture = "gfx/event_pictures/super_pictures/amur.dds"
-    }
-
-	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
-
-	option = {
-		name = tno_irk_events.0.1
-		highlighted_option = yes
-		activate_law = law_type:law_single_party_state
-    }
-}
+#tno_irk_events.0 = { # Intro to Irkutsk
+#    type = country_event
+#	placement = root
+#	title = tno_irk_events.0.t
+#	desc = tno_irk_events.0.d
+#	flavor = tno_irk_events.0.f
+#	icon = "gfx/interface/icons/generic_icons/truce.dds"
+#
+#	duration = 5
+#
+#	immediate = {
+#    }
+#    
+#    trigger = {
+#        exists = c:IRK
+#        this = c:IRK
+#	}
+#
+#	event_image = {
+#        texture = "gfx/event_pictures/super_pictures/amur.dds"
+#    }
+#
+#	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+#
+#	option = {
+#		name = tno_irk_events.0.1
+#		highlighted_option = yes
+#		#activate_law = law_type:law_single_party_state
+#    }
+#}
 
 tno_irk_events.1 = { #Crushed mutiny
 	type = country_event
@@ -66,6 +66,7 @@ tno_irk_events.1 = { #Crushed mutiny
 
     option = {
 		name = tno_irk_events.1.2
+		default_option = yes
 		highlighted_option = no
     }
 }
@@ -158,6 +159,7 @@ tno_irk_events.4 = { # Yagoda's succession, he's dead but still autocracy
 	option = {
 		highlighted_option = no
 		name = tno_irk_events.4.1
+		default_option = yes
 		custom_tooltip = tno_irk_events.4.1.1.tt
 		every_scope_character = {
 			if = {
