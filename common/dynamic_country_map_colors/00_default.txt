@@ -317,6 +317,17 @@ communist_kirghizia = {
 	}
 }
 
+anarchist_iberia = {
+	color = {4 0 0 }
+
+	possible = {
+		exists = c:IBE
+		THIS = c:IBE	
+		has_law = law_type:law_anarchy
+	}
+}
+
+
 
 
 fascist_spain = {
@@ -606,4 +617,37 @@ hre_pro = {
 		has_variable = hre_provisional 
 	}
 
+}
+
+kon_ofn = {
+	color = { 56  104  173 }
+	possible = {
+		exists = c:KON
+		THIS = c:KON
+		exists = c:USA
+		c:USA = {
+			OR = {
+				has_diplomatic_pact = {
+					who = c:KON
+					type = protectorate
+					is_initiator = yes
+				}
+				has_diplomatic_pact = {
+					who = c:KON
+					type = puppet
+					is_initiator = yes
+				}
+				has_diplomatic_pact = {
+					who = c:KON
+					type = dominion
+					is_initiator = yes
+				}
+				has_diplomatic_pact = {
+					who = c:KON
+					type = ofn_partner
+					is_initiator = yes
+				}
+			}
+		}
+	 }
 }

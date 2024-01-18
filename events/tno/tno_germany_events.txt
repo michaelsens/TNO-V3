@@ -252,12 +252,9 @@ tno_germany_events.35 = {
     on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 
     duration = 3
-    trigger = {
-		this ?= c:GER
-	}	
 
     option = {
-        name = "The Beginning of the End"
+        name = tno_germany_events.35.a
         add_loyalists = {
             value = 0.05
         }
@@ -1010,7 +1007,7 @@ tno_germany_events.17 = { # German Civil War
 	}	
 
     immediate = {
-
+        set_global_variable = german_civil_war_start
         remove_diplomatic_pact = {
             country = c:RKU
             type = reichskommissariat
@@ -1203,6 +1200,7 @@ tno_germany_events.17 = { # German Civil War
        }
         play_as = c:GMB
         remove_variable = borman_chosen
+        set_global_variable = german_civil_war_start
         hidden_effect = {
             trigger_event = { id = tno_germany_events.18 days = 10 popup = yes }  
         }
@@ -1337,6 +1335,7 @@ tno_germany_events.17 = { # German Civil War
         }
         play_as = c:GAS
         remove_variable = speer_chosen
+        set_global_variable = german_civil_war_start
         hidden_effect = {
             trigger_event = { id = tno_germany_events.18 days = 10 popup = yes }  
         }
@@ -1474,6 +1473,7 @@ tno_germany_events.17 = { # German Civil War
         }
         play_as = c:GHG
         remove_variable = goering_chosen
+        set_global_variable = german_civil_war_start
         hidden_effect = {
             trigger_event = { id = tno_germany_events.18 days = 10 popup = yes }  
         }
@@ -1609,6 +1609,7 @@ tno_germany_events.17 = { # German Civil War
         }
         play_as = c:GRH
         remove_variable = heydrich_chosen
+        set_global_variable = german_civil_war_start
         hidden_effect = {
             trigger_event = { id = tno_germany_events.18 days = 10 popup = yes }  
         }
@@ -1744,6 +1745,7 @@ tno_germany_events.18 = {   #Civil war start
     hidden = yes
 
     immediate = {
+        set_global_variable = german_civil_war_start
         c:GER = {
             change_tag = GEQ
         }
@@ -2203,6 +2205,18 @@ tno_germany_events.40 = {
 	}	
 
     immediate = {
+        create_country = {
+            tag = UKC
+            origin = c:GER
+            #gets german luhansk so that germany can take it without ukraine getting it
+            province = p:xE6C06A
+            province = p:xF06161
+            province = p:x000AE0
+            province = p:x135B1E
+            province = p:x8A09FD
+        
+        } 
+
         create_country = { 
             tag = RKU
             origin = c:GER
@@ -2211,9 +2225,24 @@ tno_germany_events.40 = {
             state = s:STATE_CHERSON.region_state:GER
             state = s:STATE_KIEV.region_state:GER
             state = s:STATE_VOLHYNIA.region_state:GER
+       
+        } 
+
+        create_country = { 
+            tag = UKR
+            #gets east galicia so that poland can have it
+            origin = c:GER 
             state = s:STATE_EAST_GALICIA.region_state:GER
        
         } 
+
+        c:GOV = {
+            annex = c:UKR
+        }
+
+        c:GER = {
+            annex = c:UKC
+        }
 
         create_diplomatic_pact = {
             country = c:RKU
@@ -2240,6 +2269,17 @@ tno_germany_events.41 = {
 	}	
 
     immediate = {
+        #create_country = { # - UPDATE: obsolete due to having brest no longer be split between germany and ostland
+        #    tag = GMG
+        #    origin = c:GER
+        #    #gets german brest so that germany can take it without ostland getting it
+        #    province = p:x0087C9
+        #    province = p:x117AE1
+        #    province = p:xDE551D
+        #    province = p:xC06121
+        #    province = p:x4969E4
+        #
+        #} 
         create_country = { 
             tag = RKO
             origin = c:GER
@@ -2249,21 +2289,79 @@ tno_germany_events.41 = {
             state = s:STATE_MINSK.region_state:GER
             state = s:STATE_BREST.region_state:GER
             state = s:STATE_ORSHA.region_state:GER
-           
        
         } 
+
 
         create_diplomatic_pact = {
             country = c:RKO
             type = reichskommissariat
         }
-        
-    
-    
-    
-    
-
-}
+    }
 }
 
 
+tno_germany_events.42 = { # Reclaimed all Outstanding Pakt Members
+    type = country_event
+    placement = root
+    title = tno_germany_events.42.t
+    desc = tno_germany_events.42.d
+    flavor = tno_germany_events.42.f
+    icon = "gfx/interface/icons/lens_toolbar_icons/recruit_generals_lens_option.dds"
+
+    duration = 6
+
+    immediate = {
+        ruler = {
+            save_scope_as = ger_leader
+        }
+                c:GWZ = {
+            save_scope_as = gwz_nation_scope
+        }
+        c:GEE = {
+            save_scope_as = gee_nation_scope
+        }
+        c:RKK = {
+            save_scope_as = rkk_nation_scope
+        }
+        c:GOV = {
+            save_scope_as = gov_nation_scope
+        }
+        c:NET = {
+            save_scope_as = net_nation_scope
+        }
+        c:RKM = {
+            save_scope_as = rkm_nation_scope
+        }
+        c:RKO = {
+            save_scope_as = rko_nation_scope
+        }
+        c:RKU = {
+            save_scope_as = rku_nation_scope
+        }
+        c:GEE = {
+            ruler = {
+                save_scope_as = gee_ruler_scope
+            }
+        }
+        c:GOV = {
+            ruler = {
+                save_scope_as = gov_ruler_scope
+            }
+        }
+    }
+    
+    trigger = {
+    }
+
+    event_image = {
+        texture = "gfx/event_pictures/super_pictures/ger_reclaimed_east.dds"
+    }
+
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    option = {
+        name = tno_germany_events.42.a
+
+    }
+}
