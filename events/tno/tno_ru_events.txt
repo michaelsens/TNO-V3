@@ -440,71 +440,16 @@ tno_ru_events.9 = { # Aftermath of expedition
 
 tno_ru_events.10 = { # Apply anything to all Russians at start of game
     type = country_event
-	placement = root
-	title = tno_ru_events.1.t
-	desc = tno_ru_events.1.d
-	flavor = tno_ru_events.1.f
-	icon = "gfx/interface/icons/goods_icons/gold.dds"
+    placement = ROOT
 	hidden = yes
 
 	duration = 5
 
 	immediate = {
+		set_immune_to_revolutions = yes
     }
-    
+
     trigger = {
-	}
-
-	event_image = {
-        texture = "gfx/event_pictures/super_pictures/russians_wait_in_line.dds"
     }
 
-	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
-
-	option = { #Interventionism
-		name = tno_ru_events.1.1
-		highlighted_option = yes
-		activate_law = law_type:law_interventionism
-		add_modifier = {
-        	name = transition_from_warlordism
-       		months = 6
-    	}
-    }
-    option = { #Agrarianism
-		name = tno_ru_events.1.2
-		highlighted_option = yes
-		activate_law = law_type:law_agrarianism
-		add_modifier = {
-        	name = transition_from_warlordism
-       		months = 6
-    	}
-    }
-    option = { #Laissez-Faire
-		name = tno_ru_events.1.3
-		highlighted_option = yes
-		activate_law = law_type:law_laissez_faire
-		add_modifier = {
-        	name = transition_from_warlordism
-       		months = 6
-    	}
-    }
-    option = { #Cooperative Ownership
-		name = tno_ru_events.1.4
-		highlighted_option = yes
-		activate_law = law_type:law_cooperative_ownership
-		add_modifier = {
-        	name = transition_from_warlordism
-       		months = 6
-    	}
-    }
-    option = { #Command Economy
-		name = tno_ru_events.1.5
-		highlighted_option = yes
-		default_option = yes
-		activate_law = law_type:law_command_economy
-		add_modifier = {
-        	name = transition_from_warlordism
-       		months = 6
-    	}
-    }
 }
