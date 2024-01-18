@@ -3645,6 +3645,14 @@ GER = { # Germany
 		}
 	}
 	flag_definition = {
+		coa = GER_2
+		subject_canton = GER_dictatorship
+		priority = 20
+		trigger = { 
+			
+		}
+	}
+	flag_definition = {
 		coa = GER_communist
 		subject_canton = GER_communist
 		priority = 5
@@ -3657,7 +3665,17 @@ GER = { # Germany
 		subject_canton = GER_fascist
 		priority = 1500
 		trigger = { 
-			coa_def_fascist_flag_trigger = yes
+			OR = {
+				coa_def_fascist_flag_trigger = yes
+				AND = {
+					exists = scope:actor
+					scope:actor = {
+						has_law = law_type:law_unitary_state
+					}
+				}
+				
+			}
+			
 		}
 	}
 

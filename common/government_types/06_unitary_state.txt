@@ -4,7 +4,6 @@
 	female_ruler = "RULER_FUHRER"
 
 	possible = {
-		has_law = law_type:law_unitary_state
 		has_law = law_type:law_single_party_state
 		has_law = law_type:law_outlawed_dissent
 		has_law = law_type:law_women_own_property
@@ -27,21 +26,48 @@
 	}
 }
 
+gov_NSDAP_dictatorship = {
+	transfer_of_power = dictatorial
+	male_ruler = "RULER_FUHRER_TRUE"
+	female_ruler = "RULER_FUHRER_TRUE"
+
+	possible = {
+		has_law = law_type:law_colonial_exploitation
+		has_law = law_type:law_single_party_state			
+		has_law = law_type:law_ethnostate
+		has_law = law_type:law_outlawed_dissent
+		has_law = law_type:law_secret_police
+		has_law = law_type:law_public_schools
+		has_law = law_type:law_regulatory_bodies
+		has_law = law_type:law_migration_controls
+		has_law = law_type:law_mercantilism
+		has_law = law_type:law_slave_trade	
+		has_law = law_type:law_professional_army
+		
+	}
+
+	on_government_type_change = {
+		change_to_dictatorial = yes
+	}
+}
+
 gov_fascist_dictatorship = {
 	transfer_of_power = dictatorial
 	male_ruler = "RULER_FUHRER_TRUE"
 	female_ruler = "RULER_FUHRER_TRUE"
 
 	possible = {
-		law_colonial_exploitation
-		law_protectionism
-		law_single_party_state
-		law_ethnostate
-		law_unitary_state
-		law_autocracy
-		law_outlawed_dissent
-		law_secret_police
-		law_public_schools
+		has_law = law_type:law_total_separation
+		has_law = law_type:law_colonial_exploitation
+		has_law = law_type:law_protectionism
+		has_law = law_type:law_single_party_state
+		has_law = law_type:law_national_supremacy
+		has_law = law_type:law_unitary_state
+		has_law = law_type:law_outlawed_dissent
+		has_law = law_type:law_secret_police
+		has_law = law_type:law_public_schools
+		has_law = law_type:law_worker_protections
+		has_law = law_type:law_command_economy
 	}
 
 	on_government_type_change = {
@@ -55,11 +81,11 @@ gov_unitary_dictatorship = {
 	female_ruler = "Supreme_Leader"
 
 	possible = {
-		law_unitary_state
-		law_autocracy
-		law_outlawed_dissent
-		law_secret_police
-		law_public_schools
+		has_law = law_unitary_state
+		has_law = law_autocracy
+		has_law = law_outlawed_dissent
+		has_law = law_secret_police
+		has_law = law_oligarchy
 	}
 
 	on_government_type_change = {
@@ -68,23 +94,38 @@ gov_unitary_dictatorship = {
 }
 
 gov_unitary_monarchy = {
-	transfer_of_power = dictatorial
+	transfer_of_power = hereditary
 	male_ruler = "sovereign_monarch"
 	female_ruler = "sovereign_monarch2"
 
 	possible = {
+		has_law = law_type:law_appointed_bureaucrats
+		has_law = law_type:law_autocracy	
+		has_law = law_type:law_oligarchy	
+		has_law = law_type:law_single_party_state	
 	}
 
 	on_government_type_change = {
-		change_to_dictatorial = yes
+		change_to_dictatorial = no
 	}
 }
 
 gov_unitary_republics = {
-	transfer_of_power = dictatorial
+	new_leader_on_reform_government = no
+	
 	male_ruler = "unitary_President"
 	female_ruler = "unitary_President"
 
 	possible = {
+		has_law = law_type:law_appointed_bureaucrats
+		has_law = law_type:law_universal_suffrage	
 	}
+
+	on_government_type_change = {
+		change_to_presidential_elective = yes
+	}
+	on_post_government_type_change = {
+		post_change_to_presidential_elective = yes
+	}	
+	
 }
