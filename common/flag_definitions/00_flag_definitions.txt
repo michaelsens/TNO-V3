@@ -467,7 +467,7 @@ AFS = {
         priority = 100
         trigger = {
             exists= c:AFS
-            scope:actor = { capital = { region = sr:region_zanj } }
+            scope:actor = { capital = { region = sr:region_southern_africa } }
         }
     }
     flag_definition = {
@@ -491,7 +491,6 @@ AFS = {
             	capital = {
             		OR = {
             			region = sr:region_senegal
-            			region = sr:region_niger
             		} 
             	}
             }
@@ -3409,6 +3408,43 @@ SBA = { # siberian black army
 	}
 }
 
+IBE = { # iberia
+	flag_definition = { 
+		coa = IBE_DEM
+		priority = 400
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				NOT = { has_law = law_type:law_autocracy }
+				NOT = { has_law = law_type:law_technocracy}
+				NOT = { has_law = law_type:law_oligarchy}
+
+			}
+		}
+	}
+	flag_definition = { 
+		coa = IBE_CNT
+		priority = 99999
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_law = law_type:law_anarchy
+			}
+		}
+	}
+	flag_definition = { 
+		coa = IBE_COM
+		priority = 15500
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_law = law_type:law_council_republic
+				NOT = { has_law = law_type:law_anarchy}
+			}
+		}
+	}
+}
+
 VOR = { # vorkuta
 	flag_definition = { # starting flagg
 		coa = VOR_start
@@ -3478,7 +3514,17 @@ IRK = { # irkust
 		trigger = {
 			exists = scope:actor
 			scope:actor = {
-				has_law = law_type:law_council_republic
+				NOT = { has_variable = irk_form_far_east }
+			}
+		}
+	}
+	flag_definition = { # Formed Far East
+		coa = RUS_soviet_union
+		priority = 3000
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_variable = irk_form_far_east
 			}
 		}
 	}
@@ -3598,6 +3644,14 @@ GER = { # Germany
 		}
 	}
 	flag_definition = {
+		coa = GER_2
+		subject_canton = GER_dictatorship
+		priority = 20
+		trigger = { 
+			
+		}
+	}
+	flag_definition = {
 		coa = GER_communist
 		subject_canton = GER_communist
 		priority = 5
@@ -3610,7 +3664,17 @@ GER = { # Germany
 		subject_canton = GER_fascist
 		priority = 1500
 		trigger = { 
-			coa_def_fascist_flag_trigger = yes
+			OR = {
+				coa_def_fascist_flag_trigger = yes
+				AND = {
+					exists = scope:actor
+					scope:actor = {
+						has_law = law_type:law_unitary_state
+					}
+				}
+				
+			}
+			
 		}
 	}
 
@@ -5598,6 +5662,7 @@ MAD = { # Madagascar
 		coa = MAD_RK
 		priority = 50000
 		trigger = {
+			exists = c:GER
 			exists = scope:actor
 			scope:actor = {
 				is_subject_of = c:GER
@@ -6459,6 +6524,7 @@ NOR = { # Norway
 		coa = NOR_RK
 		priority = 50000
 		trigger = {
+			exists = c:GER
 			exists = scope:actor
 			scope:actor = {
 				is_subject_of = c:GER

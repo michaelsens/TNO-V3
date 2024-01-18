@@ -13,12 +13,12 @@ tno_war_events.1 = {
     immediate = {
         create_diplomatic_play = {
             name = saf
-            target_country = c:SAF
+            target_country = c:USA
                 type = dp_humiliation
                 war = no
                 escalation = 40
-                add_initiator_backers = {c:KZA c:KSA c:KZA c:GER }
-                add_target_backers = { c:USA  }
+                add_initiator_backers = { c:KZA c:KSA c:GER }
+                add_target_backers = { c:SAF  }
                 add_war_goal = {
                     holder = c:KON
                     type = conquer_state
@@ -37,7 +37,7 @@ tno_war_events.1 = {
                 add_war_goal = {
                     holder = c:USA
                     type = make_protectorate
-                    target_state = s:STATE_MOCAMBIQUE.region_state:KON
+                    target_country = c:KON
                 }
                 add_war_goal = {
                     holder = c:USA
@@ -397,5 +397,46 @@ tno_war_events.7 = { # US attacks rustbelt
         hidden_effect = {
 				change_infamy = -40
 		}
+    }
+}
+
+tno_war_events.9 = {   #COL Civil war start
+    type = country_event
+    placement = ROOT
+
+    hidden = yes
+
+    immediate = {
+        c:CLM = {
+            create_diplomatic_play = {
+                type = dp_revolution
+                name = col_civil_war
+                target_country = c:CRU
+                war = yes
+            }
+            hidden_effect = {
+				change_infamy = -999
+		    }
+            create_diplomatic_play = {
+                type = dp_revolution
+                name = col_civil_war
+                target_country = c:NGR
+                war = yes
+            }
+            hidden_effect = {
+				change_infamy = -999
+		    }
+        }
+        c:CRU = {
+            create_diplomatic_play = {
+                type = dp_revolution
+                name = col_civil_war
+                target_country = c:NGR
+                war = yes
+            }
+            hidden_effect = {
+				change_infamy = -999
+		    }
+        }
     }
 }

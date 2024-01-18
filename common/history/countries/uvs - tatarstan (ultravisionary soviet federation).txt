@@ -1,0 +1,37 @@
+﻿COUNTRIES = {
+	c:UVS = {
+		effect_starting_technology_tier_1_tech = yes
+		
+		activate_law = law_type:law_council_republic
+		activate_law = law_type:law_cultural_exclusion
+		activate_law = law_type:law_total_separation
+		activate_law = law_type:law_elected_bureaucrats
+		activate_law = law_type:law_national_militia
+		activate_law = law_type:law_guaranteed_liberties
+		activate_law = law_type:law_cooperative_ownership
+		activate_law = law_type:law_free_trade
+		activate_law = law_type:law_graduated_taxation
+		activate_law = law_type:law_public_schools
+		activate_law = law_type:law_public_health_insurance
+		activate_law = law_type:law_censorship
+		activate_law = law_type:law_compulsory_primary_school
+		activate_law = law_type:law_women_in_the_workplace
+		activate_law = law_type:law_wage_subsidies	
+		
+		set_variable = uvs_provisional 	
+		
+		add_modifier = {
+			name = modifier_offensive_footing
+		}
+
+		add_modifier = {
+        	name = russian_warlord
+    	}
+    	add_journal_entry = { type = je_ru_tno_launch_raid }
+		trigger_event = { id = tno_ru_events.10 }
+
+		add_modifier = {
+         	name = modifier_developing_economy
+    	}
+    }
+}

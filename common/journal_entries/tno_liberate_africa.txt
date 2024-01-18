@@ -1,0 +1,121 @@
+﻿
+
+je_tno_liberate_east_africa = { 
+
+    icon = "gfx/interface/icons/new_event_icons/ofn_kon.dds"
+    group = je_group_historical_content
+    scripted_button = je_malaya_jap_a
+   
+
+
+    invalid = {
+       
+    }
+
+    immediate = {
+	}
+    
+    complete = {
+		
+       
+		
+		
+	}
+
+   
+
+    on_timeout = {
+        
+        add_radicals = {
+            value = 0.1
+        }
+    }
+
+    on_complete = {
+       
+        add_loyalists = {
+            value = 0.05
+
+        }
+    }
+
+    progressbar = no
+    
+    weight = 100
+
+    
+    should_be_pinned_by_default = yes
+    
+}
+
+
+
+je_tno_liberate_central_africa = { 
+
+    icon = "gfx/interface/icons/new_event_icons/ofn_kza.dds"
+    group = je_group_historical_content
+    scripted_button = je_liberate_central_a
+	scripted_button = je_liberate_central_b
+	scripted_button = je_liberate_central_c
+   
+
+
+    invalid = {
+        
+    }
+
+    immediate = {
+	}
+    
+    complete = {
+
+		
+		
+		
+		custom_tooltip = {
+			text = je_has_liberated_orungu_text
+			has_variable = je_orungu_cooldown
+			
+		}
+		custom_tooltip = {
+			text = je_has_liberated_congo_text
+			has_variable = je_congo_cooldown
+			
+		}
+
+		custom_tooltip = {
+			text = je_has_liberated_text
+			has_variable = je_central_africa_cooldown
+			
+		}
+       
+       
+		
+		
+	}
+
+   
+
+    on_timeout = {
+        
+        add_radicals = {
+            value = 0.01
+        }
+    }
+
+    on_complete = {
+       
+        add_loyalists = {
+            value = 0.05	
+
+        }
+    }
+
+    progressbar = no
+    
+    weight = 100
+
+    
+    should_be_pinned_by_default = yes
+    
+}

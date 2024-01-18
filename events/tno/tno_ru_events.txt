@@ -1,0 +1,455 @@
+﻿namespace = tno_ru_events
+
+tno_ru_events.1 = { # Choose Economic law after uniting region
+    type = country_event
+	placement = root
+	title = tno_ru_events.1.t
+	desc = tno_ru_events.1.d
+	flavor = tno_ru_events.1.f
+	icon = "gfx/interface/icons/goods_icons/gold.dds"
+
+	duration = 5
+
+	immediate = {
+    }
+    
+    trigger = {
+	}
+
+	event_image = {
+        texture = "gfx/event_pictures/super_pictures/russians_wait_in_line.dds"
+    }
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	option = { #Interventionism
+		name = tno_ru_events.1.1
+		highlighted_option = yes
+		activate_law = law_type:law_interventionism
+		add_modifier = {
+        	name = transition_from_warlordism
+       		months = 6
+    	}
+    }
+    option = { #Agrarianism
+		name = tno_ru_events.1.2
+		highlighted_option = yes
+		activate_law = law_type:law_agrarianism
+		add_modifier = {
+        	name = transition_from_warlordism
+       		months = 6
+    	}
+    }
+    option = { #Laissez-Faire
+		name = tno_ru_events.1.3
+		highlighted_option = yes
+		activate_law = law_type:law_laissez_faire
+		add_modifier = {
+        	name = transition_from_warlordism
+       		months = 6
+    	}
+    }
+    option = { #Cooperative Ownership
+		name = tno_ru_events.1.4
+		highlighted_option = yes
+		activate_law = law_type:law_cooperative_ownership
+		add_modifier = {
+        	name = transition_from_warlordism
+       		months = 6
+    	}
+    }
+    option = { #Command Economy
+		name = tno_ru_events.1.5
+		highlighted_option = yes
+		default_option = yes
+		activate_law = law_type:law_command_economy
+		add_modifier = {
+        	name = transition_from_warlordism
+       		months = 6
+    	}
+    }
+}
+
+tno_ru_events.2 = { # Begin expedition
+    type = country_event
+	placement = s:STATE_UPPER_YENISEYSK.region_state:IRK
+	title = tno_ru_events.2.t
+	desc = tno_ru_events.2.d
+	flavor = tno_ru_events.2.f
+	icon = "gfx/interface/icons/invention_icons/prospecting_tech.dds"
+
+	duration = 5
+
+	immediate = {
+    }
+    
+    trigger = {
+	}
+
+	event_image = {
+        texture = "gfx/event_pictures/super_pictures/sakha_expedition_start.dds"
+    }
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	option = {
+		name = tno_ru_events.2.1
+		highlighted_option = yes
+		custom_tooltip = tno_ru_events.2.1.1.tt
+		custom_tooltip = tno_ru_events.2.1.2.tt
+		custom_tooltip = tno_ru_events.2.1.3.tt
+		set_variable = {
+            name = expedition_peril
+            value = 0
+        }
+    }
+}
+
+tno_ru_events.3 = { #bandits raid
+	type = country_event
+    placement = s:STATE_UPPER_YENISEYSK.region_state:IRK
+
+    title = tno_ru_events.3.t
+    desc = tno_ru_events.3.d
+    flavor = tno_ru_events.3.f
+
+    event_image = {
+		texture = "gfx/event_pictures/super_pictures/bandits_ru.dds"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/invention_icons/logistics_tech.dds"
+
+    duration = 3
+	
+	trigger = {
+		has_variable = sakha_bandits
+        has_variable = on_expedition
+	}
+
+    immediate = {
+    }
+
+	option = { # Do not implement security teams (bandit events can happen again)
+		name = tno_ru_events.3.a
+		default_option = yes
+		custom_tooltip = expedition_event_ongoing_tt
+		custom_tooltip = sakha_reset_progress
+		custom_tooltip = sakha_big_progress
+		custom_tooltip = sakha_reset_peril
+		set_variable = {
+			name = sakha_progress
+			value = 4
+		}
+		set_variable = {
+			name = expedition_peril
+			value = 0
+		}
+	}
+
+	option = { # Implement security teams (bandit events impossible)
+		name = tno_ru_events.3.b
+		custom_tooltip = expedition_event_ongoing_tt
+
+		custom_tooltip = sakha_reset_progress
+		set_variable = {
+			name = sakha_progress
+			value = 0
+		}
+		set_variable = {
+			name = expedition_peril
+			value = 0
+		}
+		custom_tooltip = sakha_reset_peril
+		custom_tooltip = sakha_no_more_bandits
+		remove_variable = sakha_bandits
+		set_variable = {
+            name = sakha_corruption
+            value = yes
+        }
+        add_modifier = {
+        	name = sakha_hiring_security
+    	}
+    	custom_tooltip = sakha.tt.2
+	}
+}
+
+tno_ru_events.4 = { #corruption takes stuff
+	type = country_event
+    placement = s:STATE_UPPER_YENISEYSK.region_state:IRK
+
+    title = tno_ru_events.4.t
+    desc = tno_ru_events.4.d
+    flavor = tno_ru_events.4.f
+
+    event_image = {
+		texture = "gfx/event_pictures/super_pictures/corruption_ru.dds"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/invention_icons/logistics_tech.dds"
+
+    duration = 3
+	
+	trigger = {
+		has_variable = sakha_corruption
+		has_variable = on_expedition
+	}
+
+    immediate = {
+    }
+
+	option = { # Investigate corruption (corruption events impossible)
+		name = tno_ru_events.4.a
+		custom_tooltip = expedition_event_ongoing_tt
+
+		custom_tooltip = sakha_reset_progress
+		set_variable = {
+			name = sakha_progress
+			value = 0
+		}
+		change_variable = {
+			name = expedition_peril
+			add = 2
+		}
+		custom_tooltip = sakha_small_peril
+		custom_tooltip = sakha_no_more_corruption
+		remove_variable = sakha_corruption
+		add_modifier = {
+        	name = sakha_corruption_investigation
+    	}
+    	custom_tooltip = sakha.tt.2
+	}
+
+	option = { # Do not investigate corruption (corruption events can happen again)
+		name = tno_ru_events.4.b
+		default_option = yes
+		custom_tooltip = expedition_event_ongoing_tt
+		custom_tooltip = sakha_big_progress
+		custom_tooltip = sakha_small_peril
+		change_variable = {
+			name = sakha_progress
+			add = 4
+		}
+		change_variable = {
+			name = expedition_peril
+			add = 2
+		}
+	}
+}
+
+tno_ru_events.5 = { #snowstorm
+	type = country_event
+    placement = s:STATE_UPPER_YENISEYSK.region_state:IRK
+
+    title = tno_ru_events.5.t
+    desc = tno_ru_events.5.d
+    flavor = tno_ru_events.5.f
+
+    event_image = {
+		texture = "gfx/event_pictures/super_pictures/snowstorm_ru.dds"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_skull.dds"
+
+    duration = 3
+	
+	trigger = {
+		has_variable = on_expedition
+	}
+
+    immediate = {
+    }
+
+	option = { # There is nothing we can do
+		name = tno_ru_events.5.a
+		default_option = yes
+		custom_tooltip = expedition_event_ongoing_tt
+		custom_tooltip = sakha_minus_small_progress
+		custom_tooltip = sakha_big_peril
+		change_variable = {
+			name = sakha_progress
+			add = -1
+		}
+		change_variable = {
+			name = expedition_peril
+			add = 4
+		}
+	}
+}
+
+tno_ru_events.6 = { #additional funding for expedition
+	type = country_event
+    placement = s:STATE_UPPER_YENISEYSK.region_state:IRK
+
+    title = tno_ru_events.6.t
+    desc = tno_ru_events.6.d
+    flavor = tno_ru_events.6.f
+
+    event_image = {
+		texture = "gfx/event_pictures/super_pictures/supreme_soviet.dds"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/invention_icons/currency_standards.dds"
+
+    duration = 3
+	
+	trigger = {
+		has_variable = on_expedition
+	}
+
+    immediate = {
+    }
+
+	option = { # Truly a miracle
+		name = tno_ru_events.6.a
+		default_option = yes
+		custom_tooltip = expedition_event_ongoing_tt
+		custom_tooltip = sakha_big_progress
+		custom_tooltip = sakha_reset_peril
+		change_variable = {
+			name = sakha_progress
+			add = 4
+		}
+		set_variable = {
+			name = expedition_peril
+			value = 0
+		}
+	}
+}
+
+tno_ru_events.7 = { # Expedition failed
+    type = country_event
+	placement = s:STATE_UPPER_YENISEYSK.region_state:IRK
+	title = tno_ru_events.7.t
+	desc = tno_ru_events.7.d
+	flavor = tno_ru_events.7.f
+	icon = "gfx/interface/icons/invention_icons/prospecting_tech.dds"
+
+	duration = 5
+
+	immediate = {
+    }
+    
+    trigger = {
+	}
+
+	event_image = {
+        texture = "gfx/event_pictures/super_pictures/sakha_expedition_failed.dds"
+    }
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	option = {
+		name = tno_ru_events.7.1
+		highlighted_option = yes
+		custom_tooltip = tno_ru_events.8.1.1.tt
+		custom_tooltip = tno_ru_events.7.1.1.tt
+		custom_tooltip = tno_ru_events.7.1.2.tt
+		hidden_effect = {
+			add_journal_entry = { type = je_ru_tno_sakha_expedition }
+		}
+    }
+}
+
+tno_ru_events.8 = { # Expedition succeeded
+    type = country_event
+	placement = s:STATE_UPPER_YENISEYSK.region_state:IRK
+	title = tno_ru_events.8.t
+	desc = tno_ru_events.8.d
+	flavor = tno_ru_events.8.f
+	icon = "gfx/interface/icons/invention_icons/prospecting_tech.dds"
+
+	duration = 5
+
+	immediate = {
+    }
+    
+    trigger = {
+	}
+
+	event_image = {
+        texture = "gfx/event_pictures/super_pictures/excavation.dds"
+    }
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	option = {
+		name = tno_ru_events.8.1
+		custom_tooltip = tno_ru_events.8.1.1.tt
+		s:STATE_UPPER_YENISEYSK.region_state:IRK = {
+			force_resource_discovery = bg_coal_mining
+			force_resource_discovery = bg_lead_mining
+			force_resource_discovery = bg_iron_mining
+			force_resource_discovery = bg_sulfur_mining
+			add_modifier = {
+				name = state_sakha_complete
+				months = 25
+			}
+		}
+		random_scope_state = {
+			limit = {
+				state_region = s:STATE_UPPER_YENISEYSK
+			}
+			save_scope_as = upper_yeniseysk_state_scope
+		}
+
+
+
+		hidden_effect = {
+			scope:upper_yeniseysk_state_scope.state_region = {
+				add_state_trait = state_trait_sakha_expedition	
+			}
+			trigger_event = { id = tno_ru_events.9 days = 60 popup = no }
+		}
+		custom_tooltip = tno_ru_events.8.1.2.tt
+    }
+}
+
+tno_ru_events.9 = { # Aftermath of expedition
+    type = country_event
+	title = tno_ru_events.9.t
+	desc = tno_ru_events.9.d
+	flavor = tno_ru_events.9.f
+	icon = "gfx/interface/icons/invention_icons/corporatism.dds"
+
+	duration = 5
+
+	immediate = {
+    }
+    
+    trigger = {
+	}
+
+	event_image = {
+        texture = "gfx/event_pictures/super_pictures/home.dds"
+    }
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	option = {
+		name = tno_ru_events.9.1
+    }
+}
+
+tno_ru_events.10 = { # Apply anything to all Russians at start of game
+    type = country_event
+    placement = ROOT
+	hidden = yes
+
+	duration = 5
+
+	immediate = {
+		set_immune_to_revolutions = yes
+    }
+
+    trigger = {
+    }
+
+}

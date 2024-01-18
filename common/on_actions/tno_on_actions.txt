@@ -46,6 +46,32 @@
             trigger_event = { id = tno_super_events.1 days = 0 popup = yes }
         }
 
+        if = { #USSR formed under Irkutsk (RUSSIA)
+            limit = {
+               has_global_variable = irk_rus_formed
+               NOT = { has_variable = irk_rus_event }
+            }
+            set_variable = irk_rus_event
+            trigger_event = { id = tno_super_events.10 days = 0 popup = yes }
+        }
+        if = {  #Irkutsk launches 2WRW (Second Great Patriotic War) (2WRW)
+            limit = {
+               has_global_variable = second_great_patriotic_war
+               NOT = { has_variable = second_great_patriotic_war_event }
+            }
+            set_variable = second_great_patriotic_war_event
+            trigger_event = { id = tno_super_events.11 days = 0 popup = yes }
+        }
+        if = {  #German civilwar
+            limit = {
+               has_global_variable = german_civil_war_start
+               NOT = { has_variable = german_civilwar_event }
+            }
+            set_variable = german_civilwar_event
+            trigger_event = { id = tno_super_events.12 days = 0 popup = yes }
+        }
+
+
         if = {
             limit = {
                 c:PRO ?= THIS
@@ -89,6 +115,70 @@
             }
             set_variable = rebuilding_russia_var
             trigger_event = { id = tno_flavor_events.11 popup = yes }
+        }
+
+        if = {   #African liberation
+			limit = {
+                c:USA = {
+                    OR = {
+                        has_diplomatic_pact = {
+                            who = c:KON
+                            type = protectorate
+                            is_initiator = yes
+                        }
+                        has_diplomatic_pact = {
+                            who = c:KON
+                            type = puppet
+                            is_initiator = yes
+                        }
+                        has_diplomatic_pact = {
+                            who = c:KON
+                            type = dominion
+                            is_initiator = yes
+                        }
+                    }
+                    
+                }
+                NOT = { has_variable = liberate_kon_var }
+            }
+            set_variable = liberate_kon_var
+            c:USA = {
+                trigger_event = { id = tno_usa_events.21 popup = yes }
+                #trigger_event = { id = tno_usa_events.31 popup = yes }
+            }
+           
+        }
+
+        if = {   #African liberation
+        limit = {
+            c:USA = {
+                OR = {
+                    has_diplomatic_pact = {
+                        who = c:KZA
+                        type = protectorate
+                        is_initiator = yes
+                    }
+                    has_diplomatic_pact = {
+                        who = c:KZA
+                        type = puppet
+                        is_initiator = yes
+                    }
+                    has_diplomatic_pact = {
+                        who = c:KZA
+                        type = dominion
+                        is_initiator = yes
+                    }
+                }
+                
+            }
+            NOT = { has_variable = liberate_kza_var }
+        }
+        set_variable = liberate_kza_var
+        c:USA = {   
+            trigger_event = { id = tno_usa_events.32 popup = yes }
+            #trigger_event = { id = tno_usa_events.33 popup = yes }
+        }
+       
         }
          
         
@@ -156,6 +246,15 @@
 
 
         #War Events
+        if = {
+            limit = {
+                game_date >= 1965.7.13
+                NOT = { has_global_variable = col_war_var }
+            }
+            set_global_variable = col_war_var
+            trigger_event = { id = tno_war_events.9 }
+
+        }
         #SAF
         if = {
             limit = {
@@ -293,8 +392,8 @@
         }
        set_variable = madder_war_var
        trigger_event = { id = tno_flavor_events.13 days = 0 popup = yes }
-      }
-      if = {
+       }
+       if = {
         limit = {
             c:SMD ?= this
             game_date >= 1977.4.1
@@ -406,7 +505,55 @@
             trigger_event = { id = tno_oil_crisis.9 }
            }   
 
-        
+        if = { #Irkutsk: Crushed Mutiny (Buryatia Conquered)
+            limit = {
+                c:IRK ?= this
+               owns_entire_state_region = STATE_IRKUTSK
+               NOT = { has_variable = irk_obry_var }
+            }
+            set_variable = irk_obry_var
+            trigger_event = { id = tno_irk_events.1 days = 10 popup = no }
+        }
+
+        if = { #Irkutsk: Yagoda is no longer ruler
+            limit = {
+                c:IRK ?= this
+                ruler = {
+                    NOT = {has_variable = is_genrikh}
+                    #check if irkutsk has autocracy so that you can tell if yagoda was ousted or just died of old age. so that we can have "yagoda successor" vs "party takes power"
+                }
+                has_law = law_type:law_autocracy
+               NOT = { has_variable = irk_lyag_var }
+            }
+            set_variable = irk_lyag_var
+
+            trigger_event = { id = tno_irk_events.4 days = 60 popup = yes }
+        }
+
+        if = { #Irkutsk: No longer has law Autocracy, but yagoda is still alive.  The party came into power and overthrew him.
+            limit = {
+                c:IRK ?= this
+                NOT = {has_law = law_type:law_autocracy}
+                NOT = { has_variable = irk_noat_var }
+                any_scope_character = {
+                    has_variable = is_genrikh
+                    is_character_alive = yes
+                }
+            }
+            
+            set_variable = irk_noat_var
+
+            trigger_event = { id = tno_irk_events.5 days = 2 popup = yes }
+        }
+        if = { #Irkutsk: Get flavor event abt beginning of invasion of Far East.
+            limit = {
+               c:IRK ?= this
+               game_date >= 1966.1.1
+               NOT = { has_variable = irk_inv_var }
+            }
+            set_variable = irk_inv_var
+            trigger_event = { id = tno_irk_events.7 days = 180 popup = yes }
+        }
     }
     
     

@@ -674,6 +674,11 @@ KON = {
 					}
 					has_diplomatic_pact = {
 						who = c:KON
+						type = ofn_millgov
+						is_initiator = yes
+					}
+					has_diplomatic_pact = {
+						who = c:KON
 						type = dominion
 						is_initiator = yes
 					}
@@ -886,7 +891,15 @@ GER = { # Germany
 		priority = 1
 		
 		trigger = {
-			coa_def_dictatorship_flag_trigger = yes
+			OR = {
+				coa_def_dictatorship_flag_trigger = yes
+				AND = {
+					exists = scope:actor
+					scope:actor = {
+						has_law = law_type:law_unitary_state
+					}
+				}
+			}		
 		}
 	}
 	dynamic_country_name = {
@@ -1008,12 +1021,13 @@ FRA = { # France
 
 ITA = { # Italy
 	dynamic_country_name = {
-		name = "Italian Empire"
+		name = "Regno d'Italia"
 		
 		is_main_tag_only = yes
-		priority = 1
+		priority = 10
 		
 		trigger = {
+			exists = scope:actor
 			scope:actor = { has_law = law_type:law_autocracy }
 		}
 	}
@@ -1021,10 +1035,14 @@ ITA = { # Italy
 		name = "Union of Italy"
 		
 		is_main_tag_only = yes
-		priority = 99999`
+		priority = 10
 		
 		trigger = {
-			scope:actor = { has_law = law_type:law_council_republic}
+			exists = scope:actor
+			scope:actor = {
+				has_law = law_type:law_council_republic
+				
+			}
 		}
 	}
 	dynamic_country_name = { # Papal Italy
@@ -1041,6 +1059,8 @@ ITA = { # Italy
 		}
 	}
 }
+
+
 
 BGD = { # Burgundy
 	dynamic_country_name = {
@@ -1554,7 +1574,7 @@ AFS = { #African Free State
 		
 		trigger = {
 			scope:actor = {
-				capital = { region = sr:region_zanj }
+				capital = { region = sr:region_southern_africa }
 			}
 		}
 	}
@@ -1579,7 +1599,6 @@ AFS = { #African Free State
 		trigger = {
 			scope:actor = {
 				OR = {
-					capital = { region = sr:region_niger }
 					capital = { region = sr:region_senegal }
 				}
 			}
@@ -2903,6 +2922,50 @@ KHI = {
 	}
 }
 
+IBE = { 
+	dynamic_country_name = {
+		name = "Iberian Federation"
+		adjective = "Iberian "
+		
+		is_main_tag_only = yes
+		priority = 5
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				OR = {
+					has_law = law_type:law_universal_suffrage
+					has_law = law_type:law_census_voting
+					
+				}
+			
+				
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = "CNT - FAI"
+		adjective = "Iberian "
+		
+		is_main_tag_only = yes
+		priority = 6
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				OR = {
+					has_law = law_type:law_anarchy
+					
+				}
+			
+				
+			}
+		}
+	}
+}
+
+
+
 TSR = { 
 	dynamic_country_name = {
 		name = "Tajik Soviet Socialist Republic"
@@ -2974,6 +3037,11 @@ FPR = {
 					has_diplomatic_pact = {
 						who = c:FPR
 						type = puppet
+						is_initiator = yes
+					}
+					has_diplomatic_pact = {
+						who = c:FPR
+						type = millgov
 						is_initiator = yes
 					}
 					has_diplomatic_pact = {

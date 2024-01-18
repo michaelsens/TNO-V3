@@ -1,9 +1,6 @@
 ﻿COUNTRIES = {
-	c:OEN	 = {
-
+	c:OEN = {
 		effect_starting_technology_tier_1_tech = yes
-
-		
 		effect_starting_politics_liberal = yes
 		activate_law = law_type:law_anarchy
 		activate_law = law_type:law_public_schools
@@ -20,9 +17,14 @@
 		activate_law = law_type:law_council_republic
 
 		add_modifier = {
-         name = modifier_developing_economy
-    } 
+         		name = modifier_developing_economy
+    		} 
 
+	    	add_modifier = {
+	     	name = russian_warlord
+	    	} 
+	    	add_journal_entry = { type = je_ru_tno_launch_raid }
+	    	trigger_event = { id = tno_ru_events.10 }
 	}
 }
  

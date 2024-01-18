@@ -1,6 +1,6 @@
 ﻿BUILDINGS={
 	s:STATE_ORAN={
-		region_state:IBE={
+		region_state:CMA={
 			create_building={
 				building="building_wheat_farm"
 				level=3
@@ -456,8 +456,7 @@
 		}
 	}
 	s:STATE_ALGIERS={
-		
-		region_state:IBE={
+		region_state:CMA={
 			create_building={
 				building="building_fishing_wharf"
 				level=1
@@ -495,8 +494,44 @@
 				activate_production_methods={ "pm_industrial_port" }
 			}
 		}
-	}
-	s:STATE_CONSTANTINE={
+		region_state:TMA={
+			create_building={
+				building="building_fishing_wharf"
+				level=1
+				reserves=1
+				activate_production_methods={ "pm_steam_trawlers" "pm_unrefrigerated" "pm_merchant_guilds_building_fishing_wharf" }
+			}
+			create_building={
+				building="building_lead_mine"
+				level=1
+				reserves=1
+				activate_production_methods={ "pm_atmospheric_engine_pump_building_lead_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" "pm_privately_owned_building_lead_mine" }
+			}
+			create_building={
+				building="building_wheat_farm"
+				level=1
+				reserves=1
+				activate_production_methods={   "pm_tools_disabled" "pm_simple_farming" }
+			}
+			create_building={
+				building="building_livestock_ranch"
+				level=1
+				reserves=1
+				activate_production_methods={ "pm_intensive_grazing_ranch" "pm_slaughterhouses" "pm_standard_fences" "pm_unrefrigerated"  }
+			}
+			create_building={
+				building="building_barracks"
+				level=4
+				reserves=1
+				activate_production_methods={ "pm_general_training" }
+			}
+			create_building={
+				building="building_port"
+				level=1
+				reserves=1
+				activate_production_methods={ "pm_industrial_port" }
+			}
+		}
 		region_state:FRA={
 			create_building={
 				building="building_port"
@@ -505,7 +540,10 @@
 				activate_production_methods={ "pm_industrial_port" }
 			}
 		}
-		region_state:ITA={
+	}
+	s:STATE_CONSTANTINE={
+		
+		region_state:TMA={
 			create_building={
 				building="building_government_administration"
 				level=1
@@ -657,10 +695,24 @@
 		}
 	}
 	s:STATE_SAHARA={
-		region_state:IBE={
+		region_state:CMA={
 			create_building={
 				building="building_oil_rig"
-				level=3
+				level=2
+				reserves=1	
+				activate_production_methods={ "pm_steam_derricks" "pm_road_carts" }
+			}
+			create_building={
+				building="building_railway"
+				level=1
+				reserves=1
+				activate_production_methods={ "pm_steam_trains" "pm_wooden_passenger_carriages" }
+			}
+		}
+		region_state:TMA={
+			create_building={
+				building="building_oil_rig"
+				level=2
 				reserves=1	
 				activate_production_methods={ "pm_steam_derricks" "pm_road_carts" }
 			}
@@ -673,7 +725,7 @@
 		}
 	}
 	s:STATE_EAST_SAHARA={
-		region_state:ITA={
+		region_state:TMA={
 		}
 	}
 	s:STATE_WEST_SAHARA={
