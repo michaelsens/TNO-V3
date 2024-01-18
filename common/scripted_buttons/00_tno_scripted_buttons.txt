@@ -1777,7 +1777,7 @@ je_ger_reclaim_ost_d = {  #puppet moskowien
 		}
 		custom_tooltip = {
 			text = je_ger_reclaim_ost_d.tooltip_condition_ostland
-			country_or_subject_owns_entire_state_region = s:STATE_LATVIA
+			country_or_subject_owns_entire_state_region = STATE_LATVIA
 		}
 	}
 
@@ -1906,16 +1906,17 @@ je_ru_launch_raid = {
 		is_diplomatic_play_target = no
 		is_diplomatic_play_initiator = no
 		any_country = {
-			has_strategic_adjacency = root
-			is_diplomatic_play_target = no
-			is_diplomatic_play_initiator = no
-			save_scope_as = raid_target
-            has_modifier = russian_warlord
-			NOT = {
-				has_modifier = recently_raided
+			
+				has_strategic_adjacency = root
+				is_diplomatic_play_target = no
+				is_diplomatic_play_initiator = no
+				save_scope_as = raid_target
+				has_modifier = russian_warlord
+				NOT = {
+					has_modifier = recently_raided
+				}
 			}
 		}
-	}
 
 	effect = {
 		hidden_effect = {
@@ -2069,50 +2070,50 @@ je_ru_gen_complete_sib_plan = {
 	name = "je_ru_gen_complete_sib_plan"
 	desc = "je_ru_gen_complete_sib_plan_desc"
 
-	immediate = {
-        random_scope_state = {
-            limit = {
-                state_region = s:STATE_IRKUTSK
-            }
-            save_scope_as = irkutsk_state_scope
-        }
-        random_scope_state = {
-            limit = {
-                state_region = s:STATE_TRANS_BAIKAL
-            }
-            save_scope_as = trans_baikal_state_scope
-        }
-        random_scope_state = {
-            limit = {
-                state_region = s:STATE_OKHOTSK
-            }
-            save_scope_as = okhotsk_state_scope
-        }
-        random_scope_state = {
-            limit = {
-                state_region = s:STATE_UPPER_YENISEYSK
-            }
-            save_scope_as = upper_yeniseysk_state_scope
-        }
-        random_scope_state = {
-            limit = {
-                state_region = s:STATE_YAKUTSK
-            }
-            save_scope_as = yakutsk_state_scope
-        }
-        random_scope_state = {
-            limit = {
-                state_region = s:STATE_CHUKOTKA
-            }
-            save_scope_as = chukotka_state_scope
-        }
-        random_scope_state = {
-            limit = {
-                state_region = s:STATE_KAMCHATKA
-            }
-            save_scope_as = kamchatka_state_scope
-        }
-    }
+	#immediate = {
+       # random_scope_state = {
+            #limit = {
+              #  state_region = s:STATE_IRKUTSK
+           ## }
+           # save_scope_as = irkutsk_state_scope
+       # }
+       # random_scope_state = {
+            #limit = {
+               # state_region = s:STATE_TRANS_BAIKAL
+            #}
+           # save_scope_as = trans_baikal_state_scope
+     #   }
+      #  random_scope_state = {
+            #limit = {
+                #state_region = s:STATE_OKHOTSK
+          #  }
+          #  save_scope_as = okhotsk_state_scope
+      #  }
+       # random_scope_state = {
+         #   limit = {
+          #      state_region = s:STATE_UPPER_YENISEYSK
+          #  }
+           # save_scope_as = upper_yeniseysk_state_scope
+       # }
+       # random_scope_state = {
+         #   limit = {
+       #         state_region = s:STATE_YAKUTSK
+         #   }
+        #    save_scope_as = yakutsk_state_scope
+       # }
+        # random_scope_state = {
+          #  limit = {
+        #        state_region = s:STATE_CHUKOTKA
+       #     }
+        #    save_scope_as = chukotka_state_scope
+    #    }
+       # random_scope_state = {
+          #  limit = {
+           #     state_region = s:STATE_KAMCHATKA
+           # }
+           # save_scope_as = kamchatka_state_scope
+      #  }
+   # }
 
 	possible = {
 		custom_tooltip = {
@@ -2217,9 +2218,6 @@ je_ru_com_restore_ussr = {
 	name = "je_ru_com_restore_ussr"
 	desc = "je_ru_com_restore_ussr_desc"
 
-	immediate = {
-	}
-
 	possible = {
 		#Far-East
 		owns_entire_state_region = STATE_IRKUTSK
@@ -2260,6 +2258,10 @@ je_ru_com_restore_ussr = {
 	effect = {
 		c:GER = {
 			save_scope_as = ger_nation_scope
+			create_diplomatic_pact = {
+				country = IRK
+			   type = rivalry
+			}
 		}
 		custom_tooltip = {
 			text = je_ru_com_restore_ussr_desc_tt_1
@@ -2305,12 +2307,6 @@ je_ru_com_restore_ussr = {
      			country = GER
     			type = rivalry
      		}
-	     	c:GER = {
-	     		create_diplomatic_pact = {
-	     			country = IRK
-	    			type = rivalry
-	     		}
-	     	}
 		}
 		add_primary_culture = cu:ukrainian
         add_primary_culture = cu:byelorussian
@@ -2794,8 +2790,6 @@ je_ru_irk_second_great_patriotic_war = {
 	name = "je_ru_irk_second_great_patriotic_war"
 	desc = "je_ru_irk_second_great_patriotic_war_desc"
 
-	immediate = {
-	}
 
 	possible = {
 		custom_tooltip = {
@@ -2822,7 +2816,7 @@ je_ru_irk_second_great_patriotic_war = {
             type = dp_return_state
             war = no
             escalation = 26
-            target_state = target_state = s:STATE_MOSCOW.region_state:RKM
+            target_state = s:STATE_MOSCOW.region_state:RKM
             add_target_backers = { c:FIN c:HUN c:SLV c:DEN c:NET c:ROM }
             add_war_goal = {
 	            holder = c:GER
