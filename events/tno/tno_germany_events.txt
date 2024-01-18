@@ -1021,6 +1021,13 @@ tno_germany_events.17 = { # German Civil War
         trigger_event = { id = tno_RK_events.1 days = 0 popup = yes }
         } 
 
+        c:GER = { 
+        trigger_event = { id = tno_germany_events.43 days = 0 popup = yes }
+        } 
+
+           
+        
+
 
         c:RKU = { #22-24
 			trigger_event = { id = tno_germany_events.21 days = 0 popup = yes }
@@ -2363,5 +2370,24 @@ tno_germany_events.42 = { # Reclaimed all Outstanding Pakt Members
     option = {
         name = tno_germany_events.42.a
 
+    }
+}
+
+tno_germany_events.43 = {
+    type = state_event
+    hidden = yes  # Hide the event from the player, as it's a background process.
+
+    trigger = {
+        this = s:STATE_BRANDENBURG.region_state:GEQ  # Targeting Brandenburg in GEQ.
+    }
+
+    immediate = {
+        # Loop through all buildings in the state and remove barracks.
+        any_scope_building_in_state = {
+            limit = {
+                building = "barracks"  # Target barracks buildings.
+            }
+            remove_building = this  # Remove the targeted building.
+        }
     }
 }
