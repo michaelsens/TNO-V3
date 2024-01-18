@@ -2791,14 +2791,14 @@ je_ru_irk_second_great_patriotic_war = {
 	}
 
 	possible = {
-		#custom_tooltip = {
-        #    text = complete_one_army_reform_rq
-        #    OR = {
-        #        has_modifier = ru_basic_army_reform
-        #        has_modifier = ru_significant_army_reform
-        #        has_modifier = ru_full_army_reform
-        #    }
-        #}
+		custom_tooltip = {
+            text = complete_one_army_reform_rq
+            OR = {
+                has_modifier = ru_basic_army_reform
+                has_modifier = ru_significant_army_reform
+                has_modifier = ru_full_army_reform
+            }
+        }
         #custom_tooltip = {
         #    text = complete_request_american_aid_and_magadan
         #    has_variable = je_request_american_aid_tried
@@ -2921,6 +2921,11 @@ je_ru_irk_second_great_patriotic_war = {
 	            holder = c:RUS
 	            type = return_state
 	            target_state = s:STATE_VOLHYNIA.region_state:RKU
+			}
+			add_war_goal = {
+	            holder = c:RUS
+	            type = return_state
+	            target_state = s:STATE_CHERSON.region_state:RKU
 			}
 			add_war_goal = {
 	            holder = c:RUS
