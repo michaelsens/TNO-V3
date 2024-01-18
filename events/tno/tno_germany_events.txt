@@ -2205,6 +2205,18 @@ tno_germany_events.40 = {
 	}	
 
     immediate = {
+        create_country = {
+            tag = UKC
+            origin = c:GER
+            #gets german luhansk so that germany can take it without ukraine getting it
+            province = p:xE6C06A
+            province = p:xF06161
+            province = p:x000AE0
+            province = p:x135B1E
+            province = p:x8A09FD
+        
+        } 
+
         create_country = { 
             tag = RKU
             origin = c:GER
@@ -2218,13 +2230,18 @@ tno_germany_events.40 = {
 
         create_country = { 
             tag = UKR
-            origin = c:GER
+            #gets east galicia so that poland can have it
+            origin = c:GER 
             state = s:STATE_EAST_GALICIA.region_state:GER
        
         } 
 
         c:GOV = {
             annex = c:UKR
+        }
+
+        c:GER = {
+            annex = c:UKC
         }
 
         create_diplomatic_pact = {
