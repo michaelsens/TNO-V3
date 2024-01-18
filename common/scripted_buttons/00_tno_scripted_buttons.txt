@@ -1199,7 +1199,7 @@ je_malaya_ofn_e = {  #bombing malaya
 			set_variable = { name = je_malaya_ofn_cooldown months = 2 }
 		}	
 
-		c:JOH = {
+		c:JOL = {
 			add_modifier = {
 				name = receiving_military_supplies
 				months = 2
@@ -1244,7 +1244,7 @@ je_malaya_ofn_f = {  #bombing malaya
 		scope:journal_entry = {
 			set_variable = { name = je_malaya_ofn_cooldown months = 2 }
 		}	
-        c:JOH = {
+        c:JOL = {
 			add_modifier = {
 				name = combat_engineers
 				months = 2
@@ -1414,7 +1414,7 @@ je_malaya_jap_c = {  # japan funds JOH
     }
 }
 
-je_malaya_jap_d = {  # japan funds JOH
+je_malaya_jap_d = {
 	name = "je_malaya_jap_d_loc" 
 	desc = "je_malaya_jap_d_loc_desc"
 
@@ -1441,7 +1441,7 @@ je_malaya_jap_d = {  # japan funds JOH
 			set_variable = { name = je_malaya_jap_cooldown months = 2
 		}
 	}
-		c:JOH = {
+		c:JOL = {
 			add_modifier = {
 				name = war_machine_sabatoged
 				months = 2
@@ -1552,12 +1552,10 @@ je_ger_reclaim_ost_a = {  # Reclaim Ostland button
 	visible = { always = yes }
 
 	possible = {
-		scope:journal_entry = {
-			not = {
-				custom_tooltip = {
-					text = je_ger_reclaim_ost_a.tooltip_condition
-					has_variable = je_already_pupped_ost
-				}
+		not = {
+			custom_tooltip = {
+				text = je_ger_reclaim_ost_a.tooltip_condition
+				has_variable = je_already_pupped_ost
 			}
 		}
 	}
@@ -1779,7 +1777,7 @@ je_ger_reclaim_ost_d = {  #puppet moskowien
 		}
 		custom_tooltip = {
 			text = je_ger_reclaim_ost_d.tooltip_condition_ostland
-			has_variable = je_already_pupped_ost
+			country_or_subject_owns_entire_state_region = s:STATE_LATVIA
 		}
 	}
 
@@ -1898,6 +1896,9 @@ je_ru_launch_raid = {
 	desc = "je_ru_launch_raid_desc"
 
 	possible = {
+		hidden_trigger = {
+            game_date <= 1966.11.1
+        }
 		is_at_war = no
 		root = {
         	has_modifier = russian_warlord
@@ -2126,12 +2127,12 @@ je_ru_gen_complete_sib_plan = {
             text = fin_sib_paris_of_siberia_done
             has_variable = paris_of_siberia_done
         }
-        custom_tooltip = {
-            text = fin_sib_usa_relations
-            c:USA = {
-                relations:root >= 20
-            }
-        }
+        #custom_tooltip = {
+        #    text = fin_sib_usa_relations
+        #    c:USA = {
+        #        relations:root >= 20
+        #    }
+        #}
 	}
 
 	effect = {
@@ -2306,10 +2307,97 @@ je_ru_com_restore_ussr = {
      		}
 	     	c:GER = {
 	     		create_diplomatic_pact = {
-	     			country = RUS
+	     			country = IRK
 	    			type = rivalry
 	     		}
 	     	}
+		}
+		add_primary_culture = cu:ukrainian
+        add_primary_culture = cu:byelorussian
+        add_primary_culture = cu:north_caucasian
+        add_primary_culture = cu:armenian
+        add_primary_culture = cu:azerbaijani
+        add_primary_culture = cu:georgian
+        add_primary_culture = cu:uzbek
+		hidden_effect = {
+			s:STATE_MOSCOW = {
+				add_claim = c:RUS
+			}
+			s:STATE_TVER = {
+				add_claim = c:RUS
+			}
+			s:STATE_NOVGOROD = {
+				add_claim = c:RUS
+			}
+			s:STATE_INGRIA = {
+				add_claim = c:RUS
+			}
+			s:STATE_SMOLENSK = {
+				add_claim = c:RUS
+			}
+			s:STATE_BRYANSK = {
+				add_claim = c:RUS
+			}
+			s:STATE_KURSK = {
+				add_claim = c:RUS
+			}
+			s:STATE_TARTARIA = {
+				add_claim = c:RUS
+			}
+			s:STATE_ROSTOV = {
+				add_claim = c:RUS
+			}
+			s:STATE_ASTRAKHAN = {
+				add_claim = c:RUS
+			}
+			s:STATE_KUBAN = {
+				add_claim = c:RUS
+			}
+			s:STATE_GREATER_CAUCASUS = {
+				add_claim = c:RUS
+			}
+			s:STATE_AZERBAIJAN = {
+				add_claim = c:RUS
+			}
+			s:STATE_ARMENIA = {
+				add_claim = c:RUS
+			}
+			s:STATE_CRIMEA = {
+				add_claim = c:RUS
+			}
+			s:STATE_LUHANSK = {
+				add_claim = c:RUS
+			}
+			s:STATE_KIEV = {
+				add_claim = c:RUS
+			}
+			s:STATE_VOLHYNIA = {
+				add_claim = c:RUS
+			}
+			s:STATE_DAGESTAN = {
+				add_claim = c:RUS
+			}
+			s:STATE_CHERSON = {
+				add_claim = c:RUS
+			}
+			s:STATE_ORSHA = {
+				add_claim = c:RUS
+			}
+			s:STATE_MINSK = {
+				add_claim = c:RUS
+			}
+			s:STATE_BREST = {
+				add_claim = c:RUS
+			}
+			s:STATE_LITHUANIA = {
+				add_claim = c:RUS
+			}
+			s:STATE_LATVIA = {
+				add_claim = c:RUS
+			}
+			s:STATE_ESTONIA = {
+				add_claim = c:RUS
+			}
 		}
 	}
 }
@@ -2364,10 +2452,11 @@ je_ru_gen_reform_army_advance_basic = {
         NOR = {
             any_scope_building = {
                 is_building_type = building_barracks                
-                OR = {
-                    building_has_goods_shortage = yes
+                #OR = {
+                    #building_has_goods_shortage = yes
                     has_active_production_method = pm_no_organization
-                }
+                #}
+
             }
             any_military_formation = {
                 filter = {
@@ -2379,7 +2468,7 @@ je_ru_gen_reform_army_advance_basic = {
                         has_unit_type = unit_type:combat_unit_type_trench_infantry
                     }
                 }
-                percent >= 0.75
+                percent <= 0.75
             }
         }
         
@@ -2441,12 +2530,12 @@ je_ru_gen_reform_army_advance_significant = {
         NOT = {
             any_scope_building = {
                 is_building_type = building_barracks                
-                OR = {
-                    building_has_goods_shortage = yes
+                #OR = {
+                    #building_has_goods_shortage = yes
                     NOT = {
                         has_active_production_method = pm_nco_incorporation
                     }
-                }
+                #}
             }
         }
         any_military_formation = {
@@ -2516,12 +2605,12 @@ je_ru_gen_reform_army_advance_full = {
         NOT = {
             any_scope_building = {
                 is_building_type = building_barracks                
-                OR = {
-                    building_has_goods_shortage = yes
+                #OR = {
+                    #building_has_goods_shortage = yes
                     NOT = {
                         has_active_production_method = pm_mobile_warfare_tactics
                     }
-                }
+                #}
             }
         }
         any_military_formation = {
@@ -2692,6 +2781,10 @@ je_ru_request_american_support = {
 	effect = {
 		set_variable = { name = je_request_american_aid_tried}
 		c:USA = {
+			change_relations = {
+				country = ROOT
+				value = 80
+			}
 			trigger_event = { id = tno_usa_events.30 popup = yes }
 		}
 	}
@@ -2713,10 +2806,10 @@ je_ru_irk_second_great_patriotic_war = {
                 has_modifier = ru_full_army_reform
             }
         }
-        custom_tooltip = {
-            text = complete_request_american_aid_and_magadan
-            has_variable = je_request_american_aid_tried
-        }
+        #custom_tooltip = {
+        #    text = complete_request_american_aid_and_magadan
+        #    has_variable = je_request_american_aid_tried
+        #}
         owns_entire_state_region = STATE_EAST_KARELIA
 	    #is_at_war = no
 		is_diplomatic_play_initiator = no
@@ -2725,11 +2818,11 @@ je_ru_irk_second_great_patriotic_war = {
 	effect = {
 		create_diplomatic_play = {
             name = gtr1
-            target_country = c:GER
-            type = dp_conquer_state
+            target_country = c:RKM
+            type = dp_return_state
             war = no
             escalation = 26
-            target_state = s:STATE_BREST.region_state:GER
+            target_state = target_state = s:STATE_MOSCOW.region_state:RKM
             add_target_backers = { c:FIN c:HUN c:SLV c:DEN c:NET c:ROM }
             add_war_goal = {
 	            holder = c:GER
@@ -2741,26 +2834,136 @@ je_ru_irk_second_great_patriotic_war = {
 	            type = conquer_state
 	            target_state = s:STATE_EAST_KARELIA.region_state:RUS
             }
-            add_war_goal = {
+			add_war_goal = {
 	            holder = c:RUS
-	            type = annex_country
-	            target_state = s:STATE_LATVIA.region_state:RKO
-            }
-            add_war_goal = {
+	            type = return_state
+	            target_state = s:STATE_TVER.region_state:RKM
+			}
+			add_war_goal = {
 	            holder = c:RUS
-	            type = annex_country
-	            target_state = s:STATE_MOSCOW.region_state:RKM
-            }
-            add_war_goal = {
+	            type = return_state
+	            target_state = s:STATE_NOVGOROD.region_state:RKM
+			}
+			add_war_goal = {
 	            holder = c:RUS
-	            type = annex_country
+	            type = return_state
+	            target_state = s:STATE_INGRIA.region_state:RKM
+			}
+			add_war_goal = {
+	            holder = c:RUS
+	            type = return_state
+	            target_state = s:STATE_SMOLENSK.region_state:RKM
+			}
+			add_war_goal = {
+	            holder = c:RUS
+	            type = return_state
+	            target_state = s:STATE_BRYANSK.region_state:RKM
+			}
+			add_war_goal = {
+	            holder = c:RUS
+	            type = return_state
+	            target_state = s:STATE_KURSK.region_state:RKM
+			}
+			add_war_goal = {
+	            holder = c:RUS
+	            type = return_state
+	            target_state = s:STATE_TARTARIA.region_state:RKM
+			}
+			add_war_goal = {
+	            holder = c:RUS
+	            type = return_state
+	            target_state = s:STATE_ROSTOV.region_state:RKM
+			}
+			add_war_goal = {
+	            holder = c:RUS
+	            type = return_state
+	            target_state = s:STATE_ASTRAKHAN.region_state:RKM
+			}
+			add_war_goal = {
+	            holder = c:RUS
+	            type = return_state
+	            target_state = s:STATE_KUBAN.region_state:RKK
+			}
+			add_war_goal = {
+	            holder = c:RUS
+	            type = return_state
+	            target_state = s:STATE_GREATER_CAUCASUS.region_state:RKK
+			}
+			add_war_goal = {
+	            holder = c:RUS
+	            type = return_state
+	            target_state = s:STATE_AZERBAIJAN.region_state:RKK
+			}
+	        add_war_goal = {
+	            holder = c:RUS
+	            type = return_state
+	            target_state = s:STATE_DAGESTAN.region_state:RKK
+	        }
+	        add_war_goal = {
+	            holder = c:RUS
+	            type = return_state
+	            target_state = s:STATE_CRIMEA.region_state:GER
+	        }
+	        add_war_goal = {
+	            holder = c:RUS
+	            type = return_state
+	            target_state = s:STATE_LUHANSK.region_state:GER
+	        }
+			add_war_goal = {
+	            holder = c:RUS
+	            type = return_state
+	            target_state = s:STATE_LUHANSK.region_state:RKU
+			}
+			add_war_goal = {
+	            holder = c:RUS
+	            type = return_state
 	            target_state = s:STATE_KIEV.region_state:RKU
-            }
-            add_war_goal = {
-            	holder = c:RUS
-            	type = annex_country
-            	target_state = s:STATE_KUBAN.region_state:RKK
-            }
+			}
+			add_war_goal = {
+	            holder = c:RUS
+	            type = return_state
+	            target_state = s:STATE_KIEV.region_state:TRG
+			}
+			add_war_goal = {
+	            holder = c:RUS
+	            type = return_state
+	            target_state = s:STATE_VOLHYNIA.region_state:RKU
+			}
+			add_war_goal = {
+	            holder = c:RUS
+	            type = return_state
+	            target_state = s:STATE_CHERSON.region_state:RKU
+			}
+			add_war_goal = {
+	            holder = c:RUS
+	            type = return_state
+	            target_state = s:STATE_ORSHA.region_state:RKO
+			}
+			add_war_goal = {
+	            holder = c:RUS
+	            type = return_state
+	            target_state = s:STATE_MINSK.region_state:RKO
+			}
+			add_war_goal = {
+	            holder = c:RUS
+	            type = return_state
+	            target_state = s:STATE_BREST.region_state:RKO
+			}
+			add_war_goal = {
+	            holder = c:RUS
+	            type = return_state
+	            target_state = s:STATE_LITHUANIA.region_state:RKO
+			}
+			add_war_goal = {
+	            holder = c:RUS
+	            type = return_state
+	            target_state = s:STATE_LATVIA.region_state:RKO
+			}
+			add_war_goal = {
+	            holder = c:RUS
+	            type = return_state
+	            target_state = s:STATE_ESTONIA.region_state:RKO
+			}
             add_war_goal = {
             	holder = c:RUS
             	type = conquer_state
@@ -2864,6 +3067,41 @@ je_liberate_central_b = {  #liberate orungu
 je_liberate_central_c = {  #liberate central africa
 	name = "je_liberiate_central" 
 	desc = "je_liberiate_central_desc"
+
+	visible = { always = yes }
+
+	possible = {
+		scope:journal_entry = {
+				not = {
+				custom_tooltip = {
+					text = butten_liberate_congo
+					has_variable = je_central_africa_cooldown
+					
+				}
+				custom_tooltip = {
+					text = butten_liberation_cooldown
+					has_variable = je_liberation_cooldown
+					
+				}
+			}
+		}
+	}
+
+	effect = {
+
+		scope:journal_entry = {
+			set_variable = { name = je_central_africa_cooldown months = 99999  }
+			set_variable = { name = je_liberation_cooldown months = 5 }
+		}	
+		
+		trigger_event = { id = tno_usa_events.25 days = 0 popup = yes }
+		
+}
+}
+
+je_liberate_uganda = {  
+	name = "je_liberate_uganda" 
+	desc = "je_liberate_uganda_desc"
 
 	visible = { always = yes }
 

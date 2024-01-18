@@ -2205,6 +2205,18 @@ tno_germany_events.40 = {
 	}	
 
     immediate = {
+        create_country = {
+            tag = UKC
+            origin = c:GER
+            #gets german luhansk so that germany can take it without ukraine getting it
+            province = p:xE6C06A
+            province = p:xF06161
+            province = p:x000AE0
+            province = p:x135B1E
+            province = p:x8A09FD
+        
+        } 
+
         create_country = { 
             tag = RKU
             origin = c:GER
@@ -2218,13 +2230,18 @@ tno_germany_events.40 = {
 
         create_country = { 
             tag = UKR
-            origin = c:GER
+            #gets east galicia so that poland can have it
+            origin = c:GER 
             state = s:STATE_EAST_GALICIA.region_state:GER
        
         } 
 
         c:GOV = {
             annex = c:UKR
+        }
+
+        c:GER = {
+            annex = c:UKC
         }
 
         create_diplomatic_pact = {
@@ -2252,17 +2269,17 @@ tno_germany_events.41 = {
 	}	
 
     immediate = {
-        create_country = { 
-            tag = GMG
-            origin = c:GER
-            #gets german brest so that germany can take it without ostland getting it
-            province = p:x0087C9
-            province = p:x117AE1
-            province = p:xDE551D
-            province = p:xC06121
-            province = p:x4969E4
-       
-        } 
+        #create_country = { # - UPDATE: obsolete due to having brest no longer be split between germany and ostland
+        #    tag = GMG
+        #    origin = c:GER
+        #    #gets german brest so that germany can take it without ostland getting it
+        #    province = p:x0087C9
+        #    province = p:x117AE1
+        #    province = p:xDE551D
+        #    province = p:xC06121
+        #    province = p:x4969E4
+        #
+        #} 
         create_country = { 
             tag = RKO
             origin = c:GER
@@ -2279,11 +2296,6 @@ tno_germany_events.41 = {
         create_diplomatic_pact = {
             country = c:RKO
             type = reichskommissariat
-        }
-
-
-        c:GER = {
-            annex = c:GMG
         }
     }
 }

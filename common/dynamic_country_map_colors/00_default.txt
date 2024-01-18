@@ -618,3 +618,36 @@ hre_pro = {
 	}
 
 }
+
+kon_ofn = {
+	color = { 56  104  173 }
+	possible = {
+		exists = c:KON
+		THIS = c:KON
+		exists = c:USA
+		c:USA = {
+			OR = {
+				has_diplomatic_pact = {
+					who = c:KON
+					type = protectorate
+					is_initiator = yes
+				}
+				has_diplomatic_pact = {
+					who = c:KON
+					type = puppet
+					is_initiator = yes
+				}
+				has_diplomatic_pact = {
+					who = c:KON
+					type = dominion
+					is_initiator = yes
+				}
+				has_diplomatic_pact = {
+					who = c:KON
+					type = ofn_partner
+					is_initiator = yes
+				}
+			}
+		}
+	 }
+}
