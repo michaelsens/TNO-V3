@@ -1752,9 +1752,21 @@ tno_germany_events.18 = {   #Civil war start
 
     immediate = {
         set_global_variable = german_civil_war_start
-        c:GER = {
-            change_tag = GEQ
-        }
+        create_country = { #Martin bormann
+		tag = GEQ
+		origin = c:GER 
+       
+        state = s:STATE_BRANDENBURG.region_state:GER
+        province = p:x54FB07
+        
+		on_created = {
+            set_immune_to_revolutions = yes
+            add_modifier = {
+				name = civiL_war_never_ends
+				years = 2
+			}
+	        }
+	    } 
         c:GMB = {
             create_diplomatic_play = {
                 type = dp_revolution
@@ -2274,18 +2286,7 @@ tno_germany_events.41 = {
     trigger = {
 	}	
 
-    immediate = {
-        #create_country = { # - UPDATE: obsolete due to having brest no longer be split between germany and ostland
-        #    tag = GMG
-        #    origin = c:GER
-        #    #gets german brest so that germany can take it without ostland getting it
-        #    province = p:x0087C9
-        #    province = p:x117AE1
-        #    province = p:xDE551D
-        #    province = p:xC06121
-        #    province = p:x4969E4
-        #
-        #} 
+    immediate = { 
         create_country = { 
             tag = RKO
             origin = c:GER
@@ -2297,8 +2298,7 @@ tno_germany_events.41 = {
             state = s:STATE_ORSHA.region_state:GER
        
         } 
-
-
+        
         create_diplomatic_pact = {
             country = c:RKO
             type = reichskommissariat
