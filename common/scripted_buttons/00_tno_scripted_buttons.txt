@@ -3019,6 +3019,15 @@ je_liberate_central_a = {  #liberate congo
 			set_variable = { name = je_liberation_cooldown months = 5 }
 		}	
 		trigger_event = { id = tno_usa_events.22 days = 0 popup = yes }
+		create_country = { # full congo
+        tag = PIP
+        origin = c:USA
+        state = s:STATE_BAS_CONGO.region_state:KZA
+		state = s:STATE_EQUATEUR.region_state:KZA
+		state = s:STATE_CONGO_ORIENTALE.region_state:KZA
+		state = s:STATE_KASAI.region_state:KZA
+		state = s:STATE_KATANGA.region_state:KZA
+    } 
 		
 }
 }
@@ -3054,6 +3063,16 @@ je_liberate_central_b = {  #liberate orungu
 			set_variable = { name = je_liberation_cooldown months = 5 }
 		}	
 		trigger_event = { id = tno_usa_events.24 days = 0 popup = yes }
+		create_country = { 
+			tag = PIU
+			origin = c:USA
+			state = s:STATE_CONGO.region_state:KZA
+			state = s:STATE_GABON.region_state:KZA
+			state = s:STATE_SOUTH_CAMEROON.region_state:KZA
+	
+		
+	   
+		} 
 		
 }
 }
@@ -3089,6 +3108,13 @@ je_liberate_central_c = {  #liberate central africa
 		}	
 		
 		trigger_event = { id = tno_usa_events.25 days = 0 popup = yes }
+		create_country = { 
+			tag = PIK
+			origin = c:USA
+			state = s:STATE_UBANGI_SHARI.region_state:KZA
+		
+		} 
+	
 		
 }
 }
