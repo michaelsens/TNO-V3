@@ -2373,6 +2373,30 @@ tno_usa_events.33 = {  # event that gives JE to usa to liberate afirca
 	
 }
 
+tno_usa_events.34 = {
+    type = country_event
+    hidden = yes
+
+
+
+    trigger = {
+        exists = c:KSA
+        ROOT = c:USA
+
+	}
+
+    immediate = {
+        remove_diplomatic_pact = {
+            country = c:KSA
+            type = protectorate
+        }
+		create_diplomatic_pact = {
+            country = c:KSA
+            type = ofn_millgov
+        }
+    }
+}
+
 
 
 
