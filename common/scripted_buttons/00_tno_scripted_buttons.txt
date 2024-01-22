@@ -3114,6 +3114,11 @@ je_liberate_central_c = {  #liberate central africa
 			state = s:STATE_UBANGI_SHARI.region_state:KZA
 		
 		} 
+		 
+		set_variable = {
+			name = congo_liberated
+			value = 0
+		}
 	
 		
 }
@@ -3150,6 +3155,55 @@ je_liberate_uganda = {
 		}	
 		
 		trigger_event = { id = tno_usa_events.25 days = 0 popup = yes }
+		
+}
+}
+
+je_liberate_angola = {  #liberate angola
+	name = "je_liberiate_central" 
+	desc = "je_liberiate_central_desc"
+
+	visible = { always = yes }
+
+	possible = {
+		scope:journal_entry = {
+				not = {
+				custom_tooltip = {
+					text = butten_liberate_congo
+					has_variable = je_central_angola_cooldown
+					
+				}
+				custom_tooltip = {
+					text = butten_liberation_cooldown
+					has_variable = je_liberation_cooldown
+					
+				}
+			}
+		}
+	}
+
+	effect = {
+
+		scope:journal_entry = {
+			set_variable = { name = je_central_angola_cooldown months = 99999  }
+			set_variable = { name = je_liberation_cooldown months = 5 }
+		}	
+		
+		trigger_event = { id = tno_usa_events.25 days = 0 popup = yes }
+		create_country = { 
+			tag = ANG
+			origin = c:USA
+			state = s:STATE_NORTH_ANGOLA.region_state:KSA
+			state = s:STATE_SOUTH_ANGOLA.region_state:KSA
+			state = s:STATE_EAST_ANGOLA.region_state:KSA
+		
+		} 
+		 
+		set_variable = {
+			name = congo_liberated
+			value = 0
+		}
+	
 		
 }
 }

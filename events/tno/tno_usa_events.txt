@@ -1655,6 +1655,10 @@ tno_usa_events.23 = {  # katanga
 		value = 70
 	}
 
+	c:PIP = {
+		annex = c:PIL
+	}
+
 
 	
 	} 
@@ -2300,5 +2304,30 @@ tno_usa_events.35 = {
 
 	
     }
+}
+
+tno_usa_events.36 = {  # event that gives JE to usa to liberate afirca
+	type = country_event
+    placement = ROOT
+ hidden = yes 
+   
+   
+
+   
+
+    duration = 1
+
+	trigger = {
+		this ?= c:USA
+	}
+	
+	immediate = {
+		add_journal_entry = {
+			type = je_tno_liberate_angola
+		}
+    }
+
+	
+	
 }
 
