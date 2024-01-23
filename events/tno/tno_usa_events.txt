@@ -2597,7 +2597,118 @@ tno_usa_events.38 = { # Fate of east africa
 		default_option = yes
 		name = tno_usa_events.38.b
 		set_variable = east_africa_fed
+
+		create_country = { 
+			tag = GAY
+			origin = c:USA
+			state = s:STATE_ZAMBEZIA.region_state:KON
+			state = s:STATE_MOCAMBIQUE.region_state:KON
+			state = s:STATE_LINDI.region_state:KON
+			state = s:STATE_ZANZIBAR.region_state:KON
+			state = s:STATE_TANGANYIKA.region_state:KON
+			state = s:STATE_RIFT_VALLEY.region_state:KON
+			state = s:STATE_UGANDA.region_state:KON
+		
+		} 
+		trigger_event = { id = tno_usa_events.41 days = 0 popup = yes }
     }
+}
+
+tno_usa_events.41 = {  # East african fed
+	type = country_event
+    placement = ROOT
+ 
+    title = tno_usa_events.41
+    desc = tno_usa_events.25.d
+    flavor = tno_usa_events.25.f 
+    event_image = {
+        texture = "gfx/event_pictures/event_pictures/gay.dds"
+    }
+
+	immediate = {
+
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_fire.dds"
+
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 1
+
+	trigger = {
+		this ?= c:USA
+	}
+	
+    option = { #Liberate and put in market
+        name = tno_usa_events.22.a
+        default_option = yes
+		
+
+	
+
+	create_diplomatic_pact = {
+		country = c:GAY
+		type = customs_union
+	}
+		
+	change_relations = {
+		country = c:GAY
+		value = 150
+	}
+
+	add_loyalists = {
+		value = 0.05
+		culture = cu:yankee
+	}
+
+	change_infamy = -30
+    } 
+
+	
+
+	option = { # ofn
+	name = tno_usa_events.22.b
+
+	
+	change_relations = {
+		country = c:GAY
+		value = 150
+	}
+
+	create_diplomatic_pact = {
+	country = c:GAY
+	type = ofn_partner
+	}
+
+	change_infamy = -5
+	} 
+
+	option = { # protectorate
+	name = tno_usa_events.22.c
+
+	
+
+	create_diplomatic_pact = {
+	country = c:GAY
+	type = protectorate
+	}
+	change_infamy = 25
+} 
+
+	option = { # puppet
+	name = tno_usa_events.23.p
+
+	
+
+	create_diplomatic_pact = {
+	country = c:GAY
+	type = puppet
+	}
+
+	change_infamy = 40
+
+	
+	} 
 }
 
 
