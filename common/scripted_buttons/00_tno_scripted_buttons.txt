@@ -3244,12 +3244,64 @@ je_fate_of_east_africa = {
 
 	effect = {
 
+		
+		trigger_event = { id = tno_usa_events.38 days = 0 popup = yes }
+		
+	}
+}
+
+je_establish_east_fed = {  #liberate angola
+	name = "je_fate_angola" 
+	desc = "je_fate_angola_desc"
+
+	visible = {
+		custom_tooltip = {
+			text = button_request_money_12_months
+			has_variable = east_africa_fed
+			
+		}
+		not = {
+		custom_tooltip = {
+			text = button_request_money_12_months
+			has_variable = east_africa_green
+			
+		}
+	} }
+
+	possible = {
 		scope:journal_entry = {
-			set_variable = { name = je_central_africa_cooldown months = 99999  }
+				not = {
+				custom_tooltip = {
+					text = butten_liberation_cooldown
+					has_variable = je_liberation_cooldown
+					
+				}
+			}
+		}
+	}
+
+	effect = {
+
+		scope:journal_entry = {
 			set_variable = { name = je_liberation_cooldown months = 5 }
 		}	
 		
-		trigger_event = { id = tno_usa_events.38 days = 0 popup = yes }
+		trigger_event = { id = tno_usa_events.37 days = 0 popup = yes }
+		create_country = { 
+			tag = GAY
+			origin = c:USA
+			state = s:STATE_ZAMBEZIA.region_state:KON
+			state = s:STATE_MOCAMBIQUE.region_state:KON
+			state = s:STATE_LINDI.region_state:KON
+			state = s:STATE_ZANZIBAR.region_state:KON
+			state = s:STATE_TANGANYIKA.region_state:KON
+			state = s:STATE_RIFT_VALLEY.region_state:KON
+			state = s:STATE_UGANDA.region_state:KON
+		
+		} 
+		 
+		
+	
 		
 }
 }
