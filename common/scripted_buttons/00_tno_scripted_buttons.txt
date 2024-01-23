@@ -3251,3 +3251,50 @@ je_fate_of_east_africa = {
 	}
 }
 
+je_liberate_zambia = {  #liberate zanbia
+	name = "je_liberate_zambia" 
+	desc = "je_fate_angola_desc"
+
+	visible = { has_variable = je_picked_fate_var
+	}
+
+	possible = {
+		scope:journal_entry = {
+				not = {
+				custom_tooltip = {
+					text = butten_liberate_congo
+					has_variable = je_central_angola_cooldown
+					
+				}
+				custom_tooltip = {
+					text = butten_liberation_cooldown
+					has_variable = je_liberation_cooldown
+					
+				}
+			}
+		}
+	}
+
+	effect = {
+
+		scope:journal_entry = {
+			set_variable = { name = je_central_angola_cooldown months = 99999  }
+			set_variable = { name = je_liberation_cooldown months = 5 }
+		}	
+
+		trigger_event = { id = tno_usa_events.37 days = 0 popup = yes }
+		create_country = { 
+			tag = PIV
+			origin = c:USA
+			state = s:STATE_ZAMBIA.region_state:KON
+			state = s:STATE_KAZEMBE.region_state:KON
+		
+		} 
+		 
+		
+	
+		
+}
+}
+
+

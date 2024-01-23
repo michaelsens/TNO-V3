@@ -147,17 +147,7 @@ PRO = {
 	}
 }
 
-KON = {
-    dynamic_country_name = {
-        name = "Free Kongo"
-        
-        is_main_tag_only = yes
-        priority = 0
-        
-        trigger = {
-            scope:actor = { has_law = law_type:law_state_religion }
-        }
-    }	
+KON = {	
 	dynamic_country_name = {
 		name = "East African Interim Unity Government"
 		adjective = "Mandate"
@@ -182,6 +172,11 @@ KON = {
 					has_diplomatic_pact = {
 						who = c:KON
 						type = dominion
+						is_initiator = yes
+					}
+					has_diplomatic_pact = {
+						who = c:KON
+						type = ofn_millgov
 						is_initiator = yes
 					}
 				}
