@@ -4,7 +4,7 @@ je_tno_liberate_east_africa = {
 
     icon = "gfx/interface/icons/new_event_icons/ofn_kon.dds"
     group = je_group_historical_content
-    scripted_button = je_malaya_jap_a
+    scripted_button = je_fate_of_east_africa
    
 
 
@@ -69,7 +69,25 @@ je_tno_liberate_central_africa = {
 		
 		
 		
-		
+		custom_tooltip = {
+            text = je_has_liberated_orungu_text
+
+           has_variable = orungu_free_var
+
+        }
+        custom_tooltip = {
+            text = je_has_liberated_congo_text
+            has_variable = congo_free_var
+
+
+        }
+
+        custom_tooltip = {
+            text = je_has_liberated_text
+            has_variable = central_africa_free_var
+
+
+        }
        
        
 		
@@ -102,7 +120,7 @@ je_tno_liberate_central_africa = {
 
 je_tno_liberate_angola= { 
 
-    icon = "gfx/interface/icons/new_event_icons/ofn_kza.dds"
+    icon = "gfx/interface/icons/new_event_icons/ofn_angola.dds"
     group = je_group_historical_content
     scripted_button = je_liberate_angola
 
@@ -119,31 +137,10 @@ je_tno_liberate_angola= {
     complete = {
 
 		
+		has_variable = ango_free_var
 		
 		
-		custom_tooltip = {
-			text = je_has_liberated_orungu_text
-
-            c:PIU = {
-                owns_entire_state_region = STATE_CONGO
-            }
-			
-		}
-		custom_tooltip = {
-			text = je_has_liberated_congo_text
-            c:PIP = {
-                owns_entire_state_region = STATE_BAS_CONGO
-            }
-			
-		}
-
-		custom_tooltip = {
-			text = je_has_liberated_text
-            c:PIK = {
-                owns_entire_state_region = STATE_UBANGI_SHARI
-            }
-			
-		}
+		
        
        
 		

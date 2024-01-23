@@ -3028,6 +3028,7 @@ je_liberate_central_a = {  #liberate congo
 		state = s:STATE_KASAI.region_state:KZA
 		state = s:STATE_KATANGA.region_state:KZA
     } 
+	set_variable = congo_free_var
 		
 }
 }
@@ -3074,6 +3075,9 @@ je_liberate_central_b = {  #liberate orungu
 	   
 		} 
 		
+		set_variable = orungu_free_var
+		
+		
 }
 }
 
@@ -3116,8 +3120,7 @@ je_liberate_central_c = {  #liberate central africa
 		} 
 		 
 		set_variable = {
-			name = congo_liberated
-			value = 0
+			name = central_africa_free_var
 		}
 	
 		
@@ -3160,8 +3163,8 @@ je_liberate_uganda = {
 }
 
 je_liberate_angola = {  #liberate angola
-	name = "je_liberiate_central" 
-	desc = "je_liberiate_central_desc"
+	name = "je_fate_angola" 
+	desc = "je_fate_angola_desc"
 
 	visible = { always = yes }
 
@@ -3189,7 +3192,7 @@ je_liberate_angola = {  #liberate angola
 			set_variable = { name = je_liberation_cooldown months = 5 }
 		}	
 		
-		trigger_event = { id = tno_usa_events.25 days = 0 popup = yes }
+		trigger_event = { id = tno_usa_events.37 days = 0 popup = yes }
 		create_country = { 
 			tag = ANG
 			origin = c:USA
@@ -3199,11 +3202,54 @@ je_liberate_angola = {  #liberate angola
 		
 		} 
 		 
-		set_variable = {
-			name = congo_liberated
-			value = 0
-		}
+		
 	
+		
+}
+}
+
+je_fate_of_east_africa = {  
+	name = "je_fate_of_east_africa" 
+	desc = "je_fate_of_east_africa_desc"
+
+	visible = {not = {
+		custom_tooltip = {
+			text = button_request_money_12_months
+			has_variable = east_africa_green
+			
+		}
+		custom_tooltip = {
+			text = butten_liberation_cooldown
+			has_variable = east_africa_fed
+			
+		}
+	} }
+
+	possible = {
+		scope:journal_entry = {
+				not = {
+				custom_tooltip = {
+					text = button_request_money_12_months
+					has_variable = east_africa_green
+					
+				}
+				custom_tooltip = {
+					text = butten_liberation_cooldown
+					has_variable = east_africa_fed
+					
+				}
+			}
+		}
+	}
+
+	effect = {
+
+		scope:journal_entry = {
+			set_variable = { name = je_central_africa_cooldown months = 99999  }
+			set_variable = { name = je_liberation_cooldown months = 5 }
+		}	
+		
+		trigger_event = { id = tno_usa_events.38 days = 0 popup = yes }
 		
 }
 }

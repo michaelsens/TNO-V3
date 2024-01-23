@@ -1654,6 +1654,8 @@ tno_usa_events.23 = {  # katanga
 		country = c:PIP
 		value = 70
 	}
+	
+	trigger_event = { id = tno_usa_events.37}
 
 	c:PIP = {
 		annex = c:PIL
@@ -2330,4 +2332,272 @@ tno_usa_events.36 = {  # event that gives JE to usa to liberate afirca
 	
 	
 }
+
+tno_usa_events.37 = {  # angola
+	type = country_event
+    placement = ROOT
+ 
+    title = tno_usa_events.37
+    desc = tno_usa_events.25.d
+    flavor = tno_usa_events.25.f 
+    event_image = {
+        texture = "gfx/event_pictures/event_pictures/ang.dds"
+    }
+
+	immediate = {
+		set_variable = ango_free_var
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_fire.dds"
+
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 1
+
+	trigger = {
+		this ?= c:USA
+	}
+	
+    option = { #Liberate and put in market
+        name = tno_usa_events.22.a
+        default_option = yes
+		
+
+	
+
+	create_diplomatic_pact = {
+		country = c:ANG
+		type = customs_union
+	}
+		
+	change_relations = {
+		country = c:ANG
+		value = 150
+	}
+
+	add_loyalists = {
+		value = 0.02
+		culture = cu:yankee
+	}
+
+	change_infamy = -20
+    } 
+
+	
+
+	option = { # ofn
+	name = tno_usa_events.22.b
+
+	
+	change_relations = {
+		country = c:ANG
+		value = 150
+	}
+
+	create_diplomatic_pact = {
+	country = c:ANG
+	type = ofn_partner
+	}
+
+	change_infamy = -20
+	} 
+
+	option = { # protectorate
+	name = tno_usa_events.22.c
+
+	
+
+	create_diplomatic_pact = {
+	country = c:ANG
+	type = protectorate
+	}
+} 
+
+	option = { # puppet
+	name = tno_usa_events.23.p
+
+	
+
+	create_diplomatic_pact = {
+	country = c:ANG
+	type = puppet
+	}
+
+	change_infamy = 10
+
+	
+	} 
+}
+
+tno_usa_events.37 = {  # Insurgency in Katanga
+	type = country_event
+    placement = ROOT
+ hidden = yes 
+   
+   
+
+   
+
+    duration = 1
+
+	trigger = {
+		this ?= c:USA
+	}
+	
+	immediate = {
+		create_country = { # Facist Katanga
+		tag = KAT
+		origin = c:GER
+		province = p:x78528D
+		province = p:xD4C5CC
+		province = p:x3141F5
+		province = p:xA586BD
+		province = p:x024FB7
+		province = p:xB8CA50
+		province = p:xE5F496
+		province = p:x2F00E6
+		province = p:x7CD240
+		province = p:x1D29C2
+		province = p:x7962AB
+		province = p:x2A2A05
+		province = p:x8FC2E6
+		province = p:x9B45C3
+		province = p:x90CE04
+		province = p:x3B104F
+		province = p:x71F6F2
+		province = p:x1C670A
+		province = p:x87771C
+		province = p:xAC4151
+		province = p:xBD2B47
+		province = p:x3FB184	
+
+		
+		on_created = {
+			activate_law = law_type:law_appointed_bureaucrats
+			activate_law = law_type:law_child_labor_allowed
+			activate_law = law_type:law_single_party_state
+			activate_law = law_type:law_ethnostate
+			activate_law = law_type:law_presidential_republic
+			activate_law = law_type:law_state_religion
+			activate_law = law_type:law_command_economy
+			activate_law = law_type:law_no_schools
+			activate_law = law_type:law_outlawed_dissent
+			activate_law = law_type:law_no_health_system
+			activate_law = law_type:law_national_guard
+			activate_law = law_type:law_no_workers_rights
+			activate_law = law_type:law_tenant_farmers
+			activate_law = law_type:law_isolationism
+			activate_law = law_type:law_militarized_police
+			activate_law = law_type:law_debt_slavery
+		 }
+	} 
+
+	create_country = { # New belgium
+	tag = BEK
+	origin = c:GER
+	province = p:x1481BC
+	province = p:xEB5598
+	
+
+	
+	on_created = {
+		activate_law = law_type:law_appointed_bureaucrats
+		activate_law = law_type:law_child_labor_allowed
+		activate_law = law_type:law_single_party_state
+		activate_law = law_type:law_ethnostate
+		activate_law = law_type:law_presidential_republic
+		activate_law = law_type:law_state_religion
+		activate_law = law_type:law_command_economy
+		activate_law = law_type:law_no_schools
+		activate_law = law_type:law_outlawed_dissent
+		activate_law = law_type:law_no_health_system
+		activate_law = law_type:law_national_guard
+		activate_law = law_type:law_no_workers_rights
+		activate_law = law_type:law_tenant_farmers
+		activate_law = law_type:law_isolationism
+		activate_law = law_type:law_militarized_police
+		activate_law = law_type:law_debt_slavery
+	 }
+} 
+create_country = { # Katanga propper
+	tag = PIL
+	origin = c:JAP
+	province = p:x9D5FE0
+	province = p:xEDCDD6
+	province = p:x93B1F8
+	province = p:x403F31
+	province = p:xFA1564
+	province = p:x8833BD
+	province = p:x6C2C7C
+	province = p:x58502C
+	province = p:xC302BC
+	
+} 
+
+s:STATE_KATANGA={
+	region_state:KAT={
+		create_building={
+			building="building_barracks"
+			level=8
+			reserves=1
+			activate_production_methods={ "pm_general_training" }
+		}
+	}
+	region_state:PIL={
+		create_building={
+			building="building_barracks"
+			level=8
+			reserves=1
+			activate_production_methods={ "pm_general_training" }
+		}
+	}
+	region_state:BEK={
+		create_building={
+			building="building_barracks"
+			level=2
+			reserves=1
+			activate_production_methods={ "pm_general_training" }
+		}
+	}
+}
+    }
+
+	
+	
+}
+
+tno_usa_events.38 = { # Fate of east africa
+    type = country_event
+	placement = root
+	title = tno_usa_events.38.t
+	desc = tno_usa_events.38.d
+	flavor = tno_usa_events.38.f
+	icon = "gfx/interface/icons/invention_icons/sea_lane_strategies.dds"
+
+	duration = 6
+
+	immediate = {
+    }
+    
+    trigger = {
+	}
+
+	event_image = {
+        texture = "gfx/event_pictures/super_pictures/oval_office.dds"
+    }
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	option = {
+		default_option = yes
+		name = tno_usa_events.38.a
+		set_variable = east_africa_green
+    }
+	option = {
+		default_option = yes
+		name = tno_usa_events.38.b
+		set_variable = east_africa_fed
+    }
+}
+
 
