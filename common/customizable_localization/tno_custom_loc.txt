@@ -76,7 +76,7 @@ army_reform_current = {
 	}
 }
 
-ru_irk_transsib_repair_bonus = {
+ru_transsib_repair_bonus = {
 	type = country # The scope that the localization applies to. Examples include 'country', 'character' or 'building'
 	random_valid = no # Optional. If no, will pick the first valid option
 	text = {
@@ -86,28 +86,28 @@ ru_irk_transsib_repair_bonus = {
 					state_region = s:STATE_UPPER_YENISEYSK
 					state_has_building_group_levels = {
 			            type = bg_private_infrastructure
-			            value  >= 4
+			            value  >= 2
 			        }
 				}
 				any_scope_state = {
 					state_region = s:STATE_YAKUTSK
 					state_has_building_group_levels = {
 			            type = bg_private_infrastructure
-			            value  >= 4
+			            value  >= 2
 			        }
 				}
 				any_scope_state = {
 					state_region = s:STATE_CHUKOTKA
 					state_has_building_group_levels = {
 			            type = bg_private_infrastructure
-			            value  >= 4
+			            value  >= 2
 			        }
 				}
 				any_scope_state = {
 					state_region = s:STATE_KAMCHATKA
 					state_has_building_group_levels = {
 			            type = bg_private_infrastructure
-			            value  >= 4
+			            value  >= 2
 			        }
 				}
 			}
@@ -119,6 +119,124 @@ ru_irk_transsib_repair_bonus = {
 		localization_key = tt_x
 	}
 }
+
+ru_irk_paris_of_siberia_repair_bonus = {
+	type = country # The scope that the localization applies to. Examples include 'country', 'character' or 'building'
+	random_valid = no # Optional. If no, will pick the first valid option
+	text = {
+		trigger = {
+			any_scope_state = {
+				state_region = s:STATE_IRKUTSK
+				state_has_building_group_levels = {
+                        type = bg_bureaucracy
+                        value  >= 4
+                }
+			}
+		}
+		localization_key = tt_check
+	}
+
+	text = {
+		localization_key = tt_x
+	}
+}
+
+ru_irk_paris_of_siberia_university = {
+	type = country # The scope that the localization applies to. Examples include 'country', 'character' or 'building'
+	random_valid = no # Optional. If no, will pick the first valid option
+	text = {
+		trigger = {
+			any_scope_state = {
+				state_region = s:STATE_IRKUTSK
+				state_has_building_group_levels = {
+                    type = bg_technology
+                    value  >= 2
+                }
+			}
+		}
+		localization_key = tt_completed
+	}
+
+	text = {
+		localization_key = tt_uncompleted
+	}
+}
+
+ru_irk_paris_of_siberia_decree = {
+	type = country # The scope that the localization applies to. Examples include 'country', 'character' or 'building'
+	random_valid = no # Optional. If no, will pick the first valid option
+	text = {
+		trigger = {
+			any_scope_state = {
+				state_region = s:STATE_IRKUTSK
+				has_decree = decree_encourage_manufacturing_industry
+			}
+		}
+		localization_key = tt_completed
+	}
+
+	text = {
+		localization_key = tt_uncompleted
+	}
+}
+
+ru_irk_paris_of_siberia_urbanization = {
+	type = country # The scope that the localization applies to. Examples include 'country', 'character' or 'building'
+	random_valid = no # Optional. If no, will pick the first valid option
+	text = {
+		trigger = {
+			any_scope_state = {
+				state_region = s:STATE_IRKUTSK
+				total_urbanization >= 10
+			}
+		}
+		localization_key = tt_completed
+	}
+
+	text = {
+		localization_key = tt_uncompleted
+	}
+}
+
+ru_repair_magadan_railway = {
+	type = country # The scope that the localization applies to. Examples include 'country', 'character' or 'building'
+	random_valid = no # Optional. If no, will pick the first valid option
+	text = {
+		trigger = {
+			any_scope_state = {
+				state_region = s:STATE_OKHOTSK
+				state_has_building_group_levels = {
+                    type = bg_private_infrastructure
+                    value  >= 3
+                }
+			}
+		}
+		localization_key = tt_completed
+	}
+
+	text = {
+		localization_key = tt_uncompleted
+	}
+}
+
+ru_repair_magadan_port = {
+	type = country # The scope that the localization applies to. Examples include 'country', 'character' or 'building'
+	random_valid = no # Optional. If no, will pick the first valid option
+	text = {
+		trigger = {
+			any_scope_state = {
+				state_region = s:STATE_OKHOTSK
+				has_building = building_port
+			}
+		}
+		localization_key = tt_completed
+	}
+
+	text = {
+		localization_key = tt_uncompleted
+	}
+}
+
 
 #partisan_level_complete = {
 #	type = country # The scope that the localization applies to. Examples include 'country', 'character' or 'building'

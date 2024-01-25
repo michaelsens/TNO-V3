@@ -85,7 +85,7 @@ je_ru_tno_sakha_expedition = {
 
     on_monthly_pulse = {
         random_events = {
-            80 = 0 #nothing happens
+            40 = 0 #nothing happens
 
             20 = tno_ru_events.3 #bandits
             20 = tno_ru_events.4 #corruption
@@ -154,10 +154,7 @@ je_ru_tno_sakha_expedition = {
         remove_modifier = the_sakha_expedition
         remove_modifier = sakha_hiring_security
         remove_modifier = sakha_corruption_investigation
-        set_variable = {
-            name = sakha_expedition_done
-            value = yes
-        }
+        set_variable = { name = sakha_expedition_done }
     }
     
    fail = {
@@ -253,7 +250,7 @@ je_ru_tno_repair_transib = {
                 state_region = s:STATE_IRKUTSK
                 state_has_building_group_levels = {
                     type = bg_private_infrastructure
-                    value  >= 4
+                    value  >= 2
                 } 
             }
         }
@@ -263,7 +260,7 @@ je_ru_tno_repair_transib = {
                 state_region = s:STATE_TRANS_BAIKAL
                 state_has_building_group_levels = {
                     type = bg_private_infrastructure
-                    value  >= 4
+                    value  >= 2
                 } 
             }
         }
@@ -273,7 +270,7 @@ je_ru_tno_repair_transib = {
                 state_region = s:STATE_OKHOTSK
                 state_has_building_group_levels = {
                     type = bg_private_infrastructure
-                    value  >= 4
+                    value  >= 2
                 } 
             }
         }
@@ -318,7 +315,7 @@ je_ru_tno_repair_transib = {
                     limit = {
                         state_has_building_group_levels = {
                             type = bg_private_infrastructure
-                            value  >= 4
+                            value  >= 2
                         }
                     }
                     add_modifier = {
@@ -333,7 +330,7 @@ je_ru_tno_repair_transib = {
                     limit = {
                         state_has_building_group_levels = {
                             type = bg_private_infrastructure
-                            value  >= 4
+                            value  >= 2
                         }
                     }
                     add_modifier = {
@@ -348,7 +345,7 @@ je_ru_tno_repair_transib = {
                     limit = {
                         state_has_building_group_levels = {
                             type = bg_private_infrastructure
-                            value  >= 4
+                            value  >= 2
                         }
                     }
                     add_modifier = {
@@ -363,7 +360,7 @@ je_ru_tno_repair_transib = {
                     limit = {
                         state_has_building_group_levels = {
                             type = bg_private_infrastructure
-                            value  >= 4
+                            value  >= 2
                         }
                     }
                     add_modifier = {
@@ -591,7 +588,7 @@ je_ru_repair_magadan = {
                 state_region = s:STATE_OKHOTSK
                 state_has_building_group_levels = {
                     type = bg_private_infrastructure
-                    value  >= 6
+                    value  >= 3
                 }
                 has_building = building_port 
             }
