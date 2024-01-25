@@ -1897,7 +1897,7 @@ je_ru_launch_raid = {
 
 	possible = {
 		hidden_trigger = {
-            game_date <= 1966.11.1
+            game_date <= 1966.1.1
         }
 		is_at_war = no
 		root = {
@@ -1906,8 +1906,7 @@ je_ru_launch_raid = {
 		is_diplomatic_play_target = no
 		is_diplomatic_play_initiator = no
 		any_country = {
-			
-				has_strategic_adjacency = root
+				is_adjacent_to_country = root
 				is_diplomatic_play_target = no
 				is_diplomatic_play_initiator = no
 				save_scope_as = raid_target
@@ -1925,7 +1924,7 @@ je_ru_launch_raid = {
 		custom_tooltip = je_ru_launch_raid_tt
   		random_country = {
     		limit = {
-    	  		has_strategic_adjacency = root
+    	  		is_adjacent_to_country = root
     			is_diplomatic_play_target = no
 				is_diplomatic_play_initiator = no
             	has_modifier = russian_warlord
@@ -1954,6 +1953,81 @@ je_ru_launch_raid = {
             type = dp_raid
             war = no
             escalation = 85
+        }
+	}
+}
+
+je_ru_launch_attack = {
+	name = "je_ru_launch_attack"
+	desc = "je_ru_launch_attack_desc"
+
+	possible = {
+		is_player = no
+		game_date >= 1966.1.1
+		is_at_war = no
+		root = {
+        	has_modifier = russian_warlord
+		}
+		is_diplomatic_play_target = no
+		is_diplomatic_play_initiator = no
+		any_country = {
+			is_adjacent_to_country = root #is_adjacent_to_country
+			is_diplomatic_play_target = no
+			is_diplomatic_play_initiator = no
+			save_scope_as = raid_target
+            has_modifier = russian_warlord
+            is_player = no
+		}
+	}
+
+	effect = {
+		hidden_effect = {
+			set_immune_to_revolutions = yes
+		}
+		custom_tooltip = je_ru_launch_raid_tt
+  		random_country = {
+    		limit = {
+    	  		is_adjacent_to_country = root
+    			is_diplomatic_play_target = no
+				is_diplomatic_play_initiator = no
+            	has_modifier = russian_warlord
+    			is_player = no
+   			}
+   			save_scope_as = raid_target
+  		}
+  		ROOT = {
+  			random_scope_state = {
+	            limit = {
+	                is_capital = yes
+	            }
+	            save_scope_as = target_capital_state_scope
+	            add_war_goal = {
+					holder = scope:raid_target
+					type = return_state
+					target_state = scope:target_capital_state_scope
+				}
+	        }
+  		}
+  		ROOT = {
+  			random_scope_state = {
+	            limit = {
+	                is_capital = yes
+	            }
+	            save_scope_as = target_capital_state_scope
+	        }
+  		}
+
+        create_diplomatic_play = {
+            name = theo
+            target_country = scope:raid_target
+            type = dp_annex_subject
+            war = no
+            escalation = 1
+            add_war_goal = {
+				holder = scope:raid_target
+				type = return_state
+				target_state = scope:target_capital_state_scope
+			}
         }
 	}
 }

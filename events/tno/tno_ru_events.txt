@@ -453,3 +453,20 @@ tno_ru_events.10 = { # Apply anything to all Russians at start of game
     }
 
 }
+
+tno_ru_events.11 = { # Apply anything to all AI Russians
+    type = country_event
+    placement = ROOT
+	hidden = yes
+
+	duration = 5
+
+	immediate = {
+		add_journal_entry = { type = je_ru_tno_launch_attack }
+    }
+
+    trigger = {
+    	has_variable = on_expedition
+    }
+
+}
