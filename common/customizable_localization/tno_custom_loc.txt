@@ -76,6 +76,50 @@ army_reform_current = {
 	}
 }
 
+ru_irk_transsib_repair_bonus = {
+	type = country # The scope that the localization applies to. Examples include 'country', 'character' or 'building'
+	random_valid = no # Optional. If no, will pick the first valid option
+	text = {
+		trigger = {
+			OR = {
+				any_scope_state = {
+					state_region = s:STATE_UPPER_YENISEYSK
+					state_has_building_group_levels = {
+			            type = bg_private_infrastructure
+			            value  >= 4
+			        }
+				}
+				any_scope_state = {
+					state_region = s:STATE_YAKUTSK
+					state_has_building_group_levels = {
+			            type = bg_private_infrastructure
+			            value  >= 4
+			        }
+				}
+				any_scope_state = {
+					state_region = s:STATE_CHUKOTKA
+					state_has_building_group_levels = {
+			            type = bg_private_infrastructure
+			            value  >= 4
+			        }
+				}
+				any_scope_state = {
+					state_region = s:STATE_KAMCHATKA
+					state_has_building_group_levels = {
+			            type = bg_private_infrastructure
+			            value  >= 4
+			        }
+				}
+			}
+		}
+		localization_key = tt_check
+	}
+
+	text = {
+		localization_key = tt_x
+	}
+}
+
 #partisan_level_complete = {
 #	type = country # The scope that the localization applies to. Examples include 'country', 'character' or 'building'
 #	random_valid = no # Optional. If no, will pick the first valid option
