@@ -39,6 +39,44 @@
     
 }
 
+je_ru_tno_launch_attack = { 
+
+    icon = "gfx/interface/icons/tno_modifier_icons/modifier_ZLAarm.dds"
+    group = je_group_historical_content
+    scripted_button = je_ru_launch_attack
+
+    immediate = {
+    }
+    
+    complete = {
+        #is a player
+        is_player = yes
+    }
+
+    on_complete = {
+    }
+
+    on_monthly_pulse = {
+    }
+
+    current_value = {
+        
+    }
+
+
+    goal_add_value = {
+        
+    }
+
+    progressbar = no
+    
+    weight = 100
+
+    
+    should_be_pinned_by_default = no
+    
+}
+
 je_ru_tno_sakha_expedition = {
     icon = "gfx/interface/icons/invention_icons/prospecting_tech.dds"
     group = je_group_expeditions
@@ -47,7 +85,7 @@ je_ru_tno_sakha_expedition = {
 
     on_monthly_pulse = {
         random_events = {
-            80 = 0 #nothing happens
+            40 = 0 #nothing happens
 
             20 = tno_ru_events.3 #bandits
             20 = tno_ru_events.4 #corruption
@@ -116,10 +154,7 @@ je_ru_tno_sakha_expedition = {
         remove_modifier = the_sakha_expedition
         remove_modifier = sakha_hiring_security
         remove_modifier = sakha_corruption_investigation
-        set_variable = {
-            name = sakha_expedition_done
-            value = yes
-        }
+        set_variable = { name = sakha_expedition_done }
     }
     
    fail = {
@@ -215,7 +250,7 @@ je_ru_tno_repair_transib = {
                 state_region = s:STATE_IRKUTSK
                 state_has_building_group_levels = {
                     type = bg_private_infrastructure
-                    value  >= 4
+                    value  >= 2
                 } 
             }
         }
@@ -225,7 +260,7 @@ je_ru_tno_repair_transib = {
                 state_region = s:STATE_TRANS_BAIKAL
                 state_has_building_group_levels = {
                     type = bg_private_infrastructure
-                    value  >= 4
+                    value  >= 2
                 } 
             }
         }
@@ -235,7 +270,7 @@ je_ru_tno_repair_transib = {
                 state_region = s:STATE_OKHOTSK
                 state_has_building_group_levels = {
                     type = bg_private_infrastructure
-                    value  >= 4
+                    value  >= 2
                 } 
             }
         }
@@ -280,7 +315,7 @@ je_ru_tno_repair_transib = {
                     limit = {
                         state_has_building_group_levels = {
                             type = bg_private_infrastructure
-                            value  >= 4
+                            value  >= 2
                         }
                     }
                     add_modifier = {
@@ -295,7 +330,7 @@ je_ru_tno_repair_transib = {
                     limit = {
                         state_has_building_group_levels = {
                             type = bg_private_infrastructure
-                            value  >= 4
+                            value  >= 2
                         }
                     }
                     add_modifier = {
@@ -310,7 +345,7 @@ je_ru_tno_repair_transib = {
                     limit = {
                         state_has_building_group_levels = {
                             type = bg_private_infrastructure
-                            value  >= 4
+                            value  >= 2
                         }
                     }
                     add_modifier = {
@@ -325,7 +360,7 @@ je_ru_tno_repair_transib = {
                     limit = {
                         state_has_building_group_levels = {
                             type = bg_private_infrastructure
-                            value  >= 4
+                            value  >= 2
                         }
                     }
                     add_modifier = {
@@ -553,7 +588,7 @@ je_ru_repair_magadan = {
                 state_region = s:STATE_OKHOTSK
                 state_has_building_group_levels = {
                     type = bg_private_infrastructure
-                    value  >= 6
+                    value  >= 3
                 }
                 has_building = building_port 
             }
