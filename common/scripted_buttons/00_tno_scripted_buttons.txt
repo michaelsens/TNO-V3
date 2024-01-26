@@ -3345,6 +3345,101 @@ je_liberate_tanza = {  #liberate tanzkanika
 }
 }
 
+je_liberate_uganda = {  #liberate Uganda
+	name = "je_fate_uganda" 
+	desc = "je_fate_angola_desc"
+
+	visible = { has_variable = east_africa_green
+	}
+
+	possible = {
+		scope:journal_entry = {
+				not = {
+				custom_tooltip = {
+					text = butten_liberate_congo
+					has_variable = je_liberate_ugandad # Ugandan kucneles anybody??? Like that rabbit Big chungus
+					
+				}
+				custom_tooltip = {
+					text = butten_liberation_cooldown
+					has_variable = je_liberation_cooldown
+					
+				}
+			}
+		}
+	}
+
+	effect = {
+
+		scope:journal_entry = {
+			set_variable = { name = je_liberate_ugandad months = 99999  }
+			set_variable = { name = je_liberation_cooldown months = 5 }
+		}	
+
+		trigger_event = { id = tno_usa_events.46 days = 0 popup = yes }
+		create_country = { 
+			tag = ANK
+			origin = c:USA
+			state = s:STATE_UGANDA.region_state:KON
+
+		
+		} 
+		
+		 
+		
+	
+		
+}
+}
+
+je_liberate_kenya = {  #liberate Uganda
+	name = "je_fate_uganda" 
+	desc = "je_fate_angola_desc"
+
+	visible = { has_variable = east_africa_green
+	}
+
+	possible = {
+		scope:journal_entry = {
+				not = {
+				custom_tooltip = {
+					text = butten_liberate_congo
+					has_variable = je_liberate_ugandad # Ugandan kucneles anybody??? Like that rabbit Big chungus
+					
+				}
+				custom_tooltip = {
+					text = butten_liberation_cooldown
+					has_variable = je_liberation_cooldown
+					
+				}
+			}
+		}
+	}
+
+	effect = {
+
+		scope:journal_entry = {
+			set_variable = { name = je_liberate_ugandad months = 99999  }
+			set_variable = { name = je_liberation_cooldown months = 5 }
+		}	
+
+		trigger_event = { id = tno_usa_events.46 days = 0 popup = yes }
+		create_country = { 
+			tag = ANK
+			origin = c:USA
+			state = s:STATE_UGANDA.region_state:KON
+			state = s:STATE_RIFT_VALLEY.region_state:KON
+
+		
+		} 
+		
+		 
+		
+	
+		
+}
+}
+
 
 
 je_liberate_zambia = {  #liberate zanbia

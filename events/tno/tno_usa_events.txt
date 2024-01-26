@@ -3003,7 +3003,7 @@ tno_usa_events.45 = {  # zanzabar
 	type = country_event
     placement = ROOT
  
-    title = tno_usa_events.44.t
+    title = tno_usa_events.45.t
     desc = tno_usa_events.25.d
     flavor = tno_usa_events.25.f 
     event_image = {
@@ -3095,7 +3095,7 @@ tno_usa_events.45 = {  # zanzabar
 	} 
 
 	option = { 
-	name = tno_usa_events.23.e
+	name = tno_usa_events.45.e
 
 	change_relations = {
 		country = c:FLB
@@ -3112,6 +3112,103 @@ tno_usa_events.45 = {  # zanzabar
 	
 	} 
 }
+
+tno_usa_events.46 = {  # uganda
+	type = country_event
+    placement = ROOT
+ 
+    title = tno_usa_events.46.t
+    desc = tno_usa_events.25.d
+    flavor = tno_usa_events.25.f 
+    event_image = {
+        texture = "gfx/event_pictures/event_pictures/ang.dds"
+    }
+
+	immediate = {
+	
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_fire.dds"
+
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 1
+
+	trigger = {
+		this ?= c:USA
+	}
+	
+    option = { #Liberate and put in market
+        name = tno_usa_events.22.a
+        default_option = yes
+		
+
+	
+
+	create_diplomatic_pact = {
+		country = c:ANK
+		type = customs_union
+	}
+		
+	change_relations = {
+		country = c:ANK
+		value = 150
+	}
+
+	add_loyalists = {
+		value = 0.01
+		culture = cu:yankee
+	}
+
+	change_infamy = -10
+    } 
+
+	
+
+	option = { # ofn
+	name = tno_usa_events.22.b
+
+	
+	change_relations = {
+		country = c:ANK
+		value = 150
+	}
+
+	create_diplomatic_pact = {
+	country = c:ANK
+	type = ofn_partner
+	}
+
+	change_infamy = -20
+	} 
+
+	option = { # protectorate
+	name = tno_usa_events.22.c
+
+	
+
+	create_diplomatic_pact = {
+	country = c:ANK
+	type = protectorate
+	}
+} 
+
+	option = { # puppet
+	name = tno_usa_events.23.p
+
+	
+
+	create_diplomatic_pact = {
+	country = c:ANK
+	type = puppet
+	}
+
+	change_infamy = 5
+
+	
+	} 
+}
+
 
 
 
