@@ -3278,7 +3278,7 @@ je_liberate_mozan = {  #liberate mozanbieque
 			set_variable = { name = je_liberation_cooldown months = 5 }
 		}	
 
-		trigger_event = { id = tno_usa_events.37 days = 0 popup = yes }
+		trigger_event = { id = tno_usa_events.43 days = 0 popup = yes }
 		create_country = { 
 			tag = PIO
 			origin = c:USA
@@ -3292,6 +3292,59 @@ je_liberate_mozan = {  #liberate mozanbieque
 		
 }
 }
+
+je_liberate_tanza = {  #liberate tanzkanika
+	name = "je_fate_tanz" 
+	desc = "je_fate_angola_desc"
+
+	visible = { has_variable = east_africa_green
+	}
+
+	possible = {
+		scope:journal_entry = {
+				not = {
+				custom_tooltip = {
+					text = butten_liberate_congo
+					has_variable = je_liberate_tanz
+					
+				}
+				custom_tooltip = {
+					text = butten_liberation_cooldown
+					has_variable = je_liberation_cooldown
+					
+				}
+			}
+		}
+	}
+
+	effect = {
+
+		scope:journal_entry = {
+			set_variable = { name = je_liberate_tanz months = 99999  }
+			set_variable = { name = je_liberation_cooldown months = 5 }
+		}	
+
+		trigger_event = { id = tno_usa_events.44 days = 0 popup = yes }
+		create_country = { 
+			tag = FLB
+			origin = c:USA
+			state = s:STATE_TANGANYIKA.region_state:KON
+			state = s:STATE_LINDI.region_state:KON
+		
+		} 
+		create_country = { 
+			tag = ZAN
+			origin = c:USA
+			state = s:STATE_ZANZIBAR.region_state:KON
+		
+		} 
+		 
+		
+	
+		
+}
+}
+
 
 
 je_liberate_zambia = {  #liberate zanbia

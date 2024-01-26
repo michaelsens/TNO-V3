@@ -2723,7 +2723,7 @@ tno_usa_events.42 = {  # Zambia
     }
 
 	immediate = {
-		set_variable = ango_free_var
+
     }
 
     icon = "gfx/interface/icons/event_icons/event_fire.dds"
@@ -2806,5 +2806,313 @@ tno_usa_events.42 = {  # Zambia
 	
 	} 
 }
+
+tno_usa_events.43 = {  # Mozan
+	type = country_event
+    placement = ROOT
+ 
+    title = tno_usa_events.43.t
+    desc = tno_usa_events.25.d
+    flavor = tno_usa_events.25.f 
+    event_image = {
+        texture = "gfx/event_pictures/event_pictures/ang.dds"
+    }
+
+	immediate = {
+	
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_fire.dds"
+
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 1
+
+	trigger = {
+		this ?= c:USA
+	}
+	
+    option = { #Liberate and put in market
+        name = tno_usa_events.22.a
+        default_option = yes
+		
+
+	
+
+	create_diplomatic_pact = {
+		country = c:PIO
+		type = customs_union
+	}
+		
+	change_relations = {
+		country = c:PIO
+		value = 150
+	}
+
+	add_loyalists = {
+		value = 0.01
+		culture = cu:yankee
+	}
+
+	change_infamy = -20
+    } 
+
+	
+
+	option = { # ofn
+	name = tno_usa_events.22.b
+
+	
+	change_relations = {
+		country = c:PIO
+		value = 150
+	}
+
+	create_diplomatic_pact = {
+	country = c:PIO
+	type = ofn_partner
+	}
+
+	change_infamy = -20
+	} 
+
+	option = { # protectorate
+	name = tno_usa_events.22.c
+
+	
+
+	create_diplomatic_pact = {
+	country = c:PIO
+	type = protectorate
+	}
+} 
+
+	option = { # puppet
+	name = tno_usa_events.23.p
+
+	
+
+	create_diplomatic_pact = {
+	country = c:PIO
+	type = puppet
+	}
+
+	change_infamy = 5
+
+	
+	} 
+}
+
+tno_usa_events.44 = {  # tangakanika
+	type = country_event
+    placement = ROOT
+ 
+    title = tno_usa_events.44.t
+    desc = tno_usa_events.25.d
+    flavor = tno_usa_events.25.f 
+    event_image = {
+        texture = "gfx/event_pictures/event_pictures/ang.dds"
+    }
+
+	immediate = {
+	
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_fire.dds"
+
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 1
+
+	trigger = {
+		this ?= c:USA
+	}
+	
+    option = { #Liberate and put in market
+        name = tno_usa_events.22.a
+        default_option = yes
+		
+
+	trigger_event = { id = tno_usa_events.45 days = 0 popup = yes }
+
+	create_diplomatic_pact = {
+		country = c:FLB
+		type = customs_union
+	}
+		
+	change_relations = {
+		country = c:FLB
+		value = 150
+	}
+
+	add_loyalists = {
+		value = 0.01
+		culture = cu:yankee
+	}
+
+	change_infamy = -20
+    } 
+
+	
+
+	option = { # ofn
+	name = tno_usa_events.22.b
+
+	trigger_event = { id = tno_usa_events.45 days = 0 popup = yes }
+	change_relations = {
+		country = c:FLB
+		value = 150
+	}
+
+	create_diplomatic_pact = {
+	country = c:FLB
+	type = ofn_partner
+	}
+
+	change_infamy = -20
+	} 
+
+	option = { # protectorate
+	name = tno_usa_events.22.c
+
+	trigger_event = { id = tno_usa_events.45 days = 0 popup = yes }
+
+	create_diplomatic_pact = {
+	country = c:FLB
+	type = protectorate
+	}
+} 
+
+	option = { # puppet
+	name = tno_usa_events.23.p
+
+	trigger_event = { id = tno_usa_events.45 days = 0 popup = yes }
+
+	create_diplomatic_pact = {
+	country = c:FLB		
+	type = puppet
+	}
+
+	change_infamy = 5
+
+	
+	} 
+}
+
+tno_usa_events.45 = {  # zanzabar
+	type = country_event
+    placement = ROOT
+ 
+    title = tno_usa_events.44.t
+    desc = tno_usa_events.25.d
+    flavor = tno_usa_events.25.f 
+    event_image = {
+        texture = "gfx/event_pictures/event_pictures/ang.dds"
+    }
+
+	immediate = {
+	
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_fire.dds"
+
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 1
+
+	trigger = {
+		this ?= c:USA
+	}
+	
+    option = { #Liberate and put in market
+        name = tno_usa_events.22.a
+        default_option = yes
+		
+
+	
+
+	create_diplomatic_pact = {
+		country = c:ZAN
+		type = customs_union
+	}
+		
+	change_relations = {
+		country = c:ZAN
+		value = 150
+	}
+
+	add_loyalists = {
+		value = 0.01
+		culture = cu:yankee
+	}
+
+	change_infamy = -20
+    } 
+
+	
+
+	option = { # ofn
+	name = tno_usa_events.22.b
+
+	
+	change_relations = {
+		country = c:ZAN
+		value = 150
+	}
+
+	create_diplomatic_pact = {
+	country = c:ZAN
+	type = ofn_partner
+	}
+
+	change_infamy = -20
+	} 
+
+	option = { # protectorate
+	name = tno_usa_events.22.c
+
+	
+
+	create_diplomatic_pact = {
+	country = c:ZAN
+	type = protectorate
+	}
+} 
+
+	option = { # puppet
+	name = tno_usa_events.23.p
+
+	
+
+	create_diplomatic_pact = {
+	country = c:ZAN
+	type = puppet
+	}
+
+	change_infamy = 5
+
+	
+	} 
+
+	option = { 
+	name = tno_usa_events.23.e
+
+	change_relations = {
+		country = c:FLB
+		value = 70
+	}
+	
+	
+
+	c:FLB = {
+		annex = c:ZAN
+	}
+
+
+	
+	} 
+}
+
+
 
 
