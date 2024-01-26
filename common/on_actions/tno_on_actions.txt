@@ -144,10 +144,43 @@
             set_variable = liberate_kon_var
             c:USA = {
                 trigger_event = { id = tno_usa_events.21 popup = yes }
-                #trigger_event = { id = tno_usa_events.31 popup = yes }
+                trigger_event = { id = tno_usa_events.31 popup = yes }
             }
            
         }
+
+        if = {   #African liberation
+        limit = {
+            c:USA = {
+                OR = {
+                    has_diplomatic_pact = {
+                        who = c:KSA
+                        type = protectorate
+                        is_initiator = yes
+                    }
+                    has_diplomatic_pact = {
+                        who = c:KSA
+                        type = puppet
+                        is_initiator = yes
+                    }
+                    has_diplomatic_pact = {
+                        who = c:KSA
+                        type = dominion
+                        is_initiator = yes
+                    }
+                }
+                
+            }
+            NOT = { has_variable = liberate_ksa_var }
+        }
+        set_variable = liberate_ksa_var
+        c:USA = {
+            trigger_event = { id = tno_usa_events.34 popup = yes }
+            trigger_event = { id = tno_usa_events.36 popup = yes }
+           
+        }
+       
+    }
 
         if = {   #African liberation
         limit = {
@@ -176,7 +209,7 @@
         set_variable = liberate_kza_var
         c:USA = {   
             trigger_event = { id = tno_usa_events.32 popup = yes }
-            #trigger_event = { id = tno_usa_events.33 popup = yes }
+            trigger_event = { id = tno_usa_events.33 popup = yes }
         }
        
         }

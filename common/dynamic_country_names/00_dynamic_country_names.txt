@@ -585,6 +585,24 @@ EGY = {
 	}
 }
 
+FLB = {
+	dynamic_country_name = {
+		name = "Tanzania"
+		adjective = "Tanzanian"
+		
+		is_main_tag_only = yes
+		priority = 5
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				owns_entire_state_region = STATE_ZANZIBAR
+			}
+		}
+	}
+}
+
+
 GBR = { # Great Britain of United Kingdom
     dynamic_country_name = {
         name = "United Kingdom"
@@ -1024,7 +1042,7 @@ ITA = { # Italy
 		name = "Regno d'Italia"
 		
 		is_main_tag_only = yes
-		priority = 10
+		priority = 5
 		
 		trigger = {
 			exists = scope:actor
@@ -1035,14 +1053,11 @@ ITA = { # Italy
 		name = "Union of Italy"
 		
 		is_main_tag_only = yes
-		priority = 10
+		priority = 9999
 		
 		trigger = {
-			exists = scope:actor
-			scope:actor = {
-				has_law = law_type:law_council_republic
-				
-			}
+			scope:actor = { has_law = law_type:law_council_republic }
+	
 		}
 	}
 	dynamic_country_name = { # Papal Italy
