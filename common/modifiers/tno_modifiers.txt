@@ -15,6 +15,7 @@ modifier_advanced_economy = {
 	building_group_bg_subsistence_agriculture_throughput_add = 0.85
 	state_birth_rate_mult = 0.05
 	state_mortality_mult = -0.35
+	political_movement_radicalism_mult = -0.50
 }
 
 modifier_very_developed_economy = {
@@ -24,6 +25,7 @@ modifier_very_developed_economy = {
 	state_birth_rate_mult = 0.05
 	state_mortality_mult = -0.35
 	building_group_bg_subsistence_agriculture_throughput_add = 0.65
+	political_movement_radicalism_mult = -0.40
 }
 
 modifier_developed_economy = {
@@ -33,6 +35,7 @@ modifier_developed_economy = {
 	state_birth_rate_mult = 0.10
 	state_mortality_mult = -0.20
 	building_group_bg_subsistence_agriculture_throughput_add = 0.35
+	political_movement_radicalism_mult = -0.30
 }
 
 modifier_developing_economy = {
@@ -41,6 +44,7 @@ modifier_developing_economy = {
 	state_birth_rate_mult = 0.20
 	state_mortality_mult = -0.10
 	building_group_bg_subsistence_agriculture_throughput_add = -0.35
+	political_movement_radicalism_mult = -0.20
 }
 
 modifier_undeveloped_economy = {
@@ -49,6 +53,7 @@ modifier_undeveloped_economy = {
 	state_birth_rate_mult = 0.35
 	state_mortality_mult = -0.05
 	building_group_bg_subsistence_agriculture_throughput_add = -0.65
+	political_movement_radicalism_mult = -0.10
 }
 
 modifier_least_developed_economy = {
@@ -1675,11 +1680,15 @@ more_oil_pumps= {
 	country_expenses_add = 20000
 }
 
-civiL_war_never_ends = {
+german_civil_war_modifier = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
 	state_conscription_rate_mult = 0.4
-	country_war_exhaustion_casualties_mult = -0.6
-	country_military_wages_mult = -0.15
+	country_military_wages_mult = -0.20
+	unit_morale_loss_mult = 0.25
+	unit_offense_mult = 0.1
+	unit_defense_mult = -0.1
+	country_minting_add = 25000
+	country_bureaucracy_add = 1500
 }
 
 receiving_military_supplies = {
