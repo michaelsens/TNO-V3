@@ -3218,6 +3218,7 @@ je_fate_of_east_africa = {
 			has_variable = east_africa_green
 			
 		}
+		has_variable = je_picked_fate_var
 		custom_tooltip = {
 			text = butten_liberation_cooldown
 			has_variable = east_africa_fed
@@ -3228,14 +3229,42 @@ je_fate_of_east_africa = {
 	possible = {
 		scope:journal_entry = {
 				not = {
-				
+				custom_tooltip = {
+					text = butten_liberate_congo
+					has_variable = je_picked_fate_var
 					
-					has_variable = east_africa_green
+				}
+			}
+		}
+	}
+
+
+	effect = {
+
+		set_variable = { name = je_picked_fate_var months = 9999 }
+		trigger_event = { id = tno_usa_events.38 days = 0 popup = yes }
+		
+	}
+}
+
+je_liberate_mozan = {  #liberate mozanbieque
+	name = "je_liberate_mozan" 
+	desc = "je_fate_angola_desc"
+
+	visible = { has_variable = east_africa_green
+	}
+
+	possible = {
+		scope:journal_entry = {
+				not = {
+				custom_tooltip = {
+					text = butten_liberate_congo
+					has_variable = je_liberate_mozan
 					
-				
+				}
 				custom_tooltip = {
 					text = butten_liberation_cooldown
-					has_variable = je_picked_fate_var
+					has_variable = je_liberation_cooldown
 					
 				}
 			}
@@ -3244,12 +3273,26 @@ je_fate_of_east_africa = {
 
 	effect = {
 
-		set_variable = { name = je_picked_fate_var months = 9999 }
-		set_variable = { name = east_africa_green months = 9999 }
-		trigger_event = { id = tno_usa_events.38 days = 0 popup = yes }
+		scope:journal_entry = {
+			set_variable = { name = je_liberate_mozan months = 99999  }
+			set_variable = { name = je_liberation_cooldown months = 5 }
+		}	
+
+		trigger_event = { id = tno_usa_events.37 days = 0 popup = yes }
+		create_country = { 
+			tag = PIO
+			origin = c:USA
+			state = s:STATE_MOCAMBIQUE.region_state:KON
+			state = s:STATE_ZAMBEZIA.region_state:KON
 		
-	}
+		} 
+		 
+		
+	
+		
 }
+}
+
 
 je_liberate_zambia = {  #liberate zanbia
 	name = "je_liberate_zambia" 
@@ -3282,7 +3325,7 @@ je_liberate_zambia = {  #liberate zanbia
 			set_variable = { name = je_liberation_cooldown months = 5 }
 		}	
 
-		trigger_event = { id = tno_usa_events.37 days = 0 popup = yes }
+		trigger_event = { id = tno_usa_events.42 days = 0 popup = yes }
 		create_country = { 
 			tag = PIV
 			origin = c:USA
