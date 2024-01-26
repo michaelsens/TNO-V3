@@ -1203,8 +1203,13 @@ tno_germany_events.17 = { # German Civil War
         name = tno_germany_events.17.a
         trigger = {
             has_variable = borman_chosen
-       }
-        play_as = c:GMB
+        }
+        if = {
+            limit = {
+                is_player = yes
+            }
+            play_as = c:GMB
+        }
         remove_variable = borman_chosen
         set_global_variable = german_civil_war_start
         hidden_effect = {
@@ -1339,7 +1344,12 @@ tno_germany_events.17 = { # German Civil War
         trigger = {
             has_variable = speer_chosen
         }
-        play_as = c:GAS
+        if = {
+            limit = {
+                is_player = yes
+            }
+            play_as = c:GAS
+        }
         remove_variable = speer_chosen
         set_global_variable = german_civil_war_start
         hidden_effect = {
@@ -1477,7 +1487,12 @@ tno_germany_events.17 = { # German Civil War
         trigger = {
             has_variable = goering_chosen
         }
-        play_as = c:GHG
+        if = {
+            limit = {
+                is_player = yes
+            }
+            play_as = c:GHG
+        }
         remove_variable = goering_chosen
         set_global_variable = german_civil_war_start
         hidden_effect = {
@@ -1613,7 +1628,12 @@ tno_germany_events.17 = { # German Civil War
         trigger = {
             has_variable = heydrich_chosen
         }
-        play_as = c:GRH
+        if = {
+            limit = {
+                is_player = yes
+            }
+            play_as = c:GRH
+        }
         remove_variable = heydrich_chosen
         set_global_variable = german_civil_war_start
         hidden_effect = {

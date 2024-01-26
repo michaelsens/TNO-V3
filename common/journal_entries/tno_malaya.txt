@@ -19,18 +19,14 @@
     
     complete = {
         exists = c:JOL
-        c:JOL = {
-            owns_entire_state_region = STATE_MALAYA
-        }
+        NOT = { exists = c:JOH }
 		
 		
 	}
 
     fail = {
         exists = c:JOH
-        c:JOH = {
-            owns_entire_state_region = STATE_MALAYA
-        } 
+        NOT = { exists = c:JOL }
     }
 
     on_fail = {
@@ -91,18 +87,14 @@ je_tno_malaya_jap = {
     
     complete = {
         exists = c:JOH
-        c:JOH = {
-            owns_entire_state_region = STATE_MALAYA
-        }
+        NOT = { exists = c:JOL }
 		
 		
 	}
 
     fail = {
         exists = c:JOL
-        c:JOL = {
-            owns_entire_state_region = STATE_MALAYA
-        } 
+        NOT = { exists = c:JOH }
     }
 
     on_fail = {
