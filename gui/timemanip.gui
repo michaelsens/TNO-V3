@@ -23,7 +23,6 @@ template speedometer_set_speed_properties
 }
 template speed_button_1
 {
-	visible = "[JominiIsHostOrLocal]"
 	texture = "gfx/interface/main_hud/speedometer_set_speed_1.dds"
 	framesize = { 48 62 }
 	size = { 24 31 }
@@ -34,7 +33,6 @@ template speed_button_1
 }
 template speed_button_2
 {
-	visible = "[JominiIsHostOrLocal]"
 	texture = "gfx/interface/main_hud/speedometer_set_speed_2.dds"
 	framesize = { 64 68 }
 	size = { 32 34 }
@@ -45,7 +43,6 @@ template speed_button_2
 }
 template speed_button_3
 {
-	visible = "[JominiIsHostOrLocal]"
 	texture = "gfx/interface/main_hud/speedometer_set_speed_3.dds"
 	framesize = { 74 46 }
 	size = { 37 23 }
@@ -56,7 +53,6 @@ template speed_button_3
 }
 template speed_button_4
 {
-	visible = "[JominiIsHostOrLocal]"
 	texture = "gfx/interface/main_hud/speedometer_set_speed_4.dds"
 	framesize = { 64 68 }
 	size = { 32 34 }
@@ -67,7 +63,6 @@ template speed_button_4
 }
 template speed_button_5
 {
-	visible = "[JominiIsHostOrLocal]"
 	texture = "gfx/interface/main_hud/speedometer_set_speed_5.dds"
 	framesize = { 48 62 }
 	size = { 24 31 }
@@ -79,6 +74,34 @@ template speed_button_5
 
 types timekeeper
 {			
+	type tick_of_day_icon = widget {
+		size = { 13 13 }
+		parentanchor = vcenter|right
+		icon = {
+			size = { 13 13 }
+			visible = "[EqualTo_int32(TimeKeeper.GetTickOfDay,'(int32)0')]"
+			tooltip = "HOUR_NIGHT"
+			texture = "gfx/interface/icons/generic_icons/timekeeper_night.dds"
+		}
+		icon = {
+			size = { 13 13 } 
+			visible = "[EqualTo_int32(TimeKeeper.GetTickOfDay,'(int32)1')]"
+			tooltip = "HOUR_MORNING"
+			texture = "gfx/interface/icons/generic_icons/timekeeper_morning.dds"
+		}
+		icon = {
+			size = { 13 13 }
+			visible = "[EqualTo_int32(TimeKeeper.GetTickOfDay,'(int32)2')]"
+			tooltip = "HOUR_AFTERNOON"
+			texture = "gfx/interface/icons/generic_icons/timekeeper_afternoon.dds" 
+		}
+		icon = {
+			size = { 13 13 }
+			visible = "[EqualTo_int32(TimeKeeper.GetTickOfDay,'(int32)3')]"
+			tooltip = "HOUR_EVENING"
+			texture = "gfx/interface/icons/generic_icons/timekeeper_evening.dds"
+		}
+	}
 	type time_animation = icon {
 		texture = "gfx/interface/main_hud/speedometer_cogwheel_texture.dds"
 		size = { 30 30 }
@@ -149,7 +172,6 @@ types timekeeper
 
 					### PAUSED MIDDLE BUTTON
 					button = {
-						visible = "[JominiIsHostOrLocal]"
 						enabled = "[TimeKeeper.CanTogglePause]"
 						onclick = "[TimeKeeper.TogglePause]"
 						tooltip = "[TimeKeeper.GetTogglePauseTooltip]"
@@ -296,8 +318,8 @@ types timekeeper
 		### CONSTRUCTION
 		widget = {
 			name = "tutorial_highlight_outliner_construction"
-			size = { 410 75 }
-			position = { 0 76 }
+			size = { 490 75 }
+			position = { 90 76 }
 			parentanchor = right
 			using = fullscreen_hide
 			
@@ -340,7 +362,7 @@ types timekeeper
 			}
 			
 			flowcontainer = {
-				position = { 25 -2 }
+				position = { 20 -2 }
 				parentanchor = vcenter
 				datacontext = "[AccessMetaPlayer.AccessPlayedOrObservedCountry]"
 				spacing = 10
@@ -407,7 +429,7 @@ types timekeeper
 							autoresize = yes
 							fontsize_min = 12
 							maximumsize = { 100 -1 }
-							minimumsize = { 100 -1 }
+							minimumsize = { 200 -1 }
 							margin_left = 5
 							margin_top = -2
 						}
@@ -458,19 +480,7 @@ types timekeeper
 						}
 
 						blockoverride "icon" {
-							button = {
-								using = glow_button
-								size = { 50 28 }
-								using = tooltip_below
-								position = { -15 0 }
-								onclick = "[GetVariableSystem.SetOrToggle('privateconstructionwindow', 'visible')]"
-								icon = {
-									size = { 30 30 }
-									name = inflation_icon
-									texture = "gfx/interface/icons/generic_icons/privately_owned_building_icon.dds"
-									position = { 15 0 }
-								}
-							}
+							texture = "gfx/interface/icons/generic_icons/privately_owned_building_icon.dds"
 						}
 
 						blockoverride "text" {
@@ -502,7 +512,7 @@ types timekeeper
 
 		### TOP RIGHT STUFF
 		widget = {
-			size = { 440 80 }
+			size = { 450 80 }
 			parentanchor = right
 			alwaystransparent = no
 
@@ -591,7 +601,7 @@ types timekeeper
 				### TICKS (week)
 				widget = {
 					size = { 100% 16 }
-					position = { 0 5 }
+					position = { 15 5 }
 					parentanchor = vcenter
 					
 					### PAUSED PROGRESSBAR
@@ -643,32 +653,52 @@ types timekeeper
 					}
 					
 					#tick text
-					textbox = {
-						position = { 6 0 }
+
+					widget = {
+						parentanchor = vcenter
+						size = { 96% 16 }
 						visible = "[TimeKeeper.IsPaused]"
-						text = CLOCK_DEBUG_TEXT
-						tooltip = "[MultiplayerSynchronizationInfo.GetPlayerDatesString]"
-						align = left|nobaseline
-						autoresize = yes
-						alpha = 0.6
-						using = fontsize_small
-						default_format = "#variable"
+
+						textbox = {
+							position = { 6 0 }
+							text = CLOCK_DEBUG_TEXT
+							tooltip = "[MultiplayerSynchronizationInfo.GetPlayerDatesString]"
+							align = left|nobaseline
+							autoresize = yes
+							alpha = 1
+
+							using = fontsize_small
+							default_format = "#variable"
+						}
+
+						tick_of_day_icon = {}
 					}
-					
-					textbox = {
-						position = { 6 0 }
+
+					widget = {
+						parentanchor = vcenter
+						size = { 96% 16 }
 						visible = "[Not(TimeKeeper.IsPaused)]"
-						text = CLOCK_DEBUG_TEXT
-						tooltip = "[MultiplayerSynchronizationInfo.GetPlayerDatesString]"
-						align = left|nobaseline
-						autoresize = yes
-						using = fontsize_small
-						default_format = "#variable"
+
+						textbox = {
+							position = { 6 0 }
+
+							text = CLOCK_DEBUG_TEXT
+							tooltip = "[MultiplayerSynchronizationInfo.GetPlayerDatesString]"
+							align = left|nobaseline
+							autoresize = yes
+							alpha = 1.0
+							fontintcolor = { 0 0 0 1 }
+							using = fontsize_small
+							default_format = "#variable"
+						}
+						
+						tick_of_day_icon = {}
 					}
-				}
+				} 
 				
 				### PAUSED TEXT
 				textbox = {
+					position = { 32 0 }
 					visible = "[TimeKeeper.IsPaused]"
 					parentanchor = bottom
 					text = "CLOCK_PAUSED"
@@ -851,7 +881,7 @@ types timekeeper
 				
 				button = {
 					position = { 23 40 }
-					visible = "[And(JominiIsHostOrLocal,TimeKeeper.IsPaused)]"
+					visible = "[TimeKeeper.IsPaused]"
 					name = "play_button"
 					texture = "gfx/interface/main_hud/play_button.dds"
 					framesize = { 70 54 }
@@ -862,7 +892,7 @@ types timekeeper
 					downframe = 3
 					effectname = "NoHighlight"
 					
-					enabled = "[And(JominiIsHostOrLocal, TimeKeeper.CanTogglePause)]"
+					enabled = "[TimeKeeper.CanTogglePause]"
 					onclick = "[TimeKeeper.TogglePause]"
 					tooltip = "[TimeKeeper.GetTogglePauseTooltip]"
 					using = play_continue_button_sound
@@ -870,7 +900,7 @@ types timekeeper
 				}
 				button = {
 					position = { 25 14 }
-					visible = "[And(JominiIsHostOrLocal,Not(TimeKeeper.IsPaused))]"
+					visible = "[Not(TimeKeeper.IsPaused)]"
 					name = "pause_button"
 					texture = "gfx/interface/main_hud/pause_button.dds"
 					framesize = { 74 66 }
@@ -881,7 +911,7 @@ types timekeeper
 					downframe = 3
 					effectname = "NoHighlight"
 					
-					enabled = "[And(JominiIsHostOrLocal,TimeKeeper.CanTogglePause)]"
+					enabled = "[TimeKeeper.CanTogglePause]"
 					onclick = "[TimeKeeper.TogglePause]"
 					tooltip = "[TimeKeeper.GetTogglePauseTooltip]"
 					using = play_pause_button_sound
@@ -1168,7 +1198,7 @@ types timekeeper
 types construction_in_outliner
 {
 	type mini_construction_queue = widget {
-		size = { 265 32 }
+		size = { 225 32 }
 
 		block "alpha" {}
 
@@ -1177,6 +1207,7 @@ types construction_in_outliner
 		}
 
 		widget = {
+			position = { -8 0 }
 			size = { 32 32 }
 			parentanchor = vcenter
 		
@@ -1203,14 +1234,14 @@ types construction_in_outliner
 
 		overlappingitembox = {
 			parentanchor = vcenter
-			position = { 33 0 }
+			position = { 27 0 }
 			size = { 172 30 }
 
 			block "buildings_datamodel" {}
 
 			item = {
 				widget = {
-					size = { 32 30 }
+					size = { 30 30 }
 					button = {
 						parentanchor = vcenter
 						datacontext = "[ConstructionQueueElement.GetBuilding]"
