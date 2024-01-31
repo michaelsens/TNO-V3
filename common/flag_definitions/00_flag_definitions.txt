@@ -121,13 +121,51 @@ BGD = {
 PAL = {
 	flag_definition = {
 		coa = PAL_subject_ita
-		priority = 50000
+		priority = 50
 		trigger = {
 			exists = scope:actor
 			scope:actor = {
 				is_subject_of = c:ITA
 			}
 		}
+	}
+	flag_definition = { 
+		coa = PAL_COM
+		priority = 2000
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_law = law_type:law_council_republic
+			}
+		}
+	}
+}
+
+EOT = {
+	flag_definition = { 
+		coa = EOT_COM
+		priority = 2000
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_law = law_type:law_council_republic
+			}
+		}
+	}
+	flag_definition = { 
+	coa = EOT_ISR
+	priority = 25000
+	trigger = {
+		exists = scope:actor
+		scope:actor = {
+			is_subject_of = c:ISR
+		}
+	}
+}
+	flag_definition = {
+		coa = EOT
+		subject_canton = EOT	
+		priority = 1
 	}
 }
 
@@ -2885,13 +2923,6 @@ ENG = { # England
 	}
 }
 
-EOT = { # Emirate of Transjordan
-	flag_definition = {
-		coa = EOT
-		subject_canton = EOT	
-		priority = 1
-	}
-}
 
 EST = { # Estonia
 	flag_definition = {
