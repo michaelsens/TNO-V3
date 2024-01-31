@@ -3301,7 +3301,7 @@ je_ru_irk_second_great_patriotic_war = {
         #    text = complete_request_american_aid_and_magadan
         #    has_variable = je_request_american_aid_tried
         #}
-        owns_entire_state_region = STATE_EAST_KARELIA
+        #owns_entire_state_region = STATE_EAST_KARELIA
 	    #is_at_war = no
 		is_diplomatic_play_initiator = no
 	}
@@ -3464,6 +3464,12 @@ je_ru_irk_second_great_patriotic_war = {
         }
         set_global_variable = second_great_patriotic_war
         custom_tooltip = warning_2wrw
+        if = {
+        	limit = {
+        		owns_entire_state_region = STATE_EAST_KARELIA
+        	}
+        	custom_tooltip = warning_2wrw_finland
+        }
         hidden_effect = {
             change_infamy = -1500
             trigger_event = { id = tno_irk_events.12 popup = yes } #The Great Anti-Fascist War
