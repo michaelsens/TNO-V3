@@ -30,11 +30,7 @@ je_cuba_ofn = {
 		random_events = {
             20 = 0
             2 = tno_usa_segregation_events.50
-            3 = tno_usa_segregation_events.3
-            1 = tno_usa_segregation_events.4
-            1 = tno_usa_segregation_events.5
-            3 = tno_usa_segregation_events.6
-            3 = tno_usa_segregation_events.16
+         
         }
     }
 
@@ -73,6 +69,10 @@ je_cuba_ofn = {
             is_decaying = yes
         
         }
+		c:CUP ={
+			trigger_event = { id = tno_usa_events.53 }
+			}
+		
 	}
 
 	
@@ -86,6 +86,8 @@ je_cuba_ofn = {
 		scope:journal_entry = {
 			is_goal_complete = yes
 		}
+
+		
     }
 
 	goal_add_value = {
@@ -103,6 +105,9 @@ je_cuba_ofn = {
         add_radicals = {
             value = 0.05
         }
+		c:CUP ={
+		trigger_event = { id = tno_usa_events.53 }
+		}
     }
 
     
