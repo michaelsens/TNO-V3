@@ -816,6 +816,83 @@ je_ru_take_karelia = {
     
 }
 
+je_ru_take_karelia_and_onega = { 
+
+    icon = "gfx/interface/icons/invention_icons/sea_lane_strategies.dds"
+    group = je_group_historical_content
+    scripted_button = je_ru_take_karelia_and_onega_button
+
+    immediate = {
+    }
+    
+    complete = {
+        owns_entire_state_region = STATE_EAST_KARELIA 
+        owns_entire_state_region = STATE_ARKHANGELSK
+    }
+
+    on_complete = {
+        add_modifier = victory_in_karelia
+    }
+
+    on_monthly_pulse = {
+    }
+
+    current_value = {
+        
+    }
+
+
+    goal_add_value = {
+        
+    }
+
+    progressbar = no
+    
+    weight = 100
+
+    
+    should_be_pinned_by_default = yes
+    
+}
+
+je_ru_take_karelia_and_ind_onega = { 
+
+    icon = "gfx/interface/icons/invention_icons/sea_lane_strategies.dds"
+    group = je_group_historical_content
+    scripted_button = je_ru_take_karelia_and_ind_onega_button
+
+    immediate = {
+    }
+    
+    complete = {
+        owns_entire_state_region = STATE_EAST_KARELIA 
+    }
+
+    on_complete = {
+        add_modifier = victory_in_karelia
+    }
+
+    on_monthly_pulse = {
+    }
+
+    current_value = {
+        
+    }
+
+
+    goal_add_value = {
+        
+    }
+
+    progressbar = no
+    
+    weight = 100
+
+    
+    should_be_pinned_by_default = yes
+    
+}
+
 je_ru_buy_supplies_usa = { 
 
     icon = "gfx/interface/icons/tno_event_icons/usa_buy_supplies.dds"

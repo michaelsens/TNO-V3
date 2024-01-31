@@ -2696,16 +2696,24 @@ je_ru_com_restore_ussr = {
 		#	}
 		#}
 
-		if = {
+		if = { #if they do not own karelia or onega
 			limit = {
-				c:FIN = {
-					owns_entire_state_region = STATE_EAST_KARELIA
-				}	
 				NOT = {
-					has_modifier = victory_in_karelia
+					owns_entire_state_region = STATE_EAST_KARELIA
+					owns_entire_state_region = STATE_ARKHANGELSK
+				}
+			}
+			add_journal_entry = { type = je_ru_take_karelia_and_onega }
+		}
+		else_if = { #if they do not own karelia
+			limit = {
+				NOT = {
+					owns_entire_state_region = STATE_EAST_KARELIA
 				}
 			}
 			add_journal_entry = { type = je_ru_take_karelia }
+		}else = {
+			add_journal_entry = { type = je_ru_take_karelia_and_onega }
 		}
 
 		#custom_tooltip = {
@@ -2805,16 +2813,40 @@ je_ru_com_restore_ussr = {
 	}
 }
 
-je_ru_take_karelia_button = {
+je_ru_take_karelia_and_onega_button = {
 	name = "je_ru_take_karelia_button"
 	desc = "je_ru_take_karelia_button_desc"
 
 	possible = {
 		is_at_war = no
 		is_diplomatic_play_initiator = no
+	  	ROOT = {
+	  		has_claim = s:STATE_EAST_KARELIA
+	  	}
 	}
 
 	effect = {
+		#c:ONG = {
+    	#	random_overlord_or_above = {
+    	#		save_scope_as = overlord_target
+    	#	}
+  		#}
+  		every_state = { 
+  			limit = { 
+  				state_region = s:STATE_EAST_KARELIA
+  			} 
+  			owner = { 
+  				save_scope_as = overlord_target
+  			}
+  		}
+	    scope:overlord_target = {
+	    	random_scope_state = {
+		        limit = {
+			        state_region = s:STATE_EAST_KARELIA
+			    }
+			    save_scope_as = east_karelia_state_scope
+		    }
+	    }
         create_diplomatic_play = {
             #name = jack
             target_country = c:ONG
@@ -2825,12 +2857,70 @@ je_ru_take_karelia_button = {
 			add_war_goal = {
 				holder = root
 				type = return_state
-				target_state = s:STATE_EAST_KARELIA.region_state:FIN
+				target_state = scope:east_karelia_state_scope
 			}
 			add_war_goal = {
-				holder = c:FIN
+				holder = scope:overlord_target
+				type = revoke_claim
+				target_country = root
+				target_state = scope:east_karelia_state_scope
+			}
+			add_war_goal = {
+				holder = scope:overlord_target
 				target_country = root
 				type = war_reparations
+			}
+        }
+        custom_tooltip = je_ru_take_karelia_button_tt
+	}
+}
+
+je_ru_take_karelia_button = {
+	name = "je_ru_take_karelia_button"
+	desc = "je_ru_take_karelia_button_desc"
+
+	possible = {
+		is_at_war = no
+		is_diplomatic_play_initiator = no
+		ROOT = {
+	  		has_claim = s:STATE_EAST_KARELIA
+	  	}
+	}
+
+	effect = {
+  		every_state = { 
+  			limit = { 
+  				state_region = s:STATE_EAST_KARELIA
+  			} 
+  			owner = { 
+  				save_scope_as = overlord_target
+  			}
+  		}
+	    scope:overlord_target = {
+	    	random_scope_state = {
+		        limit = {
+			        state_region = s:STATE_EAST_KARELIA
+			    }
+			    save_scope_as = east_karelia_state_scope
+		    }
+	    }
+        create_diplomatic_play = {
+            #name = jack
+            target_country = c:ONG
+            type = dp_return_state
+            target_state = scope:east_karelia_state_scope
+            war = no
+            escalation = 85
+			add_war_goal = {
+				holder = scope:overlord_target
+				target_country = root
+				type = war_reparations
+			}
+			add_war_goal = {
+				holder = scope:overlord_target
+				type = revoke_claim
+				target_country = root
+				target_state = scope:east_karelia_state_scope
 			}
         }
         custom_tooltip = je_ru_take_karelia_button_tt
