@@ -1,0 +1,81 @@
+je_cuba_ofn = { 
+
+    icon = "gfx/interface/icons/new_event_icons/malaya.dds"
+    group = je_group_historical_content
+    scripted_button = je_malaya_ofn_a
+    scripted_button = je_malaya_ofn_b
+    scripted_button = je_malaya_ofn_c
+    scripted_button = je_malaya_ofn_d
+    scripted_button = je_malaya_ofn_e
+    scripted_button = je_malaya_ofn_f
+
+
+    
+    complete = {
+        exists = c:CUB
+        NOT = { exists = c:CUB }
+		
+		
+	}
+
+    fail = {
+        exists = c:CUB
+        NOT = { 
+		OR = {
+			has_diplomatic_pact = {
+				who = c:CUB
+				type = protectorate
+				is_initiator = yes
+			}
+			has_diplomatic_pact = {
+				who = c:CUB
+				type = puppet
+				is_initiator = yes
+			}
+			has_diplomatic_pact = {
+				who = c:CUB
+				type = dominion
+				is_initiator = yes
+			}
+			has_diplomatic_pact = {
+				who = c:CUB
+				type = ofn_millgov
+				is_initiator = yes
+			}
+		}}
+    }
+
+    on_fail = {
+        add_modifier = {
+            name = proxy_lost
+            months = 250
+            is_decaying = yes
+        
+        }
+
+        add_radicals = {
+            value = 0.1
+        }
+    }
+
+    on_complete = {
+        add_modifier = {
+            name = proxy_won
+            months = 250
+            is_decaying = yes
+        } 
+        
+        add_loyalists = {
+            value = 0.1
+        }
+    }
+
+    progressbar = yes
+    
+    weight = 100
+
+    
+    should_be_pinned_by_default = yes
+    
+}
+

@@ -3004,6 +3004,187 @@ tno_usa_events.46 = {  # uganda
 	} 
 }
 
+tno_usa_events.47 = {
+    type = country_event
+    hidden = yes
+
+
+
+    trigger = {
+        exists = c:CUB
+        ROOT = c:USA
+
+        c:CUB = {
+            has_diplomatic_pact = {
+				who = c:USA	
+                type = protectorate
+            }
+
+        }
+
+
+
+    }
+
+    immediate = {
+        remove_diplomatic_pact = {
+            country = c:CUB
+            type = protectorate
+        }
+		create_diplomatic_pact = {
+            country = c:CUB
+            type = ofn_millgov
+        }
+    }
+}
+
+tno_usa_events.48 = {  # Cuban occupation event
+	type = country_event
+    placement = ROOT
+ 
+    title = tno_usa_events.48.t
+    desc = tno_usa_events.25.d
+    flavor = tno_usa_events.25.f 
+    event_image = {
+        texture = "gfx/event_pictures/event_pictures/ang.dds"
+    }
+
+	immediate = {
+	
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_fire.dds"
+
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 1
+
+	trigger = {
+		this ?= c:USA
+	}
+	
+    option = { #Liberate and put in market
+        name = tno_usa_events.22.a
+        default_option = yes
+		
+		remove_diplomatic_pact = {
+			country = CUB
+			type = ofn_millgov
+		}
+	
+
+	create_diplomatic_pact = {
+		country = c:CUB
+		type = customs_union
+	}
+		
+	change_relations = {
+		country = c:CUB
+		value = 150
+	}
+
+	add_loyalists = {
+		value = 0.01
+		culture = cu:yankee
+	}
+
+	change_infamy = -5
+    } 
+
+	
+    option = { # OFN occupation contuines 
+        name = tno_usa_events.48.b
+        default_option = yes
+		
+		add_modifier = {
+			name = cuban_occ
+			years = 10
+		}
+
+		add_journal_entry = {
+			type = je_cuba_ofn
+		}
+	
+
+	
+    } 
+
+	
+
+
+}
+
+tno_usa_events.50 = {  # Cuban rebels attack supply depo
+	type = country_event
+    placement = ROOT
+ 
+    title = tno_usa_events.50.t
+    desc = tno_usa_events.50.d
+    flavor = tno_usa_events.50.f 
+    event_image = {
+        texture = "gfx/event_pictures/event_pictures/ang.dds"
+    }
+
+	immediate = {
+	
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_fire.dds"
+
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 1
+
+	trigger = {
+		this ?= c:USA
+	}
+	
+    option = { #Liberate and put in market
+        name = tno_usa_events.22.a
+        default_option = yes
+		
+		remove_diplomatic_pact = {
+			country = CUB
+			type = ofn_millgov
+		}
+	
+
+	create_diplomatic_pact = {
+		country = c:CUB
+		type = customs_union
+	}
+		
+	change_relations = {
+		country = c:CUB
+		value = 150
+	}
+
+	add_loyalists = {
+		value = 0.01
+		culture = cu:yankee
+	}
+
+	change_infamy = -5
+    } 
+
+	
+    option = { # OFN occupation contuines 
+        name = tno_usa_events.48.b
+        default_option = yes
+		
+
+	
+
+	
+    } 
+
+	
+
+
+}
+
+
+
 
 
 

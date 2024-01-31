@@ -217,7 +217,38 @@
        
         }
          
-        
+        if = {   # Cuban occupation
+        limit = {
+            exists = c:CUB
+            c:USA = {
+                OR = {
+                    has_diplomatic_pact = {
+                        who = c:CUB
+                        type = protectorate
+                        is_initiator = yes
+                    }
+                    has_diplomatic_pact = {
+                        who = c:CUB
+                        type = puppet
+                        is_initiator = yes
+                    }
+                    has_diplomatic_pact = {
+                        who = c:CUB
+                        type = dominion
+                        is_initiator = yes
+                    }
+                }
+                
+            }
+            NOT = { has_variable = cuba_occ_usa_var }
+        }
+        set_variable = cuba_occ_usa_var
+        c:USA = {   
+            trigger_event = { id = tno_usa_events.47 popup = yes }
+            trigger_event = { id = tno_usa_events.48 popup = yes }
+        }
+       
+        }
         
         #SAF
         if = {
