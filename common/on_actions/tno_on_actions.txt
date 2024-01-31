@@ -336,6 +336,19 @@
             trigger_event = { id = tno_war_events.3 }
         }
 
+        if = { #leveant event
+			limit = {
+				c:PAL ?= this
+		        game_date >= 1965.4.1
+                NOT = { has_global_variable = levant_par_var }
+			}
+            set_global_variable = levant_par_var
+            c:PAL = {
+                trigger_event = { id = tno_italy_events.1 }
+            }
+           
+        }
+
         if = {
 			limit = {
 				c:IBE ?= this
