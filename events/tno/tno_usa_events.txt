@@ -3323,7 +3323,7 @@ tno_usa_events.53 = {  # rebels annex cuba
 	type = country_event
     placement = ROOT
  
-    title = tno_usa_events.52.t
+    title = tno_usa_events.53.t
     desc = tno_usa_events.52.d
     flavor = tno_usa_events.50.f 
     event_image = {
@@ -3352,14 +3352,41 @@ tno_usa_events.53 = {  # rebels annex cuba
 		
 	
     } 
+}
 
+tno_usa_events.54 = {  # cuba annex rebels
+	type = country_event
+    placement = ROOT
+ 
+    title = tno_usa_events.54.t
+    desc = tno_usa_events.54.d
+    flavor = tno_usa_events.50.f 
+    event_image = {
+        texture = "gfx/event_pictures/event_pictures/ang.dds"
+    }
+
+	immediate = {
+		
+		annex = c:CUP
+		
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_fire.dds"
+
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 1
+
+	trigger = {
+		this ?= c:CUP
+	}
 	
-
+    option = { 
+        name = tno_usa_events.53.a
+        default_option = yes
+		
 	
-
-	
-
-
+    } 
 }
 
 

@@ -284,6 +284,30 @@ KZA = {
 	}
 }
 
+CUB = {
+	dynamic_country_name = {
+		name = "OFN Provisional Government of Cuba"
+		adjective = "Mandate"
+		
+		is_main_tag_only = yes
+		priority = 9999
+		
+		trigger = {
+			exists = c:USA
+			c:USA = {
+				OR = {
+					has_diplomatic_pact = {
+						who = c:CUB
+						type = ofn_millgov
+						is_initiator = yes
+					}
+				}
+				
+			}
+		}
+	}
+}
+
 RUS = {
 	dynamic_country_name = {
 		name = "Soviet Union"

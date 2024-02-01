@@ -136,6 +136,8 @@ PAL = {
 
 
 
+
+
 MGL = {
 	flag_definition = {
 		coa = MGL_CHI
@@ -2388,11 +2390,23 @@ CRO = { # Croatia
 
 CUB = { # Cuba
 	flag_definition = {
-		coa = CUB_early
-		subject_canton = CUB_early
+		coa = CUB_OFN
+		trigger = {
+			exists = c:USA
+			c:USA = {
+				OR = {
+					has_diplomatic_pact = {
+						who = c:CUB
+						type = ofn_millgov
+						is_initiator = yes
+					}
+				}
+				
+			}
+		}
 		coa_with_overlord_canton = CUB_subject
-		allow_overlord_canton = yes		
-		priority = 1		
+		allow_overlord_canton = no
+		priority = 5000	
 	}
 	flag_definition = {
 		coa = CUB
