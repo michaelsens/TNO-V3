@@ -3894,4 +3894,41 @@ je_liberate_zambia = {  #liberate zanbia
 }
 }
 
+je_cuba_retake_west = {  # spend money for stabbility
+	name = "je_retake_west" 
+	desc = "je_fate_angola_desc"
+
+	visible = { always = yes }
+
+       
+
+	possible = {
+		scope:journal_entry = {
+			not = {
+			custom_tooltip = {
+				text = butten_retake_west
+				has_variable = je_retaken_west_var
+				
+			}
+			custom_tooltip = {
+				text = butten_liberation_cooldown
+				has_variable = je_liberation_cooldown
+				
+			}
+		}
+	}
+	}
+
+	effect = {
+
+		scope:journal_entry = {
+			set_variable = { name = je_retaken_west_var months = 99999  }
+			set_variable = { name = je_liberation_cooldown months = 5 }
+		}	
+
+		
+		
+	}
+}
+
 
