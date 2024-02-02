@@ -383,6 +383,7 @@ tno_ru_events.8 = { # Expedition succeeded
 	option = {
 		name = tno_ru_events.8.1
 		custom_tooltip = tno_ru_events.8.1.1.tt
+		set_variable = { name = sakha_expedition_done }
 		s:STATE_UPPER_YENISEYSK.region_state:IRK = {
 			force_resource_discovery = bg_coal_mining
 			force_resource_discovery = bg_lead_mining
@@ -447,6 +448,86 @@ tno_ru_events.10 = { # Apply anything to all Russians at start of game
 
 	immediate = {
 		set_immune_to_revolutions = yes
+    }
+
+    trigger = {
+    }
+
+}
+
+tno_ru_events.11 = { # Apply anything to all AI Russians
+    type = country_event
+    placement = ROOT
+	hidden = yes
+
+	duration = 5
+
+	immediate = {
+		add_journal_entry = { type = je_ru_tno_launch_attack }
+    }
+
+    trigger = {
+    }
+
+}
+
+tno_ru_events.12 = { # Apply anything to all AI far east
+    type = country_event
+    placement = ROOT
+	hidden = yes
+
+	duration = 5
+
+	immediate = {
+		add_journal_entry = { type = je_ru_fe_tno_launch_attack }
+    }
+
+    trigger = {
+    }
+
+}
+
+tno_ru_events.13 = { # Apply anything to all AI siberia
+    type = country_event
+    placement = ROOT
+	hidden = yes
+
+	duration = 5
+
+	immediate = {
+		add_journal_entry = { type = je_ru_sb_tno_launch_attack }
+    }
+
+    trigger = {
+    }
+
+}
+
+tno_ru_events.14 = { # Apply anything to all AI urals
+    type = country_event
+    placement = ROOT
+	hidden = yes
+
+	duration = 5
+
+	immediate = {
+		add_journal_entry = { type = je_ru_url_tno_launch_attack }
+    }
+
+    trigger = {
+    }
+
+}
+
+tno_ru_events.15 = { # Apply anything to all AI west russia
+    type = country_event
+    placement = ROOT
+	hidden = yes
+
+	duration = 5
+
+	immediate = {
+		add_journal_entry = { type = je_ru_wst_tno_launch_attack }
     }
 
     trigger = {

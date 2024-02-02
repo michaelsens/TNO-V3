@@ -4,7 +4,6 @@
 on_monthly_pulse_country = {
 	events = {
 		communism.8 # Red Army
-		peoples_springtime.1
 		unable_to_enact.1
 
 		# Exile Agitators Events
@@ -431,11 +430,6 @@ on_yearly_pulse_country = {
 		20 = pm_events.2
 		20 = pm_events.4
 		20 = pm_events.5
-
-		# Additional 1848
-		10 = 1848.10
-		10 = 1848.11
-		10 = 1848.12
 		
 		# Vampire Panic
 		1 = vampire_panic.1
@@ -814,13 +808,8 @@ on_character_death = {
 		}
 		###
 
-		# Garibaldi exist check
-		if = {
-			limit = {
-				has_template = garibaldi_character_template
-			}
-			remove_global_variable = garibaldi_is_alive_global_var
-		}
+		
+		
 	}
 }
 
@@ -1545,11 +1534,6 @@ on_law_enactment_started = {
 					is_enacting_law = law_type:law_council_republic
 				}
 			}
-			set_variable = {
-				name = abolishing_monarchy_var
-				value = 0
-			}
-			add_journal_entry = { type =  je_abolish_monarchy }
 		}
 	}
 }
@@ -1599,8 +1583,6 @@ on_law_checkpoint_advance = {
 		10 = theocracy.1
 		10 = citizenship_laws.1
 		10 = citizenship_laws.4
-		100 = 1848.1
-		100 = 1848.3
 		10 = education_laws.1
 		10 = education_laws.4
 		10 = distribution_of_power_laws.1
@@ -1701,8 +1683,6 @@ on_law_checkpoint_debate = {
 		10 = citizenship_laws.5
 		10 = education_laws.2
 		10 = education_laws.5
-		100 = 1848.1
-		100 = 1848.3
 		10 = distribution_of_power_laws.2
 		10 = council_republic_law_events.2
 		10 = distribution_of_power_laws.5
@@ -1805,8 +1785,6 @@ on_law_checkpoint_stall = {
 		10 = citizenship_laws.6
 		10 = education_laws.3
 		10 = education_laws.6
-		100 = 1848.1
-		100 = 1848.3
 		10 = distribution_of_power_laws.3
 		10 = council_republic_law_events.3
 		10 = distribution_of_power_laws.6
@@ -2009,7 +1987,6 @@ on_civil_war_won = {
 					name = abolishing_monarchy_var
 					value = 0
 				}
-				add_journal_entry = { type = je_abolish_monarchy }
 			}
 			remove_variable = anti_monarchist_revolution
 		}

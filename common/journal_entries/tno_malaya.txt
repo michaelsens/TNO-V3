@@ -11,24 +11,22 @@
 
 
     invalid = {
+        exists = c:JOL
         c:JOL = {
             is_at_war = no
         }
 	}
     
     complete = {
-       
-        c:JOL = {
-            owns_entire_state_region = STATE_MALAYA
-        }
+        exists = c:JOL
+        NOT = { exists = c:JOH }
 		
 		
 	}
 
     fail = {
-        c:JOH = {
-            owns_entire_state_region = STATE_MALAYA
-        } 
+        exists = c:JOH
+        NOT = { exists = c:JOL }
     }
 
     on_fail = {
@@ -78,6 +76,7 @@ je_tno_malaya_jap = {
 
 
     invalid = {
+        exists = c:JOL
         c:JOL = {
             is_at_war = no
         }
@@ -87,18 +86,15 @@ je_tno_malaya_jap = {
 	}
     
     complete = {
-       
-        c:JOH = {
-            owns_entire_state_region = STATE_MALAYA
-        }
+        exists = c:JOH
+        NOT = { exists = c:JOL }
 		
 		
 	}
 
     fail = {
-        c:JOL = {
-            owns_entire_state_region = STATE_MALAYA
-        } 
+        exists = c:JOL
+        NOT = { exists = c:JOH }
     }
 
     on_fail = {

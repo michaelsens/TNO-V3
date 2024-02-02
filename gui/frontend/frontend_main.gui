@@ -14,7 +14,7 @@ widget = {
 		
 		on_start = "[PdxGuiTriggerAllAnimations('main_menu_start')]"
 		on_start = "[PdxGuiTriggerAllAnimations('menu_leaf_animation')]"
-		on_start = "[PdxGuiTriggerAllAnimations('menu_logo_v_start')]"
+		#on_start = "[PdxGuiTriggerAllAnimations('menu_logo_v_start')]"
 	}		
 
 	widget = {
@@ -111,47 +111,13 @@ widget = {
 			}
 			
 			# BG top
-			widget = {
-				size = { 400 200 }
-				parentanchor = hcenter
-				
-				icon = {
-					size = { 100% 100% }
-					using = top_header_bg
-					
-					modify_texture = {
-						texture = "gfx/interface/menu/menu_frame_top_mask.dds"
-						spriteType = Corneredstretched
-						texture_density = 2
-						spriteborder = { 125 100 }
-						spriteborder_bottom = 0
-						blend_mode = alphamultiply
-					}
-					modify_texture = {
-						texture = "gfx/interface/menu/menu_header_dec.dds"
-						blend_mode = overlay
-					}
-					
-					using = main_menu_shimmer
-				} 
-				icon = {
-					texture = "gfx/interface/menu/menu_frame_top.dds"
-					size = { 100% 100% }
-					spriteType = Corneredstretched
-					texture_density = 2
-					spriteborder = { 125 100 }
-					spriteborder_bottom = 0
-					
-					using = main_menu_shimmer
-				}
-			}
-			
+
 			# Animated leafs
 			icon = {
 				texture = "gfx/interface/menu/menu_top_corner.dds"
 				size = { 112 165 }
 				framesize = { 224 330 }
-				scale = 0.9
+				scale = 0
 				position = { 33 15 } 
 				
 				modify_texture = {
@@ -187,10 +153,10 @@ widget = {
 			} 
 			icon = {
 				texture = "gfx/interface/menu/menu_top_corner.dds"
-				size = { 112 165 }
+				size = { 112 200 }
 				framesize = { 224 330 }
-				scale = 0.9
-				position = { -33 15 }
+				scale = 0
+				position = { -30 15 }
 				parentanchor = right
 				mirror = horizontal
 				
@@ -252,7 +218,18 @@ widget = {
 					using = main_menu_shimmer
 				}
 			}
-			
+			widget = {
+				size = { 600 600 }
+				parentanchor = top|left
+
+				icon = {
+					texture = "gfx/interface/menu/menu_frame_top.dds"
+					size = { 100% 100% }
+					position = {-50 -50}
+
+					using = main_menu_shimmer
+				}
+			}
 			### glow effect on top
 			widget = {
 				position = { 0 -400 }
@@ -669,6 +646,7 @@ widget = {
 			}
 		}
 	}
+
 
 	clickable_version_number = {
 		

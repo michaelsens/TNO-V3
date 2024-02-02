@@ -1093,8 +1093,7 @@ tno_germany_events.17 = { # German Civil War
 		on_created = {
             set_immune_to_revolutions = yes
             add_modifier = {
-				name = civiL_war_never_ends
-				years = 2
+				name = german_civil_war_modifier
 			}
 	        }
 	    } 
@@ -1115,8 +1114,7 @@ tno_germany_events.17 = { # German Civil War
         on_created = {
             set_immune_to_revolutions = yes
             add_modifier = {
-				name = civiL_war_never_ends
-				years = 2
+				name = german_civil_war_modifier
 			}
 	        }
 	    } 
@@ -1147,8 +1145,7 @@ tno_germany_events.17 = { # German Civil War
 		on_created = {
             set_immune_to_revolutions = yes
             add_modifier = {
-				name = civiL_war_never_ends
-				years = 2
+				name = german_civil_war_modifier
 			}
 	        }
 	    } 
@@ -1168,8 +1165,7 @@ tno_germany_events.17 = { # German Civil War
         on_created = {
             set_immune_to_revolutions = yes
             add_modifier = {
-				name = civiL_war_never_ends
-				years = 2
+				name = german_civil_war_modifier
 			}
 	        }
 
@@ -1203,8 +1199,13 @@ tno_germany_events.17 = { # German Civil War
         name = tno_germany_events.17.a
         trigger = {
             has_variable = borman_chosen
-       }
-        play_as = c:GMB
+        }
+        if = {
+            limit = {
+                is_player = yes
+            }
+            play_as = c:GMB
+        }
         remove_variable = borman_chosen
         set_global_variable = german_civil_war_start
         hidden_effect = {
@@ -1339,7 +1340,12 @@ tno_germany_events.17 = { # German Civil War
         trigger = {
             has_variable = speer_chosen
         }
-        play_as = c:GAS
+        if = {
+            limit = {
+                is_player = yes
+            }
+            play_as = c:GAS
+        }
         remove_variable = speer_chosen
         set_global_variable = german_civil_war_start
         hidden_effect = {
@@ -1477,7 +1483,12 @@ tno_germany_events.17 = { # German Civil War
         trigger = {
             has_variable = goering_chosen
         }
-        play_as = c:GHG
+        if = {
+            limit = {
+                is_player = yes
+            }
+            play_as = c:GHG
+        }
         remove_variable = goering_chosen
         set_global_variable = german_civil_war_start
         hidden_effect = {
@@ -1613,7 +1624,12 @@ tno_germany_events.17 = { # German Civil War
         trigger = {
             has_variable = heydrich_chosen
         }
-        play_as = c:GRH
+        if = {
+            limit = {
+                is_player = yes
+            }
+            play_as = c:GRH
+        }
         remove_variable = heydrich_chosen
         set_global_variable = german_civil_war_start
         hidden_effect = {
@@ -1762,8 +1778,7 @@ tno_germany_events.18 = {   #Civil war start
 		on_created = {
             set_immune_to_revolutions = yes
             add_modifier = {
-				name = civiL_war_never_ends
-				years = 2
+				name = german_civil_war_modifier
 			}
 	        }
 	    } 
@@ -1874,6 +1889,13 @@ tno_germany_events.19 = {   #German Civil War WIn
         add_journal_entry = {type = je_ger_reclaim_ost}
         add_journal_entry = {type = je_ger_reclaim_ost_2}
         add_journal_entry = {type = je_ger_reclaim_ukc}
+        add_modifier = {
+    		name = bloated_whermacht
+  	    }
+		add_modifier = { name = slavery_dependence }
+		add_modifier = {
+			name = modifier_advanced_economy
+		}
 	}
 
     option = { # Annex Brandenburg
@@ -1898,6 +1920,13 @@ tno_germany_events.19 = {   #German Civil War WIn
         add_journal_entry = {type = je_ger_reclaim_ost}
         add_journal_entry = {type = je_ger_reclaim_ukc}
         add_journal_entry = {type = je_ger_reclaim_ost_2}
+        add_modifier = {
+    		name = bloated_whermacht
+  	    }
+		add_modifier = { name = slavery_dependence }
+		add_modifier = {
+			name = modifier_advanced_economy
+		}
    }
 }
 
@@ -2159,57 +2188,7 @@ tno_germany_events.26 = {
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 }
 
-tno_germany_events.39 = {   # rko retakes ostland
-    type = country_event
-    placement = ROOT
 
-    hidden = yes
-
-    immediate = {
-       
-      
-            create_diplomatic_play = {
-                type = dp_revolution
-                name = ost_land_fuckwar
-                target_country = c:GMG
-                war = no
-                escalation = 93
-                target_state = s:STATE_LATVIA.region_state:GMG
-            }
-            create_diplomatic_play = {
-                type = dp_revolution
-                name = ost_land_fuckwar
-                target_country = c:LLL
-                war = no
-                escalation = 93
-                target_state = s:STATE_LATVIA.region_state:LLL
-            }
-            create_diplomatic_play = {
-                type = dp_revolution
-                name = ost_land_fuckwar
-                target_country = c:RKS
-                war = no
-                escalation = 93
-                target_state = s:STATE_BREST.region_state:RKS
-            }
-            create_diplomatic_play = {
-                type = dp_revolution
-                name = ost_land_fuckwar
-                target_country = c:UPO
-                war = no
-                escalation = 93
-                target_state = s:STATE_ORSHA.region_state:UPO
-            }
-            hidden_effect = {
-				change_infamy = -999
-		    }
-
-        
-          
-
-        
-    }
-}
 
 tno_germany_events.40 = {   
 
@@ -2267,7 +2246,9 @@ tno_germany_events.40 = {
             type = reichskommissariat
         }
         
-    
+        RKU = {
+            trigger_event = { id = tno_RK_events.26 }
+        }
     
     
     
@@ -2302,6 +2283,10 @@ tno_germany_events.41 = {
         create_diplomatic_pact = {
             country = c:RKO
             type = reichskommissariat
+        }
+
+        RKO = {
+            trigger_event = { id = tno_RK_events.26 }
         }
     }
 }

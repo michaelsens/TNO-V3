@@ -1897,7 +1897,7 @@ je_ru_launch_raid = {
 
 	possible = {
 		hidden_trigger = {
-            game_date <= 1966.11.1
+            game_date <= 1966.1.1
         }
 		is_at_war = no
 		root = {
@@ -1906,8 +1906,7 @@ je_ru_launch_raid = {
 		is_diplomatic_play_target = no
 		is_diplomatic_play_initiator = no
 		any_country = {
-			
-				has_strategic_adjacency = root
+				is_adjacent_to_country = root
 				is_diplomatic_play_target = no
 				is_diplomatic_play_initiator = no
 				save_scope_as = raid_target
@@ -1925,7 +1924,7 @@ je_ru_launch_raid = {
 		custom_tooltip = je_ru_launch_raid_tt
   		random_country = {
     		limit = {
-    	  		has_strategic_adjacency = root
+    	  		is_adjacent_to_country = root
     			is_diplomatic_play_target = no
 				is_diplomatic_play_initiator = no
             	has_modifier = russian_warlord
@@ -1954,6 +1953,409 @@ je_ru_launch_raid = {
             type = dp_raid
             war = no
             escalation = 85
+        }
+	}
+}
+
+je_ru_launch_attack = {
+	name = "je_ru_launch_attack"
+	desc = "je_ru_launch_attack_desc"
+
+	possible = {
+		is_player = no
+		game_date >= 1966.1.1
+		is_at_war = no
+		root = {
+        	has_modifier = russian_warlord
+		}
+		is_diplomatic_play_target = no
+		is_diplomatic_play_initiator = no
+		any_country = {
+			is_adjacent_to_country = root
+			is_diplomatic_play_target = no
+			is_diplomatic_play_initiator = no
+			save_scope_as = raid_target
+            has_modifier = russian_warlord
+            is_player = no
+		}
+	}
+
+	effect = {
+		hidden_effect = {
+			set_immune_to_revolutions = yes
+		}
+		custom_tooltip = je_ru_launch_raid_tt
+  		random_country = {
+    		limit = {
+    	  		is_adjacent_to_country = root
+    			is_diplomatic_play_target = no
+				is_diplomatic_play_initiator = no
+            	has_modifier = russian_warlord
+    			is_player = no
+   			}
+   			save_scope_as = raid_target
+  		}
+  		ROOT = {
+  			random_scope_state = {
+	            limit = {
+	                is_capital = yes
+	            }
+	            save_scope_as = target_capital_state_scope
+	            add_war_goal = {
+					holder = scope:raid_target
+					type = return_state
+					target_state = scope:target_capital_state_scope
+				}
+	        }
+  		}
+  		ROOT = {
+  			random_scope_state = {
+	            limit = {
+	                is_capital = yes
+	            }
+	            save_scope_as = target_capital_state_scope
+	        }
+  		}
+
+        create_diplomatic_play = {
+            name = theo
+            target_country = scope:raid_target
+            type = dp_annex_war
+            war = no
+            escalation = 1
+            add_war_goal = {
+				holder = scope:raid_target
+				type = return_state
+				target_state = scope:target_capital_state_scope
+			}
+        }
+	}
+}
+
+je_ru_fe_launch_attack = {
+	name = "je_ru_launch_attack"
+	desc = "je_ru_launch_attack_desc"
+
+	ai_chance = {
+		base = 100
+	}
+
+	possible = {
+		is_player = no
+		game_date >= 1966.1.1
+		is_at_war = no
+		root = {
+        	has_modifier = russian_warlord
+			has_modifier = far_eastern
+		}
+		is_diplomatic_play_target = no
+		is_diplomatic_play_initiator = no
+		any_country = {
+			is_adjacent_to_country = root
+			is_diplomatic_play_target = no
+			is_diplomatic_play_initiator = no
+			save_scope_as = raid_target
+            has_modifier = russian_warlord
+			has_modifier = far_eastern
+            is_player = no
+		}
+	}
+
+	effect = {
+		hidden_effect = {
+			set_immune_to_revolutions = yes
+		}
+		custom_tooltip = je_ru_launch_raid_tt
+  		random_country = {
+    		limit = {
+    	  		is_adjacent_to_country = root
+    			is_diplomatic_play_target = no
+				is_diplomatic_play_initiator = no
+            	has_modifier = russian_warlord
+				has_modifier = far_eastern
+    			is_player = no
+   			}
+   			save_scope_as = raid_target
+  		}
+  		ROOT = {
+  			random_scope_state = {
+	            limit = {
+	                is_capital = yes
+	            }
+	            save_scope_as = target_capital_state_scope
+	            add_war_goal = {
+					holder = scope:raid_target
+					type = return_state
+					target_state = scope:target_capital_state_scope
+				}
+	        }
+  		}
+  		ROOT = {
+  			random_scope_state = {
+	            limit = {
+	                is_capital = yes
+	            }
+	            save_scope_as = target_capital_state_scope
+	        }
+  		}
+
+        create_diplomatic_play = {
+            name = theo
+            target_country = scope:raid_target
+            type = dp_annex_war
+            war = no
+            escalation = 1
+            add_war_goal = {
+				holder = scope:raid_target
+				type = return_state
+				target_state = scope:target_capital_state_scope
+			}
+        }
+	}
+}
+
+je_ru_sb_launch_attack = {
+	name = "je_ru_launch_attack"
+	desc = "je_ru_launch_attack_desc"
+
+	ai_chance = {
+		base = 100
+	}
+
+	possible = {
+		is_player = no
+		game_date >= 1966.1.1
+		is_at_war = no
+		root = {
+        	has_modifier = russian_warlord
+			has_modifier = siberian
+		}
+		is_diplomatic_play_target = no
+		is_diplomatic_play_initiator = no
+		any_country = {
+			is_adjacent_to_country = root
+			is_diplomatic_play_target = no
+			is_diplomatic_play_initiator = no
+			save_scope_as = raid_target
+            has_modifier = russian_warlord
+			has_modifier = siberian
+            is_player = no
+		}
+	}
+
+	effect = {
+		hidden_effect = {
+			set_immune_to_revolutions = yes
+		}
+		custom_tooltip = je_ru_launch_raid_tt
+  		random_country = {
+    		limit = {
+    	  		is_adjacent_to_country = root
+    			is_diplomatic_play_target = no
+				is_diplomatic_play_initiator = no
+            	has_modifier = russian_warlord
+				has_modifier = siberian
+    			is_player = no
+   			}
+   			save_scope_as = raid_target
+  		}
+  		ROOT = {
+  			random_scope_state = {
+	            limit = {
+	                is_capital = yes
+	            }
+	            save_scope_as = target_capital_state_scope
+	            add_war_goal = {
+					holder = scope:raid_target
+					type = return_state
+					target_state = scope:target_capital_state_scope
+				}
+	        }
+  		}
+  		ROOT = {
+  			random_scope_state = {
+	            limit = {
+	                is_capital = yes
+	            }
+	            save_scope_as = target_capital_state_scope
+	        }
+  		}
+
+        create_diplomatic_play = {
+            name = theo
+            target_country = scope:raid_target
+            type = dp_annex_war
+            war = no
+            escalation = 1
+            add_war_goal = {
+				holder = scope:raid_target
+				type = return_state
+				target_state = scope:target_capital_state_scope
+			}
+        }
+	}
+}
+
+je_ru_url_launch_attack = {
+	name = "je_ru_launch_attack"
+	desc = "je_ru_launch_attack_desc"
+
+	ai_chance = {
+		base = 100
+	}
+
+	possible = {
+		is_player = no
+		game_date >= 1966.1.1
+		is_at_war = no
+		root = {
+        	has_modifier = russian_warlord
+			has_modifier = ural
+		}
+		is_diplomatic_play_target = no
+		is_diplomatic_play_initiator = no
+		any_country = {
+			is_adjacent_to_country = root
+			is_diplomatic_play_target = no
+			is_diplomatic_play_initiator = no
+			save_scope_as = raid_target
+            has_modifier = russian_warlord
+			has_modifier = ural
+            is_player = no
+		}
+	}
+
+	effect = {
+		hidden_effect = {
+			set_immune_to_revolutions = yes
+		}
+		custom_tooltip = je_ru_launch_raid_tt
+  		random_country = {
+    		limit = {
+    	  		is_adjacent_to_country = root
+    			is_diplomatic_play_target = no
+				is_diplomatic_play_initiator = no
+            	has_modifier = russian_warlord
+				has_modifier = ural
+    			is_player = no
+   			}
+   			save_scope_as = raid_target
+  		}
+  		ROOT = {
+  			random_scope_state = {
+	            limit = {
+	                is_capital = yes
+	            }
+	            save_scope_as = target_capital_state_scope
+	            add_war_goal = {
+					holder = scope:raid_target
+					type = return_state
+					target_state = scope:target_capital_state_scope
+				}
+	        }
+  		}
+  		ROOT = {
+  			random_scope_state = {
+	            limit = {
+	                is_capital = yes
+	            }
+	            save_scope_as = target_capital_state_scope
+	        }
+  		}
+
+        create_diplomatic_play = {
+            name = theo
+            target_country = scope:raid_target
+            type = dp_annex_war
+            war = no
+            escalation = 1
+            add_war_goal = {
+				holder = scope:raid_target
+				type = return_state
+				target_state = scope:target_capital_state_scope
+			}
+        }
+	}
+}
+
+je_ru_wst_launch_attack = {
+	name = "je_ru_launch_attack"
+	desc = "je_ru_launch_attack_desc"
+
+	ai_chance = {
+		base = 100
+	}
+
+	possible = {
+		is_player = no
+		game_date >= 1966.1.1
+		is_at_war = no
+		root = {
+        	has_modifier = russian_warlord
+			has_modifier = western
+		}
+		is_diplomatic_play_target = no
+		is_diplomatic_play_initiator = no
+		any_country = {
+			is_adjacent_to_country = root
+			is_diplomatic_play_target = no
+			is_diplomatic_play_initiator = no
+			save_scope_as = raid_target
+            has_modifier = russian_warlord
+			has_modifier = western
+            is_player = no
+		}
+	}
+
+	effect = {
+		hidden_effect = {
+			set_immune_to_revolutions = yes
+		}
+		custom_tooltip = je_ru_launch_raid_tt
+  		random_country = {
+    		limit = {
+    	  		is_adjacent_to_country = root
+    			is_diplomatic_play_target = no
+				is_diplomatic_play_initiator = no
+            	has_modifier = russian_warlord
+				has_modifier = western
+    			is_player = no
+   			}
+   			save_scope_as = raid_target
+  		}
+  		ROOT = {
+  			random_scope_state = {
+	            limit = {
+	                is_capital = yes
+	            }
+	            save_scope_as = target_capital_state_scope
+	            add_war_goal = {
+					holder = scope:raid_target
+					type = return_state
+					target_state = scope:target_capital_state_scope
+				}
+	        }
+  		}
+  		ROOT = {
+  			random_scope_state = {
+	            limit = {
+	                is_capital = yes
+	            }
+	            save_scope_as = target_capital_state_scope
+	        }
+  		}
+
+        create_diplomatic_play = {
+            name = theo
+            target_country = scope:raid_target
+            type = dp_annex_war
+            war = no
+            escalation = 1
+            add_war_goal = {
+				holder = scope:raid_target
+				type = return_state
+				target_state = scope:target_capital_state_scope
+			}
         }
 	}
 }
@@ -2128,6 +2530,11 @@ je_ru_gen_complete_sib_plan = {
             text = fin_sib_paris_of_siberia_done
             has_variable = paris_of_siberia_done
         }
+        hidden_trigger = {
+        	NOT = {
+        		has_modifier = the_siberian_plan
+        	}
+        }
         #custom_tooltip = {
         #    text = fin_sib_usa_relations
         #    c:USA = {
@@ -2256,13 +2663,13 @@ je_ru_com_restore_ussr = {
 	}
 
 	effect = {
-		c:GER = {
-			save_scope_as = ger_nation_scope
-			create_diplomatic_pact = {
-				country = IRK
-			   type = rivalry
-			}
-		}
+		#c:GER = {
+		#	save_scope_as = ger_nation_scope
+		#	create_diplomatic_pact = {
+		#		country = IRK
+		#	   type = rivalry
+		#	}
+		#}
 		custom_tooltip = {
 			text = je_ru_com_restore_ussr_desc_tt_1
 			set_variable = {
@@ -2289,25 +2696,33 @@ je_ru_com_restore_ussr = {
 		#	}
 		#}
 
-		if = {
+		if = { #if they do not own karelia or onega
 			limit = {
-				c:FIN = {
-					owns_entire_state_region = STATE_EAST_KARELIA
-				}	
 				NOT = {
-					has_modifier = victory_in_karelia
+					owns_entire_state_region = STATE_EAST_KARELIA
+					owns_entire_state_region = STATE_ARKHANGELSK
+				}
+			}
+			add_journal_entry = { type = je_ru_take_karelia_and_onega }
+		}
+		else_if = { #if they do not own karelia
+			limit = {
+				NOT = {
+					owns_entire_state_region = STATE_EAST_KARELIA
 				}
 			}
 			add_journal_entry = { type = je_ru_take_karelia }
+		}else = {
+			add_journal_entry = { type = je_ru_take_karelia_and_onega }
 		}
 
-		custom_tooltip = {
-			text = je_ru_com_restore_ussr_desc_tt_3
-			create_diplomatic_pact = {
-     			country = GER
-    			type = rivalry
-     		}
-		}
+		#custom_tooltip = {
+		#	text = je_ru_com_restore_ussr_desc_tt_3
+		#	create_diplomatic_pact = {
+     	#		country = GER
+    	#		type = rivalry
+     	#	}
+		#}
 		add_primary_culture = cu:ukrainian
         add_primary_culture = cu:byelorussian
         add_primary_culture = cu:north_caucasian
@@ -2398,16 +2813,40 @@ je_ru_com_restore_ussr = {
 	}
 }
 
-je_ru_take_karelia_button = {
+je_ru_take_karelia_and_onega_button = {
 	name = "je_ru_take_karelia_button"
 	desc = "je_ru_take_karelia_button_desc"
 
 	possible = {
 		is_at_war = no
 		is_diplomatic_play_initiator = no
+	  	ROOT = {
+	  		has_claim = s:STATE_EAST_KARELIA
+	  	}
 	}
 
 	effect = {
+		#c:ONG = {
+    	#	random_overlord_or_above = {
+    	#		save_scope_as = overlord_target
+    	#	}
+  		#}
+  		every_state = { 
+  			limit = { 
+  				state_region = s:STATE_EAST_KARELIA
+  			} 
+  			owner = { 
+  				save_scope_as = overlord_target
+  			}
+  		}
+	    scope:overlord_target = {
+	    	random_scope_state = {
+		        limit = {
+			        state_region = s:STATE_EAST_KARELIA
+			    }
+			    save_scope_as = east_karelia_state_scope
+		    }
+	    }
         create_diplomatic_play = {
             #name = jack
             target_country = c:ONG
@@ -2418,10 +2857,16 @@ je_ru_take_karelia_button = {
 			add_war_goal = {
 				holder = root
 				type = return_state
-				target_state = s:STATE_EAST_KARELIA.region_state:FIN
+				target_state = scope:east_karelia_state_scope
 			}
 			add_war_goal = {
-				holder = c:FIN
+				holder = scope:overlord_target
+				type = revoke_claim
+				target_country = root
+				target_state = scope:east_karelia_state_scope
+			}
+			add_war_goal = {
+				holder = scope:overlord_target
 				target_country = root
 				type = war_reparations
 			}
@@ -2430,9 +2875,61 @@ je_ru_take_karelia_button = {
 	}
 }
 
+je_ru_take_karelia_button = {
+	name = "je_ru_take_karelia_button"
+	desc = "je_ru_take_karelia_button_desc"
+
+	possible = {
+		is_at_war = no
+		is_diplomatic_play_initiator = no
+		ROOT = {
+	  		has_claim = s:STATE_EAST_KARELIA
+	  	}
+	}
+
+	effect = {
+  		every_state = { 
+  			limit = { 
+  				state_region = s:STATE_EAST_KARELIA
+  			} 
+  			owner = { 
+  				save_scope_as = overlord_target
+  			}
+  		}
+	    scope:overlord_target = {
+	    	random_scope_state = {
+		        limit = {
+			        state_region = s:STATE_EAST_KARELIA
+			    }
+			    save_scope_as = east_karelia_state_scope
+		    }
+	    }
+        create_diplomatic_play = {
+            #name = jack
+            target_country = c:ONG
+            type = dp_return_state
+            target_state = scope:east_karelia_state_scope
+            war = no
+            escalation = 85
+			add_war_goal = {
+				holder = scope:overlord_target
+				target_country = root
+				type = war_reparations
+			}
+			add_war_goal = {
+				holder = scope:overlord_target
+				type = revoke_claim
+				target_country = root
+				target_state = scope:east_karelia_state_scope
+			}
+        }
+        custom_tooltip = je_ru_take_karelia_button_tt
+	}
+}
+
 je_ru_gen_reform_army_advance_basic = {
 	name = "je_ru_gen_reform_army_advance"
-	desc = "je_ru_gen_reform_army_advance_desc"
+	desc = "je_ru_gen_reform_army_advance_first_desc"
 
 	visible = {
 		has_modifier = ru_no_army_reform
@@ -2804,7 +3301,7 @@ je_ru_irk_second_great_patriotic_war = {
         #    text = complete_request_american_aid_and_magadan
         #    has_variable = je_request_american_aid_tried
         #}
-        owns_entire_state_region = STATE_EAST_KARELIA
+        #owns_entire_state_region = STATE_EAST_KARELIA
 	    #is_at_war = no
 		is_diplomatic_play_initiator = no
 	}
@@ -2916,7 +3413,7 @@ je_ru_irk_second_great_patriotic_war = {
 			add_war_goal = {
 	            holder = c:RUS
 	            type = return_state
-	            target_state = s:STATE_KIEV.region_state:TRG
+	            target_state = s:STATE_TRANSNISTRIA.region_state:TRG
 			}
 			add_war_goal = {
 	            holder = c:RUS
@@ -2967,6 +3464,12 @@ je_ru_irk_second_great_patriotic_war = {
         }
         set_global_variable = second_great_patriotic_war
         custom_tooltip = warning_2wrw
+        if = {
+        	limit = {
+        		owns_entire_state_region = STATE_EAST_KARELIA
+        	}
+        	custom_tooltip = warning_2wrw_finland
+        }
         hidden_effect = {
             change_infamy = -1500
             trigger_event = { id = tno_irk_events.12 popup = yes } #The Great Anti-Fascist War
@@ -3019,6 +3522,16 @@ je_liberate_central_a = {  #liberate congo
 			set_variable = { name = je_liberation_cooldown months = 5 }
 		}	
 		trigger_event = { id = tno_usa_events.22 days = 0 popup = yes }
+		create_country = { # full congo
+        tag = PIP
+        origin = c:USA
+        state = s:STATE_BAS_CONGO.region_state:KZA
+		state = s:STATE_EQUATEUR.region_state:KZA
+		state = s:STATE_CONGO_ORIENTALE.region_state:KZA
+		state = s:STATE_KASAI.region_state:KZA
+		state = s:STATE_KATANGA.region_state:KZA
+    } 
+	set_variable = congo_free_var
 		
 }
 }
@@ -3054,6 +3567,18 @@ je_liberate_central_b = {  #liberate orungu
 			set_variable = { name = je_liberation_cooldown months = 5 }
 		}	
 		trigger_event = { id = tno_usa_events.24 days = 0 popup = yes }
+		create_country = { 
+			tag = PIU
+			origin = c:USA
+			state = s:STATE_GABON.region_state:KZA
+			state = s:STATE_SOUTH_CAMEROON.region_state:KZA
+	
+		
+	   
+		} 
+		
+		set_variable = orungu_free_var
+		
 		
 }
 }
@@ -3089,13 +3614,24 @@ je_liberate_central_c = {  #liberate central africa
 		}	
 		
 		trigger_event = { id = tno_usa_events.25 days = 0 popup = yes }
+		create_country = { 
+			tag = PIK
+			origin = c:USA
+			state = s:STATE_UBANGI_SHARI.region_state:KZA
+		
+		} 
+		 
+		set_variable = {
+			name = central_africa_free_var
+		}
+	
 		
 }
 }
 
 je_liberate_uganda = {  
-	name = "je_liberate_uganda" 
-	desc = "je_liberate_uganda_desc"
+	name = "je_fate_uganda" 
+	desc = "je_fate_angola_desc"
 
 	visible = { always = yes }
 
@@ -3127,3 +3663,331 @@ je_liberate_uganda = {
 		
 }
 }
+
+je_liberate_angola = {  #liberate angola
+	name = "je_fate_angola" 
+	desc = "je_fate_angola_desc"
+
+	visible = { always = yes }
+
+	possible = {
+		scope:journal_entry = {
+				not = {
+				custom_tooltip = {
+					text = butten_liberate_congo
+					has_variable = je_central_angola_cooldown
+					
+				}
+				custom_tooltip = {
+					text = butten_liberation_cooldown
+					has_variable = je_liberation_cooldown
+					
+				}
+			}
+		}
+	}
+
+	effect = {
+
+		scope:journal_entry = {
+			set_variable = { name = je_central_angola_cooldown months = 99999  }
+			set_variable = { name = je_liberation_cooldown months = 5 }
+		}	
+		
+		trigger_event = { id = tno_usa_events.37 days = 0 popup = yes }
+		create_country = { 
+			tag = ANG
+			origin = c:USA
+			state = s:STATE_NORTH_ANGOLA.region_state:KSA
+			state = s:STATE_SOUTH_ANGOLA.region_state:KSA
+			state = s:STATE_EAST_ANGOLA.region_state:KSA
+		
+		} 
+		 
+		
+	
+		
+}
+}
+
+je_fate_of_east_africa = {  
+	name = "je_fate_of_east_africa" 
+	desc = "je_fate_angola_desc"
+
+	visible = {not = {
+		custom_tooltip = {
+			text = button_request_money_12_months
+			has_variable = east_africa_green
+			
+		}
+		has_variable = je_picked_fate_var
+		custom_tooltip = {
+			text = butten_liberation_cooldown
+			has_variable = east_africa_fed
+			
+		}
+	} }
+
+	possible = {
+		scope:journal_entry = {
+				not = {
+				custom_tooltip = {
+					text = butten_liberate_congo
+					has_variable = je_picked_fate_var
+					
+				}
+			}
+		}
+	}
+
+
+	effect = {
+
+		set_variable = { name = je_picked_fate_var months = 9999 }
+		trigger_event = { id = tno_usa_events.38 days = 0 popup = yes }
+		
+	}
+}
+
+je_liberate_mozan = {  #liberate mozanbieque
+	name = "je_liberate_mozan" 
+	desc = "je_fate_angola_desc"
+
+	visible = { has_variable = east_africa_green
+	}
+
+	possible = {
+		scope:journal_entry = {
+				not = {
+				custom_tooltip = {
+					text = butten_liberate_congo
+					has_variable = je_liberate_mozan
+					
+				}
+				custom_tooltip = {
+					text = butten_liberation_cooldown
+					has_variable = je_liberation_cooldown
+					
+				}
+			}
+		}
+	}
+
+	effect = {
+
+		scope:journal_entry = {
+			set_variable = { name = je_liberate_mozan months = 99999  }
+			set_variable = { name = je_liberation_cooldown months = 5 }
+		}	
+
+		trigger_event = { id = tno_usa_events.43 days = 0 popup = yes }
+		create_country = { 
+			tag = PIO
+			origin = c:USA
+			state = s:STATE_MOCAMBIQUE.region_state:KON
+			state = s:STATE_ZAMBEZIA.region_state:KON
+		
+		} 
+		 
+		
+	
+		
+}
+}
+
+je_liberate_tanza = {  #liberate tanzkanika
+	name = "je_fate_tanz" 
+	desc = "je_fate_angola_desc"
+
+	visible = { has_variable = east_africa_green
+	}
+
+	possible = {
+		scope:journal_entry = {
+				not = {
+				custom_tooltip = {
+					text = butten_liberate_congo
+					has_variable = je_liberate_tanz
+					
+				}
+				custom_tooltip = {
+					text = butten_liberation_cooldown
+					has_variable = je_liberation_cooldown
+					
+				}
+			}
+		}
+	}
+
+	effect = {
+
+		scope:journal_entry = {
+			set_variable = { name = je_liberate_tanz months = 99999  }
+			set_variable = { name = je_liberation_cooldown months = 5 }
+		}	
+
+		trigger_event = { id = tno_usa_events.44 days = 0 popup = yes }
+		create_country = { 
+			tag = FLB
+			origin = c:USA
+			state = s:STATE_TANGANYIKA.region_state:KON
+			state = s:STATE_LINDI.region_state:KON
+		
+		} 
+		create_country = { 
+			tag = ZAN
+			origin = c:USA
+			state = s:STATE_ZANZIBAR.region_state:KON
+		
+		} 
+		 
+		
+	
+		
+}
+}
+
+je_liberate_uganda = {  #liberate Uganda
+	name = "je_fate_uganda" 
+	desc = "je_fate_angola_desc"
+
+	visible = { has_variable = east_africa_green
+	}
+
+	possible = {
+		scope:journal_entry = {
+				not = {
+				custom_tooltip = {
+					text = butten_liberate_congo
+					has_variable = je_liberate_ugandad # Ugandan kucneles anybody??? Like that rabbit Big chungus
+					
+				}
+				custom_tooltip = {
+					text = butten_liberation_cooldown
+					has_variable = je_liberation_cooldown
+					
+				}
+			}
+		}
+	}
+
+	effect = {
+
+		scope:journal_entry = {
+			set_variable = { name = je_liberate_ugandad months = 99999  }
+			set_variable = { name = je_liberation_cooldown months = 5 }
+		}	
+
+		trigger_event = { id = tno_usa_events.46 days = 0 popup = yes }
+		create_country = { 
+			tag = ANK
+			origin = c:USA
+			state = s:STATE_UGANDA.region_state:KON
+
+		
+		} 
+		
+		 
+		
+	
+		
+}
+}
+
+je_liberate_kenya = {  #liberate Uganda
+	name = "je_fate_uganda" 
+	desc = "je_fate_angola_desc"
+
+	visible = { has_variable = east_africa_green
+	}
+
+	possible = {
+		scope:journal_entry = {
+				not = {
+				custom_tooltip = {
+					text = butten_liberate_congo
+					has_variable = je_liberate_ugandad # Ugandan kucneles anybody??? Like that rabbit Big chungus
+					
+				}
+				custom_tooltip = {
+					text = butten_liberation_cooldown
+					has_variable = je_liberation_cooldown
+					
+				}
+			}
+		}
+	}
+
+	effect = {
+
+		scope:journal_entry = {
+			set_variable = { name = je_liberate_ugandad months = 99999  }
+			set_variable = { name = je_liberation_cooldown months = 5 }
+		}	
+
+		trigger_event = { id = tno_usa_events.46 days = 0 popup = yes }
+		create_country = { 
+			tag = ANK
+			origin = c:USA
+			state = s:STATE_UGANDA.region_state:KON
+			state = s:STATE_RIFT_VALLEY.region_state:KON
+
+		
+		} 
+		
+		 
+		
+	
+		
+}
+}
+
+
+
+je_liberate_zambia = {  #liberate zanbia
+	name = "je_liberate_zambia" 
+	desc = "je_fate_angola_desc"
+
+	visible = { has_variable = je_picked_fate_var
+	}
+
+	possible = {
+		scope:journal_entry = {
+				not = {
+				custom_tooltip = {
+					text = butten_liberate_congo
+					has_variable = je_central_angola_cooldown
+					
+				}
+				custom_tooltip = {
+					text = butten_liberation_cooldown
+					has_variable = je_liberation_cooldown
+					
+				}
+			}
+		}
+	}
+
+	effect = {
+
+		scope:journal_entry = {
+			set_variable = { name = je_central_angola_cooldown months = 99999  }
+			set_variable = { name = je_liberation_cooldown months = 5 }
+		}	
+
+		trigger_event = { id = tno_usa_events.42 days = 0 popup = yes }
+		create_country = { 
+			tag = PIV
+			origin = c:USA
+			state = s:STATE_ZAMBIA.region_state:KON
+			state = s:STATE_KAZEMBE.region_state:KON
+		
+		} 
+		 
+		
+	
+		
+}
+}
+
+

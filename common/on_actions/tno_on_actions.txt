@@ -119,6 +119,7 @@
 
         if = {   #African liberation
 			limit = {
+                exists = c:KON
                 c:USA = {
                     OR = {
                         has_diplomatic_pact = {
@@ -144,13 +145,48 @@
             set_variable = liberate_kon_var
             c:USA = {
                 trigger_event = { id = tno_usa_events.21 popup = yes }
-                #trigger_event = { id = tno_usa_events.31 popup = yes }
+                trigger_event = { id = tno_usa_events.31 popup = yes }
             }
            
         }
 
         if = {   #African liberation
         limit = {
+            exists = c:KSA
+            c:USA = {
+                OR = {
+                    has_diplomatic_pact = {
+                        who = c:KSA
+                        type = protectorate
+                        is_initiator = yes
+                    }
+                    has_diplomatic_pact = {
+                        who = c:KSA
+                        type = puppet
+                        is_initiator = yes
+                    }
+                    has_diplomatic_pact = {
+                        who = c:KSA
+                        type = dominion
+                        is_initiator = yes
+                    }
+                }
+                
+            }
+            NOT = { has_variable = liberate_ksa_var }
+        }
+        set_variable = liberate_ksa_var
+        c:USA = {
+            trigger_event = { id = tno_usa_events.34 popup = yes }
+            trigger_event = { id = tno_usa_events.36 popup = yes }
+           
+        }
+       
+    }
+
+        if = {   #African liberation
+        limit = {
+            exists = c:KZA
             c:USA = {
                 OR = {
                     has_diplomatic_pact = {
@@ -176,7 +212,7 @@
         set_variable = liberate_kza_var
         c:USA = {   
             trigger_event = { id = tno_usa_events.32 popup = yes }
-            #trigger_event = { id = tno_usa_events.33 popup = yes }
+            trigger_event = { id = tno_usa_events.33 popup = yes }
         }
        
         }
@@ -259,7 +295,7 @@
         if = {
             limit = {
                 c:KON ?= this
-                game_date >= 1967.3.1
+                game_date >= 1968.3.1
                 NOT = { has_global_variable = saf_war_var }
             }
             set_global_variable = saf_war_var
@@ -348,7 +384,7 @@
         #SafContext
         if = {
 			limit = {
-               game_date >= 1966.9.1
+               game_date >= 1967.9.1
                NOT = { has_variable = saf_flavor_var }
             }
             set_variable = saf_flavor_var
@@ -358,7 +394,7 @@
         #South African Conference
         if = {
 			limit = {
-               game_date >= 1967.1.1
+               game_date >= 1968.1.1
                NOT = { has_variable = usa_flavor_var }
             }
             set_variable = usa_flavor_var
@@ -368,7 +404,7 @@
         #Mittelafrika investigation
         if = {
 			limit = {
-               game_date >= 1966.1.1
+               game_date >= 1967.9.1
                NOT = { has_variable = ger_flavor_var }
             }
             set_variable = ger_flavor_var

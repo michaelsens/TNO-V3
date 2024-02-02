@@ -4,7 +4,16 @@ je_tno_liberate_east_africa = {
 
     icon = "gfx/interface/icons/new_event_icons/ofn_kon.dds"
     group = je_group_historical_content
-    scripted_button = je_malaya_jap_a
+    scripted_button = je_fate_of_east_africa
+    scripted_button = je_liberate_zambia
+    scripted_button = je_liberate_mozan
+    scripted_button = je_liberate_tanza
+    scripted_button = je_liberate_uganda
+
+ 
+   
+
+
    
 
 
@@ -16,8 +25,22 @@ je_tno_liberate_east_africa = {
 	}
     
     complete = {
-		
-       
+        
+      NOT = {
+        
+        c:KON = {
+            OR ={
+            owns_entire_state_region = STATE_ZAMBIA
+            owns_entire_state_region = STATE_KAZEMBE
+            owns_entire_state_region = STATE_MOCAMBIQUE
+            owns_entire_state_region = STATE_ZAMBEZIA
+            owns_entire_state_region = STATE_MOCAMBIQUE
+            owns_entire_state_region = STATE_ZANZIBAR
+            owns_entire_state_region = STATE_TANGANYIKA
+            owns_entire_state_region = STATE_UGANDA
+            }
+        } 
+      }
 		
 		
 	}
@@ -26,9 +49,6 @@ je_tno_liberate_east_africa = {
 
     on_timeout = {
         
-        add_radicals = {
-            value = 0.1
-        }
     }
 
     on_complete = {
@@ -39,7 +59,7 @@ je_tno_liberate_east_africa = {
         }
     }
 
-    progressbar = no
+  
     
     weight = 100
 
@@ -73,21 +93,24 @@ je_tno_liberate_central_africa = {
 		
 		
 		custom_tooltip = {
-			text = je_has_liberated_orungu_text
-			has_variable = je_orungu_cooldown
-			
-		}
-		custom_tooltip = {
-			text = je_has_liberated_congo_text
-			has_variable = je_congo_cooldown
-			
-		}
+            text = je_has_liberated_orungu_text
 
-		custom_tooltip = {
-			text = je_has_liberated_text
-			has_variable = je_central_africa_cooldown
-			
-		}
+           has_variable = orungu_free_var
+
+        }
+        custom_tooltip = {
+            text = je_has_liberated_congo_text
+            has_variable = congo_free_var
+
+
+        }
+
+        custom_tooltip = {
+            text = je_has_liberated_text
+            has_variable = central_africa_free_var
+
+
+        }
        
        
 		
@@ -98,9 +121,7 @@ je_tno_liberate_central_africa = {
 
     on_timeout = {
         
-        add_radicals = {
-            value = 0.01
-        }
+       
     }
 
     on_complete = {
@@ -111,7 +132,67 @@ je_tno_liberate_central_africa = {
         }
     }
 
-    progressbar = no
+   
+    
+    weight = 100
+
+    
+    should_be_pinned_by_default = yes
+    
+}
+
+je_tno_liberate_angola= { 
+
+    icon = "gfx/interface/icons/new_event_icons/ofn_angola.dds"
+    group = je_group_historical_content
+    scripted_button = je_liberate_angola
+
+   
+
+
+    invalid = {
+        
+    }
+
+    immediate = {
+	}
+    
+    complete = {
+
+		
+		
+
+        custom_tooltip = {
+            text = je_liberated_angola_text
+
+            has_variable = ango_free_var
+
+        }
+		
+		
+		
+       
+       
+		
+		
+	}
+
+   
+
+    on_timeout = {
+        
+       
+    }
+
+    on_complete = {
+       
+        add_loyalists = {
+            value = 0.05	
+
+        }
+    }
+
+    
     
     weight = 100
 
