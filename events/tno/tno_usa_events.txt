@@ -3199,13 +3199,13 @@ tno_usa_events.50 = {  # Cuban rebels attack supply depo
 
 }
 
-tno_usa_events.51 = {  # Cuban rebels attack supply depo
+tno_usa_events.51 = {  # Cuban rebels attack OFN soldiers
 	type = country_event
     placement = ROOT
  
     title = tno_usa_events.51.t
     desc = tno_usa_events.51.d
-    flavor = tno_usa_events.50.f 
+    flavor = tno_usa_events.51.f 
     event_image = {
         texture = "gfx/event_pictures/event_pictures/ang.dds"
     }
@@ -3230,7 +3230,7 @@ tno_usa_events.51 = {  # Cuban rebels attack supply depo
 	}
 	
     option = { 
-        name = tno_usa_events.51.a
+        name = tno_usa_events.50.a
         default_option = no
 		
 		add_modifier = {
@@ -3245,7 +3245,7 @@ tno_usa_events.51 = {  # Cuban rebels attack supply depo
     } 
 
 	option = { 
-        name = tno_usa_events.51.b
+        name = tno_usa_events.50.b
         default_option = yes
 		
 		add_modifier = {
@@ -3262,68 +3262,6 @@ tno_usa_events.51 = {  # Cuban rebels attack supply depo
 
 }
 
-tno_usa_events.52 = {  # Cuban rebels attack supply depo
-	type = country_event
-    placement = ROOT
- 
-    title = tno_usa_events.52.t
-    desc = tno_usa_events.52.d
-    flavor = tno_usa_events.50.f 
-    event_image = {
-        texture = "gfx/event_pictures/event_pictures/ang.dds"
-    }
-
-	immediate = {
-		
-		change_variable = {
-			name = cuba_instability
-			add = 5
-		}
-		
-    }
-
-    icon = "gfx/interface/icons/event_icons/event_fire.dds"
-
-    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
-
-    duration = 1
-
-	trigger = {
-		this ?= c:USA
-	}
-	
-    option = { 
-        name = tno_usa_events.52.a
-        default_option = no
-		
-		add_modifier = {
-			name = cubans_counter_harsh
-			years = 2
-		}
-		add_modifier = {
-			name = funding_op
-			years = 1	
-		}
-	
-    } 
-
-	option = { 
-        name = tno_usa_events.52.b
-        default_option = yes
-		
-		add_modifier = {
-			name = cubans_counter_nice
-			years = 2
-		}
-	
-    } 
-
-	
-
-	
-
-
-}
 
 tno_usa_events.53 = {  # rebels annex cuba
 	type = country_event

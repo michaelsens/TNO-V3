@@ -3906,12 +3906,7 @@ je_cuba_retake_west = {  # spend money for stabbility
 		scope:journal_entry = {
 			not = {
 			custom_tooltip = {
-				text = butten_retake_west
-				has_variable = je_retaken_west_var
-				
-			}
-			custom_tooltip = {
-				text = butten_liberation_cooldown
+				text = butten_cooldown_5month
 				has_variable = je_liberation_cooldown
 				
 			}
@@ -3922,10 +3917,75 @@ je_cuba_retake_west = {  # spend money for stabbility
 	effect = {
 
 		scope:journal_entry = {
-			set_variable = { name = je_retaken_west_var months = 99999  }
 			set_variable = { name = je_liberation_cooldown months = 5 }
 		}	
 
+		change_variable = {
+            name = cuba_instability
+            add = -10
+        }
+
+		add_modifier = {
+			name = funding_op
+			years = 1
+		}
+
+		custom_tooltip = {
+			text = reduce_insta
+		
+			
+		}
+		
+		
+	}
+}
+
+je_cuba_modfier.2 = {  
+	name = "empower_colab" 
+	desc = "je_fate_angola_desc"
+
+	visible = { always = yes }
+
+       
+
+	possible = {
+		scope:journal_entry = {
+			not = {
+			custom_tooltip = {
+				text = butten_cooldown_5month
+				has_variable = je_liberation_cooldown
+				
+			}
+		}
+	}
+	}
+
+	effect = {
+
+		scope:journal_entry = {
+			set_variable = { name = je_liberation_cooldown months = 5 }
+		}	
+
+		change_variable = {
+            name = cuba_instability
+            add = -10
+        }
+
+		c:CUB = {
+		add_modifier = {
+			name = brutal_repression
+			years = 1
+		}
+		}
+
+		add_modifier = {
+			name = cuban_occ2
+			years = 1
+		}
+
+		custom_tooltip = {
+			text = reduce_insta
+		}
 		
 		
 	}
