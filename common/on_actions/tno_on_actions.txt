@@ -249,6 +249,65 @@
         }
        
         }
+
+        if = {   # Germany establishes scandi
+        limit = {
+            exists = c:SWE
+            c:GER = {
+                OR = {
+                    has_diplomatic_pact = {
+                        who = c:SWE
+                        type = protectorate
+                        is_initiator = yes
+                    }
+                    has_diplomatic_pact = {
+                        who = c:SWE
+                        type = puppet
+                        is_initiator = yes
+                    }
+                    has_diplomatic_pact = {
+                        who = c:SWE
+                        type = dominion
+                        is_initiator = yes
+                    }
+                    has_diplomatic_pact = {
+                        who = c:SWE
+                        type = reichskommissariat
+                        is_initiator = yes
+                    }
+                    has_diplomatic_pact = {
+                        who = c:NOR
+                        type = protectorate
+                        is_initiator = yes
+                    }
+                    has_diplomatic_pact = {
+                        who = c:NOR
+                        type = puppet
+                        is_initiator = yes
+                    }
+                    has_diplomatic_pact = {
+                        who = c:NOR
+                        type = dominion
+                        is_initiator = yes
+                    }
+                    has_diplomatic_pact = {
+                        who = c:NOR
+                        type = reichskommissariat
+                        is_initiator = yes
+                    }
+                }
+                
+            }
+            NOT = { has_variable = ger_scandi_rk_var }
+            
+        }
+        set_variable = ger_scandi_rk_var
+        c:GER = {   
+            trigger_event = { id = tno_germany_events.43 popup = yes }
+           
+        }
+       
+        }
         
         #SAF
         if = {

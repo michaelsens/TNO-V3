@@ -2356,3 +2356,101 @@ tno_germany_events.42 = { # Reclaimed all Outstanding Pakt Members
 
     }
 }
+
+tno_germany_events.43 = { # Germany gets event about forming RK scandi
+	type = country_event
+    placement = ROOT
+ 
+    title = tno_germany_events.43
+    desc = tno_germany_events.43.d
+    flavor = tno_germany_events.43.f 
+
+   event_image = {
+		texture  = "gfx/event_pictures/super_pictures/lasthope.dds"
+	}
+    icon = "gfx/interface/icons/event_icons/event_fire.dds"
+
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 3
+
+    option = {
+        name = tno_germany_events.43.a
+
+		hidden_effect = {
+
+            remove_diplomatic_pact = {
+                country = c:SWE
+                type = protectorate
+            }
+            remove_diplomatic_pact = {
+                country = c:SWE
+                type = puppet
+            }
+            remove_diplomatic_pact = {
+                country = c:SWE
+                type = dominion
+            }
+            create_diplomatic_pact = {
+                country = c:SWE
+                type = reichskommissariat
+            }
+			c:SWE = {
+				trigger_event = { id = tno_germany_events.44 days = 0 popup = yes }
+			} 
+
+          
+
+
+		}
+		
+
+	}
+
+    option = {
+        name = tno_germany_events.43.b
+
+		
+		
+
+	}
+
+}
+
+tno_germany_events.44 = {  # swedon annex Norway and forms RK scandi
+	type = country_event
+    placement = ROOT
+ 
+    title = tno_germany_events.44.t
+    desc = tno_germany_events.44.d
+    flavor = tno_germany_events.44.f 
+    event_image = {
+        texture = "gfx/event_pictures/event_pictures/ang.dds"
+    }
+
+	immediate = {
+		
+		annex = c:NOR
+		
+        change_tag = SCI
+
+        
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_fire.dds"
+
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 1
+
+	trigger = {
+		this ?= c:SWE
+	}
+	
+    option = { 
+        name = tno_usa_events.53.a
+        default_option = yes
+		
+	
+    } 
+}

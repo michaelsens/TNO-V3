@@ -308,6 +308,30 @@ CUB = {
 	}
 }
 
+SCI = {
+	dynamic_country_name = {
+		name = "Reichskommissariat Skandinavien"
+		adjective = "Skandinavien"
+		
+		is_main_tag_only = yes
+		priority = 9999
+		
+		trigger = {
+			exists = c:GER
+			c:GER = {
+				OR = {
+					has_diplomatic_pact = {
+						who = c:SCI
+						type = reichskommissariat
+						is_initiator = yes
+					}
+				}
+				
+			}
+		}
+	}
+}
+
 RUS = {
 	dynamic_country_name = {
 		name = "Soviet Union"

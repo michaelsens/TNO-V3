@@ -2457,6 +2457,29 @@ CUB = { # Cuba
 	}	
 }
 
+SCI = { # rk scandi
+	flag_definition = {
+		coa = SCI_ger
+		trigger = {
+			exists = c:GER
+			c:GER = {
+				OR = {
+					has_diplomatic_pact = {
+						who = c:SCI
+						type = reichskommissariat
+						is_initiator = yes
+					}
+				}
+				
+			}
+		}
+		coa_with_overlord_canton = CUB_subject
+		allow_overlord_canton = no
+		priority = 5000	
+	}
+}
+
+
 CYP = { # Cyprus
 	flag_definition = {
 		coa = CYP
