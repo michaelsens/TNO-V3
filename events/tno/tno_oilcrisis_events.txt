@@ -798,21 +798,6 @@ tno_oil_crisis.3 = {   #Iraq Civil War
 		   }
 		 }
 		}
-	c:KUW = {
-		create_diplomatic_play = {
-			name = oil_war
-			target_country = c:IRI
-			type = dp_annex_war
-			war = no
-			target_state = s:STATE_BASRA.region_state:IRI
-			escalation = 40
-			add_war_goal = {
-			 holder = c:IRI
-			 type = annex_country
-			 target_state = s:STATE_BASRA.region_state:KUW
-		   }
-		 }
-		}
 	c:IIR = {
 		create_diplomatic_play = {
 			name = oil_war
@@ -1726,8 +1711,6 @@ tno_oil_crisis.9 = {   #Superevent Oil Crisis (move to super events eventually)
 				state_region = s:STATE_LOWER_EGYPT
 				state_region = s:STATE_IRAKAJEMI
 				region = sr:region_russia
-				region = sr:region_west_siberia
-				region = sr:region_east_siberia
 			}
 		   }	
 		 }
@@ -2087,85 +2070,5 @@ tno_oil_crisis.13 = {  #Information for Majors
 	option = {
 		name = oil_flavor.13.a
 		default_option = yes
-	}
-}
-
-tno_oil_crisis.14 = {  #Country Collapse from not enough Oil
-	type = country_event
-    placement = ROOT
-
-	title = oil_flavor.14.t
-	desc = oil_flavor.14.d
-    flavor = oil_flavor.14.f
-	
-	event_image = {
-		texture  = "gfx/event_pictures/super_pictures/out_of_oil.dds"
-	}
-
-	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
-	on_opened_soundeffect = "event:/SFX/Events/middleeast/courtroom_upheaval" 
-
-	icon = "gfx/interface/icons/event_icons/event_default.dds"
-	
-	trigger = {
-	}	
-	
-	duration = 3
-
-	immediate = { 	
-	}
-	option = {
-		name = oil_flavor.14.a
-		default_option = yes
-		add_modifier = {
-			name = ran_out_of_oil
-			years = 10
-			is_decaying = yes
-		}
-	}
-}
-
-tno_oil_crisis.15 = {  #Winter of 1978
-	type = country_event
-    placement = ROOT
-
-	title = oil_flavor.15.t
-	desc = oil_flavor.15.d
-    flavor = oil_flavor.15.f
-	
-	event_image = {
-		texture  = "gfx/event_pictures/super_pictures/blizzard-of-1978.dds"
-	}
-
-	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
-	on_opened_soundeffect = "event:/SFX/Events/middleeast/courtroom_upheaval" 
-
-	icon = "gfx/interface/icons/event_icons/event_default.dds"
-	
-	trigger = {
-		OR = {
-			this ?= c:GER
-			this ?= c:USA
-			this ?= c:FRA
-			this ?= c:ENG
-			this ?= c:SWE
-			this ?= c:NOR
-			this ?= c:DEN
-			this ?= c:CAN
-			this ?= c:BGD
-		} 
-	}	
-	
-	duration = 3
-
-	immediate = { 	
-	}
-	option = {
-		name = oil_flavor.15.a
-		default_option = yes
-		change_variable = {
-			name = oil_crisis_oil_supply_var
-			add = -400
-		}
 	}
 }
