@@ -3333,6 +3333,70 @@ tno_usa_events.54 = {  # cuba annex rebels
     } 
 }
 
+tno_usa_events.55 = {  # Mexican catholic rebelian
+	type = country_event
+    placement = ROOT
+ 
+    title = tno_usa_events.48.t
+    desc = tno_usa_events.25.d
+    flavor = tno_usa_events.25.f 
+    event_image = {
+        texture = "gfx/event_pictures/event_pictures/ang.dds"
+    }
+
+	immediate = {
+	
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_fire.dds"
+
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 1
+
+	trigger = {
+		this ?= c:USA
+	}
+	
+   
+	
+    option = { #
+        name = tno_usa_events.48.b
+        default_option = yes
+		
+		add_modifier = {
+			name = cuban_occ
+			years = 10
+		}
+
+		add_journal_entry = {
+			type = je_cuba_ofn
+		}
+
+		custom_tooltip = cubaocc_txt
+
+		create_country = { 
+			tag = MEB
+			origin = c:MEX
+			
+			state = s:STATE_BAJIO.region_state:MEX
+	 
+			on_created = {
+           set_immune_to_revolutions = yes
+
+			
+         	}
+		} 
+	
+
+	
+    } 
+
+	
+
+}
+
+
 
 
 
