@@ -54,6 +54,14 @@
             set_variable = irk_rus_event
             trigger_event = { id = tno_super_events.10 days = 0 popup = yes }
         }
+        if = {  #Generic Russian launches 2WRW (Second West Russian War) (2WRW)
+            limit = {
+               has_global_variable = second_west_russian_war
+               NOT = { has_variable = second_west_russian_war_event }
+            }
+            set_variable = second_west_russian_war_event
+            trigger_event = { id = tno_super_events.13 days = 0 popup = yes }
+        }
         if = {  #Irkutsk launches 2WRW (Second Great Patriotic War) (2WRW)
             limit = {
                has_global_variable = second_great_patriotic_war
@@ -78,7 +86,6 @@
                 NOT = { has_global_variable = pro_var }
             }
             set_global_variable = pro_var
-            trigger_event = { id = tno_flavor_events.14 days = 0 popup = yes }
         }
         if = {
 			limit = {

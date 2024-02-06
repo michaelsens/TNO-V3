@@ -2547,7 +2547,7 @@ je_ru_take_karelia_button = {
 		}
 		create_diplomatic_play = {
             #name = jack
-			target_country = c:ONG
+			target_country = c:FIN
 			type = dp_return_state
 			target_state = scope:east_karelia_state_scope
 			war = no
@@ -2920,9 +2920,9 @@ je_ru_request_american_support = {
 	}
 }
 
-je_ru_irk_second_great_patriotic_war = {
-	name = "je_ru_irk_second_great_patriotic_war"
-	desc = "je_ru_irk_second_great_patriotic_war_desc"
+je_ru_second_great_patriotic_war = {
+	name = "je_ru_second_great_patriotic_war"
+	desc = "je_ru_second_great_patriotic_war_desc"
 
 
 	possible = {
@@ -3110,6 +3110,185 @@ je_ru_irk_second_great_patriotic_war = {
 		hidden_effect = {
 			change_infamy = -1500
             trigger_event = { id = tno_irk_events.12 popup = yes } #The Great Anti-Fascist War
+        }
+    }
+}
+
+je_ru_second_west_russian_war = {
+	name = "je_ru_second_west_russian_war"
+	desc = "je_ru_second_west_russian_war_desc"
+
+
+	possible = {
+		is_diplomatic_play_initiator = no
+	}
+
+	effect = {
+		create_diplomatic_play = {
+			name = gtr1
+			target_country = c:RKM
+			type = dp_return_state
+			war = no
+			escalation = 26
+			target_state = s:STATE_MOSCOW.region_state:RKM
+			add_target_backers = { c:FIN c:HUN c:SLV c:DEN c:NET c:ROM }
+			add_war_goal = {
+				holder = c:GER
+				type = conquer_state
+				target_state = s:STATE_ARKHANGELSK.region_state:PRO
+			}
+			add_war_goal = {
+				holder = c:FIN
+				type = conquer_state
+				target_state = s:STATE_EAST_KARELIA.region_state:PRO
+			}
+			add_war_goal = {
+				holder = c:PRO
+				type = return_state
+				target_state = s:STATE_TVER.region_state:RKM
+			}
+			add_war_goal = {
+				holder = c:PRO
+				type = return_state
+				target_state = s:STATE_NOVGOROD.region_state:RKM
+			}
+			add_war_goal = {
+				holder = c:PRO
+				type = return_state
+				target_state = s:STATE_INGRIA.region_state:RKM
+			}
+			add_war_goal = {
+				holder = c:PRO
+				type = return_state
+				target_state = s:STATE_SMOLENSK.region_state:RKM
+			}
+			add_war_goal = {
+				holder = c:PRO
+				type = return_state
+				target_state = s:STATE_BRYANSK.region_state:RKM
+			}
+			add_war_goal = {
+				holder = c:PRO
+				type = return_state
+				target_state = s:STATE_KURSK.region_state:RKM
+			}
+			add_war_goal = {
+				holder = c:PRO
+				type = return_state
+				target_state = s:STATE_TARTARIA.region_state:RKM
+			}
+			add_war_goal = {
+				holder = c:PRO
+				type = return_state
+				target_state = s:STATE_ROSTOV.region_state:RKM
+			}
+			add_war_goal = {
+				holder = c:PRO
+				type = return_state
+				target_state = s:STATE_ASTRAKHAN.region_state:RKM
+			}
+			add_war_goal = {
+				holder = c:PRO
+				type = return_state
+				target_state = s:STATE_KUBAN.region_state:RKK
+			}
+			add_war_goal = {
+				holder = c:PRO
+				type = return_state
+				target_state = s:STATE_GREATER_CAUCASUS.region_state:RKK
+			}
+			add_war_goal = {
+				holder = c:PRO
+				type = return_state
+				target_state = s:STATE_AZERBAIJAN.region_state:RKK
+			}
+			add_war_goal = {
+				holder = c:PRO
+				type = return_state
+				target_state = s:STATE_DAGESTAN.region_state:RKK
+			}
+			add_war_goal = {
+				holder = c:PRO
+				type = return_state
+				target_state = s:STATE_CRIMEA.region_state:GER
+			}
+			add_war_goal = {
+				holder = c:PRO
+				type = return_state
+				target_state = s:STATE_LUHANSK.region_state:GER
+			}
+			add_war_goal = {
+				holder = c:PRO
+				type = return_state
+				target_state = s:STATE_LUHANSK.region_state:RKU
+			}
+			add_war_goal = {
+				holder = c:PRO
+				type = return_state
+				target_state = s:STATE_KIEV.region_state:RKU
+			}
+			add_war_goal = {
+				holder = c:PRO
+				type = return_state
+				target_state = s:STATE_TRANSNISTRIA.region_state:TRG
+			}
+			add_war_goal = {
+				holder = c:PRO
+				type = return_state
+				target_state = s:STATE_VOLHYNIA.region_state:RKU
+			}
+			add_war_goal = {
+				holder = c:PRO
+				type = return_state
+				target_state = s:STATE_CHERSON.region_state:RKU
+			}
+			add_war_goal = {
+				holder = c:PRO
+				type = return_state
+				target_state = s:STATE_ORSHA.region_state:RKO
+			}
+			add_war_goal = {
+				holder = c:PRO
+				type = return_state
+				target_state = s:STATE_MINSK.region_state:RKO
+			}
+			add_war_goal = {
+				holder = c:PRO
+				type = return_state
+				target_state = s:STATE_BREST.region_state:RKO
+			}
+			add_war_goal = {
+				holder = c:PRO
+				type = return_state
+				target_state = s:STATE_LITHUANIA.region_state:RKO
+			}
+			add_war_goal = {
+				holder = c:PRO
+				type = return_state
+				target_state = s:STATE_LATVIA.region_state:RKO
+			}
+			add_war_goal = {
+				holder = c:PRO
+				type = return_state
+				target_state = s:STATE_ESTONIA.region_state:RKO
+			}
+			add_war_goal = {
+				holder = c:PRO
+				type = conquer_state
+				target_state = s:STATE_WEST_KARELIA.region_state:FIN
+			}
+
+		}
+		set_global_variable = second_west_russian_war
+		custom_tooltip = warning_2wrw
+		if = {
+			limit = {
+				owns_entire_state_region = STATE_EAST_KARELIA
+			}
+			custom_tooltip = warning_2wrw_finland
+		}
+		hidden_effect = {
+			change_infamy = -1500
         }
     }
 }
