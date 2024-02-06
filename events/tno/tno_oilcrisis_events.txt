@@ -712,8 +712,8 @@ tno_oil_crisis.3 = {   #Iraq Civil War
       }
 	} 
 	create_country = { #Republic of Kurdistan
-		tag = IRR
-		origin = c:IRQ
+		tag = KUR
+		origin = c:IRR
 		province = p:x00B0A0
 		province = p:x029A2B
 		province = p:x07BB1D
@@ -760,6 +760,13 @@ tno_oil_crisis.3 = {   #Iraq Civil War
 			is_decaying = yes
 		}
 	}
+	c:IRR = {
+		add_modifier = {
+			name = destroyed_infrastructure
+			years = 6
+			is_decaying = yes
+		}
+	}
 	}
 	option = {
 		name = oil_flavor.3.a
@@ -767,10 +774,10 @@ tno_oil_crisis.3 = {   #Iraq Civil War
 	c:IRQ = {
 		create_diplomatic_play = {
 			name = oil_war
-			target_country = c:IRR
+			target_country = c:KUR
 			type = dp_revolution
 			war = no
-			target_state = s:STATE_MOSUL.region_state:IRR
+			target_state = s:STATE_MOSUL.region_state:KUR
 			escalation = 40
 		 }
 		 create_diplomatic_play = {
@@ -789,6 +796,14 @@ tno_oil_crisis.3 = {   #Iraq Civil War
 			target_state = s:STATE_BASRA.region_state:IRI
 			escalation = 40
 		 }
+		 create_diplomatic_play = {
+			name = oil_war
+			target_country = c:IRR
+			type = dp_revolution
+			war = no
+			target_state = s:STATE_MOSUL.region_state:IRR
+			escalation = 40
+		 }
 		}
 	c:IIR = {
 		create_diplomatic_play = {
@@ -801,13 +816,22 @@ tno_oil_crisis.3 = {   #Iraq Civil War
 		 }
 		 create_diplomatic_play = {
 			name = oil_war
+			target_country = c:KUR
+			type = dp_revolution
+			war = no
+			target_state = s:STATE_MOSUL.region_state:KUR
+			escalation = 40
+		 }
+		 create_diplomatic_play = {
+			name = oil_war
 			target_country = c:IRR
 			type = dp_revolution
 			war = no
 			target_state = s:STATE_MOSUL.region_state:IRR
 			escalation = 40
 		 }
-	 c:IRR = {
+	}
+	 c:KUR = {
 		create_diplomatic_play = {
 			name = oil_war
 			target_country = c:IRI
@@ -815,8 +839,25 @@ tno_oil_crisis.3 = {   #Iraq Civil War
 			war = no
 			target_state = s:STATE_BASRA.region_state:IRI
 			escalation = 40
-		 }
 		}
+		create_diplomatic_play = {
+			name = oil_war
+			target_country = c:IRR
+			type = dp_revolution
+			war = no
+			target_state = s:STATE_MOSUL.region_state:IRR
+			escalation = 40
+		 }
+	}
+	c:IRI = {
+		create_diplomatic_play = {
+			name = oil_war
+			target_country = c:IRR
+			type = dp_revolution
+			war = no
+			target_state = s:STATE_MOSUL.region_state:IRR
+			escalation = 40
+		 }
 	}
 	}	
 }	
@@ -1526,7 +1567,6 @@ tno_oil_crisis.8 = {   #Trucian Coast/Qatar war
 	icon = "gfx/interface/icons/event_icons/event_default.dds"
 	
 	trigger = {
-		exists = c:BHN
 		exists = c:ABU
 		root = c:ABU
 	}	
@@ -1545,17 +1585,6 @@ tno_oil_crisis.8 = {   #Trucian Coast/Qatar war
 				years = 2
 			}
 		}
-		c:BHN = {
-		add_modifier = {
-				name = destroyed_infrastructure
-				years = 6
-				is_decaying = yes
-			}
-			add_modifier = {
-				name = civiL_war_never_ends
-				years = 2
-			}
-		}
 	}
 	option = {
 		name = oil_flavor.8.a
@@ -1563,10 +1592,10 @@ tno_oil_crisis.8 = {   #Trucian Coast/Qatar war
 		
 		create_diplomatic_play = {
 			name = oil_war
-			target_country = c:BHN
-			type = dp_revolution
+			target_country = c:ITA
+			type = dp_independence
 			war = no
-			target_state = s:STATE_ABU_DHABI.region_state:BHN
+			target_state = s:STATE_LAZIO.region_state:ITA
 			escalation = 40
 		 }
 	}
