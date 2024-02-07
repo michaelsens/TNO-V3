@@ -561,7 +561,14 @@ event_window = {
 					size = { 100% 100% }
 					priteType = Corneredtiled
 				}
-
+				# animated video ( most images should have this )
+							video_icon = {
+								visible = "[EventWindow.GetEvent.HasVideo]"
+								video = "[EventWindow.GetEvent.GetVideo]"
+								size = { 100% 100% }
+								alwaystransparent = yes
+								loop = no
+				}
 			# animated video ( most images should have this )
 				video_icon = {
 					visible = yes
@@ -599,7 +606,7 @@ event_window = {
 				align = right|nobaseline
 				raw_text = "#bold [EventWindow.GetDescription]#!"
 				margin = {  0 }
-				using = fontsize_mega
+				using = super_event_font
 			}
 
 			widget = { size = { 20 10 }}
@@ -624,7 +631,7 @@ event_window = {
 								size = { 100% 100% }
 								parentanchor = hcenter
 
-								position = { -280 10}
+								position = { -280 0}
 								
 								onclick = "[EventOption.Select]"				
 								enabled = "[EventOption.IsEnabled]"
@@ -635,7 +642,7 @@ event_window = {
 								resizeparent = yes
 								minimumsize = { 500 42 }
 								maximumsize = { 500 -1 }
-								position = { -280 10}
+								position = { -280 0}
 								text = "[EventOption.GetText]"
 								multiline = yes
 								align = hcenter|nobaseline
@@ -648,7 +655,7 @@ event_window = {
 								datacontext = "[EventWindow.GetEvent]"
 								visible = "[EventOption.IsDefaultOption]"
 								parentanchor = left|vcenter
-								position = { -280 10}
+								position = { -280 0}
 								size = { 27 27 }
 								tooltip = "DEFAULT_EVENT_OPTION"
 								value = "[EventWindow.GetEvent.GetPercentageRemainingDays]"
