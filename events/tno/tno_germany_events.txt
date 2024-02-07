@@ -926,63 +926,63 @@ tno_germany_events.15 = { # Hitler Youth Review
 }
 
 
-tno_germany_events.16 = { # Slave Camp Expansion
-    type = country_event
-    placement = ROOT
-
-    title = tno_germany_events.16
-    desc = tno_germany_events.16.d
-    flavor = tno_germany_events.16.f
-
-    event_image = {
-        texture  = "gfx/event_pictures/event_pictures/hitler_suc.dds"
-    }
-    icon = "gfx/interface/icons/event_icons/event_fire.dds"
-
-    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
-
-    duration = 3
-    trigger = {
-        this ?= c:GER
-    }   
-
-    option = { # Boost Speer
-        name = tno_germany_events.16.a
-        change_variable = {
-            name = speer_ger_struggle_timer
-            add = 5
-        }
-        custom_tooltip = tno_germany_events.16.a.tooltip
-    }
-
-    option = { # Bormann
-        name = tno_germany_events.16.b
-        default_option = yes
-        change_variable = {
-            name = boreman_ger_struggle_timer
-            add = 5
-        }
-        custom_tooltip = tno_germany_events.16.b.tooltip
-    }
-
-    option = { # Göring
-        name = tno_germany_events.16.c
-        change_variable = {
-            name = goreing_ger_struggle_timer
-            add = 5
-        }
-        custom_tooltip = tno_germany_events.16.c.tooltip
-    }
-
-    option = { # Heydrich
-        name = tno_germany_events.16.e
-        change_variable = {
-            name = devout_ger_struggle_timer
-            add = 5
-        }
-        custom_tooltip = tno_germany_events.16.e.tooltip
-    }
-}
+#tno_germany_events.16 = { # Slave Camp Expansion
+#    type = country_event
+#    placement = ROOT
+#
+#    title = tno_germany_events.16
+#    desc = tno_germany_events.16.d
+#    flavor = tno_germany_events.16.f
+#
+#    event_image = {
+#        texture  = "gfx/event_pictures/event_pictures/hitler_suc.dds"
+#    }
+#    icon = "gfx/interface/icons/event_icons/event_fire.dds"
+#
+#    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+#
+#    duration = 3
+#    trigger = {
+#        this ?= c:GER
+#    }   
+#
+#    option = { # Boost Speer
+#        name = tno_germany_events.16.a
+#        change_variable = {
+#            name = speer_ger_struggle_timer
+#            add = 5
+#        }
+#        custom_tooltip = tno_germany_events.16.a.tooltip
+#    }
+#
+#    option = { # Bormann
+#        name = tno_germany_events.16.b
+#        default_option = yes
+#        change_variable = {
+#            name = boreman_ger_struggle_timer
+#            add = 5
+#        }
+#        custom_tooltip = tno_germany_events.16.b.tooltip
+#    }
+#
+#    option = { # Göring
+#        name = tno_germany_events.16.c
+#        change_variable = {
+#            name = goreing_ger_struggle_timer
+#            add = 5
+#        }
+#        custom_tooltip = tno_germany_events.16.c.tooltip
+#    }
+#
+#    option = { # Heydrich
+#        name = tno_germany_events.16.e
+#        change_variable = {
+#            name = devout_ger_struggle_timer
+#            add = 5
+#        }
+#        custom_tooltip = tno_germany_events.16.e.tooltip
+#    }
+#}
 
 
 tno_germany_events.17 = { # German Civil War 
@@ -1094,6 +1094,7 @@ tno_germany_events.17 = { # German Civil War
             set_immune_to_revolutions = yes
             add_modifier = {
 				name = german_civil_war_modifier
+                years = 3
 			}
 	        }
 	    } 
@@ -1115,6 +1116,7 @@ tno_germany_events.17 = { # German Civil War
             set_immune_to_revolutions = yes
             add_modifier = {
 				name = german_civil_war_modifier
+                years = 3
 			}
 	        }
 	    } 
@@ -1146,6 +1148,7 @@ tno_germany_events.17 = { # German Civil War
             set_immune_to_revolutions = yes
             add_modifier = {
 				name = german_civil_war_modifier
+                years = 3
 			}
 	        }
 	    } 
@@ -1166,6 +1169,7 @@ tno_germany_events.17 = { # German Civil War
             set_immune_to_revolutions = yes
             add_modifier = {
 				name = german_civil_war_modifier
+                years = 3
 			}
 	        }
 
@@ -1779,6 +1783,7 @@ tno_germany_events.18 = {   #Civil war start
             set_immune_to_revolutions = yes
             add_modifier = {
 				name = german_civil_war_modifier
+                years = 3
 			}
 	        }
 	    } 
@@ -2006,18 +2011,32 @@ tno_germany_events.21 = {   #ukranian civil war
         state = s:STATE_VOLHYNIA.region_state:RKU
         state = s:STATE_EAST_GALICIA.region_state:GOV
    
-    } 
-    create_country = { # ukraine
-        tag = UKM
-        origin = c:USA
-        state = s:STATE_CHERSON.region_state:RKU
-   
-    } 
-    
-    
-    
-
-}
+        } 
+        create_country = { # ukraine
+            tag = UKM
+            origin = c:USA
+            state = s:STATE_CHERSON.region_state:RKU
+       
+        }
+        c:UKC = {
+            set_immune_to_revolutions = yes
+            add_modifier = { 
+                name = rk_german_colonization
+            }
+        }
+        c:UKP = {
+            set_immune_to_revolutions = yes
+            add_modifier = { 
+                name = rk_german_colonization
+            }
+        }
+        c:UKM = {
+            set_immune_to_revolutions = yes
+            add_modifier = { 
+                name = rk_german_colonization
+            }
+        }
+    }
 }
 
 tno_germany_events.22 = { 
@@ -2246,14 +2265,10 @@ tno_germany_events.40 = {
             type = reichskommissariat
         }
         
-        RKU = {
+        c:RKU = {
             trigger_event = { id = tno_RK_events.26 }
         }
-    
-    
-    
-
-}
+    }
 }
 
 tno_germany_events.41 = {   
@@ -2285,7 +2300,7 @@ tno_germany_events.41 = {
             type = reichskommissariat
         }
 
-        RKO = {
+        c:RKO = {
             trigger_event = { id = tno_RK_events.26 }
         }
     }

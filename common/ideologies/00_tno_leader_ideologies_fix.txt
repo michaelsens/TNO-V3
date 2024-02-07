@@ -335,3 +335,47 @@ ideology_natsoc_mill = {
 		}
 	}
 }
+
+ideology_securocrat = {
+	icon = "gfx/interface/icons/ideology_icons/oligarchic.dds"
+	
+	character_ideology = yes
+	lawgroup_internal_security = {
+		law_nkvd_securocracy = strongly_approve
+		law_guaranteed_liberties = strongly_disapprove
+		law_secret_police = neutral
+	}
+
+	lawgroup_distribution_of_power = {
+		law_autocracy = strongly_approve
+		law_single_party_state = disapprove
+	}
+
+	possible = {
+		NOT = { has_role = agitator }
+		owner = {
+			c:IRK ?= this
+		}
+	}
+}
+
+ideology_irk_bukharinist = {
+	icon = "gfx/interface/icons/ideology_icons/ideology_leader/ideology_leader_vanguardist.dds"
+	
+	character_ideology = yes
+	lawgroup_internal_security = {
+		law_nkvd_securocracy = strongly_disapprove
+	}
+
+	lawgroup_distribution_of_power = {
+		law_autocracy = strongly_disapprove
+		law_single_party_state = strongly_approve
+	}
+
+	possible = {
+		NOT = { has_role = agitator }
+		owner = {
+			c:IRK ?= this
+		}
+	}
+}

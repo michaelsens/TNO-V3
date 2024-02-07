@@ -54,6 +54,14 @@
             set_variable = irk_rus_event
             trigger_event = { id = tno_super_events.10 days = 0 popup = yes }
         }
+        if = {  #Generic Russian launches 2WRW (Second West Russian War) (2WRW)
+            limit = {
+               has_global_variable = second_west_russian_war
+               NOT = { has_variable = second_west_russian_war_event }
+            }
+            set_variable = second_west_russian_war_event
+            trigger_event = { id = tno_super_events.13 days = 0 popup = yes }
+        }
         if = {  #Irkutsk launches 2WRW (Second Great Patriotic War) (2WRW)
             limit = {
                has_global_variable = second_great_patriotic_war
@@ -78,7 +86,6 @@
                 NOT = { has_global_variable = pro_var }
             }
             set_global_variable = pro_var
-            trigger_event = { id = tno_flavor_events.14 days = 0 popup = yes }
         }
         if = {
 			limit = {
@@ -452,7 +459,7 @@
 
         if = {
             limit = {
-               game_date >= 1973.7.1
+               game_date >= 1978.7.1
                NOT = { has_variable = oil_crisis_information_var}
             }
            set_variable = oil_crisis_information_var
@@ -461,7 +468,7 @@
        
         if = {
             limit = {
-               game_date >= 1975.2.1
+               game_date >= 1980.2.1
                NOT = { has_variable = oil_crisis_war_1_var}
             }
            set_variable = oil_crisis_war_1_var
@@ -469,7 +476,7 @@
           } 
         if = {
             limit = {
-               game_date >= 1975.4.1
+               game_date >= 1980.4.1
                NOT = { has_variable = oil_crisis_war_2_var}
             }
             set_global_variable = oil_crisis_start
@@ -478,7 +485,7 @@
           }    
         if = {
             limit = {
-               game_date >= 1975.5.1
+               game_date >= 1980.5.1
                NOT = { has_variable = oil_crisis_war_3_var}
             }
            set_variable = oil_crisis_war_3_var
@@ -486,7 +493,7 @@
           }       
         if = {
             limit = {
-               game_date >= 1975.8.1
+               game_date >= 1980.8.1
                NOT = { has_variable = oil_crisis_war_4_var}
             }
            set_variable = oil_crisis_war_4_var
@@ -494,7 +501,7 @@
           }    
         if = {
             limit = {
-               game_date >= 1975.11.1
+               game_date >= 1980.11.1
                NOT = { has_variable = oil_crisis_war_5_var}
             }
            set_variable = oil_crisis_war_5_var
@@ -502,7 +509,7 @@
           }  
         if = {
             limit = {
-               game_date >= 1975.12.1
+               game_date >= 1980.12.1
                NOT = { has_variable = oil_crisis_war_7_var}
             }
            set_variable = oil_crisis_war_7_var
@@ -510,7 +517,7 @@
           }  
         if = {
             limit = {
-               game_date >= 1976.2.1
+               game_date >= 1981.2.1
                NOT = { has_variable = oil_crisis_war_6_var}
             }
            set_variable = oil_crisis_war_6_var
@@ -518,20 +525,12 @@
           }  
         if = {
             limit = {
-               game_date >= 1975.6.1
+               game_date >= 1980.6.1
                NOT = { has_variable = oil_crisis_war_8_var}
             }
            set_variable = oil_crisis_war_8_var
            trigger_event = { id = tno_oil_crisis.8 days = 0 popup = yes }
           } 
-        if = {
-            limit = {
-               game_date >= 1979.2.1
-               NOT = { has_variable = oil_crisis_war_15_var}
-            }
-           set_variable = oil_crisis_war_15_var
-           trigger_event = { id = tno_oil_crisis.15 days = 0 popup = yes }
-          }
         if = {
             limit = {
                 has_global_variable =  oil_crisis_start

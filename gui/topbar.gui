@@ -45,8 +45,8 @@ types topbar_components
 
 			flowcontainer = {
 				name = "tutorial_highlight_gdp"
-				minimumsize = { 90 30 }
-				maximumsize = { 90 30 }
+				minimumsize = { 120 30 }
+				maximumsize = { 120 30 }
 				spacing = 2
 				using = GDP_tooltip_with_graph
 				using = tooltip_below
@@ -62,7 +62,7 @@ types topbar_components
 				}
 				textbox = {
 					parentanchor = vcenter
-					raw_text = "#variable [Country.GetGDP|1*]#!"
+					raw_text = "#v @money![SelectLocalization(LessThan_CFixedPoint(Country.MakeScope.ScriptValue('cwp_gdp'), '(CFixedPoint)1000000000000'), 'CWP_NORMAL', 'CWP_TRILLION')|Dv]#!"
 					autoresize = yes
 					align = left|nobaseline
 				}

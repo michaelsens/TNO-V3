@@ -5,6 +5,22 @@
 ################################################################
 
 
+IRR = {
+	dynamic_country_name = {
+		name = "Republic of Iraq"
+		adjective = "Iraqi"
+		
+		is_main_tag_only = yes
+		priority = 1
+		
+		trigger = {
+			scope:actor = {
+				owns_entire_state_region = STATE_BAGHDAD
+			}
+		}
+	}
+}
+
 BHT = {
 	dynamic_country_name = {
 		name = "Republic of India"
@@ -1564,7 +1580,7 @@ AFS = { #African Free State
 		
 		trigger = {
 			scope:actor = {
-				capital = { region = sr:region_congo }
+				capital = { region = sr:region_southern_africa }
 			}
 		}
 	}
@@ -1601,7 +1617,7 @@ AFS = { #African Free State
 		
 		trigger = {
 			scope:actor = {
-				capital = { region = sr:region_nile_basin }
+				capital = { region = sr:region_southern_africa }
 			}
 		}
 	}
@@ -1627,7 +1643,7 @@ AFS = { #African Free State
 		
 		trigger = {
 			scope:actor = {
-				capital = { region = sr:region_nile_basin }
+				capital = { region = sr:region_southern_africa }
 				any_state = {
 					owner = c:AFS
 					is_capital = yes
