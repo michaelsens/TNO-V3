@@ -309,7 +309,8 @@ tno_super_events.11 = { #irk begins second great patriotic war
 	gui_window = event_super
 
 	event_image = {
-		video = "tno_2wrw"
+		#video = "tno_2wrw"
+		texture  = "gfx/event_pictures/super_pictures/superevent_2wrw.dds"
 	}
 
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
@@ -351,5 +352,32 @@ tno_super_events.12 = { #german civil war
 
 	option = {
 		name = ger_super.1.a
+	}
+}
+
+tno_super_events.13 = { #generic russian starts second west russian war
+	type = country_event
+
+	title = rus_super.5
+	desc = rus_super.5.d
+
+	gui_window = event_super
+
+	event_image = {
+		texture  = "gfx/event_pictures/super_pictures/superevent_2wrw.dds"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	#on_opened_soundeffect = "event:/SFX/Events/middleeast/courtroom_upheaval" 
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	trigger = {
+	}	
+	
+	duration = 5
+
+	option = {
+		name = rus_super.5.a
 	}
 }
