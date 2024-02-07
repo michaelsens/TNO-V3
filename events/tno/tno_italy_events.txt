@@ -123,6 +123,8 @@ tno_italy_events.1 = { # Levent becomes isreal
 
 	}
 
+
+
 	
 
 
@@ -221,6 +223,74 @@ tno_italy_events.1 = { # Levent becomes isreal
 	}
 
 }
+
+option = { # levant becomes palistine and isreal, partition
+        name = tno_italy_events.1.p
+
+		add_primary_culture = cu:ashkenazi
+		remove_primary_culture = cu:bedouin
+		change_tag = ISR 
+		create_character = {
+
+
+			age = 34
+			culture = cu:ashkenazi
+			ruler = yes
+			interest_group = ig_landowners
+
+			traits = {
+				bigoted
+			}
+		}
+
+		create_country = { 
+		tag = PAL
+		origin = c:ISR
+
+		province = p:xE05060
+		province = p:x0EC997
+		province = p:xE0D060
+		province = p:x60D060
+		province = p:xC9CBC0
+  
+      
+			on_created = {
+            set_immune_to_revolutions = yes
+	        }
+	    } 
+
+		create_country = { 
+			tag = EOT
+			origin = c:ISR
+	 
+			state = s:STATE_TRANSJORDAN.region_state:ISR
+		
+		 
+		   
+			
+			on_created = {
+				set_immune_to_revolutions = yes
+				}
+		} 
+
+
+		create_country = { 
+				tag = LEB
+				origin = c:ISR
+		 
+				state = s:STATE_LEBANON.region_state:ISR
+			
+			 
+			   
+				
+				on_created = {
+					set_immune_to_revolutions = yes
+					}
+		} 
+		
+
+	}
+
 
 tno_italy_events.2 = {
     type = country_event
