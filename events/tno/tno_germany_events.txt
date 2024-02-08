@@ -1771,22 +1771,7 @@ tno_germany_events.18 = {   #Civil war start
     hidden = yes
 
     immediate = {
-        set_global_variable = german_civil_war_start
-        create_country = { #Martin bormann
-		tag = GEQ
-		origin = c:GER 
-       
-        state = s:STATE_BRANDENBURG.region_state:GER
-        
-		on_created = {
-            annex = c:GER
-            set_immune_to_revolutions = yes
-            add_modifier = {
-				name = german_civil_war_modifier
-                years = 3
-			}
-	        }
-	    } 
+        set_global_variable = german_civil_war_start 
         c:GMB = {
             create_diplomatic_play = {
                 type = dp_revolution
@@ -1881,58 +1866,171 @@ tno_germany_events.19 = {   #German Civil War WIn
 
     option = { # Annex Brandenburg
     trigger = {
-        OR = {
-            this = c:GAS
-            this = c:GMB
-            this = c:GHG
-        }
+        this = c:GAS
     }
         name = tno_germany_events.19.a
-        annex = c:GEQ
-        change_tag = GER  # maybe?
-        set_immune_to_revolutions = no
-        add_journal_entry = {type = je_ger_reclaim_ost}
-        add_journal_entry = {type = je_ger_reclaim_ost_2}
-        add_journal_entry = {type = je_ger_reclaim_ukc}
-        add_modifier = {
-    		name = bloated_whermacht
-  	    }
-		add_modifier = { name = slavery_dependence }
-		add_modifier = {
-			name = modifier_advanced_economy
-		}
+        if = {
+            limit = {
+                is_player = yes
+            }
+            play_as = c:GER
+        }
+        c:GER = {
+            annex = c:GAS
+            set_immune_to_revolutions = no
+            #add_journal_entry = {type = je_ger_reclaim_ost}
+            #add_journal_entry = {type = je_ger_reclaim_ost_2}
+            #add_journal_entry = {type = je_ger_reclaim_ukc}
+            create_character = {
+                # Albert Speer
+                first_name = "albert_speer_first_name"
+                last_name = "albert_speer_last_name"
+                age = 47
+                culture = cu:north_german
+                ruler = yes
+                interest_group = ig_industrialists
+                ideology = ideology_ethno_nationalist
+                traits = {
+                    reserved
+                    meticulous
+                    innovative
+                }
+            }
+            add_loyalists = {
+                value = 0.4
+            }
+        }
+                
 	}
 
     option = { # Annex Brandenburg
-        trigger = {
-            this = c:GRH
-        }
-        name = tno_germany_events.19.b
-        default_option = yes
-        c:GRH = {
-            create_diplomatic_play = {
-                type = dp_revolution
-                name = german_civil_war
-                target_country = c:GEQ
-                war = yes
+    trigger = {
+        this = c:GHG
+    }
+        name = tno_germany_events.19.a
+        if = {
+            limit = {
+                is_player = yes
             }
-            hidden_effect = {
-				change_infamy = -999
-		    }
+            play_as = c:GER
         }
-        change_tag = GER  # maybe?
-        set_immune_to_revolutions = no
-        add_journal_entry = {type = je_ger_reclaim_ost}
-        add_journal_entry = {type = je_ger_reclaim_ukc}
-        add_journal_entry = {type = je_ger_reclaim_ost_2}
-        add_modifier = {
-    		name = bloated_whermacht
-  	    }
-		add_modifier = { name = slavery_dependence }
-		add_modifier = {
-			name = modifier_advanced_economy
-		}
-   }
+        c:GER = {
+            annex = c:GHG
+            set_immune_to_revolutions = no
+            #add_journal_entry = {type = je_ger_reclaim_ost}
+            #add_journal_entry = {type = je_ger_reclaim_ost_2}
+            #add_journal_entry = {type = je_ger_reclaim_ukc}
+            create_character = {
+                # Hermann Göring
+                first_name = "hermann_goring_first_name"
+                last_name = "hermann_goring_last_name"
+                age = 59
+                culture = cu:north_german
+                ruler = yes
+                interest_group = ig_armed_forces
+                ideology = ideology_fascist
+                traits = {
+                    arrogant
+                    ambitious
+                    charismatic
+                    hedonist
+                    opium_addiction
+                    celebrity_commander
+                    plains_commander
+                }
+            }
+            add_loyalists = {
+                value = 0.4
+            }
+            
+        }
+                
+	}
+
+    option = { # Annex Brandenburg
+    trigger = {
+        this = c:GMB
+    }
+        name = tno_germany_events.19.a
+        if = {
+            limit = {
+                is_player = yes
+            }
+            play_as = c:GER
+        }
+        c:GER = {
+            annex = c:GMB
+            set_immune_to_revolutions = no
+            #add_journal_entry = {type = je_ger_reclaim_ost}
+            #add_journal_entry = {type = je_ger_reclaim_ost_2}
+            #add_journal_entry = {type = je_ger_reclaim_ukc}
+            create_character = {
+                # Martin Bormann
+                first_name = "martin_bormann_first_name"
+                last_name = "martin_bormann_last_name"
+                age = 53
+                culture = cu:north_german
+                dna = dna_martin_bormann
+                ruler = yes
+                interest_group = ig_landowners
+                ideology = ideology_fascist
+                traits = {
+                    tactful
+                    bigoted
+                    expert_political_operator
+                }
+            }
+            add_loyalists = {
+                value = 0.5
+            }
+        }
+                
+	}
+
+    option = { # Annex Brandenburg
+    trigger = {
+        this = c:GRH
+    }
+        name = tno_germany_events.19.a
+        if = {
+            limit = {
+                is_player = yes
+            }
+            play_as = c:GER
+        }
+        c:GER = {
+            annex = c:GRH
+            set_immune_to_revolutions = no
+            #add_journal_entry = {type = je_ger_reclaim_ost}
+            #add_journal_entry = {type = je_ger_reclaim_ost_2}
+            #add_journal_entry = {type = je_ger_reclaim_ukc}
+            create_character = {
+                # Reinhard Heydrich
+                first_name = "reinhard_heydrich_first_name"
+                last_name = "reinhard_heydrich_last_name"
+                age = 43
+                culture = cu:north_german
+                ruler = yes
+                interest_group = ig_petty_bourgeoisie
+                ideology = ideology_fascist
+                traits = {
+                    direct
+                    wrathful
+                    cruel
+                    meticulous
+                    pillager
+                    celebrity_commander
+                    basic_political_operator
+                }
+            }
+            add_loyalists = {
+                value = 0.2
+            }
+        }
+                
+	}
+
+    
 }
 
 tno_germany_events.20 = {   #German Vassal Reaction
