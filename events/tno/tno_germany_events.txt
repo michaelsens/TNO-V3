@@ -1050,12 +1050,14 @@ tno_germany_events.17 = { # German Civil War
 
         c:GER = {
             set_immune_to_revolutions = yes
-            every_subject_or_below = {
-                trigger_event = { id = tno_germany_events.20 days = 0 popup = yes }
-           } 
+            
            remove_diplomatic_pact = {
                 country = c:DEN
                 type = customs_union
+            }
+            remove_diplomatic_pact = {
+                country = c:KZA
+                type = reichskommissariat
             }
             remove_diplomatic_pact = {
                 country = c:IRE
@@ -2033,56 +2035,6 @@ tno_germany_events.19 = {   #German Civil War WIn
     
 }
 
-tno_germany_events.20 = {   #German Vassal Reaction
-     type = country_event
-        placement = ROOT
-        hidden = yes
-    
-        duration = 3
-        trigger = {
-            
-        }	
-        immediate = {
-            if = {
-                limit = {
-                    has_diplomatic_pact = {
-                        who = c:GER
-                         type = reichskommissariat
-                    }
-                }
-                remove_diplomatic_pact = {
-                    country = c:GER
-                    type = reichskommissariat
-                }
-            }
-            if = {
-                limit = {
-                    has_diplomatic_pact = {
-                        who = c:GER
-                         type = customs_union
-                    }
-                }
-                remove_diplomatic_pact = {
-                    country = c:GER
-                    type = customs_union
-                }
-            }
-            if = {
-                limit = {
-                    has_diplomatic_pact = {
-                        who = c:GER
-                         type = puppet
-                    }
-                }
-                remove_diplomatic_pact = {
-                    country = c:GER
-                    type = puppet
-               }
-               
-            }
-
-       }    
-}
 
 tno_germany_events.21 = {   #ukranian civil war
 
