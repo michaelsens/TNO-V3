@@ -3785,6 +3785,186 @@ GGR = { # Greater Germany
 	}	
 }
 
+PRO = {
+	flag_definition = {
+		coa = PRO_DEM
+		subject_canton = PRO_DEM
+		priority = 30
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				OR = {
+					has_law = law_type:law_presidential_republic
+					has_law = law_type:law_parliamentary_republic
+				}
+				
+				NOT = { has_law = law_type:law_oligarchy}
+				NOT = { has_law = law_type:law_single_party_state}
+				NOT = { has_law = law_type:law_autocracy}
+
+			}
+		} 
+	}
+	flag_definition = {
+		coa = PRO_THEO
+		subject_canton = PRO_THEO
+		priority = 30
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				OR = {
+					has_law = law_type:law_theocracy
+				
+				}
+				
+			
+
+			}
+		} 
+	}
+
+	flag_definition = {
+		coa = PRO_COM_FAS
+		subject_canton = PRO_COM_FAS
+		priority = 9999
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				OR = {
+					has_law = law_type:law_council_republic
+				
+				}
+				
+			
+
+			}
+		} 
+	}
+	flag_definition = {
+		coa = PRO_ANAR
+		subject_canton = PRO_ANAR
+		priority = 9999
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				OR = {
+					has_law = law_type:law_anarchy
+				
+				}
+				
+			
+
+			}
+		} 
+	}
+	flag_definition = {
+		coa = OSK
+		subject_canton = OSK
+		priority = 9999
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_variable = omsk_provisional 
+				
+			
+
+			}
+		} 
+	}
+
+
+	flag_definition = { 
+		coa = PRO_FAS
+		subject_canton = PRO_FAS
+		priority = 30
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				OR = {
+					has_law = law_type:law_presidential_republic
+					has_law = law_type:law_parliamentary_republic
+				}
+
+				OR = {
+					has_law = law_type:law_oligarchy
+					has_law = law_type:law_single_party_state
+					has_law = law_type:law_autocracy
+				}
+				
+				
+				
+
+			}
+		} 
+	}
+
+
+	flag_definition = { #TOMSK DEMOCRATIC
+		coa = PRO_DEM_TOM
+		subject_canton = PRO_DEM
+		priority = 50
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_variable = tom_provisional 
+				OR = {
+					has_law = law_type:law_presidential_republic
+					has_law = law_type:law_parliamentary_republic
+				}
+				
+				NOT = { has_law = law_type:law_oligarchy}
+				NOT = { has_law = law_type:law_single_party_state}
+				NOT = { has_law = law_type:law_autocracy}
+
+			}
+		} 
+	}
+
+	flag_definition = { #monarchy democratic
+		coa = PRO_MON_DEM
+		subject_canton = PRO_MON_DEM
+		priority = 30
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				OR = {
+					has_law = law_type:law_monarchy
+				}
+				
+				NOT = { has_law = law_type:law_oligarchy}
+				NOT = { has_law = law_type:law_single_party_state}
+				NOT = { has_law = law_type:law_autocracy}
+
+			}
+		} 
+	}
+
+	flag_definition = { #monarchy UNdemocratic
+		coa = PRO_MON_FAS
+		subject_canton = PRO_MON_FAS
+		priority = 30
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				OR = {
+					has_law = law_type:law_monarchy
+				}
+
+				OR = {
+					has_law = law_type:law_oligarchy
+					has_law = law_type:law_single_party_state
+					 has_law = law_type:law_autocracy
+				}
+				
+				
+
+			}
+		} 
+	}
+
+
+}
+
 GRE = { # Greece
 	flag_definition = {
 		coa = GRE
