@@ -262,20 +262,20 @@
                     }
                     has_diplomatic_pact = {
                         who = c:WAD
-                        type = puppet
+                        type = dominion
                         is_initiator = yes
                     }
                     has_diplomatic_pact = {
                         who = c:WAD
-                        type = dominion
+                        type = puppet
                         is_initiator = yes
                     }
                 }
                 
             }
-            NOT = { has_variable = italy_kannem }
+            NOT = { has_global_variable = italy_kannem }
         }
-        set_variable = italy_kannem
+        set_global_variable = italy_kannem
         c:ITA = {   
             trigger_event = { id = tno_dynamic_puppets.1 popup = yes }
             trigger_event = { id = tno_dynamic_puppets.2 popup = yes }
