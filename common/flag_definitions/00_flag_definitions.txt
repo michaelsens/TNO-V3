@@ -3587,17 +3587,9 @@ GER = { # Germany
 		coa = GER_modern
 		subject_canton = GER_modern
 	}
-	flag_definition = {
-		coa = GER_modern
-		subject_canton = GER_modern
-		priority = 10
-		trigger = { 
-			coa_def_republic_flag_trigger = yes
-		}
-	}
 	flag_definition = { #strasserite
 		coa = GER_strasser
-		priority = 2000
+		priority = 2500
 		trigger = {
 			exists = scope:actor
 			scope:actor = {
@@ -3610,13 +3602,18 @@ GER = { # Germany
 	}
 	flag_definition = { #democracit but still ethnostate
 		coa = GER_democratic_racist
-		priority = 2000
+		priority = 1000
 		trigger = {
 			exists = scope:actor
 			scope:actor = {
+				OR = {
+					has_law = law_type:law_ethnostate
+					has_law = law_type:law_debt_slavery
+				}
 				NOT = { has_law = law_type:law_autocracy
 				has_law = law_type:law_technocracy
 				has_law = law_type:law_oligarchy
+				has_law = law_type:law_single_party_state
 				has_law = law_type:law_council_republic }
 			}
 		}
@@ -3628,9 +3625,12 @@ GER = { # Germany
 			exists = scope:actor
 			scope:actor = {
 				NOT = { has_law = law_type:law_autocracy
+				has_law = law_type:law_single_party_state
 				has_law = law_type:law_technocracy
 				has_law = law_type:law_oligarchy
 				has_law = law_type:law_council_republic
+				has_law = law_type:law_unitary_state
+				has_law = law_type:law_monarchy
 				has_law = law_type:law_ethnostate }
 			}
 		}
@@ -3638,17 +3638,14 @@ GER = { # Germany
 	flag_definition = {
 		coa = GER
 		subject_canton = GER_dictatorship
-		priority = 15
+		priority = 20000
 		trigger = { 
-			coa_def_dictatorship_flag_trigger = yes
-		}
-	}
-	flag_definition = {
-		coa = GER_2
-		subject_canton = GER_dictatorship
-		priority = 20
-		trigger = { 
-			
+			AND = {
+				exists = scope:actor
+				scope:actor = {
+					has_law = law_type:law_unitary_state
+				}
+			}
 		}
 	}
 	flag_definition = {
@@ -3659,24 +3656,6 @@ GER = { # Germany
 			coa_def_communist_flag_trigger = yes
 		}
 	}	
-	flag_definition = {
-		coa = GER_fascist
-		subject_canton = GER_fascist
-		priority = 1500
-		trigger = { 
-			OR = {
-				coa_def_fascist_flag_trigger = yes
-				AND = {
-					exists = scope:actor
-					scope:actor = {
-						has_law = law_type:law_unitary_state
-					}
-				}
-				
-			}
-			
-		}
-	}
 
 ### country-specific Germany variants ###
 
