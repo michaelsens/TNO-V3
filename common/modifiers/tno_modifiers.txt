@@ -286,7 +286,7 @@ decaying_infrastructure = {
 
 war_spoils = {
 	icon = gfx/interface/icons/tno_modifier_icons/spoil_war.dds
-	country_tax_income_add = 50000
+	country_minting_add = 100000
 }
 
 american_dream = {
@@ -785,7 +785,6 @@ atlantropa_dam = {
 
 national_purity = {
 	icon = gfx/interface/icons/tno_modifier_icons/pure_bgd.dds
-	state_accepted_birth_rate_mult = 0.20
 	state_turmoil_effects_mult = -0.7
 	state_slaves_mortality_mult = 0.6
 	state_standard_of_living_add = -3
@@ -832,6 +831,7 @@ armed_against_democracy = {
 	state_conscription_rate_mult = 0.4
 	country_war_exhaustion_casualties_mult = -0.9
 	country_military_wages_mult = -0.25
+	country_diplomatic_play_maneuvers_add = 20
 }
 shattered_union = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_negative.dds
@@ -1223,24 +1223,27 @@ treaty_of_vichy = {
 	country_prestige_from_army_power_projection_mult = -0.5
 	country_prestige_from_navy_power_projection_mult = -0.5
 	state_conscription_rate_mult = -0.5
-	unit_army_offense_mult = -0.1
-	unit_army_defense_mult = -0.1
+	unit_army_offense_mult = -0.15
+	unit_army_defense_mult = -0.15
+	unit_morale_loss_mult = 0.15
 }
 
 armed_forces_in_disarray = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
-	country_military_goods_cost_mult = -0.1
+	country_military_goods_cost_mult = 0.1
 	country_prestige_from_army_power_projection_mult = -0.15
 	country_prestige_from_navy_power_projection_mult = -0.5
 	state_conscription_rate_mult = -0.5
 	unit_army_offense_mult = -0.05
 	unit_army_defense_mult = -0.05
+	unit_morale_loss_mult = 0.05
 }
 
 armed_forces_reorganization = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
-	unit_army_offense_mult = 0.03
-	unit_army_defense_mult = 0.03
+	unit_army_offense_mult = 0.05
+	unit_army_defense_mult = 0.05
+	unit_morale_loss_mult = -0.05
 }
 
 professional_armed_forces = {
@@ -1423,7 +1426,7 @@ ineffective_union = {
 revived_union = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
 	country_institution_size_change_speed_mult = 0.15
-	country_law_enactment_success_add = 5
+	country_law_enactment_success_add = 0.05
 	country_bureaucracy_mult = 0.1
 	country_authority_mult = 0.1
 	political_movement_radicalism_mult = -0.15
