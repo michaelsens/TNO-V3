@@ -160,3 +160,59 @@ tno_dynamic_puppets.3 = {
 
 
 }
+
+
+tno_dynamic_puppets.4 = {  
+	type = country_event
+    placement = ROOT
+ 
+    title = tno_dynamic_puppets.4.t
+    desc = tno_dynamic_puppets.4.d
+    flavor = tno_dynamic_puppets.4.f 
+    event_image = {
+        texture = "gfx/event_pictures/event_pictures/ang.dds"
+    }
+
+	immediate = {
+	
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_fire.dds"
+
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 1
+
+	trigger = {
+		this ?= c:GER
+	}
+	
+    option = { 
+        name = tno_dynamic_puppets.4.a
+        default_option = yes
+		
+		remove_diplomatic_pact = {
+			country = SLV
+			type = protectorate
+		}
+		create_diplomatic_pact = {
+			country = c:SLV
+			type = reichskommissariat
+		}
+		
+		
+	
+	change_infamy = 5
+    } 
+
+	
+    option = { #
+        name = tno_dynamic_puppets.4.b
+        default_option = yes
+		
+    } 
+
+	
+
+
+}

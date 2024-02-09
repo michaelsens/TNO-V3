@@ -319,6 +319,40 @@
        
         }
 
+        if = {   # German slovakia
+        limit = {
+            exists = c:SLV
+            c:GER = {
+                OR = {
+                    has_diplomatic_pact = {
+                        who = c:SLV
+                        type = protectorate
+                        is_initiator = yes
+                    }
+                    has_diplomatic_pact = {
+                        who = c:SLV
+                        type = dominion
+                        is_initiator = yes
+                    }
+                    has_diplomatic_pact = {
+                        who = c:SLV
+                        type = puppet
+                        is_initiator = yes
+                    }
+                }
+                
+            }
+            NOT = { has_global_variable = germany_slovakia }
+        }
+        set_global_variable = germany_slovakia
+        c:GER = {   
+            trigger_event = { id = tno_dynamic_puppets.4 popup = yes }
+            
+           
+        }
+       
+        }
+
         if = {   # Germany establishes scandi
         limit = {
             exists = c:SWE
