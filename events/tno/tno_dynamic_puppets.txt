@@ -1,0 +1,99 @@
+namespace = tno_dynamic_puppets
+
+
+tno_dynamic_puppets.1 = {
+    type = country_event
+    hidden = yes
+
+
+
+    trigger = {
+        exists = c:WAD
+        ROOT = c:ITA
+
+        c:WAD = {
+            has_diplomatic_pact = {
+				who = c:ITA
+                type = protectorate
+            }
+
+        }
+
+
+
+    }
+
+    immediate = {
+        remove_diplomatic_pact = {
+            country = c:WAD
+            type = protectorate
+        }
+		create_diplomatic_pact = {
+            country = c:WAD
+            type = millgov
+        }
+    }
+}
+
+tno_dynamic_puppets.2 = {  
+	type = country_event
+    placement = ROOT
+ 
+    title = tno_dynamic_puppets.2.t
+    desc = tno_dynamic_puppets.2.d
+    flavor = tno_dynamic_puppets.2.f 
+    event_image = {
+        texture = "gfx/event_pictures/event_pictures/ang.dds"
+    }
+
+	immediate = {
+	
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_fire.dds"
+
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 1
+
+	trigger = {
+		this ?= c:ITA
+	}
+	
+    option = { 
+        name = tno_dynamic_puppets.2.a
+        default_option = yes
+		
+		remove_diplomatic_pact = {
+			country = WAD
+			type = millgov
+		}
+		create_diplomatic_pact = {
+			country = c:WAD
+			type = dominion
+		}
+		
+		custom_tooltip = wadadi_1
+	
+	change_infamy = 5
+    } 
+
+	
+    option = { #
+        name = tno_dynamic_puppets.2.b
+        default_option = yes
+		
+	
+
+		custom_tooltip = wadadi_2
+
+		
+	
+
+	
+    } 
+
+	
+
+
+}

@@ -250,6 +250,41 @@
        
         }
 
+        if = {   # Italians take kanem
+        limit = {
+            exists = c:WAD
+            c:ITA = {
+                OR = {
+                    has_diplomatic_pact = {
+                        who = c:WAD
+                        type = protectorate
+                        is_initiator = yes
+                    }
+                    has_diplomatic_pact = {
+                        who = c:WAD
+                        type = puppet
+                        is_initiator = yes
+                    }
+                    has_diplomatic_pact = {
+                        who = c:WAD
+                        type = dominion
+                        is_initiator = yes
+                    }
+                }
+                
+            }
+            NOT = { has_variable = italy_kannem }
+        }
+        set_variable = italy_kannem
+        c:ITA = {   
+            trigger_event = { id = tno_dynamic_puppets.1 popup = yes }
+            trigger_event = { id = tno_dynamic_puppets.2 popup = yes }
+            set_variable = italy_kannem
+           
+        }
+       
+        }
+
         if = {   # Germany establishes scandi
         limit = {
             exists = c:SWE
@@ -298,10 +333,9 @@
                 }
                 
             }
-            NOT = { has_variable = scandi_establish_var }
-            
+            NOT = { has_variable = scandi_establish_var  }
         }
-        set_variable = scandi_establish_var 
+        set_variable = scandi_establish_var  
         c:GER = {   
             trigger_event = { id = tno_germany_events.43 popup = yes }
            

@@ -332,6 +332,52 @@ SCI = {
 	}
 }
 
+WAD = {
+	dynamic_country_name = {
+		name = "Forze italiane in Ciad"
+		adjective = "Italian"
+		
+		is_main_tag_only = yes
+		priority = 9999
+		
+		trigger = {
+			exists = c:ITA
+			c:ITA = {
+				OR = {
+					has_diplomatic_pact = {
+						who = c:WAD
+						type = millgov
+						is_initiator = yes
+					}
+				}
+				
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = "Ciad italian"
+		adjective = "Italian"
+		
+		is_main_tag_only = yes
+		priority = 5000
+		
+		trigger = {
+			exists = c:ITA
+			c:ITA = {
+				OR = {
+					has_diplomatic_pact = {
+						who = c:WAD
+						type = dominion
+						is_initiator = yes
+					}
+				}
+				
+			}
+		}
+	}
+}
+
+
 RUS = {
 	dynamic_country_name = {
 		name = "Soviet Union"

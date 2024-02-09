@@ -2462,11 +2462,60 @@ SCI = { # rk scandi
 		coa = SCI_ger
 		trigger = {
 			exists = c:GER
+			exists = c:SCI
 			c:GER = {
 				OR = {
 					has_diplomatic_pact = {
 						who = c:SCI
 						type = reichskommissariat
+						is_initiator = yes
+					}
+				}
+				
+			}
+		}
+		coa_with_overlord_canton = CUB_subject
+		allow_overlord_canton = no
+		priority = 5000	
+	}
+}
+
+WAD = {
+	flag_definition = {
+		coa = WAD_ITA
+		trigger = {
+			exists = c:ITA
+			exists = c:WAD
+			c:ITA = {
+				OR = {
+					has_diplomatic_pact = {
+						who = c:WAD
+						type = millgov
+						is_initiator = yes
+					}
+				}
+				
+			}
+		}
+		coa_with_overlord_canton = CUB_subject
+		allow_overlord_canton = no
+		priority = 5000	
+	}
+	flag_definition = {
+		coa = WAD_ITA.2
+		trigger = {
+			exists = c:ITA
+			exists = c:WAD
+			c:ITA = {
+				OR = {
+					has_diplomatic_pact = {
+						who = c:WAD
+						type = puppet
+						is_initiator = yes
+					}
+					has_diplomatic_pact = {
+						who = c:WAD
+						type = dominion
 						is_initiator = yes
 					}
 				}
@@ -8279,17 +8328,6 @@ SWE = { # Sweden
 		overlord_canton_scale = { @canton_scale_sweden_x @canton_scale_sweden_y }
 		subject_canton = SWE_canton
 		priority = 1
-	}
-	flag_definition = {
-		coa = SWE_norway
-		coa_with_overlord_canton = SWE
-		allow_overlord_canton = yes
-		subject_canton = SWE_canton
-		overlord_canton_scale = { @canton_scale_sweden_x @canton_scale_sweden_y }
-		priority = 5
-		trigger = {
-			coa_SWE_use_norway_canton_trigger = yes
-		}
 	}
 	flag_definition = {
 		coa = sub_SWE_union_mark
