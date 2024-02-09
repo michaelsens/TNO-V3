@@ -332,6 +332,30 @@ SCI = {
 	}
 }
 
+HUN = {
+	dynamic_country_name = {
+		name = "Reichskommissariat Ungarn"
+		adjective = "Ungarn"
+		
+		is_main_tag_only = yes
+		priority = 9999
+		
+		trigger = {
+			exists = c:GER
+			c:GER = {
+				OR = {
+					has_diplomatic_pact = {
+						who = c:HUN
+						type = reichskommissariat
+						is_initiator = yes
+					}
+				}
+				
+			}
+		}
+	}
+}
+
 WAD = {
 	dynamic_country_name = {
 		name = "Forze italiane in Ciad"

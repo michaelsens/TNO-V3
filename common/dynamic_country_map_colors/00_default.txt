@@ -651,3 +651,36 @@ kon_ofn = {
 		}
 	 }
 }
+
+hun_ofn = {
+	color = {101  62 43 }
+	possible = {
+		exists = c:HUN
+		THIS = c:HUN
+		exists = c:GER
+		c:GER = {
+			OR = {
+				has_diplomatic_pact = {
+					who = c:HUN
+					type = protectorate
+					is_initiator = yes
+				}
+				has_diplomatic_pact = {
+					who = c:HUN
+					type = puppet
+					is_initiator = yes
+				}
+				has_diplomatic_pact = {
+					who = c:HUN
+					type = dominion
+					is_initiator = yes
+				}
+				has_diplomatic_pact = {
+					who = c:HUN
+					type = reichskommissariat
+					is_initiator = yes
+				}
+			}
+		}
+	 }
+}

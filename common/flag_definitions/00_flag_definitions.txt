@@ -4456,6 +4456,26 @@ HUN = { # Hungary
 		priority = 1
 	}
 	flag_definition = {
+		coa = HUN_GER
+		trigger = {
+			exists = c:GER
+			exists = c:HUN
+			c:GER = {
+				OR = {
+					has_diplomatic_pact = {
+						who = c:HUN
+						type = reichskommissariat
+						is_initiator = yes
+					}
+				}
+				
+			}
+		}
+		coa_with_overlord_canton = CUB_subject
+		allow_overlord_canton = no
+		priority = 5000	
+	}
+	flag_definition = {
 		coa = HUN_fascist
 		subject_canton = HUN_fascist
 		priority = 10

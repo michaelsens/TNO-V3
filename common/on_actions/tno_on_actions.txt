@@ -285,6 +285,40 @@
        
         }
 
+        if = {   # German Hungary
+        limit = {
+            exists = c:HUN
+            c:GER = {
+                OR = {
+                    has_diplomatic_pact = {
+                        who = c:HUN
+                        type = protectorate
+                        is_initiator = yes
+                    }
+                    has_diplomatic_pact = {
+                        who = c:HUN
+                        type = dominion
+                        is_initiator = yes
+                    }
+                    has_diplomatic_pact = {
+                        who = c:HUN
+                        type = puppet
+                        is_initiator = yes
+                    }
+                }
+                
+            }
+            NOT = { has_global_variable = germany_hungary }
+        }
+        set_global_variable = germany_hungary
+        c:GER = {   
+            trigger_event = { id = tno_dynamic_puppets.3 popup = yes }
+            
+           
+        }
+       
+        }
+
         if = {   # Germany establishes scandi
         limit = {
             exists = c:SWE
@@ -310,6 +344,8 @@
                         type = reichskommissariat
                         is_initiator = yes
                     }
+                }
+                OR = {
                     has_diplomatic_pact = {
                         who = c:NOR
                         type = protectorate
@@ -333,9 +369,9 @@
                 }
                 
             }
-            NOT = { has_variable = scandi_establish_var  }
+            NOT = { has_global_variable = scandi_establish_var  }
         }
-        set_variable = scandi_establish_var  
+        set_global_variable = scandi_establish_var  
         c:GER = {   
             trigger_event = { id = tno_germany_events.43 popup = yes }
            
