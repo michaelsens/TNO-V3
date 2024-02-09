@@ -1008,61 +1008,78 @@ tno_germany_events.17 = { # German Civil War
 
     immediate = {
         set_global_variable = german_civil_war_start
-        remove_diplomatic_pact = {
-            country = c:RKU
-            type = reichskommissariat
-        }
-        remove_diplomatic_pact = {
-            country = c:RKO
-            type = reichskommissariat
-        }
+     #  remove_diplomatic_pact = {
+     #      country = c:RKU
+     #      type = reichskommissariat
+     #  }
+     #  remove_diplomatic_pact = {
+     #      country = c:RKO
+     #      type = reichskommissariat
+     #  }
 
-        c:RKO = { #22-24
-        trigger_event = { id = tno_RK_events.1 days = 0 popup = yes }
-        } 
+     #  c:RKO = { #22-24
+     #  trigger_event = { id = tno_RK_events.1 days = 0 popup = yes }
+     #  } 
 
 
-        c:RKU = { #22-24
-			trigger_event = { id = tno_germany_events.21 days = 0 popup = yes }
-		} 
-        c:UKP = { #22-24
-			trigger_event = { id = tno_germany_events.22 days = 0 popup = yes }
-		} 
-        c:UKP = { #22-24
-			trigger_event = { id = tno_germany_events.23 days = 0 popup = yes }
-		} 
-        c:UKP = { #24-
-			trigger_event = { id = tno_germany_events.24 days = 0 popup = yes }
-		} 
-        c:UKM = { #24-
-			trigger_event = { id = tno_germany_events.27 days = 0 popup = yes }
-		}
-        c:UKM = { #22-24
-			trigger_event = { id = tno_germany_events.25 days = 0 popup = yes }
-		} 
-        c:UKC = { #IGNORE COMMITS THEY DUMB AND OUTDATED LMAO
-			trigger_event = { id = tno_germany_events.26 days = 0 popup = yes }
-		}
+     #  c:RKU = { #22-24
+     #		trigger_event = { id = tno_germany_events.21 days = 0 popup = yes }
+     #	} 
+     #  c:UKP = { #22-24
+     #		trigger_event = { id = tno_germany_events.22 days = 0 popup = yes }
+     #	} 
+     #  c:UKP = { #22-24
+     #		trigger_event = { id = tno_germany_events.23 days = 0 popup = yes }
+     #	} 
+     #  c:UKP = { #24-
+     #		trigger_event = { id = tno_germany_events.24 days = 0 popup = yes }
+     #	} 
+     #  c:UKM = { #24-
+     #		trigger_event = { id = tno_germany_events.27 days = 0 popup = yes }
+     #	}
+     #  c:UKM = { #22-24
+     #		trigger_event = { id = tno_germany_events.25 days = 0 popup = yes }
+     #	} 
+     #  c:UKC = { #IGNORE COMMITS THEY DUMB AND OUTDATED LMAO
+     #		trigger_event = { id = tno_germany_events.26 days = 0 popup = yes }
+     #	}
 
-        
+     #  
 
-      
+     #
 
         c:GER = {
-            set_immune_to_revolutions = yes
-            
-           remove_diplomatic_pact = {
-                country = c:DEN
-                type = customs_union
+           set_immune_to_revolutions = yes
+
+            remove_diplomatic_pact = {
+               country = c:IRE
+               type = protectorate
+            }
+            remove_diplomatic_pact = {
+               country = c:SER
+               type = protectorate
             }
             remove_diplomatic_pact = {
                 country = c:KZA
                 type = reichskommissariat
             }
             remove_diplomatic_pact = {
-                country = c:IRE
-                type = protectorate
+                country = c:KON
+                type = reichskommissariat
             }
+            remove_diplomatic_pact = {
+                country = c:KSA
+                type = reichskommissariat
+            }
+            remove_diplomatic_pact = {
+                country = c:NOR
+                type = reichskommissariat
+            }
+
+            every_subject_or_below = {
+                trigger_event = { id = tno_germany_events.20 days = 0 popup = yes }
+            }
+
             random_state = {
                 limit = {
                     state_region = s:STATE_BRANDENBURG
@@ -1185,15 +1202,23 @@ tno_germany_events.17 = { # German Civil War
             set_immune_to_revolutions = yes
 	        }
 	    } 
-        create_country = { # CRIMIEA
-		tag = GEE
-		origin = c:GER 
-        state = s:STATE_CRIMEA.region_state:GER
-        state = s:STATE_LUHANSK.region_state:GER
-		on_created = {
-            set_immune_to_revolutions = yes
-	        }
-	    } 
+
+        c:GER = {
+            create_diplomatic_pact = {
+                country = c:GWZ
+                type = reichskommissariat
+            }
+        }
+        
+        #create_country = { # CRIMIEA
+		#tag = GEE
+		#origin = c:GER 
+        #state = s:STATE_CRIMEA.region_state:GER
+        #state = s:STATE_LUHANSK.region_state:GER
+		#on_created = {
+        #    set_immune_to_revolutions = yes
+	    #    }
+	    #} 
         create_country = { # eng treaty port
 			tag = GEL
 			origin = c:GER
@@ -1308,36 +1333,36 @@ tno_germany_events.17 = { # German Civil War
             }
         }
         
-        c:RKO = { #22-24
-        trigger_event = { id = tno_RK_events.15 days = 0 popup = yes }
-       } 
-       c:LLL = { #22-24
-           trigger_event = { id = tno_RK_events.17 days = 0 popup = yes }
-       } 
-       c:LLL = { 
-           trigger_event = { id = tno_RK_events.18 days = 0 popup = yes }
-       } 
-       c:RKO = { 
-           trigger_event = { id = tno_RK_events.19 days = 0 popup = yes }
-       } 
-       c:LLL = { 
-           trigger_event = { id = tno_RK_events.20 days = 0 popup = yes }
-       } 
-       c:RKS = { 
-           trigger_event = { id = tno_RK_events.21 days = 0 popup = yes }
-       }
-       c:RKS = { 
-           trigger_event = { id = tno_RK_events.22 days = 0 popup = yes }
-       }
-       c:RKS = { 
-           trigger_event = { id = tno_RK_events.23 days = 0 popup = yes }
-       }
-       c:UPO = { 
-           trigger_event = { id = tno_RK_events.24 days = 0 popup = yes }
-       }
-       c:UPO = { 
-           trigger_event = { id = tno_RK_events.25 days = 0 popup = yes }
-       }
+      #  c:RKO = { #22-24
+      #  trigger_event = { id = tno_RK_events.15 days = 0 popup = yes }
+      # } 
+      # c:LLL = { #22-24
+      #     trigger_event = { id = tno_RK_events.17 days = 0 popup = yes }
+      # } 
+      # c:LLL = { 
+      #     trigger_event = { id = tno_RK_events.18 days = 0 popup = yes }
+      # } 
+      # c:RKO = { 
+      #     trigger_event = { id = tno_RK_events.19 days = 0 popup = yes }
+      # } 
+      # c:LLL = { 
+      #     trigger_event = { id = tno_RK_events.20 days = 0 popup = yes }
+      # } 
+      # c:RKS = { 
+      #     trigger_event = { id = tno_RK_events.21 days = 0 popup = yes }
+      # }
+      # c:RKS = { 
+      #     trigger_event = { id = tno_RK_events.22 days = 0 popup = yes }
+      # }
+      # c:RKS = { 
+      #     trigger_event = { id = tno_RK_events.23 days = 0 popup = yes }
+      # }
+      # c:UPO = { 
+      #     trigger_event = { id = tno_RK_events.24 days = 0 popup = yes }
+      # }
+      # c:UPO = { 
+      #     trigger_event = { id = tno_RK_events.25 days = 0 popup = yes }
+      # }
     }
    
    
@@ -1450,36 +1475,36 @@ tno_germany_events.17 = { # German Civil War
 
         
 
-        c:RKO = { #22-24
-        trigger_event = { id = tno_RK_events.15 days = 0 popup = yes }
-       } 
-       c:LLL = { #22-24
-           trigger_event = { id = tno_RK_events.17 days = 0 popup = yes }
-       } 
-       c:LLL = { 
-           trigger_event = { id = tno_RK_events.18 days = 0 popup = yes }
-       } 
-       c:RKO = { 
-           trigger_event = { id = tno_RK_events.19 days = 0 popup = yes }
-       } 
-       c:LLL = { 
-           trigger_event = { id = tno_RK_events.20 days = 0 popup = yes }
-       } 
-       c:RKS = { 
-           trigger_event = { id = tno_RK_events.21 days = 0 popup = yes }
-       }
-       c:RKS = { 
-           trigger_event = { id = tno_RK_events.22 days = 0 popup = yes }
-       }
-       c:RKS = { 
-           trigger_event = { id = tno_RK_events.23 days = 0 popup = yes }
-       }
-       c:UPO = { 
-           trigger_event = { id = tno_RK_events.24 days = 0 popup = yes }
-       }
-       c:UPO = { 
-           trigger_event = { id = tno_RK_events.25 days = 0 popup = yes }
-       }
+    #   c:RKO = { #22-24
+    #   trigger_event = { id = tno_RK_events.15 days = 0 popup = yes }
+    #  } 
+    #  c:LLL = { #22-24
+    #      trigger_event = { id = tno_RK_events.17 days = 0 popup = yes }
+    #  } 
+    #  c:LLL = { 
+    #      trigger_event = { id = tno_RK_events.18 days = 0 popup = yes }
+    #  } 
+    #  c:RKO = { 
+    #      trigger_event = { id = tno_RK_events.19 days = 0 popup = yes }
+    #  } 
+    #  c:LLL = { 
+    #      trigger_event = { id = tno_RK_events.20 days = 0 popup = yes }
+    #  } 
+    #  c:RKS = { 
+    #      trigger_event = { id = tno_RK_events.21 days = 0 popup = yes }
+    #  }
+    #  c:RKS = { 
+    #      trigger_event = { id = tno_RK_events.22 days = 0 popup = yes }
+    #  }
+    #  c:RKS = { 
+    #      trigger_event = { id = tno_RK_events.23 days = 0 popup = yes }
+    #  }
+    #  c:UPO = { 
+    #      trigger_event = { id = tno_RK_events.24 days = 0 popup = yes }
+    #  }
+    #  c:UPO = { 
+    #      trigger_event = { id = tno_RK_events.25 days = 0 popup = yes }
+    #  }
        
      }
      
@@ -1591,36 +1616,36 @@ tno_germany_events.17 = { # German Civil War
             }
         }
 
-        c:RKO = { #22-24
-        trigger_event = { id = tno_RK_events.15 days = 0 popup = yes }
-       } 
-       c:LLL = { #22-24
-           trigger_event = { id = tno_RK_events.17 days = 0 popup = yes }
-       } 
-       c:LLL = { 
-           trigger_event = { id = tno_RK_events.18 days = 0 popup = yes }
-       } 
-       c:RKO = { 
-           trigger_event = { id = tno_RK_events.19 days = 0 popup = yes }
-       } 
-       c:LLL = { 
-           trigger_event = { id = tno_RK_events.20 days = 0 popup = yes }
-       } 
-       c:RKS = { 
-           trigger_event = { id = tno_RK_events.21 days = 0 popup = yes }
-       }
-       c:RKS = { 
-           trigger_event = { id = tno_RK_events.22 days = 0 popup = yes }
-       }
-       c:RKS = { 
-           trigger_event = { id = tno_RK_events.23 days = 0 popup = yes }
-       }
-       c:UPO = { 
-           trigger_event = { id = tno_RK_events.24 days = 0 popup = yes }
-       }
-       c:UPO = { 
-           trigger_event = { id = tno_RK_events.25 days = 0 popup = yes }
-       }
+   #    c:RKO = { #22-24
+   #    trigger_event = { id = tno_RK_events.15 days = 0 popup = yes }
+   #   } 
+   #   c:LLL = { #22-24
+   #       trigger_event = { id = tno_RK_events.17 days = 0 popup = yes }
+   #   } 
+   #   c:LLL = { 
+   #       trigger_event = { id = tno_RK_events.18 days = 0 popup = yes }
+   #   } 
+   #   c:RKO = { 
+   #       trigger_event = { id = tno_RK_events.19 days = 0 popup = yes }
+   #   } 
+   #   c:LLL = { 
+   #       trigger_event = { id = tno_RK_events.20 days = 0 popup = yes }
+   #   } 
+   #   c:RKS = { 
+   #       trigger_event = { id = tno_RK_events.21 days = 0 popup = yes }
+   #   }
+   #   c:RKS = { 
+   #       trigger_event = { id = tno_RK_events.22 days = 0 popup = yes }
+   #   }
+   #   c:RKS = { 
+   #       trigger_event = { id = tno_RK_events.23 days = 0 popup = yes }
+   #   }
+   #   c:UPO = { 
+   #       trigger_event = { id = tno_RK_events.24 days = 0 popup = yes }
+   #   }
+   #   c:UPO = { 
+   #       trigger_event = { id = tno_RK_events.25 days = 0 popup = yes }
+   #   }
        
      }
     
@@ -1732,36 +1757,36 @@ tno_germany_events.17 = { # German Civil War
             }
         }
 
-        c:RKO = { #22-24
-        trigger_event = { id = tno_RK_events.15 days = 0 popup = yes }
-       } 
-       c:LLL = { #22-24
-           trigger_event = { id = tno_RK_events.17 days = 0 popup = yes }
-       } 
-       c:LLL = { 
-           trigger_event = { id = tno_RK_events.18 days = 0 popup = yes }
-       } 
-       c:RKO = { 
-           trigger_event = { id = tno_RK_events.19 days = 0 popup = yes }
-       } 
-       c:LLL = { 
-           trigger_event = { id = tno_RK_events.20 days = 0 popup = yes }
-       } 
-       c:RKS = { 
-           trigger_event = { id = tno_RK_events.21 days = 0 popup = yes }
-       }
-       c:RKS = { 
-           trigger_event = { id = tno_RK_events.22 days = 0 popup = yes }
-       }
-       c:RKS = { 
-           trigger_event = { id = tno_RK_events.23 days = 0 popup = yes }
-       }
-       c:UPO = { 
-           trigger_event = { id = tno_RK_events.24 days = 0 popup = yes }
-       }
-       c:UPO = { 
-           trigger_event = { id = tno_RK_events.25 days = 0 popup = yes }
-       }
+     #  c:RKO = { #22-24
+     #  trigger_event = { id = tno_RK_events.15 days = 0 popup = yes }
+     # } 
+     # c:LLL = { #22-24
+     #     trigger_event = { id = tno_RK_events.17 days = 0 popup = yes }
+     # } 
+     # c:LLL = { 
+     #     trigger_event = { id = tno_RK_events.18 days = 0 popup = yes }
+     # } 
+     # c:RKO = { 
+     #     trigger_event = { id = tno_RK_events.19 days = 0 popup = yes }
+     # } 
+     # c:LLL = { 
+     #     trigger_event = { id = tno_RK_events.20 days = 0 popup = yes }
+     # } 
+     # c:RKS = { 
+     #     trigger_event = { id = tno_RK_events.21 days = 0 popup = yes }
+     # }
+     # c:RKS = { 
+     #     trigger_event = { id = tno_RK_events.22 days = 0 popup = yes }
+     # }
+     # c:RKS = { 
+     #     trigger_event = { id = tno_RK_events.23 days = 0 popup = yes }
+     # }
+     # c:UPO = { 
+     #     trigger_event = { id = tno_RK_events.24 days = 0 popup = yes }
+     # }
+     # c:UPO = { 
+     #     trigger_event = { id = tno_RK_events.25 days = 0 popup = yes }
+     # }
        
      }
 }
@@ -2033,6 +2058,31 @@ tno_germany_events.19 = {   #German Civil War WIn
 	}
 
     
+}
+
+tno_germany_events.20 = {   #German Vassal Reaction
+     type = country_event
+        placement = ROOT
+        hidden = yes
+
+        duration = 3
+        trigger = {
+
+        }
+        immediate = {
+            if = {
+                limit = {
+                    has_diplomatic_pact = {
+                        who = c:GER
+                         type = customs_union
+                    }
+                }
+                remove_diplomatic_pact = {
+                    country = c:GER
+                    type = customs_union
+                }
+            }
+       }
 }
 
 
