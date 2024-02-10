@@ -3,290 +3,285 @@
 tno_germany_events.1 = { # burgundy sends assgign  #burgundy gets this event not germany
 	type = country_event
     placement = ROOT
- 
+
     title = tno_germany_events.1
     desc = tno_germany_events.1.d
     flavor = tno_germany_events.1.f 
 
-   event_image = {
-		texture  = "gfx/event_pictures/super_pictures/lasthope.dds"
-	}
-    icon = "gfx/interface/icons/event_icons/event_fire.dds"
+    event_image = {
+      texture  = "gfx/event_pictures/super_pictures/lasthope.dds"
+  }
+  icon = "gfx/interface/icons/event_icons/event_fire.dds"
 
-    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+  on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 
-    duration = 3
+  duration = 3
 
-    option = {
-        name = tno_germany_events.1.a
+  option = {
+    name = tno_germany_events.1.a
 
-		hidden_effect = {
-			c:GER = {
-				trigger_event = { id = tno_germany_events.3 days = 0 popup = yes }
-			} 
-
-
-		}
-		
-
-	}
-
+    hidden_effect = {
+        c:GER = {
+            trigger_event = { id = tno_germany_events.3 days = 0 popup = yes }
+        } 
+    }
+}
 }
 
 tno_germany_events.2 = { # burgundy sends assgign  #burgundy gets this event not germany
 	type = country_event
     placement = ROOT
- 
+
     title = tno_germany_events.2
     desc = tno_germany_events.2.d
     flavor = tno_germany_events.2.f 
 
-   event_image = {
-		texture  = "gfx/event_pictures/super_pictures/lasthope.dds"
-	}
-    icon = "gfx/interface/icons/event_icons/event_fire.dds"
+    event_image = {
+      texture  = "gfx/event_pictures/super_pictures/lasthope.dds"
+  }
+  icon = "gfx/interface/icons/event_icons/event_fire.dds"
 
-    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+  on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 
-    duration = 3
+  duration = 3
 
-    option = {
-        name = tno_germany_events.2.a
-	}
+  option = {
+    name = tno_germany_events.2.a
+}
 
 }
 
 tno_germany_events.3 = { # germanys event telling them that a japanese (burgundian) attacker tried to kill hitler
 	type = country_event
     placement = ROOT
- 
+
     title = tno_germany_events.3
     desc = tno_germany_events.3.d
     flavor = tno_germany_events.3.f 
 
-   event_image = {
-		texture  = "gfx/event_pictures/event_pictures/ass.dds"
-	}
-    icon = "gfx/interface/icons/event_icons/event_fire.dds"
+    event_image = {
+      texture  = "gfx/event_pictures/event_pictures/ass.dds"
+  }
+  icon = "gfx/interface/icons/event_icons/event_fire.dds"
 
-    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+  on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 
-    duration = 3
+  duration = 3
 
-    option = {
-        name = tno_germany_events.3.a
-        
-            custom_tooltip = tno_germany_events.3.a.tooltip1
-            custom_tooltip = tno_germany_events.3.a.tooltip2
+  option = {
+    name = tno_germany_events.3.a
 
-        
+    custom_tooltip = tno_germany_events.3.a.tooltip1
+    custom_tooltip = tno_germany_events.3.a.tooltip2
 
-            add_journal_entry = {
-                type = je_tno_gerpowerstruggle_goreing
-            }
-            add_journal_entry = {
-                type = je_tno_gerpowerstruggle_hitler_stats
-            }
-            add_journal_entry = {
-                type = je_tno_gerpowerstruggle_devout
-            }
-            add_journal_entry = {
-                type = je_tno_gerpowerstruggle_speer
-            }
-            add_journal_entry = {
-                type = je_tno_gerpowerstruggle_boreman
-            }
-            hidden_effect = {
-                trigger_event = { id = tno_germany_events.8 days = 2 popup = yes }
-                trigger_event = { id = tno_germany_events.10 days = 80 popup = yes }
-                trigger_event = { id = tno_germany_events.11 days = 160 popup = yes }
-                trigger_event = { id = tno_germany_events.12 days = 190 popup = yes }
-                trigger_event = { id = tno_germany_events.13 days = 220 popup = yes }
-                trigger_event = { id = tno_germany_events.14 days = 270 popup = yes }
-                trigger_event = { id = tno_germany_events.15 days = 320 popup = yes }  
-                trigger_event = { id = tno_germany_events.30 days = 40 popup = yes }
-                trigger_event = { id = tno_germany_events.31 days = 110 popup = yes }
-                trigger_event = { id = tno_germany_events.32 days = 160 popup = yes }
-                trigger_event = { id = tno_germany_events.33 days = 250 popup = yes }
-                trigger_event = { id = tno_germany_events.34 days = 340 popup = yes }
-                trigger_event = { id = tno_germany_events.35 days = 400 popup = yes }
-            }
-            
-            set_variable = {
-                name = hitler_good
-                value = 0
-            }
-            
-		hidden_effect = {
-    
-			c:BGD = {
-				trigger_event = { id = tno_germany_events.2 days = 0 popup = yes }
-			} 
-		}
-		
 
-	}
+
+    add_journal_entry = {
+        type = je_tno_gerpowerstruggle_goreing
+    }
+    add_journal_entry = {
+        type = je_tno_gerpowerstruggle_hitler_stats
+    }
+    add_journal_entry = {
+        type = je_tno_gerpowerstruggle_devout
+    }
+    add_journal_entry = {
+        type = je_tno_gerpowerstruggle_speer
+    }
+    add_journal_entry = {
+        type = je_tno_gerpowerstruggle_boreman
+    }
+    hidden_effect = {
+        trigger_event = { id = tno_germany_events.8 days = 2 popup = yes }
+        trigger_event = { id = tno_germany_events.10 days = 80 popup = yes }
+        trigger_event = { id = tno_germany_events.11 days = 160 popup = yes }
+        trigger_event = { id = tno_germany_events.12 days = 190 popup = yes }
+        trigger_event = { id = tno_germany_events.13 days = 220 popup = yes }
+        trigger_event = { id = tno_germany_events.14 days = 270 popup = yes }
+        trigger_event = { id = tno_germany_events.15 days = 320 popup = yes }  
+        trigger_event = { id = tno_germany_events.30 days = 40 popup = yes }
+        trigger_event = { id = tno_germany_events.31 days = 110 popup = yes }
+        trigger_event = { id = tno_germany_events.32 days = 160 popup = yes }
+        trigger_event = { id = tno_germany_events.33 days = 250 popup = yes }
+        trigger_event = { id = tno_germany_events.34 days = 340 popup = yes }
+        trigger_event = { id = tno_germany_events.35 days = 400 popup = yes }
+    }
+
+    set_variable = {
+        name = hitler_good
+        value = 0
+    }
+
+    hidden_effect = {
+
+     c:BGD = {
+        trigger_event = { id = tno_germany_events.2 days = 0 popup = yes }
+    } 
+}
+
+
+}
 
 }
 
 tno_germany_events.30 = {
 	type = country_event
     placement = ROOT
- 
+
     hidden = yes
 
     trigger = {
-		this ?= c:GER
-	}	
+      this ?= c:GER
+  }	
 
-    immediate = {
-        set_variable = {
-            name = hitler_fair
-            value = 0
-        }
-    
+  immediate = {
+    set_variable = {
+        name = hitler_fair
+        value = 0
     }
+    
+}
 }
 
 tno_germany_events.31 = {
 	type = country_event
     placement = ROOT
- 
+
     hidden = yes
 
     trigger = {
-		this ?= c:GER
-	}	
+      this ?= c:GER
+  }	
 
-    immediate = {
-        set_variable = {
-            name = hitler_unwell
-            value = 0
-        }
-    
+  immediate = {
+    set_variable = {
+        name = hitler_unwell
+        value = 0
     }
+    
+}
 }
 
 tno_germany_events.32 = {
 	type = country_event
     placement = ROOT
- 
+
     hidden = yes
 
     trigger = {
-		this ?= c:GER
-	}	
+      this ?= c:GER
+  }	
 
-    immediate = {
-        set_variable = {
-            name = hitler_severe
-            value = 0
-        }
-    
+  immediate = {
+    set_variable = {
+        name = hitler_severe
+        value = 0
     }
+    
+}
 }
 
 tno_germany_events.33 = {
 	type = country_event
     placement = ROOT
- 
+
     hidden = yes
 
     trigger = {
-		this ?= c:GER
-	}	
+      this ?= c:GER
+  }	
 
-    immediate = {
-        set_variable = {
-            name = hitler_severe
-            value = 0
-        }
-    
+  immediate = {
+    set_variable = {
+        name = hitler_severe
+        value = 0
     }
+    
+}
 }
 
 tno_germany_events.34 = {
 	type = country_event
     placement = ROOT
- 
+
     hidden = yes
 
     trigger = {
-		this ?= c:GER
-	}	
+      this ?= c:GER
+  }	
 
-    immediate = {
-        set_variable = {
-            name = hitler_coma
-            value = 0
-        }
-    
+  immediate = {
+    set_variable = {
+        name = hitler_coma
+        value = 0
     }
+    
+}
 }
 
 tno_germany_events.35 = {
 	type = country_event
     placement = ROOT
- 
-    trigger = {
-		this ?= c:GER
-	}	
 
-    immediate = {
-        set_variable = {
-            name = hitler_dead
-            value = 0
-        }
+    trigger = {
+      this ?= c:GER
+  }	
+
+  immediate = {
+    set_variable = {
+        name = hitler_dead
+        value = 0
+    }
     
+}
+
+title = tno_germany_events.35
+desc = tno_germany_events.35.d
+flavor = tno_germany_events.35.f
+
+event_image = {
+  texture  = "gfx/event_pictures/event_pictures/hitler_suc.dds"
+}
+icon = "gfx/interface/icons/event_icons/event_fire.dds"
+
+on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+duration = 3
+
+option = {
+    name = tno_germany_events.35.a
+    add_loyalists = {
+        value = 0.05
+    }
+    add_radicals = {
+        value = 0.10
     }
 
-    title = tno_germany_events.35
-    desc = tno_germany_events.35.d
-    flavor = tno_germany_events.35.f
 
-    event_image = {
-		texture  = "gfx/event_pictures/event_pictures/hitler_suc.dds"
-	}
-    icon = "gfx/interface/icons/event_icons/event_fire.dds"
-
-    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
-
-    duration = 3
-
-    option = {
-        name = tno_germany_events.35.a
-        add_loyalists = {
-            value = 0.05
-        }
-        add_radicals = {
-            value = 0.10
-        }
-        
-        
-	}
+}
 }
 
 tno_germany_events.4 = { # speer wins power struggle
 	type = country_event
     placement = ROOT
- 
+
     hidden = yes
 
     trigger = {
-		this ?= c:GER
-	}	
+      this ?= c:GER
+  }	
 
-    immediate = {
-        ig:ig_industrialists  = {
-            leader = {
-          
-              set_character_as_ruler = yes
-            }
-            set_variable = {
-                name = speer_dub
-             }
-        }
+  immediate = {
+    ig:ig_industrialists  = {
+        leader = {
+
+          set_character_as_ruler = yes
+      }
+      set_variable = {
+        name = speer_dub
     }
+}
+}
 
 }
 
@@ -295,20 +290,20 @@ tno_germany_events.5 = { # goreing wins power struggle
     placement = ROOT
     hidden = yes
 
-  
+
 
 
     immediate = {
         ig:ig_armed_forces  = {
             leader = {
-          
+
               set_character_as_ruler = yes
-            }
-            set_variable = {
-                name = goreing_dub
-             }
+          }
+          set_variable = {
+            name = goreing_dub
         }
     }
+}
 
 }
 
@@ -317,20 +312,20 @@ tno_germany_events.6 = { # SS wins power struggle
     placement = ROOT
     hidden = yes
 
-  
+
 
 
     immediate = {
         ig:ig_petty_bourgeoisie= {
             leader = {
-          
+
               set_character_as_ruler = yes
-            }
-        }
-        set_variable = {
-            name = ss_dub
-         }
+          }
+      }
+      set_variable = {
+        name = ss_dub
     }
+}
 
 }
 
@@ -339,20 +334,20 @@ tno_germany_events.7 = { # landowners wins power struggle
     placement = ROOT
     hidden = yes
 
-  
+
 
 
     immediate = {
         ig:ig_landowners = {
             leader = {
-          
+
               set_character_as_ruler = yes
-            }
-        }
-        set_variable = {
-            name = landowner_dub
-         }
+          }
+      }
+      set_variable = {
+        name = landowner_dub
     }
+}
 
 }
 
@@ -426,123 +421,123 @@ tno_germany_events.8 = { # Hitler picks successor
 tno_germany_events.10 = { # SS acting up 
 	type = country_event
     placement = ROOT
- 
+
     
- 
+
     title = tno_germany_events.10
     desc = tno_germany_events.10.d
     flavor = tno_germany_events.10.f
 
-   event_image = {
-		texture  = "gfx/event_pictures/event_pictures/hitler_suc.dds"
-	}
-    icon = "gfx/interface/icons/event_icons/event_fire.dds"
+    event_image = {
+      texture  = "gfx/event_pictures/event_pictures/hitler_suc.dds"
+  }
+  icon = "gfx/interface/icons/event_icons/event_fire.dds"
 
-    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+  on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 
-    duration = 3
-    trigger = {
-		this ?= c:GER
-	}	
+  duration = 3
+  trigger = {
+      this ?= c:GER
+  }	
 
     option = { # Boost spear
         name = tno_germany_events.10.a
         change_variable = {
             name = speer_ger_struggle_timer
             add = 5
-         }
-         custom_tooltip = autark.tooltip
+        }
+        custom_tooltip = autark.tooltip
 
-         add_modifier = {
+        add_modifier = {
             name = ss_counterd_speer
             years = 2
         }
-         
+
         
         
-	}
+    }
 
     option = { # Borman 
-     name = tno_germany_events.10.b
+       name = tno_germany_events.10.b
        default_option = yes
        change_variable = {
         name = boreman_ger_struggle_timer
         add = 5
-     }
+    }
 
-     add_modifier = {
+    add_modifier = {
         name = ss_counterd_bore
         years = 2
     }
-     custom_tooltip = chancellery.tooltip
-	}
+    custom_tooltip = chancellery.tooltip
+}
     option = { # goreing 
-     name = tno_germany_events.10.c
-     custom_tooltip = militarist.tooltip
-     
-      
-     change_variable = {
+       name = tno_germany_events.10.c
+       custom_tooltip = militarist.tooltip
+
+
+       change_variable = {
         name = goreing_ger_struggle_timer
         add = 5
-     }
+    }
 
-     add_modifier = {
+    add_modifier = {
         name = ss_counterd_gore
         years = 2
     }
-    }
+}
 
    option = { # hydrick 
     name = tno_germany_events.10.e
-     change_variable = {
-     name =  devout_ger_struggle_timer
-        add = 5
-      }
-      custom_tooltip = ss.tooltip
+    change_variable = {
+       name =  devout_ger_struggle_timer
+       add = 5
+   }
+   custom_tooltip = ss.tooltip
 
-      add_modifier = {
-        name = ss_counterd_ss
-        years = 2
-    }
+   add_modifier = {
+    name = ss_counterd_ss
+    years = 2
+}
 
-     
-   
-     
-    }
+
+
+
+}
 
 }
 
 tno_germany_events.11 = { # Autobahn renewel
 	type = country_event
     placement = ROOT
- 
+
     
- 
+
     title = tno_germany_events.11
     desc = tno_germany_events.11.d
     flavor = tno_germany_events.11.f
 
-   event_image = {
-		texture  = "gfx/event_pictures/event_pictures/hitler_suc.dds"
-	}
-    icon = "gfx/interface/icons/event_icons/event_fire.dds"
+    event_image = {
+      texture  = "gfx/event_pictures/event_pictures/hitler_suc.dds"
+  }
+  icon = "gfx/interface/icons/event_icons/event_fire.dds"
 
-    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+  on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 
-    duration = 3
-    trigger = {
-		this ?= c:GER
-	}	
+  duration = 3
+  trigger = {
+      this ?= c:GER
+  }	
 
     option = { # Boost spear
         name = tno_germany_events.11.a
         change_variable = {
             name = speer_ger_struggle_timer
             add = 5
-         }
-         custom_tooltip = autark.tooltip
-         
-         add_modifier = {
+        }
+        custom_tooltip = autark.tooltip
+
+        add_modifier = {
             name = full_funding_auto
             years = 2
         }
@@ -552,54 +547,54 @@ tno_germany_events.11 = { # Autobahn renewel
             multiplier = 0.5
         }
         
-	}
+    }
 
     option = { # Borman 
-     name = tno_germany_events.11.b
+       name = tno_germany_events.11.b
        default_option = yes
        change_variable = {
         name = boreman_ger_struggle_timer
         add = 5
-     }
-     custom_tooltip = militarist.tooltip
-     
-     change_variable = {
+    }
+    custom_tooltip = militarist.tooltip
+
+    change_variable = {
         name = goreing_ger_struggle_timer
         add = 5
-     }
+    }
 
-     add_modifier = {
+    add_modifier = {
         name = heer_funding_auto
         years = 2
     }
     remove_modifier = decaying_infrastructure
     add_modifier = {
-            name = decaying_infrastructure
-            multiplier = 0.75
+        name = decaying_infrastructure
+        multiplier = 0.75
     }
-     custom_tooltip = chancellery.tooltip
-	}
+    custom_tooltip = chancellery.tooltip
+}
    option = { # hydrick 
     name = tno_germany_events.11.c
-     change_variable = {
-     name =  devout_ger_struggle_timer
-        add = 5
-      }
-      add_modifier = {
-        name = none_funding_auto
-        years = 2
-    }
-    remove_modifier = decaying_infrastructure
-    add_modifier = {
-            name = decaying_infrastructure
-            multiplier = 1.5
-    }
-      custom_tooltip = ss.tooltip
+    change_variable = {
+       name =  devout_ger_struggle_timer
+       add = 5
+   }
+   add_modifier = {
+    name = none_funding_auto
+    years = 2
+}
+remove_modifier = decaying_infrastructure
+add_modifier = {
+    name = decaying_infrastructure
+    multiplier = 1.5
+}
+custom_tooltip = ss.tooltip
 
-     
-   
-     
-    }
+
+
+
+}
 
 }
 
@@ -1005,11 +1000,11 @@ tno_germany_events.17 = { # German Civil War
     duration = 3
     
     trigger = {
-		this ?= c:GER
-	}	
+      this ?= c:GER
+  }	
 
-    immediate = {
-        set_global_variable = german_civil_war_start
+  immediate = {
+    set_global_variable = german_civil_war_start
      #  remove_diplomatic_pact = {
      #      country = c:RKU
      #      type = reichskommissariat
@@ -1050,168 +1045,168 @@ tno_germany_events.17 = { # German Civil War
 
      #
 
-        c:GER = {
-           set_immune_to_revolutions = yes
+    c:GER = {
+     set_immune_to_revolutions = yes
 
-            remove_diplomatic_pact = {
-               country = c:IRE
-               type = protectorate
-            }
-            remove_diplomatic_pact = {
-               country = c:SER
-               type = protectorate
-            }
-            remove_diplomatic_pact = {
-                country = c:KZA
-                type = reichskommissariat
-            }
-            remove_diplomatic_pact = {
-                country = c:KON
-                type = reichskommissariat
-            }
-            remove_diplomatic_pact = {
-                country = c:KSA
-                type = reichskommissariat
-            }
-            remove_diplomatic_pact = {
-                country = c:NOR
-                type = reichskommissariat
-            }
+     remove_diplomatic_pact = {
+         country = c:IRE
+         type = protectorate
+     }
+     remove_diplomatic_pact = {
+         country = c:SER
+         type = protectorate
+     }
+     remove_diplomatic_pact = {
+        country = c:KZA
+        type = reichskommissariat
+    }
+    remove_diplomatic_pact = {
+        country = c:KON
+        type = reichskommissariat
+    }
+    remove_diplomatic_pact = {
+        country = c:KSA
+        type = reichskommissariat
+    }
+    remove_diplomatic_pact = {
+        country = c:NOR
+        type = reichskommissariat
+    }
 
-            every_subject_or_below = {
-                trigger_event = { id = tno_germany_events.20 days = 0 popup = yes }
-            }
+    every_subject_or_below = {
+        trigger_event = { id = tno_germany_events.20 days = 0 popup = yes }
+    }
 
-            random_state = {
-                limit = {
-                    state_region = s:STATE_BRANDENBURG
-                } 
-                remove_building = building_barracks
-              }
-        }
+    random_state = {
+        limit = {
+            state_region = s:STATE_BRANDENBURG
+        } 
+        remove_building = building_barracks
+    }
+}
 
-        
+
 
         create_country = { #Martin bormann
-		tag = GMB
-		origin = c:GER 
-       
-        state = s:STATE_BAVARIA.region_state:GER
-        state = s:STATE_BADEN.region_state:GER
-        state = s:STATE_WURTTEMBERG.region_state:GER
-        state = s:STATE_AUSTRIA.region_state:GER
-        state = s:STATE_SAXONY.region_state:GER
-        state = s:STATE_FRANCONIA.region_state:GER
-        state = s:STATE_SLOVENIA.region_state:GER
-        state = s:STATE_TABRIZ.region_state:GER
+          tag = GMB
+          origin = c:GER 
 
-        province = p:x400226
-        province = p:x1D6B94
-        province = p:x716141
-        province = p:xA40163
-        province = p:x67FE18
-        
-		on_created = {
-            set_immune_to_revolutions = yes
-            add_modifier = {
-				name = german_civil_war_modifier
-                years = 3
-			}
-	        }
-	    } 
-        create_country = { #Albert speer
-		tag = GAS
-		origin = c:GER 
-       
-        state = s:STATE_HESSE.region_state:GER
-        state = s:STATE_BRUNSWICK.region_state:GER
-        state = s:STATE_ANHALT.region_state:GER
-        state = s:STATE_ELBE.region_state:GER
-        state = s:STATE_HANNOVER.region_state:GER
-        state = s:STATE_WESTPHALIA.region_state:GER
-        state = s:STATE_RUHR.region_state:GER
-        state = s:STATE_NORTH_RHINE.region_state:GER
-        state = s:STATE_WALLONIA.region_state:GER
-        
-        on_created = {
-            set_immune_to_revolutions = yes
-            add_modifier = {
-				name = german_civil_war_modifier
-                years = 3
-			}
-	        }
-	    } 
-        create_country = { #Hermann Göring
-		tag = GHG
-		origin = c:GER 
-        
-        state = s:STATE_SCHLESWIG_HOLSTEIN.region_state:GER
-        state = s:STATE_MECKLENBURG.region_state:GER
-        state = s:STATE_POMERANIA.region_state:GER
-        state = s:STATE_POSEN.region_state:GER
-        state = s:STATE_GREATER_POLAND.region_state:GER 
-        state = s:STATE_SILESIA.region_state:GER 
-        state = s:STATE_SLOVENIA.region_state:GER 
-        state = s:STATE_JUTLAND.region_state:GER
-        
-        province = p:x611F2F
-        province = p:x7CB839
-        province = p:x0180A0
-        province = p:x945000
-        province = p:x178C99
-        province = p:xBAF66D
-        province = p:x3E3572
-        province = p:x4B3444
-        province = p:xF0E080
-       
-        
-		on_created = {
-            set_immune_to_revolutions = yes
-            add_modifier = {
-				name = german_civil_war_modifier
-                years = 3
-			}
-	        }
-	    } 
-        create_country = { #Reinhard Heydrich
-		tag = GRH
-		origin = c:GER 
-        
-        state = s:STATE_EAST_PRUSSIA.region_state:GER
-        state = s:STATE_MAZOVIA.region_state:GER
-        state = s:STATE_WEST_PRUSSIA.region_state:GER
-        state = s:STATE_ALSACE_LORRAINE.region_state:GER
-        state = s:STATE_RHINELAND.region_state:GER
-        state = s:STATE_BREST.region_state:GER
-        province = p:x802161
-        province = p:xE165F5
-		
-        on_created = {
-            set_immune_to_revolutions = yes
-            add_modifier = {
-				name = german_civil_war_modifier
-                years = 3
-			}
-	        }
+          state = s:STATE_BAVARIA.region_state:GER
+          state = s:STATE_BADEN.region_state:GER
+          state = s:STATE_WURTTEMBERG.region_state:GER
+          state = s:STATE_AUSTRIA.region_state:GER
+          state = s:STATE_SAXONY.region_state:GER
+          state = s:STATE_FRANCONIA.region_state:GER
+          state = s:STATE_SLOVENIA.region_state:GER
+          state = s:STATE_TABRIZ.region_state:GER
 
-	    } 
-        create_country = { #Wehrkreis XIX
-		tag = GWZ
-		origin = c:GER 
-        state = s:STATE_BOHEMIA.region_state:GER
-        state = s:STATE_MORAVIA.region_state:GER
-		on_created = {
-            set_immune_to_revolutions = yes
-	        }
-	    } 
+          province = p:x400226
+          province = p:x1D6B94
+          province = p:x716141
+          province = p:xA40163
+          province = p:x67FE18
 
-        c:GER = {
-            create_diplomatic_pact = {
-                country = c:GWZ
-                type = reichskommissariat
+          on_created = {
+            set_immune_to_revolutions = yes
+            add_modifier = {
+                name = german_civil_war_modifier
+                years = 3
             }
         }
-        
+    } 
+        create_country = { #Albert speer
+          tag = GAS
+          origin = c:GER 
+
+          state = s:STATE_HESSE.region_state:GER
+          state = s:STATE_BRUNSWICK.region_state:GER
+          state = s:STATE_ANHALT.region_state:GER
+          state = s:STATE_ELBE.region_state:GER
+          state = s:STATE_HANNOVER.region_state:GER
+          state = s:STATE_WESTPHALIA.region_state:GER
+          state = s:STATE_RUHR.region_state:GER
+          state = s:STATE_NORTH_RHINE.region_state:GER
+          state = s:STATE_WALLONIA.region_state:GER
+
+          on_created = {
+            set_immune_to_revolutions = yes
+            add_modifier = {
+                name = german_civil_war_modifier
+                years = 3
+            }
+        }
+    } 
+        create_country = { #Hermann Göring
+          tag = GHG
+          origin = c:GER 
+
+          state = s:STATE_SCHLESWIG_HOLSTEIN.region_state:GER
+          state = s:STATE_MECKLENBURG.region_state:GER
+          state = s:STATE_POMERANIA.region_state:GER
+          state = s:STATE_POSEN.region_state:GER
+          state = s:STATE_GREATER_POLAND.region_state:GER 
+          state = s:STATE_SILESIA.region_state:GER 
+          state = s:STATE_SLOVENIA.region_state:GER 
+          state = s:STATE_JUTLAND.region_state:GER
+
+          province = p:x611F2F
+          province = p:x7CB839
+          province = p:x0180A0
+          province = p:x945000
+          province = p:x178C99
+          province = p:xBAF66D
+          province = p:x3E3572
+          province = p:x4B3444
+          province = p:xF0E080
+
+
+          on_created = {
+            set_immune_to_revolutions = yes
+            add_modifier = {
+                name = german_civil_war_modifier
+                years = 3
+            }
+        }
+    } 
+        create_country = { #Reinhard Heydrich
+          tag = GRH
+          origin = c:GER 
+
+          state = s:STATE_EAST_PRUSSIA.region_state:GER
+          state = s:STATE_MAZOVIA.region_state:GER
+          state = s:STATE_WEST_PRUSSIA.region_state:GER
+          state = s:STATE_ALSACE_LORRAINE.region_state:GER
+          state = s:STATE_RHINELAND.region_state:GER
+          state = s:STATE_BREST.region_state:GER
+          province = p:x802161
+          province = p:xE165F5
+
+          on_created = {
+            set_immune_to_revolutions = yes
+            add_modifier = {
+                name = german_civil_war_modifier
+                years = 3
+            }
+        }
+
+    } 
+        create_country = { #Wehrkreis XIX
+          tag = GWZ
+          origin = c:GER 
+          state = s:STATE_BOHEMIA.region_state:GER
+          state = s:STATE_MORAVIA.region_state:GER
+          on_created = {
+            set_immune_to_revolutions = yes
+        }
+    } 
+
+    c:GER = {
+        create_diplomatic_pact = {
+            country = c:GWZ
+            type = reichskommissariat
+        }
+    }
+
         #create_country = { # CRIMIEA
 		#tag = GEE
 		#origin = c:GER 
@@ -1222,119 +1217,119 @@ tno_germany_events.17 = { # German Civil War
 	    #    }
 	    #} 
         create_country = { # eng treaty port
-			tag = GEL
-			origin = c:GER
-			province = p:x1E38F8
-		}
-         
+         tag = GEL
+         origin = c:GER
+         province = p:x1E38F8
+     }
+
+ }
+ option = {
+    name = tno_germany_events.17.a
+    trigger = {
+        has_variable = borman_chosen
     }
-    option = {
-        name = tno_germany_events.17.a
-        trigger = {
-            has_variable = borman_chosen
+    if = {
+        limit = {
+            is_player = yes
         }
-        if = {
-            limit = {
-                is_player = yes
-            }
-            play_as = c:GMB
-        }
-        remove_variable = borman_chosen
-        set_global_variable = german_civil_war_start
-        hidden_effect = {
-            trigger_event = { id = tno_germany_events.18 days = 10 popup = yes }  
-        }
-        default_option = yes    
+        play_as = c:GMB
+    }
+    remove_variable = borman_chosen
+    set_global_variable = german_civil_war_start
+    hidden_effect = {
+        trigger_event = { id = tno_germany_events.18 days = 10 popup = yes }  
+    }
+    default_option = yes    
 
-        c:BGD = { 
-            create_diplomatic_pact = {
-                country = c:GRH
-                type = customs_union
-            }
-
-            change_relations = {
-                country = c:GRH
-                value = 150
-            }
+    c:BGD = { 
+        create_diplomatic_pact = {
+            country = c:GRH
+            type = customs_union
         }
-        c:GMB = { 
-            create_character = {
+
+        change_relations = {
+            country = c:GRH
+            value = 150
+        }
+    }
+    c:GMB = { 
+        create_character = {
                 # Martin Bormann
-                first_name = "martin_bormann_first_name"
-                last_name = "martin_bormann_last_name"
-                age = 51
-                culture = cu:north_german
-                dna = dna_martin_bormann
-                ruler = yes
-                interest_group = ig_landowners
-                ideology = ideology_fascist
-                traits = {
-                    tactful
-                    bigoted
-                    expert_political_operator
-                }
+            first_name = "martin_bormann_first_name"
+            last_name = "martin_bormann_last_name"
+            age = 51
+            culture = cu:north_german
+            dna = dna_martin_bormann
+            ruler = yes
+            interest_group = ig_landowners
+            ideology = ideology_fascist
+            traits = {
+                tactful
+                bigoted
+                expert_political_operator
             }
         }
-        c:GAS = {
-            create_character = {
+    }
+    c:GAS = {
+        create_character = {
                 # Albert Speer
-                first_name = "albert_speer_first_name"
-                last_name = "albert_speer_last_name"
-                age = 45
-                culture = cu:north_german
-                ruler = yes
-                interest_group = ig_industrialists
-                ideology = ideology_ethno_nationalist
-                traits = {
-                    reserved
-                    meticulous
-                    innovative
-                }
+            first_name = "albert_speer_first_name"
+            last_name = "albert_speer_last_name"
+            age = 45
+            culture = cu:north_german
+            ruler = yes
+            interest_group = ig_industrialists
+            ideology = ideology_ethno_nationalist
+            traits = {
+                reserved
+                meticulous
+                innovative
             }
         }
-        c:GHG = {
-            create_character = {
+    }
+    c:GHG = {
+        create_character = {
                 # Hermann Göring
-                first_name = "hermann_goring_first_name"
-                last_name = "hermann_goring_last_name"
-                age = 57
-                culture = cu:north_german
-                ruler = yes
-                interest_group = ig_armed_forces
-                ideology = ideology_fascist
-                traits = {
-                    arrogant
-                    ambitious
-                    charismatic
-                    hedonist
-                    opium_addiction
-                    celebrity_commander
-                    plains_commander
-                }
+            first_name = "hermann_goring_first_name"
+            last_name = "hermann_goring_last_name"
+            age = 57
+            culture = cu:north_german
+            ruler = yes
+            interest_group = ig_armed_forces
+            ideology = ideology_fascist
+            traits = {
+                arrogant
+                ambitious
+                charismatic
+                hedonist
+                opium_addiction
+                celebrity_commander
+                plains_commander
             }
         }
-        c:GRH = {
-            create_character = {
+    }
+    c:GRH = {
+        create_character = {
                 # Reinhard Heydrich
-                first_name = "reinhard_heydrich_first_name"
-                last_name = "reinhard_heydrich_last_name"
-                age = 41
-                culture = cu:north_german
-                ruler = yes
-                interest_group = ig_petty_bourgeoisie
-                ideology = ideology_fascist
-                traits = {
-                    direct
-                    wrathful
-                    cruel
-                    meticulous
-                    pillager
-                    celebrity_commander
-                    basic_political_operator
-                }
+            first_name = "reinhard_heydrich_first_name"
+            last_name = "reinhard_heydrich_last_name"
+            age = 41
+            culture = cu:north_german
+            ruler = yes
+            interest_group = ig_petty_bourgeoisie
+            ideology = ideology_fascist
+            traits = {
+                direct
+                wrathful
+                cruel
+                meticulous
+                pillager
+                celebrity_commander
+                basic_political_operator
             }
         }
-        
+    }
+
       #  c:RKO = { #22-24
       #  trigger_event = { id = tno_RK_events.15 days = 0 popup = yes }
       # } 
@@ -1365,117 +1360,117 @@ tno_germany_events.17 = { # German Civil War
       # c:UPO = { 
       #     trigger_event = { id = tno_RK_events.25 days = 0 popup = yes }
       # }
+}
+
+
+option = {
+    name = tno_germany_events.17.a
+    trigger = {
+        has_variable = speer_chosen
     }
-   
-   
-    option = {
-        name = tno_germany_events.17.a
-        trigger = {
-            has_variable = speer_chosen
+    if = {
+        limit = {
+            is_player = yes
         }
-        if = {
-            limit = {
-                is_player = yes
-            }
-            play_as = c:GAS
-        }
-        remove_variable = speer_chosen
-        set_global_variable = german_civil_war_start
-        hidden_effect = {
-            trigger_event = { id = tno_germany_events.18 days = 10 popup = yes }  
+        play_as = c:GAS
+    }
+    remove_variable = speer_chosen
+    set_global_variable = german_civil_war_start
+    hidden_effect = {
+        trigger_event = { id = tno_germany_events.18 days = 10 popup = yes }  
+    }
+
+    c:BGD = { 
+        create_diplomatic_pact = {
+            country = c:GRH
+            type = customs_union
         }
 
-        c:BGD = { 
-            create_diplomatic_pact = {
-                country = c:GRH
-                type = customs_union
-            }
-
-            change_relations = {
-                country = c:GRH
-                value = 150
-            }
+        change_relations = {
+            country = c:GRH
+            value = 150
         }
+    }
 
-        c:GMB = { 
-            create_character = {
+    c:GMB = { 
+        create_character = {
                 # Martin Bormann
-                first_name = "martin_bormann_first_name"
-                last_name = "martin_bormann_last_name"
-                age = 51
-                culture = cu:north_german
-                dna = dna_martin_bormann
-                ruler = yes
-                interest_group = ig_landowners
-                ideology = ideology_fascist
-                traits = {
-                    tactful
-                    bigoted
-                    expert_political_operator
-                }
+            first_name = "martin_bormann_first_name"
+            last_name = "martin_bormann_last_name"
+            age = 51
+            culture = cu:north_german
+            dna = dna_martin_bormann
+            ruler = yes
+            interest_group = ig_landowners
+            ideology = ideology_fascist
+            traits = {
+                tactful
+                bigoted
+                expert_political_operator
             }
         }
-        c:GAS = {
-            create_character = {
+    }
+    c:GAS = {
+        create_character = {
                 # Albert Speer
-                first_name = "albert_speer_first_name"
-                last_name = "albert_speer_last_name"
-                age = 45
-                culture = cu:north_german
-                ruler = yes
-                interest_group = ig_industrialists
-                ideology = ideology_ethno_nationalist
-                traits = {
-                    reserved
-                    meticulous
-                    innovative
-                }
+            first_name = "albert_speer_first_name"
+            last_name = "albert_speer_last_name"
+            age = 45
+            culture = cu:north_german
+            ruler = yes
+            interest_group = ig_industrialists
+            ideology = ideology_ethno_nationalist
+            traits = {
+                reserved
+                meticulous
+                innovative
             }
         }
-        c:GHG = {
-            create_character = {
+    }
+    c:GHG = {
+        create_character = {
                 # Hermann Göring
-                first_name = "hermann_goring_first_name"
-                last_name = "hermann_goring_last_name"
-                age = 57
-                culture = cu:north_german
-                ruler = yes
-                interest_group = ig_armed_forces
-                ideology = ideology_fascist
-                traits = {
-                    arrogant
-                    ambitious
-                    charismatic
-                    hedonist
-                    opium_addiction
-                    celebrity_commander
-                    plains_commander
-                }
+            first_name = "hermann_goring_first_name"
+            last_name = "hermann_goring_last_name"
+            age = 57
+            culture = cu:north_german
+            ruler = yes
+            interest_group = ig_armed_forces
+            ideology = ideology_fascist
+            traits = {
+                arrogant
+                ambitious
+                charismatic
+                hedonist
+                opium_addiction
+                celebrity_commander
+                plains_commander
             }
         }
-        c:GRH = {
-            create_character = {
+    }
+    c:GRH = {
+        create_character = {
                 # Reinhard Heydrich
-                first_name = "reinhard_heydrich_first_name"
-                last_name = "reinhard_heydrich_last_name"
-                age = 41
-                culture = cu:north_german
-                ruler = yes
-                interest_group = ig_petty_bourgeoisie
-                ideology = ideology_fascist
-                traits = {
-                    direct
-                    wrathful
-                    cruel
-                    meticulous
-                    pillager
-                    celebrity_commander
-                    basic_political_operator
-                }
+            first_name = "reinhard_heydrich_first_name"
+            last_name = "reinhard_heydrich_last_name"
+            age = 41
+            culture = cu:north_german
+            ruler = yes
+            interest_group = ig_petty_bourgeoisie
+            ideology = ideology_fascist
+            traits = {
+                direct
+                wrathful
+                cruel
+                meticulous
+                pillager
+                celebrity_commander
+                basic_political_operator
             }
         }
+    }
 
-        
+
 
     #   c:RKO = { #22-24
     #   trigger_event = { id = tno_RK_events.15 days = 0 popup = yes }
@@ -1507,116 +1502,116 @@ tno_germany_events.17 = { # German Civil War
     #  c:UPO = { 
     #      trigger_event = { id = tno_RK_events.25 days = 0 popup = yes }
     #  }
-       
-     }
-     
-     
-     option = {
-        name = tno_germany_events.17.a
-        trigger = {
-            has_variable = goering_chosen
+
+}
+
+
+option = {
+    name = tno_germany_events.17.a
+    trigger = {
+        has_variable = goering_chosen
+    }
+    if = {
+        limit = {
+            is_player = yes
         }
-        if = {
-            limit = {
-                is_player = yes
-            }
-            play_as = c:GHG
-        }
-        remove_variable = goering_chosen
-        set_global_variable = german_civil_war_start
-        hidden_effect = {
-            trigger_event = { id = tno_germany_events.18 days = 10 popup = yes }  
+        play_as = c:GHG
+    }
+    remove_variable = goering_chosen
+    set_global_variable = german_civil_war_start
+    hidden_effect = {
+        trigger_event = { id = tno_germany_events.18 days = 10 popup = yes }  
+    }
+
+    c:BGD = { 
+        create_diplomatic_pact = {
+            country = c:GRH
+            type = customs_union
         }
 
-        c:BGD = { 
-            create_diplomatic_pact = {
-                country = c:GRH
-                type = customs_union
-            }
-
-            change_relations = {
-                country = c:GRH
-                value = 150
-            }
+        change_relations = {
+            country = c:GRH
+            value = 150
         }
+    }
 
-        c:GMB = { 
-            create_character = {
+    c:GMB = { 
+        create_character = {
                 # Martin Bormann
-                first_name = "martin_bormann_first_name"
-                last_name = "martin_bormann_last_name"
-                age = 51
-                culture = cu:north_german
-                dna = dna_martin_bormann
-                ruler = yes
-                interest_group = ig_landowners
-                ideology = ideology_fascist
-                traits = {
-                    tactful
-                    bigoted
-                    expert_political_operator
-                }
+            first_name = "martin_bormann_first_name"
+            last_name = "martin_bormann_last_name"
+            age = 51
+            culture = cu:north_german
+            dna = dna_martin_bormann
+            ruler = yes
+            interest_group = ig_landowners
+            ideology = ideology_fascist
+            traits = {
+                tactful
+                bigoted
+                expert_political_operator
             }
         }
-        c:GAS = {
-            create_character = {
+    }
+    c:GAS = {
+        create_character = {
                 # Albert Speer
-                first_name = "albert_speer_first_name"
-                last_name = "albert_speer_last_name"
-                age = 45
-                culture = cu:north_german
-                ruler = yes
-                interest_group = ig_industrialists
-                ideology = ideology_ethno_nationalist
-                traits = {
-                    reserved
-                    meticulous
-                    innovative
-                }
+            first_name = "albert_speer_first_name"
+            last_name = "albert_speer_last_name"
+            age = 45
+            culture = cu:north_german
+            ruler = yes
+            interest_group = ig_industrialists
+            ideology = ideology_ethno_nationalist
+            traits = {
+                reserved
+                meticulous
+                innovative
             }
         }
-        c:GHG = {
-            create_character = {
+    }
+    c:GHG = {
+        create_character = {
                 # Hermann Göring
-                first_name = "hermann_goring_first_name"
-                last_name = "hermann_goring_last_name"
-                age = 57
-                culture = cu:north_german
-                ruler = yes
-                interest_group = ig_armed_forces
-                ideology = ideology_fascist
-                traits = {
-                    arrogant
-                    ambitious
-                    charismatic
-                    hedonist
-                    opium_addiction
-                    celebrity_commander
-                    plains_commander
-                }
+            first_name = "hermann_goring_first_name"
+            last_name = "hermann_goring_last_name"
+            age = 57
+            culture = cu:north_german
+            ruler = yes
+            interest_group = ig_armed_forces
+            ideology = ideology_fascist
+            traits = {
+                arrogant
+                ambitious
+                charismatic
+                hedonist
+                opium_addiction
+                celebrity_commander
+                plains_commander
             }
         }
-        c:GRH = {
-            create_character = {
+    }
+    c:GRH = {
+        create_character = {
                 # Reinhard Heydrich
-                first_name = "reinhard_heydrich_first_name"
-                last_name = "reinhard_heydrich_last_name"
-                age = 41
-                culture = cu:north_german
-                ruler = yes
-                interest_group = ig_petty_bourgeoisie
-                ideology = ideology_fascist
-                traits = {
-                    direct
-                    wrathful
-                    cruel
-                    meticulous
-                    pillager
-                    celebrity_commander
-                    basic_political_operator
-                }
+            first_name = "reinhard_heydrich_first_name"
+            last_name = "reinhard_heydrich_last_name"
+            age = 41
+            culture = cu:north_german
+            ruler = yes
+            interest_group = ig_petty_bourgeoisie
+            ideology = ideology_fascist
+            traits = {
+                direct
+                wrathful
+                cruel
+                meticulous
+                pillager
+                celebrity_commander
+                basic_political_operator
             }
         }
+    }
 
    #    c:RKO = { #22-24
    #    trigger_event = { id = tno_RK_events.15 days = 0 popup = yes }
@@ -1648,116 +1643,116 @@ tno_germany_events.17 = { # German Civil War
    #   c:UPO = { 
    #       trigger_event = { id = tno_RK_events.25 days = 0 popup = yes }
    #   }
-       
-     }
-    
-    
-     option = {
-        name = tno_germany_events.17.a
-        trigger = {
-            has_variable = heydrich_chosen
+
+}
+
+
+option = {
+    name = tno_germany_events.17.a
+    trigger = {
+        has_variable = heydrich_chosen
+    }
+    if = {
+        limit = {
+            is_player = yes
         }
-        if = {
-            limit = {
-                is_player = yes
-            }
-            play_as = c:GRH
-        }
-        remove_variable = heydrich_chosen
-        set_global_variable = german_civil_war_start
-        hidden_effect = {
-            trigger_event = { id = tno_germany_events.18 days = 10 popup = yes }  
+        play_as = c:GRH
+    }
+    remove_variable = heydrich_chosen
+    set_global_variable = german_civil_war_start
+    hidden_effect = {
+        trigger_event = { id = tno_germany_events.18 days = 10 popup = yes }  
+    }
+
+    c:BGD = { 
+        create_diplomatic_pact = {
+            country = c:GRH
+            type = customs_union
         }
 
-        c:BGD = { 
-            create_diplomatic_pact = {
-                country = c:GRH
-                type = customs_union
-            }
-
-            change_relations = {
-                country = c:GRH
-                value = 150
-            }
+        change_relations = {
+            country = c:GRH
+            value = 150
         }
+    }
 
-        c:GMB = { 
-            create_character = {
+    c:GMB = { 
+        create_character = {
                 # Martin Bormann
-                first_name = "martin_bormann_first_name"
-                last_name = "martin_bormann_last_name"
-                age = 51
-                culture = cu:north_german
-                dna = dna_martin_bormann
-                ruler = yes
-                interest_group = ig_landowners
-                ideology = ideology_fascist
-                traits = {
-                    tactful
-                    bigoted
-                    expert_political_operator
-                }
+            first_name = "martin_bormann_first_name"
+            last_name = "martin_bormann_last_name"
+            age = 51
+            culture = cu:north_german
+            dna = dna_martin_bormann
+            ruler = yes
+            interest_group = ig_landowners
+            ideology = ideology_fascist
+            traits = {
+                tactful
+                bigoted
+                expert_political_operator
             }
         }
-        c:GAS = {
-            create_character = {
+    }
+    c:GAS = {
+        create_character = {
                 # Albert Speer
-                first_name = "albert_speer_first_name"
-                last_name = "albert_speer_last_name"
-                age = 45
-                culture = cu:north_german
-                ruler = yes
-                interest_group = ig_industrialists
-                ideology = ideology_ethno_nationalist
-                traits = {
-                    reserved
-                    meticulous
-                    innovative
-                }
+            first_name = "albert_speer_first_name"
+            last_name = "albert_speer_last_name"
+            age = 45
+            culture = cu:north_german
+            ruler = yes
+            interest_group = ig_industrialists
+            ideology = ideology_ethno_nationalist
+            traits = {
+                reserved
+                meticulous
+                innovative
             }
         }
-        c:GHG = {
-            create_character = {
+    }
+    c:GHG = {
+        create_character = {
                 # Hermann Göring
-                first_name = "hermann_goring_first_name"
-                last_name = "hermann_goring_last_name"
-                age = 57
-                culture = cu:north_german
-                ruler = yes
-                interest_group = ig_armed_forces
-                ideology = ideology_fascist
-                traits = {
-                    arrogant
-                    ambitious
-                    charismatic
-                    hedonist
-                    opium_addiction
-                    celebrity_commander
-                    plains_commander
-                }
+            first_name = "hermann_goring_first_name"
+            last_name = "hermann_goring_last_name"
+            age = 57
+            culture = cu:north_german
+            ruler = yes
+            interest_group = ig_armed_forces
+            ideology = ideology_fascist
+            traits = {
+                arrogant
+                ambitious
+                charismatic
+                hedonist
+                opium_addiction
+                celebrity_commander
+                plains_commander
             }
         }
-        c:GRH = {
-            create_character = {
+    }
+    c:GRH = {
+        create_character = {
                 # Reinhard Heydrich
-                first_name = "reinhard_heydrich_first_name"
-                last_name = "reinhard_heydrich_last_name"
-                age = 41
-                culture = cu:north_german
-                ruler = yes
-                interest_group = ig_petty_bourgeoisie
-                ideology = ideology_fascist
-                traits = {
-                    direct
-                    wrathful
-                    cruel
-                    meticulous
-                    pillager
-                    celebrity_commander
-                    basic_political_operator
-                }
+            first_name = "reinhard_heydrich_first_name"
+            last_name = "reinhard_heydrich_last_name"
+            age = 41
+            culture = cu:north_german
+            ruler = yes
+            interest_group = ig_petty_bourgeoisie
+            ideology = ideology_fascist
+            traits = {
+                direct
+                wrathful
+                cruel
+                meticulous
+                pillager
+                celebrity_commander
+                basic_political_operator
             }
         }
+    }
 
      #  c:RKO = { #22-24
      #  trigger_event = { id = tno_RK_events.15 days = 0 popup = yes }
@@ -1789,8 +1784,8 @@ tno_germany_events.17 = { # German Civil War
      # c:UPO = { 
      #     trigger_event = { id = tno_RK_events.25 days = 0 popup = yes }
      # }
-       
-     }
+
+}
 }
 
 tno_germany_events.18 = {   #Civil war start
@@ -1810,8 +1805,8 @@ tno_germany_events.18 = {   #Civil war start
                 target_state = s:STATE_WESTPHALIA.region_state:GAS
             }
             hidden_effect = {
-				change_infamy = -999
-		    }
+                change_infamy = -999
+            }
             create_diplomatic_play = {
                 type = dp_revolution
                 name = german_civil_war
@@ -1820,8 +1815,8 @@ tno_germany_events.18 = {   #Civil war start
                 target_state = s:STATE_SILESIA.region_state:GHG
             }
             hidden_effect = {
-				change_infamy = -999
-		    }
+                change_infamy = -999
+            }
             create_diplomatic_play = {
                 type = dp_revolution
                 name = german_civil_war
@@ -1830,8 +1825,8 @@ tno_germany_events.18 = {   #Civil war start
                 target_state = s:STATE_ALSACE_LORRAINE.region_state:GRH
             }
             hidden_effect = {
-				change_infamy = -999
-		    }
+                change_infamy = -999
+            }
         }
         c:GAS = {
             create_diplomatic_play = {
@@ -1842,8 +1837,8 @@ tno_germany_events.18 = {   #Civil war start
                 target_state = s:STATE_SILESIA.region_state:GHG
             }
             hidden_effect = {
-				change_infamy = -999
-		    }
+                change_infamy = -999
+            }
             create_diplomatic_play = {
                 type = dp_revolution
                 name = german_civil_war
@@ -1852,8 +1847,8 @@ tno_germany_events.18 = {   #Civil war start
                 target_state = s:STATE_ALSACE_LORRAINE.region_state:GRH
             }
             hidden_effect = {
-				change_infamy = -999
-		    }
+                change_infamy = -999
+            }
         }
         c:GHG = {
             create_diplomatic_play = {
@@ -1864,8 +1859,8 @@ tno_germany_events.18 = {   #Civil war start
                 target_state = s:STATE_ALSACE_LORRAINE.region_state:GRH
             }
             hidden_effect = {
-				change_infamy = -999
-		    }
+                change_infamy = -999
+            }
         }
 
         
@@ -1882,21 +1877,21 @@ tno_germany_events.19 = {   #German Civil War WIn
     flavor = tno_germany_events.19.f
 
     event_image = {
-		texture  = "gfx/event_pictures/event_pictures/hitler_suc.dds"
-	}
-    icon = "gfx/interface/icons/event_icons/event_fire.dds"
+      texture  = "gfx/event_pictures/event_pictures/hitler_suc.dds"
+  }
+  icon = "gfx/interface/icons/event_icons/event_fire.dds"
 
-    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+  on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 
-    duration = 3
-    trigger = {
-		
-	}	
+  duration = 3
+  trigger = {
+  }	
 
     option = { # Annex Brandenburg
-    trigger = {
-        this = c:GAS
-    }
+        default_option = yes
+        trigger = {
+            this = c:GAS
+        }
         name = tno_germany_events.19.a
         if = {
             limit = {
@@ -1929,13 +1924,13 @@ tno_germany_events.19 = {   #German Civil War WIn
                 value = 0.4
             }
         }
-                
-	}
+
+    }
 
     option = { # Annex Brandenburg
-    trigger = {
-        this = c:GHG
-    }
+        trigger = {
+            this = c:GHG
+        }
         name = tno_germany_events.19.a
         if = {
             limit = {
@@ -1973,13 +1968,13 @@ tno_germany_events.19 = {   #German Civil War WIn
             }
             
         }
-                
-	}
+
+    }
 
     option = { # Annex Brandenburg
-    trigger = {
-        this = c:GMB
-    }
+        trigger = {
+            this = c:GMB
+        }
         name = tno_germany_events.19.a
         if = {
             limit = {
@@ -2013,13 +2008,13 @@ tno_germany_events.19 = {   #German Civil War WIn
                 value = 0.5
             }
         }
-                
-	}
+
+    }
 
     option = { # Annex Brandenburg
-    trigger = {
-        this = c:GRH
-    }
+        trigger = {
+            this = c:GRH
+        }
         name = tno_germany_events.19.a
         if = {
             limit = {
@@ -2056,35 +2051,35 @@ tno_germany_events.19 = {   #German Civil War WIn
                 value = 0.2
             }
         }
-                
-	}
+
+    }
 
     
 }
 
 tno_germany_events.20 = {   #German Vassal Reaction
-     type = country_event
-        placement = ROOT
-        hidden = yes
+   type = country_event
+   placement = ROOT
+   hidden = yes
 
-        duration = 3
-        trigger = {
+   duration = 3
+   trigger = {
 
-        }
-        immediate = {
-            if = {
-                limit = {
-                    has_diplomatic_pact = {
-                        who = c:GER
-                         type = customs_union
-                    }
-                }
-                remove_diplomatic_pact = {
-                    country = c:GER
-                    type = customs_union
-                }
+   }
+   immediate = {
+    if = {
+        limit = {
+            has_diplomatic_pact = {
+                who = c:GER
+                type = customs_union
             }
-       }
+        }
+        remove_diplomatic_pact = {
+            country = c:GER
+            type = customs_union
+        }
+    }
+}
 }
 
 
@@ -2094,10 +2089,10 @@ tno_germany_events.21 = {   #ukranian civil war
     placement = ROOT
 
     hidden = yes
-   
+
     duration = 3
     trigger = {
-	}	
+    }	
 
     immediate = {
         create_country = { #communist ukraine
@@ -2105,20 +2100,20 @@ tno_germany_events.21 = {   #ukranian civil war
             origin = c:WST
             state = s:STATE_LUHANSK.region_state:RKU
             state = s:STATE_ROSTOV.region_state:RKU
-       
+
         } 
         create_country = { #UPO ukraine
-        tag = UKP
-        origin = c:SAM
-        state = s:STATE_VOLHYNIA.region_state:RKU
-        state = s:STATE_EAST_GALICIA.region_state:GOV
-   
+            tag = UKP
+            origin = c:SAM
+            state = s:STATE_VOLHYNIA.region_state:RKU
+            state = s:STATE_EAST_GALICIA.region_state:GOV
+
         } 
         create_country = { # ukraine
             tag = UKM
             origin = c:USA
             state = s:STATE_CHERSON.region_state:RKU
-       
+
         }
         c:UKC = {
             set_immune_to_revolutions = yes
@@ -2152,21 +2147,21 @@ tno_germany_events.22 = {
 	}	
 
     immediate = {
-		create_diplomatic_play = {
-			name = ukrain_civil.1
-			target_country = c:RKU
-				type = dp_revolution
-				war = yes
-			
-		}
-    }
-	
-	duration = 1
+      create_diplomatic_play = {
+         name = ukrain_civil.1
+         target_country = c:RKU
+         type = dp_revolution
+         war = yes
 
-	
-   
+     }
+ }
 
-	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+ duration = 1
+
+
+
+
+ on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 }
 
 tno_germany_events.23 = { 
@@ -2180,21 +2175,21 @@ tno_germany_events.23 = {
 	}	
 
     immediate = {
-		create_diplomatic_play = {
-			name = ukrain_civil.2
-			target_country = c:UKM
-				type = dp_revolution
-				war = yes
-			
-		}
-    }
-	
-	duration = 1
+      create_diplomatic_play = {
+         name = ukrain_civil.2
+         target_country = c:UKM
+         type = dp_revolution
+         war = yes
 
-	
-   
+     }
+ }
 
-	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+ duration = 1
+
+
+
+
+ on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 }
 
 tno_germany_events.24 = { 
@@ -2208,21 +2203,21 @@ tno_germany_events.24 = {
 	}	
 
     immediate = {
-		create_diplomatic_play = {
-			name = ukrain_civil.3
-			target_country = c:UKC
-				type = dp_revolution
-				war = yes
-			
-		}
-    }
-	
-	duration = 1
+      create_diplomatic_play = {
+         name = ukrain_civil.3
+         target_country = c:UKC
+         type = dp_revolution
+         war = yes
 
-	
-   
+     }
+ }
 
-	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+ duration = 1
+
+
+
+
+ on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 }
 
 tno_germany_events.27 = { 
@@ -2236,21 +2231,21 @@ tno_germany_events.27 = {
 	}	
 
     immediate = {
-		create_diplomatic_play = {
-			name = ukrain_civil.9
-			target_country = c:RKU
-				type = dp_revolution
-				war = yes
-			
-		}
-    }
-	
-	duration = 1
+      create_diplomatic_play = {
+         name = ukrain_civil.9
+         target_country = c:RKU
+         type = dp_revolution
+         war = yes
 
-	
-   
+     }
+ }
 
-	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+ duration = 1
+
+
+
+
+ on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 }
 
 tno_germany_events.25 = { 
@@ -2264,21 +2259,21 @@ tno_germany_events.25 = {
 	}	
 
     immediate = {
-		create_diplomatic_play = {
-			name = ukrain_civil.5
-			target_country = c:UKC
-				type = dp_revolution
-				war = yes
-			
-		}
-    }
-	
-	duration = 1
+      create_diplomatic_play = {
+         name = ukrain_civil.5
+         target_country = c:UKC
+         type = dp_revolution
+         war = yes
 
-	
-   
+     }
+ }
 
-	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+ duration = 1
+
+
+
+
+ on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 }
 
 tno_germany_events.26 = { 
@@ -2292,21 +2287,21 @@ tno_germany_events.26 = {
 	}	
 
     immediate = {
-		create_diplomatic_play = {
-			name = ukrain_civil.6
-			target_country = c:RKU
-				type = dp_revolution
-				war = yes
-			
-		}
-    }
-	
-	duration = 1
+      create_diplomatic_play = {
+         name = ukrain_civil.6
+         target_country = c:RKU
+         type = dp_revolution
+         war = yes
 
-	
-   
+     }
+ }
 
-	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+ duration = 1
+
+
+
+
+ on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 }
 
 
@@ -2317,10 +2312,10 @@ tno_germany_events.40 = {
     placement = ROOT
 
     hidden = yes
-   
+
     duration = 3
     trigger = {
-	}	
+    }	
 
     immediate = {
         create_country = {
@@ -2332,7 +2327,7 @@ tno_germany_events.40 = {
             province = p:x000AE0
             province = p:x135B1E
             province = p:x8A09FD
-        
+
         } 
 
         create_country = { 
@@ -2343,7 +2338,7 @@ tno_germany_events.40 = {
             state = s:STATE_CHERSON.region_state:GER
             state = s:STATE_KIEV.region_state:GER
             state = s:STATE_VOLHYNIA.region_state:GER
-       
+
         } 
 
         create_country = { 
@@ -2351,7 +2346,7 @@ tno_germany_events.40 = {
             #gets east galicia so that poland can have it
             origin = c:GER 
             state = s:STATE_EAST_GALICIA.region_state:GER
-       
+
         } 
 
         c:GOV = {
@@ -2379,10 +2374,10 @@ tno_germany_events.41 = {
     placement = ROOT
 
     hidden = yes
-   
+
     duration = 3
     trigger = {
-	}	
+    }	
 
     immediate = { 
         create_country = { 
@@ -2394,7 +2389,7 @@ tno_germany_events.41 = {
             state = s:STATE_MINSK.region_state:GER
             state = s:STATE_BREST.region_state:GER
             state = s:STATE_ORSHA.region_state:GER
-       
+
         } 
         
         create_diplomatic_pact = {
@@ -2423,7 +2418,7 @@ tno_germany_events.42 = { # Reclaimed all Outstanding Pakt Members
         ruler = {
             save_scope_as = ger_leader
         }
-                c:GWZ = {
+        c:GWZ = {
             save_scope_as = gwz_nation_scope
         }
         c:GEE = {
