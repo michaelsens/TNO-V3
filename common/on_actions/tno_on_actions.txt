@@ -353,6 +353,41 @@
        
         }
 
+        
+        if = {   # Burgundian swisserland
+        limit = {
+            exists = c:SWI
+            c:BGD = {
+                OR = {
+                    has_diplomatic_pact = {
+                        who = c:SWI
+                        type = protectorate
+                        is_initiator = yes
+                    }
+                    has_diplomatic_pact = {
+                        who = c:SWI
+                        type = dominion
+                        is_initiator = yes
+                    }
+                    has_diplomatic_pact = {
+                        who = c:SWI
+                        type = puppet
+                        is_initiator = yes
+                    }
+                }
+                
+            }
+            NOT = { has_global_variable = burgundian_swiss }
+        }
+        set_global_variable = burgundian_swiss
+        c:BGD = {   
+            trigger_event = { id = tno_dynamic_puppets.5 popup = yes }
+            
+           
+        }
+       
+        }
+
         if = {   # Germany establishes scandi
         limit = {
             exists = c:SWE

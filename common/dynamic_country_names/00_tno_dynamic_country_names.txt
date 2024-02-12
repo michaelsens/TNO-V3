@@ -356,6 +356,30 @@ HUN = {
 	}
 }
 
+SWI = {
+	dynamic_country_name = {
+		name = "Ordensstaat Swiss"
+		adjective = "Swiss"
+		
+		is_main_tag_only = yes
+		priority = 9999
+		
+		trigger = {
+			exists = c:BGD
+			c:BGD = {
+				OR = {
+					has_diplomatic_pact = {
+						who = c:SWI
+						type = ordenstat
+						is_initiator = yes
+					}
+				}
+				
+			}
+		}
+	}
+}
+
 WAD = {
 	dynamic_country_name = {
 		name = "Forze italiane in Ciad"

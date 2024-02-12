@@ -216,3 +216,34 @@ tno_dynamic_puppets.4 = {
 
 
 }
+
+tno_dynamic_puppets.5 = {  
+	type = country_event
+    placement = ROOT
+ 
+   hidden = yes
+
+    duration = 1
+
+	trigger = {
+		this ?= c:BGD
+	}
+
+    immediate = {
+        remove_diplomatic_pact = {
+			country = SWI
+			type = protectorate
+		}
+		create_diplomatic_pact = {
+			country = c:SWI
+			type = ordenstat
+		}
+    }
+	
+   
+
+	
+
+
+}
+
