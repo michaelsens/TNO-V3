@@ -1,4 +1,73 @@
-﻿### ERA 1
+﻿## NEW 
+
+plantations = {
+	era = era_1
+	texture = "gfx/interface/icons/invention_icons/manufacturies.dds"
+	category = production
+	can_research = yes
+	
+	ai_weight = {
+		value = 1
+	}
+}
+
+textile_mills = {
+	era = era_1
+	texture = "gfx/interface/icons/invention_icons/manufacturies.dds"
+	category = production
+	can_research = yes
+	
+	ai_weight = {
+		value = 1
+	}
+}
+
+furniture_manufacturies = {
+	era = era_1
+	texture = "gfx/interface/icons/invention_icons/manufacturies.dds"
+	category = production
+	can_research = yes
+	
+	ai_weight = {
+		value = 1
+	}
+}
+
+glassworks = {
+	era = era_1
+	texture = "gfx/interface/icons/invention_icons/manufacturies.dds"
+	category = production
+	can_research = yes
+	
+	ai_weight = {
+		value = 1
+	}
+}
+
+tooling_workshops = {
+	era = era_1
+	texture = "gfx/interface/icons/invention_icons/manufacturies.dds"
+	category = production
+	can_research = yes
+	
+	ai_weight = {
+		value = 1
+	}
+}
+
+paper_mills = {
+	era = era_1
+	texture = "gfx/interface/icons/invention_icons/manufacturies.dds"
+	category = production
+	can_research = yes
+	
+	ai_weight = {
+		value = 1
+	}
+}
+
+
+### ERA 1
 
 sericulture = {
 	# Unlocks Mulberry Groves PM on Rice Farms
@@ -45,10 +114,6 @@ shaft_mining = {
 	texture = "gfx/interface/icons/invention_icons/shaft_mining.dds"
 	category = production
 	
-	unlocking_technologies = {
-		enclosure
-		manufacturies
-	}
 	
 	ai_weight = {
 		value = 2 # Important tech in general
@@ -59,13 +124,9 @@ cotton_gin = {
 	era = era_1
 	texture = "gfx/interface/icons/invention_icons/cotton_gin.dds"
 	category = production
-
-	modifier = {
-		building_cotton_plantation_throughput_add = 0.25
-	}
 	
 	unlocking_technologies = {
-		manufacturies
+		rubber_mastication
 	}
 	
 	ai_weight = {
@@ -121,10 +182,6 @@ steelworking = {
 	texture = "gfx/interface/icons/invention_icons/steelworking.dds"
 	category = production
 	
-	unlocking_technologies = {
-		shaft_mining
-	}
-	
 	ai_weight = {
 		value = 1
 		
@@ -159,12 +216,12 @@ prospecting = {
 
 crystal_glass = {
 	# Unlocks Leaded Glass PM in Glassworks
-	era = era_2
+	era = era_1
 	texture = "gfx/interface/icons/invention_icons/crystal_glass.dds"
 	category = production
 	
 	unlocking_technologies = {
-		lathe
+		glassworks
 	}
 	
 	ai_weight = {
@@ -176,13 +233,9 @@ intensive_agriculture = {
 	# Unlocks Chemical Plants
 	# Unlocks Intensive Agriculture PM on Rye Farms, Wheat Farms, Rice Farms, Maize Farms, Millet Farms
 	# Unlocks Intensize Grazing Ranch PM on Livestock Ranches
-	era = era_2
+	era = era_1
 	texture = "gfx/interface/icons/invention_icons/intensive_agriculture.dds"
 	category = production
-	
-	unlocking_technologies = {
-		enclosure
-	}
 	
 	ai_weight = {
 		value = 2 # Important tech for everyone
@@ -202,7 +255,7 @@ intensive_agriculture = {
 fractional_distillation = {
 	# Unlocks Patent Stills PM in Food Industries
 	# Unlocks Cod Liver Oil PM in Fishing Wharfs
-	era = era_2
+	era = era_1
 	texture = "gfx/interface/icons/invention_icons/fractional_distillation.dds"
 	category = production
 	
@@ -217,7 +270,7 @@ fractional_distillation = {
 
 canneries = {
 	# Unlocks Cannery PM in Food Industries
-	era = era_2
+	era = era_1
 	texture = "gfx/interface/icons/invention_icons/canneries.dds"
 	category = production
 	
@@ -233,7 +286,7 @@ canneries = {
 watertube_boiler = {
 	# Unlocks Watertube Boiler PM in Furniture Manufacturies, Tooling Workshops, Paper Mills, Steel Mills, Motor Industry
 	# Unlocks Condensing Engine Pump in Coal Mines, Iron Mines, Lead Mines, Sulfur Mines
-	era = era_2
+	era = era_1
 	texture = "gfx/interface/icons/invention_icons/watertube_boiler.dds"
 	category = production
 	
@@ -249,13 +302,9 @@ watertube_boiler = {
 atmospheric_engine = {
 	# Unlocks Motor Industry
 	# Unlocks Atmospheric Engine Pump PM in Coal Mine, Iron Mine, Lead Mine, Sulfur Mine
-	era = era_2
+	era = era_1
 	texture = "gfx/interface/icons/invention_icons/atmospheric_engine.dds"
 	category = production
-	
-	unlocking_technologies = {
-		shaft_mining
-	}
 	
 	ai_weight = {
 		value = 1
@@ -280,14 +329,9 @@ railways = {
 	# Unlocks Rail Transport PM in Oil Rig
 	# Unlocks Public Trams in Urban Centers
 	# Increases Railway max level by 1
-	era = era_2
+	era = era_1
 	texture = "gfx/interface/icons/invention_icons/railways.dds"
 	category = production
-	
-	unlocking_technologies = {
-		mechanical_tools
-		atmospheric_engine
-	}
 	
 	ai_weight = {
 		value = 2 # Important tech for everyone
@@ -307,7 +351,7 @@ railways = {
 chemical_bleaching = {
 	# Unlocks Bone China PM in Glassworks
 	# Unlocks Sulfite Pulping PM in Paper Mills
-	era = era_2
+	era = era_1
 	texture = "gfx/interface/icons/invention_icons/chemical_bleaching.dds"
 	category = production
 
@@ -325,7 +369,7 @@ nitroglycerin = {
 	# Unlocks Ammonia-Soda Process PM in Chemical Industries
 	# Countries get a +25% chance of discovering new resources
 	
-	era = era_2
+	era = era_1
 	texture = "gfx/interface/icons/invention_icons/nitroglycerin.dds"
 	category = production
 	
@@ -334,7 +378,6 @@ nitroglycerin = {
 	}
 	
 	unlocking_technologies = {	
-		intensive_agriculture
 		prospecting
 	}
 	
@@ -346,7 +389,7 @@ nitroglycerin = {
 bessemer_process = {
 	# Unlocks Bessemer Process PM in Steel Mills
 	# Unlocks Steel [Tools] PM in Tooling Workshops
-	era = era_2
+	era = era_1
 	texture = "gfx/interface/icons/invention_icons/bessemer_process.dds"
 	category = production
 	
@@ -368,7 +411,7 @@ bessemer_process = {
 
 baking_powder = {
 	# Unlocks Baking Powder PM in Food Industries
-	era = era_2
+	era = era_1
 	texture = "gfx/interface/icons/invention_icons/baking_powder.dds"
 	category = production
 	
@@ -384,7 +427,7 @@ baking_powder = {
 mechanized_workshops = {
 	# Unlocks Slaughterhouses PM in Livestock Ranches
 	# Unlocks Sewing Machines PM and Mechanized Looms PM in Textile Mills
-	era = era_2
+	era = era_1
 	texture = "gfx/interface/icons/invention_icons/mechanized_workshops.dds"
 	category = production
 	
@@ -393,7 +436,6 @@ mechanized_workshops = {
 	}
 	
 	unlocking_technologies = {
-		canneries
 		mechanical_tools
 	}
 	
@@ -411,13 +453,12 @@ mechanized_workshops = {
 
 mechanical_tools = {
 	# Unlocks Precision Tools PM in Furniture Workshops
-	era = era_2
+	era = era_1
 	texture = "gfx/interface/icons/invention_icons/mechanical_tools.dds"
 	category = production
 	
 	unlocking_technologies = {
-		lathe
-		steelworking
+		tooling_workshops
 	}
 	
 	ai_weight = {
@@ -430,12 +471,12 @@ mechanical_tools = {
 improved_fertilizer = {
 	# Unlocks Improved Fertilizer PM in Chemical Plants
 	# Unlocks Fertilization PM in Rye, Wheat, Rice, Maize, Millet Farms
-	era = era_3
+	era = era_1
 	texture = "gfx/interface/icons/invention_icons/improved_fertilizer.dds"
 	category = production
 	
 	unlocking_technologies = {	
-		intensive_agriculture
+		enclosure
 	}
 	
 	ai_weight = {
@@ -446,7 +487,7 @@ improved_fertilizer = {
 steam_donkey = {
 	# Unlocks Steam Donkey PM in Logging Camps
 	# Unlocks Steam Donkey PM in Coal, Iron, Lead, Sulfur Mines
-	era = era_3
+	era = era_1
 	texture = "gfx/interface/icons/invention_icons/steam_donkey.dds"
 	category = production
 	
@@ -474,7 +515,7 @@ dynamite = {
 	# Unlocks Explosive Shells PM in Munitions Plants
 	# Unlocks Dynamite PM in Coal, Iron, Lean, Sulfur Mines
 	# Countries get a +25% chance of discovering new resources
-	era = era_3
+	era = era_1
 	texture = "gfx/interface/icons/invention_icons/dynamite.dds"
 	category = production
 	
@@ -493,14 +534,10 @@ dynamite = {
 
 rubber_mastication = {
 	# Unlocks Rubber Plantations
-	era = era_3
+	era = era_1
 	texture = "gfx/interface/icons/invention_icons/rubber.dds"
 	category = production
 	
-	unlocking_technologies = {	
-		fractional_distillation
-		chemical_bleaching
-	}
 	
 	ai_weight = {
 		value = 1
@@ -519,7 +556,7 @@ rubber_mastication = {
 
 rotary_valve_engine = {
 	# Unlocks Rotary Valve Engine PM in Furniture Manufacturies, Tooling Workshops, Paper Mills, Steel Mills, Motor Industry
-	era = era_3
+	era = era_1
 	texture = "gfx/interface/icons/invention_icons/rotary_valve_engine.dds"
 	category = production
 	
@@ -534,7 +571,7 @@ rotary_valve_engine = {
 
 reinforced_concrete = {
 	# +15% construction throughput
-	era = era_3
+	era = era_1
 	texture = "gfx/interface/icons/invention_icons/reinforced_concrete.dds"
 	category = production
 	
@@ -553,12 +590,12 @@ reinforced_concrete = {
 
 threshing_machine = {
 	# Unlocks Steam Threshers PM on Rye, Wheat, Rice, Maize, Millet Farms
-	era = era_3
+	era = era_1
 	texture = "gfx/interface/icons/invention_icons/threshing_machine.dds"
 	category = production
 	
 	unlocking_technologies = {	
-		steam_donkey
+		plantations
 	}
 	
 	ai_weight = {
@@ -579,14 +616,9 @@ threshing_machine = {
 pumpjacks = {
 	# Unlocks possibility to discover Oil (to build Oil Rigs)
 	# Unlocks Oil Rig building
-	era = era_3
+	era = era_1
 	texture = "gfx/interface/icons/invention_icons/pumpjacks.dds"
 	category = production
-	
-	unlocking_technologies = {	
-		steam_donkey
-		dynamite
-	}
 	
 	ai_weight = {
 		value = 1
@@ -605,13 +637,9 @@ pumpjacks = {
 
 aniline = {
 	# Unlocks Synthetic Plants building
-	era = era_3
+	era = era_1
 	texture = "gfx/interface/icons/invention_icons/aniline.dds"
 	category = production
-	
-	unlocking_technologies = {	
-		rubber_mastication
-	}
 	
 	ai_weight = {
 		value = 1
@@ -620,12 +648,12 @@ aniline = {
 
 open_hearth_process = {
 	# Unlocks Open Hearth Process PM in Steel Mills
-	era = era_3
+	era = era_1
 	texture = "gfx/interface/icons/invention_icons/open_hearth_process.dds"
 	category = production
 	
 	unlocking_technologies = {	
-		bessemer_process
+		canneries
 	}
 	
 	ai_weight = {
@@ -635,12 +663,12 @@ open_hearth_process = {
 
 vulcanization = {
 	# Unlocks Elastics PM in Textile Mills
-	era = era_3
+	era = era_1
 	texture = "gfx/interface/icons/invention_icons/vulcanization.dds"
 	category = production
 	
 	unlocking_technologies = {	
-		rubber_mastication
+		textile_mills
 	}
 	
 	ai_weight = {
@@ -650,7 +678,7 @@ vulcanization = {
 
 vacuum_canning = {
 	# Unlocks Vacuum Canning PM in Food Industries
-	era = era_3
+	era = era_1
 	texture = "gfx/interface/icons/invention_icons/vacuum_canning.dds"
 	category = production
 	
@@ -664,7 +692,7 @@ vacuum_canning = {
 }
 
 shift_work = {
-	era = era_3
+	era = era_1
 	texture = "gfx/interface/icons/invention_icons/shift_work.dds"
 	category = production
 	
@@ -673,7 +701,7 @@ shift_work = {
 	}
 	
 	unlocking_technologies = {	
-		mechanized_workshops
+		pumpjacks
 	}
 	
 	ai_weight = {
@@ -685,7 +713,7 @@ steel_railway_cars = {
 	# Unlocks Steel Passenger Carriages PM and Armored Cars PM in Railways
 	# Unlocks Tanker Cars PM in Oil Rig buildings
 	# Increases Railway max level by 1
-	era = era_3
+	era = era_1
 	texture = "gfx/interface/icons/invention_icons/steel_railway_cars.dds"
 	category = production	
 	
@@ -706,13 +734,9 @@ electrical_generation = {
 	# Unlocks Refrigerated Storage PM in Fishing Wharfs
 	# Unlocks Electric Saw Mills PM in Logging Camps
 	# Unlocks Electric Streetlights PM in Urban Centers
-	era = era_3
+	era = era_1
 	texture = "gfx/interface/icons/invention_icons/electrical_generation.dds"
 	category = production
-	
-	unlocking_technologies = {	
-		rotary_valve_engine
-	}
 	
 	ai_weight = {
 		value = 1
@@ -733,7 +757,7 @@ electrical_generation = {
 
 mechanized_farming = {
 	# Unlocks Tractors PM in Rye Farms, Wheat Farms, Millet Farms
-	era = era_4
+	era = era_1
 	texture = "gfx/interface/icons/invention_icons/mechanized_farming.dds"
 	category = production
 	
@@ -759,10 +783,10 @@ mechanized_farming = {
 art_silk = {
 	# Unlocks the Rayon PM in Synthetic Plants
 	# Unlocks the Bleached Paper PM in Paper Mills
-	era = era_4
+	era = era_1
 	texture = "gfx/interface/icons/invention_icons/art_silk.dds"
 	category = production
-	
+
 	unlocking_technologies = {	
 		aniline
 	}
@@ -774,12 +798,12 @@ art_silk = {
 
 automatic_bottle_blowers = {
 	# Unlocks the Automatic Bottle Blowers PM in Glassworks
-	era = era_4
+	era = era_1
 	texture = "gfx/interface/icons/invention_icons/automatic_bottle_blowers.dds"
 	category = production
 	
 	unlocking_technologies = {	
-		vulcanization
+		radio
 	}
 	
 	ai_weight = {
@@ -789,14 +813,12 @@ automatic_bottle_blowers = {
 
 conveyors = {
 	# Unlocks the Assembly Lines PM in Furniture Manufacturies, Tooling Workshops, Motor Industry
-	era = era_4
+	era = era_1
 	texture = "gfx/interface/icons/invention_icons/conveyers.dds"
 	category = production
 	
 	unlocking_technologies = {	
-		vulcanization
-		shift_work
-		electrical_generation
+		furniture_manufacturies
 	}
 	
 	ai_weight = {
@@ -806,13 +828,12 @@ conveyors = {
 
 pasteurization = {
 	# #todo! Does nothing at the moment, should probably do something at Livestock Ranches or Food Industries
-	era = era_4
+	era = era_1
 	texture = "gfx/interface/icons/invention_icons/pasteurization.dds"
 	category = production
 	
 	unlocking_technologies = {	
-		vacuum_canning
-		electrical_capacitors
+		shift_work
 	}
 	
 	ai_weight = {
@@ -825,12 +846,11 @@ electric_railway = {
 	# Unlocks Log Carts PM in Logging Camps
 	# Unlocks Refrigerated Rail Carts in Fishing Wharfs
 	# Increases Railway max level by 1
-	era = era_4
+	era = era_1
 	texture = "gfx/interface/icons/invention_icons/electric_railway.dds"
 	category = production		
 	
 	unlocking_technologies = {
-		electrical_capacitors
 		steel_railway_cars
 	}	
 	
@@ -855,7 +875,7 @@ combustion_engine = {
 	# Unlocks Chainsaws PM in Logging Camps
 	# Unlocks Combustion Derricks PM in Oil Rigs
 	# Unlocks Public Motor Carriages PM in Urban Centers
-	era = era_4
+	era = era_1
 	texture = "gfx/interface/icons/invention_icons/combustion_engine.dds"
 	category = production
 	
@@ -881,7 +901,7 @@ combustion_engine = {
 pneumatic_tools = {
 	# +15% construction throughput
 	# Countries get a +25% chance of discovering new resources
-	era = era_4
+	era = era_1
 	texture = "gfx/interface/icons/invention_icons/pneumatic_tools.dds"
 	category = production
 	
@@ -892,8 +912,7 @@ pneumatic_tools = {
 	}
 	
 	unlocking_technologies = {	
-		rotary_valve_engine
-		reinforced_concrete
+		telephone
 	}
 	
 	ai_weight = {
@@ -904,7 +923,7 @@ pneumatic_tools = {
 nitrogen_fixation = {
 	# Unlocks Nitrogen Fixation PM in Chemical Plants
 	# Unlocks Chemical Fertilizer PM in Rye, Wheat, Rice, Maize, Millet Farms
-	era = era_4
+	era = era_1
 	texture = "gfx/interface/icons/invention_icons/nitrogen_fixation.dds"
 	category = production
 	
@@ -919,7 +938,7 @@ nitrogen_fixation = {
 
 electric_arc_process = {
 	# Unlocks the Electric Arc Process PM in Steel Mills
-	era = era_4
+	era = era_1
 	texture = "gfx/interface/icons/invention_icons/electric_arc_process.dds"
 	category = production
 	
@@ -934,7 +953,7 @@ electric_arc_process = {
 
 steam_turbine = {
 	# Unlocks the Coal-Firing PM in Power Plants
-	era = era_4
+	era = era_1
 	texture = "gfx/interface/icons/invention_icons/steam_turbines.dds"
 	category = production
 	
@@ -949,7 +968,7 @@ steam_turbine = {
 
 plastics = {
 	# Unlocks the Houseware Plastics PM in Glassworks
-	era = era_4
+	era = era_1
 	texture = "gfx/interface/icons/invention_icons/plastics.dds"
 	category = production
 	
@@ -966,12 +985,12 @@ electrical_capacitors = {
 	# Unlocks Electric Sewing Machines PM and Automatic Power Looms PM in Textile Mills
 	# Unlocks Brine Electrolysis PM in Chemical Plants
 	# Unlocks Electric Saw Mills PM in Logging Camps
-	era = era_4
+	era = era_1
 	texture = "gfx/interface/icons/invention_icons/electrical_capacitors.dds"
 	category = production
 	
 	unlocking_technologies = {	
-		electrical_generation
+		paper_mills
 	}
 	
 	ai_weight = {
@@ -991,13 +1010,9 @@ electrical_capacitors = {
 
 radio = {
 	# Unlocks Radios PM in Electrics Industry
-	era = era_4
+	era = era_1
 	texture = "gfx/interface/icons/invention_icons/radio.dds"
 	category = production
-	
-	unlocking_technologies = {
-		telephone
-	}
 	
 	ai_weight = {
 		value = 1
@@ -1006,14 +1021,9 @@ radio = {
 
 telephone = {
 	# Unlocks Electrics Industry building
-	era = era_4
+	era = era_1
 	texture = "gfx/interface/icons/invention_icons/telephone.dds"
 	category = production
-	
-	unlocking_technologies = {
-		shift_work
-		electrical_generation
-	}
 	
 	ai_weight = {
 		value = 1
@@ -1024,7 +1034,7 @@ telephone = {
 
 dough_rollers = {
 	# Unlocks the Automated Bakery PM in Food Industries
-	era = era_5
+	era = era_1
 	texture = "gfx/interface/icons/invention_icons/rollers.dds"
 	category = production
 	
@@ -1040,7 +1050,7 @@ dough_rollers = {
 flash_freezing = {
 	# Unlocks Refrigerated Rail Cars PM in Livestock Ranches
 	# Unlocks Flash Freezing PM in Fishing Wharfs
-	era = era_5
+	era = era_1
 	texture = "gfx/interface/icons/invention_icons/flash_freezing.dds"
 	category = production
 	
@@ -1055,7 +1065,7 @@ flash_freezing = {
 
 oil_turbine = {
 	# Unlocks Oil-Fired Plant PM in Power Plants
-	era = era_5
+	era = era_1
 	texture = "gfx/interface/icons/invention_icons/oil_turbines.dds"
 	category = production
 	
@@ -1071,13 +1081,12 @@ oil_turbine = {
 arc_welding = {
 	# Unlocks Arc Welding Shipbuilding PM in Shipyards
 	# Unlocks Very Fast PM in Construction Camps
-	era = era_5
+	era = era_1
 	texture = "gfx/interface/icons/invention_icons/arc_welding.dds"
 	category = production
 	
 	unlocking_technologies = {
 		electric_arc_process
-		pneumatic_tools
 	}
 	
 	ai_weight = {
@@ -1088,7 +1097,7 @@ arc_welding = {
 compression_ignition = {
 	# Unlocks Diesel Trains PM in Railways
 	# Unlocks Compression Ignition Tractors PM in Rye Farms, Wheat Farms, Millet Farms
-	era = era_5
+	era = era_1
 	texture = "gfx/interface/icons/invention_icons/compression_ignition.dds"
 	category = production
 	
