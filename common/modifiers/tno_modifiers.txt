@@ -164,11 +164,12 @@ bloated_whermacht = {
 	country_soldiers_pol_str_mult = 0.5
 	interest_group_ig_armed_forces_approval_add = 5
 	country_expenses_add = 40000
-	unit_offense_mult = -0.05
+	unit_offense_mult = 0.10
+	unit_defense_mult = 0.10
 	country_prestige_from_army_power_projection_mult = 0.1
-	unit_morale_recovery_mult = -0.1
-	country_military_goods_cost_mult = 0.2
-	country_military_wages_mult = 0.2
+	unit_morale_recovery_mult = 0.1
+	country_military_goods_cost_mult = 0.1
+	country_military_wages_mult = 0.1
 	country_military_tech_research_speed_mult = 0.1
 }
 
@@ -286,7 +287,7 @@ decaying_infrastructure = {
 
 war_spoils = {
 	icon = gfx/interface/icons/tno_modifier_icons/spoil_war.dds
-	country_tax_income_add = 50000
+	country_minting_add = 200000
 }
 
 american_dream = {
@@ -296,6 +297,7 @@ american_dream = {
 	state_pop_qualifications_mult = 0.15
 	state_migration_pull_mult = 0.05
 	building_minimum_wage_mult = 0.1
+	state_birth_rate_mult = 0.15
 }
 
 civiL_war_never_ends = {
@@ -739,10 +741,11 @@ last_bastion_democracy = {
 
 japanese_efficiency = {
 	icon = gfx/interface/icons/tno_modifier_icons/jap_eff.dds
-	building_group_bg_manufacturing_throughput_add = 0.20
+	building_group_bg_manufacturing_throughput_add = 0.10
 	building_group_bg_manufacturing_laborers_mortality_mult = 0.02
 	country_loan_interest_rate_mult = -0.20
 	building_minimum_wage_mult = -0.1
+	state_birth_rate_mult = -0.15
 }
 
 sphere_overreliance = {
@@ -785,11 +788,11 @@ atlantropa_dam = {
 
 national_purity = {
 	icon = gfx/interface/icons/tno_modifier_icons/pure_bgd.dds
-	state_accepted_birth_rate_mult = 0.20
 	state_turmoil_effects_mult = -0.7
 	state_slaves_mortality_mult = 0.6
 	state_standard_of_living_add = -3
 	state_mortality_turmoil_mult = 0.75
+	state_accepted_birth_rate_mult = 0.20
 	state_radicals_from_discrimination_mult = -0.3
 }
 
@@ -832,6 +835,7 @@ armed_against_democracy = {
 	state_conscription_rate_mult = 0.4
 	country_war_exhaustion_casualties_mult = -0.9
 	country_military_wages_mult = -0.25
+	country_diplomatic_play_maneuvers_add = 60
 }
 shattered_union = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_negative.dds
@@ -1197,14 +1201,15 @@ restricted_army = {
 	icon = gfx/interface/icons/tno_modifier_icons/chi_res.dds
 	country_prestige_from_army_power_projection_mult = -0.2
 	state_conscription_rate_mult = -0.50
-	unit_morale_loss_mult = 0.1
+	unit_morale_loss_mult = 0.15
+	country_military_goods_cost_mult = 0.25
 }
 
 slave_of_the_samurai = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
-	country_authority_mult = -0.2
+	country_authority_mult = -0.25
 	country_prestige_mult = -0.15
-	country_legitimacy_base_add = -10
+	country_legitimacy_base_add = -20
 	state_radicals_from_sol_change_mult = -0.2
 	political_movement_radicalism_mult = -0.2
 	political_movement_support_mult = -0.2
@@ -1212,8 +1217,8 @@ slave_of_the_samurai = {
 
 french_irredentism = {
 	icon = gfx/interface/icons/tno_modifier_icons/fra_iri.dds	
-	unit_army_offense_mult = 0.1
-	unit_army_defense_mult = 0.1
+	unit_army_offense_mult = 0.05
+	unit_army_defense_mult = 0.05
 }
 
 treaty_of_vichy = {
@@ -1222,24 +1227,27 @@ treaty_of_vichy = {
 	country_prestige_from_army_power_projection_mult = -0.5
 	country_prestige_from_navy_power_projection_mult = -0.5
 	state_conscription_rate_mult = -0.5
-	unit_army_offense_mult = -0.1
-	unit_army_defense_mult = -0.1
+	unit_army_offense_mult = -0.15
+	unit_army_defense_mult = -0.15
+	unit_morale_loss_mult = 0.15
 }
 
 armed_forces_in_disarray = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
-	country_military_goods_cost_mult = -0.1
+	country_military_goods_cost_mult = 0.1
 	country_prestige_from_army_power_projection_mult = -0.15
 	country_prestige_from_navy_power_projection_mult = -0.5
 	state_conscription_rate_mult = -0.5
 	unit_army_offense_mult = -0.05
 	unit_army_defense_mult = -0.05
+	unit_morale_loss_mult = 0.05
 }
 
 armed_forces_reorganization = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
-	unit_army_offense_mult = 0.03
-	unit_army_defense_mult = 0.03
+	unit_army_offense_mult = 0.05
+	unit_army_defense_mult = 0.05
+	unit_morale_loss_mult = -0.05
 }
 
 professional_armed_forces = {
@@ -1327,8 +1335,9 @@ unchecked_corruption = {
 	state_tax_capacity_mult = -0.2
 	country_bureaucracy_mult = -0.2
 	country_authority_mult = -0.2
-	country_expenses_add = 25000
+	country_expenses_add = 50000
 	country_tech_spread_mult = -0.08
+	building_group_bg_manufacturing_throughput_add = -0.05
 }
 
 ecos_do_imperio = {
@@ -1422,7 +1431,7 @@ ineffective_union = {
 revived_union = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
 	country_institution_size_change_speed_mult = 0.15
-	country_law_enactment_success_add = 5
+	country_law_enactment_success_add = 0.05
 	country_bureaucracy_mult = 0.1
 	country_authority_mult = 0.1
 	political_movement_radicalism_mult = -0.15

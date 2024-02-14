@@ -94,27 +94,7 @@
             }
             set_variable = pro_super_var
             trigger_event = { id = tno_super_events.6 days = 0 popup = yes }
-        }
-
-        if = {
-			limit = {
-               has_global_variable = great_trial
-               NOT = { has_variable = great_trial_var }
-               NOT = {  c:RUS ?= THIS}
-            }
-            set_variable = great_trial_var
-            trigger_event = { id = tno_super_events.7 days = 0 popup = yes }
-        }
-
-        if = {
-			limit = {
-               has_global_variable = great_trial_win
-               NOT = { has_variable = great_trial_win_var }
-            }
-            set_variable = great_trial_win_var
-            trigger_event = { id = tno_super_events.8 days = 0 popup = yes }
-        }
-         
+        }        
         if = {
 			limit = {
                has_modifier = rebuilding_russia
@@ -589,6 +569,17 @@
             set_variable = irk_inv_var
             trigger_event = { id = tno_irk_events.7 days = 180 popup = yes }
         }
+
+        c:CHI = {
+            if = {
+                limit = {
+                    NOT = { is_subject_of = c:JAP }
+                }
+                remove_modifier = restricted_army
+                remove_modifier = slave_of_the_samurai
+            }
+        }
+        
     }
     
     
@@ -600,6 +591,7 @@
         1 = tno_oil_crisis.11
         1 = tno_oil_crisis.12
     }
+
 }  
 
 on_wargoal_enforced = {

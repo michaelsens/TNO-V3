@@ -895,7 +895,11 @@ JAP = { # Japan
 		trigger = {
 			exists = scope:actor
 			scope:actor = { 
-				has_law = law_type:law_autocracy
+				OR = {
+					has_law = law_type:law_autocracy
+					has_law = law_type:law_single_party_state
+				}
+				
 			}
 		}
 	}
@@ -930,7 +934,12 @@ GER = { # Germany
 				AND = {
 					exists = scope:actor
 					scope:actor = {
-						has_law = law_type:law_unitary_state
+						OR = {
+							has_law = law_type:law_unitary_state
+							has_law = law_type:law_single_party_state
+							has_law = law_type:law_autocracy
+						}
+						
 					}
 				}
 			}		
