@@ -356,9 +356,34 @@ HUN = {
 	}
 }
 
+
+SLV = {
+	dynamic_country_name = {
+		name = "Reichskommissariat Slowakei"
+		adjective = "Slowakei"
+		
+		is_main_tag_only = yes
+		priority = 9999
+		
+		trigger = {
+			exists = c:GER
+			c:GER = {
+				OR = {
+					has_diplomatic_pact = {
+						who = c:SLV
+						type = reichskommissariat
+						is_initiator = yes
+					}
+				}
+				
+			}
+		}
+	}
+}
+
 SWI = {
 	dynamic_country_name = {
-		name = "Ordensstaat Swiss"
+		name = "SS-Staat Swiss"
 		adjective = "Swiss"
 		
 		is_main_tag_only = yes

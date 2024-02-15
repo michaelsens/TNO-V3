@@ -388,6 +388,40 @@
        
         }
 
+        if = {   # Burgundian netherlands
+        limit = {
+            exists = c:NET
+            c:BGD = {
+                OR = {
+                    has_diplomatic_pact = {
+                        who = c:NET
+                        type = protectorate
+                        is_initiator = yes
+                    }
+                    has_diplomatic_pact = {
+                        who = c:NET
+                        type = dominion
+                        is_initiator = yes
+                    }
+                    has_diplomatic_pact = {
+                        who = c:NET
+                        type = puppet
+                        is_initiator = yes
+                    }
+                }
+                
+            }
+            NOT = { has_global_variable = burgundian_netherlands }
+        }
+        set_global_variable = burgundian_netherlands
+        c:BGD = {   
+            trigger_event = { id = tno_dynamic_puppets.6 popup = yes }
+            
+           
+        }
+       
+        }
+
         if = {   # Germany establishes scandi
         limit = {
             exists = c:SWE

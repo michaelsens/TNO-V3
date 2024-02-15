@@ -6506,6 +6506,25 @@ NET = { # Netherlands
 		priority = 1
 	}
 	flag_definition = {
+		coa = NET_BGD
+		trigger = {
+			exists = c:BGD
+			c:BGD = {
+				OR = {
+					has_diplomatic_pact = {
+						who = c:NET
+						type = ordenstat
+						is_initiator = yes
+					}
+				}
+				
+			}
+		}
+		coa_with_overlord_canton = NET_BGD
+		allow_overlord_canton = no
+		priority = 5000	
+	}
+	flag_definition = {
 		coa = NET_princes_flag
 		priority = 5
 		trigger = { 
@@ -8216,6 +8235,26 @@ SLV = { # Slovakia
 		coa = SLV
 		subject_canton = SLV	
 		priority = 1
+	}
+	flag_definition = {
+		coa = SLV_GER
+		trigger = {
+			exists = c:GER
+			exists = c:SLV
+			c:GER = {
+				OR = {
+					has_diplomatic_pact = {
+						who = c:SLV
+						type = reichskommissariat
+						is_initiator = yes
+					}
+				}
+				
+			}
+		}
+		coa_with_overlord_canton = CUB_subject
+		allow_overlord_canton = no
+		priority = 5000	
 	}
 	flag_definition = {
 		coa = SLV_fascist
