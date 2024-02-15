@@ -55,18 +55,18 @@ building_household_appliances = {
 	required_construction = construction_cost_high
 }
 
-building_chemical_plants = {
-	building_group = bg_light_industry
+building_industrial_chemical_plants = {
+	building_group = bg_heavy_industry
 	texture = ""
 	city_type = city
 	levels_per_mesh = 5
 	
 	unlocking_technologies = {
-		chemical_plants
+		industrial_chemical_plants
 	}
 
 	production_method_groups = {
-		pmg_base_building_chemical_plants
+		pmg_base_building_industrial_chemical_plants
 		pmg_ownership_capital_building
 	}
 
@@ -110,7 +110,7 @@ nylon_factory = {
 }
 
 automotive_industry = {
-	building_group = bg_light_industry
+	building_group = bg_heavy_industry
 	texture = ""
 	city_type = city
 	levels_per_mesh = 5
@@ -128,7 +128,7 @@ automotive_industry = {
 }
 
 semiconductor_plant = {
-	building_group = bg_light_industry
+	building_group = bg_heavy_industry
 	texture = ""
 	city_type = city
 	levels_per_mesh = 5
@@ -146,13 +146,13 @@ semiconductor_plant = {
 }
 
 heavy_equipment_manufactury = {
-	building_group = bg_light_industry
+	building_group = bg_heavy_industry
 	texture = ""
 	city_type = city
 	levels_per_mesh = 5
 	
 	unlocking_technologies = {
-		semiconductor_plant
+		heavy_equipment_manufactury
 	}
 
 	production_method_groups = {
@@ -164,17 +164,127 @@ heavy_equipment_manufactury = {
 }
 
 synthetic_rubber_plant = {
-	building_group = bg_light_industry
+	building_group = bg_heavy_industry
 	texture = ""
 	city_type = city
 	levels_per_mesh = 5
 	
 	unlocking_technologies = {
-		semiconductor_plant
+		synthetic_rubber_plant
 	}
 
 	production_method_groups = {
 		pmg_base_synthetic_rubber_plant
+		pmg_ownership_capital_building
+	}
+
+	required_construction = construction_cost_high
+}
+
+###SERVIES 
+
+hospitals = {
+	building_group = bg_urban_facilities
+	texture = ""
+	city_type = city
+	levels_per_mesh = 5
+	
+	unlocking_technologies = {
+		hospitals
+	}
+
+	production_method_groups = {
+		pmg_base_hospitals
+		pmg_ownership_capital_building
+	}
+
+	required_construction = construction_cost_high
+}
+
+office_building = {
+	building_group = bg_urban_facilities
+	texture = ""
+	city_type = city
+	levels_per_mesh = 5
+	
+	unlocking_technologies = {
+		office_building
+	}
+
+	production_method_groups = {
+		pmg_base_office_building
+		pmg_ownership_capital_building
+	}
+
+	required_construction = construction_cost_high
+}
+
+utilities_sector = {
+	building_group = bg_urban_facilities
+	texture = ""
+	city_type = city
+	levels_per_mesh = 5
+	
+	unlocking_technologies = {
+		utilities_sector
+	}
+
+	production_method_groups = {
+		pmg_base_utilities_sector
+		pmg_ownership_capital_building
+	}
+
+	required_construction = construction_cost_high
+}
+
+commercial_services = {
+	building_group = bg_urban_facilities
+	texture = ""
+	city_type = city
+	levels_per_mesh = 5
+	
+	unlocking_technologies = {
+		commercial_services
+	}
+
+	production_method_groups = {
+		pmg_base_commercial_services
+		pmg_ownership_capital_building
+	}
+
+	required_construction = construction_cost_high
+}
+
+airports = {
+	building_group = bg_urban_facilities
+	texture = ""
+	city_type = city
+	levels_per_mesh = 5
+	
+	unlocking_technologies = {
+		airports
+	}
+
+	production_method_groups = {
+		pmg_base_airports
+		pmg_ownership_capital_building
+	}
+
+	required_construction = construction_cost_high
+}
+
+plastic_manufacturing_plants = {
+	building_group = bg_heavy_industry
+	texture = ""
+	city_type = city
+	levels_per_mesh = 5
+	
+	unlocking_technologies = {
+		plastic_manufacturing_plants
+	}
+
+	production_method_groups = {
+		pmg_base_plastic_manufacturing_plants
 		pmg_ownership_capital_building
 	}
 
