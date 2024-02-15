@@ -2372,6 +2372,10 @@ je_ru_com_restore_ussr = {
 		add_primary_culture = cu:georgian
 		add_primary_culture = cu:uzbek
 		hidden_effect = {
+			if = {
+				limit = {
+					exists = c:RUS
+				}
 			s:STATE_MOSCOW = {
 				add_claim = c:RUS
 			}
@@ -2449,6 +2453,7 @@ je_ru_com_restore_ussr = {
 			}
 			s:STATE_ESTONIA = {
 				add_claim = c:RUS
+			}
 			}
 		}
 	}
