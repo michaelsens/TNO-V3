@@ -8274,6 +8274,28 @@ SMB = { # Sambas
 	}
 }
 
+SEP = { 
+	flag_definition = {
+		coa = SEP_BGD
+		trigger = {
+			exists = c:BGD
+			c:BGD = {
+				OR = {
+					has_diplomatic_pact = {
+						who = c:SEP
+						type = ordenstat
+						is_initiator = yes
+					}
+				}
+				
+			}
+		}
+		coa_with_overlord_canton = NET_BGD
+		allow_overlord_canton = no
+		priority = 5000	
+	}
+}
+
 SMI = { # Sapmi Lappland
 	flag_definition = {
 		coa = SMI

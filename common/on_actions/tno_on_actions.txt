@@ -422,6 +422,27 @@
        
         }
 
+        if = {   # Burgundian normandy
+        limit = {
+            exists = c:BGD
+            c:BGD = {
+               
+              owns_entire_state_region = STATE_NORMANDY
+            
+                
+            }
+            NOT = { has_global_variable = burgundian_normandy}
+        }
+        set_global_variable = burgundian_normandy
+        c:BGD = {   
+            trigger_event = { id = tno_dynamic_puppets.7 popup = yes }
+            
+           
+        }
+       
+        }
+
+       
         if = {   # Germany establishes scandi
         limit = {
             exists = c:SWE
