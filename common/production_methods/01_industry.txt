@@ -29,7 +29,7 @@ pm_breweries = {
 			goods_input_grain_add = 40		# x20 =  800
 
 			# output goods
-			goods_output_groceries_add = 45	# x30 = 1350
+			goods_output_liquor_add = 100
 		}
 
 		level_scaled = {
@@ -48,7 +48,7 @@ pm_household_appliances = {
 			goods_input_grain_add = 40		# x20 =  800
 
 			# output goods
-			goods_output_groceries_add = 45	# x30 = 1350
+			goods_output_porcelain_add = 100
 		}
 
 		level_scaled = {
@@ -67,7 +67,7 @@ pm_industrial_chemical_plants = {
 			goods_input_grain_add = 40		# x20 =  800
 
 			# output goods
-			goods_output_groceries_add = 45	# x30 = 1350
+			goods_output_chemicals_add = 100
 		}
 
 		level_scaled = {
@@ -86,7 +86,7 @@ pm_pharmaceutical_industries = {
 			goods_input_grain_add = 40		# x20 =  800
 
 			# output goods
-			goods_output_groceries_add = 45	# x30 = 1350
+			goods_output_pharmaceuticals_add = 100
 		}
 
 		level_scaled = {
@@ -96,29 +96,32 @@ pm_pharmaceutical_industries = {
 	}
 }
 
-pm_nylon_factory = {
-	texture = "gfx/interface/icons/production_method_icons/rayon.dds"
-
-	unlocking_technologies = {
-		art_silk
+pm_dye_factory = {
+	texture = "gfx/interface/icons/production_method_icons/synthetic_dyes.dds"
+	
+	state_modifiers = {
+		workforce_scaled = {
+					state_pollution_generation_add  = 5
+		}
 	}
 
 	building_modifiers = {
 		workforce_scaled = {
 			# input goods
-			goods_input_wood_add = 40
-			goods_output_dye_add = -40
-			goods_input_electricity_add = 10
+			goods_input_sulfur_add = 20
+			goods_input_fertilizer_add = 30
+			goods_input_oil_add = 10
+			goods_input_electricity_add = 30
 
 			# output goods
-			goods_output_silk_add = 40
+			goods_output_dye_add = 100
 		}
 
 		level_scaled = {
 			# employment
-			building_employment_laborers_add = -1000
-			building_employment_machinists_add = 500
-			building_employment_engineers_add = 500
+			building_employment_laborers_add = 1000
+			building_employment_machinists_add = 1500
+			building_employment_engineers_add = 2000
 		}
 	}
 }
@@ -132,7 +135,7 @@ pm_automotive_industry = {
 			goods_input_grain_add = 40		# x20 =  800
 
 			# output goods
-			goods_output_groceries_add = 45	# x30 = 1350
+			goods_output_automobiles_add = 100
 		}
 
 		level_scaled = {
@@ -151,7 +154,7 @@ pm_semiconductor_plant = {
 			goods_input_grain_add = 40		# x20 =  800
 
 			# output goods
-			goods_output_groceries_add = 45	# x30 = 1350
+			goods_output_semiconductors_add = 100
 		}
 
 		level_scaled = {
@@ -170,7 +173,7 @@ pm_heavy_equipment_manufactury = {
 			goods_input_grain_add = 40		# x20 =  800
 
 			# output goods
-			goods_output_groceries_add = 45	# x30 = 1350
+			goods_output_heavy_rigid_vehicles_add = 100
 		}
 
 		level_scaled = {
@@ -189,7 +192,7 @@ pm_synthetic_rubber_plant = {
 			goods_input_grain_add = 40		# x20 =  800
 
 			# output goods
-			goods_output_groceries_add = 45	# x30 = 1350
+			goods_output_rubber_add = 100
 		}
 
 		level_scaled = {
@@ -210,7 +213,7 @@ pm_hospitals = {
 			goods_input_grain_add = 40		# x20 =  800
 
 			# output goods
-			goods_output_groceries_add = 45	# x30 = 1350
+			goods_output_healthcare_add = 100
 		}
 
 		level_scaled = {
@@ -229,7 +232,7 @@ pm_office_building = {
 			goods_input_grain_add = 40		# x20 =  800
 
 			# output goods
-			goods_output_groceries_add = 45	# x30 = 1350
+			goods_output_professional_services_add = 100
 		}
 
 		level_scaled = {
@@ -248,7 +251,7 @@ pm_utilities_sector = {
 			goods_input_grain_add = 40		# x20 =  800
 
 			# output goods
-			goods_output_groceries_add = 45	# x30 = 1350
+			goods_output_utility_services_add = 100
 		}
 
 		level_scaled = {
@@ -267,7 +270,7 @@ commercial_services = {
 			goods_input_grain_add = 40		# x20 =  800
 
 			# output goods
-			goods_output_groceries_add = 45	# x30 = 1350
+			goods_output_commercial_services = 100
 		}
 
 		level_scaled = {
@@ -2489,36 +2492,6 @@ pm_worker_cooperative_industry = {
 		}
 		unscaled = {
 			building_workforce_shares_add = 1
-		}
-	}
-}
-
-pm_dye_production = {
-	texture = "gfx/interface/icons/production_method_icons/synthetic_dyes.dds"
-	
-	state_modifiers = {
-		workforce_scaled = {
-					state_pollution_generation_add  = 5
-		}
-	}
-
-	building_modifiers = {
-		workforce_scaled = {
-			# input goods
-			goods_input_sulfur_add = 20
-			goods_input_fertilizer_add = 30
-			goods_input_oil_add = 10
-			goods_input_electricity_add = 30
-
-			# output goods
-			goods_output_dye_add = 80
-		}
-
-		level_scaled = {
-			# employment
-			building_employment_laborers_add = 1000
-			building_employment_machinists_add = 1500
-			building_employment_engineers_add = 2000
 		}
 	}
 }
