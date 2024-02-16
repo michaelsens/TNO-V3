@@ -103,21 +103,32 @@ pharmaceutical_industries = {
 }
 
 nylon_factory = {
-	building_group = bg_light_industry
-	texture = ""
+	building_group = bg_heavy_industry
+	texture = "gfx/interface/icons/building_icons/synthetics_plants.dds"
 	city_type = city
 	levels_per_mesh = 5
 	
 	unlocking_technologies = {
 		nylon_factory
 	}
-
+	
 	production_method_groups = {
 		pmg_base_building_nylon_factory
 		pmg_ownership_capital_building
 	}
-
+	
 	required_construction = construction_cost_high
+
+	possible = {
+		error_check = {
+			severity = fail
+			this = {
+				owner = { 
+					NOT = { has_law = law_type:law_industry_banned } 
+				}
+			}
+		}
+	}
 }
 
 automotive_industry = {
@@ -194,7 +205,7 @@ synthetic_rubber_plant = {
 
 ###SERVIES 
 
-hospitals = {
+hospital = {
 	building_group = bg_urban_facilities
 	texture = ""
 	city_type = city
@@ -472,36 +483,6 @@ building_explosives_factory = {
 		pmg_ownership_capital_building_explosives_factory
 	}
 
-	required_construction = construction_cost_very_high
-
-	possible = {
-		error_check = {
-			severity = fail
-			this = {
-				owner = { 
-					NOT = { has_law = law_type:law_industry_banned } 
-				}
-			}
-		}
-	}
-}
-
-building_synthetics_plants = {
-	building_group = bg_heavy_industry
-	texture = "gfx/interface/icons/building_icons/synthetics_plants.dds"
-	city_type = city
-	levels_per_mesh = 5
-	
-	unlocking_technologies = {
-		aniline
-	}
-	
-	production_method_groups = {
-		pmg_synthetic_dyes
-		pmg_synthetic_silk
-		pmg_ownership_capital_building_synthetics_plants
-	}
-	
 	required_construction = construction_cost_very_high
 
 	possible = {

@@ -97,20 +97,28 @@ pm_pharmaceutical_industries = {
 }
 
 pm_nylon_factory = {
-	texture = "gfx/interface/icons/production_method_icons/bakeries.dds"
-	
+	texture = "gfx/interface/icons/production_method_icons/rayon.dds"
+
+	unlocking_technologies = {
+		art_silk
+	}
+
 	building_modifiers = {
 		workforce_scaled = {
 			# input goods
-			goods_input_grain_add = 40		# x20 =  800
+			goods_input_wood_add = 40
+			goods_output_dye_add = -40
+			goods_input_electricity_add = 10
 
 			# output goods
-			goods_output_groceries_add = 45	# x30 = 1350
+			goods_output_silk_add = 40
 		}
 
 		level_scaled = {
-			# profit = 550
-			building_employment_laborers_add = 4500
+			# employment
+			building_employment_laborers_add = -1000
+			building_employment_machinists_add = 500
+			building_employment_engineers_add = 500
 		}
 	}
 }
@@ -2511,37 +2519,6 @@ pm_dye_production = {
 			building_employment_laborers_add = 1000
 			building_employment_machinists_add = 1500
 			building_employment_engineers_add = 2000
-		}
-	}
-}
-
-pm_no_artificial_fibers = {
-	texture = "gfx/interface/icons/production_method_icons/no_artificial_silk.dds"
-}
-
-pm_rayon = {
-	texture = "gfx/interface/icons/production_method_icons/rayon.dds"
-
-	unlocking_technologies = {
-		art_silk
-	}
-
-	building_modifiers = {
-		workforce_scaled = {
-			# input goods
-			goods_input_wood_add = 40
-			goods_output_dye_add = -40
-			goods_input_electricity_add = 10
-
-			# output goods
-			goods_output_silk_add = 40
-		}
-
-		level_scaled = {
-			# employment
-			building_employment_laborers_add = -1000
-			building_employment_machinists_add = 500
-			building_employment_engineers_add = 500
 		}
 	}
 }
