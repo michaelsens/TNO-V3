@@ -1,18 +1,21 @@
 ﻿pm_consumer_electronics = {
-	texture = "gfx/interface/icons/production_method_icons/bakeries.dds"
-	
+	texture = "gfx/interface/icons/production_method_icons/telephones.dds"
 	building_modifiers = {
 		workforce_scaled = {
-			# input goods
-			goods_input_grain_add = 40		# x20 =  800
-
-			# output goods
-			goods_output_groceries_add = 45	# x30 = 1350
+			goods_input_iron_add = 20
+			goods_input_rubber_add = 20
+			goods_input_lead_add = 20
+			goods_input_tools_add = 10
+			goods_input_electricity_add = 25
+			goods_input_oil_add = 5
+			
+			goods_output_telephones_add = 100
 		}
 
 		level_scaled = {
-			# profit = 550
-			building_employment_laborers_add = 4500
+			building_employment_laborers_add = 1500
+			building_employment_machinists_add = 2000
+			building_employment_engineers_add = 1000
 		}
 	}
 }
@@ -3257,27 +3260,7 @@ pm_tank_production = {
 	}
 }
 
-pm_telephones = {
-	texture = "gfx/interface/icons/production_method_icons/telephones.dds"
-	building_modifiers = {
-		workforce_scaled = {
-			goods_input_iron_add = 20
-			goods_input_rubber_add = 20
-			goods_input_lead_add = 20
-			goods_input_tools_add = 10
-			goods_input_electricity_add = 25
-			goods_input_oil_add = 5
-			
-			goods_output_telephones_add = 100
-		}
 
-		level_scaled = {
-			building_employment_laborers_add = 1500
-			building_employment_machinists_add = 2000
-			building_employment_engineers_add = 1000
-		}
-	}
-}
 
 pm_no_radios = {
 	texture = "gfx/interface/icons/production_method_icons/no_radios.dds"
