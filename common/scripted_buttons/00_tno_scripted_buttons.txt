@@ -2430,6 +2430,9 @@ je_ru_com_restore_ussr = {
 			s:STATE_VOLHYNIA = {
 				add_claim = c:RUS
 			}
+			s:STATE_TRANSNISTRIA = {
+				add_claim = c:RUS
+			}
 			s:STATE_DAGESTAN = {
 				add_claim = c:RUS
 			}
@@ -3126,165 +3129,569 @@ je_ru_second_west_russian_war = {
 
 	possible = {
 		is_diplomatic_play_initiator = no
+		hidden_trigger = {
+			NOT = {
+				owns_entire_state_region = STATE_MOSCOW
+			}
+		}
 	}
 
 	effect = {
+		every_state = { # Arkhangelsk
+			limit = { 
+				state_region = s:STATE_ARKHANGELSK
+			} 
+			owner = { 
+				random_scope_state = {
+					limit = {
+						state_region = s:STATE_ARKHANGELSK
+					}
+					save_scope_as = arkhangelsk_state_scope
+				}
+			}
+		}
+		every_state = { # East Karelia
+			limit = { 
+				state_region = s:STATE_EAST_KARELIA
+			} 
+			owner = { 
+				random_scope_state = {
+					limit = {
+						state_region = s:STATE_EAST_KARELIA
+					}
+					save_scope_as = east_karelia_state_scope
+				}
+			}
+		}
+		every_state = { # Moscow
+			limit = { 
+				state_region = s:STATE_MOSCOW
+			} 
+			owner = { 
+				random_scope_state = {
+					limit = {
+						state_region = s:STATE_MOSCOW
+					}
+					save_scope_as = moscow_state_scope
+				}
+				save_scope_as = moscow_owner
+			}
+		}
+		every_state = { # Tver
+			limit = { 
+				state_region = s:STATE_TVER
+			} 
+			owner = { 
+				random_scope_state = {
+					limit = {
+						state_region = s:STATE_TVER
+					}
+					save_scope_as = tver_state_scope
+				}
+				save_scope_as = tver_owner
+			}
+		}
+		every_state = { # Novgorod
+			limit = { 
+				state_region = s:STATE_NOVGOROD
+			} 
+			owner = { 
+				random_scope_state = {
+					limit = {
+						state_region = s:STATE_NOVGOROD
+					}
+					save_scope_as = novgorod_state_scope
+				}
+				save_scope_as = novgorod_owner
+			}
+		}
+		every_state = { # Ingria
+			limit = { 
+				state_region = s:STATE_INGRIA
+			} 
+			owner = { 
+				random_scope_state = {
+					limit = {
+						state_region = s:STATE_INGRIA
+					}
+					save_scope_as = ingria_state_scope
+				}
+				save_scope_as = ingria_owner
+			}
+		}
+		every_state = { # Smolensk
+			limit = { 
+				state_region = s:STATE_SMOLENSK
+			} 
+			owner = { 
+				random_scope_state = {
+					limit = {
+						state_region = s:STATE_SMOLENSK
+					}
+					save_scope_as = smolensk_state_scope
+				}
+				save_scope_as = smolensk_owner
+			}
+		}
+		every_state = { # Bryansk
+			limit = { 
+				state_region = s:STATE_BRYANSK
+			} 
+			owner = { 
+				random_scope_state = {
+					limit = {
+						state_region = s:STATE_BRYANSK
+					}
+					save_scope_as = bryansk_state_scope
+				}
+				save_scope_as = bryansk_owner
+			}
+		}
+		every_state = { # Kursk
+			limit = { 
+				state_region = s:STATE_KURSK
+			} 
+			owner = { 
+				random_scope_state = {
+					limit = {
+						state_region = s:STATE_KURSK
+					}
+					save_scope_as = kursk_state_scope
+				}
+				save_scope_as = kursk_owner
+			}
+		}
+		every_state = { # Tartaria / Saratov
+			limit = { 
+				state_region = s:STATE_TARTARIA
+			} 
+			owner = { 
+				random_scope_state = {
+					limit = {
+						state_region = s:STATE_TARTARIA
+					}
+					save_scope_as = tartaria_state_scope
+				}
+				save_scope_as = tartaria_owner
+			}
+		}
+		every_state = { # Rostov ##########################
+			limit = { 
+				state_region = s:STATE_ROSTOV
+			} 
+			owner = { 
+				random_scope_state = {
+					limit = {
+						state_region = s:STATE_ROSTOV
+					}
+					save_scope_as = rostov_state_scope
+				}
+				save_scope_as = rostov_owner
+			}
+		}
+		every_state = { # Astrakhan
+			limit = { 
+				state_region = s:STATE_ASTRAKHAN
+			} 
+			owner = { 
+				random_scope_state = {
+					limit = {
+						state_region = s:STATE_ASTRAKHAN
+					}
+					save_scope_as = astrakhan_state_scope
+				}
+				save_scope_as = astrakhan_owner
+			}
+		}
+		every_state = { # Kuban
+			limit = { 
+				state_region = s:STATE_KUBAN
+			} 
+			owner = { 
+				random_scope_state = {
+					limit = {
+						state_region = s:STATE_KUBAN
+					}
+					save_scope_as = kuban_state_scope
+				}
+				save_scope_as = kuban_owner
+			}
+		}
+		every_state = { # Greater Caucasus
+			limit = { 
+				state_region = s:STATE_GREATER_CAUCASUS
+			} 
+			owner = { 
+				random_scope_state = {
+					limit = {
+						state_region = s:STATE_GREATER_CAUCASUS
+					}
+					save_scope_as = greater_caucasus_state_scope
+				}
+				save_scope_as = greater_caucasus_owner
+			}
+		}
+		every_state = { # Azerbaijan
+			limit = { 
+				state_region = s:STATE_AZERBAIJAN
+			} 
+			owner = { 
+				random_scope_state = {
+					limit = {
+						state_region = s:STATE_AZERBAIJAN
+					}
+					save_scope_as = azerbaijan_state_scope
+				}
+				save_scope_as = azerbaijan_owner
+			}
+		}
+		every_state = { # Dagestan
+			limit = { 
+				state_region = s:STATE_DAGESTAN
+			} 
+			owner = { 
+				random_scope_state = {
+					limit = {
+						state_region = s:STATE_DAGESTAN
+					}
+					save_scope_as = dagestan_state_scope
+				}
+				save_scope_as = dagestan_owner
+			}
+		}
+		every_state = { # Crimea
+			limit = { 
+				state_region = s:STATE_CRIMEA
+			} 
+			owner = { 
+				random_scope_state = {
+					limit = {
+						state_region = s:STATE_CRIMEA
+					}
+					save_scope_as = crimea_state_scope
+				}
+				save_scope_as = crimea_owner
+			}
+		}
+		every_state = { # Luhansk
+			limit = { 
+				state_region = s:STATE_LUHANSK
+			} 
+			owner = { 
+				random_scope_state = {
+					limit = {
+						state_region = s:STATE_LUHANSK
+					}
+					save_scope_as = luhansk_state_scope
+				}
+				save_scope_as = luhansk_owner
+			}
+		}
+		every_state = { # Kiev
+			limit = { 
+				state_region = s:STATE_KIEV
+			} 
+			owner = { 
+				random_scope_state = {
+					limit = {
+						state_region = s:STATE_KIEV
+					}
+					save_scope_as = kiev_state_scope
+				}
+				save_scope_as = kiev_owner
+			}
+		}
+		every_state = { # Transnistria
+			limit = { 
+				state_region = s:STATE_TRANSNISTRIA
+			} 
+			owner = { 
+				random_scope_state = {
+					limit = {
+						state_region = s:STATE_TRANSNISTRIA
+					}
+					save_scope_as = transnistria_state_scope
+				}
+				save_scope_as = transnistria_owner
+			}
+		}
+		every_state = { # Volhynia
+			limit = { 
+				state_region = s:STATE_VOLHYNIA
+			} 
+			owner = { 
+				random_scope_state = {
+					limit = {
+						state_region = s:STATE_VOLHYNIA
+					}
+					save_scope_as = volhynia_state_scope
+				}
+				save_scope_as = volhynia_owner
+			}
+		}
+		every_state = { # Cherson
+			limit = { 
+				state_region = s:STATE_CHERSON
+			} 
+			owner = { 
+				random_scope_state = {
+					limit = {
+						state_region = s:STATE_CHERSON
+					}
+					save_scope_as = cherson_state_scope
+				}
+				save_scope_as = cherson_owner
+			}
+		}
+		every_state = { # Orsha
+			limit = { 
+				state_region = s:STATE_ORSHA
+			} 
+			owner = { 
+				random_scope_state = {
+					limit = {
+						state_region = s:STATE_ORSHA
+					}
+					save_scope_as = orsha_state_scope
+				}
+				save_scope_as = orsha_owner
+			}
+		}
+		every_state = { # Minsk
+			limit = { 
+				state_region = s:STATE_MINSK
+			} 
+			owner = { 
+				random_scope_state = {
+					limit = {
+						state_region = s:STATE_MINSK
+					}
+					save_scope_as = minsk_state_scope
+				}
+				save_scope_as = minsk_owner
+			}
+		}
+		every_state = { # Brest
+			limit = { 
+				state_region = s:STATE_BREST
+			} 
+			owner = { 
+				random_scope_state = {
+					limit = {
+						state_region = s:STATE_BREST
+					}
+					save_scope_as = brest_state_scope
+				}
+				save_scope_as = brest_owner
+			}
+		}
+		every_state = { # Lithuania
+			limit = { 
+				state_region = s:STATE_LITHUANIA
+			} 
+			owner = { 
+				random_scope_state = {
+					limit = {
+						state_region = s:STATE_LITHUANIA
+					}
+					save_scope_as = lithuania_state_scope
+				}
+				save_scope_as = lithuania_owner
+			}
+		}
+		every_state = { # Latvia
+			limit = { 
+				state_region = s:STATE_LATVIA
+			} 
+			owner = { 
+				random_scope_state = {
+					limit = {
+						state_region = s:STATE_LATVIA
+					}
+					save_scope_as = latvia_state_scope
+				}
+				save_scope_as = latvia_owner
+			}
+		}
+		every_state = { # Estonia
+			limit = { 
+				state_region = s:STATE_ESTONIA
+			} 
+			owner = { 
+				random_scope_state = {
+					limit = {
+						state_region = s:STATE_ESTONIA
+					}
+					save_scope_as = estonia_state_scope
+				}
+				save_scope_as = estonia_owner
+			}
+		}
 		create_diplomatic_play = {
 			name = gtr1
-			target_country = c:RKM
-			type = dp_return_state
+			target_country = scope:moscow_owner
+			type = dp_nat_reclaim
 			war = no
 			escalation = 26
-			target_state = s:STATE_MOSCOW.region_state:RKM
-			add_target_backers = { c:FIN c:HUN c:SLV c:DEN c:NET c:ROM }
+			#target_state = moscow_state_scope
+			add_target_backers = { scope:tver_owner scope:novgorod_owner scope:ingria_owner scope:smolensk_owner scope:bryansk_owner scope:kursk_owner scope:tartaria_owner scope:rostov_owner scope:astrakhan_owner scope:kuban_owner  scope:greater_caucasus_owner scope:azerbaijan_owner scope:dagestan_owner scope:crimea_owner scope:luhansk_owner scope:kiev_owner scope:transnistria_owner scope:volhynia_owner scope:cherson_owner scope:orsha_owner scope:minsk_owner scope:brest_owner scope:lithuania_owner scope:latvia_owner scope:estonia_owner c:FIN c:ROM }
 			add_war_goal = {
-				holder = c:GER
+				holder = scope:moscow_owner
 				type = conquer_state
-				target_state = s:STATE_ARKHANGELSK.region_state:PRO
+				target_state = scope:arkhangelsk_state_scope
 			}
 			add_war_goal = {
 				holder = c:FIN
 				type = conquer_state
-				target_state = s:STATE_EAST_KARELIA.region_state:PRO
+				target_state = scope:east_karelia_state_scope
 			}
 			add_war_goal = {
-				holder = c:PRO
+				holder = root
 				type = return_state
-				target_state = s:STATE_TVER.region_state:RKM
+				target_state = scope:moscow_state_scope
 			}
 			add_war_goal = {
-				holder = c:PRO
+				holder = root
 				type = return_state
-				target_state = s:STATE_NOVGOROD.region_state:RKM
+				target_state = scope:tver_state_scope
 			}
 			add_war_goal = {
-				holder = c:PRO
+				holder = root
 				type = return_state
-				target_state = s:STATE_INGRIA.region_state:RKM
+				target_state = scope:novgorod_state_scope
 			}
 			add_war_goal = {
-				holder = c:PRO
+				holder = root
 				type = return_state
-				target_state = s:STATE_SMOLENSK.region_state:RKM
+				target_state = scope:ingria_state_scope
 			}
 			add_war_goal = {
-				holder = c:PRO
+				holder = root
 				type = return_state
-				target_state = s:STATE_BRYANSK.region_state:RKM
+				target_state = scope:smolensk_state_scope
 			}
 			add_war_goal = {
-				holder = c:PRO
+				holder = root
 				type = return_state
-				target_state = s:STATE_KURSK.region_state:RKM
+				target_state = scope:bryansk_state_scope
 			}
 			add_war_goal = {
-				holder = c:PRO
+				holder = root
 				type = return_state
-				target_state = s:STATE_TARTARIA.region_state:RKM
+				target_state = scope:kursk_state_scope
 			}
 			add_war_goal = {
-				holder = c:PRO
+				holder = root
 				type = return_state
-				target_state = s:STATE_ROSTOV.region_state:RKM
+				target_state = scope:tartaria_state_scope
 			}
 			add_war_goal = {
-				holder = c:PRO
+				holder = root
 				type = return_state
-				target_state = s:STATE_ASTRAKHAN.region_state:RKM
+				target_state = scope:rostov_state_scope
 			}
 			add_war_goal = {
-				holder = c:PRO
+				holder = root
 				type = return_state
-				target_state = s:STATE_KUBAN.region_state:RKK
+				target_state = scope:astrakhan_state_scope
 			}
 			add_war_goal = {
-				holder = c:PRO
+				holder = root
 				type = return_state
-				target_state = s:STATE_GREATER_CAUCASUS.region_state:RKK
+				target_state = scope:kuban_state_scope
 			}
 			add_war_goal = {
-				holder = c:PRO
+				holder = root
 				type = return_state
-				target_state = s:STATE_AZERBAIJAN.region_state:RKK
+				target_state = scope:greater_caucasus_state_scope
 			}
 			add_war_goal = {
-				holder = c:PRO
+				holder = root
 				type = return_state
-				target_state = s:STATE_DAGESTAN.region_state:RKK
+				target_state = scope:astrakhan_state_scope
 			}
 			add_war_goal = {
-				holder = c:PRO
+				holder = root
 				type = return_state
-				target_state = s:STATE_CRIMEA.region_state:GER
+				target_state = scope:dagestan_state_scope
 			}
 			add_war_goal = {
-				holder = c:PRO
+				holder = root
 				type = return_state
-				target_state = s:STATE_LUHANSK.region_state:GER
+				target_state = scope:azerbaijan_state_scope
 			}
 			add_war_goal = {
-				holder = c:PRO
+				holder = root
 				type = return_state
-				target_state = s:STATE_LUHANSK.region_state:RKU
+				target_state = scope:crimea_state_scope
 			}
 			add_war_goal = {
-				holder = c:PRO
+				holder = root
 				type = return_state
-				target_state = s:STATE_KIEV.region_state:RKU
+				target_state = scope:luhansk_state_scope
 			}
 			add_war_goal = {
-				holder = c:PRO
+				holder = root
 				type = return_state
-				target_state = s:STATE_TRANSNISTRIA.region_state:TRG
+				target_state = scope:kiev_state_scope
 			}
 			add_war_goal = {
-				holder = c:PRO
+				holder = root
 				type = return_state
-				target_state = s:STATE_VOLHYNIA.region_state:RKU
+				target_state = scope:transnistria_state_scope
 			}
 			add_war_goal = {
-				holder = c:PRO
+				holder = root
 				type = return_state
-				target_state = s:STATE_CHERSON.region_state:RKU
+				target_state = scope:volhynia_state_scope
 			}
 			add_war_goal = {
-				holder = c:PRO
+				holder = root
 				type = return_state
-				target_state = s:STATE_ORSHA.region_state:RKO
+				target_state = scope:cherson_state_scope
 			}
 			add_war_goal = {
-				holder = c:PRO
+				holder = root
 				type = return_state
-				target_state = s:STATE_MINSK.region_state:RKO
+				target_state = scope:orsha_state_scope
 			}
 			add_war_goal = {
-				holder = c:PRO
+				holder = root
 				type = return_state
-				target_state = s:STATE_BREST.region_state:RKO
+				target_state = scope:minsk_state_scope
 			}
 			add_war_goal = {
-				holder = c:PRO
+				holder = root
 				type = return_state
-				target_state = s:STATE_LITHUANIA.region_state:RKO
+				target_state = scope:brest_state_scope
 			}
 			add_war_goal = {
-				holder = c:PRO
+				holder = root
 				type = return_state
-				target_state = s:STATE_LATVIA.region_state:RKO
+				target_state = scope:lithuania_state_scope
 			}
 			add_war_goal = {
-				holder = c:PRO
+				holder = root
 				type = return_state
-				target_state = s:STATE_ESTONIA.region_state:RKO
+				target_state = scope:latvia_state_scope
 			}
 			add_war_goal = {
-				holder = c:PRO
+				holder = root
+				type = return_state
+				target_state = scope:estonia_state_scope
+			}
+			add_war_goal = {
+				holder = root
 				type = conquer_state
 				target_state = s:STATE_WEST_KARELIA.region_state:FIN
 			}
-
+			add_war_goal = {
+				holder = root
+				type = war_reparations
+				target_country = c:ROM
+			}
 		}
-		set_global_variable = second_west_russian_war
+		#set_global_variable = second_west_russian_war
 		custom_tooltip = warning_2wrw
 		if = {
 			limit = {
