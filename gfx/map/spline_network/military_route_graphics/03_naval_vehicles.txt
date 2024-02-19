@@ -154,45 +154,6 @@ naval_route_graphics_01 = {
 #################################################################
 #####				CAPITAL SHIPS							#####
 #################################################################
-		
-		manowar_capital_ship_01 = {
-			entity = "military_navy_battleship_generic_entity"
-			position = 0
-			entity_length = 20.0
-	
-			possible = {
-				OR = {
-
-					AND = {
-
-						scope:military_formation = {
-							is_army = yes
-						}
-
-  						country_navy_unit_type_fraction = {
-   								target = unit_type:combat_unit_type_man_o_war  
-    							value > 0.0
-  						}
-					}
-					
-					AND = {
-						scope:military_formation = {
-							is_fleet = yes
-						}
-	
-						scope:military_formation = {
-							any_combat_unit = {
-								has_unit_type = unit_type:combat_unit_type_man_o_war
-							}
-						}
-					}
-				}
-			}
-
-			count = {
-				value = 1
-			}
-		}
 
 		ironclad_capital_ship_01 = {
 			entity = "military_navy_battleship_generic_entity"
