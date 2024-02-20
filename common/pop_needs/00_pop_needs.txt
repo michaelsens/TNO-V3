@@ -4,40 +4,31 @@
 # min_supply_share			If above 0, a minimum of this multiplier of the base weight will be applied to a good regardless of its market Sell Order share
 
 popneed_simple_clothing = {
-	default = fabric
-
+	default = healthcare
 	entry = {
-		goods = fabric
+		goods = healthcare
 		
-		weight = 1	
-		max_supply_share = 0.5 
-		min_supply_share = 0.0
-	}	
-	
-	entry = {
-		goods = clothes
-		
-		weight = 2
+		weight = 1
 		max_supply_share = 1.0
 		min_supply_share = 0.0
 	}
 }
 
 popneed_crude_items = {
-	default = wood
+	default = clothes
 
 	entry = {
-		goods = wood
+		goods = clothes
 		
 		weight = 1
-		max_supply_share = 0.5
+		max_supply_share = 1.0
 		min_supply_share = 0.0
 	}
 	
 	entry = {
 		goods = furniture
 		
-		weight = 2
+		weight = 1
 		max_supply_share = 1.0
 		min_supply_share = 0.0
 	}
@@ -179,6 +170,25 @@ popneed_standard_clothing = {
 	entry = {
 		goods = clothes
 	}
+	entry = {
+		goods = services
+		weight = 1
+		max_supply_share = 0.8
+		min_supply_share = 0.3
+	}
+	entry = {
+		goods = healthcare
+		weight = 1
+		max_supply_share = 0.5
+		min_supply_share = 0.2
+	}
+	entry = {
+		goods = transportation
+		
+		weight = 1
+		max_supply_share = 0.1
+		min_supply_share = 0.0
+	}
 }
 
 popneed_services = {
@@ -247,10 +257,47 @@ popneed_intoxicants = {
 		max_supply_share = 0.75
 		min_supply_share = 0.0
 	}
+	entry = {
+		goods = pharmaceuticals
+		
+		weight = 1
+		max_supply_share = 0.75
+		min_supply_share = 0.0
+	}
 }
 
 popneed_luxury_drinks = {
-	default = tea
+	default = services
+
+	entry = {
+		goods = services
+		weight = 1
+		max_supply_share = 0.8
+		min_supply_share = 0.4
+	}
+
+	entry = {
+		goods = healthcare
+		weight = 1
+		max_supply_share = 0.8
+		min_supply_share = 0.2
+	}
+
+	entry = {
+		goods = clothes
+		
+		weight = 1
+		max_supply_share = 1.0
+		min_supply_share = 0.05
+	}
+	
+	entry = {
+		goods = furniture
+		
+		weight = 1
+		max_supply_share = 1.0
+		min_supply_share = 0.05
+	}
 
 	entry = {
 		goods = tea
@@ -353,25 +400,14 @@ popneed_luxury_food = {
 	}
 }
 
-popneed_luxury_items = {
-	default = luxury_clothes
-	
+popneed_luxury_items = {	
 	entry = {
-		goods = luxury_clothes
+		goods = automobiles
 		
 		weight = 1
-		max_supply_share = 0.5
-		min_supply_share = 0.1
-	}
-	
-	entry = {
-		goods = luxury_furniture
-		
-		weight = 1
-		max_supply_share = 0.5
-		min_supply_share = 0.1
-	}
-	
+		max_supply_share = 0.7
+		min_supply_share = 0.0
+	}	
 	entry = {
 		goods = porcelain
 		
@@ -391,7 +427,7 @@ popneed_luxury_items = {
 	entry = {
 		goods = professional_services
 		weight = 0.5
-		max_supply_share = 0.2
+		max_supply_share = 0.25
 		min_supply_share = 0.0
 	}
 }
