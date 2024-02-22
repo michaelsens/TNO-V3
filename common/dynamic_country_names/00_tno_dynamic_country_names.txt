@@ -479,6 +479,56 @@ WAD = {
 	}
 }
 
+ADG = {
+	dynamic_country_name = {
+		name = "Fuerzas ibéricas en Azwad"
+		adjective = "Iberian"
+		
+		is_main_tag_only = yes
+		priority = 9999
+		
+		trigger = {
+			exists = c:IBE
+			c:IBE = {
+				OR = {
+					has_diplomatic_pact = {
+						who = c:ADG
+						type = millgov
+						is_initiator = yes
+					}
+				}
+				
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = "Azwad Ibérico"
+		adjective = "Iberian"
+		
+		is_main_tag_only = yes
+		priority = 5000
+		
+		trigger = {
+			exists = c:IBE
+			c:IBE = {
+				OR = {
+					has_diplomatic_pact = {
+						who = c:ADG
+						type = dominion
+						is_initiator = yes
+					}
+					has_diplomatic_pact = {
+						who = c:ADG
+						type = puppet
+						is_initiator = yes
+					}
+				}
+				
+			}
+		}
+	}
+}
+
 
 RUS = {
 	dynamic_country_name = {

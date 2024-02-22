@@ -365,3 +365,92 @@ tno_dynamic_puppets.8 = {
 }
 
 
+tno_dynamic_puppets.9 = {
+    type = country_event
+    hidden = yes
+
+
+
+    trigger = {
+        exists = c:ADG
+        ROOT = c:IBE
+
+        c:ADG = {
+            has_diplomatic_pact = {
+				who = c:IBE
+                type = protectorate
+            }
+
+        }
+
+
+
+    }
+
+    immediate = {
+        remove_diplomatic_pact = {
+            country = c:ADG
+            type = protectorate
+        }
+		create_diplomatic_pact = {
+            country = c:ADG
+            type = millgov
+        }
+    }
+}
+
+tno_dynamic_puppets.10 = {  
+	type = country_event
+    placement = ROOT
+ 
+    title = tno_dynamic_puppets.10.t
+    desc = tno_dynamic_puppets.10.d
+    flavor = tno_dynamic_puppets.7.f 
+    event_image = {
+        texture = "gfx/event_pictures/event_pictures/ang.dds"
+    }
+
+	immediate = {
+	
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_fire.dds"
+
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 1
+
+	trigger = {
+		this ?= c:IBE
+	}
+	
+    option = { 
+        name = tno_dynamic_puppets.10.a
+        default_option = yes
+		
+        remove_diplomatic_pact = {
+			country = ADG
+			type = millgov
+		}
+		create_diplomatic_pact = {
+			country = c:ADG
+			type = dominion
+		}
+		
+		
+	
+    } 
+
+	
+    option = { #
+        name = tno_dynamic_puppets.4.b
+        default_option = yes
+		
+    } 
+
+	
+
+
+}
+
+

@@ -285,6 +285,41 @@
        
         }
 
+        if = {   # Iberians in azwad
+        limit = {
+            exists = c:ADG
+            c:IBE = {
+                OR = {
+                    has_diplomatic_pact = {
+                        who = c:ADG
+                        type = protectorate
+                        is_initiator = yes
+                    }
+                    has_diplomatic_pact = {
+                        who = c:ADG
+                        type = dominion
+                        is_initiator = yes
+                    }
+                    has_diplomatic_pact = {
+                        who = c:ADG
+                        type = puppet
+                        is_initiator = yes
+                    }
+                }
+                
+            }
+            NOT = { has_global_variable = iberia_azwad }
+        }
+        set_global_variable = iberia_azwad
+        c:IBE = {   
+            trigger_event = { id = tno_dynamic_puppets.9 popup = yes }
+            trigger_event = { id = tno_dynamic_puppets.10 popup = yes }
+            set_variable = iberia_azwad
+           
+        }
+       
+        }
+
         if = {   # German Hungary
         limit = {
             exists = c:HUN

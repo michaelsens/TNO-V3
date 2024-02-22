@@ -2528,6 +2528,40 @@ WAD = {
 	}
 }
 
+ADG = {
+	flag_definition = {
+		coa = ADG_IBE
+		trigger = {
+			exists = c:IBE
+			exists = c:ADG
+			c:IBE = {
+				OR = {
+					has_diplomatic_pact = {
+						who = c:ADG
+						type = millgov
+						is_initiator = yes
+					}
+					has_diplomatic_pact = {
+						who = c:ADG
+						type = puppet
+						is_initiator = yes
+					}
+					has_diplomatic_pact = {
+						who = c:ADG
+						type = dominion
+						is_initiator = yes
+					}
+				}
+				
+			}
+		}
+		coa_with_overlord_canton = CUB_subject
+		allow_overlord_canton = no
+		priority = 5000	
+	}
+	
+}
+
 
 CYP = { # Cyprus
 	flag_definition = {
@@ -8279,6 +8313,7 @@ SEP = {
 		coa = SEP_BGD
 		trigger = {
 			exists = c:BGD
+			exists = c:SEP
 			c:BGD = {
 				OR = {
 					has_diplomatic_pact = {
