@@ -2468,3 +2468,42 @@ tno_germany_events.42 = { # Reclaimed all Outstanding Pakt Members
 
     }
 }
+
+tno_germany_events.43 = { # Generic Invasion by Russians
+    type = country_event
+    placement = root
+    title = tno_germany_events.43.t
+    desc = tno_germany_events.43.d
+    flavor = tno_germany_events.43.f
+    icon = "gfx/interface/icons/lens_toolbar_icons/recruit_generals_lens_option.dds"
+
+    duration = 6
+
+    immediate = {
+        ruler = {
+            save_scope_as = ger_leader
+        }
+        every_state = { # Ural, Saving Russia as a Scope
+            limit = { 
+                state_region = s:STATE_URAL
+            } 
+            owner = { 
+                save_scope_as = rus_nation_scope
+            }
+        }
+    }
+    
+    trigger = {
+    }
+
+    event_image = {
+        texture = "gfx/event_pictures/super_pictures/volkshalle.dds"
+    }
+
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    option = {
+        name = tno_germany_events.43.a
+        custom_tooltip = tno_germany_events.43.a.tt
+    }
+}

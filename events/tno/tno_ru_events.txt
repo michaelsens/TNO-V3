@@ -448,6 +448,14 @@ tno_ru_events.10 = { # Apply anything to all Russians at start of game
 
 	immediate = {
 		set_immune_to_revolutions = yes
+		if = {
+			limit = {
+				NOT = {
+					this = c:IRK
+				}
+			}
+			add_journal_entry = { type = je_ru_tno_com_restore_ussr }
+		}
     }
 
     trigger = {
@@ -517,4 +525,38 @@ tno_ru_events.15 = { # Apply anything to all AI west russia
     trigger = {
     }
 
+}
+
+tno_ru_events.16 = { # Notification that the Russian Wars have begun
+    type = country_event
+	placement = ROOT
+	title = tno_ru_events.16.t
+	desc = tno_ru_events.16.d
+	flavor = tno_ru_events.16.f
+	icon = "gfx/interface/icons/invention_icons/wargaming.dds"
+
+	duration = 5
+
+	immediate = {
+		root = {
+			save_scope_as = this_nation
+		}
+    }
+    
+    trigger = {
+	}
+
+	event_image = {
+        texture = "gfx/event_pictures/event_pictures/russian_destruction.dds"
+    }
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	option = {
+		name = tno_ru_events.16.a
+		custom_tooltip = {
+			text = tno_ru_events.16.a.tt
+			add_journal_entry = { type = je_ru_tno_launch_attack }
+		}
+    }
 }

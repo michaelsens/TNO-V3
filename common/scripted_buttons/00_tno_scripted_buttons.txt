@@ -1624,7 +1624,7 @@ je_ru_launch_raid = {
 			target_country = scope:raid_target
 			type = dp_raid
 			war = no
-			escalation = 85
+			escalation = 45
 		}
 	}
 }
@@ -2014,7 +2014,7 @@ je_ru_irk_restore_far_east = {
 		owns_entire_state_region = STATE_KAMCHATKA
 
 		custom_tooltip = {
-			text = je_ru_tno_irk_owns_chernyshevsky
+			text = je_ru_tno_owns_chernyshevsky
 			any_scope_state = {
 				state_region = s:STATE_UPPER_YENISEYSK
 			}
@@ -2022,7 +2022,7 @@ je_ru_irk_restore_far_east = {
 
 		hidden_trigger = {
 			NOT = {
-				has_variable = irk_form_far_east
+				has_variable = ru_unite_far_east
 			}
 		}
 	}
@@ -2031,7 +2031,7 @@ je_ru_irk_restore_far_east = {
 		custom_tooltip = je_ru_irk_restore_far_east_tt_1
 
 		set_variable = {
-			name = irk_form_far_east
+			name = ru_unite_far_east
 		} 
 
 		hidden_effect = {
@@ -2039,7 +2039,7 @@ je_ru_irk_restore_far_east = {
 			trigger_event = { id = tno_irk_events.6 days = 180 popup = no }
 		}
 
-		custom_tooltip = je_ru_irk_restore_far_east_tt_2
+		custom_tooltip = je_ru_lose_warlord_economy
     	#custom_tooltip = je_ru_irk_restore_far_east_tt_3
 		custom_tooltip = je_ru_irk_restore_far_east_tt_4
     	#custom_tooltip = je_ru_irk_restore_far_east_tt_5
@@ -2063,7 +2063,7 @@ je_ru_gen_sakha_expedition = {
 		bureaucracy >= 200
 		custom_tooltip = {
 			text = tt.formed_far_east
-			has_variable = irk_form_far_east
+			has_variable = ru_unite_far_east
 		}
 		NOT = {
 			custom_tooltip = {
@@ -2320,7 +2320,7 @@ je_ru_com_restore_ussr = {
 		}
 		custom_tooltip = je_ru_com_restore_ussr_desc_tt_2
 
-		add_journal_entry = { type = je_ru_tno_second_great_patriotic_war }
+		add_journal_entry = { type = je_ru_tno_second_west_russian_war }
 		add_journal_entry = { type = je_ru_tno_army_reform }
 		#add_journal_entry = { type = je_ru_project_zimneye_solntse }
 		hidden_effect = {
@@ -2928,200 +2928,6 @@ je_ru_request_american_support = {
 	}
 }
 
-je_ru_second_great_patriotic_war = {
-	name = "je_ru_second_great_patriotic_war"
-	desc = "je_ru_second_great_patriotic_war_desc"
-
-
-	possible = {
-		custom_tooltip = {
-			text = complete_one_army_reform_rq
-			OR = {
-				has_modifier = ru_basic_army_reform
-				has_modifier = ru_significant_army_reform
-				has_modifier = ru_full_army_reform
-			}
-		}
-        #custom_tooltip = {
-        #    text = complete_request_american_aid_and_magadan
-        #    has_variable = je_request_american_aid_tried
-        #}
-        #owns_entire_state_region = STATE_EAST_KARELIA
-	    #is_at_war = no
-		is_diplomatic_play_initiator = no
-	}
-
-	effect = {
-		create_diplomatic_play = {
-			name = gtr1
-			target_country = c:RKM
-			type = dp_return_state
-			war = no
-			escalation = 26
-			target_state = s:STATE_MOSCOW.region_state:RKM
-			add_target_backers = { c:FIN c:HUN c:SLV c:DEN c:NET c:ROM }
-			add_war_goal = {
-				holder = c:GER
-				type = conquer_state
-				target_state = s:STATE_ARKHANGELSK.region_state:RUS
-			}
-			add_war_goal = {
-				holder = c:FIN
-				type = conquer_state
-				target_state = s:STATE_EAST_KARELIA.region_state:RUS
-			}
-			add_war_goal = {
-				holder = c:RUS
-				type = return_state
-				target_state = s:STATE_TVER.region_state:RKM
-			}
-			add_war_goal = {
-				holder = c:RUS
-				type = return_state
-				target_state = s:STATE_NOVGOROD.region_state:RKM
-			}
-			add_war_goal = {
-				holder = c:RUS
-				type = return_state
-				target_state = s:STATE_INGRIA.region_state:RKM
-			}
-			add_war_goal = {
-				holder = c:RUS
-				type = return_state
-				target_state = s:STATE_SMOLENSK.region_state:RKM
-			}
-			add_war_goal = {
-				holder = c:RUS
-				type = return_state
-				target_state = s:STATE_BRYANSK.region_state:RKM
-			}
-			add_war_goal = {
-				holder = c:RUS
-				type = return_state
-				target_state = s:STATE_KURSK.region_state:RKM
-			}
-			add_war_goal = {
-				holder = c:RUS
-				type = return_state
-				target_state = s:STATE_TARTARIA.region_state:RKM
-			}
-			add_war_goal = {
-				holder = c:RUS
-				type = return_state
-				target_state = s:STATE_ROSTOV.region_state:RKM
-			}
-			add_war_goal = {
-				holder = c:RUS
-				type = return_state
-				target_state = s:STATE_ASTRAKHAN.region_state:RKM
-			}
-			add_war_goal = {
-				holder = c:RUS
-				type = return_state
-				target_state = s:STATE_KUBAN.region_state:RKK
-			}
-			add_war_goal = {
-				holder = c:RUS
-				type = return_state
-				target_state = s:STATE_GREATER_CAUCASUS.region_state:RKK
-			}
-			add_war_goal = {
-				holder = c:RUS
-				type = return_state
-				target_state = s:STATE_AZERBAIJAN.region_state:RKK
-			}
-			add_war_goal = {
-				holder = c:RUS
-				type = return_state
-				target_state = s:STATE_DAGESTAN.region_state:RKK
-			}
-			add_war_goal = {
-				holder = c:RUS
-				type = return_state
-				target_state = s:STATE_CRIMEA.region_state:GER
-			}
-			add_war_goal = {
-				holder = c:RUS
-				type = return_state
-				target_state = s:STATE_LUHANSK.region_state:GER
-			}
-			add_war_goal = {
-				holder = c:RUS
-				type = return_state
-				target_state = s:STATE_LUHANSK.region_state:RKU
-			}
-			add_war_goal = {
-				holder = c:RUS
-				type = return_state
-				target_state = s:STATE_KIEV.region_state:RKU
-			}
-			add_war_goal = {
-				holder = c:RUS
-				type = return_state
-				target_state = s:STATE_TRANSNISTRIA.region_state:TRG
-			}
-			add_war_goal = {
-				holder = c:RUS
-				type = return_state
-				target_state = s:STATE_VOLHYNIA.region_state:RKU
-			}
-			add_war_goal = {
-				holder = c:RUS
-				type = return_state
-				target_state = s:STATE_CHERSON.region_state:RKU
-			}
-			add_war_goal = {
-				holder = c:RUS
-				type = return_state
-				target_state = s:STATE_ORSHA.region_state:RKO
-			}
-			add_war_goal = {
-				holder = c:RUS
-				type = return_state
-				target_state = s:STATE_MINSK.region_state:RKO
-			}
-			add_war_goal = {
-				holder = c:RUS
-				type = return_state
-				target_state = s:STATE_BREST.region_state:RKO
-			}
-			add_war_goal = {
-				holder = c:RUS
-				type = return_state
-				target_state = s:STATE_LITHUANIA.region_state:RKO
-			}
-			add_war_goal = {
-				holder = c:RUS
-				type = return_state
-				target_state = s:STATE_LATVIA.region_state:RKO
-			}
-			add_war_goal = {
-				holder = c:RUS
-				type = return_state
-				target_state = s:STATE_ESTONIA.region_state:RKO
-			}
-			add_war_goal = {
-				holder = c:RUS
-				type = conquer_state
-				target_state = s:STATE_WEST_KARELIA.region_state:FIN
-			}
-
-		}
-		set_global_variable = second_great_patriotic_war
-		custom_tooltip = warning_2wrw
-		if = {
-			limit = {
-				owns_entire_state_region = STATE_EAST_KARELIA
-			}
-			custom_tooltip = warning_2wrw_finland
-		}
-		hidden_effect = {
-			change_infamy = -1500
-            trigger_event = { id = tno_irk_events.12 popup = yes } #The Great Anti-Fascist War
-        }
-    }
-}
-
 je_ru_second_west_russian_war = {
 	name = "je_ru_second_west_russian_war"
 	desc = "je_ru_second_west_russian_war_desc"
@@ -3134,6 +2940,15 @@ je_ru_second_west_russian_war = {
 				owns_entire_state_region = STATE_MOSCOW
 			}
 		}
+		custom_tooltip = {
+            text = complete_one_army_reform_rq
+            OR = {
+                has_modifier = ru_basic_army_reform
+                has_modifier = ru_significant_army_reform
+                has_modifier = ru_full_army_reform
+                has_modifier = basic_unifier
+            }
+        }
 	}
 
 	effect = {
@@ -3691,13 +3506,22 @@ je_ru_second_west_russian_war = {
 				target_country = c:ROM
 			}
 		}
-		#set_global_variable = second_west_russian_war
 		custom_tooltip = warning_2wrw
 		if = {
 			limit = {
 				owns_entire_state_region = STATE_EAST_KARELIA
 			}
 			custom_tooltip = warning_2wrw_finland
+		}
+		if = {
+			limit = {
+				was_formed_from = IRK
+			}
+			set_global_variable = second_great_patriotic_war
+			trigger_event = { id = tno_irk_events.12 popup = yes } #The Great Anti-Fascist War
+		}
+		c:GER = {
+			trigger_event = { id = tno_germany_events.43 days = 0 popup = yes }
 		}
 		hidden_effect = {
 			change_infamy = -1500
@@ -4273,4 +4097,52 @@ effect = {
 }
 }
 
+je_ru_unite_far_east = {
+	name = "je_ru_unite_far_east"
+	desc = "je_ru_unite_far_east_desc"
 
+	possible = {
+		owns_entire_state_region = STATE_IRKUTSK
+		owns_entire_state_region = STATE_TRANS_BAIKAL
+		owns_entire_state_region = STATE_OKHOTSK
+		owns_entire_state_region = STATE_CHUKOTKA
+		owns_entire_state_region = STATE_YAKUTSK
+		owns_entire_state_region = STATE_KAMCHATKA
+
+		custom_tooltip = {
+			text = je_ru_tno_owns_chernyshevsky
+			any_scope_state = {
+				state_region = s:STATE_UPPER_YENISEYSK
+			}
+		}
+
+		hidden_trigger = {
+			NOT = {
+				has_variable = ru_unite_far_east
+			}
+		}
+	}
+
+	effect = {
+		custom_tooltip = je_ru_unite_far_east_tt_1
+
+		set_variable = {
+			name = ru_unite_far_east
+		} 
+
+		hidden_effect = {
+			remove_modifier = russian_warlord
+		}
+
+		custom_tooltip = je_ru_lose_warlord_economy
+
+		hidden_effect = {
+    		trigger_event = { id = tno_ru_events.1 popup = yes } # event for selecting new economic law
+    	}
+
+    	#add_journal_entry = { type = je_ru_tno_restore_russia }
+    	#add_journal_entry = { type = je_ru_tno_finish_sib_plan }
+    	add_journal_entry = { type = je_ru_tno_sakha_expedition }
+    	add_journal_entry = { type = je_ru_tno_repair_transib }
+    }
+}

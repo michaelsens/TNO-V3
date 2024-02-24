@@ -39,11 +39,14 @@
         #RUS
         if = {
 			limit = {
-               game_date >= 1966.1.1
-               NOT = { has_variable = rus_super_var }
+                game_date >= 1966.1.1
+                NOT = { has_variable = rus_war_begun_var }
+                root = {
+                    has_modifier = russian_warlord
+                }
             }
-            set_variable = rus_super_var
-            trigger_event = { id = tno_super_events.1 days = 0 popup = yes }
+            set_variable = rus_war_begun_var
+            trigger_event = { id = tno_ru_events.16 days = 0 popup = yes }
         }
 
         if = { #USSR formed under Irkutsk (RUSSIA)
