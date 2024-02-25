@@ -9,7 +9,9 @@
     
     complete = {
         hidden_trigger = {
-            game_date >= 1966.1.1
+            NOT = {
+                has_law = law_type:law_warlord_economy
+            }
         }
     }
 
@@ -272,6 +274,80 @@ je_ru_tno_unite_far_east = {
 
     goal_add_value = {
         
+    }
+
+    progressbar = no
+    
+    weight = 1000
+
+    
+    should_be_pinned_by_default = yes
+    
+}
+
+je_ru_tno_restore_russia = { 
+
+    icon = "gfx/interface/icons/tno_event_icons/reunify_russia.dds"
+    group = je_group_historical_content
+    scripted_button = je_ru_restore_russia
+
+    immediate = {
+        c:WST = {
+            save_scope_as = wrrf_nation
+        }
+    }
+    
+    complete = {
+        #Far-East
+        owns_entire_state_region = STATE_IRKUTSK
+        owns_entire_state_region = STATE_TRANS_BAIKAL
+        owns_entire_state_region = STATE_OKHOTSK
+        owns_entire_state_region = STATE_CHUKOTKA
+        owns_entire_state_region = STATE_YAKUTSK
+        owns_entire_state_region = STATE_KAMCHATKA
+        owns_entire_state_region = STATE_UPPER_YENISEYSK
+        #Central Sib
+        owns_entire_state_region = STATE_TOMSK
+        owns_entire_state_region = STATE_TOBOLSK
+        owns_entire_state_region = STATE_TUVA
+        #West Sib
+        owns_entire_state_region = STATE_OB
+        owns_entire_state_region = STATE_NENETSIA
+        owns_entire_state_region = STATE_URAL
+        #West Russia
+        owns_entire_state_region = STATE_SAMARA
+        owns_entire_state_region = STATE_PERM
+        owns_entire_state_region = STATE_KAZAN
+        owns_entire_state_region = STATE_GALICH
+
+        custom_tooltip = {
+            text = je_ru_tno_rus_owns_wrrf
+            any_scope_state = {
+                state_region = s:STATE_ARKHANGELSK
+            }
+        }
+        #custom_tooltip = {
+            #text = formed_russia_rq_tt
+        hidden_trigger = {
+            c:RUS ?= THIS
+        }
+        #}
+    }
+
+    on_complete = {
+        set_global_variable = rus_formed
+    }
+
+    on_monthly_pulse = {
+    }
+
+    current_value = {
+
+    }
+
+
+    goal_add_value = {
+
     }
 
     progressbar = no

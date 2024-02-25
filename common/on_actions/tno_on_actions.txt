@@ -56,6 +56,13 @@
             }
             set_variable = irk_rus_event
             trigger_event = { id = tno_super_events.10 days = 0 popup = yes }
+        }if = { #Russia formed under any generic Russian nation (RUSSIA)
+            limit = {
+               has_global_variable = ru_generic
+               NOT = { has_variable = gen_rus_event }
+            }
+            set_variable = gen_rus_event
+            trigger_event = { id = tno_super_events.15 days = 0 popup = yes }
         }
         if = {  #Generic Russian launches 2WRW (Second West Russian War) (2WRW)
             limit = {

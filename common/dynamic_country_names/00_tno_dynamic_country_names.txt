@@ -435,7 +435,35 @@ RUS = {
 		trigger = {
 			exists = scope:actor
 			scope:actor = {
-				has_variable = irk_form_ussr 
+				has_variable = irk_form_russia 
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = "Russian Empire"
+		adjective = "Russian"
+
+		is_main_tag_only = yes
+		priority = 100000
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_variable = cht_form_russia
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = "Russian National State"
+		adjective = "Russian"
+
+		is_main_tag_only = yes
+		priority = 100000
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_variable = amr_form_russia
 			}
 		}
 	}
@@ -485,8 +513,43 @@ IRK = {
 		trigger = {
 			exists = scope:actor
 			scope:actor = {
-				has_variable = irk_form_ussr 
+				has_variable = irk_form_russia 
 			}
 		}
 	}
 }
+
+CHT = {
+	dynamic_country_name = {
+		name = "Far Eastern Imperial Realm"
+		adjective = "Far Eastern"
+
+		is_main_tag_only = yes
+		priority = 1000
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_variable = ru_unite_far_east
+			}
+		}
+	}
+}
+
+AMR = {
+	dynamic_country_name = {
+		name = "All-Russian Government of the Far East"
+		adjective = "Far Eastern"
+
+		is_main_tag_only = yes
+		priority = 1000
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_variable = ru_unite_far_east
+			}
+		}
+	}
+}
+

@@ -2314,11 +2314,11 @@ je_ru_com_restore_ussr = {
 		custom_tooltip = {
 			text = je_ru_com_restore_ussr_desc_tt_1
 			set_variable = {
-				name = irk_form_ussr
+				name = irk_form_russia
 			} 
 			change_tag = RUS
 		}
-		custom_tooltip = je_ru_com_restore_ussr_desc_tt_2
+		custom_tooltip = je_ru_restore_russia_tt_reclaim_position
 
 		add_journal_entry = { type = je_ru_tno_second_west_russian_war }
 		add_journal_entry = { type = je_ru_tno_army_reform }
@@ -4140,9 +4140,193 @@ je_ru_unite_far_east = {
     		trigger_event = { id = tno_ru_events.1 popup = yes } # event for selecting new economic law
     	}
 
-    	#add_journal_entry = { type = je_ru_tno_restore_russia }
+    	add_journal_entry = { type = je_ru_tno_restore_russia }
     	#add_journal_entry = { type = je_ru_tno_finish_sib_plan }
     	add_journal_entry = { type = je_ru_tno_sakha_expedition }
     	add_journal_entry = { type = je_ru_tno_repair_transib }
     }
+}
+
+je_ru_restore_russia = {
+	name = "je_ru_restore_russia"
+	desc = "je_ru_restore_russia_desc"
+
+	possible = {
+		#Far-East
+		owns_entire_state_region = STATE_IRKUTSK
+		owns_entire_state_region = STATE_TRANS_BAIKAL
+		owns_entire_state_region = STATE_OKHOTSK
+		owns_entire_state_region = STATE_CHUKOTKA
+		owns_entire_state_region = STATE_YAKUTSK
+		owns_entire_state_region = STATE_KAMCHATKA
+		owns_entire_state_region = STATE_UPPER_YENISEYSK
+        #Central Sib
+		owns_entire_state_region = STATE_TOMSK
+		owns_entire_state_region = STATE_TOBOLSK
+		owns_entire_state_region = STATE_TUVA
+        #West Sib
+		owns_entire_state_region = STATE_OB
+		owns_entire_state_region = STATE_NENETSIA
+		owns_entire_state_region = STATE_URAL
+        #West Russia
+		owns_entire_state_region = STATE_SAMARA
+		owns_entire_state_region = STATE_PERM
+		owns_entire_state_region = STATE_KAZAN
+		owns_entire_state_region = STATE_GALICH
+
+		hidden_trigger = {
+			NOT = {
+				c:RUS ?= THIS
+			}
+		}
+
+		custom_tooltip = {
+			text = je_ru_tno_rus_owns_wrrf
+			any_scope_state = {
+				state_region = s:STATE_ARKHANGELSK
+			}
+		}
+	}
+
+	effect = {
+		custom_tooltip = {
+			text = je_ru_restore_russia_tt_reclaim_position
+			set_global_variable = {
+				name = ru_generic
+			} 
+			change_tag = RUS
+		}
+
+		add_journal_entry = { type = je_ru_tno_second_west_russian_war }
+		add_journal_entry = { type = je_ru_tno_army_reform }
+		#add_journal_entry = { type = je_ru_project_zimneye_solntse }
+		hidden_effect = {
+			add_modifier = ru_no_army_reform
+		}
+		add_journal_entry = { type = je_ru_repair_magadan }
+
+		if = { #if they do not own karelia or onega
+			limit = {
+				NOT = {
+					owns_entire_state_region = STATE_EAST_KARELIA
+					owns_entire_state_region = STATE_ARKHANGELSK
+				}
+			}
+			add_journal_entry = { type = je_ru_take_karelia_and_onega }
+		}
+		else_if = { #if they do not own karelia
+			limit = {
+				NOT = {
+					owns_entire_state_region = STATE_EAST_KARELIA
+				}
+			}
+			add_journal_entry = { type = je_ru_take_karelia }
+		}else = {
+			add_journal_entry = { type = je_ru_take_karelia_and_onega }
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					exists = c:RUS
+				}
+				s:STATE_MOSCOW = {
+					add_claim = c:RUS
+				}
+				s:STATE_TVER = {
+					add_claim = c:RUS
+				}
+				s:STATE_NOVGOROD = {
+					add_claim = c:RUS
+				}
+				s:STATE_INGRIA = {
+					add_claim = c:RUS
+				}
+				s:STATE_SMOLENSK = {
+					add_claim = c:RUS
+				}
+				s:STATE_BRYANSK = {
+					add_claim = c:RUS
+				}
+				s:STATE_KURSK = {
+					add_claim = c:RUS
+				}
+				s:STATE_TARTARIA = {
+					add_claim = c:RUS
+				}
+				s:STATE_ROSTOV = {
+					add_claim = c:RUS
+				}
+				s:STATE_ASTRAKHAN = {
+					add_claim = c:RUS
+				}
+				s:STATE_KUBAN = {
+					add_claim = c:RUS
+				}
+				s:STATE_GREATER_CAUCASUS = {
+					add_claim = c:RUS
+				}
+				s:STATE_AZERBAIJAN = {
+					add_claim = c:RUS
+				}
+				s:STATE_ARMENIA = {
+					add_claim = c:RUS
+				}
+				s:STATE_CRIMEA = {
+					add_claim = c:RUS
+				}
+				s:STATE_LUHANSK = {
+					add_claim = c:RUS
+				}
+				s:STATE_KIEV = {
+					add_claim = c:RUS
+				}
+				s:STATE_VOLHYNIA = {
+					add_claim = c:RUS
+				}
+				s:STATE_TRANSNISTRIA = {
+					add_claim = c:RUS
+				}
+				s:STATE_DAGESTAN = {
+					add_claim = c:RUS
+				}
+				s:STATE_CHERSON = {
+					add_claim = c:RUS
+				}
+				s:STATE_ORSHA = {
+					add_claim = c:RUS
+				}
+				s:STATE_MINSK = {
+					add_claim = c:RUS
+				}
+				s:STATE_BREST = {
+					add_claim = c:RUS
+				}
+				s:STATE_LITHUANIA = {
+					add_claim = c:RUS
+				}
+				s:STATE_LATVIA = {
+					add_claim = c:RUS
+				}
+				s:STATE_ESTONIA = {
+					add_claim = c:RUS
+				}
+			}
+		}
+		if = {
+			limit = {
+				was_formed_from = IRK
+			}
+			set_variable = irk_form_russia
+		}else_if = {
+			limit = {
+				was_formed_from = CHT
+			}
+			set_variable = cht_form_russia
+		}else_if = {
+			limit = {
+				was_formed_from = AMR
+			}
+			set_variable = amr_form_russia
+		}
+	}
 }
