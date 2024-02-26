@@ -479,6 +479,119 @@ WAD = {
 	}
 }
 
+
+IRQ = {
+	dynamic_country_name = {
+		name = "Governatorato dell'Eufrate"
+		adjective = "Italian"
+		
+		is_main_tag_only = yes
+		priority = 9999
+		
+		trigger = {
+			exists = c:ITA
+			c:ITA = {
+				OR = {
+					has_diplomatic_pact = {
+						who = c:IRQ
+						type = millgov
+						is_initiator = yes
+					}
+				}
+				
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = "Governatorato dell'Eufrate"
+		adjective = "Italian"
+		
+		is_main_tag_only = yes
+		priority = 5000
+		
+		trigger = {
+			exists = c:ITA
+			c:ITA = {
+				OR = {
+					has_diplomatic_pact = {
+						who = c:IRQ
+						type = protectorate
+						is_initiator = yes
+					}
+					has_diplomatic_pact = {
+						who = c:IRQ
+						type = dominion
+						is_initiator = yes
+					}
+					has_diplomatic_pact = {
+						who = c:IRQ
+						type = puppet
+						is_initiator = yes
+					}
+				}
+				
+			}
+		}
+	}
+}
+
+YEM = {
+	dynamic_country_name = {
+		name = "Governatorato del Sarawat"
+		adjective = "Italian"
+		
+		is_main_tag_only = yes
+		priority = 9999
+		
+		trigger = {
+			exists = c:ITA
+			exists = c:YEM
+			c:ITA = {
+				OR = {
+					has_diplomatic_pact = {
+						who = c:YEM
+						type = millgov
+						is_initiator = yes
+					}
+				}
+				
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = "Governatorato del Sarawat"
+		adjective = "Italian"
+		
+		is_main_tag_only = yes
+		priority = 5000
+		
+		trigger = {
+			exists = c:ITA
+			exists = c:YEM
+			c:ITA = {
+				OR = {
+					has_diplomatic_pact = {
+						who = c:YEM
+						type = protectorate
+						is_initiator = yes
+					}
+					has_diplomatic_pact = {
+						who = c:YEM
+						type = dominion
+						is_initiator = yes
+					}
+					has_diplomatic_pact = {
+						who = c:YEM
+						type = puppet
+						is_initiator = yes
+					}
+				}
+				
+			}
+		}
+	}
+}
+
 ADG = {
 	dynamic_country_name = {
 		name = "Fuerzas ibéricas en Azwad"

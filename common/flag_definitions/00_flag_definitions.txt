@@ -4717,6 +4717,36 @@ IRQ = { # Iraq
 		priority = 1
 	}
 	flag_definition = {
+		coa = IRQ_ITA
+		trigger = {
+			exists = c:ITA
+			exists = c:IRQ
+			c:ITA = {
+				OR = {
+					has_diplomatic_pact = {
+						who = c:IRQ
+						type = protectorate
+						is_initiator = yes
+					}
+					has_diplomatic_pact = {
+						who = c:IRQ
+						type = puppet
+						is_initiator = yes
+					}
+					has_diplomatic_pact = {
+						who = c:IRQ
+						type = dominion
+						is_initiator = yes
+					}
+				}
+				
+			}
+		}
+		coa_with_overlord_canton = CUB_subject
+		allow_overlord_canton = no
+		priority = 5000	
+	}
+	flag_definition = {
 		coa = IRQ_absolute_monarchy
 		subject_canton = IRQ_absolute_monarchy
 		priority = 20
