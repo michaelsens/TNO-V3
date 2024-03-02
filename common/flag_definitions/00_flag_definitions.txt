@@ -2941,30 +2941,6 @@ ITO = { # Ethiopia
 	}	
 }
 
-FER = { # Far Eastern Republic
-	flag_definition = {
-		coa = FER
-		allow_overlord_canton = yes	
-		subject_canton = FER
-		priority = 1
-	}
-	flag_definition = {
-		coa = FER_republic
-		subject_canton = FER_republic
-		priority = 10
-		trigger = { 
-			coa_def_republic_flag_trigger = yes
-		}
-	}		
-	flag_definition = {
-		coa = FER_communist
-		priority = 1500
-		trigger = { 
-			coa_def_communist_flag_trigger = yes
-		}
-	}		
-}
-
 FIN = { # Finland
 	flag_definition = {
 		coa = FIN
@@ -3502,6 +3478,29 @@ WRS = { # west siberia
 			exists = scope:actor
 			scope:actor = {
 				has_law = law_type:law_council_republic
+			}
+		}
+	}
+}
+
+MAG = { # Magadan
+	flag_definition = { # starting flag
+		coa = MAG
+		priority = 2000
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				NOT = { has_variable = ru_unite_far_east }
+			}
+		}
+	}
+	flag_definition = { # Formed Far East / Siberia
+		coa = RUS_mag
+		priority = 3000
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_variable = ru_unite_far_east
 			}
 		}
 	}
@@ -5330,11 +5329,21 @@ KLM = { # Kalmykia
 
 
 
-FER = { # Kalmykia
+FER = { # Soviet Pacific Fleet
 	flag_definition = {
 		coa = FER
 		subject_canton = FER
 		priority = 999
+	}
+	flag_definition = { # Formed Far East
+		coa = RUS_soviet_union
+		priority = 3000
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_variable = ru_unite_far_east
+			}
+		}
 	}
 }
 
@@ -7754,30 +7763,61 @@ RUS = { # Russia
 		coa = RUS_soviet_union
 		priority = 1500 # need to override the DEFAULT
 		trigger = { 
-			coa_def_communist_flag_trigger = yes
+			exists = scope:actor
+			scope:actor = {
+				OR = {
+					has_variable = irk_form_russia
+					has_variable = fer_form_russia
+					has_variable = bry_form_russia
+				}
+			}
 		}
 	}
 	flag_definition = {
-		coa = RUS_fascist
-		subject_canton = RUS_fascist
-		priority = 1500
-		trigger = { 
-			coa_def_fascist_flag_trigger = yes
-		}
-	}	
-	flag_definition = {
-		coa = RUS_theocracy
-		subject_canton = RUS_theocracy
-		priority = 20
-		trigger = { 
-			coa_def_theocracy_flag_trigger = yes
-		}
-	}	
-	flag_definition = {
 		coa = RUS_nihilist
-		priority = 1500 # need to override the DEFAULT
+		priority = 25 # need to override the DEFAULT
 		trigger = { 
 			coa_def_nihilist_flag_trigger = yes
+		}
+	}
+	flag_definition = {
+		coa = RUS_mag
+		priority = 1500
+		trigger = { 
+			exists = scope:actor
+			scope:actor = {
+				has_variable = mag_form_russia
+			}
+		}
+	}
+	flag_definition = {
+		coa = DIV
+		priority = 1500
+		trigger = { 
+			exists = scope:actor
+			scope:actor = {
+				has_variable = div_form_russia
+			}
+		}
+	}
+	flag_definition = {
+		coa = RUS_yak
+		priority = 1500
+		trigger = { 
+			exists = scope:actor
+			scope:actor = {
+				has_variable = yak_form_russia
+			}
+		}
+	}
+	flag_definition = {
+		coa = RUS_amr
+		priority = 1500
+		trigger = { 
+			exists = scope:actor
+			scope:actor = {
+				has_variable = amr_form_russia
+			}
 		}
 	}
 	flag_definition = {
@@ -7787,16 +7827,6 @@ RUS = { # Russia
 			exists = scope:actor
 			scope:actor = {
 				has_variable = cht_form_russia
-			}
-		}
-	}
-	flag_definition = {
-		coa = AMR
-		priority = 2500
-		trigger = { 
-			exists = scope:actor
-			scope:actor = {
-				has_variable = amr_form_russia
 			}
 		}
 	}
@@ -9543,6 +9573,16 @@ YAK = { # Yakutia
 		coa = YAK		
 		subject_canton = YAK
 		priority = 1
+	}
+	flag_definition = { # Formed Far East
+		coa = RUS_yak
+		priority = 3000
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_variable = ru_unite_far_east
+			}
+		}
 	}
 }
 

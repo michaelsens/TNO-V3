@@ -2313,9 +2313,22 @@ je_ru_com_restore_ussr = {
 		#}
 		custom_tooltip = {
 			text = je_ru_com_restore_ussr_desc_tt_1
-			set_variable = {
-				name = irk_form_russia
-			} 
+			if = {
+				limit = {
+					c:IRK ?= THIS
+				}
+				set_variable = irk_form_russia
+			}else_if = {
+				limit = {
+					c:FER ?= THIS
+				}
+				set_variable = fer_form_russia
+			}else_if = {
+				limit = {
+					c:BRY ?= THIS
+				}
+				set_variable = bry_form_russia
+			}
 			change_tag = RUS
 		}
 		custom_tooltip = je_ru_restore_russia_tt_reclaim_position
@@ -4140,7 +4153,20 @@ je_ru_unite_far_east = {
     		trigger_event = { id = tno_ru_events.1 popup = yes } # event for selecting new economic law
     	}
 
-    	add_journal_entry = { type = je_ru_tno_restore_russia }
+    	if = {
+    		limit = {
+    			OR = {
+    				c:IRK ?= THIS
+    				c:FER ?= THIS
+    				c:BRY ?= THIS
+    			}
+    		}
+    		add_journal_entry = { type = je_ru_tno_com_restore_ussr }
+    	}
+    	else = {
+    		add_journal_entry = { type = je_ru_tno_restore_russia }
+    	}
+    	
     	#add_journal_entry = { type = je_ru_tno_finish_sib_plan }
     	add_journal_entry = { type = je_ru_tno_sakha_expedition }
     	add_journal_entry = { type = je_ru_tno_repair_transib }
@@ -4327,6 +4353,26 @@ je_ru_restore_russia = {
 				was_formed_from = AMR
 			}
 			set_variable = amr_form_russia
+		}else_if = {
+			limit = {
+				was_formed_from = MAG
+			}
+			set_variable = mag_form_russia
+		}else_if = {
+			limit = {
+				was_formed_from = DIV
+			}
+			set_variable = div_form_russia
+		}else_if = {
+			limit = {
+				was_formed_from = FER
+			}
+			set_variable = fer_form_russia
+		}else_if = {
+			limit = {
+				was_formed_from = YAK
+			}
+			set_variable = yak_form_russia
 		}
 	}
 }
