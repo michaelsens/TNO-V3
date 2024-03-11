@@ -15,6 +15,7 @@
 @journal_position = 430
 @outliner_position = 530
 @companies_position = 470
+@test_position = 700
 
 @spacing_widget_2_position = 510
 
@@ -197,6 +198,49 @@ types information_panel_bar_types {
 					position = { 0 @budget_position }
 					tooltip = "BUTTON_BUDGET"
 					input_action = "open_budget"
+				}
+
+				### TEST
+				sidebar_label_button = {
+					position = { -100 @test_position }
+					blockoverride "onclick" {
+						onclick = "[InformationPanelBar.OpenPanelCycleTabs('TEST', 'default|states|assets')]"
+						input_action = "open_test"
+						#### +++
+						using = fifi_button_cancel
+						#### ===
+					}
+				}
+				sidebar_label_text = {
+					position = { -100 @test_position }
+					text = "TEST"
+				}
+				widget = {
+					position = { 0 @test_position }
+					name = "tutorial_highlightTEST"
+					using = clickthrough_blocker
+					using = sidebar_button_size
+					using = selected_sidepanel_animation
+					blockoverride "selected_visibility" {
+						visible = "[InformationPanelBar.IsPanelOpen('test')]"
+					}
+					sidepanel_button_big = {
+						blockoverride "icon" {
+							texture = "gfx/interface/main_hud/budget_btn.dds"
+						}
+						blockoverride "button_selected" {
+							visible = "[InformationPanelBar.IsPanelOpen('test')]"
+						}
+						onclick = "[InformationPanelBar.OpenPanelCycleTabs('test', 'default|states|assets')]"
+						#### +++
+						using = fifi_button_cancel
+						#### ===
+					}
+				}
+				sidebar_tooltip_area = {
+					position = { 0 @test_position }
+					tooltip = "BUTTON_BUDGET"
+					input_action = "open_test"
 				}
 
 				### BUILDINGS
