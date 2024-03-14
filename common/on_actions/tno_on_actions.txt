@@ -39,11 +39,14 @@
         #RUS
         if = {
 			limit = {
-               game_date >= 1966.1.1
-               NOT = { has_variable = rus_super_var }
+                game_date >= 1966.1.1
+                NOT = { has_variable = rus_war_begun_var }
+                root = {
+                    has_modifier = russian_warlord
+                }
             }
-            set_variable = rus_super_var
-            trigger_event = { id = tno_super_events.1 days = 0 popup = yes }
+            set_variable = rus_war_begun_var
+            trigger_event = { id = tno_ru_events.16 days = 0 popup = yes }
         }
 
         if = { #USSR formed under Irkutsk (RUSSIA)
@@ -53,6 +56,21 @@
             }
             set_variable = irk_rus_event
             trigger_event = { id = tno_super_events.10 days = 0 popup = yes }
+        }if = { #Russia formed under any generic Russian nation (RUSSIA)
+            limit = {
+               has_global_variable = ru_generic
+               NOT = { has_variable = gen_rus_event }
+            }
+            set_variable = gen_rus_event
+            trigger_event = { id = tno_super_events.15 days = 0 popup = yes }
+        }
+        if = {  #Generic Russian launches 2WRW (Second West Russian War) (2WRW)
+            limit = {
+               has_global_variable = second_west_russian_war
+               NOT = { has_variable = second_west_russian_war_event }
+            }
+            set_variable = second_west_russian_war_event
+            trigger_event = { id = tno_super_events.13 days = 0 popup = yes }
         }
         if = {  #Irkutsk launches 2WRW (Second Great Patriotic War) (2WRW)
             limit = {
@@ -78,7 +96,6 @@
                 NOT = { has_global_variable = pro_var }
             }
             set_global_variable = pro_var
-            trigger_event = { id = tno_flavor_events.14 days = 0 popup = yes }
         }
         if = {
 			limit = {
@@ -87,27 +104,7 @@
             }
             set_variable = pro_super_var
             trigger_event = { id = tno_super_events.6 days = 0 popup = yes }
-        }
-
-        if = {
-			limit = {
-               has_global_variable = great_trial
-               NOT = { has_variable = great_trial_var }
-               NOT = {  c:RUS ?= THIS}
-            }
-            set_variable = great_trial_var
-            trigger_event = { id = tno_super_events.7 days = 0 popup = yes }
-        }
-
-        if = {
-			limit = {
-               has_global_variable = great_trial_win
-               NOT = { has_variable = great_trial_win_var }
-            }
-            set_variable = great_trial_win_var
-            trigger_event = { id = tno_super_events.8 days = 0 popup = yes }
-        }
-         
+        }        
         if = {
 			limit = {
                has_modifier = rebuilding_russia
@@ -465,7 +462,7 @@
 
         if = {
             limit = {
-               game_date >= 1973.7.1
+               game_date >= 1978.7.1
                NOT = { has_variable = oil_crisis_information_var}
             }
            set_variable = oil_crisis_information_var
@@ -474,7 +471,7 @@
        
         if = {
             limit = {
-               game_date >= 1975.2.1
+               game_date >= 1980.2.1
                NOT = { has_variable = oil_crisis_war_1_var}
             }
            set_variable = oil_crisis_war_1_var
@@ -482,7 +479,7 @@
           } 
         if = {
             limit = {
-               game_date >= 1975.4.1
+               game_date >= 1980.4.1
                NOT = { has_variable = oil_crisis_war_2_var}
             }
             set_global_variable = oil_crisis_start
@@ -491,7 +488,7 @@
           }    
         if = {
             limit = {
-               game_date >= 1975.5.1
+               game_date >= 1980.5.1
                NOT = { has_variable = oil_crisis_war_3_var}
             }
            set_variable = oil_crisis_war_3_var
@@ -499,7 +496,7 @@
           }       
         if = {
             limit = {
-               game_date >= 1975.8.1
+               game_date >= 1980.8.1
                NOT = { has_variable = oil_crisis_war_4_var}
             }
            set_variable = oil_crisis_war_4_var
@@ -507,7 +504,7 @@
           }    
         if = {
             limit = {
-               game_date >= 1975.11.1
+               game_date >= 1980.11.1
                NOT = { has_variable = oil_crisis_war_5_var}
             }
            set_variable = oil_crisis_war_5_var
@@ -515,7 +512,7 @@
           }  
         if = {
             limit = {
-               game_date >= 1975.12.1
+               game_date >= 1980.12.1
                NOT = { has_variable = oil_crisis_war_7_var}
             }
            set_variable = oil_crisis_war_7_var
@@ -523,7 +520,7 @@
           }  
         if = {
             limit = {
-               game_date >= 1976.2.1
+               game_date >= 1981.2.1
                NOT = { has_variable = oil_crisis_war_6_var}
             }
            set_variable = oil_crisis_war_6_var
@@ -531,20 +528,12 @@
           }  
         if = {
             limit = {
-               game_date >= 1975.6.1
+               game_date >= 1980.6.1
                NOT = { has_variable = oil_crisis_war_8_var}
             }
            set_variable = oil_crisis_war_8_var
            trigger_event = { id = tno_oil_crisis.8 days = 0 popup = yes }
           } 
-        if = {
-            limit = {
-               game_date >= 1979.2.1
-               NOT = { has_variable = oil_crisis_war_15_var}
-            }
-           set_variable = oil_crisis_war_15_var
-           trigger_event = { id = tno_oil_crisis.15 days = 0 popup = yes }
-          }
         if = {
             limit = {
                 has_global_variable =  oil_crisis_start
@@ -603,6 +592,17 @@
             set_variable = irk_inv_var
             trigger_event = { id = tno_irk_events.7 days = 180 popup = yes }
         }
+
+        c:CHI = {
+            if = {
+                limit = {
+                    NOT = { is_subject_of = c:JAP }
+                }
+                remove_modifier = restricted_army
+                remove_modifier = slave_of_the_samurai
+            }
+        }
+        
     }
     
     
@@ -614,6 +614,7 @@
         1 = tno_oil_crisis.11
         1 = tno_oil_crisis.12
     }
+
 }  
 
 on_wargoal_enforced = {

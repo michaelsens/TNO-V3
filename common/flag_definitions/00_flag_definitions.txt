@@ -486,7 +486,7 @@ AFS = {
         priority = 100
         trigger = {
             exists= c:AFS
-            scope:actor = { capital = { region = sr:region_congo } }
+            scope:actor = { capital = { region = sr:region_southern_africa } }
         }
     }
     flag_definition = {
@@ -516,7 +516,7 @@ AFS = {
         priority = 100
         trigger = {
             exists= c:AFS
-            scope:actor = { capital = { region = sr:region_nile_basin } }
+            scope:actor = { capital = { region = sr:region_north_africa } }
         }
     }
     flag_definition = {
@@ -2973,30 +2973,6 @@ ITO = { # Ethiopia
 	}	
 }
 
-FER = { # Far Eastern Republic
-	flag_definition = {
-		coa = FER
-		allow_overlord_canton = yes	
-		subject_canton = FER
-		priority = 1
-	}
-	flag_definition = {
-		coa = FER_republic
-		subject_canton = FER_republic
-		priority = 10
-		trigger = { 
-			coa_def_republic_flag_trigger = yes
-		}
-	}		
-	flag_definition = {
-		coa = FER_communist
-		priority = 1500
-		trigger = { 
-			coa_def_communist_flag_trigger = yes
-		}
-	}		
-}
-
 FIN = { # Finland
 	flag_definition = {
 		coa = FIN
@@ -3539,6 +3515,29 @@ WRS = { # west siberia
 	}
 }
 
+MAG = { # Magadan
+	flag_definition = { # starting flag
+		coa = MAG
+		priority = 2000
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				NOT = { has_variable = ru_unite_far_east }
+			}
+		}
+	}
+	flag_definition = { # Formed Far East / Siberia
+		coa = RUS_mag
+		priority = 3000
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_variable = ru_unite_far_east
+			}
+		}
+	}
+}
+
 IRK = { # irkust
 	flag_definition = { # starting flagg
 		coa = IRK_start
@@ -3546,7 +3545,7 @@ IRK = { # irkust
 		trigger = {
 			exists = scope:actor
 			scope:actor = {
-				NOT = { has_variable = irk_form_far_east }
+				NOT = { has_variable = ru_unite_far_east }
 			}
 		}
 	}
@@ -3556,7 +3555,7 @@ IRK = { # irkust
 		trigger = {
 			exists = scope:actor
 			scope:actor = {
-				has_variable = irk_form_far_east
+				has_variable = ru_unite_far_east
 			}
 		}
 	}
@@ -3619,17 +3618,9 @@ GER = { # Germany
 		coa = GER_modern
 		subject_canton = GER_modern
 	}
-	flag_definition = {
-		coa = GER_modern
-		subject_canton = GER_modern
-		priority = 10
-		trigger = { 
-			coa_def_republic_flag_trigger = yes
-		}
-	}
 	flag_definition = { #strasserite
 		coa = GER_strasser
-		priority = 2000
+		priority = 2500
 		trigger = {
 			exists = scope:actor
 			scope:actor = {
@@ -3642,13 +3633,18 @@ GER = { # Germany
 	}
 	flag_definition = { #democracit but still ethnostate
 		coa = GER_democratic_racist
-		priority = 2000
+		priority = 1000
 		trigger = {
 			exists = scope:actor
 			scope:actor = {
+				OR = {
+					has_law = law_type:law_ethnostate
+					has_law = law_type:law_debt_slavery
+				}
 				NOT = { has_law = law_type:law_autocracy
 				has_law = law_type:law_technocracy
 				has_law = law_type:law_oligarchy
+				has_law = law_type:law_single_party_state
 				has_law = law_type:law_council_republic }
 			}
 		}
@@ -3660,9 +3656,12 @@ GER = { # Germany
 			exists = scope:actor
 			scope:actor = {
 				NOT = { has_law = law_type:law_autocracy
+				has_law = law_type:law_single_party_state
 				has_law = law_type:law_technocracy
 				has_law = law_type:law_oligarchy
 				has_law = law_type:law_council_republic
+				has_law = law_type:law_unitary_state
+				has_law = law_type:law_monarchy
 				has_law = law_type:law_ethnostate }
 			}
 		}
@@ -3670,17 +3669,14 @@ GER = { # Germany
 	flag_definition = {
 		coa = GER
 		subject_canton = GER_dictatorship
-		priority = 15
+		priority = 20000
 		trigger = { 
-			coa_def_dictatorship_flag_trigger = yes
-		}
-	}
-	flag_definition = {
-		coa = GER_2
-		subject_canton = GER_dictatorship
-		priority = 20
-		trigger = { 
-			
+			AND = {
+				exists = scope:actor
+				scope:actor = {
+					has_law = law_type:law_unitary_state
+				}
+			}
 		}
 	}
 	flag_definition = {
@@ -3691,24 +3687,6 @@ GER = { # Germany
 			coa_def_communist_flag_trigger = yes
 		}
 	}	
-	flag_definition = {
-		coa = GER_fascist
-		subject_canton = GER_fascist
-		priority = 1500
-		trigger = { 
-			OR = {
-				coa_def_fascist_flag_trigger = yes
-				AND = {
-					exists = scope:actor
-					scope:actor = {
-						has_law = law_type:law_unitary_state
-					}
-				}
-				
-			}
-			
-		}
-	}
 
 ### country-specific Germany variants ###
 
@@ -3836,6 +3814,186 @@ GGR = { # Greater Germany
 			coa_def_fascist_flag_trigger = yes
 		}
 	}	
+}
+
+PRO = {
+	flag_definition = {
+		coa = PRO_DEM
+		subject_canton = PRO_DEM
+		priority = 30
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				OR = {
+					has_law = law_type:law_presidential_republic
+					has_law = law_type:law_parliamentary_republic
+				}
+				
+				NOT = { has_law = law_type:law_oligarchy}
+				NOT = { has_law = law_type:law_single_party_state}
+				NOT = { has_law = law_type:law_autocracy}
+
+			}
+		} 
+	}
+	flag_definition = {
+		coa = PRO_THEO
+		subject_canton = PRO_THEO
+		priority = 30
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				OR = {
+					has_law = law_type:law_theocracy
+				
+				}
+				
+			
+
+			}
+		} 
+	}
+
+	flag_definition = {
+		coa = PRO_COM_FAS
+		subject_canton = PRO_COM_FAS
+		priority = 9999
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				OR = {
+					has_law = law_type:law_council_republic
+				
+				}
+				
+			
+
+			}
+		} 
+	}
+	flag_definition = {
+		coa = PRO_ANAR
+		subject_canton = PRO_ANAR
+		priority = 9999
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				OR = {
+					has_law = law_type:law_anarchy
+				
+				}
+				
+			
+
+			}
+		} 
+	}
+	flag_definition = {
+		coa = OSK
+		subject_canton = OSK
+		priority = 9999
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_variable = omsk_provisional 
+				
+			
+
+			}
+		} 
+	}
+
+
+	flag_definition = { 
+		coa = PRO_FAS
+		subject_canton = PRO_FAS
+		priority = 30
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				OR = {
+					has_law = law_type:law_presidential_republic
+					has_law = law_type:law_parliamentary_republic
+				}
+
+				OR = {
+					has_law = law_type:law_oligarchy
+					has_law = law_type:law_single_party_state
+					has_law = law_type:law_autocracy
+				}
+				
+				
+				
+
+			}
+		} 
+	}
+
+
+	flag_definition = { #TOMSK DEMOCRATIC
+		coa = PRO_DEM_TOM
+		subject_canton = PRO_DEM
+		priority = 50
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_variable = tom_provisional 
+				OR = {
+					has_law = law_type:law_presidential_republic
+					has_law = law_type:law_parliamentary_republic
+				}
+				
+				NOT = { has_law = law_type:law_oligarchy}
+				NOT = { has_law = law_type:law_single_party_state}
+				NOT = { has_law = law_type:law_autocracy}
+
+			}
+		} 
+	}
+
+	flag_definition = { #monarchy democratic
+		coa = PRO_MON_DEM
+		subject_canton = PRO_MON_DEM
+		priority = 30
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				OR = {
+					has_law = law_type:law_monarchy
+				}
+				
+				NOT = { has_law = law_type:law_oligarchy}
+				NOT = { has_law = law_type:law_single_party_state}
+				NOT = { has_law = law_type:law_autocracy}
+
+			}
+		} 
+	}
+
+	flag_definition = { #monarchy UNdemocratic
+		coa = PRO_MON_FAS
+		subject_canton = PRO_MON_FAS
+		priority = 30
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				OR = {
+					has_law = law_type:law_monarchy
+				}
+
+				OR = {
+					has_law = law_type:law_oligarchy
+					has_law = law_type:law_single_party_state
+					 has_law = law_type:law_autocracy
+				}
+				
+				
+
+			}
+		} 
+	}
+
+
 }
 
 GRE = { # Greece
@@ -5203,11 +5361,21 @@ KLM = { # Kalmykia
 
 
 
-FER = { # Kalmykia
+FER = { # Soviet Pacific Fleet
 	flag_definition = {
 		coa = FER
 		subject_canton = FER
 		priority = 999
+	}
+	flag_definition = { # Formed Far East
+		coa = RUS_soviet_union
+		priority = 3000
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_variable = ru_unite_far_east
+			}
+		}
 	}
 }
 
@@ -7627,30 +7795,71 @@ RUS = { # Russia
 		coa = RUS_soviet_union
 		priority = 1500 # need to override the DEFAULT
 		trigger = { 
-			coa_def_communist_flag_trigger = yes
+			exists = scope:actor
+			scope:actor = {
+				OR = {
+					has_variable = irk_form_russia
+					has_variable = fer_form_russia
+					has_variable = bry_form_russia
+				}
+			}
 		}
 	}
 	flag_definition = {
-		coa = RUS_fascist
-		subject_canton = RUS_fascist
-		priority = 1500
-		trigger = { 
-			coa_def_fascist_flag_trigger = yes
-		}
-	}	
-	flag_definition = {
-		coa = RUS_theocracy
-		subject_canton = RUS_theocracy
-		priority = 20
-		trigger = { 
-			coa_def_theocracy_flag_trigger = yes
-		}
-	}	
-	flag_definition = {
 		coa = RUS_nihilist
-		priority = 1500 # need to override the DEFAULT
+		priority = 25 # need to override the DEFAULT
 		trigger = { 
 			coa_def_nihilist_flag_trigger = yes
+		}
+	}
+	flag_definition = {
+		coa = RUS_mag
+		priority = 1500
+		trigger = { 
+			exists = scope:actor
+			scope:actor = {
+				has_variable = mag_form_russia
+			}
+		}
+	}
+	flag_definition = {
+		coa = DIV
+		priority = 1500
+		trigger = { 
+			exists = scope:actor
+			scope:actor = {
+				has_variable = div_form_russia
+			}
+		}
+	}
+	flag_definition = {
+		coa = RUS_yak
+		priority = 1500
+		trigger = { 
+			exists = scope:actor
+			scope:actor = {
+				has_variable = yak_form_russia
+			}
+		}
+	}
+	flag_definition = {
+		coa = RUS_amr
+		priority = 1500
+		trigger = { 
+			exists = scope:actor
+			scope:actor = {
+				has_variable = amr_form_russia
+			}
+		}
+	}
+	flag_definition = {
+		coa = RUS_cht
+		priority = 1500
+		trigger = { 
+			exists = scope:actor
+			scope:actor = {
+				has_variable = cht_form_russia
+			}
 		}
 	}
 }	
@@ -9396,6 +9605,16 @@ YAK = { # Yakutia
 		coa = YAK		
 		subject_canton = YAK
 		priority = 1
+	}
+	flag_definition = { # Formed Far East
+		coa = RUS_yak
+		priority = 3000
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_variable = ru_unite_far_east
+			}
+		}
 	}
 }
 

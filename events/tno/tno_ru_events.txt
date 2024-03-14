@@ -455,22 +455,6 @@ tno_ru_events.10 = { # Apply anything to all Russians at start of game
 
 }
 
-tno_ru_events.11 = { # Apply anything to all AI Russians
-    type = country_event
-    placement = ROOT
-	hidden = yes
-
-	duration = 5
-
-	immediate = {
-		add_journal_entry = { type = je_ru_tno_launch_attack }
-    }
-
-    trigger = {
-    }
-
-}
-
 tno_ru_events.12 = { # Apply anything to all AI far east
     type = country_event
     placement = ROOT
@@ -533,4 +517,38 @@ tno_ru_events.15 = { # Apply anything to all AI west russia
     trigger = {
     }
 
+}
+
+tno_ru_events.16 = { # Notification that the Russian Wars have begun
+    type = country_event
+	placement = ROOT
+	title = tno_ru_events.16.t
+	desc = tno_ru_events.16.d
+	flavor = tno_ru_events.16.f
+	icon = "gfx/interface/icons/invention_icons/wargaming.dds"
+
+	duration = 5
+
+	immediate = {
+		root = {
+			save_scope_as = this_nation
+		}
+    }
+    
+    trigger = {
+	}
+
+	event_image = {
+        texture = "gfx/event_pictures/event_pictures/russian_destruction.dds"
+    }
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	option = {
+		name = tno_ru_events.16.a
+		custom_tooltip = {
+			text = tno_ru_events.16.a.tt
+			add_journal_entry = { type = je_ru_tno_launch_attack }
+		}
+    }
 }

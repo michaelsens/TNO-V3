@@ -5,6 +5,22 @@
 ################################################################
 
 
+IRR = {
+	dynamic_country_name = {
+		name = "Republic of Iraq"
+		adjective = "Iraqi"
+		
+		is_main_tag_only = yes
+		priority = 1
+		
+		trigger = {
+			scope:actor = {
+				owns_entire_state_region = STATE_BAGHDAD
+			}
+		}
+	}
+}
+
 BHT = {
 	dynamic_country_name = {
 		name = "Republic of India"
@@ -896,7 +912,11 @@ JAP = { # Japan
 		trigger = {
 			exists = scope:actor
 			scope:actor = { 
-				has_law = law_type:law_autocracy
+				OR = {
+					has_law = law_type:law_autocracy
+					has_law = law_type:law_single_party_state
+				}
+				
 			}
 		}
 	}
@@ -931,7 +951,12 @@ GER = { # Germany
 				AND = {
 					exists = scope:actor
 					scope:actor = {
-						has_law = law_type:law_unitary_state
+						OR = {
+							has_law = law_type:law_unitary_state
+							has_law = law_type:law_single_party_state
+							has_law = law_type:law_autocracy
+						}
+						
 					}
 				}
 			}		
@@ -1581,7 +1606,7 @@ AFS = { #African Free State
 		
 		trigger = {
 			scope:actor = {
-				capital = { region = sr:region_congo }
+				capital = { region = sr:region_southern_africa }
 			}
 		}
 	}
@@ -1618,7 +1643,7 @@ AFS = { #African Free State
 		
 		trigger = {
 			scope:actor = {
-				capital = { region = sr:region_nile_basin }
+				capital = { region = sr:region_southern_africa }
 			}
 		}
 	}
@@ -1644,7 +1669,7 @@ AFS = { #African Free State
 		
 		trigger = {
 			scope:actor = {
-				capital = { region = sr:region_nile_basin }
+				capital = { region = sr:region_southern_africa }
 				any_state = {
 					owner = c:AFS
 					is_capital = yes

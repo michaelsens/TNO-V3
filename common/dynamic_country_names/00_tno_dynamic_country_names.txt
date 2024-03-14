@@ -435,7 +435,82 @@ RUS = {
 		trigger = {
 			exists = scope:actor
 			scope:actor = {
-				has_variable = irk_form_ussr 
+				OR = {
+					has_variable = irk_form_russia 
+					has_variable = fer_form_russia
+					has_variable = bry_form_russia  
+				}
+				
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = "Russian Confederation"
+		adjective = "Russian"
+
+		is_main_tag_only = yes
+		priority = 100000
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_variable = yak_form_russia
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = "Russian Empire"
+		adjective = "Russian"
+
+		is_main_tag_only = yes
+		priority = 100000
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_variable = cht_form_russia
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = "Russian National State"
+		adjective = "Russian"
+
+		is_main_tag_only = yes
+		priority = 100000
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_variable = amr_form_russia
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = "Russian National Republic"
+		adjective = "Russian"
+
+		is_main_tag_only = yes
+		priority = 100000
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_variable = mag_form_russia
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = "Divine Mandate of Russia"
+		adjective = "Russian"
+
+		is_main_tag_only = yes
+		priority = 100000
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_variable = div_form_russia
 			}
 		}
 	}
@@ -471,7 +546,7 @@ IRK = {
 		trigger = {
 			exists = scope:actor
 			scope:actor = {
-				has_variable = irk_form_far_east
+				has_variable = ru_unite_far_east
 			}
 		}
 	}
@@ -485,7 +560,92 @@ IRK = {
 		trigger = {
 			exists = scope:actor
 			scope:actor = {
-				has_variable = irk_form_ussr 
+				has_variable = irk_form_russia 
+			}
+		}
+	}
+}
+
+CHT = {
+	dynamic_country_name = {
+		name = "Far Eastern Imperial Realm"
+		adjective = "Far Eastern"
+
+		is_main_tag_only = yes
+		priority = 1000
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_variable = ru_unite_far_east
+			}
+		}
+	}
+}
+
+AMR = {
+	dynamic_country_name = {
+		name = "All-Russian Government of the Far East"
+		adjective = "Far Eastern"
+
+		is_main_tag_only = yes
+		priority = 1000
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_variable = ru_unite_far_east
+			}
+		}
+	}
+}
+
+MAG = {
+	dynamic_country_name = {
+		name = "Siberian National Republic"
+		adjective = "Siberian"
+
+		is_main_tag_only = yes
+		priority = 1000
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_variable = ru_unite_far_east
+			}
+		}
+	}
+}
+
+FER = {
+	dynamic_country_name = {
+		name = "Far Eastern Soviet Socialist Republic"
+		adjective = "Far Eastern"
+
+		is_main_tag_only = yes
+		priority = 1000
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_variable = ru_unite_far_east
+			}
+		}
+	}
+}
+
+YAK = {
+	dynamic_country_name = {
+		name = "Federation of Free Peoples"
+		adjective = "Far Eastern"
+
+		is_main_tag_only = yes
+		priority = 1000
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_variable = ru_unite_far_east
 			}
 		}
 	}
