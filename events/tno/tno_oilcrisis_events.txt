@@ -95,15 +95,10 @@ tno_oil_crisis.1 = {   #Yemen Civil War
 		create_diplomatic_play = {
 			name = oil_war
 			target_country = c:YED
-			type = dp_annex_war
+			type = dp_revolution
 			war = no
 			target_state = s:STATE_YEMEN.region_state:YED
 			escalation = 40
-			add_war_goal = {
-			 holder = c:YED
-			 type = annex_country
-			 target_state = s:STATE_YEMEN.region_state:YEM
-		   }
 	 }
 	}
 }		
@@ -474,6 +469,7 @@ tno_oil_crisis.2 = {   #Egypt Civil War
 		origin = c:EGY
 		state = s:STATE_DARFUR.region_state:EGY
 		state = s:STATE_KORDOFAN.region_state:EGY
+		state = s:STATE_EQUATORIA.region_state:EGY
 		province = p:x058803
 		province = p:x06007E
 		province = p:x06C449
@@ -561,49 +557,60 @@ tno_oil_crisis.2 = {   #Egypt Civil War
 	option = {
 		name = oil_flavor.2.a
 		default_option = yes
-	c:EGY = {
-		create_diplomatic_play = {
-			name = oil_war
-			target_country = c:EGR
-			type = dp_annex_war
-			war = no
-			target_state = s:STATE_MATRUH.region_state:EGR
-			escalation = 40
-			add_war_goal = {
-			 holder = c:EGR
-			 type = annex_country
-			 target_state = s:STATE_LOWER_EGYPT.region_state:EGY
-		 	  }
-		 }
-		create_diplomatic_play = {
-			name = oil_war
-			target_country = c:EGM
-			type = dp_annex_war
-			war = no
-			target_state = s:STATE_EGYPTIAN_DESERT.region_state:EGM
-			escalation = 40
-			add_war_goal = {
-				holder = c:EGM
-				type = annex_country
-				target_state = s:STATE_LOWER_EGYPT.region_state:EGY
-				 }
-		 }
+		c:EGY = {
+			create_diplomatic_play = {
+				name = oil_war
+				target_country = c:EGR
+				type = dp_revolution
+				war = no
+				target_state = s:STATE_MATRUH.region_state:EGR
+				escalation = 40
+			}
+			create_diplomatic_play = {
+				name = oil_war
+				target_country = c:EGM
+				type = dp_revolution
+				war = no
+				target_state = s:STATE_MATRUH.region_state:EGM
+				escalation = 40
+			}
+			create_diplomatic_play = {
+				name = oil_war
+				target_country = c:EGN
+				type = dp_annex_war
+				war = no
+				target_state = s:STATE_BLUE_NILE.region_state:EGN
+				escalation = 40
+			}
 		}
-	c:EGR = {
-		create_diplomatic_play = {
-			name = oil_war
-			target_country = c:EGM
-			type = dp_annex_war
-			war = no
-			target_state = s:STATE_EGYPTIAN_DESERT.region_state:EGM
-			escalation = 40
-			add_war_goal = {
-			 holder = c:EGM
-			 type = annex_country
-			 target_state = s:STATE_MATRUH.region_state:EGR
-		 	  }
-		 }
-	}
+		c:EGR = {
+			create_diplomatic_play = {
+				name = oil_war
+				target_country = c:EGM
+				type = dp_revolution
+				war = no
+				target_state = s:STATE_MATRUH.region_state:EGM
+				escalation = 40
+			}
+			create_diplomatic_play = {
+				name = oil_war
+				target_country = c:EGN
+				type = dp_annex_war
+				war = no
+				target_state = s:STATE_BLUE_NILE.region_state:EGN
+				escalation = 40
+			}
+		}
+		c:EGM = {
+			create_diplomatic_play = {
+				name = oil_war
+				target_country = c:EGN
+				type = dp_annex_war
+				war = no
+				target_state = s:STATE_BLUE_NILE.region_state:EGN
+				escalation = 40
+			}
+		}
 	}
 }		
 			
@@ -705,8 +712,8 @@ tno_oil_crisis.3 = {   #Iraq Civil War
       }
 	} 
 	create_country = { #Republic of Kurdistan
-		tag = IRR
-		origin = c:IRQ
+		tag = KUR
+		origin = c:IRR
 		province = p:x00B0A0
 		province = p:x029A2B
 		province = p:x07BB1D
@@ -753,6 +760,13 @@ tno_oil_crisis.3 = {   #Iraq Civil War
 			is_decaying = yes
 		}
 	}
+	c:IRR = {
+		add_modifier = {
+			name = destroyed_infrastructure
+			years = 6
+			is_decaying = yes
+		}
+	}
 	}
 	option = {
 		name = oil_flavor.3.a
@@ -760,101 +774,90 @@ tno_oil_crisis.3 = {   #Iraq Civil War
 	c:IRQ = {
 		create_diplomatic_play = {
 			name = oil_war
-			target_country = c:IRR
-			type = dp_annex_war
+			target_country = c:KUR
+			type = dp_revolution
 			war = no
-			target_state = s:STATE_MOSUL.region_state:IRR
+			target_state = s:STATE_MOSUL.region_state:KUR
 			escalation = 40
-			add_war_goal = {
-			 holder = c:IRR
-			 type = annex_country
-			 target_state = s:STATE_BAGHDAD.region_state:IRQ
-		   }
 		 }
 		 create_diplomatic_play = {
 			name = oil_war
 			target_country = c:IIR
-			type = dp_annex_war
+			type = dp_revolution
 			war = no
 			target_state = s:STATE_BAGHDAD.region_state:IIR
 			escalation = 40
-			add_war_goal = {
-			 holder = c:IIR
-			 type = annex_country
-			 target_state = s:STATE_BAGHDAD.region_state:IRQ
-		   }
 		 }
 		 create_diplomatic_play = {
 			name = oil_war
 			target_country = c:IRI
-			type = dp_annex_war
+			type = dp_revolution
 			war = no
 			target_state = s:STATE_BASRA.region_state:IRI
 			escalation = 40
-			add_war_goal = {
-			 holder = c:IRI
-			 type = annex_country
-			 target_state = s:STATE_BAGHDAD.region_state:IRQ
-		   }
 		 }
-		}
-	c:KUW = {
-		create_diplomatic_play = {
+		 create_diplomatic_play = {
 			name = oil_war
-			target_country = c:IRI
-			type = dp_annex_war
+			target_country = c:IRR
+			type = dp_revolution
 			war = no
-			target_state = s:STATE_BASRA.region_state:IRI
+			target_state = s:STATE_MOSUL.region_state:IRR
 			escalation = 40
-			add_war_goal = {
-			 holder = c:IRI
-			 type = annex_country
-			 target_state = s:STATE_BASRA.region_state:KUW
-		   }
 		 }
 		}
 	c:IIR = {
 		create_diplomatic_play = {
 			name = oil_war
 			target_country = c:IRI
-			type = dp_annex_war
+			type = dp_revolution
 			war = no
 			target_state = s:STATE_BASRA.region_state:IRI
 			escalation = 40
-			add_war_goal = {
-			 holder = c:IRI
-			 type = annex_country
-			 target_state = s:STATE_BAGHDAD.region_state:IIR
-		   }
+		 }
+		 create_diplomatic_play = {
+			name = oil_war
+			target_country = c:KUR
+			type = dp_revolution
+			war = no
+			target_state = s:STATE_MOSUL.region_state:KUR
+			escalation = 40
 		 }
 		 create_diplomatic_play = {
 			name = oil_war
 			target_country = c:IRR
-			type = dp_annex_war
+			type = dp_revolution
 			war = no
 			target_state = s:STATE_MOSUL.region_state:IRR
 			escalation = 40
-			add_war_goal = {
-			 holder = c:IRI
-			 type = annex_country
-			 target_state = s:STATE_BAGHDAD.region_state:IIR
-		   }
 		 }
-	 c:IRR = {
+	}
+	 c:KUR = {
 		create_diplomatic_play = {
 			name = oil_war
 			target_country = c:IRI
-			type = dp_annex_war
+			type = dp_revolution
 			war = no
 			target_state = s:STATE_BASRA.region_state:IRI
 			escalation = 40
-			add_war_goal = {
-			 holder = c:IRI
-			 type = annex_country
-			 target_state = s:STATE_MOSUL.region_state:IRR
-		   }
-		 }
 		}
+		create_diplomatic_play = {
+			name = oil_war
+			target_country = c:IRR
+			type = dp_revolution
+			war = no
+			target_state = s:STATE_MOSUL.region_state:IRR
+			escalation = 40
+		 }
+	}
+	c:IRI = {
+		create_diplomatic_play = {
+			name = oil_war
+			target_country = c:IRR
+			type = dp_revolution
+			war = no
+			target_state = s:STATE_MOSUL.region_state:IRR
+			escalation = 40
+		 }
 	}
 	}	
 }	
@@ -1005,138 +1008,88 @@ tno_oil_crisis.4 = {   #Iran Civil War
 		create_diplomatic_play = {
 			name = oil_war
 			target_country = c:PEF
-			type = dp_annex_war
+			type = dp_revolution
 			war = no
 			target_state = s:STATE_TABRIZ.region_state:PEF
 			escalation = 40
-			add_war_goal = {
-			 holder = c:PEF
-			 type = annex_country
-			 target_state = s:STATE_MAZANDARAN.region_state:PER
-		   }
 		 }
 		 create_diplomatic_play = {
 			name = oil_war
 			target_country = c:PES
-			type = dp_annex_war
+			type = dp_revolution
 			war = no
 			target_state = s:STATE_KHORASAN.region_state:PES
 			escalation = 40
-			add_war_goal = {
-			 holder = c:PES
-			 type = annex_country
-			 target_state = s:STATE_MAZANDARAN.region_state:PER
-		   }
 		 }
 		 create_diplomatic_play = {
 			name = oil_war
 			target_country = c:PED
-			type = dp_annex_war
+			type = dp_revolution
 			war = no
 			target_state = s:STATE_FARS.region_state:PED
 			escalation = 40
-			add_war_goal = {
-			 holder = c:PED
-			 type = annex_country
-			 target_state = s:STATE_MAZANDARAN.region_state:PER
-		   }
 		 }
 		 create_diplomatic_play = {
 			name = oil_war
 			target_country = c:PEI
-			type = dp_annex_war
+			type = dp_revolution
 			war = no
 			target_state = s:STATE_LARISTAN.region_state:PEI
 			escalation = 40
-			add_war_goal = {
-			 holder = c:PEI
-			 type = annex_country
-			 target_state = s:STATE_MAZANDARAN.region_state:PER
-		   }
 		 }
 		}
 	c:PED = { 
 		create_diplomatic_play = {
 			name = oil_war
 			target_country = c:PEF
-			type = dp_annex_war
+			type = dp_revolution
 			war = no
 			target_state = s:STATE_TABRIZ.region_state:PEF
 			escalation = 40
-			add_war_goal = {
-			 holder = c:PEF
-			 type = annex_country
-			 target_state = s:STATE_FARS.region_state:PED
-		   }
 		 }
 		 create_diplomatic_play = {
 			name = oil_war
 			target_country = c:PES
-			type = dp_annex_war
+			type = dp_revolution
 			war = no
 			target_state = s:STATE_KHORASAN.region_state:PES
 			escalation = 40
-			add_war_goal = {
-			 holder = c:PES
-			 type = annex_country
-			 target_state = s:STATE_FARS.region_state:PED
-		   }
 		 }
 		 create_diplomatic_play = {
 			name = oil_war
 			target_country = c:PEI
-			type = dp_annex_war
+			type = dp_revolution
 			war = no
 			target_state = s:STATE_LARISTAN.region_state:PEI
 			escalation = 40
-			add_war_goal = {
-			 holder = c:PEI
-			 type = annex_country
-			 target_state = s:STATE_FARS.region_state:PED
-		   }
 		 }
 		}
 	c:PES = {
 		create_diplomatic_play = {
 			name = oil_war
 			target_country = c:PEF
-			type = dp_annex_war
+			type = dp_revolution
 			war = no
 			target_state = s:STATE_TABRIZ.region_state:PEF
 			escalation = 40
-			add_war_goal = {
-			 holder = c:PEF
-			 type = annex_country
-			 target_state = s:STATE_KHORASAN.region_state:PES
-		   }
 		 }
 		 create_diplomatic_play = {
 			name = oil_war
 			target_country = c:PEI
-			type = dp_annex_war
+			type = dp_revolution
 			war = no
 			target_state = s:STATE_LARISTAN.region_state:PEI
 			escalation = 40
-			add_war_goal = {
-			 holder = c:PEI
-			 type = annex_country
-			 target_state = s:STATE_KHORASAN.region_state:PES
-		   }
 		 }
 		}
 	c:PEI = {
 		create_diplomatic_play = {
 			name = oil_war
 			target_country = c:PEF
-			type = dp_annex_war
+			type = dp_revolution
 			war = no
 			target_state = s:STATE_TABRIZ.region_state:PEF
 			escalation = 40
-			add_war_goal = {
-			 holder = c:PEF
-			 type = annex_country
-			 target_state = s:STATE_LARISTAN.region_state:PEI
-		   }
 		 }
 	}
 	}
@@ -1286,43 +1239,28 @@ tno_oil_crisis.5 = {   #Oman Civil War
 			create_diplomatic_play = {
 				name = oil_war
 				target_country = c:OMI
-				type = dp_annex_war
+				type = dp_revolution
 				war = no
 				target_state = s:STATE_OMAN.region_state:OMI
 				escalation = 40
-				add_war_goal = {
-				 holder = c:OMI
-				 type = annex_country
-				 target_state = s:STATE_OMAN.region_state:OMA
-			   }
 			 }
 			 create_diplomatic_play = {
 				name = oil_war
 				target_country = c:ODR
-				type = dp_annex_war
+				type = dp_revolution
 				war = no
 				target_state = s:STATE_OMAN.region_state:ODR
 				escalation = 40
-				add_war_goal = {
-				 holder = c:ODR
-				 type = annex_country
-				 target_state = s:STATE_OMAN.region_state:OMA
-			   }
 			 }
 		}
 		c:ODR = {
 			create_diplomatic_play = {
 				name = oil_war
 				target_country = c:OMI
-				type = dp_annex_war
+				type = dp_revolution
 				war = no
 				target_state = s:STATE_OMAN.region_state:OMI
 				escalation = 40
-				add_war_goal = {
-				 holder = c:OMI
-				 type = annex_country
-				 target_state = s:STATE_OMAN.region_state:ODR
-			   }
 			}
 		}
 	}
@@ -1477,25 +1415,10 @@ tno_oil_crisis.6 = {   #Saudi Civil War
 		create_diplomatic_play = {
 			name = oil_war
 			target_country = c:NEZ
-			type = dp_annex_war
+			type = dp_revolution
 			war = no
 			target_state = s:STATE_HEDJAZ.region_state:NEZ
 			escalation = 40
-			add_war_goal = {
-			 holder = c:NEJ
-			 type = conquer_state
-			 target_state = s:STATE_NEJD.region_state:NEZ
-		   }
-		   add_war_goal = {
-			holder = c:NEZ
-			type = conquer_state
-			target_state = s:STATE_NEJD.region_state:NEJ
-		  }
-		  add_war_goal = {
-			holder = c:NEZ
-			type = conquer_state
-			target_state = s:STATE_HAIL.region_state:NEJ
-	 	 }
 	 }
 	}
 }		
@@ -1618,15 +1541,10 @@ tno_oil_crisis.7 = {   #Syria Revolt
 		create_diplomatic_play = {
 			name = oil_war
 			target_country = c:SRY
-			type = dp_annex_war
+			type = dp_revolution
 			war = no
 			target_state = s:STATE_LEBANON.region_state:SRY
 			escalation = 40
-			add_war_goal = {
-			 holder = c:SRY
-			 type = annex_country
-			 target_state = s:STATE_PALESTINE.region_state:PAL
-		   }
 	 }
 	}
 }		
@@ -1649,7 +1567,6 @@ tno_oil_crisis.8 = {   #Trucian Coast/Qatar war
 	icon = "gfx/interface/icons/event_icons/event_default.dds"
 	
 	trigger = {
-		exists = c:BHN
 		exists = c:ABU
 		root = c:ABU
 	}	
@@ -1668,17 +1585,6 @@ tno_oil_crisis.8 = {   #Trucian Coast/Qatar war
 				years = 2
 			}
 		}
-		c:BHN = {
-		add_modifier = {
-				name = destroyed_infrastructure
-				years = 6
-				is_decaying = yes
-			}
-			add_modifier = {
-				name = civiL_war_never_ends
-				years = 2
-			}
-		}
 	}
 	option = {
 		name = oil_flavor.8.a
@@ -1686,16 +1592,11 @@ tno_oil_crisis.8 = {   #Trucian Coast/Qatar war
 		
 		create_diplomatic_play = {
 			name = oil_war
-			target_country = c:BHN
-			type = dp_annex_war
+			target_country = c:ITA
+			type = dp_independence
 			war = no
-			target_state = s:STATE_ABU_DHABI.region_state:BHN
+			target_state = s:STATE_LAZIO.region_state:ITA
 			escalation = 40
-			add_war_goal = {
-			 holder = c:BHN
-			 type = annex_country
-			 target_state = s:STATE_ABU_DHABI.region_state:ABU
-		   }
 		 }
 	}
 }
@@ -1726,8 +1627,6 @@ tno_oil_crisis.9 = {   #Superevent Oil Crisis (move to super events eventually)
 				state_region = s:STATE_LOWER_EGYPT
 				state_region = s:STATE_IRAKAJEMI
 				region = sr:region_russia
-				region = sr:region_west_siberia
-				region = sr:region_east_siberia
 			}
 		   }	
 		 }
@@ -2087,85 +1986,5 @@ tno_oil_crisis.13 = {  #Information for Majors
 	option = {
 		name = oil_flavor.13.a
 		default_option = yes
-	}
-}
-
-tno_oil_crisis.14 = {  #Country Collapse from not enough Oil
-	type = country_event
-    placement = ROOT
-
-	title = oil_flavor.14.t
-	desc = oil_flavor.14.d
-    flavor = oil_flavor.14.f
-	
-	event_image = {
-		texture  = "gfx/event_pictures/super_pictures/out_of_oil.dds"
-	}
-
-	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
-	on_opened_soundeffect = "event:/SFX/Events/middleeast/courtroom_upheaval" 
-
-	icon = "gfx/interface/icons/event_icons/event_default.dds"
-	
-	trigger = {
-	}	
-	
-	duration = 3
-
-	immediate = { 	
-	}
-	option = {
-		name = oil_flavor.14.a
-		default_option = yes
-		add_modifier = {
-			name = ran_out_of_oil
-			years = 10
-			is_decaying = yes
-		}
-	}
-}
-
-tno_oil_crisis.15 = {  #Winter of 1978
-	type = country_event
-    placement = ROOT
-
-	title = oil_flavor.15.t
-	desc = oil_flavor.15.d
-    flavor = oil_flavor.15.f
-	
-	event_image = {
-		texture  = "gfx/event_pictures/super_pictures/blizzard-of-1978.dds"
-	}
-
-	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
-	on_opened_soundeffect = "event:/SFX/Events/middleeast/courtroom_upheaval" 
-
-	icon = "gfx/interface/icons/event_icons/event_default.dds"
-	
-	trigger = {
-		OR = {
-			this ?= c:GER
-			this ?= c:USA
-			this ?= c:FRA
-			this ?= c:ENG
-			this ?= c:SWE
-			this ?= c:NOR
-			this ?= c:DEN
-			this ?= c:CAN
-			this ?= c:BGD
-		} 
-	}	
-	
-	duration = 3
-
-	immediate = { 	
-	}
-	option = {
-		name = oil_flavor.15.a
-		default_option = yes
-		change_variable = {
-			name = oil_crisis_oil_supply_var
-			add = -400
-		}
 	}
 }

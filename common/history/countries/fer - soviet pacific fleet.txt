@@ -8,11 +8,12 @@
 		activate_law = law_type:law_appointed_bureaucrats
 		activate_law = law_type:law_professional_army
 		activate_law = law_type:law_national_guard
-		activate_law = law_type:law_laissez_faire
+		activate_law = law_type:law_warlord_economy
 		activate_law = law_type:law_free_trade
 		activate_law = law_type:law_censorship
 		activate_law = law_type:law_restricted_child_labor
 		activate_law = law_type:law_women_in_the_workplace
+		activate_law = law_type:law_collectivized_agriculture
 
 		add_modifier = {
             name = modifier_developing_economy
@@ -26,12 +27,9 @@
         	name = russian_warlord
         }
         add_journal_entry = { type = je_ru_tno_launch_raid }
+        add_journal_entry = { type = je_ru_tno_unite_far_east }
         trigger_event = { id = tno_ru_events.10 }
 	    trigger_event = { id = tno_ru_events.12 days = 10 }
-
-		add_modifier = {
-			name = modifier_offensive_footing
-		}
 
     }
 }

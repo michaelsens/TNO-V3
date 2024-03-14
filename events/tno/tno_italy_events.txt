@@ -1,0 +1,335 @@
+namespace = tno_italy_events
+
+tno_italy_events.1 = { # Levent becomes isreal 
+	type = country_event
+    placement = ROOT
+ 
+    title = tno_italy_events.1
+    desc = tno_italy_events.1.d
+    flavor = tno_italy_events.1.f 
+
+   event_image = {
+		texture  = "gfx/event_pictures/super_pictures/lasthope.dds"
+	}
+    icon = "gfx/interface/icons/event_icons/event_fire.dds"
+
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 3
+
+    option = {  #isreal takes over all levant
+        name = tno_italy_events.1.a
+
+		add_primary_culture = cu:ashkenazi
+		remove_primary_culture = cu:bedouin
+		change_tag = ISR 
+
+		create_character = {
+			age = 34
+			culture = cu:ashkenazi
+			ruler = yes
+			interest_group = ig_landowners
+			ideology = ideology_fascist
+			traits = {
+				tactful
+				bigoted
+				expert_political_operator
+			}
+		}
+
+		create_country = { 
+			tag = EOT
+			origin = c:ISR
+	 
+			state = s:STATE_TRANSJORDAN.region_state:ISR
+		
+		 
+		   
+			
+			on_created = {
+				set_immune_to_revolutions = yes
+				}
+		} 
+		trigger_event = { id = tno_italy_events.3 days = 0 popup = yes }
+
+	}
+
+	option = { # levant becomes palistine and isreal, partition
+        name = tno_italy_events.1.b
+
+		add_primary_culture = cu:ashkenazi
+		remove_primary_culture = cu:bedouin
+		change_tag = ISR 
+		create_character = {
+
+
+			age = 34
+			culture = cu:ashkenazi
+			ruler = yes
+			interest_group = ig_landowners
+
+			traits = {
+				tactful
+				bigoted
+				expert_political_operator
+			}
+		}
+
+		create_country = { 
+		tag = PAL
+		origin = c:ISR
+
+		province = p:xE05060
+		province = p:x0EC997
+		province = p:xE0D060
+		province = p:x60D060
+		province = p:xC9CBC0
+  
+      
+			on_created = {
+            set_immune_to_revolutions = yes
+	        }
+	    } 
+
+		create_country = { 
+			tag = EOT
+			origin = c:ISR
+	 
+			state = s:STATE_TRANSJORDAN.region_state:ISR
+		
+		 
+		   
+			
+			on_created = {
+				set_immune_to_revolutions = yes
+				}
+		} 
+
+
+		create_country = { 
+				tag = LEB
+				origin = c:ISR
+		 
+				state = s:STATE_LEBANON.region_state:ISR
+			
+			 
+			   
+				
+				on_created = {
+					set_immune_to_revolutions = yes
+					}
+		} 
+		
+
+	}
+
+
+
+	
+
+
+	option = { # Communist revolution
+        name = tno_italy_events.1.c
+
+		
+		activate_law = law_type:law_council_republic
+		activate_law = law_type:law_command_economy
+
+		create_country = { 
+			tag = EOT
+			origin = c:PAL
+	 
+			state = s:STATE_TRANSJORDAN.region_state:PAL
+		
+		 
+		   
+			
+			on_created = {
+				set_immune_to_revolutions = yes
+				}
+		} 
+
+		trigger_event = { id = tno_italy_events.2 days = 0 popup = yes }
+
+
+		if = {
+			limit = {
+				has_diplomatic_pact = {
+					who = c:ITA
+					 type = reichskommissariat
+				}
+			}
+			remove_diplomatic_pact = {
+				country = c:ITA
+				type = reichskommissariat
+			}
+		}
+		if = {
+			limit = {
+				has_diplomatic_pact = {
+					who = c:ITA
+					 type = customs_union
+				}
+			}
+			remove_diplomatic_pact = {
+				country = c:ITA
+				type = customs_union
+			}
+		}
+		if = {
+			limit = {
+				has_diplomatic_pact = {
+					who = c:ITA
+					 type = puppet
+				}
+			}
+			remove_diplomatic_pact = {
+				country = c:ITA
+				type = puppet
+		   }
+		   
+		}
+		if = {
+			limit = {
+				has_diplomatic_pact = {
+					who = c:ITA
+					 type = dominion
+				}
+			}
+			remove_diplomatic_pact = {
+				country = c:ITA
+				type = dominion
+		   }
+		   
+		}
+		if = {
+			limit = {
+				has_diplomatic_pact = {
+					who = c:ITA
+					 type = protectorate
+				}
+			}
+			remove_diplomatic_pact = {
+				country = c:ITA
+				type = protectorate
+		   }
+		   
+		}
+
+		
+		
+
+
+	}
+
+}
+
+option = { # levant becomes palistine and isreal, partition
+        name = tno_italy_events.1.p
+
+		add_primary_culture = cu:ashkenazi
+		remove_primary_culture = cu:bedouin
+		change_tag = ISR 
+		create_character = {
+
+
+			age = 34
+			culture = cu:ashkenazi
+			ruler = yes
+			interest_group = ig_landowners
+
+			traits = {
+				bigoted
+			}
+		}
+
+		create_country = { 
+		tag = PAL
+		origin = c:ISR
+
+		province = p:xE05060
+		province = p:x0EC997
+		province = p:xE0D060
+		province = p:x60D060
+		province = p:xC9CBC0
+  
+      
+			on_created = {
+            set_immune_to_revolutions = yes
+	        }
+	    } 
+
+		create_country = { 
+			tag = EOT
+			origin = c:ISR
+	 
+			state = s:STATE_TRANSJORDAN.region_state:ISR
+		
+		 
+		   
+			
+			on_created = {
+				set_immune_to_revolutions = yes
+				}
+		} 
+
+
+		create_country = { 
+				tag = LEB
+				origin = c:ISR
+		 
+				state = s:STATE_LEBANON.region_state:ISR
+			
+			 
+			   
+				
+				on_created = {
+					set_immune_to_revolutions = yes
+					}
+		} 
+		
+
+	}
+
+
+tno_italy_events.2 = {
+    type = country_event
+    hidden = yes
+
+
+
+    trigger = {
+        exists = c:EOT
+        ROOT = c:PAL
+
+
+    }
+
+    immediate = {
+        create_diplomatic_pact = {
+            country = c:EOT
+            type = protectorate
+        }
+    }
+}
+
+tno_italy_events.3 = {
+    type = country_event
+    hidden = yes
+
+
+
+    trigger = {
+        exists = c:EOT
+        ROOT = c:ISR
+
+
+    }
+
+    immediate = {
+        create_diplomatic_pact = {
+            country = c:EOT
+            type = puppet
+        }
+    }
+}
