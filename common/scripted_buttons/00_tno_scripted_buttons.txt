@@ -2313,22 +2313,6 @@ je_ru_com_restore_ussr = {
 		#}
 		custom_tooltip = {
 			text = je_ru_com_restore_ussr_desc_tt_1
-			if = {
-				limit = {
-					c:IRK ?= THIS
-				}
-				set_variable = irk_form_russia
-			}else_if = {
-				limit = {
-					c:FER ?= THIS
-				}
-				set_variable = fer_form_russia
-			}else_if = {
-				limit = {
-					c:BRY ?= THIS
-				}
-				set_variable = bry_form_russia
-			}
 			change_tag = RUS
 		}
 		custom_tooltip = je_ru_restore_russia_tt_reclaim_position
@@ -4337,42 +4321,6 @@ je_ru_restore_russia = {
 					add_claim = c:RUS
 				}
 			}
-		}
-		if = {
-			limit = {
-				was_formed_from = IRK
-			}
-			set_variable = irk_form_russia
-		}else_if = {
-			limit = {
-				was_formed_from = CHT
-			}
-			set_variable = cht_form_russia
-		}else_if = {
-			limit = {
-				was_formed_from = AMR
-			}
-			set_variable = amr_form_russia
-		}else_if = {
-			limit = {
-				was_formed_from = MAG
-			}
-			set_variable = mag_form_russia
-		}else_if = {
-			limit = {
-				was_formed_from = DIV
-			}
-			set_variable = div_form_russia
-		}else_if = {
-			limit = {
-				was_formed_from = FER
-			}
-			set_variable = fer_form_russia
-		}else_if = {
-			limit = {
-				was_formed_from = YAK
-			}
-			set_variable = yak_form_russia
 		}
 	}
 }

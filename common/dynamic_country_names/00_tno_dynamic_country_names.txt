@@ -436,9 +436,9 @@ RUS = {
 			exists = scope:actor
 			scope:actor = {
 				OR = {
-					has_variable = irk_form_russia 
-					has_variable = fer_form_russia
-					has_variable = bry_form_russia  
+					was_formed_from = IRK
+					was_formed_from = FER
+					was_formed_from = BRY  
 				}
 				
 			}
@@ -454,7 +454,7 @@ RUS = {
 		trigger = {
 			exists = scope:actor
 			scope:actor = {
-				has_variable = yak_form_russia
+				was_formed_from = YAK
 			}
 		}
 	}
@@ -468,7 +468,7 @@ RUS = {
 		trigger = {
 			exists = scope:actor
 			scope:actor = {
-				has_variable = cht_form_russia
+				was_formed_from = CHT
 			}
 		}
 	}
@@ -482,7 +482,7 @@ RUS = {
 		trigger = {
 			exists = scope:actor
 			scope:actor = {
-				has_variable = amr_form_russia
+				was_formed_from = AMR
 			}
 		}
 	}
@@ -496,7 +496,7 @@ RUS = {
 		trigger = {
 			exists = scope:actor
 			scope:actor = {
-				has_variable = mag_form_russia
+				was_formed_from = MAG
 			}
 		}
 	}
@@ -510,7 +510,7 @@ RUS = {
 		trigger = {
 			exists = scope:actor
 			scope:actor = {
-				has_variable = div_form_russia
+				was_formed_from = DIV
 			}
 		}
 	}
@@ -547,20 +547,6 @@ IRK = {
 			exists = scope:actor
 			scope:actor = {
 				has_variable = ru_unite_far_east
-			}
-		}
-	}
-	dynamic_country_name = {
-		name = "Union of Soviet Socialist Republics"
-		adjective = "Soviet"
-
-		is_main_tag_only = yes
-		priority = 100000
-		
-		trigger = {
-			exists = scope:actor
-			scope:actor = {
-				has_variable = irk_form_russia 
 			}
 		}
 	}
