@@ -1,0 +1,149 @@
+je_cuba_ofn = { 
+
+    icon = "gfx/interface/icons/new_event_icons/cuba.dds"
+    group = je_group_historical_content
+	
+	 scripted_button = je_cuba_retake_west
+	 scripted_button = je_cuba_modfier.2
+
+	 
+
+    
+    complete = {
+        exists = c:CUB
+        NOT = { exists = c:CUB }
+		
+		
+	}
+
+	immediate = {
+
+		set_variable = {
+			name = cuba_instability
+			value = 0
+		}
+	}
+
+	on_monthly_pulse = {
+        effect = {
+			change_variable = {
+				name = cuba_instability
+				add = 2
+			}
+		}
+		random_events = {
+            20 = 0
+            5 = tno_usa_segregation_events.50
+			5 = tno_usa_segregation_events.51
+         
+        }
+    }
+
+	invalid = {
+		exists = c:CUB
+        NOT = { 
+		  
+			has_diplomatic_pact = {
+				who = c:CUB
+				type = protectorate
+				is_initiator = yes
+			}
+			has_diplomatic_pact = {
+				who = c:CUB
+				type = puppet
+				is_initiator = yes
+			}
+			has_diplomatic_pact = {
+				who = c:CUB
+				type = dominion
+				is_initiator = yes
+			}
+			has_diplomatic_pact = {
+				who = c:CUB
+				type = ofn_millgov
+				is_initiator = yes
+			}
+
+		}
+		NOT = {
+			exists = c:CUP
+		}
+	}
+
+	on_invalid = {
+		add_modifier = {
+            name = proxy_lost
+            months = 250
+            is_decaying = yes
+        
+        }
+		c:CUP ={
+			trigger_event = { id = tno_usa_events.53 }
+			}
+		
+	}
+
+	
+    current_value = {
+		value = root.var:cuba_instability
+	}
+
+   
+
+	fail = {
+		scope:journal_entry = {
+			is_goal_complete = yes
+		}
+
+		
+    }
+
+	goal_add_value = {
+		value = 100
+	}
+
+    on_fail = {
+        add_modifier = {
+            name = proxy_lost
+            months = 250
+            is_decaying = yes
+        
+        }
+
+        add_radicals = {
+            value = 0.05
+        }
+		c:CUP ={
+		trigger_event = { id = tno_usa_events.53 }
+		}
+    }
+
+    
+
+    progressbar = yes
+    
+    weight = 20
+
+	timeout = 3950
+
+	on_timeout = {
+		add_modifier = {
+            name = proxy_won
+            months = 250
+            is_decaying = yes
+        } 
+        
+        add_loyalists = {
+            value = 0.05
+        }
+
+		c:CUB ={
+			trigger_event = { id = tno_usa_events.54 }
+			}
+	}
+
+    
+    should_be_pinned_by_default = yes
+    
+}
+

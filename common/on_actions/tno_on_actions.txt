@@ -214,7 +214,326 @@
        
         }
          
+        if = {   # Cuban occupation
+        limit = {
+            exists = c:CUB
+            c:USA = {
+                OR = {
+                    has_diplomatic_pact = {
+                        who = c:CUB
+                        type = protectorate
+                        is_initiator = yes
+                    }
+                    has_diplomatic_pact = {
+                        who = c:CUB
+                        type = puppet
+                        is_initiator = yes
+                    }
+                    has_diplomatic_pact = {
+                        who = c:CUB
+                        type = dominion
+                        is_initiator = yes
+                    }
+                }
+                
+            }
+            NOT = { has_variable = cuba_occ_usa_var }
+        }
+        set_variable = cuba_occ_usa_var
+        c:USA = {   
+            trigger_event = { id = tno_usa_events.47 popup = yes }
+            trigger_event = { id = tno_usa_events.48 popup = yes }
+        }
+       
+        }
+
+        if = {   # Italians take kanem
+        limit = {
+            exists = c:WAD
+            c:ITA = {
+                OR = {
+                    has_diplomatic_pact = {
+                        who = c:WAD
+                        type = protectorate
+                        is_initiator = yes
+                    }
+                    has_diplomatic_pact = {
+                        who = c:WAD
+                        type = dominion
+                        is_initiator = yes
+                    }
+                    has_diplomatic_pact = {
+                        who = c:WAD
+                        type = puppet
+                        is_initiator = yes
+                    }
+                }
+                
+            }
+            NOT = { has_global_variable = italy_kannem }
+        }
+        set_global_variable = italy_kannem
+        c:ITA = {   
+            trigger_event = { id = tno_dynamic_puppets.1 popup = yes }
+            trigger_event = { id = tno_dynamic_puppets.2 popup = yes }
+            set_variable = italy_kannem
+           
+        }
+       
+        }
+
+        if = {   # Iberians in azwad
+        limit = {
+            exists = c:ADG
+            c:IBE = {
+                OR = {
+                    has_diplomatic_pact = {
+                        who = c:ADG
+                        type = protectorate
+                        is_initiator = yes
+                    }
+                    has_diplomatic_pact = {
+                        who = c:ADG
+                        type = dominion
+                        is_initiator = yes
+                    }
+                    has_diplomatic_pact = {
+                        who = c:ADG
+                        type = puppet
+                        is_initiator = yes
+                    }
+                }
+                
+            }
+            NOT = { has_global_variable = iberia_azwad }
+        }
+        set_global_variable = iberia_azwad
+        c:IBE = {   
+            trigger_event = { id = tno_dynamic_puppets.9 popup = yes }
+            trigger_event = { id = tno_dynamic_puppets.10 popup = yes }
+            set_variable = iberia_azwad
+           
+        }
+       
+        }
+
+        if = {   # German Hungary
+        limit = {
+            exists = c:HUN
+            c:GER = {
+                OR = {
+                    has_diplomatic_pact = {
+                        who = c:HUN
+                        type = protectorate
+                        is_initiator = yes
+                    }
+                    has_diplomatic_pact = {
+                        who = c:HUN
+                        type = dominion
+                        is_initiator = yes
+                    }
+                    has_diplomatic_pact = {
+                        who = c:HUN
+                        type = puppet
+                        is_initiator = yes
+                    }
+                }
+                
+            }
+            NOT = { has_global_variable = germany_hungary }
+        }
+        set_global_variable = germany_hungary
+        c:GER = {   
+            trigger_event = { id = tno_dynamic_puppets.3 popup = yes }
+            
+           
+        }
+       
+        }
+
+        if = {   # German slovakia
+        limit = {
+            exists = c:SLV
+            c:GER = {
+                OR = {
+                    has_diplomatic_pact = {
+                        who = c:SLV
+                        type = protectorate
+                        is_initiator = yes
+                    }
+                    has_diplomatic_pact = {
+                        who = c:SLV
+                        type = dominion
+                        is_initiator = yes
+                    }
+                    has_diplomatic_pact = {
+                        who = c:SLV
+                        type = puppet
+                        is_initiator = yes
+                    }
+                }
+                
+            }
+            NOT = { has_global_variable = germany_slovakia }
+        }
+        set_global_variable = germany_slovakia
+        c:GER = {   
+            trigger_event = { id = tno_dynamic_puppets.4 popup = yes }
+            
+           
+        }
+       
+        }
+
         
+        if = {   # Burgundian swisserland
+        limit = {
+            exists = c:SWI
+            c:BGD = {
+                OR = {
+                    has_diplomatic_pact = {
+                        who = c:SWI
+                        type = protectorate
+                        is_initiator = yes
+                    }
+                    has_diplomatic_pact = {
+                        who = c:SWI
+                        type = dominion
+                        is_initiator = yes
+                    }
+                    has_diplomatic_pact = {
+                        who = c:SWI
+                        type = puppet
+                        is_initiator = yes
+                    }
+                }
+                
+            }
+            NOT = { has_global_variable = burgundian_swiss }
+        }
+        set_global_variable = burgundian_swiss
+        c:BGD = {   
+            trigger_event = { id = tno_dynamic_puppets.5 popup = yes }
+            
+           
+        }
+       
+        }
+
+        if = {   # Burgundian netherlands
+        limit = {
+            exists = c:NET
+            c:BGD = {
+                OR = {
+                    has_diplomatic_pact = {
+                        who = c:NET
+                        type = protectorate
+                        is_initiator = yes
+                    }
+                    has_diplomatic_pact = {
+                        who = c:NET
+                        type = dominion
+                        is_initiator = yes
+                    }
+                    has_diplomatic_pact = {
+                        who = c:NET
+                        type = puppet
+                        is_initiator = yes
+                    }
+                }
+                
+            }
+            NOT = { has_global_variable = burgundian_netherlands }
+        }
+        set_global_variable = burgundian_netherlands
+        c:BGD = {   
+            trigger_event = { id = tno_dynamic_puppets.6 popup = yes }
+            
+           
+        }
+       
+        }
+
+        if = {   # Burgundian normandy
+        limit = {
+            exists = c:BGD
+            c:BGD = {
+               
+              owns_entire_state_region = STATE_NORMANDY
+            
+                
+            }
+            NOT = { has_global_variable = burgundian_normandy}
+        }
+        set_global_variable = burgundian_normandy
+        c:BGD = {   
+            trigger_event = { id = tno_dynamic_puppets.7 popup = yes }
+            
+           
+        }
+       
+        }
+
+       
+        if = {   # Germany establishes scandi
+        limit = {
+            exists = c:SWE
+            c:GER = {
+                OR = {
+                    has_diplomatic_pact = {
+                        who = c:SWE
+                        type = protectorate
+                        is_initiator = yes
+                    }
+                    has_diplomatic_pact = {
+                        who = c:SWE
+                        type = puppet
+                        is_initiator = yes
+                    }
+                    has_diplomatic_pact = {
+                        who = c:SWE
+                        type = dominion
+                        is_initiator = yes
+                    }
+                    has_diplomatic_pact = {
+                        who = c:SWE
+                        type = reichskommissariat
+                        is_initiator = yes
+                    }
+                }
+                OR = {
+                    has_diplomatic_pact = {
+                        who = c:NOR
+                        type = protectorate
+                        is_initiator = yes
+                    }
+                    has_diplomatic_pact = {
+                        who = c:NOR
+                        type = puppet
+                        is_initiator = yes
+                    }
+                    has_diplomatic_pact = {
+                        who = c:NOR
+                        type = dominion
+                        is_initiator = yes
+                    }
+                    has_diplomatic_pact = {
+                        who = c:NOR
+                        type = reichskommissariat
+                        is_initiator = yes
+                    }
+                }
+                
+            }
+            NOT = { has_global_variable = scandi_establish_var  }
+        }
+        set_global_variable = scandi_establish_var  
+        c:GER = {   
+            trigger_event = { id = tno_germany_events.43 popup = yes }
+           
+        }
+       
+        }
         
         #SAF
         if = {

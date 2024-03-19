@@ -2368,6 +2368,27 @@ NET = { # Netherlands
             }
         }
     }
+	dynamic_country_name = {
+		name = "SS-Staat Niederlande"
+		adjective = "Dutch"
+		
+		is_main_tag_only = yes
+		priority = 9999
+		
+		trigger = {
+			exists = c:BGD
+			c:BGD = {
+				OR = {
+					has_diplomatic_pact = {
+						who = c:NET
+						type = ordenstat
+						is_initiator = yes
+					}
+				}
+				
+			}
+		}
+	}
 }
 
 ONT = { # Ontario
