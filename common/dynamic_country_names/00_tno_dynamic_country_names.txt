@@ -873,6 +873,20 @@ RUS = {
 			}
 		}
 	}
+	dynamic_country_name = {
+		name = "Ascendancy of Homo Deus"
+		adjective = "Homo Deus"
+
+		is_main_tag_only = yes
+		priority = 100000
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				was_formed_from = CHR
+			}
+		}
+	}
 }
 
 NEJ = {
@@ -984,6 +998,37 @@ BRY = {
 		name = "Far Eastern Soviet Socialist Republic"
 		adjective = "Far Eastern"
 
+		is_main_tag_only = yes
+		priority = 1000
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_variable = ru_unite_far_east
+			}
+		}
+	}
+}
+
+CHR = {
+	dynamic_country_name = {
+		name = "Chernyshevsky"
+		adjective = "Chernyshevite"
+		is_main_tag_only = yes
+		priority = 10000
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				NOT = {
+					has_variable = ru_unite_far_east
+				}
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = "Bureau for the Proliferation of the Second Humanity"
+		adjective = "Homo Deus
 		is_main_tag_only = yes
 		priority = 1000
 		
