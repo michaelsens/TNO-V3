@@ -664,6 +664,15 @@ rus_yak = {
 	}
 }
 
+rus_chr = {
+	color = { 54 53 68 }
+	possible = {
+		exists = c:RUS
+		THIS = c:RUS
+		was_formed_from = CHR
+	}
+}
+
 rus_sov = {
 	color = "red_dark"
 	possible = {
@@ -684,6 +693,26 @@ fer_sov = {
 	possible = {
 		exists = c:FER
 		THIS = c:FER
+		has_variable = ru_unite_far_east
+	}
+}
+
+irk_sov = {
+	color = "red_dark"
+
+	possible = {
+		exists = c:IRK
+		THIS = c:IRK
+		has_variable = ru_unite_far_east
+	}
+}
+
+bry_sov = {
+	color = "red_dark"
+
+	possible = {
+		exists = c:BRY
+		THIS = c:BRY
 		has_variable = ru_unite_far_east
 	}
 }
@@ -714,6 +743,105 @@ kon_ofn = {
 				has_diplomatic_pact = {
 					who = c:KON
 					type = ofn_partner
+					is_initiator = yes
+				}
+			}
+		}
+	 }
+}
+
+hun_ger = {
+	color = {101  62 43 }
+	possible = {
+		exists = c:HUN
+		THIS = c:HUN
+		exists = c:GER
+		c:GER = {
+			OR = {
+				has_diplomatic_pact = {
+					who = c:HUN
+					type = protectorate
+					is_initiator = yes
+				}
+				has_diplomatic_pact = {
+					who = c:HUN
+					type = puppet
+					is_initiator = yes
+				}
+				has_diplomatic_pact = {
+					who = c:HUN
+					type = dominion
+					is_initiator = yes
+				}
+				has_diplomatic_pact = {
+					who = c:HUN
+					type = reichskommissariat
+					is_initiator = yes
+				}
+			}
+		}
+	 }
+}
+
+swi_bgd = {
+	color = {34 4 15 }
+	possible = {
+		exists = c:SWI
+		THIS = c:SWI
+		exists = c:BGD
+		c:BGD = {
+			OR = {
+				has_diplomatic_pact = {
+					who = c:SWI
+					type = protectorate
+					is_initiator = yes
+				}
+				has_diplomatic_pact = {
+					who = c:SWI
+					type = puppet
+					is_initiator = yes
+				}
+				has_diplomatic_pact = {
+					who = c:SWI
+					type = dominion
+					is_initiator = yes
+				}
+				has_diplomatic_pact = {
+					who = c:SWI
+					type = ordenstat
+					is_initiator = yes
+				}
+			}
+		}
+	 }
+}
+
+slv_ger = {
+	color = {74 33 0 }
+	possible = {
+		exists = c:SLV
+		THIS = c:SLV
+		exists = c:GER
+		c:GER = {
+			OR = {
+				has_diplomatic_pact = {
+					who = c:SLV
+					type = protectorate
+					is_initiator = yes
+				}
+				has_diplomatic_pact = {
+					who = c:SLV
+					type = puppet
+					is_initiator = yes
+				}
+				has_diplomatic_pact = {
+					who = c:SLV
+					type = dominion
+					is_initiator = yes
+				}
+				has_diplomatic_pact = {
+					who = c:SLV
+					type = reichskommissariat
 					is_initiator = yes
 				}
 			}

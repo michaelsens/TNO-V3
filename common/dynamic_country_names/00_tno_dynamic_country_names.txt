@@ -4,6 +4,149 @@
 ## DEFAULT COUNTRY NAMES EXAMPLE CAN BE USED WITH ANY COUNTRY ##
 ################################################################
 
+PRO = {
+	dynamic_country_name = {
+		name = "Soviet Provisional Union"
+		adjective = "Soviet Provisional Union"
+
+		is_main_tag_only = yes
+		priority = 10
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_variable = wst_provisional 
+			}
+		}
+	}
+	dynamic_country_name = {
+		name ="Russian National Reclamation Government"
+		adjective = "Russian National Reclamation Government"
+
+		is_main_tag_only = yes
+		priority = 10
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_variable = omsk_provisional 
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = "Ultravisionary Russian Federation"
+		adjective = "Ultravisionary Russian Federation"
+
+		is_main_tag_only = yes
+		priority = 10
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_variable = uvs_provisional 
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = "Divine Provisional Mandate"
+		adjective = "Divine Provisional Mandate"
+
+		is_main_tag_only = yes
+		priority = 10
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_variable = div_provisional 
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = "Holy Russia Provisional Empire"
+		adjective = "Holy Russia Provisional Empire"
+
+		is_main_tag_only = yes
+		priority = 10
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_variable = hre_provisional 
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = "Provisional Ultranationalist Brotherhood"
+		adjective = "Provisional Ultranationalist Brotherhood"
+
+		is_main_tag_only = yes
+		priority = 10
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_variable = hyp_provisional 
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = "Provisional Central Siberian Republic"
+		adjective = "Provisional Central Siberian Republic"
+
+		is_main_tag_only = yes
+		priority = 10
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_variable = tom_provisional 
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = "Provisional Russian Federation"
+		adjective = "Provisional Russian Federation"
+
+		is_main_tag_only = yes
+		priority = 10
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_variable = nvb_provisional 
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = "Provisional Romanovian Empire"
+		adjective = "Provisional Romanovian Empire"
+
+		is_main_tag_only = yes
+		priority = 10
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_variable = vya_provisional 
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = "Provisional Romanovian Empire"
+		adjective = "Provisional Romanovian Empire"
+
+		is_main_tag_only = yes
+		priority = 10
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_variable = amr_provisional 
+			}
+		}
+	}
+}
+
 KON = {	
 	dynamic_country_name = {
 		name = "East African Interim Unity Government"
@@ -140,6 +283,365 @@ KZA = {
 		}
 	}
 }
+
+CUB = {
+	dynamic_country_name = {
+		name = "OFN Provisional Government of Cuba"
+		adjective = "Mandate"
+		
+		is_main_tag_only = yes
+		priority = 9999
+		
+		trigger = {
+			exists = c:USA
+			c:USA = {
+				OR = {
+					has_diplomatic_pact = {
+						who = c:CUB
+						type = ofn_millgov
+						is_initiator = yes
+					}
+				}
+				
+			}
+		}
+	}
+}
+
+SCI = {
+	dynamic_country_name = {
+		name = "Reichskommissariat Skandinavien"
+		adjective = "Skandinavien"
+		
+		is_main_tag_only = yes
+		priority = 9999
+		
+		trigger = {
+			exists = c:GER
+			c:GER = {
+				OR = {
+					has_diplomatic_pact = {
+						who = c:SCI
+						type = reichskommissariat
+						is_initiator = yes
+					}
+				}
+				
+			}
+		}
+	}
+}
+
+HUN = {
+	dynamic_country_name = {
+		name = "Reichskommissariat Ungarn"
+		adjective = "Ungarn"
+		
+		is_main_tag_only = yes
+		priority = 9999
+		
+		trigger = {
+			exists = c:GER
+			c:GER = {
+				OR = {
+					has_diplomatic_pact = {
+						who = c:HUN
+						type = reichskommissariat
+						is_initiator = yes
+					}
+				}
+				
+			}
+		}
+	}
+}
+
+
+SLV = {
+	dynamic_country_name = {
+		name = "Reichskommissariat Slowakei"
+		adjective = "Slowakei"
+		
+		is_main_tag_only = yes
+		priority = 9999
+		
+		trigger = {
+			exists = c:GER
+			c:GER = {
+				OR = {
+					has_diplomatic_pact = {
+						who = c:SLV
+						type = reichskommissariat
+						is_initiator = yes
+					}
+				}
+				
+			}
+		}
+	}
+}
+
+SWI = {
+	dynamic_country_name = {
+		name = "SS-Staat Swiss"
+		adjective = "Swiss"
+		
+		is_main_tag_only = yes
+		priority = 9999
+		
+		trigger = {
+			exists = c:BGD
+			c:BGD = {
+				OR = {
+					has_diplomatic_pact = {
+						who = c:SWI
+						type = ordenstat
+						is_initiator = yes
+					}
+				}
+				
+			}
+		}
+	}
+}
+
+SEP = {
+	dynamic_country_name = {
+		name = "SS-Staat Normandie"
+		adjective = "Norman"
+		
+		is_main_tag_only = yes
+		priority = 9999
+		
+		trigger = {
+			exists = c:BGD
+			c:BGD = {
+				OR = {
+					has_diplomatic_pact = {
+						who = c:SEP
+						type = ordenstat
+						is_initiator = yes
+					}
+				}
+				
+			}
+		}
+	}
+}
+
+WAD = {
+	dynamic_country_name = {
+		name = "Forze italiane in Ciad"
+		adjective = "Italian"
+		
+		is_main_tag_only = yes
+		priority = 9999
+		
+		trigger = {
+			exists = c:ITA
+			c:ITA = {
+				OR = {
+					has_diplomatic_pact = {
+						who = c:WAD
+						type = millgov
+						is_initiator = yes
+					}
+				}
+				
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = "Ciad italian"
+		adjective = "Italian"
+		
+		is_main_tag_only = yes
+		priority = 5000
+		
+		trigger = {
+			exists = c:ITA
+			c:ITA = {
+				OR = {
+					has_diplomatic_pact = {
+						who = c:WAD
+						type = dominion
+						is_initiator = yes
+					}
+					has_diplomatic_pact = {
+						who = c:WAD
+						type = puppet
+						is_initiator = yes
+					}
+				}
+				
+			}
+		}
+	}
+}
+
+
+IRQ = {
+	dynamic_country_name = {
+		name = "Governatorato dell'Eufrate"
+		adjective = "Italian"
+		
+		is_main_tag_only = yes
+		priority = 9999
+		
+		trigger = {
+			exists = c:ITA
+			c:ITA = {
+				OR = {
+					has_diplomatic_pact = {
+						who = c:IRQ
+						type = millgov
+						is_initiator = yes
+					}
+				}
+				
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = "Governatorato dell'Eufrate"
+		adjective = "Italian"
+		
+		is_main_tag_only = yes
+		priority = 5000
+		
+		trigger = {
+			exists = c:ITA
+			c:ITA = {
+				OR = {
+					has_diplomatic_pact = {
+						who = c:IRQ
+						type = protectorate
+						is_initiator = yes
+					}
+					has_diplomatic_pact = {
+						who = c:IRQ
+						type = dominion
+						is_initiator = yes
+					}
+					has_diplomatic_pact = {
+						who = c:IRQ
+						type = puppet
+						is_initiator = yes
+					}
+				}
+				
+			}
+		}
+	}
+}
+
+YEM = {
+	dynamic_country_name = {
+		name = "Governatorato del Sarawat"
+		adjective = "Italian"
+		
+		is_main_tag_only = yes
+		priority = 9999
+		
+		trigger = {
+			exists = c:ITA
+			exists = c:YEM
+			c:ITA = {
+				OR = {
+					has_diplomatic_pact = {
+						who = c:YEM
+						type = millgov
+						is_initiator = yes
+					}
+				}
+				
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = "Governatorato del Sarawat"
+		adjective = "Italian"
+		
+		is_main_tag_only = yes
+		priority = 5000
+		
+		trigger = {
+			exists = c:ITA
+			exists = c:YEM
+			c:ITA = {
+				OR = {
+					has_diplomatic_pact = {
+						who = c:YEM
+						type = protectorate
+						is_initiator = yes
+					}
+					has_diplomatic_pact = {
+						who = c:YEM
+						type = dominion
+						is_initiator = yes
+					}
+					has_diplomatic_pact = {
+						who = c:YEM
+						type = puppet
+						is_initiator = yes
+					}
+				}
+				
+			}
+		}
+	}
+}
+
+ADG = {
+	dynamic_country_name = {
+		name = "Fuerzas ibéricas en Azwad"
+		adjective = "Iberian"
+		
+		is_main_tag_only = yes
+		priority = 9999
+		
+		trigger = {
+			exists = c:IBE
+			c:IBE = {
+				OR = {
+					has_diplomatic_pact = {
+						who = c:ADG
+						type = millgov
+						is_initiator = yes
+					}
+				}
+				
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = "Azwad Ibérico"
+		adjective = "Iberian"
+		
+		is_main_tag_only = yes
+		priority = 5000
+		
+		trigger = {
+			exists = c:IBE
+			c:IBE = {
+				OR = {
+					has_diplomatic_pact = {
+						who = c:ADG
+						type = dominion
+						is_initiator = yes
+					}
+					has_diplomatic_pact = {
+						who = c:ADG
+						type = puppet
+						is_initiator = yes
+					}
+				}
+				
+			}
+		}
+	}
+}
+
 
 RUS = {
 	dynamic_country_name = {
@@ -371,6 +873,20 @@ RUS = {
 			}
 		}
 	}
+	dynamic_country_name = {
+		name = "Ascendancy of Homo Deus"
+		adjective = "Homo Deus"
+
+		is_main_tag_only = yes
+		priority = 100000
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				was_formed_from = CHR
+			}
+		}
+	}
 }
 
 NEJ = {
@@ -403,7 +919,7 @@ IRK = {
 		trigger = {
 			exists = scope:actor
 			scope:actor = {
-				has_variable = irk_form_far_east
+				has_variable = ru_unite_far_east
 			}
 		}
 	}
@@ -465,6 +981,54 @@ FER = {
 		name = "Far Eastern Soviet Socialist Republic"
 		adjective = "Far Eastern"
 
+		is_main_tag_only = yes
+		priority = 1000
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_variable = ru_unite_far_east
+			}
+		}
+	}
+}
+
+BRY = {
+	dynamic_country_name = {
+		name = "Far Eastern Soviet Socialist Republic"
+		adjective = "Far Eastern"
+
+		is_main_tag_only = yes
+		priority = 1000
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_variable = ru_unite_far_east
+			}
+		}
+	}
+}
+
+CHR = {
+	dynamic_country_name = {
+		name = "Chernyshevsky"
+		adjective = "Chernyshevite"
+		is_main_tag_only = yes
+		priority = 10000
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				NOT = {
+					has_variable = ru_unite_far_east
+				}
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = "Bureau for the Proliferation of the Second Humanity"
+		adjective = "Homo Deus
 		is_main_tag_only = yes
 		priority = 1000
 		
