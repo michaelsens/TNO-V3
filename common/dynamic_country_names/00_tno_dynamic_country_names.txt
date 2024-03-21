@@ -645,146 +645,6 @@ ADG = {
 
 RUS = {
 	dynamic_country_name = {
-		name = "Soviet Union"
-		adjective = "Soviet Union"
-
-		is_main_tag_only = yes
-		priority = 10
-		
-		trigger = {
-			exists = scope:actor
-			scope:actor = {
-				has_variable = wst_provisional 
-			}
-		}
-	}
-	dynamic_country_name = {
-		name ="National Russian Government"
-		adjective = "National Russian Government"
-
-		is_main_tag_only = yes
-		priority = 10
-		
-		trigger = {
-			exists = scope:actor
-			scope:actor = {
-				has_variable = omsk_provisional 
-			}
-		}
-	}
-	dynamic_country_name = {
-		name = "Ultravisionary Russian Federation"
-		adjective = "Ultravisionary Russian Federation"
-
-		is_main_tag_only = yes
-		priority = 10
-		
-		trigger = {
-			exists = scope:actor
-			scope:actor = {
-				has_variable = uvs_provisional 
-			}
-		}
-	}
-	dynamic_country_name = {
-		name = "Divine Mandate of Russia"
-		adjective = "Divine Mandate of Russia"
-
-		is_main_tag_only = yes
-		priority = 10
-		
-		trigger = {
-			exists = scope:actor
-			scope:actor = {
-				has_variable = div_provisional 
-			}
-		}
-	}
-	dynamic_country_name = {
-		name = "Holy Russia Empire"
-		adjective = "Holy Russia Empire"
-
-		is_main_tag_only = yes
-		priority = 10
-		
-		trigger = {
-			exists = scope:actor
-			scope:actor = {
-				has_variable = hre_provisional 
-			}
-		}
-	}
-	dynamic_country_name = {
-		name = "Ultranationalist Russian Empire"
-		adjective = "Ultranationalist Russian Empire"
-
-		is_main_tag_only = yes
-		priority = 10
-		
-		trigger = {
-			exists = scope:actor
-			scope:actor = {
-				has_variable = hyp_provisional 
-			}
-		}
-	}
-	dynamic_country_name = {
-		name = "Russian Republic"
-		adjective = "Russian Republic"
-
-		is_main_tag_only = yes
-		priority = 10
-		
-		trigger = {
-			exists = scope:actor
-			scope:actor = {
-				has_variable = tom_provisional 
-			}
-		}
-	}
-	dynamic_country_name = {
-		name = "Russian Federation"
-		adjective = "Russian Federation"
-
-		is_main_tag_only = yes
-		priority = 10
-		
-		trigger = {
-			exists = scope:actor
-			scope:actor = {
-				has_variable = nvb_provisional 
-			}
-		}
-	}
-	dynamic_country_name = {
-		name = "Romanovian Empire"
-		adjective = "Romanovian Empire"
-
-		is_main_tag_only = yes
-		priority = 10
-		
-		trigger = {
-			exists = scope:actor
-			scope:actor = {
-				has_variable = vya_provisional 
-			}
-		}
-	}
-	dynamic_country_name = {
-		name = "Romanovian Empire"
-		adjective = "Romanovian Empire"
-
-		is_main_tag_only = yes
-		priority = 10
-		
-		trigger = {
-			exists = scope:actor
-			scope:actor = {
-				has_variable = amr_provisional 
-			}
-		}
-	}
-	dynamic_country_name = {
 		name = "Union of Soviet Socialist Republics"
 		adjective = "Soviet"
 
@@ -798,8 +658,26 @@ RUS = {
 					was_formed_from = IRK
 					was_formed_from = FER
 					was_formed_from = BRY  
+					was_formed_from = TUV
 				}
 				
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = "Russian Federation"
+		adjective = "Russian"
+
+		is_main_tag_only = yes
+		priority = 100000
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				OR = {
+					was_formed_from = NVB
+					was_formed_from = KRK
+				}
 			}
 		}
 	}
@@ -828,6 +706,20 @@ RUS = {
 			exists = scope:actor
 			scope:actor = {
 				was_formed_from = CHT
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = "Kingdom of Rus"
+		adjective = "Russian"
+
+		is_main_tag_only = yes
+		priority = 100000
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				was_formed_from = KEM
 			}
 		}
 	}
@@ -887,6 +779,48 @@ RUS = {
 			}
 		}
 	}
+	dynamic_country_name = {
+		name = "Republic of Russia"
+		adjective = "Russian"
+
+		is_main_tag_only = yes
+		priority = 100000
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				was_formed_from = TOM
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = "Holy Order of Russia"
+		adjective = "Russian"
+
+		is_main_tag_only = yes
+		priority = 100000
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				was_formed_from = OYR
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = "Russian Free Territory"
+		adjective = "Russian"
+
+		is_main_tag_only = yes
+		priority = 100000
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				was_formed_from = SBA
+			}
+		}
+	}
 }
 
 NEJ = {
@@ -920,6 +854,125 @@ IRK = {
 			exists = scope:actor
 			scope:actor = {
 				has_variable = ru_unite_far_east
+			}
+		}
+	}
+}
+
+TUV = {
+	dynamic_country_name = {
+		name = "Central Siberian Soviet Socialist Republic"
+		adjective = "Central Siberian"
+
+		is_main_tag_only = yes
+		priority = 1000
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_variable = ru_unite_central_sib
+			}
+		}
+	}
+}
+
+SBA = {
+	dynamic_country_name = {
+		name = "Siberian Free Territory"
+		adjective = "Siberian"
+
+		is_main_tag_only = yes
+		priority = 1000
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_variable = ru_unite_central_sib
+			}
+		}
+	}
+}
+
+TOM = {
+	dynamic_country_name = {
+		name = "Central Siberian Republic"
+		adjective = "Central Siberian"
+
+		is_main_tag_only = yes
+		priority = 1000
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_variable = ru_unite_central_sib
+			}
+		}
+	}
+}
+
+NVB = {
+	dynamic_country_name = {
+		name = "Central Siberian Federation"
+		adjective = "Central Siberian"
+
+		is_main_tag_only = yes
+		priority = 1000
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_variable = ru_unite_central_sib
+			}
+		}
+	}
+}
+
+KEM = {
+	dynamic_country_name = {
+		name = "Great Principality of Central Siberia"
+		adjective = "Central Siberian"
+
+		is_main_tag_only = yes
+		priority = 1000
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_variable = ru_unite_central_sib
+			}
+		}
+	}
+}
+
+KRK = {
+	dynamic_country_name = {
+		name = "Republic of Central Siberia"
+		adjective = "Central Siberian"
+
+		is_main_tag_only = yes
+		priority = 1000
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_variable = ru_unite_central_sib
+			}
+		}
+	}
+}
+
+OYR = {
+	dynamic_country_name = {
+		name = "Central Siberian Theocratic Administration"
+		adjective = "Central Siberian"
+
+		is_main_tag_only = yes
+		priority = 1000
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_variable = ru_unite_central_sib
 			}
 		}
 	}
