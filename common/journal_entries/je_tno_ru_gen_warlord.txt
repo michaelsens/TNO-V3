@@ -285,6 +285,58 @@ je_ru_tno_unite_far_east = {
     
 }
 
+je_ru_tno_unite_central_sib = { 
+
+    icon = "gfx/interface/icons/war_goals/return_state.dds"
+    group = je_group_historical_content
+    scripted_button = je_ru_unite_central_sib
+
+    immediate = {
+        c:TOM = {
+            save_scope_as = tom_nation
+        }
+    }
+    
+    complete = {
+        owns_entire_state_region = STATE_TOMSK
+        owns_entire_state_region = STATE_TUVA
+
+        custom_tooltip = {
+            text = je_ru_tno_owns_tomsk
+            any_scope_state = {
+                state_region = s:STATE_UPPER_YENISEYSK
+            }
+        }
+
+        hidden_trigger = {
+            has_variable = ru_unite_central_sib
+        }
+    }
+
+    on_complete = {
+    }
+
+    on_monthly_pulse = {
+    }
+
+    current_value = {
+        
+    }
+
+
+    goal_add_value = {
+        
+    }
+
+    progressbar = no
+    
+    weight = 1000
+
+    
+    should_be_pinned_by_default = yes
+    
+}
+
 je_ru_tno_restore_russia = { 
 
     icon = "gfx/interface/icons/tno_event_icons/reunify_russia.dds"

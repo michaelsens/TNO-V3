@@ -3717,6 +3717,16 @@ AVI = { # AVAITORS
 	}
 }
 
+TUV = {
+	flag_definition = { # starting flagg
+		coa = TUV_start
+		priority = 20000
+		trigger = {
+			exists = scope:actor
+		}
+	}
+}
+
 GOR = { # gorky
 	flag_definition = { # starting flagg
 		coa = GOR_start
@@ -8035,6 +8045,7 @@ RUS = { # Russia
 					was_formed_from = IRK
 					was_formed_from = FER
 					was_formed_from = BRY
+					was_formed_from = TUV
 				}
 			}
 		}
@@ -8044,6 +8055,26 @@ RUS = { # Russia
 		priority = 25 # need to override the DEFAULT
 		trigger = { 
 			coa_def_nihilist_flag_trigger = yes
+		}
+	}
+	flag_definition = {
+		coa = RUS_tom
+		priority = 1500
+		trigger = { 
+			exists = scope:actor
+			scope:actor = {
+				was_formed_from = TOM
+			}
+		}
+	}
+	flag_definition = {
+		coa = RUS_sba
+		priority = 2500
+		trigger = { 
+			exists = scope:actor
+			scope:actor = {
+				was_formed_from = SBA
+			}
 		}
 	}
 	flag_definition = {
@@ -8103,6 +8134,39 @@ RUS = { # Russia
 			exists = scope:actor
 			scope:actor = {
 				was_formed_from = CHR
+			}
+		}
+	}
+	flag_definition = {
+		coa = KEM
+		priority = 1500
+		trigger = { 
+			exists = scope:actor
+			scope:actor = {
+				was_formed_from = KEM
+			}
+		}
+	}
+	flag_definition = {
+		coa = RUS_gen
+		priority = 1500
+		trigger = { 
+			exists = scope:actor
+			scope:actor = {
+				OR = {
+					was_formed_from = NVB
+					was_formed_from = KRK
+				}
+			}
+		}
+	}
+	flag_definition = {
+		coa = RUS_theo
+		priority = 1500
+		trigger = { 
+			exists = scope:actor
+			scope:actor = {
+				was_formed_from = OYR
 			}
 		}
 	}
