@@ -9842,32 +9842,17 @@ VNZ = { # Venezuela
 		}
 	}	
 	flag_definition = {
-		coa = VNZ_republic
-		subject_canton = VNZ_republic
-		allow_overlord_canton = yes		
-		coa_with_overlord_canton = VNZ_subject			
-		priority = 10
-		trigger = { 
-			coa_def_republic_flag_trigger = yes
-		}
-	}		
-	flag_definition = {
-		coa = VNZ_dictatorship
-		subject_canton = VNZ_dictatorship
-		priority = 20
+		coa = VNZ
+		priority = 1500
 		trigger = {
-			coa_def_dictatorship_flag_trigger = yes
-		}
-	}	
-	flag_definition = {
-		coa = VNZ_oligarchy
-		subject_canton = VNZ_oligarchy
-		allow_overlord_canton = yes		
-		coa_with_overlord_canton = VNZ_subject			
-		priority = 20
-		trigger = {
-			coa_def_oligarchy_flag_trigger = yes
-		}
+			scope:actor = {
+				exists = scope:actor
+				OR = {
+					has_law = law_type:law_presidential_republic
+					has_law = law_type:law_parliamentary_republic
+				}
+			}
+	}
 	}	
 	flag_definition = {
 		coa = VNZ_communist
@@ -9876,20 +9861,6 @@ VNZ = { # Venezuela
 			coa_def_communist_flag_trigger = yes
 		}
 	}		
-	flag_definition = {
-		coa = VNZ_subject_SPA
-		priority = 50
-		trigger = { 
-			coa_def_spanish_ensign_trigger = yes
-		}
-	}
-	flag_definition = {
-		coa = VNZ_subject_USA
-		priority = 50
-		trigger = { 
-			coa_def_american_ensign_trigger = yes
-		}
-	}	
 }
 
 WAL = { # Wallachia
