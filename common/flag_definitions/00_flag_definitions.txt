@@ -4729,6 +4729,31 @@ HUN = { # Hungary
 	}	
 }	
 
+NAP = { 
+	flag_definition = {
+		coa = NAP_JAP
+		trigger = {
+			exists = c:JAP
+			exists = c:NAP
+			c:JAP = {
+				OR = {
+					has_diplomatic_pact = {
+						who = c:NAP
+						type = japanese_military_administration
+						is_initiator = yes
+					}
+				}
+				
+			}
+		}
+		coa_with_overlord_canton = CUB_subject
+		allow_overlord_canton = no
+		priority = 5000	
+	}
+	
+}	
+
+
 HYD = { # Hyderabad
 	flag_definition = {
 		coa = HYD

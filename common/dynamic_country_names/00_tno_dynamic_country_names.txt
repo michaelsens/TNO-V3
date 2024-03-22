@@ -592,6 +592,31 @@ YEM = {
 	}
 }
 
+NAP = {
+	dynamic_country_name = {
+		name = "Nanpo Gunseikan"
+		adjective = "Gunseikan"
+		
+		is_main_tag_only = yes
+		priority = 9999
+		
+		trigger = {
+			exists = c:JAP
+			c:JAP = {
+				OR = {
+					has_diplomatic_pact = {
+						who = c:NAP
+						type = japanese_military_administration
+						is_initiator = yes
+					}
+				}
+				
+			}
+		}
+	}
+	
+}
+
 ADG = {
 	dynamic_country_name = {
 		name = "Fuerzas ibéricas en Azwad"
