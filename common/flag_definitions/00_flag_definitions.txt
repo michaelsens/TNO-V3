@@ -2689,55 +2689,40 @@ AIR = {
 		allow_overlord_canton = no
 		priority = 5500
 	}
+}
+
+SGU = {
 	flag_definition = {
-		coa = ADG_THEO_AUTOCRATIC
+		coa = SGU_COM
 		trigger = {
 			scope:actor = {
 				exists = scope:actor
-				has_law = law_type:law_theocracy
-				OR = {
-					has_law = law_type:law_autocracy
-					has_law = law_type:law_oligarchy
-					has_law = law_type:law_single_party_state
-					has_law = law_type:law_technocracy
-				}
+				has_law = law_type:law_council_republic
 			}	
 		}
 		coa_with_overlord_canton = CUB_subject
 		allow_overlord_canton = no
-		priority = 5000	
+		priority = 90000
 	}
+
+}
+
+SOK = {
 	flag_definition = {
-		coa = ADG_REP
+		coa = SOK_IBO
 		trigger = {
-			exists = c:ADG
-			c:IBE = {
-				OR = {
-					has_diplomatic_pact = {
-						who = c:ADG
-						type = millgov
-						is_initiator = yes
-					}
-					has_diplomatic_pact = {
-						who = c:ADG
-						type = puppet
-						is_initiator = yes
-					}
-					has_diplomatic_pact = {
-						who = c:ADG
-						type = dominion
-						is_initiator = yes
-					}
-				}
-				
-			}
+			scope:actor = {
+				exists = scope:actor
+				has_law = law_type:law_council_republic
+			}	
 		}
 		coa_with_overlord_canton = CUB_subject
 		allow_overlord_canton = no
-		priority = 5000	
+		priority = 90000
 	}
-	
+
 }
+
 
 
 CYP = { # Cyprus
