@@ -2649,6 +2649,96 @@ ADG = {
 	
 }
 
+AIR = {
+	flag_definition = {
+		coa = AIR_REP
+		trigger = {
+			scope:actor = {
+				exists = scope:actor
+				OR = {
+					has_law = law_type:law_presidential_republic
+					has_law = law_type:law_parliamentary_republic
+				}
+			}	
+		}
+		coa_with_overlord_canton = CUB_subject
+		allow_overlord_canton = no
+		priority = 5000	
+	}
+	flag_definition = {
+		coa = AIR_ETHNO
+		trigger = {
+			scope:actor = {
+				exists = scope:actor
+				has_law = law_type:law_ethnostate
+			}	
+		}
+		coa_with_overlord_canton = CUB_subject
+		allow_overlord_canton = no
+		priority = 5500
+	}
+	flag_definition = {
+		coa = AIR_COM
+		trigger = {
+			scope:actor = {
+				exists = scope:actor
+				has_law = law_type:law_council_republic
+			}	
+		}
+		coa_with_overlord_canton = CUB_subject
+		allow_overlord_canton = no
+		priority = 5500
+	}
+	flag_definition = {
+		coa = ADG_THEO_AUTOCRATIC
+		trigger = {
+			scope:actor = {
+				exists = scope:actor
+				has_law = law_type:law_theocracy
+				OR = {
+					has_law = law_type:law_autocracy
+					has_law = law_type:law_oligarchy
+					has_law = law_type:law_single_party_state
+					has_law = law_type:law_technocracy
+				}
+			}	
+		}
+		coa_with_overlord_canton = CUB_subject
+		allow_overlord_canton = no
+		priority = 5000	
+	}
+	flag_definition = {
+		coa = ADG_REP
+		trigger = {
+			exists = c:ADG
+			c:IBE = {
+				OR = {
+					has_diplomatic_pact = {
+						who = c:ADG
+						type = millgov
+						is_initiator = yes
+					}
+					has_diplomatic_pact = {
+						who = c:ADG
+						type = puppet
+						is_initiator = yes
+					}
+					has_diplomatic_pact = {
+						who = c:ADG
+						type = dominion
+						is_initiator = yes
+					}
+				}
+				
+			}
+		}
+		coa_with_overlord_canton = CUB_subject
+		allow_overlord_canton = no
+		priority = 5000	
+	}
+	
+}
+
 
 CYP = { # Cyprus
 	flag_definition = {
