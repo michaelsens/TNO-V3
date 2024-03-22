@@ -196,6 +196,48 @@ strasserite_black = {
 	}
 }
 
+swabian_red = {
+	color = { 252	 24 12	 }
+
+	possible = {
+		exists = c:SOK
+		THIS = c:SOK
+
+		has_law = law_type:law_council_republic
+	}
+}
+
+brazilian_dictatorship = {
+	color = { 24 70 31}
+
+	possible = {
+		exists = c:BRZ
+		THIS = c:BRZ
+		OR = {
+		has_law = law_type:law_autocracy
+		has_law = law_type:law_oligarchy
+		has_law = law_type:law_single_party_state
+		}
+		NOT = {
+			has_law = law_type:law_council_republic
+		}
+	}
+}
+
+brazilian_communism= {
+	color = { 0 43 0}
+
+	possible = {
+		exists = c:BRZ
+		THIS = c:BRZ
+		
+
+		has_law = law_type:law_council_republic
+		
+	}
+}
+
+
 corprate_goungdong = {
 	color = { 130 26 32 }
 
