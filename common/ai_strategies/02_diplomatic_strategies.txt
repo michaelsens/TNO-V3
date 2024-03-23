@@ -184,6 +184,160 @@
 	}
 }
 
+ai_strategy_free_africa = {
+	icon = "gfx/interface/icons/ai_strategy_icons_tno/unification.dds"
+	
+	type = diplomatic
+	
+	undesirable_infamy_level = {
+		value = 150
+	}
+
+	possible = {
+		c:IBO ?= THIS
+
+	}
+	
+	unacceptable_infamy_level = {
+		value = 200
+	}
+	
+	ideological_opinion_effect_mult = {
+		value = 0.5
+	}
+	
+	wargoal_maneuvers_fraction = {
+		value = 0.2
+	}	
+	
+	
+	
+	diplomatic_play_neutrality = {
+		value = 0
+	}
+	
+	diplomatic_play_boldness = {
+		value = 100
+	}
+
+	obligation_value = {
+		value = 0
+	
+		
+	}	
+
+	recklessness = {
+		value = 25.0
+	}
+	
+	aggression = {
+		value = 1.0
+		
+		if = {
+			limit = { 
+				scope:target_country = {			
+					country_has_primary_culture = cu:mande
+				}
+			}
+			add = 50
+		}
+
+		# Less aggressive against countries we're just antagonistic against, rather than belligerent/domineering
+		if = {
+			limit = {
+				has_attitude = {
+					who = scope:target_country
+					attitude = antagonistic
+				}					
+			}
+			multiply = 2.5
+		}	
+		if = {
+			limit = {
+				NOT = {
+					is_adjacent_to_country = scope:target_country
+				}
+			}
+			multiply = 0
+		}		
+	}
+
+	building_group_weights = {
+		bg_army = 2.5
+	}
+	
+	wargoal_scores = {
+		conquer_state = {
+			if = {
+				limit = {
+					scope:target_state = {
+						state_region = {
+							is_homeland = cu:mande
+						}
+					}
+					can_reach_target_state = yes					
+				}
+				add = 400
+			}
+		}
+		return_state = {
+			if = {
+				limit = {
+					scope:target_state = {
+						state_region = {
+							is_homeland = cu:mande
+						}	
+					}
+					can_reach_target_state = yes
+				}
+				add = 500
+			}
+		}		
+		
+	}
+	
+	secret_goal_scores = {
+		dominate = {		
+			if = {
+				limit = {
+					scope:target_country = {
+						country_has_primary_culture = cu:french				
+						NOT = { has_law = law_type:law_council_republic }
+						NOR = { 
+							is_subject_of = root
+							has_diplomatic_pact = {
+								who = scope:target_country
+								type = customs_union
+							}							
+						}	
+					}
+				}
+				add = 1000
+			}		
+		}
+		conquer = {				
+			if = {
+				limit = {
+					scope:target_country = {				
+						country_has_primary_culture = cu:mande
+					}
+					can_reach_target_country = yes
+				}
+				add = 1000
+			}			
+		}
+	}	
+
+	possible = {
+		country_has_primary_culture = cu:mande	
+		NOT = { country_tier = empire }
+	}
+
+	weight = {
+		value = 1000
+	}
+}
+
 ai_strategy_unify_britian = {
 	icon = "gfx/interface/icons/ai_strategy_icons/unification.dds"
 	
