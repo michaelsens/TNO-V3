@@ -680,6 +680,15 @@ rus_sba = {
 	}
 }
 
+rus_tty = {
+	color = { 200 196 148 }
+	possible = {
+		exists = c:RUS
+		THIS = c:RUS
+		was_formed_from = TTY		
+	}
+}
+
 rus_nvb = {
 	color = { 94 131 162 }
 	possible = {
@@ -703,7 +712,7 @@ rus_kem = {
 }
 
 rus_sov = {
-	color = "red_dark"
+	color = { 93 30 30 }
 	possible = {
 		exists = c:RUS
 		THIS = c:RUS
@@ -712,13 +721,16 @@ rus_sov = {
 			was_formed_from = FER
 			was_formed_from = BRY
 			was_formed_from = TUV
+			was_formed_from = WRS
+			was_formed_from = AVI
+			was_formed_from = VOR
 		}
 		
 	}
 }
 
 fer_sov = {
-	color = "red_dark"
+	color = { 93 30 30 }
 
 	possible = {
 		exists = c:FER
@@ -728,7 +740,7 @@ fer_sov = {
 }
 
 tuv_sov = {
-	color = "red_dark"
+	color = { 93 30 30 }
 
 	possible = {
 		exists = c:TUV
@@ -737,8 +749,17 @@ tuv_sov = {
 	}
 }
 
+vor_sov = {
+	color = { 132 188 186 }
+	possible = {
+		exists = c:VOR
+		THIS = c:VOR
+		has_variable = ru_unite_west_sib
+	}
+}
+
 irk_sov = {
-	color = "red_dark"
+	color = { 93 30 30 }
 
 	possible = {
 		exists = c:IRK
@@ -748,12 +769,21 @@ irk_sov = {
 }
 
 bry_sov = {
-	color = "red_dark"
+	color = { 93 30 30 }
 
 	possible = {
 		exists = c:BRY
 		THIS = c:BRY
 		has_variable = ru_unite_far_east
+	}
+}
+
+rus_url = {
+	color = { 144 108 124 }
+	possible = {
+		exists = c:RUS
+		THIS = c:RUS
+		was_formed_from = URL
 	}
 }
 

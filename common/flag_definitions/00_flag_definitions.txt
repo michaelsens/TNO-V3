@@ -3580,11 +3580,22 @@ VOR = { # vorkuta
 		trigger = {
 			exists = scope:actor
 			scope:actor = {
-				has_law = law_type:law_council_republic
+				NOT = { has_variable = ru_unite_west_sib }
+			}
+		}
+	}
+	flag_definition = { # Formed West Siberia
+		coa = RUS_rsfsr
+		priority = 3000
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_variable = ru_unite_west_sib
 			}
 		}
 	}
 }
+
 WST = { # west rev front
 	flag_definition = { # starting flagg
 		coa = WST_start
@@ -3704,6 +3715,75 @@ BRY = { # byrata start
 	}
 }
 
+URL = { # ural military district
+	flag_definition = { # starting flagg
+		coa = URL
+		priority = 2000
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				NOT = { has_variable = ru_unite_west_sib }
+			}
+		}
+	}
+	flag_definition = { # Formed West Siberia
+		coa = URL_reg
+		priority = 3000
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_variable = ru_unite_west_sib
+			}
+		}
+	}
+}
+
+WRS = { # west siberian people's republic
+	flag_definition = { # starting flagg
+		coa = WRS
+		priority = 2000
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				NOT = { has_variable = ru_unite_west_sib }
+			}
+		}
+	}
+	flag_definition = { # Formed West Siberia
+		coa = WRS_reg
+		priority = 3000
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_variable = ru_unite_west_sib
+			}
+		}
+	}
+}
+
+ZLA = { # zlatoust
+	flag_definition = { # starting flagg
+		coa = ZLA
+		priority = 2000
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				NOT = { has_variable = ru_unite_west_sib }
+			}
+		}
+	}
+	flag_definition = { # Formed West Siberia
+		coa = RUS_gen
+		priority = 3000
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_variable = ru_unite_west_sib
+			}
+		}
+	}
+}
+
 AVI = { # AVAITORS
 	flag_definition = { # starting flagg
 		coa = AVI_start
@@ -3712,6 +3792,29 @@ AVI = { # AVAITORS
 			exists = scope:actor
 			scope:actor = {
 				has_law = law_type:law_council_republic
+			}
+		}
+	}
+}
+
+AVI = { # free aviators
+	flag_definition = { # starting flagg
+		coa = AVI
+		priority = 2000
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				NOT = { has_variable = ru_unite_west_sib }
+			}
+		}
+	}
+	flag_definition = { # Formed West Siberia
+		coa = RUS_rsfsr
+		priority = 3000
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_variable = ru_unite_west_sib
 			}
 		}
 	}
@@ -7998,41 +8101,18 @@ ROM = { # Romania
 
 RUS = { # Russia
 	flag_definition = {
-		coa = RUS_imperial
-		allow_overlord_canton = yes		
-		subject_canton = RUS_imperial
-		priority = 1
-	}
-	flag_definition = {
-		coa = RUS_absolute_monarchy
-		subject_canton = RUS 
-		priority = 20
+		coa = RUS_gen
+		priority = 1500
 		trigger = { 
-			coa_def_absolute_monarchy_flag_trigger = yes
-		}
-	}	
-	flag_definition = {
-		coa = RUS_republic
-		subject_canton = RUS_republic
-		priority = 10
-		trigger = { 
-			coa_def_republic_flag_trigger = yes
-		}
-	}		
-	flag_definition = {
-		coa = RUS_dictatorship
-		subject_canton = RUS_dictatorship
-		priority = 20
-		trigger = {
-			coa_def_dictatorship_flag_trigger = yes
-		}
-	}	
-	flag_definition = {
-		coa = RUS_oligarchy
-		subject_canton = RUS_oligarchy
-		priority = 25
-		trigger = {
-			coa_def_oligarchy_flag_trigger = yes
+			exists = scope:actor
+			scope:actor = {
+				OR = {
+					was_formed_from = NVB
+					was_formed_from = KRK
+					was_formed_from = ZLA
+					was_formed_from = TTY
+				}
+			}
 		}
 	}	
 	flag_definition = {
@@ -8046,15 +8126,11 @@ RUS = { # Russia
 					was_formed_from = FER
 					was_formed_from = BRY
 					was_formed_from = TUV
+					was_formed_from = WRS
+					was_formed_from = AVI
+					was_formed_from = VOR
 				}
 			}
-		}
-	}
-	flag_definition = {
-		coa = RUS_nihilist
-		priority = 25 # need to override the DEFAULT
-		trigger = { 
-			coa_def_nihilist_flag_trigger = yes
 		}
 	}
 	flag_definition = {
@@ -8148,25 +8224,22 @@ RUS = { # Russia
 		}
 	}
 	flag_definition = {
-		coa = RUS_gen
-		priority = 1500
-		trigger = { 
-			exists = scope:actor
-			scope:actor = {
-				OR = {
-					was_formed_from = NVB
-					was_formed_from = KRK
-				}
-			}
-		}
-	}
-	flag_definition = {
 		coa = RUS_theo
 		priority = 1500
 		trigger = { 
 			exists = scope:actor
 			scope:actor = {
 				was_formed_from = OYR
+			}
+		}
+	}
+	flag_definition = {
+		coa = URL_reg
+		priority = 1500
+		trigger = { 
+			exists = scope:actor
+			scope:actor = {
+				was_formed_from = URL
 			}
 		}
 	}

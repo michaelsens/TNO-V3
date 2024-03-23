@@ -659,6 +659,9 @@ RUS = {
 					was_formed_from = FER
 					was_formed_from = BRY  
 					was_formed_from = TUV
+					was_formed_from = WRS
+					was_formed_from = AVI
+					was_formed_from = VOR
 				}
 				
 			}
@@ -677,6 +680,8 @@ RUS = {
 				OR = {
 					was_formed_from = NVB
 					was_formed_from = KRK
+					was_formed_from = ZLA
+					was_formed_from = TTY
 				}
 			}
 		}
@@ -818,6 +823,20 @@ RUS = {
 			exists = scope:actor
 			scope:actor = {
 				was_formed_from = SBA
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = "Russian People's Union"
+		adjective = "Russian"
+
+		is_main_tag_only = yes
+		priority = 100000
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				was_formed_from = URL
 			}
 		}
 	}
@@ -1012,6 +1031,57 @@ AMR = {
 	}
 }
 
+ZLA = {
+	dynamic_country_name = {
+		name = "Federal Republic of West Siberia"
+		adjective = "West Siberian"
+
+		is_main_tag_only = yes
+		priority = 1000
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_variable = ru_unite_west_sib
+			}
+		}
+	}
+}
+
+VOR = {
+	dynamic_country_name = {
+		name = "Russian Soviet Federative Socialist Republic"
+		adjective = "Russian"
+
+		is_main_tag_only = yes
+		priority = 1000
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_variable = ru_unite_west_sib
+			}
+		}
+	}
+}
+
+AVI = {
+	dynamic_country_name = {
+		name = "Russian Soviet Federative Socialist Republic"
+		adjective = "Russian"
+
+		is_main_tag_only = yes
+		priority = 1000
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_variable = ru_unite_west_sib
+			}
+		}
+	}
+}
+
 MAG = {
 	dynamic_country_name = {
 		name = "Siberian National Republic"
@@ -1106,6 +1176,23 @@ YAK = {
 			exists = scope:actor
 			scope:actor = {
 				has_variable = ru_unite_far_east
+			}
+		}
+	}
+}
+
+TTY = {
+	dynamic_country_name = {
+		name = "Thief Territory of West Siberia"
+		adjective = "West Siberian"
+
+		is_main_tag_only = yes
+		priority = 1000
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_variable = ru_unite_west_sib
 			}
 		}
 	}
