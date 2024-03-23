@@ -4191,6 +4191,99 @@ je_cuba_modfier.2 = {
 	}
 }
 
+je_prep_coup_money = {  
+	name = "coup_money" 
+	desc = "je_fate_angola_desc"
+
+	visible = { always = yes }
+
+       
+
+	possible = {
+		scope:journal_entry = {
+			not = {
+			custom_tooltip = {
+				text = butten_cooldown_5month
+				has_variable = je_liberation_cooldown
+				
+			}
+		}
+	}
+	}
+
+	effect = {
+
+		scope:journal_entry = {
+			set_variable = { name = je_liberation_cooldown months = 5 }
+		}	
+
+		change_variable = {
+            name = cammroon_coup_progress
+            add = 30
+        }
+
+		
+
+		add_modifier = {
+			name = funding_op
+			years = 1
+		}
+
+	
+		
+		
+	}
+}
+
+je_prep_coup_agi = {  
+	name = "je_prep_coup_agi_1" 
+	desc = "je_fate_angola_desc"
+
+	visible = { always = yes }
+
+       
+
+	possible = {
+		scope:journal_entry = {
+			not = {
+			custom_tooltip = {
+				text = butten_cooldown_5month
+				has_variable = je_liberation_cooldown
+				
+			}
+		}
+	}
+	}
+
+	effect = {
+
+		scope:journal_entry = {
+			set_variable = { name = je_liberation_cooldown months = 5 }
+		}	
+
+		change_variable = {
+            name = cammroon_coup_progress
+            add = 30
+        }
+
+		
+		c:SOK = {
+			add_modifier = {
+				name = cammroon_agi
+				months = 6
+			}
+		}
+		add_modifier = {
+			name = funding_op
+			months = 6
+		}
+
+	
+		
+		
+	}
+}
+
 je_ru_unite_far_east = {
 	name = "je_ru_unite_far_east"
 	desc = "je_ru_unite_far_east_desc"

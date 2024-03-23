@@ -42,3 +42,78 @@ je_crush_youtbland = {
     
 }
 
+je_crush_sokoto = { 
+
+    icon = "gfx/interface/icons/new_event_icons/cam_1.dds"
+    group = je_group_historical_content
+  
+    scripted_button = je_prep_coup_money
+    scripted_button = je_prep_coup_agi
+
+   
+   invalid = {
+        OR = {
+        NOT = {
+      exists = c:SOK
+        }
+            c:SOK = {
+        is_subject = yes
+            }
+        }
+   }
+    
+    complete = {
+     
+		
+    
+     custom_tooltip = {
+        scope:journal_entry = {
+			is_goal_complete = yes
+		}
+        text = je_coup_sok
+       
+    }
+
+	}
+
+    on_complete = {
+
+        trigger_event = tno_dynamic_puppets.11
+    }
+
+	immediate = {
+
+		set_variable = {
+			name = cammroon_coup_progress
+			value = 0
+		}
+	}
+
+	
+	
+    current_value = {
+		value = root.var:cammroon_coup_progress
+	}
+
+   
+
+	goal_add_value = {
+		value = 150
+	}
+
+    on_timeout = {
+        add_radicals = {
+            value = 0.02
+        }
+    }
+
+    progressbar = yes
+    
+    weight = 100
+
+	timeout = 3900
+    
+    should_be_pinned_by_default = yes
+    
+}
+

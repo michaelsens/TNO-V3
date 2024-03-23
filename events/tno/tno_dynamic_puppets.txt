@@ -399,6 +399,8 @@ tno_dynamic_puppets.9 = {
     }
 }
 
+
+
 tno_dynamic_puppets.10 = {  
 	type = country_event
     placement = ROOT
@@ -451,6 +453,35 @@ tno_dynamic_puppets.10 = {
 	
 
 
+}
+
+tno_dynamic_puppets.11 = {
+    type = country_event
+    hidden = yes
+
+
+
+    trigger = {
+        exists = c:SOK
+        ROOT = c:IBO
+
+      
+
+
+
+    }
+
+    immediate = {
+		create_diplomatic_pact = {
+            country = c:SOK
+            type = puppet
+        }
+        c:SOK = {
+            activate_law = law_type:law_autocracy
+            activate_law = law_type:law_council_republic
+          
+        }
+    }
 }
 
 
