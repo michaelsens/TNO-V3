@@ -2569,9 +2569,57 @@ WAD = {
 
 ADG = {
 	flag_definition = {
-		coa = ADG_IBE
+		coa = ADG_REP
 		trigger = {
-			exists = c:IBE
+			scope:actor = {
+				exists = scope:actor
+				OR = {
+					has_law = law_type:law_presidential_republic
+					has_law = law_type:law_parliamentary_republic
+				}
+			}	
+		}
+		coa_with_overlord_canton = CUB_subject
+		allow_overlord_canton = no
+		priority = 5000	
+	}
+	flag_definition = {
+		coa = ADG_REP_ETHNO
+		trigger = {
+			scope:actor = {
+				exists = scope:actor
+				has_law = law_type:law_ethnostate
+				OR = {
+					has_law = law_type:law_presidential_republic
+					has_law = law_type:law_parliamentary_republic
+				}
+			}	
+		}
+		coa_with_overlord_canton = CUB_subject
+		allow_overlord_canton = no
+		priority = 5500
+	}
+	flag_definition = {
+		coa = ADG_THEO_AUTOCRATIC
+		trigger = {
+			scope:actor = {
+				exists = scope:actor
+				has_law = law_type:law_theocracy
+				OR = {
+					has_law = law_type:law_autocracy
+					has_law = law_type:law_oligarchy
+					has_law = law_type:law_single_party_state
+					has_law = law_type:law_technocracy
+				}
+			}	
+		}
+		coa_with_overlord_canton = CUB_subject
+		allow_overlord_canton = no
+		priority = 5000	
+	}
+	flag_definition = {
+		coa = ADG_REP
+		trigger = {
 			exists = c:ADG
 			c:IBE = {
 				OR = {
@@ -2600,6 +2648,81 @@ ADG = {
 	}
 	
 }
+
+AIR = {
+	flag_definition = {
+		coa = AIR_REP
+		trigger = {
+			scope:actor = {
+				exists = scope:actor
+				OR = {
+					has_law = law_type:law_presidential_republic
+					has_law = law_type:law_parliamentary_republic
+				}
+			}	
+		}
+		coa_with_overlord_canton = CUB_subject
+		allow_overlord_canton = no
+		priority = 5000	
+	}
+	flag_definition = {
+		coa = AIR_ETHNO
+		trigger = {
+			scope:actor = {
+				exists = scope:actor
+				has_law = law_type:law_ethnostate
+			}	
+		}
+		coa_with_overlord_canton = CUB_subject
+		allow_overlord_canton = no
+		priority = 5500
+	}
+	flag_definition = {
+		coa = AIR_COM
+		trigger = {
+			scope:actor = {
+				exists = scope:actor
+				has_law = law_type:law_council_republic
+			}	
+		}
+		coa_with_overlord_canton = CUB_subject
+		allow_overlord_canton = no
+		priority = 5500
+	}
+}
+
+SGU = {
+	flag_definition = {
+		coa = SGU_COM
+		trigger = {
+			scope:actor = {
+				exists = scope:actor
+				has_law = law_type:law_council_republic
+			}	
+		}
+		coa_with_overlord_canton = CUB_subject
+		allow_overlord_canton = no
+		priority = 90000
+	}
+
+}
+
+SOK = {
+	flag_definition = {
+		coa = SOK_IBO
+		trigger = {
+			scope:actor = {
+				exists = scope:actor
+				has_law = law_type:law_council_republic
+			}	
+		}
+		coa_with_overlord_canton = CUB_subject
+		allow_overlord_canton = no
+		priority = 90000
+	}
+
+}
+
 
 
 CYP = { # Cyprus
@@ -4831,6 +4954,31 @@ HUN = { # Hungary
 		}
 	}	
 }	
+
+NAP = { 
+	flag_definition = {
+		coa = NAP_JAP
+		trigger = {
+			exists = c:JAP
+			exists = c:NAP
+			c:JAP = {
+				OR = {
+					has_diplomatic_pact = {
+						who = c:NAP
+						type = japanese_military_administration
+						is_initiator = yes
+					}
+				}
+				
+			}
+		}
+		coa_with_overlord_canton = CUB_subject
+		allow_overlord_canton = no
+		priority = 5000	
+	}
+	
+}	
+
 
 HYD = { # Hyderabad
 	flag_definition = {
@@ -9767,32 +9915,17 @@ VNZ = { # Venezuela
 		}
 	}	
 	flag_definition = {
-		coa = VNZ_republic
-		subject_canton = VNZ_republic
-		allow_overlord_canton = yes		
-		coa_with_overlord_canton = VNZ_subject			
-		priority = 10
-		trigger = { 
-			coa_def_republic_flag_trigger = yes
-		}
-	}		
-	flag_definition = {
-		coa = VNZ_dictatorship
-		subject_canton = VNZ_dictatorship
-		priority = 20
+		coa = VNZ
+		priority = 1500
 		trigger = {
-			coa_def_dictatorship_flag_trigger = yes
-		}
-	}	
-	flag_definition = {
-		coa = VNZ_oligarchy
-		subject_canton = VNZ_oligarchy
-		allow_overlord_canton = yes		
-		coa_with_overlord_canton = VNZ_subject			
-		priority = 20
-		trigger = {
-			coa_def_oligarchy_flag_trigger = yes
-		}
+			scope:actor = {
+				exists = scope:actor
+				OR = {
+					has_law = law_type:law_presidential_republic
+					has_law = law_type:law_parliamentary_republic
+				}
+			}
+	}
 	}	
 	flag_definition = {
 		coa = VNZ_communist
@@ -9801,20 +9934,6 @@ VNZ = { # Venezuela
 			coa_def_communist_flag_trigger = yes
 		}
 	}		
-	flag_definition = {
-		coa = VNZ_subject_SPA
-		priority = 50
-		trigger = { 
-			coa_def_spanish_ensign_trigger = yes
-		}
-	}
-	flag_definition = {
-		coa = VNZ_subject_USA
-		priority = 50
-		trigger = { 
-			coa_def_american_ensign_trigger = yes
-		}
-	}	
 }
 
 WAL = { # Wallachia
