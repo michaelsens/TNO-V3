@@ -3751,11 +3751,22 @@ OEN = { # orenburg
 		trigger = {
 			exists = scope:actor
 			scope:actor = {
-				has_law = law_type:law_council_republic
+				NOT = { has_variable = ru_unite_west_russia }
+			}
+		}
+	}
+	flag_definition = { # Formed West Russia
+		coa = OEN_reg
+		priority = 3000
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_variable = ru_unite_west_russia
 			}
 		}
 	}
 }
+
 WRS = { # west siberia
 	flag_definition = { # starting flagg
 		coa = WRS_start
@@ -3966,6 +3977,98 @@ MGK = { # Magnitogorsk
 	}
 	flag_definition = { # Formed West Russia
 		coa = MGK_reg
+		priority = 3000
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_variable = ru_unite_west_russia
+			}
+		}
+	}
+}
+
+DIR = { # Dirlewanger Brigade
+	flag_definition = { # starting flagg
+		coa = DIR
+		priority = 2000
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				NOT = { has_variable = ru_unite_west_russia }
+			}
+		}
+	}
+	flag_definition = { # Formed West Russia
+		coa = DIR_reg
+		priority = 3000
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_variable = ru_unite_west_russia
+			}
+		}
+	}
+}
+
+XUR = { # Ural League
+	flag_definition = { # starting flagg
+		coa = XUR
+		priority = 2000
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				NOT = { has_variable = ru_unite_west_russia }
+			}
+		}
+	}
+	flag_definition = { # Formed West Russia
+		coa = RUS_gen
+		priority = 3000
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_variable = ru_unite_west_russia
+			}
+		}
+	}
+}
+
+BSH = { # Bashkortostan
+	flag_definition = { # starting flagg
+		coa = BSH
+		priority = 2000
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				NOT = { has_variable = ru_unite_west_russia }
+			}
+		}
+	}
+	flag_definition = { # Formed West Russia
+		coa = BSH_reg
+		priority = 3000
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_variable = ru_unite_west_russia
+			}
+		}
+	}
+}
+
+SAM = { # Samara
+	flag_definition = { # starting flagg
+		coa = SAM
+		priority = 2000
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				NOT = { has_variable = ru_unite_west_russia }
+			}
+		}
+	}
+	flag_definition = { # Formed West Russia
+		coa = SAM_reg
 		priority = 3000
 		trigger = {
 			exists = scope:actor
@@ -8269,6 +8372,7 @@ RUS = { # Russia
 					was_formed_from = KRK
 					was_formed_from = ZLA
 					was_formed_from = TTY
+					was_formed_from = XUR
 				}
 			}
 		}
@@ -8408,6 +8512,46 @@ RUS = { # Russia
 			exists = scope:actor
 			scope:actor = {
 				was_formed_from = MGK
+			}
+		}
+	}
+	flag_definition = {
+		coa = DIR_reg
+		priority = 1500
+		trigger = { 
+			exists = scope:actor
+			scope:actor = {
+				was_formed_from = DIR
+			}
+		}
+	}
+	flag_definition = {
+		coa = OEN_reg
+		priority = 1500
+		trigger = { 
+			exists = scope:actor
+			scope:actor = {
+				was_formed_from = OEN
+			}
+		}
+	}
+	flag_definition = {
+		coa = BSH_reg
+		priority = 1500
+		trigger = { 
+			exists = scope:actor
+			scope:actor = {
+				was_formed_from = BSH
+			}
+		}
+	}
+	flag_definition = {
+		coa = SAM_reg
+		priority = 1500
+		trigger = { 
+			exists = scope:actor
+			scope:actor = {
+				was_formed_from = SAM
 			}
 		}
 	}

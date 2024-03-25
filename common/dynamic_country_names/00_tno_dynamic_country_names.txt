@@ -787,7 +787,22 @@ RUS = {
 					was_formed_from = KRK
 					was_formed_from = ZLA
 					was_formed_from = TTY
+					was_formed_from = XUR
 				}
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = "Russian Republic"
+		adjective = "Russian"
+
+		is_main_tag_only = yes
+		priority = 100000
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				was_formed_from = SAM
 			}
 		}
 	}
@@ -956,6 +971,48 @@ RUS = {
 			exists = scope:actor
 			scope:actor = {
 				was_formed_from = MGK
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = "Ordenstaat Neuostland"
+		adjective = "Ostländish"
+
+		is_main_tag_only = yes
+		priority = 100000
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				was_formed_from = DIR
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = "Organized Communes of Russia"
+		adjective = "Russian"
+
+		is_main_tag_only = yes
+		priority = 100000
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				was_formed_from = OEN
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = "Union of Free Peoples"
+		adjective = "Russian"
+
+		is_main_tag_only = yes
+		priority = 100000
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				was_formed_from = BSH
 			}
 		}
 	}
@@ -1270,7 +1327,7 @@ CHR = {
 	}
 	dynamic_country_name = {
 		name = "Bureau for the Proliferation of the Second Humanity"
-		adjective = "Homo Deus
+		adjective = "Homo Deus"
 		is_main_tag_only = yes
 		priority = 1000
 		
@@ -1319,9 +1376,209 @@ TTY = {
 
 MGK = {
 	dynamic_country_name = {
-		name = "Technocratic Union of Russia"
-		adjective = "West Russian"
+		name = "Magnitogorsk"
+		adjective = "Magnitogorsk"
+		is_main_tag_only = yes
+		priority = 10000
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				NOT = {
+					has_variable = ru_unite_west_russia
+				}
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = "Russian Technocratic Union"
+		adjective = "Russian"
+		is_main_tag_only = yes
+		priority = 1000
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_variable = ru_unite_west_russia
+			}
+		}
+	}
+}
 
+MGK = {
+	dynamic_country_name = {
+		name = "Magnitogorsk"
+		adjective = "Magnitogorsk"
+		is_main_tag_only = yes
+		priority = 10000
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				NOT = {
+					has_variable = ru_unite_west_russia
+				}
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = "Russian Technocratic Union"
+		adjective = "Russian"
+		is_main_tag_only = yes
+		priority = 1000
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_variable = ru_unite_west_russia
+			}
+		}
+	}
+}
+
+DIR = {
+	dynamic_country_name = {
+		name = "Dirlewanger Brigade"
+		adjective = "SS"
+		is_main_tag_only = yes
+		priority = 10000
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				NOT = {
+					has_variable = ru_unite_west_russia
+				}
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = "Ordenstaat Westrussland"
+		adjective = "Westrussisch"
+		is_main_tag_only = yes
+		priority = 1000
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_variable = ru_unite_west_russia
+			}
+		}
+	}
+}
+
+XUR = {
+	dynamic_country_name = {
+		name = "Ural League"
+		adjective = "Ural"
+		is_main_tag_only = yes
+		priority = 10000
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				NOT = {
+					has_variable = ru_unite_west_russia
+				}
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = "Russian Federation"
+		adjective = "Russian"
+		is_main_tag_only = yes
+		priority = 1000
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_variable = ru_unite_west_russia
+			}
+		}
+	}
+}
+
+OEN = {
+	dynamic_country_name = {
+		name = "Orenburg"
+		adjective = "Orenburg"
+		is_main_tag_only = yes
+		priority = 10000
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				NOT = {
+					has_variable = ru_unite_west_russia
+				}
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = "Free Communes of West Russia"
+		adjective = "West Russian"
+		is_main_tag_only = yes
+		priority = 1000
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_variable = ru_unite_west_russia
+			}
+		}
+	}
+}
+
+BSH = {
+	dynamic_country_name = {
+		name = "Bashkortostan"
+		adjective = "Bashkir"
+		is_main_tag_only = yes
+		priority = 10000
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				NOT = {
+					has_variable = ru_unite_west_russia
+				}
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = "Union of Free Peoples"
+		adjective = "West Russian"
+		is_main_tag_only = yes
+		priority = 1000
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_variable = ru_unite_west_russia
+			}
+		}
+	}
+}
+
+SAM = {
+	dynamic_country_name = {
+		name = "Samara"
+		adjective = "Samara"
+		is_main_tag_only = yes
+		priority = 10000
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				NOT = {
+					has_variable = ru_unite_west_russia
+				}
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = "Provisional Commissariat of Western Russia"
+		adjective = "West Russian"
 		is_main_tag_only = yes
 		priority = 1000
 		
