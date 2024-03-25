@@ -141,26 +141,21 @@ je_tno_liberate_central_africa = {
 
 		
 		
-		
-		custom_tooltip = {
-            text = je_has_liberated_orungu_text
-
-           has_variable = orungu_free_var
-
-        }
-        custom_tooltip = {
-            text = je_has_liberated_congo_text
-            has_variable = congo_free_var
-
-
-        }
-
-        custom_tooltip = {
-            text = je_has_liberated_text
-            has_variable = central_africa_free_var
-
-
-        }
+		NOT = {
+        
+            c:KZA = {
+                OR ={
+                owns_entire_state_region = STATE_SOUTH_CAMEROON
+                owns_entire_state_region = STATE_UBANGI_SHARI
+                owns_entire_state_region = STATE_GABON
+                owns_entire_state_region = STATE_BAS_CONGO
+                owns_entire_state_region = STATE_KASAI
+                owns_entire_state_region = STATE_KATANGA
+                owns_entire_state_region = STATE_EQUATEUR
+                owns_entire_state_region = STATE_CONGO_ORIENTALE
+                }
+            } 
+          }
        
        
 		
@@ -237,12 +232,17 @@ je_tno_liberate_angola= {
 		
 		
 
-        custom_tooltip = {
-            text = je_liberated_angola_text
-
-            has_variable = ango_free_var
-
-        }
+        NOT = {
+        
+            c:KSA = {
+                OR ={
+                owns_entire_state_region = STATE_EAST_ANGOLA
+                owns_entire_state_region = STATE_NORTH_ANGOLA
+                owns_entire_state_region = STATE_SOUTH_ANGOLA
+             
+                }
+            } 
+          }
 		
 		
 		
