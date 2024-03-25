@@ -4466,6 +4466,69 @@ je_ru_unite_west_sib = {
     }
 }
 
+je_ru_unite_west_russia = {
+	name = "je_ru_unite_west_russia"
+	desc = "je_ru_unite_west_russia_desc"
+
+	possible = {
+        owns_entire_state_region = STATE_SAMARA
+        owns_entire_state_region = STATE_KAZAN
+        owns_entire_state_region = STATE_PERM
+        owns_entire_state_region = STATE_GALICH
+
+        custom_tooltip = {
+            text = je_ru_tno_owns_mgk
+            any_scope_state = {
+                state_region = s:STATE_URAL
+            }
+        }
+
+        custom_tooltip = {
+            text = je_ru_tno_rus_owns_wrrf
+            any_scope_state = {
+                state_region = s:STATE_NENETSIA
+            }
+            any_scope_state = {
+                state_region = s:STATE_ARKHANGELSK
+            }
+        }
+
+		hidden_trigger = {
+			NOT = {
+				has_variable = ru_unite_west_russia
+			}
+		}
+	}
+
+	effect = {
+		custom_tooltip = je_ru_unite_west_russia_tt_1
+
+		set_variable = {
+			name = ru_unite_west_russia
+		} 
+
+		hidden_effect = {
+			remove_modifier = russian_warlord
+		}
+
+		custom_tooltip = je_ru_lose_warlord_economy
+
+		hidden_effect = {
+    		trigger_event = { id = tno_ru_events.1 popup = yes } # event for selecting new economic law
+    	}
+
+    	if = {
+    		limit = {
+    			c:TUV ?= THIS
+    		}
+    		add_journal_entry = { type = je_ru_tno_com_restore_ussr }
+    	}
+    	else = {
+    		add_journal_entry = { type = je_ru_tno_restore_russia }
+    	}
+    }
+}
+
 je_ru_restore_russia = {
 	name = "je_ru_restore_russia"
 	desc = "je_ru_restore_russia_desc"

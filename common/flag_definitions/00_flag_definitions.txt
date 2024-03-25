@@ -3907,19 +3907,6 @@ ZLA = { # zlatoust
 	}
 }
 
-AVI = { # AVAITORS
-	flag_definition = { # starting flagg
-		coa = AVI_start
-		priority = 2000
-		trigger = {
-			exists = scope:actor
-			scope:actor = {
-				has_law = law_type:law_council_republic
-			}
-		}
-	}
-}
-
 AVI = { # free aviators
 	flag_definition = { # starting flagg
 		coa = AVI
@@ -3961,6 +3948,29 @@ GOR = { # gorky
 			exists = scope:actor
 			scope:actor = {
 				has_law = law_type:law_council_republic
+			}
+		}
+	}
+}
+
+MGK = { # Magnitogorsk
+	flag_definition = { # starting flagg
+		coa = MGK
+		priority = 2000
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				NOT = { has_variable = ru_unite_west_russia }
+			}
+		}
+	}
+	flag_definition = { # Formed West Russia
+		coa = MGK_reg
+		priority = 3000
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_variable = ru_unite_west_russia
 			}
 		}
 	}
@@ -8388,6 +8398,16 @@ RUS = { # Russia
 			exists = scope:actor
 			scope:actor = {
 				was_formed_from = URL
+			}
+		}
+	}
+	flag_definition = {
+		coa = MGK_reg
+		priority = 1500
+		trigger = { 
+			exists = scope:actor
+			scope:actor = {
+				was_formed_from = MGK
 			}
 		}
 	}
