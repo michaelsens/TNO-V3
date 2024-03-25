@@ -3545,7 +3545,18 @@ je_liberate_central_a = {  #liberate congo
 	name = "je_liberate_congo_butten" 
 	desc = "je_liberate_congo_butten_desc"
 
-	visible = { always = yes }
+	visible = {  
+		c:KZA = {
+               
+		owns_entire_state_region = STATE_BAS_CONGO
+		owns_entire_state_region = STATE_KASAI
+		owns_entire_state_region = STATE_EQUATEUR
+		owns_entire_state_region = STATE_KATANGA
+		owns_entire_state_region = STATE_CONGO_ORIENTALE
+	  
+		  
+	  }
+	}
 
 	possible = {
 		scope:journal_entry = {
@@ -3593,7 +3604,15 @@ je_liberate_central_b = {  #liberate orungu
 	name = "je_liberate_orungu" 
 	desc = "je_liberate_orungu_desc"
 
-	visible = { always = yes }
+	visible = {  
+		c:KZA = {
+               
+		owns_entire_state_region = STATE_GABON
+	
+	  
+		  
+	  }
+	}
 
 	possible = {
 		scope:journal_entry = {
@@ -3646,7 +3665,15 @@ je_liberate_central_c = {  #liberate central africa
 	name = "je_liberiate_central" 
 	desc = "je_liberiate_central_desc"
 
-	visible = { always = yes }
+	visible = {  
+		c:KZA = {
+               
+		owns_entire_state_region = STATE_UBANGI_SHARI
+	
+	  
+		  
+	  }
+	}
 
 	possible = {
 		scope:journal_entry = {
@@ -3697,7 +3724,14 @@ je_liberate_uganda = {
 	name = "je_fate_uganda" 
 	desc = "je_fate_angola_desc"
 
-	visible = { always = yes }
+	visible = {  
+		c:KON = {
+               
+		owns_entire_state_region = STATE_UGANDA
+	  
+		  
+	  }
+	}
 
 	possible = {
 		scope:journal_entry = {
@@ -3737,7 +3771,16 @@ je_liberate_angola = {  #liberate angola
 	name = "je_fate_angola" 
 	desc = "je_fate_angola_desc"
 
-	visible = { always = yes }
+	visible = {  
+		c:KSA = {
+               
+		owns_entire_state_region = STATE_EAST_ANGOLA
+		owns_entire_state_region = STATE_NORTH_ANGOLA
+	
+	  
+		  
+	  }
+	}
 
 	possible = {
 		scope:journal_entry = {
@@ -3833,7 +3876,16 @@ je_liberate_mozan = {  #liberate mozanbieque
 	desc = "je_fate_angola_desc"
 
 	visible = { has_variable = east_africa_green
-}
+	
+		c:KON = {
+               
+		owns_entire_state_region = STATE_ZAMBEZIA
+		owns_entire_state_region = STATE_MOCAMBIQUE
+	
+	   
+	  }
+	
+	}
 
 possible = {
 	scope:journal_entry = {
@@ -3884,6 +3936,14 @@ je_liberate_tanza = {  #liberate tanzkanika
 	desc = "je_fate_angola_desc"
 
 	visible = { has_variable = east_africa_green
+	c:KON = {
+               
+		owns_entire_state_region = STATE_LINDI
+		owns_entire_state_region = STATE_TANGANYIKA
+		owns_entire_state_region = STATE_ZANZIBAR
+	
+	   
+	  }
 }
 
 possible = {
@@ -3941,6 +4001,13 @@ je_liberate_uganda = {  #liberate Uganda
 	desc = "je_fate_angola_desc"
 
 	visible = { has_variable = east_africa_green
+	c:KON = {
+               
+		owns_entire_state_region = STATE_UGANDA
+	
+	
+	   
+	  }
 }
 
 possible = {
@@ -4048,6 +4115,15 @@ je_liberate_zambia = {  #liberate zanbia
 	desc = "je_fate_angola_desc"
 
 	visible = { has_variable = je_picked_fate_var
+	c:KON = {
+               
+		owns_entire_state_region = STATE_ZAMBIA
+		owns_entire_state_region = STATE_KAZEMBE
+		
+	
+	
+	   
+	  }
 }
 
 possible = {
