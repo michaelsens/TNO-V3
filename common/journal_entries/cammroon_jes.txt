@@ -36,7 +36,7 @@ je_crush_youtbland = {
     
     weight = 100
 
-	timeout = 1560
+	timeout = 1960
     
     should_be_pinned_by_default = yes
     
@@ -44,7 +44,7 @@ je_crush_youtbland = {
 
 je_crush_sokoto = { 
 
-    icon = "gfx/interface/icons/new_event_icons/cam_1.dds"
+    icon = "gfx/interface/icons/new_event_icons/cam_2.dds"
     group = je_group_historical_content
   
     scripted_button = je_prep_coup_money
@@ -64,13 +64,23 @@ je_crush_sokoto = {
     
     complete = {
      
-		
+		OR = {
+
+            c:SOK = {
+               
+               
+                has_law = law_type:law_council_republic
+            
+                
+            }
     
      custom_tooltip = {
         scope:journal_entry = {
 			is_goal_complete = yes
 		}
         text = je_coup_sok
+    
+    }
        
     }
 

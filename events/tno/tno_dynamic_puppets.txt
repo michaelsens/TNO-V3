@@ -484,4 +484,53 @@ tno_dynamic_puppets.11 = {
     }
 }
 
+tno_dynamic_puppets.12 = {  
+	type = country_event
+    placement = ROOT
+ 
+    title = tno_dynamic_puppets.12.t
+    desc = tno_dynamic_puppets.12.d
+    flavor = tno_dynamic_puppets.12.f 
+    event_image = {
+        texture = "gfx/event_pictures/event_pictures/ang.dds"
+    }
 
+	immediate = {
+	
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_fire.dds"
+
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 1
+
+	trigger = {
+		this ?= c:SOK
+	}
+	
+    option = { 
+        name = tno_dynamic_puppets.12.a
+        default_option = yes
+		
+        create_country = { 
+		tag = FUT
+		origin = c:USA
+       
+        state = s:STATE_EASTERN_MALI.region_state:SOK
+        
+      
+        
+		on_created = {
+            set_immune_to_revolutions = no
+        
+	        }
+	    } 
+
+       
+		
+		
+	
+	
+    } 
+}
