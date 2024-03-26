@@ -650,6 +650,45 @@ hre_pro = {
 
 }
 
+rus_sge = {
+	color = { 10 14 25 }
+	possible = {
+		exists = c:RUS
+		THIS = c:RUS
+		was_formed_from = SGE
+	}
+}
+
+rus_uvs = {
+	color = { 217 20 26 }
+	possible = {
+		exists = c:RUS
+		THIS = c:RUS
+		was_formed_from = UVS
+	}
+}
+
+rus_vya = {
+	color = { 26 70 32 }
+	possible = {
+		exists = c:RUS
+		THIS = c:RUS
+		OR = {
+			was_formed_from = VYA
+			was_formed_from = SGE
+		}
+	}
+}
+
+rus_hyp = {
+	color = { 75 70 64 }
+	possible = {
+		exists = c:RUS
+		THIS = c:RUS
+		was_formed_from = HYP
+	}
+}
+
 rus_sam = {
 	color = { 198 190 190 }
 	possible = {
@@ -762,6 +801,15 @@ rus_kem = {
 	}
 }
 
+rus_osk = {
+	color = { 43 50 43 }
+	possible = {
+		exists = c:RUS
+		THIS = c:RUS
+		was_formed_from = OSK
+	}
+}
+
 rus_sov = {
 	color = { 93 30 30 }
 	possible = {
@@ -776,8 +824,20 @@ rus_sov = {
 			was_formed_from = AVI
 			was_formed_from = VOR
 			was_formed_from = OEN
+			was_formed_from = GOR
+			was_formed_from = WST
 		}
 		
+	}
+}
+
+gor_sov = {
+	color = { 93 30 30 }
+
+	possible = {
+		exists = c:GOR
+		THIS = c:GOR
+		has_variable = ru_unite_west_russia
 	}
 }
 
@@ -857,6 +917,25 @@ xur_rus = {
 		exists = c:XUR
 		THIS = c:XUR
 		has_variable = ru_unite_west_russia
+	}
+}
+
+vol_rus = {
+	color = { 84 124 69 }
+
+	possible = {
+		exists = c:VOL
+		THIS = c:VOL
+		has_variable = ru_unite_west_russia
+	}
+}
+
+rus_hly = {
+	color = { 26 4 41 }
+	possible = {
+		exists = c:RUS
+		THIS = c:RUS
+		was_formed_from = HLY
 	}
 }
 

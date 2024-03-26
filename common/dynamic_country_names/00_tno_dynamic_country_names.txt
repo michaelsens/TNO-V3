@@ -767,6 +767,8 @@ RUS = {
 					was_formed_from = WRS
 					was_formed_from = AVI
 					was_formed_from = VOR
+					was_formed_from = GOR
+					was_formed_from = WST
 				}
 				
 			}
@@ -788,6 +790,7 @@ RUS = {
 					was_formed_from = ZLA
 					was_formed_from = TTY
 					was_formed_from = XUR
+					was_formed_from = VOL
 				}
 			}
 		}
@@ -803,6 +806,20 @@ RUS = {
 			exists = scope:actor
 			scope:actor = {
 				was_formed_from = SAM
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = "Russian National Reclamation Government"
+		adjective = "Russian"
+
+		is_main_tag_only = yes
+		priority = 100000
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				was_formed_from = OSK
 			}
 		}
 	}
@@ -830,7 +847,10 @@ RUS = {
 		trigger = {
 			exists = scope:actor
 			scope:actor = {
-				was_formed_from = CHT
+				OR = {
+					was_formed_from = CHT
+					was_formed_from = VYA
+				}
 			}
 		}
 	}
@@ -928,7 +948,10 @@ RUS = {
 		trigger = {
 			exists = scope:actor
 			scope:actor = {
-				was_formed_from = OYR
+				OR = {
+					was_formed_from = OYR
+					was_formed_from = SGE
+				}
 			}
 		}
 	}
@@ -1013,6 +1036,48 @@ RUS = {
 			exists = scope:actor
 			scope:actor = {
 				was_formed_from = BSH
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = "Russkiy Reykh"
+		adjective = "Russkiy"
+
+		is_main_tag_only = yes
+		priority = 100000
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				was_formed_from = HYP
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = "Federation of Soviet Socialist Republics"
+		adjective = "Soviet"
+
+		is_main_tag_only = yes
+		priority = 100000
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				was_formed_from = UVS
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = "Holy Russian Empire"
+		adjective = "Russian"
+
+		is_main_tag_only = yes
+		priority = 100000
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				was_formed_from = HLY
 			}
 		}
 	}
@@ -1586,6 +1651,254 @@ SAM = {
 			exists = scope:actor
 			scope:actor = {
 				has_variable = ru_unite_west_russia
+			}
+		}
+	}
+}
+
+HYP = {
+	dynamic_country_name = {
+		name = "Hyperborea"
+		adjective = "Hyperborean"
+		is_main_tag_only = yes
+		priority = 10000
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				NOT = {
+					has_variable = ru_unite_west_russia
+				}
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = "Brotherhood of Hyperborea"
+		adjective = "Hyperborean"
+		is_main_tag_only = yes
+		priority = 1000
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_variable = ru_unite_west_russia
+			}
+		}
+	}
+}
+
+VYA = {
+	dynamic_country_name = {
+		name = "Vyakta"
+		adjective = "Vyatka"
+		is_main_tag_only = yes
+		priority = 10000
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				NOT = {
+					has_variable = ru_unite_west_russia
+				}
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = "Sovereignty of Western Russia"
+		adjective = "West Russian"
+		is_main_tag_only = yes
+		priority = 1000
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_variable = ru_unite_west_russia
+			}
+		}
+	}
+}
+
+UVS = {
+	dynamic_country_name = {
+		name = "Ultravisionary Soviet Federation"
+		adjective = "Soviet"
+		is_main_tag_only = yes
+		priority = 10000
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				NOT = {
+					has_variable = ru_unite_west_russia
+				}
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = "Soviet Federation of Western Russia"
+		adjective = "Soviet"
+		is_main_tag_only = yes
+		priority = 1000
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_variable = ru_unite_west_russia
+			}
+		}
+	}
+}
+
+GOR = {
+	dynamic_country_name = {
+		name = "Gorky"
+		adjective = "Gorky"
+		is_main_tag_only = yes
+		priority = 10000
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				NOT = {
+					has_variable = ru_unite_west_russia
+				}
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = "West Russian Revolutionary Front"
+		adjective = "West Russian"
+		is_main_tag_only = yes
+		priority = 1000
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_variable = ru_unite_west_russia
+			}
+		}
+	}
+}
+
+SGE = {
+	dynamic_country_name = {
+		name = "Order of Saint George"
+		adjective = "Order of Saint George"
+		is_main_tag_only = yes
+		priority = 10000
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				NOT = {
+					has_variable = ru_unite_west_russia
+				}
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = "Holy Dominion of Western Russia"
+		adjective = "West Russian"
+		is_main_tag_only = yes
+		priority = 1000
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_variable = ru_unite_west_russia
+			}
+		}
+	}
+}
+
+VOL = {
+	dynamic_country_name = {
+		name = "Vologda"
+		adjective = "Vologda"
+		is_main_tag_only = yes
+		priority = 10000
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				NOT = {
+					has_variable = ru_unite_west_russia
+				}
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = "Russian Federation"
+		adjective = "Russian"
+		is_main_tag_only = yes
+		priority = 1000
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_variable = ru_unite_west_russia
+			}
+		}
+	}
+}
+
+HLY = {
+	dynamic_country_name = {
+		name = "Holy Russian Empire"
+		adjective = "Russian"
+		is_main_tag_only = yes
+		priority = 10000
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				NOT = {
+					has_variable = ru_unite_west_russia
+				}
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = "Imperial Regency of Western Russia"
+		adjective = "West Russian"
+		is_main_tag_only = yes
+		priority = 1000
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_variable = ru_unite_west_russia
+			}
+		}
+	}
+}
+
+OSK = {
+	dynamic_country_name = {
+		name = "Black League"
+		adjective = "Black League"
+		is_main_tag_only = yes
+		priority = 10000
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				NOT = {
+					has_variable = ru_unite_west_sib
+				}
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = "West Siberian Provisional Authority"
+		adjective = "West Siberian"
+		is_main_tag_only = yes
+		priority = 1000
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_variable = ru_unite_west_sib
 			}
 		}
 	}
