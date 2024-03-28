@@ -545,6 +545,15 @@ event_window = {
 			}
 		}
 	}
+	state = {
+			trigger_on_create = yes
+			name = 1
+			duration = 0.3
+			using = Animation_Curve_EaseOut
+			alpha = 1
+			using = Snapshot_Mute_World_100
+			on_start = "[ExecuteConsoleCommand('Music.PlayTrack mx_mood_tr_44-1')]"
+		}
 	### EVENT IMAGE / CONTENT
 	blockoverride "event_content" {
 		widget = {
