@@ -24,7 +24,7 @@ Libertarians_party = {
 	available_for_interest_group = {
 		owner = {
 			country_has_voting_franchise = yes
-			ig:ig_Conservatives = {
+			ig:ig_Libertarians = {
 				is_marginal = no
 			}
 		}
@@ -34,6 +34,7 @@ Libertarians_party = {
 		NOT = { is_interest_group_type = ig_Progressives }
 		NOT = { is_interest_group_type = ig_Socialist }		
 		NOT = { is_interest_group_type = ig_Anarchists }
+		NOT = { is_interest_group_type = ig_Conservatives }			
 		NOT = { is_interest_group_type = ig_Liberals }		
 		NOT = { is_interest_group_type = ig_Fascists }		
 		OR = {
@@ -95,7 +96,6 @@ Libertarians_party = {
 					has_ideology = ideology:ideology_liberal
 					has_ideology = ideology:ideology_egalitarian				
 					has_ideology = ideology:ideology_paternalistic
-					has_ideology = ideology:ideology_stratocratic
 					has_ideology = ideology:ideology_moralist
 					has_ideology = ideology:ideology_corporatist
 				}
@@ -190,18 +190,6 @@ Libertarians_party = {
 				desc = "from_capitalists_tax"
 			}
 		}
-		if = { # capitalists more likely to join Libertarianss with public health
-			limit = {
-				has_ideology = ideology:ideology_individualist
-				owner = {
-					has_law = law_type:law_public_health_insurance
-				}
-			}
-			add = {
-				value = 2
-				desc = "from_capitalists_health"
-			}
-		}
 		if = { # devout, industrialists more likely to join Libertarianss with public schools
 			limit = {
 				OR = {
@@ -215,18 +203,6 @@ Libertarians_party = {
 			add = {
 				value = 2
 				desc = "from_capitalists_schools"
-			}
-		}
-		if = { # devout more likely to join Libertarianss with total separation
-			limit = {
-				has_ideology = ideology:ideology_moralist
-				owner = {
-					has_law = law_type:law_total_separation
-				}
-			}
-			add = {
-				value = 5
-				desc = "from_devout_separation"
 			}
 		}
 		if = { # devout more likely to join Libertarianss with freedom of conscience
@@ -296,24 +272,7 @@ Libertarians_party = {
 				desc = "from_liberty"
 			}
 		}
-		if = { # Libertarianss hate republics
-			limit = {
-				OR = {
-					has_ideology = ideology:ideology_moralist
-					has_ideology = ideology:ideology_paternalistic
-				}
-				owner = {
-					NOR = {
-						has_law = law_type:law_monarchy
-						has_law = law_type:law_theocracy
-					}
-				}
-			}
-			add = {
-				value = 3
-				desc = "from_republic"
-			}
-		}
+		
 		if = { # landowners and industrialists hate labor rights
 			limit = {
 				OR = {
@@ -335,7 +294,6 @@ Libertarians_party = {
 		if = { # Libertarianss hate welfare
 			limit = {
 				OR = {
-					has_ideology = ideology:ideology_stratocratic
 					has_ideology = ideology:ideology_individualist
 				}
 				OR = {
