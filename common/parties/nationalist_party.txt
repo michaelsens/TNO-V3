@@ -1,12 +1,12 @@
 ﻿# Bastion of the Landowners
 # Can also appeal to the Devout, PB, and Industrialists
 
-conservative_party = {
+nationalist_party = {
 	color = { 108 64 179 }
 	name = {
 		first_valid = {
 			triggered_desc = {
-				desc = party_republicans
+				desc = party_nationalist
 				trigger = {
 					exists = c:USA
 					THIS = c:USA
@@ -24,17 +24,19 @@ conservative_party = {
 	available_for_interest_group = {
 		owner = {
 			country_has_voting_franchise = yes
-			ig:ig_Conservatives = {
+			ig:ig_Nationalists = {
 				is_marginal = no
 			}
 		}
-		# unions can never be conservative
+		# leftest anything left of basic conservitives can not be in the N wing of the NPP nor the nationalist party.
 		NOT = { is_interest_group_type = ig_trade_unions }
 		NOT = { is_interest_group_type = ig_Communists }
 		NOT = { is_interest_group_type = ig_Progressives }
 		NOT = { is_interest_group_type = ig_Socialist }		
 		NOT = { is_interest_group_type = ig_Anarchists }
-		NOT = { is_interest_group_type = ig_Fascists }		
+		NOT = { is_interest_group_type = ig_Liberals }		
+		NOT = { is_interest_group_type = ig_Moderates }		
+		NOT = { is_interest_group_type = ig_Libertarians }				
 		OR = {
 	     	NOT = {
 	         	owner = {
@@ -42,7 +44,7 @@ conservative_party = {
 	         	}
 	        }
 	        owner.var:only_valid_party = {
-	        	is_party_type = conservative_party
+	        	is_party_type = party_nationalist
 	        }
 	    }
 	}
@@ -77,6 +79,9 @@ conservative_party = {
 				leader = {
 					OR = {
 						has_ideology = ideology:ideology_traditionalist
+						has_ideology = ideology:ideology_reformer			
+						has_ideology = ideology:ideology_jingoist_leader
+						has_ideology = ideology:ideology_ethno_nationalist											
 					}
 				}
 			}
@@ -85,18 +90,17 @@ conservative_party = {
 				desc = "from_conservative_leader"
 			}
 		}
-		if = { # conservatives love conservativism
+		if = { 
 			limit = {
 				OR = {
-					has_ideology = ideology:ideology_republican
+					has_ideology = ideology:ideology_particularist
 					has_ideology = ideology:ideology_individualist
 					has_ideology = ideology:ideology_patriarchal
-					has_ideology = ideology:ideology_liberal
-					has_ideology = ideology:ideology_egalitarian				
-					has_ideology = ideology:ideology_paternalistic
-					has_ideology = ideology:ideology_stratocratic
-					has_ideology = ideology:ideology_moralist
-					has_ideology = ideology:ideology_corporatist
+					has_ideology = ideology:ideology_isolationist
+					has_ideology = ideology:ideology_patriotic				
+					has_ideology = ideology:ideology_jingoist
+					has_ideology = ideology:ideology_reactionary
+					has_ideology = ideology:ideology_plutocratic
 				}
 			}
 			add = {
@@ -107,10 +111,10 @@ conservative_party = {
 		if = { # armed forces will join if a more powerful member has jingoist leader
 			limit = {
 				is_interest_group_type = ig_armed_forces
-				exists = owner.py:conservative_party
+				exists = owner.py:party_nationalist
 				owner = {
 					any_interest_group = {
-						is_member_of_party = owner.py:conservative_party
+						is_member_of_party = owner.py:party_nationalist
 						is_powerful = yes
 						leader = {
 							has_ideology = ideology:ideology_jingoist_leader
@@ -123,16 +127,7 @@ conservative_party = {
 				desc = "from_jingoist_party_leader"
 			}
 		}
-		if = { # landowners will join if they are even moderately powerful
-			limit = {
-				ig_clout >= 0.15
-				is_interest_group_type = ig_landowners
-			}
-			add = {
-				value = 5
-				desc = "from_powerful_conservative_ig"
-			}
-		}
+
 		if = { # various progressives dislike conservativism
 			limit = {
 				leader = {
@@ -159,87 +154,7 @@ conservative_party = {
 				desc = "from_patriot"
 			}
 		}
-		if = { # capitalists more likely to join conservatives when the poor can vote
-			limit = {
-				OR = {
-					has_ideology = ideology:ideology_plutocratic
-					has_ideology = ideology:ideology_paternalistic
-				}
-				owner = {
-					has_law = law_type:law_universal_suffrage
-				}
-			}
-			add = {
-				value = 5
-				desc = "from_capitalists_suffrage"
-			}
-		}
-		if = { # capitalists and landowners more likely to join with progressive taxation
-			limit = {
-				OR = {
-					has_ideology = ideology:ideology_plutocratic
-					has_ideology = ideology:ideology_stratocratic
-				}
-				owner = {
-					has_law = law_type:law_graduated_taxation
-				}
-			}
-			add = {
-				value = 2
-				desc = "from_capitalists_tax"
-			}
-		}
-		if = { # capitalists more likely to join conservatives with public health
-			limit = {
-				has_ideology = ideology:ideology_individualist
-				owner = {
-					has_law = law_type:law_public_health_insurance
-				}
-			}
-			add = {
-				value = 2
-				desc = "from_capitalists_health"
-			}
-		}
-		if = { # devout, industrialists more likely to join conservatives with public schools
-			limit = {
-				OR = {
-					has_ideology = ideology:ideology_individualist
-					has_ideology = ideology:ideology_pious
-				}
-				owner = {
-					has_law = law_type:law_public_schools
-				}
-			}
-			add = {
-				value = 2
-				desc = "from_capitalists_schools"
-			}
-		}
-		if = { # devout more likely to join conservatives with total separation
-			limit = {
-				has_ideology = ideology:ideology_moralist
-				owner = {
-					has_law = law_type:law_total_separation
-				}
-			}
-			add = {
-				value = 5
-				desc = "from_devout_separation"
-			}
-		}
-		if = { # devout more likely to join conservatives with freedom of conscience
-			limit = {
-				has_ideology = ideology:ideology_moralist
-				owner = {
-					has_law = law_type:law_freedom_of_conscience
-				}
-			}
-			add = {
-				value = 3
-				desc = "from_devout_conscience"
-			}
-		}
+
 		if = { # patriarchs more likely to join conservatives with women's suffrage
 			limit = {
 				has_ideology = ideology:ideology_patriarchal
@@ -250,18 +165,6 @@ conservative_party = {
 			add = {
 				value = 3
 				desc = "from_patriarchy"
-			}
-		}
-		if = { # patriarchs more likely to join conservatives with working women
-			limit = {
-				has_ideology = ideology:ideology_patriarchal
-				owner = {
-					has_law = law_type:law_women_in_the_workplace
-				}
-			}
-			add = {
-				value = 2
-				desc = "from_patriarchy_lesser"
 			}
 		}
 		if = { # reactionaries like regressing from multiculturalism
@@ -456,7 +359,7 @@ conservative_party = {
 					any_interest_group = {
 						has_party = yes
 						party = {
-							is_party_type = conservative_party
+							is_party_type = party_nationalist
 						}
 						is_powerful = yes
 						leader = {
@@ -482,7 +385,7 @@ conservative_party = {
 					any_interest_group = {
 						has_party = yes
 						party = {
-							is_party_type = conservative_party
+							is_party_type = party_nationalist
 						}
 						is_powerful = yes
 						leader = {
@@ -508,7 +411,7 @@ conservative_party = {
 					any_interest_group = {
 						has_party = yes
 						party = {
-							is_party_type = conservative_party
+							is_party_type = party_nationalist
 						}
 						is_powerful = yes
 						leader = {
@@ -630,7 +533,7 @@ conservative_party = {
 	         	}
 	         	NOT = {
 			        owner.var:only_valid_party = {
-			        	is_party_type = conservative_party
+			        	is_party_type = party_nationalist
 			        }
 			    }
 			}
@@ -640,22 +543,11 @@ conservative_party = {
 		}
 		if = {
 			limit = {
-				leader = {
-					has_ideology = ideology:ideology_jacksonian_democrat
-				}
-			}
-			add = {
-				value = 1000
-				desc = "from_jacksonian_democrat"
-			}
-		}
-		if = {
-			limit = {
 				owner = {
 	         		has_variable = only_valid_party
 	         	}
 				owner.var:only_valid_party = {
-					is_party_type = conservative_party
+					is_party_type = party_nationalist
 				}
 	         	owner.ruler = {
 					this.interest_group = prev
@@ -672,7 +564,7 @@ conservative_party = {
 	         		has_variable = only_valid_party
 	         	}
 	         	 owner.var:only_valid_party = {
-		        	is_party_type = conservative_party
+		        	is_party_type = party_nationalist
 		        }
 			}
 			add = {

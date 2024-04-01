@@ -1,0 +1,400 @@
+﻿# Bastion the Leftwing counter
+
+Progressive_party = {
+	color = { 108 64 179 }
+	name = {
+		first_valid = {
+			triggered_desc = {
+				desc = party_Progressive
+				trigger = {
+					exists = c:USA
+					THIS = c:USA
+				}
+			}
+		}
+	}
+	icon = {
+		default = "/gfx/interface/icons/political_parties/conservatism.dds"
+	}
+	# THIS IS RUN ONLY ONCE AT GAME START
+	valid_for_country = {
+		always = yes
+	}
+	available_for_interest_group = {
+		owner = {
+			country_has_voting_franchise = yes
+			ig:ig_Progressives = {
+				is_marginal = no
+			}			
+		}
+		NOT = { is_interest_group_type = ig_Conservatives }	
+		NOT = { is_interest_group_type = ig_Libertarians }
+		NOT = { is_interest_group_type = ig_Nationalists }
+		NOT = { is_interest_group_type = ig_Reactionary }		
+		
+		OR = {
+	     	NOT = {
+	         	owner = {
+	         		has_variable = only_valid_party
+	         	}
+	        }
+	        owner.var:only_valid_party = {
+	        	is_party_type = Progressive_party
+	        }
+	    }
+	}
+	
+	# Root - IG considering joining
+	# scope:number - the number of IGs that would join this party before the root IG
+	join_weight = {
+		value = {
+			value = -5
+			desc = "base_value"
+		}
+
+
+		if = { # radicals will fall in line behind stronger liberals
+			limit = {
+				leader = {
+					has_ideology = ideology:ideology_social_democrat
+				}
+				is_powerful = no
+				owner = {
+					any_interest_group = {
+						is_powerful = yes
+						OR = {
+							has_ideology = ideology:ideology_liberal
+							has_ideology = ideology:ideology_liberal_modern
+						}
+					}
+				}
+			}
+			add = {
+				value = -5
+				desc = "from_weak_radicals"
+			}
+		}
+		if = { # weak liberals will fall in line behind strong radicals
+			limit = {
+				is_powerful = no
+				OR = {
+					has_ideology = ideology:ideology_liberal
+				}
+				owner = {
+					any_interest_group = {
+						is_powerful = yes
+						leader = {
+							has_ideology = ideology:ideology_social_democrat
+						}
+					}
+				}
+			}
+			add = {
+				value = 10
+				desc = "from_weak_liberals_radical"
+			}
+		}
+		
+		if = { # radicals will fall in line behind stronger liberals
+			limit = {
+				leader = {
+					has_ideology = ideology:ideology_American_Left-Wing
+				}
+				is_powerful = no
+				owner = {
+					any_interest_group = {
+						is_powerful = yes
+						OR = {
+							has_ideology = ideology:ideology_social_democrat
+						}
+					}
+				}
+			}
+			add = {
+				value = -5
+				desc = "from_weak_radicals"
+			}
+		}
+		if = { # weak liberals will fall in line behind strong radicals
+			limit = {
+				is_powerful = no
+				OR = {
+					has_ideology = ideology:ideology_social_democrat
+				}
+				owner = {
+					any_interest_group = {
+						is_powerful = yes
+						leader = {
+							has_ideology = ideology:ideology_American_Left-Wing
+						}
+					}
+				}
+			}
+			add = {
+				value = 10
+				desc = "from_weak_liberals_radical"
+			}
+		}			
+		
+		if = { # radicals will fall in line behind stronger liberals
+			limit = {
+				leader = {
+					has_ideology = ideology:ideology_marxist
+				}
+				is_powerful = no
+				owner = {
+					any_interest_group = {
+						is_powerful = yes
+						OR = {
+							has_ideology = ideology:ideology_social_democrat
+						}
+					}
+				}
+			}
+			add = {
+				value = -5
+				desc = "from_weak_radicals"
+			}
+		}
+		if = { # weak liberals will fall in line behind strong radicals
+			limit = {
+				is_powerful = no
+				OR = {
+					has_ideology = ideology:ideology_social_democrat
+				}
+				owner = {
+					any_interest_group = {
+						is_powerful = yes
+						leader = {
+							has_ideology = ideology:ideology_marxist
+						}
+					}
+				}
+			}
+			add = {
+				value = 10
+				desc = "from_weak_liberals_radical"
+			}
+		}		
+		
+		
+
+		if = { # NPP loves radicals
+			limit = {
+				OR = {
+					has_ideology = ideology:ideology_egalitarian
+					has_ideology = ideology:ideology_individualist
+					has_ideology = ideology:ideology_liberal
+					has_ideology = ideology:ideology_populist
+					has_ideology = ideology:ideology_socialist
+				}
+			}
+			add = {
+				value = 5
+				desc = "from_Progressives_ig"
+			}
+		}		
+		
+		if = { # a party for powerful farmers
+			limit = {
+				is_interest_group_type = Progressives
+				is_powerful = yes
+			}
+			add = {
+				value = 10
+			}
+		}
+		if = { # a party for powerful farmers
+			limit = {
+				is_interest_group_type = ig_Socialist
+				is_powerful = yes
+			}
+			add = {
+				value = 10
+			}
+		}	
+		if = { # a party for powerful farmers
+			limit = {
+				is_interest_group_type = ig_Communists
+				is_powerful = yes
+			}
+			add = {
+				value = 10
+			}
+		}	
+
+		if = {
+			limit = {
+				scope:number = 1
+				is_powerful = no
+				is_marginal = no
+			}
+			multiply = {
+				value = 2
+				desc = "from_influential_supporting_member"
+			}
+		}
+		else_if = {
+			limit = {
+				scope:number = 2
+			}
+			multiply = {
+				value = 0.5
+				desc = "from_two_prior_members"
+			}
+		}
+		else_if = {
+			limit = {
+				scope:number = 3
+			}
+			multiply = {
+				value = 0.25
+				desc = "from_three_prior_members"
+			}
+		}
+		else_if = {
+			limit = {
+				scope:number > 3
+			}
+			multiply = {
+				value = 0.1
+				desc = "from_more_than_three_prior_members"
+			}
+		}
+		if = { # anti-orleanist
+			limit = {
+				leader = {
+					OR = {
+						has_ideology = ideology:ideology_bonapartist
+						has_ideology = ideology:ideology_legitimist
+					}
+				}
+				owner = {
+					any_interest_group = {
+						has_party = yes
+						party = {
+							is_party_type = conservative_party
+						}
+						is_powerful = yes
+						leader = {
+							has_ideology = ideology:ideology_orleanist
+						}
+					}
+				}
+			}
+			add = {
+				value = -5
+				desc = "from_french_monarchist_rival"
+			}
+		}
+		if = { # anti-legitimist
+			limit = {
+				leader = {
+					OR = {
+						has_ideology = ideology:ideology_bonapartist
+						has_ideology = ideology:ideology_orleanist
+					}
+				}
+				owner = {
+					any_interest_group = {
+						has_party = yes
+						party = {
+							is_party_type = conservative_party
+						}
+						is_powerful = yes
+						leader = {
+							has_ideology = ideology:ideology_legitimist
+						}
+					}
+				}
+			}
+			add = {
+				value = -5
+				desc = "from_french_monarchist_rival"
+			}
+		}
+		if = { # anti-bonapartist
+			limit = {
+				leader = {
+					OR = {
+						has_ideology = ideology:ideology_legitimist
+						has_ideology = ideology:ideology_orleanist
+					}
+				}
+				owner = {
+					any_interest_group = {
+						has_party = yes
+						party = {
+							is_party_type = conservative_party
+						}
+						is_powerful = yes
+						leader = {
+							has_ideology = ideology:ideology_bonapartist
+						}
+					}
+				}
+			}
+			add = {
+				value = -5
+				desc = "from_french_monarchist_rival"
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+	         		has_variable = only_valid_party
+	         	}
+	         	NOT = {
+			        owner.var:only_valid_party = {
+			        	is_party_type = conservative_party
+			        }
+			    }
+			}
+			multiply = {
+				value = 0
+			}
+		}
+		if = {
+			limit = {
+				leader = {
+					has_ideology = ideology:ideology_jacksonian_democrat
+				}
+			}
+			add = {
+				value = 1000
+				desc = "from_jacksonian_democrat"
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+	         		has_variable = only_valid_party
+	         	}
+				owner.var:only_valid_party = {
+					is_party_type = conservative_party
+				}
+	         	owner.ruler = {
+					this.interest_group = prev
+				}
+			}
+			add = {
+				value = 1000
+				desc = "from_only_legal_party"
+			}
+		}
+		else_if = {
+			limit = {
+				owner = {
+	         		has_variable = only_valid_party
+	         	}
+	         	 owner.var:only_valid_party = {
+		        	is_party_type = conservative_party
+		        }
+			}
+			add = {
+				value = 3
+				desc = "from_only_legal_party"
+			}
+		}
+	}
+}

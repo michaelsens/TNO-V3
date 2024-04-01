@@ -1,9 +1,9 @@
-﻿communist_party = {
+﻿Socialist_party = {
 	color = { 150 20 20 }
 	name = {
 		first_valid = {
 			triggered_desc = {
-				desc = party_CPUSA
+				desc = party_SPA
 				trigger = {
 					exists = c:USA
 					THIS = c:USA
@@ -14,9 +14,6 @@
 	icon = {
 		default = "/gfx/interface/icons/political_parties/communists.dds"
 	}
-	unlocking_technologies = {
-		socialism
-	}
 	# THIS IS RUN ONLY ONCE AT GAME START
 	valid_for_country = {
 		always = yes
@@ -24,29 +21,17 @@
 	available_for_interest_group = {
 		owner = {
 			country_has_voting_franchise = yes
-			ig:ig_Communists = {
+			ig:ig_Socialist = {
 				is_marginal = no
-			}			
-		}
-		NOR = {
-			is_interest_group_type = ig_industrialists
-			is_interest_group_type = ig_landowners
-		}
-		leader = { # fascists, conservatives, and capitalists hate communism
-			NOR = {
-				has_ideology = ideology:ideology_fascist
-				has_ideology = ideology:ideology_integralist
-				has_ideology = ideology:ideology_ethno_nationalist
-				has_ideology = ideology:ideology_market_liberal
-				has_ideology = ideology:ideology_traditionalist
-				has_ideology = ideology:ideology_royalist
-				has_ideology = ideology:ideology_orleanist
-				has_ideology = ideology:ideology_bonapartist
-				has_ideology = ideology:ideology_legitimist
-				has_ideology = ideology:ideology_theocrat
-				has_ideology = ideology:ideology_corporatist_leader
 			}
 		}
+		# leftest anything left of basic conservitives can not be in the N wing of the NPP nor the nationalist party.
+		NOT = { is_interest_group_type = ig_Liberals }
+		NOT = { is_interest_group_type = ig_Moderates }
+		NOT = { is_interest_group_type = ig_Conservatives }
+		NOT = { is_interest_group_type = ig_Nationalists }		
+		NOT = { is_interest_group_type = ig_Reactionary }
+		NOT = { is_interest_group_type = ig_Fascists }
 		OR = {
 	     	NOT = {
 	         	owner = {
@@ -54,9 +39,9 @@
 	         	}
 	        }
 	        owner.var:only_valid_party = {
-	        	is_party_type = communist_party
+	        	is_party_type = party_Socialist
 	        }
-	    }		
+	    }
 	}
 	
 	# Root - IG considering joining
@@ -70,9 +55,15 @@
 			limit = {
 				leader = {
 					OR = {
-						has_ideology = ideology:ideology_communist
-						has_ideology = ideology:ideology_vanguardist
-						has_ideology = ideology:ideology_anarchist
+						has_ideology = ideology:ideology_American_Left-Wing
+						has_ideology = ideology:ideology_Marxism-Leninism-Amazonism
+						has_ideology = ideology:ideology_Mao_Zedong_Thought
+						has_ideology = ideology:ideology_Stratocratic_Communism
+						has_ideology = ideology:ideology_Left_Communism	
+						has_ideology = ideology:ideology_Marxism-Leninism
+						has_ideology = ideology:ideology_Bukharinist
+						has_ideology = ideology:ideology_marxist
+						has_ideology = ideology:ideology_social_democrat
 					}
 				}
 			}
@@ -86,9 +77,15 @@
 				is_powerful = yes
 				leader = {
 					OR = {
-						has_ideology = ideology:ideology_communist
-						has_ideology = ideology:ideology_vanguardist
-						has_ideology = ideology:ideology_anarchist
+						has_ideology = ideology:ideology_American_Left-Wing
+						has_ideology = ideology:ideology_Marxism-Leninism-Amazonism
+						has_ideology = ideology:ideology_Mao_Zedong_Thought
+						has_ideology = ideology:ideology_Stratocratic_Communism
+						has_ideology = ideology:ideology_Left_Communism	
+						has_ideology = ideology:ideology_Marxism-Leninism
+						has_ideology = ideology:ideology_Bukharinist
+						has_ideology = ideology:ideology_marxist
+						has_ideology = ideology:ideology_social_democrat
 					}
 				}
 			}
@@ -103,7 +100,6 @@
 				leader = {
 					OR = {
 						has_ideology = ideology:ideology_social_democrat
-						has_ideology = ideology:ideology_radical
 					}
 				}
 				owner = {
@@ -111,9 +107,15 @@
 						is_powerful = yes
 						leader = {
 							OR = {
-								has_ideology = ideology:ideology_communist
-								has_ideology = ideology:ideology_vanguardist
-								has_ideology = ideology:ideology_anarchist
+						has_ideology = ideology:ideology_American_Left-Wing
+						has_ideology = ideology:ideology_Marxism-Leninism-Amazonism
+						has_ideology = ideology:ideology_Mao_Zedong_Thought
+						has_ideology = ideology:ideology_Stratocratic_Communism
+						has_ideology = ideology:ideology_Left_Communism	
+						has_ideology = ideology:ideology_Marxism-Leninism
+						has_ideology = ideology:ideology_Bukharinist
+						has_ideology = ideology:ideology_marxist
+						has_ideology = ideology:ideology_social_democrat
 							}
 						}
 					}
@@ -131,10 +133,8 @@
 				}
 				owner = {
 					has_law = law_type:law_council_republic
-					any_interest_group = {
-						leader = {
-							has_ideology = ideology:ideology_vanguardist
-						}
+					ruler = {
+						has_ideology = ideology:ideology_vanguardist
 					}
 				}
 			}
@@ -287,8 +287,6 @@
 					has_ideology = ideology:ideology_egalitarian
 					has_ideology = ideology:ideology_egalitarian_modern
 					has_ideology = ideology:ideology_anti_slavery
-					has_ideology = ideology:ideology_laissez_faire
-					has_ideology = ideology:ideology_particularist
 					leader = {
 						has_ideology = ideology:ideology_abolitionist
 						has_ideology = ideology:ideology_social_democrat

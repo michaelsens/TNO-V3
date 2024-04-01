@@ -1,12 +1,12 @@
 ﻿# Bastion of the Landowners
 # Can also appeal to the Devout, PB, and Industrialists
 
-conservative_party = {
+Libertarians_party = {
 	color = { 108 64 179 }
 	name = {
 		first_valid = {
 			triggered_desc = {
-				desc = party_republicans
+				desc = party_libertarian
 				trigger = {
 					exists = c:USA
 					THIS = c:USA
@@ -28,12 +28,13 @@ conservative_party = {
 				is_marginal = no
 			}
 		}
-		# unions can never be conservative
+		# unions can never be Libertarians
 		NOT = { is_interest_group_type = ig_trade_unions }
 		NOT = { is_interest_group_type = ig_Communists }
 		NOT = { is_interest_group_type = ig_Progressives }
 		NOT = { is_interest_group_type = ig_Socialist }		
 		NOT = { is_interest_group_type = ig_Anarchists }
+		NOT = { is_interest_group_type = ig_Liberals }		
 		NOT = { is_interest_group_type = ig_Fascists }		
 		OR = {
 	     	NOT = {
@@ -42,7 +43,7 @@ conservative_party = {
 	         	}
 	        }
 	        owner.var:only_valid_party = {
-	        	is_party_type = conservative_party
+	        	is_party_type = Libertarians_party
 	        }
 	    }
 	}
@@ -54,7 +55,7 @@ conservative_party = {
 			value = -5
 			desc = "base_value"
 		}
-		if = { # socialists and radicals won't join conservative parties
+		if = { # socialists and radicals won't join Libertarians parties
 			limit = {
 				leader = { 
 					OR = {
@@ -72,7 +73,7 @@ conservative_party = {
 				desc = "from_leftist"
 			}
 		}
-		if = { # conservatives love conservativism
+		if = { # Libertarianss love conservativism
 			limit = {
 				leader = {
 					OR = {
@@ -82,10 +83,10 @@ conservative_party = {
 			}
 			add = {
 				value = 5
-				desc = "from_conservative_leader"
+				desc = "from_Libertarians_leader"
 			}
 		}
-		if = { # conservatives love conservativism
+		if = { # Libertarianss love conservativism
 			limit = {
 				OR = {
 					has_ideology = ideology:ideology_republican
@@ -101,16 +102,16 @@ conservative_party = {
 			}
 			add = {
 				value = 5
-				desc = "from_conservative_ig"
+				desc = "from_Libertarians_ig"
 			}
 		}
 		if = { # armed forces will join if a more powerful member has jingoist leader
 			limit = {
-				is_interest_group_type = ig_armed_forces
-				exists = owner.py:conservative_party
+				is_interest_group_type = ig_industrialists
+				exists = owner.py:Libertarians_party
 				owner = {
 					any_interest_group = {
-						is_member_of_party = owner.py:conservative_party
+						is_member_of_party = owner.py:Libertarians_party
 						is_powerful = yes
 						leader = {
 							has_ideology = ideology:ideology_jingoist_leader
@@ -130,7 +131,7 @@ conservative_party = {
 			}
 			add = {
 				value = 5
-				desc = "from_powerful_conservative_ig"
+				desc = "from_powerful_Libertarians_ig"
 			}
 		}
 		if = { # various progressives dislike conservativism
@@ -159,7 +160,7 @@ conservative_party = {
 				desc = "from_patriot"
 			}
 		}
-		if = { # capitalists more likely to join conservatives when the poor can vote
+		if = { # capitalists more likely to join Libertarianss when the poor can vote
 			limit = {
 				OR = {
 					has_ideology = ideology:ideology_plutocratic
@@ -189,7 +190,7 @@ conservative_party = {
 				desc = "from_capitalists_tax"
 			}
 		}
-		if = { # capitalists more likely to join conservatives with public health
+		if = { # capitalists more likely to join Libertarianss with public health
 			limit = {
 				has_ideology = ideology:ideology_individualist
 				owner = {
@@ -201,7 +202,7 @@ conservative_party = {
 				desc = "from_capitalists_health"
 			}
 		}
-		if = { # devout, industrialists more likely to join conservatives with public schools
+		if = { # devout, industrialists more likely to join Libertarianss with public schools
 			limit = {
 				OR = {
 					has_ideology = ideology:ideology_individualist
@@ -216,7 +217,7 @@ conservative_party = {
 				desc = "from_capitalists_schools"
 			}
 		}
-		if = { # devout more likely to join conservatives with total separation
+		if = { # devout more likely to join Libertarianss with total separation
 			limit = {
 				has_ideology = ideology:ideology_moralist
 				owner = {
@@ -228,7 +229,7 @@ conservative_party = {
 				desc = "from_devout_separation"
 			}
 		}
-		if = { # devout more likely to join conservatives with freedom of conscience
+		if = { # devout more likely to join Libertarianss with freedom of conscience
 			limit = {
 				has_ideology = ideology:ideology_moralist
 				owner = {
@@ -240,7 +241,7 @@ conservative_party = {
 				desc = "from_devout_conscience"
 			}
 		}
-		if = { # patriarchs more likely to join conservatives with women's suffrage
+		if = { # patriarchs more likely to join Libertarianss with women's suffrage
 			limit = {
 				has_ideology = ideology:ideology_patriarchal
 				owner = {
@@ -252,7 +253,7 @@ conservative_party = {
 				desc = "from_patriarchy"
 			}
 		}
-		if = { # patriarchs more likely to join conservatives with working women
+		if = { # patriarchs more likely to join Libertarianss with working women
 			limit = {
 				has_ideology = ideology:ideology_patriarchal
 				owner = {
@@ -295,7 +296,7 @@ conservative_party = {
 				desc = "from_liberty"
 			}
 		}
-		if = { # conservatives hate republics
+		if = { # Libertarianss hate republics
 			limit = {
 				OR = {
 					has_ideology = ideology:ideology_moralist
@@ -331,7 +332,7 @@ conservative_party = {
 				desc = "from_labor_rights"
 			}
 		}
-		if = { # conservatives hate welfare
+		if = { # Libertarianss hate welfare
 			limit = {
 				OR = {
 					has_ideology = ideology:ideology_stratocratic
@@ -349,7 +350,7 @@ conservative_party = {
 				desc = "from_welfare"
 			}
 		}
-		if = { # conservatives like police
+		if = { # Libertarianss like police
 			limit = {
 				OR = {
 					has_paternalist_ideology = yes
@@ -456,7 +457,7 @@ conservative_party = {
 					any_interest_group = {
 						has_party = yes
 						party = {
-							is_party_type = conservative_party
+							is_party_type = Libertarians_party
 						}
 						is_powerful = yes
 						leader = {
@@ -482,7 +483,7 @@ conservative_party = {
 					any_interest_group = {
 						has_party = yes
 						party = {
-							is_party_type = conservative_party
+							is_party_type = Libertarians_party
 						}
 						is_powerful = yes
 						leader = {
@@ -508,7 +509,7 @@ conservative_party = {
 					any_interest_group = {
 						has_party = yes
 						party = {
-							is_party_type = conservative_party
+							is_party_type = Libertarians_party
 						}
 						is_powerful = yes
 						leader = {
@@ -569,7 +570,7 @@ conservative_party = {
 		if = {
 			limit = {
 				leader = {
-					has_variable = caudillo_conservative
+					has_variable = caudillo_Libertarians
 				}
 			}
 			add = {
@@ -630,7 +631,7 @@ conservative_party = {
 	         	}
 	         	NOT = {
 			        owner.var:only_valid_party = {
-			        	is_party_type = conservative_party
+			        	is_party_type = Libertarians_party
 			        }
 			    }
 			}
@@ -655,7 +656,7 @@ conservative_party = {
 	         		has_variable = only_valid_party
 	         	}
 				owner.var:only_valid_party = {
-					is_party_type = conservative_party
+					is_party_type = Libertarians_party
 				}
 	         	owner.ruler = {
 					this.interest_group = prev
@@ -672,7 +673,7 @@ conservative_party = {
 	         		has_variable = only_valid_party
 	         	}
 	         	 owner.var:only_valid_party = {
-		        	is_party_type = conservative_party
+		        	is_party_type = Libertarians_party
 		        }
 			}
 			add = {
