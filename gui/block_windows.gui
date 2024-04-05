@@ -1,4 +1,4 @@
-# COPY-PASTED FOR NOW
+﻿# COPY-PASTED FOR NOW
 @panel_width_minus_10 = 530			# used to be 450
 @panel_width = 540  				# used to be 460
 @panel_width_half = 270				# used to be 230
@@ -97,6 +97,7 @@ types windows {
 		allow_outside = yes
 
 		block "behind_window" {}
+
 		block "bg" {
 			widget = {
 				size = { 100% 100% }
@@ -413,10 +414,12 @@ types windows {
 							button_icon_pin = {
 								size = { 100% 100% }
 								block "pin_properties" {}
+								input_action = "toggle_pin"
 							}
 							button_icon_unpin = {
 								size = { 100% 100% }
 								block "unpin_properties" {}
+								input_action = "toggle_pin"
 							}
 						}
 
@@ -431,6 +434,7 @@ types windows {
 							button_icon_zoom = {
 								size = { 100% 100% }
 								block "goto_properties" {}
+								input_action = "zoom_to"
 							}
 						}
 						
@@ -819,8 +823,9 @@ types windows {
 }
 
 template fullscreen_show {
-	visible = "[Or(Or(InformationPanelBar.IsPanelOpen('politics'), InformationPanelBar.IsPanelOpen('politics_panel_change_law')), InformationPanelBar.IsPanelOpen('tech_tree'))]"
+	visible = "[Or(Or(Or(Or(InformationPanelBar.IsPanelOpen('politics'), InformationPanelBar.IsPanelOpen('politics_panel_change_law')), InformationPanelBar.IsPanelOpen('tech_tree')), InformationPanelBar.IsPanelOpen('pop_browser')), InformationPanelBar.IsPanelOpen('countries'))]"
 }
+
 template fullscreen_hide {
-	visible = "[Not(Or(Or(InformationPanelBar.IsPanelOpen('politics'), InformationPanelBar.IsPanelOpen('politics_panel_change_law')), InformationPanelBar.IsPanelOpen('tech_tree')))]"
+	visible = "[Not(Or(Or(Or(Or(InformationPanelBar.IsPanelOpen('politics'), InformationPanelBar.IsPanelOpen('politics_panel_change_law')), InformationPanelBar.IsPanelOpen('tech_tree')), InformationPanelBar.IsPanelOpen('pop_browser')), InformationPanelBar.IsPanelOpen('countries')))]"
 }

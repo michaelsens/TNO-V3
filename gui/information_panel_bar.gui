@@ -13,12 +13,11 @@
 @culture_position = 350
 @population_position = 390
 @journal_position = 430
-@outliner_position = 530
 @companies_position = 470
 
 @spacing_widget_2_position = 510
 
-@maplist_position = 600
+@maplist_position = 530
 
 types information_panel_bar_types {
 	type information_panel_bar = widget {
@@ -108,9 +107,6 @@ types information_panel_bar_types {
 						onclick = "[InformationPanelBar.OpenPanelCycleTabs('politics', 'default|interest_groups|laws|institutions')]"
 						onclick = "[GetVariableSystem.Clear('politics_overview_exile_pool')]"
 						input_action = "open_politics"
-						#### +++
-						using = fifi_button_cancel
-						#### ===
 					}
 				}
 				sidebar_label_text = {
@@ -134,13 +130,25 @@ types information_panel_bar_types {
 						}
 						onclick = "[InformationPanelBar.OpenPanelCycleTabs('politics', 'default|interest_groups|laws|institutions')]"
 						onclick = "[GetVariableSystem.Clear('politics_overview_exile_pool')]"
-						#### +++
-						using = fifi_button_cancel
-						#### ===
 
+						### DEFAULT LAW ENACTMENT PROGRESS
 						animated_progresspie = {
+							visible = "[Not(LessThan_int32(GetPlayer.GetGovernmentLegitimacy, '(int32)25'))]"
 							parentanchor = center
 							texture = "gfx/interface/main_hud/sidebar_progress.dds"
+							size = { 100% 100% }
+							framesize = { 100 100 }
+							frame = 2
+							datacontext = "[GetPlayer.GetLawBeingEnacted]"
+							value = "[FixedPointToFloat(GetPlayer.GetLawEnactmentProgress)]"
+							alwaystransparent = yes
+						}
+
+						### IF ILLEGITMATE GOVERNMENT - RED PROGRESS
+						animated_progresspie = {
+							visible = "[LessThan_int32(GetPlayer.GetGovernmentLegitimacy, '(int32)25')]"
+							parentanchor = center
+							texture = "gfx/interface/main_hud/sidebar_progress_red.dds"
 							size = { 100% 100% }
 							framesize = { 100 100 }
 							frame = 2
@@ -162,9 +170,6 @@ types information_panel_bar_types {
 					blockoverride "onclick" {
 						onclick = "[InformationPanelBar.OpenPanelCycleTabs('budget', 'default|states|assets')]"
 						input_action = "open_budget"
-						#### +++
-						using = fifi_button_cancel
-						#### ===
 					}
 				}
 				sidebar_label_text = {
@@ -188,9 +193,6 @@ types information_panel_bar_types {
 							visible = "[InformationPanelBar.IsPanelOpen('budget')]"
 						}
 						onclick = "[InformationPanelBar.OpenPanelCycleTabs('budget', 'default|states|assets')]"
-						#### +++
-						using = fifi_button_cancel
-						#### ===
 					}
 				}
 				sidebar_tooltip_area = {
@@ -205,9 +207,6 @@ types information_panel_bar_types {
 					blockoverride "onclick" {
 						onclick = "[InformationPanelBar.OpenPanelCycleTabs('production_methods', 'urban|rural|development|construction_queues')]"
 						input_action = "open_buildings"
-						#### +++
-						using = fifi_button_cancel
-						#### ===
 					}
 				}
 				sidebar_label_text = {
@@ -231,9 +230,6 @@ types information_panel_bar_types {
 							visible = "[InformationPanelBar.IsPanelOpen('production_methods')]"
 						}
 						onclick = "[InformationPanelBar.OpenPanelCycleTabs('production_methods', 'urban|rural|development|construction_queues')]"
-						#### +++
-						using = fifi_button_cancel
-						#### ===
 					}
 				}
 				sidebar_tooltip_area = {
@@ -248,9 +244,6 @@ types information_panel_bar_types {
 					blockoverride "onclick" {
 						onclick = "[InformationPanelBar.OpenMarketPanelCycleTabs(AccessPlayer.AccessFirstMarket, 'market', 'default|trade_routes|trade_suggestions|states')]"
 						input_action = "open_market"
-						#### +++
-						using = fifi_button_cancel
-						#### ===
 					}
 				}
 				sidebar_label_text = {
@@ -274,9 +267,6 @@ types information_panel_bar_types {
 							visible = "[InformationPanelBar.IsPanelOpen('market')]"
 						}
 						onclick = "[InformationPanelBar.OpenMarketPanelCycleTabs(AccessPlayer.AccessFirstMarket, 'market', 'default|trade_routes|trade_suggestions|states')]"
-						#### +++
-						using = fifi_button_cancel
-						#### ===
 					}
 				}
 				sidebar_tooltip_area = {
@@ -289,11 +279,8 @@ types information_panel_bar_types {
 				sidebar_label_button = {
 					position = { -100 @military_position }
 					blockoverride "onclick" {
-						onclick = "[InformationPanelBar.OpenPanelCycleTabs('military', 'army|navy')]"
+						onclick = "[InformationPanelBar.OpenPanelCycleTabs('military', 'army|mobilization|navy')]"
 						input_action = "open_military"
-						#### +++
-						using = fifi_button_cancel
-						#### ===
 					}
 				}
 				sidebar_label_text = {
@@ -316,10 +303,7 @@ types information_panel_bar_types {
 						blockoverride "button_selected" {
 							visible = "[InformationPanelBar.IsPanelOpen('military')]"
 						}
-						onclick = "[InformationPanelBar.OpenPanelCycleTabs('military', 'army|navy')]"
-						#### +++
-						using = fifi_button_cancel
-						#### ===
+						onclick = "[InformationPanelBar.OpenPanelCycleTabs('military', 'army|mobilization|navy')]"
 					}
 				}
 				sidebar_tooltip_area = {
@@ -344,9 +328,6 @@ types information_panel_bar_types {
 					blockoverride "onclick" {
 						onclick = "[InformationPanelBar.OpenPanelCycleTabs('diplomatic_overview', 'default|release_subject')]"
 						input_action = "open_diplomatic"
-						#### +++
-						using = fifi_button_cancel
-						#### ===
 					}
 				}
 				sidebar_label_text_small = {
@@ -371,9 +352,6 @@ types information_panel_bar_types {
 							visible = "[InformationPanelBar.IsPanelOpen('diplomatic_overview')]"
 						}
 						onclick = "[InformationPanelBar.OpenPanelCycleTabs('diplomatic_overview', 'default|release_subject')]"
-						#### +++
-						using = fifi_button_cancel
-						#### ===
 					}
 				}
 				sidebar_tooltip_area_small = {
@@ -389,9 +367,6 @@ types information_panel_bar_types {
 					blockoverride "onclick" {
 						onclick = "[InformationPanelBar.OpenPanelCycleTabs('tech_tree', 'production|military|society')]"
 						input_action = "open_technology"
-						#### +++
-						using = fifi_button_cancel
-						#### ===
 					}
 				}
 				sidebar_label_text_small = {
@@ -416,9 +391,6 @@ types information_panel_bar_types {
 							visible = "[InformationPanelBar.IsPanelOpen('tech_tree')]"
 						}
 						onclick = "[InformationPanelBar.OpenPanelCycleTabs('tech_tree', 'production|military|society')]"
-						#### +++
-						using = fifi_button_cancel
-						#### ===
 
 						animated_progresspie = {
 							visible = "[Technology.IsValid]"
@@ -460,9 +432,6 @@ types information_panel_bar_types {
 					blockoverride "onclick" {
 						onclick = "[InformationPanelBar.OpenPanelCycleTabs('companies', 'default|potential_companies')]"
 						input_action = "open_companies"
-						#### +++
-						using = fifi_button_cancel
-						#### ===
 					}
 				}
 				sidebar_label_text_small = {
@@ -487,9 +456,6 @@ types information_panel_bar_types {
 							visible = "[InformationPanelBar.IsPanelOpen('companies')]"
 						}
 						onclick = "[InformationPanelBar.OpenPanel('companies')]"
-						#### +++
-						using = fifi_button_cancel
-						#### ===
 					}
 				}
 				sidebar_tooltip_area_small = {
@@ -505,9 +471,6 @@ types information_panel_bar_types {
 					blockoverride "onclick" {
 						onclick = "[InformationPanelBar.OpenPanelCycleTabs('culture', 'default|nation_formation')]"
 						input_action = "open_culture"
-						#### +++
-						using = fifi_button_cancel
-						#### ===
 					}
 				}
 				sidebar_label_text_small = {
@@ -532,9 +495,6 @@ types information_panel_bar_types {
 							visible = "[InformationPanelBar.IsPanelOpen('culture')]"
 						}
 						onclick = "[InformationPanelBar.OpenPanelCycleTabs('culture', 'default|nation_formation')]"
-						#### +++
-						using = fifi_button_cancel
-						#### ===
 					}
 				}
 				sidebar_tooltip_area_small = {
@@ -550,9 +510,6 @@ types information_panel_bar_types {
 					blockoverride "onclick" {
 						onclick = "[InformationPanelBar.OpenPanelCycleTabs('pops_overview', 'default|population_charts|pop_list')]"
 						input_action = "open_population"
-						#### +++
-						using = fifi_button_cancel
-						#### ===
 					}
 				}
 				sidebar_label_text_small = {
@@ -577,9 +534,6 @@ types information_panel_bar_types {
 							visible = "[InformationPanelBar.IsPanelOpen('pops_overview')]"
 						}
 						onclick = "[InformationPanelBar.OpenPanelCycleTabs('pops_overview', 'default|population_charts|pop_list')]"
-						#### +++
-						using = fifi_button_cancel
-						#### ===
 					}
 				}
 				sidebar_tooltip_area_small = {
@@ -595,9 +549,6 @@ types information_panel_bar_types {
 					blockoverride "onclick" {
 						onclick = "[InformationPanelBar.OpenPanelCycleTabs('journal', 'default|decisions')]"
 						input_action = "open_journal"
-						#### +++
-						using = fifi_button_cancel
-						#### ===
 					}
 				}
 				# HIDDEN DECISIONS BUTTON, JUST FOR SHORTCUT
@@ -605,9 +556,6 @@ types information_panel_bar_types {
 					size = { 0 0 }
 					input_action = "open_decisions"
 					onclick = "[InformationPanelBar.OpenPanelTab('journal', 'decisions')]"
-					#### +++
-						using = fifi_button_cancel
-						#### ===
 				}
 				sidebar_label_text_small = {
 					position = { -100 @journal_position }
@@ -631,9 +579,6 @@ types information_panel_bar_types {
 							visible = "[InformationPanelBar.IsPanelOpen('journal')]"
 						}
 						onclick = "[InformationPanelBar.OpenPanelCycleTabs('journal', 'default|decisions')]"
-						#### +++
-						using = fifi_button_cancel
-						#### ===
 					}
 					textbox = {
 						parentanchor = right|top
@@ -655,52 +600,6 @@ types information_panel_bar_types {
 					input_action = "open_journal"
 				}
 
-				### OUTLINER
-				sidebar_label_button_small = {
-					enabled = "[GetMetaPlayer.GetPlayedOrObservedCountry.IsValid]"
-					position = { -100 @outliner_position }
-					blockoverride "onclick" {
-						onclick = "[InformationPanelBar.OpenPanel('outliner')]"
-						input_action = "open_outliner"
-						#### +++
-						using = fifi_button_cancel
-						#### ===
-					}
-				}
-
-				sidebar_label_text_small = {
-					position = { -100 @outliner_position }
-					text = "OUTLINER"
-				}
-				widget = {
-					enabled = "[GetMetaPlayer.GetPlayedOrObservedCountry.IsValid]"
-					name = "tutorial_highlight_outliner"
-					position = { 0 @outliner_position }
-					using = clickthrough_blocker
-					using = sidebar_button_size_small
-					using = selected_sidepanel_animation_small
-					blockoverride "selected_visibility" {
-						visible = "[InformationPanelBar.IsPanelOpen('outliner')]"
-					}
-					sidepanel_button_small = {
-						blockoverride "icon" {
-							texture = "gfx/interface/main_hud/outliner_btn.dds"
-						}
-						blockoverride "button_selected" {
-							visible = "[InformationPanelBar.IsPanelOpen('outliner')]"
-						}
-						onclick = "[InformationPanelBar.OpenPanel('outliner')]"
-						#### +++
-						using = fifi_button_cancel
-						#### ===
-					}
-				}
-				sidebar_tooltip_area_small = {
-					position = { 0 @outliner_position }
-					tooltip = "OUTLINER_TOOLTIP"
-					input_action = "open_outliner"
-				}
-
 				#widget needed to prevent you from clicking on the map
 				widget = {
 					using = clickthrough_blocker
@@ -715,9 +614,6 @@ types information_panel_bar_types {
 					blockoverride "onclick" {
 						onclick = "[MapListPanelManager.ToggleCurrentPanel]"
 						input_action = map_list
-						#### +++
-						using = fifi_button_cancel
-						#### ===
 					}
 				}
 
@@ -742,9 +638,6 @@ types information_panel_bar_types {
 							visible = "[MapListPanelManager.IsVisible]"
 						}
 						onclick = "[MapListPanelManager.ToggleCurrentPanel]"
-						#### +++
-						using = fifi_button_cancel
-						#### ===
 					}
 				}
 
@@ -753,9 +646,6 @@ types information_panel_bar_types {
 					tooltip = "MAP_LIST_TOOLTIP"
 					input_action = map_list
 				}
-				#### +++
-				using = fifi_panel_bar_button
-				#### ===
 			}
 		}
 	}

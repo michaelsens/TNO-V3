@@ -1,4 +1,4 @@
-### this is an imported file. please make as little changes to this file as possible.
+﻿### this is an imported file. please make as little changes to this file as possible.
 ### when you make a change please mark it very clearly using a pair of comment lines with the text '### v3' and '### to here'
 ### texture paths and audio event ids are an exception to this and can be changed without marking
 
@@ -314,7 +314,7 @@ window = {
 							}
 
 							text_single = {
-								raw_text = "MULTIPLAYER_GUI_PUBLIC_MICROSOFT_ONLY"
+								text = "MULTIPLAYER_GUI_PUBLIC_MICROSOFT_ONLY_TT"
 								align = nobaseline
 							}
 
@@ -589,8 +589,8 @@ window = {
 							blockoverride "scrollbox_content" {
 								vbox = {
 									layoutpolicy_horizontal = expanding
-									datamodel = "[GameMpSetup.GetEnabledDLCs]"
-									visible = "[DataModelHasItems( GameMpSetup.GetEnabledDLCs )]"
+									datamodel = "[GetEnabledDlcNames]"
+									visible = "[DataModelHasItems( GetEnabledDlcNames )]"
 
 									item = {
 										text_single = {
@@ -603,7 +603,7 @@ window = {
 
 							blockoverride "scrollbox_empty"
 							{
-								visible = "[IsDataModelEmpty( GameMpSetup.GetEnabledDLCs )]"
+								visible = "[IsDataModelEmpty( GetEnabledDlcNames )]"
 								text = "JOMINI_MULTIPLAYER_GUI_NO_DLCS"
 							}
 
@@ -611,7 +611,7 @@ window = {
 							{
 								expand = {
 									layoutpolicy_vertical = growing
-									visible = "[DataModelHasItems( GameMpSetup.GetEnabledDLCs )]"
+									visible = "[DataModelHasItems( GetEnabledDlcNames )]"
 								}
 							}
 						}
