@@ -72,20 +72,21 @@
 		relations_progress_per_day = 3 # At 100, +1 relations
 		relations_improvement_max = 80		
 	
-		is_about_to_auto_break = {
-            scope:target_country.relations:root < 0 # this is: cordial + 3
-		}
-
-		should_auto_break = {
-			custom_tooltip = {
-				text = DIPLO_ACTION_RELATIONS_CORDIAL_OR_GREATER_NOT
-
-                # make sure to update is_about_to_auto_break when changing this:
-				scope:target_country.relations:root < relations_threshold:cordial
+		requirement_to_maintain = {
+			trigger = {
+				custom_tooltip = {
+					text = DIPLO_ACTION_RELATIONS_CORDIAL_OR_GREATER
+					# make sure to update is_about_to_auto_break when changing this:
+					scope:target_country.relations:root < relations_threshold:cordial
+				}	
+			}
+			
+			show_about_to_break_warning = {
+				scope:target_country.relations:root < 23
 			}		
-		}
+		}	
 
-		should_invalidate = {
+		requirement_to_maintain = {
 			OR = {
 				NOT = { has_diplomatic_relevance = scope:target_country }
 				has_war_with = scope:target_country				
@@ -104,7 +105,7 @@
 			}
 		}
 
-		break_effect = {
+		manual_break_effect = {
 			change_relations = { country = scope:target_country value = -30 }
 			create_truce = { country = scope:target_country months = 12 }
 		}
