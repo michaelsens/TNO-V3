@@ -1048,9 +1048,18 @@ tno_germany_events.17 = { # German Civil War
     c:GER = {
      set_immune_to_revolutions = yes
 
-     remove_diplomatic_pact = {
-         country = c:IRE
-         type = protectorate
+     if = {
+        limit = {
+            has_diplomatic_pact = {
+                who = c:IRE
+                type = protectorate
+                is_initiator = yes
+            }
+        }
+        remove_diplomatic_pact = {
+             country = c:IRE
+             type = protectorate
+         }
      }
      remove_diplomatic_pact = {
          country = c:SER
