@@ -59,6 +59,12 @@
 	s:STATE_LOUISIANA={
 		region_state:USA={
 			create_building={
+				building="building_power_plant"
+				level=2
+				reserves=1
+				activate_production_methods={ "pm_oil-fired_plant" }
+			}
+			create_building={
 				building="building_logging_camp"
 				level=1
 				reserves=1
@@ -82,12 +88,7 @@
 				reserves=1
 				activate_production_methods={ "pm_industrial_port" }
 			}
-			create_building={
-				building="building_sugar_plantation"
-				level=2
-				reserves=1
-				activate_production_methods={ "default_building_sugar_plantation" "pm_road_carts"  }
-			}
+
 			create_building={
 				building="building_railway"
 				level=3
@@ -109,12 +110,6 @@
 			create_building={
 				building="building_breweries"
 				level=2
-				reserves=1
-				activate_production_methods={ "" }
-			}
-			create_building={
-				building="building_industrial_chemical_plants"
-				level=3
 				reserves=1
 				activate_production_methods={ "" }
 			}
@@ -184,13 +179,13 @@
 			}
 			create_building={
 				building="building_nuclear_enrichtigment_facility"
-				level=3
+				level=5
 				reserves=1
 				activate_production_methods={ "pmg_tno_nuclear_enrichtiment" }
 			}
 			create_building={
 				building="building_railway"
-				level=16
+				level=19
 				reserves=1
 				activate_production_methods={ "pm_steam_trains" "pm_wooden_passenger_carriages" }
 			}
@@ -199,73 +194,55 @@
 			}	
 			create_building={
 				building="building_steel_mills"
-				level=9
+				level=15
 				reserves=1
 				activate_production_methods={ "pm_blister_steel_process" "pm_automation_disabled" "pm_privately_owned_industry" }
 			}
 			create_building={
 				building="building_motor_industry"
-				level=6
+				level=9
 				reserves=1
 				activate_production_methods={ "pm_steam_engines" "pm_automobiles_disabled" "pm_automation_disabled" "pm_privately_owned_industry" }
 			}
 			create_building={
 				building="building_power_plant"
-				level=7
+				level=10
 				reserves=1
 				activate_production_methods={ "pm_oil-fired_plant" }
 			}
 			create_building={
 				building="building_government_administration"
-				level=6
+				level=10
 				reserves=1
 				activate_production_methods={ "pm_horizontal_drawer_cabinets" }
 			}
 			create_building={
 				building="building_construction_sector"
-				level=9
+				level=8
 				reserves=1
 				activate_production_methods={ "pm_iron_frame_buildings" }
-			}			
-			create_building={
-				building="building_arms_industry"
-				level=4
-				reserves=1
-				activate_production_methods={ "pm_muskets" "pm_merchant_guilds_building_arms_industry" }
-			}
-			create_building={
-				building="building_munition_plants"
-				level=3
-				reserves=1
-				activate_production_methods={ "pm_percussion_caps" "pm_privately_owned_industry" }
-			}			
+			}					
 			create_building={
 				building="building_university"
-				level=2
+				level=5
 				reserves=1
 				activate_production_methods={ "pm_philosophy_department" }
 			}
 			create_building={
 				building="building_paper_mills"
-				level=3
+				level=4
 				reserves=1
 				activate_production_methods={ "pm_sulfite_pulping" "pm_automation_disabled" "pm_privately_owned_building_paper_mills" }
 			}
 			create_building={
 				building="building_textile_mills"
-				level=4
+				level=3
 				reserves=1
 				activate_production_methods={ "pm_dye_workshops" "pm_no_luxury_clothes" "pm_traditional_looms" "pm_privately_owned_building_textile_mills" }
 			}
 			create_building={
-				building="building_furniture_manufacturies"
-				level=4
-				reserves=1
-				activate_production_methods={ "pm_lathe" "pm_privately_owned_building_furniture_manufacturies" "pm_automation_disabled" "pm_luxury_furniture" }
-			}
-			create_building={
 				building="building_tooling_workshops"
-				level=18
+				level=24
 				reserves=1
 				activate_production_methods={ "pm_steel" "pm_automation_disabled" "pm_privately_owned_building_tooling_workshops" }
 			}
@@ -274,12 +251,6 @@
 				level=5
 				reserves=1
 				activate_production_methods={ "pm_saw_mills" "pm_privately_owned_building_logging_camp" "pm_no_equipment" "pm_road_carts" "pm_hardwood" }
-			}
-			create_building={
-				building="building_wheat_farm"
-				level=2
-				reserves=1
-				activate_production_methods={  "pm_soil_enriching_farming" "pm_tools_disabled"  }
 			}
 			create_building={
 				building="building_naval_base"
@@ -295,43 +266,13 @@
 			}
 			create_building={
 				building="building_port"
-				level=2
+				level=7
 				reserves=1
 				activate_production_methods={ "pm_industrial_port" }
 			}
 			create_building={
 				building="building_consumer_electronics"
-				level=12
-				reserves=1
-				activate_production_methods={ "" }
-			}
-			create_building={
-				building="building_breweries"
-				level=1
-				reserves=1
-				activate_production_methods={ "" }
-			}
-			create_building={
-				building="building_household_appliances"
-				level=1
-				reserves=1
-				activate_production_methods={ "" }
-			}
-			create_building={
-				building="building_industrial_chemical_plants"
-				level=8
-				reserves=1
-				activate_production_methods={ "" }
-			}
-			create_building={
-				building="pharmaceutical_industries"
-				level=5
-				reserves=1
-				activate_production_methods={ "" }
-			}
-			create_building={
-				building="dye_factory"
-				level=2
+				level=16
 				reserves=1
 				activate_production_methods={ "" }
 			}
@@ -420,6 +361,30 @@
 	s:STATE_VIRGINIA={
 		region_state:USA={
 			create_building={
+				building="building_furniture_manufacturies"
+				level=2
+				reserves=1
+				activate_production_methods={ "pm_lathe" "pm_privately_owned_building_furniture_manufacturies" "pm_automation_disabled" "pm_luxury_furniture" }
+			}
+			create_building={
+				building="building_industrial_chemical_plants"
+				level=5
+				reserves=1
+				activate_production_methods={ "pm_artificial_fertilizers" "pm_privately_owned_industry" }			
+			}
+			create_building={
+				building="office_building"
+				level=4
+				reserves=1
+				activate_production_methods={ "" }
+			}
+			create_building={
+				building="building_food_industry"
+				level=6
+				reserves=1
+				activate_production_methods={ "pm_pot_stills" "pm_disabled_canning" "pm_merchant_guilds_building_food_industry" "pm_manual_dough_processing" "pm_sweeteners" }
+			}
+			create_building={
 				building="building_power_plant"
 				level=5
 				reserves=1
@@ -438,12 +403,6 @@
 				activate_production_methods={ "" }
 			}
 			create_building={
-				building="building_fishing_wharf"
-				level=1
-				reserves=1
-				activate_production_methods={ "pm_steam_trawlers" "pm_unrefrigerated" "pm_merchant_guilds_building_fishing_wharf" }
-			}
-			create_building={
 				building="building_construction_sector"
 				level=3
 				reserves=1
@@ -457,7 +416,7 @@
 			}
 			create_building={
 				building="building_iron_mine"
-				level=2
+				level=7
 				reserves=1
 				activate_production_methods={ "pm_atmospheric_engine_pump_building_iron_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" "pm_privately_owned_building_iron_mine" }
 			}
@@ -481,13 +440,13 @@
 			}			
 			create_building={
 				building="building_port"
-				level=1
+				level=3
 				reserves=1
 				activate_production_methods={ "pm_industrial_port" }
 			}		
 			create_building={
 				building="building_railway"
-				level=1
+				level=3
 				reserves=1
 				activate_production_methods={ "pm_steam_trains" "pm_wooden_passenger_carriages" }
 			}	
@@ -495,6 +454,12 @@
 	}
 	s:STATE_ALASKA={
 		region_state:USA={
+			create_building={
+				building="hospital"
+				level=1
+				reserves=1
+				activate_production_methods={ "" }
+			}
 			create_building={
 				building="building_port"
 				level=4
@@ -512,8 +477,14 @@
 	s:STATE_WASHINGTON={
 		region_state:USA={
 			create_building={
+				building="hospital"
+				level=2
+				reserves=1
+				activate_production_methods={ "" }
+			}
+			create_building={
 				building="building_chemical_plants"
-				level=1
+				level=3
 				reserves=1
 				activate_production_methods={ "pm_artificial_fertilizers" "pm_privately_owned_industry" }			
 			}
@@ -555,7 +526,7 @@
 			}
 			create_building={
 				building="building_coal_mine"
-				level=2
+				level=4
 				reserves=1
 				activate_production_methods={ "pm_atmospheric_engine_pump_building_coal_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" "pm_privately_owned_building_coal_mine" }
 			}
@@ -573,7 +544,7 @@
 			}
 			create_building={
 				building="building_artillery_foundries"
-				level=1
+				level=4
 				reserves=1
 				activate_production_methods={ "pm_cannons" "pm_automation_disabled" "pm_merchant_guilds_building_artillery_foundries" }
 			}
@@ -582,11 +553,12 @@
 	s:STATE_OREGON={
 		region_state:USA={
 			create_building={
-				building="building_chemical_plants"
-				level=1
+				building="hospital"
+				level=2
 				reserves=1
-				activate_production_methods={ "pm_artificial_fertilizers" "pm_privately_owned_industry" }			
+				activate_production_methods={ "" }
 			}
+			
 			create_building={
 				building="heavy_equipment_manufactury"
 				level=2
@@ -652,6 +624,12 @@
 	s:STATE_IDAHO={
 		region_state:USA={
 			create_building={
+				building="hospital"
+				level=1
+				reserves=1
+				activate_production_methods={ "" }
+			}
+			create_building={
 				building="building_food_industry"
 				level=1
 				reserves=1
@@ -686,8 +664,26 @@
 	s:STATE_COLORADO={
 		region_state:USA={
 			create_building={
+				building="building_oil_rig"
+				level=2
+				reserves=1	
+				activate_production_methods={ "pm_steam_derricks" "pm_road_carts" }
+			}
+			create_building={
+				building="building_tooling_workshops"
+				level=3
+				reserves=1
+				activate_production_methods={ "pm_steel" "pm_automation_disabled" "pm_privately_owned_building_tooling_workshops" }
+			}
+			create_building={
+				building="building_munition_plants"
+				level=5
+				reserves=1
+				activate_production_methods={ "pm_percussion_caps" "pm_privately_owned_industry" }
+			}	
+			create_building={
 				building="building_railway"
-				level=1
+				level=3
 				reserves=1
 				activate_production_methods={ "pm_steam_trains" "pm_wooden_passenger_carriages" }
 			}
@@ -788,6 +784,12 @@
 	s:STATE_NORTH_DAKOTA={
 		region_state:USA={
 			create_building={
+				building="heavy_equipment_manufactury"
+				level=2
+				reserves=1
+				activate_production_methods={ "" }
+			}
+			create_building={
 				building="building_livestock_ranch"
 				level=2
 				reserves=1
@@ -803,6 +805,18 @@
 	}
 	s:STATE_SOUTH_DAKOTA={
 		region_state:USA={
+			create_building={
+				building="heavy_equipment_manufactury"
+				level=2
+				reserves=1
+				activate_production_methods={ "" }
+			}
+			create_building={
+				building="building_tooling_workshops"
+				level=3
+				reserves=1
+				activate_production_methods={ "pm_steel" "pm_automation_disabled" "pm_privately_owned_building_tooling_workshops" }
+			}
 			create_building={
 				building="building_railway"
 				level=1
@@ -820,6 +834,24 @@
 	s:STATE_NEBRASKA={
 		region_state:USA={
 			create_building={
+				building="building_logging_camp"
+				level=2
+				reserves=1
+				activate_production_methods={ "pm_saw_mills" "pm_privately_owned_building_logging_camp" "pm_no_equipment" "pm_road_carts" "pm_no_hardwood" }
+			}
+			create_building={
+				building="building_power_plant"
+				level=2
+				reserves=1
+				activate_production_methods={ "pm_oil-fired_plant" }
+			}
+			create_building={
+				building="building_chemical_plants"
+				level=7
+				reserves=1
+				activate_production_methods={ "pm_artificial_fertilizers" "pm_privately_owned_industry" }			
+			}
+			create_building={
 				building="building_railway"
 				level=1
 				reserves=1
@@ -835,6 +867,30 @@
 	}
 	s:STATE_KANSAS={
 		region_state:USA={
+			create_building={
+				building="heavy_equipment_manufactury"
+				level=1
+				reserves=1
+				activate_production_methods={ "" }
+			}
+			create_building={
+				building="pharmaceutical_industries"
+				level=2
+				reserves=1
+				activate_production_methods={ "" }
+			}
+			create_building={
+				building="building_tooling_workshops"
+				level=6
+				reserves=1
+				activate_production_methods={ "pm_steel" "pm_automation_disabled" "pm_privately_owned_building_tooling_workshops" }
+			}
+			create_building={
+				building="building_arms_industry"
+				level=6
+				reserves=1
+				activate_production_methods={ "pm_muskets" "pm_merchant_guilds_building_arms_industry" }
+			}
 			create_building={
 				building="building_lead_mine"
 				level=1
@@ -858,8 +914,32 @@
 	s:STATE_OKLAHOMA={
 		region_state:USA={
 			create_building={
+				building="building_power_plant"
+				level=3
+				reserves=1
+				activate_production_methods={ "pm_oil-fired_plant" }
+			}
+			create_building={
+				building="building_barracks"
+				level=2
+				reserves=1
+				activate_production_methods={ "pm_general_training" }
+			}
+			create_building={
+				building="building_arms_industry"
+				level=6
+				reserves=1
+				activate_production_methods={ "pm_muskets" "pm_merchant_guilds_building_arms_industry" }
+			}
+			create_building={
+				building="building_munition_plants"
+				level=5
+				reserves=1
+				activate_production_methods={ "pm_percussion_caps" "pm_privately_owned_industry" }
+			}	
+			create_building={
 				building="building_explosives_factory"
-				level=1
+				level=3
 				reserves=1
 				activate_production_methods={ "pm_vacuum_evaporation" }
 			}
@@ -877,13 +957,13 @@
 			}
 			create_building={
 				building="building_railway"
-				level=1
+				level=3
 				reserves=1
 				activate_production_methods={ "pm_steam_trains" "pm_wooden_passenger_carriages" }
 			}
 			create_building={
 				building="dye_factory"
-				level=1
+				level=2
 				reserves=1
 				activate_production_methods={ "" }
 			}
@@ -929,7 +1009,7 @@
 			}
 			create_building={
 				building="building_lead_mine"
-				level=4
+				level=7
 				reserves=1
 				activate_production_methods={ "pm_atmospheric_engine_pump_building_lead_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" "pm_privately_owned_building_lead_mine" }
 			}
@@ -963,7 +1043,7 @@
 			}
 			create_building={
 				building="building_railway"
-				level=2
+				level=4
 				reserves=1
 				activate_production_methods={ "pm_steam_trains" "pm_wooden_passenger_carriages" }
 			}
@@ -986,7 +1066,7 @@
 				activate_production_methods={ "" }
 			}
 			create_building={
-				building="building_industrial_chemical_plants"
+				building="building_chemical_plants"
 				level=2
 				reserves=1
 				activate_production_methods={ "" }
@@ -1029,7 +1109,7 @@
 			}
 			create_building={
 				building="hospital"
-				level=1
+				level=2
 				reserves=1
 				activate_production_methods={ "" }
 			}
@@ -1192,6 +1272,24 @@
 	s:STATE_MINNESOTA={
 		region_state:USA={
 			create_building={
+				building="heavy_equipment_manufactury"
+				level=4
+				reserves=1
+				activate_production_methods={ "" }
+			}
+			create_building={
+				building="building_munition_plants"
+				level=5
+				reserves=1
+				activate_production_methods={ "pm_percussion_caps" "pm_privately_owned_industry" }
+			}	
+			create_building={
+				building="commercial_services"
+				level=4
+				reserves=1
+				activate_production_methods={ "" }
+			}
+			create_building={
 				building="building_sulfur_mine"
 				level=4
 				reserves=1
@@ -1205,7 +1303,7 @@
 			}
 			create_building={
 				building="building_railway"
-				level=1
+				level=3
 				reserves=1
 				activate_production_methods={ "pm_steam_trains" "pm_wooden_passenger_carriages" }
 			}
@@ -1216,8 +1314,8 @@
 				activate_production_methods={ "pm_oil-fired_plant" }
 			}
 			create_building={
-				building="building_chemical_plants"
-				level=3
+				building="building_industrial_chemical_plants"
+				level=7
 				reserves=1
 				activate_production_methods={ "pm_artificial_fertilizers" "pm_privately_owned_industry" }			
 			}
@@ -1235,7 +1333,7 @@
 			}
 			create_building={
 				building="building_iron_mine"
-				level=1
+				level=2
 				reserves=1
 				activate_production_methods={ "pm_atmospheric_engine_pump_building_iron_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" "pm_privately_owned_building_iron_mine" }
 			}
@@ -1244,8 +1342,20 @@
 	s:STATE_WISCONSIN={
 		region_state:USA={
 			create_building={
+				building="building_tooling_workshops"
+				level=7
+				reserves=1
+				activate_production_methods={ "pm_steel" "pm_automation_disabled" "pm_privately_owned_building_tooling_workshops" }
+			}
+			create_building={
+				building="building_barracks"
+				level=5
+				reserves=1
+				activate_production_methods={ "pm_general_training" }
+			}
+			create_building={
 				building="building_paper_mills"
-				level=6
+				level=3
 				reserves=1
 				activate_production_methods={ "pm_sulfite_pulping" "pm_automation_disabled" "pm_privately_owned_building_paper_mills" }
 			}
@@ -1263,18 +1373,12 @@
 			}
 			create_building={
 				building="building_railway"
-				level=1
+				level=5
 				reserves=1
 				activate_production_methods={ "pm_steam_trains" "pm_wooden_passenger_carriages" }
 			}
 			create_building={
 				building="building_industrial_chemical_plants"
-				level=1
-				reserves=1
-				activate_production_methods={ "" }
-			}
-			create_building={
-				building="dye_factory"
 				level=1
 				reserves=1
 				activate_production_methods={ "" }
@@ -1359,7 +1463,7 @@
 			}			
 			create_building={
 				building="building_munition_plants"
-				level=1
+				level=5
 				reserves=1
 				activate_production_methods={ "pm_percussion_caps" "pm_privately_owned_industry" }
 			}			
@@ -1371,7 +1475,7 @@
 			}
 			create_building={
 				building="building_iron_mine"
-				level=2
+				level=5
 				reserves=1
 				activate_production_methods={ "pm_atmospheric_engine_pump_building_iron_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" "pm_privately_owned_building_iron_mine" }
 			}
@@ -1516,20 +1620,32 @@
 	s:STATE_MICHIGAN={
 		region_state:USA={
 			create_building={
-				building="building_artillery_foundries"
+				building="building_food_industry"
 				level=2
+				reserves=1
+				activate_production_methods={ "pm_merchant_guilds_building_food_industry" "pm_disabled_canning" "pm_sweeteners" "pm_manual_dough_processing" "pm_pot_stills" }
+			}
+			create_building={
+				building="building_railway"
+				level=12
+				reserves=1
+				activate_production_methods={ "pm_steam_trains" "pm_wooden_passenger_carriages" }
+			}
+			create_building={
+				building="building_artillery_foundries"
+				level=4
 				reserves=1
 				activate_production_methods={ "pm_cannons" "pm_automation_disabled" "pm_merchant_guilds_building_artillery_foundries" }
 			}
 			create_building={
 				building="building_explosives_factory"
-				level=1
+				level=4
 				reserves=1
 				activate_production_methods={ "pm_vacuum_evaporation" }
 			}
 			create_building={
 				building="building_glassworks"
-				level=14
+				level=10
 				reserves=1
 				activate_production_methods={ "pm_leaded_glass" "pm_privately_owned_building_glassworks" "pm_manual_glassblowing" "pm_ceramics" }
 			}
@@ -1547,7 +1663,7 @@
 			}
 			create_building={
 				building="building_iron_mine"
-				level=5
+				level=13
 				reserves=1
 				activate_production_methods={ "pm_atmospheric_engine_pump_building_iron_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" "pm_privately_owned_building_iron_mine" }
 			}
@@ -1558,14 +1674,8 @@
 				activate_production_methods={ "pm_steam_engines" "pm_automobiles_disabled" "pm_automation_disabled" "pm_privately_owned_industry" }
 			}
 			create_building={
-				building="building_railway"
-				level=10
-				reserves=1
-				activate_production_methods={ "pm_steam_trains" "pm_wooden_passenger_carriages" }
-			}
-			create_building={
-				building="building_chemical_plants"
-				level=5
+				building="building_industrial_chemical_plants"
+				level=6
 				reserves=1
 				activate_production_methods={ "pm_artificial_fertilizers" "pm_privately_owned_industry" }			
 			}
@@ -1631,7 +1741,7 @@
 			}
 			create_building={
 				building="automotive_industry"
-				level=3
+				level=8
 				reserves=1
 				activate_production_methods={ "" }
 			}
@@ -1688,6 +1798,12 @@
 	s:STATE_OHIO={
 		region_state:USA={
 			create_building={
+				building="building_explosives_factory"
+				level=7
+				reserves=1
+				activate_production_methods={ "pm_vacuum_evaporation" }
+			}
+			create_building={
 				building="building_war_machine_industry"
 				level=2
 				reserves=1
@@ -1713,13 +1829,13 @@
 			}
 			create_building={
 				building="building_lead_mine"
-				level=7
+				level=12
 				reserves=1
 				activate_production_methods={ "pm_atmospheric_engine_pump_building_lead_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" "pm_privately_owned_building_lead_mine" }
 			}
 			create_building={
 				building="building_railway"
-				level=9
+				level=12
 				reserves=1
 				activate_production_methods={ "pm_steam_trains" "pm_wooden_passenger_carriages" }
 			}
@@ -1767,7 +1883,7 @@
 			}
 			create_building={
 				building="heavy_equipment_manufactury"
-				level=4
+				level=10
 				reserves=1
 				activate_production_methods={ "" }
 			}
@@ -1807,12 +1923,7 @@
 				reserves=1
 				activate_production_methods={ "" }
 			}
-			create_building={
-				building="building_chemical_plants"
-				level=1
-				reserves=1
-				activate_production_methods={ "pm_artificial_fertilizers" "pm_privately_owned_industry" }			
-			}
+			
 			create_building={
 				building="building_power_plant"
 				level=1
@@ -1866,6 +1977,12 @@
 	s:STATE_KENTUCKY={
 		region_state:USA={
 			create_building={
+				building="semiconductor_plant"
+				level=3
+				reserves=1
+				activate_production_methods={ "" }
+			}
+			create_building={
 				building="building_government_administration"
 				level=2
 				reserves=1
@@ -1902,18 +2019,6 @@
 				activate_production_methods={ "pm_merchant_guilds_building_food_industry" "pm_disabled_canning" "pm_sweeteners" "pm_manual_dough_processing" "pm_pot_stills" }
 			}
 			create_building={
-				building="building_tobacco_plantation"
-				level=3
-				reserves=1
-				activate_production_methods={ "default_building_tobacco_plantation" "pm_road_carts"  }
-			}
-			create_building={
-				building="building_maize_farm"
-				level=2
-				reserves=1
-				activate_production_methods={ "pm_soil_enriching_farming"  "pm_tools_disabled" }
-			}
-			create_building={
 				building="building_livestock_ranch"
 				level=2
 				reserves=1
@@ -1929,6 +2034,18 @@
 	}
 	s:STATE_TENNESSEE={
 		region_state:USA={
+			create_building={
+				building="building_food_industry"
+				level=2
+				reserves=1
+				activate_production_methods={ "pm_merchant_guilds_building_food_industry" "pm_disabled_canning" "pm_sweeteners" "pm_manual_dough_processing" "pm_pot_stills" }
+			}
+			create_building={
+				building="pharmaceutical_industries"
+				level=3
+				reserves=1
+				activate_production_methods={ "" }
+			}
 			create_building={
 				building="building_iron_mine"
 				level=5
@@ -1961,7 +2078,7 @@
 			}
 			create_building={
 				building="building_railway"
-				level=1
+				level=3
 				reserves=1
 				activate_production_methods={ "pm_steam_trains" "pm_wooden_passenger_carriages" }
 			}
@@ -1978,24 +2095,6 @@
 				activate_production_methods={ "pm_oil-fired_plant" }
 			}
 			create_building={
-				building="building_livestock_ranch"
-				level=1
-				reserves=1
-				activate_production_methods={ "pm_intensive_grazing_ranch" "pm_slaughterhouses" "pm_standard_fences" "pm_unrefrigerated"  }
-			}
-			create_building={
-				building="building_tobacco_plantation"
-				level=1
-				reserves=1
-				activate_production_methods={ "default_building_tobacco_plantation" "pm_road_carts"  }
-			}
-			create_building={
-				building="building_cotton_plantation"
-				level=1
-				reserves=1
-				activate_production_methods={ "default_building_cotton_plantation" "pm_road_carts"  }
-			}
-			create_building={
 				building="building_barracks"
 				level=1
 				reserves=1
@@ -2005,6 +2104,12 @@
 	}
 	s:STATE_MISSISSIPPI={
 		region_state:USA={
+			create_building={
+				building="building_sugar_plantation"
+				level=3
+				reserves=1
+				activate_production_methods={ "default_building_sugar_plantation" "pm_road_carts"  }
+			}
 			create_building={
 				building="building_government_administration"
 				level=1
@@ -2042,28 +2147,10 @@
 				activate_production_methods={ "pm_general_training" }
 			}	
 			create_building={
-				building="building_cotton_plantation"
-				level=2
-				reserves=1
-				activate_production_methods={ "default_building_cotton_plantation" "pm_road_carts"  }
-			}
-			create_building={
 				building="commercial_services"
 				level=2
 				reserves=1
 				activate_production_methods={ "" }
-			}
-			create_building={
-				building="building_maize_farm"
-				level=2
-				reserves=1
-				activate_production_methods={ "pm_simple_farming" "pm_no_secondary" "pm_tools_disabled"  }
-			}
-			create_building={
-				building="building_tobacco_plantation"
-				level=2
-				reserves=1
-				activate_production_methods={ "default_building_tobacco_plantation" "pm_road_carts"  }
 			}					
 		}
 	}
@@ -2089,7 +2176,7 @@
 			}
 			create_building={
 				building="building_railway"
-				level=1
+				level=2
 				reserves=1
 				activate_production_methods={ "pm_steam_trains" "pm_wooden_passenger_carriages" }
 			}
@@ -2117,24 +2204,7 @@
 				reserves=1
 				activate_production_methods={ "pm_horizontal_drawer_cabinets" }
 			}
-			create_building={
-				building="building_maize_farm"
-				level=1
-				reserves=1
-				activate_production_methods={ "pm_simple_farming"  "pm_tools_disabled" "pm_citrus_orchards" }
-			}
-			create_building={
-				building="building_sugar_plantation"
-				level=1
-				reserves=1
-				activate_production_methods={ "default_building_sugar_plantation" "pm_road_carts"  }
-			}
-			create_building={
-				building="building_tobacco_plantation"
-				level=1
-				reserves=1
-				activate_production_methods={ "default_building_tobacco_plantation" "pm_road_carts"  }
-			}				
+				
 			create_building={
 				building="building_barracks"
 				level=1
@@ -2152,6 +2222,12 @@
 	s:STATE_FLORIDA={
 		region_state:USA={
 			create_building={
+				building="building_food_industry"
+				level=2
+				reserves=1
+				activate_production_methods={ "pm_merchant_guilds_building_food_industry" "pm_disabled_canning" "pm_sweeteners" "pm_manual_dough_processing" "pm_pot_stills" }
+			}
+			create_building={
 				building="building_logging_camp"
 				level=2
 				reserves=1
@@ -2165,15 +2241,9 @@
 			}
 			create_building={
 				building="heavy_equipment_manufactury"
-				level=4
+				level=8
 				reserves=1
 				activate_production_methods={ "" }
-			}
-			create_building={
-				building="building_fishing_wharf"
-				level=2
-				reserves=1
-				activate_production_methods={ "pm_simple_fishing" "pm_unrefrigerated" "pm_merchant_guilds_building_fishing_wharf" }
 			}
 			create_building={
 				building="building_motor_industry"
@@ -2183,7 +2253,7 @@
 			}
 			create_building={
 				building="building_tooling_workshops"
-				level=5
+				level=9
 				reserves=1
 				activate_production_methods={ "pm_steel" "pm_automation_disabled" "pm_privately_owned_building_tooling_workshops" }
 			}
@@ -2207,13 +2277,13 @@
 			}
 			create_building={
 				building="building_railway"
-				level=4
+				level=6
 				reserves=1
 				activate_production_methods={ "pm_steam_trains" "pm_wooden_passenger_carriages" }
 			}
 			create_building={
 				building="building_port"
-				level=1
+				level=4
 				reserves=1
 				activate_production_methods={ "pm_industrial_port" }
 			}	
@@ -2236,7 +2306,7 @@
 				activate_production_methods={ "pm_leaded_glass" "pm_ceramics" "pm_manual_glassblowing" "pm_privately_owned_building_glassworks" }
 			}
 			create_building={
-				building="building_chemical_plants"
+				building="building_industrial_chemical_plants"
 				level=4
 				reserves=1
 				activate_production_methods={ "pm_artificial_fertilizers" "pm_privately_owned_industry" }
@@ -2271,19 +2341,13 @@
 			}
 			create_building={
 				building="pharmaceutical_industries"
-				level=4
-				reserves=1
-				activate_production_methods={ "" }
-			}
-			create_building={
-				building="building_breweries"
-				level=1
+				level=2
 				reserves=1
 				activate_production_methods={ "" }
 			}
 			create_building={
 				building="commercial_services"
-				level=6
+				level=3
 				reserves=1
 				activate_production_methods={ "" }
 			}
@@ -2324,7 +2388,7 @@
 				activate_production_methods={ "pm_iron_frame_buildings" }
 			}	
 			create_building={
-				building="building_chemical_plants"
+				building="building_industrial_chemical_plants"
 				level=3
 				reserves=1
 				activate_production_methods={ "pm_artificial_fertilizers" "pm_privately_owned_industry" }			
@@ -2361,22 +2425,10 @@
 			}
 			create_building={
 				building="building_sugar_plantation"
-				level=1
+				level=2
 				reserves=1
 				activate_production_methods={ "default_building_sugar_plantation" "pm_road_carts"  }
-			}
-			create_building={
-				building="building_cotton_plantation"
-				level=2
-				reserves=1
-				activate_production_methods={ "default_building_cotton_plantation" "pm_road_carts"  }
-			}
-			create_building={
-				building="building_tobacco_plantation"
-				level=2
-				reserves=1
-				activate_production_methods={ "default_building_tobacco_plantation" "pm_road_carts"  }
-			}				
+			}			
 			create_building={
 				building="building_port"
 				level=2
@@ -2401,13 +2453,37 @@
 		region_state:USA={
 			create_building={
 				building="building_explosives_factory"
+				level=6
+				reserves=1
+				activate_production_methods={ "pm_vacuum_evaporation" }
+			}
+			create_building={
+				building="building_consumer_electronics"
+				level=6
+				reserves=1
+				activate_production_methods={ "" }
+			}
+			create_building={
+				building="building_arms_industry"
+				level=6
+				reserves=1
+				activate_production_methods={ "pm_muskets" "pm_merchant_guilds_building_arms_industry" }
+			}
+			create_building={
+				building="hospital"
+				level=4
+				reserves=1
+				activate_production_methods={ "" }
+			}
+			create_building={
+				building="building_explosives_factory"
 				level=4
 				reserves=1
 				activate_production_methods={ "pm_vacuum_evaporation" }
 			}
 			create_building={
 				building="building_iron_mine"
-				level=2
+				level=7
 				reserves=1
 				activate_production_methods={ "pm_atmospheric_engine_pump_building_iron_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" "pm_privately_owned_building_iron_mine" }
 			}
@@ -2419,7 +2495,7 @@
 			}
 			create_building={
 				building="building_railway"
-				level=1
+				level=4
 				reserves=1
 				activate_production_methods={ "pm_steam_trains" "pm_wooden_passenger_carriages" }
 			}
@@ -2457,6 +2533,12 @@
 	}
 	s:STATE_MARYLAND={
 		region_state:USA={
+			create_building={
+				building="synthetic_rubber_plant"
+				level=6
+				reserves=1
+				activate_production_methods={ "" }
+			}
 			create_building={
 				building="building_government_administration"
 				level=2
@@ -2536,18 +2618,6 @@
 				activate_production_methods={ "pm_leaded_glass" "pm_privately_owned_building_glassworks" "pm_manual_glassblowing" "pm_ceramics" }
 			}
 			create_building={
-				building="building_fishing_wharf"
-				level=1
-				reserves=1
-				activate_production_methods={ "pm_steam_trawlers" "pm_unrefrigerated" "pm_merchant_guilds_building_fishing_wharf" }
-			}
-			create_building={
-				building="building_tobacco_plantation"
-				level=1
-				reserves=1
-				activate_production_methods={ "default_building_tobacco_plantation" "pm_road_carts"  }
-			}
-			create_building={
 				building="building_naval_base"
 				level=1
 				reserves=1
@@ -2564,6 +2634,18 @@
 	s:STATE_DELAWARE={
 		region_state:USA={
 			create_building={
+				building="building_fishing_wharf"
+				level=1
+				reserves=1
+				activate_production_methods={ "pm_steam_trawlers" "pm_unrefrigerated" "pm_merchant_guilds_building_fishing_wharf" }
+			}
+			create_building={
+				building="building_consumer_electronics"
+				level=1
+				reserves=1
+				activate_production_methods={ "" }
+			}
+			create_building={
 				building="building_barracks"
 				level=1
 				reserves=1
@@ -2576,12 +2658,6 @@
 				activate_production_methods={ "pm_horizontal_drawer_cabinets" }
 			}
 			create_building={
-				building="building_fishing_wharf"
-				level=1
-				reserves=1
-				activate_production_methods={ "pm_steam_trawlers" "pm_unrefrigerated" "pm_merchant_guilds_building_fishing_wharf" }
-			}
-			create_building={
 				building="building_livestock_ranch"
 				level=1
 				reserves=1
@@ -2592,6 +2668,12 @@
 	s:STATE_PENNSYLVANIA={
 		region_state:USA={
 			create_building={
+				building="building_railway"
+				level=12
+				reserves=1
+				activate_production_methods={ "pm_steam_trains" "pm_wooden_passenger_carriages" }
+			}
+			create_building={
 				building="building_artillery_foundries"
 				level=2
 				reserves=1
@@ -2599,7 +2681,7 @@
 			}
 			create_building={
 				building="building_motor_industry"
-				level=4
+				level=6
 				reserves=1
 				activate_production_methods={ "pm_steam_engines" "pm_automobiles_disabled" "pm_automation_disabled" "pm_privately_owned_industry" }
 			}
@@ -2622,14 +2704,14 @@
 				activate_production_methods={ "pm_traditional_art" }
 			}
 			create_building={
-				building="building_chemical_plants"
+				building="building_industrial_chemical_plants"
 				level=3
 				reserves=1
 				activate_production_methods={ "pm_artificial_fertilizers" "pm_privately_owned_industry" }			
 			}
 			create_building={
 				building="synthetic_rubber_plant"
-				level=9
+				level=13
 				reserves=1
 				activate_production_methods={ "" }
 			}
@@ -2718,12 +2800,6 @@
 				activate_production_methods={ "pm_oil-fired_plant" }
 			}
 			create_building={
-				building="building_railway"
-				level=8
-				reserves=1
-				activate_production_methods={ "pm_steam_trains" "pm_wooden_passenger_carriages" }
-			}
-			create_building={
 				building="building_oil_rig"
 				level=4
 				reserves=1	
@@ -2783,31 +2859,61 @@
 		region_state:USA={
 			create_building={
 				building="building_food_industry"
+				level=3
+				reserves=1
+				activate_production_methods={ "pm_pot_stills" "pm_disabled_canning" "pm_merchant_guilds_building_food_industry" "pm_manual_dough_processing" "pm_sweeteners" }
+			}
+			create_building={
+				building="building_textile_mills"
 				level=2
+				reserves=1
+				activate_production_methods={ "pm_dye_workshops" "pm_no_luxury_clothes" "pm_traditional_looms" "pm_privately_owned_building_textile_mills" }
+			}
+			create_building={
+				building="building_furniture_manufacturies"
+				level=3
+				reserves=1
+				activate_production_methods={ "pm_lathe" "pm_privately_owned_building_furniture_manufacturies" "pm_automation_disabled" "pm_luxury_furniture" }
+			}
+			create_building={
+				building="building_industrial_chemical_plants"
+				level=8
+				reserves=1
+				activate_production_methods={ "" }
+			}
+			create_building={
+				building="building_railway"
+				level=5
+				reserves=1
+				activate_production_methods={ "pm_steam_trains" "pm_wooden_passenger_carriages" }
+			}
+			create_building={
+				building="building_food_industry"
+				level=7
 				reserves=1
 				activate_production_methods={ "pm_pot_stills" "pm_disabled_canning" "pm_merchant_guilds_building_food_industry" "pm_manual_dough_processing" "pm_sweeteners" }
 			}
 			create_building={
 				building="building_iron_mine"
-				level=2
+				level=8
 				reserves=1
 				activate_production_methods={ "pm_atmospheric_engine_pump_building_iron_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" "pm_privately_owned_building_iron_mine" }
 			}
 			create_building={
 				building="heavy_equipment_manufactury"
-				level=4
+				level=12
 				reserves=1
 				activate_production_methods={ "" }
 			}
 			create_building={
 				building="building_motor_industry"
-				level=1
+				level=5
 				reserves=1
 				activate_production_methods={ "pm_steam_engines" "pm_automobiles_disabled" "pm_automation_disabled" "pm_privately_owned_industry" }
 			}
 			create_building={
 				building="building_port"
-				level=3
+				level=6
 				reserves=1
 				activate_production_methods={ "pm_industrial_port" }
 			}
@@ -2818,7 +2924,7 @@
 				activate_production_methods={ "pm_oil-fired_plant" }
 			}
 			create_building={
-				building="building_chemical_plants"
+				building="building_industrial_chemical_plants"
 				level=3
 				reserves=1
 				activate_production_methods={ "pm_artificial_fertilizers" "pm_privately_owned_industry" }			
@@ -2845,6 +2951,12 @@
 	}
 	s:STATE_ILLINOIS={
 		region_state:USA={
+			create_building={
+				building="building_coal_mine"
+				level=6
+				reserves=1
+				activate_production_methods={ "pm_atmospheric_engine_pump_building_coal_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" "pm_privately_owned_building_coal_mine" }
+			}
 			create_building={
 				building="building_food_industry"
 				level=9
@@ -2895,7 +3007,7 @@
 			}
 			create_building={
 				building="synthetic_rubber_plant"
-				level=1
+				level=6
 				reserves=1
 				activate_production_methods={ "" }
 			}
@@ -2947,15 +3059,10 @@
 				reserves=1
 				activate_production_methods={ "pm_leaded_glass" "pm_privately_owned_building_glassworks" "pm_manual_glassblowing" "pm_ceramics" }
 			}
-			create_building={
-				building="building_chemical_plants"
-				level=1
-				reserves=1
-				activate_production_methods={ "pm_artificial_fertilizers" "pm_privately_owned_industry" }			
-			}
+			
 			create_building={
 				building="building_vineyard_plantation"
-				level=2
+				level=3
 				reserves=1
 				activate_production_methods={ "default_building_vineyard_plantation" "pm_privately_owned_plantation" }
 			}
@@ -2973,7 +3080,7 @@
 			}
 			create_building={
 				building="building_arms_industry"
-				level=1
+				level=6
 				reserves=1
 				activate_production_methods={ "pm_muskets" "pm_merchant_guilds_building_arms_industry" }
 			}
@@ -2985,7 +3092,7 @@
 			}
 			create_building={
 				building="building_lead_mine"
-				level=8
+				level=18
 				reserves=1
 				activate_production_methods={ "pm_atmospheric_engine_pump_building_lead_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" "pm_privately_owned_building_lead_mine" }
 			}
@@ -2997,7 +3104,7 @@
 			}
 			create_building={
 				building="building_railway"
-				level=9
+				level=14
 				reserves=1
 				activate_production_methods={ "pm_steam_trains" "pm_wooden_passenger_carriages" }
 			}
@@ -3006,10 +3113,10 @@
 	s:STATE_RHODE_ISLAND={
 		region_state:USA={
 			create_building={
-				building="building_chemical_plants"
-				level=1
+				building="building_consumer_electronics"
+				level=2
 				reserves=1
-				activate_production_methods={ "pm_artificial_fertilizers" "pm_privately_owned_industry" }			
+				activate_production_methods={ "" }
 			}
 			create_building={
 				building="building_government_administration"
@@ -3022,17 +3129,35 @@
 				level=2
 				reserves=1
 				activate_production_methods={ "pm_leaded_glass" "pm_privately_owned_building_glassworks" "pm_manual_glassblowing" "pm_ceramics" }
-			}
-			create_building={
-				building="building_fishing_wharf"
-				level=1
-				reserves=1
-				activate_production_methods={ "pm_steam_trawlers" "pm_unrefrigerated" "pm_merchant_guilds_building_fishing_wharf" }
-			}		
+			}	
 		}
 	}
 	s:STATE_CONNECTICUT={
 		region_state:USA={
+			create_building={
+				building="building_power_plant"
+				level=3
+				reserves=1
+				activate_production_methods={ "pm_oil-fired_plant" }
+			}
+			create_building={
+				building="synthetic_rubber_plant"
+				level=3
+				reserves=1
+				activate_production_methods={ "" }
+			}
+			create_building={
+				building="building_railway"
+				level=2
+				reserves=1
+				activate_production_methods={ "pm_steam_trains" "pm_wooden_passenger_carriages" }
+			}
+			create_building={
+				building="building_steel_mills"
+				level=8
+				reserves=1
+				activate_production_methods={ "pm_blister_steel_process" "pm_automation_disabled" "pm_privately_owned_industry" }
+			}
 			create_building={
 				building="building_motor_industry"
 				level=1
@@ -3045,12 +3170,7 @@
 				reserves=1
 				activate_production_methods={ "pm_leaded_glass" "pm_privately_owned_building_glassworks" "pm_manual_glassblowing" "pm_ceramics" }
 			}
-			create_building={
-				building="building_chemical_plants"
-				level=1
-				reserves=1
-				activate_production_methods={ "pm_artificial_fertilizers" "pm_privately_owned_industry" }			
-			}
+			
 			create_building={
 				building="building_government_administration"
 				level=2
@@ -3065,7 +3185,7 @@
 			}
 			create_building={
 				building="building_port"
-				level=1
+				level=3
 				reserves=1
 				activate_production_methods={ "pm_industrial_port" }
 			}		
@@ -3080,14 +3200,56 @@
 	s:STATE_MASSACHUSETTS={
 		region_state:USA={
 			create_building={
+				building="heavy_equipment_manufactury"
+				level=3
+				reserves=1
+				activate_production_methods={ "" }
+			}
+			create_building={
+				building="building_food_industry"
+				level=4
+				reserves=1
+				activate_production_methods={ "pm_pot_stills" "pm_disabled_canning" "pm_merchant_guilds_building_food_industry" "pm_manual_dough_processing" "pm_sweeteners" }
+			}
+			create_building={
+				building="building_textile_mills"
+				level=2
+				reserves=1
+				activate_production_methods={ "pm_dye_workshops" "pm_no_luxury_clothes" "pm_traditional_looms" "pm_privately_owned_building_textile_mills" }
+			}
+			create_building={
+				building="semiconductor_plant"
+				level=3
+				reserves=1
+				activate_production_methods={ "" }
+			}
+			create_building={
+				building="building_steel_mills"
+				level=8
+				reserves=1
+				activate_production_methods={ "pm_blister_steel_process" "pm_automation_disabled" "pm_privately_owned_industry" }
+			}
+			create_building={
+				building="building_railway"
+				level=4
+				reserves=1
+				activate_production_methods={ "pm_steam_trains" "pm_wooden_passenger_carriages" }
+			}
+			create_building={
+				building="building_explosives_factory"
+				level=7
+				reserves=1
+				activate_production_methods={ "pm_vacuum_evaporation" }
+			}
+			create_building={
 				building="building_power_plant"
-				level=1
+				level=5
 				reserves=1
 				activate_production_methods={ "pm_oil-fired_plant" }
 			}
 			create_building={
 				building="building_iron_mine"
-				level=2
+				level=4
 				reserves=1
 				activate_production_methods={ "pm_atmospheric_engine_pump_building_iron_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" "pm_privately_owned_building_iron_mine" }
 			}
@@ -3141,7 +3303,7 @@
 			}
 			create_building={
 				building="building_port"
-				level=1
+				level=5
 				reserves=1
 				activate_production_methods={ "pm_industrial_port" }
 			}
@@ -3156,6 +3318,18 @@
 	s:STATE_NEW_HAMPSHIRE={
 		region_state:USA={
 			create_building={
+				building="building_power_plant"
+				level=2
+				reserves=1
+				activate_production_methods={ "pm_oil-fired_plant" }
+			}
+			create_building={
+				building="building_steel_mills"
+				level=2
+				reserves=1
+				activate_production_methods={ "pm_blister_steel_process" "pm_automation_disabled" "pm_privately_owned_industry" }
+			}
+			create_building={
 				building="building_port"
 				level=2
 				reserves=1
@@ -3163,13 +3337,13 @@
 			}
 			create_building={
 				building="building_government_administration"
-				level=8
+				level=2
 				reserves=1
 				activate_production_methods={ "pm_horizontal_drawer_cabinets" }
 			}
 			create_building={
 				building="hospital"
-				level=6
+				level=2
 				reserves=1
 				activate_production_methods={ "" }
 			}
@@ -3181,7 +3355,7 @@
 			}
 			create_building={
 				building="building_livestock_ranch"
-				level=2
+				level=1
 				reserves=1
 				activate_production_methods={  "pm_simple_ranch" "pm_standard_fences" "pm_unrefrigerated" "pm_open_air_stockyards" }
 			}			
@@ -3260,18 +3434,6 @@
 				activate_production_methods={ "pm_saw_mills" "pm_privately_owned_building_logging_camp" "pm_no_equipment" "pm_road_carts" "pm_hardwood" }
 			}
 			create_building={
-				building="building_shipyards"
-				level=1
-				reserves=1
-				activate_production_methods={ "pm_basic_shipbuilding" "pm_merchant_guilds_building_shipyards" }
-			}
-			create_building={
-				building="building_military_shipyards"
-				level=2
-				reserves=1
-				activate_production_methods={ "pm_merchant_guilds_building_military_shipyards" "pm_military_shipbuilding_steam" }
-			}	
-			create_building={
 				building="building_fishing_wharf"
 				level=1
 				reserves=1
@@ -3288,6 +3450,18 @@
 	s:STATE_NORTH_CAROLINA={
 		region_state:USA={
 			create_building={
+				building="building_fishing_wharf"
+				level=1
+				reserves=1
+				activate_production_methods={ "pm_steam_trawlers" "pm_unrefrigerated" "pm_merchant_guilds_building_fishing_wharf" }
+			}
+			create_building={
+				building="building_industrial_chemical_plants"
+				level=7
+				reserves=1
+				activate_production_methods={ "pm_artificial_fertilizers" "pm_privately_owned_industry" }			
+			}
+			create_building={
 				building="building_furniture_manufacturies"
 				level=6
 				reserves=1
@@ -3301,7 +3475,7 @@
 			}
 			create_building={
 				building="building_railway"
-				level=2
+				level=4
 				reserves=1
 				activate_production_methods={ "pm_steam_trains" "pm_wooden_passenger_carriages" }
 			}
@@ -3434,8 +3608,32 @@
 	s:STATE_SOUTH_CAROLINA={
 		region_state:USA={
 			create_building={
+				building="synthetic_rubber_plant"
+				level=5
+				reserves=1
+				activate_production_methods={ "" }
+			}
+			create_building={
+				building="building_cotton_plantation"
+				level=4
+				reserves=1
+				activate_production_methods={ "default_building_cotton_plantation" "pm_road_carts"  }
+			}
+			create_building={
+				building="pharmaceutical_industries"
+				level=3
+				reserves=1
+				activate_production_methods={ "" }
+			}
+			create_building={
+				building="building_motor_industry"
+				level=4
+				reserves=1
+				activate_production_methods={ "pm_steam_engines" "pm_automobiles_disabled" "pm_automation_disabled" "pm_privately_owned_industry" }
+			}
+			create_building={
 				building="building_railway"
-				level=1
+				level=3	
 				reserves=1
 				activate_production_methods={ "pm_steam_trains" "pm_wooden_passenger_carriages" }
 			}
@@ -3464,12 +3662,6 @@
 				activate_production_methods={ "pm_oil-fired_plant" }
 			}
 			create_building={
-				building="building_cotton_plantation"
-				level=2
-				reserves=1
-				activate_production_methods={ "default_building_cotton_plantation" "pm_road_carts"  }
-			}
-			create_building={
 				building="building_barracks"
 				level=2
 				reserves=1
@@ -3491,12 +3683,7 @@
 				reserves=1
 				activate_production_methods={ "pm_simple_organization" }
 			}
-			create_building={
-				building="building_sugar_plantation"
-				level=2
-				reserves=1
-				activate_production_methods={ "default_building_sugar_plantation" "pm_road_carts"  }
-			}
+
 			create_building={
 				building="building_rice_farm"
 				level=2
@@ -3587,18 +3774,6 @@
 				level=2
 				reserves=1
 				activate_production_methods={ "pm_simple_farming"  "pm_tools_disabled" "pm_citrus_orchards" }
-			}
-			create_building={
-				building="building_livestock_ranch"
-				level=2
-				reserves=1
-				activate_production_methods={ "pm_simple_ranch" "pm_open_air_stockyards" "pm_standard_fences" "pm_unrefrigerated"  }
-			}
-			create_building={
-				building="building_tobacco_plantation"
-				level=2
-				reserves=1
-				activate_production_methods={ "default_building_tobacco_plantation" "pm_road_carts"  }
 			}
 			create_building={
 				building="building_barracks"
@@ -3799,6 +3974,12 @@
 	s:STATE_TEXAS={
 		region_state:USA={
 			create_building={
+				building="building_coal_mine"
+				level=2
+				reserves=1
+				activate_production_methods={ "pm_atmospheric_engine_pump_building_coal_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" "pm_privately_owned_building_coal_mine" }
+			}
+			create_building={
 				building="building_arms_industry"
 				level=2
 				reserves=1
@@ -3806,7 +3987,7 @@
 			}
 			create_building={
 				building="building_munition_plants"
-				level=4
+				level=7
 				reserves=1
 				activate_production_methods={ "pm_percussion_caps" "pm_privately_owned_industry" }
 			}
@@ -3830,7 +4011,7 @@
 			}
 			create_building={
 				building="building_sulfur_mine"
-				level=3
+				level=10
 				reserves=1
 				activate_production_methods={ "pm_atmospheric_engine_pump_building_sulfur_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" "pm_privately_owned_building_sulfur_mine" }
 			}
@@ -3906,15 +4087,10 @@
 				reserves=1
 				activate_production_methods={ "pm_oil-fired_plant" }
 			}
-			create_building={
-				building="building_sugar_plantation"
-				level=1
-				reserves=1
-				activate_production_methods={ "default_building_sugar_plantation" "pm_road_carts"  }
-			}
+
 			create_building={
 				building="building_oil_rig"
-				level=5
+				level=14
 				reserves=1	
 				activate_production_methods={ "pm_steam_derricks" "pm_road_carts" }
 			}
@@ -3980,6 +4156,12 @@
 	}
 	s:STATE_ARIZONA={
 		region_state:USA={
+			create_building={
+				building="building_consumer_electronics"
+				level=4
+				reserves=1
+				activate_production_methods={ "" }
+			}
 			create_building={
 				building="building_iron_mine"
 				level=2
@@ -4083,6 +4265,18 @@
 		
 		region_state:USA={
 			create_building={
+				building="building_food_industry"
+				level=3
+				reserves=1
+				activate_production_methods={ "pm_pot_stills" "pm_disabled_canning" "pm_merchant_guilds_building_food_industry" "pm_manual_dough_processing" "pm_sweeteners" }
+			}
+			create_building={
+				building="building_motor_industry"
+				level=7
+				reserves=1
+				activate_production_methods={ "pm_steam_engines" "pm_automobiles_disabled" "pm_automation_disabled" "pm_privately_owned_industry" }
+			}
+			create_building={
 				building="building_military_shipyards"
 				level=2
 				reserves=1
@@ -4096,13 +4290,13 @@
 			}
 			create_building={
 				building="building_iron_mine"
-				level=2
+				level=12
 				reserves=1
 				activate_production_methods={ "pm_atmospheric_engine_pump_building_iron_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" "pm_privately_owned_building_iron_mine" }
 			}
 			create_building={
 				building="building_sulfur_mine"
-				level=2
+				level=8
 				reserves=1
 				activate_production_methods={ "pm_atmospheric_engine_pump_building_sulfur_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" "pm_privately_owned_building_sulfur_mine" }
 			}
@@ -4115,7 +4309,7 @@
 			
 			create_building={
 				building="building_arts_academy"
-				level=5
+				level=12
 				reserves=1
 				activate_production_methods={ "pm_realist_art" }
 			}
@@ -4187,7 +4381,7 @@
 			}
 			create_building={
 				building="commercial_services"
-				level=6
+				level=10
 				reserves=1
 				activate_production_methods={ "" }
 			}
@@ -4211,7 +4405,7 @@
 			}
 			create_building={
 				building="building_port"
-				level=5
+				level=8
 				reserves=1
 				activate_production_methods={ "pm_industrial_port" }
 			}
@@ -4253,25 +4447,25 @@
 			}
 			create_building={
 				building="building_furniture_manufacturies"
-				level=7
+				level=3
 				reserves=1
 				activate_production_methods={ "pm_lathe" "pm_privately_owned_building_furniture_manufacturies" "pm_automation_disabled" "pm_luxury_furniture" }
 			}
 			create_building={
 				building="building_glassworks"
-				level=14
+				level=7
 				reserves=1
 				activate_production_methods={ "pm_leaded_glass" "pm_privately_owned_building_glassworks" "pm_manual_glassblowing" "pm_ceramics" }
 			}
 			create_building={
 				building="building_railway"
-				level=15
+				level=18
 				reserves=1
 				activate_production_methods={ "pm_steam_trains" "pm_wooden_passenger_carriages" }
 			}
 			create_building={
 				building="building_livestock_ranch"
-				level=5
+				level=2
 				reserves=1
 				activate_production_methods={ "pm_intensive_grazing_ranch" "pm_slaughterhouses" "pm_standard_fences" "pm_unrefrigerated"  }
 			}
@@ -4360,12 +4554,7 @@
 				reserves=1
 				activate_production_methods={ "default_building_banana_plantation" "pm_road_carts"  }
 			}
-			create_building={
-				building="building_sugar_plantation"
-				level=2
-				reserves=1
-				activate_production_methods={ "default_building_sugar_plantation" "pm_road_carts"  }
-			}			
+			
 			create_building={
 				building="building_barracks"
 				level=10
@@ -4525,12 +4714,7 @@
 				reserves=1
 				activate_production_methods={ "pm_soil_enriching_farming" "pm_no_secondary" "pm_tools_disabled"  }
 			}
-			create_building={
-				building="building_sugar_plantation"
-				level=2
-				reserves=1
-				activate_production_methods={ "default_building_sugar_plantation" "pm_road_carts"  }
-			}
+
 			create_building={
 				building="building_fishing_wharf"
 				level=4
