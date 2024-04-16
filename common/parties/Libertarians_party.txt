@@ -114,7 +114,7 @@ Libertarians_party = {
 						is_member_of_party = owner.py:Libertarians_party
 						is_powerful = yes
 						leader = {
-							has_ideology = ideology:ideology_jingoist_leader
+							has_ideology = ideology:ideology_republican_leader
 						}
 					}
 				}
@@ -127,7 +127,7 @@ Libertarians_party = {
 		if = { # landowners will join if they are even moderately powerful
 			limit = {
 				ig_clout >= 0.15
-				is_interest_group_type = ig_landowners
+				is_interest_group_type = ig_industrialists
 			}
 			add = {
 				value = 5
@@ -138,10 +138,6 @@ Libertarians_party = {
 			limit = {
 				leader = {
 					OR = {
-						has_ideology = ideology:ideology_feminist
-						has_ideology = ideology:ideology_pacifist
-						has_ideology = ideology:ideology_reformer
-						has_ideology = ideology:ideology_humanitarian
 						has_ideology = ideology:ideology_humanitarian_royalist
 					}
 				}

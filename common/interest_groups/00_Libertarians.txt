@@ -65,6 +65,17 @@
 		value = 30
 
 		add = {
+			desc = "POP_CAPITALISTS"
+			if = {
+				limit = {
+					is_pop_type = capitalists
+				}
+				value = 450
+				add = this.standard_of_living
+			}
+		}
+
+		add = {
 			desc = "POP_SHOPKEEPERS"
 			if = {
 				limit = {

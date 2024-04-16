@@ -104,6 +104,7 @@ conservative_party = {
 				desc = "from_conservative_ig"
 			}
 		}
+		
 		if = { # armed forces will join if a more powerful member has jingoist leader
 			limit = {
 				is_interest_group_type = ig_armed_forces
@@ -123,6 +124,29 @@ conservative_party = {
 				desc = "from_jingoist_party_leader"
 			}
 		}
+		
+		if = { # armed forces will join if a more powerful member has jingoist leader
+			limit = {
+				is_interest_group_type = ig_Libertarians
+				exists = owner.py:conservative_party
+				owner = {
+					any_interest_group = {
+						is_member_of_party = owner.py:conservative_party
+						is_powerful = yes
+						leader = {
+							has_ideology = ideology:ideology_moderate
+						}
+					}
+				}
+			}
+			add = {
+				value = 10
+				desc = "from_jingoist_party_leader"
+			}
+		}	
+	
+	
+		
 		if = { # landowners will join if they are even moderately powerful
 			limit = {
 				ig_clout >= 0.15
