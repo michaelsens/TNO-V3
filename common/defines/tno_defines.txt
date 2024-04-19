@@ -31,6 +31,11 @@ NEconomy = {
 	COUNTRY_GDP_MODIFIER_MAX_MULTIPLIER = 200000000
 	MINIMUM_WAGE_RATE = 1000.0					# The wage rate can never drop below this, no matter what (weekly £ per POP_SIZE_PACKAGE employees)
 	MAXIMUM_WAGE_RATE = 10000000.0				# The absolute maximum that a building's wage rate can be increased to.
+	REINVESTMENT_EFFICIENCY_MAX = 3.0					# Maximum conversion of reinvestment to investment pool
+	REINVESTMENT_EFFICIENCY_MIN = 0.3					# Minimum conversion of reinvestment to investment pool
+	REINVESTMENT_FALLOFF_START = 10000000000				# Below this amount of GDP, increase reinvestment multiplier on a linear scale up to REINVESTMENT_EFFICIENCY_MAX at 0
+	REINVESTMENT_FALLOFF_END = 2000000000000				# Above REINVESTMENT_FALLOFF_START but below this, apply minimum reinvestment multiplier on a linear scale down to REINVESTMENT_EFFICIENCY_MIN, above this always use REINVESTMENT_EFFICIENCY_MIN
+
 }
 
 NEconomy = {
