@@ -195,7 +195,8 @@ ai_strategy_free_africa = {
 
 	possible = {
 		c:IBO ?= THIS
-
+		country_has_primary_culture = cu:mande	
+		NOT = { country_tier = empire }
 	}
 	
 	unacceptable_infamy_level = {
@@ -327,11 +328,6 @@ ai_strategy_free_africa = {
 			}			
 		}
 	}	
-
-	possible = {
-		country_has_primary_culture = cu:mande	
-		NOT = { country_tier = empire }
-	}
 
 	weight = {
 		value = 1000
