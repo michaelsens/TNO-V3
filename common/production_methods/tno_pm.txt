@@ -426,19 +426,26 @@ pm_small_workshop = {
 	building_modifiers = {
 		workforce_scaled = {
 			# input goods
-			goods_input_wood_add = 25
+			goods_input_wood_add = 15
 			# output goods
-			goods_output_small_arms_add = 6
-			goods_output_ammunition_add = 6
-			goods_output_artillery_add = 3
+			goods_output_small_arms_add = 5
+			goods_output_ammunition_add = 5
+			goods_output_artillery_add = 2.5
 		}
 
-		level_scaled = {
+		level_scaled = {		
 			building_employment_laborers_add = 2000
 		}
-		unscaled = {
-			building_workforce_shares_add = 1
-		}	
+
+		building_modifiers = {
+			level_scaled = {
+				building_employment_aristocrats_add = 100
+			}
+			unscaled = {
+				building_workforce_shares_add = 1
+			}
+		}
+			
 	}
 }
 			
