@@ -83,10 +83,16 @@
 	s:STATE_KAMCHATKA={
 		region_state:FER={
 			create_building={
+				building="building_small_workshop"
+				level=1
+				reserves=1
+				activate_production_methods={ "pm_small_workshop" }
+			}
+			create_building={
 				building="building_military_shipyards"
 				level=1
 				reserves=1
-				activate_production_methods={ "pm_merchant_guilds_building_military_shipyards" "pm_military_shipbuilding_steam" }
+				activate_production_methods={ "pm_privately_owned_building_military_shipyards" "pm_military_shipbuilding_steam" }
 			}
 			create_building={
 				building="building_port"
@@ -102,7 +108,7 @@
 			}
 			create_building={
 				building="building_naval_base"
-				level=2
+				level=1
 				reserves=1
 				activate_production_methods={ "pm_power_of_the_purse" }
 			}
@@ -128,7 +134,7 @@
 		region_state:AMR={
 			create_building={
 				building="building_barracks"
-				level=5
+				level=2
 				reserves=1
 				activate_production_methods={ "pm_general_training" }
 			}
@@ -166,31 +172,75 @@
 			}
 		}
 		region_state:CHT={
-			
+			create_building={
+				building="building_oil_rig"
+				level=1
+				reserves=1	
+				activate_production_methods={ "pm_steam_derricks" "pm_road_carts" }
+			}
+			create_building={
+				building="building_power_plant"
+				level=3
+				reserves=1
+				activate_production_methods={ "pm_hydroelectric_plant" }
+			}
+			create_building={
+				building="building_logging_camp"
+				level=1
+				reserves=1
+				activate_production_methods={ "pm_saw_mills" "pm_privately_owned_building_logging_camp" "pm_no_equipment" "pm_road_carts" "pm_hardwood" }
+			}
+			create_building={
+				building="building_small_workshop"
+				level=1
+				reserves=1
+				activate_production_methods={ "pm_small_workshop" }
+			}
+			create_building={
+				building="building_barracks"
+				level=2
+				reserves=1
+				activate_production_methods={ "pm_general_training" }
+			}
 		}
 	}
 	s:STATE_IRKUTSK={
 		region_state:IRK={
-			
+			create_building={
+				building="building_small_workshop"
+				level=3
+				reserves=1
+				activate_production_methods={ "pm_small_workshop" }
+			}
+			create_building={
+				building="building_barracks"
+				level=6
+				reserves=1
+				activate_production_methods={ "pm_general_training" }
+			}
 		}
 		region_state:BRY={
-			
-
-		}
-	}
-	s:STATE_OKHOTSK={
-		region_state:MAG={
+			create_building={
+				building="building_small_workshop"
+				level=2
+				reserves=1
+				activate_production_methods={ "pm_small_workshop" }
+			}
 			create_building={
 				building="building_barracks"
 				level=4
 				reserves=1
 				activate_production_methods={ "pm_general_training" }
 			}
+		}
+	}
+	s:STATE_OKHOTSK={
+		region_state:MAG={
 			create_building={
-				building="building_logging_camp"
-				level=1
+				building="building_barracks"
+				level=2
 				reserves=1
-				activate_production_methods={ "pm_saw_mills" "pm_no_hardwood" "pm_no_equipment" "pm_road_carts" "pm_privately_owned_building_logging_camp" }
+				activate_production_methods={ "pm_general_training" }
 			}
 			create_building={
 				building="building_port"
@@ -203,6 +253,18 @@
 				level=1
 				reserves=1
 				activate_production_methods={ "pm_small_workshop" }
+			}
+			create_building={
+				building="building_power_plant"
+				level=1
+				reserves=1
+				activate_production_methods={ "pm_hydroelectric_plant" }
+			}
+			create_building={
+				building="building_breweries"
+				level=1
+				reserves=1
+				activate_production_methods={ "" }
 			}
 		}
 	}
