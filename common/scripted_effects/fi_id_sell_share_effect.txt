@@ -982,7 +982,7 @@ else_if = {
 }
 else_if = {
      limit = {
-          scope:buy_share_target_building = { is_building_type = building_rye_farm }
+          scope:buy_share_target_building = { is_building_type = building_wheat_farm }
      }
      if = {
           limit = {
@@ -994,10 +994,10 @@ else_if = {
      else = {
           if = {
                limit = {
-                    NOT = { has_variable = $BUYER$_building_rye_farm_number }
+                    NOT = { has_variable = $BUYER$_building_wheat_farm_number }
                }
                set_variable = {
-                    name = $BUYER$_building_rye_farm_number
+                    name = $BUYER$_building_wheat_farm_number
                     value = 0
                }
           }
@@ -1011,23 +1011,23 @@ else_if = {
                }
           }
           change_variable = {
-               name = $BUYER$_building_rye_farm_number
-               add = var:$SELLER$_building_rye_farm_number
+               name = $BUYER$_building_wheat_farm_number
+               add = var:$SELLER$_building_wheat_farm_number
           }
           scope:buy_share_country = {
                change_variable = {
                     name = total_invested_building
-                    add = prev.var:$SELLER$_building_rye_farm_number
+                    add = prev.var:$SELLER$_building_wheat_farm_number
                }
           }
      }
      scope:seller_country = {
           change_variable = {
                name = total_invested_building
-               subtract = prev.var:$SELLER$_building_rye_farm_number
+               subtract = prev.var:$SELLER$_building_wheat_farm_number
           }
      }
-     remove_variable = $SELLER$_building_rye_farm_number
+     remove_variable = $SELLER$_building_wheat_farm_number
 }
 else_if = {
      limit = {
@@ -1080,7 +1080,7 @@ else_if = {
 }
 else_if = {
      limit = {
-          scope:buy_share_target_building = { is_building_type = building_rice_farm }
+          scope:buy_share_target_building = { is_building_type = building_wheat_farm }
      }
      if = {
           limit = {
@@ -1092,10 +1092,10 @@ else_if = {
      else = {
           if = {
                limit = {
-                    NOT = { has_variable = $BUYER$_building_rice_farm_number }
+                    NOT = { has_variable = $BUYER$_building_wheat_farm_number }
                }
                set_variable = {
-                    name = $BUYER$_building_rice_farm_number
+                    name = $BUYER$_building_wheat_farm_number
                     value = 0
                }
           }
@@ -1109,23 +1109,23 @@ else_if = {
                }
           }
           change_variable = {
-               name = $BUYER$_building_rice_farm_number
-               add = var:$SELLER$_building_rice_farm_number
+               name = $BUYER$_building_wheat_farm_number
+               add = var:$SELLER$_building_wheat_farm_number
           }
           scope:buy_share_country = {
                change_variable = {
                     name = total_invested_building
-                    add = prev.var:$SELLER$_building_rice_farm_number
+                    add = prev.var:$SELLER$_building_wheat_farm_number
                }
           }
      }
      scope:seller_country = {
           change_variable = {
                name = total_invested_building
-               subtract = prev.var:$SELLER$_building_rice_farm_number
+               subtract = prev.var:$SELLER$_building_wheat_farm_number
           }
      }
-     remove_variable = $SELLER$_building_rice_farm_number
+     remove_variable = $SELLER$_building_wheat_farm_number
 }
 else_if = {
      limit = {
@@ -1178,7 +1178,7 @@ else_if = {
 }
 else_if = {
      limit = {
-          scope:buy_share_target_building = { is_building_type = building_maize_farm }
+          scope:buy_share_target_building = { is_building_type = building_wheat_farm }
      }
      if = {
           limit = {
@@ -1190,10 +1190,10 @@ else_if = {
      else = {
           if = {
                limit = {
-                    NOT = { has_variable = $BUYER$_building_maize_farm_number }
+                    NOT = { has_variable = $BUYER$_building_wheat_farm_number }
                }
                set_variable = {
-                    name = $BUYER$_building_maize_farm_number
+                    name = $BUYER$_building_wheat_farm_number
                     value = 0
                }
           }
@@ -1207,27 +1207,27 @@ else_if = {
                }
           }
           change_variable = {
-               name = $BUYER$_building_maize_farm_number
-               add = var:$SELLER$_building_maize_farm_number
+               name = $BUYER$_building_wheat_farm_number
+               add = var:$SELLER$_building_wheat_farm_number
           }
           scope:buy_share_country = {
                change_variable = {
                     name = total_invested_building
-                    add = prev.var:$SELLER$_building_maize_farm_number
+                    add = prev.var:$SELLER$_building_wheat_farm_number
                }
           }
      }
      scope:seller_country = {
           change_variable = {
                name = total_invested_building
-               subtract = prev.var:$SELLER$_building_maize_farm_number
+               subtract = prev.var:$SELLER$_building_wheat_farm_number
           }
      }
-     remove_variable = $SELLER$_building_maize_farm_number
+     remove_variable = $SELLER$_building_wheat_farm_number
 }
 else_if = {
      limit = {
-          scope:buy_share_target_building = { is_building_type = building_millet_farm }
+          scope:buy_share_target_building = { is_building_type = building_wheat_farm }
      }
      if = {
           limit = {
@@ -1239,10 +1239,10 @@ else_if = {
      else = {
           if = {
                limit = {
-                    NOT = { has_variable = $BUYER$_building_millet_farm_number }
+                    NOT = { has_variable = $BUYER$_building_wheat_farm_number }
                }
                set_variable = {
-                    name = $BUYER$_building_millet_farm_number
+                    name = $BUYER$_building_wheat_farm_number
                     value = 0
                }
           }
@@ -1256,23 +1256,23 @@ else_if = {
                }
           }
           change_variable = {
-               name = $BUYER$_building_millet_farm_number
-               add = var:$SELLER$_building_millet_farm_number
+               name = $BUYER$_building_wheat_farm_number
+               add = var:$SELLER$_building_wheat_farm_number
           }
           scope:buy_share_country = {
                change_variable = {
                     name = total_invested_building
-                    add = prev.var:$SELLER$_building_millet_farm_number
+                    add = prev.var:$SELLER$_building_wheat_farm_number
                }
           }
      }
      scope:seller_country = {
           change_variable = {
                name = total_invested_building
-               subtract = prev.var:$SELLER$_building_millet_farm_number
+               subtract = prev.var:$SELLER$_building_wheat_farm_number
           }
      }
-     remove_variable = $SELLER$_building_millet_farm_number
+     remove_variable = $SELLER$_building_wheat_farm_number
 }
 else_if = {
      limit = {
