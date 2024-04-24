@@ -3108,8 +3108,8 @@ tno_usa_events.48 = {  # Cuban occupation event
 		custom_tooltip = cubaocc_txt
 
 		create_country = { # cuban rebels
-			tag = c:CUP
-			origin = c:USA
+			tag = CUP
+		
 			
 			province = p:x30B001
 			province = p:x519343
@@ -3123,7 +3123,13 @@ tno_usa_events.48 = {  # Cuban occupation event
 
 			
          	}
+
+			
+
+			
 		} 
+
+		trigger_event = tno_usa_events.56
 	
 
 	
@@ -3331,6 +3337,28 @@ tno_usa_events.54 = {  # cuba annex rebels
 		
 	
     } 
+}
+
+tno_usa_events.56 = {
+    type = country_event
+    hidden = yes
+
+
+
+    trigger = {
+      
+        ROOT = c:USA
+
+
+
+    }
+
+    immediate = {
+       create_truce = {
+		country = c:CUP
+		months = 35
+	   }
+    }
 }
 
 
