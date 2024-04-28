@@ -253,6 +253,12 @@
 				reserves=1
 				activate_production_methods={ "pm_industrial_port" }
 			}
+			create_building={
+				building="building_port"
+				level=1
+				reserves=1
+				activate_production_methods={ "pm_industrial_port" }
+			}
 		}
 	}
 	s:STATE_UMBRIA={
@@ -489,7 +495,7 @@
 		region_state:ITA={
 			create_building={
 				building="building_vineyard_plantation"
-				level=18
+				level=8
 				reserves=1
 				activate_production_methods={ "default_building_vineyard_plantation" "pm_privately_owned_plantation" }
 			}
@@ -499,10 +505,21 @@
 				reserves=1
 				activate_production_methods={ "pm_steam_engines" "pm_automobiles_disabled" "pm_automation_disabled" "pm_privately_owned_industry" }
 			}
-			
+			create_building={
+				building="building_munition_plants"
+				level=5
+				reserves=1
+				activate_production_methods={ "pm_percussion_caps" "pm_privately_owned_industry" }
+			}
+			create_building={
+				building="building_arms_industry"
+				level=4
+				reserves=1
+				activate_production_methods={ "pm_muskets" "pm_merchant_guilds_building_arms_industry" }
+			}
 			create_building={
 				building="building_railway"
-				level=2
+				level=3
 				reserves=1
 				activate_production_methods={ "pm_steam_trains" "pm_wooden_passenger_carriages" }
 			}
@@ -576,7 +593,19 @@
 				building="building_vineyard_plantation"
 				level=6
 				reserves=1
-				activate_production_methods={ "default_building_vineyard_plantation" "pm_privately_owned_plantation" }
+				activate_production_methods={ "pm_tank_production" }
+			}
+			create_building={
+				building="building_tank_industry"
+				level=1
+				reserves=1
+				activate_production_methods={ "pm_intensive_grazing_ranch" "pm_slaughterhouses" "pm_standard_fences" "pm_unrefrigerated"  }
+			}
+			create_building={
+				building="building_artillery_foundries"
+				level=5
+				reserves=1
+				activate_production_methods={ "pm_cannons" "pm_automation_disabled" "pm_merchant_guilds_building_artillery_foundries" }
 			}
 			create_building={
 				building="plastic_manufacturing_plants"
@@ -741,6 +770,12 @@
 				activate_production_methods={ "pm_atmospheric_engine_pump_building_coal_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" "pm_privately_owned_building_coal_mine" }
 			}
 			create_building={
+				building="building_military_shipyards"
+				level=2
+				reserves=1
+				activate_production_methods={ "pm_merchant_guilds_building_military_shipyards" "pm_military_shipbuilding_steam" }
+			}
+			create_building={
 				building="building_tooling_workshops"
 				level=6
 				reserves=1
@@ -854,7 +889,7 @@
 			}
 			create_building={
 				building="building_railway"
-				level=6
+				level=7
 				reserves=1
 				activate_production_methods={ "pm_steam_trains" "pm_wooden_passenger_carriages" }
 			}
@@ -1033,6 +1068,12 @@
 		region_state:GER={
 		}
 		region_state:ITA={
+			create_building={
+				building="building_coal_mine"
+				level=4
+				reserves=1
+				activate_production_methods={ "pm_atmospheric_engine_pump_building_coal_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" "pm_privately_owned_building_coal_mine" }
+			}
 		}
 	}
 	s:STATE_DALMATIA={
@@ -1052,8 +1093,14 @@
 				activate_production_methods={ "" }
 			}
 			create_building={
+				building="building_military_shipyards"
+				level=2
+				reserves=1
+				activate_production_methods={ "pm_merchant_guilds_building_military_shipyards" "pm_military_shipbuilding_steam" }
+			}
+			create_building={
 				building="building_railway"
-				level=1
+				level=2
 				reserves=1
 				activate_production_methods={ "pm_steam_trains" "pm_wooden_passenger_carriages" }
 			}
@@ -1168,6 +1215,12 @@
 	}
 	s:STATE_EAST_AEGEAN_ISLANDS={
 		region_state:ITA={
+			create_building={
+				building="building_port"
+				level=1
+				reserves=1
+				activate_production_methods={ "pm_industrial_port" }
+			}
 		}
 	}
 	s:STATE_THESSALIA={
@@ -1188,6 +1241,14 @@
 	}
 	s:STATE_SKOPIA={
 		region_state:BUL={
+		}
+		region_state:ITA={
+			create_building={
+				building="building_arts_academy"
+				level=4
+				reserves=1
+				activate_production_methods={ "pm_traditional_art" }
+			}
 		}
 	}
 	s:STATE_MACEDONIA={
