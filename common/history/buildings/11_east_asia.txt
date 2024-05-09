@@ -13,10 +13,34 @@
 	}
 	s:STATE_YUNNAN={
 		region_state:YUN={
+			create_building={
+				building="building_coal_mine"
+				level=25
+				reserves=1
+				activate_production_methods={ "pm_atmospheric_engine_pump_building_coal_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" "pm_privately_owned_building_coal_mine" }
+			}
+			create_building={
+				building="building_railway"
+				level=5
+				reserves=1
+				activate_production_methods={ "pm_steam_trains" "pm_wooden_passenger_carriages" }
+			}
 		}
 	}
 	s:STATE_GUIZHOU={
 		region_state:HNA={
+			create_building={
+				building="building_railway"
+				level=5
+				reserves=1
+				activate_production_methods={ "pm_steam_trains" "pm_wooden_passenger_carriages" }
+			}
+			create_building={
+				building="building_coal_mine"
+				level=20
+				reserves=1
+				activate_production_methods={ "pm_atmospheric_engine_pump_building_coal_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" "pm_privately_owned_building_coal_mine" }
+			}
 		}
 	}
 	s:STATE_SHAOZHOU={
@@ -67,6 +91,12 @@
 			}
 		}
 		region_state:JAP={
+			create_building={
+				building="building_military_shipyards"
+				level=2
+				reserves=1
+				activate_production_methods={ "pm_merchant_guilds_building_military_shipyards" "pm_military_shipbuilding_steam" }
+			}	
 		}
 	}
 	s:STATE_HINGGAN={
@@ -193,6 +223,30 @@
 				activate_production_methods={ "" }
 			}
 			create_building={
+				building="building_power_plant"
+				level=28
+				reserves=1
+				activate_production_methods={ "pm_oil-fired_plant" }
+			}
+			create_building={
+				building="building_artillery_foundries"
+				level=8
+				reserves=1
+				activate_production_methods={ "pm_cannons" "pm_automation_disabled" "pm_merchant_guilds_building_artillery_foundries" }
+			}
+			create_building={
+				building="building_munition_plants"
+				level=16
+				reserves=1
+				activate_production_methods={ "pm_percussion_caps" "pm_privately_owned_industry" }
+			}
+			create_building={
+				building="building_arms_industry"
+				level=20
+				reserves=1
+				activate_production_methods={ "pm_muskets" "pm_merchant_guilds_building_arms_industry" }
+			}
+			create_building={
 				building="building_port"
 				level=12
 				reserves=1
@@ -200,7 +254,7 @@
 			}
 			create_building={
 				building="building_railway"
-				level=5
+				level=6
 				reserves=1
 				activate_production_methods={ "pm_steam_trains" "pm_wooden_passenger_carriages" }
 			}
@@ -348,6 +402,12 @@
 				level=12
 				reserves=1
 				activate_production_methods={ "pm_industrial_port" }
+			}
+			create_building={
+				building="building_government_administration"
+				level=13
+				reserves=1
+				activate_production_methods={ "pm_horizontal_drawer_cabinets" }
 			}
 			create_building={
 				building="building_construction_sector"
@@ -619,18 +679,6 @@
 				activate_production_methods={ "pm_blister_steel_process" "pm_automation_disabled" "pm_privately_owned_industry" }
 			}
 			create_building={
-				building="building_consumer_electronics"
-				level=25
-				reserves=1
-				activate_production_methods={ "" }
-			}
-			create_building={
-				building="building_port"
-				level=6
-				reserves=1
-				activate_production_methods={ "pm_industrial_port" }
-			}
-			create_building={
 				building="office_building"
 				level=25
 				reserves=1
@@ -705,6 +753,12 @@
 				level=20
 				reserves=1
 				activate_production_methods={ "pm_pot_stills" "pm_disabled_canning" "pm_merchant_guilds_building_food_industry" "pm_manual_dough_processing" "pm_sweeteners" }
+			}
+			create_building={
+				building="building_iron_mine"
+				level=10
+				reserves=1
+				activate_production_methods={ "pm_atmospheric_engine_pump_building_iron_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" "pm_privately_owned_building_iron_mine" }
 			}
 			create_building={
 				building="building_wheat_farm"
@@ -809,12 +863,6 @@
 				activate_production_methods={ "pm_saw_mills" "pm_privately_owned_building_logging_camp" "pm_no_equipment" "pm_road_carts" "pm_hardwood" }
 			}
 			create_building={
-				building="building_naval_base"
-				level=20
-				reserves=1
-				activate_production_methods={ "pm_power_of_the_purse" }
-			}
-			create_building={
 				building="building_port"
 				level=12
 				reserves=1
@@ -870,7 +918,7 @@
 			}
 			create_building={
 				building="plastic_manufacturing_plants"
-				level=6
+				level=12
 				reserves=1
 				activate_production_methods={ "" }
 			}
@@ -991,6 +1039,18 @@
 				activate_production_methods={ "" }
 			}
 			create_building={
+				building="building_government_administration"
+				level=5
+				reserves=1
+				activate_production_methods={ "pm_horizontal_drawer_cabinets" }
+			}
+			create_building={
+				building="building_munition_plants"
+				level=15
+				reserves=1
+				activate_production_methods={ "pm_percussion_caps" "pm_privately_owned_industry" }
+			}
+			create_building={
 				building="building_wheat_farm"
 				level=1
 				reserves=1
@@ -1079,12 +1139,6 @@
 				level=45
 				reserves=1
 				activate_production_methods={ "pm_steam_trains" "pm_wooden_passenger_carriages" }
-			}
-			create_building={
-				building="building_textile_mills"
-				level=13
-				reserves=1
-				activate_production_methods={ "pm_dye_workshops" "pm_no_luxury_clothes" "pm_traditional_looms" "pm_privately_owned_building_textile_mills" }
 			}
 			create_building={
 				building="building_explosives_factory"
@@ -1244,12 +1298,6 @@
 				activate_production_methods={ "pm_saw_mills" "pm_privately_owned_building_logging_camp" "pm_no_equipment" "pm_road_carts" "pm_hardwood" }
 			}
 			create_building={
-				building="building_consumer_electronics"
-				level=25
-				reserves=1
-				activate_production_methods={ "" }
-			}
-			create_building={
 				building="pharmaceutical_industries"
 				level=4
 				reserves=1
@@ -1298,10 +1346,10 @@
 				activate_production_methods={ "" }
 			}
 			create_building={
-				building="building_port"
+				building="building_arms_industry"
 				level=8
 				reserves=1
-				activate_production_methods={ "pm_industrial_port" }
+				activate_production_methods={ "pm_muskets" "pm_merchant_guilds_building_arms_industry" }
 			}
 			create_building={
 				building="building_household_appliances"
@@ -1397,9 +1445,15 @@
 		region_state:JAP={
 			create_building={
 				building="building_breweries"
-				level=30
+				level=26
 				reserves=1
 				activate_production_methods={ "" }
+			}
+			create_building={
+				building="building_government_administration"
+				level=5
+				reserves=1
+				activate_production_methods={ "pm_horizontal_drawer_cabinets" }
 			}
 			create_building={
 				building="building_consumer_electronics"
@@ -1409,13 +1463,13 @@
 			}
 			create_building={
 				building="building_furniture_manufacturies"
-				level=20
+				level=14
 				reserves=1
 				activate_production_methods={ "pm_lathe" "pm_privately_owned_building_furniture_manufacturies" "pm_automation_disabled" "pm_luxury_furniture" }
 			}
 			create_building={
 				building="building_tooling_workshops"
-				level=15
+				level=2
 				reserves=1
 				activate_production_methods={ "pm_steel" "pm_automation_disabled" "pm_privately_owned_building_tooling_workshops" }
 			}
@@ -1427,7 +1481,7 @@
 			}
 			create_building={
 				building="office_building"
-				level=20
+				level=15
 				reserves=1
 				activate_production_methods={ "" }
 			}
@@ -1454,6 +1508,30 @@
 				activate_production_methods={ "" }
 			}
 			create_building={
+				building="building_military_shipyards"
+				level=1
+				reserves=1
+				activate_production_methods={ "pm_merchant_guilds_building_military_shipyards" "pm_military_shipbuilding_steam" }
+			}	
+			create_building={
+				building="building_tank_industry"
+				level=2
+				reserves=1
+				activate_production_methods={ "pm_intensive_grazing_ranch" "pm_slaughterhouses" "pm_standard_fences" "pm_unrefrigerated"  }
+			}
+			create_building={
+				building="building_war_machine_industry"
+				level=1
+				reserves=1
+				activate_production_methods={ "pm_aeroplane_production" "pm_privately_owned_industry" }
+			}
+			create_building={
+				building="building_artillery_foundries"
+				level=3
+				reserves=1
+				activate_production_methods={ "pm_cannons" "pm_automation_disabled" "pm_merchant_guilds_building_artillery_foundries" }
+			}
+			create_building={
 				building="building_household_appliances"
 				level=15
 				reserves=1
@@ -1466,10 +1544,10 @@
 				activate_production_methods={ "pm_artificial_fertilizers" "pm_privately_owned_industry" }			
 			}
 			create_building={
-				building="building_port"
-				level=12
+				building="building_arms_industry"
+				level=5
 				reserves=1
-				activate_production_methods={ "pm_industrial_port" }
+				activate_production_methods={ "pm_muskets" "pm_merchant_guilds_building_arms_industry" }
 			}
 			create_building={
 				building="building_railway"
@@ -1542,6 +1620,12 @@
 				activate_production_methods={ "pm_industrial_port" }
 			}
 			create_building={
+				building="building_power_plant"
+				level=15
+				reserves=1
+				activate_production_methods={ "pm_oil-fired_plant" }
+			}
+			create_building={
 				building="building_railway"
 				level=18
 				reserves=1
@@ -1611,7 +1695,7 @@
 			}
 			create_building={
 				building="building_consumer_electronics"
-				level=35
+				level=33
 				reserves=1
 				activate_production_methods={ "" }
 			}

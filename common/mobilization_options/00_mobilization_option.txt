@@ -11,11 +11,7 @@ upkeep_modifier = {
 }
 upkeep_modifier_unscaled = {
 	goods_input_small_arms_mult = 0.25
-	goods_input_artillery_mult = 0.25
 	goods_input_ammunition_mult = 0.25
-	goods_input_oil_mult = 0.25
-	goods_input_radios_mult = 0.25
-	goods_input_tanks_mult = 0.25
 }
 
 unit_modifier = {
@@ -39,6 +35,8 @@ possible = {
 	}
 }
 
+
+
 unlocking_technologies = {
 	army_reserves
 }	
@@ -56,21 +54,17 @@ on_deactivate_while_mobilized = {
 }
 
 upkeep_modifier = {
-	goods_input_groceries_add = 1
+	goods_input_groceries_add = 0.2
 }
 upkeep_modifier_unscaled = {
-	goods_input_small_arms_mult = 0.25
-	goods_input_artillery_mult = 0.25
-	goods_input_ammunition_mult = 0.25
-	goods_input_oil_mult = 0.25
-	goods_input_radios_mult = 0.25
-	goods_input_tanks_mult = 0.25
+	goods_input_small_arms_mult = 0.30
+	goods_input_ammunition_mult = 0.35
 }	
 
 unit_modifier = {
 	unit_morale_loss_mult = -0.05
-	unit_offense_mult = 0.1
-	unit_defense_mult = 0.1
+	unit_offense_mult = 0.05
+	unit_defense_mult = 0.05
 }
 ai_weight = {
 	value = 1
@@ -84,15 +78,10 @@ texture = "gfx/interface/icons/mobilization_options/luxurious_supplies.dds"
 
 possible = {
 	scope:military_formation = { has_mobilization_option = mobilization_option:mobilization_option_extra_supplies }
-	market ?= {
-		mg:meat ?= {
-			market_goods_sell_orders > 0
-		}
-		mg:wine ?= {
-			market_goods_sell_orders > 0
-		}
-	}
+	
 }
+
+
 
 unlocking_technologies = {
 	military_statistics
@@ -110,23 +99,20 @@ on_deactivate_while_mobilized = {
 	}
 }
 
+
+
 upkeep_modifier = {
-	goods_input_meat_add = 1
-	goods_input_wine_add = 1
+	goods_input_groceries_add = 0.3
 }
 upkeep_modifier_unscaled = {
-	goods_input_small_arms_mult = 0.25
-	goods_input_artillery_mult = 0.25
-	goods_input_ammunition_mult = 0.25
-	goods_input_oil_mult = 0.25
-	goods_input_radios_mult = 0.25
-	goods_input_tanks_mult = 0.25
+	goods_input_small_arms_mult = 0.35
+	goods_input_ammunition_mult = 0.45
 }	
 
 unit_modifier = {
-	unit_morale_loss_mult = -0.05
-	unit_offense_mult = 0.1
-	unit_defense_mult = 0.1
+	unit_morale_loss_mult = -0.1
+	unit_offense_mult = 0.10
+	unit_defense_mult = 0.10
 }
 ai_weight = {
 	value = 1
@@ -146,7 +132,10 @@ possible = {
 	}
 }
 upkeep_modifier = {
-	goods_input_sugar_add = 1
+	goods_input_sugar_add = 0.5
+	goods_input_meat_add = 0.5
+	goods_input_fruit_add = 0.5
+	goods_input_groceries_add = 0.5
 }
 unit_modifier = {
 	unit_morale_recovery_mult = 0.1
