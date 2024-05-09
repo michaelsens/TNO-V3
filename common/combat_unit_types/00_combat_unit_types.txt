@@ -10,10 +10,14 @@
 combat_unit_type_irregular_infantry = {
     group = combat_unit_group_infantry
 
+    unlocking_technologies = { standing_army }
+
+    
+
     battle_modifier = {
-        unit_offense_add = 10
-        unit_defense_add = 15
-        unit_morale_loss_add = 15
+        unit_offense_add = 5
+        unit_defense_add = 10
+        unit_morale_loss_add = 25
     }
 	
     upkeep_modifier = {
@@ -69,13 +73,230 @@ combat_unit_type_irregular_infantry = {
     }
 	
 	upgrades = {
+        combat_unit_type_irregular_infantry_teir_2
+        combat_unit_type_irregular_infantry_teir_3
 		combat_unit_type_line_infantry
+        combat_unit_type_line_infantry_teir_2
+        combat_unit_type_line_infantry_teir_3
+		combat_unit_type_skirmish_infantry
+        combat_unit_type_trench_infantry
+       
+	}
+}
+
+combat_unit_type_irregular_infantry_teir_2 = {
+    group = combat_unit_group_infantry
+
+    unlocking_technologies = { line_infantry }
+
+    battle_modifier = {
+        unit_offense_add = 10
+        unit_defense_add = 20
+        unit_morale_loss_add = 20
+    }
+	
+    upkeep_modifier = {
+        goods_input_small_arms_add = 2.5
+        goods_input_ammunition_add = 2.5
+        goods_input_artillery_add = 1.5
+    }
+
+    # scope = country
+    # both this and "can_build" needs to be true to build conscripts
+    can_build_conscript = {
+        always = yes
+    }
+    
+    combat_unit_image = {
+        trigger = { 
+            has_culture_graphics = decentralised_americas
+        }
+        texture = "gfx/unit_illustrations/infantry_decentralised_americas_irregular.dds"
+    }
+
+    combat_unit_image = {
+        trigger = { 
+            has_culture_graphics = east_asian
+        }
+        texture = "gfx/unit_illustrations/infantry_east_asian_irregular.dds"
+    }
+
+    combat_unit_image = {
+        trigger = { 
+            has_culture_graphics = south_asian
+        }
+        texture = "gfx/unit_illustrations/infantry_south_asian_irregular.dds"
+    }
+
+    combat_unit_image = {
+        trigger = { 
+            has_culture_graphics = african
+        }
+        texture = "gfx/unit_illustrations/infantry_african_irregular.dds"
+    }
+
+    combat_unit_image = {
+        trigger = { 
+            has_culture_graphics = arabic
+        }
+        texture = "gfx/unit_illustrations/infantry_arabic_irregular.dds"
+    }
+
+    combat_unit_image = {
+		# fallback
+        texture = "gfx/unit_illustrations/infantry_eu_irregular.dds"
+    }
+	
+	upgrades = {
+        combat_unit_type_irregular_infantry_teir_3
+		combat_unit_type_line_infantry
+        combat_unit_type_line_infantry_teir_2
+        combat_unit_type_line_infantry_teir_3
+		combat_unit_type_skirmish_infantry
+        combat_unit_type_trench_infantry
+        combat_unit_type_irregular_infantry_teir_3
+	}
+}
+
+combat_unit_type_irregular_infantry_teir_3 = {
+    group = combat_unit_group_infantry
+
+    unlocking_technologies = { napoleonic_warfare }
+
+    battle_modifier = {
+        unit_offense_add = 15
+        unit_defense_add = 25
+        unit_morale_loss_add = 15
+    }
+	
+    upkeep_modifier = {
+        goods_input_small_arms_add = 3
+        goods_input_ammunition_add = 3
+        goods_input_artillery_add = 1.5
+    }
+
+    # scope = country
+    # both this and "can_build" needs to be true to build conscripts
+    can_build_conscript = {
+        always = yes
+    }
+    
+    combat_unit_image = {
+        trigger = { 
+            has_culture_graphics = decentralised_americas
+        }
+        texture = "gfx/unit_illustrations/infantry_decentralised_americas_irregular.dds"
+    }
+
+    combat_unit_image = {
+        trigger = { 
+            has_culture_graphics = east_asian
+        }
+        texture = "gfx/unit_illustrations/infantry_east_asian_irregular.dds"
+    }
+
+    combat_unit_image = {
+        trigger = { 
+            has_culture_graphics = south_asian
+        }
+        texture = "gfx/unit_illustrations/infantry_south_asian_irregular.dds"
+    }
+
+    combat_unit_image = {
+        trigger = { 
+            has_culture_graphics = african
+        }
+        texture = "gfx/unit_illustrations/infantry_african_irregular.dds"
+    }
+
+    combat_unit_image = {
+        trigger = { 
+            has_culture_graphics = arabic
+        }
+        texture = "gfx/unit_illustrations/infantry_arabic_irregular.dds"
+    }
+
+    combat_unit_image = {
+		# fallback
+        texture = "gfx/unit_illustrations/infantry_eu_irregular.dds"
+    }
+	
+	upgrades = {
+		combat_unit_type_line_infantry
+        combat_unit_type_line_infantry_teir_2
+        combat_unit_type_line_infantry_teir_3
+		combat_unit_type_skirmish_infantry
+        combat_unit_type_trench_infantry
+       
+	}
+}
+
+combat_unit_type_line_infantry = {
+    group = combat_unit_group_infantry
+
+    upkeep_modifier = {
+        goods_input_small_arms_add = 3.2
+        goods_input_ammunition_add = 3.5
+        goods_input_artillery_add = 1.5
+    }
+
+    battle_modifier = {
+        unit_offense_add = 25
+        unit_defense_add = 35
+        unit_morale_loss_add = 15
+    }
+
+	unlocking_technologies = { logistics }
+
+    combat_unit_image = {
+        trigger = { 
+            has_culture_graphics = decentralised_americas
+        }
+        texture = "gfx/unit_illustrations/unit_illustration_placeholder.dds"
+    }
+
+    combat_unit_image = {
+        trigger = { 
+            has_culture_graphics = east_asian
+        }
+        texture = "gfx/unit_illustrations/infantry_east_asian_line.dds"
+    }
+
+    combat_unit_image = {
+        trigger = { 
+            has_culture_graphics = south_asian
+        }
+        texture = "gfx/unit_illustrations/infantry_south_asian_line.dds"
+    }
+
+    combat_unit_image = {
+        trigger = { 
+            has_culture_graphics = african
+        }
+        texture = "gfx/unit_illustrations/infantry_african_line.dds"
+    }
+
+    combat_unit_image = {
+        trigger = { 
+            has_culture_graphics = arabic
+        }
+        texture = "gfx/unit_illustrations/infantry_arabic_line.dds"
+    }
+
+    combat_unit_image = {
+		# fallback
+        texture = "gfx/unit_illustrations/infantry_eu_line.dds"
+    }
+	
+	upgrades = {	
+        combat_unit_type_line_infantry_teir_2
+        combat_unit_type_line_infantry_teir_3
 		combat_unit_type_skirmish_infantry
         combat_unit_type_trench_infantry
 	}
 }
 
-combat_unit_type_line_infantry = {
+combat_unit_type_line_infantry_teir_2 = {
     group = combat_unit_group_infantry
 
     upkeep_modifier = {
@@ -90,7 +311,71 @@ combat_unit_type_line_infantry = {
         unit_morale_loss_add = 10
     }
 
-	unlocking_technologies = { military_statistics }
+	unlocking_technologies = { logistics }
+
+    combat_unit_image = {
+        trigger = { 
+            has_culture_graphics = decentralised_americas
+        }
+        texture = "gfx/unit_illustrations/unit_illustration_placeholder.dds"
+    }
+
+    combat_unit_image = {
+        trigger = { 
+            has_culture_graphics = east_asian
+        }
+        texture = "gfx/unit_illustrations/infantry_east_asian_line.dds"
+    }
+
+    combat_unit_image = {
+        trigger = { 
+            has_culture_graphics = south_asian
+        }
+        texture = "gfx/unit_illustrations/infantry_south_asian_line.dds"
+    }
+
+    combat_unit_image = {
+        trigger = { 
+            has_culture_graphics = african
+        }
+        texture = "gfx/unit_illustrations/infantry_african_line.dds"
+    }
+
+    combat_unit_image = {
+        trigger = { 
+            has_culture_graphics = arabic
+        }
+        texture = "gfx/unit_illustrations/infantry_arabic_line.dds"
+    }
+
+    combat_unit_image = {
+		# fallback
+        texture = "gfx/unit_illustrations/infantry_eu_line.dds"
+    }
+	
+	upgrades = {	
+        combat_unit_type_line_infantry_teir_3
+		combat_unit_type_skirmish_infantry
+        combat_unit_type_trench_infantry
+	}
+}
+
+combat_unit_type_line_infantry_teir_3 = {
+    group = combat_unit_group_infantry
+
+    upkeep_modifier = {
+        goods_input_small_arms_add = 3
+        goods_input_ammunition_add = 3
+        goods_input_artillery_add = 1
+    }
+
+    battle_modifier = {
+        unit_offense_add = 10
+        unit_defense_add = 25
+        unit_morale_loss_add = 10
+    }
+
+	unlocking_technologies = { logistics }
 
     combat_unit_image = {
         trigger = { 
@@ -137,6 +422,7 @@ combat_unit_type_line_infantry = {
         combat_unit_type_trench_infantry
 	}
 }
+
 
 combat_unit_type_skirmish_infantry = {
     group = combat_unit_group_infantry
@@ -282,7 +568,7 @@ combat_unit_type_cannon_artillery = {
         unit_devastation_mult = 0.2
     }
 
-	unlocking_technologies = { shell_gun }
+	unlocking_technologies = { artillery }
 
     combat_unit_image = {
         texture = "gfx/unit_illustrations/ww2-artillery.dds"
