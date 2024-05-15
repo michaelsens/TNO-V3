@@ -485,24 +485,24 @@ else_if = {
 else_if = {
           limit = {
                any_state ={
-                    has_variable = $ID$_building_rye_farm_picked
+                    has_variable = $ID$_building_wheat_farm_picked
                }
           }
           random_state = {
                limit = {
-                     has_variable = $ID$_building_rye_farm_picked
+                     has_variable = $ID$_building_wheat_farm_picked
                }
                save_scope_as = buy_share_target_state
                random_scope_building = {
-                    limit = { is_building_type = building_rye_farm }
+                    limit = { is_building_type = building_wheat_farm }
                     save_scope_as = buy_share_target_building
                }
                set_variable = {
-                    name = $ID$_building_rye_farm_sell
+                    name = $ID$_building_wheat_farm_sell
                     value = 1
                     months = 2
                }
-               remove_variable = $ID$_building_rye_farm_picked
+               remove_variable = $ID$_building_wheat_farm_picked
                
           }
      }
@@ -533,24 +533,24 @@ else_if = {
 else_if = {
           limit = {
                any_state ={
-                    has_variable = $ID$_building_rice_farm_picked
+                    has_variable = $ID$_building_wheat_farm_picked
                }
           }
           random_state = {
                limit = {
-                     has_variable = $ID$_building_rice_farm_picked
+                     has_variable = $ID$_building_wheat_farm_picked
                }
                save_scope_as = buy_share_target_state
                random_scope_building = {
-                    limit = { is_building_type = building_rice_farm }
+                    limit = { is_building_type = building_wheat_farm }
                     save_scope_as = buy_share_target_building
                }
                set_variable = {
-                    name = $ID$_building_rice_farm_sell
+                    name = $ID$_building_wheat_farm_sell
                     value = 1
                     months = 2
                }
-               remove_variable = $ID$_building_rice_farm_picked
+               remove_variable = $ID$_building_wheat_farm_picked
                
           }
      }
@@ -581,48 +581,48 @@ else_if = {
 else_if = {
           limit = {
                any_state ={
-                    has_variable = $ID$_building_maize_farm_picked
+                    has_variable = $ID$_building_wheat_farm_picked
                }
           }
           random_state = {
                limit = {
-                     has_variable = $ID$_building_maize_farm_picked
+                     has_variable = $ID$_building_wheat_farm_picked
                }
                save_scope_as = buy_share_target_state
                random_scope_building = {
-                    limit = { is_building_type = building_maize_farm }
+                    limit = { is_building_type = building_wheat_farm }
                     save_scope_as = buy_share_target_building
                }
                set_variable = {
-                    name = $ID$_building_maize_farm_sell
+                    name = $ID$_building_wheat_farm_sell
                     value = 1
                     months = 2
                }
-               remove_variable = $ID$_building_maize_farm_picked
+               remove_variable = $ID$_building_wheat_farm_picked
                
           }
      }
 else_if = {
           limit = {
                any_state ={
-                    has_variable = $ID$_building_millet_farm_picked
+                    has_variable = $ID$_building_wheat_farm_picked
                }
           }
           random_state = {
                limit = {
-                     has_variable = $ID$_building_millet_farm_picked
+                     has_variable = $ID$_building_wheat_farm_picked
                }
                save_scope_as = buy_share_target_state
                random_scope_building = {
-                    limit = { is_building_type = building_millet_farm }
+                    limit = { is_building_type = building_wheat_farm }
                     save_scope_as = buy_share_target_building
                }
                set_variable = {
-                    name = $ID$_building_millet_farm_sell
+                    name = $ID$_building_wheat_farm_sell
                     value = 1
                     months = 2
                }
-               remove_variable = $ID$_building_millet_farm_picked
+               remove_variable = $ID$_building_wheat_farm_picked
                
           }
      }
@@ -1500,19 +1500,19 @@ else_if = {
 }
 else_if = {
         limit = {
-                any_state={has_variable = $ID$_building_rye_farm_sell}
+                any_state={has_variable = $ID$_building_wheat_farm_sell}
         }
         random_state = {
-                limit = {has_variable = $ID$_building_rye_farm_sell}
-                remove_variable = $ID$_building_rye_farm_sell
+                limit = {has_variable = $ID$_building_wheat_farm_sell}
+                remove_variable = $ID$_building_wheat_farm_sell
                 save_scope_as = buy_share_target_state
                 random_scope_building = {
-                        limit = { is_building_type = building_rye_farm }
+                        limit = { is_building_type = building_wheat_farm }
                         save_scope_as = buy_share_target_building
                 }
                 set_local_variable = {
                         name = building_number_store
-                        value = var:$ID$_building_rye_farm_number
+                        value = var:$ID$_building_wheat_farm_number
                 }
         }
 }
@@ -1536,19 +1536,19 @@ else_if = {
 }
 else_if = {
         limit = {
-                any_state={has_variable = $ID$_building_rice_farm_sell}
+                any_state={has_variable = $ID$_building_wheat_farm_sell}
         }
         random_state = {
-                limit = {has_variable = $ID$_building_rice_farm_sell}
-                remove_variable = $ID$_building_rice_farm_sell
+                limit = {has_variable = $ID$_building_wheat_farm_sell}
+                remove_variable = $ID$_building_wheat_farm_sell
                 save_scope_as = buy_share_target_state
                 random_scope_building = {
-                        limit = { is_building_type = building_rice_farm }
+                        limit = { is_building_type = building_wheat_farm }
                         save_scope_as = buy_share_target_building
                 }
                 set_local_variable = {
                         name = building_number_store
-                        value = var:$ID$_building_rice_farm_number
+                        value = var:$ID$_building_wheat_farm_number
                 }
         }
 }
@@ -1572,37 +1572,37 @@ else_if = {
 }
 else_if = {
         limit = {
-                any_state={has_variable = $ID$_building_maize_farm_sell}
+                any_state={has_variable = $ID$_building_wheat_farm_sell}
         }
         random_state = {
-                limit = {has_variable = $ID$_building_maize_farm_sell}
-                remove_variable = $ID$_building_maize_farm_sell
+                limit = {has_variable = $ID$_building_wheat_farm_sell}
+                remove_variable = $ID$_building_wheat_farm_sell
                 save_scope_as = buy_share_target_state
                 random_scope_building = {
-                        limit = { is_building_type = building_maize_farm }
+                        limit = { is_building_type = building_wheat_farm }
                         save_scope_as = buy_share_target_building
                 }
                 set_local_variable = {
                         name = building_number_store
-                        value = var:$ID$_building_maize_farm_number
+                        value = var:$ID$_building_wheat_farm_number
                 }
         }
 }
 else_if = {
         limit = {
-                any_state={has_variable = $ID$_building_millet_farm_sell}
+                any_state={has_variable = $ID$_building_wheat_farm_sell}
         }
         random_state = {
-                limit = {has_variable = $ID$_building_millet_farm_sell}
-                remove_variable = $ID$_building_millet_farm_sell
+                limit = {has_variable = $ID$_building_wheat_farm_sell}
+                remove_variable = $ID$_building_wheat_farm_sell
                 save_scope_as = buy_share_target_state
                 random_scope_building = {
-                        limit = { is_building_type = building_millet_farm }
+                        limit = { is_building_type = building_wheat_farm }
                         save_scope_as = buy_share_target_building
                 }
                 set_local_variable = {
                         name = building_number_store
-                        value = var:$ID$_building_millet_farm_number
+                        value = var:$ID$_building_wheat_farm_number
                 }
         }
 }
@@ -2472,24 +2472,24 @@ else_if = {
 else_if = {
           limit = {
                any_state ={
-                    has_variable = building_rye_farm_picked
+                    has_variable = building_wheat_farm_picked
                }
           }
           random_state = {
                limit = {
-                     has_variable = building_rye_farm_picked
+                     has_variable = building_wheat_farm_picked
                }
                save_scope_as = buy_share_target_state
                random_scope_building = {
-                    limit = { is_building_type = building_rye_farm }
+                    limit = { is_building_type = building_wheat_farm }
                     save_scope_as = buy_share_target_building
                }
                set_variable = {
-                    name = building_rye_farm_sell
+                    name = building_wheat_farm_sell
                     value = 1
                     months = 2
                }
-               remove_variable = building_rye_farm_picked
+               remove_variable = building_wheat_farm_picked
                
           }
      }
@@ -2520,24 +2520,24 @@ else_if = {
 else_if = {
           limit = {
                any_state ={
-                    has_variable = building_rice_farm_picked
+                    has_variable = building_wheat_farm_picked
                }
           }
           random_state = {
                limit = {
-                     has_variable = building_rice_farm_picked
+                     has_variable = building_wheat_farm_picked
                }
                save_scope_as = buy_share_target_state
                random_scope_building = {
-                    limit = { is_building_type = building_rice_farm }
+                    limit = { is_building_type = building_wheat_farm }
                     save_scope_as = buy_share_target_building
                }
                set_variable = {
-                    name = building_rice_farm_sell
+                    name = building_wheat_farm_sell
                     value = 1
                     months = 2
                }
-               remove_variable = building_rice_farm_picked
+               remove_variable = building_wheat_farm_picked
                
           }
      }
@@ -2568,48 +2568,48 @@ else_if = {
 else_if = {
           limit = {
                any_state ={
-                    has_variable = building_maize_farm_picked
+                    has_variable = building_wheat_farm_picked
                }
           }
           random_state = {
                limit = {
-                     has_variable = building_maize_farm_picked
+                     has_variable = building_wheat_farm_picked
                }
                save_scope_as = buy_share_target_state
                random_scope_building = {
-                    limit = { is_building_type = building_maize_farm }
+                    limit = { is_building_type = building_wheat_farm }
                     save_scope_as = buy_share_target_building
                }
                set_variable = {
-                    name = building_maize_farm_sell
+                    name = building_wheat_farm_sell
                     value = 1
                     months = 2
                }
-               remove_variable = building_maize_farm_picked
+               remove_variable = building_wheat_farm_picked
                
           }
      }
 else_if = {
           limit = {
                any_state ={
-                    has_variable = building_millet_farm_picked
+                    has_variable = building_wheat_farm_picked
                }
           }
           random_state = {
                limit = {
-                     has_variable = building_millet_farm_picked
+                     has_variable = building_wheat_farm_picked
                }
                save_scope_as = buy_share_target_state
                random_scope_building = {
-                    limit = { is_building_type = building_millet_farm }
+                    limit = { is_building_type = building_wheat_farm }
                     save_scope_as = buy_share_target_building
                }
                set_variable = {
-                    name = building_millet_farm_sell
+                    name = building_wheat_farm_sell
                     value = 1
                     months = 2
                }
-               remove_variable = building_millet_farm_picked
+               remove_variable = building_wheat_farm_picked
                
           }
      }
@@ -3567,14 +3567,14 @@ else_if = {
 }
 else_if = {
      limit = {
-          any_state={has_variable = building_rye_farm_sell}
+          any_state={has_variable = building_wheat_farm_sell}
      }
      random_state = {
-          limit = {has_variable = building_rye_farm_sell}
-          remove_variable = building_rye_farm_sell
+          limit = {has_variable = building_wheat_farm_sell}
+          remove_variable = building_wheat_farm_sell
           save_scope_as = buy_share_target_state
           random_scope_building = {
-               limit = { is_building_type = building_rye_farm }
+               limit = { is_building_type = building_wheat_farm }
                save_scope_as = buy_share_target_building
                set_local_variable = {
                     name = building_number_store
@@ -3583,7 +3583,7 @@ else_if = {
           }
           every_id_executor = {
                FUNCTION = fi_id_select_building_5
-               BUILDING = building_rye_farm
+               BUILDING = building_wheat_farm
           }
      }
 }
@@ -3611,14 +3611,14 @@ else_if = {
 }
 else_if = {
      limit = {
-          any_state={has_variable = building_rice_farm_sell}
+          any_state={has_variable = building_wheat_farm_sell}
      }
      random_state = {
-          limit = {has_variable = building_rice_farm_sell}
-          remove_variable = building_rice_farm_sell
+          limit = {has_variable = building_wheat_farm_sell}
+          remove_variable = building_wheat_farm_sell
           save_scope_as = buy_share_target_state
           random_scope_building = {
-               limit = { is_building_type = building_rice_farm }
+               limit = { is_building_type = building_wheat_farm }
                save_scope_as = buy_share_target_building
                set_local_variable = {
                     name = building_number_store
@@ -3627,7 +3627,7 @@ else_if = {
           }
           every_id_executor = {
                FUNCTION = fi_id_select_building_5
-               BUILDING = building_rice_farm
+               BUILDING = building_wheat_farm
           }
      }
 }
@@ -3655,14 +3655,14 @@ else_if = {
 }
 else_if = {
      limit = {
-          any_state={has_variable = building_maize_farm_sell}
+          any_state={has_variable = building_wheat_farm_sell}
      }
      random_state = {
-          limit = {has_variable = building_maize_farm_sell}
-          remove_variable = building_maize_farm_sell
+          limit = {has_variable = building_wheat_farm_sell}
+          remove_variable = building_wheat_farm_sell
           save_scope_as = buy_share_target_state
           random_scope_building = {
-               limit = { is_building_type = building_maize_farm }
+               limit = { is_building_type = building_wheat_farm }
                save_scope_as = buy_share_target_building
                set_local_variable = {
                     name = building_number_store
@@ -3671,20 +3671,20 @@ else_if = {
           }
           every_id_executor = {
                FUNCTION = fi_id_select_building_5
-               BUILDING = building_maize_farm
+               BUILDING = building_wheat_farm
           }
      }
 }
 else_if = {
      limit = {
-          any_state={has_variable = building_millet_farm_sell}
+          any_state={has_variable = building_wheat_farm_sell}
      }
      random_state = {
-          limit = {has_variable = building_millet_farm_sell}
-          remove_variable = building_millet_farm_sell
+          limit = {has_variable = building_wheat_farm_sell}
+          remove_variable = building_wheat_farm_sell
           save_scope_as = buy_share_target_state
           random_scope_building = {
-               limit = { is_building_type = building_millet_farm }
+               limit = { is_building_type = building_wheat_farm }
                save_scope_as = buy_share_target_building
                set_local_variable = {
                     name = building_number_store
@@ -3693,7 +3693,7 @@ else_if = {
           }
           every_id_executor = {
                FUNCTION = fi_id_select_building_5
-               BUILDING = building_millet_farm
+               BUILDING = building_wheat_farm
           }
      }
 }
@@ -4639,24 +4639,24 @@ else_if = {
 else_if = {
      limit = {
           any_state ={
-               has_variable = $ID$_building_rye_farm_SELL_SHARE
+               has_variable = $ID$_building_wheat_farm_SELL_SHARE
           }
      }
      random_state = {
           limit = {
-                has_variable = $ID$_building_rye_farm_SELL_SHARE
+                has_variable = $ID$_building_wheat_farm_SELL_SHARE
           }
           save_scope_as = buy_share_target_state
           random_scope_building = {
-               limit = { is_building_type = building_rye_farm }
+               limit = { is_building_type = building_wheat_farm }
                save_scope_as = buy_share_target_building
           }
           set_variable = {
-               name = $ID$_building_rye_farm_sell_share_2
-               value = var:$ID$_building_rye_farm_SELL_SHARE
+               name = $ID$_building_wheat_farm_sell_share_2
+               value = var:$ID$_building_wheat_farm_SELL_SHARE
                months = 2
           }
-          remove_variable = $ID$_building_rye_farm_SELL_SHARE
+          remove_variable = $ID$_building_wheat_farm_SELL_SHARE
      }
 }
 else_if = {
@@ -4685,24 +4685,24 @@ else_if = {
 else_if = {
      limit = {
           any_state ={
-               has_variable = $ID$_building_rice_farm_SELL_SHARE
+               has_variable = $ID$_building_wheat_farm_SELL_SHARE
           }
      }
      random_state = {
           limit = {
-                has_variable = $ID$_building_rice_farm_SELL_SHARE
+                has_variable = $ID$_building_wheat_farm_SELL_SHARE
           }
           save_scope_as = buy_share_target_state
           random_scope_building = {
-               limit = { is_building_type = building_rice_farm }
+               limit = { is_building_type = building_wheat_farm }
                save_scope_as = buy_share_target_building
           }
           set_variable = {
-               name = $ID$_building_rice_farm_sell_share_2
-               value = var:$ID$_building_rice_farm_SELL_SHARE
+               name = $ID$_building_wheat_farm_sell_share_2
+               value = var:$ID$_building_wheat_farm_SELL_SHARE
                months = 2
           }
-          remove_variable = $ID$_building_rice_farm_SELL_SHARE
+          remove_variable = $ID$_building_wheat_farm_SELL_SHARE
      }
 }
 else_if = {
@@ -4731,47 +4731,47 @@ else_if = {
 else_if = {
      limit = {
           any_state ={
-               has_variable = $ID$_building_maize_farm_SELL_SHARE
+               has_variable = $ID$_building_wheat_farm_SELL_SHARE
           }
      }
      random_state = {
           limit = {
-                has_variable = $ID$_building_maize_farm_SELL_SHARE
+                has_variable = $ID$_building_wheat_farm_SELL_SHARE
           }
           save_scope_as = buy_share_target_state
           random_scope_building = {
-               limit = { is_building_type = building_maize_farm }
+               limit = { is_building_type = building_wheat_farm }
                save_scope_as = buy_share_target_building
           }
           set_variable = {
-               name = $ID$_building_maize_farm_sell_share_2
-               value = var:$ID$_building_maize_farm_SELL_SHARE
+               name = $ID$_building_wheat_farm_sell_share_2
+               value = var:$ID$_building_wheat_farm_SELL_SHARE
                months = 2
           }
-          remove_variable = $ID$_building_maize_farm_SELL_SHARE
+          remove_variable = $ID$_building_wheat_farm_SELL_SHARE
      }
 }
 else_if = {
      limit = {
           any_state ={
-               has_variable = $ID$_building_millet_farm_SELL_SHARE
+               has_variable = $ID$_building_wheat_farm_SELL_SHARE
           }
      }
      random_state = {
           limit = {
-                has_variable = $ID$_building_millet_farm_SELL_SHARE
+                has_variable = $ID$_building_wheat_farm_SELL_SHARE
           }
           save_scope_as = buy_share_target_state
           random_scope_building = {
-               limit = { is_building_type = building_millet_farm }
+               limit = { is_building_type = building_wheat_farm }
                save_scope_as = buy_share_target_building
           }
           set_variable = {
-               name = $ID$_building_millet_farm_sell_share_2
-               value = var:$ID$_building_millet_farm_SELL_SHARE
+               name = $ID$_building_wheat_farm_sell_share_2
+               value = var:$ID$_building_wheat_farm_SELL_SHARE
                months = 2
           }
-          remove_variable = $ID$_building_millet_farm_SELL_SHARE
+          remove_variable = $ID$_building_wheat_farm_SELL_SHARE
      }
 }
 else_if = {
@@ -5623,20 +5623,20 @@ else_if = {
 }
 else_if = {
      limit = {
-          any_state={has_variable = $ID$_building_rye_farm_sell_share_2}
+          any_state={has_variable = $ID$_building_wheat_farm_sell_share_2}
      }
      random_state = {
-          limit = {has_variable = $ID$_building_rye_farm_sell_share_2}
+          limit = {has_variable = $ID$_building_wheat_farm_sell_share_2}
           save_scope_as = buy_share_target_state
           random_scope_building = {
-               limit = { is_building_type = building_rye_farm }
+               limit = { is_building_type = building_wheat_farm }
                save_scope_as = buy_share_target_building
           }
           set_local_variable = {
                name = building_number_store
-               value = var:$ID$_building_rye_farm_sell_share_2
+               value = var:$ID$_building_wheat_farm_sell_share_2
           }
-          remove_variable = $ID$_building_rye_farm_sell_share_2
+          remove_variable = $ID$_building_wheat_farm_sell_share_2
      }
 }
 else_if = {
@@ -5659,20 +5659,20 @@ else_if = {
 }
 else_if = {
      limit = {
-          any_state={has_variable = $ID$_building_rice_farm_sell_share_2}
+          any_state={has_variable = $ID$_building_wheat_farm_sell_share_2}
      }
      random_state = {
-          limit = {has_variable = $ID$_building_rice_farm_sell_share_2}
+          limit = {has_variable = $ID$_building_wheat_farm_sell_share_2}
           save_scope_as = buy_share_target_state
           random_scope_building = {
-               limit = { is_building_type = building_rice_farm }
+               limit = { is_building_type = building_wheat_farm }
                save_scope_as = buy_share_target_building
           }
           set_local_variable = {
                name = building_number_store
-               value = var:$ID$_building_rice_farm_sell_share_2
+               value = var:$ID$_building_wheat_farm_sell_share_2
           }
-          remove_variable = $ID$_building_rice_farm_sell_share_2
+          remove_variable = $ID$_building_wheat_farm_sell_share_2
      }
 }
 else_if = {
@@ -5695,38 +5695,38 @@ else_if = {
 }
 else_if = {
      limit = {
-          any_state={has_variable = $ID$_building_maize_farm_sell_share_2}
+          any_state={has_variable = $ID$_building_wheat_farm_sell_share_2}
      }
      random_state = {
-          limit = {has_variable = $ID$_building_maize_farm_sell_share_2}
+          limit = {has_variable = $ID$_building_wheat_farm_sell_share_2}
           save_scope_as = buy_share_target_state
           random_scope_building = {
-               limit = { is_building_type = building_maize_farm }
+               limit = { is_building_type = building_wheat_farm }
                save_scope_as = buy_share_target_building
           }
           set_local_variable = {
                name = building_number_store
-               value = var:$ID$_building_maize_farm_sell_share_2
+               value = var:$ID$_building_wheat_farm_sell_share_2
           }
-          remove_variable = $ID$_building_maize_farm_sell_share_2
+          remove_variable = $ID$_building_wheat_farm_sell_share_2
      }
 }
 else_if = {
      limit = {
-          any_state={has_variable = $ID$_building_millet_farm_sell_share_2}
+          any_state={has_variable = $ID$_building_wheat_farm_sell_share_2}
      }
      random_state = {
-          limit = {has_variable = $ID$_building_millet_farm_sell_share_2}
+          limit = {has_variable = $ID$_building_wheat_farm_sell_share_2}
           save_scope_as = buy_share_target_state
           random_scope_building = {
-               limit = { is_building_type = building_millet_farm }
+               limit = { is_building_type = building_wheat_farm }
                save_scope_as = buy_share_target_building
           }
           set_local_variable = {
                name = building_number_store
-               value = var:$ID$_building_millet_farm_sell_share_2
+               value = var:$ID$_building_wheat_farm_sell_share_2
           }
-          remove_variable = $ID$_building_millet_farm_sell_share_2
+          remove_variable = $ID$_building_wheat_farm_sell_share_2
      }
 }
 else_if = {

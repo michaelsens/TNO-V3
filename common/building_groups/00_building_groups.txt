@@ -49,7 +49,7 @@ bg_light_industry = {
 	can_use_slaves = yes
 	
 	urbanization = 20
-	infrastructure_usage_per_level = 2
+	infrastructure_usage_per_level = 20
 }
 
 bg_heavy_industry = {
@@ -58,21 +58,21 @@ bg_heavy_industry = {
 	lens = heavy_industry
 	can_use_slaves = yes
 	urbanization = 30
-	infrastructure_usage_per_level = 3
+	infrastructure_usage_per_level = 30
 }
 
 bg_shipyards = {
 	parent_group = bg_heavy_industry
 	
 	urbanization = 20
-	infrastructure_usage_per_level = 1
+	infrastructure_usage_per_level = 10
 }
 
 bg_military_shipyards = {
 	parent_group = bg_heavy_industry
 		
 	urbanization = 20
-	infrastructure_usage_per_level = 2
+	infrastructure_usage_per_level = 20
 }
 
 # Agriculture
@@ -89,7 +89,7 @@ bg_agriculture = {
 	can_use_slaves = yes
 	
 	urbanization = 5
-	infrastructure_usage_per_level = 1
+	infrastructure_usage_per_level = 10
 	
 	should_auto_expand = { 
 		default_auto_expand_rule = yes
@@ -98,42 +98,10 @@ bg_agriculture = {
 	economy_of_scale_ai_factor = 2.0
 }
 
-bg_rye_farms = {
-	parent_group = bg_agriculture
-	
-	default_building = building_rye_farm
-	
-	cash_reserves_max = 25000
-}
-
 bg_wheat_farms = {
 	parent_group = bg_agriculture
 	
 	default_building = building_wheat_farm
-	
-	cash_reserves_max = 25000
-}
-
-bg_rice_farms = {
-	parent_group = bg_agriculture
-	
-	default_building = building_rice_farm
-	
-	cash_reserves_max = 25000
-}
-
-bg_maize_farms = {
-	parent_group = bg_agriculture
-	
-	default_building = building_maize_farm
-	
-	cash_reserves_max = 25000
-}
-
-bg_millet_farms = {
-	parent_group = bg_agriculture
-	
-	default_building = building_millet_farm
 	
 	cash_reserves_max = 25000
 }
@@ -178,7 +146,7 @@ bg_ranching = {
 	can_use_slaves = yes
 	
 	urbanization = 5
-	infrastructure_usage_per_level = 1
+	infrastructure_usage_per_level = 10
 	
 	should_auto_expand = { 
 		default_auto_expand_rule = yes
@@ -227,7 +195,7 @@ bg_plantations = {
 	cash_reserves_max = 25000
 	
 	urbanization = 5
-	infrastructure_usage_per_level = 1
+	infrastructure_usage_per_level = 10
 	
 	should_auto_expand = { 
 		default_auto_expand_rule = yes
@@ -307,7 +275,7 @@ bg_mining = {
 	cash_reserves_max = 25000
 	
 	urbanization = 10
-	infrastructure_usage_per_level = 2
+	infrastructure_usage_per_level = 20
 	
 	should_auto_expand = { 
 		default_auto_expand_rule = yes
@@ -398,7 +366,7 @@ bg_logging = {
 	cash_reserves_max = 25000
 	
 	urbanization = 5
-	infrastructure_usage_per_level = 1
+	infrastructure_usage_per_level = 10
 	
 	should_auto_expand = { 
 		default_auto_expand_rule = yes
@@ -427,7 +395,7 @@ bg_rubber = {
 	cash_reserves_max = 25000 
 	
 	urbanization = 5
-	infrastructure_usage_per_level = 1
+	infrastructure_usage_per_level = 10
 	
 	should_auto_expand = { 
 		default_auto_expand_rule = yes
@@ -454,7 +422,7 @@ bg_whaling = {
 	cash_reserves_max = 25000
 	
 	urbanization = 5
-	infrastructure_usage_per_level = 1
+	infrastructure_usage_per_level = 10
 	
 	should_auto_expand = { 
 		default_auto_expand_rule = yes
@@ -477,7 +445,7 @@ bg_fishing = {
 	cash_reserves_max = 25000
 	
 	urbanization = 5
-	infrastructure_usage_per_level = 1
+	infrastructure_usage_per_level = 10
 	
 	should_auto_expand = { 
 		default_auto_expand_rule = yes
@@ -506,7 +474,7 @@ bg_oil_extraction = {
 	cash_reserves_max = 25000
 	
 	urbanization = 10
-	infrastructure_usage_per_level = 2
+	infrastructure_usage_per_level = 20
 	
 	should_auto_expand = { 
 		default_auto_expand_rule = yes
@@ -549,7 +517,7 @@ bg_urban_facilities = {
 	cash_reserves_max = 25000
 	
 	urbanization = 20
-	infrastructure_usage_per_level = 2
+	infrastructure_usage_per_level = 20
 	
 	should_auto_expand = { 
 		default_auto_expand_rule = yes
@@ -584,7 +552,7 @@ bg_government = {
 	lens = government
 	
 	urbanization = 20
-	infrastructure_usage_per_level = 1
+	infrastructure_usage_per_level = 10
 	
 	economy_of_scale_ai_factor = 2.0
 }
@@ -625,7 +593,7 @@ bg_trade = {
 	
 	urbanization = 5
 	
-	infrastructure_usage_per_level = 0.1
+	infrastructure_usage_per_level = 0.10
 	
 	fired_pops_become_radical = no
 	
@@ -661,7 +629,7 @@ bg_public_infrastructure = {
 bg_construction = {
 	parent_group = bg_public_infrastructure
 
-	infrastructure_usage_per_level = 0.2
+	infrastructure_usage_per_level = 0.20
 
 	lens = government
 
@@ -710,7 +678,7 @@ bg_military = {
 	
 	is_government_funded = yes
 
-	infrastructure_usage_per_level = 0.2
+	infrastructure_usage_per_level = 0.20
 	
 	lens = military
 	

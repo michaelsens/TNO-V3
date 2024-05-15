@@ -1117,7 +1117,7 @@ types foreign_investments_types
                 }
                 container ={
                         position = { 11 -15 }                        
-                        visible = "[And(Building.IsBuildingType('building_rye_farm'), Or(NotEqualTo_CFixedPoint(Building.GetState.MakeScope.ScriptValue('rye_farm_total_item'),'(CFixedPoint)0'), NotEqualTo_CFixedPoint(Building.GetState.MakeScope.ScriptValue('rye_farm_queued_item'),'(CFixedPoint)0')))]"
+                        visible = "[And(Building.IsBuildingType('building_wheat_farm'), Or(NotEqualTo_CFixedPoint(Building.GetState.MakeScope.ScriptValue('rye_farm_total_item'),'(CFixedPoint)0'), NotEqualTo_CFixedPoint(Building.GetState.MakeScope.ScriptValue('rye_farm_queued_item'),'(CFixedPoint)0')))]"
                         textbox = {
                                 visible = "[And(NotEqualTo_CFixedPoint(Building.GetState.MakeScope.ScriptValue('rye_farm_total_item'), '(CFixedPoint)0'), EqualTo_CFixedPoint(Building.GetState.MakeScope.ScriptValue('rye_farm_queued_item'),'(CFixedPoint)0'))]"
                                 raw_text = "#bold #gold [Building.GetState.MakeScope.ScriptValue('rye_farm_total_item')|0]#!#!"
@@ -1130,7 +1130,7 @@ types foreign_investments_types
                 fi_button_icon_minus_action = {
                         blockoverride "building_type" {
                                 datacontext = "[GetScriptedGui('cancel_investments_rye_farm')]"
-                                visible = "[And(Building.IsBuildingType('building_rye_farm'),ScriptedGui.IsShown(GuiScope.AddScope('invested_building', Building.MakeScope).AddScope('invested_state', State.MakeScope).AddScope('investor_country', GetPlayer.MakeScope).End))]"
+                                visible = "[And(Building.IsBuildingType('building_wheat_farm'),ScriptedGui.IsShown(GuiScope.AddScope('invested_building', Building.MakeScope).AddScope('invested_state', State.MakeScope).AddScope('investor_country', GetPlayer.MakeScope).End))]"
                         }
                 }
                 default_progressbar_horizontal = {
@@ -1138,20 +1138,20 @@ types foreign_investments_types
                         position = { 38 8 }
                         fi_bar_textbox = {
                                 blockoverride "building_type" {
-                                        visible = "[And(NotEqualTo_CFixedPoint(Building.GetState.MakeScope.ScriptValue('building_rye_farm_total_number'), '(CFixedPoint)0'), EqualTo_CFixedPoint(Building.GetState.MakeScope.ScriptValue('building_rye_farm_total_queued'),'(CFixedPoint)0'))]"
-                                        raw_text = "#bold [Building.GetState.MakeScope.ScriptValue('building_rye_farm_total_number')|0]#!"
+                                        visible = "[And(NotEqualTo_CFixedPoint(Building.GetState.MakeScope.ScriptValue('building_wheat_farm_total_number'), '(CFixedPoint)0'), EqualTo_CFixedPoint(Building.GetState.MakeScope.ScriptValue('building_wheat_farm_total_queued'),'(CFixedPoint)0'))]"
+                                        raw_text = "#bold [Building.GetState.MakeScope.ScriptValue('building_wheat_farm_total_number')|0]#!"
                                         tooltip = "rye_farm_CONSTRUCTION_TOOLTIP"
                                 }
                         }
                         fi_bar_textbox = {
                                 blockoverride "building_type" {
-                                        visible = "[NotEqualTo_CFixedPoint(Building.GetState.MakeScope.ScriptValue('building_rye_farm_total_queued'),'(CFixedPoint)0')]"
-                                        raw_text = "#bold [Building.GetState.MakeScope.ScriptValue('building_rye_farm_total_number')|0] + [Building.GetState.MakeScope.ScriptValue('building_rye_farm_total_queued')|0]#!"
+                                        visible = "[NotEqualTo_CFixedPoint(Building.GetState.MakeScope.ScriptValue('building_wheat_farm_total_queued'),'(CFixedPoint)0')]"
+                                        raw_text = "#bold [Building.GetState.MakeScope.ScriptValue('building_wheat_farm_total_number')|0] + [Building.GetState.MakeScope.ScriptValue('building_wheat_farm_total_queued')|0]#!"
                                         tooltip = "rye_farm_CONSTRUCTION_TOOLTIP"
                                 }
                         }
                         datacontext = "[GetScriptedGui('buy_share_scripted_gui')]"
-                        visible = "[And(Building.IsBuildingType('building_rye_farm'), Or(ScriptedGui.IsValid(GuiScope.AddScope('invested_building', Building.MakeScope).AddScope('investor_country', GetPlayer.MakeScope).End),Or(NotEqualTo_CFixedPoint(Building.GetState.MakeScope.ScriptValue('building_rye_farm_total_number'),'(CFixedPoint)0'), NotEqualTo_CFixedPoint(Building.GetState.MakeScope.ScriptValue('building_rye_farm_total_queued'),'(CFixedPoint)0'))))]"
+                        visible = "[And(Building.IsBuildingType('building_wheat_farm'), Or(ScriptedGui.IsValid(GuiScope.AddScope('invested_building', Building.MakeScope).AddScope('investor_country', GetPlayer.MakeScope).End),Or(NotEqualTo_CFixedPoint(Building.GetState.MakeScope.ScriptValue('building_wheat_farm_total_number'),'(CFixedPoint)0'), NotEqualTo_CFixedPoint(Building.GetState.MakeScope.ScriptValue('building_wheat_farm_total_queued'),'(CFixedPoint)0'))))]"
                         button = {
                                 size = {100% 100%}
                                 enabled = "[ScriptedGui.IsValid(GuiScope.AddScope('invested_building', Building.MakeScope).AddScope('investor_country', GetPlayer.MakeScope).End)]"
@@ -1164,7 +1164,7 @@ types foreign_investments_types
                 fi_button_icon_plus_action = {
                         blockoverride "building_type" {
                                 datacontext = "[GetScriptedGui('foreign_investments_rye_farm')]"
-                                visible = "[And(Building.IsBuildingType('building_rye_farm'),ScriptedGui.IsShown(GuiScope.AddScope('invested_building', Building.MakeScope).AddScope('invested_state', State.MakeScope).AddScope('investor_country', GetPlayer.MakeScope).End))]"
+                                visible = "[And(Building.IsBuildingType('building_wheat_farm'),ScriptedGui.IsShown(GuiScope.AddScope('invested_building', Building.MakeScope).AddScope('invested_state', State.MakeScope).AddScope('investor_country', GetPlayer.MakeScope).End))]"
                         }
                 }
                 container ={
@@ -1221,7 +1221,7 @@ types foreign_investments_types
                 }
                 container ={
                         position = { 11 -15 }                        
-                        visible = "[And(Building.IsBuildingType('building_rice_farm'), Or(NotEqualTo_CFixedPoint(Building.GetState.MakeScope.ScriptValue('rice_farm_total_item'),'(CFixedPoint)0'), NotEqualTo_CFixedPoint(Building.GetState.MakeScope.ScriptValue('rice_farm_queued_item'),'(CFixedPoint)0')))]"
+                        visible = "[And(Building.IsBuildingType('building_wheat_farm'), Or(NotEqualTo_CFixedPoint(Building.GetState.MakeScope.ScriptValue('rice_farm_total_item'),'(CFixedPoint)0'), NotEqualTo_CFixedPoint(Building.GetState.MakeScope.ScriptValue('rice_farm_queued_item'),'(CFixedPoint)0')))]"
                         textbox = {
                                 visible = "[And(NotEqualTo_CFixedPoint(Building.GetState.MakeScope.ScriptValue('rice_farm_total_item'), '(CFixedPoint)0'), EqualTo_CFixedPoint(Building.GetState.MakeScope.ScriptValue('rice_farm_queued_item'),'(CFixedPoint)0'))]"
                                 raw_text = "#bold #gold [Building.GetState.MakeScope.ScriptValue('rice_farm_total_item')|0]#!#!"
@@ -1234,7 +1234,7 @@ types foreign_investments_types
                 fi_button_icon_minus_action = {
                         blockoverride "building_type" {
                                 datacontext = "[GetScriptedGui('cancel_investments_rice_farm')]"
-                                visible = "[And(Building.IsBuildingType('building_rice_farm'),ScriptedGui.IsShown(GuiScope.AddScope('invested_building', Building.MakeScope).AddScope('invested_state', State.MakeScope).AddScope('investor_country', GetPlayer.MakeScope).End))]"
+                                visible = "[And(Building.IsBuildingType('building_wheat_farm'),ScriptedGui.IsShown(GuiScope.AddScope('invested_building', Building.MakeScope).AddScope('invested_state', State.MakeScope).AddScope('investor_country', GetPlayer.MakeScope).End))]"
                         }
                 }
                 default_progressbar_horizontal = {
@@ -1242,20 +1242,20 @@ types foreign_investments_types
                         position = { 38 8 }
                         fi_bar_textbox = {
                                 blockoverride "building_type" {
-                                        visible = "[And(NotEqualTo_CFixedPoint(Building.GetState.MakeScope.ScriptValue('building_rice_farm_total_number'), '(CFixedPoint)0'), EqualTo_CFixedPoint(Building.GetState.MakeScope.ScriptValue('building_rice_farm_total_queued'),'(CFixedPoint)0'))]"
-                                        raw_text = "#bold [Building.GetState.MakeScope.ScriptValue('building_rice_farm_total_number')|0]#!"
+                                        visible = "[And(NotEqualTo_CFixedPoint(Building.GetState.MakeScope.ScriptValue('building_wheat_farm_total_number'), '(CFixedPoint)0'), EqualTo_CFixedPoint(Building.GetState.MakeScope.ScriptValue('building_wheat_farm_total_queued'),'(CFixedPoint)0'))]"
+                                        raw_text = "#bold [Building.GetState.MakeScope.ScriptValue('building_wheat_farm_total_number')|0]#!"
                                         tooltip = "rice_farm_CONSTRUCTION_TOOLTIP"
                                 }
                         }
                         fi_bar_textbox = {
                                 blockoverride "building_type" {
-                                        visible = "[NotEqualTo_CFixedPoint(Building.GetState.MakeScope.ScriptValue('building_rice_farm_total_queued'),'(CFixedPoint)0')]"
-                                        raw_text = "#bold [Building.GetState.MakeScope.ScriptValue('building_rice_farm_total_number')|0] + [Building.GetState.MakeScope.ScriptValue('building_rice_farm_total_queued')|0]#!"
+                                        visible = "[NotEqualTo_CFixedPoint(Building.GetState.MakeScope.ScriptValue('building_wheat_farm_total_queued'),'(CFixedPoint)0')]"
+                                        raw_text = "#bold [Building.GetState.MakeScope.ScriptValue('building_wheat_farm_total_number')|0] + [Building.GetState.MakeScope.ScriptValue('building_wheat_farm_total_queued')|0]#!"
                                         tooltip = "rice_farm_CONSTRUCTION_TOOLTIP"
                                 }
                         }
                         datacontext = "[GetScriptedGui('buy_share_scripted_gui')]"
-                        visible = "[And(Building.IsBuildingType('building_rice_farm'), Or(ScriptedGui.IsValid(GuiScope.AddScope('invested_building', Building.MakeScope).AddScope('investor_country', GetPlayer.MakeScope).End),Or(NotEqualTo_CFixedPoint(Building.GetState.MakeScope.ScriptValue('building_rice_farm_total_number'),'(CFixedPoint)0'), NotEqualTo_CFixedPoint(Building.GetState.MakeScope.ScriptValue('building_rice_farm_total_queued'),'(CFixedPoint)0'))))]"
+                        visible = "[And(Building.IsBuildingType('building_wheat_farm'), Or(ScriptedGui.IsValid(GuiScope.AddScope('invested_building', Building.MakeScope).AddScope('investor_country', GetPlayer.MakeScope).End),Or(NotEqualTo_CFixedPoint(Building.GetState.MakeScope.ScriptValue('building_wheat_farm_total_number'),'(CFixedPoint)0'), NotEqualTo_CFixedPoint(Building.GetState.MakeScope.ScriptValue('building_wheat_farm_total_queued'),'(CFixedPoint)0'))))]"
                         button = {
                                 size = {100% 100%}
                                 enabled = "[ScriptedGui.IsValid(GuiScope.AddScope('invested_building', Building.MakeScope).AddScope('investor_country', GetPlayer.MakeScope).End)]"
@@ -1268,7 +1268,7 @@ types foreign_investments_types
                 fi_button_icon_plus_action = {
                         blockoverride "building_type" {
                                 datacontext = "[GetScriptedGui('foreign_investments_rice_farm')]"
-                                visible = "[And(Building.IsBuildingType('building_rice_farm'),ScriptedGui.IsShown(GuiScope.AddScope('invested_building', Building.MakeScope).AddScope('invested_state', State.MakeScope).AddScope('investor_country', GetPlayer.MakeScope).End))]"
+                                visible = "[And(Building.IsBuildingType('building_wheat_farm'),ScriptedGui.IsShown(GuiScope.AddScope('invested_building', Building.MakeScope).AddScope('invested_state', State.MakeScope).AddScope('investor_country', GetPlayer.MakeScope).End))]"
                         }
                 }
                 container ={
@@ -1325,7 +1325,7 @@ types foreign_investments_types
                 }
                 container ={
                         position = { 11 -15 }                        
-                        visible = "[And(Building.IsBuildingType('building_maize_farm'), Or(NotEqualTo_CFixedPoint(Building.GetState.MakeScope.ScriptValue('maize_farm_total_item'),'(CFixedPoint)0'), NotEqualTo_CFixedPoint(Building.GetState.MakeScope.ScriptValue('maize_farm_queued_item'),'(CFixedPoint)0')))]"
+                        visible = "[And(Building.IsBuildingType('building_wheat_farm'), Or(NotEqualTo_CFixedPoint(Building.GetState.MakeScope.ScriptValue('maize_farm_total_item'),'(CFixedPoint)0'), NotEqualTo_CFixedPoint(Building.GetState.MakeScope.ScriptValue('maize_farm_queued_item'),'(CFixedPoint)0')))]"
                         textbox = {
                                 visible = "[And(NotEqualTo_CFixedPoint(Building.GetState.MakeScope.ScriptValue('maize_farm_total_item'), '(CFixedPoint)0'), EqualTo_CFixedPoint(Building.GetState.MakeScope.ScriptValue('maize_farm_queued_item'),'(CFixedPoint)0'))]"
                                 raw_text = "#bold #gold [Building.GetState.MakeScope.ScriptValue('maize_farm_total_item')|0]#!#!"
@@ -1338,7 +1338,7 @@ types foreign_investments_types
                 fi_button_icon_minus_action = {
                         blockoverride "building_type" {
                                 datacontext = "[GetScriptedGui('cancel_investments_maize_farm')]"
-                                visible = "[And(Building.IsBuildingType('building_maize_farm'),ScriptedGui.IsShown(GuiScope.AddScope('invested_building', Building.MakeScope).AddScope('invested_state', State.MakeScope).AddScope('investor_country', GetPlayer.MakeScope).End))]"
+                                visible = "[And(Building.IsBuildingType('building_wheat_farm'),ScriptedGui.IsShown(GuiScope.AddScope('invested_building', Building.MakeScope).AddScope('invested_state', State.MakeScope).AddScope('investor_country', GetPlayer.MakeScope).End))]"
                         }
                 }
                 default_progressbar_horizontal = {
@@ -1346,20 +1346,20 @@ types foreign_investments_types
                         position = { 38 8 }
                         fi_bar_textbox = {
                                 blockoverride "building_type" {
-                                        visible = "[And(NotEqualTo_CFixedPoint(Building.GetState.MakeScope.ScriptValue('building_maize_farm_total_number'), '(CFixedPoint)0'), EqualTo_CFixedPoint(Building.GetState.MakeScope.ScriptValue('building_maize_farm_total_queued'),'(CFixedPoint)0'))]"
-                                        raw_text = "#bold [Building.GetState.MakeScope.ScriptValue('building_maize_farm_total_number')|0]#!"
+                                        visible = "[And(NotEqualTo_CFixedPoint(Building.GetState.MakeScope.ScriptValue('building_wheat_farm_total_number'), '(CFixedPoint)0'), EqualTo_CFixedPoint(Building.GetState.MakeScope.ScriptValue('building_wheat_farm_total_queued'),'(CFixedPoint)0'))]"
+                                        raw_text = "#bold [Building.GetState.MakeScope.ScriptValue('building_wheat_farm_total_number')|0]#!"
                                         tooltip = "maize_farm_CONSTRUCTION_TOOLTIP"
                                 }
                         }
                         fi_bar_textbox = {
                                 blockoverride "building_type" {
-                                        visible = "[NotEqualTo_CFixedPoint(Building.GetState.MakeScope.ScriptValue('building_maize_farm_total_queued'),'(CFixedPoint)0')]"
-                                        raw_text = "#bold [Building.GetState.MakeScope.ScriptValue('building_maize_farm_total_number')|0] + [Building.GetState.MakeScope.ScriptValue('building_maize_farm_total_queued')|0]#!"
+                                        visible = "[NotEqualTo_CFixedPoint(Building.GetState.MakeScope.ScriptValue('building_wheat_farm_total_queued'),'(CFixedPoint)0')]"
+                                        raw_text = "#bold [Building.GetState.MakeScope.ScriptValue('building_wheat_farm_total_number')|0] + [Building.GetState.MakeScope.ScriptValue('building_wheat_farm_total_queued')|0]#!"
                                         tooltip = "maize_farm_CONSTRUCTION_TOOLTIP"
                                 }
                         }
                         datacontext = "[GetScriptedGui('buy_share_scripted_gui')]"
-                        visible = "[And(Building.IsBuildingType('building_maize_farm'), Or(ScriptedGui.IsValid(GuiScope.AddScope('invested_building', Building.MakeScope).AddScope('investor_country', GetPlayer.MakeScope).End),Or(NotEqualTo_CFixedPoint(Building.GetState.MakeScope.ScriptValue('building_maize_farm_total_number'),'(CFixedPoint)0'), NotEqualTo_CFixedPoint(Building.GetState.MakeScope.ScriptValue('building_maize_farm_total_queued'),'(CFixedPoint)0'))))]"
+                        visible = "[And(Building.IsBuildingType('building_wheat_farm'), Or(ScriptedGui.IsValid(GuiScope.AddScope('invested_building', Building.MakeScope).AddScope('investor_country', GetPlayer.MakeScope).End),Or(NotEqualTo_CFixedPoint(Building.GetState.MakeScope.ScriptValue('building_wheat_farm_total_number'),'(CFixedPoint)0'), NotEqualTo_CFixedPoint(Building.GetState.MakeScope.ScriptValue('building_wheat_farm_total_queued'),'(CFixedPoint)0'))))]"
                         button = {
                                 size = {100% 100%}
                                 enabled = "[ScriptedGui.IsValid(GuiScope.AddScope('invested_building', Building.MakeScope).AddScope('investor_country', GetPlayer.MakeScope).End)]"
@@ -1372,12 +1372,12 @@ types foreign_investments_types
                 fi_button_icon_plus_action = {
                         blockoverride "building_type" {
                                 datacontext = "[GetScriptedGui('foreign_investments_maize_farm')]"
-                                visible = "[And(Building.IsBuildingType('building_maize_farm'),ScriptedGui.IsShown(GuiScope.AddScope('invested_building', Building.MakeScope).AddScope('invested_state', State.MakeScope).AddScope('investor_country', GetPlayer.MakeScope).End))]"
+                                visible = "[And(Building.IsBuildingType('building_wheat_farm'),ScriptedGui.IsShown(GuiScope.AddScope('invested_building', Building.MakeScope).AddScope('invested_state', State.MakeScope).AddScope('investor_country', GetPlayer.MakeScope).End))]"
                         }
                 }
                 container ={
                         position = { 11 -15 }                        
-                        visible = "[And(Building.IsBuildingType('building_millet_farm'), Or(NotEqualTo_CFixedPoint(Building.GetState.MakeScope.ScriptValue('millet_farm_total_item'),'(CFixedPoint)0'), NotEqualTo_CFixedPoint(Building.GetState.MakeScope.ScriptValue('millet_farm_queued_item'),'(CFixedPoint)0')))]"
+                        visible = "[And(Building.IsBuildingType('building_wheat_farm'), Or(NotEqualTo_CFixedPoint(Building.GetState.MakeScope.ScriptValue('millet_farm_total_item'),'(CFixedPoint)0'), NotEqualTo_CFixedPoint(Building.GetState.MakeScope.ScriptValue('millet_farm_queued_item'),'(CFixedPoint)0')))]"
                         textbox = {
                                 visible = "[And(NotEqualTo_CFixedPoint(Building.GetState.MakeScope.ScriptValue('millet_farm_total_item'), '(CFixedPoint)0'), EqualTo_CFixedPoint(Building.GetState.MakeScope.ScriptValue('millet_farm_queued_item'),'(CFixedPoint)0'))]"
                                 raw_text = "#bold #gold [Building.GetState.MakeScope.ScriptValue('millet_farm_total_item')|0]#!#!"
@@ -1390,7 +1390,7 @@ types foreign_investments_types
                 fi_button_icon_minus_action = {
                         blockoverride "building_type" {
                                 datacontext = "[GetScriptedGui('cancel_investments_millet_farm')]"
-                                visible = "[And(Building.IsBuildingType('building_millet_farm'),ScriptedGui.IsShown(GuiScope.AddScope('invested_building', Building.MakeScope).AddScope('invested_state', State.MakeScope).AddScope('investor_country', GetPlayer.MakeScope).End))]"
+                                visible = "[And(Building.IsBuildingType('building_wheat_farm'),ScriptedGui.IsShown(GuiScope.AddScope('invested_building', Building.MakeScope).AddScope('invested_state', State.MakeScope).AddScope('investor_country', GetPlayer.MakeScope).End))]"
                         }
                 }
                 default_progressbar_horizontal = {
@@ -1398,20 +1398,20 @@ types foreign_investments_types
                         position = { 38 8 }
                         fi_bar_textbox = {
                                 blockoverride "building_type" {
-                                        visible = "[And(NotEqualTo_CFixedPoint(Building.GetState.MakeScope.ScriptValue('building_millet_farm_total_number'), '(CFixedPoint)0'), EqualTo_CFixedPoint(Building.GetState.MakeScope.ScriptValue('building_millet_farm_total_queued'),'(CFixedPoint)0'))]"
-                                        raw_text = "#bold [Building.GetState.MakeScope.ScriptValue('building_millet_farm_total_number')|0]#!"
+                                        visible = "[And(NotEqualTo_CFixedPoint(Building.GetState.MakeScope.ScriptValue('building_wheat_farm_total_number'), '(CFixedPoint)0'), EqualTo_CFixedPoint(Building.GetState.MakeScope.ScriptValue('building_wheat_farm_total_queued'),'(CFixedPoint)0'))]"
+                                        raw_text = "#bold [Building.GetState.MakeScope.ScriptValue('building_wheat_farm_total_number')|0]#!"
                                         tooltip = "millet_farm_CONSTRUCTION_TOOLTIP"
                                 }
                         }
                         fi_bar_textbox = {
                                 blockoverride "building_type" {
-                                        visible = "[NotEqualTo_CFixedPoint(Building.GetState.MakeScope.ScriptValue('building_millet_farm_total_queued'),'(CFixedPoint)0')]"
-                                        raw_text = "#bold [Building.GetState.MakeScope.ScriptValue('building_millet_farm_total_number')|0] + [Building.GetState.MakeScope.ScriptValue('building_millet_farm_total_queued')|0]#!"
+                                        visible = "[NotEqualTo_CFixedPoint(Building.GetState.MakeScope.ScriptValue('building_wheat_farm_total_queued'),'(CFixedPoint)0')]"
+                                        raw_text = "#bold [Building.GetState.MakeScope.ScriptValue('building_wheat_farm_total_number')|0] + [Building.GetState.MakeScope.ScriptValue('building_wheat_farm_total_queued')|0]#!"
                                         tooltip = "millet_farm_CONSTRUCTION_TOOLTIP"
                                 }
                         }
                         datacontext = "[GetScriptedGui('buy_share_scripted_gui')]"
-                        visible = "[And(Building.IsBuildingType('building_millet_farm'), Or(ScriptedGui.IsValid(GuiScope.AddScope('invested_building', Building.MakeScope).AddScope('investor_country', GetPlayer.MakeScope).End),Or(NotEqualTo_CFixedPoint(Building.GetState.MakeScope.ScriptValue('building_millet_farm_total_number'),'(CFixedPoint)0'), NotEqualTo_CFixedPoint(Building.GetState.MakeScope.ScriptValue('building_millet_farm_total_queued'),'(CFixedPoint)0'))))]"
+                        visible = "[And(Building.IsBuildingType('building_wheat_farm'), Or(ScriptedGui.IsValid(GuiScope.AddScope('invested_building', Building.MakeScope).AddScope('investor_country', GetPlayer.MakeScope).End),Or(NotEqualTo_CFixedPoint(Building.GetState.MakeScope.ScriptValue('building_wheat_farm_total_number'),'(CFixedPoint)0'), NotEqualTo_CFixedPoint(Building.GetState.MakeScope.ScriptValue('building_wheat_farm_total_queued'),'(CFixedPoint)0'))))]"
                         button = {
                                 size = {100% 100%}
                                 enabled = "[ScriptedGui.IsValid(GuiScope.AddScope('invested_building', Building.MakeScope).AddScope('investor_country', GetPlayer.MakeScope).End)]"
@@ -1424,7 +1424,7 @@ types foreign_investments_types
                 fi_button_icon_plus_action = {
                         blockoverride "building_type" {
                                 datacontext = "[GetScriptedGui('foreign_investments_millet_farm')]"
-                                visible = "[And(Building.IsBuildingType('building_millet_farm'),ScriptedGui.IsShown(GuiScope.AddScope('invested_building', Building.MakeScope).AddScope('invested_state', State.MakeScope).AddScope('investor_country', GetPlayer.MakeScope).End))]"
+                                visible = "[And(Building.IsBuildingType('building_wheat_farm'),ScriptedGui.IsShown(GuiScope.AddScope('invested_building', Building.MakeScope).AddScope('invested_state', State.MakeScope).AddScope('investor_country', GetPlayer.MakeScope).End))]"
                         }
                 }
                 container ={
