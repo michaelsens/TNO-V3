@@ -189,10 +189,11 @@ pm_semiconductor_plant = {
 	
 	building_modifiers = {
 		workforce_scaled = {
-			goods_input_lead_add = 40
+			goods_input_lead_add = 35
 			goods_input_electricity_add = 33
 			goods_input_chemicals_add = 10
-			goods_input_plastic_add = 20
+			goods_input_plastic_add = 15
+			goods_input_heavy_rigid_vehicles_add = 15
 			goods_input_transportation_add = 2
 
 			# output goods
@@ -214,7 +215,7 @@ pm_heavy_equipment_manufactury = {
 	building_modifiers = {
 		workforce_scaled = {
 			goods_input_engines_add = 25
-			goods_input_iron_add = 30
+			goods_input_steel_add = 30
 			goods_input_rubber_add = 10
 			goods_input_lead_add = 10
 			goods_input_oil_add = 5
@@ -1782,9 +1783,9 @@ pm_electric_arc_process = {
 	building_modifiers = {
 		workforce_scaled = {
 			# input goods
-			goods_input_iron_add = 45
+			goods_input_iron_add = 75
 			goods_input_coal_add = 15 
-			goods_input_electricity_add = 23
+			goods_input_electricity_add = 20
 			goods_input_transportation_add = 2
 			
 			# output goods
@@ -2273,6 +2274,10 @@ pm_worker_cooperative_building_shipyards = {
 
 pm_aeroplane_production = {
 	texture = "gfx/interface/icons/production_method_icons/aeroplanes.dds"
+
+	unlocking_technologies = {
+		areoplanes
+	}
 
 	building_modifiers = {
 		workforce_scaled = {
