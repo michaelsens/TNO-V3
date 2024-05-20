@@ -289,7 +289,8 @@ social_democrat_party = {
 		if = { # social democrats will fall in line behind stronger leftists
 			limit = {
 				leader = {
-					has_ideology = ideology:ideology_social_democrat
+					has_ideology = ideology:ideology_American_Left-Wing				
+					has_ideology = ideology:ideology_anarchist
 				}
 				is_powerful = no
 				owner = {
@@ -297,17 +298,20 @@ social_democrat_party = {
 						is_powerful = yes
 						leader = {
 							OR = {
-								has_ideology = ideology:ideology_anarchist
+								has_ideology = ideology:ideology_social_democrat
+								has_ideology = ideology:ideology_Eastern_Progressivism_leader		
+								has_ideology = ideology:ideology_Western_Progressivism_leader								
 							}
 						}
 					}
 				}
 			}
 			add = {	
-				value = 5
+				value = 15
 				desc = from_powerful_communists
 			}
-		}
+		}	
+		
 		if = { # weak leftists will fall in line behind social democrats pre-revolution
 			limit = {
 				is_powerful = no

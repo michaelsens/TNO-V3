@@ -79,6 +79,7 @@ liberal_party = {
 			value = -5
 			desc = "base_value"
 		}
+		
 		if = { # liberals love liberalism
 			limit = {
 				leader = {
@@ -95,6 +96,22 @@ liberal_party = {
 				desc = "from_liberal_leader"
 			}
 		}
+
+		if = { # PROG hate Establishment
+			limit = {
+				leader = {
+					OR = {
+						has_ideology = ideology:ideology_Western_Progressivism_leader
+						has_ideology = ideology:ideology_social_democrat						
+					}
+				}
+			}
+			add = {
+				value = -50
+				desc = ""
+			}
+		}
+
 		if = { # liberals love liberalism
 			limit = {
 				OR = {

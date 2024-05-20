@@ -85,6 +85,40 @@ Libertarians_party = {
 				desc = "from_Libertarians_leader"
 			}
 		}
+		
+		if = { # Libertarianss hate conservativism
+			limit = {
+				leader = {
+					OR = {
+						has_ideology = ideology:ideology_Natural_Conservatism
+						has_ideology = ideology:ideology_silent_conservatism						
+					}
+				}
+			}
+			add = {
+				value = -15
+				desc = "from_Libertarians_leader"
+			}
+		}		
+
+		if = { # Libertarianss hate nats
+			limit = {
+				leader = {
+					OR = {
+						has_ideology = ideology:ideology_National_conservatism
+						has_ideology = ideology:ideology_Dixiecrat						
+						has_ideology = ideology:ideology_authoritarian
+						has_ideology = ideology:ideology_Dixiecrat						
+					}
+				}
+			}
+			add = {
+				value = -15
+				desc = "from_Libertarians_leader"
+			}
+		}	
+		
+		
 		if = { # Libertarianss love conservativism
 			limit = {
 				OR = {

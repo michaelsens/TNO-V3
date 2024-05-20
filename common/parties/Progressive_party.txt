@@ -44,6 +44,88 @@ Progressive_party = {
 	    }
 	}
 	
+		if = { # PROG Love love PROG
+			limit = {
+				leader = {
+					OR = {
+						has_ideology = ideology:ideology_Eastern_Progressivism_leader		
+						has_ideology = ideology:ideology_Western_Progressivism_leader
+						has_ideology = ideology:ideology_social_democrat						
+					}
+				}
+			}
+			add = {
+				value = 150
+				desc = ""
+			}
+		}	
+		
+
+		if = { # weak liberals will fall in line behind strong radicals
+			limit = {
+				is_powerful = no
+				OR = {
+					has_ideology = ideology:ideology_social_democrat
+					has_ideology = ideology:ideology_American_Left-Wing					
+				}
+				owner = {
+					any_interest_group = {
+						is_powerful = yes
+						leader = {
+									has_ideology = ideology:ideology_Eastern_Progressivism_leader		
+									has_ideology = ideology:ideology_Western_Progressivism_leader
+						}
+					}
+				}
+			}
+			add = {
+				value = 10
+				desc = "from_weak_liberals_radical"
+			}
+		}
+
+		if = { # PROG hate Establishment
+			limit = {
+				leader = {
+					OR = {
+						has_ideology = ideology:ideology_Dynastic_Liberalism		
+						has_ideology = ideology:ideology_Liberal_Conservatism					
+					}
+				}
+			}
+			add = {
+				value = -50
+				desc = ""
+			}
+		}
+		
+	
+	
+		if = { # social democrats will fall in line behind stronger leftists
+			limit = {
+				leader = {
+					has_ideology = ideology:ideology_social_democrat
+				}
+				is_powerful = no
+				owner = {
+					any_interest_group = {
+						is_powerful = yes
+						leader = {
+							OR = {
+								has_ideology = ideology:ideology_Western_Progressivism_leader
+							}
+						}
+					}
+				}
+			}
+			add = {	
+				value = 5
+				desc = from_powerful_communists
+			}
+		}	
+	
+	
+	
 	# Root - IG considering joining
 	# scope:number - the number of IGs that would join this party before the root IG
 	join_weight = {

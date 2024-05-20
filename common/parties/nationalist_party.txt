@@ -72,6 +72,37 @@ nationalist_party = {
 				desc = "from_leftist"
 			}
 		}
+		
+		if = { # Republicans Hate love Nats
+			limit = {
+				leader = {
+					OR = {
+						has_ideology = ideology:ideology_silent_conservatism										
+					}
+				}
+			}
+			add = {
+				value = -10
+				desc = "from_conservative_leader"
+			}
+		}		
+		
+		if = { # conservatives love conservativism
+			limit = {
+				leader = {
+					OR = {
+						has_ideology = ideology:ideology_National_conservatism
+						has_ideology = ideology:ideology_Dixiecrat							
+					}
+				}
+			}
+			add = {
+				value = 15
+				desc = "from_conservative_leader"
+			}
+		}	
+		
+		
 		if = { # conservatives love conservativism
 			limit = {
 				leader = {
@@ -79,7 +110,7 @@ nationalist_party = {
 						has_ideology = ideology:ideology_traditionalist
 						has_ideology = ideology:ideology_reformer			
 						has_ideology = ideology:ideology_jingoist_leader
-						has_ideology = ideology:ideology_ethno_nationalist											
+						has_ideology = ideology:ideology_ethno_nationalist							
 					}
 				}
 			}
@@ -88,9 +119,37 @@ nationalist_party = {
 				desc = "from_conservative_leader"
 			}
 		}
+		
+		if = { # Nationalist love Nationalist
+			limit = {
+				leader = {
+					OR = {
+						has_ideology = ideology:ideology_National_conservatism										
+					}
+				}
+			}
+			add = {
+				value = 10
+				desc = "from_conservative_leader"
+			}
+		}		
+
+		if = { #BY JINGO!
+			limit = {
+				OR = {		
+					has_ideology = ideology:ideology_jingoist
+				}
+			}
+			add = {
+				value = 15
+				desc = ""
+			}
+		}
+		
 		if = { 
 			limit = {
 				OR = {
+					has_ideology = ideology:ideology_Dixiecrat
 					has_ideology = ideology:ideology_particularist
 					has_ideology = ideology:ideology_individualist
 					has_ideology = ideology:ideology_patriarchal

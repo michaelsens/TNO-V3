@@ -104,6 +104,37 @@ conservative_party = {
 			}
 		}
 		
+		if = { # conservative Love Libtars
+			limit = {
+				leader = {
+					OR = {
+						has_ideology = ideology:ideology_Natural_Conservatism		
+						has_ideology = ideology:ideology_Liberal_Conservatism							
+					}
+				}
+			}
+			add = {
+				value = 12
+				desc = "from_conservative_leader"
+			}
+		}		
+	
+		if = { # conservative hate Nationalist
+			limit = {
+				leader = {
+					OR = {
+						has_ideology = ideology:ideology_National_conservatism										
+					}
+				}
+			}
+			add = {
+				value = -10
+				desc = "from_conservative_leader"
+			}
+		}	
+
+	
+		
 		if = { # armed forces will join if a more powerful member has jingoist leader
 			limit = {
 				is_interest_group_type = ig_armed_forces
