@@ -20,28 +20,6 @@ urbanization = {
 	}
 }
 
-urban_planning = {
-	era = era_1
-	texture = "gfx/interface/icons/invention_icons/urban_planning.dds"
-	category = society
-	
-	modifier = {
-		state_infrastructure_from_population_add = 1
-		state_infrastructure_from_population_max_add = 20
-		state_building_construction_sector_max_level_add = 50
-		country_max_weekly_construction_progress_add = 5
-		market_land_trade_capacity_add = 10
-	}
-	
-	unlocking_technologies = {
-		urbanization
-	}
-	
-	ai_weight = {
-		value = 2 # Important in general
-	}
-}
-
 rationalism = {
 	# Unlocks Freedom of Conscience - Church and State Law
 	era = era_1
@@ -275,7 +253,6 @@ law_enforcement = {
 	
 	unlocking_technologies = {
 		tech_bureaucracy
-		urban_planning
 	}
 	
 	ai_weight = {
@@ -418,30 +395,6 @@ pharmaceuticals = {
 	
 	ai_weight = {
 		value = 1
-	}
-}
-
-modern_sewerage = {
-	# Unlocks Maintained Sewers PM in Urban Centers
-	era = era_2
-	texture = "gfx/interface/icons/invention_icons/modern_sewerage.dds"
-	category = society
-	
-	modifier = {
-		state_infrastructure_from_population_add = 1
-		state_infrastructure_from_population_max_add = 20
-		state_building_construction_sector_max_level_add = 50
-		country_max_weekly_construction_progress_add = 5
-		market_land_trade_capacity_add = 10
-		state_pollution_reduction_health_mult = -0.1
-	}
-	
-	unlocking_technologies = {
-		urban_planning
-	}
-	
-	ai_weight = {
-		value = 1.5 # Important in general
 	}
 }
 
@@ -806,28 +759,6 @@ feminism = {
 	}
 }
 
-steel_frame_buildings = {
-	# Unlocks Covered Markets PM in Urban Centers
-	era = era_3
-	texture = "gfx/interface/icons/invention_icons/steel_frame_buildings.dds"
-	category = society
-	modifier = {
-		state_infrastructure_from_population_add = 1
-		state_infrastructure_from_population_max_add = 20
-		state_building_construction_sector_max_level_add = 50
-		country_max_weekly_construction_progress_add = 5
-		market_land_trade_capacity_add = 10
-	}
-	
-	unlocking_technologies = {
-		modern_sewerage
-	}
-	
-	ai_weight = {
-		value = 2 # Important in general
-	}
-}
-
 civilizing_mission = {
 	# Unlocks Panama Canal survey expedition decision
 	# Unlocks the Panama Canal
@@ -1119,28 +1050,6 @@ identification_documents = {
 }
 
 ### ERA 4
-elevator = {
-	# Unlocks Arcades PM in Urban Center
-	era = era_4
-	texture = "gfx/interface/icons/invention_icons/elevator.dds"
-	category = society
-	
-	modifier = {
-		state_infrastructure_from_population_add = 1
-		state_infrastructure_from_population_max_add = 20
-		state_building_construction_sector_max_level_add = 50
-		country_max_weekly_construction_progress_add = 5
-		market_land_trade_capacity_add = 10
-	}	
-	
-	unlocking_technologies = {
-		steel_frame_buildings
-	}
-	
-	ai_weight = {
-		value = 1.5 # Important in general
-	}
-}
 
 zeppelins = {
 	# #todo#! Does nothing at the moment
@@ -1153,7 +1062,7 @@ zeppelins = {
 	}
 	
 	unlocking_technologies = {
-		steel_frame_buildings
+		corporate_charters
 	}
 	
 	ai_weight = {
@@ -1508,26 +1417,5 @@ analytical_philosophy = {
 	
 	ai_weight = {
 		value = 1
-	}
-}
-
-paved_roads = {
-	era = era_5
-	texture = "gfx/interface/icons/invention_icons/paved_roads.dds"
-	category = society
-	
-	modifier = {
-		state_infrastructure_from_population_add = 1.5
-		state_infrastructure_from_population_max_add = 30
-		country_max_weekly_construction_progress_add = 10
-		market_land_trade_capacity_add = 20
-	}
-	
-	unlocking_technologies = {	
-		elevator
-	}
-	
-	ai_weight = {
-		value = 2 # Important for those nice-looking roads!
 	}
 }
