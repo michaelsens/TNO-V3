@@ -79,6 +79,21 @@ liberal_party = {
 			value = -5
 			desc = "base_value"
 		}
+				
+		if = { # various progressives are inclined towards liberalism
+			limit = {
+				leader = {
+					OR = {
+						has_ideology = ideology:ideology_Dynastic_Liberalism
+						has_ideology = ideology:ideology_Normal_Liberalism						
+					}
+				}
+			}
+			add = {
+				value = 50
+				desc = "from_progressivism"
+			}
+		}		
 		
 		if = { # liberals love liberalism
 			limit = {
@@ -136,7 +151,8 @@ liberal_party = {
 				value = 1
 				desc = "from_liberalism"
 			}
-		}		
+		}
+
 		if = { # various progressives are inclined towards liberalism
 			limit = {
 				leader = {
@@ -407,7 +423,6 @@ liberal_party = {
 					leader = {
 						has_ideology = ideology:ideology_abolitionist
 						has_ideology = ideology:ideology_social_democrat
-						has_ideology = ideology:ideology_communist
 					}
 				}
 			}

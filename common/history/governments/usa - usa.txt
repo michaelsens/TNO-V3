@@ -1,18 +1,10 @@
 ﻿GOVERNMENT = {
-	c:USA ?= {
+	c:USA = {
 		if = {
 			limit = { exists = py:conservative_party }
 			py:conservative_party = {
 				set_ruling_party = yes
-				add_momentum = momentum_medium # To weight the historical election in their favor
 			}				
-		}
-		if = {
-			limit = { exists = py:liberal_party }
-			py:liberal_party = {
-				set_ruling_party = yes
-				add_momentum = momentum_medium # To weight the historical election in their favor
-			}				
-		}		
+		}	
 	}
 }

@@ -1,0 +1,57 @@
+﻿je_Established_nomore = { #
+
+    icon = "gfx/interface/icons/new_event_icons/event_jimcrow.dds"
+
+    group = je_group_internal_affairs
+    
+    complete = {
+			OR = {
+            c:USA = {
+                ig:ig_Nationalists = {
+                    is_in_government = yes
+
+                }
+            }
+            c:USA = {
+                ig:ig_Reactionary = {
+                    is_in_government = yes
+
+                }
+            }
+			
+            c:USA = {
+                ig:ig_Fascists = {
+                    is_in_government = yes
+
+                }
+            }
+            c:USA = {
+                ig:ig_Progressives = {
+                    is_in_government = yes
+
+                }
+            }
+
+            c:USA = {
+                ig:ig_Socialist = {
+                    is_in_government = yes
+
+                }
+            }
+            c:USA = {
+                ig:ig_Communists = {
+                    is_in_government = yes
+
+                }
+            }			
+        }			
+    }
+
+    on_complete = {
+        remove_modifier = Men_of_washington
+    
+    weight = 30
+    
+    should_be_pinned_by_default = no
+	}
+}
