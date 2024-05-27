@@ -963,6 +963,25 @@ GER = { # Germany
 		}
 	}
 	dynamic_country_name = {
+		name = "Schutzzone Germania"
+		adjective = German
+		
+		is_main_tag_only = yes
+		priority = 3
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				NOT = {
+				owns_entire_state_region = STATE_BAVARIA
+				owns_entire_state_region = STATE_AUSTRIA
+				owns_entire_state_region = STATE_WEST_PRUSSIA
+				}
+				
+			}
+		}
+	}
+	dynamic_country_name = {
 		name = dyn_c_german_empire
 		
 		is_main_tag_only = yes
