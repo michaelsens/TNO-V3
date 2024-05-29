@@ -55,6 +55,12 @@
 				reserves=1
 				activate_production_methods={ "pm_percussion_caps" "pm_privately_owned_industry" }
 			}
+			create_building={
+				building="building_rubber_plantation"
+				level=1
+				reserves=1
+				activate_production_methods={ "default_building_rubber_plantation" "pm_road_carts"  }
+			}
 		}
 	}
 	s:STATE_BENIN={
@@ -80,6 +86,12 @@
 				activate_production_methods={ "pm_small_workshop" }
 			}
 			create_building={
+				building="building_tooling_workshops"
+				level=1
+				reserves=1
+				activate_production_methods={ "pm_steel" "pm_automation_disabled" "pm_privately_owned_building_tooling_workshops" }
+			}
+			create_building={
 				building="building_university"
 				level=1
 				reserves=1
@@ -99,19 +111,19 @@
 			}
 			create_building={
 				building="building_artillery_foundries"
-				level=2
+				level=1
 				reserves=1
 				activate_production_methods={ "pm_cannons" "pm_automation_disabled" "pm_merchant_guilds_building_artillery_foundries" }
 			}
 			create_building={
 				building="building_arms_industry"
-				level=4
+				level=1
 				reserves=1
 				activate_production_methods={ "pm_muskets" "pm_merchant_guilds_building_arms_industry" }
 			}
 			create_building={
 				building="building_makeshift_plant"
-				level=5
+				level=8
 				reserves=1
 				activate_production_methods={ "pm_hydroelectric_plant" }
 			}
@@ -135,10 +147,34 @@
 				reserves=1
 				activate_production_methods={ "pm_atmospheric_engine_pump_building_iron_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" "pm_privately_owned_building_iron_mine" }
 			}
+			create_building={
+				building="heavy_equipment_manufactury"
+				level=1
+				reserves=1
+				activate_production_methods={ "" }
+			}
+			create_building={
+				building="building_explosives_factory"
+				level=1
+				reserves=1
+				activate_production_methods={ "pm_vacuum_evaporation" }
+			}
 		}
 	}
 	s:STATE_EAST_HAUSALAND={
 		region_state:IBO={
+			create_building={
+				building="building_oil_rig"
+				level=2
+				reserves=1	
+				activate_production_methods={ "pm_steam_derricks" "pm_road_carts" }
+			}
+			create_building={
+				building="building_coal_mine"
+				level=1
+				reserves=1
+				activate_production_methods={ "pm_atmospheric_engine_pump_building_coal_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" "pm_privately_owned_building_coal_mine" }
+			}
 		}
 	}
 	s:STATE_GUINEA={
@@ -308,6 +344,12 @@
 				level=2
 				reserves=1
 				activate_production_methods={ "pm_saw_mills" "pm_privately_owned_building_logging_camp" "pm_no_equipment" "pm_road_carts" "pm_hardwood" }
+			}
+			create_building={
+				building="building_makeshift_plant"
+				level=12
+				reserves=1
+				activate_production_methods={ "pm_hydroelectric_plant" }
 			}
 			create_building={
 				building="building_steel_mills"
