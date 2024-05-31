@@ -3635,6 +3635,21 @@ GER = { # Germany
 			}
 		}
 	}
+	flag_definition = { #Suzzophone
+	coa = GER_GERMANIA
+	priority = 99999 
+	trigger = {
+		exists = scope:actor
+		scope:actor = {
+			NOT = {
+			owns_entire_state_region = STATE_BAVARIA
+			owns_entire_state_region = STATE_AUSTRIA
+			owns_entire_state_region = STATE_WEST_PRUSSIA
+			}
+			
+		}
+	}
+}
 	flag_definition = {
 		coa = GER
 		subject_canton = GER_dictatorship

@@ -209,6 +209,30 @@ pm_semiconductor_plant = {
 	}
 }
 
+pm_crude_heavy_equipment_manufactury = {
+	texture = "gfx/interface/icons/production_method_icons/bakeries.dds"
+	
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_engines_add = 15
+			goods_input_steel_add = 20
+			goods_input_lead_add = 10
+			goods_input_oil_add = 5
+			goods_input_electricity_add = 15
+			goods_input_transportation_add = 2
+
+			# output goods
+			goods_output_heavy_rigid_vehicles_add = 30
+		}
+
+		level_scaled = {
+			building_employment_laborers_add = 15000
+			building_employment_machinists_add = 10000
+			building_employment_engineers_add = 5000
+		}
+	}
+}
+
 pm_heavy_equipment_manufactury = {
 	texture = "gfx/interface/icons/production_method_icons/bakeries.dds"
 	
@@ -423,7 +447,7 @@ pm_publicly_traded_building = {
 	}
 
 	unlocking_technologies = {
-		mutual_funds
+		urbanization
 	}
 
 	building_modifiers = {
@@ -618,7 +642,7 @@ pm_publicly_traded_building_food_industry = {
 	}
 
 	unlocking_technologies = {
-		mutual_funds
+		urbanization
 	}
 
 	disallowing_laws = {
