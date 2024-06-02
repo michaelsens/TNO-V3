@@ -91,17 +91,19 @@ pm_diesel_pump_building_uranium_mining = {
 	
 	building_modifiers = {
 		workforce_scaled = {
-			# input goods
-			goods_input_tools_add = 15
-			goods_input_oil_add = 5
+			goods_input_tools_add = 20
+			goods_input_oil_add = 10
+			goods_input_heavy_rigid_vehicles_add = 17
+			goods_input_explosives_add = 15
+			goods_input_transportation_add = 5
 			
 			# output goods
-			goods_output_uranium_ore_add = 120
+			goods_output_uranium_add = 150
 		}
 
 		level_scaled = {
-			building_employment_laborers_add = 20000
-			building_employment_machinists_add = 15000
+			building_employment_laborers_add = 15000
+			building_employment_farmers_add = 10000
 			building_employment_engineers_add = 5000
 		}
 	}
@@ -261,8 +263,8 @@ pm_nuclear_privately_owned_building = {
 	}
 
 	disallowing_laws = {
-		law_command_economy
-		law_cooperative_ownership
+		law_burgundian_system
+		law_social_market
 	}
 
 	building_modifiers = {
@@ -282,8 +284,8 @@ pm_nuclear_publicly_traded_building = {
 	}
 	
 	disallowing_laws = {
-		law_command_economy
-		law_cooperative_ownership
+		law_burgundian_system
+		law_social_market
 	}
 
 	unlocking_technologies = {
@@ -304,7 +306,7 @@ pm_nuclear_government_run_building = {
 	texture = "gfx/interface/icons/production_method_icons/government_run.dds"
 
 	unlocking_laws = {
-		law_command_economy
+		law_burgundian_system
 	}
 	
 	building_modifiers = {
@@ -324,7 +326,7 @@ pm_nuclear_worker_cooperative_building = {
 	}
 
 	unlocking_laws = {
-		law_cooperative_ownership
+		law_social_market
 	}
 
 	building_modifiers = {

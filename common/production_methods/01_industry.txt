@@ -163,7 +163,7 @@ pm_automotive_industry = {
 		workforce_scaled = {
 			# input goods
 			goods_input_engines_add = 50
-			goods_input_iron_add = 20
+			goods_input_steel_add = 20
 			goods_input_rubber_add = 15
 			goods_input_lead_add = 15
 			goods_input_oil_add = 5
@@ -189,15 +189,40 @@ pm_semiconductor_plant = {
 	
 	building_modifiers = {
 		workforce_scaled = {
-			goods_input_lead_add = 40
+			goods_input_lead_add = 35
 			goods_input_electricity_add = 33
 			goods_input_chemicals_add = 10
-			goods_input_plastic_add = 20
+			goods_input_plastic_add = 15
+			goods_input_heavy_rigid_vehicles_add = 15
 			goods_input_transportation_add = 2
 
 			# output goods
 			goods_output_semiconductors_add = 100
 			
+		}
+
+		level_scaled = {
+			building_employment_laborers_add = 15000
+			building_employment_machinists_add = 10000
+			building_employment_engineers_add = 5000
+		}
+	}
+}
+
+pm_crude_heavy_equipment_manufactury = {
+	texture = "gfx/interface/icons/production_method_icons/bakeries.dds"
+	
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_engines_add = 15
+			goods_input_steel_add = 20
+			goods_input_lead_add = 10
+			goods_input_oil_add = 5
+			goods_input_electricity_add = 15
+			goods_input_transportation_add = 2
+
+			# output goods
+			goods_output_heavy_rigid_vehicles_add = 30
 		}
 
 		level_scaled = {
@@ -214,7 +239,7 @@ pm_heavy_equipment_manufactury = {
 	building_modifiers = {
 		workforce_scaled = {
 			goods_input_engines_add = 25
-			goods_input_iron_add = 30
+			goods_input_steel_add = 30
 			goods_input_rubber_add = 10
 			goods_input_lead_add = 10
 			goods_input_oil_add = 5
@@ -396,8 +421,8 @@ pm_privately_owned_building = {
 	}
 
 	disallowing_laws = {
-		law_command_economy
-		law_cooperative_ownership
+		law_burgundian_system
+		law_social_market
 	}
 
 	building_modifiers = {
@@ -417,12 +442,12 @@ pm_publicly_traded_building = {
 	}
 	
 	disallowing_laws = {
-		law_command_economy
-		law_cooperative_ownership
+		law_burgundian_system
+		law_social_market
 	}
 
 	unlocking_technologies = {
-		mutual_funds
+		urbanization
 	}
 
 	building_modifiers = {
@@ -439,7 +464,7 @@ pm_government_run_building = {
 	texture = "gfx/interface/icons/production_method_icons/government_run.dds"
 
 	unlocking_laws = {
-		law_command_economy
+		law_burgundian_system
 	}
 	
 	building_modifiers = {
@@ -459,7 +484,7 @@ pm_worker_cooperative_building = {
 	}
 
 	unlocking_laws = {
-		law_cooperative_ownership
+		law_social_market
 	}
 
 	building_modifiers = {
@@ -571,8 +596,8 @@ pm_merchant_guilds_building_food_industry = {
 	}
 
 	disallowing_laws = {
-		law_command_economy
-		law_cooperative_ownership
+		law_burgundian_system
+		law_social_market
 	}
 
 	building_modifiers = {
@@ -594,8 +619,8 @@ pm_privately_owned_building_food_industry = {
 	}
 
 	disallowing_laws = {
-		law_command_economy
-		law_cooperative_ownership
+		law_burgundian_system
+		law_social_market
 	}
 
 	building_modifiers = {
@@ -617,12 +642,12 @@ pm_publicly_traded_building_food_industry = {
 	}
 
 	unlocking_technologies = {
-		mutual_funds
+		urbanization
 	}
 
 	disallowing_laws = {
-		law_command_economy
-		law_cooperative_ownership
+		law_burgundian_system
+		law_social_market
 	}
 
 	building_modifiers = {
@@ -639,7 +664,7 @@ pm_government_run_building_food_industry = {
 	texture = "gfx/interface/icons/production_method_icons/government_run.dds"
 	
 	unlocking_laws = {
-		law_command_economy
+		law_burgundian_system
 		law_warlord_economy
 	}
 	
@@ -661,7 +686,7 @@ pm_worker_cooperative_building_food_industry = {
 	}
 
 	unlocking_laws = {
-		law_cooperative_ownership
+		law_social_market
 	}
 
 	building_modifiers = {
@@ -757,8 +782,8 @@ pm_merchant_guilds_building_textile_mills = {
 	}
 
 	disallowing_laws = {
-		law_command_economy
-		law_cooperative_ownership
+		law_burgundian_system
+		law_social_market
 	}
 
 	building_modifiers = {
@@ -781,8 +806,8 @@ pm_privately_owned_building_textile_mills = {
 	}
 
 	disallowing_laws = {
-		law_command_economy
-		law_cooperative_ownership
+		law_burgundian_system
+		law_social_market
 	}
 
 	building_modifiers = {
@@ -805,8 +830,8 @@ pm_publicly_traded_building_textile_mills = {
 	}
 	
 	disallowing_laws = {
-		law_command_economy
-		law_cooperative_ownership
+		law_burgundian_system
+		law_social_market
 	}
 
 	unlocking_technologies = {
@@ -827,7 +852,7 @@ pm_government_run_building_textile_mills = {
 	texture = "gfx/interface/icons/production_method_icons/government_run.dds"
 	
 	unlocking_laws = {
-		law_command_economy
+		law_burgundian_system
 		law_warlord_economy
 	}
 	
@@ -851,7 +876,7 @@ pm_worker_cooperative_building_textile_mills = {
 	}
 
 	unlocking_laws = {
-		law_cooperative_ownership
+		law_social_market
 	}
 
 	building_modifiers = {
@@ -989,8 +1014,8 @@ pm_merchant_guilds_building_furniture_manufacturies = {
 	}
 
 	disallowing_laws = {
-		law_command_economy
-		law_cooperative_ownership
+		law_burgundian_system
+		law_social_market
 	}
 
 	building_modifiers = {
@@ -1012,8 +1037,8 @@ pm_privately_owned_building_furniture_manufacturies = {
 	}
 
 	disallowing_laws = {
-		law_command_economy
-		law_cooperative_ownership
+		law_burgundian_system
+		law_social_market
 	}
 
 	building_modifiers = {
@@ -1035,8 +1060,8 @@ pm_publicly_traded_building_furniture_manufacturies = {
 	}
 	
 	disallowing_laws = {
-		law_command_economy
-		law_cooperative_ownership
+		law_burgundian_system
+		law_social_market
 	}
 
 	unlocking_technologies = {
@@ -1057,7 +1082,7 @@ pm_government_run_building_furniture_manufacturies = {
 	texture = "gfx/interface/icons/production_method_icons/government_run.dds"
 
 	unlocking_laws = {
-		law_command_economy
+		law_burgundian_system
 		law_warlord_economy
 	}
 	
@@ -1080,7 +1105,7 @@ pm_worker_cooperative_building_furniture_manufacturies = {
 	}
 
 	unlocking_laws = {
-		law_cooperative_ownership
+		law_social_market
 	}
 
 	building_modifiers = {
@@ -1166,8 +1191,8 @@ pm_merchant_guilds_building_glassworks = {
 	}
 
 	disallowing_laws = {
-		law_command_economy
-		law_cooperative_ownership
+		law_burgundian_system
+		law_social_market
 	}
 
 	building_modifiers = {
@@ -1190,8 +1215,8 @@ pm_privately_owned_building_glassworks = {
 	}
 
 	disallowing_laws = {
-		law_command_economy
-		law_cooperative_ownership
+		law_burgundian_system
+		law_social_market
 	}
 
 	building_modifiers = {
@@ -1214,8 +1239,8 @@ pm_publicly_traded_building_glassworks = {
 	}
 	
 	disallowing_laws = {
-		law_command_economy
-		law_cooperative_ownership
+		law_burgundian_system
+		law_social_market
 	}
 
 	unlocking_technologies = {
@@ -1236,7 +1261,7 @@ pm_government_run_building_glassworks = {
 	texture = "gfx/interface/icons/production_method_icons/government_run.dds"
 	
 	unlocking_laws = {
-		law_command_economy
+		law_burgundian_system
 		law_warlord_economy
 	}
 	
@@ -1260,7 +1285,7 @@ pm_worker_cooperative_building_glassworks = {
 	}
 
 	unlocking_laws = {
-		law_cooperative_ownership
+		law_social_market
 	}
 
 	building_modifiers = {
@@ -1355,8 +1380,8 @@ pm_merchant_guilds_building_tooling_workshops = {
 	}
 
 	disallowing_laws = {
-		law_command_economy
-		law_cooperative_ownership
+		law_burgundian_system
+		law_social_market
 	}
 
 	building_modifiers = {
@@ -1379,8 +1404,8 @@ pm_privately_owned_building_tooling_workshops = {
 	}
 
 	disallowing_laws = {
-		law_command_economy
-		law_cooperative_ownership
+		law_burgundian_system
+		law_social_market
 	}
 
 	building_modifiers = {
@@ -1403,8 +1428,8 @@ pm_publicly_traded_building_tooling_workshops = {
 	}
 	
 	disallowing_laws = {
-		law_command_economy
-		law_cooperative_ownership
+		law_burgundian_system
+		law_social_market
 	}
 
 	unlocking_technologies = {
@@ -1425,7 +1450,7 @@ pm_government_run_building_tooling_workshops = {
 	texture = "gfx/interface/icons/production_method_icons/government_run.dds"
 
 	unlocking_laws = {
-		law_command_economy
+		law_burgundian_system
 		law_warlord_economy
 	}
 	
@@ -1449,7 +1474,7 @@ pm_worker_cooperative_building_tooling_workshops = {
 	}
 
 	unlocking_laws = {
-		law_cooperative_ownership
+		law_social_market
 	}
 
 	building_modifiers = {
@@ -1553,8 +1578,8 @@ pm_merchant_guilds_building_paper_mills = {
 	}
 
 	disallowing_laws = {
-		law_command_economy
-		law_cooperative_ownership
+		law_burgundian_system
+		law_social_market
 	}
 
 	building_modifiers = {
@@ -1576,8 +1601,8 @@ pm_privately_owned_building_paper_mills = {
 	}
 
 	disallowing_laws = {
-		law_command_economy
-		law_cooperative_ownership
+		law_burgundian_system
+		law_social_market
 	}
 
 	building_modifiers = {
@@ -1599,8 +1624,8 @@ pm_publicly_traded_building_paper_mills = {
 	}
 	
 	disallowing_laws = {
-		law_command_economy
-		law_cooperative_ownership
+		law_burgundian_system
+		law_social_market
 	}
 
 	unlocking_technologies = {
@@ -1621,7 +1646,7 @@ pm_government_run_building_paper_mills = {
 	texture = "gfx/interface/icons/production_method_icons/government_run.dds"
 	
 	unlocking_laws = {
-		law_command_economy
+		law_burgundian_system
 		law_warlord_economy
 	}
 	
@@ -1644,7 +1669,7 @@ pm_worker_cooperative_building_paper_mills = {
 	}
 
 	unlocking_laws = {
-		law_cooperative_ownership
+		law_social_market
 	}
 
 	building_modifiers = {
@@ -1721,8 +1746,8 @@ pm_privately_owned_industry = {
 	texture = "gfx/interface/icons/production_method_icons/privately_owned.dds"
 
 	disallowing_laws = {
-		law_command_economy
-		law_cooperative_ownership
+		law_burgundian_system
+		law_social_market
 	}
 
 	building_modifiers = {
@@ -1739,7 +1764,7 @@ pm_government_run_industry = {
 	texture = "gfx/interface/icons/production_method_icons/government_run.dds"
 
 	unlocking_laws = {
-		law_command_economy
+		law_burgundian_system
 		law_warlord_economy
 	}
 	
@@ -1757,7 +1782,7 @@ pm_worker_cooperative_industry = {
 	texture = "gfx/interface/icons/production_method_icons/worker_cooperative.dds"
 
 	unlocking_laws = {
-		law_cooperative_ownership
+		law_social_market
 	}
 
 	building_modifiers = {
@@ -1782,9 +1807,9 @@ pm_electric_arc_process = {
 	building_modifiers = {
 		workforce_scaled = {
 			# input goods
-			goods_input_iron_add = 45
+			goods_input_iron_add = 75
 			goods_input_coal_add = 15 
-			goods_input_electricity_add = 23
+			goods_input_electricity_add = 20
 			goods_input_transportation_add = 2
 			
 			# output goods
@@ -2164,8 +2189,8 @@ pm_merchant_guilds_building_shipyards = {
 	}
 
 	disallowing_laws = {
-		law_command_economy
-		law_cooperative_ownership
+		law_burgundian_system
+		law_social_market
 	}
 
 	building_modifiers = {
@@ -2188,8 +2213,8 @@ pm_privately_owned_building_shipyards = {
 	}
 
 	disallowing_laws = {
-		law_command_economy
-		law_cooperative_ownership
+		law_burgundian_system
+		law_social_market
 	}
 
 	building_modifiers = {
@@ -2212,8 +2237,8 @@ pm_publicly_traded_building_shipyards = {
 	}
 
 	disallowing_laws = {
-		law_command_economy
-		law_cooperative_ownership
+		law_burgundian_system
+		law_social_market
 	}
 
 	unlocking_technologies = {
@@ -2234,7 +2259,7 @@ pm_government_run_building_shipyards = {
 	texture = "gfx/interface/icons/production_method_icons/government_run.dds"
 
 	unlocking_laws = {
-		law_command_economy
+		law_burgundian_system
 		law_warlord_economy
 	}
 	
@@ -2258,7 +2283,7 @@ pm_worker_cooperative_building_shipyards = {
 	}
 
 	unlocking_laws = {
-		law_cooperative_ownership
+		law_social_market
 	}
 
 	building_modifiers = {
@@ -2273,6 +2298,10 @@ pm_worker_cooperative_building_shipyards = {
 
 pm_aeroplane_production = {
 	texture = "gfx/interface/icons/production_method_icons/aeroplanes.dds"
+
+	unlocking_technologies = {
+		areoplanes
+	}
 
 	building_modifiers = {
 		workforce_scaled = {
@@ -2625,8 +2654,8 @@ pm_merchant_guilds_building_arms_industry = {
 	}
 
 	disallowing_laws = {
-		law_command_economy
-		law_cooperative_ownership
+		law_burgundian_system
+		law_social_market
 	}
 
 	building_modifiers = {
@@ -2649,8 +2678,8 @@ pm_privately_owned_building_arms_industry = {
 	}
 
 	disallowing_laws = {
-		law_command_economy
-		law_cooperative_ownership
+		law_burgundian_system
+		law_social_market
 	}
 
 	building_modifiers = {
@@ -2673,8 +2702,8 @@ pm_publicly_traded_building_arms_industry = {
 	}
 
 	disallowing_laws = {
-		law_command_economy
-		law_cooperative_ownership
+		law_burgundian_system
+		law_social_market
 	}
 
 	unlocking_technologies = {
@@ -2695,7 +2724,7 @@ pm_government_run_building_arms_industry = {
 	texture = "gfx/interface/icons/production_method_icons/government_run.dds"
 
 	unlocking_laws = {
-		law_command_economy
+		law_burgundian_system
 		law_warlord_economy
 	}
 	
@@ -2719,7 +2748,7 @@ pm_worker_cooperative_building_arms_industry = {
 	}
 
 	unlocking_laws = {
-		law_cooperative_ownership
+		law_social_market
 	}
 
 	building_modifiers = {
@@ -2853,8 +2882,8 @@ pm_publicly_traded_building_chemical_plants = {
 	}
 	
 	disallowing_laws = {
-		law_command_economy
-		law_cooperative_ownership
+		law_burgundian_system
+		law_social_market
 	}
 
 	unlocking_technologies = {
@@ -2875,8 +2904,8 @@ pm_publicly_traded_building_synthetic_plants = {
 	texture = "gfx/interface/icons/production_method_icons/publicly_traded.dds"
 	
 	disallowing_laws = {
-		law_command_economy
-		law_cooperative_ownership
+		law_burgundian_system
+		law_social_market
 	}
 
 	unlocking_technologies = {
@@ -2903,8 +2932,8 @@ pm_publicly_traded_building_steel_mills = {
 	}
 	
 	disallowing_laws = {
-		law_command_economy
-		law_cooperative_ownership
+		law_burgundian_system
+		law_social_market
 	}
 
 	unlocking_technologies = {
@@ -2930,8 +2959,8 @@ pm_publicly_traded_building_motor_industries = {
 	}
 	
 	disallowing_laws = {
-		law_command_economy
-		law_cooperative_ownership
+		law_burgundian_system
+		law_social_market
 	}
 
 	unlocking_technologies = {
@@ -2952,8 +2981,8 @@ pm_publicly_traded_building_war_machines_induestries = {
 	texture = "gfx/interface/icons/production_method_icons/publicly_traded.dds"
 	
 	disallowing_laws = {
-		law_command_economy
-		law_cooperative_ownership
+		law_burgundian_system
+		law_social_market
 	}
 
 	unlocking_technologies = {
@@ -2974,8 +3003,8 @@ pm_publicly_traded_building_electrics_industries = {
 	texture = "gfx/interface/icons/production_method_icons/publicly_traded.dds"
 	
 	disallowing_laws = {
-		law_command_economy
-		law_cooperative_ownership
+		law_burgundian_system
+		law_social_market
 	}
 
 	unlocking_technologies = {
@@ -3000,8 +3029,8 @@ pm_publicly_traded_building_munition_plants = {
 	}
 	
 	disallowing_laws = {
-		law_command_economy
-		law_cooperative_ownership
+		law_burgundian_system
+		law_social_market
 	}
 
 	unlocking_technologies = {
@@ -3089,8 +3118,8 @@ pm_merchant_guilds_building_military_shipyards = {
 	}
 
 	disallowing_laws = {
-		law_command_economy
-		law_cooperative_ownership
+		law_burgundian_system
+		law_social_market
 	}
 
 	building_modifiers = {
@@ -3112,8 +3141,8 @@ pm_privately_owned_building_military_shipyards = {
 	}
 
 	disallowing_laws = {
-		law_command_economy
-		law_cooperative_ownership
+		law_burgundian_system
+		law_social_market
 	}
 
 	building_modifiers = {
@@ -3135,8 +3164,8 @@ pm_publicly_traded_building_military_shipyards = {
 	}
 
 	disallowing_laws = {
-		law_command_economy
-		law_cooperative_ownership
+		law_burgundian_system
+		law_social_market
 	}
 
 	unlocking_technologies = {
@@ -3157,7 +3186,7 @@ pm_government_run_building_military_shipyards = {
 	texture = "gfx/interface/icons/production_method_icons/government_run.dds"
 
 	unlocking_laws = {
-		law_command_economy
+		law_burgundian_system
 		law_warlord_economy
 	}
 	
@@ -3180,7 +3209,7 @@ pm_worker_cooperative_building_military_shipyards = {
 	}
 
 	unlocking_laws = {
-		law_cooperative_ownership
+		law_social_market
 	}
 
 	building_modifiers = {
@@ -3201,8 +3230,8 @@ pm_merchant_guilds_building_artillery_foundries = {
 	}
 
 	disallowing_laws = {
-		law_command_economy
-		law_cooperative_ownership
+		law_burgundian_system
+		law_social_market
 	}
 
 	building_modifiers = {
@@ -3225,8 +3254,8 @@ pm_privately_owned_building_artillery_foundries = {
 	}
 
 	disallowing_laws = {
-		law_command_economy
-		law_cooperative_ownership
+		law_burgundian_system
+		law_social_market
 	}
 
 	building_modifiers = {
@@ -3249,8 +3278,8 @@ pm_publicly_traded_building_artillery_foundries = {
 	}
 
 	disallowing_laws = {
-		law_command_economy
-		law_cooperative_ownership
+		law_burgundian_system
+		law_social_market
 	}
 
 	unlocking_technologies = {
@@ -3277,7 +3306,7 @@ pm_worker_cooperative_building_artillery_foundries = {
 	}
 
 	unlocking_laws = {
-		law_cooperative_ownership
+		law_social_market
 	}
 
 	building_modifiers = {
@@ -3300,8 +3329,8 @@ pm_publicly_traded_building_explosives_factory = {
 	}
 	
 	disallowing_laws = {
-		law_command_economy
-		law_cooperative_ownership
+		law_burgundian_system
+		law_social_market
 	}
 
 	unlocking_technologies = {

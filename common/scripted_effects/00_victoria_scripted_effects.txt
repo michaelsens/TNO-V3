@@ -631,7 +631,7 @@ adopt_random_antigovernment_ideology = {
 					if = {
 						limit = {
 							owner = {
-								has_law = law_type:law_command_economy
+								has_law = law_type:law_burgundian_system
 							}
 						}
 						add = 50
@@ -639,7 +639,7 @@ adopt_random_antigovernment_ideology = {
 					if = {
 						limit = {
 							owner = {
-								has_law = law_type:law_traditionalism
+								has_law = law_type:law_corporatism
 							}
 						}
 						add = 50
@@ -672,9 +672,9 @@ adopt_random_antigovernment_ideology = {
 					owner = {
 						has_technology_researched = romanticism
 						OR = {
-							has_law = law_type:law_command_economy
-							has_law = law_type:law_laissez_faire
-							has_law = law_type:law_interventionism
+							has_law = law_type:law_burgundian_system
+							has_law = law_type:law_free_market_capitalism
+							has_law = law_type:law_planned_economy
 						}
 						NOT = {
 							ruler = {
@@ -2771,10 +2771,10 @@ restore_peruvian_constitution = {
 	if = {
 		limit = {
 			NOT = {
-				has_law = law_type:law_interventionism
+				has_law = law_type:law_planned_economy
 			}
 		}
-		activate_law = law_type:law_interventionism
+		activate_law = law_type:law_planned_economy
 	}
 	if = {
 		limit = {
