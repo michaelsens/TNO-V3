@@ -1374,13 +1374,13 @@ ideology_communist = {
 	}
 
 	lawgroup_economic_system = {	
-		law_command_economy = strongly_approve
-		law_cooperative_ownership = strongly_approve
-		law_interventionism = neutral
-		law_agrarianism = disapprove
-		law_traditionalism = disapprove	
-		law_laissez_faire = strongly_disapprove
-		law_industry_banned = strongly_disapprove
+		law_burgundian_system = strongly_approve
+		law_social_market = strongly_approve
+		law_planned_economy = neutral
+		law_dirigisme = disapprove
+		law_corporatism = disapprove	
+		law_free_market_capitalism = strongly_disapprove
+		law_socialized_economy = strongly_disapprove
 	}
 	
 	lawgroup_church_and_state = {
@@ -1520,13 +1520,13 @@ ideology_vanguardist = {
 	}
 	
 	lawgroup_economic_system = {	
-		law_command_economy = strongly_approve
-		law_cooperative_ownership = approve
-		law_interventionism = neutral
-		law_agrarianism = disapprove
-		law_traditionalism = disapprove	
-		law_laissez_faire = strongly_disapprove
-		law_industry_banned = strongly_disapprove
+		law_burgundian_system = strongly_approve
+		law_social_market = approve
+		law_planned_economy = neutral
+		law_dirigisme = disapprove
+		law_corporatism = disapprove	
+		law_free_market_capitalism = strongly_disapprove
+		law_socialized_economy = strongly_disapprove
 	}
 	
 	lawgroup_trade_policy = {		
@@ -1552,7 +1552,7 @@ ideology_vanguardist = {
 			owner = {
 				has_law = law_type:law_collectivized_agriculture
 				has_law = law_type:law_council_republic
-				has_law = law_type:law_command_economy
+				has_law = law_type:law_burgundian_system
 				has_law = law_type:law_protectionism
 				has_law = law_type:law_single_party_state
 			}
@@ -1697,13 +1697,13 @@ ideology_fascist = {
 	
 	character_ideology = yes
 	lawgroup_economic_system = {	
-		law_cooperative_ownership = strongly_disapprove
-		law_command_economy = neutral
-		law_interventionism = approve
-		law_agrarianism = strongly_disapprove
-		law_traditionalism = strongly_disapprove	
-		law_laissez_faire = disapprove
-		law_industry_banned = strongly_disapprove
+		law_social_market = strongly_disapprove
+		law_burgundian_system = neutral
+		law_planned_economy = approve
+		law_dirigisme = strongly_disapprove
+		law_corporatism = strongly_disapprove	
+		law_free_market_capitalism = disapprove
+		law_socialized_economy = strongly_disapprove
 	}
 
 	lawgroup_trade_policy = {
@@ -2122,13 +2122,13 @@ ideology_anarchist = {
 	}
 
 	lawgroup_economic_system = {	
-		law_cooperative_ownership = strongly_approve
-		law_command_economy = disapprove
-		law_interventionism = strongly_disapprove
-		law_agrarianism = neutral
-		law_traditionalism = strongly_disapprove	
-		law_laissez_faire = strongly_disapprove
-		law_industry_banned = disapprove
+		law_social_market = strongly_approve
+		law_burgundian_system = disapprove
+		law_planned_economy = strongly_disapprove
+		law_dirigisme = neutral
+		law_corporatism = strongly_disapprove	
+		law_free_market_capitalism = strongly_disapprove
+		law_socialized_economy = disapprove
 	}
 
 	lawgroup_army_model = {
@@ -2392,13 +2392,13 @@ ideology_theocrat = {
 	character_ideology = yes
 
 	lawgroup_economic_system = {	
-		law_cooperative_ownership = strongly_disapprove
-		law_command_economy = strongly_approve
-		law_interventionism = disapprove
-		law_agrarianism = approve
-		law_traditionalism = neutral	
-		law_laissez_faire = strongly_disapprove
-		law_industry_banned = neutral
+		law_social_market = strongly_disapprove
+		law_burgundian_system = strongly_approve
+		law_planned_economy = disapprove
+		law_dirigisme = approve
+		law_corporatism = neutral	
+		law_free_market_capitalism = strongly_disapprove
+		law_socialized_economy = neutral
 	}
 	
 	lawgroup_trade_policy = {
@@ -2524,13 +2524,13 @@ ideology_market_liberal = {
 	character_ideology = yes
 
 	lawgroup_economic_system = {	
-		law_laissez_faire = strongly_approve
-		law_interventionism = neutral
-		law_agrarianism = disapprove
-		law_traditionalism = disapprove		
-		law_cooperative_ownership = strongly_disapprove
-		law_command_economy = strongly_disapprove
-		law_industry_banned = strongly_disapprove
+		law_free_market_capitalism = strongly_approve
+		law_planned_economy = neutral
+		law_dirigisme = disapprove
+		law_corporatism = disapprove		
+		law_social_market = strongly_disapprove
+		law_burgundian_system = strongly_disapprove
+		law_socialized_economy = strongly_disapprove
 	}
 	
 	lawgroup_childrens_rights = {
@@ -2570,7 +2570,7 @@ ideology_market_liberal = {
 		NAND = {
 			has_role = agitator
 			owner = {
-				has_law = law_type:law_laissez_faire
+				has_law = law_type:law_free_market_capitalism
 				has_law = law_type:law_child_labor_allowed
 				has_law = law_type:law_free_trade
 				has_law = law_type:law_commercialized_agriculture
@@ -2618,8 +2618,8 @@ ideology_market_liberal = {
 				}
 				owner = {
 					OR = {
-						has_law = law_type:law_agrarianism
-						has_law = law_type:law_traditionalism
+						has_law = law_type:law_dirigisme
+						has_law = law_type:law_corporatism
 						has_law = law_type:law_isolationism
 						has_law = law_type:law_mercantilism
 					}
@@ -2652,8 +2652,8 @@ ideology_market_liberal = {
 				}
 				owner = {
 					OR = {
-						has_law = law_type:law_agrarianism
-						has_law = law_type:law_traditionalism
+						has_law = law_type:law_dirigisme
+						has_law = law_type:law_corporatism
 					}
 				}
 			}
@@ -2698,7 +2698,7 @@ ideology_market_liberal = {
 			limit = {
 				owner = {
 					has_law = law_type:law_free_trade
-					has_law = law_type:law_laissez_faire
+					has_law = law_type:law_free_market_capitalism
 					has_law = law_type:law_commercialized_agriculture
 				}
 			}
@@ -2722,13 +2722,13 @@ ideology_luddite = {
 	character_ideology = yes
 
 	lawgroup_economic_system = {
-		law_industry_banned = strongly_approve
-		law_agrarianism = approve
-		law_cooperative_ownership = neutral
-		law_traditionalism = neutral
-		law_laissez_faire = strongly_disapprove
-		law_interventionism = strongly_disapprove
-		law_command_economy = strongly_disapprove
+		law_socialized_economy = strongly_approve
+		law_dirigisme = approve
+		law_social_market = neutral
+		law_corporatism = neutral
+		law_free_market_capitalism = strongly_disapprove
+		law_planned_economy = strongly_disapprove
+		law_burgundian_system = strongly_disapprove
 	}
 	
 	lawgroup_trade_policy = {
@@ -2742,9 +2742,9 @@ ideology_luddite = {
 		owner = {
 			has_technology_researched = romanticism
 			OR = {
-				has_law = law_type:law_command_economy
-				has_law = law_type:law_laissez_faire
-				has_law = law_type:law_interventionism
+				has_law = law_type:law_burgundian_system
+				has_law = law_type:law_free_market_capitalism
+				has_law = law_type:law_planned_economy
 			}
 		}
 		# Agitator ideologies should disapprove of a current law
@@ -2752,7 +2752,7 @@ ideology_luddite = {
 			has_role = agitator
 			owner = {
 				has_law = law_type:law_isolationism
-				has_law = law_type:law_industry_banned
+				has_law = law_type:law_socialized_economy
 			}
 		}
 		scope:interest_group = {
@@ -2945,13 +2945,13 @@ ideology_protectionist = {
 	character_ideology = yes
 
 	lawgroup_economic_system = {
-		law_interventionism = approve
-		law_agrarianism = neutral
-		law_command_economy = disapprove
-		law_cooperative_ownership = disapprove
-		law_laissez_faire = disapprove
-		law_traditionalism = disapprove
-		law_industry_banned = strongly_disapprove
+		law_planned_economy = approve
+		law_dirigisme = neutral
+		law_burgundian_system = disapprove
+		law_social_market = disapprove
+		law_free_market_capitalism = disapprove
+		law_corporatism = disapprove
+		law_socialized_economy = strongly_disapprove
 	}
 	
 	lawgroup_trade_policy = {
@@ -2975,7 +2975,7 @@ ideology_protectionist = {
 			has_role = agitator
 			owner = {
 				has_law = law_type:law_protectionism
-				has_law = law_type:law_interventionism
+				has_law = law_type:law_planned_economy
 			}
 		}
 		scope:interest_group = {
@@ -3017,8 +3017,8 @@ ideology_protectionist = {
 				}
 				owner = {
 					OR = {
-						has_law = law_type:law_agrarianism
-						has_law = law_type:law_traditionalism
+						has_law = law_type:law_dirigisme
+						has_law = law_type:law_corporatism
 						has_law = law_type:law_isolationism
 						has_law = law_type:law_mercantilism
 					}
@@ -3035,8 +3035,8 @@ ideology_protectionist = {
 				}
 				owner = {
 					OR = {
-						has_law = law_type:law_agrarianism
-						has_law = law_type:law_traditionalism
+						has_law = law_type:law_dirigisme
+						has_law = law_type:law_corporatism
 					}
 				}
 			}
@@ -3050,7 +3050,7 @@ ideology_protectionist = {
 						has_law = law_type:law_protectionism
 						has_law = law_type:law_mercantilism
 					}
-					has_law = law_type:law_interventionism
+					has_law = law_type:law_planned_economy
 				}
 			}
 			add = -100
@@ -3568,8 +3568,8 @@ ideology_land_reformer = {
 			limit = {
 				owner = {
 					OR = {
-						has_law = law_type:law_agrarianism
-						has_law = law_type:law_industry_banned
+						has_law = law_type:law_dirigisme
+						has_law = law_type:law_socialized_economy
 					}
 				}
 			}
