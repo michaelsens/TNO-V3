@@ -257,9 +257,9 @@ ideology_republican_leader = {
 	}
 	
 	lawgroup_bureaucracy = {
-		law_elected_bureaucrats = approve
-		law_appointed_bureaucrats = neutral
-		law_hereditary_bureaucrats = disapprove
+		law_multi_party_system = approve
+		law_controlled_opposition = neutral
+		law_non_partisan_system = disapprove
 	}
 	
 	possible = {
@@ -271,7 +271,7 @@ ideology_republican_leader = {
 					has_law = law_type:law_presidential_republic
 					has_law = law_type:law_parliamentary_republic
 				}
-				has_law = law_type:law_elected_bureaucrats
+				has_law = law_type:law_multi_party_system
 			}
 		}
 		# Monarchs cannot be republicans
@@ -312,7 +312,7 @@ ideology_republican_leader = {
 					NOR = { 
 						has_law = law_type:law_monarchy
 						has_law = law_type:law_theocracy
-						has_law = law_type:law_hereditary_bureaucrats
+						has_law = law_type:law_non_partisan_system
 					}
 				}
 			}
@@ -3307,9 +3307,9 @@ ideology_jacksonian_democrat = {
 	}
 
 	lawgroup_bureaucracy = {
-		law_elected_bureaucrats = approve
-		law_appointed_bureaucrats = neutral
-		law_hereditary_bureaucrats = disapprove
+		law_multi_party_system = approve
+		law_controlled_opposition = neutral
+		law_non_partisan_system = disapprove
 	}
 
 	lawgroup_slavery = {
@@ -3389,9 +3389,9 @@ ideology_positivist = {
 	}
 
 	lawgroup_bureaucracy = {
-		law_appointed_bureaucrats = strongly_approve
-		law_elected_bureaucrats = disapprove
-		law_hereditary_bureaucrats = strongly_disapprove
+		law_controlled_opposition = strongly_approve
+		law_multi_party_system = disapprove
+		law_non_partisan_system = strongly_disapprove
 	}
 	
 	possible = {
@@ -3399,7 +3399,7 @@ ideology_positivist = {
 		NAND = {
 			has_role = agitator
 			owner = {
-				has_law = law_type:law_appointed_bureaucrats
+				has_law = law_type:law_controlled_opposition
 				has_law = law_type:law_technocracy
 				has_law = law_type:law_state_atheism
 				has_law = law_type:law_presidential_republic
@@ -3797,9 +3797,9 @@ ideology_liberal_leader = {
 	}
 	
 	lawgroup_bureaucracy = {
-		law_elected_bureaucrats = approve
-		law_appointed_bureaucrats = neutral
-		law_hereditary_bureaucrats = disapprove
+		law_multi_party_system = approve
+		law_controlled_opposition = neutral
+		law_non_partisan_system = disapprove
 	}
 	
 	possible = {
@@ -3813,7 +3813,7 @@ ideology_liberal_leader = {
 					has_law = law_type:law_wealth_voting
 					has_law = law_type:law_landed_voting
 				}
-				has_law = law_type:law_elected_bureaucrats
+				has_law = law_type:law_multi_party_system
 			}
 		}
 		scope:interest_group = {
@@ -3839,7 +3839,7 @@ ideology_liberal_leader = {
 						has_law = law_type:law_wealth_voting
 						has_law = law_type:law_landed_voting
 					}
-					has_law = law_type:law_elected_bureaucrats
+					has_law = law_type:law_multi_party_system
 				}
 			}
 			add = -25
