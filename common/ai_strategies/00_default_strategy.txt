@@ -1204,15 +1204,15 @@ ai_strategy_default = {
 			}
 			
 			if = {
-				limit = { has_law = law_type:law_peasant_levies }
+				limit = { has_law = law_type:law_encouraged_brutality }
 				multiply = 0.5
 			}			
 			else_if = {
-				limit = { has_law = law_type:law_national_militia }
+				limit = { has_law = law_type:law_rules_of_engagement }
 				multiply = 0.75
 			}
 			else_if = {
-				limit = { has_law = law_type:law_professional_army }
+				limit = { has_law = law_type:law_no_restrictions }
 				multiply = 1.25
 			}			
 		}
@@ -1224,15 +1224,15 @@ ai_strategy_default = {
 			}
 			
 			if = {
-				limit = { has_law = law_type:law_national_militia }
+				limit = { has_law = law_type:law_rules_of_engagement }
 				multiply = 0.5
 			}
 			else_if = {
-				limit = { has_law = law_type:law_professional_army }
+				limit = { has_law = law_type:law_no_restrictions }
 				multiply = 1.25
 			}			
 			else_if = {
-				limit = { has_law = law_type:law_peasant_levies }
+				limit = { has_law = law_type:law_encouraged_brutality }
 				multiply = 1.5
 			}				
 		}
@@ -1270,19 +1270,19 @@ ai_strategy_default = {
 	conscript_battalion_ratio = {
 		value = 0
 		if = {
-			limit = { has_law = law_type:law_national_militia }
+			limit = { has_law = law_type:law_rules_of_engagement }
 			add = 5
 		}
 		else_if = {
-			limit = { has_law = law_type:law_professional_army }
+			limit = { has_law = law_type:law_no_restrictions }
 			add = 0.5
 		}			
 		else_if = {
-			limit = { has_law = law_type:law_peasant_levies }
+			limit = { has_law = law_type:law_encouraged_brutality }
 			add = 1
 		}	
 		else_if = {
-			limit = { has_law = law_type:law_mass_conscription }
+			limit = { has_law = law_type:law_watchdog_groups }
 			add = 2
 		}		
 	}

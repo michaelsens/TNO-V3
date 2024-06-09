@@ -461,7 +461,7 @@ gov_warlord_state = {
 	possible = {
 		has_law = law_type:law_presidential_republic
 		has_law = law_type:law_autocracy 
-		has_law = law_type:law_peasant_levies
+		has_law = law_type:law_encouraged_brutality
 
 		OR = { #Maybe theres a better trigger?
 			root.capital.region = sr:region_north_china
@@ -636,8 +636,8 @@ gov_military_dictatorship = {
 		has_law = law_type:law_presidential_republic
 		has_law = law_type:law_autocracy 
 		OR = {
-			has_law = law_type:law_mass_conscription
-			has_law = law_type:law_professional_army
+			has_law = law_type:law_watchdog_groups
+			has_law = law_type:law_no_restrictions
 		}
 	}
 
@@ -659,8 +659,8 @@ gov_presidential_dictatorship = {
 		has_law = law_type:law_presidential_republic
 		has_law = law_type:law_autocracy 
 		OR = {
-			has_law = law_type:law_peasant_levies
-			has_law = law_type:law_national_militia
+			has_law = law_type:law_encouraged_brutality
+			has_law = law_type:law_rules_of_engagement
 		}
 	}
 
@@ -682,8 +682,8 @@ gov_junta = {
 		has_law = law_type:law_presidential_republic
 		country_has_voting_franchise = no
 		OR = {
-			has_law = law_type:law_mass_conscription
-			has_law = law_type:law_professional_army
+			has_law = law_type:law_watchdog_groups
+			has_law = law_type:law_no_restrictions
 		}
 		ig:ig_armed_forces = {
 			is_in_government = yes
