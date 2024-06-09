@@ -7,14 +7,16 @@ law_non_partisan_system = {
 	progressiveness = -50
 	
 	modifier = {
-		state_bureaucracy_population_base_cost_factor_mult = -0.25
-		country_aristocrats_pol_str_mult = 0.50
-		country_prestige_mult = 0.05
+	
+	}
+
+	on_activate = {
+		scripted_effect_parties_disappearence = yes
+		clear_legal_single_party = yes
 	}
 	
 	possible_political_movements = {
-		law_controlled_opposition
-		law_multi_party_system
+		
 	}
 
 	pop_support = {
@@ -81,14 +83,12 @@ law_single_party_state = {
 		}
 	}
 
-	unlocking_technologies = {
-		urbanization 
-	}
+	
 	
 	modifier = {
 		country_legitimacy_govt_total_votes_add = 100
 		country_legitimacy_ideological_incoherence_mult = -0.25
-		country_authority_add = 250
+		country_authority_add = 100
 		country_voting_power_base_add = 20
 		interest_group_in_government_attraction_mult = 0.25
 	}
