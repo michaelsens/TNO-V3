@@ -1,56 +1,4 @@
 ﻿
-law_non_partisan_system = {
-	group = lawgroup_bureaucracy
-	
-	icon = "gfx/interface/icons/law_icons/hereditary_bureaucrats.dds"
-	
-	progressiveness = -50
-	
-	modifier = {
-		state_bureaucracy_population_base_cost_factor_mult = -0.25
-		country_aristocrats_pol_str_mult = 0.50
-		country_prestige_mult = 0.05
-	}
-	
-	possible_political_movements = {
-		law_controlled_opposition
-		law_multi_party_system
-	}
-
-	pop_support = {
-		value = 0
-		# Aristocrats like nepotism
-		add = {
-			desc = "POP_ARISTOCRATS"			
-			if = {
-				limit = { 
-					is_pop_type = aristocrats
-				}
-				value = 0.25
-			}
-		}
-	}
-
-	ai_will_do = {
-		exists = ruler
-		ruler = {
-			has_ideology = ideology:ideology_traditionalist
-		}
-	}
-
-	ai_enact_weight_modifier = { #Petitions
-		value = 0
-		
-		if = {
-			limit = { 
-				has_journal_entry = je_government_petition
-				has_variable = desired_law_var
-                scope:law = var:desired_law_var
-			}
-			add = 750
-		}
-	}
-}
 
 
 
@@ -81,14 +29,18 @@ law_single_party_state = {
 		}
 	}
 
-	unlocking_technologies = {
-		urbanization 
+	disallowing_laws = {
+		law_autocracy
+		law_technocracy
+		law_oligarchy
 	}
+
+	
 	
 	modifier = {
 		country_legitimacy_govt_total_votes_add = 100
 		country_legitimacy_ideological_incoherence_mult = -0.25
-		country_authority_add = 250
+		country_authority_add = 100
 		country_voting_power_base_add = 20
 		interest_group_in_government_attraction_mult = 0.25
 	}
