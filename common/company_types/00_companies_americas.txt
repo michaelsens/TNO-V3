@@ -90,6 +90,70 @@ company_el_aguila = {
 	}
 }
 
+company_general_motars = {
+	icon = "gfx/interface/icons/tno_companies_icons/general_motars.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_plantation.dds"
+	
+	flavored_company = yes
+	
+	building_types = {  
+		automotive_industry
+	
+	}
+	
+	potential = {
+		c:USA ?= this
+	}
+	
+	possible = {
+		c:USA = {
+		is_player = yes 
+		}
+	}
+	
+	prosperity_modifier = {
+		automotive_industry_throughput_add = 0.1
+	
+	}	
+	
+	ai_weight = {
+		value = 3 # Higher base value for flavored companies
+	}
+}
+
+company_canadian_national_railways = {
+	icon = "gfx/interface/icons/tno_companies_icons/canadian_national.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_plantation.dds"
+	
+	flavored_company = yes
+	
+	building_types = {  
+		building_railway
+	
+	}
+	
+	potential = {
+		c:CAN ?= this
+	}
+	
+	possible = {
+		c:CAN ?= this
+	}
+	
+	prosperity_modifier = {
+		state_infrastructure_mult = 0.05
+		building_railway_throughput_add = 0.05
+		interest_group_ig_industrialists_approval_add = 2
+
+	
+	}	
+	
+	ai_weight = {
+		value = 3 # Higher base value for flavored companies
+	}
+}
+
+
 # Compañía de Salitres y Ferrocarril de Antofagasta
 company_csfa = {
 	icon = "gfx/interface/icons/company_icons/historical_company_icons/bolivia_csfa.dds"

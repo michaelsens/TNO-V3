@@ -47,6 +47,104 @@ company_east_india_company = {
 	}
 }
 
+company_deutsch_persiche_olgesellschaft = {
+	icon = "gfx/interface/icons/tno_companies_icons/germany_persia_company.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_plantation.dds"
+	
+	flavored_company = yes
+	
+	building_types = {  
+		building_oil_rig
+	
+	}
+	
+	potential = {
+		c:PER ?= this
+	}
+	
+	possible = {
+		c:PER = {
+		is_in_customs_union = yes 
+		}
+	}
+	
+	prosperity_modifier = {
+		building_group_bg_oil_extraction_throughput_add = 0.2
+		country_authority_mult = -0.1
+		building_minimum_wage_mult = -0.05
+		country_resource_discovery_chance_mult = 0.1
+		country_prestige_mult = -0.1
+	}	
+	
+	ai_weight = {
+		value = 3 # Higher base value for flavored companies
+	}
+}
+
+company_broken_hills= {
+	icon = "gfx/interface/icons/tno_companies_icons/broken_hills.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_plantation.dds"
+	
+	flavored_company = yes
+	
+	building_types = {  
+		building_iron_mine
+		building_coal_mine
+	
+	}
+	
+	potential = {
+		c:AST ?= this
+	}
+	
+	possible = {
+		c:AST ?= this
+	}
+	
+	prosperity_modifier = {
+		
+		building_iron_mine_throughput_add = 0.1
+		building_coal_mine_throughput_add = 0.1
+
+	
+	}	
+	
+	ai_weight = {
+		value = 3 # Higher base value for flavored companies
+	}
+}
+
+company_tata_steel= {
+	icon = "gfx/interface/icons/tno_companies_icons/tata_steel.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_plantation.dds"
+	
+	flavored_company = yes
+	
+	building_types = {  
+		building_steel_mills
+	
+	}
+	
+	potential = {
+		c:BHT ?= this
+	}
+	
+	possible = {
+		c:BHT ?= this
+	}
+	
+	prosperity_modifier = {
+		
+		building_steel_mills_throughput_add = 0.15
+
+	
+	}	
+	
+	ai_weight = {
+		value = 3 # Higher base value for flavored companies
+	}
+}
+
 # Imperial Arsenal
 company_imperial_arsenal = {
 	icon = "gfx/interface/icons/company_icons/historical_company_icons/imperial_arsenal.dds"
