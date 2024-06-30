@@ -134,6 +134,22 @@ ideology_Democratic_socialism = {
 				has_variable = chose_ethno_nationalism
 			}
 		}
+			possible = {
+				owner = { }
+				scope:interest_group = {
+					NOR = {
+						is_interest_group_type = ig_Anarchists
+						is_interest_group_type = ig_Communists				
+						is_interest_group_type = ig_Liberals
+						is_interest_group_type = ig_Moderates
+						is_interest_group_type = ig_Conservatives		
+						is_interest_group_type = ig_Libertarians				
+						is_interest_group_type = ig_Nationalists
+						is_interest_group_type = ig_Reactionary
+						is_interest_group_type = ig_Fascists			
+					}
+				}
+			}		
 	}
 }
 
@@ -243,7 +259,24 @@ ideology_securocrat = {
 		owner = {
 			c:IRK ?= this
 		}
+		scope:interest_group = {
+			NOR = {
+				is_interest_group_type = ig_Anarchists
+				is_interest_group_type = ig_Communists				
+				is_interest_group_type = ig_Socialist
+				is_interest_group_type = ig_Progressives
+				is_interest_group_type = ig_Liberals
+				is_interest_group_type = ig_Moderates
+				is_interest_group_type = ig_Conservatives		
+				is_interest_group_type = ig_Libertarians				
+				is_interest_group_type = ig_Nationalists
+				is_interest_group_type = ig_Reactionary
+				is_interest_group_type = ig_Fascists			
+			}
+		}		
 	}
+
+	
 }
 
 ideology_irk_bukharinist = {
@@ -299,6 +332,12 @@ ideology_irk_bukharinist = {
 		owner = {
 			c:IRK ?= this
 		}
+		scope:interest_group = {
+			NOR = {
+				is_interest_group_type = ig_Communists				
+				is_interest_group_type = ig_Socialist			
+			}
+		}			
 	}
 }
 
@@ -397,7 +436,22 @@ ideology_Eastern_Progressivism_leader = {
 		law_totalitarian_police	= disapprove
 		law_death_sqauds = disapprove
 	}
-	
+		possible = {
+			owner = { }
+			scope:interest_group = {
+				NOR = {
+					is_interest_group_type = ig_Anarchists
+					is_interest_group_type = ig_Communists				
+					is_interest_group_type = ig_Liberals
+					is_interest_group_type = ig_Moderates
+					is_interest_group_type = ig_Conservatives		
+					is_interest_group_type = ig_Libertarians				
+					is_interest_group_type = ig_Nationalists
+					is_interest_group_type = ig_Reactionary
+					is_interest_group_type = ig_Fascists			
+				}
+			}
+		}	
 }
 
 ideology_Western_Progressivism_leader = {
@@ -492,7 +546,23 @@ ideology_Western_Progressivism_leader = {
 		law_per_capita_based_taxation = neutral
 		law_proportional_taxation = approve
 		law_graduated_taxation = strongly_approve
-	}	
+	}
+		possible = {
+			owner = { }
+			scope:interest_group = {
+				NOR = {
+					is_interest_group_type = ig_Anarchists
+					is_interest_group_type = ig_Communists				
+					is_interest_group_type = ig_Liberals
+					is_interest_group_type = ig_Moderates
+					is_interest_group_type = ig_Conservatives		
+					is_interest_group_type = ig_Libertarians				
+					is_interest_group_type = ig_Nationalists
+					is_interest_group_type = ig_Reactionary
+					is_interest_group_type = ig_Fascists			
+				}
+			}
+		}	
 }
 
 
@@ -566,47 +636,22 @@ ideology_marxist = {
 		law_death_sqauds = disapprove
 	}	
 	
-	possible = {
-		# Agitator ideologies should disapprove of a current law
-		NAND = {
-			has_role = agitator
-			owner = {
-				has_law = law_type:law_collectivized_agriculture
-				has_law = law_type:law_state_atheism
-				has_law = law_type:law_council_republic
-				has_law = law_type:law_worker_protections
+		possible = {
+			owner = { }
+			scope:interest_group = {
+				NOR = {			
+					is_interest_group_type = ig_Socialist
+					is_interest_group_type = ig_Progressives
+					is_interest_group_type = ig_Liberals
+					is_interest_group_type = ig_Moderates
+					is_interest_group_type = ig_Conservatives		
+					is_interest_group_type = ig_Libertarians				
+					is_interest_group_type = ig_Nationalists
+					is_interest_group_type = ig_Reactionary
+					is_interest_group_type = ig_Fascists					
+				}
 			}
 		}
-		NAND = {
-			owner = {
-				has_law = law_type:law_monarchy
-			}
-			OR = {
-				is_ruler = yes
-				is_heir = yes
-			}
-		}
-		owner = { has_technology_researched = socialism }
-		scope:interest_group = {
-			OR = {
-				is_interest_group_type = ig_rural_folk
-				is_interest_group_type = ig_intelligentsia
-				is_interest_group_type = ig_trade_unions
-				is_interest_group_type = ig_Anarchists
-				is_interest_group_type = ig_Communists	
-				is_interest_group_type = ig_armed_forces
-			}
-		}
-		scope:interest_group = {
-			NOR = {
-				has_variable = chose_anarchism
-				has_variable = chose_vanguardism
-				has_variable = chose_fascism
-				has_variable = chose_conservatism
-				has_variable = chose_ethno_nationalism
-			}
-		}
-	}
 	
 	leader_weight = {
 		# More likely for angry IG's outside of council republic
@@ -738,49 +783,22 @@ ideology_Bukharinist = {
 		law_totalitarian_police	= strongly_disapprove
 		law_death_sqauds = strongly_disapprove
 	}		
-	
-	possible = {
-		owner = { has_technology_researched = socialism }
-		# Agitator ideologies should disapprove of a current law
-		NAND = {
-			has_role = agitator
-			owner = {
-				has_law = law_type:law_collectivized_agriculture
-				has_law = law_type:law_council_republic
-				has_law = law_type:law_command_economy
-				has_law = law_type:law_protectionism
-				has_law = law_type:law_single_party_state
+		possible = {
+			owner = { }
+			scope:interest_group = {
+				NOR = {			
+					is_interest_group_type = ig_Socialist
+					is_interest_group_type = ig_Progressives
+					is_interest_group_type = ig_Liberals
+					is_interest_group_type = ig_Moderates
+					is_interest_group_type = ig_Conservatives		
+					is_interest_group_type = ig_Libertarians				
+					is_interest_group_type = ig_Nationalists
+					is_interest_group_type = ig_Reactionary
+					is_interest_group_type = ig_Fascists					
+				}
 			}
 		}
-		# Monarchs cannot be republicans
-		NAND = {
-			owner = {
-				has_law = law_type:law_monarchy
-			}
-			OR = {
-				is_ruler = yes
-				is_heir = yes
-			}
-		}
-		scope:interest_group = {
-			OR = {
-				is_interest_group_type = ig_rural_folk
-				is_interest_group_type = ig_intelligentsia
-				is_interest_group_type = ig_trade_unions
-				is_interest_group_type = ig_armed_forces
-				is_interest_group_type = ig_Communists					
-			}
-		}
-		scope:interest_group = {
-			NOR = {
-				has_variable = chose_anarchism
-				has_variable = chose_communism
-				has_variable = chose_fascism
-				has_variable = chose_conservatism
-				has_variable = chose_ethno_nationalism
-			}
-		}
-	}
 	
 	leader_weight = {
 		value = 100
@@ -976,48 +994,22 @@ ideology_Marxism-Leninism = {
 		law_death_sqauds = approve
 	}		
 	
-	possible = {
-		owner = { has_technology_researched = socialism }
-		# Agitator ideologies should disapprove of a current law
-		NAND = {
-			has_role = agitator
-			owner = {
-				has_law = law_type:law_collectivized_agriculture
-				has_law = law_type:law_council_republic
-				has_law = law_type:law_command_economy
-				has_law = law_type:law_protectionism
-				has_law = law_type:law_single_party_state
+		possible = {
+			owner = { }
+			scope:interest_group = {
+				NOR = {			
+					is_interest_group_type = ig_Socialist
+					is_interest_group_type = ig_Progressives
+					is_interest_group_type = ig_Liberals
+					is_interest_group_type = ig_Moderates
+					is_interest_group_type = ig_Conservatives		
+					is_interest_group_type = ig_Libertarians				
+					is_interest_group_type = ig_Nationalists
+					is_interest_group_type = ig_Reactionary
+					is_interest_group_type = ig_Fascists					
+				}
 			}
 		}
-		# Monarchs cannot be republicans
-		NAND = {
-			owner = {
-				has_law = law_type:law_monarchy
-			}
-			OR = {
-				is_ruler = yes
-				is_heir = yes
-			}
-		}
-		scope:interest_group = {
-			OR = {
-				is_interest_group_type = ig_rural_folk
-				is_interest_group_type = ig_intelligentsia
-				is_interest_group_type = ig_trade_unions
-				is_interest_group_type = ig_armed_forces
-				is_interest_group_type = ig_Communists					
-			}
-		}
-		scope:interest_group = {
-			NOR = {
-				has_variable = chose_anarchism
-				has_variable = chose_communism
-				has_variable = chose_fascism
-				has_variable = chose_conservatism
-				has_variable = chose_ethno_nationalism
-			}
-		}
-	}
 	
 	leader_weight = {
 		value = 100
@@ -1213,48 +1205,21 @@ ideology_Left_Communism = {
 		law_collectivized_agriculture = strongly_approve
 	}			
 	
-	possible = {
-		owner = { has_technology_researched = socialism }
-		# Agitator ideologies should disapprove of a current law
-		NAND = {
-			has_role = agitator
-			owner = {
-				has_law = law_type:law_collectivized_agriculture
-				has_law = law_type:law_council_republic
-				has_law = law_type:law_command_economy
-				has_law = law_type:law_protectionism
-				has_law = law_type:law_single_party_state
+		possible = {
+			owner = { }
+			scope:interest_group = {
+				NOR = {			
+					is_interest_group_type = ig_Socialist
+					is_interest_group_type = ig_Progressives
+					is_interest_group_type = ig_Liberals
+					is_interest_group_type = ig_Moderates
+					is_interest_group_type = ig_Conservatives		
+					is_interest_group_type = ig_Libertarians				
+					is_interest_group_type = ig_Reactionary
+					is_interest_group_type = ig_Fascists					
+				}
 			}
 		}
-		# Monarchs cannot be republicans
-		NAND = {
-			owner = {
-				has_law = law_type:law_monarchy
-			}
-			OR = {
-				is_ruler = yes
-				is_heir = yes
-			}
-		}
-		scope:interest_group = {
-			OR = {
-				is_interest_group_type = ig_rural_folk
-				is_interest_group_type = ig_intelligentsia
-				is_interest_group_type = ig_trade_unions
-				is_interest_group_type = ig_armed_forces
-				is_interest_group_type = ig_Communists					
-			}
-		}
-		scope:interest_group = {
-			NOR = {
-				has_variable = chose_anarchism
-				has_variable = chose_communism
-				has_variable = chose_fascism
-				has_variable = chose_conservatism
-				has_variable = chose_ethno_nationalism
-			}
-		}
-	}
 	
 	leader_weight = {
 		value = 100
@@ -1450,48 +1415,21 @@ ideology_Stratocratic_Communism = {
 		law_collectivized_agriculture = strongly_approve
 	}			
 	
-	possible = {
-		owner = { has_technology_researched = socialism }
-		# Agitator ideologies should disapprove of a current law
-		NAND = {
-			has_role = agitator
-			owner = {
-				has_law = law_type:law_collectivized_agriculture
-				has_law = law_type:law_council_republic
-				has_law = law_type:law_command_economy
-				has_law = law_type:law_protectionism
-				has_law = law_type:law_single_party_state
+		possible = {
+			owner = { }
+			scope:interest_group = {
+				NOR = {			
+					is_interest_group_type = ig_Socialist
+					is_interest_group_type = ig_Progressives
+					is_interest_group_type = ig_Liberals
+					is_interest_group_type = ig_Moderates
+					is_interest_group_type = ig_Conservatives		
+					is_interest_group_type = ig_Libertarians				
+					is_interest_group_type = ig_Reactionary
+					is_interest_group_type = ig_Fascists					
+				}
 			}
 		}
-		# Monarchs cannot be republicans
-		NAND = {
-			owner = {
-				has_law = law_type:law_monarchy
-			}
-			OR = {
-				is_ruler = yes
-				is_heir = yes
-			}
-		}
-		scope:interest_group = {
-			OR = {
-				is_interest_group_type = ig_rural_folk
-				is_interest_group_type = ig_intelligentsia
-				is_interest_group_type = ig_trade_unions
-				is_interest_group_type = ig_armed_forces
-				is_interest_group_type = ig_Communists					
-			}
-		}
-		scope:interest_group = {
-			NOR = {
-				has_variable = chose_anarchism
-				has_variable = chose_communism
-				has_variable = chose_fascism
-				has_variable = chose_conservatism
-				has_variable = chose_ethno_nationalism
-			}
-		}
-	}
 	
 	leader_weight = {
 		value = 100
@@ -1687,48 +1625,21 @@ ideology_Mao_Zedong_Thought = {
 		law_collectivized_agriculture = strongly_approve
 	}			
 	
-	possible = {
-		owner = { has_technology_researched = socialism }
-		# Agitator ideologies should disapprove of a current law
-		NAND = {
-			has_role = agitator
-			owner = {
-				has_law = law_type:law_collectivized_agriculture
-				has_law = law_type:law_council_republic
-				has_law = law_type:law_command_economy
-				has_law = law_type:law_protectionism
-				has_law = law_type:law_single_party_state
+		possible = {
+			owner = { }
+			scope:interest_group = {
+				NOR = {			
+					is_interest_group_type = ig_Socialist
+					is_interest_group_type = ig_Progressives
+					is_interest_group_type = ig_Liberals
+					is_interest_group_type = ig_Moderates
+					is_interest_group_type = ig_Conservatives		
+					is_interest_group_type = ig_Libertarians				
+					is_interest_group_type = ig_Reactionary
+					is_interest_group_type = ig_Fascists					
+				}
 			}
 		}
-		# Monarchs cannot be republicans
-		NAND = {
-			owner = {
-				has_law = law_type:law_monarchy
-			}
-			OR = {
-				is_ruler = yes
-				is_heir = yes
-			}
-		}
-		scope:interest_group = {
-			OR = {
-				is_interest_group_type = ig_rural_folk
-				is_interest_group_type = ig_intelligentsia
-				is_interest_group_type = ig_trade_unions
-				is_interest_group_type = ig_armed_forces
-				is_interest_group_type = ig_Communists					
-			}
-		}
-		scope:interest_group = {
-			NOR = {
-				has_variable = chose_anarchism
-				has_variable = chose_communism
-				has_variable = chose_fascism
-				has_variable = chose_conservatism
-				has_variable = chose_ethno_nationalism
-			}
-		}
-	}
 	
 	leader_weight = {
 		value = 100
@@ -1924,48 +1835,21 @@ ideology_Marxism-Leninism-Amazonism = {
 		law_collectivized_agriculture = strongly_approve
 	}			
 	
-	possible = {
-		owner = { has_technology_researched = socialism }
-		# Agitator ideologies should disapprove of a current law
-		NAND = {
-			has_role = agitator
-			owner = {
-				has_law = law_type:law_collectivized_agriculture
-				has_law = law_type:law_council_republic
-				has_law = law_type:law_command_economy
-				has_law = law_type:law_protectionism
-				has_law = law_type:law_single_party_state
+		possible = {
+			owner = { }
+			scope:interest_group = {
+				NOR = {			
+					is_interest_group_type = ig_Socialist
+					is_interest_group_type = ig_Progressives
+					is_interest_group_type = ig_Liberals
+					is_interest_group_type = ig_Moderates
+					is_interest_group_type = ig_Conservatives		
+					is_interest_group_type = ig_Libertarians				
+					is_interest_group_type = ig_Reactionary
+					is_interest_group_type = ig_Fascists					
+				}
 			}
 		}
-		# Monarchs cannot be republicans
-		NAND = {
-			owner = {
-				has_law = law_type:law_monarchy
-			}
-			OR = {
-				is_ruler = yes
-				is_heir = yes
-			}
-		}
-		scope:interest_group = {
-			OR = {
-				is_interest_group_type = ig_rural_folk
-				is_interest_group_type = ig_intelligentsia
-				is_interest_group_type = ig_trade_unions
-				is_interest_group_type = ig_armed_forces
-				is_interest_group_type = ig_Communists					
-			}
-		}
-		scope:interest_group = {
-			NOR = {
-				has_variable = chose_anarchism
-				has_variable = chose_communism
-				has_variable = chose_fascism
-				has_variable = chose_conservatism
-				has_variable = chose_ethno_nationalism
-			}
-		}
-	}
 	
 	leader_weight = {
 		value = 100
@@ -2157,49 +2041,21 @@ ideology_American_Left-Wing = {
 		law_collectivized_agriculture = strongly_approve
 	}			
 	
-	possible = {
-		owner = { has_technology_researched = socialism }
-		# Agitator ideologies should disapprove of a current law
-		NAND = {
-			has_role = agitator
-			owner = {
-				has_law = law_type:law_collectivized_agriculture
-				has_law = law_type:law_council_republic
-				has_law = law_type:law_command_economy
-				has_law = law_type:law_protectionism
-				has_law = law_type:law_single_party_state
+		possible = {
+			owner = { }
+			scope:interest_group = {
+				NOR = {			
+					is_interest_group_type = ig_Socialist
+					is_interest_group_type = ig_Progressives
+					is_interest_group_type = ig_Liberals
+					is_interest_group_type = ig_Moderates
+					is_interest_group_type = ig_Conservatives		
+					is_interest_group_type = ig_Libertarians				
+					is_interest_group_type = ig_Reactionary
+					is_interest_group_type = ig_Fascists					
+				}
 			}
 		}
-		# Monarchs cannot be republicans
-		NAND = {
-			owner = {
-				has_law = law_type:law_monarchy
-			}
-			OR = {
-				is_ruler = yes
-				is_heir = yes
-			}
-		}
-		scope:interest_group = {
-			OR = {
-				is_interest_group_type = ig_rural_folk
-				is_interest_group_type = ig_intelligentsia
-				is_interest_group_type = ig_trade_unions
-				is_interest_group_type = ig_armed_forces
-				is_interest_group_type = ig_Communists					
-				is_interest_group_type = ig_Anarchists									
-			}
-		}
-		scope:interest_group = {
-			NOR = {
-				has_variable = chose_anarchism
-				has_variable = chose_communism
-				has_variable = chose_fascism
-				has_variable = chose_conservatism
-				has_variable = chose_ethno_nationalism
-			}
-		}
-	}
 	
 	leader_weight = {
 		value = 100
@@ -2380,20 +2236,21 @@ ideology_Workerism = {
 		law_collectivized_agriculture = strongly_approve
 	}			
 	
-	possible = {
-		owner = { has_technology_researched = socialism }
-		# Agitator ideologies should disapprove of a current law
-		NAND = {
-			has_role = agitator
-			owner = {
-				has_law = law_type:law_collectivized_agriculture
-				has_law = law_type:law_council_republic
-				has_law = law_type:law_command_economy
-				has_law = law_type:law_protectionism
-				has_law = law_type:law_single_party_state
+		possible = {
+			owner = { }
+			scope:interest_group = {
+				NOR = {			
+					is_interest_group_type = ig_Socialist
+					is_interest_group_type = ig_Progressives
+					is_interest_group_type = ig_Liberals
+					is_interest_group_type = ig_Moderates
+					is_interest_group_type = ig_Conservatives		
+					is_interest_group_type = ig_Libertarians				
+					is_interest_group_type = ig_Reactionary
+					is_interest_group_type = ig_Fascists					
+				}
 			}
 		}
-	}
 }
 
 
