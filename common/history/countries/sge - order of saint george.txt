@@ -1,6 +1,6 @@
 ﻿COUNTRIES = {
 	c:SGE = {
-		effect_starting_technology_tier_2_tech = yes
+		effect_starting_technology_tier_4_tech = yes
 				
 		# Laws 
 		activate_law = law_type:law_theocracy
@@ -10,7 +10,8 @@
 		activate_law = law_type:law_per_capita_based_taxation
 		activate_law = law_type:law_appointed_bureaucrats
 		activate_law = law_type:law_racial_segregation
-		activate_law = law_type:law_warlord_economy
+		activate_law = law_type:law_mercantilism
+		activate_law = law_type:law_interventionism
 		activate_law = law_type:law_religious_schools
 		activate_law = law_type:law_local_police
 		activate_law = law_type:law_per_capita_based_taxation
@@ -30,13 +31,10 @@
 			name = western
 		}
     	add_journal_entry = { type = je_ru_tno_launch_raid }
-    	add_journal_entry = { type = je_ru_tno_unite_west_russia }
     	trigger_event = { id = tno_ru_events.10 }
 	    trigger_event = { id = tno_ru_events.15 days = 10 }
 
-		add_modifier = {
-         name = modifier_developing_economy
-    	} 
+		
 
 		add_modifier = {
 			name = modifier_warrior_order
