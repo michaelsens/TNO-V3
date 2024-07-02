@@ -1,0 +1,453 @@
+﻿namespace = tno_war_events
+
+tno_war_events.1 = {
+	type = country_event
+    hidden = yes
+
+	trigger = {
+        exists = c:KON
+		exists = c:SAF
+		ROOT = c:KON
+	}	
+	
+    immediate = {
+        create_diplomatic_play = {
+            name = saf
+            target_country = c:USA
+                type = dp_humiliation
+                war = no
+                escalation = 40
+                add_initiator_backers = { c:KZA c:KSA c:GER }
+                add_target_backers = { c:SAF  }
+                add_war_goal = {
+                    holder = c:KON
+                    type = conquer_state
+                    target_state = s:STATE_ZULULAND.region_state:SAF
+                }
+                add_war_goal = {
+                    holder = c:KON
+                    type = conquer_state
+                    target_state = s:STATE_BOTSWANA.region_state:SAF
+                }
+                add_war_goal = {
+                    holder = c:KSA
+                    type = conquer_state
+                    target_state = s:STATE_NORTHERN_CAPE.region_state:SAF
+                }
+                add_war_goal = {
+                    holder = c:USA
+                    type = make_protectorate
+                    target_country = c:KON
+                }
+                add_war_goal = {
+                    holder = c:USA
+                    type = make_protectorate
+                    target_country = c:KSA
+                }
+                add_war_goal = {
+                    holder = c:USA
+                    type = make_protectorate
+                    target_country = c:KZA
+                }
+                add_war_goal = {
+                    holder = c:SAF
+                    type = conquer_state
+                    target_state = s:STATE_NAMAQUALAND.region_state:KSA
+                }
+                add_war_goal = {
+                    holder = c:SAF
+                    type = conquer_state
+                    target_state = s:STATE_HEREROLAND.region_state:KSA
+                }
+                add_war_goal = {
+                    holder = c:SAF
+                    type = conquer_state
+                    target_state = s:STATE_BOTSWANA.region_state:KON
+                }
+                add_war_goal = {
+                    holder = c:SAF
+                    type = conquer_state
+                    target_state = s:STATE_LOURENCO_MARQUES.region_state:KON
+                }
+                add_war_goal = {
+                    holder = c:SAF
+                    type = conquer_state
+                    target_state = s:STATE_ZAMBEZI.region_state:KON
+                }
+                
+        }
+        hidden_effect = {
+				change_infamy = -150
+		}
+    }
+}
+
+tno_war_events.2 = {
+	type = country_event
+    hidden = yes
+
+	 
+
+	trigger = {
+        exists = c:PHI
+		exists = c:RNG
+		ROOT = c:PHI
+	}	
+	
+    immediate = {
+        create_diplomatic_play = {
+            name = phi
+            target_country = c:RNG
+                type = dp_annex_war
+                escalation = 50
+                war = no
+                add_initiator_backers = { c:JAP }
+                add_target_backers = { c:USA }
+                add_war_goal = {
+                    holder = c:RNG
+                    type = return_state
+                    target_state = s:STATE_MINDANAO.region_state:PHI
+                }
+                add_war_goal = {    
+                    holder = c:RNG
+                    type = return_state
+                    target_state = s:STATE_VISAYAS.region_state:PHI
+                }
+                add_war_goal = {
+                    holder = c:RNG
+                    type = return_state
+                    target_state = s:STATE_LUZON.region_state:PHI
+                }
+        }
+        hidden_effect = {
+				change_infamy = -150
+		}
+    }
+}
+
+tno_war_events.3 = {
+	type = country_event
+    hidden = yes
+
+	trigger = {
+        exists = c:ITA
+        exists = c:PAL
+		ROOT = c:TUR
+	}	
+	
+    immediate = {
+        create_diplomatic_play = {
+            name = tri
+            target_country = c:PAL
+                type = dp_annex_war
+                war = no
+                escalation = 80
+                add_target_backers = { c:GRE C:EGY c:ITA }
+                add_war_goal = {
+                    holder = c:GRE
+                    type = conquer_state
+                    target_state = s:STATE_WESTERN_THRACE.region_state:TUR
+                }
+                add_war_goal = {    
+                    holder = c:PAL
+                    type = annex_country
+                    target_state = s:STATE_SYRIA.region_state:SYR
+                }
+                add_war_goal = {    
+                    holder = c:TUR
+                    type = return_state
+                    target_state = s:STATE_AYDIN.region_state:ITA
+                }
+                add_war_goal = {    
+                    holder = c:TUR
+                    type = return_state
+                    target_state = s:STATE_EAST_AEGEAN_ISLANDS.region_state:ITA
+                }
+                add_war_goal = {    
+                    holder = c:TUR
+                    type = return_state
+                    target_state = s:STATE_CYPRUS.region_state:GRE
+                }
+        }
+        hidden_effect = {
+				change_infamy = -150
+		}
+    }
+}
+
+tno_war_events.4 = {
+	type = country_event
+    hidden = yes
+
+	trigger = {
+        exists = c:ITA
+		exists = c:IBE
+        root = c:IBE
+	}	
+	
+    immediate = {
+        create_diplomatic_play = {
+            name = tri2
+            target_country = c:ITA
+                type = dp_humiliation
+                war = no
+                escalation = 80
+                add_war_goal = {    
+                    holder = c:TMA
+                    type = annex_country
+                    target_state = s:STATE_ORAN.region_state:CMA
+                }
+                add_war_goal = {    
+                    holder = c:CMA
+                    type = annex_country
+                    target_state = s:STATE_CONSTANTINE.region_state:TMA
+                }
+        }
+        hidden_effect = {
+				change_infamy = -150
+		}
+    }
+}
+
+tno_war_events.5 = {
+    type = country_event
+    hidden = yes
+
+	trigger = {
+        exists = c:GER
+		exists = c:PRO
+        root = c:PRO
+	}	
+
+    immediate = {
+        create_diplomatic_play = {
+            name = gtr1
+            target_country = c:GER
+              type = dp_conquer_state
+              war = no
+              escalation = 20
+              target_state = s:STATE_BREST.region_state:GER
+              add_target_backers = { c:FIN c:HUN c:SLV c:DEN c:NET }
+              add_war_goal = {
+                holder = c:GER
+                type = contain_threat
+              }
+              add_war_goal = {
+                holder = c:PRO
+                type = annex_country
+                target_state = s:STATE_LATVIA.region_state:RKO
+              }
+              add_war_goal = {
+                holder = c:PRO
+                type = conquer_state
+                target_state = s:STATE_EAST_KARELIA.region_state:FIN
+              }
+              add_war_goal = {
+                holder = c:PRO
+                type = annex_country
+                target_state = s:STATE_MOSCOW.region_state:RKM
+              }
+              add_war_goal = {
+                holder = c:PRO
+                type = annex_country
+                target_state = s:STATE_KIEV.region_state:RKU
+              }
+              add_war_goal = {
+                holder = c:PRO
+                type = annex_country
+                target_state = s:STATE_KUBAN.region_state:RKK
+              }
+              add_war_goal = {
+                holder = c:PRO
+                type = annex_country
+                target_state = s:STATE_BREST.region_state:RKO
+              }
+        }
+        hidden_effect = {
+            change_infamy = -150
+        }
+    }
+   
+}
+
+tno_war_events.6 = {
+    type = country_event
+    hidden = yes
+
+	trigger = {
+        exists = c:GER
+		exists = c:MAD
+        exists = c:JAP
+        exists = c:SMD
+        root = c:SMD
+	}	
+
+    immediate = {
+        create_diplomatic_play = {
+               name = madagascar
+               target_country = c:MAD
+               type = dp_annex_war
+               war = no
+               target_state = s:STATE_NORTH_MADAGASCAR.region_state:MAD
+               add_initiator_backers = { c:JAP }
+               escalation = 40
+               add_war_goal = {
+                holder = c:MAD
+                type = conquer_state
+                target_state = s:STATE_SOUTH_MADAGASCAR.region_state:SMD
+              }
+        }
+    }
+}
+tno_war_events.10 = { # US retakes newengland 
+	type = country_event
+    hidden = yes
+
+	 
+
+	trigger = {
+        exists = c:USA
+		exists = c:NYR
+		ROOT = c:USA
+	}	
+	
+    immediate = {
+        remove_modifier = modifier_usa_newengland
+        create_diplomatic_play = {
+            name = usuattack
+            target_country = c:NYR
+                type = dp_humiliation
+                war = yes
+                add_target_backers = { c:USX c:NYP }
+                add_war_goal = {
+                    holder = c:USA
+                    type = conquer_state
+                    target_state = s:STATE_NEW_YORK.region_state:NYR
+                }
+                add_war_goal = {
+                    holder = c:USA
+                    type = conquer_state
+                    target_state = s:STATE_NEW_YORK.region_state:NYP
+                }
+                add_war_goal = {
+                    holder = c:USA
+                    type = conquer_state
+                    target_state = s:STATE_MASSACHUSETTS.region_state:USX
+                }
+                
+        }
+        hidden_effect = {
+				change_infamy = -40
+		}
+    }
+}
+
+
+
+tno_war_events.8 = { # US attacks southern clament
+	type = country_event
+    hidden = yes
+
+	 
+
+	trigger = {
+        exists = c:USA
+		exists = c:USU
+		ROOT = c:USA
+	}	
+	
+    immediate = {
+        remove_modifier = modifier_usa_crushusu
+        create_diplomatic_play = {
+            name = usuattack
+            target_country = c:USU
+                type = dp_annex_war
+                war = yes
+                escalation = 80
+        
+        }
+        hidden_effect = {
+				change_infamy = -40
+		}
+    }
+}
+
+tno_war_events.7 = { # US attacks rustbelt
+	type = country_event
+    hidden = yes
+
+	 
+
+	trigger = {
+        exists = c:USA
+		exists = c:USU
+		ROOT = c:USA
+	}	
+	
+    immediate = {
+        remove_modifier = modifier_usa_rustbelt
+        create_diplomatic_play = {
+            name = rust
+        
+            add_target_backers = { c:USH c:UUH }
+            target_country = c:USI
+                type = dp_annex_war
+                war = yes
+         
+                add_war_goal = {
+                    holder = c:USA
+                    type = conquer_state
+                    target_state = s:STATE_OHIO.region_state:USH
+                }
+                add_war_goal = {
+                    holder = c:USA
+                    type = conquer_state
+                    target_state = s:STATE_INDIANA.region_state:UUH
+                }
+        }
+        hidden_effect = {
+				change_infamy = -40
+		}
+    }
+}
+
+tno_war_events.9 = {   #COL Civil war start
+    type = country_event
+    placement = ROOT
+
+    hidden = yes
+
+    immediate = {
+        c:CLM = {
+            create_diplomatic_play = {
+                type = dp_revolution
+                name = col_civil_war
+                target_country = c:CRU
+                war = yes
+            }
+            hidden_effect = {
+				change_infamy = -999
+		    }
+            create_diplomatic_play = {
+                type = dp_revolution
+                name = col_civil_war
+                target_country = c:NGR
+                war = yes
+            }
+            hidden_effect = {
+				change_infamy = -999
+		    }
+        }
+        c:CRU = {
+            create_diplomatic_play = {
+                type = dp_revolution
+                name = col_civil_war
+                target_country = c:NGR
+                war = yes
+            }
+            hidden_effect = {
+				change_infamy = -999
+		    }
+        }
+    }
+}

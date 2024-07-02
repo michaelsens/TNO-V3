@@ -1,0 +1,492 @@
+﻿### Try to keep tags in alphabetical order if it's not too far gone, please.
+
+################################################################
+## DEFAULT COUNTRY NAMES EXAMPLE CAN BE USED WITH ANY COUNTRY ##
+################################################################
+
+PRO = {
+	dynamic_country_name = {
+		name = "Soviet Provisional Union"
+		adjective = "Soviet Provisional Union"
+
+		is_main_tag_only = yes
+		priority = 10
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_variable = wst_provisional 
+			}
+		}
+	}
+	dynamic_country_name = {
+		name ="Russian National Reclamation Government"
+		adjective = "Russian National Reclamation Government"
+
+		is_main_tag_only = yes
+		priority = 10
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_variable = omsk_provisional 
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = "Ultravisionary Russian Federation"
+		adjective = "Ultravisionary Russian Federation"
+
+		is_main_tag_only = yes
+		priority = 10
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_variable = uvs_provisional 
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = "Divine Provisional Mandate"
+		adjective = "Divine Provisional Mandate"
+
+		is_main_tag_only = yes
+		priority = 10
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_variable = div_provisional 
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = "Holy Russia Provisional Empire"
+		adjective = "Holy Russia Provisional Empire"
+
+		is_main_tag_only = yes
+		priority = 10
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_variable = hre_provisional 
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = "Provisional Ultranationalist Brotherhood"
+		adjective = "Provisional Ultranationalist Brotherhood"
+
+		is_main_tag_only = yes
+		priority = 10
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_variable = hyp_provisional 
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = "Provisional Central Siberian Republic"
+		adjective = "Provisional Central Siberian Republic"
+
+		is_main_tag_only = yes
+		priority = 10
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_variable = tom_provisional 
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = "Provisional Russian Federation"
+		adjective = "Provisional Russian Federation"
+
+		is_main_tag_only = yes
+		priority = 10
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_variable = nvb_provisional 
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = "Provisional Romanovian Empire"
+		adjective = "Provisional Romanovian Empire"
+
+		is_main_tag_only = yes
+		priority = 10
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_variable = vya_provisional 
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = "Provisional Romanovian Empire"
+		adjective = "Provisional Romanovian Empire"
+
+		is_main_tag_only = yes
+		priority = 10
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_variable = amr_provisional 
+			}
+		}
+	}
+}
+
+KON = {	
+	dynamic_country_name = {
+		name = "East African Interim Unity Government"
+		adjective = "Mandate"
+		
+		is_main_tag_only = yes
+		priority = 9999
+		
+		trigger = {
+			exists = c:USA
+			c:USA = {
+				OR = {
+					has_diplomatic_pact = {
+						who = c:KON
+						type = protectorate
+						is_initiator = yes
+					}
+					has_diplomatic_pact = {
+						who = c:KON
+						type = puppet
+						is_initiator = yes
+					}
+					has_diplomatic_pact = {
+						who = c:KON
+						type = dominion
+						is_initiator = yes
+					}
+					has_diplomatic_pact = {
+						who = c:KON
+						type = ofn_millgov
+						is_initiator = yes
+					}
+				}
+				
+			}
+		}
+	}
+}
+
+KSA = {
+    dynamic_country_name = {
+        name = "Free Angola"
+        
+        is_main_tag_only = yes
+        priority = 0
+        
+        trigger = {
+            scope:actor = { has_law = law_type:law_state_religion }
+        }
+    }	
+	dynamic_country_name = {
+		name = "Coalition Government of Angola"
+		adjective = "Mandate"
+		
+		is_main_tag_only = yes
+		priority = 9999
+		
+		trigger = {
+			exists = c:USA
+			c:USA = {
+				OR = {
+					has_diplomatic_pact = {
+						who = c:KSA
+						type = protectorate
+						is_initiator = yes
+					}
+					has_diplomatic_pact = {
+						who = c:KSA
+						type = puppet
+						is_initiator = yes
+					}
+					has_diplomatic_pact = {
+						who = c:KSA
+						type = dominion
+						is_initiator = yes
+					}
+					has_diplomatic_pact = {
+						who = c:KSA
+						type = ofn_millgov
+						is_initiator = yes
+					}
+				}
+				
+			}
+		}
+	}
+}
+
+KZA = {
+    dynamic_country_name = {
+        name = "Free Angola"
+        
+        is_main_tag_only = yes
+        priority = 0
+        
+        trigger = {
+            scope:actor = { has_law = law_type:law_state_religion }
+        }
+    }	
+	dynamic_country_name = {
+		name = "OFN Provisional Government of the Congo"
+		adjective = "Mandate"
+		
+		is_main_tag_only = yes
+		priority = 9999
+		
+		trigger = {
+			exists = c:USA
+			c:USA = {
+				OR = {
+					has_diplomatic_pact = {
+						who = c:KZA
+						type = protectorate
+						is_initiator = yes
+					}
+					has_diplomatic_pact = {
+						who = c:KZA
+						type = puppet
+						is_initiator = yes
+					}
+					has_diplomatic_pact = {
+						who = c:KZA
+						type = ofn_millgov
+						is_initiator = yes
+					}
+					has_diplomatic_pact = {
+						who = c:KZA
+						type = dominion
+						is_initiator = yes
+					}
+				}
+				
+			}
+		}
+	}
+}
+
+RUS = {
+	dynamic_country_name = {
+		name = "Soviet Union"
+		adjective = "Soviet Union"
+
+		is_main_tag_only = yes
+		priority = 10
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_variable = wst_provisional 
+			}
+		}
+	}
+	dynamic_country_name = {
+		name ="National Russian Government"
+		adjective = "National Russian Government"
+
+		is_main_tag_only = yes
+		priority = 10
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_variable = omsk_provisional 
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = "Ultravisionary Russian Federation"
+		adjective = "Ultravisionary Russian Federation"
+
+		is_main_tag_only = yes
+		priority = 10
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_variable = uvs_provisional 
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = "Divine Mandate of Russia"
+		adjective = "Divine Mandate of Russia"
+
+		is_main_tag_only = yes
+		priority = 10
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_variable = div_provisional 
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = "Holy Russia Empire"
+		adjective = "Holy Russia Empire"
+
+		is_main_tag_only = yes
+		priority = 10
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_variable = hre_provisional 
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = "Ultranationalist Russian Empire"
+		adjective = "Ultranationalist Russian Empire"
+
+		is_main_tag_only = yes
+		priority = 10
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_variable = hyp_provisional 
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = "Russian Republic"
+		adjective = "Russian Republic"
+
+		is_main_tag_only = yes
+		priority = 10
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_variable = tom_provisional 
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = "Russian Federation"
+		adjective = "Russian Federation"
+
+		is_main_tag_only = yes
+		priority = 10
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_variable = nvb_provisional 
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = "Romanovian Empire"
+		adjective = "Romanovian Empire"
+
+		is_main_tag_only = yes
+		priority = 10
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_variable = vya_provisional 
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = "Romanovian Empire"
+		adjective = "Romanovian Empire"
+
+		is_main_tag_only = yes
+		priority = 10
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_variable = amr_provisional 
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = "Union of Soviet Socialist Republics"
+		adjective = "Soviet"
+
+		is_main_tag_only = yes
+		priority = 100000
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_variable = irk_form_ussr 
+			}
+		}
+	}
+}
+
+NEJ = {
+	dynamic_country_name = {
+		name = "Kingdom of Saudi Arabia"
+		adjective = "Kingdom of Saudi Arabia"
+
+		is_main_tag_only = yes
+		priority = 10
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_law = law_type:law_monarchy
+			}
+		}
+	}
+
+
+}
+
+IRK = {
+	dynamic_country_name = {
+		name = "Far Eastern Soviet Socialist Republic"
+		adjective = "Far Eastern"
+
+		is_main_tag_only = yes
+		priority = 1000
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_variable = irk_form_far_east
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = "Union of Soviet Socialist Republics"
+		adjective = "Soviet"
+
+		is_main_tag_only = yes
+		priority = 100000
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_variable = irk_form_ussr 
+			}
+		}
+	}
+}
