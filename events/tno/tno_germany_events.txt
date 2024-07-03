@@ -1048,9 +1048,18 @@ tno_germany_events.17 = { # German Civil War
     c:GER = {
      set_immune_to_revolutions = yes
 
-     remove_diplomatic_pact = {
-         country = c:IRE
-         type = protectorate
+     if = {
+        limit = {
+            has_diplomatic_pact = {
+                who = c:IRE
+                type = protectorate
+                is_initiator = yes
+            }
+        }
+        remove_diplomatic_pact = {
+             country = c:IRE
+             type = protectorate
+         }
      }
      remove_diplomatic_pact = {
          country = c:SER
@@ -1900,7 +1909,7 @@ tno_germany_events.19 = {   #German Civil War WIn
             play_as = c:GER
         }
         c:GER = {
-            annex_with_incorporation = c:GAS
+            annex = c:GAS
             set_immune_to_revolutions = no
             #add_journal_entry = {type = je_ger_reclaim_ost}
             #add_journal_entry = {type = je_ger_reclaim_ost_2}
@@ -1939,7 +1948,7 @@ tno_germany_events.19 = {   #German Civil War WIn
             play_as = c:GER
         }
         c:GER = {
-            annex_with_incorporation = c:GHG
+            annex = c:GHG
             set_immune_to_revolutions = no
             #add_journal_entry = {type = je_ger_reclaim_ost}
             #add_journal_entry = {type = je_ger_reclaim_ost_2}
@@ -1983,7 +1992,7 @@ tno_germany_events.19 = {   #German Civil War WIn
             play_as = c:GER
         }
         c:GER = {
-            annex_with_incorporation = c:GMB
+            annex = c:GMB
             set_immune_to_revolutions = no
             #add_journal_entry = {type = je_ger_reclaim_ost}
             #add_journal_entry = {type = je_ger_reclaim_ost_2}
@@ -2023,7 +2032,7 @@ tno_germany_events.19 = {   #German Civil War WIn
             play_as = c:GER
         }
         c:GER = {
-            annex_with_incorporation = c:GRH
+            annex = c:GRH
             set_immune_to_revolutions = no
             #add_journal_entry = {type = je_ger_reclaim_ost}
             #add_journal_entry = {type = je_ger_reclaim_ost_2}
@@ -2466,5 +2475,144 @@ tno_germany_events.42 = { # Reclaimed all Outstanding Pakt Members
     option = {
         name = tno_germany_events.42.a
 
+    }
+}
+
+tno_germany_events.45 = { # Germany gets event about forming RK scandi
+	type = country_event
+    placement = ROOT
+ 
+    title = tno_germany_events.45.t
+    desc = tno_germany_events.45.d
+    flavor = tno_germany_events.45.f 
+
+   event_image = {
+		texture  = "gfx/event_pictures/super_pictures/lasthope.dds"
+	}
+    icon = "gfx/interface/icons/event_icons/event_fire.dds"
+
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 3
+
+    option = {
+        name = tno_germany_events.45.a
+
+		hidden_effect = {
+
+            remove_diplomatic_pact = {
+                country = c:SWE
+                type = protectorate
+            }
+            remove_diplomatic_pact = {
+                country = c:SWE
+                type = puppet
+            }
+            remove_diplomatic_pact = {
+                country = c:SWE
+                type = dominion
+            }
+            create_diplomatic_pact = {
+                country = c:SWE
+                type = reichskommissariat
+            }
+			c:SWE = {
+				trigger_event = { id = tno_germany_events.44 days = 0 popup = yes }
+			} 
+
+
+
+		}
+
+        custom_tooltip = scandi_text
+        
+
+	}
+
+    option = {
+        name = tno_germany_events.45.b
+
+		
+		
+
+	}
+
+}
+
+tno_germany_events.44 = {  # swedon annex Norway and forms RK scandi
+	type = country_event
+    placement = ROOT
+ 
+    title = tno_germany_events.44.t
+    desc = tno_germany_events.44.d
+    flavor = tno_germany_events.44.f 
+    event_image = {
+        texture = "gfx/event_pictures/event_pictures/ang.dds"
+    }
+
+	immediate = {
+		
+		
+        
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_fire.dds"
+
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 1
+
+	trigger = {
+		this ?= c:SWE
+	}
+	
+    option = { 
+        name = tno_germany_events.44.a
+        default_option = yes
+        
+		annex = c:NOR
+		
+        change_tag = SCI
+
+	
+    } 
+}
+
+tno_germany_events.43 = { # Generic Invasion by Russians
+    type = country_event
+    placement = root
+    title = tno_germany_events.43.t
+    desc = tno_germany_events.43.d
+    flavor = tno_germany_events.43.f
+    icon = "gfx/interface/icons/lens_toolbar_icons/recruit_generals_lens_option.dds"
+
+    duration = 6
+
+    immediate = {
+        ruler = {
+            save_scope_as = ger_leader
+        }
+        every_state = { # Ural, Saving Russia as a Scope
+            limit = { 
+                state_region = s:STATE_URAL
+            } 
+            owner = { 
+                save_scope_as = rus_nation_scope
+            }
+        }
+    }
+    
+    trigger = {
+    }
+
+    event_image = {
+        texture = "gfx/event_pictures/super_pictures/volkshalle.dds"
+    }
+
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    option = {
+        name = tno_germany_events.43.a
+        custom_tooltip = tno_germany_events.43.a.tt
     }
 }
