@@ -1,0 +1,76 @@
+﻿NGame = {
+	START_DATE = "1962.1.1" 
+	END_DATE = "1991.12.26" 
+}
+
+NWar = {
+    DAYS_BETWEEN_WAR_EXHAUSTION = 10 # Every this many days war support will be reduced by the war exhaustion formula
+	DEVASTATION_INCREASE_RATE = 0.1
+	DEVASTATION_FROM_BATTLES = 2.5
+	DEVASTATION_MAX = 250.0
+	OCCUPATION_STATE_BASE_WEIGHT = 2
+	OCCUPATION_STATE_POP_WEIGHT = 2
+	OCCUPATION_STATE_INCORPORATED_WEIGHT = 20
+}
+
+NAI = {
+	AI_PEACE_DESIRE_FROM_FORCE_BALANCE = 150
+	AI_PEACE_AGREEMENT_WHITE_PEACE_BASE = 0 # If no wargoals are being enforced on either side
+	AI_PEACE_AGREEMENT_WHITE_PEACE_WAR_DURATION = 0.1 # For each month the war goes on add this to the acceptance for a white peace
+	AI_CAPITULATE_BASE_VALUE = -50
+	AI_PEACE_AGREEMENT_BASE_VALUE = -40
+    TRADE_ROUTE_MIN_SCORE_TO_CREATE_BASE = 500 # If a potential trade route is scored less than this, don't create it
+}
+
+NEconomy = {
+	AI_PEACE_AGREEMENT_BASE_VALUE = -100
+    TRADE_ROUTE_MIN_SCORE_TO_CREATE_BASE = 500 # If a potential trade route is scored less than this, don't create it
+	AI_PEACE_AGREEMENT_WHITE_PEACE_BASE = 0 # If no wargoals are being enforced on either side
+	AI_PEACE_AGREEMENT_WHITE_PEACE_WAR_DURATION = 0.1 # For each month the war goes on add this to the acceptance for a white peace
+	AI_CAPITULATE_BASE_VALUE = -50
+	COUNTRY_GDP_MODIFIER_MAX_MULTIPLIER = 200000000
+}
+
+NEconomy = {
+	TRADE_ROUTE_BUREAUCRACY_COST = 5					# The cost in BUR per trade route
+	TRADE_ROUTE_MAX_LEVEL = 9999
+	SLAVE_TRADE_SLAVES_PER_WEEK = 10000
+
+}
+
+NPops = {
+	ASSIMILATION_RATE = 0.02					# Percentage of pops who will Assimilate into a different Culture each month, if eligible
+	MIN_ASSIMILATION = 100						# If there is any assmiliation at least this many people will assimilate
+	CONVERSION_RATE = 0.02						# Percentage of pops who will Convert into a different Religion each month, if eligible
+	MIN_CONVERSION = 100
+	MIGRATION_PULL_FROM_AVAILABLE_ARABLE_LAND = 0.1
+	MIGRATION_PULL_FROM_AVAILABLE_ARABLE_LAND_MAX = 8
+	MASS_MIGRATION_TARGET_MIN_ARABLE_LAND = 5
+	MIGRATION_PULL_REDUCTION_FROM_UNEMPLOYMENT_MAX = 20
+	MASS_MIGRATION_DURATION_MONTHS = 6
+}
+
+NDiplomacy = {
+	DEFAULT_TRUCE_MONTHS = 18
+	WAR_GOAL_REPARATIONS_MONTHS = 18
+	WAR_GOAL_HUMILIATION_MONTHS = 18
+	WAR_GOAL_BAN_SLAVERY_MONTHS = 18
+	WAR_GOAL_OPEN_MARKET_MONTHS = 18
+	WAR_GOAL_REGIME_CHANGE_MONTHS = 18
+}
+
+NPolitics = {
+	LAW_ENACTMENT_COOLDOWN_DAYS = 365
+	DAILY_INSTITUTION_SIZE_CHANGE =  0.0056
+	DEFAULT_LAW_ACTIVATION_DATE = "1962.1.1"
+	POWERFUL_IG_TRAIT_BONUS = 0.25	
+	REVOLUTION_SUPPORT_STATE_MULTIPLIER = 0.008
+	REVOLUTION_MAX_STATE_FRACTION = 0.55            # A revolution cannot be supported by more than this fraction of the states in the country
+}
+
+NCountry = {
+	INCORPORATION_TIME_SAME_CULTURE = 0.5				# Years if the state is a Homeland of one of the country's primary cultures
+	INCORPORATION_TIME_SAME_HERITAGE = 3			# Years if the state is a Homeland of a culture that matches of one of the country's primary cultures' Heritage traits
+	INCORPORATION_TIME_SAME_TRAIT = 6				# Years if the state is a Homeland of a culture with any trait in common with a country's primary cultures
+	INCORPORATION_TIME_NO_MATCH = 10				# Years if the state's Homeland cultures have nothing in common with the country's primary cultures
+}
