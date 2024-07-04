@@ -922,30 +922,13 @@ ig_suppression_events.1001 = {
 	option = { #Nothing happens
 		name = ig_suppression_events.1001.b
 		default_option = yes
-		if = {
+		random_interest_group = {
 			limit = {
-				NOT = { has_technology_researched = democracy }
-				can_research = democracy
+				NOT = { this = scope:target }
 			}
-			add_technology_progress = { progress = 2500 technology = democracy }
-		}
-		else_if = {
-			limit = {
-				NOT = { has_technology_researched = international_relations }
-				has_technology_researched = centralization
-				can_research = international_relations
-			}
-			add_technology_progress = { progress = 2500 technology = international_relations }
-		}
-		else = {
-			random_interest_group = {
-				limit = {
-					NOT = { this = scope:target }
-				}
-				add_modifier = {
-					name = plot_backing_down_modifier
-					months = normal_modifier_time
-				}
+			add_modifier = {
+				name = plot_backing_down_modifier
+				months = normal_modifier_time
 			}
 		}
 	}

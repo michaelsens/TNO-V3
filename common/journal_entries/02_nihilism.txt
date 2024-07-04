@@ -2,19 +2,11 @@
 	icon = "gfx/interface/icons/event_icons/event_protest.dds"
 	group = je_group_internal_affairs
 	is_shown_when_inactive = {
-		has_technology_researched = realism
-		NOT = {
-			has_technology_researched = socialism
-		}
 		has_law = law_type:law_state_religion
 	}
 
 	possible = {
-		has_technology_researched = realism
 		empty_agitator_slots >= 1
-		NOT = {
-			has_technology_researched = socialism
-		}
 		has_law = law_type:law_state_religion
 		OR = {
 			has_law = law_type:law_monarchy
