@@ -227,7 +227,6 @@ lobby_events.31 = {
 				}
 				any_political_lobby = { # existing member has opposing ideology
 					is_political_lobby_type = lobby_pro_country
-					target = { has_technology_researched = film }
 					any_lobby_member = {
 						leader = {
 							OR = {
@@ -252,7 +251,6 @@ lobby_events.31 = {
 				}
 				any_political_lobby = { # existing member has opposing ideology
 					is_political_lobby_type = lobby_pro_country
-					target = { has_technology_researched = film }
 					any_lobby_member = {
 						leader = {
 							OR = {
@@ -282,7 +280,6 @@ lobby_events.31 = {
 				}
 				any_political_lobby = { # existing member has opposing ideology
 					is_political_lobby_type = lobby_pro_country
-					target = { has_technology_researched = film }
 					any_lobby_member = {
 						leader = {
 							OR = {
@@ -313,7 +310,7 @@ lobby_events.31 = {
 			random_political_lobby = {
 				limit = {
 					is_political_lobby_type = lobby_pro_country
-					target = { has_technology_researched = film }
+					
 					any_lobby_member = {
 						leader = {
 							OR = {
@@ -356,7 +353,7 @@ lobby_events.31 = {
 				}
 				any_political_lobby = { # existing member has opposing ideology
 					is_political_lobby_type = lobby_pro_country
-					target = { has_technology_researched = film }
+					
 					any_lobby_member = {
 						leader = {
 							OR = {
@@ -387,7 +384,7 @@ lobby_events.31 = {
 			random_political_lobby = {
 				limit = {
 					is_political_lobby_type = lobby_pro_country
-					target = { has_technology_researched = film }
+					
 					any_lobby_member = {
 						leader = {
 							OR = {
@@ -1560,7 +1557,6 @@ lobby_events.51 = {
 	trigger = {
 		has_dlc_feature = lobbies
 		is_revolutionary = no
-		has_technology_researched = mass_communication
 		any_political_lobby = {
 			any_lobby_member = {
 				is_powerful = yes
@@ -1719,7 +1715,6 @@ lobby_events.53 = {
 	trigger = {
 		has_dlc_feature = lobbies
 		is_revolutionary = no
-		has_technology_researched = mass_communication
 		any_political_lobby = {
 			OR = {
 				is_political_lobby_type = lobby_pro_country
@@ -2114,43 +2109,6 @@ lobby_events.57 = {
 				is_political_lobby_type = lobby_pro_country
 				is_political_lobby_type = lobby_pro_overlord
 			}
-			OR = {
-				AND = {
-					target = { has_technology_researched = medical_degrees }
-					ROOT = {
-						NOT = { has_technology_researched = medical_degrees }
-						can_research = medical_degrees
-					}
-				}
-				AND = {
-					target = { has_technology_researched = pharmaceuticals }
-					ROOT = {
-						NOT = { has_technology_researched = pharmaceuticals }
-						can_research = pharmaceuticals
-					}
-				}
-				AND = {
-					target = { has_technology_researched = quinine }
-					ROOT = {
-						NOT = { has_technology_researched = quinine }
-						can_research = quinine
-					}
-				}
-				AND = {
-					target = { has_technology_researched = malaria_prevention }
-					ROOT = {
-						NOT = { has_technology_researched = malaria_prevention }
-						can_research = malaria_prevention
-					}
-				}
-				AND = {
-					target = { has_technology_researched = antibiotics }
-					ROOT = {
-						NOT = { has_technology_researched = antibiotics }
-						can_research = antibiotics
-					}
-				}
-			}
 		}
 	}
 
@@ -2160,43 +2118,6 @@ lobby_events.57 = {
 				OR = {
 					is_political_lobby_type = lobby_pro_country
 					is_political_lobby_type = lobby_pro_overlord
-				}
-				OR = {
-					AND = {
-						target = { has_technology_researched = medical_degrees }
-						ROOT = {
-							NOT = { has_technology_researched = medical_degrees }
-							can_research = medical_degrees
-						}
-					}
-					AND = {
-						target = { has_technology_researched = pharmaceuticals }
-						ROOT = {
-							NOT = { has_technology_researched = pharmaceuticals }
-							can_research = pharmaceuticals
-						}
-					}
-					AND = {
-						target = { has_technology_researched = quinine }
-						ROOT = {
-							NOT = { has_technology_researched = quinine }
-							can_research = quinine
-						}
-					}
-					AND = {
-						target = { has_technology_researched = malaria_prevention }
-						ROOT = {
-							NOT = { has_technology_researched = malaria_prevention }
-							can_research = malaria_prevention
-						}
-					}
-					AND = {
-						target = { has_technology_researched = antibiotics }
-						ROOT = {
-							NOT = { has_technology_researched = antibiotics }
-							can_research = antibiotics
-						}
-					}
 				}
 			}
 			target = {
@@ -2231,41 +2152,6 @@ lobby_events.57 = {
 			multiplier = money_amount_multiplier_small
 			months = normal_modifier_time
 		}
-		 if = {
- 			limit = {
- 				NOT = { has_technology_researched = medical_degrees }
- 				can_research = medical_degrees
- 			}
- 			add_technology_progress = { progress = 2500 technology = medical_degrees }
- 		}
- 		else_if = {
- 			limit = {
- 				NOT = { has_technology_researched = pharmaceuticals }
- 				can_research = pharmaceuticals
- 			}
- 			add_technology_progress = { progress = 3500 technology = pharmaceuticals }
- 		}
- 		 else_if = {
- 			limit = {
- 				NOT = { has_technology_researched = quinine }
- 				can_research = quinine
- 			}
- 			add_technology_progress = { progress = 3500 technology = quinine }
- 		}
- 		else_if = {
- 			limit = {
- 				NOT = { has_technology_researched = malaria_prevention }
- 				can_research = malaria_prevention
- 			}
- 			add_technology_progress = { progress = 5000 technology = malaria_prevention }
- 		}
- 		else_if = {
- 			limit = {
- 				NOT = { has_technology_researched = antibiotics }
- 				can_research = antibiotics
- 			}
- 			add_technology_progress = { progress = 5850 technology = antibiotics }
- 		}
 	}
 }
 
@@ -2400,7 +2286,6 @@ lobby_events.59 = {
 	trigger = {
 		has_dlc_feature = lobbies
 		is_revolutionary = no
-		has_technology_researched = mass_communication
 		NOT = {
 			OR = {
 				has_law = law_type:law_elder_council
@@ -2494,7 +2379,6 @@ lobby_events.60 = {
 	trigger = {
 		has_dlc_feature = lobbies
 		is_revolutionary = no
-		has_technology_researched = mass_communication
 		any_political_lobby = {
 			OR = {
 				is_political_lobby_type = lobby_anti_country

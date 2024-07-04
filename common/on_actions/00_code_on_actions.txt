@@ -202,7 +202,6 @@ on_monthly_pulse_country = {
 						NOT = {
 							has_variable = je_codify_chinese_border_ai_var
 						}
-						has_technology_researched = nationalism
 					}
 					set_variable = je_codify_chinese_border_ai_var
 					add_journal_entry = {
@@ -214,7 +213,6 @@ on_monthly_pulse_country = {
 						NOT = {
 							has_variable = je_consolidate_central_asia_ai_var
 						}
-						has_technology_researched = nationalism
 					}
 					set_variable = je_consolidate_central_asia_ai_var
 					add_journal_entry = {
@@ -226,7 +224,6 @@ on_monthly_pulse_country = {
 						NOT = {
 							has_variable = je_chinese_concessions_ai_var
 						}
-						has_technology_researched = railways
 						any_scope_state = {
 							OR = {
 								state_region = s:STATE_OUTER_MANCHURIA
@@ -972,7 +969,6 @@ on_acquired_technology = {
 		if = {
 			limit = {
 				is_player = yes
-				has_technology_researched = pumpjacks
 				NOT = { has_variable = first_oil_discovered }
 			}
 			set_variable = first_oil_discovered
@@ -3054,7 +3050,6 @@ on_revolution_start = {
 						has_law = law_type:law_isolationism
 					}
 					has_interest_marker_in_region = region_manchuria
-					has_technology_researched = electric_telegraph
 				}
 				any_country = {
 					OR = {
@@ -3064,7 +3059,6 @@ on_revolution_start = {
 					any_subject_or_below = {
 						c:KOR = this
 					}
-					has_technology_researched = electric_telegraph
 				}
 			}
 			c:JAP = {

@@ -19,7 +19,6 @@ technology_events.1 = { #New regulations for cars
 	icon = "gfx/interface/icons/event_icons/event_industry.dds"
 
 	trigger = {
-		has_technology_researched = combustion_engine
 		NOT = {
 			has_variable = car_regulations
 		}
@@ -95,15 +94,10 @@ technology_events.10 = { #Telephone line between countries
 	duration = 3
 
 	trigger = {
-		has_technology_researched = telephone
 		any_neighbouring_state = {
 			owner = {
 				relations:root >= relations_threshold:neutral
 				is_player = no
-				has_technology_researched = telephone
-				NOT = {
-					has_variable = telephone_exchange
-				}
 			}
 		}
 	}
@@ -113,7 +107,6 @@ technology_events.10 = { #Telephone line between countries
 			limit = {
 				owner = {
 					relations:root >= relations_threshold:neutral
-					has_technology_researched = telephone
 					NOT = {
 						has_variable = telephone_exchange
 					}
@@ -163,7 +156,6 @@ technology_events.20 = { #Radio Chats
 	duration = 3
 
 	trigger = {
-		has_technology_researched = radio
 		NOT = {
 			has_variable = radio_chats
 		}
@@ -324,7 +316,6 @@ technology_events.40 = { #Distributing photos of our country
 	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
 
 	trigger = {
-		has_technology_researched = camera
 		NOT = {
 			has_variable = country_photographs
 		}
@@ -375,7 +366,6 @@ technology_events.50 = {
 	duration = 3
 
 	trigger = {
-		has_technology_researched = canneries
 		NOT = {
 			has_variable = war_time_cans
 		}

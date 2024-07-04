@@ -3046,65 +3046,11 @@ lobby_events.12 = {
 			any_political_lobby = {
 				is_political_lobby_type = lobby_pro_country
 				target = {
-					OR = {
-						AND = {
-							has_technology_researched = romanticism
-							ROOT = {
-								NOT = {
-									has_technology_researched = realism
-								}
-							}
-						}
-						AND = {
-							has_technology_researched = realism
-							ROOT = {
-								NOT = {
-									has_technology_researched = camera
-								}
-							}
-						}
-						AND = {
-							has_technology_researched = camera
-							ROOT = {
-								NOT = {
-									has_technology_researched = film
-								}
-							}
-						}
-						has_technology_researched = film
-					}
 					relations:root >= relations_threshold:poor
 				}
 			}
 			any_diplomatically_relevant_country = {
 				is_valid_lobby_target = yes
-				OR = {
-					AND = {
-						has_technology_researched = romanticism
-						ROOT = {
-							NOT = {
-								has_technology_researched = realism
-							}
-						}
-					}
-					AND = {
-						has_technology_researched = realism
-						ROOT = {
-							NOT = {
-								has_technology_researched = camera
-							}
-						}
-					}
-					AND = {
-						has_technology_researched = camera
-						ROOT = {
-							NOT = {
-								has_technology_researched = film
-							}
-						}
-					}
-					has_technology_researched = film
-				}
 				relations:root >= relations_threshold:poor
 			}
 		}
@@ -3117,33 +3063,6 @@ lobby_events.12 = {
 					is_political_lobby_type = lobby_pro_country
 					target = {
 						relations:root >= relations_threshold:poor
-						OR = {
-							AND = {
-								has_technology_researched = romanticism
-								ROOT = {
-									NOT = {
-										has_technology_researched = realism
-									}
-								}
-							}
-							AND = {
-								has_technology_researched = realism
-								ROOT = {
-									NOT = {
-										has_technology_researched = camera
-									}
-								}
-							}
-							AND = {
-								has_technology_researched = camera
-								ROOT = {
-									NOT = {
-										has_technology_researched = film
-									}
-								}
-							}
-							has_technology_researched = film
-						}
 					}
 				}
 			}
@@ -3152,33 +3071,6 @@ lobby_events.12 = {
 					is_political_lobby_type = lobby_pro_country
 					target = {
 						relations:root >= relations_threshold:poor
-						OR = {
-							AND = {
-								has_technology_researched = romanticism
-								ROOT = {
-									NOT = {
-										has_technology_researched = realism
-									}
-								}
-							}
-							AND = {
-								has_technology_researched = realism
-								ROOT = {
-									NOT = {
-										has_technology_researched = camera
-									}
-								}
-							}
-							AND = {
-								has_technology_researched = camera
-								ROOT = {
-									NOT = {
-										has_technology_researched = film
-									}
-								}
-							}
-							has_technology_researched = film
-						}
 					}
 				}
 				target = {
@@ -3192,33 +3084,6 @@ lobby_events.12 = {
 				limit = {
 					is_valid_lobby_target = yes
 					relations:root >= relations_threshold:poor
-					OR = {
-						AND = {
-							has_technology_researched = romanticism
-							ROOT = {
-								NOT = {
-									has_technology_researched = realism
-								}
-							}
-						}
-						AND = {
-							has_technology_researched = realism
-							ROOT = {
-								NOT = {
-									has_technology_researched = camera
-								}
-							}
-						}
-						AND = {
-							has_technology_researched = camera
-							ROOT = {
-								NOT = {
-									has_technology_researched = film
-								}
-							}
-						}
-						has_technology_researched = film
-					}
 				}
 				save_scope_as = relevant_country
 			}
@@ -3233,48 +3098,21 @@ lobby_events.12 = {
 		}
 		if = {
 			limit = {
-				scope:relevant_country ?= {
-					has_technology_researched = film
-				}
 			}
 			set_variable = { name = impressive_cultech value = 1 }
 		}
 		else_if = {
 			limit = {
-				scope:relevant_country ?= {
-					has_technology_researched = camera
-				}
-				ROOT = {
-					NOT = {
-						has_technology_researched = film
-					}
-				}
 			}
 			set_variable = { name = impressive_cultech value = 2 }
 		}
 		else_if = {
 			limit = {
-				scope:relevant_country ?= {
-					has_technology_researched = realism
-				}
-				ROOT = {
-					NOT = {
-						has_technology_researched = camera
-					}
-				}
 			}
 			set_variable = { name = impressive_cultech value = 3 }
 		}
 		else_if = {
 			limit = {
-				scope:relevant_country ?= {
-					has_technology_researched = romanticism
-				}
-				ROOT = {
-					NOT = {
-						has_technology_researched = realism
-					}
-				}
 			}
 			set_variable = { name = impressive_cultech value = 4 }
 		}
