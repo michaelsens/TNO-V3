@@ -1,0 +1,2490 @@
+﻿fi_sell_share_effect3 = {
+scope:buy_share_target_building = { remove_modifier = invested_foriegn_building }
+if = {
+     limit = {
+          scope:buy_share_target_building = { is_building_type = building_coal_mine }
+     }
+     if = {
+          limit = {
+               scope:buy_share_target_building = {
+                    owner = scope:buy_share_country
+               }
+          }
+     }
+     else = {
+          if = {
+               limit = {
+                    NOT = { has_variable = $BUYER$_building_coal_mine_number }
+               }
+               set_variable = {
+                    name = $BUYER$_building_coal_mine_number
+                    value = 0
+               }
+          }
+          if = {
+               limit = { scope:buy_share_country = { NOT = { has_variable = total_invested_building } } }
+               scope:buy_share_country = { 
+                    set_variable = {
+                         name = total_invested_building
+                         value = 0
+                    }
+               }
+          }
+          change_variable = {
+               name = $BUYER$_building_coal_mine_number
+               add = var:$SELLER$_building_coal_mine_number
+          }
+          scope:buy_share_country = {
+               change_variable = {
+                    name = total_invested_building
+                    add = prev.var:$SELLER$_building_coal_mine_number
+               }
+          }
+     }
+     scope:seller_country = {
+          change_variable = {
+               name = total_invested_building
+               subtract = prev.var:$SELLER$_building_coal_mine_number
+          }
+     }
+     remove_variable = $SELLER$_building_coal_mine_number
+}
+else_if = {
+     limit = {
+          scope:buy_share_target_building = { is_building_type = building_iron_mine }
+     }
+     if = {
+          limit = {
+               scope:buy_share_target_building = {
+                    owner = scope:buy_share_country
+               }
+          }
+     }
+     else = {
+          if = {
+               limit = {
+                    NOT = { has_variable = $BUYER$_building_iron_mine_number }
+               }
+               set_variable = {
+                    name = $BUYER$_building_iron_mine_number
+                    value = 0
+               }
+          }
+          if = {
+               limit = { scope:buy_share_country = { NOT = { has_variable = total_invested_building } } }
+               scope:buy_share_country = { 
+                    set_variable = {
+                         name = total_invested_building
+                         value = 0
+                    }
+               }
+          }
+          change_variable = {
+               name = $BUYER$_building_iron_mine_number
+               add = var:$SELLER$_building_iron_mine_number
+          }
+          scope:buy_share_country = {
+               change_variable = {
+                    name = total_invested_building
+                    add = prev.var:$SELLER$_building_iron_mine_number
+               }
+          }
+     }
+     scope:seller_country = {
+          change_variable = {
+               name = total_invested_building
+               subtract = prev.var:$SELLER$_building_iron_mine_number
+          }
+     }
+     remove_variable = $SELLER$_building_iron_mine_number
+}
+else_if = {
+     limit = {
+          scope:buy_share_target_building = { is_building_type = building_lead_mine }
+     }
+     if = {
+          limit = {
+               scope:buy_share_target_building = {
+                    owner = scope:buy_share_country
+               }
+          }
+     }
+     else = {
+          if = {
+               limit = {
+                    NOT = { has_variable = $BUYER$_building_lead_mine_number }
+               }
+               set_variable = {
+                    name = $BUYER$_building_lead_mine_number
+                    value = 0
+               }
+          }
+          if = {
+               limit = { scope:buy_share_country = { NOT = { has_variable = total_invested_building } } }
+               scope:buy_share_country = { 
+                    set_variable = {
+                         name = total_invested_building
+                         value = 0
+                    }
+               }
+          }
+          change_variable = {
+               name = $BUYER$_building_lead_mine_number
+               add = var:$SELLER$_building_lead_mine_number
+          }
+          scope:buy_share_country = {
+               change_variable = {
+                    name = total_invested_building
+                    add = prev.var:$SELLER$_building_lead_mine_number
+               }
+          }
+     }
+     scope:seller_country = {
+          change_variable = {
+               name = total_invested_building
+               subtract = prev.var:$SELLER$_building_lead_mine_number
+          }
+     }
+     remove_variable = $SELLER$_building_lead_mine_number
+}
+else_if = {
+     limit = {
+          scope:buy_share_target_building = { is_building_type = building_sulfur_mine }
+     }
+     if = {
+          limit = {
+               scope:buy_share_target_building = {
+                    owner = scope:buy_share_country
+               }
+          }
+     }
+     else = {
+          if = {
+               limit = {
+                    NOT = { has_variable = $BUYER$_building_sulfur_mine_number }
+               }
+               set_variable = {
+                    name = $BUYER$_building_sulfur_mine_number
+                    value = 0
+               }
+          }
+          if = {
+               limit = { scope:buy_share_country = { NOT = { has_variable = total_invested_building } } }
+               scope:buy_share_country = { 
+                    set_variable = {
+                         name = total_invested_building
+                         value = 0
+                    }
+               }
+          }
+          change_variable = {
+               name = $BUYER$_building_sulfur_mine_number
+               add = var:$SELLER$_building_sulfur_mine_number
+          }
+          scope:buy_share_country = {
+               change_variable = {
+                    name = total_invested_building
+                    add = prev.var:$SELLER$_building_sulfur_mine_number
+               }
+          }
+     }
+     scope:seller_country = {
+          change_variable = {
+               name = total_invested_building
+               subtract = prev.var:$SELLER$_building_sulfur_mine_number
+          }
+     }
+     remove_variable = $SELLER$_building_sulfur_mine_number
+}
+else_if = {
+     limit = {
+          scope:buy_share_target_building = { is_building_type = building_gold_mine }
+     }
+     if = {
+          limit = {
+               scope:buy_share_target_building = {
+                    owner = scope:buy_share_country
+               }
+          }
+     }
+     else = {
+          if = {
+               limit = {
+                    NOT = { has_variable = $BUYER$_building_gold_mine_number }
+               }
+               set_variable = {
+                    name = $BUYER$_building_gold_mine_number
+                    value = 0
+               }
+          }
+          if = {
+               limit = { scope:buy_share_country = { NOT = { has_variable = total_invested_building } } }
+               scope:buy_share_country = { 
+                    set_variable = {
+                         name = total_invested_building
+                         value = 0
+                    }
+               }
+          }
+          change_variable = {
+               name = $BUYER$_building_gold_mine_number
+               add = var:$SELLER$_building_gold_mine_number
+          }
+          scope:buy_share_country = {
+               change_variable = {
+                    name = total_invested_building
+                    add = prev.var:$SELLER$_building_gold_mine_number
+               }
+          }
+     }
+     scope:seller_country = {
+          change_variable = {
+               name = total_invested_building
+               subtract = prev.var:$SELLER$_building_gold_mine_number
+          }
+     }
+     remove_variable = $SELLER$_building_gold_mine_number
+}
+else_if = {
+     limit = {
+          scope:buy_share_target_building = { is_building_type = building_logging_camp }
+     }
+     if = {
+          limit = {
+               scope:buy_share_target_building = {
+                    owner = scope:buy_share_country
+               }
+          }
+     }
+     else = {
+          if = {
+               limit = {
+                    NOT = { has_variable = $BUYER$_building_logging_camp_number }
+               }
+               set_variable = {
+                    name = $BUYER$_building_logging_camp_number
+                    value = 0
+               }
+          }
+          if = {
+               limit = { scope:buy_share_country = { NOT = { has_variable = total_invested_building } } }
+               scope:buy_share_country = { 
+                    set_variable = {
+                         name = total_invested_building
+                         value = 0
+                    }
+               }
+          }
+          change_variable = {
+               name = $BUYER$_building_logging_camp_number
+               add = var:$SELLER$_building_logging_camp_number
+          }
+          scope:buy_share_country = {
+               change_variable = {
+                    name = total_invested_building
+                    add = prev.var:$SELLER$_building_logging_camp_number
+               }
+          }
+     }
+     scope:seller_country = {
+          change_variable = {
+               name = total_invested_building
+               subtract = prev.var:$SELLER$_building_logging_camp_number
+          }
+     }
+     remove_variable = $SELLER$_building_logging_camp_number
+}
+else_if = {
+     limit = {
+          scope:buy_share_target_building = { is_building_type = building_fishing_wharf }
+     }
+     if = {
+          limit = {
+               scope:buy_share_target_building = {
+                    owner = scope:buy_share_country
+               }
+          }
+     }
+     else = {
+          if = {
+               limit = {
+                    NOT = { has_variable = $BUYER$_building_fishing_wharf_number }
+               }
+               set_variable = {
+                    name = $BUYER$_building_fishing_wharf_number
+                    value = 0
+               }
+          }
+          if = {
+               limit = { scope:buy_share_country = { NOT = { has_variable = total_invested_building } } }
+               scope:buy_share_country = { 
+                    set_variable = {
+                         name = total_invested_building
+                         value = 0
+                    }
+               }
+          }
+          change_variable = {
+               name = $BUYER$_building_fishing_wharf_number
+               add = var:$SELLER$_building_fishing_wharf_number
+          }
+          scope:buy_share_country = {
+               change_variable = {
+                    name = total_invested_building
+                    add = prev.var:$SELLER$_building_fishing_wharf_number
+               }
+          }
+     }
+     scope:seller_country = {
+          change_variable = {
+               name = total_invested_building
+               subtract = prev.var:$SELLER$_building_fishing_wharf_number
+          }
+     }
+     remove_variable = $SELLER$_building_fishing_wharf_number
+}
+else_if = {
+     limit = {
+          scope:buy_share_target_building = { is_building_type = building_whaling_station }
+     }
+     if = {
+          limit = {
+               scope:buy_share_target_building = {
+                    owner = scope:buy_share_country
+               }
+          }
+     }
+     else = {
+          if = {
+               limit = {
+                    NOT = { has_variable = $BUYER$_building_whaling_station_number }
+               }
+               set_variable = {
+                    name = $BUYER$_building_whaling_station_number
+                    value = 0
+               }
+          }
+          if = {
+               limit = { scope:buy_share_country = { NOT = { has_variable = total_invested_building } } }
+               scope:buy_share_country = { 
+                    set_variable = {
+                         name = total_invested_building
+                         value = 0
+                    }
+               }
+          }
+          change_variable = {
+               name = $BUYER$_building_whaling_station_number
+               add = var:$SELLER$_building_whaling_station_number
+          }
+          scope:buy_share_country = {
+               change_variable = {
+                    name = total_invested_building
+                    add = prev.var:$SELLER$_building_whaling_station_number
+               }
+          }
+     }
+     scope:seller_country = {
+          change_variable = {
+               name = total_invested_building
+               subtract = prev.var:$SELLER$_building_whaling_station_number
+          }
+     }
+     remove_variable = $SELLER$_building_whaling_station_number
+}
+else_if = {
+     limit = {
+          scope:buy_share_target_building = { is_building_type = building_rubber_plantation }
+     }
+     if = {
+          limit = {
+               scope:buy_share_target_building = {
+                    owner = scope:buy_share_country
+               }
+          }
+     }
+     else = {
+          if = {
+               limit = {
+                    NOT = { has_variable = $BUYER$_building_rubber_plantation_number }
+               }
+               set_variable = {
+                    name = $BUYER$_building_rubber_plantation_number
+                    value = 0
+               }
+          }
+          if = {
+               limit = { scope:buy_share_country = { NOT = { has_variable = total_invested_building } } }
+               scope:buy_share_country = { 
+                    set_variable = {
+                         name = total_invested_building
+                         value = 0
+                    }
+               }
+          }
+          change_variable = {
+               name = $BUYER$_building_rubber_plantation_number
+               add = var:$SELLER$_building_rubber_plantation_number
+          }
+          scope:buy_share_country = {
+               change_variable = {
+                    name = total_invested_building
+                    add = prev.var:$SELLER$_building_rubber_plantation_number
+               }
+          }
+     }
+     scope:seller_country = {
+          change_variable = {
+               name = total_invested_building
+               subtract = prev.var:$SELLER$_building_rubber_plantation_number
+          }
+     }
+     remove_variable = $SELLER$_building_rubber_plantation_number
+}
+else_if = {
+     limit = {
+          scope:buy_share_target_building = { is_building_type = building_oil_rig }
+     }
+     if = {
+          limit = {
+               scope:buy_share_target_building = {
+                    owner = scope:buy_share_country
+               }
+          }
+     }
+     else = {
+          if = {
+               limit = {
+                    NOT = { has_variable = $BUYER$_building_oil_rig_number }
+               }
+               set_variable = {
+                    name = $BUYER$_building_oil_rig_number
+                    value = 0
+               }
+          }
+          if = {
+               limit = { scope:buy_share_country = { NOT = { has_variable = total_invested_building } } }
+               scope:buy_share_country = { 
+                    set_variable = {
+                         name = total_invested_building
+                         value = 0
+                    }
+               }
+          }
+          change_variable = {
+               name = $BUYER$_building_oil_rig_number
+               add = var:$SELLER$_building_oil_rig_number
+          }
+          scope:buy_share_country = {
+               change_variable = {
+                    name = total_invested_building
+                    add = prev.var:$SELLER$_building_oil_rig_number
+               }
+          }
+     }
+     scope:seller_country = {
+          change_variable = {
+               name = total_invested_building
+               subtract = prev.var:$SELLER$_building_oil_rig_number
+          }
+     }
+     remove_variable = $SELLER$_building_oil_rig_number
+}
+else_if = {
+     limit = {
+          scope:buy_share_target_building = { is_building_type = building_railway }
+     }
+     if = {
+          limit = {
+               scope:buy_share_target_building = {
+                    owner = scope:buy_share_country
+               }
+          }
+     }
+     else = {
+          if = {
+               limit = {
+                    NOT = { has_variable = $BUYER$_building_railway_number }
+               }
+               set_variable = {
+                    name = $BUYER$_building_railway_number
+                    value = 0
+               }
+          }
+          if = {
+               limit = { scope:buy_share_country = { NOT = { has_variable = total_invested_building } } }
+               scope:buy_share_country = { 
+                    set_variable = {
+                         name = total_invested_building
+                         value = 0
+                    }
+               }
+          }
+          change_variable = {
+               name = $BUYER$_building_railway_number
+               add = var:$SELLER$_building_railway_number
+          }
+          scope:buy_share_country = {
+               change_variable = {
+                    name = total_invested_building
+                    add = prev.var:$SELLER$_building_railway_number
+               }
+          }
+     }
+     scope:seller_country = {
+          change_variable = {
+               name = total_invested_building
+               subtract = prev.var:$SELLER$_building_railway_number
+          }
+     }
+     remove_variable = $SELLER$_building_railway_number
+}
+else_if = {
+     limit = {
+          scope:buy_share_target_building = { is_building_type = building_coffee_plantation }
+     }
+     if = {
+          limit = {
+               scope:buy_share_target_building = {
+                    owner = scope:buy_share_country
+               }
+          }
+     }
+     else = {
+          if = {
+               limit = {
+                    NOT = { has_variable = $BUYER$_building_coffee_plantation_number }
+               }
+               set_variable = {
+                    name = $BUYER$_building_coffee_plantation_number
+                    value = 0
+               }
+          }
+          if = {
+               limit = { scope:buy_share_country = { NOT = { has_variable = total_invested_building } } }
+               scope:buy_share_country = { 
+                    set_variable = {
+                         name = total_invested_building
+                         value = 0
+                    }
+               }
+          }
+          change_variable = {
+               name = $BUYER$_building_coffee_plantation_number
+               add = var:$SELLER$_building_coffee_plantation_number
+          }
+          scope:buy_share_country = {
+               change_variable = {
+                    name = total_invested_building
+                    add = prev.var:$SELLER$_building_coffee_plantation_number
+               }
+          }
+     }
+     scope:seller_country = {
+          change_variable = {
+               name = total_invested_building
+               subtract = prev.var:$SELLER$_building_coffee_plantation_number
+          }
+     }
+     remove_variable = $SELLER$_building_coffee_plantation_number
+}
+else_if = {
+     limit = {
+          scope:buy_share_target_building = { is_building_type = building_cotton_plantation }
+     }
+     if = {
+          limit = {
+               scope:buy_share_target_building = {
+                    owner = scope:buy_share_country
+               }
+          }
+     }
+     else = {
+          if = {
+               limit = {
+                    NOT = { has_variable = $BUYER$_building_cotton_plantation_number }
+               }
+               set_variable = {
+                    name = $BUYER$_building_cotton_plantation_number
+                    value = 0
+               }
+          }
+          if = {
+               limit = { scope:buy_share_country = { NOT = { has_variable = total_invested_building } } }
+               scope:buy_share_country = { 
+                    set_variable = {
+                         name = total_invested_building
+                         value = 0
+                    }
+               }
+          }
+          change_variable = {
+               name = $BUYER$_building_cotton_plantation_number
+               add = var:$SELLER$_building_cotton_plantation_number
+          }
+          scope:buy_share_country = {
+               change_variable = {
+                    name = total_invested_building
+                    add = prev.var:$SELLER$_building_cotton_plantation_number
+               }
+          }
+     }
+     scope:seller_country = {
+          change_variable = {
+               name = total_invested_building
+               subtract = prev.var:$SELLER$_building_cotton_plantation_number
+          }
+     }
+     remove_variable = $SELLER$_building_cotton_plantation_number
+}
+else_if = {
+     limit = {
+          scope:buy_share_target_building = { is_building_type = building_dye_plantation }
+     }
+     if = {
+          limit = {
+               scope:buy_share_target_building = {
+                    owner = scope:buy_share_country
+               }
+          }
+     }
+     else = {
+          if = {
+               limit = {
+                    NOT = { has_variable = $BUYER$_building_dye_plantation_number }
+               }
+               set_variable = {
+                    name = $BUYER$_building_dye_plantation_number
+                    value = 0
+               }
+          }
+          if = {
+               limit = { scope:buy_share_country = { NOT = { has_variable = total_invested_building } } }
+               scope:buy_share_country = { 
+                    set_variable = {
+                         name = total_invested_building
+                         value = 0
+                    }
+               }
+          }
+          change_variable = {
+               name = $BUYER$_building_dye_plantation_number
+               add = var:$SELLER$_building_dye_plantation_number
+          }
+          scope:buy_share_country = {
+               change_variable = {
+                    name = total_invested_building
+                    add = prev.var:$SELLER$_building_dye_plantation_number
+               }
+          }
+     }
+     scope:seller_country = {
+          change_variable = {
+               name = total_invested_building
+               subtract = prev.var:$SELLER$_building_dye_plantation_number
+          }
+     }
+     remove_variable = $SELLER$_building_dye_plantation_number
+}
+else_if = {
+     limit = {
+          scope:buy_share_target_building = { is_building_type = building_opium_plantation }
+     }
+     if = {
+          limit = {
+               scope:buy_share_target_building = {
+                    owner = scope:buy_share_country
+               }
+          }
+     }
+     else = {
+          if = {
+               limit = {
+                    NOT = { has_variable = $BUYER$_building_opium_plantation_number }
+               }
+               set_variable = {
+                    name = $BUYER$_building_opium_plantation_number
+                    value = 0
+               }
+          }
+          if = {
+               limit = { scope:buy_share_country = { NOT = { has_variable = total_invested_building } } }
+               scope:buy_share_country = { 
+                    set_variable = {
+                         name = total_invested_building
+                         value = 0
+                    }
+               }
+          }
+          change_variable = {
+               name = $BUYER$_building_opium_plantation_number
+               add = var:$SELLER$_building_opium_plantation_number
+          }
+          scope:buy_share_country = {
+               change_variable = {
+                    name = total_invested_building
+                    add = prev.var:$SELLER$_building_opium_plantation_number
+               }
+          }
+     }
+     scope:seller_country = {
+          change_variable = {
+               name = total_invested_building
+               subtract = prev.var:$SELLER$_building_opium_plantation_number
+          }
+     }
+     remove_variable = $SELLER$_building_opium_plantation_number
+}
+else_if = {
+     limit = {
+          scope:buy_share_target_building = { is_building_type = building_tea_plantation }
+     }
+     if = {
+          limit = {
+               scope:buy_share_target_building = {
+                    owner = scope:buy_share_country
+               }
+          }
+     }
+     else = {
+          if = {
+               limit = {
+                    NOT = { has_variable = $BUYER$_building_tea_plantation_number }
+               }
+               set_variable = {
+                    name = $BUYER$_building_tea_plantation_number
+                    value = 0
+               }
+          }
+          if = {
+               limit = { scope:buy_share_country = { NOT = { has_variable = total_invested_building } } }
+               scope:buy_share_country = { 
+                    set_variable = {
+                         name = total_invested_building
+                         value = 0
+                    }
+               }
+          }
+          change_variable = {
+               name = $BUYER$_building_tea_plantation_number
+               add = var:$SELLER$_building_tea_plantation_number
+          }
+          scope:buy_share_country = {
+               change_variable = {
+                    name = total_invested_building
+                    add = prev.var:$SELLER$_building_tea_plantation_number
+               }
+          }
+     }
+     scope:seller_country = {
+          change_variable = {
+               name = total_invested_building
+               subtract = prev.var:$SELLER$_building_tea_plantation_number
+          }
+     }
+     remove_variable = $SELLER$_building_tea_plantation_number
+}
+else_if = {
+     limit = {
+          scope:buy_share_target_building = { is_building_type = building_tobacco_plantation }
+     }
+     if = {
+          limit = {
+               scope:buy_share_target_building = {
+                    owner = scope:buy_share_country
+               }
+          }
+     }
+     else = {
+          if = {
+               limit = {
+                    NOT = { has_variable = $BUYER$_building_tobacco_plantation_number }
+               }
+               set_variable = {
+                    name = $BUYER$_building_tobacco_plantation_number
+                    value = 0
+               }
+          }
+          if = {
+               limit = { scope:buy_share_country = { NOT = { has_variable = total_invested_building } } }
+               scope:buy_share_country = { 
+                    set_variable = {
+                         name = total_invested_building
+                         value = 0
+                    }
+               }
+          }
+          change_variable = {
+               name = $BUYER$_building_tobacco_plantation_number
+               add = var:$SELLER$_building_tobacco_plantation_number
+          }
+          scope:buy_share_country = {
+               change_variable = {
+                    name = total_invested_building
+                    add = prev.var:$SELLER$_building_tobacco_plantation_number
+               }
+          }
+     }
+     scope:seller_country = {
+          change_variable = {
+               name = total_invested_building
+               subtract = prev.var:$SELLER$_building_tobacco_plantation_number
+          }
+     }
+     remove_variable = $SELLER$_building_tobacco_plantation_number
+}
+else_if = {
+     limit = {
+          scope:buy_share_target_building = { is_building_type = building_sugar_plantation }
+     }
+     if = {
+          limit = {
+               scope:buy_share_target_building = {
+                    owner = scope:buy_share_country
+               }
+          }
+     }
+     else = {
+          if = {
+               limit = {
+                    NOT = { has_variable = $BUYER$_building_sugar_plantation_number }
+               }
+               set_variable = {
+                    name = $BUYER$_building_sugar_plantation_number
+                    value = 0
+               }
+          }
+          if = {
+               limit = { scope:buy_share_country = { NOT = { has_variable = total_invested_building } } }
+               scope:buy_share_country = { 
+                    set_variable = {
+                         name = total_invested_building
+                         value = 0
+                    }
+               }
+          }
+          change_variable = {
+               name = $BUYER$_building_sugar_plantation_number
+               add = var:$SELLER$_building_sugar_plantation_number
+          }
+          scope:buy_share_country = {
+               change_variable = {
+                    name = total_invested_building
+                    add = prev.var:$SELLER$_building_sugar_plantation_number
+               }
+          }
+     }
+     scope:seller_country = {
+          change_variable = {
+               name = total_invested_building
+               subtract = prev.var:$SELLER$_building_sugar_plantation_number
+          }
+     }
+     remove_variable = $SELLER$_building_sugar_plantation_number
+}
+else_if = {
+     limit = {
+          scope:buy_share_target_building = { is_building_type = building_banana_plantation }
+     }
+     if = {
+          limit = {
+               scope:buy_share_target_building = {
+                    owner = scope:buy_share_country
+               }
+          }
+     }
+     else = {
+          if = {
+               limit = {
+                    NOT = { has_variable = $BUYER$_building_banana_plantation_number }
+               }
+               set_variable = {
+                    name = $BUYER$_building_banana_plantation_number
+                    value = 0
+               }
+          }
+          if = {
+               limit = { scope:buy_share_country = { NOT = { has_variable = total_invested_building } } }
+               scope:buy_share_country = { 
+                    set_variable = {
+                         name = total_invested_building
+                         value = 0
+                    }
+               }
+          }
+          change_variable = {
+               name = $BUYER$_building_banana_plantation_number
+               add = var:$SELLER$_building_banana_plantation_number
+          }
+          scope:buy_share_country = {
+               change_variable = {
+                    name = total_invested_building
+                    add = prev.var:$SELLER$_building_banana_plantation_number
+               }
+          }
+     }
+     scope:seller_country = {
+          change_variable = {
+               name = total_invested_building
+               subtract = prev.var:$SELLER$_building_banana_plantation_number
+          }
+     }
+     remove_variable = $SELLER$_building_banana_plantation_number
+}
+else_if = {
+     limit = {
+          scope:buy_share_target_building = { is_building_type = building_silk_plantation }
+     }
+     if = {
+          limit = {
+               scope:buy_share_target_building = {
+                    owner = scope:buy_share_country
+               }
+          }
+     }
+     else = {
+          if = {
+               limit = {
+                    NOT = { has_variable = $BUYER$_building_silk_plantation_number }
+               }
+               set_variable = {
+                    name = $BUYER$_building_silk_plantation_number
+                    value = 0
+               }
+          }
+          if = {
+               limit = { scope:buy_share_country = { NOT = { has_variable = total_invested_building } } }
+               scope:buy_share_country = { 
+                    set_variable = {
+                         name = total_invested_building
+                         value = 0
+                    }
+               }
+          }
+          change_variable = {
+               name = $BUYER$_building_silk_plantation_number
+               add = var:$SELLER$_building_silk_plantation_number
+          }
+          scope:buy_share_country = {
+               change_variable = {
+                    name = total_invested_building
+                    add = prev.var:$SELLER$_building_silk_plantation_number
+               }
+          }
+     }
+     scope:seller_country = {
+          change_variable = {
+               name = total_invested_building
+               subtract = prev.var:$SELLER$_building_silk_plantation_number
+          }
+     }
+     remove_variable = $SELLER$_building_silk_plantation_number
+}
+else_if = {
+     limit = {
+          scope:buy_share_target_building = { is_building_type = building_rye_farm }
+     }
+     if = {
+          limit = {
+               scope:buy_share_target_building = {
+                    owner = scope:buy_share_country
+               }
+          }
+     }
+     else = {
+          if = {
+               limit = {
+                    NOT = { has_variable = $BUYER$_building_rye_farm_number }
+               }
+               set_variable = {
+                    name = $BUYER$_building_rye_farm_number
+                    value = 0
+               }
+          }
+          if = {
+               limit = { scope:buy_share_country = { NOT = { has_variable = total_invested_building } } }
+               scope:buy_share_country = { 
+                    set_variable = {
+                         name = total_invested_building
+                         value = 0
+                    }
+               }
+          }
+          change_variable = {
+               name = $BUYER$_building_rye_farm_number
+               add = var:$SELLER$_building_rye_farm_number
+          }
+          scope:buy_share_country = {
+               change_variable = {
+                    name = total_invested_building
+                    add = prev.var:$SELLER$_building_rye_farm_number
+               }
+          }
+     }
+     scope:seller_country = {
+          change_variable = {
+               name = total_invested_building
+               subtract = prev.var:$SELLER$_building_rye_farm_number
+          }
+     }
+     remove_variable = $SELLER$_building_rye_farm_number
+}
+else_if = {
+     limit = {
+          scope:buy_share_target_building = { is_building_type = building_wheat_farm }
+     }
+     if = {
+          limit = {
+               scope:buy_share_target_building = {
+                    owner = scope:buy_share_country
+               }
+          }
+     }
+     else = {
+          if = {
+               limit = {
+                    NOT = { has_variable = $BUYER$_building_wheat_farm_number }
+               }
+               set_variable = {
+                    name = $BUYER$_building_wheat_farm_number
+                    value = 0
+               }
+          }
+          if = {
+               limit = { scope:buy_share_country = { NOT = { has_variable = total_invested_building } } }
+               scope:buy_share_country = { 
+                    set_variable = {
+                         name = total_invested_building
+                         value = 0
+                    }
+               }
+          }
+          change_variable = {
+               name = $BUYER$_building_wheat_farm_number
+               add = var:$SELLER$_building_wheat_farm_number
+          }
+          scope:buy_share_country = {
+               change_variable = {
+                    name = total_invested_building
+                    add = prev.var:$SELLER$_building_wheat_farm_number
+               }
+          }
+     }
+     scope:seller_country = {
+          change_variable = {
+               name = total_invested_building
+               subtract = prev.var:$SELLER$_building_wheat_farm_number
+          }
+     }
+     remove_variable = $SELLER$_building_wheat_farm_number
+}
+else_if = {
+     limit = {
+          scope:buy_share_target_building = { is_building_type = building_rice_farm }
+     }
+     if = {
+          limit = {
+               scope:buy_share_target_building = {
+                    owner = scope:buy_share_country
+               }
+          }
+     }
+     else = {
+          if = {
+               limit = {
+                    NOT = { has_variable = $BUYER$_building_rice_farm_number }
+               }
+               set_variable = {
+                    name = $BUYER$_building_rice_farm_number
+                    value = 0
+               }
+          }
+          if = {
+               limit = { scope:buy_share_country = { NOT = { has_variable = total_invested_building } } }
+               scope:buy_share_country = { 
+                    set_variable = {
+                         name = total_invested_building
+                         value = 0
+                    }
+               }
+          }
+          change_variable = {
+               name = $BUYER$_building_rice_farm_number
+               add = var:$SELLER$_building_rice_farm_number
+          }
+          scope:buy_share_country = {
+               change_variable = {
+                    name = total_invested_building
+                    add = prev.var:$SELLER$_building_rice_farm_number
+               }
+          }
+     }
+     scope:seller_country = {
+          change_variable = {
+               name = total_invested_building
+               subtract = prev.var:$SELLER$_building_rice_farm_number
+          }
+     }
+     remove_variable = $SELLER$_building_rice_farm_number
+}
+else_if = {
+     limit = {
+          scope:buy_share_target_building = { is_building_type = building_vineyard_plantation }
+     }
+     if = {
+          limit = {
+               scope:buy_share_target_building = {
+                    owner = scope:buy_share_country
+               }
+          }
+     }
+     else = {
+          if = {
+               limit = {
+                    NOT = { has_variable = $BUYER$_building_vineyard_plantation_number }
+               }
+               set_variable = {
+                    name = $BUYER$_building_vineyard_plantation_number
+                    value = 0
+               }
+          }
+          if = {
+               limit = { scope:buy_share_country = { NOT = { has_variable = total_invested_building } } }
+               scope:buy_share_country = { 
+                    set_variable = {
+                         name = total_invested_building
+                         value = 0
+                    }
+               }
+          }
+          change_variable = {
+               name = $BUYER$_building_vineyard_plantation_number
+               add = var:$SELLER$_building_vineyard_plantation_number
+          }
+          scope:buy_share_country = {
+               change_variable = {
+                    name = total_invested_building
+                    add = prev.var:$SELLER$_building_vineyard_plantation_number
+               }
+          }
+     }
+     scope:seller_country = {
+          change_variable = {
+               name = total_invested_building
+               subtract = prev.var:$SELLER$_building_vineyard_plantation_number
+          }
+     }
+     remove_variable = $SELLER$_building_vineyard_plantation_number
+}
+else_if = {
+     limit = {
+          scope:buy_share_target_building = { is_building_type = building_maize_farm }
+     }
+     if = {
+          limit = {
+               scope:buy_share_target_building = {
+                    owner = scope:buy_share_country
+               }
+          }
+     }
+     else = {
+          if = {
+               limit = {
+                    NOT = { has_variable = $BUYER$_building_maize_farm_number }
+               }
+               set_variable = {
+                    name = $BUYER$_building_maize_farm_number
+                    value = 0
+               }
+          }
+          if = {
+               limit = { scope:buy_share_country = { NOT = { has_variable = total_invested_building } } }
+               scope:buy_share_country = { 
+                    set_variable = {
+                         name = total_invested_building
+                         value = 0
+                    }
+               }
+          }
+          change_variable = {
+               name = $BUYER$_building_maize_farm_number
+               add = var:$SELLER$_building_maize_farm_number
+          }
+          scope:buy_share_country = {
+               change_variable = {
+                    name = total_invested_building
+                    add = prev.var:$SELLER$_building_maize_farm_number
+               }
+          }
+     }
+     scope:seller_country = {
+          change_variable = {
+               name = total_invested_building
+               subtract = prev.var:$SELLER$_building_maize_farm_number
+          }
+     }
+     remove_variable = $SELLER$_building_maize_farm_number
+}
+else_if = {
+     limit = {
+          scope:buy_share_target_building = { is_building_type = building_millet_farm }
+     }
+     if = {
+          limit = {
+               scope:buy_share_target_building = {
+                    owner = scope:buy_share_country
+               }
+          }
+     }
+     else = {
+          if = {
+               limit = {
+                    NOT = { has_variable = $BUYER$_building_millet_farm_number }
+               }
+               set_variable = {
+                    name = $BUYER$_building_millet_farm_number
+                    value = 0
+               }
+          }
+          if = {
+               limit = { scope:buy_share_country = { NOT = { has_variable = total_invested_building } } }
+               scope:buy_share_country = { 
+                    set_variable = {
+                         name = total_invested_building
+                         value = 0
+                    }
+               }
+          }
+          change_variable = {
+               name = $BUYER$_building_millet_farm_number
+               add = var:$SELLER$_building_millet_farm_number
+          }
+          scope:buy_share_country = {
+               change_variable = {
+                    name = total_invested_building
+                    add = prev.var:$SELLER$_building_millet_farm_number
+               }
+          }
+     }
+     scope:seller_country = {
+          change_variable = {
+               name = total_invested_building
+               subtract = prev.var:$SELLER$_building_millet_farm_number
+          }
+     }
+     remove_variable = $SELLER$_building_millet_farm_number
+}
+else_if = {
+     limit = {
+          scope:buy_share_target_building = { is_building_type = building_livestock_ranch }
+     }
+     if = {
+          limit = {
+               scope:buy_share_target_building = {
+                    owner = scope:buy_share_country
+               }
+          }
+     }
+     else = {
+          if = {
+               limit = {
+                    NOT = { has_variable = $BUYER$_building_livestock_ranch_number }
+               }
+               set_variable = {
+                    name = $BUYER$_building_livestock_ranch_number
+                    value = 0
+               }
+          }
+          if = {
+               limit = { scope:buy_share_country = { NOT = { has_variable = total_invested_building } } }
+               scope:buy_share_country = { 
+                    set_variable = {
+                         name = total_invested_building
+                         value = 0
+                    }
+               }
+          }
+          change_variable = {
+               name = $BUYER$_building_livestock_ranch_number
+               add = var:$SELLER$_building_livestock_ranch_number
+          }
+          scope:buy_share_country = {
+               change_variable = {
+                    name = total_invested_building
+                    add = prev.var:$SELLER$_building_livestock_ranch_number
+               }
+          }
+     }
+     scope:seller_country = {
+          change_variable = {
+               name = total_invested_building
+               subtract = prev.var:$SELLER$_building_livestock_ranch_number
+          }
+     }
+     remove_variable = $SELLER$_building_livestock_ranch_number
+}
+else_if = {
+     limit = {
+          scope:buy_share_target_building = { is_building_type = building_food_industry }
+     }
+     if = {
+          limit = {
+               scope:buy_share_target_building = {
+                    owner = scope:buy_share_country
+               }
+          }
+     }
+     else = {
+          if = {
+               limit = {
+                    NOT = { has_variable = $BUYER$_building_food_industry_number }
+               }
+               set_variable = {
+                    name = $BUYER$_building_food_industry_number
+                    value = 0
+               }
+          }
+          if = {
+               limit = { scope:buy_share_country = { NOT = { has_variable = total_invested_building } } }
+               scope:buy_share_country = { 
+                    set_variable = {
+                         name = total_invested_building
+                         value = 0
+                    }
+               }
+          }
+          change_variable = {
+               name = $BUYER$_building_food_industry_number
+               add = var:$SELLER$_building_food_industry_number
+          }
+          scope:buy_share_country = {
+               change_variable = {
+                    name = total_invested_building
+                    add = prev.var:$SELLER$_building_food_industry_number
+               }
+          }
+     }
+     scope:seller_country = {
+          change_variable = {
+               name = total_invested_building
+               subtract = prev.var:$SELLER$_building_food_industry_number
+          }
+     }
+     remove_variable = $SELLER$_building_food_industry_number
+}
+else_if = {
+     limit = {
+          scope:buy_share_target_building = { is_building_type = building_textile_mills }
+     }
+     if = {
+          limit = {
+               scope:buy_share_target_building = {
+                    owner = scope:buy_share_country
+               }
+          }
+     }
+     else = {
+          if = {
+               limit = {
+                    NOT = { has_variable = $BUYER$_building_textile_mills_number }
+               }
+               set_variable = {
+                    name = $BUYER$_building_textile_mills_number
+                    value = 0
+               }
+          }
+          if = {
+               limit = { scope:buy_share_country = { NOT = { has_variable = total_invested_building } } }
+               scope:buy_share_country = { 
+                    set_variable = {
+                         name = total_invested_building
+                         value = 0
+                    }
+               }
+          }
+          change_variable = {
+               name = $BUYER$_building_textile_mills_number
+               add = var:$SELLER$_building_textile_mills_number
+          }
+          scope:buy_share_country = {
+               change_variable = {
+                    name = total_invested_building
+                    add = prev.var:$SELLER$_building_textile_mills_number
+               }
+          }
+     }
+     scope:seller_country = {
+          change_variable = {
+               name = total_invested_building
+               subtract = prev.var:$SELLER$_building_textile_mills_number
+          }
+     }
+     remove_variable = $SELLER$_building_textile_mills_number
+}
+else_if = {
+     limit = {
+          scope:buy_share_target_building = { is_building_type = building_furniture_manufacturies }
+     }
+     if = {
+          limit = {
+               scope:buy_share_target_building = {
+                    owner = scope:buy_share_country
+               }
+          }
+     }
+     else = {
+          if = {
+               limit = {
+                    NOT = { has_variable = $BUYER$_building_furniture_manufacturies_number }
+               }
+               set_variable = {
+                    name = $BUYER$_building_furniture_manufacturies_number
+                    value = 0
+               }
+          }
+          if = {
+               limit = { scope:buy_share_country = { NOT = { has_variable = total_invested_building } } }
+               scope:buy_share_country = { 
+                    set_variable = {
+                         name = total_invested_building
+                         value = 0
+                    }
+               }
+          }
+          change_variable = {
+               name = $BUYER$_building_furniture_manufacturies_number
+               add = var:$SELLER$_building_furniture_manufacturies_number
+          }
+          scope:buy_share_country = {
+               change_variable = {
+                    name = total_invested_building
+                    add = prev.var:$SELLER$_building_furniture_manufacturies_number
+               }
+          }
+     }
+     scope:seller_country = {
+          change_variable = {
+               name = total_invested_building
+               subtract = prev.var:$SELLER$_building_furniture_manufacturies_number
+          }
+     }
+     remove_variable = $SELLER$_building_furniture_manufacturies_number
+}
+else_if = {
+     limit = {
+          scope:buy_share_target_building = { is_building_type = building_glassworks }
+     }
+     if = {
+          limit = {
+               scope:buy_share_target_building = {
+                    owner = scope:buy_share_country
+               }
+          }
+     }
+     else = {
+          if = {
+               limit = {
+                    NOT = { has_variable = $BUYER$_building_glassworks_number }
+               }
+               set_variable = {
+                    name = $BUYER$_building_glassworks_number
+                    value = 0
+               }
+          }
+          if = {
+               limit = { scope:buy_share_country = { NOT = { has_variable = total_invested_building } } }
+               scope:buy_share_country = { 
+                    set_variable = {
+                         name = total_invested_building
+                         value = 0
+                    }
+               }
+          }
+          change_variable = {
+               name = $BUYER$_building_glassworks_number
+               add = var:$SELLER$_building_glassworks_number
+          }
+          scope:buy_share_country = {
+               change_variable = {
+                    name = total_invested_building
+                    add = prev.var:$SELLER$_building_glassworks_number
+               }
+          }
+     }
+     scope:seller_country = {
+          change_variable = {
+               name = total_invested_building
+               subtract = prev.var:$SELLER$_building_glassworks_number
+          }
+     }
+     remove_variable = $SELLER$_building_glassworks_number
+}
+else_if = {
+     limit = {
+          scope:buy_share_target_building = { is_building_type = building_tooling_workshops }
+     }
+     if = {
+          limit = {
+               scope:buy_share_target_building = {
+                    owner = scope:buy_share_country
+               }
+          }
+     }
+     else = {
+          if = {
+               limit = {
+                    NOT = { has_variable = $BUYER$_building_tooling_workshops_number }
+               }
+               set_variable = {
+                    name = $BUYER$_building_tooling_workshops_number
+                    value = 0
+               }
+          }
+          if = {
+               limit = { scope:buy_share_country = { NOT = { has_variable = total_invested_building } } }
+               scope:buy_share_country = { 
+                    set_variable = {
+                         name = total_invested_building
+                         value = 0
+                    }
+               }
+          }
+          change_variable = {
+               name = $BUYER$_building_tooling_workshops_number
+               add = var:$SELLER$_building_tooling_workshops_number
+          }
+          scope:buy_share_country = {
+               change_variable = {
+                    name = total_invested_building
+                    add = prev.var:$SELLER$_building_tooling_workshops_number
+               }
+          }
+     }
+     scope:seller_country = {
+          change_variable = {
+               name = total_invested_building
+               subtract = prev.var:$SELLER$_building_tooling_workshops_number
+          }
+     }
+     remove_variable = $SELLER$_building_tooling_workshops_number
+}
+else_if = {
+     limit = {
+          scope:buy_share_target_building = { is_building_type = building_paper_mills }
+     }
+     if = {
+          limit = {
+               scope:buy_share_target_building = {
+                    owner = scope:buy_share_country
+               }
+          }
+     }
+     else = {
+          if = {
+               limit = {
+                    NOT = { has_variable = $BUYER$_building_paper_mills_number }
+               }
+               set_variable = {
+                    name = $BUYER$_building_paper_mills_number
+                    value = 0
+               }
+          }
+          if = {
+               limit = { scope:buy_share_country = { NOT = { has_variable = total_invested_building } } }
+               scope:buy_share_country = { 
+                    set_variable = {
+                         name = total_invested_building
+                         value = 0
+                    }
+               }
+          }
+          change_variable = {
+               name = $BUYER$_building_paper_mills_number
+               add = var:$SELLER$_building_paper_mills_number
+          }
+          scope:buy_share_country = {
+               change_variable = {
+                    name = total_invested_building
+                    add = prev.var:$SELLER$_building_paper_mills_number
+               }
+          }
+     }
+     scope:seller_country = {
+          change_variable = {
+               name = total_invested_building
+               subtract = prev.var:$SELLER$_building_paper_mills_number
+          }
+     }
+     remove_variable = $SELLER$_building_paper_mills_number
+}
+else_if = {
+     limit = {
+          scope:buy_share_target_building = { is_building_type = building_chemical_plants }
+     }
+     if = {
+          limit = {
+               scope:buy_share_target_building = {
+                    owner = scope:buy_share_country
+               }
+          }
+     }
+     else = {
+          if = {
+               limit = {
+                    NOT = { has_variable = $BUYER$_building_chemical_plants_number }
+               }
+               set_variable = {
+                    name = $BUYER$_building_chemical_plants_number
+                    value = 0
+               }
+          }
+          if = {
+               limit = { scope:buy_share_country = { NOT = { has_variable = total_invested_building } } }
+               scope:buy_share_country = { 
+                    set_variable = {
+                         name = total_invested_building
+                         value = 0
+                    }
+               }
+          }
+          change_variable = {
+               name = $BUYER$_building_chemical_plants_number
+               add = var:$SELLER$_building_chemical_plants_number
+          }
+          scope:buy_share_country = {
+               change_variable = {
+                    name = total_invested_building
+                    add = prev.var:$SELLER$_building_chemical_plants_number
+               }
+          }
+     }
+     scope:seller_country = {
+          change_variable = {
+               name = total_invested_building
+               subtract = prev.var:$SELLER$_building_chemical_plants_number
+          }
+     }
+     remove_variable = $SELLER$_building_chemical_plants_number
+}
+else_if = {
+     limit = {
+          scope:buy_share_target_building = { is_building_type = building_synthetics_plants }
+     }
+     if = {
+          limit = {
+               scope:buy_share_target_building = {
+                    owner = scope:buy_share_country
+               }
+          }
+     }
+     else = {
+          if = {
+               limit = {
+                    NOT = { has_variable = $BUYER$_building_synthetics_plants_number }
+               }
+               set_variable = {
+                    name = $BUYER$_building_synthetics_plants_number
+                    value = 0
+               }
+          }
+          if = {
+               limit = { scope:buy_share_country = { NOT = { has_variable = total_invested_building } } }
+               scope:buy_share_country = { 
+                    set_variable = {
+                         name = total_invested_building
+                         value = 0
+                    }
+               }
+          }
+          change_variable = {
+               name = $BUYER$_building_synthetics_plants_number
+               add = var:$SELLER$_building_synthetics_plants_number
+          }
+          scope:buy_share_country = {
+               change_variable = {
+                    name = total_invested_building
+                    add = prev.var:$SELLER$_building_synthetics_plants_number
+               }
+          }
+     }
+     scope:seller_country = {
+          change_variable = {
+               name = total_invested_building
+               subtract = prev.var:$SELLER$_building_synthetics_plants_number
+          }
+     }
+     remove_variable = $SELLER$_building_synthetics_plants_number
+}
+else_if = {
+     limit = {
+          scope:buy_share_target_building = { is_building_type = building_steel_mills }
+     }
+     if = {
+          limit = {
+               scope:buy_share_target_building = {
+                    owner = scope:buy_share_country
+               }
+          }
+     }
+     else = {
+          if = {
+               limit = {
+                    NOT = { has_variable = $BUYER$_building_steel_mills_number }
+               }
+               set_variable = {
+                    name = $BUYER$_building_steel_mills_number
+                    value = 0
+               }
+          }
+          if = {
+               limit = { scope:buy_share_country = { NOT = { has_variable = total_invested_building } } }
+               scope:buy_share_country = { 
+                    set_variable = {
+                         name = total_invested_building
+                         value = 0
+                    }
+               }
+          }
+          change_variable = {
+               name = $BUYER$_building_steel_mills_number
+               add = var:$SELLER$_building_steel_mills_number
+          }
+          scope:buy_share_country = {
+               change_variable = {
+                    name = total_invested_building
+                    add = prev.var:$SELLER$_building_steel_mills_number
+               }
+          }
+     }
+     scope:seller_country = {
+          change_variable = {
+               name = total_invested_building
+               subtract = prev.var:$SELLER$_building_steel_mills_number
+          }
+     }
+     remove_variable = $SELLER$_building_steel_mills_number
+}
+else_if = {
+     limit = {
+          scope:buy_share_target_building = { is_building_type = building_motor_industry }
+     }
+     if = {
+          limit = {
+               scope:buy_share_target_building = {
+                    owner = scope:buy_share_country
+               }
+          }
+     }
+     else = {
+          if = {
+               limit = {
+                    NOT = { has_variable = $BUYER$_building_motor_industry_number }
+               }
+               set_variable = {
+                    name = $BUYER$_building_motor_industry_number
+                    value = 0
+               }
+          }
+          if = {
+               limit = { scope:buy_share_country = { NOT = { has_variable = total_invested_building } } }
+               scope:buy_share_country = { 
+                    set_variable = {
+                         name = total_invested_building
+                         value = 0
+                    }
+               }
+          }
+          change_variable = {
+               name = $BUYER$_building_motor_industry_number
+               add = var:$SELLER$_building_motor_industry_number
+          }
+          scope:buy_share_country = {
+               change_variable = {
+                    name = total_invested_building
+                    add = prev.var:$SELLER$_building_motor_industry_number
+               }
+          }
+     }
+     scope:seller_country = {
+          change_variable = {
+               name = total_invested_building
+               subtract = prev.var:$SELLER$_building_motor_industry_number
+          }
+     }
+     remove_variable = $SELLER$_building_motor_industry_number
+}
+else_if = {
+     limit = {
+          scope:buy_share_target_building = { is_building_type = building_shipyards }
+     }
+     if = {
+          limit = {
+               scope:buy_share_target_building = {
+                    owner = scope:buy_share_country
+               }
+          }
+     }
+     else = {
+          if = {
+               limit = {
+                    NOT = { has_variable = $BUYER$_building_shipyards_number }
+               }
+               set_variable = {
+                    name = $BUYER$_building_shipyards_number
+                    value = 0
+               }
+          }
+          if = {
+               limit = { scope:buy_share_country = { NOT = { has_variable = total_invested_building } } }
+               scope:buy_share_country = { 
+                    set_variable = {
+                         name = total_invested_building
+                         value = 0
+                    }
+               }
+          }
+          change_variable = {
+               name = $BUYER$_building_shipyards_number
+               add = var:$SELLER$_building_shipyards_number
+          }
+          scope:buy_share_country = {
+               change_variable = {
+                    name = total_invested_building
+                    add = prev.var:$SELLER$_building_shipyards_number
+               }
+          }
+     }
+     scope:seller_country = {
+          change_variable = {
+               name = total_invested_building
+               subtract = prev.var:$SELLER$_building_shipyards_number
+          }
+     }
+     remove_variable = $SELLER$_building_shipyards_number
+}
+else_if = {
+     limit = {
+          scope:buy_share_target_building = { is_building_type = building_war_machine_industry }
+     }
+     if = {
+          limit = {
+               scope:buy_share_target_building = {
+                    owner = scope:buy_share_country
+               }
+          }
+     }
+     else = {
+          if = {
+               limit = {
+                    NOT = { has_variable = $BUYER$_building_war_machine_industry_number }
+               }
+               set_variable = {
+                    name = $BUYER$_building_war_machine_industry_number
+                    value = 0
+               }
+          }
+          if = {
+               limit = { scope:buy_share_country = { NOT = { has_variable = total_invested_building } } }
+               scope:buy_share_country = { 
+                    set_variable = {
+                         name = total_invested_building
+                         value = 0
+                    }
+               }
+          }
+          change_variable = {
+               name = $BUYER$_building_war_machine_industry_number
+               add = var:$SELLER$_building_war_machine_industry_number
+          }
+          scope:buy_share_country = {
+               change_variable = {
+                    name = total_invested_building
+                    add = prev.var:$SELLER$_building_war_machine_industry_number
+               }
+          }
+     }
+     scope:seller_country = {
+          change_variable = {
+               name = total_invested_building
+               subtract = prev.var:$SELLER$_building_war_machine_industry_number
+          }
+     }
+     remove_variable = $SELLER$_building_war_machine_industry_number
+}
+else_if = {
+     limit = {
+          scope:buy_share_target_building = { is_building_type = building_electrics_industry }
+     }
+     if = {
+          limit = {
+               scope:buy_share_target_building = {
+                    owner = scope:buy_share_country
+               }
+          }
+     }
+     else = {
+          if = {
+               limit = {
+                    NOT = { has_variable = $BUYER$_building_electrics_industry_number }
+               }
+               set_variable = {
+                    name = $BUYER$_building_electrics_industry_number
+                    value = 0
+               }
+          }
+          if = {
+               limit = { scope:buy_share_country = { NOT = { has_variable = total_invested_building } } }
+               scope:buy_share_country = { 
+                    set_variable = {
+                         name = total_invested_building
+                         value = 0
+                    }
+               }
+          }
+          change_variable = {
+               name = $BUYER$_building_electrics_industry_number
+               add = var:$SELLER$_building_electrics_industry_number
+          }
+          scope:buy_share_country = {
+               change_variable = {
+                    name = total_invested_building
+                    add = prev.var:$SELLER$_building_electrics_industry_number
+               }
+          }
+     }
+     scope:seller_country = {
+          change_variable = {
+               name = total_invested_building
+               subtract = prev.var:$SELLER$_building_electrics_industry_number
+          }
+     }
+     remove_variable = $SELLER$_building_electrics_industry_number
+}
+else_if = {
+     limit = {
+          scope:buy_share_target_building = { is_building_type = building_arms_industry }
+     }
+     if = {
+          limit = {
+               scope:buy_share_target_building = {
+                    owner = scope:buy_share_country
+               }
+          }
+     }
+     else = {
+          if = {
+               limit = {
+                    NOT = { has_variable = $BUYER$_building_arms_industry_number }
+               }
+               set_variable = {
+                    name = $BUYER$_building_arms_industry_number
+                    value = 0
+               }
+          }
+          if = {
+               limit = { scope:buy_share_country = { NOT = { has_variable = total_invested_building } } }
+               scope:buy_share_country = { 
+                    set_variable = {
+                         name = total_invested_building
+                         value = 0
+                    }
+               }
+          }
+          change_variable = {
+               name = $BUYER$_building_arms_industry_number
+               add = var:$SELLER$_building_arms_industry_number
+          }
+          scope:buy_share_country = {
+               change_variable = {
+                    name = total_invested_building
+                    add = prev.var:$SELLER$_building_arms_industry_number
+               }
+          }
+     }
+     scope:seller_country = {
+          change_variable = {
+               name = total_invested_building
+               subtract = prev.var:$SELLER$_building_arms_industry_number
+          }
+     }
+     remove_variable = $SELLER$_building_arms_industry_number
+}
+else_if = {
+     limit = {
+          scope:buy_share_target_building = { is_building_type = building_munition_plants }
+     }
+     if = {
+          limit = {
+               scope:buy_share_target_building = {
+                    owner = scope:buy_share_country
+               }
+          }
+     }
+     else = {
+          if = {
+               limit = {
+                    NOT = { has_variable = $BUYER$_building_munition_plants_number }
+               }
+               set_variable = {
+                    name = $BUYER$_building_munition_plants_number
+                    value = 0
+               }
+          }
+          if = {
+               limit = { scope:buy_share_country = { NOT = { has_variable = total_invested_building } } }
+               scope:buy_share_country = { 
+                    set_variable = {
+                         name = total_invested_building
+                         value = 0
+                    }
+               }
+          }
+          change_variable = {
+               name = $BUYER$_building_munition_plants_number
+               add = var:$SELLER$_building_munition_plants_number
+          }
+          scope:buy_share_country = {
+               change_variable = {
+                    name = total_invested_building
+                    add = prev.var:$SELLER$_building_munition_plants_number
+               }
+          }
+     }
+     scope:seller_country = {
+          change_variable = {
+               name = total_invested_building
+               subtract = prev.var:$SELLER$_building_munition_plants_number
+          }
+     }
+     remove_variable = $SELLER$_building_munition_plants_number
+}
+else_if = {
+     limit = {
+          scope:buy_share_target_building = { is_building_type = building_arts_academy }
+     }
+     if = {
+          limit = {
+               scope:buy_share_target_building = {
+                    owner = scope:buy_share_country
+               }
+          }
+     }
+     else = {
+          if = {
+               limit = {
+                    NOT = { has_variable = $BUYER$_building_arts_academy_number }
+               }
+               set_variable = {
+                    name = $BUYER$_building_arts_academy_number
+                    value = 0
+               }
+          }
+          if = {
+               limit = { scope:buy_share_country = { NOT = { has_variable = total_invested_building } } }
+               scope:buy_share_country = { 
+                    set_variable = {
+                         name = total_invested_building
+                         value = 0
+                    }
+               }
+          }
+          change_variable = {
+               name = $BUYER$_building_arts_academy_number
+               add = var:$SELLER$_building_arts_academy_number
+          }
+          scope:buy_share_country = {
+               change_variable = {
+                    name = total_invested_building
+                    add = prev.var:$SELLER$_building_arts_academy_number
+               }
+          }
+     }
+     scope:seller_country = {
+          change_variable = {
+               name = total_invested_building
+               subtract = prev.var:$SELLER$_building_arts_academy_number
+          }
+     }
+     remove_variable = $SELLER$_building_arts_academy_number
+}
+else_if = {
+     limit = {
+          scope:buy_share_target_building = { is_building_type = building_power_plant }
+     }
+     if = {
+          limit = {
+               scope:buy_share_target_building = {
+                    owner = scope:buy_share_country
+               }
+          }
+     }
+     else = {
+          if = {
+               limit = {
+                    NOT = { has_variable = $BUYER$_building_power_plant_number }
+               }
+               set_variable = {
+                    name = $BUYER$_building_power_plant_number
+                    value = 0
+               }
+          }
+          if = {
+               limit = { scope:buy_share_country = { NOT = { has_variable = total_invested_building } } }
+               scope:buy_share_country = { 
+                    set_variable = {
+                         name = total_invested_building
+                         value = 0
+                    }
+               }
+          }
+          change_variable = {
+               name = $BUYER$_building_power_plant_number
+               add = var:$SELLER$_building_power_plant_number
+          }
+          scope:buy_share_country = {
+               change_variable = {
+                    name = total_invested_building
+                    add = prev.var:$SELLER$_building_power_plant_number
+               }
+          }
+     }
+     scope:seller_country = {
+          change_variable = {
+               name = total_invested_building
+               subtract = prev.var:$SELLER$_building_power_plant_number
+          }
+     }
+     remove_variable = $SELLER$_building_power_plant_number
+}
+
+else_if = {
+     limit = {
+          scope:buy_share_target_building = { is_building_type = building_explosives_factory }
+     }
+     if = {
+          limit = {
+               scope:buy_share_target_building = {
+                    owner = scope:buy_share_country
+               }
+          }
+     }
+     else = {
+          if = {
+               limit = {
+                    NOT = { has_variable = $BUYER$_building_explosives_factory_number }
+               }
+               set_variable = {
+                    name = $BUYER$_building_explosives_factory_number
+                    value = 0
+               }
+          }
+          if = {
+               limit = { scope:buy_share_country = { NOT = { has_variable = total_invested_building } } }
+               scope:buy_share_country = { 
+                    set_variable = {
+                         name = total_invested_building
+                         value = 0
+                    }
+               }
+          }
+          change_variable = {
+               name = $BUYER$_building_explosives_factory_number
+               add = var:$SELLER$_building_explosives_factory_number
+          }
+          scope:buy_share_country = {
+               change_variable = {
+                    name = total_invested_building
+                    add = prev.var:$SELLER$_building_explosives_factory_number
+               }
+          }
+     }
+     scope:seller_country = {
+          change_variable = {
+               name = total_invested_building
+               subtract = prev.var:$SELLER$_building_explosives_factory_number
+          }
+     }
+     remove_variable = $SELLER$_building_explosives_factory_number
+}
+else_if = {
+     limit = {
+          scope:buy_share_target_building = { is_building_type = building_military_shipyards }
+     }
+     if = {
+          limit = {
+               scope:buy_share_target_building = {
+                    owner = scope:buy_share_country
+               }
+          }
+     }
+     else = {
+          if = {
+               limit = {
+                    NOT = { has_variable = $BUYER$_building_military_shipyards_number }
+               }
+               set_variable = {
+                    name = $BUYER$_building_military_shipyards_number
+                    value = 0
+               }
+          }
+          if = {
+               limit = { scope:buy_share_country = { NOT = { has_variable = total_invested_building } } }
+               scope:buy_share_country = { 
+                    set_variable = {
+                         name = total_invested_building
+                         value = 0
+                    }
+               }
+          }
+          change_variable = {
+               name = $BUYER$_building_military_shipyards_number
+               add = var:$SELLER$_building_military_shipyards_number
+          }
+          scope:buy_share_country = {
+               change_variable = {
+                    name = total_invested_building
+                    add = prev.var:$SELLER$_building_military_shipyards_number
+               }
+          }
+     }
+     scope:seller_country = {
+          change_variable = {
+               name = total_invested_building
+               subtract = prev.var:$SELLER$_building_military_shipyards_number
+          }
+     }
+     remove_variable = $SELLER$_building_military_shipyards_number
+}
+else_if = {
+     limit = {
+          scope:buy_share_target_building = { is_building_type = building_artillery_foundries }
+     }
+     if = {
+          limit = {
+               scope:buy_share_target_building = {
+                    owner = scope:buy_share_country
+               }
+          }
+     }
+     else = {
+          if = {
+               limit = {
+                    NOT = { has_variable = $BUYER$_building_artillery_foundries_number }
+               }
+               set_variable = {
+                    name = $BUYER$_building_artillery_foundries_number
+                    value = 0
+               }
+          }
+          if = {
+               limit = { scope:buy_share_country = { NOT = { has_variable = total_invested_building } } }
+               scope:buy_share_country = { 
+                    set_variable = {
+                         name = total_invested_building
+                         value = 0
+                    }
+               }
+          }
+          change_variable = {
+               name = $BUYER$_building_artillery_foundries_number
+               add = var:$SELLER$_building_artillery_foundries_number
+          }
+          scope:buy_share_country = {
+               change_variable = {
+                    name = total_invested_building
+                    add = prev.var:$SELLER$_building_artillery_foundries_number
+               }
+          }
+     }
+     scope:seller_country = {
+          change_variable = {
+               name = total_invested_building
+               subtract = prev.var:$SELLER$_building_artillery_foundries_number
+          }
+     }
+     remove_variable = $SELLER$_building_artillery_foundries_number
+}
+}
+
+fi_sell_share_effect2 = {
+switch={
+trigger=scope:buy_share_country.var:fi_identification
+1={fi_sell_share_effect3 = {BUYER = 1 SELLER = $SELLER$}}
+2={fi_sell_share_effect3 = {BUYER = 2 SELLER = $SELLER$}}
+3={fi_sell_share_effect3 = {BUYER = 3 SELLER = $SELLER$}}
+4={fi_sell_share_effect3 = {BUYER = 4 SELLER = $SELLER$}}
+5={fi_sell_share_effect3 = {BUYER = 5 SELLER = $SELLER$}}
+6={fi_sell_share_effect3 = {BUYER = 6 SELLER = $SELLER$}}
+7={fi_sell_share_effect3 = {BUYER = 7 SELLER = $SELLER$}}
+8={fi_sell_share_effect3 = {BUYER = 8 SELLER = $SELLER$}}
+9={fi_sell_share_effect3 = {BUYER = 9 SELLER = $SELLER$}}
+10={fi_sell_share_effect3 = {BUYER = 10 SELLER = $SELLER$}}
+11={fi_sell_share_effect3 = {BUYER = 11 SELLER = $SELLER$}}
+12={fi_sell_share_effect3 = {BUYER = 12 SELLER = $SELLER$}}
+13={fi_sell_share_effect3 = {BUYER = 13 SELLER = $SELLER$}}
+14={fi_sell_share_effect3 = {BUYER = 14 SELLER = $SELLER$}}
+15={fi_sell_share_effect3 = {BUYER = 15 SELLER = $SELLER$}}
+16={fi_sell_share_effect3 = {BUYER = 16 SELLER = $SELLER$}}
+17={fi_sell_share_effect3 = {BUYER = 17 SELLER = $SELLER$}}
+18={fi_sell_share_effect3 = {BUYER = 18 SELLER = $SELLER$}}
+19={fi_sell_share_effect3 = {BUYER = 19 SELLER = $SELLER$}}
+20={fi_sell_share_effect3 = {BUYER = 20 SELLER = $SELLER$}}
+}
+
+}
+
+
+fi_sell_share_effect = {
+switch={
+trigger=scope:seller_country.var:fi_identification
+1={fi_sell_share_effect2 = {SELLER = 1}}
+2={fi_sell_share_effect2 = {SELLER = 2}}
+3={fi_sell_share_effect2 = {SELLER = 3}}
+4={fi_sell_share_effect2 = {SELLER = 4}}
+5={fi_sell_share_effect2 = {SELLER = 5}}
+6={fi_sell_share_effect2 = {SELLER = 6}}
+7={fi_sell_share_effect2 = {SELLER = 7}}
+8={fi_sell_share_effect2 = {SELLER = 8}}
+9={fi_sell_share_effect2 = {SELLER = 9}}
+10={fi_sell_share_effect2 = {SELLER = 10}}
+11={fi_sell_share_effect2 = {SELLER = 11}}
+12={fi_sell_share_effect2 = {SELLER = 12}}
+13={fi_sell_share_effect2 = {SELLER = 13}}
+14={fi_sell_share_effect2 = {SELLER = 14}}
+15={fi_sell_share_effect2 = {SELLER = 15}}
+16={fi_sell_share_effect2 = {SELLER = 16}}
+17={fi_sell_share_effect2 = {SELLER = 17}}
+18={fi_sell_share_effect2 = {SELLER = 18}}
+19={fi_sell_share_effect2 = {SELLER = 19}}
+20={fi_sell_share_effect2 = {SELLER = 20}}
+}
+}
+
+
+fi_sell_share_effect_owner = {
+switch={
+trigger=scope:buy_share_country.var:fi_identification
+1={fi_sell_share_effect_owner2 = {BUYER = 1 BUILDING=$BUILDING$}}
+2={fi_sell_share_effect_owner2 = {BUYER = 2 BUILDING=$BUILDING$}}
+3={fi_sell_share_effect_owner2 = {BUYER = 3 BUILDING=$BUILDING$}}
+4={fi_sell_share_effect_owner2 = {BUYER = 4 BUILDING=$BUILDING$}}
+5={fi_sell_share_effect_owner2 = {BUYER = 5 BUILDING=$BUILDING$}}
+6={fi_sell_share_effect_owner2 = {BUYER = 6 BUILDING=$BUILDING$}}
+7={fi_sell_share_effect_owner2 = {BUYER = 7 BUILDING=$BUILDING$}}
+8={fi_sell_share_effect_owner2 = {BUYER = 8 BUILDING=$BUILDING$}}
+9={fi_sell_share_effect_owner2 = {BUYER = 9 BUILDING=$BUILDING$}}
+10={fi_sell_share_effect_owner2 = {BUYER = 10 BUILDING=$BUILDING$}}
+11={fi_sell_share_effect_owner2 = {BUYER = 11 BUILDING=$BUILDING$}}
+12={fi_sell_share_effect_owner2 = {BUYER = 12 BUILDING=$BUILDING$}}
+13={fi_sell_share_effect_owner2 = {BUYER = 13 BUILDING=$BUILDING$}}
+14={fi_sell_share_effect_owner2 = {BUYER = 14 BUILDING=$BUILDING$}}
+15={fi_sell_share_effect_owner2 = {BUYER = 15 BUILDING=$BUILDING$}}
+16={fi_sell_share_effect_owner2 = {BUYER = 16 BUILDING=$BUILDING$}}
+17={fi_sell_share_effect_owner2 = {BUYER = 17 BUILDING=$BUILDING$}}
+18={fi_sell_share_effect_owner2 = {BUYER = 18 BUILDING=$BUILDING$}}
+19={fi_sell_share_effect_owner2 = {BUYER = 19 BUILDING=$BUILDING$}}
+20={fi_sell_share_effect_owner2 = {BUYER = 20 BUILDING=$BUILDING$}}
+}
+
+}
+
+fi_sell_share_effect_owner2 = {
+scope:buy_share_target_building = { remove_modifier = invested_foriegn_building }
+if = {
+     limit = {
+          scope:buy_share_target_building = { is_building_type = $BUILDING$ }
+     }
+     if = {
+          limit = {
+               NOT = { has_variable = $BUYER$_$BUILDING$_number }
+          }
+          set_variable = {
+               name = $BUYER$_$BUILDING$_number
+               value = 0
+          }
+     }
+     if = {
+          limit = { scope:buy_share_country = { NOT = { has_variable = total_invested_building } } }
+          scope:buy_share_country = { 
+               set_variable = {
+                    name = total_invested_building
+                    value = 0
+               }
+          }
+     }
+     change_variable = {
+          name = $BUYER$_$BUILDING$_number
+          add = scope:scope_building_number
+     }
+     scope:buy_share_country = {
+          change_variable = {
+               name = total_invested_building
+               add = scope:scope_building_number
+          }
+     }
+}
+}
+
+
+fi_sell_share_effect_proposed = {
+switch={
+trigger=scope:buy_share_country.var:fi_identification
+1={fi_sell_share_effect_proposed2 = {BUYER = 1 BUILDING=$BUILDING$}}
+2={fi_sell_share_effect_proposed2 = {BUYER = 2 BUILDING=$BUILDING$}}
+3={fi_sell_share_effect_proposed2 = {BUYER = 3 BUILDING=$BUILDING$}}
+4={fi_sell_share_effect_proposed2 = {BUYER = 4 BUILDING=$BUILDING$}}
+5={fi_sell_share_effect_proposed2 = {BUYER = 5 BUILDING=$BUILDING$}}
+6={fi_sell_share_effect_proposed2 = {BUYER = 6 BUILDING=$BUILDING$}}
+7={fi_sell_share_effect_proposed2 = {BUYER = 7 BUILDING=$BUILDING$}}
+8={fi_sell_share_effect_proposed2 = {BUYER = 8 BUILDING=$BUILDING$}}
+9={fi_sell_share_effect_proposed2 = {BUYER = 9 BUILDING=$BUILDING$}}
+10={fi_sell_share_effect_proposed2 = {BUYER = 10 BUILDING=$BUILDING$}}
+11={fi_sell_share_effect_proposed2 = {BUYER = 11 BUILDING=$BUILDING$}}
+12={fi_sell_share_effect_proposed2 = {BUYER = 12 BUILDING=$BUILDING$}}
+13={fi_sell_share_effect_proposed2 = {BUYER = 13 BUILDING=$BUILDING$}}
+14={fi_sell_share_effect_proposed2 = {BUYER = 14 BUILDING=$BUILDING$}}
+15={fi_sell_share_effect_proposed2 = {BUYER = 15 BUILDING=$BUILDING$}}
+16={fi_sell_share_effect_proposed2 = {BUYER = 16 BUILDING=$BUILDING$}}
+17={fi_sell_share_effect_proposed2 = {BUYER = 17 BUILDING=$BUILDING$}}
+18={fi_sell_share_effect_proposed2 = {BUYER = 18 BUILDING=$BUILDING$}}
+19={fi_sell_share_effect_proposed2 = {BUYER = 19 BUILDING=$BUILDING$}}
+20={fi_sell_share_effect_proposed2 = {BUYER = 20 BUILDING=$BUILDING$}}
+}
+
+}
+
+fi_sell_share_effect_proposed2 = {
+if = {
+     limit = {
+          scope:buy_share_target_building = { is_building_type = $BUILDING$ }
+     }
+     if = {
+          limit = {
+               NOT = { has_variable = $BUYER$_$BUILDING$_number }
+          }
+          set_variable = {
+               name = $BUYER$_$BUILDING$_number
+               value = 0
+          }
+     }
+     if = {
+          limit = { scope:buy_share_country = { NOT = { has_variable = total_invested_building } } }
+          scope:buy_share_country = { 
+               set_variable = {
+                    name = total_invested_building
+                    value = 0
+               }
+          }
+     }
+     change_variable = {
+          name = $BUYER$_$BUILDING$_number
+          add = scope:scope_building_number
+     }
+     scope:buy_share_country = {
+          change_variable = {
+               name = total_invested_building
+               add = scope:scope_building_number
+          }
+     }
+}
+}

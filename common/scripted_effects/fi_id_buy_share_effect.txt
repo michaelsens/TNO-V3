@@ -1,0 +1,197 @@
+﻿fi_buy_share_update_gui = {
+        if = {
+                limit = { NOT = { has_variable = fi_state_item_number } }
+                set_variable = {
+                        name = fi_state_item_number
+                        value = 0
+                }
+        }
+        if = {
+                limit = {
+                        has_variable = $ID$_$BUILDING$_number
+                }
+                change_variable = {
+                        name = fi_state_item_number
+                        add = var:$ID$_$BUILDING$_number
+                }
+        }
+}
+fi_buy_share_update_gui2 = {
+        if = {
+                limit = { NOT = { has_variable = fi_state_total_number } }
+                set_variable = {
+                        name = fi_state_total_number
+                        value = 0
+                }
+        }
+        if = {
+                limit = {
+                        has_variable = $ID$_$BUILDING$_number
+                }
+                change_variable = {
+                        name = fi_state_total_number
+                        add = var:$ID$_$BUILDING$_number
+                }
+        }
+}
+fi_buy_share_effect3 = {
+        if = {
+                limit = { 
+                        has_variable = $ID$_$BUILDING$_number
+                        NOT = { scope:investor_country = { var:fi_identification = $ID$ }}
+                }
+                scope:investor_country = {
+                        if = {
+                                limit = {
+                                        NOT = { has_variable = buy_share_country }
+                                }
+                                set_variable = {
+                                        name = buy_share_country
+                                        value = 0
+                                        months = 2
+                                }
+                        }
+                        change_variable = {
+                                name = buy_share_country
+                                add = 1
+                        }
+                }
+                set_variable = {
+                        name = $ID$_$BUILDING$_picked
+                        value = 1
+                        months = 2
+                }
+                if = {
+                        limit = { NOT = { has_local_variable = $BUILDING$_number}}
+                        set_local_variable = {
+                                name = $BUILDING$_number
+                                value = 0
+                        }
+                }
+                change_local_variable = {
+                        name = $BUILDING$_number
+                        add = var:$ID$_$BUILDING$_number
+                }
+                random_country = {
+                        limit = {
+                                has_variable = fi_identification
+                                var:fi_identification = $ID$
+                        }
+                        trigger_event = { id = fi_share_buying_executer.3 }                      
+                }
+        }
+}
+
+fi_buy_share_effect2 = {
+        if = {
+                limit = { 
+                        is_building_type = $BUILDING$
+                        NOT = { scope:investor_country = { var:fi_identification = $ID$ }}
+                        state = { has_variable = $ID$_$BUILDING$_number }
+                }
+                scope:investor_country = {
+                       set_variable = {
+                                name = buy_share_country
+                                value = buy_share_country_value
+                                months = 2
+                        }
+                }
+                state ={
+                        set_variable = {
+                                name = $ID$_$BUILDING$_picked
+                                value = 1
+                                months = 2
+                        }
+                        if = {
+                                limit = { NOT = { has_local_variable = $BUILDING$_number}}
+                                set_local_variable = {
+                                        name = $BUILDING$_number
+                                        value = 0
+                                }
+                        }
+                        change_local_variable = {
+                                name = $BUILDING$_number
+                                add = var:$ID$_$BUILDING$_number
+                        }
+                }
+
+                random_country = {
+                        limit = {
+                                has_variable = fi_identification
+                                var:fi_identification = $ID$
+                        }
+                        trigger_event = { id = fi_share_buying_executer.3 }                      
+                }
+        }
+}
+
+fi_buy_share_effect = {
+        if = {
+                limit = { 
+                        is_building_type = $BUILDING$
+                        OR = {
+                                NOT = { has_local_variable = $BUILDING$_number}
+                                level > local_var:$BUILDING$_number
+                        }
+                }
+                scope:investor_country = {
+                        set_variable = {
+                                name = buy_share_country2
+                                value = buy_share_country2_value
+                                months = 2
+                        }
+                }
+                state ={
+                        set_variable = {
+                                name = $BUILDING$_picked
+                                value = 1
+                                months = 2
+                        }
+                }
+                owner = {
+                        trigger_event = { id = fi_share_buying_executer.2 }                      
+                }
+        }
+}
+fi_buy_share_caluclate_misc = {
+        if = {
+                limit = { 
+                        has_variable = $ID$_$BUILDING$_number
+                }
+                
+                if = {
+                        limit = { NOT = { has_local_variable = $BUILDING$_number}}
+                        set_local_variable = {
+                                name = $BUILDING$_number
+                                value = 0
+                        }
+                }
+                change_local_variable = {
+                        name = $BUILDING$_number
+                        add = var:$ID$_$BUILDING$_number
+                }
+                
+        }
+}
+
+fi_buy_share_caluclate_misc2 = {
+        if = {
+                limit = { 
+                        is_building_type = $BUILDING$
+                        state = { has_variable = $ID$_$BUILDING$_number }
+                }
+                state ={
+                        if = {
+                                limit = { NOT = { has_local_variable = $BUILDING$_number}}
+                                set_local_variable = {
+                                        name = $BUILDING$_number
+                                        value = 0
+                                }
+                        }
+                        change_local_variable = {
+                                name = $BUILDING$_number
+                                add = var:$ID$_$BUILDING$_number
+                        }
+                }
+        }
+}

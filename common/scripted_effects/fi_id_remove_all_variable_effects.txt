@@ -1,0 +1,497 @@
+﻿fi_remove_all_from_state_function={
+        remove_variable= $ID$_building_coal_mine_number
+        remove_variable = $ID$_building_iron_mine_number
+        remove_variable = $ID$_building_lead_mine_number
+        remove_variable = $ID$_building_sulfur_mine_number
+        remove_variable = $ID$_building_gold_mine_number
+        remove_variable = $ID$_building_logging_camp_number
+        remove_variable = $ID$_building_fishing_wharf_number
+        remove_variable = $ID$_building_whaling_station_number
+        remove_variable = $ID$_building_rubber_plantation_number
+        remove_variable = $ID$_building_oil_rig_number
+        remove_variable = $ID$_building_railway_number
+        remove_variable = $ID$_building_coffee_plantation_number
+        remove_variable = $ID$_building_cotton_plantation_number
+        remove_variable = $ID$_building_dye_plantation_number
+        remove_variable = $ID$_building_opium_plantation_number
+        remove_variable = $ID$_building_tea_plantation_number
+        remove_variable = $ID$_building_tobacco_plantation_number
+        remove_variable = $ID$_building_sugar_plantation_number
+        remove_variable = $ID$_building_banana_plantation_number
+        remove_variable = $ID$_building_silk_plantation_number
+        remove_variable = $ID$_building_rye_farm_number
+        remove_variable = $ID$_building_wheat_farm_number
+        remove_variable = $ID$_building_rice_farm_number
+        remove_variable = $ID$_building_vineyard_plantation_number
+        remove_variable = $ID$_building_maize_farm_number
+        remove_variable = $ID$_building_millet_farm_number
+        remove_variable = $ID$_building_livestock_ranch_number
+        remove_variable = $ID$_building_food_industry_number
+        remove_variable = $ID$_building_textile_mills_number
+        remove_variable = $ID$_building_furniture_manufacturies_number
+        remove_variable = $ID$_building_glassworks_number
+        remove_variable = $ID$_building_tooling_workshops_number
+        remove_variable = $ID$_building_paper_mills_number
+        remove_variable = $ID$_building_chemical_plants_number
+        remove_variable = $ID$_building_synthetics_plants_number
+        remove_variable = $ID$_building_steel_mills_number
+        remove_variable = $ID$_building_motor_industry_number
+        remove_variable = $ID$_building_shipyards_number
+        remove_variable = $ID$_building_war_machine_industry_number
+        remove_variable = $ID$_building_electrics_industry_number
+        remove_variable = $ID$_building_arms_industry_number
+        remove_variable = $ID$_building_munition_plants_number
+        remove_variable = $ID$_building_arts_academy_number
+        remove_variable = $ID$_building_power_plant_number
+        remove_variable = $ID$_building_explosives_factory_number
+        remove_variable = $ID$_building_military_shipyards_number
+        remove_variable = $ID$_building_artillery_foundries_number
+}
+
+fi_remove_all_from_state = {
+
+if = {
+        limit = {
+                1_remove_number_calc > 0
+        }
+        set_local_variable = {
+                name = remove_number_store
+                value = 1_remove_number_calc
+        }
+        random_country = {
+                limit = {
+                        has_variable = fi_identification
+                        var:fi_identification = 1
+                }
+                change_variable = {
+                        name = total_invested_building
+                        subtract = local_var:remove_number_store
+                }
+                cancel_building_effect = yes
+        }
+        remove_local_variable = remove_number_store
+        fi_remove_all_from_state_function = {ID = 1}
+}
+if = {
+        limit = {
+                2_remove_number_calc > 0
+        }
+        set_local_variable = {
+                name = remove_number_store
+                value = 2_remove_number_calc
+        }
+        random_country = {
+                limit = {
+                        has_variable = fi_identification
+                        var:fi_identification = 2
+                }
+                change_variable = {
+                        name = total_invested_building
+                        subtract = local_var:remove_number_store
+                }
+                cancel_building_effect = yes
+        }
+        remove_local_variable = remove_number_store
+        fi_remove_all_from_state_function = {ID = 2}
+}
+if = {
+        limit = {
+                3_remove_number_calc > 0
+        }
+        set_local_variable = {
+                name = remove_number_store
+                value = 3_remove_number_calc
+        }
+        random_country = {
+                limit = {
+                        has_variable = fi_identification
+                        var:fi_identification = 3
+                }
+                change_variable = {
+                        name = total_invested_building
+                        subtract = local_var:remove_number_store
+                }
+                cancel_building_effect = yes
+        }
+        remove_local_variable = remove_number_store
+        fi_remove_all_from_state_function = {ID = 3}
+}
+if = {
+        limit = {
+                4_remove_number_calc > 0
+        }
+        set_local_variable = {
+                name = remove_number_store
+                value = 4_remove_number_calc
+        }
+        random_country = {
+                limit = {
+                        has_variable = fi_identification
+                        var:fi_identification = 4
+                }
+                change_variable = {
+                        name = total_invested_building
+                        subtract = local_var:remove_number_store
+                }
+                cancel_building_effect = yes
+        }
+        remove_local_variable = remove_number_store
+        fi_remove_all_from_state_function = {ID = 4}
+}
+if = {
+        limit = {
+                5_remove_number_calc > 0
+        }
+        set_local_variable = {
+                name = remove_number_store
+                value = 5_remove_number_calc
+        }
+        random_country = {
+                limit = {
+                        has_variable = fi_identification
+                        var:fi_identification = 5
+                }
+                change_variable = {
+                        name = total_invested_building
+                        subtract = local_var:remove_number_store
+                }
+                cancel_building_effect = yes
+        }
+        remove_local_variable = remove_number_store
+        fi_remove_all_from_state_function = {ID = 5}
+}
+if = {
+        limit = {
+                6_remove_number_calc > 0
+        }
+        set_local_variable = {
+                name = remove_number_store
+                value = 6_remove_number_calc
+        }
+        random_country = {
+                limit = {
+                        has_variable = fi_identification
+                        var:fi_identification = 6
+                }
+                change_variable = {
+                        name = total_invested_building
+                        subtract = local_var:remove_number_store
+                }
+                cancel_building_effect = yes
+        }
+        remove_local_variable = remove_number_store
+        fi_remove_all_from_state_function = {ID = 6}
+}
+if = {
+        limit = {
+                7_remove_number_calc > 0
+        }
+        set_local_variable = {
+                name = remove_number_store
+                value = 7_remove_number_calc
+        }
+        random_country = {
+                limit = {
+                        has_variable = fi_identification
+                        var:fi_identification = 7
+                }
+                change_variable = {
+                        name = total_invested_building
+                        subtract = local_var:remove_number_store
+                }
+                cancel_building_effect = yes
+        }
+        remove_local_variable = remove_number_store
+        fi_remove_all_from_state_function = {ID = 7}
+}
+if = {
+        limit = {
+                8_remove_number_calc > 0
+        }
+        set_local_variable = {
+                name = remove_number_store
+                value = 8_remove_number_calc
+        }
+        random_country = {
+                limit = {
+                        has_variable = fi_identification
+                        var:fi_identification = 8
+                }
+                change_variable = {
+                        name = total_invested_building
+                        subtract = local_var:remove_number_store
+                }
+                cancel_building_effect = yes
+        }
+        remove_local_variable = remove_number_store
+        fi_remove_all_from_state_function = {ID = 8}
+}
+if = {
+        limit = {
+                9_remove_number_calc > 0
+        }
+        set_local_variable = {
+                name = remove_number_store
+                value = 9_remove_number_calc
+        }
+        random_country = {
+                limit = {
+                        has_variable = fi_identification
+                        var:fi_identification = 9
+                }
+                change_variable = {
+                        name = total_invested_building
+                        subtract = local_var:remove_number_store
+                }
+                cancel_building_effect = yes
+        }
+        remove_local_variable = remove_number_store
+        fi_remove_all_from_state_function = {ID = 9}
+}
+if = {
+        limit = {
+                10_remove_number_calc > 0
+        }
+        set_local_variable = {
+                name = remove_number_store
+                value = 10_remove_number_calc
+        }
+        random_country = {
+                limit = {
+                        has_variable = fi_identification
+                        var:fi_identification = 10
+                }
+                change_variable = {
+                        name = total_invested_building
+                        subtract = local_var:remove_number_store
+                }
+                cancel_building_effect = yes
+        }
+        remove_local_variable = remove_number_store
+        fi_remove_all_from_state_function = {ID = 10}
+}
+if = {
+        limit = {
+                11_remove_number_calc > 0
+        }
+        set_local_variable = {
+                name = remove_number_store
+                value = 11_remove_number_calc
+        }
+        random_country = {
+                limit = {
+                        has_variable = fi_identification
+                        var:fi_identification = 11
+                }
+                change_variable = {
+                        name = total_invested_building
+                        subtract = local_var:remove_number_store
+                }
+                cancel_building_effect = yes
+        }
+        remove_local_variable = remove_number_store
+        fi_remove_all_from_state_function = {ID = 11}
+}
+if = {
+        limit = {
+                12_remove_number_calc > 0
+        }
+        set_local_variable = {
+                name = remove_number_store
+                value = 12_remove_number_calc
+        }
+        random_country = {
+                limit = {
+                        has_variable = fi_identification
+                        var:fi_identification = 12
+                }
+                change_variable = {
+                        name = total_invested_building
+                        subtract = local_var:remove_number_store
+                }
+                cancel_building_effect = yes
+        }
+        remove_local_variable = remove_number_store
+        fi_remove_all_from_state_function = {ID = 12}
+}
+if = {
+        limit = {
+                13_remove_number_calc > 0
+        }
+        set_local_variable = {
+                name = remove_number_store
+                value = 13_remove_number_calc
+        }
+        random_country = {
+                limit = {
+                        has_variable = fi_identification
+                        var:fi_identification = 13
+                }
+                change_variable = {
+                        name = total_invested_building
+                        subtract = local_var:remove_number_store
+                }
+                cancel_building_effect = yes
+        }
+        remove_local_variable = remove_number_store
+        fi_remove_all_from_state_function = {ID = 13}
+}
+if = {
+        limit = {
+                14_remove_number_calc > 0
+        }
+        set_local_variable = {
+                name = remove_number_store
+                value = 14_remove_number_calc
+        }
+        random_country = {
+                limit = {
+                        has_variable = fi_identification
+                        var:fi_identification = 14
+                }
+                change_variable = {
+                        name = total_invested_building
+                        subtract = local_var:remove_number_store
+                }
+                cancel_building_effect = yes
+        }
+        remove_local_variable = remove_number_store
+        fi_remove_all_from_state_function = {ID = 14}
+}
+if = {
+        limit = {
+                15_remove_number_calc > 0
+        }
+        set_local_variable = {
+                name = remove_number_store
+                value = 15_remove_number_calc
+        }
+        random_country = {
+                limit = {
+                        has_variable = fi_identification
+                        var:fi_identification = 15
+                }
+                change_variable = {
+                        name = total_invested_building
+                        subtract = local_var:remove_number_store
+                }
+                cancel_building_effect = yes
+        }
+        remove_local_variable = remove_number_store
+        fi_remove_all_from_state_function = {ID = 15}
+}
+if = {
+        limit = {
+                16_remove_number_calc > 0
+        }
+        set_local_variable = {
+                name = remove_number_store
+                value = 16_remove_number_calc
+        }
+        random_country = {
+                limit = {
+                        has_variable = fi_identification
+                        var:fi_identification = 16
+                }
+                change_variable = {
+                        name = total_invested_building
+                        subtract = local_var:remove_number_store
+                }
+                cancel_building_effect = yes
+        }
+        remove_local_variable = remove_number_store
+        fi_remove_all_from_state_function = {ID = 16}
+}
+if = {
+        limit = {
+                17_remove_number_calc > 0
+        }
+        set_local_variable = {
+                name = remove_number_store
+                value = 17_remove_number_calc
+        }
+        random_country = {
+                limit = {
+                        has_variable = fi_identification
+                        var:fi_identification = 17
+                }
+                change_variable = {
+                        name = total_invested_building
+                        subtract = local_var:remove_number_store
+                }
+                cancel_building_effect = yes
+        }
+        remove_local_variable = remove_number_store
+        fi_remove_all_from_state_function = {ID = 17}
+}
+if = {
+        limit = {
+                18_remove_number_calc > 0
+        }
+        set_local_variable = {
+                name = remove_number_store
+                value = 18_remove_number_calc
+        }
+        random_country = {
+                limit = {
+                        has_variable = fi_identification
+                        var:fi_identification = 18
+                }
+                change_variable = {
+                        name = total_invested_building
+                        subtract = local_var:remove_number_store
+                }
+                cancel_building_effect = yes
+        }
+        remove_local_variable = remove_number_store
+        fi_remove_all_from_state_function = {ID = 18}
+}
+if = {
+        limit = {
+                19_remove_number_calc > 0
+        }
+        set_local_variable = {
+                name = remove_number_store
+                value = 19_remove_number_calc
+        }
+        random_country = {
+                limit = {
+                        has_variable = fi_identification
+                        var:fi_identification = 19
+                }
+                change_variable = {
+                        name = total_invested_building
+                        subtract = local_var:remove_number_store
+                }
+                cancel_building_effect = yes
+        }
+        remove_local_variable = remove_number_store
+        fi_remove_all_from_state_function = {ID = 19}
+}
+if = {
+        limit = {
+                20_remove_number_calc > 0
+        }
+        set_local_variable = {
+                name = remove_number_store
+                value = 20_remove_number_calc
+        }
+        random_country = {
+                limit = {
+                        has_variable = fi_identification
+                        var:fi_identification = 20
+                }
+                change_variable = {
+                        name = total_invested_building
+                        subtract = local_var:remove_number_store
+                }
+                cancel_building_effect = yes
+        }
+        remove_local_variable = remove_number_store
+        fi_remove_all_from_state_function = {ID = 20}
+}
+
+
+
+
+}

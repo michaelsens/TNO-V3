@@ -1,0 +1,672 @@
+﻿on_monthly_pulse_country = {
+    effect = {
+        #Starting Events
+        if = {
+			limit = {
+               game_date >= 1962.1.1
+               game_date <= 1962.5.1
+               NOT = { has_variable = start_var }
+            }
+            set_variable = start_var
+            trigger_event = { id = tno_starting_events.1 popup = yes }
+            trigger_event = { id = tno_starting_events.2 popup = yes }
+            trigger_event = { id = tno_starting_events.3 popup = yes }
+            trigger_event = { id = tno_starting_events.4 popup = yes }
+            trigger_event = { id = tno_starting_events.5 popup = yes }
+            trigger_event = { id = tno_starting_events.6 popup = yes }
+            trigger_event = { id = tno_starting_events.7 popup = yes }
+            trigger_event = { id = tno_starting_events.8 popup = yes }
+            trigger_event = { id = tno_starting_events.9 popup = yes }
+            trigger_event = { id = tno_starting_events.10 popup = yes }
+            trigger_event = { id = tno_starting_events.11 popup = yes }
+            trigger_event = { id = tno_starting_events.12 popup = yes }
+            trigger_event = { id = tno_starting_events.13 popup = yes }
+            trigger_event = { id = tno_starting_events.14 popup = yes }
+            trigger_event = { id = tno_starting_events.15 popup = yes }
+            trigger_event = { id = tno_starting_events.16 popup = yes }
+            trigger_event = { id = tno_starting_events.17 popup = yes }
+            trigger_event = { id = tno_starting_events.18 popup = yes }
+            trigger_event = { id = tno_starting_events.19 popup = yes }
+            trigger_event = { id = tno_starting_events.20 popup = yes }
+            trigger_event = { id = tno_starting_events.21 popup = yes }
+            trigger_event = { id = tno_starting_events.22 popup = yes }
+            trigger_event = { id = tno_starting_events.23 popup = yes }
+            trigger_event = { id = tno_starting_events.24 popup = yes }
+        }
+
+        #Super events
+
+        #RUS
+        if = {
+			limit = {
+                game_date >= 1966.1.1
+                NOT = { has_variable = rus_war_begun_var }
+                root = {
+                    has_modifier = russian_warlord
+                }
+            }
+            set_variable = rus_war_begun_var
+            trigger_event = { id = tno_ru_events.16 days = 0 popup = yes }
+        }
+
+        if = { #USSR formed under Irkutsk (RUSSIA)
+            limit = {
+               has_global_variable = irk_rus_formed
+               NOT = { has_variable = irk_rus_event }
+            }
+            set_variable = irk_rus_event
+            trigger_event = { id = tno_super_events.10 days = 0 popup = yes }
+        }if = { #Russia formed under any generic Russian nation (RUSSIA)
+            limit = {
+               has_global_variable = ru_generic
+               NOT = { has_variable = gen_rus_event }
+            }
+            set_variable = gen_rus_event
+            trigger_event = { id = tno_super_events.15 days = 0 popup = yes }
+        }
+        if = {  #Generic Russian launches 2WRW (Second West Russian War) (2WRW)
+            limit = {
+               has_global_variable = second_west_russian_war
+               NOT = { has_variable = second_west_russian_war_event }
+            }
+            set_variable = second_west_russian_war_event
+            trigger_event = { id = tno_super_events.13 days = 0 popup = yes }
+        }
+        if = {  #Irkutsk launches 2WRW (Second Great Patriotic War) (2WRW)
+            limit = {
+               has_global_variable = second_great_patriotic_war
+               NOT = { has_variable = second_great_patriotic_war_event }
+            }
+            set_variable = second_great_patriotic_war_event
+            trigger_event = { id = tno_super_events.11 days = 0 popup = yes }
+        }
+        if = {  #German civilwar
+            limit = {
+               has_global_variable = german_civil_war_start
+               NOT = { has_variable = german_civilwar_event }
+            }
+            set_variable = german_civilwar_event
+            trigger_event = { id = tno_super_events.12 days = 0 popup = yes }
+        }
+
+
+        if = {
+            limit = {
+                c:PRO ?= THIS
+                NOT = { has_global_variable = pro_var }
+            }
+            set_global_variable = pro_var
+        }
+        if = {
+			limit = {
+               has_global_variable = pro_var
+               NOT = { has_variable = pro_super_var }
+            }
+            set_variable = pro_super_var
+            trigger_event = { id = tno_super_events.6 days = 0 popup = yes }
+        }        
+        if = {
+			limit = {
+               has_modifier = rebuilding_russia
+               NOT = { has_variable = rebuilding_russia_var }
+            }
+            set_variable = rebuilding_russia_var
+            trigger_event = { id = tno_flavor_events.11 popup = yes }
+        }
+
+        if = {   #African liberation
+			limit = {
+                exists = c:KON
+                c:USA = {
+                    OR = {
+                        has_diplomatic_pact = {
+                            who = c:KON
+                            type = protectorate
+                            is_initiator = yes
+                        }
+                        has_diplomatic_pact = {
+                            who = c:KON
+                            type = puppet
+                            is_initiator = yes
+                        }
+                        has_diplomatic_pact = {
+                            who = c:KON
+                            type = dominion
+                            is_initiator = yes
+                        }
+                    }
+                    
+                }
+                NOT = { has_variable = liberate_kon_var }
+            }
+            set_variable = liberate_kon_var
+            c:USA = {
+                trigger_event = { id = tno_usa_events.21 popup = yes }
+                trigger_event = { id = tno_usa_events.31 popup = yes }
+            }
+           
+        }
+
+        if = {   #African liberation
+        limit = {
+            exists = c:KSA
+            c:USA = {
+                OR = {
+                    has_diplomatic_pact = {
+                        who = c:KSA
+                        type = protectorate
+                        is_initiator = yes
+                    }
+                    has_diplomatic_pact = {
+                        who = c:KSA
+                        type = puppet
+                        is_initiator = yes
+                    }
+                    has_diplomatic_pact = {
+                        who = c:KSA
+                        type = dominion
+                        is_initiator = yes
+                    }
+                }
+                
+            }
+            NOT = { has_variable = liberate_ksa_var }
+        }
+        set_variable = liberate_ksa_var
+        c:USA = {
+            trigger_event = { id = tno_usa_events.34 popup = yes }
+            trigger_event = { id = tno_usa_events.36 popup = yes }
+           
+        }
+       
+    }
+
+        if = {   #African liberation
+        limit = {
+            exists = c:KZA
+            c:USA = {
+                OR = {
+                    has_diplomatic_pact = {
+                        who = c:KZA
+                        type = protectorate
+                        is_initiator = yes
+                    }
+                    has_diplomatic_pact = {
+                        who = c:KZA
+                        type = puppet
+                        is_initiator = yes
+                    }
+                    has_diplomatic_pact = {
+                        who = c:KZA
+                        type = dominion
+                        is_initiator = yes
+                    }
+                }
+                
+            }
+            NOT = { has_variable = liberate_kza_var }
+        }
+        set_variable = liberate_kza_var
+        c:USA = {   
+            trigger_event = { id = tno_usa_events.32 popup = yes }
+            trigger_event = { id = tno_usa_events.33 popup = yes }
+        }
+       
+        }
+         
+        
+        
+        #SAF
+        if = {
+			limit = {
+               has_global_variable = saf_war_var
+               NOT = { has_variable = saf_super_var }
+            }
+            set_variable = saf_super_var
+            trigger_event = { id = tno_super_events.2 days = 0 popup = yes }
+        }
+
+        #Phillipean
+        if = {
+			limit = {
+               has_global_variable = phi_war_var
+               NOT = { has_variable = phi_super_var }
+            }
+            set_variable = phi_super_var
+            trigger_event = { id = tno_super_events.3 days = 0 popup = yes }
+        }
+
+        #Triumvirate
+        if = {
+			limit = {
+               has_global_variable = tri_war_var
+               NOT = { has_variable = tri_super_var }
+            }
+            set_variable = tri_super_var
+            trigger_event = { id = tno_super_events.4 days = 0 popup = yes }
+        }
+
+        #British Reuinification
+        if = {
+            limit = {
+                c:GBR ?= THIS
+                NOT = { has_global_variable = gbr_var }
+            }
+            set_global_variable = gbr_var
+        }
+        if = {
+			limit = {
+               has_global_variable = gbr_var
+               NOT = { has_variable = gbr_super_var }
+            }
+            set_variable = gbr_super_var
+            trigger_event = { id = tno_super_events.5 days = 0 popup = yes }
+        }
+
+        if = {
+			limit = {
+               owns_entire_state_region = STATE_CONNAUGHT
+               owns_entire_state_region = STATE_LEINSTER
+               owns_entire_state_region = STATE_MUNSTER
+               owns_entire_state_region = STATE_ULSTER
+               NOT = { has_variable = eng_var_3 }
+            }
+            set_variable = eng_var_3
+            trigger_event = { id = tno_flavor_events.9 popup = yes }
+        }
+
+
+
+
+        #War Events
+        if = {
+            limit = {
+                game_date >= 1965.7.13
+                NOT = { has_global_variable = col_war_var }
+            }
+            set_global_variable = col_war_var
+            trigger_event = { id = tno_war_events.9 }
+
+        }
+        #SAF
+        if = {
+            limit = {
+                c:KON ?= this
+                game_date >= 1968.3.1
+                NOT = { has_global_variable = saf_war_var }
+            }
+            set_global_variable = saf_war_var
+            trigger_event = { id = tno_war_events.1 }
+
+        }
+        #Egypt
+        if = {
+            limit = {
+                c:EGY?= this
+                game_date >= 1964.3.1
+                NOT = { has_variable = egyp_leader_dead_var }
+            }
+            set_variable = egyp_leader_dead_var
+            trigger_event = { id = tno_flavor_events.15 }
+
+        }
+
+        #Phillipean
+        if = {
+			limit = {
+				c:PHI ?= this
+		        game_date >= 1972.6.1
+                NOT = { has_global_variable = phi_war_var }
+			}
+            set_global_variable = phi_war_var
+            trigger_event = { id = tno_war_events.2 }
+        }
+        
+        #Triumvirate
+        if = {
+			limit = {
+				c:TUR ?= this
+		        game_date >= 1964.8.1
+                NOT = { has_global_variable = tri_war_var }
+			}
+            set_global_variable = tri_war_var
+            trigger_event = { id = tno_war_events.3 }
+        }
+
+        if = {
+			limit = {
+				c:IBE ?= this
+		        game_date >= 1964.9.1
+                NOT = { has_global_variable = tri_war_var_ibe }
+			}
+            set_global_variable = tri_war_var_ibe
+            trigger_event = { id = tno_war_events.4 }
+        }
+
+        #Flavor Events
+
+        if = {
+			limit = {
+               game_date >= 1963.10.1
+               NOT = { has_variable = ita_flavor_var }
+            }
+            set_variable = ita_flavor_var
+            trigger_event = { id = tno_flavor_events.4 days = 0 }
+        }
+        if = {
+			limit = {
+               game_date >= 1964.1.1
+               NOT = { has_variable = ibe_flavor_var }
+            }
+            set_variable = ibe_flavor_var
+            trigger_event = { id = tno_flavor_events.5 days = 0 }
+        }
+        if = {
+			limit = {
+               game_date >= 1964.3.1
+               NOT = { has_variable = ita_flavor_var_2 }
+            }
+            set_variable = ita_flavor_var_2
+            trigger_event = { id = tno_flavor_events.6 days = 0 }
+        }
+        if = {
+			limit = {
+               game_date >= 1964.2.1
+               NOT = { has_variable = tur_flavor_var }
+            }
+            set_variable = tur_flavor_var
+            trigger_event = { id = tno_flavor_events.7 days = 0 }
+        }
+
+        #SafContext
+        if = {
+			limit = {
+               game_date >= 1967.9.1
+               NOT = { has_variable = saf_flavor_var }
+            }
+            set_variable = saf_flavor_var
+            trigger_event = { id = tno_flavor_events.1 days = 0 }
+        }
+
+        #South African Conference
+        if = {
+			limit = {
+               game_date >= 1968.1.1
+               NOT = { has_variable = usa_flavor_var }
+            }
+            set_variable = usa_flavor_var
+            trigger_event = { id = tno_flavor_events.2 days = 0 popup = yes }
+        }
+
+        #Mittelafrika investigation
+        if = {
+			limit = {
+               game_date >= 1967.9.1
+               NOT = { has_variable = ger_flavor_var }
+            }
+            set_variable = ger_flavor_var
+            trigger_event = { id = tno_flavor_events.3 days = 0 popup = yes }
+        } 
+    
+       #MADAGASCAR 
+       if = {
+         limit = {
+            game_date >= 1975.12.1
+            NOT = { has_variable = mad_war_var}
+         }
+        set_variable = mad_war_var
+        trigger_event = { id = tno_flavor_events.12 days = 0 popup = yes }
+       }
+
+       if = {
+        limit = {
+           game_date >= 1976.8.1
+           NOT = { has_variable = madder_war_var }
+        }
+       set_variable = madder_war_var
+       trigger_event = { id = tno_flavor_events.13 days = 0 popup = yes }
+       }
+       if = {
+        limit = {
+            c:SMD ?= this
+            game_date >= 1977.4.1
+            NOT = { has_global_variable = maddener_war_var }
+        }
+        set_global_variable = maddener_war_var
+        trigger_event = { id = tno_war_events.6 }
+       }
+       if = {
+        limit = {
+           has_global_variable = maddener_war_var
+           NOT = { has_variable = mad_supersss_war_var }
+        }
+        set_variable = mad_supersss_war_var
+        trigger_event = { id = tno_super_events.9 days = 0 popup = yes }
+        }
+      
+        
+        #Oilcrisis 
+
+        if = {
+            limit = {
+               game_date >= 1978.7.1
+               NOT = { has_variable = oil_crisis_information_var}
+            }
+           set_variable = oil_crisis_information_var
+           trigger_event = { id = tno_oil_crisis.13 days = 0 popup = yes }
+          }
+       
+        if = {
+            limit = {
+               game_date >= 1980.2.1
+               NOT = { has_variable = oil_crisis_war_1_var}
+            }
+           set_variable = oil_crisis_war_1_var
+           trigger_event = { id = tno_oil_crisis.1 days = 0 popup = yes }
+          } 
+        if = {
+            limit = {
+               game_date >= 1980.4.1
+               NOT = { has_variable = oil_crisis_war_2_var}
+            }
+            set_global_variable = oil_crisis_start
+            set_variable = oil_crisis_war_2_var
+           trigger_event = { id = tno_oil_crisis.3 days = 0 popup = yes }
+          }    
+        if = {
+            limit = {
+               game_date >= 1980.5.1
+               NOT = { has_variable = oil_crisis_war_3_var}
+            }
+           set_variable = oil_crisis_war_3_var
+           trigger_event = { id = tno_oil_crisis.5  days = 0 popup = yes }
+          }       
+        if = {
+            limit = {
+               game_date >= 1980.8.1
+               NOT = { has_variable = oil_crisis_war_4_var}
+            }
+           set_variable = oil_crisis_war_4_var
+           trigger_event = { id = tno_oil_crisis.2  days = 0 popup = yes }
+          }    
+        if = {
+            limit = {
+               game_date >= 1980.11.1
+               NOT = { has_variable = oil_crisis_war_5_var}
+            }
+           set_variable = oil_crisis_war_5_var
+           trigger_event = { id = tno_oil_crisis.6  days = 0 popup = yes }
+          }  
+        if = {
+            limit = {
+               game_date >= 1980.12.1
+               NOT = { has_variable = oil_crisis_war_7_var}
+            }
+           set_variable = oil_crisis_war_7_var
+           trigger_event = { id = tno_oil_crisis.7  days = 0 popup = yes }
+          }  
+        if = {
+            limit = {
+               game_date >= 1981.2.1
+               NOT = { has_variable = oil_crisis_war_6_var}
+            }
+           set_variable = oil_crisis_war_6_var
+           trigger_event = { id = tno_oil_crisis.4 days = 0 popup = yes }
+          }  
+        if = {
+            limit = {
+               game_date >= 1980.6.1
+               NOT = { has_variable = oil_crisis_war_8_var}
+            }
+           set_variable = oil_crisis_war_8_var
+           trigger_event = { id = tno_oil_crisis.8 days = 0 popup = yes }
+          } 
+        if = {
+            limit = {
+                has_global_variable =  oil_crisis_start
+                NOT = { has_variable = oil_crisis_superevent_var }
+            }
+            set_variable = oil_crisis_superevent_var
+            trigger_event = { id = tno_oil_crisis.9 }
+           }   
+
+        if = { #Irkutsk: Crushed Mutiny (Buryatia Conquered)
+            limit = {
+                c:IRK ?= this
+               owns_entire_state_region = STATE_IRKUTSK
+               NOT = { has_variable = irk_obry_var }
+            }
+            set_variable = irk_obry_var
+            trigger_event = { id = tno_irk_events.1 days = 10 popup = no }
+        }
+
+        if = { #Irkutsk: Yagoda is no longer ruler
+            limit = {
+                c:IRK ?= this
+                ruler = {
+                    NOT = {has_variable = is_genrikh}
+                    #check if irkutsk has autocracy so that you can tell if yagoda was ousted or just died of old age. so that we can have "yagoda successor" vs "party takes power"
+                }
+                has_law = law_type:law_autocracy
+               NOT = { has_variable = irk_lyag_var }
+            }
+            set_variable = irk_lyag_var
+
+            trigger_event = { id = tno_irk_events.4 days = 60 popup = yes }
+        }
+
+        if = { #Irkutsk: No longer has law Autocracy, but yagoda is still alive.  The party came into power and overthrew him.
+            limit = {
+                c:IRK ?= this
+                NOT = {has_law = law_type:law_autocracy}
+                NOT = { has_variable = irk_noat_var }
+                any_scope_character = {
+                    has_variable = is_genrikh
+                    is_character_alive = yes
+                }
+            }
+            
+            set_variable = irk_noat_var
+
+            trigger_event = { id = tno_irk_events.5 days = 2 popup = yes }
+        }
+        if = { #Irkutsk: Get flavor event abt beginning of invasion of Far East.
+            limit = {
+               c:IRK ?= this
+               game_date >= 1966.1.1
+               NOT = { has_variable = irk_inv_var }
+            }
+            set_variable = irk_inv_var
+            trigger_event = { id = tno_irk_events.7 days = 180 popup = yes }
+        }
+
+        c:CHI = {
+            if = {
+                limit = {
+                    NOT = { is_subject_of = c:JAP }
+                }
+                remove_modifier = restricted_army
+                remove_modifier = slave_of_the_samurai
+            }
+        }
+        
+    }
+    
+    
+    #Oil Crisis Random Events
+    
+    random_events = {
+        10 = 0
+        1 = tno_oil_crisis.10
+        1 = tno_oil_crisis.11
+        1 = tno_oil_crisis.12
+    }
+
+}  
+
+on_wargoal_enforced = {
+    effect = {
+        if = {
+            limit = {
+                owner = {
+                    c:GMB ?= this
+                    NOT = {
+                        exists = c:GAS
+                        exists = c:GHG
+                        exists = c:GRH
+                    }
+                }
+             }
+           owner = {
+            trigger_event = { id = tno_germany_events.19 days = 0 popup = yes }
+           }
+        }
+        if = {
+            limit = {
+                owner = {
+                    c:GAS ?= this
+                    NOT = {
+                        exists = c:GMB
+                        exists = c:GHG
+                        exists = c:GRH
+                    }
+                }
+             }
+             owner = {
+                trigger_event = { id = tno_germany_events.19 days = 0 popup = yes }
+               }
+        }
+        if = {
+            limit = {
+                owner = {
+                    c:GHG ?= this
+                    NOT = {
+                        exists = c:GAS
+                        exists = c:GMB
+                        exists = c:GRH
+                    }
+                }
+             }
+             owner = {
+                trigger_event = { id = tno_germany_events.19 days = 0 popup = yes }
+               }
+        }
+        if = {
+            limit = {
+                owner = {
+                    c:GRH ?= this
+                    NOT = {
+                        exists = c:GAS
+                        exists = c:GHG
+                        exists = c:GMB
+                    }
+                }
+             }
+             owner = {
+                trigger_event = { id = tno_germany_events.19 days = 0 popup = yes }
+               }
+        }
+    }
+
+
+}

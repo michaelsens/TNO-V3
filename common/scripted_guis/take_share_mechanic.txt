@@ -1,0 +1,163 @@
+﻿take_share_scripted_gui = {
+	scope = country
+	saved_scopes = {
+		invested_state
+    }
+
+	is_shown = {
+		always = yes	
+	}
+	
+	is_valid = {
+		scope:invested_state = {
+			has_variable = fi_state_total_number
+			var:fi_state_total_number > 0
+		}
+	}
+
+	effect = {
+		scope:invested_state = {
+			set_variable = {
+				name = take_share_target_state
+				value = 0
+			}
+			owner = {
+				trigger_event = { id = fi_share_taking_executer.1 }
+			}
+		}
+	}
+}
+buy_share_state_scripted_gui = {
+	scope = country
+	saved_scopes = {
+		invested_state
+		investor_country
+	}
+
+	is_shown = {
+		always = yes	
+	}
+	
+	is_valid = {
+		scope:invested_state = {
+			NOT = { has_variable = buy_share_counter }
+			owner = {
+				OR = {
+					NOT = { this = scope:investor_country }
+					prev = { 
+						has_variable = fi_state_total_number
+						var:fi_state_total_number > 0
+					}
+				} 
+				check_investable = yes
+			}
+			OR = {
+				NOT = { has_variable = fi_state_item_number }
+				NOT = { var:fi_state_building_number = var:fi_state_item_number }
+			}
+		}
+	}
+
+	effect = {
+		scope:investor_country = {
+			if = { 
+				limit = {
+					NOT = { has_variable = fi_identification }
+				}
+				fi_assign_id = yes
+			}
+			save_scope_as = fi_target_country
+		}
+		scope:invested_state = {
+			set_variable = {
+				name = buy_share_counter
+				value = 1
+				months = 1
+			}
+			every_id_building_executor = {
+				FUNCTION = fi_buy_share_effect3
+			}
+			fi_id_building_executor = {
+				FUNCTION = fi_buy_share_caluclate_misc
+			}
+			if = {
+				limit = {
+					NOT = { owner = { this = scope:investor_country} }
+				}
+				every_scope_building = {
+					limit = { level > 0 }
+					no_id_every_building_executor = {
+						FUNCTION = fi_buy_share_effect
+					}
+				}
+			}
+		}
+	}
+}
+
+buy_share_scripted_gui = {
+	scope = country
+	saved_scopes = {
+		invested_building
+		investor_country
+    }
+
+	is_shown = {
+		always = no	
+	}
+	
+	is_valid = {
+		exists = scope:invested_building
+		scope:invested_building = {
+			owner = {
+				OR = {
+					NOT = { this = scope:investor_country }
+					scope:invested_building.state = { 
+						state_total_number > 0
+					}
+				} 
+				check_investable = yes
+			}
+			state = {
+				NOT = { has_variable = buy_share_counter }
+			}
+			check_invested_building2 = yes
+		}
+	}
+
+	effect = {
+		scope:investor_country = {
+			if = { 
+				limit = {
+					NOT = { has_variable = fi_identification }
+				}
+				fi_assign_id = yes
+			}
+			save_scope_as = fi_target_country
+		}
+		scope:invested_building = {
+			every_id_building_executor = {
+				FUNCTION = fi_buy_share_effect2
+			}
+			fi_id_building_executor = {
+				FUNCTION = fi_buy_share_caluclate_misc2
+			}
+			state = {
+				set_variable = {
+					name = buy_share_counter
+					value = 1
+					months = 1
+				}
+			}
+			if = {
+				limit = {
+					NOT = { owner = { this = scope:investor_country} }
+				}
+				no_id_every_building_executor = {
+					FUNCTION = fi_buy_share_effect
+				}
+				
+			}
+		}
+	}
+}
