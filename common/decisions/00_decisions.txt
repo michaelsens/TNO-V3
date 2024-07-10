@@ -1,0 +1,334 @@
+﻿revive_olympic_games_decision = {
+	is_shown = {
+		exists = c:GRE
+		this = c:GRE
+	}
+
+	possible = {
+		this = c:GRE
+		has_technology_researched = organized_sports
+		hidden_trigger = {
+			NOT = { has_variable = revive_olympics_decision_taken }
+		}
+	}
+	
+	when_taken = {
+		set_variable = {
+			name = revive_olympics_decision_taken
+			value = yes
+		}
+		add_modifier = {
+			name = modifier_olympic_games
+		}
+	}
+
+	ai_chance = {
+		base = 0
+		modifier = {
+			trigger = { bureaucracy > 0 }
+			add = 5
+		}
+		modifier = {
+			OR = {
+				is_diplomatic_play_committed_participant = yes
+				is_at_war = yes
+			}
+			add = -1000
+		}		
+	}
+}
+
+lowlands_land_reclamation = {
+	is_shown = {
+		owns_entire_state_region = STATE_FRIESLAND
+		owns_entire_state_region = STATE_HOLLAND
+		OR = {
+			NOT = { exists = global_var:land_reclamation_global }
+			AND = {
+				exists = global_var:land_reclamation_global
+				global_var:land_reclamation_global >= 10
+			}
+		}
+		NOT = { has_variable = dutch_land_reclaimer }
+	}
+
+	possible = {
+		has_technology_researched = watertube_boiler
+		bureaucracy > 200
+	}
+	
+	when_taken = {
+		if = {
+			limit = {
+				NOT = { has_global_variable = land_reclamation_global }
+			}
+			set_global_variable = {
+				name = land_reclamation_global
+				value = 0
+			}
+		}
+		add_modifier = {
+			name = modifier_reclaiming_land
+			days = -1 # permanent until removed
+		}
+		add_journal_entry = { type = je_land_reclamation }
+		set_variable = dutch_land_reclaimer
+		if = {
+			limit = {
+				NOT = { has_technology_researched = concrete_dockyards }
+			}
+			custom_tooltip = land_reclamation_no_tech
+		}
+		else = {
+			custom_tooltip = land_reclamation_tech
+		}
+	}
+
+	ai_chance = {
+		base = 5
+		modifier = {
+			OR = {
+				is_diplomatic_play_committed_participant = yes
+				is_at_war = yes
+			}
+			add = -1000
+		}		
+	}
+}
+
+crush_newengland = { #usa attacks newengland breakaways
+		is_shown = {
+			exists = c:USA
+			ROOT = c:USA
+			has_modifier = modifier_usa_newengland
+		}
+	
+		possible = {
+			exists = c:USA
+			ROOT = c:USA
+			has_modifier = modifier_usa_newengland
+		}
+	
+		when_taken = {
+			trigger_event = { id = tno_war_events.10 days = 0 popup = yes }
+		}
+		ai_chance = {
+			base = 100
+		}
+	}
+
+crush_thesouth = { #usa attacks the south
+		is_shown = {
+			exists = c:USA
+			ROOT = c:USA
+			has_modifier = modifier_usa_crushsouth
+		}
+	
+		possible = {
+			exists = c:USA
+			ROOT = c:USA
+			has_modifier = modifier_usa_crushsouth
+		}
+	
+		when_taken = {
+			trigger_event = { id = tno_usa_events.18 days = 0 popup = yes }
+		}
+		ai_chance = {
+			base = 100
+		}
+	}
+	crush_rustbelt = { #usa attacks the rustbelt
+		is_shown = {
+			exists = c:USA
+			ROOT = c:USA
+			has_modifier = modifier_usa_rustbelt
+		}
+	
+		possible = {
+			exists = c:USA
+			ROOT = c:USA
+			has_modifier = modifier_usa_rustbelt
+		}
+	
+		when_taken = {
+			trigger_event = { id = tno_war_events.7 days = 0 popup = yes }
+		}
+		ai_chance = {
+			base = 100
+		}
+	}
+crush_pacific = { #usa attacks the paccific
+		is_shown = {
+			exists = c:USA
+			ROOT = c:USA
+			has_modifier = modifier_usa_cali
+		}
+	
+		possible = {
+			exists = c:USA
+			ROOT = c:USA
+			has_modifier = modifier_usa_cali
+		}
+	
+		when_taken = {
+			trigger_event = { id = tno_usa_events.19 days = 0 popup = yes }
+		}
+		ai_chance = {
+			base = 100
+		}
+	}
+crush_govleauge = { #usa attacks govners lauge
+		is_shown = {
+			exists = c:USA
+			ROOT = c:USA
+			has_modifier = modifier_usa_gov
+		}
+	
+		possible = {
+			exists = c:USA
+			ROOT = c:USA
+			has_modifier = modifier_usa_gov
+		}
+	
+		when_taken = {
+			trigger_event = { id = tno_usa_events.20 days = 0 popup = yes }
+		}
+		ai_chance = {
+			base = 100
+		}
+
+	}
+crush_usu = { #USA ATTACks USU
+			is_shown = {
+				exists = c:USA
+				ROOT = c:USA
+				has_modifier = modifier_usa_crushusu
+			}
+		
+			possible = {
+				exists = c:USA
+				ROOT = c:USA
+				has_modifier = modifier_usa_crushusu
+			}
+		
+			when_taken = {
+				trigger_event = { id = tno_war_events.8 days = 0 popup = yes }
+			}
+			ai_chance = {
+				base = 100
+			}
+		}
+
+		abolish_tangena_ordeal = {
+	is_shown = {
+		exists = c:MAD
+		ROOT = c:MAD
+		has_modifier = modifier_tangena_ordeal
+	}
+
+	possible = {
+		exists = c:MAD
+		ROOT = c:MAD
+		has_modifier = modifier_tangena_ordeal
+		custom_tooltip = {
+			text = ranavalona_tt
+			NOT = {
+				ruler = {
+					has_variable = ranavalona
+				}
+			}
+		}
+	}
+
+	when_taken = {
+		remove_modifier = modifier_tangena_ordeal
+	}
+	ai_chance = {
+		base = 100
+	}
+}
+	
+reform_the_navy = {
+	is_shown = {
+		exists = c:GBR
+		ROOT = c:GBR
+		has_modifier = the_broken_navy
+	}
+
+	possible = {
+		OR = {
+			AND = {
+				exists = c:ENG
+			}
+			AND = {
+				exists = c:GBR
+			}
+		}
+		has_modifier = the_broken_navy
+		GDP >= 40000000
+	}
+		
+	when_taken = {
+		remove_modifier = the_broken_navy
+		add_modifier = {
+			name = the_british_navy
+		}
+		add_modifier = { 
+			name = pay_up
+			years = 3
+		}
+	}
+	ai_chance = {
+		base = 100
+	}
+}
+
+#the_great_trial = {
+#    is_shown = {
+#		exists = c:PRO
+#		ROOT = c:PRO
+#		NOT = {exists = c:RUS}
+#		NOT = { has_global_variable = great_trial }
+#	}
+#
+#    possible = {
+#		exists = c:GER
+#	}
+#	
+#	when_taken = {
+#		trigger_event = { id = tno_war_events.5 }
+#		set_global_variable = great_trial
+#	}
+#	
+#	ai_chance = {
+#		base = 100
+#	}
+#}
+
+german_helping = {
+    is_shown = {
+		exists = c:KON
+		ROOT = c:KON
+	}
+
+    possible = {
+		exists = c:GER
+		exists = c:KON
+		NOT = { has_modifier = german_help }
+	}
+	
+	when_taken = {
+		add_modifier = { 
+			name = german_help
+			years = 1
+		}
+		add_treasury = 50000
+		c:GER = {
+			add_treasury = -50000
+		}
+	}
+	
+	ai_chance = {
+		base = 100
+	}
+}
