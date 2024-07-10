@@ -1,4 +1,4 @@
-﻿#IRK
+﻿#IRK - Irkutsk
 je_ru_tno_irk_restore_order_far_east = { 
 
     icon = "gfx/interface/icons/alert_icons/idle_mobilized_general.dds"
@@ -27,14 +27,14 @@ je_ru_tno_irk_restore_order_far_east = {
         owns_entire_state_region = STATE_KAMCHATKA
 
         custom_tooltip = {
-            text = je_ru_tno_irk_owns_chernyshevsky
+            text = je_ru_tno_owns_chernyshevsky
             any_scope_state = {
                 state_region = s:STATE_UPPER_YENISEYSK
             }
         }
 
         hidden_trigger = {
-            has_variable = irk_form_far_east
+            has_variable = ru_unite_far_east
         }
 	}
 
@@ -204,66 +204,6 @@ je_ru_tno_irk_finish_sib_plan = {
     progressbar = no
     
     weight = 4000
-
-    
-    should_be_pinned_by_default = yes
-    
-}
-
-je_ru_tno_second_great_patriotic_war = { 
-
-    icon = "gfx/interface/icons/lens_toolbar_icons/recruit_generals_lens_option.dds"
-    group = je_group_historical_content
-    scripted_button = je_ru_second_great_patriotic_war
-
-    immediate = {
-        c:USA = {
-            save_scope_as = usa_nation_scope
-        }
-        c:FIN = {
-            save_scope_as = fin_nation
-        }
-    }
-    
-    complete = {
-        custom_tooltip = {
-            text = complete_one_army_reform_rq
-            OR = {
-                has_modifier = ru_basic_army_reform
-                has_modifier = ru_significant_army_reform
-                has_modifier = ru_full_army_reform
-            }
-        }
-        is_diplomatic_play_initiator = no
-        #custom_tooltip = {
-        #    text = complete_request_american_aid_and_magadan
-        #    has_variable = je_request_american_aid_tried
-        #}
-        #owns_entire_state_region = STATE_EAST_KARELIA
-        hidden_trigger = {
-            owns_entire_state_region = STATE_MOSCOW
-        }
-    }
-
-    on_complete = {
-        custom_tooltip = warning_2wrw
-    }
-
-    on_monthly_pulse = {
-    }
-
-    current_value = {
-        
-    }
-
-
-    goal_add_value = {
-        
-    }
-
-    progressbar = no
-    
-    weight = 1000
 
     
     should_be_pinned_by_default = yes
