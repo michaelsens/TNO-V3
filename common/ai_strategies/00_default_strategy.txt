@@ -1383,6 +1383,7 @@ ai_strategy_default = {
 		paper = {
 			stance = wants_high_supply
 			trigger = {
+				has_technology_researched = centralization
 				total_population >= 1000000
 				NOT = { has_law = law_type:law_traditionalism }
 			}
@@ -2265,7 +2266,12 @@ ai_strategy_default = {
 						NOT = { is_country_type = unrecognized }
 						scope:target_country = { is_country_type = unrecognized }
 					}
-					add = 50				
+					add = 50
+					
+					if = {
+						limit = { has_technology_researched = civilizing_mission }
+						add = 50
+					}					
 				}			
 				
 				if = { 
@@ -2515,7 +2521,12 @@ ai_strategy_default = {
 					scope:target_country = { is_country_type = unrecognized }
 					scope:target_country = { NOT = { is_subject_of = root }	}
 				}
-				add = 25			
+				add = 25
+				
+				if = {
+					limit = { has_technology_researched = civilizing_mission }
+					add = 25
+				}					
 			}			
 			
 			if = {

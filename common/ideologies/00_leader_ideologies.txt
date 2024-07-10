@@ -175,6 +175,9 @@ ideology_atheist = {
 				is_heir = yes
 			}
 		}
+		owner = {
+			has_technology_researched = realism
+		}
 		scope:interest_group = {
 			OR = {
 				is_interest_group_type = ig_trade_unions
@@ -379,6 +382,7 @@ ideology_radical = {
 	}
 	
 	possible = {
+		owner = { has_technology_researched = egalitarianism }
 		# Agitators should have an ideology at odds with current laws
 		NAND = {
 			has_role = agitator
@@ -481,6 +485,9 @@ ideology_radical = {
 					scope:interest_group = {
 						is_interest_group_type = ig_trade_unions
 					}
+					owner = {
+						has_technology_researched = socialism
+					}
 				}
 				add = -200
 			}
@@ -551,6 +558,10 @@ ideology_reformer = {
 	}
 	
 	possible = {
+		owner = {
+			has_technology_researched = egalitarianism
+			NOT = { has_technology_researched = feminism }
+		}
 		# Agitators should have an ideology at odds with current laws
 		NAND = {
 			has_role = agitator
@@ -591,6 +602,9 @@ ideology_reformer = {
 		# less likely among more progressive IG's if they're angry and socialism is researched
 		if = {
 			limit = {
+				owner = {
+					has_technology_researched = socialism
+				}
 				scope:interest_group = {
 					OR = {
 						is_interest_group_type = ig_intelligentsia
@@ -642,6 +656,7 @@ ideology_feminist = {
 	
 	possible = {
 		owner = { 
+			has_technology_researched = feminism
 			NOT = { has_law = law_type:law_womens_suffrage }
 		}
 		# Agitators should have an ideology at odds with current laws
@@ -695,6 +710,8 @@ ideology_feminist = {
 			# more likely if character is a woman after mass propaganda
 			if = {
 				limit = {
+					owner = { has_technology_researched = mass_propaganda }
+					is_female = yes
 				}
 				multiply = {
 					value = 2
@@ -1231,6 +1248,7 @@ ideology_social_democrat = {
 	}
 
 	possible = {
+		owner = { has_technology_researched = socialism }
 		# Agitator ideologies should disapprove of a current law
 		NAND = {
 			has_role = agitator
@@ -1401,6 +1419,7 @@ ideology_communist = {
 				is_heir = yes
 			}
 		}
+		owner = { has_technology_researched = socialism }
 		scope:interest_group = {
 			OR = {
 				is_interest_group_type = ig_rural_folk
@@ -1526,6 +1545,7 @@ ideology_vanguardist = {
 	}			
 	
 	possible = {
+		owner = { has_technology_researched = socialism }
 		# Agitator ideologies should disapprove of a current law
 		NAND = {
 			has_role = agitator
@@ -1739,6 +1759,7 @@ ideology_fascist = {
 	}
 	
 	possible = {
+		owner = { has_technology_researched = mass_propaganda }
 		# Agitator ideologies should disapprove of a current law
 		NAND = {
 			has_role = agitator
@@ -1930,6 +1951,7 @@ ideology_nat_soc = {
 	}
 	
 	possible = {
+		owner = { has_technology_researched = mass_propaganda }
 		# Agitator ideologies should disapprove of a current law
 		NAND = {
 			has_role = agitator
@@ -2139,6 +2161,7 @@ ideology_anarchist = {
 	}
 	
 	possible = {
+		owner = { has_technology_researched = anarchism }
 		# Agitator ideologies should disapprove of a current law
 		NAND = {
 			has_role = agitator
@@ -2249,6 +2272,9 @@ ideology_ethno_nationalist = {
 	}
 
 	possible = {
+		owner = {
+			has_technology_researched = political_agitation
+		}
 		# Agitator ideologies should disapprove of a current law
 		NAND = {
 			has_role = agitator
@@ -2533,6 +2559,7 @@ ideology_market_liberal = {
 		law_commercialized_agriculture = approve
 	}	possible = {
 		owner = {
+			has_technology_researched = stock_exchange
 			# capitalism must be relevant
 			exists = ig:ig_industrialists
 			ig:ig_industrialists = {
@@ -2713,6 +2740,7 @@ ideology_luddite = {
 
 	possible = {
 		owner = {
+			has_technology_researched = romanticism
 			OR = {
 				has_law = law_type:law_command_economy
 				has_law = law_type:law_laissez_faire
@@ -2822,11 +2850,13 @@ ideology_authoritarian = {
 		scope:interest_group = {
 			# trade unions should always go vanguardist instead if available
 			NAND = {
+				owner = { has_technology_researched = socialism }
 				is_interest_group_type = ig_trade_unions
 			}
 			# PB should always go fascist instead if available
 			NAND = {
 				is_interest_group_type = ig_petty_bourgeoisie
+				owner = { has_technology_researched = mass_propaganda }
 			}
 			NOR = {
 				has_variable = chose_vanguardism
@@ -2933,6 +2963,7 @@ ideology_protectionist = {
 
 	possible = {
 		owner = {
+			has_technology_researched = international_trade
 			# capitalism must be relevant
 			exists = ig:ig_industrialists
 			ig:ig_industrialists = {
@@ -3086,6 +3117,9 @@ ideology_humanitarian = {
 	}
 
 	possible = {
+		owner = {
+			has_technology_researched = feminism
+		}
 		# Agitator ideologies should disapprove of a current law
 		NAND = {
 			has_role = agitator
@@ -3225,6 +3259,9 @@ ideology_humanitarian = {
 		# less likely for angry trade unions, they should go communist instead
 		if = {
 			limit = {
+				owner = {
+					has_technology_researched = socialism
+				}
 				scope:interest_group = {
 					is_interest_group_type = ig_trade_unions
 					ig_approval < 5
@@ -3378,6 +3415,9 @@ ideology_positivist = {
 				is_heir = yes
 			}
 		}
+		owner = {
+			has_technology_researched = empiricism
+		}
 		scope:interest_group = {
 			OR = {
 				is_interest_group_type = ig_armed_forces
@@ -3446,6 +3486,7 @@ ideology_land_reformer = {
 	}
 
 	possible = {
+		owner = { has_technology_researched = enclosure }
 		# Agitator ideologies should disapprove of a current law
 		NAND = {
 			has_role = agitator
@@ -3601,6 +3642,7 @@ ideology_integralist = {
 	}
 
 	possible = {
+		owner = { has_technology_researched = corporatism }
 		owner = { 
 			any_primary_culture = { 
 				OR = { 
@@ -3886,6 +3928,7 @@ ideology_corporatist_leader = {
 	}
 	
 	possible = {
+		owner = { has_technology_researched = corporatism }
 		# Agitators should have an ideology at odds with current laws
 		NAND = {
 			has_role = agitator
@@ -4022,6 +4065,9 @@ ideology_humanitarian_royalist = {
 	}
 
 	possible = {
+		owner = {
+			has_technology_researched = feminism
+		}
 		# Agitator ideologies should disapprove of a current law
 		NAND = {
 			has_role = agitator
@@ -4060,6 +4106,18 @@ ideology_humanitarian_royalist = {
 				}
 			}
 			add = 50
+		}
+		# massively more likely in monarchies
+		if = {
+			limit = {
+				owner = {
+					has_law = law_type:law_humanitarian_royalist
+				}
+			}
+			add = 50
+		}
+		else = {
+			add = -50
 		}
 		# less likely if issues are not relevant
 		if = {
@@ -4153,6 +4211,9 @@ ideology_humanitarian_royalist = {
 		# less likely for angry trade unions, they should go communist instead
 		if = {
 			limit = {
+				owner = {
+					has_technology_researched = socialism
+				}
 				scope:interest_group = {
 					is_interest_group_type = ig_trade_unions
 					ig_approval < 5
