@@ -1,0 +1,18 @@
+﻿tranfer_gold_to_investment_decision = {
+	is_shown = {
+		is_player = yes
+        gold_reserves > 0
+	}
+
+	possible = {
+        gold_reserves > 0
+        
+	}
+
+	when_taken = {
+		
+		add_investment_pool = gold_reserves
+        add_treasury = gold_reserves_negative
+	}
+}
+

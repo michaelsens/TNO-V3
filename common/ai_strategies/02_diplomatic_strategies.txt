@@ -701,7 +701,12 @@ ai_strategy_colonial_expansion = {
 				NOT = { is_country_type = unrecognized }
 				scope:target_country = { is_country_type = unrecognized } 
 			}
-			add = 0.75					
+			add = 0.75			
+			
+			if = {
+				limit = { has_technology_researched = civilizing_mission }
+				add = 1.0
+			}			
 		}
 
 		# Less aggressive against countries we're just antagonistic against, rather than belligerent/domineering
@@ -841,6 +846,11 @@ ai_strategy_colonial_expansion = {
 		if = {
 			limit = { has_technology_researched = civilizing_mission }
 			multiply = 1.25
+		}	
+		
+		if = {
+			limit = { has_law = law_type:law_council_republic }
+			multiply = 0.01
 		}			
 	}
 }
@@ -988,7 +998,12 @@ ai_strategy_economic_imperialism = {
 				NOT = { is_country_type = unrecognized }
 				scope:target_country = { is_country_type = unrecognized } 
 			}
-			add = 0.5		
+			add = 0.5
+			
+			if = {
+				limit = { has_technology_researched = civilizing_mission }
+				add = 0.5
+			}			
 		}
 		
 		if = {
@@ -1819,7 +1834,12 @@ ai_strategy_maintain_power_balance = {
 				NOT = { is_country_type = unrecognized }
 				scope:target_country = { is_country_type = unrecognized } 
 			}
-			add = 0.25		
+			add = 0.25
+			
+			if = {
+				limit = { has_technology_researched = civilizing_mission }
+				add = 0.5
+			}			
 		}
 
 		# Less aggressive against countries we're just antagonistic against, rather than belligerent/domineering
