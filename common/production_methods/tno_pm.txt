@@ -330,3 +330,29 @@ pm_tno_analytical_philosophy_department = {
 pm_no_artillery_production = {
 	texture = "gfx/interface/icons/production_method_icons/no_artillery_production.dds"
 }
+
+pm_small_workshop = {
+	texture = "gfx/interface/icons/production_method_icons/blister_steel_process.dds"
+	
+	unlocking_technologies = {
+		manufacturies
+	}
+	
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_wood_add = 25
+			# output goods
+			goods_output_small_arms_add = 6
+			goods_output_ammunition_add = 6
+			goods_output_artillery_add = 3
+		}
+
+		level_scaled = {
+			building_employment_laborers_add = 2000
+		}
+		unscaled = {
+			building_workforce_shares_add = 1
+		}	
+	}
+}
