@@ -1,13 +1,17 @@
 ﻿POPS = {
 	s:STATE_DISTRICT_OF_COLUMBIA = {
+		# total population of DC in 1830 was 30261, and 33745 in 1840. 32003 serves as a workable average.
+		# + Fairfax County, VA. Total pop in 1830 was 9204, 5203 free/4001 slaves
+		# + Montgomery Co, Prince George's Co, Charles co, St. Mary's Co and Calvert Co in MD- 80418 total, 42176 free/38242 slaves
+		# Number of actual pops adjusted from historical research to better fit the buildings
 		region_state:USA = { 
 			create_pop = {
 				culture = yankee
-				size = 1607544
+				size = 807544
 			}		
 			create_pop = {
 				culture = afro_american
-				size = 107818
+				size = 17818
 			}
 		}
 	}
@@ -16,132 +20,7 @@
 			create_pop = {
 				culture = cajun
 				religion = catholic
-				size = 65992
-			}
-			create_pop = {
-				culture = ashkenazi
-				size = 4200
-			}
-			create_pop = {
-				culture = yankee
-				size = 4018392
-			}
-			create_pop = {
-				culture = yankee
-				religion = jewish
-				size = 4200
-			}
-			create_pop = {
-				culture = afro_american
-				size = 41106 
-			}
-			create_pop = {
-				culture = afro_american
-				size = 202994
-			}
-		}
-	}
-	s:STATE_NEW_YORK = {
-		region_state:USA = {
-			create_pop = {
-				culture = yankee
-				size = 17535000
-			}
-			create_pop = {
-				culture = ashkenazi
-				size = 86000
-			}
-			create_pop = {
-				culture = afro_american
-				size = 120004
-			}
-			create_pop = {
-				culture = siouan
-				size = 8000
-			}
-		}
-	}
-	s:STATE_VIRGINIA = { 
-		region_state:USA = {
-			create_pop = {
-				culture = yankee
-				size = 4023597
-			}
-			create_pop = {
-				culture = ashkenazi
-				size = 6258
-			}
-			create_pop = {
-				culture = afro_american
-				size = 105120
-			}
-		}
-	}
-	s:STATE_ALASKA = {
-		region_state:USA = {
-			create_pop = {
-				culture = siouan
-				size = 29780
-			}
-			create_pop = {
-				culture = yankee
-				size = 220738
-			}	
-		}
-	}
-	s:STATE_WASHINGTON = {
-		region_state:USA = {
-			create_pop = {
-				culture = yankee
-				size = 2453003
-			}		
-			create_pop = {
-				culture = siouan
-				size = 20000
-			}
-			create_pop = {
-				culture = ashkenazi
-				size = 14000
-			}
-		}
-	}
-	s:STATE_OREGON = {
-		region_state:USA = {
-			create_pop = {
-				culture = yankee
-				size = 1684809
-			}			
-			create_pop = {
-				culture = siouan
-				size = 16000
-			}
-			create_pop = {
-				culture = ashkenazi
-				size = 10000
-			}
-		}
-	}
-	s:STATE_IDAHO = {
-		region_state:USA = {
-			create_pop = {
-				culture = siouan
-				size = 40000
-			}
-			create_pop = {
-				culture = ashkenazi
-				size = 8579
-			}
-			create_pop = {
-				culture = yankee
-				size = 608742
-			}	
-		}
-	}
-	s:STATE_COLORADO = {
-		region_state:USA = {
-			create_pop = {
-				culture = siouan
-				size = 4000
+				size = 35992
 			}
 			create_pop = {
 				culture = ashkenazi
@@ -149,7 +28,175 @@
 			}
 			create_pop = {
 				culture = yankee
-				size = 2283729
+				size = 2018392
+			}
+			create_pop = {
+				culture = yankee
+				religion = jewish
+				size = 200
+			}
+			create_pop = {
+				culture = afro_american
+				size = 21106 # 16710 free in 1830, 25502 free in 1840
+			}
+			create_pop = {
+				culture = afro_american
+				size = 102994
+			}
+		}
+	}
+	s:STATE_NEW_YORK = {
+		region_state:USA = {
+			create_pop = {
+				culture = yankee
+				size = 5535000
+			}
+			create_pop = {
+				culture = yankee
+				religion = jewish
+				size = 2000
+			}
+			create_pop = {
+				culture = ashkenazi
+				size = 36000
+			}
+			create_pop = {
+				culture = yankee
+				religion = catholic
+				size = 39996
+			}
+			create_pop = {
+				culture = afro_american
+				size = 20004
+			}
+			create_pop = {
+				culture = irish
+				size = 16000
+			}
+			create_pop = {
+				culture = siouan
+				size = 8000
+			}
+		}
+	}
+	s:STATE_VIRGINIA = { # population of VA proper minus Fairfax County, which had its population figures added to DC to inflate the pop count there
+		region_state:USA = {
+			create_pop = {
+				culture = yankee
+				size = 2023597
+			}
+			create_pop = {
+				culture = yankee
+				religion = catholic
+				size = 48000
+			}
+			create_pop = {
+				culture = ashkenazi
+				size = 1258
+			}
+			create_pop = {
+				culture = afro_american
+				size = 35120
+			}
+			create_pop = {
+				culture = afro_american
+				size = 512079
+			}
+		}
+	}
+	s:STATE_ALASKA = {
+		region_state:USA = {
+			create_pop = {
+				culture = siouan
+				size = 19780
+			}
+			create_pop = {
+				culture = yankee
+				size = 120738
+			}	
+		}
+	}
+	s:STATE_WASHINGTON = {
+		region_state:USA = {
+			create_pop = {
+				culture = yankee
+				size = 1453003
+			}		
+			create_pop = {
+				culture = siouan
+				size = 10000
+			}
+			create_pop = {
+				culture = ashkenazi
+				size = 7000
+			}
+		}
+	}
+	s:STATE_OREGON = {
+		region_state:USA = {
+			create_pop = {
+				culture = yankee
+				size = 884809
+			}			
+			create_pop = {
+				culture = siouan
+				size = 8000
+			}
+			create_pop = {
+				culture = siouan
+				size = 8000
+			}
+			create_pop = {
+				culture = ashkenazi
+				size = 7000
+			}
+		}
+	}
+	s:STATE_IDAHO = {
+		region_state:USA = {
+			create_pop = {
+				culture = siouan
+				size = 20000
+			}
+			create_pop = {
+				culture = ashkenazi
+				size = 4579
+			}
+			create_pop = {
+				culture = yankee
+				size = 308742
+			}	
+		}
+	}
+	s:STATE_COLORADO = {
+		region_state:USA = {
+			create_pop = {
+				culture = siouan
+				size = 2000
+			}
+			create_pop = {
+				culture = ashkenazi
+				size = 1200
+			}
+			create_pop = {
+				culture = siouan
+				size = 10000
+			}
+			create_pop = {
+				culture = siouan
+				size = 4000
+			}
+			create_pop = {
+				culture = mexican
+				size = 4000
+			}
+			create_pop = {
+				culture = siouan
+				size = 1200
+			}
+			create_pop = {
+				culture = yankee
+				size = 1283729
 			}
 		}
 	}
@@ -157,15 +204,27 @@
 		region_state:USA = {
 			create_pop = {
 				culture = siouan
-				size = 22000
+				size = 12000
+			}
+			create_pop = {
+				culture = siouan
+				size = 8000
+			}
+			create_pop = {
+				culture = siouan
+				size = 6000
+			}
+			create_pop = {
+				culture = siouan
+				size = 4000
 			}
 			create_pop = {
 				culture = ashkenazi
-				size = 1600
+				size = 120
 			}
 			create_pop = {
 				culture = yankee
-				size = 257849
+				size = 157849
 			}	
 		}
 	}
@@ -173,45 +232,89 @@
 		region_state:USA = {
 			create_pop = {
 				culture = siouan
-				size = 24000
+				size = 10000
+			}
+			create_pop = {
+				culture = siouan
+				size = 2000
+			}
+			create_pop = {
+				culture = siouan
+				size = 28000
+			}
+			create_pop = {
+				culture = siouan
+				size = 6000
+			}
+			create_pop = {
+				culture = siouan
+				size = 14000
 			}
 			create_pop = {
 				culture = yankee
-				size = 450974
+				size = 250974
 			}	
 		}
 	}
 	s:STATE_NORTH_DAKOTA = {
 		region_state:USA = {
 			create_pop = {
+				culture = siouan
+				size = 6000
+			}
+		# DKT had 22000
+			create_pop = {
+				culture = siouan
+				size = 30000
+			}
+			create_pop = {
+				culture = siouan
+				size = 4000
+			}
+			create_pop = {
 				culture = yankee
-				size = 608363
+				size = 308363
 			}	
 		}
 	}
- 
 	s:STATE_SOUTH_DAKOTA = {
 		region_state:USA = {
 			create_pop = {
 				culture = siouan
-				size = 64000
+				size = 34000
+			}
+			create_pop = {
+				culture = siouan
+				size = 4000
 			}
 			create_pop = {
 				culture = yankee
 				size = 806438
 			}	
 		}
-		
+		# DKT has 12000
 	}
 	s:STATE_NEBRASKA = {
 		region_state:USA = {
 			create_pop = {
 				culture = siouan
-				size = 7000
+				size = 4000
+			}
+			create_pop = {
+				culture = siouan
+				size = 4000
+			}
+			create_pop = {
+				culture = siouan
+				size = 10000
+			}
+			create_pop = {
+				culture = siouan
+				size = 2000
 			}
 			create_pop = {
 				culture = yankee
-				size = 1489749
+				size = 789749
 			}	
 		}
 	}
@@ -219,39 +322,64 @@
 		region_state:USA = {
 			create_pop = {
 				culture = siouan
-				size = 22000
+				size = 12000
+			}
+			create_pop = {
+				culture = siouan
+				size = 8000
+			}
+			create_pop = {
+				culture = siouan
+				size = 4000
 			}
 			create_pop = {
 				culture = yankee
-				size = 1423849
+				size = 723849
 			}	
 		}
 	}
 	s:STATE_OKLAHOMA = {
 		region_state:USA = {
 			create_pop = {
+				culture = siouan
+				size = 2000
+			}
+			create_pop = {
+				culture = siouan
+				size = 8000
+			}
+			create_pop = {
+				culture = siouan
+				size = 50800
+			}
+			create_pop = {
 				culture = ashkenazi
 				size = 690
 			}
 			create_pop = {
 				culture = siouan
-				size = 28000
+				size = 18000
 			}
 			create_pop = {
 				culture = yankee
-				size = 2198378
+				size = 1198378
 			}	
 		}
 	}
 	s:STATE_ARKANSAS = {
 		region_state:USA = {
 			create_pop = {
+				culture = cajun
+				religion = catholic
+				size = 12635
+			}
+			create_pop = {
 				culture = yankee
-				size = 1738570
+				size = 938570
 			}
 			create_pop = {
 				culture = afro_american
-				size = 7903 
+				size = 1903 # 141 free in 1830, 465 free in 1840
 			}
 			create_pop = {
 				culture = ashkenazi
@@ -259,19 +387,45 @@
 			}
 			create_pop = {
 				culture = siouan
-				size = 60136
+				size = 30136
 			}
 		}
 	}
 	s:STATE_MISSOURI = {
 		region_state:USA = {
 			create_pop = {
+				culture = cajun
+				religion = catholic
+				size = 9642
+			}
+			create_pop = {
 				culture = yankee
-				size = 4038666
+				size = 2038666
+			}
+			create_pop = {
+				culture = north_german
+				size = 2000
+			}
+			create_pop = {
+				culture = yankee
+				size = 165204
+			}
+			create_pop = {
+				culture = yankee
+				religion = catholic
+				size = 3996
 			}
 			create_pop = {
 				culture = afro_american
-				size = 68928
+				size = 1072 # 569 free in 1830, 1574 free in 1840
+			}
+			create_pop = {
+				culture = afro_american
+				size = 38928
+			}
+			create_pop = {
+				culture = irish
+				size = 8000
 			}
 		}
 	}
@@ -279,11 +433,15 @@
 		region_state:USA = {
 			create_pop = {
 				culture = siouan
-				size = 22000
+				size = 12000
+			}
+			create_pop = {
+				culture = siouan
+				size = 8000
 			}
 			create_pop = {
 				culture = yankee
-				size = 2339920
+				size = 1339920
 			}
 		}
 	}
@@ -291,11 +449,15 @@
 		region_state:USA = {
 			create_pop = {
 				culture = siouan
-				size = 26000
+				size = 16000
 			}
 			create_pop = {
 				culture = yankee
-				size = 2739920
+				size = 1739920
+			}
+			create_pop = {
+				culture = siouan
+				size = 22000
 			}
 		}
 	}
@@ -303,11 +465,11 @@
 		region_state:USA = {
 			create_pop = {
 				culture = siouan
-				size = 16000
+				size = 8000
 			}
 			create_pop = {
 				culture = yankee
-				size = 4180040
+				size = 2180040
 			}
 		}
 	}
@@ -315,11 +477,19 @@
 		region_state:USA = {
 			create_pop = {
 				culture = yankee
-				size = 4531504
+				size = 2531504
+			}
+			create_pop = {
+				culture = irish
+				size = 4004
+			}
+			create_pop = {
+				culture = north_german
+				size = 20000
 			}
 			create_pop = {
 				culture = afro_american
-				size = 16000
+				size = 8000
 			}
 		}
 	}
@@ -327,19 +497,24 @@
 		region_state:USA = {
 			create_pop = {
 				culture = yankee
-				size = 7023996
+				size = 4023996
 			}
 			create_pop = {
 				culture = ashkenazi
-				size = 8200
+				size = 4200
 			}
 			create_pop = {
 				culture = siouan
-				size = 22000
+				size = 12000
 			}
 			create_pop = {
-				culture = afro_american
-				size = 916000
+				culture = siouan
+				size = 4000
+			}
+			create_pop = {
+				culture = yankee
+				religion = catholic
+				size = 4004
 			}
 		}
 	}
@@ -347,15 +522,23 @@
 		region_state:USA = {
 			create_pop = {
 				culture = yankee
-				size = 9092200
+				size = 4892200
 			}
 			create_pop = {
 				culture = afro_american
-				size = 660008
+				size = 16008
+			}
+			create_pop = {
+				culture = north_german
+				size = 128000
 			}
 			create_pop = {
 				culture = ashkenazi
-				size = 17009
+				size = 7009
+			}
+			create_pop = {
+				culture = irish
+				size = 108004
 			}
 		}
 	}
@@ -363,15 +546,27 @@
 		region_state:USA = {
 			create_pop = {
 				culture = yankee
-				size = 2339988
+				size = 439988
+			}
+			create_pop = {
+				culture = yankee
+				size = 816392
 			}
 			create_pop = {
 				culture = afro_american
-				size = 661879
+				size = 6117 # 4917 free in 1830, 7317 free in 1840
+			}
+			create_pop = {
+				culture = afro_american
+				size = 361879
 			}
 			create_pop = {
 				culture = ashkenazi
 				size = 3200
+			}
+			create_pop = {
+				culture = irish
+				size = 20000
 			}
 		}
 	}
@@ -379,15 +574,31 @@
 		region_state:USA = {
 			create_pop = {
 				culture = yankee
-				size = 2819604
+				size = 819604
 			}
 			create_pop = {
 				culture = siouan
 				size = 7200
 			}
 			create_pop = {
+				culture = yankee
+				size = 404800
+			}
+			create_pop = {
 				culture = afro_american
-				size = 842960
+				size = 5040 # 4555 free in 1830, 5524 free in 1840
+			}
+			create_pop = {
+				culture = afro_american
+				size = 442960
+			}
+			create_pop = {
+				culture = irish
+				size = 39996
+			}
+			create_pop = {
+				culture = siouan
+				size = 2528 # 1835 Cherokee Census "Henderson Roll"
 			}
 		}
 	}
@@ -395,11 +606,15 @@
 		region_state:USA = {
 			create_pop = {
 				culture = yankee
-				size = 1872804
+				size = 972804
 			}
 			create_pop = {
 				culture = afro_american
-				size = 167057
+				size = 943 # 519 free in 1830, 1366 free in 1840
+			}
+			create_pop = {
+				culture = afro_american
+				size = 87057
 			}
 		}
 	}
@@ -407,16 +622,28 @@
 		region_state:USA = {
 			create_pop = {
 				culture = yankee
-				size = 1829008
+				size = 929008
 			}
-
 			create_pop = {
 				culture = afro_american
-				size = 1029998
+				size = 1806 # 1572 free in 1830, 2039 free in 1840
+			}
+			create_pop = {
+				culture = afro_american
+				size = 529998
 			}
 			create_pop = {
 				culture = ashkenazi
-				size = 2900
+				size = 159
+			}
+			create_pop = {
+				culture = yankee
+				religion = catholic
+				size = 16004
+			}
+			create_pop = {
+				culture = siouan
+				size = 1424 # 1835 Cherokee Census "Henderson Roll"
 			}
 			create_pop = {
 				culture = siouan # Creeks tallied in the "Parsons and Albert Roll" after the 1832 Treaty of Cusseta
@@ -428,11 +655,19 @@
 		region_state:USA = {
 			create_pop = {
 				culture = yankee
-				size = 4279960
+				size = 2279960
 			}
 			create_pop = {
 				culture = afro_american
-				size = 1011183
+				size = 817 # unknown free population in 1830, 817 free in 1840
+			}
+			create_pop = {
+				culture = afro_american
+				size = 511183
+			}
+			create_pop = {
+				culture = siouan
+				size = 8000
 			}
 		}
 	}
@@ -440,15 +675,24 @@
 		region_state:USA = {
 			create_pop = {
 				culture = yankee
-				size = 2129836
+				size = 1129836
+			}
+			create_pop = {
+				culture = yankee
+				religion = jewish
+				size = 1000
+			}
+			create_pop = {
+				culture = siouan
+				size = 8946 # 1835 Cherokee Census "Henderson Roll"
 			}
 			create_pop = {
 				culture = afro_american
-				size = 1402620 # 2486 free in 1830, 2753 free in 1840
+				size = 702620 # 2486 free in 1830, 2753 free in 1840
 			}
 			create_pop = {
 				culture = afro_american
-				size = 856172
+				size = 456172
 			}
 		}
 	}
@@ -456,31 +700,52 @@
 		region_state:USA = {
 			create_pop = {
 				culture = yankee
-				size = 43544
+				size = 23544
 			}	
 			create_pop = {
 				culture = yankee
-				size = 1660916
+				size = 860916
 			}
 			create_pop = {
 				culture = afro_american
-				size = 28081 # 17673 slaves in WV's counties in 1830, 18488 slaves in 1840
+				size = 18081 # 17673 slaves in WV's counties in 1830, 18488 slaves in 1840
+			}
+			create_pop = {
+				culture = afro_american
+				size = 1808 # don't have easy numbers for WV's free non-white population, but ~10% of the enslaved population seems to roughly track
+			}
+			create_pop = {
+				culture = yankee
+				religion = catholic
+				size = 28000
 			}
 		}
 	}
 	s:STATE_MARYLAND = { # Actually Maryland + Delaware
 		region_state:USA = {
+			# Maryland: (1830, 447040) (1840, 470019), so 1835 est. 458530
+			# Delaware: (1830, 76748)  (1840, 78085),  so 1835 est. 77417
+			# minus 42176 free/38242 slaves that have been ceded to DC to inflate its pop figure
+			# aim for 535947 pops for Mega-Maryland (Megaland?) in total
 			create_pop = {
 				culture = yankee
-				size = 2101997
+				size = 1101997
 			}
+			# Maryland: 52938 free in 1830, 62078 free in 1840
+			# Delaware: 15855 free in 1830, 16919 free in 1840
 			create_pop = {
 				culture = afro_american
-				size = 188541
+				size = 98541
 			}
 			create_pop = {
 				culture = ashkenazi
-				size = 4790
+				size = 2790
+			}
+			# Maryland: 102994 in 1830, 89737 in 1840
+			# Delaware: 3292 in 1830, 2605 in 1840
+			create_pop = {
+				culture = afro_american
+				size = 58467
 			}
 		}
 	}
@@ -489,15 +754,18 @@
 		region_state:USA = {
 			create_pop = {
 				culture = yankee
-				size = 477000
+				size = 277000
 			}
 	
 			create_pop = {
 					culture = afro_american
-					size = 26919
+					size = 16919
 			}
 	
-			
+			create_pop = {
+					culture = afro_american
+					size = 2605
+			}
 		}
 	}
 
@@ -505,11 +773,25 @@
 		region_state:USA = {
 			create_pop = {
 				culture = yankee
-				size = 10850496
+				size = 4850496
+			}
+			create_pop = {
+				culture = yankee
+				religion = jewish
+				size = 2000
+			}
+			create_pop = {
+				culture = yankee
+				religion = catholic
+				size = 144008
+			}
+			create_pop = {
+				culture = irish
+				size = 59800
 			}
 			create_pop = {
 				culture = afro_american
-				size = 483996
+				size = 283996
 			}
 			create_pop = {
 				culture = ashkenazi
@@ -521,11 +803,16 @@
 		region_state:USA = {
 			create_pop = {
 				culture = yankee
-				size = 5603200
+				size = 2603200
+			}
+			create_pop = {
+				culture = yankee
+				religion = catholic
+				size = 27996
 			}
 			create_pop = {
 				culture = afro_american
-				size = 625996
+				size = 325996
 			}
 			create_pop = {
 				culture = ashkenazi
@@ -537,15 +824,15 @@
 		region_state:USA = {
 			create_pop = {
 				culture = yankee
-				size = 9352400
+				size = 4452400
 			}
 			create_pop = {
 				culture = afro_american
-				size = 1204000
+				size = 604000
 			}
 			create_pop = {
 				culture = ashkenazi
-				size = 14600
+				size = 7600
 			}
 		}
 	}
@@ -553,7 +840,7 @@
 		region_state:USA = {
 			create_pop = {
 				culture = yankee
-				size = 814820
+				size = 414820
 			}
 		}
 	}
@@ -561,7 +848,7 @@
 		region_state:USA = {
 			create_pop = {
 				culture = yankee
-				size = 2599228
+				size = 1299228
 			}
 		}
 	}
@@ -569,11 +856,20 @@
 		region_state:USA = {
 			create_pop = {
 				culture = yankee
-				size = 5054484
+				size = 2054484
 			}
 			create_pop = {
 				culture = afro_american
-				size = 181996
+				size = 91996
+			}
+			create_pop = {
+				culture = irish
+				size = 52400
+			}
+			create_pop = {
+				culture = yankee
+				religion = catholic
+				size = 28400
 			}
 		}
 	}
@@ -581,7 +877,16 @@
 		region_state:USA = {
 			create_pop = {
 				culture = yankee
-				size = 623300
+				size = 323300
+			}
+			create_pop = {
+				culture = anglo_canadian
+				size = 24000
+			}
+			create_pop = {
+				culture = yankee
+				religion = catholic
+				size = 32000
 			}
 		}
 	}
@@ -589,15 +894,19 @@
 		region_state:USA = {
 			create_pop = {
 				culture = yankee
-				size = 482848
+				size = 282848
 			}
 		}
 	}
 	s:STATE_MAINE = {
 		region_state:USA = {
 			create_pop = {
+				culture = anglo_canadian
+				size = 16000
+			}
+			create_pop = {
 				culture = yankee
-				size = 881228
+				size = 481228
 			}
 		}
 	}
@@ -605,15 +914,19 @@
 		region_state:USA = {
 			create_pop = {
 				culture = yankee
-				size = 2142500
+				size = 142500
 			}
 			create_pop = {
 				culture = afro_american
-				size = 2022862
+				size = 21138 # 19543 free in 1830, 22732 free in 1840
+			}
+			create_pop = {
+				culture = afro_american
+				size = 922862
 			}
 			create_pop = {
 				culture = siouan
-				size = 9644 
+				size = 3644 # 1835 Cherokee Census "Henderson Roll"
 			}
 		}
 	}
@@ -621,11 +934,23 @@
 		region_state:USA = {
 			create_pop = {
 				culture = siouan
-				size = 21000
+				size = 3000
+			}
+			create_pop = {
+				culture = siouan
+				size = 2000
+			}
+			create_pop = {
+				culture = siouan
+				size = 4000
+			}
+			create_pop = {
+				culture = siouan
+				size = 11000
 			}
 			create_pop = {
 				culture = yankee
-				size = 1014800
+				size = 514800
 			}	
 		}
 	}
@@ -633,15 +958,24 @@
 		region_state:USA = {
 			create_pop = {
 				culture = yankee
-				size = 1853836
+				size = 953836
+			}
+			create_pop = {
+				culture = yankee
+				religion = jewish
+				size = 1000
 			}
 			create_pop = {
 				culture = siouan
-				size = 18960
+				size = 6960
 			}
 			create_pop = {
 				culture = afro_american
-				size = 1218693
+				size = 8099 # 7921 free in 1830, 8276 free in 1840
+			}
+			create_pop = {
+				culture = afro_american
+				size = 618693
 			}
 		}
 	}
@@ -657,21 +991,21 @@
 			}
 			create_pop = {
 				culture = japanese
-				size = 62938
+				size = 22938
 			}
 			create_pop = {
 				culture = melanesian
 				religion = catholic
-				size = 172304
+				size = 72304
 			}
 			create_pop = {
 				culture = melanesian
 				religion = catholic
-				size = 18500
+				size = 8500
 			}
 			create_pop = {
-				culture = japanese
-				size = 150000
+				culture = han
+				size = 50000
 			}
 		}
 	}
@@ -679,84 +1013,84 @@
 		region_state:CAN = {
 			create_pop = {
 				culture = anglo_canadian
-				size = 5933584
+				size = 2966792
 			}
 			create_pop = {
 				culture = ashkenazi
-				size = 24000
+				size = 12000
 			}
 			create_pop = {
 				culture = siouan
-				size = 24400
+				size = 12200
 			}
 			create_pop = {
 				culture = anglo_canadian
-				size = 146800
+				size = 73400
 			}
 			create_pop = {
 				culture = siouan
-				size = 7804
+				size = 3902
 			}
 			create_pop = {
 				culture = siouan
-				size = 7804
+				size = 3902
 			}
 			create_pop = {
 				culture = anglo_canadian
 				religion = catholic
-				size = 1200
+				size = 600
 			}
 			create_pop = {
 				culture = siouan
-				size = 7992
+				size = 3996
 			}
 			create_pop = {
 				culture = siouan
-				size = 8000
+				size = 4000
 			}
 			create_pop = {
 				culture = anglo_canadian
-				size = 24000
+				size = 12000
 			}
 			create_pop = {
 				culture = siouan
-				size = 56400
+				size = 28200
 			}
 		}
 	}
 	s:STATE_NEW_BRUNSWICK = {
-		# New Brunswick: 238914 in 3668
+		# New Brunswick: 119457 in 1834
 		region_state:CAN = {
 			create_pop = {
 				culture = anglo_canadian
-				size = 331980
+				size = 165990
 			}
 			create_pop = {
 				culture = afro_american
-				size = 1334
+				size = 667
 			}
 			create_pop = {
 				culture = ashkenazi
-				size = 2400
+				size = 1200
 			}
 			create_pop = {
 				culture = anglo_canadian
-				size = 305600
+				size = 152800
 			}
 		}
-		# Nova Scotia: 399812 in 3674
+		# Nova Scotia: 199906 in 1837
 		region_state:CAN = {
 			create_pop = {
 				culture = anglo_canadian
-				size = 393146
+				size = 196573
 			}
 			create_pop = {
 				culture = afro_american
-				size = 6666
+				size = 3333
 			}
 			create_pop = {
 				culture = ashkenazi
-				size = 1756
+				size = 878
 			}
 		}
 	}
@@ -764,37 +1098,37 @@
 		region_state:CAN = {
 			create_pop = {
 				culture = anglo_canadian
-				size = 3894400
+				size = 1947200
 			}
 			create_pop = {
 				culture = anglo_canadian
-				size = 10000
+				size = 5000
 			}
 			create_pop = {
 				culture = siouan
-				size = 6000
+				size = 3000
 			}
 			create_pop = {
 				culture = ashkenazi
-				size = 258
+				size = 129
 			}
 		}
 		region_state:CAN = {
 			create_pop = {
 				culture = siouan
-				size = 8000
+				size = 4000
 			}
 			create_pop = {
 				culture = siouan
-				size = 36408
+				size = 18204
 			}
 			create_pop = {
 				culture = anglo_canadian
-				size = 38400
+				size = 19200
 			}
 			create_pop = {
 				culture = anglo_canadian
-				size = 16000
+				size = 8000
 			}
 		}
 	}
@@ -802,15 +1136,15 @@
 		region_state:CAN = {
 			create_pop = {
 				culture = siouan
-				size = 15960
+				size = 7980
 			}
 			create_pop = {
 				culture = irish
-				size = 160000
+				size = 80000
 			}
 			create_pop = {
 				culture = anglo_canadian
-				size = 559992
+				size = 279996
 			}
 		}
 	}
@@ -818,35 +1152,35 @@
 		region_state:CAN = {
 			create_pop = {
 				culture = anglo_canadian
-				size = 727998
+				size = 363999
 			}		
 			create_pop = {
 				culture = siouan
-				size = 16400
+				size = 8200
 			}
 			create_pop = {
 				culture = siouan
-				size = 22000
+				size = 11000
 			}
 			create_pop = {
 				culture = siouan
-				size = 24000
+				size = 12000
 			}
 			create_pop = {
 				culture = siouan
-				size = 24008
+				size = 12004
 			}
 			create_pop = {
 				culture = siouan
-				size = 30800
+				size = 15400
 			}
 			create_pop = {
 				culture = siouan
-				size = 10000
+				size = 5000
 			}
 			create_pop = {
 				culture = ashkenazi
-				size = 6400
+				size = 3200
 			}
 		}
 	}
@@ -854,19 +1188,19 @@
 		region_state:CAN = {
 			create_pop = {
 				culture = anglo_canadian
-				size = 616000
+				size = 308000
 			}		
 			create_pop = {
 				culture = siouan
-				size = 54792
+				size = 27396
 			}
 			create_pop = {
 				culture = siouan
-				size = 110400
+				size = 55200
 			}
 			create_pop = {
 				culture = ashkenazi
-				size = 2400
+				size = 1200
 			}
 		}
 	}
@@ -874,15 +1208,11 @@
 		region_state:CAN = {
 			create_pop = {
 				culture = anglo_canadian
-				size = 526000
+				size = 263000
 			}			
 			create_pop = {
 				culture = siouan
-				size = 8400
-			}
-			create_pop = {
-				culture = siouan
-				size = 32000
+				size = 4200
 			}
 			create_pop = {
 				culture = siouan
@@ -890,11 +1220,15 @@
 			}
 			create_pop = {
 				culture = siouan
-				size = 48000
+				size = 8000
+			}
+			create_pop = {
+				culture = siouan
+				size = 24000
 			}
 			create_pop = {
 				culture = ashkenazi
-				size = 1578
+				size = 789
 			}
 		}
 	}
@@ -902,32 +1236,32 @@
 		region_state:CAN = {
 			create_pop = {
 				culture = anglo_canadian
-				size = 569696
+				size = 284848
 			}		
 			create_pop = {
 				culture = siouan
-				size = 24000
+				size = 12000
 			}
 			create_pop = {
 				culture = siouan
 				religion = catholic
-				size = 7992
+				size = 3996
 			}
 			create_pop = {
 				culture = siouan
-				size = 32000
+				size = 16000
 			}
 			create_pop = {
 				culture = siouan
-				size = 40008
+				size = 20004
 			}
 			create_pop = {
 				culture = siouan
-				size = 24000
+				size = 12000
 			}
 			create_pop = {
 				culture = ashkenazi
-				size = 2500
+				size = 1250
 			}
 		}
 	}
@@ -935,11 +1269,11 @@
 		region_state:CAN = {
 			create_pop = {
 				culture = siouan
-				size = 24000
+				size = 12000
 			}
 			create_pop = {
 				culture = anglo_canadian
-				size = 59992
+				size = 29996
 			}
 		}
 	}
@@ -947,11 +1281,11 @@
 		region_state:CAN = {
 			create_pop = {
 				culture = siouan
-				size = 32000
+				size = 16000
 			}
 			create_pop = {
 				culture = anglo_canadian
-				size = 50764
+				size = 25382
 			}
 		}
 	}
@@ -959,11 +1293,11 @@
 		region_state:CAN = {
 			create_pop = {
 				culture = siouan
-				size = 23960
+				size = 11980
 			}
 			create_pop = {
 				culture = anglo_canadian
-				size = 44748
+				size = 22374
 			}
 		}
 		
@@ -972,15 +1306,15 @@
 		region_state:CAN = {
 			create_pop = {
 				culture = yankee
-				size = 58400
+				size = 29200
 			}
 			create_pop = {
 				culture = british
-				size = 29696
+				size = 14848
 			}
 			create_pop = {
 				culture = afro_american
-				size = 24704
+				size = 12352
 			}
 		}
 	}
@@ -988,7 +1322,11 @@
 		region_state:USA = {
 			create_pop = {
 				culture = yankee
-				size = 8242224
+				size = 4242224
+			}
+			create_pop = {
+				culture = siouan
+				size = 1996
 			}
 			create_pop = {
 				culture = siouan
@@ -996,28 +1334,43 @@
 			}
 			create_pop = {
 				culture = afro_american
-				size = 1806040
+				size = 806040
 			}
 			create_pop = {
 				culture = mexican
-				size = 12004
+				size = 2004
 			}
 			create_pop = {
 				culture = ashkenazi
-				size = 18620
+				size = 9620
 			}
-
+			create_pop = {
+				culture = mexican
+				size = 12000
+			}
+			create_pop = {
+				culture = mexican
+				size = 3000
+			}
+			create_pop = {
+				culture = siouan
+				size = 18000
+			}
+			create_pop = {
+				culture = mexican
+				size = 4000
+			}
 		}
 	}
 	s:STATE_NEVADA = {
 		region_state:USA = {
 			create_pop = {
 				culture = siouan
-				size = 48000
+				size = 28000
 			}
 			create_pop = {
 				culture = yankee
-				size = 284809
+				size = 184809
 			}	
 		}
 	}
@@ -1025,15 +1378,35 @@
 		region_state:USA = {
 			create_pop = {
 				culture = mexican
-				size = 8000
+				size = 4000
+			}
+			create_pop = {
+				culture = mexican
+				size = 1004
+			}
+			create_pop = {
+				culture = siouan
+				size = 3000
+			}
+			create_pop = {
+				culture = siouan
+				size = 24000
 			}
 			create_pop = {
 				culture = siouan
 				size = 4000
 			}
 			create_pop = {
+				culture = mexican
+				size = 11000
+			}
+			create_pop = {
+				culture = siouan
+				size = 2000
+			}
+			create_pop = {
 				culture = yankee
-				size = 1235809
+				size = 635809
 			}	
 		}
 	}
@@ -1044,8 +1417,28 @@
 				size = 27796
 			}
 			create_pop = {
+				culture = siouan
+				size = 18000
+			}
+			create_pop = {
+				culture = siouan
+				size = 6000
+			}
+			create_pop = {
+				culture = siouan
+				size = 2000
+			}
+			create_pop = {
+				culture = siouan
+				size = 3000
+			}
+			create_pop = {
+				culture = mexican
+				size = 11000
+			}
+			create_pop = {
 				culture = yankee
-				size = 828942
+				size = 428942
 			}	
 		}
 	}
@@ -1053,20 +1446,20 @@
 		region_state:USA = {
 			create_pop = {
 				culture = siouan
-				size = 102000
+				size = 52000
 			}
 			create_pop = {
 				culture = ashkenazi
-				size = 20200
+				size = 10200
 			}
 			create_pop = {
 				culture = yankee
-				size = 15823748
+				size = 5823748
 			}
 
 			create_pop = {
 				culture = mexican
-				size = 321996
+				size = 11996
 			}
 		}
 		region_state:JAP = {
@@ -1099,88 +1492,88 @@
 		region_state:MEX = {
 			create_pop = {
 				culture = mexican
-				size = 338174
+				size = 169087
 			}
 			create_pop = {
 				culture = mexican
-				size = 87274
+				size = 43637
 			}
 		}
 	}
-	s:STATE_CHIHUAHUA = { # total population: 264378 (3660), 295200 (3680)
+	s:STATE_CHIHUAHUA = { # total population: 132189 (1830), 147600 (1840)
 		region_state:MEX = {
 			create_pop = {
 				culture = mexican
-				size = 679790
+				size = 339895
+			}
+			create_pop = {
+				culture = mexican
+				size = 8000
 			}
 			create_pop = {
 				culture = mexican
 				size = 16000
 			}
-			create_pop = {
-				culture = mexican
-				size = 32000
-			}
 		}
 	}
-	s:STATE_RIO_GRANDE = { # Coahuila, Nuevo Leon and Tamaulipas. est. pop 364704 in 3660, 533294 in 3680
+	s:STATE_RIO_GRANDE = { # Coahuila, Nuevo Leon and Tamaulipas. est. pop 182352 in 1830, 266647 in 1840
 		region_state:MEX = {
 			create_pop = {
 				culture = mexican
-				size = 1042998
+				size = 521499
 			}
 			create_pop = {
 				culture = mexican
-				size = 54000
+				size = 27000
 			}
 			create_pop = {
 				culture = mexican
 				religion = catholic
-				size = 140008
+				size = 70004
 			}
 			create_pop = {
 				culture = afro_american
-				size = 12000
+				size = 6000
 			}
 		}
 	}
-	s:STATE_VERACRUZ = { # 485316 in 3660, 518926 in 3680
+	s:STATE_VERACRUZ = { # 242658 in 1830, 259463 in 1840
 		region_state:MEX = {
 			create_pop = {
 				culture = mexican
-				size = 1102122
+				size = 551061
 			}		
 		}
 	}
-	s:STATE_DURANGO = { # est. total of 313998. 307620 in 3660, 320374 in 3680
+	s:STATE_DURANGO = { # est. total of 156999. 153810 in 1830, 160187 in 1840
 		region_state:MEX = {
 			create_pop = {
 				culture = mexican
-				size = 1072398
+				size = 536199
 			}
 			create_pop = {
 				culture = mexican
-				size = 40000
+				size = 20000
 			}
 			create_pop = {
 				culture = afro_american
-				size = 1600
+				size = 800
 			}
 		}
 	}
-	s:STATE_SINALOA = { # est. total of 269882. 244570 in 3660, 295192 in 3680
+	s:STATE_SINALOA = { # est. total of 134941. 122285 in 1830, 147596 in 1840
 		region_state:MEX = {
 			create_pop = {
 				culture = mexican
-				size = 1027682
+				size = 513841
 			}
 			create_pop = {
 				culture = mexican
-				size = 40000
+				size = 20000
 			}
 			create_pop = {
 				culture = afro_american
-				size = 2200
+				size = 1100
 			}
 		}
 	}
@@ -1192,170 +1585,170 @@
 		region_state:MEX = {
 			create_pop = {
 				culture = mexican
-				size = 2189818
+				size = 1094909
 			}
 			create_pop = {
 				culture = mexican
-				size = 532922
+				size = 266461
 			}
 			create_pop = {
 				culture = mexican
-				size = 170324
+				size = 85162
 			}
 			create_pop = {
 				culture = afro_american
-				size = 7602
+				size = 3801
 			}
 		}
 	}
-	# Yucatan proper: 	835894 in 3660, 841452 in 3680, so averaging out to 838674
-	# Campeche:			128106 in 3660, 145414 in 3680, so averaging out to 136760
-	# Tabasco:			117036 in 3660, 127838 in 3680, so averaging out to 122438
-	# working total number of 1097872
+	# Yucatan proper: 	417947 in 1830, 420726 in 1840, so averaging out to 419337
+	# Campeche:			64053 in 1830, 72707 in 1840, so averaging out to 68380
+	# Tabasco:			58518 in 1830, 63919 in 1840, so averaging out to 61219
+	# working total number of 548936
 	s:STATE_YUCATAN = { 
 		region_state:MEX = {
 			create_pop = {
 				culture = mexican
-				size = 1853528
+				size = 926764
 			}
 			create_pop = {
 				culture = mexican
-				size = 1177608
+				size = 588804
 			}
 			create_pop = {
 				culture = afro_american
-				size = 2800
+				size = 1400
 			}
 		}
 	}
-	# Mexico state (incl. Hidalgo): 2100306 in 3660, 2291518 in 3680, so averaging out to 2195912
-	# Puebla: 1221900 in 3660, 1323048 in 3680, so averaging out to 1272474
-	# Tlaxcala: 144542 in 3660, 163048 in 3680, so averaging out to 153794
-	# working total number of 3622180
+	# Mexico state (incl. Hidalgo): 1050153 in 1830, 1145759 in 1840, so averaging out to 1097956
+	# Puebla: 610950 in 1830, 661524 in 1840, so averaging out to 636237
+	# Tlaxcala: 72271 in 1830, 81524 in 1840, so averaging out to 76897
+	# working total number of 1811090
 	s:STATE_MEXICO = {
 		region_state:MEX = {
 			create_pop = {
 				culture = mexican
-				size = 5726972
+				size = 2863486
 			}
 			create_pop = {
 				culture = mexican
 				religion = catholic
-				size = 79992
+				size = 39996
 			}
 			create_pop = {
 				culture = mexican
-				size = 1379208
+				size = 689604
 			}
 			create_pop = {
 				culture = mexican
-				size = 528008
+				size = 264004
 			}
 			create_pop = {
 				culture = afro_american
-				size = 108000
+				size = 54000
 			}
 		}
 	}
 
-	# total of 462638. This number was revealed to me in a dream.
-	# jk. Couldn't find estimates for Guerrero in 3660 or 3680, but they could be found for 3740 onwards, so some math trickery was done. Neighboring Oaxaca's estimated 3670 population is 148.14% of its 3740 population, and 100.122% of its 3800 population, so those percentages were applied to Guerrero's 3740 and 3800 population figures, and the two results were averaged together into the above.
+	# total of 231319. This number was revealed to me in a dream.
+	# jk. Couldn't find estimates for Guerrero in 1830 or 1840, but they could be found for 1870 onwards, so some math trickery was done. Neighboring Oaxaca's estimated 1835 population is 74.7% of its 1870 population, and 50.61% of its 1900 population, so those percentages were applied to Guerrero's 1870 and 1900 population figures, and the two results were averaged together into the above.
 	s:STATE_GUERRERO = { 
 		region_state:MEX = {
 			create_pop = {
 				culture = mexican
-				size = 829748
+				size = 414874
 			}
 			create_pop = {
 				culture = mexican
-				size = 26366
+				size = 13183
 			}
 			create_pop = {
 				culture = mexican
-				size = 121692
+				size = 60846
 			}
 			create_pop = {
 				culture = mexican
-				size = 54762
+				size = 27381
 			}
 			create_pop = {
 				culture = afro_american
-				size = 30072
+				size = 15036
 			}
 		}
 	}
-	s:STATE_OAXACA = { # approx 959348. 915008 in 3660, 1003688 in 3680.
+	s:STATE_OAXACA = { # approx 479674. 457504 in 1830, 501844 in 1840.
 		region_state:MEX = {
 			create_pop = {
 				culture = mexican
-				size = 1087806
+				size = 543903
 			}
 			create_pop = {
 				culture = mexican
-				size = 81064
+				size = 40532
 			}
 			create_pop = {
 				culture = mexican
-				size = 374146
+				size = 187073
 			}
 			create_pop = {
 				culture = mexican
-				size = 168364
+				size = 84182
 			}
 			create_pop = {
 				culture = afro_american
-				size = 47968
+				size = 23984
 			}
 		}
 	}
-	# Jalisco: 1313762 in 3660, 1382794 in 3680, so averaging out to 1348278
-	# Michoacan: 870562 in 3660, 995074 in 3680, so averaging out to 932818
-	# Colima: 91676 in 3660, 106778 in 3680, so averaging out to 99228
-	# working total of 2380324
-	# 2.11716
+	# Jalisco: 656881 in 1830, 691397 in 1840, so averaging out to 674139
+	# Michoacan: 435281 in 1830, 497537 in 1840, so averaging out to 466409
+	# Colima: 45838 in 1830, 53389 in 1840, so averaging out to 49614
+	# working total of 1190162
+	# 1.5858
 	s:STATE_JALISCO = {
 		region_state:MEX = {
 			create_pop = {
 				culture = mexican
-				size = 4023420
+				size = 2011710
 			}
 			create_pop = {
 				culture = mexican
 				religion = catholic
-				size = 304156
+				size = 152078
 			}
 			create_pop = {
 				culture = mexican
-				size = 52746
+				size = 26373
 			}
 		}
 	}
-	# Zacatecas: 445836 in 3660, 548760 in 3680, so averaging out to 497298
-	# Aguascalientes: 114250 in 3660, 144386, so averaging out to 129318
-	# working total of 626616
+	# Zacatecas: 222918 in 1830, 274380 in 1840, so averaging out to 248649
+	# Aguascalientes: 57125 in 1830, 72193, so averaging out to 64659
+	# working total of 313308
 	s:STATE_ZACATECAS = {
 		region_state:MEX = {
 			create_pop = {
 				culture = mexican
-				size = 1074694
+				size = 537347
 			}
 			create_pop = {
 				culture = mexican
-				size = 351922
+				size = 175961
 			}
 		}
 	}
-	# 242848 in 3660, 277190 in 3680
-	# working total of 260020
+	# 121424 in 1830, 138595 in 1840
+	# working total of 130010
 	s:STATE_CHIAPAS = {
 		region_state:MEX = {
 			create_pop = {
 				culture = mexican
-				size = 615692
+				size = 307846
 			}
 			create_pop = {
 				culture = mexican
-				size = 144328
+				size = 72164
 			}
 		}
 	}
@@ -1363,15 +1756,15 @@
 		region_state:MEX = {
 			create_pop = {
 				culture = mexican
-				size = 16528
+				size = 8264
 			}
 			create_pop = {
 				culture = mexican
-				size = 506600
+				size = 253300
 			}
 			create_pop = {
 				culture = afro_american
-				size = 2600
+				size = 1300
 			}
 		}
 	}
