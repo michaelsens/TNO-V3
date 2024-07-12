@@ -4,7 +4,7 @@
 agitator_legal_events.1 = {
 	type = country_event
 	event_image = {
-		video = "unspecific_politicians_arguing"
+		video = "votp_agitator_speaking"
 	}
 
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
@@ -18,6 +18,8 @@ agitator_legal_events.1 = {
 	category = enactment
 
 	duration = 3
+
+	cooldown = { months = normal_modifier_time }
 	
 	trigger = { #Triggers when you enact laws; agitator does not like the law AND governing interest group doesn't care about the law
 		agitator_opposes_enaction = yes
@@ -43,48 +45,50 @@ agitator_legal_events.1 = {
 		currently_enacting_law = {
 			save_scope_as = current_law_scope
 		}
+		capital = {
+			save_scope_as = capital_scope
+		}
 	}
 
-	option = { #This option has a 70% chance of increasing the Agitator's hardliners, and a 30% chance of making SOL Radicals worse
+	option = {
 		name = agitator_legal_events.1.a
 		default_option = yes
-		random_list = {
-			70 = {
-				add_loyalists = {
-					value = small_radicals
-				}
- 			}
-			30 = {
-				add_radicals = {
-					value = small_radicals
-					strata = poor
+		random_interest_group = {
+			limit = {
+				is_in_government = yes
+				NOT = {
+					is_same_interest_group_type = scope:opposing_agitator.interest_group
 				}
 			}
+			add_modifier = {
+				name = modifier_legalised_gag_laws
+				months = short_modifier_time
+			}
+		}
+		add_radicals = {
+			value = small_radicals
+			interest_group = scope:opposing_agitator.interest_group
 		}
 		add_enactment_modifier = {
-			name = failed_law_ram
-			multiplier = 2
+			name = modifier_wasted_session
 		}
 	}
 
-	option = { #This option is the opposite of the above; 70% chance to ego-check the Agitator's IG, and a 30% chance of making SOL Radicals cool their jets
+	option = {
 		name = agitator_legal_events.1.b
-		random_list = {
-			70 = {
-				add_radicals = {
-					value = small_radicals
-				}
-			}
-			30 = {
-				add_loyalists = {
-					value = small_radicals
-					strata = poor
-				}
+		add_radicals = {
+			value = medium_radicals
+			interest_group = scope:opposing_agitator.interest_group
+		}
+		scope:opposing_agitator = {
+			add_modifier = {
+				name = modifier_public_smears
+				months = short_modifier_time
 			}
 		}
 		add_enactment_modifier = {
-			name = failed_law_ram
-			multiplier = 1
+			name = modifier_wasted_session
+			multiplier = 2
 		}
 	}
 }
@@ -107,10 +111,13 @@ agitator_legal_events.2 = {
 	category = enactment
 
 	duration = 3
+
+	cooldown = { months = normal_modifier_time }
 	
 	trigger = { #Triggers when you enact laws; agitator does not like the law	
 		agitator_opposes_enaction = yes
 		government_ig_supports_enaction = yes
+		government_ig_opposes_enaction = yes
 	}
 
 	cancellation_trigger = {
@@ -142,14 +149,24 @@ agitator_legal_events.2 = {
 			}
 			save_scope_as = governing_ig
 		}
+		random_interest_group = {
+			limit = {
+				is_in_government = yes
+				law_stance = {
+					law = owner.currently_enacting_law.type
+					value < neutral
+				}
+			}
+			save_scope_as = opposing_ig
+		}
 	}
 
-	option = { #This option has a 70% chance of increasing the Agitator's IG attraction, and a 30% chance of getting more loyalists to the ruling government
+	option = {
 		name = agitator_legal_events.2.a
 		default_option = yes
 		random_list = {
 			70 = {
-				scope:opposing_agitator = {
+				scope:opposing_ig = {
 					add_modifier = {
 						name = gagging_the_opposition
 						months = normal_modifier_time
@@ -166,23 +183,23 @@ agitator_legal_events.2 = {
 			}
 		}
 		add_enactment_modifier = {
-			name = failed_law_ram
-			multiplier = 2
+			name = modifier_gag_laws_controversy
 		}
 	}
 	
-	option = { #This option is the opposite of the above; 70% chance to ego-check the Agitator's IG, and 30% chance of spawning anti-government radicals
+	option = {
 		name = agitator_legal_events.2.b
-		random_list = {
-			70 = {
-				scope:opposing_agitator = {
-					add_modifier = {
-						name = bridle_gagged
-						months = normal_modifier_time
-					}
-				}
+		scope:opposing_agitator = {
+			add_modifier = {
+				name = bridle_gagged
+				months = normal_modifier_time
 			}
-			30 = {
+		}
+		random_list = {
+			50 = {
+				
+			}
+			50 = {
 				scope:governing_ig = {
 					add_modifier = {
 						name = tasteless_kink_shaming
@@ -212,18 +229,20 @@ agitator_legal_events.3 = {
 	category = enactment
 
 	duration = 3
+
+	cooldown = { months = normal_modifier_time }
 	
 	trigger = {
-		agitator_opposes_enaction = yes
+		agitator_supports_enaction = yes
 	}
 
 	cancellation_trigger = {
 		OR = {
-			scope:opposing_agitator = {
+			scope:supporting_agitator = {
 				is_character_alive = no
 			}
 			NOT = {
-				exists = scope:opposing_agitator
+				exists = scope:supporting_agitator
 			}
 			NOT = {
 				exists = root.currently_enacting_law
@@ -238,32 +257,32 @@ agitator_legal_events.3 = {
 		}
 	}
 
-	option = { #The agitator IG gains attraction, and radicals spring up against the player
+	option = { 
 		name = agitator_legal_events.3.a
 		default_option = yes
 		add_enactment_modifier = {
-			name = failed_law_ram
+			name = modifier_sick_leave
 			multiplier = 2
 		}
-		scope:opposing_agitator = {
+		scope:supporting_agitator = {
 			add_modifier = {
 				name = unfortunate_accident
 				months = normal_modifier_time
 			}
 		}
-		add_radicals = {
+		add_loyalists = {
 			value = small_radicals
-			strata = poor
+			interest_group = scope:supporting_agitator.interest_group
 		}
 	}
 
 	option = { #This option gains sympathy for the interest group, but wounds the agitator
 		name = agitator_legal_events.3.b
 		add_enactment_modifier = {
-			name = failed_law_ram
-			multiplier = 2
+			name = modifier_sick_leave
+			multiplier = 1
 		}
-		scope:opposing_agitator = {
+		scope:supporting_agitator = {
 			add_modifier = {
 				name = totally_unfortunate_accident
 				months = normal_modifier_time
@@ -291,6 +310,8 @@ agitator_legal_events.4 = {
 	category = enactment
 
 	duration = 3
+
+	cooldown = { months = normal_modifier_time }
 	
 	trigger = {
 		agitator_opposes_enaction = yes
@@ -350,23 +371,16 @@ agitator_legal_events.4 = {
 					}
 				}
 				add_enactment_modifier = {
-					name = failed_law_ram
-					multiplier = 2
+					name = modifier_expert_dissents
 				}
 			}
-			20 = {
+			30 = {
 				scope:opposing_agitator = {
 					add_modifier = {
 						name = bluff_called
 						months = normal_modifier_time
 					}
 				}
-				add_enactment_modifier = {
-					name = failed_law_ram
-					multiplier = 2
-				}
-			}
-			10 = {
 				add_enactment_modifier = {
 					name = expert_agreed_with_gov
 					multiplier = 1
@@ -380,13 +394,16 @@ agitator_legal_events.4 = {
 		trigger = {
 			any_scope_building = {
 				is_building_type = building_university
-				has_active_production_method = pm_philosophy_department
+				OR = {
+					has_active_production_method = pm_philosophy_department
+					has_active_production_method = pm_analytical_philosophy_department
+				}
 			}
 		}
 		highlighted_option = yes
 		random_list = {
 			60 = {
-				add_loyalists = {
+				add_radicals = {
 					value = small_radicals
 				}
 				add_enactment_modifier = {
@@ -398,7 +415,7 @@ agitator_legal_events.4 = {
 			40 = {
 				add_enactment_modifier = {
 					name = professional_agreed_with_gov
-					multiplier = 2
+					multiplier = 1.5
 				}
 			}
 		}
@@ -409,7 +426,7 @@ agitator_legal_events.4 = {
 agitator_legal_events.5 = {
 	type = country_event
 	event_image = {
-		video = "europenorthamerica_capitalists_meeting"
+		video = "ep1_clandestine_meeting"
 	}
 
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
@@ -423,6 +440,8 @@ agitator_legal_events.5 = {
 	category = enactment
 
 	duration = 3
+
+	cooldown = { months = normal_modifier_time }
 	
 	trigger = {
 		any_interest_group = {
@@ -460,7 +479,7 @@ agitator_legal_events.5 = {
 					value >= neutral
 				}
 			}
-			save_scope_as = opposing_ig
+			save_scope_as = opposing_ig #Actually supporting the law
 			leader = {
 				save_scope_as = opposing_ig_leader
 			}	
@@ -498,7 +517,6 @@ agitator_legal_events.5 = {
 		}
 		add_enactment_modifier = {
 			name = failed_law_ram
-			multiplier = 2
 		}
 	}
 }
@@ -521,6 +539,8 @@ agitator_legal_events.6 = {
 	category = enactment
 
 	duration = 3
+
+	cooldown = { months = normal_modifier_time }
 	
 	trigger = {
 		agitator_opposes_enaction = yes
@@ -579,7 +599,7 @@ agitator_legal_events.6 = {
 		default_option = yes
 		random_list = {
 			70 = {
-				scope:opposing_agitator = {
+				scope:opposing_agitator.interest_group = {
 					add_modifier = {
 						name = just_like_lenin
 						months = normal_modifier_time
@@ -596,8 +616,7 @@ agitator_legal_events.6 = {
 			}
 		}
 		add_enactment_modifier = {
-			name = failed_law_ram
-			multiplier = 2
+			name = modifier_adamant_refusal
 		}
 	}
 
@@ -627,18 +646,21 @@ agitator_legal_events.6 = {
 			}
 		}
 		add_enactment_modifier = {
-			name = failed_law_ram
-			multiplier = 2
+			name = modifier_doxed_opposition
 		}
 	}
 
 	option = {
 		name = agitator_legal_events.6.c
 		trigger = {
-			enactment_setback_count < 2
+			enactment_setback_count < max_setbacks_minus_one
 		}
 		highlighted_option = yes
 		add_enactment_setback = 1
+		add_radicals = {
+			value = small_radicals
+			interest_group = scope:opposing_agitator.interest_group
+		}
 		scope:opposing_agitator = {
 			add_modifier = {
 				name = bluff_called
@@ -666,6 +688,8 @@ agitator_legal_events.7 = {
 	category = enactment
 
 	duration = 3
+
+	cooldown = { months = normal_modifier_time }
 	
 	trigger = {
 		OR = {
@@ -712,7 +736,7 @@ agitator_legal_events.7 = {
 		scope:govnas = {
 			add_modifier = {
 				name = resisted_oppositional_tomfoolery
-				months = normal_modifier_time
+				months = short_modifier_time
 			}
 		}
 		add_enactment_modifier = {
@@ -726,7 +750,7 @@ agitator_legal_events.7 = {
 		scope:govnas = {
 			add_modifier = {
 				name = house_divided
-				months = normal_modifier_time
+				months = short_modifier_time
 			}
 		}	
 		add_enactment_modifier = {
@@ -740,18 +764,19 @@ agitator_legal_events.7 = {
 		scope:opposing_agitator = {
 			add_modifier = {
 				name = foul_play_success
-	 			months = normal_modifier_time
+	 			months = short_modifier_time
 			}
 		}
 		scope:govnas = {
 			add_modifier = {
-				name = foul_play_sympathies
-				months = normal_modifier_time
+				name = house_divided
+				months = short_modifier_time
+				multiplier = 1.5
 			}
 		}
 		add_enactment_modifier = {
-			name = failed_law_abandoned
-			multiplier = 2
+			name = failed_law_ram
+			multiplier = 3
 		}
 	}
 }
@@ -774,6 +799,8 @@ agitator_legal_events.8 = {
 	category = enactment
 
 	duration = 3
+
+	cooldown = { months = normal_modifier_time }
 	
 	trigger = {
 		agitator_supports_enaction = yes
@@ -838,9 +865,9 @@ agitator_legal_events.8 = {
 		default_option = yes
 		scope:govnas = {
 			add_modifier = {
-				name = foul_play_sympathies
+				name = modifier_crippling_corruption
 				months = normal_modifier_time
-				}
+			}
 		}
 		add_enactment_modifier = {
 			name = failed_law_abandoned
@@ -850,41 +877,25 @@ agitator_legal_events.8 = {
 
 	option = {
 		name = agitator_legal_events.8.b
-		random_list = {
-			70 = {
-				scope:supporting_agitator = {
-					add_modifier = {
-						name = foul_play_sympathies
-						months = normal_modifier_time
-					}
-				}
+		scope:supporting_agitator = {
+			add_modifier = {
+				name = modifier_blamed_for_corruption
+				months = normal_modifier_time
 			}
-			20 = {
-				add_enactment_modifier = {
-					name = failed_law_ram
-					multiplier = 2
-				}
-			}
-			10 = {
-				scope:supporting_agitator = {
-					add_modifier = {
-						name = foul_play_success
-						months = normal_modifier_time
-					}
-				}
-			}
+		}
+		add_enactment_modifier = {
+			name = failed_law_ram
 		}
 	}
 	option = {
 		name = agitator_legal_events.8.c
 		trigger = {
-			enactment_setback_count < 2
+			enactment_setback_count < max_setbacks_minus_one
 		}
 		highlighted_option = yes
 		add_enactment_setback = 1
 		add_enactment_modifier = {
 			name = modifier_corruption_is_very_good
-			multiplier = 2
 		}
 	}		
 }
@@ -893,7 +904,7 @@ agitator_legal_events.8 = {
 agitator_legal_events.9 = {
 	type = country_event
 	event_image = {
-		video = "southamerica_election"
+		video = "votp_realist_household"
 	}
 
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
@@ -907,6 +918,8 @@ agitator_legal_events.9 = {
 	category = enactment
 
 	duration = 3
+
+	cooldown = { months = normal_modifier_time }
 	
 	trigger = {
 		agitator_opposes_enaction = yes
@@ -1004,6 +1017,8 @@ agitator_legal_events.10 = {
 	category = enactment
 
 	duration = 3
+
+	cooldown = { months = normal_modifier_time }
 	
 	trigger = {
 		any_interest_group = {
@@ -1125,6 +1140,8 @@ agitator_legal_events.11 = {
 	category = enactment
 
 	duration = 3
+
+	cooldown = { months = normal_modifier_time }
 	
 	trigger = {
 		agitator_opposes_enaction = yes
@@ -1166,12 +1183,6 @@ agitator_legal_events.11 = {
 	option = {
 		name = agitator_legal_events.11.a
 		default_option = yes
-		scope:opposing_ig = {
-			add_modifier = {
-				name = foul_play_success
-				months = normal_modifier_time
-			}
-		}
 		scope:opposing_agitator = {
 			add_modifier = {
 				name = shrewd_politico
@@ -1211,30 +1222,33 @@ agitator_legal_events.12 = {
 	category = enactment
 
 	duration = 3
+
+	cooldown = { months = normal_modifier_time }
 	
 	trigger = {
-		agitator_opposes_enaction = yes
-		any_interest_group = {
+		government_ig_supports_enaction = yes
+		any_scope_character = {
+			has_role = agitator
 			law_stance = {
 				law = owner.currently_enacting_law.type
-				value <= neutral
+				value > neutral
 			}
-			is_marginal = no
-			is_in_government = no
-		}
-		OR = {
-			government_ig_supports_enaction = yes
-			government_ig_ambivalent_enaction = yes
+			this.interest_group = {
+				law_stance = {
+					law = owner.currently_enacting_law.type
+					value = neutral
+				}
+			}
 		}
 	}
 
 	cancellation_trigger = {
 		OR = {
-			scope:opposing_agitator = {
+			scope:supporting_agitator = {
 				is_character_alive = no
 			}
 			NOT = {
-				exists = scope:opposing_agitator
+				exists = scope:supporting_agitator
 			}
 			NOT = {
 				exists = root.currently_enacting_law
@@ -1243,23 +1257,27 @@ agitator_legal_events.12 = {
 	}
 	
 	immediate = {
-		save_agitator_law_scopes = yes
-		currently_enacting_law = {
-			save_scope_as = current_law_scope
-		}
-		random_interest_group = {
+		random_scope_character = {
 			limit = {
-				is_marginal = no
-				is_in_government = no
+				has_role = agitator
 				law_stance = {
 					law = owner.currently_enacting_law.type
-					value <= neutral
+					value > neutral
+				}
+				this.interest_group = {
+					law_stance = {
+						law = owner.currently_enacting_law.type
+						value = neutral
+					}
 				}
 			}
-			save_scope_as = opposing_ig
-			leader = {
-				save_scope_as = opposing_ig_leader
+			save_scope_as = supporting_agitator
+			this.interest_group = {
+				save_scope_as = ambivalent_ig
 			}
+		}
+		currently_enacting_law = {
+			save_scope_as = current_law_scope
 		}
 		random_interest_group = {
 			limit = {
@@ -1267,7 +1285,7 @@ agitator_legal_events.12 = {
 				is_in_government = yes
 				law_stance = {
 					law = owner.currently_enacting_law.type
-					value >= neutral
+					value > neutral
 				}
 			}
 			save_scope_as = govnas
@@ -1283,10 +1301,11 @@ agitator_legal_events.12 = {
 	option = {
 		name = agitator_legal_events.12.a
 		default_option = yes
-		scope:opposing_ig = {
+		scope:ambivalent_ig = {
 			add_modifier = {
 				name = middle_meeter
 				months = normal_modifier_time
+				multiplier = 3
 			}
 		}
 		add_enactment_modifier = {
@@ -1296,7 +1315,7 @@ agitator_legal_events.12 = {
 	}
 	option = {
 		name = agitator_legal_events.12.b
-		scope:opposing_ig_leader = {
+		scope:ambivalent_ig.leader = {
 			add_modifier = {
 				name = rumours_going_around
 				months = normal_modifier_time
@@ -1319,11 +1338,8 @@ agitator_legal_events.12 = {
 			add_modifier = {
 				name = foul_play_sympathies
 				months = normal_modifier_time
+				multiplier = 3
 			}
-		}
-		add_loyalists = {
-			culture = scope:primary_culture_scope
-			value = 0.01
 		}
 		add_enactment_modifier = {
 			name = failed_law_ram
@@ -1349,12 +1365,29 @@ agitator_legal_events.13 = {
 	category = enactment
 
 	duration = 3
+
+	cooldown = { months = normal_modifier_time }
 	
 	trigger = {
-		agitator_supports_enaction = yes
-		OR = {
-			government_ig_supports_enaction = yes
-			government_ig_ambivalent_enaction = yes
+		any_scope_character = {
+			has_role = agitator
+			law_stance = {
+				law = owner.currently_enacting_law.type
+				value > neutral
+			}
+			NOT = {
+				law_stance = {
+					law = owner.currently_enacting_law.type
+					value > strongly_approve
+				}
+			}
+			this.interest_group = {
+				is_in_government = yes
+				law_stance = {
+					law = owner.currently_enacting_law.type
+					value < neutral
+				}
+			}
 		}
 	}
 
@@ -1373,20 +1406,34 @@ agitator_legal_events.13 = {
 	}
 	
 	immediate = {
-		save_agitator_law_scopes = yes
-		currently_enacting_law = {
-			save_scope_as = current_law_scope
-		}
-		random_interest_group = {
+		random_scope_character = {
 			limit = {
-				is_marginal = no
-				is_in_government = yes
+				has_role = agitator
 				law_stance = {
 					law = owner.currently_enacting_law.type
-					value >= neutral
+					value > neutral
+				}
+				NOT = {
+					law_stance = {
+						law = owner.currently_enacting_law.type
+						value > strongly_approve
+					}
+				}
+				this.interest_group = {
+					is_in_government = yes
+					law_stance = {
+						law = owner.currently_enacting_law.type
+						value < neutral
+					}
 				}
 			}
-			save_scope_as = govnas
+			save_scope_as = supporting_agitator
+			interest_group = {
+				save_scope_as = opposing_interest_group
+			}
+		}
+		currently_enacting_law = {
+			save_scope_as = current_law_scope
 		}
 		random_primary_culture = {
 			save_scope_as = primary_culture_scope
@@ -1397,30 +1444,22 @@ agitator_legal_events.13 = {
 		name = agitator_legal_events.13.a
 		default_option = yes
 		random_list = {
-			60 = {
-				scope:govnas = {
+			50 = {
+				scope:opposing_interest_group = {
 					add_modifier = {
-						name = clean_hands
+						name = foul_play_sympathies
 						months = normal_modifier_time
-						multiplier = -1
 					}
 				}
 			}
-			20 = {
+			50 = {
 				add_radicals = {
-					value = 0.02
-					strata = poor
+					value = small_radicals
+					interest_group = scope:opposing_interest_group
 				}
-			}
-			15 = {
 				add_enactment_modifier = {
 					name = successful_law_ram
 					multiplier = 2
-				}
-			}
-			5 = {
-				scope:supporting_agitator = {
-					exile_character_with_martyrdom = yes
 				}
 			}
 		}
@@ -1433,10 +1472,11 @@ agitator_legal_events.13 = {
 				months = normal_modifier_time
 			}
 		}
-		scope:govnas = {
+		scope:opposing_interest_group = {
 			add_modifier = {
-				name = foul_play_sympathies
+				name = modifier_dissidents_splitting
 				months = normal_modifier_time
+				multiplier = -1
 			}
 		}
 	}
@@ -1459,17 +1499,11 @@ agitator_legal_events.14 = {
 	category = enactment
 
 	duration = 3
+
+	cooldown = { months = normal_modifier_time }
 	
 	trigger = {
 		agitator_opposes_enaction = yes
-		any_interest_group = {
-			is_marginal = no
-			is_in_government = no
-			law_stance = {
-				law = owner.currently_enacting_law.type
-				value = neutral
-			}
-		}
 		OR = {
 			government_ig_supports_enaction = yes
 			government_ig_ambivalent_enaction = yes
@@ -1498,17 +1532,6 @@ agitator_legal_events.14 = {
 		random_interest_group = {
 			limit = {
 				is_marginal = no
-				is_in_government = no
-				law_stance = {
-					law = owner.currently_enacting_law.type
-					value = neutral
-				}
-			}
-			save_scope_as = opposing_ig
-		}
-		random_interest_group = {
-			limit = {
-				is_marginal = no
 				is_in_government = yes
 				law_stance = {
 					law = owner.currently_enacting_law.type
@@ -1522,16 +1545,16 @@ agitator_legal_events.14 = {
 	option = {
 		name = agitator_legal_events.14.a
 		default_option = yes
-		scope:opposing_ig = {
+		scope:govnas = {
 			add_modifier = {
 				name = lock_breaker
 				months = normal_modifier_time
 			}
 		}
-			add_enactment_modifier = {
-				name = successful_law_focus
-				multiplier = 1
-			}
+		add_enactment_modifier = {
+			name = successful_law_focus
+			multiplier = 1
+		}
 	}
 	option = {
 		name = agitator_legal_events.14.b
@@ -1549,39 +1572,36 @@ agitator_legal_events.14 = {
 	option = {
 		name = agitator_legal_events.14.c
 		random_list = {
-			60 = {
-				scope:govnas = {
-					add_modifier = {
-						name = clean_hands
-						months = normal_modifier_time
-						multiplier = 2
-					}
-				}
-			}
-			20 = {
-				add_radicals = {
-					value = 0.05
-					strata = poor
-				}
-			}
-			20 = {
+			50 = {
 				scope:agitator_ig = {
 					add_modifier = {
 						name = foul_play_success
 						months = normal_modifier_time
+						multiplier = 2
 					}
 				}
-				scope:opposing_ig = {
+				add_loyalists = {
+					value = medium_radicals
+					interest_group = scope:govnas
+				}
+			}
+			50 = {
+				scope:govnas = {
 					add_modifier = {
 						name = foul_play_success
 						months = normal_modifier_time
+						multiplier = 2
 					}
 				}
-				add_enactment_modifier = {
-					name = successful_law_ram
-					multiplier = 2
+				add_loyalists = {
+					value = medium_radicals
+					interest_group = scope:agitator_ig
 				}
 			}
+		}
+		add_enactment_modifier = {
+			name = failed_law_ram
+			multiplier = 1
 		}
 	}
 }
@@ -1603,6 +1623,8 @@ agitator_legal_events.15 = {
 	category = enactment
 
 	duration = 3
+
+	cooldown = { months = normal_modifier_time }
 	
 	trigger = {
 		has_technology_researched = mass_communication
@@ -1651,7 +1673,7 @@ agitator_legal_events.15 = {
 	option = {
 		name = agitator_legal_events.15.a
 		default_option = yes
-		add_treasury = -500
+		add_treasury = -2500
 		scope:govnas = {
 			add_modifier = {
 				name = comms_fault
@@ -1689,10 +1711,11 @@ agitator_legal_events.15 = {
 		}
 		add_loyalists = {
 			value = small_radicals
+			interest_group = scope:opposing_agitator.interest_group
 		}
 		add_enactment_modifier = {
 			name = failed_law_abandoned
-			multiplier = 1
+			multiplier = 2
 		}
 	}
 }
@@ -1714,6 +1737,8 @@ agitator_legal_events.16 = {
 	category = enactment
 
 	duration = 3
+
+	cooldown = { months = normal_modifier_time }
 	
 	trigger = {
 		agitator_supports_enaction = yes
@@ -1761,7 +1786,7 @@ agitator_legal_events.16 = {
 		add_modifier = {
 			name = alleged_expert_committee
 			months = normal_modifier_time
-			multiplier = money_amount_multiplier_small
+			multiplier = money_amount_multiplier_medium
 		}
 		add_enactment_modifier = {
 			name = successful_law_ram
@@ -1776,13 +1801,21 @@ agitator_legal_events.16 = {
 				months = normal_modifier_time
 			}
 		}
-		add_enactment_modifier = {
-			name = successful_law_focus
-			multiplier = 1
+		random_list = {
+			40 = {
+				add_enactment_modifier = {
+					name = successful_law_focus
+					multiplier = 1
+				}
+			}
+			60 = {
+
+			}
 		}
 	}
 	option = {
 		name = agitator_legal_events.16.c
+		highlighted_option = yes
 		trigger = {
 			any_scope_building = {
 				is_building_type = building_university
@@ -1813,6 +1846,8 @@ agitator_legal_events.17 = {
 	category = enactment
 
 	duration = 3
+
+	cooldown = { months = normal_modifier_time }
 	
 	trigger = {
 		any_interest_group = {
@@ -1926,6 +1961,8 @@ agitator_legal_events.18 = {
 	category = enactment
 	
 	duration = 3
+
+	cooldown = { months = normal_modifier_time }
 	
 	trigger = {
 		agitator_supports_enaction = yes
@@ -1974,7 +2011,7 @@ agitator_legal_events.18 = {
 		default_option = yes
 		random_list = {
 			34 = {
-				scope:opposing_agitator = {
+				scope:supporting_agitator ?= {
 					add_modifier = {
 						name = bicker_win
 						months = normal_modifier_time
@@ -1988,7 +2025,7 @@ agitator_legal_events.18 = {
 				}
 			}
 			33 = {
-				scope:supporting_agitator = {
+				scope:supporting_agitator ?= {
 					add_modifier = {
 						name = bicker_loss
 						months = normal_modifier_time
@@ -2011,7 +2048,7 @@ agitator_legal_events.18 = {
 	}
 	option = {
 		name = agitator_legal_events.18.b
-		scope:opposing_agitator = {
+		scope:supporting_agitator = {
 			add_modifier = {
 				name = agitator_law_breakthrough
 				months = normal_modifier_time
@@ -2026,7 +2063,7 @@ agitator_legal_events.18 = {
 	}
 	option = {
 		name = agitator_legal_events.18.c
-		scope:opposing_agitator = {
+		scope:supporting_agitator = {
 			add_modifier = {
 				name = agitator_law_collapse
 				months = normal_modifier_time
@@ -2059,6 +2096,8 @@ agitator_legal_events.19 = {
 	category = enactment
 
 	duration = 3
+
+	cooldown = { months = normal_modifier_time }
 	
 	trigger = {
 		agitator_supports_enaction = yes
@@ -2137,7 +2176,7 @@ agitator_legal_events.19 = {
 	}
 	option = {
 		name = agitator_legal_events.19.c
-		scope:supporting_agitator= {
+		scope:supporting_agitator = {
 			add_modifier = {
 				name = pot_stirrer
 				months = normal_modifier_time
@@ -2168,6 +2207,8 @@ agitator_legal_events.20 = {
 	category = enactment
 
 	duration = 3
+
+	cooldown = { months = normal_modifier_time }
 	
 	trigger = {
 		any_interest_group = {
@@ -2233,9 +2274,9 @@ agitator_legal_events.20 = {
 	option = {
 		name = agitator_legal_events.20.a
 		default_option = yes
-		scope:govnas = {
+		scope:opposing_ig = {
 			add_modifier = {
-				name = successful_redraft
+				name = ignored_provisions
 				months = normal_modifier_time
 			}
 		}
@@ -2248,26 +2289,36 @@ agitator_legal_events.20 = {
 		name = agitator_legal_events.20.b
 		scope:supporting_agitator = {
 			add_modifier = {
-				name = successful_redraft
+				name = architect_of_change
 				months = normal_modifier_time
 			}
 		}
-		add_enactment_modifier = {
-			name = successful_law_ram
-			multiplier = 2
+		random_list = {
+			1 = {
+				add_enactment_modifier = {
+					name = failed_law_ram
+					multiplier = 1
+				}
+			}
+			1 = {
+				add_enactment_modifier = {
+					name = successful_law_ram
+					multiplier = 1
+				}
+			}
 		}
 	}
 	option = {
 		name = agitator_legal_events.20.c
 		scope:opposing_ig = {
 			add_modifier = {
-				name = successful_redraft
+				name = partisan_favoritism
 				months = normal_modifier_time
 			}
 		}
 		add_enactment_modifier = {
-			name = successful_law_ram
-			multiplier = 2
+			name = compromised_law_ram
+			multiplier = 1
 		}
 	}
 }
@@ -2290,13 +2341,18 @@ agitator_legal_events.21 = {
 	category = enactment
 
 	duration = 3
+
+	cooldown = { months = normal_modifier_time }
 	
 	trigger = {
-		agitator_supports_enaction = yes
-		OR = {
-			government_ig_supports_enaction = yes
-			government_ig_ambivalent_enaction = yes
+		any_scope_character = {
+			has_role = agitator
+			law_stance = {
+				law = owner.currently_enacting_law.type
+				value = neutral
+			}
 		}
+		government_ig_supports_enaction = yes
 	}
 
 	cancellation_trigger = {
@@ -2314,7 +2370,16 @@ agitator_legal_events.21 = {
 	}
 	
 	immediate = {
-		save_agitator_law_scopes = yes
+		random_scope_character = {
+			limit = {
+				has_role = agitator
+				law_stance = {
+					law = owner.currently_enacting_law.type
+					value = neutral
+				}
+			}
+			save_scope_as = supporting_agitator
+		}
 		currently_enacting_law = {
 			save_scope_as = current_law_scope
 		}
@@ -2324,7 +2389,7 @@ agitator_legal_events.21 = {
 				is_in_government = yes
 				law_stance = {
 					law = owner.currently_enacting_law.type
-					value >= neutral
+					value > neutral
 				}
 			}
 			save_scope_as = govnas
@@ -2353,7 +2418,7 @@ agitator_legal_events.21 = {
 	}
 	option = {
 		name = agitator_legal_events.21.b
-		scope:govnas = {
+		scope:supporting_agitator = {
 			add_modifier = {
 				name = rumours_going_around
 				months = normal_modifier_time
@@ -2384,6 +2449,8 @@ agitator_legal_events.22 = {
 	category = enactment
 
 	duration = 3
+
+	cooldown = { months = normal_modifier_time }
 	
 	trigger = {
 		agitator_opposes_enaction = yes
@@ -2480,6 +2547,8 @@ agitator_legal_events.23 = {
 	category = enactment
 
 	duration = 3
+
+	cooldown = { months = normal_modifier_time }
 	
 	trigger = {
 		agitator_supports_enaction = yes
@@ -2580,6 +2649,8 @@ agitator_legal_events.24 = {
 	category = enactment
 
 	duration = 3
+
+	cooldown = { months = normal_modifier_time }
 	
 	trigger = {
 		agitator_opposes_enaction = yes
@@ -2659,7 +2730,7 @@ agitator_legal_events.24 = {
 agitator_legal_events.25 = {
 	type = country_event
 	event_image = {
-		video = "southamerica_election"
+		video = "votp_realist_household"
 	}
 
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
@@ -2673,6 +2744,8 @@ agitator_legal_events.25 = {
 	category = enactment
 
 	duration = 3
+
+	cooldown = { months = normal_modifier_time }
 	
 	trigger = {
 		agitator_opposes_enaction = yes
@@ -2772,6 +2845,8 @@ agitator_legal_events.26 = {
 	category = enactment
 
 	duration = 3
+
+	cooldown = { months = normal_modifier_time }
 	
 	trigger = {
 		agitator_opposes_enaction = yes
@@ -2872,6 +2947,8 @@ agitator_legal_events.27 = {
 	category = enactment
 
 	duration = 3
+
+	cooldown = { months = normal_modifier_time }
 	
 	trigger = {
 		agitator_supports_enaction = yes
@@ -3013,6 +3090,8 @@ agitator_legal_events.28 = {
 	category = enactment
 
 	duration = 3
+
+	cooldown = { months = normal_modifier_time }
 	
 	trigger = {
 		any_interest_group = {
@@ -3055,10 +3134,9 @@ agitator_legal_events.28 = {
 			limit = {
 				law_stance = {
 					law = owner.currently_enacting_law.type
-					value >= neutral
+					value > neutral
 				}	
 				is_marginal = no
-				is_in_government = no
 			}
 			save_scope_as = opposing_ig
 		}
@@ -3066,10 +3144,9 @@ agitator_legal_events.28 = {
 			limit = {
 				law_stance = {
 					law = owner.currently_enacting_law.type
-					value <= neutral
+					value < neutral
 				}	
 				is_marginal = no
-				is_in_government = no
 				NOT = {
 					scope:opposing_ig = THIS
 				}
@@ -3137,6 +3214,8 @@ agitator_legal_events.29 = {
 	category = enactment
 
 	duration = 3
+
+	cooldown = { months = normal_modifier_time }
 	
 	trigger = {
 		agitator_supports_enaction = yes
@@ -3247,6 +3326,8 @@ agitator_legal_events.30 = {
 	category = enactment
 
 	duration = 3
+
+	cooldown = { months = normal_modifier_time }
 	
 	trigger = {
 		agitator_supports_enaction = yes

@@ -538,8 +538,6 @@ slavery_law_events.7 = {
 	desc = slavery_law_events.7.d
 	flavor = slavery_law_events.7.f
 
-	category = enactment
-
 	duration = 3
 
 	cooldown = { months = long_modifier_time }
@@ -561,6 +559,15 @@ slavery_law_events.7 = {
 			NOT = {
 				this = c:USA
 				has_variable = slavery_recently_abolished
+			}
+			AND = {
+				this = c:USA
+				OR = {
+					has_variable = je_acw_countdown_complete
+					NOT = {
+						has_journal_entry = je_acw_countdown
+					}	
+				}
 			}
 		}
 	}

@@ -463,7 +463,7 @@ exiles_more_events.3 = {
 		}
 
 		scope:the_loneliest_little_agitator = {
-			political_movement = {
+			political_movement ?= {
 				add_modifier = {
 					name = deliberate_deliberations
 					months = normal_modifier_time
@@ -1305,11 +1305,18 @@ exiles_more_events.9 = {
 		empty_agitator_slots >= 1
 		any_character_in_exile_pool = {
 			NOT = { home_country = ROOT }
-			culture = { NOT = { is_primary_culture_of = ROOT } }
-			save_temporary_scope_as = ex_ig
+			culture = { 
+				NOR = { 
+					is_primary_culture_of = ROOT
+					culture_is_discriminated_in = ROOT
+				} 
+			}
+			interest_group_type = {
+				save_temporary_scope_as = exile_ig_type
+			}
 		}
 		any_interest_group = {
-			ig_type_matches_former = yes
+			scope:exile_ig_type = this.type
 			is_powerful = yes
 		}
 	}
@@ -1318,16 +1325,23 @@ exiles_more_events.9 = {
 		random_character_in_exile_pool  = {	
 			limit = {
 				NOT = { home_country = ROOT }
-				culture = { NOT = { is_primary_culture_of = ROOT } }
+				culture = { 
+					NOR = { 
+						is_primary_culture_of = ROOT
+						culture_is_discriminated_in = ROOT
+					} 
+				}
 			}
-			save_temporary_scope_as = ex_ig
+			interest_group_type = {
+				save_temporary_scope_as = exile_ig_type
+			}
 			save_scope_as = fertile_ground_exile_scope
 		}
 		random_interest_group = {
 			limit = {
-				ig_type_matches_former = yes
-				is_powerful = yes
+				scope:exile_ig_type = this.type
 			}
+			save_scope_as = fertile_ground_ig
 		}
 	}
 
@@ -1337,6 +1351,9 @@ exiles_more_events.9 = {
 				is_in_exile_pool = no
 				is_character_alive = no
 			}
+		}
+		NOT = {
+			exists = scope:fertile_ground_ig
 		}
 	}
 
@@ -1352,6 +1369,38 @@ exiles_more_events.9 = {
 		}
 	}
 
+	option = {
+		name = exiles_more_events.9.b
+
+		scope:fertile_ground_ig = { 
+			add_modifier = {
+				name = messed_with_the_wrong_ig
+				months = normal_modifier_time
+			}
+		}
+	}
+
+	option = {
+		name = exiles_more_events.9.c
+		highlighted_option = yes
+
+		trigger = {
+			scope:fertile_ground_ig = {
+				is_in_government = no
+			}
+			OR = {
+				has_law = law_type:law_outlawed_dissent
+				has_law = law_type:law_censorship
+			}
+		}
+
+		scope:fertile_ground_ig = { 
+			add_modifier = {
+				name = accused_of_subversion
+				months = normal_modifier_time
+			}
+		}
+	}
 }
 
 # Purging unstable elements in a time of crisis
