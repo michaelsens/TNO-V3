@@ -1,0 +1,125 @@
+﻿namespace = historical_agitators
+
+# Hey guys! it's your favorite mod developer - Robert Parr!  i had an idea that we could add like historical agitators or whatever
+# if this is you robert, hello!  Joe Biden
+
+#historical_agitators.1 = { #Vladimir Lenin
+#	type = country_event
+#	placement = root
+#
+#	gui_window = event_window_1char_tabloid
+#	left_icon = scope:historic_agitator_scope
+#
+#	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+#	on_opened_soundeffect = "event:/SFX/Events/misc/1Character_Banner"
+#
+#	icon = "gfx/interface/icons/event_icons/event_scales.dds"
+#
+#	title = historical_agitators.1.t
+#	desc = historical_agitators.1.d
+#	flavor = historical_agitators.1.f
+#
+#	duration = 3
+#
+#	trigger = {
+#		empty_agitator_slots >= 1
+#		c:RUS ?= this
+#		ig:ig_trade_unions = {
+#			is_marginal = no
+#			ig_approval < 0	
+#		}
+#		game_date > 1890.1.1
+#		has_technology_researched = political_agitation
+#		NOT = {
+#			has_law = law_type:law_council_republic
+#		}
+#		NOT = { has_global_variable = lenin_spawn }
+#	}
+#
+#	immediate = {
+#		create_character = {
+#			template = rus_lenin_character_template
+#			on_created = {
+#				set_variable = lenin_var
+#			}
+#		}
+#		random_scope_character = {
+#			limit = {
+#				has_variable = lenin_var
+#			}
+#			save_scope_as = historic_agitator_scope
+#		}
+#		set_global_variable = lenin_spawn
+#	}
+#
+#	option = {
+#		name = historical_agitators.1.a
+#		default_option = yes
+#		ai_chance = {
+#			base = 20
+#		}
+#		scope:historic_agitator_scope = {
+#			interest_group = {
+#				add_modifier = {
+#					name = modifier_lenin_in_exile
+#					months = normal_modifier_time
+#					is_decaying = yes
+#				}
+#			}
+#			exile_character_with_martyrdom = yes
+#		}
+#	}
+#	option = {
+#		name = historical_agitators.1.b
+#		trigger = {
+#			OR = {
+#				has_law = law_type:law_national_guard
+#				has_law = law_type:law_secret_police
+#			}
+#		}
+#		ai_chance = {
+#			base = 10
+#		}
+#		show_as_tooltip = {
+#			create_character = {
+#				template = rus_lenin_character_template
+#			}
+#		}
+#		scope:historic_agitator_scope = {
+#			add_modifier = {
+#				name = modifier_lenin_harassed_by_spies
+#				months = normal_modifier_time
+#			}
+#		}
+#		capital = {
+#			add_radicals_in_state = {
+#				value = small_radicals
+#				pop_type = laborers
+#			}
+#		}
+#	}
+#	option = {
+#		name = historical_agitators.1.c
+#		ai_chance = {
+#			base = 5
+#		}
+#		show_as_tooltip = {
+#			create_character = {
+#				template = rus_lenin_character_template
+#			}
+#		}
+#		scope:historic_agitator_scope = {
+#			add_modifier = {
+#				name = modifier_lenin_popularity
+#				months = normal_modifier_time
+#				is_decaying = yes
+#			}
+#		}
+#		capital = {
+#			add_radicals_in_state = {
+#				value = medium_radicals
+#				pop_type = laborers
+#			}
+#		}
+#	}
+#}

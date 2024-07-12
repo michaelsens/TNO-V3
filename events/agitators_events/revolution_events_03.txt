@@ -97,7 +97,7 @@ revolution_pulse2_events.1 = {
 			text = revolution_pulse2_events.1.tt
 			trigger_event = { id = revolution_pulse2_events.2 days = 365 popup = yes }
 		}
-		scope:army_lad_leader_scope = { 
+		scope:army_lad_leader_scope = {
 			set_character_busy_and_immortal = yes 
 			set_variable = army_lad_leader_var
 		}
@@ -641,7 +641,6 @@ revolution_pulse2_events.4 = {
 	}
 }
 
-
 revolution_pulse2_events.5 = {
 	type = country_event
 	placement = scope:garrison_refusal_state
@@ -730,12 +729,9 @@ revolution_pulse2_events.5 = {
 		name = revolution_pulse2_events.5.a 
 		default_option = yes
 		scope:garrison_refusal_state = {
-			remove_building = building_barracks
-		}
-		scope:garrison_refusal_state = {
 			add_radicals_in_state = {
 				pop_type = soldiers
-				value = medium_radicals
+				value = large_radicals
 			}
 			add_loyalists_in_state = {
 				pop_type = officers
@@ -743,7 +739,7 @@ revolution_pulse2_events.5 = {
 			}
 		}
 		scope:garrison_refusal_state.state_region = {
-			add_devastation = 3
+			add_devastation = 10
 		}
 		scope:ongoing_revolution = {
 			add_civil_war_progress = revolution_retreat_small
@@ -757,6 +753,12 @@ revolution_pulse2_events.5 = {
 		scope:garrison_refusal_barracks = {
 			add_modifier = {
 				name = seditious_garrison
+				months = short_modifier_time
+			}
+		}
+		ig:ig_armed_forces = {
+			add_modifier = {
+				name = ig_furious_at_cowardice
 				months = short_modifier_time
 			}
 		}
@@ -867,7 +869,7 @@ revolution_pulse2_events.7 = {
 	}
 	option = {
 		name = revolution_pulse2_events.7.b
-		scope:ongoing_revolution = {
+		scope:ongoing_revolution_movement = {
 			add_modifier = {
 				name = hatmakersfeud_emboldened_commoners
 				months = normal_modifier_time
@@ -1090,7 +1092,7 @@ revolution_pulse2_events.9 = {
 	}
 	option = {
 		name = revolution_pulse2_events.9.b
-		scope:ongoing_revolution = {
+		scope:ongoing_revolution_movement = {
 			add_modifier = {
 				name = jailtime_blues_jail_stormed
 				months = normal_modifier_time
