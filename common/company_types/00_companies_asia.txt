@@ -20,7 +20,7 @@ company_east_india_company = {
 		any_scope_state = {
 			OR = {
 				region = sr:region_north_india
-				region = sr:region_north_india
+				region = sr:region_south_india
 			}
 			any_scope_building = {
 				OR = {
@@ -28,7 +28,7 @@ company_east_india_company = {
 					is_building_type = building_tobacco_plantation
 					is_building_type = building_opium_plantation
 				}
-				level >= 10
+				level >= 3
 			}
 			count >= 4
 		}
@@ -59,7 +59,7 @@ company_imperial_arsenal = {
 	}
 	
 	potential = {
-		has_interest_marker_in_region = region_italy
+		has_interest_marker_in_region = region_anatolia
 	}
 	
 	attainable = {
@@ -76,7 +76,7 @@ company_imperial_arsenal = {
 			is_incorporated = yes
 			any_scope_building = {
 				is_building_type = building_military_shipyards
-				level >= 10
+				level >= 3
 			}
 		}
 		has_technology_researched = hydraulic_cranes
@@ -143,7 +143,7 @@ company_allatini_mills = {
 	}
 	
 	potential = {
-		has_interest_marker_in_region = region_italy
+		has_interest_marker_in_region = region_balkans
 	}
 	
 	attainable = {
@@ -163,7 +163,7 @@ company_allatini_mills = {
 					is_building_type = building_wheat_farm
 					is_building_type = building_rye_farm
 				}
-				level >= 10
+				level >= 3
 			}
 		}
 		NOR = {
@@ -195,8 +195,8 @@ company_orient_express = {
 	
 	potential = {
 		OR = {
-			has_interest_marker_in_region = region_italy
-			has_interest_marker_in_region = region_italy
+			has_interest_marker_in_region = region_anatolia
+			has_interest_marker_in_region = region_balkans
 		}
 	}
 	
@@ -206,7 +206,7 @@ company_orient_express = {
 	
 	possible = {
 		any_scope_state = {
-			region = sr:region_italy
+			region = sr:region_balkans
 			is_incorporated = yes
 			has_building = building_railway
 			count >= 4
@@ -247,20 +247,14 @@ company_great_indian_railway = {
 	attainable = {
 		hidden_trigger = { # Hide attainable if it's always fulfilled by possible
 			any_scope_state = {
-				OR = {
-					region = sr:region_north_india
-					region = sr:region_north_india
-				}
+				region = sr:region_north_india
 			}
 		}
 	}			
 	
 	possible = {
 		any_scope_state = {
-			OR = {
-				region = sr:region_north_india
-				region = sr:region_north_india
-			}
+			region = sr:region_north_india
 			is_incorporated = yes
 			has_building = building_railway
 			count >= 6
@@ -290,7 +284,7 @@ company_tata = {
 	}
 	
 	potential = {
-		has_interest_marker_in_region = region_north_india
+		has_interest_marker_in_region = region_south_india
 	}
 	
 	attainable = {
@@ -310,7 +304,7 @@ company_tata = {
 					is_building_type = building_textile_mills
 					is_building_type = building_steel_mills
 				}
-				level >= 10
+				level >= 3
 			}
 		}
 	}
@@ -338,7 +332,7 @@ company_sunhwaguk = {
 	}
 	
 	potential = {
-		has_interest_marker_in_region = region_north_china
+		has_interest_marker_in_region = region_manchuria
 	}
 	
 	
@@ -358,7 +352,7 @@ company_sunhwaguk = {
 			is_incorporated = yes
 			any_scope_building = {
 				is_building_type = building_tobacco_plantation
-				level = 10
+				level >= 10
 			}
 		}
 		has_technology_researched = central_planning
@@ -385,7 +379,7 @@ company_nam_dinh = {
 	}
 	
 	potential = {
-		has_interest_marker_in_region = region_indonesia
+		has_interest_marker_in_region = region_indochina
 	}
 	
 	attainable = {
@@ -402,7 +396,7 @@ company_nam_dinh = {
 			is_incorporated = yes
 			any_scope_building = {
 				is_building_type = building_textile_mills
-				level >= 10
+				level >= 3
 			}
 		}
 		has_technology_researched = corporate_charters
@@ -429,20 +423,20 @@ company_imperial_tobacco = {
 	}
 	
 	potential = {
-		has_interest_marker_in_region = region_arabic
+		has_interest_marker_in_region = region_persia
 	}
 	
 	attainable = {
 		hidden_trigger = { # Hide attainable if it's always fulfilled by possible
 			any_scope_state = {
-				region = sr:region_arabic
+				region = sr:region_persia
 			}
 		}
 	}		
 	
 	possible = {
 		any_scope_state = {
-			region = sr:region_arabic
+			region = sr:region_persia
 			is_incorporated = yes
 			any_scope_building = {
 				is_building_type = building_tobacco_plantation
@@ -492,7 +486,7 @@ company_san_miguel = {
 			is_incorporated = yes
 			any_scope_building = {
 				is_building_type = building_food_industry
-				level >= 10
+				level >= 3
 			}
 		}
 		has_technology_researched = corporate_charters
@@ -519,7 +513,7 @@ company_william_sandford = {
 	}
 	
 	potential = {
-		has_interest_marker_in_region = region_italy
+		has_interest_marker_in_region = region_oceania
 	}
 	
 	attainable = {
@@ -536,7 +530,7 @@ company_william_sandford = {
 			is_incorporated = yes
 			any_scope_building = {
 				is_building_type = building_steel_mills
-				level >= 10
+				level >= 3
 			}
 		}
 		has_technology_researched = bessemer_process
@@ -563,7 +557,7 @@ company_b_grimm = {
 	}
 	
 	potential = {
-		has_interest_marker_in_region = region_indonesia
+		has_interest_marker_in_region = region_indochina
 	}
 	
 	attainable = {
@@ -580,13 +574,13 @@ company_b_grimm = {
 			is_incorporated = yes
 			any_scope_building = {
 				is_building_type = building_rice_farm
-				level >= 10
+				level >= 3
 			}
 		}
 	}
 	
 	prosperity_modifier = {
-		state_infrastructure_from_population_add = 0.1
+		state_infrastructure_from_population_mult = 0.1
 		building_food_industry_throughput_add = 0.1
 	}	
 	
