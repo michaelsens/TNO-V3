@@ -82,6 +82,7 @@ law_women_own_property = {
 				limit = {
 					owner = {
 						has_law = law_type:law_no_womens_rights
+						has_technology_researched = feminism
 					}
 				}
 				value = 0.1
@@ -90,6 +91,8 @@ law_women_own_property = {
 				limit = {
 					owner = {
 						has_law = law_type:law_no_womens_rights
+						has_technology_researched = feminism
+						has_technology_researched = political_agitation
 					}
 				}
 				value = 0.1
@@ -168,6 +171,7 @@ law_women_in_the_workplace = {
 							has_law = law_type:law_no_womens_rights
 							has_law = law_type:law_women_own_property
 						}
+						has_technology_researched = feminism
 					}
 				}
 				value = 0.1
@@ -179,6 +183,8 @@ law_women_in_the_workplace = {
 							has_law = law_type:law_no_womens_rights
 							has_law = law_type:law_women_own_property
 						}
+						has_technology_researched = feminism
+						has_technology_researched = political_agitation
 					}
 				}
 				value = 0.1
@@ -253,11 +259,18 @@ law_womens_suffrage = {
 			desc = "ALL_POPS"
 			if = {
 				limit = {
+					owner = {
+						has_technology_researched = feminism
+					}
 				}
 				value = 0.1
 			}
 			if = {
 				limit = {
+					owner = {
+						has_technology_researched = feminism
+						has_technology_researched = political_agitation
+					}
 				}
 				value = 0.1
 			}

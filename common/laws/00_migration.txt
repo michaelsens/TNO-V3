@@ -3,6 +3,10 @@
 	icon = "gfx/interface/icons/law_icons/no_migration_controls.dds"
 	
 	progressiveness = 50
+
+	modifier = {
+		state_migration_pull_mult = 0.2
+	}
 	
 	possible_political_movements = {
 		law_migration_controls
@@ -24,6 +28,38 @@
 		}
 	}
 }
+
+law_quota_immigration = {
+	group = lawgroup_migration
+	icon = "gfx/interface/icons/law_icons/no_migration_controls.dds"
+	
+	progressiveness = 50
+
+	modifier = {
+		state_migration_pull_mult = 0.1
+	}
+	
+	possible_political_movements = {
+		law_migration_controls
+	}	
+	pop_support = {
+		value = 0
+	}
+
+	ai_enact_weight_modifier = { #Petitions
+		value = 0
+		
+		if = {
+			limit = { 
+				has_journal_entry = je_government_petition
+				has_variable = desired_law_var
+                scope:law = var:desired_law_var
+			}
+			add = 750
+		}
+	}
+}
+
 
 law_migration_controls = {
 	group = lawgroup_migration
@@ -208,6 +244,7 @@ law_closed_borders = {
 	}
 	
 	progressiveness = -50
+
 	
 	possible_political_movements = {
 		law_closed_borders
@@ -320,3 +357,130 @@ law_closed_borders = {
 		}
 	}
 }
+
+law_never_leave = {
+	group = lawgroup_migration
+	icon = "gfx/interface/icons/law_icons/closed_borders.dds"
+
+	modifier = {
+		country_disallow_migration = yes
+		country_disallow_agitator_invites = yes
+		state_mortality_turmoil_mult = 0.1
+	}
+
+
+	
+	progressiveness = -50
+	
+	possible_political_movements = {
+		law_closed_borders
+	}
+
+	pop_support = {
+		value = 0
+		add = {
+			desc = "POP_UNEMPLOYED_STATE"
+			if = {
+				limit = { 
+					state = {
+						state_unemployment_rate >= 0.1
+					}
+				}
+				value = 0.1
+			}
+			if = {
+				limit = {
+					state = {
+						state_unemployment_rate >= 0.2
+					}
+				}
+				value = 0.1
+			}
+			if = {
+				limit = { 
+					state = {
+						state_unemployment_rate >= 0.3
+					}
+				}
+				value = 0.1
+			}
+			if = {
+				limit = {
+					state = {
+						state_unemployment_rate >= 0.4
+					}
+				}
+				value = 0.1
+			}
+			if = {
+				limit = {
+					state = {
+						state_unemployment_rate >= 0.5
+					}
+				}
+				value = 0.1
+			}
+		}	
+	}
+
+	pop_support = {
+		value = 0
+		add = {
+			desc = "POP_LOWER_STRATA"
+			if = {
+				limit = { 
+					state = {
+						state_unemployment_rate >= 0.1
+					}
+				}
+				value = 0.1
+			}
+			if = {
+				limit = {
+					state = {
+						state_unemployment_rate >= 0.2
+					}
+				}
+				value = 0.1
+			}
+			if = {
+				limit = { 
+					state = {
+						state_unemployment_rate >= 0.3
+					}
+				}
+				value = 0.1
+			}
+			if = {
+				limit = {
+					state = {
+						state_unemployment_rate >= 0.4
+					}
+				}
+				value = 0.1
+			}
+			if = {
+				limit = {
+					state = {
+						state_unemployment_rate >= 0.5
+					}
+				}
+				value = 0.1
+			}
+		}
+	}
+
+	ai_enact_weight_modifier = { #Petitions
+		value = 0
+		
+		if = {
+			limit = { 
+				has_journal_entry = je_government_petition
+				has_variable = desired_law_var
+                scope:law = var:desired_law_var
+			}
+			add = 750
+		}
+	}
+}
+
