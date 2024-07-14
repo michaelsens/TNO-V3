@@ -1,111 +1,119 @@
-﻿COUNTRIES = {
+﻿CHARACTERS = {
 	c:GER = {
-		effect_starting_technology_tier_1_tech = yes
-				
-		# Laws 
-		activate_law = law_type:law_unitary_state	
-		activate_law = law_type:law_autocracy
-		activate_law = law_type:law_outlawed_dissent			
-		activate_law = law_type:law_controlled_opposition
-		activate_law = law_type:law_ethnostate
-		activate_law = law_type:law_protectionism
-		activate_law = law_type:law_corporatism
-		activate_law = law_type:law_commercialized_agriculture
-		activate_law = law_type:law_rules_of_engagement	
-		activate_law = law_type:law_death_sqauds	
-		activate_law = law_type:law_migration_controls
-		activate_law = law_type:law_debt_slavery	
-		activate_law = law_type:law_colonial_exploitation
-		activate_law = law_type:law_universal_coverage
-		activate_law = law_type:law_secret_police
-		activate_law = law_type:law_old_age_pension	
-		activate_law = law_type:law_freedom_of_conscience
-
-		add_modifier = {
-    		name = decaying_infrastructure
-  	    }
-
-		add_modifier = {
-    		name = modifier_masters_of_europe
-  	    }
-		add_modifier = {
-    		name = bloated_whermacht
-  	    }
-		
-		add_modifier = {
-    		name = The_LIBS_CAN_NOT_HOLD
-  	    }		
-		
-		add_modifier = { name = slavery_dependence }
-		add_modifier = { 
-			name = war_spoils 
-			years = 9
-		}
-
-        ig:ig_Fascists = { 
-            add_ruling_interest_group = yes
-        }
-		
-        ig:ig_Reactionary = { 
-            add_ruling_interest_group = yes
-        }
-
-        ig:ig_Nationalists = { 
-            add_ruling_interest_group = yes
-        }		
-		
-		
-		set_institution_investment_level = {
-			institution = institution_schools
-			level = 3
-		}
-
-		set_institution_investment_level = {
-			institution = institution_police
-			level = 4
-		}
-
-		set_institution_investment_level = {
-			institution = institution_health_system
-			level = 3
-		}
-
-		set_institution_investment_level = {
-			institution = institution_home_affairs
-			level = 4
+		create_character = {
+			# Adolf Hitler
+			#role = politician # Remove this line
+			first_name = "adolf_hitler_first_name"
+			last_name = "adolf_hitler_last_name"
+			ruler = yes
+			ig_leader = no			
+			age = 61
+			culture = cu:north_german
+			religion = catholic
+			dna = dna_adolf_hitler
+			interest_group = ig_Fascists
+			ideology = ideology_nat_soc
+			traits = {
+				firebrand
+				direct
+				reckless
+				masterful_diplomat
+				experienced_political_operator
+				senile
+			}
 		}
 		
-		ig:ig_landowners = { 
-			set_interest_group_name = ig_chancellery
-			remove_ideology = ideology_paternalistic
-			add_ideology = ideology_junker_paternalistic
+		create_character = {
+			# Martin Bormann
+			first_name = "martin_bormann_first_name"
+			last_name = "martin_bormann_last_name"
+			age = 50
+			culture = cu:north_german
+			dna = dna_martin_bormann
+			ig_leader = yes
+			interest_group = ig_Bureaucrats
+			ideology = ideology_Orthodox_National_Socialist
+			traits = {
+				tactful
+				bigoted
+				expert_political_operator
+			}
 		}
 
-		ig:ig_armed_forces = {
-			add_ruling_interest_group = yes
-			set_interest_group_name = ig_wehrmacht
-			remove_ideology = ideology_patriotic
+		create_character = {
+			# Albert Speer
+			first_name = "albert_speer_first_name"
+			last_name = "albert_speer_last_name"
+			age = 45
+			culture = cu:north_german
+			ig_leader = yes
+			interest_group = ig_industrialists
+			ideology = ideology_nat_soc
+			traits = {
+				reserved
+				meticulous
+				innovative
+			}
 		}
 
-		ig:ig_industrialists = {
-			set_interest_group_name = ig_autarks
-			remove_ideology = ideology_individualist
-			remove_ideology = ideology_plutocratic
+		create_character = {
+			# Hermann Göring
+			first_name = "hermann_goring_first_name"
+			last_name = "hermann_goring_last_name"
+			age = 57
+			culture = cu:north_german
+			ig_leader = yes
+			interest_group = ig_armed_forces
+			ideology = ideology_Stratocratic_Nazism
+			traits = {
+				arrogant
+				ambitious
+				charismatic
+				hedonist
+				opium_addiction
+				celebrity_commander
+				plains_commander
+			}
 		}
 
-		ig:ig_petty_bourgeoisie = {
-			set_interest_group_name = ig_herrenvolk
+		create_character = {
+			# Reinhard Heydrich
+			first_name = "reinhard_heydrich_first_name"
+			last_name = "reinhard_heydrich_last_name"
+			age = 41
+			culture = cu:north_german
+			ig_leader = no
+			interest_group = ig_armed_forces
+			ideology = ideology_Spartanism
+			traits = {
+				direct
+				wrathful
+				cruel
+				meticulous
+				pillager
+				celebrity_commander
+				basic_political_operator
+			}
 		}
 
-		ig:ig_rural_folk = {
-			set_interest_group_name = ig_reichsnahrstand
-		}
-
-		ig:ig_trade_unions = {
-			set_interest_group_name = ig_glf
-		}
-		ig:ig_devout = {
-			set_interest_group_name = ig_evangelical_church 
+		create_character = {
+			# Joseph Goebbels
+			first_name = "joseph_goebbels_first_name"
+			last_name = "joseph_goebbels_last_name"
+			age = 53
+			culture = cu:north_german
+			ig_leader = yes
+			interest_group = ig_intelligentsia
+			ideology = ideology_nat_soc
+			traits = {
+				persistent
+				bigoted
+				charismatic
+				experienced_political_operator
+				experienced_diplomat
+				demagogue
+			}
 		}
 	}
+
 }
