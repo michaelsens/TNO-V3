@@ -311,47 +311,47 @@ tno_starting_events.7 = {
 	}
 }
 
-tno_starting_events.8 = {
-    type = country_event
-    placement = ROOT
-
-	title = eng.1
-	desc = eng.1.d
-    flavor = eng.1.f
-	event_image = {
-		texture  = "gfx/event_pictures/super_pictures/london.dds"
-	}
-
-    icon = "gfx/interface/icons/event_icons/event_default.dds"
-	
-	trigger = {
-		exists = c:ENG
-		this ?= c:ENG
-		game_date <= 1963.2.1
-	}	
-	
-	duration = 3
-
-	option = {
-		name = eng.1.a
-		hidden_effect = {
-			remove_modifier = shattered_union
-			remove_modifier = the_broken_navy
-			remove_modifier = emergency_powers
-			remove_modifier = empire_remnants
-		}
-		add_modifier = { name = shattered_union }
-		add_modifier = { name = the_broken_navy }
-		add_modifier = { 
-			name = emergency_powers
-			is_decaying = yes
-			years = 20
-		}
-		add_modifier = { name = empire_remnants }
-	}
-
-	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
-}
+#tno_starting_events.8 = {
+#    type = country_event
+#    placement = ROOT
+#
+#	title = eng.1
+#	desc = eng.1.d
+#    flavor = eng.1.f
+#	event_image = {
+#		texture  = "gfx/event_pictures/super_pictures/london.dds"
+#	}
+#
+#    icon = "gfx/interface/icons/event_icons/event_default.dds"
+#	
+#	trigger = {
+#		exists = c:ENG
+#		this ?= c:ENG
+#		game_date <= 1963.2.1
+#	}	
+#	
+#	duration = 3
+#
+#	option = {
+#		name = eng.1.a
+#		hidden_effect = {
+#			remove_modifier = shattered_union
+#			remove_modifier = the_broken_navy
+#			remove_modifier = emergency_powers
+#			remove_modifier = empire_remnants
+#		}
+#		add_modifier = { name = shattered_union }
+#		add_modifier = { name = the_broken_navy }
+#		add_modifier = { 
+#			name = emergency_powers
+#			is_decaying = yes
+#			years = 20
+#		}
+#		add_modifier = { name = empire_remnants }
+#	}
+#
+#	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+#}
 
 tno_starting_events.9 = {
 	type = country_event
