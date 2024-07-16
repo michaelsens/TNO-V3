@@ -1,20 +1,23 @@
 ﻿COUNTRIES = {
 	c:VYA = {
-		effect_starting_technology_tier_1_tech = yes
+		effect_starting_technology_tier_4_tech = yes
 
 		activate_law = law_type:law_state_religion
 		activate_law = law_type:law_no_migration_controls
-		activate_law = law_type:law_national_militia
+		activate_law = law_type:law_rules_of_engagement
 		activate_law = law_type:law_autocracy
-		activate_law = law_type:law_warlord_economy
+		activate_law = law_type:law_dirigisme
 		activate_law = law_type:law_per_capita_based_taxation
 		activate_law = law_type:law_local_police
 		activate_law = law_type:law_religious_schools
-		activate_law = law_type:law_charitable_health_system
+		activate_law = law_type:law_service_for_care
 		activate_law = law_type:law_censorship
 		activate_law = law_type:law_women_own_property
 		activate_law = law_type:law_monarchy
 		activate_law = law_type:law_tenant_farmers
+		
+        
+		set_variable = vya_provisional 
 		
 		add_modifier = {
 			name = modifier_offensive_footing
@@ -28,13 +31,10 @@
         	name = russian_warlord
     	}
     	add_journal_entry = { type = je_ru_tno_launch_raid }
-    	add_journal_entry = { type = je_ru_tno_unite_west_russia }
     	trigger_event = { id = tno_ru_events.10 }
 	    trigger_event = { id = tno_ru_events.15 days = 10 }
 
-		add_modifier = {
-         	name = modifier_developing_economy
-    	}
+		
 
     }
 }

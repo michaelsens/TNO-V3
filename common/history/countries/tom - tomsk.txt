@@ -1,14 +1,14 @@
 ﻿COUNTRIES = {
 	c:TOM = {
-		effect_starting_technology_tier_1_tech = yes
+		effect_starting_technology_tier_4_tech = yes
 
 		activate_law = law_type:law_parliamentary_republic
 		activate_law = law_type:law_universal_suffrage
 		activate_law = law_type:law_multicultural
-		activate_law = law_type:law_elected_bureaucrats
+		activate_law = law_type:law_multi_party_system
 		activate_law = law_type:law_guaranteed_liberties
-		activate_law = law_type:law_national_militia
-		activate_law = law_type:law_warlord_economy
+		activate_law = law_type:law_rules_of_engagement
+		activate_law = law_type:law_planned_economy
 		activate_law = law_type:law_local_police
 		activate_law = law_type:law_public_health_insurance
 		activate_law = law_type:law_public_schools
@@ -20,6 +20,8 @@
 		activate_law = law_type:law_free_trade
 		activate_law = law_type:law_homesteading
 		
+		set_variable = tom_provisional 
+		
 		add_modifier = {
 			name = modifier_offensive_footing
 		}
@@ -28,13 +30,10 @@
 			name = russian_warlord
 		}
 		add_journal_entry = { type = je_ru_tno_launch_raid }
-		add_journal_entry = { type = je_ru_tno_unite_central_sib }
     	trigger_event = { id = tno_ru_events.10 }
 	    trigger_event = { id = tno_ru_events.13 days = 10 }
 
-		add_modifier = {
-         	name = modifier_developing_economy
-    	}	 
+		 
 		add_modifier = {
 			name = siberian
 		}

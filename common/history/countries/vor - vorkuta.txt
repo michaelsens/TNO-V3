@@ -1,12 +1,13 @@
 ﻿COUNTRIES = {
 	c:VOR = {
-		effect_starting_technology_tier_1_tech = yes
+		effect_starting_technology_tier_5_tech = yes
 		activate_law = law_type:law_council_republic
 		activate_law = law_type:law_cultural_exclusion
 		activate_law = law_type:law_state_atheism
-		activate_law = law_type:law_appointed_bureaucrats
-		activate_law = law_type:law_mass_conscription
-		activate_law = law_type:law_warlord_economy
+		activate_law = law_type:law_controlled_opposition
+		activate_law = law_type:law_watchdog_groups
+		activate_law = law_type:law_burgundian_system
+		activate_law = law_type:law_protectionism
 		activate_law = law_type:law_per_capita_based_taxation
 		activate_law = law_type:law_militarized_police
 		activate_law = law_type:law_public_health_insurance
@@ -14,6 +15,8 @@
 		activate_law = law_type:law_women_in_the_workplace
 		activate_law = law_type:law_poor_laws
 		activate_law = law_type:law_migration_controls
+		
+        set_variable = wst_provisional 
 
 		add_modifier = {
 			name = modifier_offensive_footing
@@ -23,9 +26,8 @@
          name = russian_warlord
     	} 
     	add_journal_entry = { type = je_ru_tno_launch_raid }
-    	add_journal_entry = { type = je_ru_tno_unite_west_sib }
     	trigger_event = { id = tno_ru_events.10 }
-	    trigger_event = { id = tno_ru_events.16 days = 1095 }
+	    trigger_event = { id = tno_ru_events.14 days = 10 }
 
 		add_modifier = {
 			name = ural
@@ -35,8 +37,6 @@
 			add_ruling_interest_group = yes
 		}
 
-		add_modifier = {
-         	name = modifier_developing_economy
-    	}
+		
     }
 }

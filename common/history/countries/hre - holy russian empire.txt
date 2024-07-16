@@ -1,17 +1,19 @@
 ﻿COUNTRIES = {
 	c:HLY = {
-		effect_starting_technology_tier_1_tech = yes
-		activate_law = law_type:law_appointed_bureaucrats
-		activate_law = law_type:law_mass_conscription
-		activate_law = law_type:law_warlord_economy
+		effect_starting_technology_tier_4_tech = yes
+		activate_law = law_type:law_controlled_opposition
+		activate_law = law_type:law_watchdog_groups
+		activate_law = law_type:law_burgundian_system
 		activate_law = law_type:law_protectionism
 		activate_law = law_type:law_land_based_taxation	
 		activate_law = law_type:law_militarized_police
 		activate_law = law_type:law_religious_schools
-		activate_law = law_type:law_charitable_health_system
+		activate_law = law_type:law_service_for_care
 		activate_law = law_type:law_serfdom
 		activate_law = law_type:law_closed_borders
 		activate_law = law_type:law_debt_slavery
+    	
+		set_variable = hre_provisional 
 		
 		add_modifier = {
 			name = modifier_offensive_footing
@@ -23,9 +25,7 @@
 		add_modifier = { name = salted_earth }
 		add_modifier = { name = imperskiye_shturmoviki }
 		
-		add_modifier = {
-        	name = modifier_developing_economy
-    	} 
+		
 		add_modifier = {
 			name = western
 		}
@@ -34,7 +34,6 @@
         	name = russian_warlord
     	} 
     	add_journal_entry = { type = je_ru_tno_launch_raid }
-    	add_journal_entry = { type = je_ru_tno_unite_west_russia }
     	trigger_event = { id = tno_ru_events.10 }
 	    trigger_event = { id = tno_ru_events.15 days = 10 }
 
