@@ -5,54 +5,10 @@ anarchist_party = {
 	name = {
 		first_valid = {
 			triggered_desc = {
-				desc = party_cnt
+				desc = party_SLP
 				trigger = {
-					exists = c:SPA
-					THIS = c:SPA
-				}
-			}
-			triggered_desc = {
-				desc = party_socialist_league
-				trigger = {
-					exists = c:GBR
-					THIS = c:GBR
-				}
-			}
-			triggered_desc = {
-				desc = party_anarcho_communist_federation
-				trigger = {
-					exists = c:FRA
-					THIS = c:FRA
-				}
-			}
-			triggered_desc = {
-				desc = party_maximalist_federation
-				trigger = {
-					country_has_primary_culture = cu:portuguese
-				}
-			}
-			triggered_desc = {
-				desc = party_young_socialists
-				trigger = {
-					OR = {
-						country_has_primary_culture = cu:norwegian
-						country_has_primary_culture = cu:danish
-					}
-				}
-			}
-			triggered_desc = {
-				desc = party_italian_syndicalist_union
-				trigger = {
-					OR = {
-						country_has_primary_culture = cu:north_italian
-						country_has_primary_culture = cu:south_italian
-					}
-				}
-			}
-			triggered_desc = {
-				desc = party_anarchist
-				trigger = {
-					always = yes
+					exists = c:USA
+					THIS = c:USA
 				}
 			}
 		}
@@ -61,7 +17,7 @@ anarchist_party = {
 		default = "/gfx/interface/icons/political_parties/anarchist.dds"
 	}
 	unlocking_technologies = {
-		anarchism
+		urbanization
 	}
 	# THIS IS RUN ONLY ONCE AT GAME START
 	valid_for_country = {
@@ -70,15 +26,13 @@ anarchist_party = {
 	available_for_interest_group = {
 		owner = {
 			country_has_voting_franchise = yes
-			any_interest_group = {
+			ig:ig_Anarchists = {
 				is_marginal = no
-				leader = {
-					has_ideology = ideology:ideology_anarchist
-				}
 			}
 		}
 		leader = {
 			has_ideology = ideology:ideology_anarchist
+			has_ideology = ideology:ideology_marxist			
 		}
 		OR = {
 	     	NOT = {
@@ -148,8 +102,8 @@ anarchist_party = {
 							is_marginal = no
 							leader = {
 								OR = {
-									has_ideology = ideology:ideology_communist
-									has_ideology = ideology:ideology_vanguardist
+										has_ideology = ideology:ideology_radical
+										has_ideology = ideology:ideology_anarchist
 								}
 							}
 						}
@@ -185,7 +139,9 @@ anarchist_party = {
 			limit = {
 				OR = {
 					has_ideology = ideology:ideology_liberal
+					has_ideology = ideology:ideology_liberal_modern
 					has_ideology = ideology:ideology_egalitarian
+					has_ideology = ideology:ideology_egalitarian_modern
 					leader = {
 						has_ideology = ideology:ideology_humanitarian
 					}
@@ -248,7 +204,7 @@ anarchist_party = {
 					}
 				}
 				owner = {
-					has_law = law_type:law_peasant_levies
+					has_law = law_type:law_encouraged_brutality
 				}
 			}
 			add = {
@@ -283,6 +239,7 @@ anarchist_party = {
 				}
 				OR = {
 					has_ideology = ideology:ideology_egalitarian
+					has_ideology = ideology:ideology_egalitarian_modern
 					has_ideology = ideology:ideology_anti_slavery
 					has_ideology = ideology:ideology_laissez_faire
 					has_ideology = ideology:ideology_particularist
