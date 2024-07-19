@@ -9,63 +9,6 @@
 }
 
 
-
-modifier_advanced_economy = {
-	icon = gfx/interface/icons/tno_modifier_icons/modifier_money6.dds
-	state_middle_standard_of_living_add = 2
-	state_poor_standard_of_living_add = 2
-	building_group_bg_subsistence_agriculture_throughput_add = 0.85
-	state_birth_rate_mult = 0.05
-	state_mortality_mult = -0.35
-	political_movement_radicalism_mult = -0.50
-}
-
-modifier_very_developed_economy = {
-	icon = gfx/interface/icons/tno_modifier_icons/modifier_money.5.dds
-	state_middle_standard_of_living_add = 2
-	state_poor_standard_of_living_add = 2
-	state_birth_rate_mult = 0.05
-	state_mortality_mult = -0.35
-	building_group_bg_subsistence_agriculture_throughput_add = 0.65
-	political_movement_radicalism_mult = -0.40
-}
-
-modifier_developed_economy = {
-	icon = gfx/interface/icons/tno_modifier_icons/modifier_money.4.dds
-	state_middle_standard_of_living_add = 1
-	state_poor_standard_of_living_add = 1
-	state_birth_rate_mult = 0.10
-	state_mortality_mult = -0.20
-	building_group_bg_subsistence_agriculture_throughput_add = 0.35
-	political_movement_radicalism_mult = -0.30
-}
-
-modifier_developing_economy = {
-	icon = gfx/interface/icons/tno_modifier_icons/modifier_money.3.dds
-	state_poor_standard_of_living_add = 2
-	state_birth_rate_mult = 0.20
-	state_mortality_mult = -0.10
-	building_group_bg_subsistence_agriculture_throughput_add = -0.35
-	political_movement_radicalism_mult = -0.20
-}
-
-modifier_undeveloped_economy = {
-	icon = gfx/interface/icons/tno_modifier_icons/modifier_money.2.dds
-	state_poor_standard_of_living_add = 2
-	state_birth_rate_mult = 0.35
-	state_mortality_mult = -0.05
-	building_group_bg_subsistence_agriculture_throughput_add = -0.65
-	political_movement_radicalism_mult = -0.10
-}
-
-modifier_least_developed_economy = {
-	icon = gfx/interface/icons/tno_modifier_icons/modifier_money.1.dds
-	state_poor_standard_of_living_add = 2
-	state_birth_rate_mult = 0.50
-	building_group_bg_subsistence_agriculture_throughput_add = -0.95
-	
-}
-
 modifier_zla_arms = {
 	icon = gfx/interface/icons/tno_modifier_icons/modifier_ZLAarm.dds
 	building_arms_industry_throughput_add = 0.15
@@ -150,9 +93,26 @@ oil_transition_modifier = {
 	building_oil_rig_throughput_add = -0.25
 }
 
+The_LIBS_CAN_NOT_HOLD = {
+	icon = gfx/interface/icons/tno_modifier_icons/master_eur.dds
+	interest_group_in_government_approval_add = 20
+	interest_group_ig_Libertarians_pop_attraction_mult = -0.90
+	interest_group_ig_Conservatives_pop_attraction_mult = -0.90	
+	interest_group_ig_Moderates_pop_attraction_mult = -0.90		
+	interest_group_ig_Liberals_pop_attraction_mult = -0.90	
+	interest_group_ig_Progressives_pop_attraction_mult = -0.90	
+	interest_group_ig_Socialist_pop_attraction_mult = -0.90	
+	interest_group_ig_Communists_pop_attraction_mult = -0.90		
+	interest_group_ig_Socialist_pop_attraction_mult = -0.90	
+	interest_group_ig_Anarchists_pop_attraction_mult = -0.90			
+}
+
 modifier_masters_of_europe = {
 	icon = gfx/interface/icons/tno_modifier_icons/master_eur.dds
 	interest_group_in_government_approval_add = 3
+	interest_group_ig_Nationalists_pop_attraction_mult = 0.20
+	interest_group_ig_Reactionary_pop_attraction_mult = 0.30	
+	interest_group_ig_Fascists_pop_attraction_mult = 0.50	
 	country_legitimacy_base_add = 10
 	country_aristocrats_pol_str_mult = 0.5
 	country_prestige_mult = 0.1
@@ -165,6 +125,7 @@ bloated_whermacht = {
 	country_officers_pol_str_mult = 0.9
 	country_soldiers_pol_str_mult = 0.5
 	interest_group_ig_armed_forces_approval_add = 5
+	interest_group_ig_armed_forces_pop_attraction_mult = 1.20	
 	country_expenses_add = 40000
 	unit_offense_mult = 0.10
 	unit_defense_mult = 0.10
@@ -232,6 +193,7 @@ insurgency = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_negative.dds
 	country_war_exhaustion_casualties_mult = -0.3
 	country_revolution_progress_mult = -10
+
 }
 
 large_funding_ost = {
@@ -292,40 +254,11 @@ war_spoils = {
 	country_minting_add = 200000
 }
 
-american_dream = {
-	icon = gfx/interface/icons/tno_modifier_icons/usa_dream.dds
-	state_expected_sol_mult = 0.2
-	state_education_access_add = 0.2
-	state_pop_qualifications_mult = 0.15
-	state_migration_pull_mult = 0.05
-	building_minimum_wage_mult = 0.1
-	state_birth_rate_mult = 0.15
-}
-
 civiL_war_never_ends = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
 	state_expected_sol_mult = -0.2
 	state_migration_pull_mult = -0.05
 	building_minimum_wage_mult = -0.1
-}
-
-national_humiliation = {
-	icon = gfx/interface/icons/tno_modifier_icons/usa_loss.dds
-	country_prestige_mult = -0.15
-	country_officers_pol_str_mult = -0.5
-	country_soldiers_pol_str_mult = -0.2
-	country_legitimacy_base_add = -5
-	country_opposition_ig_approval_add = -3
-	state_radicals_from_sol_change_mult = 0.20
-}
-
-cammroon_agi = {
-	icon = gfx/interface/icons/tno_modifier_icons/usa_loss.dds
-	country_officers_pol_str_mult = 0.5
-	country_soldiers_pol_str_mult = 0.2
-	country_legitimacy_base_add = -5
-	country_opposition_ig_approval_add = -3
-	state_radicals_from_sol_change_mult = 0.20
 }
 
 proxy_won = {
@@ -334,6 +267,14 @@ proxy_won = {
 	country_legitimacy_base_add = 3
 	country_influence_mult = 0.12
 	unit_morale_recovery_mult = 0.05
+}
+
+bombing_west_africa = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	building_throughput_add = -0.05
+	building_group_bg_subsistence_agriculture_throughput_add = -0.15
+	country_military_goods_cost_mult = -0.50
+	state_expected_sol_mult = -0.7
 }
 
 proxy_lost = {
@@ -732,6 +673,24 @@ northern_riots = {
 	country_prestige_mult = -0.05
 }
 
+
+american_dream = {
+	icon = gfx/interface/icons/tno_modifier_icons/usa_dream.dds
+	state_expected_sol_mult = 0.2
+	state_education_access_add = 0.2
+	state_pop_qualifications_mult = 0.15
+	state_migration_pull_mult = 0.05
+	building_minimum_wage_mult = 0.1
+	state_birth_rate_mult = 0.15
+	interest_group_ig_Progressives_pop_attraction_mult = 0.5
+	interest_group_ig_Liberals_pop_attraction_mult = 0.5	
+	interest_group_ig_Moderates_pop_attraction_mult = 0.5
+	interest_group_ig_Conservatives_pop_attraction_mult = 0.5	
+	interest_group_ig_Libertarians_pop_attraction_mult = 0.5	
+	interest_group_ig_Nationalists_pop_attraction_mult = 0.5
+	
+}
+
 jim_crow = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
 	state_radicals_from_discrimination_mult = 0.75
@@ -739,6 +698,7 @@ jim_crow = {
 	state_pop_qualifications_mult = -0.1
 	state_turmoil_effects_mult = 0.2
 	country_agitator_slots_add = 1
+	interest_group_ig_Reactionary_pop_attraction_mult = 0.10	
 }
 
 last_bastion_democracy = {
@@ -748,6 +708,41 @@ last_bastion_democracy = {
 	country_trade_route_competitiveness_mult = 0.2
 	country_trade_route_quantity_mult = 0.2
 	country_trade_route_cost_mult = -0.2
+	interest_group_ig_communists_pop_attraction_mult = -0.3	
+	interest_group_ig_Fascists_pop_attraction_mult = -0.5	
+	interest_group_ig_Reactionary_pop_attraction_mult = -0.3	
+	interest_group_ig_Anarchists_pop_attraction_mult = -0.3
+	country_legitimacy_base_add = 15.00
+}
+
+Men_of_washington = { Establishment buff
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+	interest_group_ig_communists_pop_attraction_mult = -0.60
+	interest_group_ig_Anarchists_pop_attraction_mult = -0.60
+	interest_group_ig_Socialist_pop_attraction_mult = -0.30
+	interest_group_ig_Progressives_pop_attraction_mult = -0.30	
+	interest_group_ig_Nationalists_pop_attraction_mult = -0.30	
+	interest_group_ig_Fascists_pop_attraction_mult = -0.60
+	country_legitimacy_base_add = 15.10
+	interest_group_ig_Liberals_pop_attraction_mult = 0.12	
+	interest_group_ig_Moderates_pop_attraction_mult = 0.12	
+	interest_group_ig_Conservatives_pop_attraction_mult = 0.12	
+	interest_group_ig_Libertarians_pop_attraction_mult = 0.12
+	interest_group_ig_Reactionary_pop_attraction_mult = 0.12
+}
+
+national_humiliation = {
+	icon = gfx/interface/icons/tno_modifier_icons/usa_loss.dds
+	country_prestige_mult = -0.15
+	country_officers_pol_str_mult = -0.5
+	country_soldiers_pol_str_mult = -0.2
+	country_legitimacy_base_add = -5
+	country_opposition_ig_approval_add = -3
+	state_radicals_from_sol_change_mult = 0.20
+	interest_group_ig_Reactionary_pop_attraction_mult = 0.20
+	interest_group_ig_Nationalists_pop_attraction_mult = 0.20	
+	interest_group_ig_Fascists_pop_attraction_mult = 0.20		
+	
 }
 
 japanese_efficiency = {
@@ -820,12 +815,7 @@ shadow_state = {
 
 shadow_economy = {
 	icon = gfx/interface/icons/tno_modifier_icons/shadow_eco.dds
-	state_education_access_add = -0.3
-	state_pop_qualifications_mult = -0.3
-	country_tech_spread_mult = -0.40
-	country_trade_route_competitiveness_mult = -0.5
 	country_loan_interest_rate_mult = 0.9
-	country_trade_route_quantity_mult = -0.5
 	country_trade_route_cost_mult = 0.5
 	building_steel_mills_throughput_add = 0.25
 	building_arms_industry_throughput_add = 0.3
@@ -835,10 +825,8 @@ shadow_economy = {
 	building_iron_mine_throughput_add = 0.4
 	building_group_bg_iron_mining_mortality_mult = 0.25
 	state_construction_mult = -0.30
-	state_mortality_mult = 0.2
 	tax_per_capita_add = 0.75
 	building_group_bg_construction_laborers_mortality_mult = 0.2
-	building_minimum_wage_mult = -0.35
 }
 
 armed_against_democracy = {
@@ -985,11 +973,6 @@ hitachi = {
 	state_radicals_from_discrimination_mult = 0.30
 	state_construction_mult = 0.10
 	building_group_bg_construction_laborers_mortality_mult = 0.2
-}
-
-agrarian_economy = {
-	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds
-	state_poor_standard_of_living_add = 2
 }
 
 worlds_factory = {
@@ -1409,47 +1392,6 @@ complete_monopoly = {
 	country_disable_investment_pool = yes
 }
 
-cuban_occ = {
-	icon = gfx/interface/icons/tno_modifier_icons/cub_occ.dds
-	interest_group_ig_industrialists_pol_str_mult = 0.10
-	interest_group_ig_armed_forces_approval_add = 5
-	interest_group_ig_industrialists_approval_add = 5
-	interest_group_in_government_approval_add = 2
-	country_legitimacy_base_add = 5
-
-}
-
-cuban_occ2 = {
-	icon = gfx/interface/icons/tno_modifier_icons/cub_occ.dds
-	interest_group_ig_armed_forces_approval_add = 5
-	interest_group_ig_industrialists_approval_add = 5
-	
-
-}
-
-funding_op = {
-	icon = gfx/interface/icons/tno_modifier_icons/cub_occ.dds
-	country_expenses_add = 10000
-
-}
-
-cubans_counter_harsh = {
-	icon = gfx/interface/icons/tno_modifier_icons/cub_occ.dds
-	interest_group_ig_industrialists_pol_str_mult = 0.05
-	interest_group_ig_armed_forces_approval_add = 2
-	interest_group_ig_industrialists_approval_add = 2
-	
-
-}
-
-cubans_counter_nice = {
-	icon = gfx/interface/icons/tno_modifier_icons/cub_occ.dds
-	interest_group_ig_armed_forces_approval_add = -3
-	interest_group_ig_industrialists_approval_add = -2
-	country_legitimacy_base_add = -5
-
-}
-
 grand_council_of_fascism = {
 	icon = gfx/interface/icons/tno_modifier_icons/grand_turk.dds
 	state_radicals_from_discrimination_mult = 0.5
@@ -1826,6 +1768,7 @@ state_sakha_complete = {
 
 russian_warlord = {
 	icon = gfx/interface/icons/goods_icons/unused/food.dds
+	country_military_goods_cost_mult = -0.5
 }
 
 far_eastern = {
@@ -1950,8 +1893,4 @@ tno_ru_irk_buff_playable = {
 rk_german_colonization = {
 	icon = "gfx/interface/icons/invention_icons/stormtroopers.dds"
 	country_secession_progress_mult = -10000
-}
-
-basic_unifier = {
-	icon = "gfx/interface/icons/invention_icons/mandatory_service.dds"
 }
