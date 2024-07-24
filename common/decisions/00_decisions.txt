@@ -257,8 +257,12 @@ reform_the_navy = {
 
 	possible = {
 		OR = {
-			exists = c:ENG
-			exists = c:GBR
+			AND = {
+				exists = c:ENG
+			}
+			AND = {
+				exists = c:GBR
+			}
 		}
 		has_modifier = the_broken_navy
 		GDP >= 40000000
