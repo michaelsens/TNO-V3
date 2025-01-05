@@ -146,11 +146,17 @@ revolution_pulse1_events.2 = {
 		        value < 10
 		    }
 		}
-		any_revolution_ongoing = yes
+		OR = {
+			any_revolution_ongoing = yes
+			any_secession_ongoing = yes
+		}
 	}
 
 	cancellation_trigger = {
-		NOT = { any_revolution_ongoing = yes }
+		NOR = { 
+			any_revolution_ongoing = yes 
+			any_secession_ongoing = yes
+		}
 	}
 
 	immediate = {
@@ -546,13 +552,22 @@ revolution_pulse1_events.6 = {
 	duration = 3
 
 	trigger = {
-		revolution_progress_low = yes
-		any_revolution_ongoing = yes
+		OR = {
+			revolution_progress_low = yes
+			secession_progress_low = yes
+		}
+		OR = {
+			any_revolution_ongoing = yes
+			any_secession_ongoing = yes
+		}
 		is_at_war = yes
 	}
 
 	cancellation_trigger = {
-		NOT = { any_revolution_ongoing = yes }
+		NOR = { 
+			any_revolution_ongoing = yes
+			any_secession_ongoing = yes
+		}
 	}
 
 	immediate = {
@@ -633,6 +648,7 @@ revolution_pulse1_events.7 = {
 				is_insurrectionary = yes
 			}
 			is_busy = no
+			is_immortal = no
 		}
 		any_interest_group = {
 			is_insurrectionary = yes
@@ -1085,19 +1101,28 @@ revolution_pulse1_events.11 = {
 	trigger = {
 		OR = {
 			revolution_progress_low = yes
+			secession_progress_low = yes
 			revolution_progress_medium = yes
+			secession_progress_medium = yes
 		}
-		any_revolution_ongoing = yes
+		OR = {
+			any_revolution_ongoing = yes
+			any_secession_ongoing = yes
+		}
 		any_scope_state = {
 			any_scope_pop = {
 				is_pop_type = academics
 			}
+			is_in_revolt = yes
 			is_incorporated = yes
 		}
 	}
 
 	cancellation_trigger = {
-		NOT = { any_revolution_ongoing = yes }
+		NOR = { 
+			any_revolution_ongoing = yes 
+			any_secession_ongoing = yes
+		}
 	}
 
 	immediate = {
@@ -1107,6 +1132,7 @@ revolution_pulse1_events.11 = {
 				any_scope_pop = {
 					is_pop_type = academics
 				}
+				is_in_revolt = yes
 				is_incorporated = yes
 			}
 			save_scope_as = rebel_doctors_state
@@ -1176,19 +1202,26 @@ revolution_pulse1_events.12 = {
 	duration = 3
 
 	trigger = {
-		any_revolution_ongoing = yes
+		OR = {
+			any_revolution_ongoing = yes
+			any_secession_ongoing = yes
+		}
 		any_country = {
 			is_direct_subject_of = ROOT # not bothering with sub-vassals
 			any_scope_character = {
 				has_role = agitator
 				home_country = ROOT
+				is_immortal = no
 			}
 		}
 	}
 
 	cancellation_trigger = {
 		OR = {
-			NOT = { any_revolution_ongoing = yes }
+			NOR = { 
+				any_revolution_ongoing = yes
+				any_secession_ongoing = yes 
+			}
 			NOT = {
 				scope:safehaven_for_dissidents = {
 					is_direct_subject_of = ROOT
@@ -1205,12 +1238,14 @@ revolution_pulse1_events.12 = {
 				any_scope_character = {
 					has_role = agitator
 					home_country = ROOT
+					is_immortal = no
 				}
 			}
 			random_scope_character = {
 				limit = {
 					has_role = agitator
 					home_country = ROOT
+					is_immortal = no
 				}
 				save_scope_as = safehaven_dissident
 			}
@@ -1329,7 +1364,10 @@ revolution_pulse1_events.13 = {
 	cancellation_trigger = {
 		OR = {
 			scope:parent_of_safehaven = {
-				NOT = { any_revolution_ongoing = yes }
+				NOR = { 
+					any_revolution_ongoing = yes 
+					any_secession_ongoing = yes
+				}
 			}
 			scope:safehaven_dissident = {
 				is_character_alive = no
@@ -1404,7 +1442,10 @@ revolution_pulse1_events.13 = {
 			modifier = {
 				trigger = {
 					ruler = {
-						has_trait = bandit
+						OR = {
+							has_trait = bandit
+							has_trait = social_bandit
+						}
 					}
 				}
 				add = 10 # no snitches
@@ -1443,7 +1484,10 @@ revolution_pulse1_events.14 = {
 	cancellation_trigger = {
 		OR = {
 			scope:parent_of_safehaven = {
-				NOT = { any_revolution_ongoing = yes }
+				NOR = { 
+					any_revolution_ongoing = yes 
+					any_secession_ongoing = yes
+				}
 			}
 			scope:safehaven_dissident = {
 				is_character_alive = no
@@ -1500,6 +1544,8 @@ revolution_pulse1_events.14 = {
 # Siege of the arsenal
 revolution_pulse1_events.15 = {
 	type = country_event
+	placement = scope:besieged_arsenal
+
 	event_image = {
 		video = "votp_barricade"
 	}
@@ -1519,9 +1565,12 @@ revolution_pulse1_events.15 = {
 	duration = 3
 
 	trigger = {
-		any_revolution_ongoing = yes
+		OR = {
+			any_revolution_ongoing = yes
+			any_secession_ongoing = yes
+		}
 		any_scope_state = {
-			is_incorporated = yes
+			is_in_revolt = yes
 			any_scope_building = {
 				is_building_type = building_barracks
 			}
@@ -1529,17 +1578,20 @@ revolution_pulse1_events.15 = {
 	}
 
 	cancellation_trigger = {
-		NOT = { any_revolution_ongoing = yes }
+		NOR = { 
+			any_secession_ongoing = yes
+			any_revolution_ongoing = yes 
+		}
 	}
 
 	immediate = {
 		save_revolution_scopes = yes
 		random_scope_state = {
 			limit = {
+				is_in_revolt = yes
 				any_scope_building = {
 					is_building_type = building_barracks
 				}
-				is_incorporated = yes
 			}
 			save_scope_as = besieged_arsenal
 		}
@@ -1598,6 +1650,7 @@ revolution_pulse1_events.15 = {
 # The Mob Approaches
 revolution_pulse1_events.16 = {
 	type = country_event
+	placement = scope:radicalized_state
 	event_image = {
 		video = "europenorthamerica_springtime_of_nations"
 	}
@@ -1617,27 +1670,27 @@ revolution_pulse1_events.16 = {
 	duration = 3
 
 	trigger = {
-		any_revolution_ongoing = yes
+		OR = {
+			any_revolution_ongoing = yes
+			any_secession_ongoing = yes
+		}
 		any_scope_state = {
-			radical_fraction = {
-				value > 0.25
-			}
-			is_incorporated = yes
+			is_in_revolt = yes
 		}
 	}
 
 	cancellation_trigger = {
-		NOT = { any_revolution_ongoing = yes }
+		NOR = { 
+			any_secession_ongoing = yes 
+			any_revolution_ongoing = yes 
+		}
 	}
 
 	immediate = {
 		save_revolution_scopes = yes
 		random_scope_state = {
 			limit = {
-				radical_fraction = {
-					value > 0.25
-				}
-				is_incorporated = yes
+				is_in_revolt = yes
 			}
 			save_scope_as = radicalized_state
 		}
@@ -1686,6 +1739,7 @@ revolution_pulse1_events.16 = {
 # The Procession of Provocations
 revolution_pulse1_events.17 = {
 	type = country_event
+	placement = scope:provocative_procession_state
 	event_image = {
 		video = "europenorthamerica_sufferage"
 	}
@@ -1705,28 +1759,34 @@ revolution_pulse1_events.17 = {
 	duration = 3
 
 	trigger = {
-		any_revolution_ongoing = yes
+		OR = {
+			any_revolution_ongoing = yes
+			any_secession_ongoing = yes
+		}
 		any_scope_state = {
-			is_incorporated = yes
+			is_in_revolt = yes
 			radical_fraction = {
 				value > 0.25
-				strata = poor
+				strata = lower
 			}
 		}
 	}
 
 	cancellation_trigger = {
-		NOT = { any_revolution_ongoing = yes }
+		NOR = { 
+			any_revolution_ongoing = yes 
+			any_secession_ongoing = yes
+		}
 	}
 
 	immediate = {
 		save_revolution_scopes = yes
 		random_scope_state = {
 			limit = {
-				is_incorporated = yes
+				is_in_revolt = yes
 				radical_fraction = {
 					value > 0.25
-					strata = poor
+					strata = lower
 				}
 			}
 			save_scope_as = provocative_procession_state
@@ -1749,7 +1809,7 @@ revolution_pulse1_events.17 = {
 				scope:provocative_procession_state = {
 					add_radicals_in_state = {
 						value = large_radicals
-						strata = poor
+						strata = lower
 					}				
 				}
 				scope:ongoing_revolution = {
@@ -1770,7 +1830,7 @@ revolution_pulse1_events.17 = {
 		scope:provocative_procession_state = {
 			add_radicals_in_state = {
 				value = medium_radicals
-				strata = poor
+				strata = lower
 			}		
 		}
 
@@ -1825,6 +1885,7 @@ revolution_pulse1_events.17 = {
 # When You Have A Hammer
 revolution_pulse1_events.18 = {
 	type = country_event
+	placement = scope:will_kill_for_peace_state
 	event_image = {
 		video = "europenorthamerica_before_the_battle"
 	}
@@ -1844,21 +1905,24 @@ revolution_pulse1_events.18 = {
 	duration = 3
 
 	trigger = {
-		any_revolution_ongoing = yes
+		OR = {
+			any_revolution_ongoing = yes
+			any_secession_ongoing = yes
+		}
 		any_scope_character = {
 			has_role = general
 		}
 		any_scope_state = {
-			is_incorporated = yes
-			radical_fraction = {
-				value > 0.25
-			}
+			is_in_revolt = yes
 		}
 	}
 
 	cancellation_trigger = {
 		OR = {
-			NOT = { any_revolution_ongoing = yes }
+			NOR = { 
+				any_revolution_ongoing = yes 
+				any_secession_ongoing = yes 
+			}
 			scope:will_kill_for_peace_general = {
 				is_character_alive = no
 			}
@@ -1875,10 +1939,7 @@ revolution_pulse1_events.18 = {
 		}
 		random_scope_state = {
 			limit = {
-				is_incorporated = yes
-				radical_fraction = {
-					value > 0.25
-				}
+				is_in_revolt = yes
 			}
 			save_scope_as = will_kill_for_peace_state
 		}
@@ -1930,6 +1991,7 @@ revolution_pulse1_events.18 = {
 					has_trait = pillager
 					has_trait = bandit
 					has_trait = wrathful
+					has_trait = social_bandit
 				}
 			}
 		}
@@ -1949,6 +2011,7 @@ revolution_pulse1_events.18 = {
 					has_trait = pillager
 					has_trait = bandit
 					has_trait = wrathful
+					has_trait = social_bandit
 				}
 			}
 		}
@@ -1972,6 +2035,7 @@ revolution_pulse1_events.18 = {
 # Mob confronts the army
 revolution_pulse1_events.19 = {
 	type = country_event
+	placement = scope:mob_gathering_state
 	event_image = {
 		video = "europenorthamerica_before_the_battle"
 	}
@@ -1991,27 +2055,27 @@ revolution_pulse1_events.19 = {
 	duration = 3
 
 	trigger = {
-		any_revolution_ongoing = yes
+		OR = {
+			any_revolution_ongoing = yes
+			any_secession_ongoing = yes
+		}
 		any_scope_state = {
-			is_incorporated = yes
-			radical_fraction = {
-				value > 0.25
-			}
+			is_in_revolt = yes
 		}
 	}
 
 	cancellation_trigger = {			
-		NOT = { any_revolution_ongoing = yes }
+		NOR = { 
+			any_revolution_ongoing = yes 
+			any_secession_ongoing = yes
+		}
 	}
 
 	immediate = {
 		save_revolution_scopes = yes
 		random_scope_state = {
 			limit = {
-				is_incorporated = yes
-				radical_fraction = {
-					value > 0.25
-				}
+				is_in_revolt = yes
 			}
 			save_scope_as = mob_gathering_state
 		}
