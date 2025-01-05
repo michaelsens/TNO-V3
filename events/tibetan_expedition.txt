@@ -124,30 +124,15 @@ tibet_expedition_events.2 = { #Choose commander
 					}
 					this = scope:expedition_leader_2
 				}
-
 			}
 			save_scope_as = expedition_leader_3
 		}
-		set_variable = {
-			name = expedition_progress
-			value = 1
-		}
-		set_variable = {
-			name = expedition_peril
-			value = 1
-		}
-		
 	}
 
 	option = {
 		name = expedition_events.602.a
 		trigger = {
 			exists = scope:expedition_leader_1
-		}
-		custom_tooltip = expedition_costs_tt
-		add_modifier = {
-			name = modifier_large_expedition_cost
-			multiplier = money_amount_multiplier_medium
 		}
 		scope:expedition_leader_1 = {
 			set_character_busy_and_immortal = yes
@@ -162,11 +147,6 @@ tibet_expedition_events.2 = { #Choose commander
 		trigger = {
 			exists = scope:expedition_leader_2
 		}
-		custom_tooltip = expedition_costs_tt
-		add_modifier = {
-			name = modifier_large_expedition_cost
-			multiplier = money_amount_multiplier_medium
-		}
 		scope:expedition_leader_2 = {
 			set_character_busy_and_immortal = yes
 			set_variable = expedition_leader_var
@@ -178,11 +158,6 @@ tibet_expedition_events.2 = { #Choose commander
 		name = expedition_events.602.c	
 		trigger = {
 			exists = scope:expedition_leader_3
-		}
-		custom_tooltip = expedition_costs_tt
-		add_modifier = {
-			name = modifier_large_expedition_cost
-			multiplier = money_amount_multiplier_medium
 		}
 		scope:expedition_leader_3 = {
 			set_character_busy_and_immortal = yes
@@ -236,18 +211,23 @@ tibet_expedition_events.3 = { #Expedition Arrives
 		default_option = yes
 		if = {
 			limit = {
-				NOT = { has_objective = objective_great_game } # the JE gets added by the objective elsewise
+				has_journal_entry = je_great_game_control
 			}
-			add_journal_entry = {
-				type = je_tibet_expedition
-			}
-		}
-		else = {
 			show_as_tooltip = {
 				add_journal_entry = {
 					type = je_tibet_expedition
 				}
 			}
+		}
+		else = {
+			add_journal_entry = {
+				type = je_tibet_expedition
+			}
+		}
+		custom_tooltip = expedition_costs_tt
+		add_modifier = {
+			name = modifier_large_expedition_cost
+			multiplier = money_amount_multiplier_medium
 		}
 		set_variable = tibet_has_started
 	}
@@ -351,11 +331,11 @@ tibet_expedition_events.4 = { # Yaks cross the border
 					NOR = {
 						is_interest_group_type = ig_armed_forces
 						is_interest_group_type = ig_rural_folk # RF is not normally a valid IG for Jingoists
-						leader = { has_ideology = ideology:ideology_jingoist }
+						leader = { has_ideology = ideology:ideology_jingoist_leader }
 					}
 				}
 				leader = {
-					set_ideology = ideology:ideology_jingoist
+					set_ideology = ideology:ideology_jingoist_leader
 				}
 				add_modifier = {
 					name = hostility_resisted
@@ -768,7 +748,7 @@ tibet_expedition_events.7 = { # Selecting the expeditionary force
 
 		scope:expedition_leader = {
 			add_modifier = {
-				name = best_of_the_best # character_morale_cap_add
+				name = best_of_the_best # unit_morale_loss_mult
 				# lifetime
 			}
 		}
@@ -2130,7 +2110,7 @@ tibet_expedition_events.22 = { # Ultimatum sent (Overlord)
 
 		create_incident = {
 			country = scope:expedition_country
-			value = 40
+			value = 10
 		}
 		scope:expedition_country = {
 			post_notification = tibet_overlord_refuses_demands
