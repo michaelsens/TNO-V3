@@ -44,7 +44,8 @@ pm_covered_markets = {
 		workforce_scaled = {
 			goods_input_glass_add = 2
 			goods_input_steel_add = 1
-			goods_output_services_add = 25
+			goods_input_electricity_add = 2
+			goods_output_services_add = 28
 		}
 
 		level_scaled = {
@@ -65,8 +66,8 @@ pm_arcades = {
 		workforce_scaled = {
 			goods_input_glass_add = 2
 			goods_input_steel_add = 2
-			goods_input_electricity_add = 1
-			goods_output_services_add = 30
+			goods_input_electricity_add = 4
+			goods_output_services_add = 34
 		}
 
 		level_scaled = {
@@ -392,18 +393,17 @@ pm_independent_artists = {
 }
 
 pm_hydroelectric_plant = {
-	texture = "gfx/interface/icons/production_method_icons/hydroelectric_plant.dds"
-
+	texture = "gfx/interface/icons/production_method_icons/power_plant.dds"
 	state_modifiers = {
 		workforce_scaled = {
-			state_pollution_generation_add = 10
+					state_pollution_generation_add  = 10
 		}
 	}
 	
-	building_modifiers = {
+	building_modifiers = { 
 		workforce_scaled = {
 			goods_input_engines_add = 10
-			goods_output_electricity_add = 50
+			goods_output_electricity_add = 25
 		}
 
 		level_scaled = {
@@ -415,23 +415,21 @@ pm_hydroelectric_plant = {
 }
 
 pm_coal-fired_plant = {
-	texture = "gfx/interface/icons/production_method_icons/coal_fired_plant.dds"
-
-	unlocking_technologies = {
-		steam_turbine
-	}
-
+	texture = "gfx/interface/icons/production_method_icons/power_plant.dds"
 	state_modifiers = {
 		workforce_scaled = {
-			state_pollution_generation_add = 50
+			state_pollution_generation_add  = 90
 		}
 	}
-
-	building_modifiers = {
+	unlocking_technologies = {
+		steam_turbine
+	}				
+	
+	building_modifiers = { 
 		workforce_scaled = {
 			goods_input_engines_add = 15
-			goods_input_coal_add = 30
-			goods_output_electricity_add = 100
+			goods_input_coal_add = 40
+			goods_output_electricity_add = 120
 		}
 
 		level_scaled = {
@@ -443,23 +441,22 @@ pm_coal-fired_plant = {
 }
 
 pm_oil-fired_plant = {
-	texture = "gfx/interface/icons/production_method_icons/oil_fired_plant.dds"
-
+	texture = "gfx/interface/icons/production_method_icons/power_plant.dds"
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add  = 75
+		}
+	}
+	
 	unlocking_technologies = {
 		oil_turbine
 	}
-
-	state_modifiers = {
-		workforce_scaled = {
-			state_pollution_generation_add = 75
-		}
-	}
-
-	building_modifiers = {
+	
+	building_modifiers = { 
 		workforce_scaled = {
 			goods_input_engines_add = 20
-			goods_input_oil_add = 40
-			goods_output_electricity_add = 150
+			goods_input_oil_add = 120
+			goods_output_electricity_add = 300
 		}
 
 		level_scaled = {
