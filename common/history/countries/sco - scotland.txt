@@ -1,8 +1,10 @@
 ﻿COUNTRIES = {
 	c:SCO = {
-		effect_starting_technology_tier_2_tech = yes
+		effect_starting_technology_tier_1_tech = yes
 				
-		
+		add_modifier = {
+			name = modifier_very_developed_economy
+		}
 		
 		# Laws 
 		activate_law = law_type:law_presidential_republic
@@ -27,5 +29,9 @@
 		activate_law = law_type:law_migration_controls
 		activate_law = law_type:law_commercialized_agriculture
 		
+		set_institution_investment_level = {
+			institution = institution_schools
+			level = 2
+		}
 	}
 }

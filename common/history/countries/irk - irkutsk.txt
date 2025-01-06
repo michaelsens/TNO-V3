@@ -1,7 +1,7 @@
 ﻿COUNTRIES = {
 	c:IRK	 = {
 
-		effect_starting_technology_tier_4_tech = yes
+		effect_starting_technology_tier_1_tech = yes
 		activate_law = law_type:law_nkvd_securocracy
 		activate_law = law_type:law_warlord_economy
 		activate_law = law_type:law_autocracy
@@ -22,16 +22,15 @@
 		activate_law = law_type:law_compulsory_primary_school
 		activate_law = law_type:law_collectivized_agriculture
 
-		
+		add_modifier = {
+         name = modifier_developing_economy
+    	} 
 		add_modifier = {
 			name = far_eastern
 		}
     	add_modifier = {
          name = russian_warlord
     	} 
-    	add_modifier = {
-			name = modifier_offensive_footing
-		}
     	trigger_event = { id = tno_ru_events.10 }
 	    trigger_event = { id = tno_ru_events.12 days = 10 }
 
