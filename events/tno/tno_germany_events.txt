@@ -1005,6 +1005,11 @@ tno_germany_events.17 = { # German Civil War
 
   immediate = {
     set_global_variable = german_civil_war_start
+
+    set_relations = { country = c:FIN value = -50 }
+    set_relations = { country = c:HUN value = -15 }
+    set_relations = { country = c:ROM value = -30 }
+
      #  remove_diplomatic_pact = {
      #      country = c:RKU
      #      type = reichskommissariat
@@ -1126,6 +1131,7 @@ tno_germany_events.17 = { # German Civil War
           state = s:STATE_RUHR.region_state:GER
           state = s:STATE_NORTH_RHINE.region_state:GER
           state = s:STATE_WALLONIA.region_state:GER
+          state = s:STATE_GELRE.region_state:GER
 
           on_created = {
             set_immune_to_revolutions = yes
