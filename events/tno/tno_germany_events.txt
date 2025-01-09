@@ -59,12 +59,45 @@ tno_germany_events.3 = { # germanys event telling them that a japanese (burgundi
     desc = tno_germany_events.3.d
     flavor = tno_germany_events.3.f 
 
-    event_image = {
-      texture  = "gfx/event_pictures/event_pictures/ass.dds"
-  }
-  icon = "gfx/interface/icons/event_icons/event_fire.dds"
+    event_image = { texture  = "gfx/event_pictures/event_pictures/ass.dds" }
+    icon = "gfx/interface/icons/event_icons/event_fire.dds"
 
   on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    immediate = {
+        every_scope_character = { #ironically, make Hitler immortal
+             if = {
+                limit = {
+                    is_ruler = yes
+                }
+                set_character_immortal = yes
+              }
+        }
+
+        ig:ig_industrialists = { #Albert Speer
+            leader = {
+                set_character_immortal = yes
+            }
+        }
+        ig:ig_armed_forces = { #Hermann Göring
+            leader = {
+                set_character_immortal = yes
+            }
+        }
+        ig:ig_landowners = { #Martin Bormann (Chancellery)
+            leader = {
+                set_character_immortal = yes
+            }
+        }
+        ig:ig_petty_bourgeoisie = {#Reinhard Heydrich
+            leader = {
+                set_character_immortal = yes
+            }
+        }
+    }
+
+    
+
 
   duration = 3
 
@@ -73,8 +106,6 @@ tno_germany_events.3 = { # germanys event telling them that a japanese (burgundi
 
     custom_tooltip = tno_germany_events.3.a.tooltip1
     custom_tooltip = tno_germany_events.3.a.tooltip2
-
-
 
     add_journal_entry = {
         type = je_tno_gerpowerstruggle_goreing
@@ -113,10 +144,10 @@ tno_germany_events.3 = { # germanys event telling them that a japanese (burgundi
     }
 
     hidden_effect = {
-
      c:BGD = {
         trigger_event = { id = tno_germany_events.2 days = 0 popup = yes }
     } 
+
 }
 
 
@@ -232,7 +263,17 @@ tno_germany_events.35 = {
         name = hitler_dead
         value = 0
     }
-    
+    every_scope_character = {
+         if = {
+            limit = {
+                is_ruler = yes
+            }
+            save_scope_as = hitler
+          }
+    }
+    scope:hitler = {
+        set_character_immortal = no
+    }
 }
 
 title = tno_germany_events.35
@@ -280,7 +321,7 @@ tno_germany_events.4 = { # speer wins power struggle
       set_variable = {
         name = speer_dub
     }
-}
+    }
 }
 
 }
