@@ -69,7 +69,7 @@
 					building={
 						type="building_manor_house"
 						country="c:NEJ"
-						levels=13
+						levels=17
 						region="STATE_NEJD"
 					}
 				}
@@ -190,6 +190,13 @@
 				reserves=1
 				activate_production_methods={ "pm_traditional_art" "pm_traditional_patronage" "pm_freedom_of_movement_no_effect" }
 			}
+			create_building={
+				building="building_steel_mills"
+				add_ownership={
+				}
+				reserves=1
+				activate_production_methods={ "pm_blister_steel_process" "pm_automation_disabled" }
+			}
 		}
 	}
 	s:STATE_OMAN={
@@ -289,7 +296,7 @@
 				add_ownership={
 					country={
 						country="c:OMA"
-						levels=7
+						levels=17
 					}
 				}
 				reserves=1
@@ -715,7 +722,7 @@
 				add_ownership={
 					country={
 						country="c:ABU"
-						levels=8
+						levels=6
 					}
 				}
 				reserves=1
@@ -1052,7 +1059,7 @@
 				add_ownership={
 					country={
 						country="c:YEM"
-						levels=5
+						levels=4
 					}
 				}
 				reserves=1
@@ -1261,17 +1268,6 @@
 				activate_production_methods={ "pm_forest_glass" "pm_disabled_ceramics" "pm_manual_glassblowing" }
 			}
 			create_building={
-				building="building_university"
-				add_ownership={
-					country={
-						country="c:YEM"
-						levels=1
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_scholastic_education" "pm_religious_academia" "pm_freedom_of_movement_no_effect" }
-			}
-			create_building={
 				building="building_paper_mills"
 				add_ownership={
 					country={
@@ -1329,6 +1325,18 @@
 				}
 				reserves=1
 				activate_production_methods={ "default_building_coffee_plantation" "pm_road_carts" }
+			}
+			create_building={
+				building="building_railway"
+				add_ownership={
+					country={
+						country="c:ITA"
+						levels=1
+					}
+				}
+				subsidized=no
+				reserves=1
+				activate_production_methods={ "pm_steam_trains" "pm_wooden_passenger_carriages" }
 			}
 		}
 	}
@@ -1996,7 +2004,7 @@
 				add_ownership={
 					country={
 						country="c:PAL"
-						levels=2
+						levels=3
 					}
 				}
 				reserves=1
@@ -2007,7 +2015,7 @@
 				add_ownership={
 					country={
 						country="c:PAL"
-						levels=2
+						levels=3
 					}
 				}
 				reserves=1
@@ -2161,7 +2169,7 @@
 				add_ownership={
 					country={
 						country="c:PAL"
-						levels=8
+						levels=9
 					}
 				}
 				reserves=1
@@ -2196,8 +2204,14 @@
 					building={
 						type="building_manor_house"
 						country="c:ITA"
-						levels=6
+						levels=8
 						region="STATE_ROMAGNA"
+					}
+					building={
+						type="building_manor_house"
+						country="c:ITA"
+						levels=8
+						region="STATE_EMILIA"
 					}
 				}
 				reserves=1
@@ -2257,10 +2271,6 @@
 						levels=5
 						region="STATE_SYRIA"
 					}
-					country={
-						country="c:TUR"
-						levels=3
-					}
 					building={
 						type="building_financial_district"
 						country="c:TUR"
@@ -2292,7 +2302,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_manual_glassblowing" "pm_disabled_ceramics" "pm_crystal_glass" }
+				activate_production_methods={ "pm_forest_glass" "pm_disabled_ceramics" "pm_manual_glassblowing" }
 			}
 			create_building={
 				building="building_textile_mills"
@@ -2374,18 +2384,6 @@
 				activate_production_methods={ "pm_steel_frame_buildings" }
 			}
 			create_building={
-				building="building_power_plant"
-				add_ownership={
-					country={
-						country="c:TUR"
-						levels=1
-					}
-				}
-				subsidized=yes
-				reserves=1
-				activate_production_methods={ "pm_oil-fired_plant" }
-			}
-			create_building={
 				building="building_railway"
 				add_ownership={
 					building={
@@ -2413,17 +2411,6 @@
 				activate_production_methods={ "pm_unrefrigerated" "pm_slaughterhouses" "pm_sheep_farms" "pm_electric_fencing" }
 			}
 			create_building={
-				building="building_logging_camp"
-				add_ownership={
-					country={
-						country="c:TUR"
-						levels=1
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_simple_forestry" "pm_no_hardwood" "pm_steam_donkey_building_logging_camp" "pm_rail_transport_building_logging_camp" }
-			}
-			create_building={
 				building="building_government_administration"
 				add_ownership={
 					country={
@@ -2444,41 +2431,18 @@
 					building={
 						type="building_financial_district"
 						country="c:TUR"
-						levels=6
-						region="STATE_ALEPPO"
-					}
-					country={
-						country="c:TUR"
-						levels=3
-					}
-					building={
-						type="building_financial_district"
-						country="c:TUR"
 						levels=1
 						region="STATE_KONYA"
 					}
 					building={
 						type="building_company_basic_oil"
 						country="c:TUR"
-						levels=5
+						levels=1
 						region="STATE_ALEPPO"
 					}
 				}
 				reserves=1
 				activate_production_methods={ "pm_steam_derricks" "pm_rail_transport_building_oil_rig" }
-			}
-			create_building={
-				building="building_glassworks"
-				add_ownership={
-					building={
-						type="building_financial_district"
-						country="c:TUR"
-						levels=2
-						region="STATE_ALEPPO"
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_crystal_glass" "pm_bone_china" "pm_manual_glassblowing" }
 			}
 			create_building={
 				building="building_fishing_wharf"
@@ -2498,12 +2462,6 @@
 					building={
 						type="building_financial_district"
 						country="c:TUR"
-						levels=2
-						region="STATE_KONYA"
-					}
-					building={
-						type="building_financial_district"
-						country="c:TUR"
 						levels=1
 						region="STATE_ALEPPO"
 					}
@@ -2512,50 +2470,13 @@
 				activate_production_methods={ "pm_steam_trawlers" "pm_unrefrigerated" }
 			}
 			create_building={
-				building="building_tobacco_plantation"
-				add_ownership={
-					building={
-						type="building_manor_house"
-						country="c:TUR"
-						levels=2
-						region="STATE_ANKARA"
-					}
-					building={
-						type="building_manor_house"
-						country="c:TUR"
-						levels=2
-						region="STATE_ALEPPO"
-					}
-					building={
-						type="building_financial_district"
-						country="c:TUR"
-						levels=1
-						region="STATE_ALEPPO"
-					}
-				}
-				reserves=1
-				activate_production_methods={ "automatic_irrigation_building_tobacco_plantation" "pm_road_carts" }
-			}
-			create_building={
 				building="building_wheat_farm"
 				add_ownership={
 					building={
 						type="building_wheat_farm"
 						country="c:TUR"
-						levels=7
+						levels=4
 						region="STATE_ALEPPO"
-					}
-					building={
-						type="building_manor_house"
-						country="c:TUR"
-						levels=5
-						region="STATE_AYDIN"
-					}
-					building={
-						type="building_manor_house"
-						country="c:TUR"
-						levels=1
-						region="STATE_EASTERN_THRACE"
 					}
 				}
 				reserves=1
@@ -2606,28 +2527,8 @@
 				activate_production_methods={ "pm_breech_loaders" "pm_rotary_valve_engine_building_arms_industry" }
 			}
 			create_building={
-				building="building_power_plant"
-				add_ownership={
-					building={
-						type="building_financial_district"
-						country="c:TUR"
-						levels=4
-						region="STATE_ALEPPO"
-					}
-				}
-				subsidized=yes
-				reserves=1
-				activate_production_methods={ "pm_oil-fired_plant" }
-			}
-			create_building={
 				building="building_steel_mills"
 				add_ownership={
-					building={
-						type="building_financial_district"
-						country="c:TUR"
-						levels=1
-						region="STATE_HUDAVENDIGAR"
-					}
 					building={
 						type="building_financial_district"
 						country="c:TUR"
@@ -2637,41 +2538,6 @@
 				}
 				reserves=1
 				activate_production_methods={ "pm_bessemer_process" "pm_rotary_valve_engine_building_steel_mills" }
-			}
-			create_building={
-				building="building_shipyards"
-				add_ownership={
-					country={
-						country="c:TUR"
-						levels=1
-					}
-					building={
-						type="building_financial_district"
-						country="c:TUR"
-						levels=1
-						region="STATE_ANKARA"
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_metal_shipbuilding" }
-			}
-			create_building={
-				building="building_tooling_workshops"
-				add_ownership={
-					country={
-						country="c:TUR"
-						levels=1
-					}
-					building={
-						type="building_financial_district"
-						country="c:TUR"
-						levels=3
-						region="STATE_ALEPPO"
-					}
-				}
-				subsidized=yes
-				reserves=1
-				activate_production_methods={ "pm_rubber_grips" "pm_rotary_valve_engine_building_tooling_workshops" }
 			}
 			create_building={
 				building="building_food_industry"
@@ -2693,25 +2559,6 @@
 				activate_production_methods={ "pm_baking_powder" "pm_disabled_canning" "pm_disabled_distillery" "pm_manual_dough_processing" }
 			}
 			create_building={
-				building="building_furniture_manufacturies"
-				add_ownership={
-					building={
-						type="building_financial_district"
-						country="c:TUR"
-						levels=1
-						region="STATE_DIYARBAKIR"
-					}
-					building={
-						type="building_financial_district"
-						country="c:TUR"
-						levels=1
-						region="STATE_ANKARA"
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_mechanized_workshops" "pm_no_luxuries" "pm_rotary_valve_engine_building_furniture_manufacturies" }
-			}
-			create_building={
 				building="building_arms_industry"
 				add_ownership={
 					building={
@@ -2725,19 +2572,6 @@
 				activate_production_methods={ "pm_rifles" "pm_rotary_valve_engine_building_arms_industry" }
 			}
 			create_building={
-				building="building_electrics_industry"
-				add_ownership={
-					building={
-						type="building_financial_district"
-						country="c:TUR"
-						levels=1
-						region="STATE_ALEPPO"
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_telephones" "pm_radios" }
-			}
-			create_building={
 				building="building_motor_industry"
 				add_ownership={
 					building={
@@ -2745,12 +2579,6 @@
 						country="c:TUR"
 						levels=1
 						region="STATE_ALEPPO"
-					}
-					building={
-						type="building_financial_district"
-						country="c:TUR"
-						levels=6
-						region="STATE_ANKARA"
 					}
 				}
 				reserves=1
@@ -2765,40 +2593,9 @@
 						levels=1
 						region="STATE_EASTERN_THRACE"
 					}
-					building={
-						type="building_financial_district"
-						country="c:TUR"
-						levels=2
-						region="STATE_DIYARBAKIR"
-					}
-					building={
-						type="building_financial_district"
-						country="c:TUR"
-						levels=3
-						region="STATE_ANKARA"
-					}
 				}
 				reserves=1
 				activate_production_methods={ "pm_electric_saw_mills" "pm_no_hardwood" "pm_steam_donkey_building_logging_camp" "pm_road_carts" }
-			}
-			create_building={
-				building="building_textile_mills"
-				add_ownership={
-					building={
-						type="building_financial_district"
-						country="c:TUR"
-						levels=1
-						region="STATE_ALEPPO"
-					}
-					building={
-						type="building_financial_district"
-						country="c:TUR"
-						levels=2
-						region="STATE_ANKARA"
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_sewing_machines" "pm_no_luxury_clothes" "pm_mechanized_looms" }
 			}
 			create_building={
 				building="building_livestock_ranch"
@@ -2806,13 +2603,7 @@
 					building={
 						type="building_livestock_ranch"
 						country="c:TUR"
-						levels=2
-						region="STATE_ALEPPO"
-					}
-					building={
-						type="building_manor_house"
-						country="c:TUR"
-						levels=2
+						levels=1
 						region="STATE_ALEPPO"
 					}
 				}
@@ -2844,32 +2635,6 @@
 				reserves=1
 				activate_production_methods={ "automatic_irrigation_building_vineyard_plantation" "pm_steam_rail_transport" }
 			}
-			create_building={
-				building="building_paper_mills"
-				add_ownership={
-					building={
-						type="building_financial_district"
-						country="c:TUR"
-						levels=1
-						region="STATE_ANKARA"
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_bleached_paper" "pm_rotary_valve_engine_building_paper_mills" }
-			}
-			create_building={
-				building="building_cotton_plantation"
-				add_ownership={
-					building={
-						type="building_manor_house"
-						country="c:TUR"
-						levels=2
-						region="STATE_ANKARA"
-					}
-				}
-				reserves=1
-				activate_production_methods={ "automatic_irrigation_building_cotton_plantation" "pm_steam_rail_transport" }
-			}
 		}
 	}
 	s:STATE_BAGHDAD={
@@ -2890,17 +2655,6 @@
 				}
 				reserves=1
 				activate_production_methods={ "pm_steam_derricks" "pm_road_carts" }
-			}
-			create_building={
-				building="building_silk_plantation"
-				add_ownership={
-					country={
-						country="c:TUR"
-						levels=1
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_road_carts" "automatic_irrigation_building_silk_plantation" }
 			}
 			create_building={
 				building="building_rice_farm"
@@ -2956,22 +2710,11 @@
 				activate_production_methods={ "pm_road_carts" "automatic_irrigation_building_tobacco_plantation" }
 			}
 			create_building={
-				building="building_power_plant"
-				add_ownership={
-					country={
-						country="c:TUR"
-						levels=1
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_oil-fired_plant" }
-			}
-			create_building={
 				building="building_university"
 				add_ownership={
 					country={
 						country="c:IRR"
-						levels=3
+						levels=2
 					}
 				}
 				reserves=1
@@ -2989,17 +2732,6 @@
 				}
 				reserves=1
 				activate_production_methods={ "pm_unrefrigerated" "pm_slaughterhouses" "pm_sheep_farms" "pm_electric_fencing" }
-			}
-			create_building={
-				building="building_steel_mills"
-				add_ownership={
-					country={
-						country="c:TUR"
-						levels=1
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_bessemer_process" "pm_rotary_valve_engine_building_steel_mills" }
 			}
 		}
 		region_state:IRQ={
@@ -3138,7 +2870,6 @@
 						levels=1
 					}
 				}
-				subsidized=yes
 				reserves=1
 				activate_production_methods={ "pm_oil-fired_plant" }
 			}
@@ -3331,10 +3062,6 @@
 						region="STATE_MOSUL"
 					}
 					country={
-						country="c:TUR"
-						levels=6
-					}
-					country={
 						country="c:IRR"
 						levels=6
 					}
@@ -3373,10 +3100,6 @@
 			create_building={
 				building="building_power_plant"
 				add_ownership={
-					country={
-						country="c:TUR"
-						levels=1
-					}
 					building={
 						type="building_financial_district"
 						country="c:TUR"
@@ -3398,7 +3121,7 @@
 				add_ownership={
 					country={
 						country="c:IRR"
-						levels=2
+						levels=1
 					}
 				}
 				reserves=1
@@ -3453,17 +3176,6 @@
 				activate_production_methods={ "pm_philosophy_department" "pm_religious_academia" "pm_freedom_of_movement_no_effect" }
 			}
 			create_building={
-				building="building_arms_industry"
-				add_ownership={
-					country={
-						country="c:TUR"
-						levels=1
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_rotary_valve_engine_building_arms_industry" "pm_rifles" }
-			}
-			create_building={
 				building="building_glassworks"
 				add_ownership={
 					building={
@@ -3479,10 +3191,6 @@
 			create_building={
 				building="building_cotton_plantation"
 				add_ownership={
-					country={
-						country="c:TUR"
-						levels=1
-					}
 					building={
 						type="building_manor_house"
 						country="c:TUR"
@@ -3497,7 +3205,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "default_building_cotton_plantation" "pm_steam_rail_transport" }
+				activate_production_methods={ "pm_steam_rail_transport" "automatic_irrigation_building_cotton_plantation" }
 			}
 			create_building={
 				building="building_munition_plants"
@@ -3526,12 +3234,6 @@
 					building={
 						type="building_financial_district"
 						country="c:TUR"
-						levels=5
-						region="STATE_ANKARA"
-					}
-					building={
-						type="building_financial_district"
-						country="c:TUR"
 						levels=1
 						region="STATE_KONYA"
 					}
@@ -3540,10 +3242,6 @@
 						country="c:TUR"
 						levels=1
 						region="STATE_EASTERN_THRACE"
-					}
-					country={
-						country="c:TUR"
-						levels=1
 					}
 				}
 				reserves=1
@@ -3563,17 +3261,6 @@
 				activate_production_methods={ "pm_slaughterhouses" "pm_sheep_farms" "pm_standard_fences" "pm_unrefrigerated" }
 			}
 			create_building={
-				building="building_tooling_workshops"
-				add_ownership={
-					country={
-						country="c:TUR"
-						levels=1
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_rubber_grips" "pm_rotary_valve_engine_building_tooling_workshops" }
-			}
-			create_building={
 				building="building_barracks"
 				add_ownership={
 					country={
@@ -3583,17 +3270,6 @@
 				}
 				reserves=1
 				activate_production_methods={ "pm_general_training" }
-			}
-			create_building={
-				building="building_arms_industry"
-				add_ownership={
-					country={
-						country="c:TUR"
-						levels=1
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_rifles" "pm_rotary_valve_engine_building_arms_industry" }
 			}
 			create_building={
 				building="building_railway"
@@ -3606,6 +3282,13 @@
 				subsidized=no
 				reserves=1
 				activate_production_methods={ "pm_steam_trains" "pm_no_passenger_trains" }
+			}
+			create_building={
+				building="building_power_plant"
+				add_ownership={
+				}
+				reserves=1
+				activate_production_methods={ "pm_oil-fired_plant" }
 			}
 		}
 		region_state:SYR={
@@ -3653,17 +3336,6 @@
 				}
 				reserves=1
 				activate_production_methods={ "pm_general_training" }
-			}
-			create_building={
-				building="building_university"
-				add_ownership={
-					country={
-						country="c:SYR"
-						levels=1
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_philosophy_department" "pm_religious_academia" "pm_freedom_of_movement_no_effect" }
 			}
 		}
 		region_state:IRR={
@@ -3907,7 +3579,6 @@
 						levels=3
 					}
 				}
-				subsidized=yes
 				reserves=1
 				activate_production_methods={ "pm_oil-fired_plant" }
 			}
@@ -4381,7 +4052,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_condensing_engine_pump_building_iron_mine" "pm_no_explosives" "pm_steam_donkey_mine" "pm_rail_transport_mine" }
+				activate_production_methods={ "pm_steam_donkey_mine" "pm_no_explosives" "pm_condensing_engine_pump_building_iron_mine" "pm_rail_transport_mine" }
 			}
 		}
 	}
@@ -4630,7 +4301,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_rail_transport_mine" "pm_no_explosives" "pm_steam_donkey_mine" "pm_condensing_engine_pump_building_iron_mine" }
+				activate_production_methods={ "pm_condensing_engine_pump_building_iron_mine" "pm_no_explosives" "pm_steam_donkey_mine" "pm_rail_transport_mine" }
 			}
 			create_building={
 				building="building_steel_mills"
@@ -4966,7 +4637,7 @@
 				add_ownership={
 					country={
 						country="c:PER"
-						levels=2
+						levels=1
 					}
 				}
 				reserves=1
@@ -5126,6 +4797,19 @@
 				}
 				reserves=1
 				activate_production_methods={ "pm_mechanized_workshops" "pm_precision_tools" "pm_rotary_valve_engine_building_furniture_manufacturies" }
+			}
+			create_building={
+				building="building_artillery_foundries"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:PER"
+						levels=1
+						region="STATE_FARS"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_cannons" "pm_rotary_valve_engine_building_arms_industry" }
 			}
 		}
 	}
@@ -5378,7 +5062,7 @@
 					building={
 						type="building_financial_district"
 						country="c:PER"
-						levels=1
+						levels=2
 						region="STATE_IRAKAJEMI"
 					}
 				}
@@ -5462,7 +5146,7 @@
 					building={
 						type="building_financial_district"
 						country="c:PER"
-						levels=1
+						levels=2
 						region="STATE_KHORASAN"
 					}
 				}
@@ -5490,6 +5174,12 @@
 						country="c:PER"
 						levels=1
 						region="STATE_TABRIZ"
+					}
+					building={
+						type="building_financial_district"
+						country="c:PER"
+						levels=1
+						region="STATE_KHORASAN"
 					}
 				}
 				reserves=1
@@ -5944,7 +5634,7 @@
 					building={
 						type="building_financial_district"
 						country="c:PER"
-						levels=2
+						levels=4
 						region="STATE_ISFAHAN"
 					}
 				}
@@ -6210,6 +5900,19 @@
 				}
 				reserves=1
 				activate_production_methods={ "automatic_irrigation_building_dye_plantation" "pm_steam_rail_transport" }
+			}
+			create_building={
+				building="building_motor_industry"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:PER"
+						levels=1
+						region="STATE_IRAKAJEMI"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_steam_engines" "pm_automobiles_disabled" "pm_rotary_valve_engine_building_motor_industry" }
 			}
 		}
 	}
@@ -6783,7 +6486,7 @@
 				add_ownership={
 					country={
 						country="c:PER"
-						levels=6
+						levels=5
 					}
 				}
 				reserves=1
@@ -7009,6 +6712,19 @@
 				}
 				reserves=1
 				activate_production_methods={ "pm_sewing_machines" "pm_no_luxury_clothes" "pm_mechanized_looms" }
+			}
+			create_building={
+				building="building_arms_industry"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:PER"
+						levels=1
+						region="STATE_IRAKAJEMI"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_rifles" "pm_rotary_valve_engine_building_arms_industry" }
 			}
 		}
 	}
@@ -7369,7 +7085,7 @@
 					building={
 						type="building_financial_district"
 						country="c:PER"
-						levels=2
+						levels=3
 						region="STATE_TABRIZ"
 					}
 					building={
@@ -7540,6 +7256,19 @@
 				reserves=1
 				activate_production_methods={ "pm_leaded_glass" "pm_ceramics" "pm_manual_glassblowing" }
 			}
+			create_building={
+				building="building_munition_plants"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:PER"
+						levels=1
+						region="STATE_TABRIZ"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_percussion_caps" "pm_automation_disabled" }
+			}
 		}
 	}
 	s:STATE_URMIA={
@@ -7669,6 +7398,13 @@
 				}
 				reserves=1
 				activate_production_methods={ "automatic_irrigation_building_dye_plantation" "pm_steam_rail_transport" }
+			}
+			create_building={
+				building="building_logging_camp"
+				add_ownership={
+				}
+				reserves=1
+				activate_production_methods={ "pm_electric_saw_mills" "pm_hardwood" "pm_steam_donkey_building_logging_camp" "pm_rail_transport_building_logging_camp" }
 			}
 		}
 	}
@@ -8180,36 +7916,6 @@
 				activate_production_methods={ "pm_vertical_filing_cabinets" "pm_professional_bureaucrats" "pm_secular_bureaucrats" }
 			}
 			create_building={
-				building="building_textile_mills"
-				add_ownership={
-					building={
-						type="building_financial_district"
-						country="c:TUR"
-						levels=1
-						region="STATE_EASTERN_THRACE"
-					}
-					building={
-						type="building_financial_district"
-						country="c:TUR"
-						levels=2
-						region="STATE_ANKARA"
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_sewing_machines" "pm_no_luxury_clothes" "pm_mechanized_looms" }
-			}
-			create_building={
-				building="building_paper_mills"
-				add_ownership={
-					country={
-						country="c:TUR"
-						levels=4
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_rotary_valve_engine_building_paper_mills" "pm_sulfite_pulping" }
-			}
-			create_building={
 				building="building_logging_camp"
 				add_ownership={
 					building={
@@ -8237,40 +7943,9 @@
 						levels=1
 						region="STATE_ANKARA"
 					}
-					building={
-						type="building_financial_district"
-						country="c:TUR"
-						levels=2
-						region="STATE_ANKARA"
-					}
 				}
 				reserves=1
 				activate_production_methods={ "pm_steam_trawlers" "pm_unrefrigerated" }
-			}
-			create_building={
-				building="building_tea_plantation"
-				add_ownership={
-					building={
-						type="building_company_basic_colonial_plantations_1"
-						country="c:TUR"
-						levels=4
-						region="STATE_HUDAVENDIGAR"
-					}
-					building={
-						type="building_financial_district"
-						country="c:TUR"
-						levels=2
-						region="STATE_HUDAVENDIGAR"
-					}
-					building={
-						type="building_manor_house"
-						country="c:TUR"
-						levels=10
-						region="STATE_EASTERN_THRACE"
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_steam_rail_transport" "automatic_irrigation_building_tea_plantation" }
 			}
 			create_building={
 				building="building_wheat_farm"
@@ -8278,14 +7953,8 @@
 					building={
 						type="building_wheat_farm"
 						country="c:TUR"
-						levels=8
+						levels=4
 						region="STATE_HUDAVENDIGAR"
-					}
-					building={
-						type="building_manor_house"
-						country="c:TUR"
-						levels=8
-						region="STATE_ANKARA"
 					}
 				}
 				reserves=1
@@ -8296,7 +7965,7 @@
 				add_ownership={
 					country={
 						country="c:TUR"
-						levels=14
+						levels=34
 					}
 				}
 				reserves=1
@@ -8319,7 +7988,7 @@
 					building={
 						type="building_financial_district"
 						country="c:TUR"
-						levels=1
+						levels=2
 						region="STATE_ANKARA"
 					}
 				}
@@ -8331,55 +8000,11 @@
 				add_ownership={
 					country={
 						country="c:TUR"
-						levels=17
+						levels=47
 					}
 				}
 				reserves=1
 				activate_production_methods={ "pm_general_training" }
-			}
-			create_building={
-				building="building_construction_sector"
-				add_ownership={
-					country={
-						country="c:TUR"
-						levels=4
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_steel_frame_buildings" }
-			}
-			create_building={
-				building="building_power_plant"
-				add_ownership={
-					building={
-						type="building_financial_district"
-						country="c:TUR"
-						levels=1
-						region="STATE_EASTERN_THRACE"
-					}
-				}
-				subsidized=yes
-				reserves=1
-				activate_production_methods={ "pm_oil-fired_plant" }
-			}
-			create_building={
-				building="building_opium_plantation"
-				add_ownership={
-					building={
-						type="building_company_basic_colonial_plantations_1"
-						country="c:TUR"
-						levels=7
-						region="STATE_HUDAVENDIGAR"
-					}
-					building={
-						type="building_manor_house"
-						country="c:TUR"
-						levels=6
-						region="STATE_HUDAVENDIGAR"
-					}
-				}
-				reserves=1
-				activate_production_methods={ "automatic_irrigation_building_opium_plantation" "pm_steam_rail_transport" }
 			}
 			create_building={
 				building="building_furniture_manufacturies"
@@ -8414,64 +8039,6 @@
 				activate_production_methods={ "pm_baking_powder" "pm_disabled_canning" "pm_disabled_distillery" "pm_manual_dough_processing" }
 			}
 			create_building={
-				building="building_cotton_plantation"
-				add_ownership={
-					building={
-						type="building_manor_house"
-						country="c:TUR"
-						levels=1
-						region="STATE_AYDIN"
-					}
-					building={
-						type="building_manor_house"
-						country="c:TUR"
-						levels=1
-						region="STATE_HUDAVENDIGAR"
-					}
-				}
-				reserves=1
-				activate_production_methods={ "automatic_irrigation_building_cotton_plantation" "pm_steam_rail_transport" }
-			}
-			create_building={
-				building="building_electrics_industry"
-				add_ownership={
-					building={
-						type="building_financial_district"
-						country="c:TUR"
-						levels=1
-						region="STATE_HUDAVENDIGAR"
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_telephones" "pm_radios" }
-			}
-			create_building={
-				building="building_synthetics_plants"
-				add_ownership={
-					building={
-						type="building_financial_district"
-						country="c:TUR"
-						levels=3
-						region="STATE_ALEPPO"
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_dye_production" "pm_no_artificial_fibers" }
-			}
-			create_building={
-				building="building_chemical_plants"
-				add_ownership={
-					building={
-						type="building_financial_district"
-						country="c:TUR"
-						levels=2
-						region="STATE_HUDAVENDIGAR"
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_improved_fertilizer" }
-			}
-			create_building={
 				building="building_steel_mills"
 				add_ownership={
 					building={
@@ -8483,49 +8050,6 @@
 				}
 				reserves=1
 				activate_production_methods={ "pm_bessemer_process" "pm_rotary_valve_engine_building_steel_mills" }
-			}
-			create_building={
-				building="building_motor_industry"
-				add_ownership={
-					building={
-						type="building_financial_district"
-						country="c:TUR"
-						levels=4
-						region="STATE_HUDAVENDIGAR"
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_steam_engines" "pm_automobiles_disabled" "pm_rotary_valve_engine_building_motor_industry" }
-			}
-			create_building={
-				building="building_tooling_workshops"
-				add_ownership={
-					building={
-						type="building_financial_district"
-						country="c:TUR"
-						levels=1
-						region="STATE_ANKARA"
-					}
-					building={
-						type="building_financial_district"
-						country="c:TUR"
-						levels=1
-						region="STATE_TRABZON"
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_rubber_grips" "pm_rotary_valve_engine_building_tooling_workshops" }
-			}
-			create_building={
-				building="building_shipyards"
-				add_ownership={
-					country={
-						country="c:TUR"
-						levels=1
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_metal_shipbuilding" }
 			}
 			create_building={
 				building="building_railway"
@@ -8544,25 +8068,6 @@
 				subsidized=no
 				reserves=1
 				activate_production_methods={ "pm_steam_trains" "pm_no_passenger_trains" }
-			}
-			create_building={
-				building="building_glassworks"
-				add_ownership={
-					building={
-						type="building_financial_district"
-						country="c:TUR"
-						levels=1
-						region="STATE_ANKARA"
-					}
-					building={
-						type="building_financial_district"
-						country="c:TUR"
-						levels=2
-						region="STATE_ALEPPO"
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_crystal_glass" "pm_manual_glassblowing" "pm_ceramics" }
 			}
 			create_building={
 				building="building_livestock_ranch"
@@ -8603,104 +8108,35 @@
 				reserves=1
 				activate_production_methods={ "automatic_irrigation_building_tobacco_plantation" "pm_steam_rail_transport" }
 			}
+			create_building={
+				building="building_arms_industry"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:TUR"
+						levels=1
+						region="STATE_ANKARA"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_rifles" "pm_rotary_valve_engine_building_arms_industry" }
+			}
 		}
 	}
 	s:STATE_AYDIN={
 		region_state:TUR={
-			create_building={
-				building="building_textile_mills"
-				add_ownership={
-					building={
-						type="building_financial_district"
-						country="c:TUR"
-						levels=3
-						region="STATE_ANKARA"
-					}
-					building={
-						type="building_financial_district"
-						country="c:TUR"
-						levels=1
-						region="STATE_AYDIN"
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_sewing_machines" "pm_mechanized_looms" "pm_craftsman_sewing" }
-			}
-			create_building={
-				building="building_furniture_manufacturies"
-				add_ownership={
-					building={
-						type="building_financial_district"
-						country="c:TUR"
-						levels=2
-						region="STATE_ANKARA"
-					}
-					building={
-						type="building_financial_district"
-						country="c:TUR"
-						levels=1
-						region="STATE_ALEPPO"
-					}
-					building={
-						type="building_financial_district"
-						country="c:TUR"
-						levels=1
-						region="STATE_AYDIN"
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_mechanized_workshops" "pm_rotary_valve_engine_building_furniture_manufacturies" "pm_luxury_furniture" }
-			}
-			create_building={
-				building="building_fishing_wharf"
-				add_ownership={
-					building={
-						type="building_financial_district"
-						country="c:TUR"
-						levels=4
-						region="STATE_ALEPPO"
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_steam_trawlers" "pm_unrefrigerated" }
-			}
 			create_building={
 				building="building_wheat_farm"
 				add_ownership={
 					building={
 						type="building_wheat_farm"
 						country="c:TUR"
-						levels=3
-						region="STATE_AYDIN"
-					}
-					building={
-						type="building_manor_house"
-						country="c:TUR"
-						levels=3
+						levels=2
 						region="STATE_AYDIN"
 					}
 				}
 				reserves=1
 				activate_production_methods={ "pm_fertilization" "pm_citrus_orchards" "pm_tools" }
-			}
-			create_building={
-				building="building_silk_plantation"
-				add_ownership={
-					building={
-						type="building_manor_house"
-						country="c:TUR"
-						levels=1
-						region="STATE_AYDIN"
-					}
-					building={
-						type="building_financial_district"
-						country="c:TUR"
-						levels=8
-						region="STATE_AYDIN"
-					}
-				}
-				reserves=1
-				activate_production_methods={ "automatic_irrigation_building_silk_plantation" "pm_road_carts" }
 			}
 			create_building={
 				building="building_tea_plantation"
@@ -8729,24 +8165,11 @@
 				activate_production_methods={ "automatic_irrigation_building_tobacco_plantation" "pm_steam_rail_transport" }
 			}
 			create_building={
-				building="building_cotton_plantation"
-				add_ownership={
-					building={
-						type="building_manor_house"
-						country="c:TUR"
-						levels=3
-						region="STATE_ANKARA"
-					}
-				}
-				reserves=1
-				activate_production_methods={ "automatic_irrigation_building_cotton_plantation" "pm_steam_rail_transport" }
-			}
-			create_building={
 				building="building_naval_base"
 				add_ownership={
 					country={
 						country="c:TUR"
-						levels=7
+						levels=13
 					}
 				}
 				reserves=1
@@ -8786,30 +8209,12 @@
 					building={
 						type="building_financial_district"
 						country="c:TUR"
-						levels=5
-						region="STATE_EASTERN_THRACE"
-					}
-					building={
-						type="building_financial_district"
-						country="c:TUR"
-						levels=3
-						region="STATE_ALEPPO"
-					}
-					building={
-						type="building_financial_district"
-						country="c:TUR"
-						levels=14
-						region="STATE_ANKARA"
-					}
-					building={
-						type="building_financial_district"
-						country="c:TUR"
 						levels=1
 						region="STATE_AYDIN"
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_road_carts" "pm_condensing_engine_pump_building_coal_mine" "pm_nitroglycerin_building_coal_mine" "pm_steam_donkey_building_coal_mine" }
+				activate_production_methods={ "pm_road_carts" "pm_condensing_engine_pump_building_coal_mine" "pm_steam_donkey_building_coal_mine" "pm_dynamite_building_coal_mine" }
 			}
 			create_building={
 				building="building_arts_academy"
@@ -8829,7 +8234,7 @@
 				add_ownership={
 					country={
 						country="c:TUR"
-						levels=11
+						levels=31
 					}
 				}
 				reserves=1
@@ -8849,26 +8254,6 @@
 				activate_production_methods={ "pm_baking_powder" "pm_disabled_canning" "pm_disabled_distillery" "pm_manual_dough_processing" }
 			}
 			create_building={
-				building="building_tooling_workshops"
-				add_ownership={
-					building={
-						type="building_financial_district"
-						country="c:TUR"
-						levels=1
-						region="STATE_KASTAMONU"
-					}
-					building={
-						type="building_financial_district"
-						country="c:TUR"
-						levels=2
-						region="STATE_AYDIN"
-					}
-				}
-				subsidized=yes
-				reserves=1
-				activate_production_methods={ "pm_rubber_grips" "pm_rotary_valve_engine_building_tooling_workshops" }
-			}
-			create_building={
 				building="building_vineyard_plantation"
 				add_ownership={
 					building={
@@ -8880,56 +8265,6 @@
 				}
 				reserves=1
 				activate_production_methods={ "automatic_irrigation_building_vineyard_plantation" "pm_steam_rail_transport" }
-			}
-			create_building={
-				building="building_shipyards"
-				add_ownership={
-					country={
-						country="c:TUR"
-						levels=1
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_metal_shipbuilding" }
-			}
-			create_building={
-				building="building_munition_plants"
-				add_ownership={
-					country={
-						country="c:TUR"
-						levels=1
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_explosive_shells" "pm_rotary_valve_engine_building_munition_plants" }
-			}
-			create_building={
-				building="building_steel_mills"
-				add_ownership={
-					country={
-						country="c:TUR"
-						levels=1
-					}
-					building={
-						type="building_financial_district"
-						country="c:TUR"
-						levels=2
-						region="STATE_HUDAVENDIGAR"
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_bessemer_process" "pm_rotary_valve_engine_building_steel_mills" }
-			}
-			create_building={
-				building="building_paper_mills"
-				add_ownership={
-					country={
-						country="c:TUR"
-						levels=1
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_bleached_paper" "pm_rotary_valve_engine_building_paper_mills" }
 			}
 			create_building={
 				building="building_logging_camp"
@@ -9003,30 +8338,22 @@
 				activate_production_methods={ "pm_vacuum_evaporation" }
 			}
 			create_building={
-				building="building_synthetics_plants"
+				building="building_government_administration"
 				add_ownership={
-					building={
-						type="building_financial_district"
+					country={
 						country="c:TUR"
 						levels=1
-						region="STATE_AYDIN"
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_dye_production" "pm_no_artificial_fibers" }
+				activate_production_methods={ "pm_vertical_filing_cabinets" "pm_professional_bureaucrats" "pm_secular_bureaucrats" }
 			}
 			create_building={
-				building="building_power_plant"
+				building="building_silk_plantation"
 				add_ownership={
-					building={
-						type="building_financial_district"
-						country="c:TUR"
-						levels=1
-						region="STATE_ERZURUM"
-					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_oil-fired_plant" }
+				activate_production_methods={ "default_building_silk_plantation" "pm_road_carts" }
 			}
 		}
 		region_state:ITA={
@@ -9063,68 +8390,29 @@
 				reserves=1
 				activate_production_methods={ "pm_general_training" }
 			}
+			create_building={
+				building="building_railway"
+				add_ownership={
+					country={
+						country="c:ITA"
+						levels=1
+					}
+				}
+				subsidized=no
+				reserves=1
+				activate_production_methods={ "pm_steam_trains" "pm_wooden_passenger_carriages" }
+			}
 		}
 	}
 	s:STATE_KONYA={
 		region_state:TUR={
-			create_building={
-				building="building_electrics_industry"
-				add_ownership={
-					building={
-						type="building_financial_district"
-						country="c:TUR"
-						levels=2
-						region="STATE_EASTERN_THRACE"
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_telephones" "pm_radios" }
-			}
-			create_building={
-				building="building_cotton_plantation"
-				add_ownership={
-					building={
-						type="building_manor_house"
-						country="c:TUR"
-						levels=2
-						region="STATE_EASTERN_THRACE"
-					}
-					building={
-						type="building_manor_house"
-						country="c:TUR"
-						levels=2
-						region="STATE_ANKARA"
-					}
-				}
-				reserves=1
-				activate_production_methods={ "automatic_irrigation_building_cotton_plantation" "pm_steam_rail_transport" }
-			}
-			create_building={
-				building="building_tobacco_plantation"
-				add_ownership={
-					building={
-						type="building_manor_house"
-						country="c:TUR"
-						levels=1
-						region="STATE_KONYA"
-					}
-					building={
-						type="building_manor_house"
-						country="c:TUR"
-						levels=2
-						region="STATE_HUDAVENDIGAR"
-					}
-				}
-				reserves=1
-				activate_production_methods={ "automatic_irrigation_building_tobacco_plantation" "pm_steam_rail_transport" }
-			}
 			create_building={
 				building="building_tea_plantation"
 				add_ownership={
 					building={
 						type="building_manor_house"
 						country="c:TUR"
-						levels=2
+						levels=1
 						region="STATE_ANKARA"
 					}
 				}
@@ -9149,7 +8437,7 @@
 				add_ownership={
 					country={
 						country="c:TUR"
-						levels=9
+						levels=19
 					}
 				}
 				reserves=1
@@ -9164,11 +8452,9 @@
 						levels=1
 						region="STATE_KONYA"
 					}
-					building={
-						type="building_manor_house"
+					country={
 						country="c:TUR"
 						levels=1
-						region="STATE_WESTERN_THRACE"
 					}
 				}
 				reserves=1
@@ -9191,53 +8477,16 @@
 					building={
 						type="building_wheat_farm"
 						country="c:TUR"
-						levels=4
-						region="STATE_KONYA"
-					}
-					building={
-						type="building_manor_house"
-						country="c:TUR"
-						levels=1
-						region="STATE_KONYA"
-					}
-					building={
-						type="building_financial_district"
-						country="c:TUR"
-						levels=1
-						region="STATE_ANKARA"
-					}
-					building={
-						type="building_financial_district"
-						country="c:TUR"
 						levels=2
-						region="STATE_AYDIN"
+						region="STATE_KONYA"
 					}
 				}
 				reserves=1
 				activate_production_methods={ "pm_fertilization" "pm_citrus_orchards" "pm_tools" }
 			}
 			create_building={
-				building="building_tooling_workshops"
-				add_ownership={
-					building={
-						type="building_financial_district"
-						country="c:TUR"
-						levels=1
-						region="STATE_EASTERN_THRACE"
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_rubber_grips" "pm_rotary_valve_engine_building_tooling_workshops" }
-			}
-			create_building={
 				building="building_opium_plantation"
 				add_ownership={
-					building={
-						type="building_manor_house"
-						country="c:TUR"
-						levels=2
-						region="STATE_ALEPPO"
-					}
 					building={
 						type="building_company_basic_colonial_plantations_1"
 						country="c:TUR"
@@ -9267,52 +8516,6 @@
 				activate_production_methods={ "automatic_irrigation_building_opium_plantation" "pm_steam_rail_transport" }
 			}
 			create_building={
-				building="building_power_plant"
-				add_ownership={
-					building={
-						type="building_financial_district"
-						country="c:TUR"
-						levels=1
-						region="STATE_TRABZON"
-					}
-				}
-				subsidized=yes
-				reserves=1
-				activate_production_methods={ "pm_oil-fired_plant" }
-			}
-			create_building={
-				building="building_logging_camp"
-				add_ownership={
-					building={
-						type="building_financial_district"
-						country="c:TUR"
-						levels=4
-						region="STATE_DIYARBAKIR"
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_electric_saw_mills" "pm_rail_transport_building_logging_camp" "pm_steam_donkey_building_logging_camp" "pm_no_hardwood" }
-			}
-			create_building={
-				building="building_textile_mills"
-				add_ownership={
-					building={
-						type="building_financial_district"
-						country="c:TUR"
-						levels=1
-						region="STATE_DIYARBAKIR"
-					}
-					building={
-						type="building_financial_district"
-						country="c:TUR"
-						levels=2
-						region="STATE_ANKARA"
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_sewing_machines" "pm_no_luxury_clothes" "pm_mechanized_looms" }
-			}
-			create_building={
 				building="building_fishing_wharf"
 				add_ownership={
 					building={
@@ -9321,47 +8524,9 @@
 						levels=1
 						region="STATE_ALEPPO"
 					}
-					building={
-						type="building_financial_district"
-						country="c:TUR"
-						levels=2
-						region="STATE_KONYA"
-					}
 				}
 				reserves=1
 				activate_production_methods={ "pm_steam_trawlers" "pm_unrefrigerated" }
-			}
-			create_building={
-				building="building_synthetics_plants"
-				add_ownership={
-					building={
-						type="building_financial_district"
-						country="c:TUR"
-						levels=1
-						region="STATE_EASTERN_THRACE"
-					}
-					building={
-						type="building_financial_district"
-						country="c:TUR"
-						levels=1
-						region="STATE_ANKARA"
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_dye_production" "pm_no_artificial_fibers" }
-			}
-			create_building={
-				building="building_shipyards"
-				add_ownership={
-					building={
-						type="building_financial_district"
-						country="c:TUR"
-						levels=1
-						region="STATE_EASTERN_THRACE"
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_metal_shipbuilding" }
 			}
 			create_building={
 				building="building_furniture_manufacturies"
@@ -9396,17 +8561,6 @@
 				activate_production_methods={ "pm_baking_powder" "pm_manual_dough_processing" "pm_disabled_distillery" "pm_cannery" }
 			}
 			create_building={
-				building="building_university"
-				add_ownership={
-					country={
-						country="c:TUR"
-						levels=1
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_philosophy_department" "pm_secular_academia" "pm_freedom_of_movement_no_effect" }
-			}
-			create_building={
 				building="building_chemical_plants"
 				add_ownership={
 					building={
@@ -9422,10 +8576,6 @@
 			create_building={
 				building="building_small_workshop"
 				add_ownership={
-					country={
-						country="c:TUR"
-						levels=1
-					}
 					building={
 						type="building_financial_district"
 						country="c:TUR"
@@ -9451,7 +8601,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_tno_scholastic_education" "pm_secular_academia" }
+				activate_production_methods={ "pm_secular_academia" "pm_tno_philosophy_department" }
 			}
 			create_building={
 				building="building_railway"
@@ -9484,83 +8634,20 @@
 				reserves=1
 				activate_production_methods={ "pm_breech_loaders" "pm_rotary_valve_engine_building_arms_industry" }
 			}
-			create_building={
-				building="building_paper_mills"
-				add_ownership={
-					country={
-						country="c:TUR"
-						levels=1
-					}
-					building={
-						type="building_financial_district"
-						country="c:TUR"
-						levels=1
-						region="STATE_TRABZON"
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_bleached_paper" "pm_rotary_valve_engine_building_paper_mills" }
-			}
 		}
 	}
 	s:STATE_KASTAMONU={
 		region_state:TUR={
 			create_building={
-				building="building_tea_plantation"
-				add_ownership={
-					building={
-						type="building_company_basic_colonial_plantations_1"
-						country="c:TUR"
-						levels=5
-						region="STATE_KASTAMONU"
-					}
-					building={
-						type="building_manor_house"
-						country="c:TUR"
-						levels=2
-						region="STATE_KONYA"
-					}
-				}
-				reserves=1
-				activate_production_methods={ "automatic_irrigation_building_tea_plantation" "pm_steam_rail_transport" }
-			}
-			create_building={
-				building="building_fishing_wharf"
-				add_ownership={
-					building={
-						type="building_manor_house"
-						country="c:TUR"
-						levels=3
-						region="STATE_EASTERN_THRACE"
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_steam_trawlers" "pm_unrefrigerated" }
-			}
-			create_building={
 				building="building_barracks"
 				add_ownership={
 					country={
 						country="c:TUR"
-						levels=7
+						levels=13
 					}
 				}
 				reserves=1
 				activate_production_methods={ "pm_general_training" }
-			}
-			create_building={
-				building="building_power_plant"
-				add_ownership={
-					building={
-						type="building_financial_district"
-						country="c:TUR"
-						levels=1
-						region="STATE_ANKARA"
-					}
-				}
-				subsidized=yes
-				reserves=1
-				activate_production_methods={ "pm_oil-fired_plant" }
 			}
 			create_building={
 				building="building_construction_sector"
@@ -9574,49 +8661,8 @@
 				activate_production_methods={ "pm_steel_frame_buildings" }
 			}
 			create_building={
-				building="building_opium_plantation"
-				add_ownership={
-					building={
-						type="building_manor_house"
-						country="c:TUR"
-						levels=1
-						region="STATE_EASTERN_THRACE"
-					}
-					building={
-						type="building_manor_house"
-						country="c:TUR"
-						levels=2
-						region="STATE_TRABZON"
-					}
-					building={
-						type="building_manor_house"
-						country="c:TUR"
-						levels=5
-						region="STATE_KASTAMONU"
-					}
-					building={
-						type="building_manor_house"
-						country="c:TUR"
-						levels=4
-						region="STATE_ANKARA"
-					}
-					country={
-						country="c:TUR"
-						levels=1
-					}
-				}
-				reserves=1
-				activate_production_methods={ "automatic_irrigation_building_opium_plantation" "pm_steam_rail_transport" }
-			}
-			create_building={
 				building="building_motor_industry"
 				add_ownership={
-					building={
-						type="building_financial_district"
-						country="c:TUR"
-						levels=3
-						region="STATE_TRABZON"
-					}
 					building={
 						type="building_financial_district"
 						country="c:TUR"
@@ -9641,19 +8687,6 @@
 				activate_production_methods={ "pm_explosive_shells" "pm_rotary_valve_engine_building_munition_plants" }
 			}
 			create_building={
-				building="building_shipyards"
-				add_ownership={
-					building={
-						type="building_financial_district"
-						country="c:TUR"
-						levels=1
-						region="STATE_KONYA"
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_metal_shipbuilding" }
-			}
-			create_building={
 				building="building_small_workshop"
 				add_ownership={
 					building={
@@ -9665,19 +8698,6 @@
 				}
 				reserves=1
 				activate_production_methods={ "pm_small_workshop" }
-			}
-			create_building={
-				building="building_paper_mills"
-				add_ownership={
-					building={
-						type="building_financial_district"
-						country="c:TUR"
-						levels=1
-						region="STATE_EASTERN_THRACE"
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_bleached_paper" "pm_rotary_valve_engine_building_paper_mills" }
 			}
 			create_building={
 				building="building_coal_mine"
@@ -9693,12 +8713,6 @@
 						country="c:TUR"
 						levels=2
 						region="STATE_KONYA"
-					}
-					building={
-						type="building_financial_district"
-						country="c:TUR"
-						levels=14
-						region="STATE_ANKARA"
 					}
 				}
 				reserves=1
@@ -9718,31 +8732,6 @@
 				activate_production_methods={ "pm_vacuum_evaporation" }
 			}
 			create_building={
-				building="building_steel_mills"
-				add_ownership={
-					building={
-						type="building_financial_district"
-						country="c:TUR"
-						levels=1
-						region="STATE_DIYARBAKIR"
-					}
-					building={
-						type="building_financial_district"
-						country="c:TUR"
-						levels=1
-						region="STATE_AYDIN"
-					}
-					building={
-						type="building_financial_district"
-						country="c:TUR"
-						levels=1
-						region="STATE_ANKARA"
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_bessemer_process" "pm_rotary_valve_engine_building_steel_mills" }
-			}
-			create_building={
 				building="building_railway"
 				add_ownership={
 					country={
@@ -9753,31 +8742,6 @@
 				subsidized=no
 				reserves=1
 				activate_production_methods={ "pm_steam_trains" "pm_no_passenger_trains" }
-			}
-			create_building={
-				building="building_tooling_workshops"
-				add_ownership={
-					country={
-						country="c:TUR"
-						levels=1
-					}
-				}
-				subsidized=yes
-				reserves=1
-				activate_production_methods={ "pm_rubber_grips" "pm_rotary_valve_engine_building_tooling_workshops" }
-			}
-			create_building={
-				building="building_logging_camp"
-				add_ownership={
-					building={
-						type="building_company_basic_forestry"
-						country="c:TUR"
-						levels=5
-						region="STATE_ANKARA"
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_electric_saw_mills" "pm_rail_transport_building_logging_camp" "pm_steam_donkey_building_logging_camp" "pm_no_hardwood" }
 			}
 			create_building={
 				building="building_arts_academy"
@@ -9791,19 +8755,6 @@
 				}
 				reserves=1
 				activate_production_methods={ "pm_traditional_art" "pm_traditional_patronage" "pm_freedom_of_movement_no_effect" }
-			}
-			create_building={
-				building="building_synthetics_plants"
-				add_ownership={
-					building={
-						type="building_financial_district"
-						country="c:TUR"
-						levels=1
-						region="STATE_KASTAMONU"
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_dye_production" "pm_no_artificial_fibers" }
 			}
 			create_building={
 				building="building_military_shipyards"
@@ -9844,11 +8795,9 @@
 						levels=2
 						region="STATE_KASTAMONU"
 					}
-					building={
-						type="building_manor_house"
+					country={
 						country="c:TUR"
 						levels=1
-						region="STATE_KASTAMONU"
 					}
 				}
 				reserves=1
@@ -9900,7 +8849,7 @@
 				activate_production_methods={ "pm_mechanized_workshops" "pm_no_luxuries" "pm_rotary_valve_engine_building_furniture_manufacturies" }
 			}
 			create_building={
-				building="building_textile_mills"
+				building="building_chemical_plants"
 				add_ownership={
 					building={
 						type="building_financial_district"
@@ -9910,7 +8859,14 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_sewing_machines" "pm_no_luxury_clothes" "pm_mechanized_looms" }
+				activate_production_methods={ "pm_improved_fertilizer" }
+			}
+			create_building={
+				building="building_fishing_wharf"
+				add_ownership={
+				}
+				reserves=1
+				activate_production_methods={ "pm_steam_trawlers" "pm_unrefrigerated" }
 			}
 		}
 	}
@@ -9922,24 +8878,12 @@
 					building={
 						type="building_financial_district"
 						country="c:TUR"
-						levels=3
+						levels=1
 						region="STATE_EASTERN_THRACE"
-					}
-					building={
-						type="building_financial_district"
-						country="c:TUR"
-						levels=11
-						region="STATE_DIYARBAKIR"
-					}
-					building={
-						type="building_financial_district"
-						country="c:TUR"
-						levels=6
-						region="STATE_AYDIN"
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_condensing_engine_pump_building_coal_mine" "pm_nitroglycerin_building_coal_mine" "pm_road_carts" "pm_no_steam_automation" }
+				activate_production_methods={ "pm_condensing_engine_pump_building_coal_mine" "pm_no_steam_automation" "pm_road_carts" "pm_dynamite_building_coal_mine" }
 			}
 			create_building={
 				building="building_livestock_ranch"
@@ -9955,43 +8899,11 @@
 				activate_production_methods={ "pm_slaughterhouses" "pm_sheep_farms" "pm_standard_fences" "pm_unrefrigerated" }
 			}
 			create_building={
-				building="building_tea_plantation"
-				add_ownership={
-					building={
-						type="building_manor_house"
-						country="c:TUR"
-						levels=4
-						region="STATE_EASTERN_THRACE"
-					}
-				}
-				reserves=1
-				activate_production_methods={ "automatic_irrigation_building_tea_plantation" "pm_steam_rail_transport" }
-			}
-			create_building={
-				building="building_tobacco_plantation"
-				add_ownership={
-					building={
-						type="building_manor_house"
-						country="c:TUR"
-						levels=2
-						region="STATE_AYDIN"
-					}
-					building={
-						type="building_manor_house"
-						country="c:TUR"
-						levels=1
-						region="STATE_EASTERN_THRACE"
-					}
-				}
-				reserves=1
-				activate_production_methods={ "automatic_irrigation_building_tobacco_plantation" "pm_steam_rail_transport" }
-			}
-			create_building={
 				building="building_barracks"
 				add_ownership={
 					country={
 						country="c:TUR"
-						levels=16
+						levels=36
 					}
 				}
 				reserves=1
@@ -10005,12 +8917,6 @@
 						country="c:TUR"
 						levels=1
 						region="STATE_ANKARA"
-					}
-					building={
-						type="building_financial_district"
-						country="c:TUR"
-						levels=6
-						region="STATE_DIYARBAKIR"
 					}
 				}
 				reserves=1
@@ -10028,51 +8934,11 @@
 				activate_production_methods={ "pm_steel_frame_buildings" }
 			}
 			create_building={
-				building="building_power_plant"
-				add_ownership={
-					building={
-						type="building_financial_district"
-						country="c:TUR"
-						levels=1
-						region="STATE_ANKARA"
-					}
-				}
-				subsidized=yes
-				reserves=1
-				activate_production_methods={ "pm_oil-fired_plant" }
-			}
-			create_building={
-				building="building_tooling_workshops"
-				add_ownership={
-					building={
-						type="building_financial_district"
-						country="c:TUR"
-						levels=1
-						region="STATE_EASTERN_THRACE"
-					}
-					country={
-						country="c:TUR"
-						levels=1
-					}
-					building={
-						type="building_financial_district"
-						country="c:TUR"
-						levels=3
-						region="STATE_AYDIN"
-					}
-				}
-				subsidized=yes
-				reserves=1
-				activate_production_methods={ "pm_rubber_grips" "pm_rotary_valve_engine_building_tooling_workshops" }
-			}
-			create_building={
 				building="building_textile_mills"
 				add_ownership={
-					building={
-						type="building_financial_district"
+					country={
 						country="c:TUR"
 						levels=2
-						region="STATE_ANKARA"
 					}
 				}
 				reserves=1
@@ -10106,32 +8972,6 @@
 				activate_production_methods={ "pm_steam_trains" "pm_no_passenger_trains" }
 			}
 			create_building={
-				building="building_synthetics_plants"
-				add_ownership={
-					building={
-						type="building_financial_district"
-						country="c:TUR"
-						levels=1
-						region="STATE_TRABZON"
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_dye_production" "pm_no_artificial_fibers" }
-			}
-			create_building={
-				building="building_paper_mills"
-				add_ownership={
-					building={
-						type="building_financial_district"
-						country="c:TUR"
-						levels=1
-						region="STATE_ANKARA"
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_bleached_paper" "pm_rotary_valve_engine_building_paper_mills" }
-			}
-			create_building={
 				building="building_electrics_industry"
 				add_ownership={
 					building={
@@ -10143,23 +8983,6 @@
 				}
 				reserves=1
 				activate_production_methods={ "pm_telephones" "pm_radios" }
-			}
-			create_building={
-				building="building_steel_mills"
-				add_ownership={
-					country={
-						country="c:TUR"
-						levels=1
-					}
-					building={
-						type="building_financial_district"
-						country="c:TUR"
-						levels=4
-						region="STATE_DIYARBAKIR"
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_bessemer_process" "pm_rotary_valve_engine_building_steel_mills" }
 			}
 			create_building={
 				building="building_explosives_factory"
@@ -10226,6 +9049,19 @@
 				reserves=1
 				activate_production_methods={ "automatic_irrigation_building_cotton_plantation" "pm_steam_rail_transport" }
 			}
+			create_building={
+				building="building_tea_plantation"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:TUR"
+						levels=1
+						region="STATE_ERZURUM"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "automatic_irrigation_building_tea_plantation" "pm_steam_rail_transport" }
+			}
 		}
 	}
 	s:STATE_ADANA={
@@ -10233,12 +9069,6 @@
 			create_building={
 				building="building_cotton_plantation"
 				add_ownership={
-					building={
-						type="building_manor_house"
-						country="c:TUR"
-						levels=1
-						region="STATE_AYDIN"
-					}
 					building={
 						type="building_manor_house"
 						country="c:TUR"
@@ -10255,7 +9085,7 @@
 					building={
 						type="building_financial_district"
 						country="c:TUR"
-						levels=2
+						levels=1
 						region="STATE_ANKARA"
 					}
 				}
@@ -10270,12 +9100,6 @@
 						country="c:TUR"
 						levels=1
 						region="STATE_ADANA"
-					}
-					building={
-						type="building_manor_house"
-						country="c:TUR"
-						levels=1
-						region="STATE_DIYARBAKIR"
 					}
 				}
 				reserves=1
@@ -10328,18 +9152,12 @@
 					building={
 						type="building_financial_district"
 						country="c:TUR"
-						levels=6
-						region="STATE_ALEPPO"
-					}
-					building={
-						type="building_financial_district"
-						country="c:TUR"
 						levels=3
 						region="STATE_ANKARA"
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_condensing_engine_pump_building_coal_mine" "pm_nitroglycerin_building_coal_mine" "pm_steam_donkey_building_coal_mine" "pm_road_carts" }
+				activate_production_methods={ "pm_condensing_engine_pump_building_coal_mine" "pm_road_carts" "pm_steam_donkey_building_coal_mine" "pm_dynamite_building_coal_mine" }
 			}
 			create_building={
 				building="building_construction_sector"
@@ -10351,31 +9169,6 @@
 				}
 				reserves=1
 				activate_production_methods={ "pm_steel_frame_buildings" }
-			}
-			create_building={
-				building="building_power_plant"
-				add_ownership={
-					building={
-						type="building_financial_district"
-						country="c:TUR"
-						levels=1
-						region="STATE_ANKARA"
-					}
-				}
-				subsidized=yes
-				reserves=1
-				activate_production_methods={ "pm_oil-fired_plant" }
-			}
-			create_building={
-				building="building_tooling_workshops"
-				add_ownership={
-					country={
-						country="c:TUR"
-						levels=2
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_rubber_grips" "pm_rotary_valve_engine_building_tooling_workshops" }
 			}
 			create_building={
 				building="building_small_workshop"
@@ -10430,43 +9223,6 @@
 				activate_production_methods={ "pm_vacuum_evaporation" }
 			}
 			create_building={
-				building="building_paper_mills"
-				add_ownership={
-					country={
-						country="c:TUR"
-						levels=1
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_bleached_paper" "pm_rotary_valve_engine_building_paper_mills" }
-			}
-			create_building={
-				building="building_synthetics_plants"
-				add_ownership={
-					building={
-						type="building_financial_district"
-						country="c:TUR"
-						levels=1
-						region="STATE_AYDIN"
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_dye_production" "pm_no_artificial_fibers" }
-			}
-			create_building={
-				building="building_logging_camp"
-				add_ownership={
-					building={
-						type="building_financial_district"
-						country="c:TUR"
-						levels=4
-						region="STATE_TRABZON"
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_electric_saw_mills" "pm_no_hardwood" "pm_steam_donkey_building_logging_camp" "pm_road_carts" }
-			}
-			create_building={
 				building="building_motor_industry"
 				add_ownership={
 					building={
@@ -10501,11 +9257,9 @@
 			create_building={
 				building="building_shipyards"
 				add_ownership={
-					building={
-						type="building_financial_district"
+					country={
 						country="c:TUR"
 						levels=1
-						region="STATE_AYDIN"
 					}
 				}
 				reserves=1
@@ -10524,12 +9278,6 @@
 						levels=1
 						region="STATE_TRABZON"
 					}
-					building={
-						type="building_financial_district"
-						country="c:TUR"
-						levels=7
-						region="STATE_ANKARA"
-					}
 				}
 				reserves=1
 				activate_production_methods={ "pm_steam_trawlers" "pm_unrefrigerated" }
@@ -10538,43 +9286,14 @@
 				building="building_livestock_ranch"
 				add_ownership={
 					building={
-						type="building_manor_house"
+						type="building_livestock_ranch"
 						country="c:TUR"
 						levels=2
 						region="STATE_TRABZON"
-					}
-					building={
-						type="building_livestock_ranch"
-						country="c:TUR"
-						levels=3
-						region="STATE_TRABZON"
-					}
-					country={
-						country="c:TUR"
-						levels=1
 					}
 				}
 				reserves=1
 				activate_production_methods={ "pm_slaughterhouses" "pm_unrefrigerated" "pm_standard_fences" "pm_simple_ranch" }
-			}
-			create_building={
-				building="building_tea_plantation"
-				add_ownership={
-					building={
-						type="building_manor_house"
-						country="c:TUR"
-						levels=2
-						region="STATE_EASTERN_THRACE"
-					}
-					building={
-						type="building_company_basic_colonial_plantations_1"
-						country="c:TUR"
-						levels=2
-						region="STATE_HUDAVENDIGAR"
-					}
-				}
-				reserves=1
-				activate_production_methods={ "automatic_irrigation_building_tea_plantation" "pm_steam_rail_transport" }
 			}
 			create_building={
 				building="building_logging_camp"
@@ -10609,28 +9328,13 @@
 			create_building={
 				building="building_shipyards"
 				add_ownership={
-					building={
-						type="building_financial_district"
+					country={
 						country="c:TUR"
 						levels=1
-						region="STATE_TRABZON"
 					}
 				}
 				reserves=1
 				activate_production_methods={ "pm_metal_shipbuilding" }
-			}
-			create_building={
-				building="building_synthetics_plants"
-				add_ownership={
-					building={
-						type="building_financial_district"
-						country="c:TUR"
-						levels=3
-						region="STATE_EASTERN_THRACE"
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_dye_production" "pm_rayon" }
 			}
 			create_building={
 				building="building_military_shipyards"
@@ -10648,7 +9352,7 @@
 				add_ownership={
 					country={
 						country="c:TUR"
-						levels=8
+						levels=2
 					}
 				}
 				reserves=1
@@ -10668,51 +9372,8 @@
 				activate_production_methods={ "pm_breech_loaders" "pm_rotary_valve_engine_building_arms_industry" }
 			}
 			create_building={
-				building="building_steel_mills"
-				add_ownership={
-					building={
-						type="building_financial_district"
-						country="c:TUR"
-						levels=1
-						region="STATE_WESTERN_THRACE"
-					}
-					building={
-						type="building_financial_district"
-						country="c:TUR"
-						levels=1
-						region="STATE_AYDIN"
-					}
-					building={
-						type="building_financial_district"
-						country="c:TUR"
-						levels=1
-						region="STATE_DIYARBAKIR"
-					}
-					building={
-						type="building_financial_district"
-						country="c:TUR"
-						levels=3
-						region="STATE_ANKARA"
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_bessemer_process" "pm_rotary_valve_engine_building_steel_mills" }
-			}
-			create_building={
 				building="building_iron_mine"
 				add_ownership={
-					building={
-						type="building_financial_district"
-						country="c:TUR"
-						levels=4
-						region="STATE_ANKARA"
-					}
-					building={
-						type="building_financial_district"
-						country="c:TUR"
-						levels=2
-						region="STATE_ERZURUM"
-					}
 					building={
 						type="building_financial_district"
 						country="c:TUR"
@@ -10727,7 +9388,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_condensing_engine_pump_building_iron_mine" "pm_nitroglycerin_building_iron_mine" "pm_steam_donkey_mine" "pm_rail_transport_mine" }
+				activate_production_methods={ "pm_condensing_engine_pump_building_iron_mine" "pm_rail_transport_mine" "pm_steam_donkey_mine" "pm_dynamite_building_iron_mine" }
 			}
 			create_building={
 				building="building_construction_sector"
@@ -10741,65 +9402,6 @@
 				activate_production_methods={ "pm_steel_frame_buildings" }
 			}
 			create_building={
-				building="building_paper_mills"
-				add_ownership={
-					building={
-						type="building_financial_district"
-						country="c:TUR"
-						levels=1
-						region="STATE_KASTAMONU"
-					}
-					building={
-						type="building_financial_district"
-						country="c:TUR"
-						levels=2
-						region="STATE_TRABZON"
-					}
-					country={
-						country="c:TUR"
-						levels=2
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_bleached_paper" "pm_rotary_valve_engine_building_paper_mills" }
-			}
-			create_building={
-				building="building_chemical_plants"
-				add_ownership={
-					building={
-						type="building_financial_district"
-						country="c:TUR"
-						levels=3
-						region="STATE_HUDAVENDIGAR"
-					}
-					building={
-						type="building_financial_district"
-						country="c:TUR"
-						levels=2
-						region="STATE_KASTAMONU"
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_improved_fertilizer" }
-			}
-			create_building={
-				building="building_tooling_workshops"
-				add_ownership={
-					building={
-						type="building_financial_district"
-						country="c:TUR"
-						levels=1
-						region="STATE_ADANA"
-					}
-					country={
-						country="c:TUR"
-						levels=1
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_rubber_grips" "pm_rotary_valve_engine_building_tooling_workshops" }
-			}
-			create_building={
 				building="building_explosives_factory"
 				add_ownership={
 					building={
@@ -10811,25 +9413,6 @@
 				}
 				reserves=1
 				activate_production_methods={ "pm_vacuum_evaporation" }
-			}
-			create_building={
-				building="building_furniture_manufacturies"
-				add_ownership={
-					building={
-						type="building_financial_district"
-						country="c:TUR"
-						levels=2
-						region="STATE_AYDIN"
-					}
-					building={
-						type="building_financial_district"
-						country="c:TUR"
-						levels=2
-						region="STATE_ANKARA"
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_mechanized_workshops" "pm_rotary_valve_engine_building_furniture_manufacturies" "pm_precision_tools" }
 			}
 			create_building={
 				building="building_cotton_plantation"
@@ -10850,14 +9433,8 @@
 					building={
 						type="building_wheat_farm"
 						country="c:TUR"
-						levels=2
+						levels=1
 						region="STATE_TRABZON"
-					}
-					building={
-						type="building_manor_house"
-						country="c:TUR"
-						levels=2
-						region="STATE_HUDAVENDIGAR"
 					}
 				}
 				reserves=1
@@ -10951,17 +9528,6 @@
 				activate_production_methods={ "pm_sewing_machines" "pm_no_luxury_clothes" "pm_mechanized_looms" }
 			}
 			create_building={
-				building="building_school"
-				add_ownership={
-					country={
-						country="c:TUR"
-						levels=1
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_tno_scholastic_education" "pm_secular_academia" }
-			}
-			create_building={
 				building="building_food_industry"
 				add_ownership={
 					building={
@@ -10993,12 +9559,25 @@
 					building={
 						type="building_financial_district"
 						country="c:TUR"
-						levels=1
+						levels=2
 						region="STATE_ANKARA"
 					}
 				}
 				reserves=1
 				activate_production_methods={ "pm_steam_engines" "pm_automobiles_disabled" "pm_rotary_valve_engine_building_motor_industry" }
+			}
+			create_building={
+				building="building_war_machine_industry"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:TUR"
+						levels=2
+						region="STATE_ANKARA"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_aeroplane_production" }
 			}
 		}
 	}
@@ -11008,26 +9587,18 @@
 				building="building_lead_mine"
 				add_ownership={
 					building={
-						type="building_company_basic_metal_mining"
-						country="c:TUR"
-						levels=3
-						region="STATE_EASTERN_THRACE"
-					}
-					building={
 						type="building_financial_district"
 						country="c:TUR"
 						levels=1
 						region="STATE_WESTERN_THRACE"
 					}
-					building={
-						type="building_financial_district"
+					country={
 						country="c:TUR"
-						levels=4
-						region="STATE_ERZURUM"
+						levels=2
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_steam_donkey_mine" "pm_condensing_engine_pump_building_lead_mine" "pm_nitroglycerin_building_lead_mine" "pm_rail_transport_mine" }
+				activate_production_methods={ "pm_steam_donkey_mine" "pm_condensing_engine_pump_building_lead_mine" "pm_rail_transport_mine" "pm_dynamite_building_lead_mine" }
 			}
 			create_building={
 				building="building_logging_camp"
@@ -11079,66 +9650,15 @@
 				add_ownership={
 					country={
 						country="c:TUR"
-						levels=8
+						levels=18
 					}
 				}
 				reserves=1
 				activate_production_methods={ "pm_general_training" }
 			}
 			create_building={
-				building="building_cotton_plantation"
-				add_ownership={
-					building={
-						type="building_manor_house"
-						country="c:TUR"
-						levels=1
-						region="STATE_ERZURUM"
-					}
-					building={
-						type="building_manor_house"
-						country="c:TUR"
-						levels=1
-						region="STATE_AYDIN"
-					}
-					building={
-						type="building_manor_house"
-						country="c:TUR"
-						levels=2
-						region="STATE_ANKARA"
-					}
-				}
-				reserves=1
-				activate_production_methods={ "automatic_irrigation_building_cotton_plantation" "pm_steam_rail_transport" }
-			}
-			create_building={
-				building="building_paper_mills"
-				add_ownership={
-					country={
-						country="c:TUR"
-						levels=1
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_rotary_valve_engine_building_paper_mills" "pm_sulfite_pulping" }
-			}
-			create_building={
-				building="building_tooling_workshops"
-				add_ownership={
-					country={
-						country="c:TUR"
-						levels=2
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_rubber_grips" "pm_rotary_valve_engine_building_tooling_workshops" }
-			}
-			create_building={
 				building="building_small_workshop"
 				add_ownership={
-					country={
-						country="c:TUR"
-						levels=1
-					}
 					building={
 						type="building_financial_district"
 						country="c:TUR"
@@ -11161,37 +9681,12 @@
 				activate_production_methods={ "pm_steel_frame_buildings" }
 			}
 			create_building={
-				building="building_glassworks"
-				add_ownership={
-					building={
-						type="building_financial_district"
-						country="c:TUR"
-						levels=1
-						region="STATE_ERZURUM"
-					}
-					building={
-						type="building_financial_district"
-						country="c:TUR"
-						levels=1
-						region="STATE_EASTERN_THRACE"
-					}
-					building={
-						type="building_financial_district"
-						country="c:TUR"
-						levels=2
-						region="STATE_AYDIN"
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_crystal_glass" "pm_manual_glassblowing" "pm_ceramics" }
-			}
-			create_building={
 				building="building_motor_industry"
 				add_ownership={
 					building={
 						type="building_financial_district"
 						country="c:TUR"
-						levels=3
+						levels=1
 						region="STATE_AYDIN"
 					}
 				}
@@ -11282,25 +9777,6 @@
 				activate_production_methods={ "pm_condensing_engine_pump_building_iron_mine" "pm_dynamite_building_iron_mine" "pm_steam_donkey_mine" "pm_rail_transport_mine" }
 			}
 			create_building={
-				building="building_chemical_plants"
-				add_ownership={
-					building={
-						type="building_financial_district"
-						country="c:TUR"
-						levels=1
-						region="STATE_HUDAVENDIGAR"
-					}
-					building={
-						type="building_financial_district"
-						country="c:TUR"
-						levels=3
-						region="STATE_AYDIN"
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_improved_fertilizer" }
-			}
-			create_building={
 				building="building_steel_mills"
 				add_ownership={
 					building={
@@ -11400,7 +9876,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_rotary_valve_engine_building_furniture_manufacturies" "pm_no_luxuries" "pm_handcrafted_furniture" }
+				activate_production_methods={ "pm_rotary_valve_engine_building_furniture_manufacturies" "pm_no_luxuries" "pm_mechanized_workshops" }
 			}
 		}
 	}
@@ -11420,41 +9896,11 @@
 				activate_production_methods={ "pm_vacuum_evaporation" }
 			}
 			create_building={
-				building="building_munition_plants"
-				add_ownership={
-					country={
-						country="c:TUR"
-						levels=2
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_explosive_shells" "pm_rotary_valve_engine_building_munition_plants" }
-			}
-			create_building={
-				building="building_logging_camp"
-				add_ownership={
-					building={
-						type="building_company_basic_forestry"
-						country="c:TUR"
-						levels=7
-						region="STATE_ANKARA"
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_electric_saw_mills" "pm_rail_transport_building_logging_camp" "pm_steam_donkey_building_logging_camp" "pm_hardwood" }
-			}
-			create_building={
 				building="building_tooling_workshops"
 				add_ownership={
 					country={
 						country="c:TUR"
-						levels=3
-					}
-					building={
-						type="building_company_basic_metalworks"
-						country="c:TUR"
-						levels=3
-						region="STATE_ANKARA"
+						levels=4
 					}
 				}
 				subsidized=yes
@@ -11464,10 +9910,6 @@
 			create_building={
 				building="building_arms_industry"
 				add_ownership={
-					country={
-						country="c:TUR"
-						levels=1
-					}
 					building={
 						type="building_company_basic_metalworks"
 						country="c:TUR"
@@ -11485,43 +9927,6 @@
 				activate_production_methods={ "pm_rifles" "pm_rotary_valve_engine_building_arms_industry" }
 			}
 			create_building={
-				building="building_chemical_plants"
-				add_ownership={
-					building={
-						type="building_financial_district"
-						country="c:TUR"
-						levels=4
-						region="STATE_ANKARA"
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_improved_fertilizer" }
-			}
-			create_building={
-				building="building_steel_mills"
-				add_ownership={
-					country={
-						country="c:TUR"
-						levels=4
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_bessemer_process" "pm_rotary_valve_engine_building_steel_mills" }
-			}
-			create_building={
-				building="building_motor_industry"
-				add_ownership={
-					building={
-						type="building_financial_district"
-						country="c:TUR"
-						levels=10
-						region="STATE_ANKARA"
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_steam_engines" "pm_automobiles_disabled" "pm_rotary_valve_engine_building_motor_industry" }
-			}
-			create_building={
 				building="building_government_administration"
 				add_ownership={
 					country={
@@ -11536,15 +9941,9 @@
 				building="building_livestock_ranch"
 				add_ownership={
 					building={
-						type="building_manor_house"
-						country="c:TUR"
-						levels=1
-						region="STATE_ANKARA"
-					}
-					building={
 						type="building_livestock_ranch"
 						country="c:TUR"
-						levels=2
+						levels=1
 						region="STATE_ANKARA"
 					}
 				}
@@ -11552,27 +9951,8 @@
 				activate_production_methods={ "pm_slaughterhouses" "pm_sheep_farms" "pm_standard_fences" "pm_unrefrigerated" }
 			}
 			create_building={
-				building="building_tobacco_plantation"
-				add_ownership={
-					building={
-						type="building_manor_house"
-						country="c:TUR"
-						levels=2
-						region="STATE_ANKARA"
-					}
-				}
-				reserves=1
-				activate_production_methods={ "automatic_irrigation_building_tobacco_plantation" "pm_steam_rail_transport" }
-			}
-			create_building={
 				building="building_tea_plantation"
 				add_ownership={
-					building={
-						type="building_manor_house"
-						country="c:TUR"
-						levels=3
-						region="STATE_ANKARA"
-					}
 					building={
 						type="building_financial_district"
 						country="c:TUR"
@@ -11588,7 +9968,7 @@
 				add_ownership={
 					country={
 						country="c:TUR"
-						levels=18
+						levels=41
 					}
 				}
 				reserves=1
@@ -11613,68 +9993,12 @@
 					building={
 						type="building_wheat_farm"
 						country="c:TUR"
-						levels=10
-						region="STATE_ANKARA"
-					}
-					building={
-						type="building_company_basic_agriculture_1"
-						country="c:TUR"
-						levels=10
+						levels=5
 						region="STATE_ANKARA"
 					}
 				}
 				reserves=1
 				activate_production_methods={ "pm_fertilization" "pm_citrus_orchards" "pm_tools" }
-			}
-			create_building={
-				building="building_paper_mills"
-				add_ownership={
-					building={
-						type="building_financial_district"
-						country="c:TUR"
-						levels=1
-						region="STATE_EASTERN_THRACE"
-					}
-					country={
-						country="c:TUR"
-						levels=1
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_bleached_paper" "pm_rotary_valve_engine_building_paper_mills" }
-			}
-			create_building={
-				building="building_power_plant"
-				add_ownership={
-					building={
-						type="building_financial_district"
-						country="c:TUR"
-						levels=3
-						region="STATE_ANKARA"
-					}
-				}
-				subsidized=yes
-				reserves=1
-				activate_production_methods={ "pm_oil-fired_plant" }
-			}
-			create_building={
-				building="building_furniture_manufacturies"
-				add_ownership={
-					building={
-						type="building_financial_district"
-						country="c:TUR"
-						levels=4
-						region="STATE_ANKARA"
-					}
-					building={
-						type="building_financial_district"
-						country="c:TUR"
-						levels=1
-						region="STATE_KASTAMONU"
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_mechanized_workshops" "pm_no_luxuries" "pm_rotary_valve_engine_building_furniture_manufacturies" }
 			}
 			create_building={
 				building="building_glassworks"
@@ -11729,19 +10053,6 @@
 				activate_production_methods={ "pm_dye_production" "pm_rayon" }
 			}
 			create_building={
-				building="building_cotton_plantation"
-				add_ownership={
-					building={
-						type="building_manor_house"
-						country="c:TUR"
-						levels=12
-						region="STATE_ANKARA"
-					}
-				}
-				reserves=1
-				activate_production_methods={ "automatic_irrigation_building_cotton_plantation" "pm_steam_rail_transport" }
-			}
-			create_building={
 				building="building_electrics_industry"
 				add_ownership={
 					building={
@@ -11757,17 +10068,9 @@
 			create_building={
 				building="building_textile_mills"
 				add_ownership={
-					building={
-						type="building_financial_district"
+					country={
 						country="c:TUR"
-						levels=7
-						region="STATE_ANKARA"
-					}
-					building={
-						type="building_financial_district"
-						country="c:TUR"
-						levels=2
-						region="STATE_WESTERN_THRACE"
+						levels=4
 					}
 				}
 				reserves=1
@@ -11829,6 +10132,17 @@
 				reserves=1
 				activate_production_methods={ "automatic_irrigation_building_vineyard_plantation" "pm_steam_rail_transport" }
 			}
+			create_building={
+				building="building_paper_mills"
+				add_ownership={
+					country={
+						country="c:TUR"
+						levels=6
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_pulp_pressing" "pm_automation_disabled" }
+			}
 		}
 	}
 	s:STATE_KARS={
@@ -11841,12 +10155,6 @@
 						country="c:TUR"
 						levels=1
 						region="STATE_KARS"
-					}
-					building={
-						type="building_manor_house"
-						country="c:TUR"
-						levels=1
-						region="STATE_ANKARA"
 					}
 				}
 				reserves=1
@@ -11870,7 +10178,7 @@
 				add_ownership={
 					country={
 						country="c:TUR"
-						levels=8
+						levels=18
 					}
 				}
 				reserves=1
@@ -11945,17 +10253,6 @@
 				activate_production_methods={ "pm_telephones" "pm_radios" }
 			}
 			create_building={
-				building="building_paper_mills"
-				add_ownership={
-					country={
-						country="c:TUR"
-						levels=1
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_bleached_paper" "pm_rotary_valve_engine_building_paper_mills" }
-			}
-			create_building={
 				building="building_naval_base"
 				add_ownership={
 					country={
@@ -11999,6 +10296,12 @@
 						country="c:TUR"
 						levels=1
 						region="STATE_HUDAVENDIGAR"
+					}
+					building={
+						type="building_financial_district"
+						country="c:TUR"
+						levels=1
+						region="STATE_KASTAMONU"
 					}
 				}
 				reserves=1

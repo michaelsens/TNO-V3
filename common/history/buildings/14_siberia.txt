@@ -422,7 +422,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_open_air_stockyards" "pm_unrefrigerated" "pm_sheep_farms" "pm_electric_fencing" }
+				activate_production_methods={ "pm_open_air_stockyards" "pm_unrefrigerated" "pm_sheep_farms" "pm_barbed_wire_fences" }
 			}
 			create_building={
 				building="building_iron_mine"
@@ -435,7 +435,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_picks_and_shovels_building_iron_mine" "pm_nitroglycerin_building_iron_mine" "pm_no_steam_automation" "pm_rail_transport_mine" }
+				activate_production_methods={ "pm_picks_and_shovels_building_iron_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_rail_transport_mine" }
 			}
 			create_building={
 				building="building_coal_mine"
@@ -448,7 +448,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_rail_transport_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_condensing_engine_pump_building_coal_mine" }
+				activate_production_methods={ "pm_picks_and_shovels_building_coal_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_rail_transport_mine" }
 			}
 			create_building={
 				building="building_lead_mine"
@@ -538,7 +538,7 @@
 				add_ownership={
 					country={
 						country="c:ZLA"
-						levels=7
+						levels=5
 					}
 				}
 				reserves=1
@@ -947,7 +947,7 @@
 				add_ownership={
 					country={
 						country="c:NVB"
-						levels=4
+						levels=2
 					}
 				}
 				reserves=1
@@ -1262,7 +1262,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_handcrafted_furniture" "pm_no_luxuries" "pm_automation_disabled" }
+				activate_production_methods={ "pm_handcrafted_furniture" "pm_no_luxuries" "pm_watertube_boiler_building_furniture_manufacturies" }
 			}
 			create_building={
 				building="building_textile_mills"
@@ -1692,6 +1692,17 @@
 				reserves=1
 				activate_production_methods={ "pm_crude_tools" "pm_automation_disabled" }
 			}
+			create_building={
+				building="building_coal_mine"
+				add_ownership={
+					country={
+						country="c:TUV"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_picks_and_shovels_building_coal_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" }
+			}
 		}
 	}
 	s:STATE_TOBOLSK={
@@ -1840,7 +1851,7 @@
 				add_ownership={
 					country={
 						country="c:OSK"
-						levels=6
+						levels=4
 					}
 				}
 				reserves=1
@@ -1907,14 +1918,14 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_simple_farming" "pm_tools" "pm_apple_orchards" }
+				activate_production_methods={ "pm_apple_orchards" "pm_tools" "pm_soil_enriching_farming" }
 			}
 			create_building={
 				building="building_university"
 				add_ownership={
 					country={
 						country="c:WRS"
-						levels=3
+						levels=1
 					}
 				}
 				reserves=1
@@ -2673,7 +2684,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_improved_fertilizer" }
+				activate_production_methods={ "pm_artificial_fertilizers" }
 			}
 			create_building={
 				building="building_furniture_manufacturies"
@@ -2695,7 +2706,7 @@
 				add_ownership={
 					country={
 						country="c:AMR"
-						levels=2
+						levels=1
 					}
 				}
 				reserves=1
@@ -2868,7 +2879,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_steam_engines" "pm_automobiles_disabled" "pm_automation_disabled" }
+				activate_production_methods={ "pm_steam_engines" "pm_automobiles_disabled" "pm_watertube_boiler_building_motor_industry" }
 			}
 			create_building={
 				building="building_explosives_factory"
@@ -3349,7 +3360,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_tools" "pm_soil_enriching_farming" "pm_potatoes" }
+				activate_production_methods={ "pm_potatoes" "pm_tools_disabled" "pm_soil_enriching_farming" }
 			}
 			create_building={
 				building="building_tooling_workshops"
@@ -3371,7 +3382,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_road_carts" "pm_no_explosives" "pm_no_steam_automation" "pm_atmospheric_engine_pump_building_iron_mine" }
+				activate_production_methods={ "pm_picks_and_shovels_building_iron_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" }
 			}
 			create_building={
 				building="building_coal_mine"
@@ -3438,7 +3449,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_cannons" "pm_automation_disabled" }
+				activate_production_methods={ "pm_cannons" "pm_rotary_valve_engine_building_arms_industry" }
 			}
 			create_building={
 				building="building_lead_mine"
@@ -3449,7 +3460,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_rail_transport_mine" "pm_no_explosives" "pm_condensing_engine_pump_building_lead_mine" "pm_steam_donkey_mine" }
+				activate_production_methods={ "pm_picks_and_shovels_building_lead_mine" "pm_no_explosives" "pm_rail_transport_mine" "pm_steam_donkey_mine" }
 			}
 			create_building={
 				building="building_power_plant"
@@ -3569,7 +3580,7 @@
 					building={
 						type="building_financial_district"
 						country="c:IRK"
-						levels=2
+						levels=4
 						region="STATE_IRKUTSK"
 					}
 				}
@@ -3699,7 +3710,7 @@
 					building={
 						type="building_financial_district"
 						country="c:IRK"
-						levels=7
+						levels=9
 						region="STATE_IRKUTSK"
 					}
 				}
