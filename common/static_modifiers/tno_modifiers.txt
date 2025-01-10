@@ -10,11 +10,12 @@ modifier_advanced_economy = {
 	icon = gfx/interface/icons/tno_modifier_icons/modifier_money6.dds
 	state_middle_strata_standard_of_living_add = 2
 	state_lower_strata_standard_of_living_add = 2
-	building_group_bg_subsistence_agriculture_throughput_add = 0.75
+	building_group_bg_subsistence_agriculture_throughput_add = 0.70
 	state_birth_rate_mult = 0.05
 	state_mortality_mult = -0.35
 	political_movement_radicalism_from_enactment_disapproval_mult = -0.50
 	state_education_access_add = 0.05
+	country_peasants_pol_str_mult = -0.95
 }
 
 modifier_very_developed_economy = {
@@ -23,9 +24,10 @@ modifier_very_developed_economy = {
 	state_lower_strata_standard_of_living_add = 2
 	state_birth_rate_mult = 0.05
 	state_mortality_mult = -0.35
-	building_group_bg_subsistence_agriculture_throughput_add = 0.60
+	building_group_bg_subsistence_agriculture_throughput_add = 0.55
 	political_movement_radicalism_from_enactment_disapproval_mult = -0.40
 	state_education_access_add = 0.05
+	country_peasants_pol_str_mult = -0.95
 }
 
 modifier_developed_economy = {
@@ -34,9 +36,10 @@ modifier_developed_economy = {
 	state_lower_strata_standard_of_living_add = 1
 	state_birth_rate_mult = 0.10
 	state_mortality_mult = -0.20
-	building_group_bg_subsistence_agriculture_throughput_add = 0.30
+	building_group_bg_subsistence_agriculture_throughput_add = 0.25
 	political_movement_radicalism_from_enactment_disapproval_mult = -0.30
 	state_education_access_add = 0.05
+	country_peasants_pol_str_mult = -0.8
 }
 
 modifier_developing_economy = {
@@ -44,9 +47,10 @@ modifier_developing_economy = {
 	state_lower_strata_standard_of_living_add = 2
 	state_birth_rate_mult = 0.20
 	state_mortality_mult = -0.10
-	building_group_bg_subsistence_agriculture_throughput_add = -0.30
+	building_group_bg_subsistence_agriculture_throughput_add = -0.25
 	political_movement_radicalism_from_enactment_disapproval_mult = -0.20
 	state_education_access_add = 0.05
+	country_peasants_pol_str_mult = -0.65
 }
 
 modifier_undeveloped_economy = {
@@ -54,17 +58,19 @@ modifier_undeveloped_economy = {
 	state_lower_strata_standard_of_living_add = 2
 	state_birth_rate_mult = 0.35
 	state_mortality_mult = -0.05
-	building_group_bg_subsistence_agriculture_throughput_add = -0.60
+	building_group_bg_subsistence_agriculture_throughput_add = -0.55
 	political_movement_radicalism_from_enactment_disapproval_mult = -0.10
 	state_education_access_add = 0.05
+	country_peasants_pol_str_mult = -0.5
 }
 
 modifier_least_developed_economy = {
 	icon = gfx/interface/icons/tno_modifier_icons/modifier_money.1.dds
 	state_lower_strata_standard_of_living_add = 2
 	state_birth_rate_mult = 0.50
-	building_group_bg_subsistence_agriculture_throughput_add = -0.80
+	building_group_bg_subsistence_agriculture_throughput_add = -0.70
 	state_education_access_add = 0.05
+	country_peasants_pol_str_mult = -0.5
 	
 }
 
@@ -109,7 +115,7 @@ modifier_forgien_army = {
 	building_arms_industry_throughput_add = 0.20
 	country_legitimacy_base_add = -90
 	state_middle_standard_of_living_add = -5
-	state_poor_standard_of_living_add = -5
+	state_lower_strata_standard_of_living_add = -5
 	unit_army_offense_mult = 0.1
 	state_radicals_from_discrimination_mult = 0.75
 	interest_group_ig_armed_forces_pol_str_mult = 1
@@ -277,7 +283,7 @@ wont_fund_op = {
 
 slavery_dependence = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
-	state_poor_standard_of_living_add = -1
+	state_lower_strata_standard_of_living_add = -1
 	state_rich_standard_of_living_add = 1
 	state_pop_qualifications_mult = -0.1
 	state_poor_expected_sol = -1
@@ -791,7 +797,7 @@ masters_of_the_med = {
 
 atlantropa_disaster = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
-	state_poor_standard_of_living_add = -1
+	state_lower_strata_standard_of_living_add = -1
 	building_group_bg_agriculture_throughput_add = -0.15
 }
 
@@ -808,6 +814,7 @@ national_purity = {
 	state_mortality_turmoil_mult = 0.75
 	state_accepted_birth_rate_mult = 0.20
 	state_radicals_from_discrimination_mult = -0.3
+	country_acceptance_shared_heritage_trait_add = -20
 }
 
 shadow_state = {
@@ -1013,7 +1020,7 @@ two_state_solution = {
 
 oppresive_colonial_rule = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_negative.dds
-	state_poor_standard_of_living_add = -3
+	state_lower_strata_standard_of_living_add = -3
 }
 
 emergency_powers = {
@@ -1036,21 +1043,22 @@ empire_remnants = {
 fueled_by_hate = {
 	icon = gfx/interface/icons/tno_modifier_icons/omsk_shi.dds
 	country_infamy_generation_mult = 0.15
+	country_infamy_decay_mult = -0.25
 	country_legitimacy_base_add = -5
 	country_military_goods_cost_mult = -0.3
 	country_military_tech_research_speed_mult = 0.15
-	country_production_tech_research_speed_mult = -0.15
-	country_society_tech_research_speed_mult = -0.15
+	country_production_tech_research_speed_mult = -0.2
+	country_society_tech_research_speed_mult = -0.3
 	unit_devastation_mult = 0.25
 	unit_kill_rate_add = 0.1
-	unit_morale_recovery_mult = 0.15
+	unit_morale_recovery_mult = 0.2
 	building_mobilization_cost_mult = -0.2
 	state_conscription_rate_mult = 0.45
 	interest_group_ig_armed_forces_pol_str_mult = 0.75
 	interest_group_ig_armed_forces_pop_attraction_mult = 0.8
 	country_officers_pol_str_mult = 0.7
 	country_soldiers_pol_str_mult = 0.25
-	battle_casualties_mult = 0.1
+	battle_casualties_mult = 0.2
 	building_minimum_wage_mult = -0.2
 }
 
@@ -1095,6 +1103,7 @@ nothing_to_lose = {
 	state_mortality_turmoil_mult = 0.6
 	country_war_exhaustion_casualties_mult = -0.75
 	state_rich_standard_of_living_add = -4
+	unit_morale_loss_mult = -0.3
 }
 
 veterans = {
@@ -1103,9 +1112,9 @@ veterans = {
 	interest_group_ig_armed_forces_pop_attraction_mult = 0.75
 	unit_army_defense_mult = 0.15
 	country_military_wages_mult = 0.33
-	building_mobilization_cost_mult = 0.2
+	building_mobilization_cost_mult = -0.2
 	unit_army_offense_mult = 0.05
-	unit_morale_loss_mult = -0.1
+	unit_morale_loss_mult = -0.2
 	country_officers_pol_str_mult = 0.9
 	country_soldiers_pol_str_mult = 0.5
 }
@@ -1119,7 +1128,7 @@ frozen_wasteland = {
 
 soviet_successors = {
 	icon = gfx/interface/icons/tno_modifier_icons/modifier_soviet_suc.dds
-	country_legitimacy_base_add = 15
+	country_legitimacy_base_add = 5
 	country_authority_mult = 0.1
 	country_war_exhaustion_casualties_mult = -0.25
 	country_prestige_mult = 0.1
@@ -1332,7 +1341,7 @@ reformed_oas = {
 rapid_industrialization = {
 	icon = gfx/interface/icons/tno_modifier_icons/rapid_ind_bra.dds
 	state_construction_mult = 0.2
-	state_poor_standard_of_living_add = -3
+	state_lower_strata_standard_of_living_add = -1
 	building_minimum_wage_mult = -0.15
 	state_pop_qualifications_mult = -0.15
 	building_group_bg_manufacturing_throughput_add = 0.1
@@ -1547,7 +1556,7 @@ kingdom_of_black_gold = {
 	building_group_bg_agriculture_throughput_add = -0.15
 	building_group_bg_oil_extraction_throughput_add = 0.10
 	building_group_bg_manufacturing_throughput_add = -0.15
-	state_poor_standard_of_living_add = 1
+	state_lower_strata_standard_of_living_add = 1
 }
 
 the_imperial_guard = {
@@ -1566,7 +1575,7 @@ mosaddeghs_legacy = {
 deutsch_persische_oelgesellschaft = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
 	building_group_bg_oil_extraction_throughput_add = 0.05
-	state_poor_standard_of_living_add = -2
+	state_lower_strata_standard_of_living_add = -2
 	building_minimum_wage_mult = -0.05
 	country_resource_discovery_chance_mult = 0.1
 	country_prestige_mult = -0.1
@@ -1615,7 +1624,7 @@ oil_crisis_global = {
 	country_legitimacy_base_add = -15
 	building_throughput_add = -0.1
 	state_middle_standard_of_living_add	= -2
-	state_poor_standard_of_living_add = -1
+	state_lower_strata_standard_of_living_add = -1
 }
 
 oil_crisis_ger = {
@@ -1625,7 +1634,7 @@ oil_crisis_ger = {
 	country_authority_add = -200
 	building_throughput_add = -0.15
 	state_middle_standard_of_living_add	= -2
-	state_poor_standard_of_living_add = -1
+	state_lower_strata_standard_of_living_add = -1
 }
 
 oil_crisis_jap = {
@@ -1635,7 +1644,7 @@ oil_crisis_jap = {
 	country_legitimacy_base_add = -20
 	building_throughput_add = -0.15
 	state_middle_standard_of_living_add	= -2
-	state_poor_standard_of_living_add = -1
+	state_lower_strata_standard_of_living_add = -1
 }
 
 oil_crisis_usa = {
@@ -1643,7 +1652,7 @@ oil_crisis_usa = {
 	state_radicals_from_sol_change_mult = 0.15
 	country_legitimacy_base_add = -10
 	state_middle_standard_of_living_add	= -1
-	state_poor_standard_of_living_add = -1
+	state_lower_strata_standard_of_living_add = -1
 	building_throughput_add = -0.05
 }
 
@@ -1680,7 +1689,7 @@ ran_out_of_oil = {
 	state_construction_mult = -0.75
 	building_throughput_add = -0.35
 	state_middle_standard_of_living_add	= -3
-	state_poor_standard_of_living_add = -2
+	state_lower_strata_standard_of_living_add = -2
 }
 
 ration_oil_supply = {
@@ -1909,4 +1918,45 @@ tno_ru_irk_buff_playable = {
 rk_german_colonization = {
 	icon = "gfx/interface/icons/invention_icons/stormtroopers.dds"
 	country_secession_progress_mult = -10000
+	country_acceptance_shared_heritage_trait_add = -20
+	state_lower_strata_standard_of_living_add = -3
+}
+
+The_Salons = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_positive.dds
+	state_radicals_from_sol_change_mult = -0.3
+	state_radicals_from_discrimination_mult = -0.2
+	country_weekly_innovation_mult = 0.10
+	country_weekly_innovation_max_add = 10
+	state_education_access_add = 0.10
+	country_legitimacy_base_add = 10
+	state_pop_pol_str_add = 1
+	country_voting_power_base_add = 20
+}
+
+Defence_Of_The_Republic = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
+	unit_defense_mult = 0.20
+	unit_morale_recovery_mult = 0.15
+	unit_morale_loss_mult = -0.15
+}
+
+Disportionate_Population = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_Negative.dds
+	state_birth_rate_mult = 0.10
+	state_radicals_from_sol_change_mult = 0.05
+}
+
+The_Siberian_Army = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
+	unit_morale_loss_mult = -0.15
+	unit_morale_recovery_mult = 0.15
+	state_conscription_rate_mult = -0.20
+}
+
+Legacy_Of_The_Siberian_Plan = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_positive.dds
+	state_pop_qualifications_mult = 0.1
+	state_construction_mult = 0.10
+	building_group_bg_heavy_industry_throughput_add = 0.05
 }
