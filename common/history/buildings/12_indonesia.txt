@@ -33,7 +33,7 @@
 					building={
 						type="building_company_basic_agriculture_2"
 						country="c:JOH"
-						levels=5
+						levels=3
 						region="STATE_MALAYA"
 					}
 				}
@@ -114,6 +114,18 @@
 						country="c:JAP"
 						levels=1
 						region="STATE_PYONGYANG"
+					}
+					building={
+						type="building_financial_district"
+						country="c:JOH"
+						levels=1
+						region="STATE_MALAYA"
+					}
+					building={
+						type="building_manor_house"
+						country="c:JOH"
+						levels=2
+						region="STATE_MALAYA"
 					}
 				}
 				reserves=1
@@ -256,7 +268,7 @@
 					building={
 						type="building_manor_house"
 						country="c:JOH"
-						levels=2
+						levels=1
 						region="STATE_MALAYA"
 					}
 				}
@@ -438,6 +450,13 @@
 				reserves=1
 				activate_production_methods={ "pm_tno_philosophy_department" "pm_religious_academia" }
 			}
+			create_building={
+				building="building_power_plant"
+				add_ownership={
+				}
+				reserves=1
+				activate_production_methods={ "pm_oil-fired_plant" }
+			}
 		}
 	}
 	s:STATE_NORTH_BORNEO={
@@ -578,7 +597,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_rail_transport_building_logging_camp" "pm_electric_saw_mills" "pm_steam_donkey_building_logging_camp" "pm_hardwood" }
+				activate_production_methods={ "pm_rail_transport_building_logging_camp" "pm_steam_donkey_building_logging_camp" "pm_electric_saw_mills" "pm_hardwood" }
 			}
 			create_building={
 				building="building_rubber_plantation"
@@ -1339,6 +1358,12 @@
 						levels=1
 						region="STATE_WEST_JAVA"
 					}
+					building={
+						type="building_manor_house"
+						country="c:JAP"
+						levels=1
+						region="STATE_CHUBU"
+					}
 				}
 				reserves=1
 				activate_production_methods={ "default_building_sugar_plantation" "pm_road_carts" }
@@ -2040,9 +2065,15 @@
 						levels=1
 						region="STATE_WEST_JAVA"
 					}
+					building={
+						type="building_financial_district"
+						country="c:JAP"
+						levels=7
+						region="STATE_KANTO"
+					}
 				}
 				reserves=1
-				activate_production_methods={ "automatic_irrigation_building_rubber_plantation" "pm_road_carts" }
+				activate_production_methods={ "pm_road_carts" "automatic_irrigation_building_rubber_plantation" }
 			}
 		}
 	}
@@ -2141,7 +2172,7 @@
 					building={
 						type="building_manor_house"
 						country="c:JAP"
-						levels=3
+						levels=9
 						region="STATE_KANTO"
 					}
 				}
@@ -2305,7 +2336,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_road_carts" "automatic_irrigation_building_rubber_plantation" }
+				activate_production_methods={ "automatic_irrigation_building_rubber_plantation" "pm_road_carts" }
 			}
 			create_building={
 				building="building_paper_mills"
@@ -2612,6 +2643,18 @@
 						levels=1
 						region="STATE_EAST_BORNEO"
 					}
+					building={
+						type="building_financial_district"
+						country="c:JAP"
+						levels=9
+						region="STATE_KANTO"
+					}
+					building={
+						type="building_financial_district"
+						country="c:JAP"
+						levels=4
+						region="STATE_CHUGOKU"
+					}
 				}
 				reserves=1
 				activate_production_methods={ "automatic_irrigation_building_rubber_plantation" "pm_road_carts" }
@@ -2889,14 +2932,6 @@
 				reserves=1
 				activate_production_methods={ "pm_traditional_art" "pm_traditional_patronage" "pm_freedom_of_movement_no_effect" }
 			}
-			create_building={
-				building="building_railway"
-				add_ownership={
-				}
-				subsidized=no
-				reserves=1
-				activate_production_methods={ "pm_steam_trains" "pm_no_passenger_trains" }
-			}
 		}
 	}
 	s:STATE_ACEH={
@@ -3012,6 +3047,12 @@
 						levels=4
 						region="STATE_WEST_JAVA"
 					}
+					building={
+						type="building_financial_district"
+						country="c:IDN"
+						levels=9
+						region="STATE_EAST_BORNEO"
+					}
 				}
 				reserves=1
 				activate_production_methods={ "pm_steam_derricks" "pm_road_carts" }
@@ -3027,7 +3068,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_dynamite_building_iron_mine" "pm_steam_donkey_mine" "pm_road_carts" "pm_condensing_engine_pump_building_iron_mine" }
+				activate_production_methods={ "pm_steam_donkey_mine" "pm_road_carts" "pm_dynamite_building_iron_mine" "pm_condensing_engine_pump_building_iron_mine" }
 			}
 			create_building={
 				building="building_naval_base"
@@ -3552,6 +3593,12 @@
 						levels=1
 						region="STATE_KANSAI"
 					}
+					building={
+						type="building_manor_house"
+						country="c:JAP"
+						levels=1
+						region="STATE_KYUSHU"
+					}
 				}
 				reserves=1
 				activate_production_methods={ "pm_steam_whaling_ships" "pm_unrefrigerated" }
@@ -3688,6 +3735,12 @@
 						country="c:JAP"
 						levels=1
 						region="STATE_KANSAI"
+					}
+					building={
+						type="building_financial_district"
+						country="c:JAP"
+						levels=3
+						region="STATE_KANTO"
 					}
 				}
 				reserves=1
@@ -4324,7 +4377,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_rail_transport_mine" "pm_condensing_engine_pump_building_iron_mine" "pm_steam_donkey_mine" "pm_dynamite_building_iron_mine" }
+				activate_production_methods={ "pm_rail_transport_mine" "pm_steam_donkey_mine" "pm_condensing_engine_pump_building_iron_mine" "pm_dynamite_building_iron_mine" }
 			}
 			create_building={
 				building="building_naval_base"
@@ -4605,7 +4658,7 @@
 					building={
 						type="building_financial_district"
 						country="c:PHI"
-						levels=7
+						levels=8
 						region="STATE_LUZON"
 					}
 				}
@@ -4904,7 +4957,7 @@
 					building={
 						type="building_sugar_plantation"
 						country="c:PHC"
-						levels=7
+						levels=8
 						region="STATE_LUZON"
 					}
 				}
@@ -4999,7 +5052,7 @@
 					building={
 						type="building_financial_district"
 						country="c:PHC"
-						levels=1
+						levels=2
 						region="STATE_LUZON"
 					}
 				}
@@ -5411,6 +5464,19 @@
 				reserves=1
 				activate_production_methods={ "pm_industrial_port" }
 			}
+			create_building={
+				building="building_whaling_station"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:JAP"
+						levels=1
+						region="STATE_KANTO"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_steam_whaling_ships" "pm_unrefrigerated" }
+			}
 		}
 	}
 	s:STATE_NAURU={
@@ -5426,9 +5492,24 @@
 				reserves=1
 				activate_production_methods={ "pm_industrial_port" }
 			}
+			create_building={
+				building="building_whaling_station"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:JAP"
+						levels=1
+						region="STATE_TOHOKU"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_steam_whaling_ships" "pm_unrefrigerated" }
+			}
 		}
 	}
 	s:STATE_FIJI={
+		region_state:FJI={
+		}
 	}
 	s:STATE_VANUATU={
 		region_state:JAP={
@@ -5545,6 +5626,19 @@
 				reserves=1
 				activate_production_methods={ "pm_industrial_port" }
 			}
+			create_building={
+				building="building_whaling_station"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:JAP"
+						levels=1
+						region="STATE_KYUSHU"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_steam_whaling_ships" "pm_unrefrigerated" }
+			}
 		}
 	}
 	s:STATE_TAHITI={
@@ -5552,9 +5646,11 @@
 			create_building={
 				building="building_rice_farm"
 				add_ownership={
-					country={
+					building={
+						type="building_rice_farm"
 						country="c:USA"
 						levels=1
+						region="STATE_TAHITI"
 					}
 				}
 				reserves=1
@@ -5602,6 +5698,17 @@
 				}
 				reserves=1
 				activate_production_methods={ "automatic_irrigation_building_banana_plantation" "pm_road_carts" }
+			}
+			create_building={
+				building="building_railway"
+				add_ownership={
+					country={
+						country="c:USA"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_steam_trains" "pm_wooden_passenger_carriages" }
 			}
 		}
 	}

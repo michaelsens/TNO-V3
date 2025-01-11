@@ -1203,7 +1203,7 @@
 					building={
 						type="building_financial_district"
 						country="c:HAI"
-						levels=3
+						levels=4
 						region="STATE_HAITI"
 					}
 				}
@@ -1296,7 +1296,7 @@
 					building={
 						type="building_manor_house"
 						country="c:HAI"
-						levels=2
+						levels=3
 						region="STATE_HAITI"
 					}
 				}
@@ -1517,7 +1517,7 @@
 					building={
 						type="building_financial_district"
 						country="c:HAI"
-						levels=1
+						levels=2
 						region="STATE_HAITI"
 					}
 				}
@@ -1537,6 +1537,30 @@
 				}
 				reserves=1
 				activate_production_methods={ "pm_muskets" "pm_automation_disabled" }
+			}
+			create_building={
+				building="building_power_plant"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:HAI"
+						levels=1
+						region="STATE_HAITI"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_hydroelectric_plant" }
+			}
+			create_building={
+				building="building_university"
+				add_ownership={
+					country={
+						country="c:HAI"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_scholastic_education" "pm_religious_academia" "pm_freedom_of_movement_no_effect" }
 			}
 		}
 	}
@@ -1769,9 +1793,11 @@
 			create_building={
 				building="building_tobacco_plantation"
 				add_ownership={
-					country={
+					building={
+						type="building_manor_house"
 						country="c:USA"
 						levels=3
+						region="STATE_IOWA"
 					}
 				}
 				reserves=1
@@ -1867,7 +1893,6 @@
 						region="STATE_NEW_YORK"
 					}
 				}
-				subsidized=no
 				reserves=1
 				activate_production_methods={ "pm_steam_trains" "pm_wooden_passenger_carriages" }
 			}
@@ -2135,18 +2160,24 @@
 					building={
 						type="building_rice_farm"
 						country="c:CUB"
-						levels=12
+						levels=15
 						region="STATE_CUBA"
 					}
 					building={
 						type="building_manor_house"
 						country="c:CUB"
-						levels=11
+						levels=12
 						region="STATE_CUBA"
 					}
 					country={
 						country="c:CUB"
 						levels=7
+					}
+					building={
+						type="building_financial_district"
+						country="c:CUB"
+						levels=2
+						region="STATE_CUBA"
 					}
 				}
 				reserves=1
@@ -2279,7 +2310,7 @@
 					building={
 						type="building_financial_district"
 						country="c:CUB"
-						levels=2
+						levels=3
 						region="STATE_CUBA"
 					}
 				}
