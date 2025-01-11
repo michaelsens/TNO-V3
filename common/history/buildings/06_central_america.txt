@@ -838,7 +838,7 @@
 					building={
 						type="building_company_basic_forestry"
 						country="c:PNM"
-						levels=4
+						levels=1
 						region="STATE_PANAMA"
 					}
 					building={
@@ -863,7 +863,7 @@
 					building={
 						type="building_manor_house"
 						country="c:PNM"
-						levels=3
+						levels=2
 						region="STATE_PANAMA"
 					}
 					building={
@@ -1136,6 +1136,12 @@
 						levels=1
 						region="STATE_MASSACHUSETTS"
 					}
+					building={
+						type="building_financial_district"
+						country="c:USA"
+						levels=2
+						region="STATE_MICHIGAN"
+					}
 				}
 				reserves=1
 				activate_production_methods={ "pm_road_carts" "automatic_irrigation_building_coffee_plantation" }
@@ -1161,7 +1167,7 @@
 					building={
 						type="building_manor_house"
 						country="c:HAI"
-						levels=3
+						levels=4
 						region="STATE_HAITI"
 					}
 					building={
@@ -1197,7 +1203,7 @@
 					building={
 						type="building_financial_district"
 						country="c:HAI"
-						levels=2
+						levels=3
 						region="STATE_HAITI"
 					}
 				}
@@ -1209,7 +1215,7 @@
 				add_ownership={
 					country={
 						country="c:HAI"
-						levels=60
+						levels=100
 					}
 				}
 				reserves=1
@@ -1257,6 +1263,12 @@
 						country="c:HAI"
 						levels=1
 					}
+					building={
+						type="building_financial_district"
+						country="c:HAI"
+						levels=1
+						region="STATE_HAITI"
+					}
 				}
 				reserves=1
 				activate_production_methods={ "pm_cannons" "pm_automation_disabled" }
@@ -1280,6 +1292,12 @@
 					country={
 						country="c:HAI"
 						levels=2
+					}
+					building={
+						type="building_manor_house"
+						country="c:HAI"
+						levels=2
+						region="STATE_HAITI"
 					}
 				}
 				reserves=1
@@ -1309,6 +1327,12 @@
 						type="building_company_basic_forestry"
 						country="c:HAI"
 						levels=5
+						region="STATE_HAITI"
+					}
+					building={
+						type="building_financial_district"
+						country="c:HAI"
+						levels=1
 						region="STATE_HAITI"
 					}
 				}
@@ -1477,9 +1501,42 @@
 						country="c:HAI"
 						levels=1
 					}
+					building={
+						type="building_financial_district"
+						country="c:HAI"
+						levels=1
+						region="STATE_HAITI"
+					}
 				}
 				reserves=1
 				activate_production_methods={ "pm_small_workshop" }
+			}
+			create_building={
+				building="building_railway"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:HAI"
+						levels=1
+						region="STATE_HAITI"
+					}
+				}
+				subsidized=no
+				reserves=1
+				activate_production_methods={ "pm_early_trains" "pm_no_passenger_trains" }
+			}
+			create_building={
+				building="building_arms_industry"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:HAI"
+						levels=3
+						region="STATE_HAITI"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_muskets" "pm_automation_disabled" }
 			}
 		}
 	}
@@ -1910,18 +1967,14 @@
 					building={
 						type="building_rice_farm"
 						country="c:CAN"
-						levels=1
+						levels=2
 						region="STATE_BAHAMAS"
 					}
 					building={
 						type="building_manor_house"
 						country="c:CAN"
 						levels=1
-						region="STATE_ONTARIO"
-					}
-					country={
-						country="c:CAN"
-						levels=1
+						region="STATE_QUEBEC"
 					}
 				}
 				reserves=1
@@ -1991,13 +2044,28 @@
 			create_building={
 				building="building_power_plant"
 				add_ownership={
-					country={
+					building={
+						type="building_financial_district"
 						country="c:CAN"
 						levels=1
+						region="STATE_ONTARIO"
 					}
 				}
 				reserves=1
 				activate_production_methods={ "pm_oil-fired_plant" }
+			}
+			create_building={
+				building="building_food_industry"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:CAN"
+						levels=1
+						region="STATE_ONTARIO"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_baking_powder" "pm_disabled_canning" "pm_disabled_distillery" "pm_manual_dough_processing" }
 			}
 		}
 	}
@@ -2050,12 +2118,6 @@
 					building={
 						type="building_company_basic_forestry"
 						country="c:CUB"
-						levels=6
-						region="STATE_CUBA"
-					}
-					building={
-						type="building_financial_district"
-						country="c:CUB"
 						levels=1
 						region="STATE_CUBA"
 					}
@@ -2071,21 +2133,15 @@
 				building="building_rice_farm"
 				add_ownership={
 					building={
-						type="building_company_basic_agriculture_2"
-						country="c:CUB"
-						levels=1
-						region="STATE_CUBA"
-					}
-					building={
 						type="building_rice_farm"
 						country="c:CUB"
-						levels=11
+						levels=12
 						region="STATE_CUBA"
 					}
 					building={
 						type="building_manor_house"
 						country="c:CUB"
-						levels=9
+						levels=11
 						region="STATE_CUBA"
 					}
 					country={
@@ -2108,7 +2164,7 @@
 					building={
 						type="building_manor_house"
 						country="c:CUB"
-						levels=11
+						levels=13
 						region="STATE_CUBA"
 					}
 					country={
@@ -2269,7 +2325,7 @@
 					building={
 						type="building_financial_district"
 						country="c:CUB"
-						levels=2
+						levels=3
 						region="STATE_CUBA"
 					}
 					country={
@@ -2299,7 +2355,7 @@
 					building={
 						type="building_financial_district"
 						country="c:CUB"
-						levels=2
+						levels=3
 						region="STATE_CUBA"
 					}
 					country={

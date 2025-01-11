@@ -6,7 +6,7 @@
 				add_ownership={
 					country={
 						country="c:RKO"
-						levels=1
+						levels=3
 					}
 				}
 				reserves=1
@@ -31,6 +31,12 @@
 						country="c:RKO"
 						levels=1
 						region="STATE_COURLAND"
+					}
+					building={
+						type="building_financial_district"
+						country="c:RKO"
+						levels=7
+						region="STATE_TALINN"
 					}
 				}
 				reserves=1
@@ -90,6 +96,12 @@
 						levels=1
 						region="STATE_VITEBSK"
 					}
+					building={
+						type="building_financial_district"
+						country="c:RKO"
+						levels=1
+						region="STATE_TALINN"
+					}
 				}
 				reserves=1
 				activate_production_methods={ "pm_manual_glassblowing" "pm_disabled_ceramics" "pm_crystal_glass" }
@@ -102,6 +114,12 @@
 						country="c:RKO"
 						levels=1
 						region="STATE_RIGA"
+					}
+					building={
+						type="building_financial_district"
+						country="c:RKO"
+						levels=1
+						region="STATE_TALINN"
 					}
 				}
 				reserves=1
@@ -133,7 +151,7 @@
 					building={
 						type="building_financial_district"
 						country="c:RKO"
-						levels=1
+						levels=2
 						region="STATE_BREST"
 					}
 				}
@@ -146,7 +164,7 @@
 					building={
 						type="building_financial_district"
 						country="c:RKO"
-						levels=1
+						levels=2
 						region="STATE_BREST"
 					}
 				}
@@ -165,6 +183,26 @@
 				}
 				reserves=1
 				activate_production_methods={ "pm_bessemer_process" "pm_rotary_valve_engine_building_steel_mills" }
+			}
+			create_building={
+				building="building_tooling_workshops"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:RKO"
+						levels=1
+						region="STATE_BREST"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_rubber_grips" "pm_rotary_valve_engine_building_tooling_workshops" }
+			}
+			create_building={
+				building="building_military_shipyards"
+				add_ownership={
+				}
+				reserves=1
+				activate_production_methods={ "pm_military_shipbuilding_steam" }
 			}
 		}
 	}
@@ -337,6 +375,17 @@
 				}
 				reserves=1
 				activate_production_methods={ "pm_iron_frame_buildings" }
+			}
+			create_building={
+				building="building_university"
+				add_ownership={
+					country={
+						country="c:RKO"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_philosophy_department" "pm_religious_academia" "pm_freedom_of_movement_no_effect" }
 			}
 		}
 	}
@@ -516,11 +565,28 @@
 				activate_production_methods={ "pm_bessemer_process" "pm_rotary_valve_engine_building_steel_mills" }
 			}
 			create_building={
-				building="building_textile_mills"
+				building="building_arms_industry"
 				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:RKO"
+						levels=1
+						region="STATE_VITEBSK"
+					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_sewing_machines" "pm_no_luxury_clothes" "pm_mechanized_looms" }
+				activate_production_methods={ "pm_rifles" "pm_rotary_valve_engine_building_arms_industry" }
+			}
+			create_building={
+				building="building_port"
+				add_ownership={
+					country={
+						country="c:RKO"
+						levels=2
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_industrial_port" }
 			}
 		}
 	}
@@ -763,7 +829,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_rotary_valve_engine_building_arms_industry" "pm_rifles" }
+				activate_production_methods={ "pm_rifles" "pm_rotary_valve_engine_building_arms_industry" }
 			}
 			create_building={
 				building="building_logging_camp"
@@ -992,6 +1058,37 @@
 				}
 				reserves=1
 				activate_production_methods={ "pm_philosophy_department" "pm_religious_academia" "pm_freedom_of_movement_no_effect" }
+			}
+			create_building={
+				building="building_port"
+				add_ownership={
+					country={
+						country="c:RKO"
+						levels=2
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_industrial_port" }
+			}
+			create_building={
+				building="building_steel_mills"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:RKO"
+						levels=1
+						region="STATE_KAUNAS"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_bessemer_process" "pm_rotary_valve_engine_building_steel_mills" }
+			}
+			create_building={
+				building="building_motor_industry"
+				add_ownership={
+				}
+				reserves=1
+				activate_production_methods={ "pm_steam_engines" "pm_automobiles_disabled" "pm_rotary_valve_engine_building_motor_industry" }
 			}
 		}
 	}
@@ -1432,6 +1529,12 @@
 						levels=1
 						region="STATE_KUOPIO"
 					}
+					building={
+						type="building_financial_district"
+						country="c:FIN"
+						levels=1
+						region="STATE_OSTROBOTHNIA"
+					}
 				}
 				reserves=1
 				activate_production_methods={ "pm_potatoes" "pm_soil_enriching_farming" "pm_tools" }
@@ -1563,6 +1666,12 @@
 						levels=2
 						region="STATE_UUSIMAA"
 					}
+					building={
+						type="building_financial_district"
+						country="c:FIN"
+						levels=2
+						region="STATE_OSTROBOTHNIA"
+					}
 				}
 				reserves=1
 				activate_production_methods={ "pm_simple_fishing" "pm_unrefrigerated" }
@@ -1595,9 +1704,11 @@
 			create_building={
 				building="building_steel_mills"
 				add_ownership={
-					country={
-						country="c:GER"
+					building={
+						type="building_financial_district"
+						country="c:FIN"
 						levels=1
+						region="STATE_UUSIMAA"
 					}
 				}
 				reserves=1
@@ -1608,7 +1719,7 @@
 				add_ownership={
 					country={
 						country="c:FIN"
-						levels=4
+						levels=8
 					}
 				}
 				reserves=1
@@ -1671,6 +1782,12 @@
 						country="c:SWE"
 						levels=1
 						region="STATE_SVEALAND"
+					}
+					building={
+						type="building_financial_district"
+						country="c:FIN"
+						levels=1
+						region="STATE_UUSIMAA"
 					}
 				}
 				reserves=1
@@ -1780,18 +1897,11 @@
 				add_ownership={
 					country={
 						country="c:FIN"
-						levels=9
+						levels=21
 					}
 				}
 				reserves=1
 				activate_production_methods={ "pm_general_training" }
-			}
-			create_building={
-				building="building_small_workshop"
-				add_ownership={
-				}
-				reserves=1
-				activate_production_methods={ "pm_small_workshop" }
 			}
 		}
 	}
@@ -1877,7 +1987,7 @@
 				add_ownership={
 					country={
 						country="c:FIN"
-						levels=7
+						levels=15
 					}
 				}
 				reserves=1
@@ -1897,6 +2007,12 @@
 						country="c:FIN"
 						levels=1
 						region="STATE_OSTROBOTHNIA"
+					}
+					building={
+						type="building_financial_district"
+						country="c:FIN"
+						levels=2
+						region="STATE_WEST_KARELIA"
 					}
 				}
 				reserves=1
@@ -1951,13 +2067,13 @@
 					building={
 						type="building_livestock_ranch"
 						country="c:FIN"
-						levels=1
+						levels=3
 						region="STATE_WEST_KARELIA"
 					}
 					building={
 						type="building_manor_house"
 						country="c:FIN"
-						levels=1
+						levels=3
 						region="STATE_UUSIMAA"
 					}
 				}
@@ -2093,6 +2209,12 @@
 					country={
 						country="c:FIN"
 						levels=1
+					}
+					building={
+						type="building_financial_district"
+						country="c:FIN"
+						levels=3
+						region="STATE_WEST_KARELIA"
 					}
 				}
 				reserves=1
@@ -2262,6 +2384,12 @@
 						country="c:FIN"
 						levels=1
 					}
+					building={
+						type="building_financial_district"
+						country="c:FIN"
+						levels=3
+						region="STATE_OSTROBOTHNIA"
+					}
 				}
 				reserves=1
 				activate_production_methods={ "pm_small_workshop" }
@@ -2276,6 +2404,12 @@
 					country={
 						country="c:FIN"
 						levels=5
+					}
+					building={
+						type="building_financial_district"
+						country="c:FIN"
+						levels=2
+						region="STATE_UUSIMAA"
 					}
 				}
 				subsidized=yes
@@ -2517,7 +2651,7 @@
 					building={
 						type="building_manor_house"
 						country="c:FIN"
-						levels=2
+						levels=3
 						region="STATE_OSTROBOTHNIA"
 					}
 				}
@@ -2739,7 +2873,7 @@
 					building={
 						type="building_financial_district"
 						country="c:FIN"
-						levels=3
+						levels=4
 						region="STATE_OULU"
 					}
 				}
@@ -2752,7 +2886,7 @@
 					building={
 						type="building_financial_district"
 						country="c:FIN"
-						levels=1
+						levels=4
 						region="STATE_OULU"
 					}
 				}
@@ -3814,10 +3948,6 @@
 						levels=1
 						region="STATE_RHINELAND"
 					}
-					country={
-						country="c:GER"
-						levels=2
-					}
 					building={
 						type="building_manor_house"
 						country="c:GER"
@@ -3835,6 +3965,12 @@
 						country="c:GER"
 						levels=1
 						region="STATE_SILESIA"
+					}
+					building={
+						type="building_financial_district"
+						country="c:GER"
+						levels=2
+						region="STATE_RUHR"
 					}
 				}
 				reserves=1
@@ -3925,6 +4061,18 @@
 						levels=1
 						region="STATE_BREST"
 					}
+					building={
+						type="building_manor_house"
+						country="c:RKU"
+						levels=1
+						region="STATE_CHERSON"
+					}
+					building={
+						type="building_manor_house"
+						country="c:RKU"
+						levels=3
+						region="STATE_MINSK"
+					}
 				}
 				reserves=1
 				activate_production_methods={ "pm_soil_enriching_farming" "pm_tools" "pm_potatoes" }
@@ -4004,6 +4152,19 @@
 				reserves=1
 				activate_production_methods={ "pm_rubber_grips" "pm_rotary_valve_engine_building_tooling_workshops" }
 			}
+			create_building={
+				building="building_logging_camp"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:RKU"
+						levels=1
+						region="STATE_KHARKOV"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_steam_donkey_building_logging_camp" "pm_electric_saw_mills" "pm_hardwood" "pm_rail_transport_building_logging_camp" }
+			}
 		}
 		region_state:GER={
 			create_building={
@@ -4025,7 +4186,6 @@
 						levels=1
 					}
 				}
-				subsidized=yes
 				reserves=1
 				activate_production_methods={ "pm_oil-fired_plant" }
 			}
@@ -4243,8 +4403,14 @@
 					building={
 						type="building_financial_district"
 						country="c:RKO"
-						levels=1
+						levels=9
 						region="STATE_BREST"
+					}
+					building={
+						type="building_financial_district"
+						country="c:RKO"
+						levels=3
+						region="STATE_KAUNAS"
 					}
 				}
 				subsidized=yes
@@ -4286,7 +4452,7 @@
 					building={
 						type="building_financial_district"
 						country="c:RKO"
-						levels=2
+						levels=3
 						region="STATE_BREST"
 					}
 				}
@@ -4332,7 +4498,7 @@
 					building={
 						type="building_financial_district"
 						country="c:RKO"
-						levels=4
+						levels=7
 						region="STATE_BREST"
 					}
 				}
@@ -4396,7 +4562,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_steam_donkey_building_logging_camp" "pm_electric_saw_mills" "pm_hardwood" "pm_rail_transport_building_logging_camp" }
+				activate_production_methods={ "pm_electric_saw_mills" "pm_hardwood" "pm_steam_donkey_building_logging_camp" "pm_rail_transport_building_logging_camp" }
 			}
 			create_building={
 				building="building_wheat_farm"
@@ -4668,12 +4834,25 @@
 					building={
 						type="building_financial_district"
 						country="c:RKU"
-						levels=3
+						levels=8
 						region="STATE_CHERSON"
 					}
 				}
 				reserves=1
 				activate_production_methods={ "pm_steam_donkey_building_coal_mine" "pm_condensing_engine_pump_building_coal_mine" "pm_dynamite_building_coal_mine" "pm_rail_transport_mine" }
+			}
+			create_building={
+				building="building_explosives_factory"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:RKU"
+						levels=1
+						region="STATE_KIEV"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_vacuum_evaporation" }
 			}
 		}
 	}
@@ -4793,7 +4972,7 @@
 					building={
 						type="building_financial_district"
 						country="c:RKU"
-						levels=1
+						levels=2
 						region="STATE_KIEV"
 					}
 				}
@@ -5117,6 +5296,12 @@
 						country="c:RKU"
 						levels=4
 						region="STATE_CHERSON"
+					}
+					building={
+						type="building_financial_district"
+						country="c:GER"
+						levels=4
+						region="STATE_NORTH_RHINE"
 					}
 				}
 				reserves=1
@@ -5584,7 +5769,7 @@
 					building={
 						type="building_financial_district"
 						country="c:RKO"
-						levels=4
+						levels=1
 						region="STATE_VITEBSK"
 					}
 				}
@@ -6134,6 +6319,12 @@
 						country="c:RKM"
 						levels=1
 					}
+					building={
+						type="building_financial_district"
+						country="c:RKM"
+						levels=1
+						region="STATE_TAMBOV"
+					}
 				}
 				reserves=1
 				activate_production_methods={ "pm_condensing_engine_pump_building_coal_mine" "pm_dynamite_building_coal_mine" "pm_steam_donkey_building_coal_mine" "pm_rail_transport_mine" }
@@ -6239,9 +6430,11 @@
 			create_building={
 				building="building_railway"
 				add_ownership={
-					country={
+					building={
+						type="building_financial_district"
 						country="c:GER"
 						levels=2
+						region="STATE_WESTPHALIA"
 					}
 				}
 				subsidized=no
@@ -6495,7 +6688,19 @@
 					building={
 						type="building_financial_district"
 						country="c:RKU"
-						levels=2
+						levels=7
+						region="STATE_KHARKOV"
+					}
+					building={
+						type="building_financial_district"
+						country="c:RKU"
+						levels=3
+						region="STATE_KIEV"
+					}
+					building={
+						type="building_manor_house"
+						country="c:RKU"
+						levels=4
 						region="STATE_KHARKOV"
 					}
 				}
@@ -6510,6 +6715,12 @@
 						country="c:RKU"
 						levels=1
 						region="STATE_KHARKOV"
+					}
+					building={
+						type="building_financial_district"
+						country="c:RKU"
+						levels=1
+						region="STATE_VOLHYNIA"
 					}
 				}
 				reserves=1
@@ -6534,12 +6745,25 @@
 					building={
 						type="building_manor_house"
 						country="c:RKU"
-						levels=1
+						levels=4
 						region="STATE_KHARKOV"
 					}
 				}
 				reserves=1
 				activate_production_methods={ "pm_slaughterhouses" "pm_sheep_farms" "pm_standard_fences" "pm_unrefrigerated" }
+			}
+			create_building={
+				building="building_war_machine_industry"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:RKU"
+						levels=1
+						region="STATE_KHARKOV"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_aeroplane_production" }
 			}
 		}
 	}
@@ -7064,7 +7288,7 @@
 					building={
 						type="building_financial_district"
 						country="c:TRG"
-						levels=2
+						levels=1
 						region="STATE_CHERSON"
 					}
 				}
@@ -7398,6 +7622,12 @@
 						levels=2
 						region="STATE_SOUTHERN_TRANSYLVANIA"
 					}
+					building={
+						type="building_financial_district"
+						country="c:TRG"
+						levels=2
+						region="STATE_CHERSON"
+					}
 				}
 				reserves=1
 				activate_production_methods={ "pm_steam_engines" "pm_automobiles_disabled" "pm_rotary_valve_engine_building_motor_industry" }
@@ -7471,6 +7701,13 @@
 				}
 				reserves=1
 				activate_production_methods={ "pm_explosive_shells" "pm_rotary_valve_engine_building_munition_plants" }
+			}
+			create_building={
+				building="building_power_plant"
+				add_ownership={
+				}
+				reserves=1
+				activate_production_methods={ "pm_hydroelectric_plant" }
 			}
 		}
 		region_state:RKU={
@@ -7569,7 +7806,7 @@
 					building={
 						type="building_manor_house"
 						country="c:RKU"
-						levels=2
+						levels=6
 						region="STATE_KIEV"
 					}
 					building={
@@ -8044,7 +8281,7 @@
 					building={
 						type="building_financial_district"
 						country="c:VOL"
-						levels=3
+						levels=2
 						region="STATE_NIZHNY_NOVGOROD"
 					}
 					building={
@@ -8262,6 +8499,12 @@
 					country={
 						country="c:VYA"
 						levels=1
+					}
+					building={
+						type="building_financial_district"
+						country="c:VYA"
+						levels=1
+						region="STATE_VYATKA"
 					}
 				}
 				reserves=1
@@ -8508,6 +8751,12 @@
 						levels=1
 						region="STATE_TAURIDA"
 					}
+					building={
+						type="building_financial_district"
+						country="c:RKU"
+						levels=4
+						region="STATE_KHARKOV"
+					}
 				}
 				reserves=1
 				activate_production_methods={ "pm_soil_enriching_farming" "pm_potatoes" "pm_tools" }
@@ -8581,6 +8830,12 @@
 						levels=1
 						region="STATE_KHARKOV"
 					}
+					building={
+						type="building_financial_district"
+						country="c:RKU"
+						levels=1
+						region="STATE_MINSK"
+					}
 				}
 				reserves=1
 				activate_production_methods={ "pm_small_workshop" }
@@ -8637,6 +8892,32 @@
 				subsidized=no
 				reserves=1
 				activate_production_methods={ "pm_steam_trains" "pm_no_passenger_trains" }
+			}
+			create_building={
+				building="building_arts_academy"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:RKU"
+						levels=1
+						region="STATE_KHARKOV"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_traditional_art" "pm_traditional_patronage" "pm_freedom_of_movement_no_effect" }
+			}
+			create_building={
+				building="building_munition_plants"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:RKU"
+						levels=1
+						region="STATE_KIEV"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_explosive_shells" "pm_rotary_valve_engine_building_munition_plants" }
 			}
 		}
 		region_state:RKO={
@@ -8708,7 +8989,7 @@
 					building={
 						type="building_company_basic_textiles"
 						country="c:RKO"
-						levels=8
+						levels=1
 						region="STATE_MINSK"
 					}
 					building={
@@ -8720,7 +9001,7 @@
 					building={
 						type="building_financial_district"
 						country="c:RKO"
-						levels=2
+						levels=1
 						region="STATE_KAUNAS"
 					}
 				}
@@ -9082,13 +9363,13 @@
 					building={
 						type="building_company_basic_agriculture_1"
 						country="c:RKU"
-						levels=4
+						levels=3
 						region="STATE_KIEV"
 					}
 					building={
 						type="building_financial_district"
 						country="c:RKU"
-						levels=4
+						levels=3
 						region="STATE_ROSTOV"
 					}
 					building={
@@ -9100,7 +9381,7 @@
 					building={
 						type="building_manor_house"
 						country="c:RKU"
-						levels=5
+						levels=3
 						region="STATE_ROSTOV"
 					}
 				}
@@ -9140,7 +9421,7 @@
 					building={
 						type="building_financial_district"
 						country="c:RKU"
-						levels=2
+						levels=1
 						region="STATE_ROSTOV"
 					}
 				}
@@ -9732,7 +10013,7 @@
 					building={
 						type="building_company_basic_metal_mining"
 						country="c:HYP"
-						levels=5
+						levels=4
 						region="STATE_PERM"
 					}
 				}
@@ -10430,7 +10711,7 @@
 					building={
 						type="building_manor_house"
 						country="c:SAM"
-						levels=4
+						levels=3
 						region="STATE_SAMARA"
 					}
 				}
@@ -10640,6 +10921,12 @@
 					country={
 						country="c:UVS"
 						levels=1
+					}
+					building={
+						type="building_textile_mills"
+						country="c:UVS"
+						levels=1
+						region="STATE_KAZAN"
 					}
 				}
 				reserves=1
@@ -10919,7 +11206,7 @@
 					building={
 						type="building_livestock_ranch"
 						country="c:ZAT"
-						levels=7
+						levels=5
 						region="STATE_URALSK"
 					}
 					country={
@@ -12475,6 +12762,14 @@
 				reserves=1
 				activate_production_methods={ "pm_simple_farming" "pm_no_secondary" "pm_tools" }
 			}
+			create_building={
+				building="building_railway"
+				add_ownership={
+				}
+				subsidized=no
+				reserves=1
+				activate_production_methods={ "pm_early_trains" "pm_no_passenger_trains" }
+			}
 		}
 	}
 	s:STATE_SYRDARYA={
@@ -12760,7 +13055,7 @@
 					building={
 						type="building_livestock_ranch"
 						country="c:ZAT"
-						levels=6
+						levels=11
 						region="STATE_SYRDARYA"
 					}
 				}
@@ -13301,7 +13596,7 @@
 				add_ownership={
 					country={
 						country="c:GER"
-						levels=3
+						levels=8
 					}
 				}
 				reserves=1
@@ -13329,6 +13624,19 @@
 				}
 				reserves=1
 				activate_production_methods={ "pm_tno_philosophy_department" "pm_religious_academia" }
+			}
+			create_building={
+				building="building_fishing_wharf"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:GER"
+						levels=1
+						region="STATE_HANNOVER"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_steam_trawlers" "pm_unrefrigerated" }
 			}
 		}
 		region_state:RKU={
@@ -13410,7 +13718,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_slaughterhouses" "pm_sheep_farms" "pm_unrefrigerated" "pm_standard_fences" }
+				activate_production_methods={ "pm_slaughterhouses" "pm_sheep_farms" "pm_standard_fences" "pm_unrefrigerated" }
 			}
 			create_building={
 				building="building_fishing_wharf"
@@ -13418,7 +13726,7 @@
 					building={
 						type="building_manor_house"
 						country="c:RKU"
-						levels=1
+						levels=2
 						region="STATE_ROSTOV"
 					}
 					building={
@@ -13448,6 +13756,12 @@
 					country={
 						country="c:RKU"
 						levels=1
+					}
+					building={
+						type="building_financial_district"
+						country="c:RKU"
+						levels=1
+						region="STATE_TAURIDA"
 					}
 				}
 				reserves=1
@@ -13524,6 +13838,12 @@
 						country="c:RKU"
 						levels=1
 						region="STATE_CHERSON"
+					}
+					building={
+						type="building_financial_district"
+						country="c:RKU"
+						levels=1
+						region="STATE_TAURIDA"
 					}
 				}
 				reserves=1
@@ -13673,6 +13993,12 @@
 						levels=1
 						region="STATE_TAURIDA"
 					}
+					building={
+						type="building_financial_district"
+						country="c:RKU"
+						levels=1
+						region="STATE_KHARKOV"
+					}
 				}
 				reserves=1
 				activate_production_methods={ "pm_rubber_grips" "pm_rotary_valve_engine_building_tooling_workshops" }
@@ -13709,6 +14035,12 @@
 						country="c:RKU"
 						levels=1
 						region="STATE_CHERSON"
+					}
+					building={
+						type="building_financial_district"
+						country="c:RKU"
+						levels=1
+						region="STATE_MINSK"
 					}
 				}
 				subsidized=no
@@ -13955,7 +14287,7 @@
 					building={
 						type="building_financial_district"
 						country="c:RKO"
-						levels=5
+						levels=6
 						region="STATE_VITEBSK"
 					}
 				}
@@ -13997,7 +14329,7 @@
 					building={
 						type="building_manor_house"
 						country="c:RKO"
-						levels=7
+						levels=6
 						region="STATE_VITEBSK"
 					}
 				}
@@ -14041,7 +14373,7 @@
 					building={
 						type="building_financial_district"
 						country="c:RKO"
-						levels=2
+						levels=3
 						region="STATE_VITEBSK"
 					}
 				}
@@ -14206,7 +14538,7 @@
 					building={
 						type="building_financial_district"
 						country="c:RKO"
-						levels=1
+						levels=2
 						region="STATE_VITEBSK"
 					}
 					building={
@@ -14303,6 +14635,20 @@
 				}
 				reserves=1
 				activate_production_methods={ "pm_traditional_art" "pm_traditional_patronage" "pm_freedom_of_movement_no_effect" }
+			}
+			create_building={
+				building="building_railway"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:RKO"
+						levels=1
+						region="STATE_VITEBSK"
+					}
+				}
+				subsidized=no
+				reserves=1
+				activate_production_methods={ "pm_steam_trains" "pm_wooden_passenger_carriages" }
 			}
 		}
 		region_state:RKM={
@@ -14544,7 +14890,7 @@
 					building={
 						type="building_financial_district"
 						country="c:GOR"
-						levels=1
+						levels=2
 						region="STATE_NIZHNY_NOVGOROD"
 					}
 				}
@@ -14667,7 +15013,7 @@
 					building={
 						type="building_manor_house"
 						country="c:VOL"
-						levels=3
+						levels=2
 						region="STATE_NIZHNY_NOVGOROD"
 					}
 					building={
@@ -15139,7 +15485,7 @@
 					building={
 						type="building_financial_district"
 						country="c:BSH"
-						levels=4
+						levels=3
 						region="STATE_UFA"
 					}
 					building={
@@ -15253,7 +15599,7 @@
 					building={
 						type="building_financial_district"
 						country="c:BSH"
-						levels=4
+						levels=2
 						region="STATE_UFA"
 					}
 				}
@@ -15266,7 +15612,7 @@
 					building={
 						type="building_manor_house"
 						country="c:BSH"
-						levels=7
+						levels=5
 						region="STATE_UFA"
 					}
 					country={
@@ -16131,7 +16477,7 @@
 					building={
 						type="building_manor_house"
 						country="c:KEM"
-						levels=2
+						levels=1
 						region="STATE_TOMSK"
 					}
 				}
@@ -16879,7 +17225,7 @@
 					building={
 						type="building_gold_mine"
 						country="c:BRY"
-						levels=5
+						levels=6
 						region="STATE_BURYATIA"
 					}
 				}
@@ -17575,9 +17921,11 @@
 			create_building={
 				building="building_logging_camp"
 				add_ownership={
-					country={
-						country="c:GER"
+					building={
+						type="building_manor_house"
+						country="c:RKK"
 						levels=3
+						region="STATE_ELIZAVETPOL"
 					}
 				}
 				reserves=1
@@ -17586,10 +17934,6 @@
 			create_building={
 				building="building_iron_mine"
 				add_ownership={
-					country={
-						country="c:GER"
-						levels=3
-					}
 					building={
 						type="building_financial_district"
 						country="c:RKK"
@@ -17599,7 +17943,7 @@
 					building={
 						type="building_financial_district"
 						country="c:RKK"
-						levels=3
+						levels=6
 						region="STATE_AZERBAIJAN"
 					}
 					building={
@@ -17812,14 +18156,10 @@
 			create_building={
 				building="building_oil_rig"
 				add_ownership={
-					country={
-						country="c:GER"
-						levels=5
-					}
 					building={
 						type="building_financial_district"
 						country="c:RKK"
-						levels=5
+						levels=10
 						region="STATE_AZERBAIJAN"
 					}
 					building={
@@ -17871,7 +18211,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_slaughterhouses" "pm_sheep_farms" "pm_unrefrigerated" "pm_standard_fences" }
+				activate_production_methods={ "pm_slaughterhouses" "pm_sheep_farms" "pm_standard_fences" "pm_unrefrigerated" }
 			}
 			create_building={
 				building="building_tobacco_plantation"
@@ -18146,7 +18486,7 @@
 					building={
 						type="building_rye_farm"
 						country="c:UVS"
-						levels=11
+						levels=14
 						region="STATE_CHUVASHIA"
 					}
 				}
@@ -18359,7 +18699,7 @@
 					building={
 						type="building_financial_district"
 						country="c:RKU"
-						levels=5
+						levels=3
 						region="STATE_CHERSON"
 					}
 				}
@@ -18455,6 +18795,19 @@
 				}
 				reserves=1
 				activate_production_methods={ "pm_slaughterhouses" "pm_sheep_farms" "pm_unrefrigerated" "pm_electric_fencing" }
+			}
+			create_building={
+				building="building_textile_mills"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:RKU"
+						levels=1
+						region="STATE_CHERNIHIV"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_sewing_machines" "pm_no_luxury_clothes" "pm_mechanized_looms" }
 			}
 		}
 		region_state:RKM={

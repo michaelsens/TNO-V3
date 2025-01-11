@@ -44,7 +44,7 @@
 					building={
 						type="building_manor_house"
 						country="c:AST"
-						levels=2
+						levels=1
 						region="STATE_NEW_SOUTH_WALES"
 					}
 					building={
@@ -267,13 +267,13 @@
 					building={
 						type="building_manor_house"
 						country="c:AST"
-						levels=4
+						levels=2
 						region="STATE_NEW_SOUTH_WALES"
 					}
 					building={
 						type="building_financial_district"
 						country="c:AST"
-						levels=5
+						levels=2
 						region="STATE_NEW_SOUTH_WALES"
 					}
 				}
@@ -336,7 +336,7 @@
 					building={
 						type="building_financial_district"
 						country="c:AST"
-						levels=2
+						levels=3
 						region="STATE_NEW_SOUTH_WALES"
 					}
 				}
@@ -418,7 +418,7 @@
 					building={
 						type="building_manor_house"
 						country="c:AST"
-						levels=2
+						levels=1
 						region="STATE_NEW_SOUTH_WALES"
 					}
 				}
@@ -547,13 +547,13 @@
 					building={
 						type="building_livestock_ranch"
 						country="c:AST"
-						levels=2
+						levels=1
 						region="STATE_VICTORIA"
 					}
 					building={
 						type="building_manor_house"
 						country="c:AST"
-						levels=2
+						levels=1
 						region="STATE_VICTORIA"
 					}
 				}
@@ -732,7 +732,7 @@
 					building={
 						type="building_manor_house"
 						country="c:AST"
-						levels=6
+						levels=4
 						region="STATE_NEW_SOUTH_WALES"
 					}
 					building={
@@ -972,7 +972,7 @@
 					building={
 						type="building_manor_house"
 						country="c:AST"
-						levels=2
+						levels=1
 						region="STATE_NEW_SOUTH_WALES"
 					}
 				}
@@ -1187,7 +1187,7 @@
 					building={
 						type="building_manor_house"
 						country="c:AST"
-						levels=2
+						levels=1
 						region="STATE_QUEENSLAND"
 					}
 					building={
@@ -1337,7 +1337,7 @@
 					building={
 						type="building_manor_house"
 						country="c:AST"
-						levels=2
+						levels=1
 						region="STATE_NEW_SOUTH_WALES"
 					}
 				}
@@ -2269,6 +2269,12 @@
 						levels=1
 						region="STATE_NORTH_ISLAND"
 					}
+					building={
+						type="building_manor_house"
+						country="c:NZL"
+						levels=1
+						region="STATE_NORTH_ISLAND"
+					}
 				}
 				reserves=1
 				activate_production_methods={ "pm_simple_forestry" "pm_no_hardwood" "pm_no_equipment" "pm_road_carts" }
@@ -2437,6 +2443,12 @@
 						country="c:NZL"
 						levels=1
 					}
+					building={
+						type="building_financial_district"
+						country="c:NZL"
+						levels=1
+						region="STATE_NORTH_ISLAND"
+					}
 				}
 				reserves=1
 				activate_production_methods={ "pm_simple_whaling" "pm_unrefrigerated" }
@@ -2544,6 +2556,19 @@
 				subsidized=no
 				reserves=1
 				activate_production_methods={ "pm_early_trains" "pm_no_passenger_trains" }
+			}
+			create_building={
+				building="building_power_plant"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:NZL"
+						levels=1
+						region="STATE_NORTH_ISLAND"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_hydroelectric_plant" }
 			}
 		}
 	}
