@@ -6,7 +6,7 @@
 				add_ownership={
 					country={
 						country="c:AST"
-						levels=4
+						levels=6
 					}
 					building={
 						type="building_financial_district"
@@ -158,7 +158,7 @@
 				add_ownership={
 					country={
 						country="c:AST"
-						levels=7
+						levels=11
 					}
 				}
 				reserves=1
@@ -1133,7 +1133,7 @@
 				add_ownership={
 					country={
 						country="c:AST"
-						levels=1
+						levels=2
 					}
 				}
 				reserves=1
@@ -1385,7 +1385,7 @@
 				add_ownership={
 					country={
 						country="c:AST"
-						levels=2
+						levels=3
 					}
 				}
 				subsidized=no
@@ -1696,9 +1696,11 @@
 			create_building={
 				building="building_steel_mills"
 				add_ownership={
-					country={
+					building={
+						type="building_financial_district"
 						country="c:AST"
 						levels=1
+						region="STATE_NEW_SOUTH_WALES"
 					}
 				}
 				reserves=1
@@ -1714,6 +1716,17 @@
 				}
 				reserves=1
 				activate_production_methods={ "pm_small_workshop" }
+			}
+			create_building={
+				building="building_port"
+				add_ownership={
+					country={
+						country="c:AST"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_anchorage" }
 			}
 		}
 	}
@@ -1827,7 +1840,7 @@
 					}
 					country={
 						country="c:AST"
-						levels=1
+						levels=2
 					}
 				}
 				subsidized=no
@@ -1974,6 +1987,13 @@
 				}
 				reserves=1
 				activate_production_methods={ "pm_electric_saw_mills" "pm_hardwood" "pm_steam_donkey_building_logging_camp" "pm_rail_transport_building_logging_camp" }
+			}
+			create_building={
+				building="building_glassworks"
+				add_ownership={
+				}
+				reserves=1
+				activate_production_methods={ "pm_leaded_glass" "pm_ceramics" "pm_manual_glassblowing" }
 			}
 		}
 	}
@@ -2208,6 +2228,17 @@
 				reserves=1
 				activate_production_methods={ "pm_bessemer_process" "pm_rotary_valve_engine_building_steel_mills" }
 			}
+			create_building={
+				building="building_port"
+				add_ownership={
+					country={
+						country="c:AST"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_anchorage" }
+			}
 		}
 	}
 	s:STATE_NORTH_ISLAND={
@@ -2277,7 +2308,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_simple_forestry" "pm_no_hardwood" "pm_no_equipment" "pm_road_carts" }
+				activate_production_methods={ "pm_road_carts" "pm_no_hardwood" "pm_no_equipment" "pm_electric_saw_mills" }
 			}
 			create_building={
 				building="building_coal_mine"
@@ -2288,9 +2319,13 @@
 						levels=1
 						region="STATE_NORTH_ISLAND"
 					}
+					country={
+						country="c:NZL"
+						levels=2
+					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_picks_and_shovels_building_coal_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" }
+				activate_production_methods={ "pm_steam_donkey_building_coal_mine" "pm_condensing_engine_pump_building_coal_mine" "pm_dynamite_building_coal_mine" "pm_rail_transport_mine" }
 			}
 			create_building={
 				building="building_fishing_wharf"
@@ -2301,18 +2336,18 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_simple_fishing" "pm_unrefrigerated" }
+				activate_production_methods={ "pm_unrefrigerated" "pm_fishing_trawlers" }
 			}
 			create_building={
 				building="building_wheat_farm"
 				add_ownership={
 					country={
 						country="c:NZL"
-						levels=1
+						levels=2
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_tools_disabled" "pm_no_secondary" "pm_soil_enriching_farming" }
+				activate_production_methods={ "pm_tools_disabled" "pm_no_secondary" "pm_fertilization" }
 			}
 			create_building={
 				building="building_food_industry"
@@ -2323,7 +2358,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_bakery" "pm_disabled_canning" "pm_disabled_distillery" "pm_manual_dough_processing" }
+				activate_production_methods={ "pm_manual_dough_processing" "pm_disabled_canning" "pm_disabled_distillery" "pm_sweeteners" }
 			}
 			create_building={
 				building="building_gold_mine"
@@ -2340,7 +2375,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_picks_and_shovels_building_gold_mine" "pm_no_explosives" "pm_road_carts" "pm_steam_donkey_mine" }
+				activate_production_methods={ "pm_steam_donkey_mine" "pm_condensing_engine_pump_building_gold_mine" "pm_road_carts" "pm_dynamite_building_gold_mine" }
 			}
 			create_building={
 				building="building_tooling_workshops"
@@ -2351,7 +2386,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_crude_tools" "pm_automation_disabled" }
+				activate_production_methods={ "pm_automation_disabled" "pm_steel" }
 			}
 			create_building={
 				building="building_iron_mine"
@@ -2362,7 +2397,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_picks_and_shovels_building_iron_mine" "pm_no_explosives" "pm_steam_donkey_mine" "pm_rail_transport_mine" }
+				activate_production_methods={ "pm_steam_donkey_mine" "pm_rail_transport_mine" "pm_dynamite_building_iron_mine" "pm_condensing_engine_pump_building_iron_mine" }
 			}
 			create_building={
 				building="building_small_workshop"
@@ -2386,14 +2421,14 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_steel_frame_buildings" }
+				activate_production_methods={ "pm_iron_frame_buildings" }
 			}
 			create_building={
 				building="building_government_administration"
 				add_ownership={
 					country={
 						country="c:NZL"
-						levels=1
+						levels=4
 					}
 				}
 				reserves=1
@@ -2410,7 +2445,31 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_hydroelectric_plant" }
+				activate_production_methods={ "pm_coal-fired_plant" }
+			}
+			create_building={
+				building="building_steel_mills"
+				add_ownership={
+					country={
+						country="c:NZL"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_blister_steel_process" "pm_automation_disabled" }
+			}
+			create_building={
+				building="building_glassworks"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:NZL"
+						levels=1
+						region="STATE_NORTH_ISLAND"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_forest_glass" "pm_disabled_ceramics" "pm_manual_glassblowing" }
 			}
 		}
 	}
@@ -2447,7 +2506,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_crude_tools" "pm_automation_disabled" }
+				activate_production_methods={ "pm_steel" "pm_automation_disabled" }
 			}
 			create_building={
 				building="building_whaling_station"
@@ -2459,7 +2518,7 @@
 					building={
 						type="building_financial_district"
 						country="c:NZL"
-						levels=1
+						levels=2
 						region="STATE_NORTH_ISLAND"
 					}
 				}
@@ -2471,11 +2530,11 @@
 				add_ownership={
 					country={
 						country="c:NZL"
-						levels=1
+						levels=2
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_rail_transport_mine" "pm_no_explosives" "pm_steam_donkey_mine" "pm_atmospheric_engine_pump_building_gold_mine" }
+				activate_production_methods={ "pm_condensing_engine_pump_building_gold_mine" "pm_dynamite_building_gold_mine" "pm_steam_donkey_mine" "pm_rail_transport_mine" }
 			}
 			create_building={
 				building="building_chemical_plants"
@@ -2499,7 +2558,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_soil_enriching_farming" "pm_no_secondary" "pm_tools" }
+				activate_production_methods={ "pm_fertilization" "pm_no_secondary" "pm_tools" }
 			}
 			create_building={
 				building="building_motor_industry"
@@ -2532,7 +2591,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_steam_donkey_building_logging_camp" "pm_no_hardwood" "pm_rail_transport_building_logging_camp" "pm_saw_mills" }
+				activate_production_methods={ "pm_electric_saw_mills" "pm_steam_donkey_building_logging_camp" "pm_rail_transport_building_logging_camp" "pm_hardwood" }
 			}
 			create_building={
 				building="building_livestock_ranch"
@@ -2554,7 +2613,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_wooden_buildings" }
+				activate_production_methods={ "pm_iron_frame_buildings" }
 			}
 			create_building={
 				building="building_railway"
@@ -2581,7 +2640,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_hydroelectric_plant" }
+				activate_production_methods={ "pm_coal-fired_plant" }
 			}
 		}
 	}
