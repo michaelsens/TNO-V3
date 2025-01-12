@@ -495,7 +495,7 @@
 					building={
 						type="building_financial_district"
 						country="c:USA"
-						levels=5
+						levels=13
 						region="STATE_KENTUCKY"
 					}
 					country={
@@ -544,7 +544,7 @@
 					building={
 						type="building_financial_district"
 						country="c:USA"
-						levels=16
+						levels=35
 						region="STATE_MASSACHUSETTS"
 					}
 				}
@@ -557,7 +557,7 @@
 					building={
 						type="building_financial_district"
 						country="c:USA"
-						levels=5
+						levels=40
 						region="STATE_NEW_YORK"
 					}
 					building={
@@ -568,11 +568,11 @@
 					}
 					country={
 						country="c:USA"
-						levels=40
+						levels=1
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_oil-fired_plant" }
+				activate_production_methods={ "pm_coal-fired_plant" }
 			}
 			create_building={
 				building="building_government_administration"
@@ -663,7 +663,7 @@
 					building={
 						type="building_financial_district"
 						country="c:USA"
-						levels=3
+						levels=20
 						region="STATE_OHIO"
 					}
 					building={
@@ -1026,7 +1026,7 @@
 					building={
 						type="building_financial_district"
 						country="c:USA"
-						levels=1
+						levels=14
 						region="STATE_VIRGINIA"
 					}
 					building={
@@ -2645,7 +2645,7 @@
 				add_ownership={
 					country={
 						country="c:USA"
-						levels=1
+						levels=5
 					}
 				}
 				subsidized=no
@@ -2999,7 +2999,7 @@
 					building={
 						type="building_financial_district"
 						country="c:USA"
-						levels=1
+						levels=5
 						region="STATE_NEW_YORK"
 					}
 				}
@@ -3311,6 +3311,19 @@
 	s:STATE_WISCONSIN={
 		region_state:USA={
 			create_building={
+				building="building_iron_mine"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:USA"
+						levels=18
+						region="STATE_WISCONSIN"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_condensing_engine_pump_building_iron_mine" "pm_dynamite_building_iron_mine" "pm_steam_donkey_mine" "pm_rail_transport_mine" }
+			}
+			create_building={
 				building="building_sulfur_mine"
 				add_ownership={
 					building={
@@ -3537,7 +3550,7 @@
 					building={
 						type="building_financial_district"
 						country="c:USA"
-						levels=1
+						levels=9
 						region="STATE_MASSACHUSETTS"
 					}
 				}
@@ -3578,7 +3591,7 @@
 				add_ownership={
 					country={
 						country="c:USA"
-						levels=15
+						levels=35
 					}
 				}
 				reserves=1
@@ -3599,7 +3612,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_manual_glassblowing" "pm_disabled_ceramics" "pm_crystal_glass" }
+				activate_production_methods={ "pm_manual_glassblowing" "pm_ceramics" "pm_crystal_glass" }
 			}
 			create_building={
 				building="building_chemical_plants"
@@ -3757,7 +3770,7 @@
 				add_ownership={
 					country={
 						country="c:USA"
-						levels=8
+						levels=14
 					}
 				}
 				subsidized=no
@@ -3822,17 +3835,17 @@
 				add_ownership={
 					country={
 						country="c:USA"
-						levels=24
+						levels=1
 					}
 					building={
 						type="building_financial_district"
 						country="c:USA"
-						levels=1
+						levels=22
 						region="STATE_CALIFORNIA"
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_oil-fired_plant" }
+				activate_production_methods={ "pm_coal-fired_plant" }
 			}
 			create_building={
 				building="building_iron_mine"
@@ -3955,16 +3968,16 @@
 					building={
 						type="building_financial_district"
 						country="c:USA"
-						levels=5
+						levels=30
 						region="STATE_NEW_YORK"
 					}
 					country={
 						country="c:USA"
-						levels=28
+						levels=1
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_oil-fired_plant" }
+				activate_production_methods={ "pm_coal-fired_plant" }
 			}
 			create_building={
 				building="building_government_administration"
@@ -5862,7 +5875,7 @@
 					building={
 						type="building_financial_district"
 						country="c:USA"
-						levels=1
+						levels=30
 						region="STATE_PENNSYLVANIA"
 					}
 					building={
@@ -5930,7 +5943,7 @@
 					building={
 						type="building_financial_district"
 						country="c:USA"
-						levels=9
+						levels=15
 						region="STATE_OKLAHOMA"
 					}
 					building={
@@ -6870,7 +6883,7 @@
 					building={
 						type="building_financial_district"
 						country="c:USA"
-						levels=9
+						levels=29
 						region="STATE_ILLINOIS"
 					}
 					building={
@@ -7007,7 +7020,7 @@
 					building={
 						type="building_financial_district"
 						country="c:USA"
-						levels=1
+						levels=8
 						region="STATE_TEXAS"
 					}
 					country={
@@ -8344,19 +8357,6 @@
 				activate_production_methods={ "pm_vertical_filing_cabinets" "pm_professional_bureaucrats" "pm_secular_bureaucrats" }
 			}
 			create_building={
-				building="building_uranium_mine"
-				add_ownership={
-					building={
-						type="building_financial_district"
-						country="c:USA"
-						levels=1
-						region="STATE_MISSOURI"
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_road_carts" "pm_no_explosives_nuclear" "pm_condensing_engine_pump_building_uranium_mining" }
-			}
-			create_building={
 				building="building_construction_sector"
 				add_ownership={
 					country={
@@ -8763,17 +8763,6 @@
 				subsidized=yes
 				reserves=1
 				activate_production_methods={ "pm_oil-fired_plant" }
-			}
-			create_building={
-				building="building_uranium_mine"
-				add_ownership={
-					country={
-						country="c:CAN"
-						levels=8
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_road_carts" "pm_no_explosives_nuclear" "pm_condensing_engine_pump_building_uranium_mining" }
 			}
 			create_building={
 				building="building_government_administration"
@@ -11794,6 +11783,19 @@
 	s:STATE_CALIFORNIA={
 		region_state:USA={
 			create_building={
+				building="building_arts_academy"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:USA"
+						levels=20
+						region="STATE_CALIFORNIA"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_realist_art" "pm_traditional_patronage" "pm_freedom_of_movement_no_effect" }
+			}
+			create_building={
 				building="building_power_plant"
 				add_ownership={
 					building={
@@ -11836,7 +11838,7 @@
 					building={
 						type="building_financial_district"
 						country="c:USA"
-						levels=7
+						levels=27
 						region="STATE_CALIFORNIA"
 					}
 					building={
@@ -11978,7 +11980,7 @@
 					building={
 						type="building_company_standard_oil"
 						country="c:USA"
-						levels=3
+						levels=8
 						region="STATE_PENNSYLVANIA"
 					}
 					building={
@@ -12813,19 +12815,6 @@
 				}
 				reserves=1
 				activate_production_methods={ "pm_electric_fencing" "pm_sheep_farms" "pm_unrefrigerated" "pm_slaughterhouses" }
-			}
-			create_building={
-				building="building_uranium_mine"
-				add_ownership={
-					building={
-						type="building_financial_district"
-						country="c:MEX"
-						levels=1
-						region="STATE_MEXICO"
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_condensing_engine_pump_building_uranium_mining" "pm_no_explosives_nuclear" "pm_nuclear_rail_transport_building" }
 			}
 			create_building={
 				building="building_textile_mills"

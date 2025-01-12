@@ -10356,6 +10356,37 @@
 	s:STATE_FORMOSA={
 		region_state:JAP={
 			create_building={
+				building="building_railway"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:JAP"
+						levels=2
+						region="STATE_FORMOSA"
+					}
+					country={
+						country="c:JAP"
+						levels=5
+					}
+				}
+				subsidized=no
+				reserves=1
+				activate_production_methods={ "pm_steam_trains" "pm_wooden_passenger_carriages" }
+			}
+			create_building={
+				building="building_electrics_industry"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:JAP"
+						levels=22
+						region="STATE_KANSAI"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_telephones" "pm_radios" }
+			}
+			create_building={
 				building="building_government_administration"
 				add_ownership={
 					country={
@@ -10794,7 +10825,7 @@
 				add_ownership={
 					country={
 						country="c:CHI"
-						levels=2
+						levels=5
 					}
 				}
 				subsidized=no
@@ -13778,30 +13809,29 @@
 	s:STATE_SAKHALIN={
 		region_state:JAP={
 			create_building={
-				building="building_logging_camp"
-				add_ownership={
-					building={
-						type="building_financial_district"
-						country="c:JAP"
-						levels=7
-						region="STATE_KANTO"
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_electric_saw_mills" "pm_road_carts" "pm_steam_donkey_building_logging_camp" "pm_no_hardwood" }
-			}
-			create_building={
-				building="building_artillery_foundries"
+				building="building_railway"
 				add_ownership={
 					building={
 						type="building_financial_district"
 						country="c:JAP"
 						levels=1
-						region="STATE_CHUGOKU"
+						region="STATE_KANTO"
+					}
+				}
+				subsidized=yes
+				reserves=1
+				activate_production_methods={ "pm_early_trains" "pm_no_passenger_trains" }
+			}
+			create_building={
+				building="building_oil_rig"
+				add_ownership={
+					country={
+						country="c:JAP"
+						levels=15
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_breech_loaders" "pm_rotary_valve_engine_building_arms_industry" }
+				activate_production_methods={ "pm_steam_derricks" "pm_road_carts" }
 			}
 			create_building={
 				building="building_power_plant"
@@ -13826,65 +13856,6 @@
 				}
 				reserves=1
 				activate_production_methods={ "pm_industrial_port" }
-			}
-			create_building={
-				building="building_shipyards"
-				add_ownership={
-					building={
-						type="building_financial_district"
-						country="c:JAP"
-						levels=1
-						region="STATE_KANSAI"
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_metal_shipbuilding" }
-			}
-			create_building={
-				building="building_uranium_mine"
-				add_ownership={
-					building={
-						type="building_financial_district"
-						country="c:JAP"
-						levels=1
-						region="STATE_PYONGYANG"
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_picks_and_shovels_building_uranium_mining" "pm_no_explosives_nuclear" "pm_road_carts" }
-			}
-			create_building={
-				building="building_school"
-				add_ownership={
-					country={
-						country="c:JAP"
-						levels=1
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_tno_philosophy_department" "pm_religious_academia" }
-			}
-			create_building={
-				building="building_whaling_station"
-				add_ownership={
-					country={
-						country="c:JAP"
-						levels=3
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_unrefrigerated" "pm_steam_whaling_ships" }
-			}
-			create_building={
-				building="building_fishing_wharf"
-				add_ownership={
-					country={
-						country="c:JAP"
-						levels=5
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_steam_trawlers" "pm_unrefrigerated" }
 			}
 			create_building={
 				building="building_iron_mine"
@@ -14101,7 +14072,7 @@
 					building={
 						type="building_financial_district"
 						country="c:JAP"
-						levels=2
+						levels=19
 						region="STATE_TOHOKU"
 					}
 				}
@@ -14167,7 +14138,7 @@
 					building={
 						type="building_financial_district"
 						country="c:JAP"
-						levels=4
+						levels=8
 						region="STATE_KANTO"
 					}
 					building={
@@ -14278,7 +14249,7 @@
 					}
 					country={
 						country="c:JAP"
-						levels=29
+						levels=2
 					}
 				}
 				reserves=1
@@ -14456,22 +14427,11 @@
 				activate_production_methods={ "pm_baking_powder" "pm_cannery" "pm_disabled_distillery" "pm_manual_dough_processing" }
 			}
 			create_building={
-				building="building_naval_base"
-				add_ownership={
-					country={
-						country="c:JAP"
-						levels=15
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_jeune_ecole" }
-			}
-			create_building={
 				building="building_government_administration"
 				add_ownership={
 					country={
 						country="c:JAP"
-						levels=15
+						levels=5
 					}
 				}
 				reserves=1
@@ -14597,13 +14557,13 @@
 					building={
 						type="building_financial_district"
 						country="c:JAP"
-						levels=2
+						levels=20
 						region="STATE_YANGHO"
 					}
 					building={
 						type="building_financial_district"
 						country="c:JAP"
-						levels=26
+						levels=1
 						region="STATE_KANTO"
 					}
 				}
@@ -14616,7 +14576,7 @@
 					building={
 						type="building_financial_district"
 						country="c:JAP"
-						levels=13
+						levels=33
 						region="STATE_KANTO"
 					}
 					building={
@@ -14740,7 +14700,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_sewing_machines" "pm_elastics" "pm_mechanized_looms" }
+				activate_production_methods={ "pm_sewing_machines" "pm_no_luxury_clothes" "pm_mechanized_looms" }
 			}
 			create_building={
 				building="building_furniture_manufacturies"
@@ -14905,7 +14865,7 @@
 					building={
 						type="building_financial_district"
 						country="c:JAP"
-						levels=10
+						levels=17
 						region="STATE_CHUBU"
 					}
 					building={
@@ -14961,17 +14921,6 @@
 				activate_production_methods={ "pm_rifles" "pm_automation_disabled" }
 			}
 			create_building={
-				building="building_naval_base"
-				add_ownership={
-					country={
-						country="c:JAP"
-						levels=15
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_jeune_ecole" }
-			}
-			create_building={
 				building="building_construction_sector"
 				add_ownership={
 					country={
@@ -14988,7 +14937,7 @@
 					building={
 						type="building_company_basic_paper"
 						country="c:JAP"
-						levels=6
+						levels=1
 						region="STATE_CHUBU"
 					}
 					building={
@@ -15006,7 +14955,7 @@
 					building={
 						type="building_financial_district"
 						country="c:JAP"
-						levels=11
+						levels=1
 						region="STATE_KANSAI"
 					}
 				}
@@ -15019,12 +14968,12 @@
 					building={
 						type="building_financial_district"
 						country="c:JAP"
-						levels=16
+						levels=26
 						region="STATE_KANSAI"
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_mechanized_workshops" "pm_precision_tools" "pm_rotary_valve_engine_building_furniture_manufacturies" }
+				activate_production_methods={ "pm_mechanized_workshops" "pm_no_luxuries" "pm_rotary_valve_engine_building_furniture_manufacturies" }
 			}
 			create_building={
 				building="building_logging_camp"
@@ -15378,18 +15327,18 @@
 					building={
 						type="building_financial_district"
 						country="c:JAP"
-						levels=8
+						levels=18
 						region="STATE_CHUBU"
 					}
 					building={
 						type="building_financial_district"
 						country="c:JAP"
-						levels=17
+						levels=27
 						region="STATE_KYUSHU"
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_oil-fired_plant" }
+				activate_production_methods={ "pm_coal-fired_plant" }
 			}
 			create_building={
 				building="building_port"
@@ -15412,17 +15361,6 @@
 				}
 				reserves=1
 				activate_production_methods={ "pm_freedom_of_movement_no_effect" "pm_religious_academia" "pm_philosophy_department" }
-			}
-			create_building={
-				building="building_naval_base"
-				add_ownership={
-					country={
-						country="c:JAP"
-						levels=15
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_jeune_ecole" }
 			}
 			create_building={
 				building="building_government_administration"
@@ -15452,7 +15390,7 @@
 					building={
 						type="building_financial_district"
 						country="c:JAP"
-						levels=1
+						levels=20
 						region="STATE_KANSAI"
 					}
 					building={
@@ -15464,12 +15402,12 @@
 					building={
 						type="building_financial_district"
 						country="c:JAP"
-						levels=17
+						levels=3
 						region="STATE_KANTO"
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_sewing_machines" "pm_elastics" "pm_mechanized_looms" }
+				activate_production_methods={ "pm_sewing_machines" "pm_no_luxury_clothes" "pm_mechanized_looms" }
 			}
 			create_building={
 				building="building_paper_mills"
@@ -15489,7 +15427,7 @@
 				add_ownership={
 					country={
 						country="c:JAP"
-						levels=4
+						levels=1
 					}
 					building={
 						type="building_financial_district"
@@ -15500,7 +15438,7 @@
 					building={
 						type="building_manor_house"
 						country="c:JAP"
-						levels=5
+						levels=1
 						region="STATE_KANTO"
 					}
 				}
@@ -15513,7 +15451,7 @@
 					building={
 						type="building_manor_house"
 						country="c:JAP"
-						levels=10
+						levels=2
 						region="STATE_KANTO"
 					}
 					building={
@@ -15532,7 +15470,7 @@
 					building={
 						type="building_manor_house"
 						country="c:JAP"
-						levels=10
+						levels=5
 						region="STATE_KANSAI"
 					}
 				}
@@ -15587,7 +15525,7 @@
 					building={
 						type="building_manor_house"
 						country="c:JAP"
-						levels=7
+						levels=1
 						region="STATE_KYUSHU"
 					}
 					building={
@@ -15619,7 +15557,7 @@
 					building={
 						type="building_financial_district"
 						country="c:JAP"
-						levels=1
+						levels=8
 						region="STATE_TOHOKU"
 					}
 					building={
@@ -15661,7 +15599,7 @@
 					building={
 						type="building_manor_house"
 						country="c:JAP"
-						levels=5
+						levels=1
 						region="STATE_KANTO"
 					}
 				}
@@ -15718,7 +15656,7 @@
 					building={
 						type="building_financial_district"
 						country="c:JAP"
-						levels=2
+						levels=20
 						region="STATE_KANTO"
 					}
 				}
@@ -15813,7 +15751,7 @@
 					building={
 						type="building_financial_district"
 						country="c:JAP"
-						levels=9
+						levels=1
 						region="STATE_KANTO"
 					}
 				}
@@ -15826,7 +15764,7 @@
 					building={
 						type="building_financial_district"
 						country="c:JAP"
-						levels=10
+						levels=6
 						region="STATE_KANSAI"
 					}
 				}
@@ -15839,13 +15777,13 @@
 					building={
 						type="building_financial_district"
 						country="c:JAP"
-						levels=8
+						levels=18
 						region="STATE_KANSAI"
 					}
 					building={
 						type="building_financial_district"
 						country="c:JAP"
-						levels=7
+						levels=11
 						region="STATE_KANTO"
 					}
 				}
@@ -16001,7 +15939,7 @@
 				add_ownership={
 					country={
 						country="c:JAP"
-						levels=8
+						levels=2
 					}
 				}
 				reserves=1
@@ -16145,7 +16083,7 @@
 					}
 					country={
 						country="c:JAP"
-						levels=18
+						levels=1
 					}
 					building={
 						type="building_financial_district"
@@ -16200,7 +16138,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_oil-fired_plant" }
+				activate_production_methods={ "pm_coal-fired_plant" }
 			}
 			create_building={
 				building="building_steel_mills"
@@ -16233,25 +16171,25 @@
 					building={
 						type="building_financial_district"
 						country="c:JAP"
-						levels=4
+						levels=2
 						region="STATE_KANTO"
 					}
 					building={
 						type="building_financial_district"
 						country="c:JAP"
-						levels=7
+						levels=2
 						region="STATE_TOHOKU"
 					}
 					building={
 						type="building_financial_district"
 						country="c:JAP"
-						levels=6
+						levels=3
 						region="STATE_FORMOSA"
 					}
 					building={
 						type="building_financial_district"
 						country="c:JAP"
-						levels=18
+						levels=2
 						region="STATE_KYUSHU"
 					}
 				}
@@ -16275,7 +16213,7 @@
 					}
 					country={
 						country="c:JAP"
-						levels=15
+						levels=3
 					}
 				}
 				reserves=1
@@ -16475,22 +16413,11 @@
 				add_ownership={
 					country={
 						country="c:JAP"
-						levels=10
+						levels=6
 					}
 				}
 				reserves=1
 				activate_production_methods={ "pm_industrial_port" }
-			}
-			create_building={
-				building="building_naval_base"
-				add_ownership={
-					country={
-						country="c:JAP"
-						levels=15
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_jeune_ecole" }
 			}
 			create_building={
 				building="building_paper_mills"
@@ -16498,7 +16425,7 @@
 					building={
 						type="building_financial_district"
 						country="c:JAP"
-						levels=14
+						levels=4
 						region="STATE_TOHOKU"
 					}
 					building={
@@ -16530,7 +16457,7 @@
 					building={
 						type="building_financial_district"
 						country="c:JAP"
-						levels=9
+						levels=1
 						region="STATE_KANTO"
 					}
 					building={
@@ -16542,7 +16469,7 @@
 					building={
 						type="building_financial_district"
 						country="c:JAP"
-						levels=7
+						levels=2
 						region="STATE_CHUBU"
 					}
 				}
@@ -16554,7 +16481,7 @@
 				add_ownership={
 					country={
 						country="c:JAP"
-						levels=10
+						levels=2
 					}
 				}
 				reserves=1
@@ -16698,13 +16625,13 @@
 					building={
 						type="building_company_basic_mineral_mining"
 						country="c:JAP"
-						levels=7
+						levels=2
 						region="STATE_CHUGOKU"
 					}
 					building={
 						type="building_financial_district"
 						country="c:JAP"
-						levels=25
+						levels=2
 						region="STATE_KANSAI"
 					}
 					country={
@@ -16815,13 +16742,13 @@
 					building={
 						type="building_financial_district"
 						country="c:JAP"
-						levels=14
+						levels=4
 						region="STATE_KANSAI"
 					}
 					building={
 						type="building_financial_district"
 						country="c:JAP"
-						levels=6
+						levels=2
 						region="STATE_KANTO"
 					}
 				}
@@ -16851,7 +16778,7 @@
 					building={
 						type="building_financial_district"
 						country="c:JAP"
-						levels=5
+						levels=1
 						region="STATE_KANTO"
 					}
 				}
@@ -16913,13 +16840,13 @@
 					building={
 						type="building_manor_house"
 						country="c:JAP"
-						levels=2
+						levels=1
 						region="STATE_CHUGOKU"
 					}
 					building={
 						type="building_manor_house"
 						country="c:JAP"
-						levels=3
+						levels=1
 						region="STATE_KANTO"
 					}
 				}
@@ -16959,7 +16886,7 @@
 				add_ownership={
 					country={
 						country="c:JAP"
-						levels=12
+						levels=3
 					}
 				}
 				reserves=1
@@ -17000,17 +16927,6 @@
 				}
 				reserves=1
 				activate_production_methods={ "pm_metal_shipbuilding" }
-			}
-			create_building={
-				building="building_naval_base"
-				add_ownership={
-					country={
-						country="c:JAP"
-						levels=15
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_jeune_ecole" }
 			}
 			create_building={
 				building="building_government_administration"
@@ -17072,30 +16988,6 @@
 						country="c:JAP"
 						levels=1
 					}
-					building={
-						type="building_manor_house"
-						country="c:JAP"
-						levels=4
-						region="STATE_TOHOKU"
-					}
-					building={
-						type="building_financial_district"
-						country="c:JAP"
-						levels=1
-						region="STATE_EASTERN_NEW_GUINEA"
-					}
-					building={
-						type="building_manor_house"
-						country="c:JAP"
-						levels=1
-						region="STATE_SHIKOKU"
-					}
-					building={
-						type="building_manor_house"
-						country="c:JAP"
-						levels=1
-						region="STATE_KANTO"
-					}
 				}
 				reserves=1
 				activate_production_methods={ "automatic_irrigation_building_dye_plantation" "pm_road_carts" }
@@ -17153,7 +17045,7 @@
 					}
 					country={
 						country="c:JAP"
-						levels=25
+						levels=5
 					}
 				}
 				reserves=1
@@ -17219,10 +17111,10 @@
 				add_ownership={
 					country={
 						country="c:JAP"
-						levels=18
+						levels=12
 					}
 				}
-				subsidized=no
+				subsidized=yes
 				reserves=1
 				activate_production_methods={ "pm_steam_trains" "pm_wooden_passenger_carriages" }
 			}
@@ -17260,7 +17152,7 @@
 					building={
 						type="building_financial_district"
 						country="c:JAP"
-						levels=24
+						levels=2
 						region="STATE_KANTO"
 					}
 					building={
@@ -17788,6 +17680,20 @@
 	s:STATE_YANGHO={
 		region_state:JAP={
 			create_building={
+				building="building_railway"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:JAP"
+						levels=5
+						region="STATE_KANTO"
+					}
+				}
+				subsidized=yes
+				reserves=1
+				activate_production_methods={ "pm_steam_trains" "pm_wooden_passenger_carriages" }
+			}
+			create_building={
 				building="building_government_administration"
 				add_ownership={
 					country={
@@ -17880,7 +17786,7 @@
 					building={
 						type="building_financial_district"
 						country="c:JAP"
-						levels=1
+						levels=15
 						region="STATE_YANGHO"
 					}
 					building={
@@ -18446,10 +18352,10 @@
 				add_ownership={
 					country={
 						country="c:JAP"
-						levels=8
+						levels=13
 					}
 				}
-				subsidized=no
+				subsidized=yes
 				reserves=1
 				activate_production_methods={ "pm_steam_trains" "pm_wooden_passenger_carriages" }
 			}
