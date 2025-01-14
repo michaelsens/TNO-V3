@@ -89,31 +89,6 @@
             trigger_event = { id = tno_super_events.12 days = 0 popup = yes }
         }
 
-
-        if = {
-            limit = {
-                c:PRO ?= THIS
-                NOT = { has_global_variable = pro_var }
-            }
-            set_global_variable = pro_var
-        }
-        if = {
-			limit = {
-               has_global_variable = pro_var
-               NOT = { has_variable = pro_super_var }
-            }
-            set_variable = pro_super_var
-            trigger_event = { id = tno_super_events.6 days = 0 popup = yes }
-        }        
-        if = {
-			limit = {
-               has_modifier = rebuilding_russia
-               NOT = { has_variable = rebuilding_russia_var }
-            }
-            set_variable = rebuilding_russia_var
-            trigger_event = { id = tno_flavor_events.11 popup = yes }
-        }
-
         if = {   #African liberation
 			limit = {
                 exists = c:KON
@@ -866,7 +841,7 @@
         if = { #Irkutsk: Crushed Mutiny (Buryatia Conquered)
             limit = {
                 c:IRK ?= this
-               owns_entire_state_region = STATE_IRKUTSK
+               owns_entire_state_region = STATE_BURYATIA
                NOT = { has_variable = irk_obry_var }
             }
             set_variable = irk_obry_var
