@@ -1650,6 +1650,9 @@ on_law_checkpoint_advance = {
 		10 = land_ownership_law_events.16
 		10 = technocracy.2
 		100 = nihilism.13
+		10 = corporate_state.1
+		10 = corporate_state.4
+		50 = utilitarian.8
 	}
 }
 
@@ -1751,6 +1754,8 @@ on_law_checkpoint_debate = {
 		10 = agitator_legal_events.19
 		10 = agitator_legal_events.20
 		10 = technocracy.3
+		10 = corporate_state.2
+		10 = corporate_state.5
 	}
 }
 
@@ -1824,7 +1829,6 @@ on_law_checkpoint_stall = {
 		10 = luddite_law_events.6
 		10 = agitators_law_events.1
 		10 = agitators_law_events.2
-		10 = agitators_law_events.3
 		10 = agitators_law_events.4
 		10 = agitators_law_events.5
 		10 = agitators_law_events.6
@@ -1848,6 +1852,8 @@ on_law_checkpoint_stall = {
 		10 = agitator_legal_events.9
 		10 = agitator_legal_events.10
 		10 = technocracy.1
+		10 = corporate_state.3
+		10 = corporate_state.6
 	}
 }
 
@@ -1864,7 +1870,13 @@ on_law_enactment_pass = {
 				is_player = yes
 				NOT = { has_variable = achievement_vox_populi_var }
 				any_political_movement = {
-					desired_law = ROOT.currently_enacting_law.type
+					law_stance = {
+
+						law = root.currently_enacting_law.type
+
+						value > neutral
+
+					}
 					any_supporting_character = {
 						has_role = agitator
 					}
