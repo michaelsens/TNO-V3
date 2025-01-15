@@ -405,6 +405,34 @@ com_egypt = {
 	}
 }
 
+ita_egypt = {
+	color = { 80 120 70 }
+	possible = {
+		exists = c:ITA
+		THIS = c:EGY
+		c:ITA = {
+			OR = {
+				has_diplomatic_pact = {
+					who = c:EGY
+					type = protectorate
+					is_initiator = yes
+				}
+				has_diplomatic_pact = {
+					who = c:EGY
+					type = puppet
+					is_initiator = yes
+				}
+				has_diplomatic_pact = {
+					who = c:EGY
+					type = dominion
+					is_initiator = yes
+				}
+			}
+			
+		}
+	}
+}
+
 com_iran = {
 	color = { 255 93 20 }
 
