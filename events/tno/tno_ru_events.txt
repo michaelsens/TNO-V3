@@ -548,9 +548,14 @@ tno_ru_events.16 = { # Notification that the Russian Wars have begun
 		name = tno_ru_events.16.a
 		
 		custom_tooltip = tno_ru_events.16.a.tt.a
-		custom_tooltip = {
-			text = tno_ru_events.16.a.tt.b
-			add_journal_entry = { type = je_ru_tno_launch_attack }
+		if = {
+			limit = {
+				is_player = no
+			}
+			custom_tooltip = {
+				text = tno_ru_events.16.a.tt.b
+				add_journal_entry = { type = je_ru_tno_launch_attack }
+			}
 		}
     }
 }
