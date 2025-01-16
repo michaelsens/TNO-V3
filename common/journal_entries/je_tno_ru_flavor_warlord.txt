@@ -6,15 +6,8 @@ je_ru_tno_irk_restore_order_far_east = {
     scripted_button = je_ru_irk_restore_far_east
 
     immediate = {
-        c:CHR = {
-            save_scope_as = chr_nation
-        }
-
-        random_scope_state = {
-            limit = {
-                state_region = s:STATE_UPPER_YENISEYSK
-            }
-            save_scope_as = upper_yeniseysk_state_scope
+        s:STATE_UPPER_YENISEYSK = {
+            state_region = s:STATE_UPPER_YENISEYSK
         }
     }
     
@@ -29,7 +22,7 @@ je_ru_tno_irk_restore_order_far_east = {
         owns_entire_state_region = STATE_KAMCHATKA
 
         custom_tooltip = {
-            text = je_ru_tno_owns_chernyshevsky
+            text = je_ru_tno_owns_upper_yeniseysk
             any_scope_state = {
                 state_region = s:STATE_UPPER_YENISEYSK
             }
