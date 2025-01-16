@@ -2015,6 +2015,13 @@ je_ru_irk_restore_far_east = {
         owns_entire_state_region = STATE_CHUKOTKA
         owns_entire_state_region = STATE_KAMCHATKA
 
+        custom_tooltip = {
+            text = je_ru_tno_owns_upper_yeniseysk
+            any_scope_state = {
+                state_region = s:STATE_UPPER_YENISEYSK
+            }
+        }
+
 		hidden_trigger = {
 			NOT = {
 				has_variable = ru_unite_far_east
@@ -4104,6 +4111,13 @@ je_ru_unite_far_east = {
         owns_entire_state_region = STATE_CHUKOTKA
         owns_entire_state_region = STATE_KAMCHATKA
 
+        custom_tooltip = {
+            text = je_ru_tno_owns_upper_yeniseysk
+            any_scope_state = {
+                state_region = s:STATE_UPPER_YENISEYSK
+            }
+        }
+
 		hidden_trigger = {
 			NOT = {
 				has_variable = ru_unite_far_east
@@ -4157,7 +4171,7 @@ je_ru_unite_central_sib = {
         owns_entire_state_region = STATE_TUVA
 
         custom_tooltip = {
-            text = je_ru_tno_owns_tomsk
+            text = je_ru_tno_owns_upper_yeniseysk
             any_scope_state = {
                 state_region = s:STATE_UPPER_YENISEYSK
             }
@@ -4204,7 +4218,7 @@ je_ru_unite_west_sib = {
 	desc = "je_ru_unite_west_sib_desc"
 
 	possible = {
-        owns_entire_state_region = STATE_OB
+        owns_entire_state_region = STATE_TOBOLSK
 
         custom_tooltip = {
             text = je_ru_tno_owns_ural
@@ -4212,16 +4226,20 @@ je_ru_unite_west_sib = {
                 state_region = s:STATE_URAL
             }
         }
-
         custom_tooltip = {
-            text = je_ru_tno_owns_omsk
+            text = je_ru_tno_owns_surgut
             any_scope_state = {
-                state_region = s:STATE_TOBOLSK
+                state_region = s:STATE_SURGUT
             }
         }
-
         custom_tooltip = {
-            text = je_ru_tno_owns_vorkuta
+            text = je_ru_tno_owns_ob
+            any_scope_state = {
+                state_region = s:STATE_OB
+            }
+        }
+        custom_tooltip = {
+            text = je_ru_tno_owns_nenetsia
             any_scope_state = {
                 state_region = s:STATE_NENETSIA
             }
@@ -4272,23 +4290,40 @@ je_ru_unite_west_russia = {
 	desc = "je_ru_unite_west_russia_desc"
 
 	possible = {
-        owns_entire_state_region = STATE_SAMARA
         owns_entire_state_region = STATE_KAZAN
-        owns_entire_state_region = STATE_PERM
-        owns_entire_state_region = STATE_GALICH
 
         custom_tooltip = {
-            text = je_ru_tno_owns_mgk
+            text = je_ru_tno_owns_galich
             any_scope_state = {
-                state_region = s:STATE_URAL
+                state_region = s:STATE_GALICH
             }
         }
-
         custom_tooltip = {
-            text = je_ru_tno_rus_owns_wrrf
+            text = je_ru_tno_owns_chelyabinsk
+            any_scope_state = {
+                state_region = s:STATE_CHELYABINSK
+            }
+        }
+        custom_tooltip = {
+            text = je_ru_tno_owns_samara
+            any_scope_state = {
+                state_region = s:STATE_SAMARA
+            }
+        }
+        custom_tooltip = {
+            text = je_ru_tno_owns_perm
+            any_scope_state = {
+                state_region = s:STATE_PERM
+            }
+        }
+        custom_tooltip = {
+            text = je_ru_tno_owns_nenetsia
             any_scope_state = {
                 state_region = s:STATE_NENETSIA
             }
+        }
+        custom_tooltip = {
+            text = je_ru_tno_rus_owns_arkhangelsk
             any_scope_state = {
                 state_region = s:STATE_ARKHANGELSK
             }
@@ -4336,7 +4371,7 @@ je_ru_restore_russia = {
 
 	possible = {
 		#Far-East
-		owns_entire_state_region = STATE_IRKUTSK
+        owns_entire_state_region = STATE_IRKUTSK
         owns_entire_state_region = STATE_BURYATIA
         owns_entire_state_region = STATE_YAKUTSK
         owns_entire_state_region = STATE_TRANS_BAIKAL
@@ -4344,19 +4379,39 @@ je_ru_restore_russia = {
         owns_entire_state_region = STATE_KOLYMA
         owns_entire_state_region = STATE_CHUKOTKA
         owns_entire_state_region = STATE_KAMCHATKA
+        owns_entire_state_region = STATE_UPPER_YENISEYSK
         #Central Sib
-		owns_entire_state_region = STATE_TOMSK
-		owns_entire_state_region = STATE_TOBOLSK
-		owns_entire_state_region = STATE_TUVA
+        owns_entire_state_region = STATE_TOMSK
+        owns_entire_state_region = STATE_TUVA
         #West Sib
-		owns_entire_state_region = STATE_OB
-		owns_entire_state_region = STATE_NENETSIA
-		owns_entire_state_region = STATE_URAL
+        owns_entire_state_region = STATE_TOBOLSK
+        owns_entire_state_region = STATE_URAL
+        owns_entire_state_region = STATE_SURGUT
+        owns_entire_state_region = STATE_OB
+        owns_entire_state_region = STATE_URAL
+        custom_tooltip = {
+            text = je_ru_tno_owns_nenetsia
+            any_scope_state = {
+                state_region = s:STATE_NENETSIA
+            }
+        }
         #West Russia
-		owns_entire_state_region = STATE_SAMARA
-		owns_entire_state_region = STATE_PERM
-		owns_entire_state_region = STATE_KAZAN
-		owns_entire_state_region = STATE_GALICH
+        owns_entire_state_region = STATE_KAZAN
+        owns_entire_state_region = STATE_GALICH
+        owns_entire_state_region = STATE_CHELYABINSK
+        custom_tooltip = {
+            text = je_ru_tno_owns_samara
+            any_scope_state = {
+                state_region = s:STATE_SAMARA
+            }
+        }
+        owns_entire_state_region = STATE_PERM
+        custom_tooltip = {
+            text = je_ru_tno_rus_owns_arkhangelsk
+            any_scope_state = {
+                state_region = s:STATE_ARKHANGELSK
+            }
+        }
 
 		hidden_trigger = {
 			NOT = {

@@ -5,7 +5,18 @@ je_ru_tno_irk_restore_order_far_east = {
     group = je_group_historical_content
     scripted_button = je_ru_irk_restore_far_east
 
-    immediate = {}
+    immediate = {
+        c:CHR = {
+            save_scope_as = chr_nation
+        }
+
+        random_scope_state = {
+            limit = {
+                state_region = s:STATE_UPPER_YENISEYSK
+            }
+            save_scope_as = upper_yeniseysk_state_scope
+        }
+    }
     
     complete = {
         owns_entire_state_region = STATE_IRKUTSK
@@ -16,6 +27,13 @@ je_ru_tno_irk_restore_order_far_east = {
         owns_entire_state_region = STATE_KOLYMA
         owns_entire_state_region = STATE_CHUKOTKA
         owns_entire_state_region = STATE_KAMCHATKA
+
+        custom_tooltip = {
+            text = je_ru_tno_owns_chernyshevsky
+            any_scope_state = {
+                state_region = s:STATE_UPPER_YENISEYSK
+            }
+        }
 
         hidden_trigger = {
             has_variable = ru_unite_far_east
