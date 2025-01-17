@@ -2041,14 +2041,9 @@ je_ru_irk_restore_far_east = {
 			trigger_event = { id = tno_irk_events.6 days = 180 popup = no }
 		}
 
-		custom_tooltip = je_ru_lose_warlord_economy
     	#custom_tooltip = je_ru_irk_restore_far_east_tt_3
 		custom_tooltip = je_ru_irk_restore_far_east_tt_4
     	#custom_tooltip = je_ru_irk_restore_far_east_tt_5
-
-		hidden_effect = {
-    		trigger_event = { id = tno_ru_events.1 popup = yes } # event for selecting new economic law
-    	}
 
     	add_journal_entry = { type = je_ru_tno_com_restore_ussr }
     	add_journal_entry = { type = je_ru_tno_irk_finish_sib_plan }
@@ -2270,7 +2265,7 @@ je_ru_com_restore_ussr = {
 
 	possible = {
 		#Far-East
-		owns_entire_state_region = STATE_IRKUTSK
+        owns_entire_state_region = STATE_IRKUTSK
         owns_entire_state_region = STATE_BURYATIA
         owns_entire_state_region = STATE_YAKUTSK
         owns_entire_state_region = STATE_TRANS_BAIKAL
@@ -2278,30 +2273,43 @@ je_ru_com_restore_ussr = {
         owns_entire_state_region = STATE_KOLYMA
         owns_entire_state_region = STATE_CHUKOTKA
         owns_entire_state_region = STATE_KAMCHATKA
+        owns_entire_state_region = STATE_UPPER_YENISEYSK
         #Central Sib
-		owns_entire_state_region = STATE_TOMSK
-		owns_entire_state_region = STATE_TOBOLSK
-		owns_entire_state_region = STATE_TUVA
+        owns_entire_state_region = STATE_TOMSK
+        owns_entire_state_region = STATE_TUVA
         #West Sib
-		owns_entire_state_region = STATE_OB
-		owns_entire_state_region = STATE_NENETSIA
-		owns_entire_state_region = STATE_URAL
+        owns_entire_state_region = STATE_TOBOLSK
+        owns_entire_state_region = STATE_URAL
+        owns_entire_state_region = STATE_SURGUT
+        owns_entire_state_region = STATE_OB
+        owns_entire_state_region = STATE_URAL
+        custom_tooltip = {
+            text = je_ru_tno_owns_nenetsia
+            any_scope_state = {
+                state_region = s:STATE_NENETSIA
+            }
+        }
         #West Russia
-		owns_entire_state_region = STATE_SAMARA
-		owns_entire_state_region = STATE_PERM
-		owns_entire_state_region = STATE_KAZAN
-		owns_entire_state_region = STATE_GALICH
+        owns_entire_state_region = STATE_KAZAN
+        owns_entire_state_region = STATE_GALICH
+        owns_entire_state_region = STATE_CHELYABINSK
+        custom_tooltip = {
+            text = je_ru_tno_owns_samara
+            any_scope_state = {
+                state_region = s:STATE_SAMARA
+            }
+        }
+        owns_entire_state_region = STATE_PERM
+        custom_tooltip = {
+            text = je_ru_tno_rus_owns_arkhangelsk
+            any_scope_state = {
+                state_region = s:STATE_ARKHANGELSK
+            }
+        }
 
-		hidden_trigger = {
+        hidden_trigger = {
 			NOT = {
 				c:RUS ?= THIS
-			}
-		}
-
-		custom_tooltip = {
-			text = je_ru_tno_rus_owns_wrrf
-			any_scope_state = {
-				state_region = s:STATE_ARKHANGELSK
 			}
 		}
 	}
@@ -2364,99 +2372,185 @@ je_ru_com_restore_ussr = {
     	#		type = rivalry
      	#	}
 		#}
-		add_primary_culture = cu:ukrainian
-		add_primary_culture = cu:byelorussian
-		add_primary_culture = cu:north_caucasian
-		add_primary_culture = cu:armenian
-		add_primary_culture = cu:azerbaijani
-		add_primary_culture = cu:georgian
-		add_primary_culture = cu:uzbek
 		hidden_effect = {
 			if = {
 				limit = {
 					exists = c:RUS
 				}
-			s:STATE_MOSCOW = {
-				add_claim = c:RUS
-			}
-			s:STATE_TVER = {
-				add_claim = c:RUS
-			}
-			s:STATE_NOVGOROD = {
-				add_claim = c:RUS
-			}
-			s:STATE_INGRIA = {
-				add_claim = c:RUS
-			}
-			s:STATE_SMOLENSK = {
-				add_claim = c:RUS
-			}
-			s:STATE_BRYANSK = {
-				add_claim = c:RUS
-			}
-			s:STATE_KURSK = {
-				add_claim = c:RUS
-			}
-			s:STATE_TARTARIA = {
-				add_claim = c:RUS
-			}
-			s:STATE_ROSTOV = {
-				add_claim = c:RUS
-			}
-			s:STATE_ASTRAKHAN = {
-				add_claim = c:RUS
-			}
-			s:STATE_KUBAN = {
-				add_claim = c:RUS
-			}
-			s:STATE_GREATER_CAUCASUS = {
-				add_claim = c:RUS
-			}
-			s:STATE_AZERBAIJAN = {
-				add_claim = c:RUS
-			}
-			s:STATE_ARMENIA = {
-				add_claim = c:RUS
-			}
-			s:STATE_CRIMEA = {
-				add_claim = c:RUS
-			}
-			s:STATE_LUHANSK = {
-				add_claim = c:RUS
-			}
-			s:STATE_KIEV = {
-				add_claim = c:RUS
-			}
-			s:STATE_VOLHYNIA = {
-				add_claim = c:RUS
-			}
-			s:STATE_TRANSNISTRIA = {
-				add_claim = c:RUS
-			}
-			s:STATE_DAGESTAN = {
-				add_claim = c:RUS
-			}
-			s:STATE_CHERSON = {
-				add_claim = c:RUS
-			}
-			s:STATE_ORSHA = {
-				add_claim = c:RUS
-			}
-			s:STATE_MINSK = {
-				add_claim = c:RUS
-			}
-			s:STATE_BREST = {
-				add_claim = c:RUS
-			}
-			s:STATE_LITHUANIA = {
-				add_claim = c:RUS
-			}
-			s:STATE_LATVIA = {
-				add_claim = c:RUS
-			}
-			s:STATE_ESTONIA = {
-				add_claim = c:RUS
-			}
+				#Vladivostok
+				s:STATE_OUTER_MANCHURIA = {
+					add_claim = c:RUS
+				}
+				#Kazakhstan
+				s:STATE_JETISY = {
+					add_claim = c:RUS
+				}
+				s:STATE_SEMIRECHE = {
+					add_claim = c:RUS
+				}
+				s:STATE_AKMOLINSK = {
+					add_claim = c:RUS
+				}
+				s:STATE_SYRDARYA = {
+					add_claim = c:RUS
+				}
+				s:STATE_AKTOBE = {
+					add_claim = c:RUS
+				}
+				s:STATE_URALSK = {
+					add_claim = c:RUS
+				}
+				#Other Central Asia
+				s:STATE_KHIVA = {
+					add_claim = c:RUS
+				}
+				s:STATE_UZBEKIA = {
+					add_claim = c:RUS
+				}
+				s:STATE_MERZ = {
+					add_claim = c:RUS
+				}
+				s:STATE_TURKMENIA = {
+					add_claim = c:RUS
+				}
+				s:STATE_TAJIKISTAN = {
+					add_claim = c:RUS
+				}
+				s:STATE_FERGANA = {
+					add_claim = c:RUS
+				}
+				s:STATE_KIRGHIZIA = {
+					add_claim = c:RUS
+				}
+				#Onega & Karelia
+				s:STATE_EAST_KARELIA = {
+					add_claim = c:RUS
+				}
+				s:STATE_KOLA = {
+					add_claim = c:RUS
+				}
+				#Moscowien
+				s:STATE_INGRIA = {
+					add_claim = c:RUS
+				}
+				s:STATE_PSKOV = {
+					add_claim = c:RUS
+				}
+				s:STATE_TVER = {
+					add_claim = c:RUS
+				}
+				s:STATE_SMOLENSK = {
+					add_claim = c:RUS
+				}
+				s:STATE_MOSCOW = {
+					add_claim = c:RUS
+				}
+				s:STATE_YAROSLAVL = {
+					add_claim = c:RUS
+				}
+				s:STATE_ORYOL = {
+					add_claim = c:RUS
+				}
+				s:STATE_TARTARIA = {
+					add_claim = c:RUS
+				}
+				s:STATE_RYAZAN = {
+					add_claim = c:RUS
+				}
+				s:STATE_KURSK = {
+					add_claim = c:RUS
+				}
+				s:STATE_TAMBOV = {
+					add_claim = c:RUS
+				}
+				s:STATE_ROSTOV = {
+					add_claim = c:RUS
+				}
+				#Caucasus
+				s:STATE_ASTRAKHAN = {
+					add_claim = c:RUS
+				}
+				s:STATE_KALMYKIA = {
+					add_claim = c:RUS
+				}
+				s:STATE_STAVROPOL = {
+					add_claim = c:RUS
+				}
+				s:STATE_KUBAN = {
+					add_claim = c:RUS
+				}
+				s:STATE_NORTH_CAUCASUS = {
+					add_claim = c:RUS
+				}
+				s:STATE_DAGESTAN = {
+					add_claim = c:RUS
+				}
+				s:STATE_GREATER_CAUCASUS = {
+					add_claim = c:RUS
+				}
+				s:STATE_ELIZAVETPOL = {
+					add_claim = c:RUS
+				}
+				s:STATE_AZERBAIJAN = {
+					add_claim = c:RUS
+				}
+				s:STATE_ARMENIA = {
+					add_claim = c:RUS
+				}
+				#German Crimea
+				s:STATE_CRIMEA = {
+					add_claim = c:RUS
+				}
+				#Ukraine
+				s:STATE_TAURIDA = {
+					add_claim = c:RUS
+				}
+				s:STATE_KIEV = {
+					add_claim = c:RUS
+				}
+				s:STATE_KHARKOV = {
+					add_claim = c:RUS
+				}
+				s:STATE_CHERNIHIV = {
+					add_claim = c:RUS
+				}
+				s:STATE_VOLHYNIA = {
+					add_claim = c:RUS
+				}
+				s:STATE_CHERSON = {
+					add_claim = c:RUS
+				}
+				#Ostland
+				s:STATE_MOGILEV = {
+					add_claim = c:RUS
+				}
+				s:STATE_MINSK = {
+					add_claim = c:RUS
+				}
+				s:STATE_VITEBSK = {
+					add_claim = c:RUS
+				}
+				s:STATE_BREST = {
+					add_claim = c:RUS
+				}
+				s:STATE_VILNIUS = {
+					add_claim = c:RUS
+				}
+				s:STATE_KAUNAS = {
+					add_claim = c:RUS
+				}
+				s:STATE_COURLAND = {
+					add_claim = c:RUS
+				}
+				s:STATE_RIGA = {
+					add_claim = c:RUS
+				}
+				s:STATE_TARTU = {
+					add_claim = c:RUS
+				}
+				s:STATE_TALINN = {
+					add_claim = c:RUS
+				}
 			}
 		}
 	}
@@ -2495,6 +2589,12 @@ je_ru_take_karelia_and_onega_button = {
 				}
 				save_scope_as = east_karelia_state_scope
 			}
+			random_scope_state = {
+				limit = {
+					state_region = s:STATE_KOLA
+				}
+				save_scope_as = kola_state_scope
+			}
 		}
 		create_diplomatic_play = {
             #name = jack
@@ -2506,13 +2606,34 @@ je_ru_take_karelia_and_onega_button = {
 			add_war_goal = {
 				holder = root
 				type = return_state
+				target_state = s:STATE_EAST_KARELIA.region_state:ONG
+			}
+			add_war_goal = {
+				holder = root
+				type = return_state
+				target_state = s:STATE_NOVGOROD.region_state:ONG
+			}
+			add_war_goal = {
+				holder = root
+				type = return_state
 				target_state = scope:east_karelia_state_scope
+			}
+			add_war_goal = {
+				holder = root
+				type = return_state
+				target_state = scope:kola_state_scope
 			}
 			add_war_goal = {
 				holder = scope:overlord_target
 				type = revoke_claim
 				target_country = root
 				target_state = scope:east_karelia_state_scope
+			}
+			add_war_goal = {
+				holder = scope:overlord_target
+				type = revoke_claim
+				target_country = root
+				target_state = scope:kola_state_scope
 			}
 			add_war_goal = {
 				holder = scope:overlord_target
@@ -2552,14 +2673,25 @@ je_ru_take_karelia_button = {
 				}
 				save_scope_as = east_karelia_state_scope
 			}
+			random_scope_state = {
+				limit = {
+					state_region = s:STATE_KOLA
+				}
+				save_scope_as = kola_state_scope
+			}
 		}
 		create_diplomatic_play = {
             #name = jack
-			target_country = c:FIN
+			target_country = overlord_target
 			type = dp_return_state
 			target_state = scope:east_karelia_state_scope
 			war = no
 			escalation = 85
+			add_war_goal = {
+				holder = root
+				type = return_state
+				target_state = scope:kola_state_scope
+			}
 			add_war_goal = {
 				holder = scope:overlord_target
 				target_country = root
@@ -2570,6 +2702,12 @@ je_ru_take_karelia_button = {
 				type = revoke_claim
 				target_country = root
 				target_state = scope:east_karelia_state_scope
+			}
+			add_war_goal = {
+				holder = scope:overlord_target
+				type = revoke_claim
+				target_country = root
+				target_state = scope:kola_state_scope
 			}
 		}
 		custom_tooltip = je_ru_take_karelia_button_tt
@@ -2588,7 +2726,10 @@ je_ru_gen_reform_army_advance_basic = {
 		hidden_trigger = {
 			has_modifier = ru_no_army_reform
 		}
-		has_law = law_type:law_professional_army
+		OR = {
+			has_law = law_type:law_professional_army
+			has_law = law_type:law_mass_conscription
+		}
 		army_size >= 150
 		has_technology_researched = trench_works
 		NOR = {
@@ -2952,6 +3093,19 @@ je_ru_second_west_russian_war = {
 	}
 
 	effect = {
+		every_state = { # Kola
+			limit = { 
+				state_region = s:STATE_KOLA
+			} 
+			owner = { 
+				random_scope_state = {
+					limit = {
+						state_region = s:STATE_KOLA
+					}
+					save_scope_as = kola_state_scope
+				}
+			}
+		}
 		every_state = { # Arkhangelsk
 			limit = { 
 				state_region = s:STATE_ARKHANGELSK
@@ -2965,6 +3119,22 @@ je_ru_second_west_russian_war = {
 				}
 			}
 		}
+		every_state = { # Russian Novgorod
+			limit = { 
+				state_region = s:STATE_NOVGOROD
+			} 
+			owner = { 
+				random_scope_state = {
+					limit = {
+						owner = {
+							c:RUS ?= THIS
+						}
+						state_region = s:STATE_NOVGOROD
+					}
+					save_scope_as = rus_novgorod_state_scope
+				}
+			}
+		}
 		every_state = { # East Karelia
 			limit = { 
 				state_region = s:STATE_EAST_KARELIA
@@ -2975,6 +3145,19 @@ je_ru_second_west_russian_war = {
 						state_region = s:STATE_EAST_KARELIA
 					}
 					save_scope_as = east_karelia_state_scope
+				}
+			}
+		}
+		every_state = { # West Karelia
+			limit = { 
+				state_region = s:STATE_WEST_KARELIA
+			} 
+			owner = { 
+				random_scope_state = {
+					limit = {
+						state_region = s:STATE_WEST_KARELIA
+					}
+					save_scope_as = west_karelia_state_scope
 				}
 			}
 		}
@@ -3034,6 +3217,34 @@ je_ru_second_west_russian_war = {
 				save_scope_as = ingria_owner
 			}
 		}
+		every_state = { # Pskov
+			limit = { 
+				state_region = s:STATE_PSKOV
+			} 
+			owner = { 
+				random_scope_state = {
+					limit = {
+						state_region = s:STATE_PSKOV
+					}
+					save_scope_as = pskov_state_scope
+				}
+				save_scope_as = pskov_owner
+			}
+		}
+		every_state = { # Yaroslavl
+			limit = { 
+				state_region = s:STATE_YAROSLAVL
+			} 
+			owner = { 
+				random_scope_state = {
+					limit = {
+						state_region = s:STATE_YAROSLAVL
+					}
+					save_scope_as = yaroslavl_state_scope
+				}
+				save_scope_as = yaroslavl_owner
+			}
+		}
 		every_state = { # Smolensk
 			limit = { 
 				state_region = s:STATE_SMOLENSK
@@ -3048,18 +3259,46 @@ je_ru_second_west_russian_war = {
 				save_scope_as = smolensk_owner
 			}
 		}
-		every_state = { # Bryansk
+		every_state = { # Ryazan
 			limit = { 
-				state_region = s:STATE_BRYANSK
+				state_region = s:STATE_RYAZAN
 			} 
 			owner = { 
 				random_scope_state = {
 					limit = {
-						state_region = s:STATE_BRYANSK
+						state_region = s:STATE_RYAZAN
 					}
-					save_scope_as = bryansk_state_scope
+					save_scope_as = ryazan_state_scope
 				}
-				save_scope_as = bryansk_owner
+				save_scope_as = ryazan_owner
+			}
+		}
+		every_state = { # Tambov
+			limit = { 
+				state_region = s:STATE_TAMBOV
+			} 
+			owner = { 
+				random_scope_state = {
+					limit = {
+						state_region = s:STATE_TAMBOV
+					}
+					save_scope_as = tambov_state_scope
+				}
+				save_scope_as = tambov_owner
+			}
+		}
+		every_state = { # Oryol
+			limit = { 
+				state_region = s:STATE_ORYOL
+			} 
+			owner = { 
+				random_scope_state = {
+					limit = {
+						state_region = s:STATE_ORYOL
+					}
+					save_scope_as = oryol_state_scope
+				}
+				save_scope_as = oryol_owner
 			}
 		}
 		every_state = { # Kursk
@@ -3090,6 +3329,20 @@ je_ru_second_west_russian_war = {
 				save_scope_as = tartaria_owner
 			}
 		}
+		every_state = { # Samara
+			limit = { 
+				state_region = s:STATE_SAMARA
+			} 
+			owner = { 
+				random_scope_state = {
+					limit = {
+						state_region = s:STATE_SAMARA
+					}
+					save_scope_as = samara_state_scope
+				}
+				save_scope_as = samara_owner
+			}
+		}
 		every_state = { # Rostov ##########################
 			limit = { 
 				state_region = s:STATE_ROSTOV
@@ -3118,6 +3371,20 @@ je_ru_second_west_russian_war = {
 				save_scope_as = astrakhan_owner
 			}
 		}
+		every_state = { # Kalmykia
+			limit = { 
+				state_region = s:STATE_KALMYKIA
+			} 
+			owner = { 
+				random_scope_state = {
+					limit = {
+						state_region = s:STATE_KALMYKIA
+					}
+					save_scope_as = kalmykia_state_scope
+				}
+				save_scope_as = kalmykia_owner
+			}
+		}
 		every_state = { # Kuban
 			limit = { 
 				state_region = s:STATE_KUBAN
@@ -3132,6 +3399,34 @@ je_ru_second_west_russian_war = {
 				save_scope_as = kuban_owner
 			}
 		}
+		every_state = { # Stavropol
+			limit = { 
+				state_region = s:STATE_STAVROPOL
+			} 
+			owner = { 
+				random_scope_state = {
+					limit = {
+						state_region = s:STATE_STAVROPOL
+					}
+					save_scope_as = stavropol_state_scope
+				}
+				save_scope_as = stavropol_owner
+			}
+		}
+		every_state = { # North Caucasus
+			limit = { 
+				state_region = s:STATE_NORTH_CAUCASUS
+			} 
+			owner = { 
+				random_scope_state = {
+					limit = {
+						state_region = s:STATE_NORTH_CAUCASUS
+					}
+					save_scope_as = north_caucasus_state_scope
+				}
+				save_scope_as = north_caucasus_owner
+			}
+		}
 		every_state = { # Greater Caucasus
 			limit = { 
 				state_region = s:STATE_GREATER_CAUCASUS
@@ -3144,6 +3439,34 @@ je_ru_second_west_russian_war = {
 					save_scope_as = greater_caucasus_state_scope
 				}
 				save_scope_as = greater_caucasus_owner
+			}
+		}
+		every_state = { # Azerbaijan
+			limit = { 
+				state_region = s:STATE_AZERBAIJAN
+			} 
+			owner = { 
+				random_scope_state = {
+					limit = {
+						state_region = s:STATE_AZERBAIJAN
+					}
+					save_scope_as = azerbaijan_state_scope
+				}
+				save_scope_as = azerbaijan_owner
+			}
+		}
+		every_state = { # Elizavetpol
+			limit = { 
+				state_region = s:STATE_ELIZAVETPOL
+			} 
+			owner = { 
+				random_scope_state = {
+					limit = {
+						state_region = s:STATE_ELIZAVETPOL
+					}
+					save_scope_as = elizavetpol_state_scope
+				}
+				save_scope_as = elizavetpol_owner
 			}
 		}
 		every_state = { # Azerbaijan
@@ -3188,18 +3511,46 @@ je_ru_second_west_russian_war = {
 				save_scope_as = crimea_owner
 			}
 		}
-		every_state = { # Luhansk
+		every_state = { # Kharkov
 			limit = { 
-				state_region = s:STATE_LUHANSK
+				state_region = s:STATE_KHARKOV
 			} 
 			owner = { 
 				random_scope_state = {
 					limit = {
-						state_region = s:STATE_LUHANSK
+						state_region = s:STATE_KHARKOV
 					}
-					save_scope_as = luhansk_state_scope
+					save_scope_as = kharkov_state_scope
 				}
-				save_scope_as = luhansk_owner
+				save_scope_as = kharkov_owner
+			}
+		}
+		every_state = { # Taurida
+			limit = { 
+				state_region = s:STATE_TAURIDA
+			} 
+			owner = { 
+				random_scope_state = {
+					limit = {
+						state_region = s:STATE_TAURIDA
+					}
+					save_scope_as = taurida_state_scope
+				}
+				save_scope_as = taurida_owner
+			}
+		}
+		every_state = { # Chernihiv
+			limit = { 
+				state_region = s:STATE_CHERNIHIV
+			} 
+			owner = { 
+				random_scope_state = {
+					limit = {
+						state_region = s:STATE_CHERNIHIV
+					}
+					save_scope_as = chernihiv_state_scope
+				}
+				save_scope_as = chernihiv_owner
 			}
 		}
 		every_state = { # Kiev
@@ -3214,20 +3565,6 @@ je_ru_second_west_russian_war = {
 					save_scope_as = kiev_state_scope
 				}
 				save_scope_as = kiev_owner
-			}
-		}
-		every_state = { # Transnistria
-			limit = { 
-				state_region = s:STATE_TRANSNISTRIA
-			} 
-			owner = { 
-				random_scope_state = {
-					limit = {
-						state_region = s:STATE_TRANSNISTRIA
-					}
-					save_scope_as = transnistria_state_scope
-				}
-				save_scope_as = transnistria_owner
 			}
 		}
 		every_state = { # Volhynia
@@ -3258,18 +3595,32 @@ je_ru_second_west_russian_war = {
 				save_scope_as = cherson_owner
 			}
 		}
-		every_state = { # Orsha
+		every_state = { # Mogilev
 			limit = { 
-				state_region = s:STATE_ORSHA
+				state_region = s:STATE_MOGILEV
 			} 
 			owner = { 
 				random_scope_state = {
 					limit = {
-						state_region = s:STATE_ORSHA
+						state_region = s:STATE_MOGILEV
 					}
-					save_scope_as = orsha_state_scope
+					save_scope_as = mogilev_state_scope
 				}
-				save_scope_as = orsha_owner
+				save_scope_as = mogilev_owner
+			}
+		}
+		every_state = { # Vitebsk
+			limit = { 
+				state_region = s:STATE_VITEBSK
+			} 
+			owner = { 
+				random_scope_state = {
+					limit = {
+						state_region = s:STATE_VITEBSK
+					}
+					save_scope_as = vitebsk_state_scope
+				}
+				save_scope_as = vitebsk_owner
 			}
 		}
 		every_state = { # Minsk
@@ -3300,46 +3651,88 @@ je_ru_second_west_russian_war = {
 				save_scope_as = brest_owner
 			}
 		}
-		every_state = { # Lithuania
+		every_state = { # Kaunas
 			limit = { 
-				state_region = s:STATE_LITHUANIA
+				state_region = s:STATE_KAUNAS
 			} 
 			owner = { 
 				random_scope_state = {
 					limit = {
-						state_region = s:STATE_LITHUANIA
+						state_region = s:STATE_KAUNAS
 					}
-					save_scope_as = lithuania_state_scope
+					save_scope_as = kaunas_state_scope
 				}
-				save_scope_as = lithuania_owner
+				save_scope_as = kaunas_owner
 			}
 		}
-		every_state = { # Latvia
+		every_state = { # Vilnius
 			limit = { 
-				state_region = s:STATE_LATVIA
+				state_region = s:STATE_VILNIUS
 			} 
 			owner = { 
 				random_scope_state = {
 					limit = {
-						state_region = s:STATE_LATVIA
+						state_region = s:STATE_VILNIUS
 					}
-					save_scope_as = latvia_state_scope
+					save_scope_as = vilnius_state_scope
 				}
-				save_scope_as = latvia_owner
+				save_scope_as = vilnius_owner
 			}
 		}
-		every_state = { # Estonia
+		every_state = { # Riga
 			limit = { 
-				state_region = s:STATE_ESTONIA
+				state_region = s:STATE_RIGA
 			} 
 			owner = { 
 				random_scope_state = {
 					limit = {
-						state_region = s:STATE_ESTONIA
+						state_region = s:STATE_RIGA
 					}
-					save_scope_as = estonia_state_scope
+					save_scope_as = riga_state_scope
 				}
-				save_scope_as = estonia_owner
+				save_scope_as = riga_owner
+			}
+		}
+		every_state = { # Courland
+			limit = { 
+				state_region = s:STATE_COURLAND
+			} 
+			owner = { 
+				random_scope_state = {
+					limit = {
+						state_region = s:STATE_COURLAND
+					}
+					save_scope_as = courland_state_scope
+				}
+				save_scope_as = courland_owner
+			}
+		}
+		every_state = { # Talinn
+			limit = { 
+				state_region = s:STATE_TALINN
+			} 
+			owner = { 
+				random_scope_state = {
+					limit = {
+						state_region = s:STATE_TALINN
+					}
+					save_scope_as = talinn_state_scope
+				}
+				save_scope_as = talinn_owner
+			}
+		}
+		every_state = { # Tartu
+			limit = { 
+				state_region = s:STATE_TARTU
+			} 
+			owner = { 
+				random_scope_state = {
+					limit = {
+						state_region = s:STATE_TARTU
+					}
+					save_scope_as = tartu_state_scope
+				}
+				save_scope_as = tartu_owner
 			}
 		}
 		create_diplomatic_play = {
@@ -3349,16 +3742,31 @@ je_ru_second_west_russian_war = {
 			war = no
 			escalation = 26
 			#target_state = moscow_state_scope
-			add_target_backers = { scope:tver_owner scope:novgorod_owner scope:ingria_owner scope:smolensk_owner scope:bryansk_owner scope:kursk_owner scope:tartaria_owner scope:rostov_owner scope:astrakhan_owner scope:kuban_owner  scope:greater_caucasus_owner scope:azerbaijan_owner scope:dagestan_owner scope:crimea_owner scope:luhansk_owner scope:kiev_owner scope:transnistria_owner scope:volhynia_owner scope:cherson_owner scope:orsha_owner scope:minsk_owner scope:brest_owner scope:lithuania_owner scope:latvia_owner scope:estonia_owner c:FIN c:ROM }
+			add_target_backers = { scope:tver_owner scope:novgorod_owner scope:ingria_owner scope:pskov_owner scope:yaroslavl_owner scope:smolensk_owner scope:ryazan_owner scope:tambov_owner scope:oryol_owner scope:kursk_owner scope:tartaria_owner scope:samara_owner scope:rostov_owner scope:astrakhan_owner scope:kalmykia_owner scope:kuban_owner scope:stavropol_owner scope:north_caucasus_owner scope:greater_caucasus_owner scope:azerbaijan_owner scope:elizavetpol_owner scope:dagestan_owner scope:crimea_owner scope:kharkov_owner scope:taurida_owner scope:chernihiv_owner scope:kiev_owner scope:volhynia_owner scope:cherson_owner scope:mogilev_owner scope:vitebsk_owner scope:minsk_owner scope:brest_owner scope:kaunas_owner scope:vilnius_owner scope:riga_owner scope:courland_owner scope:talinn_owner scope:tartu_owner c:FIN c:ROM }
 			add_war_goal = {
 				holder = scope:moscow_owner
 				type = conquer_state
 				target_state = scope:arkhangelsk_state_scope
 			}
 			add_war_goal = {
+				holder = scope:moscow_owner
+				type = return_state
+				target_state = scope:rus_novgorod_state_scope
+			}
+			add_war_goal = {
 				holder = c:FIN
 				type = conquer_state
 				target_state = scope:east_karelia_state_scope
+			}
+			add_war_goal = {
+				holder = root
+				type = conquer_state
+				target_state = scope:west_karelia_state_scope
+			}
+			add_war_goal = {
+				holder = c:FIN
+				type = conquer_state
+				target_state = scope:kola_state_scope
 			}
 			add_war_goal = {
 				holder = root
@@ -3383,12 +3791,32 @@ je_ru_second_west_russian_war = {
 			add_war_goal = {
 				holder = root
 				type = return_state
+				target_state = scope:pskov_state_scope
+			}
+			add_war_goal = {
+				holder = root
+				type = return_state
+				target_state = scope:yaroslavl_state_scope
+			}
+			add_war_goal = {
+				holder = root
+				type = return_state
 				target_state = scope:smolensk_state_scope
 			}
 			add_war_goal = {
 				holder = root
 				type = return_state
-				target_state = scope:bryansk_state_scope
+				target_state = scope:ryazan_state_scope
+			}
+			add_war_goal = {
+				holder = root
+				type = return_state
+				target_state = scope:tambov_state_scope
+			}
+			add_war_goal = {
+				holder = root
+				type = return_state
+				target_state = scope:oryol_state_scope
 			}
 			add_war_goal = {
 				holder = root
@@ -3403,6 +3831,11 @@ je_ru_second_west_russian_war = {
 			add_war_goal = {
 				holder = root
 				type = return_state
+				target_state = scope:samara_state_scope
+			}
+			add_war_goal = {
+				holder = root
+				type = return_state
 				target_state = scope:rostov_state_scope
 			}
 			add_war_goal = {
@@ -3413,7 +3846,22 @@ je_ru_second_west_russian_war = {
 			add_war_goal = {
 				holder = root
 				type = return_state
+				target_state = scope:kalmykia_state_scope
+			}
+			add_war_goal = {
+				holder = root
+				type = return_state
 				target_state = scope:kuban_state_scope
+			}
+			add_war_goal = {
+				holder = root
+				type = return_state
+				target_state = scope:stavropol_state_scope
+			}
+			add_war_goal = {
+				holder = root
+				type = return_state
+				target_state = scope:north_caucasus_state_scope
 			}
 			add_war_goal = {
 				holder = root
@@ -3438,22 +3886,34 @@ je_ru_second_west_russian_war = {
 			add_war_goal = {
 				holder = root
 				type = return_state
+				target_state = scope:elizavetpol_state_scope
+			}
+			#German Crimea
+			add_war_goal = {
+				holder = root
+				type = return_state
 				target_state = scope:crimea_state_scope
+			}
+			#Ukraine
+			add_war_goal = {
+				holder = root
+				type = return_state
+				target_state = scope:kharkov_state_scope
 			}
 			add_war_goal = {
 				holder = root
 				type = return_state
-				target_state = scope:luhansk_state_scope
+				target_state = scope:taurida_state_scope
+			}
+			add_war_goal = {
+				holder = root
+				type = return_state
+				target_state = scope:chernihiv_state_scope
 			}
 			add_war_goal = {
 				holder = root
 				type = return_state
 				target_state = scope:kiev_state_scope
-			}
-			add_war_goal = {
-				holder = root
-				type = return_state
-				target_state = scope:transnistria_state_scope
 			}
 			add_war_goal = {
 				holder = root
@@ -3465,10 +3925,16 @@ je_ru_second_west_russian_war = {
 				type = return_state
 				target_state = scope:cherson_state_scope
 			}
+			#Ostland
 			add_war_goal = {
 				holder = root
 				type = return_state
-				target_state = scope:orsha_state_scope
+				target_state = scope:mogilev_state_scope
+			}
+			add_war_goal = {
+				holder = root
+				type = return_state
+				target_state = scope:vitebsk_state_scope
 			}
 			add_war_goal = {
 				holder = root
@@ -3483,17 +3949,102 @@ je_ru_second_west_russian_war = {
 			add_war_goal = {
 				holder = root
 				type = return_state
-				target_state = scope:lithuania_state_scope
+				target_state = scope:kaunas_state_scope
 			}
 			add_war_goal = {
 				holder = root
 				type = return_state
-				target_state = scope:latvia_state_scope
+				target_state = scope:vilnius_state_scope
 			}
 			add_war_goal = {
 				holder = root
 				type = return_state
-				target_state = scope:estonia_state_scope
+				target_state = scope:riga_state_scope
+			}
+			add_war_goal = {
+				holder = root
+				type = return_state
+				target_state = scope:courland_state_scope
+			}
+			add_war_goal = {
+				holder = root
+				type = return_state
+				target_state = scope:talinn_state_scope
+			}
+			add_war_goal = {
+				holder = root
+				type = return_state
+				target_state = scope:tartu_state_scope
+			}
+			add_war_goal = { #Force annex the entire state
+				holder = root
+				type = return_state
+				target_state = s:STATE_PSKOV.region_state:RKM
+			}
+			add_war_goal = {
+				holder = root
+				type = return_state
+				target_state = s:STATE_CHERNIHIV.region_state:RKM
+			}
+			add_war_goal = {
+				holder = root
+				type = return_state
+				target_state = s:STATE_MOGILEV.region_state:RKM
+			}
+			add_war_goal = {
+				holder = root
+				type = return_state
+				target_state = s:STATE_ROSTOV.region_state:RKM
+			}
+			add_war_goal = {
+				holder = root
+				type = return_state
+				target_state = s:STATE_ASTRAKHAN.region_state:RKK
+			}
+			add_war_goal = {
+				holder = root
+				type = return_state
+				target_state = s:STATE_NORTH_CAUCASUS.region_state:RKK
+			}
+			add_war_goal = {
+				holder = root
+				type = return_state
+				target_state = s:STATE_KUBAN.region_state:RKK
+			}
+			add_war_goal = {
+				holder = root
+				type = return_state
+				target_state = s:STATE_ROSTOV.region_state:RKK
+			}
+			add_war_goal = {
+				holder = root
+				type = return_state
+				target_state = s:STATE_TAURIDA.region_state:RKU
+			}
+			add_war_goal = {
+				holder = root
+				type = return_state
+				target_state = s:STATE_CHERSON.region_state:RKU
+			}
+			add_war_goal = {
+				holder = root
+				type = return_state
+				target_state = s:STATE_KIEV.region_state:RKU
+			}
+			add_war_goal = {
+				holder = root
+				type = return_state
+				target_state = s:STATE_MINSK.region_state:RKU
+			}
+			add_war_goal = {
+				holder = root
+				type = return_state
+				target_state = s:STATE_VITEBSK.region_state:RKO
+			}
+			add_war_goal = {
+				holder = root
+				type = return_state
+				target_state = s:STATE_BREST.region_state:RKO
 			}
 			add_war_goal = {
 				holder = root
@@ -4136,12 +4687,6 @@ je_ru_unite_far_east = {
 			remove_modifier = russian_warlord
 		}
 
-		custom_tooltip = je_ru_lose_warlord_economy
-
-		hidden_effect = {
-    		trigger_event = { id = tno_ru_events.1 popup = yes } # event for selecting new economic law
-    	}
-
     	if = {
     		limit = {
     			OR = {
@@ -4194,12 +4739,6 @@ je_ru_unite_central_sib = {
 		hidden_effect = {
 			remove_modifier = russian_warlord
 		}
-
-		custom_tooltip = je_ru_lose_warlord_economy
-
-		hidden_effect = {
-    		trigger_event = { id = tno_ru_events.1 popup = yes } # event for selecting new economic law
-    	}
 
     	if = {
     		limit = {
@@ -4262,12 +4801,6 @@ je_ru_unite_west_sib = {
 		hidden_effect = {
 			remove_modifier = russian_warlord
 		}
-
-		custom_tooltip = je_ru_lose_warlord_economy
-
-		hidden_effect = {
-    		trigger_event = { id = tno_ru_events.1 popup = yes } # event for selecting new economic law
-    	}
 
     	if = {
     		limit = {
@@ -4346,12 +4879,6 @@ je_ru_unite_west_russia = {
 		hidden_effect = {
 			remove_modifier = russian_warlord
 		}
-
-		custom_tooltip = je_ru_lose_warlord_economy
-
-		hidden_effect = {
-    		trigger_event = { id = tno_ru_events.1 popup = yes } # event for selecting new economic law
-    	}
 
     	if = {
     		limit = {
@@ -4459,42 +4986,120 @@ je_ru_restore_russia = {
 		hidden_effect = {
 			if = {
 				limit = {
-					exists = c:RUS #### hey man don't forget to add kazakhstan and everything! (vladivostok?)
+					exists = c:RUS
 				}
-				s:STATE_MOSCOW = {
+				#Vladivostok
+				s:STATE_OUTER_MANCHURIA = {
+					add_claim = c:RUS
+				}
+				#Kazakhstan
+				s:STATE_JETISY = {
+					add_claim = c:RUS
+				}
+				s:STATE_SEMIRECHE = {
+					add_claim = c:RUS
+				}
+				s:STATE_AKMOLINSK = {
+					add_claim = c:RUS
+				}
+				s:STATE_SYRDARYA = {
+					add_claim = c:RUS
+				}
+				s:STATE_AKTOBE = {
+					add_claim = c:RUS
+				}
+				s:STATE_URALSK = {
+					add_claim = c:RUS
+				}
+				#Other Central Asia
+				s:STATE_KHIVA = {
+					add_claim = c:RUS
+				}
+				s:STATE_UZBEKIA = {
+					add_claim = c:RUS
+				}
+				s:STATE_MERZ = {
+					add_claim = c:RUS
+				}
+				s:STATE_TURKMENIA = {
+					add_claim = c:RUS
+				}
+				s:STATE_TAJIKISTAN = {
+					add_claim = c:RUS
+				}
+				s:STATE_FERGANA = {
+					add_claim = c:RUS
+				}
+				s:STATE_KIRGHIZIA = {
+					add_claim = c:RUS
+				}
+				#Onega & Karelia
+				s:STATE_EAST_KARELIA = {
+					add_claim = c:RUS
+				}
+				s:STATE_KOLA = {
+					add_claim = c:RUS
+				}
+				#Moscowien
+				s:STATE_INGRIA = {
+					add_claim = c:RUS
+				}
+				s:STATE_PSKOV = {
 					add_claim = c:RUS
 				}
 				s:STATE_TVER = {
 					add_claim = c:RUS
 				}
-				s:STATE_NOVGOROD = {
-					add_claim = c:RUS
-				}
-				s:STATE_INGRIA = {
-					add_claim = c:RUS
-				}
 				s:STATE_SMOLENSK = {
 					add_claim = c:RUS
 				}
-				s:STATE_BRYANSK = {
+				s:STATE_MOSCOW = {
 					add_claim = c:RUS
 				}
-				s:STATE_KURSK = {
+				s:STATE_YAROSLAVL = {
+					add_claim = c:RUS
+				}
+				s:STATE_ORYOL = {
 					add_claim = c:RUS
 				}
 				s:STATE_TARTARIA = {
 					add_claim = c:RUS
 				}
+				s:STATE_RYAZAN = {
+					add_claim = c:RUS
+				}
+				s:STATE_KURSK = {
+					add_claim = c:RUS
+				}
+				s:STATE_TAMBOV = {
+					add_claim = c:RUS
+				}
 				s:STATE_ROSTOV = {
 					add_claim = c:RUS
 				}
+				#Caucasus
 				s:STATE_ASTRAKHAN = {
+					add_claim = c:RUS
+				}
+				s:STATE_KALMYKIA = {
+					add_claim = c:RUS
+				}
+				s:STATE_STAVROPOL = {
 					add_claim = c:RUS
 				}
 				s:STATE_KUBAN = {
 					add_claim = c:RUS
 				}
+				s:STATE_NORTH_CAUCASUS = {
+					add_claim = c:RUS
+				}
+				s:STATE_DAGESTAN = {
+					add_claim = c:RUS
+				}
 				s:STATE_GREATER_CAUCASUS = {
+					add_claim = c:RUS
+				}
+				s:STATE_ELIZAVETPOL = {
 					add_claim = c:RUS
 				}
 				s:STATE_AZERBAIJAN = {
@@ -4503,43 +5108,58 @@ je_ru_restore_russia = {
 				s:STATE_ARMENIA = {
 					add_claim = c:RUS
 				}
+				#German Crimea
 				s:STATE_CRIMEA = {
 					add_claim = c:RUS
 				}
-				s:STATE_LUHANSK = {
+				#Ukraine
+				s:STATE_TAURIDA = {
 					add_claim = c:RUS
 				}
 				s:STATE_KIEV = {
 					add_claim = c:RUS
 				}
+				s:STATE_KHARKOV = {
+					add_claim = c:RUS
+				}
+				s:STATE_CHERNIHIV = {
+					add_claim = c:RUS
+				}
 				s:STATE_VOLHYNIA = {
-					add_claim = c:RUS
-				}
-				s:STATE_TRANSNISTRIA = {
-					add_claim = c:RUS
-				}
-				s:STATE_DAGESTAN = {
 					add_claim = c:RUS
 				}
 				s:STATE_CHERSON = {
 					add_claim = c:RUS
 				}
-				s:STATE_ORSHA = {
+				#Ostland
+				s:STATE_MOGILEV = {
 					add_claim = c:RUS
 				}
 				s:STATE_MINSK = {
 					add_claim = c:RUS
 				}
+				s:STATE_VITEBSK = {
+					add_claim = c:RUS
+				}
 				s:STATE_BREST = {
 					add_claim = c:RUS
 				}
-				s:STATE_LITHUANIA = {
+				s:STATE_VILNIUS = {
 					add_claim = c:RUS
 				}
-				s:STATE_LATVIA = {
+				s:STATE_KAUNAS = {
 					add_claim = c:RUS
 				}
-				s:STATE_ESTONIA = {
+				s:STATE_COURLAND = {
+					add_claim = c:RUS
+				}
+				s:STATE_RIGA = {
+					add_claim = c:RUS
+				}
+				s:STATE_TARTU = {
+					add_claim = c:RUS
+				}
+				s:STATE_TALINN = {
 					add_claim = c:RUS
 				}
 			}

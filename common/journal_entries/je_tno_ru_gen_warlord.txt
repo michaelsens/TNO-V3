@@ -9,7 +9,7 @@
     
     complete = {
         NOT = {
-            has_law = law_type:law_warlord_economy
+            has_modifier = russian_warlord
         }
     }
 
@@ -1012,14 +1012,14 @@ je_ru_tno_com_restore_ussr = {
     scripted_button = je_ru_com_restore_ussr
 
     immediate = {
-        random_scope_state = {
-            limit = {
-                state_region = s:STATE_IRKUTSK
-            }
-            save_scope_as = irkutsk_state_scope
+        s:STATE_NENETSIA = {
+            save_scope_as = nenetsia_state_scope
         }
-        c:WST = {
-            save_scope_as = wrrf_nation
+        s:STATE_ARKHANGELSK = {
+            save_scope_as = arkhangelsk_state_scope
+        }
+        s:STATE_SAMARA = {
+            save_scope_as = samara_state_scope
         }
     }
     
@@ -1033,22 +1033,35 @@ je_ru_tno_com_restore_ussr = {
         owns_entire_state_region = STATE_KOLYMA
         owns_entire_state_region = STATE_CHUKOTKA
         owns_entire_state_region = STATE_KAMCHATKA
+        owns_entire_state_region = STATE_UPPER_YENISEYSK
         #Central Sib
         owns_entire_state_region = STATE_TOMSK
-        owns_entire_state_region = STATE_TOBOLSK
         owns_entire_state_region = STATE_TUVA
         #West Sib
-        owns_entire_state_region = STATE_OB
-        owns_entire_state_region = STATE_NENETSIA
+        owns_entire_state_region = STATE_TOBOLSK
         owns_entire_state_region = STATE_URAL
+        owns_entire_state_region = STATE_SURGUT
+        owns_entire_state_region = STATE_OB
+        owns_entire_state_region = STATE_URAL
+        custom_tooltip = {
+            text = je_ru_tno_owns_nenetsia
+            any_scope_state = {
+                state_region = s:STATE_NENETSIA
+            }
+        }
         #West Russia
-        owns_entire_state_region = STATE_SAMARA
-        owns_entire_state_region = STATE_PERM
         owns_entire_state_region = STATE_KAZAN
         owns_entire_state_region = STATE_GALICH
-
+        owns_entire_state_region = STATE_CHELYABINSK
         custom_tooltip = {
-            text = je_ru_tno_rus_owns_wrrf
+            text = je_ru_tno_owns_samara
+            any_scope_state = {
+                state_region = s:STATE_SAMARA
+            }
+        }
+        owns_entire_state_region = STATE_PERM
+        custom_tooltip = {
+            text = je_ru_tno_rus_owns_arkhangelsk
             any_scope_state = {
                 state_region = s:STATE_ARKHANGELSK
             }
