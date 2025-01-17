@@ -728,6 +728,12 @@ je_ru_tno_repair_transib = {
         }
         random_scope_state = {
             limit = {
+                state_region = s:STATE_BURYATIA
+            }
+            save_scope_as = buryatia_state_scope
+        }
+        random_scope_state = {
+            limit = {
                 state_region = s:STATE_TRANS_BAIKAL
             }
             save_scope_as = trans_baikal_state_scope
@@ -770,6 +776,16 @@ je_ru_tno_repair_transib = {
             text = je_transib_irkutsk_tt
             any_scope_state = {
                 state_region = s:STATE_IRKUTSK
+                state_has_building_group_levels = {
+                    type = bg_private_infrastructure
+                    value  >= 2
+                } 
+            }
+        }
+        custom_tooltip = {
+            text = je_transib_buryatia_tt
+            any_scope_state = {
+                state_region = s:STATE_BURYATIA
                 state_has_building_group_levels = {
                     type = bg_private_infrastructure
                     value  >= 2
