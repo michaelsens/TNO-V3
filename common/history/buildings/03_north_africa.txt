@@ -1143,33 +1143,29 @@
 		}
 	}
 	s:STATE_SINAI={
-		region_state:EGY={
+		region_state:ITA={
 			create_building={
-				building="building_iron_mine"
+				building="building_port"
 				add_ownership={
-					building={
-						type="building_financial_district"
-						country="c:EGY"
+					country={
+						country="c:ITA"
 						levels=1
-						region="STATE_LOWER_EGYPT"
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_road_carts" "pm_no_explosives" "pm_no_steam_automation" "pm_condensing_engine_pump_building_iron_mine" }
+				activate_production_methods={ "pm_industrial_port" }
 			}
 			create_building={
-				building="building_lead_mine"
-				add_ownership={
-					building={
-						type="building_financial_district"
-						country="c:EGY"
-						levels=1
-						region="STATE_MIDDLE_EGYPT"
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_picks_and_shovels_building_lead_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" }
-			}
+                building="building_suez_canal"
+                add_ownership={
+                    country={
+                        country="c:ITA"
+                        levels=1
+                    }
+                }
+                reserves=1
+                activate_production_methods={ "pm_canal" }
+            }
 		}
 		region_state:PAL={
 		}

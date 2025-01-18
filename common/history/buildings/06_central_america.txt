@@ -1027,6 +1027,17 @@
 		}
 		region_state:USA={
 			create_building={
+                building="building_panama_canal"
+                add_ownership={
+                    country={
+                        country="c:USA"
+                        levels=1
+                    }
+                }
+                reserves=1
+                activate_production_methods={ "pm_canal" }
+            }
+			create_building={
 				building="building_port"
 				add_ownership={
 					country={
@@ -1036,38 +1047,6 @@
 				}
 				reserves=1
 				activate_production_methods={ "pm_industrial_port" }
-			}
-			create_building={
-				building="building_rubber_plantation"
-				add_ownership={
-					building={
-						type="building_financial_district"
-						country="c:USA"
-						levels=1
-						region="STATE_MISSOURI"
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_road_carts" "automatic_irrigation_building_rubber_plantation" }
-			}
-			create_building={
-				building="building_coffee_plantation"
-				add_ownership={
-					building={
-						type="building_manor_house"
-						country="c:USA"
-						levels=1
-						region="STATE_MASSACHUSETTS"
-					}
-					building={
-						type="building_financial_district"
-						country="c:USA"
-						levels=2
-						region="STATE_MICHIGAN"
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_road_carts" "automatic_irrigation_building_coffee_plantation" }
 			}
 		}
 	}
