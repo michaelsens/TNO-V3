@@ -13,6 +13,37 @@
 #	}
 #
 
+relations_hit_with_power_bloc_leaders = {
+	if = {
+		limit = {
+			has_game_started = yes
+		}
+		
+		every_power_bloc = {
+			limit = { 
+				NOT = { scope:power_bloc ?= this }			
+			}
+			power_bloc_leader = {
+				root = {
+					change_relations = { 
+						country = prev
+						value = {
+							add = -30
+							if = {
+								limit = {
+									is_country_type = unrecognized
+									prev = { is_country_type = recognized }
+								}
+								add = -30
+							}
+						}
+					}
+				}
+			}
+		}		
+	}
+}
+
 save_neighbor_with_state = {
 	random_neighbouring_state = {
 		limit = {
@@ -154,6 +185,53 @@ warlord_setup_effect = {
 	activate_law = law_type:law_autocracy 
 	activate_law = law_type:law_presidential_republic
 	activate_law = law_type:law_peasant_levies
+	if = {
+		limit = {
+			NOR = {
+				c:MGL ?= this
+				c:TUV ?= this
+				c:ALI ?= this
+			}
+		}
+		random_character = {
+			limit = {
+				c:CHI ?= owner
+				OR = {
+					has_role = general
+					AND = {
+						PREV = {
+							any_scope_state = {
+								has_building = building_naval_base
+							}
+						}
+						has_role = admiral
+					}
+				}
+			}
+			transfer_character = PREV
+			set_character_as_ruler = yes
+		}
+		if = {
+			limit = {
+				NOR = {
+					country_has_primary_culture = cu:han
+					country_has_primary_culture = cu:manchu
+				}
+			}
+			add_primary_culture = cu:han
+			if = {
+				limit = {
+					OR = {
+						has_law = law_type:law_ethnostate
+						has_law = law_type:law_national_supremacy
+					}
+				}
+				remove_primary_culture = cu:uighur
+				remove_primary_culture = cu:tibetan
+				remove_primary_culture = cu:mongol
+			}
+		}
+	}
 		
 	every_scope_character = {
 		random_list = {
@@ -210,7 +288,7 @@ enslave_discriminated_farm_workers = {
 	every_scope_pop = {
 		limit = {
 			is_pop_type = laborers
-			pop_is_discriminated = yes
+			pop_acceptance < acceptance_status_4
 			OR = {
 				pop_employment_building_group = bg_agriculture
 				pop_employment_building_group = bg_ranching
@@ -223,16 +301,10 @@ enslave_discriminated_farm_workers = {
 
 save_revolution_scopes = {
 	random_civil_war = {
-		limit = {
-			is_civil_war_type = revolution
-		}
 		save_scope_as = ongoing_revolution
-	}
-	random_political_movement = {
-		limit = {
-			is_revolutionary_movement = yes
+		political_movement = {
+			save_scope_as = ongoing_revolution_movement
 		}
-		save_scope_as = ongoing_revolution_movement
 	}
 }
 
@@ -245,25 +317,19 @@ save_agitator_law_scopes = {
 			limit = {
 				has_role = agitator
 				OR = {
-					law_stance = {
+					law_enactment_stance = {
 						law = owner.currently_enacting_law.type
 						value > neutral
 					}
 					AND = {	
-						law_stance = {
+						law_enactment_stance = {
 							law = owner.currently_enacting_law.type
-							value > strongly_approve # Equals 'count'
+							value = neutral
 						}
 						interest_group = {
-							law_stance = {
+							law_enactment_stance = {
 								law = owner.currently_enacting_law.type
 								value > neutral
-							}
-							NOT = {
-								law_stance = {
-									law = owner.currently_enacting_law.type
-									value > strongly_approve # Equals 'count'
-								}
 							}
 						}
 					}
@@ -276,11 +342,10 @@ save_agitator_law_scopes = {
 		}
 		random_political_movement = {
 			limit = {
-				OR = {	
-					is_political_movement_type = movement_to_enact
-					is_political_movement_type = movement_to_restore	
+				law_enactment_stance = {
+					law = owner.currently_enacting_law.type
+					value > neutral
 				}
-				this.desired_law = root.currently_enacting_law.type
 			}
 			save_scope_as = supporting_movement
 		}
@@ -294,25 +359,19 @@ save_agitator_law_scopes = {
 			limit = {
 				has_role = agitator
 				OR = {
-					law_stance = {
+					law_enactment_stance = {
 						law = owner.currently_enacting_law.type
 						value < neutral
 					}
 					AND = {	
-						law_stance = {
+						law_enactment_stance = {
 							law = owner.currently_enacting_law.type
-							value > strongly_approve # Equals 'count'
+							value = neutral
 						}
 						interest_group = {
-							law_stance = {
+							law_enactment_stance = {
 								law = owner.currently_enacting_law.type
 								value < neutral
-							}
-							NOT = {
-								law_stance = {
-									law = owner.currently_enacting_law.type
-									value > strongly_approve # Equals 'count'
-								}
 							}
 						}
 					}
@@ -325,7 +384,10 @@ save_agitator_law_scopes = {
 		}
 		random_political_movement = {
 			limit = {
-				is_political_movement_type = movement_to_preserve
+				law_enactment_stance = {
+					law = owner.currently_enacting_law.type
+					value < neutral
+				}
 			}
 			save_scope_as = opposing_movement
 		}
@@ -353,6 +415,43 @@ generate_french_monarch = {
 			has_variable = orleanist_restoration_var
 		}
 		if = {
+			limit = {
+				year < 1850
+			}
+			if = {
+				limit = {
+					any_scope_character = {
+						has_template = FRA_louis_philippe
+					}
+				}
+				random_scope_character = {
+					limit = {
+						has_template = FRA_louis_philippe
+					}
+					set_character_as_ruler = yes
+				}
+			}
+			else_if = {
+				limit = {
+					any_scope_character = {
+						has_template = FRA_ferdinand_philippe
+						is_ruler = no
+					}
+				}
+				random_scope_character = {
+					limit = {
+						has_template = FRA_ferdinand_philippe
+					}
+					set_character_as_ruler = yes
+				}
+			}
+			else = {
+				create_character = {
+					template = FRA_ferdinand_philippe
+				}
+			}
+		}
+		else_if = {
 			limit = {
 				year >= 1850
 				year < 1894
@@ -634,7 +733,7 @@ generate_french_monarch = {
 					}
 					transfer_character = root
 					hidden_effect = {
-						remove_modifier = in_exile_modifier
+						free_from_exile_effect = yes
 					}
 					set_character_as_ruler = yes
 					add_character_role = politician
@@ -785,7 +884,6 @@ clean_up_exile_character_roles = { # scope: character
 		limit = {
 			has_role = politician
 		}
-		set_as_interest_group_leader = no
 		remove_character_role = politician
 	}
 	if = {

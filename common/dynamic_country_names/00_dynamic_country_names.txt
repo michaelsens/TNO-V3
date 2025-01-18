@@ -533,7 +533,7 @@ YUN = {
 
 ABU = { 
 	dynamic_country_name = {
-		name = "Governatorato del Golfo"
+		name = "Stati Della Tregua"
 		adjective = "Governatorato del Golfo"
 		
 		is_main_tag_only = yes
@@ -958,6 +958,25 @@ GER = { # Germany
 				has_law = law_type:law_council_republic
 				has_law = law_type:law_ethnostate
 				has_law = law_type:law_autocracy
+				
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = "Schutzzone Germania"
+		adjective = German
+		
+		is_main_tag_only = yes
+		priority = 3
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				NOT = {
+				owns_entire_state_region = STATE_BAVARIA
+				owns_entire_state_region = STATE_AUSTRIA
+				owns_entire_state_region = STATE_WEST_PRUSSIA
+				}
 				
 			}
 		}

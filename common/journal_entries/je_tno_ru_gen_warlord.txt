@@ -8,10 +8,8 @@
     }
     
     complete = {
-        hidden_trigger = {
-            NOT = {
-                has_modifier = russian_warlord
-            }
+        NOT = {
+            has_modifier = russian_warlord
         }
     }
 
@@ -49,8 +47,6 @@ je_ru_tno_launch_attack = {
     }
     
     complete = {
-        #is a player
-        is_player = yes
     }
 
     on_complete = {
@@ -73,7 +69,7 @@ je_ru_tno_launch_attack = {
     weight = 100
 
     
-    should_be_pinned_by_default = no   
+    should_be_pinned_by_default = yes   
 }
 
 je_ru_fe_tno_launch_attack = { 
@@ -224,6 +220,385 @@ je_ru_wst_tno_launch_attack = {
     should_be_pinned_by_default = no   
 }
 
+je_ru_tno_unite_far_east = { 
+
+    icon = "gfx/interface/icons/war_goals/return_state.dds"
+    group = je_group_historical_content
+    scripted_button = je_ru_unite_far_east
+
+    immediate = {
+        s:STATE_UPPER_YENISEYSK = {
+            save_scope_as = upper_yeniseysk_state_scope
+        }
+    }
+    
+    complete = {
+        owns_entire_state_region = STATE_IRKUTSK
+        owns_entire_state_region = STATE_BURYATIA
+        owns_entire_state_region = STATE_YAKUTSK
+        owns_entire_state_region = STATE_TRANS_BAIKAL
+        owns_entire_state_region = STATE_OKHOTSK
+        owns_entire_state_region = STATE_KOLYMA
+        owns_entire_state_region = STATE_CHUKOTKA
+        owns_entire_state_region = STATE_KAMCHATKA
+
+        custom_tooltip = {
+            text = je_ru_tno_owns_upper_yeniseysk
+            any_scope_state = {
+                state_region = s:STATE_UPPER_YENISEYSK
+            }
+        }
+
+        hidden_trigger = {
+            has_variable = ru_unite_far_east
+        }
+    }
+
+    on_complete = {
+    }
+
+    on_monthly_pulse = {
+    }
+
+    current_value = {
+        
+    }
+
+
+    goal_add_value = {
+        
+    }
+
+    progressbar = no
+    
+    weight = 1000
+
+    
+    should_be_pinned_by_default = yes
+    
+}
+
+je_ru_tno_unite_central_sib = { 
+
+    icon = "gfx/interface/icons/war_goals/return_state.dds"
+    group = je_group_historical_content
+    scripted_button = je_ru_unite_central_sib
+
+    immediate = {
+        s:STATE_UPPER_YENISEYSK = {
+            save_scope_as = upper_yeniseysk_state_scope
+        }
+    }
+    
+    complete = {
+        owns_entire_state_region = STATE_TOMSK
+        owns_entire_state_region = STATE_TUVA
+
+        custom_tooltip = {
+            text = je_ru_tno_owns_upper_yeniseysk
+            any_scope_state = {
+                state_region = s:STATE_UPPER_YENISEYSK
+            }
+        }
+
+        hidden_trigger = {
+            has_variable = ru_unite_central_sib
+        }
+    }
+
+    on_complete = {
+    }
+
+    on_monthly_pulse = {
+    }
+
+    current_value = {
+        
+    }
+
+
+    goal_add_value = {
+        
+    }
+
+    progressbar = no
+    
+    weight = 1000
+
+    
+    should_be_pinned_by_default = yes
+    
+}
+
+je_ru_tno_unite_west_sib = { 
+
+    icon = "gfx/interface/icons/war_goals/return_state.dds"
+    group = je_group_historical_content
+    scripted_button = je_ru_unite_west_sib
+
+    immediate = {
+        s:STATE_URAL = {
+            save_scope_as = ural_state_scope
+        }
+        s:STATE_SURGUT = {
+            save_scope_as = surgut_state_scope
+        }
+        s:STATE_OB = {
+            save_scope_as = ob_state_scope
+        }
+        s:STATE_NENETSIA = {
+            save_scope_as = nenetsia_state_scope
+        }
+    }
+    
+    complete = {
+        owns_entire_state_region = STATE_TOBOLSK
+
+        custom_tooltip = {
+            text = je_ru_tno_owns_ural
+            any_scope_state = {
+                state_region = s:STATE_URAL
+            }
+        }
+        custom_tooltip = {
+            text = je_ru_tno_owns_surgut
+            any_scope_state = {
+                state_region = s:STATE_SURGUT
+            }
+        }
+        custom_tooltip = {
+            text = je_ru_tno_owns_ob
+            any_scope_state = {
+                state_region = s:STATE_OB
+            }
+        }
+        custom_tooltip = {
+            text = je_ru_tno_owns_nenetsia
+            any_scope_state = {
+                state_region = s:STATE_NENETSIA
+            }
+        }
+
+        hidden_trigger = {
+            has_variable = ru_unite_west_sib
+        }
+    }
+
+    on_complete = {
+    }
+
+    on_monthly_pulse = {
+    }
+
+    current_value = {
+        
+    }
+
+
+    goal_add_value = {
+        
+    }
+
+    progressbar = no
+    
+    weight = 1000
+
+    
+    should_be_pinned_by_default = yes
+    
+}
+
+je_ru_tno_unite_west_russia = { 
+
+    icon = "gfx/interface/icons/war_goals/return_state.dds"
+    group = je_group_historical_content
+    scripted_button = je_ru_unite_west_russia
+
+    immediate = {
+        s:STATE_ARKHANGELSK = {
+            save_scope_as = arkhangelsk_state_scope
+        }
+        s:STATE_CHELYABINSK = {
+            save_scope_as = chelyabinsk_state_scope
+        }
+        s:STATE_SAMARA = {
+            save_scope_as = samara_state_scope
+        }
+        s:STATE_PERM = {
+            save_scope_as = perm_state_scope
+        }
+        s:STATE_GALICH = {
+            save_scope_as = galich_state_scope
+        }
+        s:STATE_NENETSIA = {
+            save_scope_as = nenetsia_state_scope
+        }
+    }
+    
+    complete = {
+        owns_entire_state_region = STATE_KAZAN
+
+        custom_tooltip = {
+            text = je_ru_tno_owns_galich
+            any_scope_state = {
+                state_region = s:STATE_GALICH
+            }
+        }
+        custom_tooltip = {
+            text = je_ru_tno_owns_chelyabinsk
+            any_scope_state = {
+                state_region = s:STATE_CHELYABINSK
+            }
+        }
+        custom_tooltip = {
+            text = je_ru_tno_owns_samara
+            any_scope_state = {
+                state_region = s:STATE_SAMARA
+            }
+        }
+        custom_tooltip = {
+            text = je_ru_tno_owns_perm
+            any_scope_state = {
+                state_region = s:STATE_PERM
+            }
+        }
+        custom_tooltip = {
+            text = je_ru_tno_owns_nenetsia
+            any_scope_state = {
+                state_region = s:STATE_NENETSIA
+            }
+        }
+        custom_tooltip = {
+            text = je_ru_tno_rus_owns_arkhangelsk
+            any_scope_state = {
+                state_region = s:STATE_ARKHANGELSK
+            }
+        }
+
+        hidden_trigger = {
+            has_variable = ru_unite_west_russia
+        }
+    }
+
+    on_complete = {
+    }
+
+    on_monthly_pulse = {
+    }
+
+    current_value = {
+        
+    }
+
+
+    goal_add_value = {
+        
+    }
+
+    progressbar = no
+    
+    weight = 1000
+
+    
+    should_be_pinned_by_default = yes
+    
+}
+
+je_ru_tno_restore_russia = { 
+
+    icon = "gfx/interface/icons/tno_event_icons/reunify_russia.dds"
+    group = je_group_historical_content
+    scripted_button = je_ru_restore_russia
+
+    immediate = {
+        s:STATE_NENETSIA = {
+            save_scope_as = nenetsia_state_scope
+        }
+        s:STATE_ARKHANGELSK = {
+            save_scope_as = arkhangelsk_state_scope
+        }
+        s:STATE_SAMARA = {
+            save_scope_as = samara_state_scope
+        }
+    }
+    
+    complete = {
+        #Far-East
+        owns_entire_state_region = STATE_IRKUTSK
+        owns_entire_state_region = STATE_BURYATIA
+        owns_entire_state_region = STATE_YAKUTSK
+        owns_entire_state_region = STATE_TRANS_BAIKAL
+        owns_entire_state_region = STATE_OKHOTSK
+        owns_entire_state_region = STATE_KOLYMA
+        owns_entire_state_region = STATE_CHUKOTKA
+        owns_entire_state_region = STATE_KAMCHATKA
+        owns_entire_state_region = STATE_UPPER_YENISEYSK
+        #Central Sib
+        owns_entire_state_region = STATE_TOMSK
+        owns_entire_state_region = STATE_TUVA
+        #West Sib
+        owns_entire_state_region = STATE_TOBOLSK
+        owns_entire_state_region = STATE_URAL
+        owns_entire_state_region = STATE_SURGUT
+        owns_entire_state_region = STATE_OB
+        owns_entire_state_region = STATE_URAL
+        custom_tooltip = {
+            text = je_ru_tno_owns_nenetsia
+            any_scope_state = {
+                state_region = s:STATE_NENETSIA
+            }
+        }
+        #West Russia
+        owns_entire_state_region = STATE_KAZAN
+        owns_entire_state_region = STATE_GALICH
+        owns_entire_state_region = STATE_CHELYABINSK
+        custom_tooltip = {
+            text = je_ru_tno_owns_samara
+            any_scope_state = {
+                state_region = s:STATE_SAMARA
+            }
+        }
+        owns_entire_state_region = STATE_PERM
+        custom_tooltip = {
+            text = je_ru_tno_rus_owns_arkhangelsk
+            any_scope_state = {
+                state_region = s:STATE_ARKHANGELSK
+            }
+        }
+
+        #custom_tooltip = {
+            #text = formed_russia_rq_tt
+        hidden_trigger = {
+            c:RUS ?= THIS
+        }
+        #}
+    }
+
+    on_complete = {
+        set_global_variable = rus_formed
+    }
+
+    on_monthly_pulse = {
+    }
+
+    current_value = {
+
+    }
+
+
+    goal_add_value = {
+
+    }
+
+    progressbar = no
+    
+    weight = 1000
+
+    
+    should_be_pinned_by_default = yes
+    
+}
+
 je_ru_tno_sakha_expedition = {
     icon = "gfx/interface/icons/invention_icons/prospecting_tech.dds"
     group = je_group_expeditions
@@ -353,6 +728,12 @@ je_ru_tno_repair_transib = {
         }
         random_scope_state = {
             limit = {
+                state_region = s:STATE_BURYATIA
+            }
+            save_scope_as = buryatia_state_scope
+        }
+        random_scope_state = {
+            limit = {
                 state_region = s:STATE_TRANS_BAIKAL
             }
             save_scope_as = trans_baikal_state_scope
@@ -395,6 +776,16 @@ je_ru_tno_repair_transib = {
             text = je_transib_irkutsk_tt
             any_scope_state = {
                 state_region = s:STATE_IRKUTSK
+                state_has_building_group_levels = {
+                    type = bg_private_infrastructure
+                    value  >= 2
+                } 
+            }
+        }
+        custom_tooltip = {
+            text = je_transib_buryatia_tt
+            any_scope_state = {
+                state_region = s:STATE_BURYATIA
                 state_has_building_group_levels = {
                     type = bg_private_infrastructure
                     value  >= 2
@@ -632,47 +1023,61 @@ je_ru_tno_army_reform_significant = {
 
 je_ru_tno_com_restore_ussr = { 
 
-    icon = "gfx/interface/icons/tno_event_icons/reunify_russia.dds"
+    icon = "gfx/interface/icons/tno_event_icons/reunify_ussr.dds"
     group = je_group_historical_content
     scripted_button = je_ru_com_restore_ussr
 
     immediate = {
-        random_scope_state = {
-            limit = {
-                state_region = s:STATE_IRKUTSK
-            }
-            save_scope_as = irkutsk_state_scope
+        s:STATE_NENETSIA = {
+            save_scope_as = nenetsia_state_scope
         }
-        c:WST = {
-            save_scope_as = wrrf_nation
+        s:STATE_ARKHANGELSK = {
+            save_scope_as = arkhangelsk_state_scope
+        }
+        s:STATE_SAMARA = {
+            save_scope_as = samara_state_scope
         }
     }
     
     complete = {
         #Far-East
         owns_entire_state_region = STATE_IRKUTSK
+        owns_entire_state_region = STATE_BURYATIA
+        owns_entire_state_region = STATE_YAKUTSK
         owns_entire_state_region = STATE_TRANS_BAIKAL
         owns_entire_state_region = STATE_OKHOTSK
+        owns_entire_state_region = STATE_KOLYMA
         owns_entire_state_region = STATE_CHUKOTKA
-        owns_entire_state_region = STATE_YAKUTSK
         owns_entire_state_region = STATE_KAMCHATKA
         owns_entire_state_region = STATE_UPPER_YENISEYSK
         #Central Sib
         owns_entire_state_region = STATE_TOMSK
-        owns_entire_state_region = STATE_TOBOLSK
         owns_entire_state_region = STATE_TUVA
         #West Sib
-        owns_entire_state_region = STATE_OB
-        owns_entire_state_region = STATE_NENETSIA
+        owns_entire_state_region = STATE_TOBOLSK
         owns_entire_state_region = STATE_URAL
+        owns_entire_state_region = STATE_SURGUT
+        owns_entire_state_region = STATE_OB
+        owns_entire_state_region = STATE_URAL
+        custom_tooltip = {
+            text = je_ru_tno_owns_nenetsia
+            any_scope_state = {
+                state_region = s:STATE_NENETSIA
+            }
+        }
         #West Russia
-        owns_entire_state_region = STATE_SAMARA
-        owns_entire_state_region = STATE_PERM
         owns_entire_state_region = STATE_KAZAN
         owns_entire_state_region = STATE_GALICH
-
+        owns_entire_state_region = STATE_CHELYABINSK
         custom_tooltip = {
-            text = je_ru_tno_rus_owns_wrrf
+            text = je_ru_tno_owns_samara
+            any_scope_state = {
+                state_region = s:STATE_SAMARA
+            }
+        }
+        owns_entire_state_region = STATE_PERM
+        custom_tooltip = {
+            text = je_ru_tno_rus_owns_arkhangelsk
             any_scope_state = {
                 state_region = s:STATE_ARKHANGELSK
             }
@@ -686,7 +1091,16 @@ je_ru_tno_com_restore_ussr = {
     }
 
     on_complete = {
-        set_global_variable = irk_rus_formed
+        if ={
+            limit = {
+                was_formed_from = IRK
+            }
+            set_global_variable = irk_rus_formed
+        }
+        else ={
+            set_global_variable = ru_generic
+        }
+        
     }
 
     on_monthly_pulse = {
@@ -904,10 +1318,10 @@ je_ru_tno_second_west_russian_war = {
     group = je_group_historical_content
     scripted_button = je_ru_second_west_russian_war
 
-    is_shown_when_inactive = {
-        country_has_primary_culture = cu:russian
-        exists = c:PRO
-    }
+    #is_shown_when_inactive = {
+    #    country_has_primary_culture = cu:russian
+    #    exists = c:PRO
+    #}
 
     immediate = {
         c:USA = {
@@ -935,84 +1349,6 @@ je_ru_tno_second_west_russian_war = {
             add_journal_entry = { type = je_ru_take_karelia }
         }else = {
             add_journal_entry = { type = je_ru_take_karelia_and_onega }
-        }
-        s:STATE_MOSCOW = {
-            add_claim = c:PRO
-        }
-        s:STATE_TVER = {
-            add_claim = c:PRO
-        }
-        s:STATE_NOVGOROD = {
-            add_claim = c:PRO
-        }
-        s:STATE_INGRIA = {
-            add_claim = c:PRO
-        }
-        s:STATE_SMOLENSK = {
-            add_claim = c:PRO
-        }
-        s:STATE_BRYANSK = {
-            add_claim = c:PRO
-        }
-        s:STATE_KURSK = {
-            add_claim = c:PRO
-        }
-        s:STATE_TARTARIA = {
-            add_claim = c:PRO
-        }
-        s:STATE_ROSTOV = {
-            add_claim = c:PRO
-        }
-        s:STATE_ASTRAKHAN = {
-            add_claim = c:PRO
-        }
-        s:STATE_KUBAN = {
-            add_claim = c:PRO
-        }
-        s:STATE_GREATER_CAUCASUS = {
-            add_claim = c:PRO
-        }
-        s:STATE_AZERBAIJAN = {
-            add_claim = c:PRO
-        }
-        s:STATE_ARMENIA = {
-            add_claim = c:PRO
-        }
-        s:STATE_CRIMEA = {
-            add_claim = c:PRO
-        }
-        s:STATE_LUHANSK = {
-            add_claim = c:PRO
-        }
-        s:STATE_KIEV = {
-            add_claim = c:PRO
-        }
-        s:STATE_VOLHYNIA = {
-            add_claim = c:PRO
-        }
-        s:STATE_DAGESTAN = {
-            add_claim = c:PRO
-        }
-        s:STATE_CHERSON = {
-            add_claim = c:PRO
-        }
-        s:STATE_ORSHA = {
-            add_claim = c:PRO
-        }
-        s:STATE_MINSK = {
-            add_claim = c:PRO
-        }
-        s:STATE_BREST = {
-            add_claim = c:PRO
-        }
-        s:STATE_LITHUANIA = {
-            add_claim = c:PRO
-        }
-        s:STATE_LATVIA = {
-            add_claim = c:PRO
-        }
-        s:STATE_ESTONIA = {
-            add_claim = c:PRO
         }
     }
     
@@ -1048,6 +1384,78 @@ je_ru_tno_second_west_russian_war = {
     
 }
 
+je_ru_pro_second_west_russian_war = { 
+
+    icon = "gfx/interface/icons/lens_toolbar_icons/recruit_generals_lens_option.dds"
+    group = je_group_historical_content
+    scripted_button = je_ru_second_west_russian_war
+
+    is_shown_when_inactive = {
+        country_has_primary_culture = cu:russian
+        exists = c:PRO
+    }
+
+    immediate = {
+        c:USA = {
+            save_scope_as = usa_nation_scope
+        }
+        c:FIN = {
+            save_scope_as = fin_nation
+        }
+        remove_modifier = russian_warlord
+        if = { #if they do not own karelia or onega
+            limit = {
+                NOT = {
+                    owns_entire_state_region = STATE_EAST_KARELIA
+                    owns_entire_state_region = STATE_ARKHANGELSK
+                }
+            }
+            add_journal_entry = { type = je_ru_take_karelia_and_onega }
+        }
+        else_if = { #if they do not own karelia
+            limit = {
+                NOT = {
+                    owns_entire_state_region = STATE_EAST_KARELIA
+                }
+            }
+            add_journal_entry = { type = je_ru_take_karelia }
+        }else = {
+            add_journal_entry = { type = je_ru_take_karelia_and_onega }
+        }
+        add_journal_entry = { type = je_ru_tno_army_reform }
+    }
+    
+    complete = {
+        custom_tooltip = {
+            text = je_complete_with_button
+            owns_entire_state_region = STATE_MOSCOW
+        }
+    }
+
+    on_complete = {
+        custom_tooltip = warning_2wrw
+    }
+
+    on_monthly_pulse = {
+    }
+
+    current_value = {
+
+    }
+
+
+    goal_add_value = {
+
+    }
+
+    progressbar = no
+    
+    weight = 1000
+
+    
+    should_be_pinned_by_default = yes
+    
+}
 
 #je_ru_tno_partisan = {
 #    icon = "gfx/interface/icons/invention_icons/anarchy.dds"

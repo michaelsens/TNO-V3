@@ -59,12 +59,45 @@ tno_germany_events.3 = { # germanys event telling them that a japanese (burgundi
     desc = tno_germany_events.3.d
     flavor = tno_germany_events.3.f 
 
-    event_image = {
-      texture  = "gfx/event_pictures/event_pictures/ass.dds"
-  }
-  icon = "gfx/interface/icons/event_icons/event_fire.dds"
+    event_image = { texture  = "gfx/event_pictures/event_pictures/ass.dds" }
+    icon = "gfx/interface/icons/event_icons/event_fire.dds"
 
   on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    immediate = {
+        every_scope_character = { #ironically, make Hitler immortal
+             if = {
+                limit = {
+                    is_ruler = yes
+                }
+                set_character_immortal = yes
+              }
+        }
+
+        ig:ig_industrialists = { #Albert Speer
+            leader = {
+                set_character_immortal = yes
+            }
+        }
+        ig:ig_armed_forces = { #Hermann Göring
+            leader = {
+                set_character_immortal = yes
+            }
+        }
+        ig:ig_landowners = { #Martin Bormann (Chancellery)
+            leader = {
+                set_character_immortal = yes
+            }
+        }
+        ig:ig_petty_bourgeoisie = {#Reinhard Heydrich
+            leader = {
+                set_character_immortal = yes
+            }
+        }
+    }
+
+    
+
 
   duration = 3
 
@@ -73,8 +106,6 @@ tno_germany_events.3 = { # germanys event telling them that a japanese (burgundi
 
     custom_tooltip = tno_germany_events.3.a.tooltip1
     custom_tooltip = tno_germany_events.3.a.tooltip2
-
-
 
     add_journal_entry = {
         type = je_tno_gerpowerstruggle_goreing
@@ -113,10 +144,10 @@ tno_germany_events.3 = { # germanys event telling them that a japanese (burgundi
     }
 
     hidden_effect = {
-
      c:BGD = {
         trigger_event = { id = tno_germany_events.2 days = 0 popup = yes }
     } 
+
 }
 
 
@@ -232,7 +263,17 @@ tno_germany_events.35 = {
         name = hitler_dead
         value = 0
     }
-    
+    every_scope_character = {
+         if = {
+            limit = {
+                is_ruler = yes
+            }
+            save_scope_as = hitler
+          }
+    }
+    scope:hitler = {
+        set_character_immortal = no
+    }
 }
 
 title = tno_germany_events.35
@@ -280,7 +321,7 @@ tno_germany_events.4 = { # speer wins power struggle
       set_variable = {
         name = speer_dub
     }
-}
+    }
 }
 
 }
@@ -1005,6 +1046,11 @@ tno_germany_events.17 = { # German Civil War
 
   immediate = {
     set_global_variable = german_civil_war_start
+
+    set_relations = { country = c:FIN value = -50 }
+    set_relations = { country = c:HUN value = -15 }
+    set_relations = { country = c:ROM value = -30 }
+
      #  remove_diplomatic_pact = {
      #      country = c:RKU
      #      type = reichskommissariat
@@ -1048,26 +1094,23 @@ tno_germany_events.17 = { # German Civil War
     c:GER = {
      set_immune_to_revolutions = yes
 
-     remove_diplomatic_pact = {
-         country = c:IRE
-         type = protectorate
+     if = {
+        limit = {
+            has_diplomatic_pact = {
+                who = c:IRE
+                type = protectorate
+                is_initiator = yes
+            }
+        }
+        remove_diplomatic_pact = {
+             country = c:IRE
+             type = protectorate
+         }
      }
      remove_diplomatic_pact = {
          country = c:SER
          type = protectorate
      }
-     remove_diplomatic_pact = {
-        country = c:KZA
-        type = reichskommissariat
-    }
-    remove_diplomatic_pact = {
-        country = c:KON
-        type = reichskommissariat
-    }
-    remove_diplomatic_pact = {
-        country = c:KSA
-        type = reichskommissariat
-    }
     remove_diplomatic_pact = {
         country = c:NOR
         type = reichskommissariat
@@ -1099,6 +1142,8 @@ tno_germany_events.17 = { # German Civil War
           state = s:STATE_FRANCONIA.region_state:GER
           state = s:STATE_SLOVENIA.region_state:GER
           state = s:STATE_TABRIZ.region_state:GER
+          state = s:STATE_STYRIA.region_state:GER
+          state = s:STATE_TYROL.region_state:GER
 
           province = p:x400226
           province = p:x1D6B94
@@ -1127,6 +1172,7 @@ tno_germany_events.17 = { # German Civil War
           state = s:STATE_RUHR.region_state:GER
           state = s:STATE_NORTH_RHINE.region_state:GER
           state = s:STATE_WALLONIA.region_state:GER
+          state = s:STATE_GELRE.region_state:GER
 
           on_created = {
             set_immune_to_revolutions = yes
@@ -2466,5 +2512,144 @@ tno_germany_events.42 = { # Reclaimed all Outstanding Pakt Members
     option = {
         name = tno_germany_events.42.a
 
+    }
+}
+
+tno_germany_events.45 = { # Germany gets event about forming RK scandi
+	type = country_event
+    placement = ROOT
+ 
+    title = tno_germany_events.45.t
+    desc = tno_germany_events.45.d
+    flavor = tno_germany_events.45.f 
+
+   event_image = {
+		texture  = "gfx/event_pictures/super_pictures/lasthope.dds"
+	}
+    icon = "gfx/interface/icons/event_icons/event_fire.dds"
+
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 3
+
+    option = {
+        name = tno_germany_events.45.a
+
+		hidden_effect = {
+
+            remove_diplomatic_pact = {
+                country = c:SWE
+                type = protectorate
+            }
+            remove_diplomatic_pact = {
+                country = c:SWE
+                type = puppet
+            }
+            remove_diplomatic_pact = {
+                country = c:SWE
+                type = dominion
+            }
+            create_diplomatic_pact = {
+                country = c:SWE
+                type = reichskommissariat
+            }
+			c:SWE = {
+				trigger_event = { id = tno_germany_events.44 days = 0 popup = yes }
+			} 
+
+
+
+		}
+
+        custom_tooltip = scandi_text
+        
+
+	}
+
+    option = {
+        name = tno_germany_events.45.b
+
+		
+		
+
+	}
+
+}
+
+tno_germany_events.44 = {  # swedon annex Norway and forms RK scandi
+	type = country_event
+    placement = ROOT
+ 
+    title = tno_germany_events.44.t
+    desc = tno_germany_events.44.d
+    flavor = tno_germany_events.44.f 
+    event_image = {
+        texture = "gfx/event_pictures/event_pictures/ang.dds"
+    }
+
+	immediate = {
+		
+		
+        
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_fire.dds"
+
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 1
+
+	trigger = {
+		this ?= c:SWE
+	}
+	
+    option = { 
+        name = tno_germany_events.44.a
+        default_option = yes
+        
+		annex = c:NOR
+		
+        change_tag = SCI
+
+	
+    } 
+}
+
+tno_germany_events.43 = { # Generic Invasion by Russians
+    type = country_event
+    placement = root
+    title = tno_germany_events.43.t
+    desc = tno_germany_events.43.d
+    flavor = tno_germany_events.43.f
+    icon = "gfx/interface/icons/lens_toolbar_icons/recruit_generals_lens_option.dds"
+
+    duration = 6
+
+    immediate = {
+        ruler = {
+            save_scope_as = ger_leader
+        }
+        every_state = { # Ural, Saving Russia as a Scope
+            limit = { 
+                state_region = s:STATE_URAL
+            } 
+            owner = { 
+                save_scope_as = rus_nation_scope
+            }
+        }
+    }
+    
+    trigger = {
+    }
+
+    event_image = {
+        texture = "gfx/event_pictures/super_pictures/volkshalle.dds"
+    }
+
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    option = {
+        name = tno_germany_events.43.a
+        custom_tooltip = tno_germany_events.43.a.tt
     }
 }

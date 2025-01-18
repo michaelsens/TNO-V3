@@ -58,6 +58,17 @@ tno_starting_events.2 = {
 	desc = usa.1.d
     flavor = usa.1.f	
 
+    immediate = {
+    	every_scope_character = { #NIXON IMMORTAL
+             if = {
+                limit = {
+                    is_ruler = yes
+                }
+                set_character_immortal = yes
+              }
+        }
+    }
+
 	event_image = {
 		texture  = "gfx/event_pictures/super_pictures/liberty.dds"
 	}
@@ -697,7 +708,7 @@ tno_starting_events.18 = {
 		add_modifier = { 
 			name = rapid_industrialization 
 			is_decaying = yes
-			years = 30
+			years = 20
 		}
 		add_modifier = { name = unchecked_corruption }
 		add_modifier = { name = ecos_do_imperio }

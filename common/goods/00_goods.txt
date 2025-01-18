@@ -19,6 +19,7 @@ small_arms = {
 	cost = 60
 	category = military
 	
+	obsession_chance = 0.5
 	prestige_factor = 5
 }
 
@@ -34,7 +35,7 @@ artillery = {
 
 tanks = {
 	texture = "gfx/interface/icons/goods_icons/tanks.dds"
-	cost = 60
+	cost = 80
 	category = military
 	
 	prestige_factor = 10
@@ -44,9 +45,10 @@ tanks = {
 
 aeroplanes = {
 	texture = "gfx/interface/icons/goods_icons/aeroplanes.dds"
-	cost = 60
+	cost = 80
 	category = military
 	
+	obsession_chance = 0.5
 	prestige_factor = 10
 	traded_quantity = 3
 	convoy_cost_multiplier = 2.0
@@ -184,8 +186,7 @@ services = {
 	texture = "gfx/interface/icons/goods_icons/services.dds"
 	cost = 30
 	category = staple
-	tradeable = no
-	
+
 	prestige_factor = 3
 	
 	consumption_tax_cost = 200
@@ -195,7 +196,7 @@ transportation = {
 	texture = "gfx/interface/icons/goods_icons/transportation.dds"
 	cost = 30
 	category = staple
-	tradeable = no
+	local = yes
 
 	prestige_factor = 4
 	
@@ -206,7 +207,6 @@ electricity = {
 	texture = "gfx/interface/icons/goods_icons/electricity.dds"
 	cost = 30
 	category = staple
-	tradeable = no
 	
 	prestige_factor = 5
 	
@@ -222,6 +222,7 @@ clippers = {
 	cost = 60
 	category = industrial
 	
+	obsession_chance = 0.5
 	prestige_factor = 5
 	traded_quantity = 3.5
 	convoy_cost_multiplier = 0.25
@@ -232,6 +233,7 @@ steamers = {
 	cost = 70
 	category = industrial
 	
+	obsession_chance = 0.5
 	prestige_factor = 5
 	traded_quantity = 3.5
 	convoy_cost_multiplier = 0.25
@@ -496,6 +498,8 @@ automobiles = {
 	obsession_chance = 1.0
 	prestige_factor = 10
 	traded_quantity = 4
+	
+	pop_consumption_can_add_infrastructure = yes
 }
 
 telephones = {

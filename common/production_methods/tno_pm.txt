@@ -252,97 +252,12 @@ pm_nuclear_rail_transport_building = {
 	}
 }
 
-
-
-pm_nuclear_privately_owned_building = {
-	texture = "gfx/interface/icons/production_method_icons/privately_owned.dds"
-
-	unlocking_production_methods = {	
-	}
-
-	disallowing_laws = {
-		law_command_economy
-		law_cooperative_ownership
-	}
-
-	building_modifiers = {
-		level_scaled = {
-			building_employment_capitalists_add = 75
-		}
-		unscaled = {
-			building_capitalists_shares_add = 5
-		}
-	}
-}
-
-pm_nuclear_publicly_traded_building = {
-	texture = "gfx/interface/icons/production_method_icons/publicly_traded.dds"
-
-	unlocking_production_methods = {
-	}
-	
-	disallowing_laws = {
-		law_command_economy
-		law_cooperative_ownership
-	}
-
-	unlocking_technologies = {
-		mutual_funds
-	}
-
-	building_modifiers = {
-		level_scaled = {
-			building_employment_capitalists_add = 150
-		}
-		unscaled = {
-			building_capitalists_shares_add = 5
-		}
-	}
-}
-
-pm_nuclear_government_run_building = {
-	texture = "gfx/interface/icons/production_method_icons/government_run.dds"
-
-	unlocking_laws = {
-		law_command_economy
-	}
-	
-	building_modifiers = {
-		level_scaled = {
-			building_employment_bureaucrats_add = 75
-		}
-		unscaled = {
-			building_government_shares_add = 5
-		}
-	}
-}
-
-pm_nuclear_worker_cooperative_building = {
-	texture = "gfx/interface/icons/production_method_icons/worker_cooperative.dds"
-
-	unlocking_production_methods = {
-	}
-
-	unlocking_laws = {
-		law_cooperative_ownership
-	}
-
-	building_modifiers = {
-		level_scaled = {
-			building_employment_shopkeepers_add = 75
-		}
-		unscaled = {
-			building_workforce_shares_add = 1
-		}
-	}
-}
-
 pm_tno_scholastic_education = {
 	texture = "gfx/interface/icons/production_method_icons/scholastic_education.dds"
 	
 	building_modifiers = {
 		workforce_scaled = {
-			goods_input_paper_add = 5
+			goods_input_paper_add = 10
 		}	
 	
 		level_scaled = {
@@ -369,7 +284,9 @@ pm_tno_philosophy_department = {
 	
 	building_modifiers = {
 		workforce_scaled = {
-			goods_input_paper_add = 10
+			goods_input_paper_add = 20
+			goods_input_telephones_add = 5
+			goods_input_electricity_add = 2.5
 		}
 		
 		level_scaled = {
@@ -395,7 +312,10 @@ pm_tno_analytical_philosophy_department = {
 	
 	building_modifiers = {
 		workforce_scaled = { 
-			goods_input_paper_add = 15
+			goods_input_paper_add = 20
+			goods_input_telephones_add = 10
+			goods_input_radios_add = 5
+			goods_input_electricity_add = 5
 		}
 		
 		level_scaled = {
@@ -442,20 +362,3 @@ pm_small_workshop = {
 	}
 }
 			
-pm_tno_oil_government_run_industry = {
-	texture = "gfx/interface/icons/production_method_icons/government_run.dds"
-
-	unlocking_technologies = {
-		oil_crisis_nationalization
-	}
-	
-	building_modifiers = {
-		level_scaled = {
-			building_employment_bureaucrats_add = 120
-			building_employment_capitalists_add = 30
-		}
-		unscaled = {
-			building_government_shares_add = 0.7
-		}
-	}
-}
