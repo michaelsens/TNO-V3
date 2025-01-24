@@ -363,7 +363,6 @@ unlocking_technologies = {
 	combustion_engine
 }
 upkeep_modifier = {
-	goods_input_transportation_add = 0.5
 	goods_input_automobiles_add = 0.5
 	goods_input_oil_add = 0.5
 }
@@ -437,7 +436,7 @@ unlocking_technologies = {
 	railways
 }
 upkeep_modifier = {
-	goods_input_aeroplanes_add = 2
+	goods_input_aeroplanes_add = 0.5
 	goods_input_oil_add = 1
 }
 unit_modifier = {
@@ -451,7 +450,7 @@ ai_weight = {
 group = transport
 }
 
-mobilization_option_machinegunners = {
+mobilization_option_atgm_teams = {
 texture = "gfx/interface/icons/mobilization_options/machinegunners.dds"
 
 possible = {
@@ -486,15 +485,13 @@ unlocking_technologies = {
 	automatic_machine_guns
 }
 upkeep_modifier = {
-	goods_input_small_arms_add = 1
+	goods_input_artillery_add = 1
 	goods_input_ammunition_add = 1
-	goods_input_transportation_add = 0.5
-	goods_input_automobiles_add = 0.5
 
 }
 unit_modifier = {
 	unit_offense_add = 5
-	unit_defense_add = 15
+	unit_defense_add = 10
 }
 ai_weight = {
 	value = 1
@@ -538,12 +535,14 @@ unlocking_technologies = {
 	chemical_warfare
 }
 upkeep_modifier = {
-	goods_input_fertilizer_add = 4
+	goods_input_fertilizer_add = 3
+	goods_input_oil_add = 1
 }
 unit_modifier = {
 	unit_offense_add = 20
-	unit_kill_rate_add = 1
-	unit_recovery_rate_add = -0.3
+	unit_kill_rate_add = 0.2
+	unit_recovery_rate_add = -0.05
+	unit_devastation_mult = 1
 }
 ai_weight = {
 	value = 1
@@ -552,7 +551,7 @@ ai_weight = {
 group = special_weapons
 }
 
-mobilization_option_flamethrowers = {
+mobilization_option_incendiary_teams = {
 texture = "gfx/interface/icons/mobilization_options/flamethrowers.dds"
 
 possible = {
@@ -587,12 +586,12 @@ unlocking_technologies = {
 	flamethrowers
 }
 upkeep_modifier = {
-	goods_input_oil_add = 1
+	goods_input_oil_add = 2
 }
 unit_modifier = {
 	unit_offense_add = 15
 	unit_devastation_mult = 1
-	unit_morale_damage_mult = 0.1
+	unit_morale_damage_mult = 0.15
 }
 ai_weight = {
 	value = 1
@@ -601,20 +600,19 @@ ai_weight = {
 group = special_weapons
 }
 
-mobilization_option_gunship = {
+mobilization_option_engineer_teams = {
 texture = "gfx/interface/icons/production_method_icons/flamethrower_company.dds"
 unlocking_technologies = {
 	military_aviation
 }
 upkeep_modifier = {
-	goods_input_aeroplanes_add = 1
-	goods_input_oil_add = 1.5
+	goods_input_tools_add = 2
+	goods_input_automobiles_add = 0.5
 	goods_input_explosives_add = 1
 }
 unit_modifier = {
-	unit_offense_add = 15
-	unit_devastation_mult = 0.6
-	unit_morale_damage_mult = 0.2
+	unit_defense_add = 20
+	unit_recovery_rate_add = 0.1
 }
 ai_weight = {
 	value = 1
@@ -675,12 +673,12 @@ ai_weight = {
 group = reconnaissance
 }
 
-mobilization_option_aerial_recon = {
+mobilization_option_armored_recon = {
 texture = "gfx/interface/icons/mobilization_options/aerial_reconaissance.dds"
 
 possible = {
 	market ?= {
-		mg:aeroplanes ?= {
+		mg:tanks ?= {
 			market_goods_sell_orders > 0
 		}
 		mg:oil ?= {
@@ -713,7 +711,7 @@ unlocking_technologies = {
 	military_aviation
 }
 upkeep_modifier = {
-	goods_input_aeroplanes_add = 1
+	goods_input_tanks_add = 1
 	goods_input_oil_add = 0.5
 }
 unit_modifier = {
@@ -728,7 +726,7 @@ ai_weight = {
 group = reconnaissance
 }
 
-mobilization_option_aerial_inflitrator = {
+mobilization_option_aerial_recon = {
 texture = "gfx/interface/icons/production_method_icons/aerial_recon.dds"
 unlocking_technologies = {
 	stormtroopers	
@@ -736,7 +734,6 @@ unlocking_technologies = {
 upkeep_modifier = {
 	goods_input_aeroplanes_add = 1
 	goods_input_oil_add = 0.5
-	goods_input_explosives_add = 1
 }
 unit_modifier = {
 	unit_provinces_captured_mult = 1.2 # replace with higher occupation %age
@@ -755,7 +752,6 @@ mobilization_option_first_aid = {
 		triage
 	}
 	possible = {
-		NOT = { scope:military_formation = { has_mobilization_option = mobilization_option:mobilization_option_field_hospitals } }
 		market ?= {
 			mg:fabric ?= {
 				market_goods_sell_orders > 0
@@ -799,6 +795,7 @@ upkeep_modifier = {
 }
 	unit_modifier = {
 		unit_recovery_rate_add = 0.20
+		unit_morale_loss_mult = -0.1
 	}
 	ai_weight = {
 		value = 1
@@ -807,7 +804,7 @@ upkeep_modifier = {
 group = medic_support
 }
 
-mobilization_option_helicopter_aid = {
+mobilization_option_medevac = {
 unlocking_technologies = {
 	triage
 }
@@ -818,7 +815,7 @@ upkeep_modifier = {
 	goods_input_aeroplanes_add = 1
 }
 unit_modifier = {
-	unit_recovery_rate_add = 0.5
+	unit_recovery_rate_add = 0.2
 	unit_morale_loss_mult = -0.3
 }
 ai_weight = {
@@ -874,11 +871,10 @@ upkeep_modifier = {
 	goods_input_fabric_add = 1
 	goods_input_liquor_add = 2
 	goods_input_tools_add = 1
-	goods_input_aeroplanes_add = 1
 }
 unit_modifier = {
-	unit_recovery_rate_add = 0.7
-	unit_morale_loss_mult = -0.4
+	unit_recovery_rate_add = 0.4
+	unit_morale_loss_mult = -0.2
 }
 ai_weight = {
 	value = 1
@@ -887,64 +883,74 @@ ai_weight = {
 group = medic_support
 }
 
-mobilization_option_ww_doctrine = {
+mobilization_option_increased_fire = {
 texture = "gfx/interface/icons/production_method_icons/cannon_artillery.dds"
 unlocking_technologies = {
 	percussion_cap
 }
+possible = {
+	NOT = { scope:military_formation = { has_mobilization_option = mobilization_option:mobilization_option_extensive_fire } }
+	NOT = { scope:military_formation = { has_mobilization_option = mobilization_option:mobilization_option_excessive_fire } }
+}	
 upkeep_modifier = {
-	goods_input_artillery_add = 1
-	goods_input_ammunition_add = 1
+	goods_input_ammunition_add = 2
 }
 unit_modifier = {
 	unit_morale_damage_mult = 0.1
-	unit_kill_rate_add = 0.1
+	unit_kill_rate_add = 0.05
+	unit_devastation_mult = 0.1
 }
 ai_weight = {
 	value = 1
 }
 
-group = artillery_doctrine
+group = ammunition_doctrine
 }
 
-mobilization_option_mass_shelling = {
+mobilization_option_extensive_fire = {
 texture = "gfx/interface/icons/production_method_icons/siege_artillery.dds"
 unlocking_technologies = {
 	repeaters
 }
+possible = {
+	NOT = { scope:military_formation = { has_mobilization_option = mobilization_option:mobilization_option_increased_fire } }
+	NOT = { scope:military_formation = { has_mobilization_option = mobilization_option:mobilization_option_excessive_fire } }
+}	
 upkeep_modifier = {
-	goods_input_artillery_add = 2
-	goods_input_ammunition_add = 3
+	goods_input_artillery_add = 4
 }
 unit_modifier = {
 	unit_morale_damage_mult = 0.1
-	unit_kill_rate_add = 0.15
-	unit_devastation_mult = 0.4
+	unit_kill_rate_add = 0.1
+	unit_devastation_mult = 0.2
 }
 ai_weight = {
 	value = 1
 }
 
-group = artillery_doctrine
+group = ammunition_doctrine
 }
 
-mobilization_option_ulimate_destruction = {
+mobilization_option_excessive_fire = {
 texture = "gfx/interface/icons/production_method_icons/unused/chemical_artillery.dds"
 unlocking_technologies = {
 	repeaters
 }
+possible = {
+	NOT = { scope:military_formation = { has_mobilization_option = mobilization_option:mobilization_option_increased_fire } }
+	NOT = { scope:military_formation = { has_mobilization_option = mobilization_option:mobilization_option_extenssive_fire } }
+}
 upkeep_modifier = {
-	goods_input_artillery_add = 4
-	goods_input_ammunition_add = 6
+	goods_input_artillery_add = 6
 }
 unit_modifier = {
 	unit_morale_damage_mult = 0.25
-	unit_kill_rate_add = 0.3
-	unit_devastation_mult = 1.5
+	unit_kill_rate_add = 0.15
+	unit_devastation_mult = 0.3
 }
 ai_weight = {
 	value = 1
 }
 
-group = artillery_doctrine
+group = ammunition_doctrine
 }

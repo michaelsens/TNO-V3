@@ -7,19 +7,86 @@
 
 ### Infantry
 
+combat_unit_type_ww2_infantry = {
+    group = combat_unit_group_infantry
+
+    battle_modifier = {
+        unit_offense_add = 8
+        unit_defense_add = 10
+        unit_morale_loss_add = 15
+    }
+	
+    upkeep_modifier = {
+        goods_input_small_arms_add = 1
+        goods_input_ammunition_add = 1
+    }
+
+    # scope = country
+    # both this and "can_build" needs to be true to build conscripts
+    can_build_conscript = {
+        always = yes
+    }
+    
+    combat_unit_image = {
+        trigger = { 
+            has_culture_graphics = decentralised_americas
+        }
+        texture = "gfx/unit_illustrations/infantry_decentralised_americas_irregular.dds"
+    }
+
+    combat_unit_image = {
+        trigger = { 
+            has_culture_graphics = east_asian
+        }
+        texture = "gfx/unit_illustrations/infantry_east_asian_irregular.dds"
+    }
+
+    combat_unit_image = {
+        trigger = { 
+            has_culture_graphics = south_asian
+        }
+        texture = "gfx/unit_illustrations/infantry_south_asian_irregular.dds"
+    }
+
+    combat_unit_image = {
+        trigger = { 
+            has_culture_graphics = african
+        }
+        texture = "gfx/unit_illustrations/infantry_african_irregular.dds"
+    }
+
+    combat_unit_image = {
+        trigger = { 
+            has_culture_graphics = arabic
+        }
+        texture = "gfx/unit_illustrations/infantry_arabic_irregular.dds"
+    }
+
+    combat_unit_image = {
+		# fallback
+        texture = "gfx/unit_illustrations/infantry_eu_irregular.dds"
+    }
+	
+	upgrades = {
+        combat_unit_type_irregular_infantry
+		combat_unit_type_line_infantry
+		combat_unit_type_skirmish_infantry
+        combat_unit_type_trench_infantry
+	}
+}
+
 combat_unit_type_irregular_infantry = {
     group = combat_unit_group_infantry
 
     battle_modifier = {
-        unit_offense_add = 10
-        unit_defense_add = 15
-        unit_morale_loss_add = 15
+        unit_offense_add = 15
+        unit_defense_add = 20
+        unit_morale_loss_add = 10
     }
 	
     upkeep_modifier = {
         goods_input_small_arms_add = 2
         goods_input_ammunition_add = 2
-        goods_input_artillery_add = 1
     }
 
     # scope = country
@@ -81,13 +148,16 @@ combat_unit_type_line_infantry = {
     upkeep_modifier = {
         goods_input_small_arms_add = 3
         goods_input_ammunition_add = 3
-        goods_input_artillery_add = 1
+        goods_input_radios_add = 1
+        goods_input_oil_add = 1
+        goods_input_tanks_add = 1
     }
 
     battle_modifier = {
-        unit_offense_add = 10
-        unit_defense_add = 25
-        unit_morale_loss_add = 10
+        unit_offense_add = 20
+        unit_defense_add = 30
+        unit_morale_loss_add = 8
+        unit_devastation_mult = 0.1
     }
 
 	unlocking_technologies = { military_statistics }
@@ -144,15 +214,16 @@ combat_unit_type_skirmish_infantry = {
     upkeep_modifier = {
         goods_input_small_arms_add = 3
         goods_input_ammunition_add = 4
-        goods_input_oil_add = 1
-        goods_input_radios_add = 1
-        goods_input_artillery_add = 2
+        goods_input_radios_add = 2
+        goods_input_oil_add = 1.5
+        goods_input_tanks_add = 1.5
     }
     
     battle_modifier = {
-        unit_offense_add = 15
-        unit_defense_add = 35
-        unit_morale_loss_add = 10
+        unit_offense_add = 30
+        unit_defense_add = 40
+        unit_morale_loss_add = 6
+        unit_devastation_mult = 0.15
     }
 
 	unlocking_technologies = { trench_works }
@@ -208,16 +279,16 @@ combat_unit_type_trench_infantry = {
     upkeep_modifier = {
         goods_input_small_arms_add = 4
         goods_input_ammunition_add = 4
-        goods_input_tanks_add = 1.5
-        goods_input_oil_add = 1
         goods_input_radios_add = 3
-        goods_input_artillery_add = 3
+        goods_input_oil_add = 2
+        goods_input_tanks_add = 2
     }
     
     battle_modifier = {
-        unit_offense_add = 20
-        unit_defense_add = 40
-        unit_morale_loss_add = 8
+        unit_offense_add = 45
+        unit_defense_add = 55
+        unit_morale_loss_add = 4
+        unit_devastation_mult = 0.25
     }
 
 	unlocking_technologies = { nco_training }
@@ -270,16 +341,16 @@ combat_unit_type_cannon_artillery = {
     group = combat_unit_group_artillery
 
     upkeep_modifier = {
-        goods_input_artillery_add = 2
-        goods_input_ammunition_add = 3
+        goods_input_artillery_add = 1
+        goods_input_ammunition_add = 2
     }
     
     battle_modifier = {
-        unit_offense_add = 30
-        unit_defense_add = 15
-        unit_morale_loss_add = 10
-        unit_kill_rate_add = 0.2
-        unit_devastation_mult = 0.2
+        unit_offense_add = 20
+        unit_defense_add = 5
+        unit_morale_loss_add = 15
+        unit_kill_rate_add = 0.1
+        unit_devastation_mult = 0.1
     }
 
 	unlocking_technologies = { shell_gun }
@@ -301,15 +372,16 @@ combat_unit_type_mobile_artillery = {
 
     upkeep_modifier = {
         goods_input_artillery_add = 2
-        goods_input_ammunition_add = 4
+        goods_input_ammunition_add = 3
+        goods_input_engines_add = 1
     }
     
     battle_modifier = {
-        unit_offense_add = 40
-        unit_defense_add = 20
-        unit_morale_loss_add = 8
-        unit_kill_rate_add = 0.25
-        unit_devastation_mult = 0.25
+        unit_offense_add = 30
+        unit_defense_add = 10
+        unit_morale_loss_add = 12
+        unit_kill_rate_add = 0.15
+        unit_devastation_mult = 0.15
     }
 
 	unlocking_technologies = { rifling }
@@ -330,16 +402,18 @@ combat_unit_type_shrapnel_artillery = {
     
     upkeep_modifier = {
         goods_input_artillery_add = 3
-        goods_input_ammunition_add = 4
+        goods_input_ammunition_add = 3
         goods_input_tanks_add = 1
+        goods_input_radios_add = 1
+        goods_input_oil_add = 1
     }
 
     battle_modifier = {
-        unit_offense_add = 50
+        unit_offense_add = 40
         unit_defense_add = 25
-        unit_morale_loss_add = 6
-        unit_kill_rate_add = 0.3
-        unit_devastation_mult = 0.3
+        unit_morale_loss_add = 10
+        unit_kill_rate_add = 0.15
+        unit_devastation_mult = 0.2
     }
 
 	unlocking_technologies = { repeaters }
@@ -360,16 +434,18 @@ combat_unit_type_siege_artillery = {
     upkeep_modifier = {
         goods_input_artillery_add = 3
         goods_input_ammunition_add = 4
-        goods_input_tanks_add = 2
+        goods_input_tanks_add = 1.5
+        goods_input_radios_add = 2
+        goods_input_oil_add = 1.5
+        goods_input_electricity_add = 1
     }
 
     battle_modifier = {
         unit_offense_add = 50
         unit_defense_add = 25
-        unit_morale_loss_add = 6
-        unit_kill_rate_add = 0.30
-        unit_devastation_mult = 0.30
-        unit_provinces_captured_mult = 0.15
+        unit_morale_loss_add = 8
+        unit_kill_rate_add = 0.20
+        unit_devastation_mult = 0.25
     }
 
 	unlocking_technologies = { automatic_machine_guns }
@@ -387,19 +463,20 @@ combat_unit_type_heavy_tank = {
     group = combat_unit_group_artillery
     
     upkeep_modifier = {
-        goods_input_artillery_add = 3
+        goods_input_artillery_add = 4
         goods_input_ammunition_add = 5
-        goods_input_tanks_add = 3
-        goods_input_electricity_add = 1
+        goods_input_tanks_add = 2
+        goods_input_radios_add = 3
+        goods_input_oil_add = 2
+        goods_input_electricity_add = 2
     }
 
     battle_modifier = {
-        unit_offense_add = 70
+        unit_offense_add = 65
         unit_defense_add = 35
-        unit_morale_loss_add = 4
-        unit_kill_rate_add = 0.45
-        unit_morale_damage_mult = 0.15
-        unit_devastation_mult = 0.3
+        unit_morale_loss_add = 6
+        unit_kill_rate_add = 0.3
+        unit_devastation_mult = 0.35
     }
 
 	unlocking_technologies = { mobile_armor }
@@ -415,19 +492,17 @@ combat_unit_type_hussars = {
     group = combat_unit_group_cavalry
     
     upkeep_modifier = {
-        goods_input_tanks_add = 2
-        goods_input_small_arms_add = 1
+        goods_input_tanks_add = 1
         goods_input_ammunition_add = 2
-        goods_input_radios_add = 1
         goods_input_oil_add = 0.5
     }
 
     battle_modifier = {
-        unit_offense_add = 25
+        unit_offense_add = 15
         unit_defense_add = 15
         unit_morale_loss_add = 10
-        unit_occupation_mult = 0.2
-        unit_provinces_captured_mult = 0.2
+        unit_devastation_mult = 0.05
+        unit_morale_damage_mult = 0.05
     }
 
 	unlocking_technologies = { shell_gun }
@@ -455,12 +530,11 @@ combat_unit_type_dragoons = {
     }
 
     battle_modifier = {
-        unit_offense_add = 25
-        unit_defense_add = 15
-        unit_morale_loss_add = 10
-        unit_occupation_mult = 0.3
-        unit_provinces_captured_mult = 0.3
-        #should get modifiers to mobile/surprise battle conditions appearing
+        unit_offense_add = 30
+        unit_defense_add = 30
+        unit_morale_loss_add = 8
+        unit_devastation_mult = 0.1
+        unit_morale_damage_mult = 0.1
     }
 
 	unlocking_technologies = { breech_loading_artillery }
@@ -481,18 +555,17 @@ combat_unit_type_cuirassiers = {
     
     upkeep_modifier = {
         goods_input_tanks_add = 3
-        goods_input_ammunition_add = 3
-        goods_input_oil_add = 1
-        goods_input_radios_add = 2
+        goods_input_ammunition_add = 2
+        goods_input_oil_add = 1.5
+        goods_input_radios_add = 1.5
     }
 
     battle_modifier = {
-        unit_offense_add = 30
-        unit_defense_add = 20
-        unit_morale_loss_add = 8
-        unit_occupation_mult = 0.3
-        unit_provinces_captured_mult = 0.3
-        unit_kill_rate_add = 0.15
+        unit_offense_add = 40
+        unit_defense_add = 40
+        unit_morale_loss_add = 6
+        unit_devastation_mult = 0.1
+        unit_morale_damage_mult = 0.15
     }
 
 	unlocking_technologies = { handcranked_machine_gun }
@@ -512,22 +585,21 @@ combat_unit_type_lancers = {
     
     upkeep_modifier = {
         goods_input_tanks_add = 4
-        goods_input_ammunition_add = 4
-        goods_input_oil_add = 1
-        goods_input_radios_add = 2.5
+        goods_input_ammunition_add = 2
+        goods_input_oil_add = 2
+        goods_input_radios_add = 2
     }
 
     battle_modifier = {
-        unit_offense_add = 35
-        unit_defense_add = 25
-        unit_morale_loss_add = 6
-        unit_kill_rate_add = 0.25
-        unit_morale_loss_mult = 0.05
-        unit_occupation_mult = 0.35
-        unit_provinces_captured_mult = 0.35
+                unit_offense_add = 45
+        unit_defense_add = 45
+        unit_morale_loss_add = 5
+        unit_devastation_mult = 0.15
+        unit_morale_damage_mult = 0.2
     }
 
-	unlocking_technologies = { automatic_machine_guns }
+
+        unlocking_technologies = { automatic_machine_guns }
 
     combat_unit_image = {
         texture = "gfx/unit_illustrations/tank-gen-2-late.dds"
@@ -544,18 +616,16 @@ combat_unit_type_light_tanks = {
     upkeep_modifier = {
         goods_input_tanks_add = 5
         goods_input_ammunition_add = 5
-        goods_input_oil_add = 1.5
+        goods_input_oil_add = 3
         goods_input_radios_add = 3
     }
 
     battle_modifier = {
-        unit_offense_add = 45
-        unit_defense_add = 35
+        unit_offense_add = 60
+        unit_defense_add = 60
         unit_morale_loss_add = 4
-        unit_kill_rate_add = 0.1
-        unit_morale_loss_mult = 0.1
-        unit_occupation_mult = 0.4
-        unit_provinces_captured_mult = 0.4
+        unit_devastation_mult = 0.25
+        unit_morale_damage_mult = 0.30
     }
 
 	unlocking_technologies = { mobile_armor }
