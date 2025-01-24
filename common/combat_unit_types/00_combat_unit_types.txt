@@ -644,13 +644,15 @@ combat_unit_type_frigate = {
     group = combat_unit_group_light_ship
 
     upkeep_modifier = {
-        goods_input_ironclads_add = 1
-        goods_input_ammunition_add = 1
+        goods_input_ironclads_add = 2
+        goods_input_ammunition_add = 2
+        goods_input_artillery_add = 2
+        goods_input_explosives_add = 2
     }
 
     battle_modifier = {
-        unit_offense_add = 10
-        unit_defense_add = 10
+        unit_offense_add = 20
+        unit_defense_add = 20
         unit_morale_loss_add = 10
     }
 
@@ -670,13 +672,16 @@ combat_unit_type_destroyer = {
     group = combat_unit_group_light_ship
 
     upkeep_modifier = {
-        goods_input_ironclads_add = 1
+        goods_input_ironclads_add = 3
+        goods_input_artillery_add = 2
         goods_input_ammunition_add = 2
+        goods_input_explosives_add = 2
+        goods_input_radios_add = 1
     }
 
     battle_modifier = {
-        unit_offense_add = 15
-        unit_defense_add = 25
+        unit_offense_add = 30
+        unit_defense_add = 30
         unit_morale_loss_add = 8
     }
 
@@ -694,15 +699,16 @@ combat_unit_type_torpedo_boat = {
     group = combat_unit_group_light_ship
 
     upkeep_modifier = {
-        goods_input_ironclads_add = 1
-        goods_input_ammunition_add = 2
-        goods_input_explosives_add = 2
+        goods_input_ironclads_add = 3
+        goods_input_ammunition_add = 3
+        goods_input_explosives_add = 3
+        goods_input_radios_add = 2
     }
 
     battle_modifier = {
-        unit_offense_add = 30
-        unit_defense_add = 20
-        unit_morale_loss_add = 8
+        unit_offense_add = 40
+        unit_defense_add = 40
+        unit_morale_loss_add = 6
         # unit_convoy_raiding_mult = 0.25 Needs code support
     }
 
@@ -723,7 +729,7 @@ combat_unit_type_man_o_war = {
     group = combat_unit_group_capital_ship
 
     upkeep_modifier = {
-        goods_input_ironclads_add = 1
+        goods_input_ironclads_add = 2
         goods_input_ammunition_add = 2
         goods_input_radios_add = 1
         goods_input_aeroplanes_add = 2
@@ -750,15 +756,15 @@ combat_unit_type_ironclad = {
     group = combat_unit_group_capital_ship
 
     upkeep_modifier = {
-        goods_input_ironclads_add = 2
-        goods_input_ammunition_add = 2.5
+        goods_input_ironclads_add = 3
+        goods_input_ammunition_add = 2
         goods_input_radios_add = 2
         goods_input_aeroplanes_add = 3
     }
 
     battle_modifier = {
-        unit_offense_add = 25
-        unit_defense_add = 25
+        unit_offense_add = 30
+        unit_defense_add = 30
         unit_morale_loss_add = 8
     }
 
@@ -777,15 +783,15 @@ combat_unit_type_monitor = {
     group = combat_unit_group_capital_ship
 
     upkeep_modifier = {
-        goods_input_ironclads_add = 3
+        goods_input_ironclads_add = 4
         goods_input_ammunition_add = 3
         goods_input_radios_add = 2.5
         goods_input_aeroplanes_add = 4
     }
 
     battle_modifier = {
-        unit_offense_add = 35
-        unit_defense_add = 35
+        unit_offense_add = 40
+        unit_defense_add = 40
         unit_morale_loss_add = 6
     }
 
@@ -800,7 +806,7 @@ combat_unit_type_dreadnought = {
     group = combat_unit_group_capital_ship
 
     upkeep_modifier = {
-        goods_input_ironclads_add = 4
+        goods_input_ironclads_add = 5
         goods_input_ammunition_add = 4
         goods_input_radios_add = 3
         goods_input_aeroplanes_add = 5
@@ -809,7 +815,7 @@ combat_unit_type_dreadnought = {
     battle_modifier = {
         unit_offense_add = 50
         unit_defense_add = 50
-        unit_morale_loss_add = 6
+        unit_morale_loss_add = 4
     }
 
 	unlocking_technologies = { battleship_tech }
@@ -827,6 +833,7 @@ combat_unit_type_submarine = {
     upkeep_modifier = {
         goods_input_ironclads_add = 1
         goods_input_ammunition_add = 1
+        goods_input_explosives_add = 1
     }
 
     battle_modifier = {
@@ -849,12 +856,13 @@ combat_unit_type_carrier = {
         goods_input_ironclads_add = 2
         goods_input_ammunition_add = 2
         goods_input_radios_add = 2
+        goods_input_explosives_add = 2
     }
 
     battle_modifier = {
-        unit_offense_add = 65
-        unit_defense_add = 40
-        unit_morale_loss_add = 4
+        unit_offense_add = 50
+        unit_defense_add = 25
+        unit_morale_loss_add = 6
     }
 
 	unlocking_technologies = { submarine }
@@ -871,11 +879,12 @@ combat_unit_type_nuclear_submarine = {
         goods_input_ironclads_add = 3
         goods_input_ammunition_add = 3
         goods_input_radios_add = 3
+        goods_input_explosives_add = 3
     }
 
     battle_modifier = {
-        unit_offense_add = 65
-        unit_defense_add = 40
+        unit_offense_add = 60
+        unit_defense_add = 30
         unit_morale_loss_add = 4
     }
 
