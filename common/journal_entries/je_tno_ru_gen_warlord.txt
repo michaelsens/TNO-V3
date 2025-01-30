@@ -42,6 +42,8 @@ je_ru_tno_launch_attack = {
     icon = "gfx/interface/icons/tno_modifier_icons/modifier_ZLAarm.dds"
     group = je_group_historical_content
     scripted_button = je_ru_launch_attack
+    scripted_button = je_ru_launch_attack_west
+    scripted_button = je_ru_launch_attack_east
 
     immediate = {
     }
@@ -77,14 +79,11 @@ je_ru_fe_tno_launch_attack = {
     icon = "gfx/interface/icons/tno_modifier_icons/modifier_ZLAarm.dds"
     group = je_group_historical_content
     scripted_button = je_ru_fe_launch_attack
+    scripted_button = je_ru_fe2_launch_attack
 
     immediate = {
     }
     
-    complete = {
-        #is a player
-        is_player = yes
-    }
 
     on_complete = {
     }
@@ -105,8 +104,8 @@ je_ru_fe_tno_launch_attack = {
     
     weight = 100
 
-    
-    should_be_pinned_by_default = no   
+    should_be_pinned_by_default = yes   
+
 }
 
 je_ru_sb_tno_launch_attack = { 
@@ -114,13 +113,9 @@ je_ru_sb_tno_launch_attack = {
     icon = "gfx/interface/icons/tno_modifier_icons/modifier_ZLAarm.dds"
     group = je_group_historical_content
     scripted_button = je_ru_sb_launch_attack
+    scripted_button = je_ru_sb2_launch_attack
 
     immediate = {
-    }
-    
-    complete = {
-        #is a player
-        is_player = yes
     }
 
     on_complete = {
@@ -142,8 +137,8 @@ je_ru_sb_tno_launch_attack = {
     
     weight = 100
 
-    
-    should_be_pinned_by_default = no   
+    should_be_pinned_by_default = yes   
+
 }
 
 je_ru_url_tno_launch_attack = { 
@@ -151,13 +146,9 @@ je_ru_url_tno_launch_attack = {
     icon = "gfx/interface/icons/tno_modifier_icons/modifier_ZLAarm.dds"
     group = je_group_historical_content
     scripted_button = je_ru_url_launch_attack
+    scripted_button = je_ru_url2_launch_attack
 
     immediate = {
-    }
-    
-    complete = {
-        #is a player
-        is_player = yes
     }
 
     on_complete = {
@@ -179,8 +170,9 @@ je_ru_url_tno_launch_attack = {
     
     weight = 100
 
+    should_be_pinned_by_default = yes   
+
     
-    should_be_pinned_by_default = no   
 }
 
 je_ru_wst_tno_launch_attack = { 
@@ -188,13 +180,9 @@ je_ru_wst_tno_launch_attack = {
     icon = "gfx/interface/icons/tno_modifier_icons/modifier_ZLAarm.dds"
     group = je_group_historical_content
     scripted_button = je_ru_wst_launch_attack
+    scripted_button = je_ru_wst2_launch_attack
 
     immediate = {
-    }
-    
-    complete = {
-        #is a player
-        is_player = yes
     }
 
     on_complete = {
@@ -216,8 +204,8 @@ je_ru_wst_tno_launch_attack = {
     
     weight = 100
 
-    
-    should_be_pinned_by_default = no   
+    should_be_pinned_by_default = yes   
+
 }
 
 je_ru_tno_unite_far_east = { 
@@ -442,12 +430,6 @@ je_ru_tno_unite_west_russia = {
             text = je_ru_tno_owns_galich
             any_scope_state = {
                 state_region = s:STATE_GALICH
-            }
-        }
-        custom_tooltip = {
-            text = je_ru_tno_owns_chelyabinsk
-            any_scope_state = {
-                state_region = s:STATE_CHELYABINSK
             }
         }
         custom_tooltip = {

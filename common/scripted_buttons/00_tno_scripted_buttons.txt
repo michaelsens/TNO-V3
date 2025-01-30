@@ -1570,7 +1570,7 @@ je_ru_launch_raid = {
 
 	possible = {
 		hidden_trigger = {
-			game_date <= 1966.1.1
+			game_date <= 1965.6.1
 		}
 		is_at_war = no
 		root = {
@@ -1633,9 +1633,12 @@ je_ru_launch_attack = {
 	name = "je_ru_launch_attack"
 	desc = "je_ru_launch_attack_desc"
 
+	ai_chance = {
+		base = 100
+	}
+
 	possible = {
-		is_player = no
-		game_date >= 1966.1.1
+		game_date >= 1980.1.1
 		is_at_war = no
 		root = {
 			has_modifier = russian_warlord
@@ -1644,10 +1647,7 @@ je_ru_launch_attack = {
 		is_diplomatic_play_initiator = no
 		any_country = {
 			is_adjacent_to_country = root
-			is_diplomatic_play_target = no
-			is_diplomatic_play_initiator = no
 			has_modifier = russian_warlord
-			is_player = no
 		}
 	}
 
@@ -1662,38 +1662,138 @@ je_ru_launch_attack = {
 				is_diplomatic_play_target = no
 				is_diplomatic_play_initiator = no
 				has_modifier = russian_warlord
-				is_player = no
+				
 			}
 			save_scope_as = raid_target
 		}
-		ROOT = {
-			random_scope_state = {
-				limit = {
-					is_capital = yes
-				}
-				save_scope_as = target_capital_state_scope
+		create_diplomatic_play = {
+			name = theo
+			target_country = scope:raid_target
+			type = dp_revolution
+			war = no
+			escalation = 75
+		}
+	}
+}
+
+je_ru_launch_attack_west = {
+	name = "je_ru_launch_attack"
+	desc = "je_ru_launch_attack_desc"
+
+	ai_chance = {
+		base = 100
+	}
+
+	possible = {
+		game_date >= 1975.1.1
+		is_at_war = no
+		root = {
+			has_modifier = russian_warlord
+			OR = {
+				has_modifier = western
+				has_modifier = ural
 			}
 		}
-		ROOT = {
-			random_scope_state = {
-				limit = {
-					is_capital = yes
-				}
-				save_scope_as = target_capital_state_scope
+		is_diplomatic_play_target = no
+		is_diplomatic_play_initiator = no
+		any_country = {
+			is_adjacent_to_country = root
+			has_modifier = russian_warlord
+			OR = {
+				has_modifier = western
+				has_modifier = ural
 			}
+			
+		}
+	}
+
+	effect = {
+		hidden_effect = {
+			set_immune_to_revolutions = yes
+		}
+		custom_tooltip = je_ru_launch_raid_tt
+		random_country = {
+			limit = {
+				is_adjacent_to_country = root
+				is_diplomatic_play_target = no
+				is_diplomatic_play_initiator = no
+				has_modifier = russian_warlord
+				OR = {
+					has_modifier = western
+					has_modifier = ural
+				}
+				
+			}
+			save_scope_as = raid_target
 		}
 
 		create_diplomatic_play = {
 			name = theo
 			target_country = scope:raid_target
-			type = dp_annex_war
+			type = dp_revolution
 			war = no
-			escalation = 1
-			add_war_goal = {
-				holder = scope:raid_target
-				type = return_state
-				target_state = scope:target_capital_state_scope
+			escalation = 75
+		}
+	}
+}
+
+je_ru_launch_attack_east = {
+	name = "je_ru_launch_attack"
+	desc = "je_ru_launch_attack_desc"
+
+	ai_chance = {
+		base = 100
+	}
+
+	possible = {
+		game_date >= 1975.1.1
+		is_at_war = no
+		root = {
+			has_modifier = russian_warlord
+			OR = {
+				has_modifier = siberian
+				has_modifier = far_eastern
 			}
+		}
+		is_diplomatic_play_target = no
+		is_diplomatic_play_initiator = no
+		any_country = {
+			is_adjacent_to_country = root
+			has_modifier = russian_warlord
+			OR = {
+				has_modifier = siberian
+				has_modifier = far_eastern
+			}
+			
+		}
+	}
+
+	effect = {
+		hidden_effect = {
+			set_immune_to_revolutions = yes
+		}
+		custom_tooltip = je_ru_launch_raid_tt
+		random_country = {
+			limit = {
+				is_adjacent_to_country = root
+				is_diplomatic_play_target = no
+				is_diplomatic_play_initiator = no
+				has_modifier = russian_warlord
+				OR = {
+					has_modifier = siberian
+					has_modifier = far_eastern
+				}
+				
+			}
+			save_scope_as = raid_target
+		}
+
+		create_diplomatic_play = {
+			name = theo
+			target_country = scope:raid_target
+			type = dp_revolution
+			war = no
+			escalation = 75
 		}
 	}
 }
@@ -1707,8 +1807,8 @@ je_ru_fe_launch_attack = {
 	}
 
 	possible = {
-		is_player = no
 		game_date >= 1966.1.1
+		game_date <= 1970.1.1
 		is_at_war = no
 		root = {
 			has_modifier = russian_warlord
@@ -1722,7 +1822,7 @@ je_ru_fe_launch_attack = {
 			is_diplomatic_play_initiator = no
 			has_modifier = russian_warlord
 			has_modifier = far_eastern
-			is_player = no
+			
 		}
 	}
 
@@ -1738,38 +1838,16 @@ je_ru_fe_launch_attack = {
 				is_diplomatic_play_initiator = no
 				has_modifier = russian_warlord
 				has_modifier = far_eastern
-				is_player = no
+				
 			}
 			save_scope_as = raid_target
 		}
-		ROOT = {
-			random_scope_state = {
-				limit = {
-					is_capital = yes
-				}
-				save_scope_as = target_capital_state_scope
-			}
-		}
-		ROOT = {
-			random_scope_state = {
-				limit = {
-					is_capital = yes
-				}
-				save_scope_as = target_capital_state_scope
-			}
-		}
-
 		create_diplomatic_play = {
 			name = theo
 			target_country = scope:raid_target
-			type = dp_annex_war
+			type = dp_revolution
 			war = no
-			escalation = 1
-			add_war_goal = {
-				holder = scope:raid_target
-				type = return_state
-				target_state = scope:target_capital_state_scope
-			}
+			escalation = 75
 		}
 	}
 }
@@ -1783,8 +1861,8 @@ je_ru_sb_launch_attack = {
 	}
 
 	possible = {
-		is_player = no
 		game_date >= 1966.1.1
+		game_date <= 1970.1.1
 		is_at_war = no
 		root = {
 			has_modifier = russian_warlord
@@ -1798,7 +1876,7 @@ je_ru_sb_launch_attack = {
 			is_diplomatic_play_initiator = no
 			has_modifier = russian_warlord
 			has_modifier = siberian
-			is_player = no
+			
 		}
 	}
 
@@ -1814,38 +1892,16 @@ je_ru_sb_launch_attack = {
 				is_diplomatic_play_initiator = no
 				has_modifier = russian_warlord
 				has_modifier = siberian
-				is_player = no
+				
 			}
 			save_scope_as = raid_target
 		}
-		ROOT = {
-			random_scope_state = {
-				limit = {
-					is_capital = yes
-				}
-				save_scope_as = target_capital_state_scope
-			}
-		}
-		ROOT = {
-			random_scope_state = {
-				limit = {
-					is_capital = yes
-				}
-				save_scope_as = target_capital_state_scope
-			}
-		}
-
 		create_diplomatic_play = {
 			name = theo
 			target_country = scope:raid_target
-			type = dp_annex_war
+			type = dp_revolution
 			war = no
-			escalation = 1
-			add_war_goal = {
-				holder = scope:raid_target
-				type = return_state
-				target_state = scope:target_capital_state_scope
-			}
+			escalation = 75
 		}
 	}
 }
@@ -1859,8 +1915,8 @@ je_ru_url_launch_attack = {
 	}
 
 	possible = {
-		is_player = no
 		game_date >= 1966.1.1
+		game_date <= 1970.1.1
 		is_at_war = no
 		root = {
 			has_modifier = russian_warlord
@@ -1874,7 +1930,7 @@ je_ru_url_launch_attack = {
 			is_diplomatic_play_initiator = no
 			has_modifier = russian_warlord
 			has_modifier = ural
-			is_player = no
+			
 		}
 	}
 
@@ -1890,38 +1946,16 @@ je_ru_url_launch_attack = {
 				is_diplomatic_play_initiator = no
 				has_modifier = russian_warlord
 				has_modifier = ural
-				is_player = no
+				
 			}
 			save_scope_as = raid_target
 		}
-		ROOT = {
-			random_scope_state = {
-				limit = {
-					is_capital = yes
-				}
-				save_scope_as = target_capital_state_scope
-			}
-		}
-		ROOT = {
-			random_scope_state = {
-				limit = {
-					is_capital = yes
-				}
-				save_scope_as = target_capital_state_scope
-			}
-		}
-
 		create_diplomatic_play = {
 			name = theo
 			target_country = scope:raid_target
-			type = dp_annex_war
+			type = dp_revolution
 			war = no
-			escalation = 1
-			add_war_goal = {
-				holder = scope:raid_target
-				type = return_state
-				target_state = scope:target_capital_state_scope
-			}
+			escalation = 75
 		}
 	}
 }
@@ -1935,8 +1969,8 @@ je_ru_wst_launch_attack = {
 	}
 
 	possible = {
-		is_player = no
 		game_date >= 1966.1.1
+		game_date <= 1970.1.1
 		is_at_war = no
 		root = {
 			has_modifier = russian_warlord
@@ -1950,7 +1984,7 @@ je_ru_wst_launch_attack = {
 			is_diplomatic_play_initiator = no
 			has_modifier = russian_warlord
 			has_modifier = western
-			is_player = no
+			
 		}
 	}
 
@@ -1966,37 +2000,204 @@ je_ru_wst_launch_attack = {
 				is_diplomatic_play_initiator = no
 				has_modifier = russian_warlord
 				has_modifier = western
-				is_player = no
+				
 			}
 			save_scope_as = raid_target
-		}
-		ROOT = {
-			random_scope_state = {
-				limit = {
-					is_capital = yes
-				}
-				save_scope_as = target_capital_state_scope
-			}
-		}
-		ROOT = {
-			random_scope_state = {
-				limit = {
-					is_capital = yes
-				}
-				save_scope_as = target_capital_state_scope
-			}
 		}
 		create_diplomatic_play = {
 			name = theo
 			target_country = scope:raid_target
-			type = dp_annex_war
+			type = dp_revolution
 			war = no
-			escalation = 1
-			add_war_goal = {
-				holder = scope:raid_target
-				type = return_state
-				target_state = scope:target_capital_state_scope
+			escalation = 75
+		}
+	}
+}
+
+je_ru_fe2_launch_attack = {
+	name = "je_ru_launch_attack"
+	desc = "je_ru_launch_attack_desc"
+
+	ai_chance = {
+		base = 100
+	}
+
+	possible = {
+		game_date >= 1969.12.20
+		game_date <= 1973.1.1
+		is_diplomatic_play_initiator = no
+		root = {
+			has_modifier = russian_warlord
+			has_modifier = far_eastern
+		}
+		any_country = {
+			is_adjacent_to_country = root
+			has_modifier = russian_warlord
+			has_modifier = far_eastern
+			
+		}
+	}
+
+	effect = {
+		hidden_effect = {
+			set_immune_to_revolutions = yes
+		}
+		custom_tooltip = je_ru_launch_raid_tt
+		random_country = {
+			limit = {
+				is_adjacent_to_country = root
+				has_modifier = russian_warlord
+				has_modifier = far_eastern
+				
 			}
+			save_scope_as = raid_target
+		}
+		create_diplomatic_play = {
+			name = theo
+			target_country = scope:raid_target
+			type = dp_revolution
+			war = no
+			escalation = 75
+		}
+	}
+}
+
+je_ru_sb2_launch_attack = {
+	name = "je_ru_launch_attack"
+	desc = "je_ru_launch_attack_desc"
+
+	ai_chance = {
+		base = 100
+	}
+
+	possible = {
+		game_date >= 1969.12.20
+		game_date <= 1973.1.1
+		is_diplomatic_play_initiator = no
+		root = {
+			has_modifier = russian_warlord
+			has_modifier = siberian
+		}
+		any_country = {
+			is_adjacent_to_country = root
+			has_modifier = russian_warlord
+			has_modifier = siberian
+			
+		}
+	}
+
+	effect = {
+		hidden_effect = {
+			set_immune_to_revolutions = yes
+		}
+		custom_tooltip = je_ru_launch_raid_tt
+		random_country = {
+			limit = {
+				is_adjacent_to_country = root
+				has_modifier = russian_warlord
+				has_modifier = siberian
+				
+			}
+			save_scope_as = raid_target
+		}
+		create_diplomatic_play = {
+			name = theo
+			target_country = scope:raid_target
+			type = dp_revolution
+			war = no
+			escalation = 75
+		}
+	}
+}
+
+je_ru_url2_launch_attack = {
+	name = "je_ru_launch_attack"
+	desc = "je_ru_launch_attack_desc"
+
+	ai_chance = {
+		base = 100
+	}
+
+	possible = {
+		game_date >= 1969.12.20
+		game_date <= 1973.1.1
+		is_diplomatic_play_initiator = no
+		root = {
+			has_modifier = russian_warlord
+			has_modifier = ural
+		}
+		any_country = {
+			is_adjacent_to_country = root
+			has_modifier = russian_warlord
+			has_modifier = ural
+		}
+	}
+
+	effect = {
+		hidden_effect = {
+			set_immune_to_revolutions = yes
+		}
+		custom_tooltip = je_ru_launch_raid_tt
+		random_country = {
+			limit = {
+				is_adjacent_to_country = root
+				has_modifier = russian_warlord
+				has_modifier = ural
+			}
+			save_scope_as = raid_target
+		}
+		create_diplomatic_play = {
+			name = theo
+			target_country = scope:raid_target
+			type = dp_revolution
+			war = no
+			escalation = 75
+		}
+	}
+}
+
+je_ru_wst2_launch_attack = {
+	name = "je_ru_launch_attack"
+	desc = "je_ru_launch_attack_desc"
+
+	ai_chance = {
+		base = 100
+	}
+
+	possible = {
+		game_date >= 1969.12.20
+		game_date <= 1973.1.1
+		is_diplomatic_play_initiator = no
+		root = {
+			has_modifier = russian_warlord
+			has_modifier = western
+		}
+		any_country = {
+			is_adjacent_to_country = root
+			has_modifier = russian_warlord
+			has_modifier = western
+		}
+	}
+
+	effect = {
+		hidden_effect = {
+			set_immune_to_revolutions = yes
+		}
+		custom_tooltip = je_ru_launch_raid_tt
+		random_country = {
+			limit = {
+				is_adjacent_to_country = root
+				has_modifier = russian_warlord
+				has_modifier = western
+			}
+			save_scope_as = raid_target
+		}
+		create_diplomatic_play = {
+			name = theo
+			target_country = scope:raid_target
+			type = dp_revolution
+			war = no
+			escalation = 75
 		}
 	}
 }
@@ -2004,6 +2205,10 @@ je_ru_wst_launch_attack = {
 je_ru_irk_restore_far_east = {
 	name = "je_ru_irk_restore_far_east"
 	desc = "je_ru_irk_restore_far_east_desc"
+
+	ai_chance = {
+		base = 100
+	}
 
 	possible = {
 		owns_entire_state_region = STATE_IRKUTSK
@@ -2014,13 +2219,6 @@ je_ru_irk_restore_far_east = {
         owns_entire_state_region = STATE_KOLYMA
         owns_entire_state_region = STATE_CHUKOTKA
         owns_entire_state_region = STATE_KAMCHATKA
-
-        custom_tooltip = {
-            text = je_ru_tno_owns_upper_yeniseysk
-            any_scope_state = {
-                state_region = s:STATE_UPPER_YENISEYSK
-            }
-        }
 
 		hidden_trigger = {
 			NOT = {
@@ -2037,7 +2235,6 @@ je_ru_irk_restore_far_east = {
 		} 
 
 		hidden_effect = {
-			remove_modifier = russian_warlord
 			trigger_event = { id = tno_irk_events.6 days = 180 popup = no }
 		}
 
@@ -4652,6 +4849,10 @@ je_ru_unite_far_east = {
 	name = "je_ru_unite_far_east"
 	desc = "je_ru_unite_far_east_desc"
 
+	ai_chance = {
+		base = 100
+	}
+
 	possible = {
 		owns_entire_state_region = STATE_IRKUTSK
         owns_entire_state_region = STATE_BURYATIA
@@ -4661,13 +4862,6 @@ je_ru_unite_far_east = {
         owns_entire_state_region = STATE_KOLYMA
         owns_entire_state_region = STATE_CHUKOTKA
         owns_entire_state_region = STATE_KAMCHATKA
-
-        custom_tooltip = {
-            text = je_ru_tno_owns_upper_yeniseysk
-            any_scope_state = {
-                state_region = s:STATE_UPPER_YENISEYSK
-            }
-        }
 
 		hidden_trigger = {
 			NOT = {
@@ -4684,7 +4878,6 @@ je_ru_unite_far_east = {
 		} 
 
 		hidden_effect = {
-			remove_modifier = russian_warlord
 		}
 
     	if = {
@@ -4710,6 +4903,10 @@ je_ru_unite_far_east = {
 je_ru_unite_central_sib = {
 	name = "je_ru_unite_central_sib"
 	desc = "je_ru_unite_central_sib_desc"
+
+	ai_chance = {
+		base = 100
+	}
 
 	possible = {
         owns_entire_state_region = STATE_TOMSK
@@ -4737,7 +4934,6 @@ je_ru_unite_central_sib = {
 		} 
 
 		hidden_effect = {
-			remove_modifier = russian_warlord
 		}
 
     	if = {
@@ -4755,6 +4951,10 @@ je_ru_unite_central_sib = {
 je_ru_unite_west_sib = {
 	name = "je_ru_unite_west_sib"
 	desc = "je_ru_unite_west_sib_desc"
+
+	ai_chance = {
+		base = 100
+	}
 
 	possible = {
         owns_entire_state_region = STATE_TOBOLSK
@@ -4799,7 +4999,6 @@ je_ru_unite_west_sib = {
 		} 
 
 		hidden_effect = {
-			remove_modifier = russian_warlord
 		}
 
     	if = {
@@ -4822,6 +5021,10 @@ je_ru_unite_west_russia = {
 	name = "je_ru_unite_west_russia"
 	desc = "je_ru_unite_west_russia_desc"
 
+	ai_chance = {
+		base = 100
+	}
+
 	possible = {
         owns_entire_state_region = STATE_KAZAN
 
@@ -4829,12 +5032,6 @@ je_ru_unite_west_russia = {
             text = je_ru_tno_owns_galich
             any_scope_state = {
                 state_region = s:STATE_GALICH
-            }
-        }
-        custom_tooltip = {
-            text = je_ru_tno_owns_chelyabinsk
-            any_scope_state = {
-                state_region = s:STATE_CHELYABINSK
             }
         }
         custom_tooltip = {
@@ -4877,7 +5074,6 @@ je_ru_unite_west_russia = {
 		} 
 
 		hidden_effect = {
-			remove_modifier = russian_warlord
 		}
 
     	if = {
@@ -4895,6 +5091,10 @@ je_ru_unite_west_russia = {
 je_ru_restore_russia = {
 	name = "je_ru_restore_russia"
 	desc = "je_ru_restore_russia_desc"
+
+	ai_chance = {
+		base = 100
+	}
 
 	possible = {
 		#Far-East
@@ -4961,6 +5161,7 @@ je_ru_restore_russia = {
 		#add_journal_entry = { type = je_ru_project_zimneye_solntse }
 		hidden_effect = {
 			add_modifier = ru_no_army_reform
+			remove_modifier = modifier_offensive_footing
 		}
 		add_journal_entry = { type = je_ru_repair_magadan }
 
