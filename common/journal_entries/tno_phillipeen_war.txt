@@ -112,7 +112,7 @@ je_tno_blitz_countdown = {
 
 		set_variable = {
 			name = blitztimer
-			value = 3
+			value = 0
 		}
 	}
     
@@ -124,6 +124,7 @@ je_tno_blitz_countdown = {
 
     on_complete = {
         trigger_event = { id = tno_philipeen_events.1 popup = yes }
+        trigger_event = { id = tno_super_events.3 days = 30 popup = yes }
 
         hidden_effect = {
             c:JAP = {
@@ -143,7 +144,7 @@ je_tno_blitz_countdown = {
         effect = {
 			change_variable = {
 				name = blitztimer
-				add = 5
+				add = 0.79365
 			}
 		}
     }
