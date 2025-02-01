@@ -1806,6 +1806,11 @@ je_ru_fe_launch_attack = {
 		base = 100
 	}
 
+	visible = {
+		has_modifier = russian_warlord
+		has_modifier = far_eastern
+	}
+
 	possible = {
 		game_date >= 1966.1.1
 		game_date <= 1970.1.1
@@ -1858,6 +1863,11 @@ je_ru_sb_launch_attack = {
 
 	ai_chance = {
 		base = 100
+	}
+
+	visible = {
+		has_modifier = russian_warlord
+		has_modifier = siberian
 	}
 
 	possible = {
@@ -1914,6 +1924,11 @@ je_ru_url_launch_attack = {
 		base = 100
 	}
 
+	visible = {
+		has_modifier = russian_warlord
+		has_modifier = ural
+	}
+
 	possible = {
 		game_date >= 1966.1.1
 		game_date <= 1970.1.1
@@ -1966,6 +1981,11 @@ je_ru_wst_launch_attack = {
 
 	ai_chance = {
 		base = 100
+	}
+
+	visible = {
+		has_modifier = russian_warlord
+		has_modifier = western
 	}
 
 	possible = {
@@ -2022,6 +2042,14 @@ je_ru_fe2_launch_attack = {
 		base = 100
 	}
 
+	visible = {
+		any_country = {
+			is_adjacent_to_country = root
+			has_modifier = russian_warlord
+			has_modifier = far_eastern
+		}
+	}
+
 	possible = {
 		game_date >= 1969.12.20
 		game_date <= 1973.1.1
@@ -2068,6 +2096,18 @@ je_ru_sb2_launch_attack = {
 
 	ai_chance = {
 		base = 100
+	}
+
+	visible = {
+		root = {
+			has_modifier = russian_warlord
+			has_modifier = siberian
+		}
+		any_country = {
+			is_adjacent_to_country = root
+			has_modifier = russian_warlord
+			has_modifier = siberian	
+		}
 	}
 
 	possible = {

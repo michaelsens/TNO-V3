@@ -519,7 +519,7 @@ tno_ru_events.15 = { # Apply anything to all AI west russia
 
 }
 
-tno_ru_events.16 = { # Notification that the Russian Wars have begun
+tno_ru_events.16 = { # Notification that the Russian Wars have begun (Second Smuta)
     type = country_event
 	placement = ROOT
 	title = tno_ru_events.16.t
@@ -548,14 +548,9 @@ tno_ru_events.16 = { # Notification that the Russian Wars have begun
 		name = tno_ru_events.16.a
 		
 		custom_tooltip = tno_ru_events.16.a.tt.a
-		if = {
-			limit = {
-				is_player = no
-			}
-			custom_tooltip = {
-				text = tno_ru_events.16.a.tt.b
-				add_journal_entry = { type = je_ru_tno_launch_attack }
-			}
+		custom_tooltip = {
+			text = tno_ru_events.16.a.tt.b
+			add_journal_entry = { type = je_ru_tno_launch_attack }
 		}
     }
 }
