@@ -1569,9 +1569,7 @@ je_ru_launch_raid = {
 	desc = "je_ru_launch_raid_desc"
 
 	possible = {
-		hidden_trigger = {
-			game_date <= 1965.6.1
-		}
+		game_date <= 1965.6.1
 		is_at_war = no
 		root = {
 			has_modifier = russian_warlord
@@ -1630,15 +1628,19 @@ je_ru_launch_raid = {
 }
 
 je_ru_launch_attack = {
-	name = "je_ru_launch_attack"
+	name = "je_ru_launch_attack5"
 	desc = "je_ru_launch_attack_desc"
 
 	ai_chance = {
 		base = 100
 	}
 
+	visible = {
+		game_date >= 1975.1.1
+	}
+
 	possible = {
-		game_date >= 1980.1.1
+		game_date >= 1979.1.1
 		is_at_war = no
 		root = {
 			has_modifier = russian_warlord
@@ -1677,11 +1679,28 @@ je_ru_launch_attack = {
 }
 
 je_ru_launch_attack_west = {
-	name = "je_ru_launch_attack"
+	name = "je_ru_launch_attack4"
 	desc = "je_ru_launch_attack_desc"
 
 	ai_chance = {
 		base = 100
+	}
+
+	visible = {
+		game_date >= 1971.1.1
+		OR = {
+			has_modifier = western
+			has_modifier = ural
+		}
+		any_country = {
+			is_adjacent_to_country = root
+			has_modifier = russian_warlord
+			OR = {
+				has_modifier = western
+				has_modifier = ural
+			}
+			
+		}
 	}
 
 	possible = {
@@ -1738,15 +1757,32 @@ je_ru_launch_attack_west = {
 }
 
 je_ru_launch_attack_east = {
-	name = "je_ru_launch_attack"
+	name = "je_ru_launch_attack3"
 	desc = "je_ru_launch_attack_desc"
 
 	ai_chance = {
 		base = 100
 	}
 
+	visible = {
+		game_date >= 1971.1.1
+		OR = {
+			has_modifier = siberian
+			has_modifier = far_eastern
+		}
+		any_country = {
+			is_adjacent_to_country = root
+			has_modifier = russian_warlord
+			OR = {
+				has_modifier = siberian
+				has_modifier = far_eastern
+			}
+			
+		}
+	}
+
 	possible = {
-		game_date >= 1975.1.1
+		game_date >= 1974.6.1
 		is_at_war = no
 		root = {
 			has_modifier = russian_warlord
@@ -1809,6 +1845,8 @@ je_ru_fe_launch_attack = {
 	visible = {
 		has_modifier = russian_warlord
 		has_modifier = far_eastern
+		game_date >= 1966.1.1
+		game_date <= 1970.1.1
 	}
 
 	possible = {
@@ -1868,6 +1906,8 @@ je_ru_sb_launch_attack = {
 	visible = {
 		has_modifier = russian_warlord
 		has_modifier = siberian
+		game_date >= 1966.1.1
+		game_date <= 1970.1.1
 	}
 
 	possible = {
@@ -1927,6 +1967,8 @@ je_ru_url_launch_attack = {
 	visible = {
 		has_modifier = russian_warlord
 		has_modifier = ural
+		game_date >= 1966.1.1
+		game_date <= 1970.1.1
 	}
 
 	possible = {
@@ -1986,6 +2028,8 @@ je_ru_wst_launch_attack = {
 	visible = {
 		has_modifier = russian_warlord
 		has_modifier = western
+		game_date >= 1966.1.1
+		game_date <= 1970.1.1
 	}
 
 	possible = {
@@ -2035,7 +2079,7 @@ je_ru_wst_launch_attack = {
 }
 
 je_ru_fe2_launch_attack = {
-	name = "je_ru_launch_attack"
+	name = "je_ru_launch_attack2"
 	desc = "je_ru_launch_attack_desc"
 
 	ai_chance = {
@@ -2043,10 +2087,17 @@ je_ru_fe2_launch_attack = {
 	}
 
 	visible = {
+		game_date >= 1969.12.20
+		game_date <= 1973.1.1
+		root = {
+			has_modifier = russian_warlord
+			has_modifier = far_eastern
+		}
 		any_country = {
 			is_adjacent_to_country = root
 			has_modifier = russian_warlord
 			has_modifier = far_eastern
+
 		}
 	}
 
@@ -2091,7 +2142,7 @@ je_ru_fe2_launch_attack = {
 }
 
 je_ru_sb2_launch_attack = {
-	name = "je_ru_launch_attack"
+	name = "je_ru_launch_attack2"
 	desc = "je_ru_launch_attack_desc"
 
 	ai_chance = {
@@ -2099,6 +2150,8 @@ je_ru_sb2_launch_attack = {
 	}
 
 	visible = {
+		game_date >= 1969.12.20
+		game_date <= 1973.1.1
 		root = {
 			has_modifier = russian_warlord
 			has_modifier = siberian
@@ -2151,11 +2204,25 @@ je_ru_sb2_launch_attack = {
 }
 
 je_ru_url2_launch_attack = {
-	name = "je_ru_launch_attack"
+	name = "je_ru_launch_attack2"
 	desc = "je_ru_launch_attack_desc"
 
 	ai_chance = {
 		base = 100
+	}
+
+	visible = {
+		game_date >= 1969.12.20
+		game_date <= 1973.1.1
+		root = {
+			has_modifier = russian_warlord
+			has_modifier = ural
+		}
+		any_country = {
+			is_adjacent_to_country = root
+			has_modifier = russian_warlord
+			has_modifier = ural	
+		}
 	}
 
 	possible = {
@@ -2197,11 +2264,25 @@ je_ru_url2_launch_attack = {
 }
 
 je_ru_wst2_launch_attack = {
-	name = "je_ru_launch_attack"
+	name = "je_ru_launch_attack2"
 	desc = "je_ru_launch_attack_desc"
 
 	ai_chance = {
 		base = 100
+	}
+
+	visible = {
+		game_date >= 1969.12.20
+		game_date <= 1973.1.1
+		root = {
+			has_modifier = russian_warlord
+			has_modifier = western
+		}
+		any_country = {
+			is_adjacent_to_country = root
+			has_modifier = russian_warlord
+			has_modifier = western	
+		}
 	}
 
 	possible = {
