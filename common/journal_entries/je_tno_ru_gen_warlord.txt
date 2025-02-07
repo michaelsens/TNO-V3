@@ -41,28 +41,61 @@ je_ru_tno_launch_attack = {
 
     icon = "gfx/interface/icons/tno_modifier_icons/modifier_ZLAarm.dds"
     group = je_group_historical_content
-    scripted_button = je_ru_launch_attack
-
-    scripted_button = je_ru_launch_attack_west
-    scripted_button = je_ru_launch_attack_east
-
-    scripted_button = je_ru_fe_launch_attack
-    scripted_button = je_ru_fe2_launch_attack
-
-    scripted_button = je_ru_sb_launch_attack
-    scripted_button = je_ru_sb2_launch_attack
-
-    scripted_button = je_ru_url_launch_attack
-    scripted_button = je_ru_url2_launch_attack
-
-    scripted_button = je_ru_wst_launch_attack
-    scripted_button = je_ru_wst2_launch_attack
+    scripted_button = je_ru_launch_invasion
 
     immediate = {
+        set_variable = {
+            name = ru_opened_invasion_event
+            value = no
+        } 
+
+        set_variable = { name = ru_war_IRK value = no } 
+        set_variable = { name = ru_war_BRY value = no } 
+        set_variable = { name = ru_war_CHT value = no } 
+        set_variable = { name = ru_war_AMR value = no } 
+        set_variable = { name = ru_war_YAK value = no } 
+        set_variable = { name = ru_war_CHR value = no } 
+        set_variable = { name = ru_war_MAG value = no } 
+        set_variable = { name = ru_war_DIV value = no } 
+        set_variable = { name = ru_war_FER value = no } 
+
+        set_variable = { name = ru_war_TOM value = no } 
+        set_variable = { name = ru_war_SBA value = no } 
+        set_variable = { name = ru_war_TUV value = no } 
+        set_variable = { name = ru_war_KRK value = no } 
+        set_variable = { name = ru_war_KEM value = no } 
+        set_variable = { name = ru_war_OYR value = no } 
+        set_variable = { name = ru_war_NVB value = no } 
+
+        set_variable = { name = ru_war_OSK value = no } 
+        set_variable = { name = ru_war_WRS value = no } 
+        set_variable = { name = ru_war_URL value = no } 
+        set_variable = { name = ru_war_AVI value = no } 
+        set_variable = { name = ru_war_ZLA value = no } 
+        set_variable = { name = ru_war_TTY value = no } 
+        set_variable = { name = ru_war_VOR value = no } 
+
+        set_variable = { name = ru_war_MGK value = no } 
+        set_variable = { name = ru_war_DIR value = no } 
+        set_variable = { name = ru_war_XUR value = no } 
+        set_variable = { name = ru_war_OEN value = no } 
+        set_variable = { name = ru_war_SAM value = no } 
+        set_variable = { name = ru_war_BSH value = no } 
+        set_variable = { name = ru_war_HYP value = no } 
+        set_variable = { name = ru_war_VYA value = no } 
+        set_variable = { name = ru_war_UVS value = no } 
+        set_variable = { name = ru_war_GOR value = no } 
+        set_variable = { name = ru_war_VOL value = no } 
+        set_variable = { name = ru_war_HLY value = no } 
+        set_variable = { name = ru_war_WST value = no } 
+        set_variable = { name = ru_war_SGE value = no } 
     }
     
     complete = {
-        c:RUS ?= THIS
+        custom_tooltip = {
+            text = formed_russia_rq_tt
+            c:RUS ?= THIS
+        }
     }
 
     on_complete = {
