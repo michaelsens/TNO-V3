@@ -1,0 +1,227 @@
+﻿namespace = tno_RepIndia
+
+tno_RepIndia.0 = { # Set all leaders invincible
+    type = country_event
+	placement = root
+	title = tno_RepIndia.0.t
+	desc = tno_RepIndia.0.d
+	flavor = tno_RepIndia.0.f
+	icon = "gfx/interface/icons/goods_icons/small_arms.dds"
+
+	duration = 5
+
+	immediate = {
+		every_scope_character = {
+	        if = {
+	        	limit = {
+	        		has_variable = is_jawaharlal_nehru
+	        	}
+	        	save_scope_as = is_jawaharlal_nehru
+	        }
+   		}
+	    scope:is_jawaharlal_nehru = {
+	        set_character_immortal = yes
+	    }
+		every_scope_character = {
+	        if = {
+	        	limit = {
+	        		has_variable = is_v_k_krishna_menon
+	        	}
+	        	save_scope_as = is_v_k_krishna_menon
+	        }
+   		}
+	    scope:is_v_k_krishna_menon = {
+	        set_character_immortal = yes
+	    }
+    }
+    
+    trigger = {
+	}
+
+	event_image = {
+        texture = "gfx/interface/icons/goods_icons/automobiles.dds"
+    }
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    option = {
+		name = tno_RepIndia.0.1
+		default_option = yes
+
+		every_scope_character = {
+	        if = {
+	        	limit = {
+	        		has_variable = is_jawaharlal_nehru
+	        	}
+	        	save_scope_as = is_jawaharlal_nehru
+	        }
+   		}
+	    scope:is_jawaharlal_nehru = {
+	        set_character_immortal = yes
+	    }
+		every_scope_character = {
+	        if = {
+	        	limit = {
+	        		has_variable = is_v_k_krishna_menon
+	        	}
+	        	save_scope_as = is_v_k_krishna_menon
+	        }
+   		}
+	    scope:is_v_k_krishna_menon = {
+	        set_character_immortal = yes
+	    }
+    }
+}
+
+tno_RepIndia.1 = { # Death of Jawaharial Nehru
+    type = country_event
+	placement = root
+	title = tno_RepIndia.1.t
+	desc = tno_RepIndia.1.d
+	flavor = tno_RepIndia.1.f
+	icon = "gfx/interface/icons/goods_icons/small_arms.dds"
+
+	duration = 5
+
+	immediate = {
+		
+    }
+    
+    trigger = {
+	}
+
+	event_image = {
+        texture = "gfx/event_pictures/event_pictures/jawaharlal_nehru_death.dds"
+    }
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    option = {
+		name = tno_RepIndia.1.1
+		default_option = yes
+
+		every_scope_character = {
+	        if = {
+	        	limit = {
+	        		has_variable = is_jawaharlal_nehru
+	        	}
+	        	save_scope_as = is_jawaharlal_nehru
+	        }
+   		}
+	    scope:is_jawaharlal_nehru = {
+	        kill_character = yes
+	    }
+	    every_scope_character = {
+	        if = {
+	        	limit = {
+	        		has_variable = is_v_k_krishna_menon
+	        	}
+	        	save_scope_as = is_v_k_krishna_menon
+	        }
+   		}
+	    scope:is_v_k_krishna_menon = {
+	        set_character_as_ruler = yes
+	    }
+
+    }
+}
+
+tno_RepIndia.2 = { # Annex Balochistan
+    type = country_event
+	placement = root
+	title = tno_RepIndia.2.t
+	desc = tno_RepIndia.2.d
+	flavor = tno_RepIndia.2.f
+	icon = "gfx/interface/icons/goods_icons/small_arms.dds"
+
+	duration = 5
+
+	immediate = {
+		annex = c:KAL
+		annex = c:BLH
+    }
+    
+    trigger = {
+	}
+
+	event_image = {
+        texture = "gfx/interface/icons/goods_icons/automobiles.dds"
+    }
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    option = {
+		name = tno_RepIndia.2.1
+		default_option = yes
+    }
+}
+
+tno_RepIndia.3 = { # Invasion of India (Operation Bin Qasim)
+    type = country_event
+	placement = root
+	title = tno_RepIndia.3.t
+	desc = tno_RepIndia.3.d
+	flavor = tno_RepIndia.3.f
+	icon = "gfx/interface/icons/goods_icons/small_arms.dds"
+
+	duration = 5
+
+	immediate = {
+		c:PAK = {
+			set_variable = pakistan_formed
+		}
+		s:STATE_SINDH = {
+			add_claim = c:PAK
+		}
+		s:STATE_PUNJAB = {
+			add_claim = c:PAK
+		}
+		s:STATE_KASHMIR = {
+			add_claim = c:PAK
+		}
+		create_diplomatic_play = {
+			name = bin_qasim
+			target_country = c:BHT
+			type = dp_nat_reclaim
+			war = no
+			escalation = 60
+
+			#target_state = moscow_state_scope
+			add_target_backers = {}
+			add_war_goal = {
+				holder = c:PAK
+				type = return_state
+				target_state = s:STATE_PUNJAB.region_state:BHT
+			}
+			add_war_goal = {
+				holder = c:PAK
+				type = return_state
+				target_state = s:STATE_KASHMIR.region_state:BHT
+			}
+			add_war_goal = {
+				holder = c:PAK
+				type = return_state
+				target_state = s:STATE_SINDH.region_state:BHT
+			}
+			add_war_goal = {
+				holder = c:BHT
+				type = annex_country
+				target_country = c:PAK
+			}
+		}
+    }
+    
+    trigger = {
+	}
+
+	event_image = {
+        texture = "gfx/interface/icons/goods_icons/automobiles.dds"
+    }
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    option = {
+		name = tno_RepIndia.3.1
+		default_option = yes
+    }
+}
