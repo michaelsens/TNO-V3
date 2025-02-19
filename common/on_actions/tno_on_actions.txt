@@ -978,3 +978,38 @@ on_wargoal_enforced = {
 
 
 }
+
+my_on_action = {
+    effect = {
+        every_country = {
+            limit = {
+                is_subject = yes
+                overlord ?= {
+                    has_diplomatic_pact = {
+                        who = PREV
+                        type = reichskommissariat
+                    }
+                    NOT = {
+                        c:GER ?= THIS # check to see if they're NOT supposed to have RKKs
+                    }
+                }
+            }
+            overlord = {
+                remove_diplomatic_pact = {
+                    country = PREV
+                    type = reichskommissariat
+                }
+                create_diplomatic_pact = {
+                    country = PREV
+                    type = protectorate
+                }
+            }
+        }
+    }
+}
+
+on_war_end = {
+    on_actions = {
+        my_on_action
+    }
+}
