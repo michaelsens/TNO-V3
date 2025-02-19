@@ -210,67 +210,8 @@ tno_war_events.4 = {
 		}
     }
 }
-
-tno_war_events.5 = {
-    type = country_event
-    hidden = yes
-
-	trigger = {
-        exists = c:GER
-		exists = c:PRO
-        root = c:PRO
-	}	
-
-    immediate = {
-        create_diplomatic_play = {
-            name = gtr1
-            target_country = c:GER
-              type = dp_conquer_state
-              war = no
-              escalation = 20
-              target_state = s:STATE_BREST.region_state:GER
-              add_target_backers = { c:FIN c:HUN c:SLV c:DEN c:NET }
-              add_war_goal = {
-                holder = c:GER
-                type = contain_threat
-              }
-              add_war_goal = {
-                holder = c:PRO
-                type = annex_country
-                target_state = s:STATE_LATVIA.region_state:RKO
-              }
-              add_war_goal = {
-                holder = c:PRO
-                type = conquer_state
-                target_state = s:STATE_EAST_KARELIA.region_state:FIN
-              }
-              add_war_goal = {
-                holder = c:PRO
-                type = annex_country
-                target_state = s:STATE_MOSCOW.region_state:RKM
-              }
-              add_war_goal = {
-                holder = c:PRO
-                type = annex_country
-                target_state = s:STATE_KIEV.region_state:RKU
-              }
-              add_war_goal = {
-                holder = c:PRO
-                type = annex_country
-                target_state = s:STATE_KUBAN.region_state:RKK
-              }
-              add_war_goal = {
-                holder = c:PRO
-                type = annex_country
-                target_state = s:STATE_BREST.region_state:RKO
-              }
-        }
-        hidden_effect = {
-            change_infamy = -150
-        }
-    }
-   
-}
+# This was once tno_war_events.5.  It was destroyed, because it was for PROVO, the provisional government of Russia.  An outdated relic, they call it now.  But during its time it was the Russian formable.  Such is the fate of all of it's code.  PROVO will be remembered.
+# - Robert Parr, After realizing this remnant of PRO still existed (2025)
 
 tno_war_events.6 = {
     type = country_event

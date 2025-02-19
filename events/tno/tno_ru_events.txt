@@ -1,72 +1,3451 @@
 ﻿namespace = tno_ru_events
 
-tno_ru_events.1 = { # Choose Economic law after uniting region
+tno_ru_events.1 = { # Choose which country to invade (Second Smuta)
     type = country_event
 	placement = root
 	title = tno_ru_events.1.t
 	desc = tno_ru_events.1.d
 	flavor = tno_ru_events.1.f
-	icon = "gfx/interface/icons/goods_icons/gold.dds"
+	icon = "gfx/interface/icons/tno_modifier_icons/modifier_ZLAarm.dds"
 
 	duration = 5
 
 	immediate = {
+		c:IRK = { save_scope_as = irkutsk_nation }
+		c:BRY = { save_scope_as = buryatia_nation }
+		c:CHT = { save_scope_as = chita_nation }
+		c:AMR = { save_scope_as = amur_nation }
+		c:YAK = { save_scope_as = yakutia_nation }
+		c:CHR = { save_scope_as = chernyshevsky_nation }
+		c:MAG = { save_scope_as = magadan_nation }
+		c:DIV = { save_scope_as = divmandate_nation }
+		c:FER = { save_scope_as = sovfleet_nation }
+
+		c:TOM = { save_scope_as = tomsk_nation }
+		c:SBA = { save_scope_as = sibblackarmy_nation }
+		c:TUV = { save_scope_as = revcouncil_nation }
+		c:KRK = { save_scope_as = krasnoyarsk_nation }
+		c:KEM = { save_scope_as = kemerovo_nation }
+		c:OYR = { save_scope_as = oyrotia_nation }
+		c:NVB = { save_scope_as = novosibirsk_nation }
+
+		c:OSK = { save_scope_as = omsk_nation }
+		c:WRS = { save_scope_as = tyumen_nation }
+		c:URL = { save_scope_as = sverdlosk_nation }
+		c:AVI = { save_scope_as = freeaviators_nation }
+		c:ZLA = { save_scope_as = zlatoust_nation }
+		c:TTY = { save_scope_as = yugra_nation }
+		c:VOR = { save_scope_as = vorkuta_nation }
+
+		c:MGK = { save_scope_as = magnitogorsk_nation }
+		c:DIR = { save_scope_as = dirbrigade_nation }
+		c:XUR = { save_scope_as = uralleague_nation }
+		c:OEN = { save_scope_as = orenburg_nation }
+		c:SAM = { save_scope_as = samara_nation }
+		c:BSH = { save_scope_as = bashkortostan_nation }
+		c:HYP = { save_scope_as = hyperborea_nation }
+		c:VYA = { save_scope_as = vyatka_nation }
+		c:UVS = { save_scope_as = ultravisionary_nation }
+		c:GOR = { save_scope_as = gorky_nation }
+		c:VOL = { save_scope_as = vologda_nation }
+		c:HLY = { save_scope_as = holyrussianempire_nation }
+		c:WST = { save_scope_as = wrrf_nation }
+		c:SGE = { save_scope_as = gayny_nation }
     }
     
     trigger = {
 	}
 
 	event_image = {
-        texture = "gfx/event_pictures/super_pictures/russians_wait_in_line.dds"
+        texture = "gfx/event_pictures/event_pictures/war_plans_russian.dds"
     }
 
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 
-	option = { #Interventionism
+	#FAR EAST
+	option = { #Irkutsk
+		name = tno_ru_events.1.irkutsk
+		trigger = {
+			var:ru_war_IRK == no
+			c:IRK = {
+				exists = yes
+				is_adjacent_to_country = root
+			}
+			OR = {
+				AND = { #Stage 1
+					game_date >= 1966.1.1  # \/ that one needs to be the modifier of the country in question, to ensure we have the same region as them
+					has_modifier = far_eastern
+
+					is_diplomatic_play_target = no
+					is_diplomatic_play_initiator = no
+				}
+				AND = { #Stage 2 (stage 1 but can attack while at war)
+					game_date >= 1971.1.1  # \/ that one needs to be the modifier of the country in question, to ensure we have the same region as them
+					has_modifier = far_eastern
+				}
+	            AND = { # Stage 1 Part B
+	                game_date >= 1965.6.1
+	                # \/ that one needs to be the modifier of the country in question, to ensure we have the same region as them
+                    has_modifier = far_eastern
+	                is_diplomatic_play_target = no
+					is_diplomatic_play_initiator = no
+	                OR = { # We are Siberian or Far Eastern
+	                    has_modifier = siberian
+	                    has_modifier = far_eastern
+	                }
+	                c:IRK = { # The country we are attacking is also Siberian or Far Eastern
+	                    OR = {
+	                        has_modifier = siberian
+	                        has_modifier = far_eastern
+	                    }
+	                }
+	            }
+	            AND = { #Stage 3 (attack neighboring region)
+									  # \/ adjacent region
+					has_modifier = siberian
+					OR = {
+						game_date >= 1975.1.1
+						AND = {
+							is_ai = no
+							OR = {
+								has_variable = ru_unite_far_east
+								has_variable = ru_unite_central_sib
+								has_variable = ru_unite_west_sib
+								has_variable = ru_unite_west_russia
+							}
+						}
+					}
+				}
+				AND = { #Stage 4 (No restrictions whatsoever)
+					game_date >= 1980.1.1
+				}
+	        }
+		}
+
+		ai_chance = {
+			base = 10
+			modifier = { # The country is stronger than us
+				trigger = {
+					root.army_power_projection <= c:IRK.army_power_projection
+				}
+				add = -25
+			}
+			modifier = { # We are stronger than the country
+				trigger = {
+					root.army_power_projection >= c:IRK.army_power_projection
+				}
+				add = 15
+			}
+		}
+
+		create_diplomatic_play = {
+			name = theo
+			target_country = c:IRK
+			type = dp_revolution
+			war = no
+			escalation = 75
+		}
+		set_variable = {
+			name = ru_opened_invasion_event
+			value = no
+		} 
+		set_variable = { 
+			name = ru_war_IRK 
+			value = yes 
+		} 
+    }
+    option = { #Buryatia
+		name = tno_ru_events.1.buryatia
+		trigger = {
+			var:ru_war_BRY == no
+			c:BRY = {
+				exists = yes
+				is_adjacent_to_country = root
+			}
+			OR = {
+				AND = { #Stage 1
+					game_date >= 1966.1.1  # \/ modifier of country to invade
+					has_modifier = far_eastern
+
+					is_diplomatic_play_target = no
+					is_diplomatic_play_initiator = no
+				}
+				AND = { #Stage 2 (stage 1 but can attack while at war)
+					game_date >= 1971.1.1  # \/ modifier of country to invade
+					has_modifier = far_eastern
+				}
+	            AND = { # Stage 1 Part B
+	                game_date >= 1965.6.1
+	                # \/ that one needs to be the modifier of the country in question, to ensure we have the same region as them
+                    has_modifier = far_eastern
+	                is_diplomatic_play_target = no
+					is_diplomatic_play_initiator = no
+	                OR = { # We are Siberian or Far Eastern
+	                    has_modifier = siberian
+	                    has_modifier = far_eastern
+	                }
+	                c:BRY = { # The country we are attacking is also Siberian or Far Eastern
+	                    OR = {
+	                        has_modifier = siberian
+	                        has_modifier = far_eastern
+	                    }
+	                }
+	            }
+	            AND = { #Stage 3 (attack neighboring region)
+									  # \/ adjacent region
+					has_modifier = siberian
+					OR = {
+						game_date >= 1975.1.1
+						AND = {
+							is_ai = no
+							OR = {
+								has_variable = ru_unite_far_east
+								has_variable = ru_unite_central_sib
+								has_variable = ru_unite_west_sib
+								has_variable = ru_unite_west_russia
+							}
+						}
+					}
+				}
+				AND = { #Stage 4 (No restrictions whatsoever)
+					game_date >= 1980.1.1
+				}
+	        }
+		}
+
+		ai_chance = {
+			base = 10
+			modifier = { # The country is stronger than us
+				trigger = {
+					root.army_power_projection <= c:BRY.army_power_projection
+				}
+				add = -25
+			}
+			modifier = { # We are stronger than the country
+				trigger = {
+					root.army_power_projection >= c:BRY.army_power_projection
+				}
+				add = 15
+			}
+		}
+
+		create_diplomatic_play = {
+			name = theo
+			target_country = c:BRY
+			type = dp_revolution
+			war = no
+			escalation = 75
+		}
+		set_variable = {
+			name = ru_opened_invasion_event
+			value = no
+		} 
+		set_variable = { 
+			name = ru_war_BRY 
+			value = yes 
+		} 
+    }
+    option = { #Chita
+		name = tno_ru_events.1.chita
+		trigger = {
+			var:ru_war_CHT == no
+			c:CHT = {
+				exists = yes
+				is_adjacent_to_country = root
+			}
+			OR = {
+				AND = { #Stage 1
+					game_date >= 1966.1.1  # \/ modifier of country to invade
+					has_modifier = far_eastern
+
+					is_diplomatic_play_target = no
+					is_diplomatic_play_initiator = no
+				}
+				AND = { #Stage 2 (stage 1 but can attack while at war)
+					game_date >= 1971.1.1  # \/ modifier of country to invade
+					has_modifier = far_eastern
+				}
+	            AND = { # Stage 1 Part B
+	                game_date >= 1965.6.1
+	                # \/ that one needs to be the modifier of the country in question, to ensure we have the same region as them
+                    has_modifier = far_eastern
+	                is_diplomatic_play_target = no
+					is_diplomatic_play_initiator = no
+	                OR = { # We are Siberian or Far Eastern
+	                    has_modifier = siberian
+	                    has_modifier = far_eastern
+	                }
+	                c:CHT = { # The country we are attacking is also Siberian or Far Eastern
+	                    OR = {
+	                        has_modifier = siberian
+	                        has_modifier = far_eastern
+	                    }
+	                }
+	            }
+	            AND = { #Stage 3 (attack neighboring region)
+									  # \/ adjacent region
+					has_modifier = siberian
+					OR = {
+						game_date >= 1975.1.1
+						AND = {
+							is_ai = no
+							OR = {
+								has_variable = ru_unite_far_east
+								has_variable = ru_unite_central_sib
+								has_variable = ru_unite_west_sib
+								has_variable = ru_unite_west_russia
+							}
+						}
+					}
+				}
+				AND = { #Stage 4 (No restrictions whatsoever)
+					game_date >= 1980.1.1
+				}
+	        }
+		}
+
+		ai_chance = {
+			base = 10
+			modifier = { # The country is stronger than us
+				trigger = {
+					root.army_power_projection <= c:CHT.army_power_projection
+				}
+				add = -25
+			}
+			modifier = { # We are stronger than the country
+				trigger = {
+					root.army_power_projection >= c:CHT.army_power_projection
+				}
+				add = 15
+			}
+		}
+
+		create_diplomatic_play = {
+			name = theo
+			target_country = c:CHT
+			type = dp_revolution
+			war = no
+			escalation = 75
+		}
+		set_variable = {
+			name = ru_opened_invasion_event
+			value = no
+		} 
+		set_variable = { 
+			name = ru_war_CHT 
+			value = yes 
+		} 
+    }
+    option = { #Amur
+		name = tno_ru_events.1.amur
+		trigger = {
+			var:ru_war_AMR == no
+			c:AMR = {
+				exists = yes
+				is_adjacent_to_country = root
+			}
+			OR = {
+				AND = { #Stage 1
+					game_date >= 1966.1.1  # \/ modifier of country to invade
+					has_modifier = far_eastern
+
+					is_diplomatic_play_target = no
+					is_diplomatic_play_initiator = no
+				}
+				AND = { #Stage 2 (stage 1 but can attack while at war)
+					game_date >= 1971.1.1  # \/ modifier of country to invade
+					has_modifier = far_eastern
+				}
+	            AND = { # Stage 1 Part B
+	                game_date >= 1965.6.1
+	                # \/ that one needs to be the modifier of the country in question, to ensure we have the same region as them
+                    has_modifier = far_eastern
+	                is_diplomatic_play_target = no
+					is_diplomatic_play_initiator = no
+	                OR = { # We are Siberian or Far Eastern
+	                    has_modifier = siberian
+	                    has_modifier = far_eastern
+	                }
+	                c:AMR = { # The country we are attacking is also Siberian or Far Eastern
+	                    OR = {
+	                        has_modifier = siberian
+	                        has_modifier = far_eastern
+	                    }
+	                }
+	            }
+	            AND = { #Stage 3 (attack neighboring region)
+									  # \/ adjacent region
+					has_modifier = siberian
+					OR = {
+						game_date >= 1975.1.1
+						AND = {
+							is_ai = no
+							OR = {
+								has_variable = ru_unite_far_east
+								has_variable = ru_unite_central_sib
+								has_variable = ru_unite_west_sib
+								has_variable = ru_unite_west_russia
+							}
+						}
+					}
+				}
+				AND = { #Stage 4 (No restrictions whatsoever)
+					game_date >= 1980.1.1
+				}
+	        }
+		}
+
+		ai_chance = {
+			base = 10
+			modifier = { # The country is stronger than us
+				trigger = {
+					root.army_power_projection <= c:AMR.army_power_projection
+				}
+				add = -25
+			}
+			modifier = { # We are stronger than the country
+				trigger = {
+					root.army_power_projection >= c:AMR.army_power_projection
+				}
+				add = 15
+			}
+		}
+
+		create_diplomatic_play = {
+			name = theo
+			target_country = c:AMR
+			type = dp_revolution
+			war = no
+			escalation = 75
+		}
+		set_variable = {
+			name = ru_opened_invasion_event
+			value = no
+		} 
+		set_variable = { 
+			name = ru_war_AMR
+			value = yes 
+		} 
+    }
+    option = { #Sakha Republic (Yakutia)
+		name = tno_ru_events.1.yakutia
+		trigger = {
+			var:ru_war_YAK == no
+			c:YAK = {
+				exists = yes
+				is_adjacent_to_country = root
+			}
+			OR = {
+				AND = { #Stage 1
+					game_date >= 1966.1.1  # \/ modifier of country to invade
+					has_modifier = far_eastern
+
+					is_diplomatic_play_target = no
+					is_diplomatic_play_initiator = no
+				}
+				AND = { #Stage 2 (stage 1 but can attack while at war)
+					game_date >= 1971.1.1  # \/ modifier of country to invade
+					has_modifier = far_eastern
+				}
+	            AND = { # Stage 1 Part B
+	                game_date >= 1965.6.1
+	                # \/ that one needs to be the modifier of the country in question, to ensure we have the same region as them
+                    has_modifier = far_eastern
+	                is_diplomatic_play_target = no
+					is_diplomatic_play_initiator = no
+	                OR = { # We are Siberian or Far Eastern
+	                    has_modifier = siberian
+	                    has_modifier = far_eastern
+	                }
+	                c:YAK = { # The country we are attacking is also Siberian or Far Eastern
+	                    OR = {
+	                        has_modifier = siberian
+	                        has_modifier = far_eastern
+	                    }
+	                }
+	            }
+	            AND = { #Stage 3 (attack neighboring region)
+									  # \/ adjacent region
+					has_modifier = siberian
+					OR = {
+						game_date >= 1975.1.1
+						AND = {
+							is_ai = no
+							OR = {
+								has_variable = ru_unite_far_east
+								has_variable = ru_unite_central_sib
+								has_variable = ru_unite_west_sib
+								has_variable = ru_unite_west_russia
+							}
+						}
+					}
+				}
+				AND = { #Stage 4 (No restrictions whatsoever)
+					game_date >= 1980.1.1
+				}
+	        }
+		}
+
+		ai_chance = {
+			base = 10
+			modifier = { # The country is stronger than us
+				trigger = {
+					root.army_power_projection <= c:YAK.army_power_projection
+				}
+				add = -25
+			}
+			modifier = { # We are stronger than the country
+				trigger = {
+					root.army_power_projection >= c:YAK.army_power_projection
+				}
+				add = 15
+			}
+		}
+
+		create_diplomatic_play = {
+			name = theo
+			target_country = c:YAK
+			type = dp_revolution
+			war = no
+			escalation = 75
+		}
+		set_variable = {
+			name = ru_opened_invasion_event
+			value = no
+		} 
+		set_variable = { 
+			name = ru_war_YAK 
+			value = yes 
+		} 
+    }
+    option = { #Chernyshevsky
+		name = tno_ru_events.1.chernyshevsky
+		trigger = {
+			var:ru_war_CHR == no
+			c:CHR = {
+				exists = yes
+				is_adjacent_to_country = root
+			}
+			OR = {
+				AND = { #Stage 1
+					game_date >= 1966.1.1  # \/ modifier of country to invade
+					has_modifier = far_eastern
+
+					is_diplomatic_play_target = no
+					is_diplomatic_play_initiator = no
+				}
+				AND = { #Stage 2 (stage 1 but can attack while at war)
+					game_date >= 1971.1.1  # \/ modifier of country to invade
+					has_modifier = far_eastern
+				}
+	            AND = { # Stage 1 Part B
+	                game_date >= 1965.6.1
+	                # \/ that one needs to be the modifier of the country in question, to ensure we have the same region as them
+                    has_modifier = far_eastern
+	                is_diplomatic_play_target = no
+					is_diplomatic_play_initiator = no
+	                OR = { # We are Siberian or Far Eastern
+	                    has_modifier = siberian
+	                    has_modifier = far_eastern
+	                }
+	                c:CHR = { # The country we are attacking is also Siberian or Far Eastern
+	                    OR = {
+	                        has_modifier = siberian
+	                        has_modifier = far_eastern
+	                    }
+	                }
+	            }
+	            AND = { #Stage 3 (attack neighboring region)
+									  # \/ adjacent region
+					has_modifier = siberian
+					OR = {
+						game_date >= 1975.1.1
+						AND = {
+							is_ai = no
+							OR = {
+								has_variable = ru_unite_far_east
+								has_variable = ru_unite_central_sib
+								has_variable = ru_unite_west_sib
+								has_variable = ru_unite_west_russia
+							}
+						}
+					}
+				}
+				AND = { #Stage 4 (No restrictions whatsoever)
+					game_date >= 1980.1.1
+				}
+	        }
+		}
+
+		ai_chance = {
+			base = 10
+			modifier = { # The country is stronger than us
+				trigger = {
+					root.army_power_projection <= c:CHR.army_power_projection
+				}
+				add = -25
+			}
+			modifier = { # We are stronger than the country
+				trigger = {
+					root.army_power_projection >= c:CHR.army_power_projection
+				}
+				add = 15
+			}
+		}
+
+		create_diplomatic_play = {
+			name = theo
+			target_country = c:CHR
+			type = dp_revolution
+			war = no
+			escalation = 75
+		}
+		set_variable = {
+			name = ru_opened_invasion_event
+			value = no
+		} 
+		set_variable = { 
+			name = ru_war_CHR
+			value = yes 
+		} 
+    }
+    option = { #Magadan
+		name = tno_ru_events.1.magadan
+		trigger = {
+			var:ru_war_MAG == no
+			c:MAG = {
+				exists = yes
+				is_adjacent_to_country = root
+			}
+			OR = {
+				AND = { #Stage 1
+					game_date >= 1966.1.1  # \/ modifier of country to invade
+					has_modifier = far_eastern
+
+					is_diplomatic_play_target = no
+					is_diplomatic_play_initiator = no
+				}
+				AND = { #Stage 2 (stage 1 but can attack while at war)
+					game_date >= 1971.1.1  # \/ modifier of country to invade
+					has_modifier = far_eastern
+				}
+	            AND = { # Stage 1 Part B
+	                game_date >= 1965.6.1
+	                # \/ that one needs to be the modifier of the country in question, to ensure we have the same region as them
+                    has_modifier = far_eastern
+	                is_diplomatic_play_target = no
+					is_diplomatic_play_initiator = no
+	                OR = { # We are Siberian or Far Eastern
+	                    has_modifier = siberian
+	                    has_modifier = far_eastern
+	                }
+	                c:MAG = { # The country we are attacking is also Siberian or Far Eastern
+	                    OR = {
+	                        has_modifier = siberian
+	                        has_modifier = far_eastern
+	                    }
+	                }
+	            }
+	            AND = { #Stage 3 (attack neighboring region)
+									  # \/ adjacent region
+					has_modifier = siberian
+					OR = {
+						game_date >= 1975.1.1
+						AND = {
+							is_ai = no
+							OR = {
+								has_variable = ru_unite_far_east
+								has_variable = ru_unite_central_sib
+								has_variable = ru_unite_west_sib
+								has_variable = ru_unite_west_russia
+							}
+						}
+					}
+				}
+				AND = { #Stage 4 (No restrictions whatsoever)
+					game_date >= 1980.1.1
+				}
+	        }
+		}
+
+		ai_chance = {
+			base = 10
+			modifier = { # The country is stronger than us
+				trigger = {
+					root.army_power_projection <= c:MAG.army_power_projection
+				}
+				add = -25
+			}
+			modifier = { # We are stronger than the country
+				trigger = {
+					root.army_power_projection >= c:MAG.army_power_projection
+				}
+				add = 15
+			}
+		}
+
+		create_diplomatic_play = {
+			name = theo
+			target_country = c:MAG
+			type = dp_revolution
+			war = no
+			escalation = 75
+		}
+		set_variable = {
+			name = ru_opened_invasion_event
+			value = no
+		} 
+		set_variable = { 
+			name = ru_war_MAG
+			value = yes 
+		} 
+    }
+    option = { #Divine Mandate of Siberia
+		name = tno_ru_events.1.divmandate
+		trigger = {
+			var:ru_war_DIV == no
+			c:DIV = {
+				exists = yes
+				is_adjacent_to_country = root
+			}
+			OR = {
+				AND = { #Stage 1
+					game_date >= 1966.1.1  # \/ modifier of country to invade
+					has_modifier = far_eastern
+
+					is_diplomatic_play_target = no
+					is_diplomatic_play_initiator = no
+				}
+				AND = { #Stage 2 (stage 1 but can attack while at war)
+					game_date >= 1971.1.1  # \/ modifier of country to invade
+					has_modifier = far_eastern
+				}
+	            AND = { # Stage 1 Part B
+	                game_date >= 1965.6.1
+	                # \/ that one needs to be the modifier of the country in question, to ensure we have the same region as them
+                    has_modifier = far_eastern
+	                is_diplomatic_play_target = no
+					is_diplomatic_play_initiator = no
+	                OR = { # We are Siberian or Far Eastern
+	                    has_modifier = siberian
+	                    has_modifier = far_eastern
+	                }
+	                c:DIV = { # The country we are attacking is also Siberian or Far Eastern
+	                    OR = {
+	                        has_modifier = siberian
+	                        has_modifier = far_eastern
+	                    }
+	                }
+	            }
+	            AND = { #Stage 3 (attack neighboring region)
+									  # \/ adjacent region
+					has_modifier = siberian
+					OR = {
+						game_date >= 1975.1.1
+						AND = {
+							is_ai = no
+							OR = {
+								has_variable = ru_unite_far_east
+								has_variable = ru_unite_central_sib
+								has_variable = ru_unite_west_sib
+								has_variable = ru_unite_west_russia
+							}
+						}
+					}
+				}
+				AND = { #Stage 4 (No restrictions whatsoever)
+					game_date >= 1980.1.1
+				}
+	        }
+		}
+
+		ai_chance = {
+			base = 10
+			modifier = { # The country is stronger than us
+				trigger = {
+					root.army_power_projection <= c:DIV.army_power_projection
+				}
+				add = -25
+			}
+			modifier = { # We are stronger than the country
+				trigger = {
+					root.army_power_projection >= c:DIV.army_power_projection
+				}
+				add = 15
+			}
+		}
+
+		create_diplomatic_play = {
+			name = theo
+			target_country = c:DIV
+			type = dp_revolution
+			war = no
+			escalation = 75
+		}
+		set_variable = {
+			name = ru_opened_invasion_event
+			value = no
+		} 
+		set_variable = { 
+			name = ru_war_DIV
+			value = yes 
+		} 
+    }
+    option = { #Soviet Pacific Fleet
+		name = tno_ru_events.1.sovfleet
+		trigger = {
+			var:ru_war_FER == no
+			c:FER = {
+				exists = yes
+				is_adjacent_to_country = root
+			}
+			OR = {
+				AND = { #Stage 1
+					game_date >= 1966.1.1  # \/ modifier of country to invade
+					has_modifier = far_eastern
+
+					is_diplomatic_play_target = no
+					is_diplomatic_play_initiator = no
+				}
+				AND = { #Stage 2 (stage 1 but can attack while at war)
+					game_date >= 1971.1.1  # \/ modifier of country to invade
+					has_modifier = far_eastern
+				}
+	            AND = { # Stage 1 Part B
+	                game_date >= 1965.6.1
+	                # \/ that one needs to be the modifier of the country in question, to ensure we have the same region as them
+                    has_modifier = far_eastern
+	                is_diplomatic_play_target = no
+					is_diplomatic_play_initiator = no
+	                OR = { # We are Siberian or Far Eastern
+	                    has_modifier = siberian
+	                    has_modifier = far_eastern
+	                }
+	                c:FER = { # The country we are attacking is also Siberian or Far Eastern
+	                    OR = {
+	                        has_modifier = siberian
+	                        has_modifier = far_eastern
+	                    }
+	                }
+	            }
+	            AND = { #Stage 3 (attack neighboring region)
+									  # \/ adjacent region
+					has_modifier = siberian
+					OR = {
+						game_date >= 1975.1.1
+						AND = {
+							is_ai = no
+							OR = {
+								has_variable = ru_unite_far_east
+								has_variable = ru_unite_central_sib
+								has_variable = ru_unite_west_sib
+								has_variable = ru_unite_west_russia
+							}
+						}
+					}
+				}
+				AND = { #Stage 4 (No restrictions whatsoever)
+					game_date >= 1980.1.1
+				}
+	        }
+		}
+
+		ai_chance = {
+			base = 10
+			modifier = { # The country is stronger than us
+				trigger = {
+					root.army_power_projection <= c:FER.army_power_projection
+				}
+				add = -25
+			}
+			modifier = { # We are stronger than the country
+				trigger = {
+					root.army_power_projection >= c:FER.army_power_projection
+				}
+				add = 15
+			}
+		}
+
+		create_diplomatic_play = {
+			name = theo
+			target_country = c:FER
+			type = dp_revolution
+			war = no
+			escalation = 75
+		}
+		set_variable = {
+			name = ru_opened_invasion_event
+			value = no
+		} 
+		set_variable = { 
+			name = ru_war_FER
+			value = yes 
+		} 
+    }
+    #CENTRAL SIBERIA
+    option = { #Tomsk
+		name = tno_ru_events.1.tomsk
+		trigger = {
+			var:ru_war_TOM == no
+			c:TOM = {
+				exists = yes
+				is_adjacent_to_country = root
+			}
+			OR = {
+				AND = { #Stage 1
+					game_date >= 1966.1.1  # \/ modifier of country to invade
+					has_modifier = siberian
+
+					is_diplomatic_play_target = no
+					is_diplomatic_play_initiator = no
+				}
+				AND = { #Stage 2 (stage 1 but can attack while at war)
+					game_date >= 1971.1.1  # \/ modifier of country to invade
+					has_modifier = siberian
+				}
+	            AND = { # Stage 1 Part B
+	                game_date >= 1965.6.1
+	                # \/ that one needs to be the modifier of the country in question, to ensure we have the same region as them
+                    has_modifier = siberian
+	                is_diplomatic_play_target = no
+					is_diplomatic_play_initiator = no
+	                OR = { # We are Siberian or Far Eastern
+	                    has_modifier = siberian
+	                    has_modifier = far_eastern
+	                }
+	                c:TOM = { # The country we are attacking is also Siberian or Far Eastern
+	                    OR = {
+	                        has_modifier = siberian
+	                        has_modifier = far_eastern
+	                    }
+	                }
+	            }
+	            AND = { #Stage 3 (attack neighboring region)
+									  # \/ adjacent region
+					has_modifier = far_eastern
+					OR = {
+						game_date >= 1975.1.1
+						AND = {
+							is_ai = no
+							OR = {
+								has_variable = ru_unite_far_east
+								has_variable = ru_unite_central_sib
+								has_variable = ru_unite_west_sib
+								has_variable = ru_unite_west_russia
+							}
+						}
+					}
+				}
+				AND = { #Stage 4 (No restrictions whatsoever)
+					game_date >= 1980.1.1
+				}
+	        }
+		}
+
+		ai_chance = {
+			base = 10
+			modifier = { # The country is stronger than us
+				trigger = {
+					root.army_power_projection <= c:TOM.army_power_projection
+				}
+				add = -25
+			}
+			modifier = { # We are stronger than the country
+				trigger = {
+					root.army_power_projection >= c:TOM.army_power_projection
+				}
+				add = 15
+			}
+		}
+
+		create_diplomatic_play = {
+			name = theo
+			target_country = c:TOM
+			type = dp_revolution
+			war = no
+			escalation = 75
+		}
+		set_variable = {
+			name = ru_opened_invasion_event
+			value = no
+		} 
+		set_variable = { 
+			name = ru_war_TOM 
+			value = yes 
+		} 
+    }
+    option = { #Siberian Black Army
+		name = tno_ru_events.1.sibblackarmy
+		trigger = {
+			var:ru_war_SBA == no
+			c:SBA = {
+				exists = yes
+				is_adjacent_to_country = root
+			}
+			OR = {
+				AND = { #Stage 1
+					game_date >= 1966.1.1  # \/ modifier of country to invade
+					has_modifier = siberian
+
+					is_diplomatic_play_target = no
+					is_diplomatic_play_initiator = no
+				}
+				AND = { #Stage 2 (stage 1 but can attack while at war)
+					game_date >= 1971.1.1  # \/ modifier of country to invade
+					has_modifier = siberian
+				}
+	            AND = { # Stage 1 Part B
+	                game_date >= 1965.6.1
+	                # \/ that one needs to be the modifier of the country in question, to ensure we have the same region as them
+                    has_modifier = siberian
+	                is_diplomatic_play_target = no
+					is_diplomatic_play_initiator = no
+	                OR = { # We are Siberian or Far Eastern
+	                    has_modifier = siberian
+	                    has_modifier = far_eastern
+	                }
+	                c:SBA = { # The country we are attacking is also Siberian or Far Eastern
+	                    OR = {
+	                        has_modifier = siberian
+	                        has_modifier = far_eastern
+	                    }
+	                }
+	            }
+	            AND = { #Stage 3 (attack neighboring region)
+									  # \/ adjacent region
+					has_modifier = far_eastern
+					OR = {
+						game_date >= 1975.1.1
+						AND = {
+							is_ai = no
+							OR = {
+								has_variable = ru_unite_far_east
+								has_variable = ru_unite_central_sib
+								has_variable = ru_unite_west_sib
+								has_variable = ru_unite_west_russia
+							}
+						}
+					}
+				}
+				AND = { #Stage 4 (No restrictions whatsoever)
+					game_date >= 1980.1.1
+				}
+	        }
+		}
+
+		ai_chance = {
+			base = 10
+			modifier = { # The country is stronger than us
+				trigger = {
+					root.army_power_projection <= c:SBA.army_power_projection
+				}
+				add = -25
+			}
+			modifier = { # We are stronger than the country
+				trigger = {
+					root.army_power_projection >= c:SBA.army_power_projection
+				}
+				add = 15
+			}
+		}
+
+		create_diplomatic_play = {
+			name = theo
+			target_country = c:SBA
+			type = dp_revolution
+			war = no
+			escalation = 75
+		}
+		set_variable = {
+			name = ru_opened_invasion_event
+			value = no
+		} 
+		set_variable = { 
+			name = ru_war_SBA
+			value = yes 
+		} 
+    }
+    option = { #People's Revolutionary Council
+		name = tno_ru_events.1.revcouncil
+		trigger = {
+			var:ru_war_TUV == no
+			c:TUV = {
+				exists = yes
+				is_adjacent_to_country = root
+			}
+			OR = {
+				AND = { #Stage 1
+					game_date >= 1966.1.1  # \/ modifier of country to invade
+					has_modifier = siberian
+
+					is_diplomatic_play_target = no
+					is_diplomatic_play_initiator = no
+				}
+				AND = { #Stage 2 (stage 1 but can attack while at war)
+					game_date >= 1971.1.1  # \/ modifier of country to invade
+					has_modifier = siberian
+				}
+	            AND = { # Stage 1 Part B
+	                game_date >= 1965.6.1
+	                # \/ that one needs to be the modifier of the country in question, to ensure we have the same region as them
+                    has_modifier = siberian
+	                is_diplomatic_play_target = no
+					is_diplomatic_play_initiator = no
+	                OR = { # We are Siberian or Far Eastern
+	                    has_modifier = siberian
+	                    has_modifier = far_eastern
+	                }
+	                c:TUV = { # The country we are attacking is also Siberian or Far Eastern
+	                    OR = {
+	                        has_modifier = siberian
+	                        has_modifier = far_eastern
+	                    }
+	                }
+	            }
+	            AND = { #Stage 3 (attack neighboring region)
+									  # \/ adjacent region
+					has_modifier = far_eastern
+					OR = {
+						game_date >= 1975.1.1
+						AND = {
+							is_ai = no
+							OR = {
+								has_variable = ru_unite_far_east
+								has_variable = ru_unite_central_sib
+								has_variable = ru_unite_west_sib
+								has_variable = ru_unite_west_russia
+							}
+						}
+					}
+				}
+				AND = { #Stage 4 (No restrictions whatsoever)
+					game_date >= 1980.1.1
+				}
+	        }
+		}
+
+		ai_chance = {
+			base = 10
+			modifier = { # The country is stronger than us
+				trigger = {
+					root.army_power_projection <= c:TUV.army_power_projection
+				}
+				add = -25
+			}
+			modifier = { # We are stronger than the country
+				trigger = {
+					root.army_power_projection >= c:TUV.army_power_projection
+				}
+				add = 15
+			}
+		}
+
+		create_diplomatic_play = {
+			name = theo
+			target_country = c:TUV
+			type = dp_revolution
+			war = no
+			escalation = 75
+		}
+		set_variable = {
+			name = ru_opened_invasion_event
+			value = no
+		} 
+		set_variable = { 
+			name = ru_war_TUV
+			value = yes 
+		} 
+    }
+    option = { #Krasnoyarsk
+		name = tno_ru_events.1.krasnoyarsk
+		trigger = {
+			var:ru_war_KRK == no
+			c:KRK = {
+				exists = yes
+				is_adjacent_to_country = root
+			}
+			OR = {
+				AND = { #Stage 1
+					game_date >= 1966.1.1  # \/ modifier of country to invade
+					has_modifier = siberian
+
+					is_diplomatic_play_target = no
+					is_diplomatic_play_initiator = no
+				}
+				AND = { #Stage 2 (stage 1 but can attack while at war)
+					game_date >= 1971.1.1  # \/ modifier of country to invade
+					has_modifier = siberian
+				}
+	            AND = { # Stage 1 Part B
+	                game_date >= 1965.6.1
+	                # \/ that one needs to be the modifier of the country in question, to ensure we have the same region as them
+                    has_modifier = siberian
+	                is_diplomatic_play_target = no
+					is_diplomatic_play_initiator = no
+	                OR = { # We are Siberian or Far Eastern
+	                    has_modifier = siberian
+	                    has_modifier = far_eastern
+	                }
+	                c:KRK = { # The country we are attacking is also Siberian or Far Eastern
+	                    OR = {
+	                        has_modifier = siberian
+	                        has_modifier = far_eastern
+	                    }
+	                }
+	            }
+	            AND = { #Stage 3 (attack neighboring region)
+									  # \/ adjacent region
+					has_modifier = far_eastern
+					OR = {
+						game_date >= 1975.1.1
+						AND = {
+							is_ai = no
+							OR = {
+								has_variable = ru_unite_far_east
+								has_variable = ru_unite_central_sib
+								has_variable = ru_unite_west_sib
+								has_variable = ru_unite_west_russia
+							}
+						}
+					}
+				}
+				AND = { #Stage 4 (No restrictions whatsoever)
+					game_date >= 1980.1.1
+				}
+	        }
+		}
+
+		ai_chance = {
+			base = 10
+			modifier = { # The country is stronger than us
+				trigger = {
+					root.army_power_projection <= c:KRK.army_power_projection
+				}
+				add = -25
+			}
+			modifier = { # We are stronger than the country
+				trigger = {
+					root.army_power_projection >= c:KRK.army_power_projection
+				}
+				add = 15
+			}
+		}
+
+		create_diplomatic_play = {
+			name = theo
+			target_country = c:KRK
+			type = dp_revolution
+			war = no
+			escalation = 75
+		}
+		set_variable = {
+			name = ru_opened_invasion_event
+			value = no
+		} 
+		set_variable = { 
+			name = ru_war_KRK 
+			value = yes 
+		} 
+    }
+    option = { #Kemerovo
+		name = tno_ru_events.1.kemerovo
+		trigger = {
+			var:ru_war_KEM == no
+			c:KEM = {
+				exists = yes
+				is_adjacent_to_country = root
+			}
+			OR = {
+				AND = { #Stage 1
+					game_date >= 1966.1.1  # \/ modifier of country to invade
+					has_modifier = siberian
+
+					is_diplomatic_play_target = no
+					is_diplomatic_play_initiator = no
+				}
+				AND = { #Stage 2 (stage 1 but can attack while at war)
+					game_date >= 1971.1.1  # \/ modifier of country to invade
+					has_modifier = siberian
+				}
+	            AND = { # Stage 1 Part B
+	                game_date >= 1965.6.1
+	                # \/ that one needs to be the modifier of the country in question, to ensure we have the same region as them
+                    has_modifier = siberian
+	                is_diplomatic_play_target = no
+					is_diplomatic_play_initiator = no
+	                OR = { # We are Siberian or Far Eastern
+	                    has_modifier = siberian
+	                    has_modifier = far_eastern
+	                }
+	                c:KEM = { # The country we are attacking is also Siberian or Far Eastern
+	                    OR = {
+	                        has_modifier = siberian
+	                        has_modifier = far_eastern
+	                    }
+	                }
+	            }
+	            AND = { #Stage 3 (attack neighboring region)
+									  # \/ adjacent region
+					has_modifier = far_eastern
+					OR = {
+						game_date >= 1975.1.1
+						AND = {
+							is_ai = no
+							OR = {
+								has_variable = ru_unite_far_east
+								has_variable = ru_unite_central_sib
+								has_variable = ru_unite_west_sib
+								has_variable = ru_unite_west_russia
+							}
+						}
+					}
+				}
+				AND = { #Stage 4 (No restrictions whatsoever)
+					game_date >= 1980.1.1
+				}
+	        }
+		}
+
+		ai_chance = {
+			base = 10
+			modifier = { # The country is stronger than us
+				trigger = {
+					root.army_power_projection <= c:KEM.army_power_projection
+				}
+				add = -25
+			}
+			modifier = { # We are stronger than the country
+				trigger = {
+					root.army_power_projection >= c:KEM.army_power_projection
+				}
+				add = 15
+			}
+		}
+
+		create_diplomatic_play = {
+			name = theo
+			target_country = c:KEM
+			type = dp_revolution
+			war = no
+			escalation = 75
+		}
+		set_variable = {
+			name = ru_opened_invasion_event
+			value = no
+		} 
+		set_variable = { 
+			name = ru_war_KEM
+			value = yes 
+		} 
+    }
+    option = { #Oyrotia
+		name = tno_ru_events.1.oyrotia
+		trigger = {
+			var:ru_war_OYR == nO
+			c:OYR = {
+				exists = yes
+				is_adjacent_to_country = root
+			}
+			OR = {
+				AND = { #Stage 1
+					game_date >= 1966.1.1  # \/ modifier of country to invade
+					has_modifier = siberian
+
+					is_diplomatic_play_target = no
+					is_diplomatic_play_initiator = no
+				}
+				AND = { #Stage 2 (stage 1 but can attack while at war)
+					game_date >= 1971.1.1  # \/ modifier of country to invade
+					has_modifier = siberian
+				}
+	            AND = { # Stage 1 Part B
+	                game_date >= 1965.6.1
+	                # \/ that one needs to be the modifier of the country in question, to ensure we have the same region as them
+                    has_modifier = siberian
+	                is_diplomatic_play_target = no
+					is_diplomatic_play_initiator = no
+	                OR = { # We are Siberian or Far Eastern
+	                    has_modifier = siberian
+	                    has_modifier = far_eastern
+	                }
+	                c:OYR = { # The country we are attacking is also Siberian or Far Eastern
+	                    OR = {
+	                        has_modifier = siberian
+	                        has_modifier = far_eastern
+	                    }
+	                }
+	            }
+	            AND = { #Stage 3 (attack neighboring region)
+									  # \/ adjacent region
+					has_modifier = far_eastern
+					OR = {
+						game_date >= 1975.1.1
+						AND = {
+							is_ai = no
+							OR = {
+								has_variable = ru_unite_far_east
+								has_variable = ru_unite_central_sib
+								has_variable = ru_unite_west_sib
+								has_variable = ru_unite_west_russia
+							}
+						}
+					}
+				}
+				AND = { #Stage 4 (No restrictions whatsoever)
+					game_date >= 1980.1.1
+				}
+	        }
+		}
+
+		ai_chance = {
+			base = 10
+			modifier = { # The country is stronger than us
+				trigger = {
+					root.army_power_projection <= c:OYR.army_power_projection
+				}
+				add = -25
+			}
+			modifier = { # We are stronger than the country
+				trigger = {
+					root.army_power_projection >= c:OYR.army_power_projection
+				}
+				add = 15
+			}
+		}
+
+		create_diplomatic_play = {
+			name = theo
+			target_country = c:OYR
+			type = dp_revolution
+			war = no
+			escalation = 75
+		}
+		set_variable = {
+			name = ru_opened_invasion_event
+			value = no
+		} 
+		set_variable = { 
+			name = ru_war_OYR
+			value = yes 
+		} 
+    }
+    option = { #Novosibirsk
+		name = tno_ru_events.1.novosibirsk
+		trigger = {
+			var:ru_war_NVB == no
+			c:NVB = {
+				exists = yes
+				is_adjacent_to_country = root
+			}
+			OR = {
+				AND = { #Stage 1
+					game_date >= 1966.1.1  # \/ modifier of country to invade
+					has_modifier = siberian
+
+					is_diplomatic_play_target = no
+					is_diplomatic_play_initiator = no
+				}
+				AND = { #Stage 2 (stage 1 but can attack while at war)
+					game_date >= 1971.1.1  # \/ modifier of country to invade
+					has_modifier = siberian
+				}
+	            AND = { # Stage 1 Part B
+	                game_date >= 1965.6.1
+	                # \/ that one needs to be the modifier of the country in question, to ensure we have the same region as them
+                    has_modifier = siberian
+	                is_diplomatic_play_target = no
+					is_diplomatic_play_initiator = no
+	                OR = { # We are Siberian or Far Eastern
+	                    has_modifier = siberian
+	                    has_modifier = far_eastern
+	                }
+	                c:NVB = { # The country we are attacking is also Siberian or Far Eastern
+	                    OR = {
+	                        has_modifier = siberian
+	                        has_modifier = far_eastern
+	                    }
+	                }
+	            }
+	            AND = { #Stage 3 (attack neighboring region)
+									  # \/ adjacent region
+					has_modifier = far_eastern
+					OR = {
+						game_date >= 1975.1.1
+						AND = {
+							is_ai = no
+							OR = {
+								has_variable = ru_unite_far_east
+								has_variable = ru_unite_central_sib
+								has_variable = ru_unite_west_sib
+								has_variable = ru_unite_west_russia
+							}
+						}
+					}
+				}
+				AND = { #Stage 4 (No restrictions whatsoever)
+					game_date >= 1980.1.1
+				}
+	        }
+		}
+
+		ai_chance = {
+			base = 10
+			modifier = { # The country is stronger than us
+				trigger = {
+					root.army_power_projection <= c:NVB.army_power_projection
+				}
+				add = -25
+			}
+			modifier = { # We are stronger than the country
+				trigger = {
+					root.army_power_projection >= c:NVB.army_power_projection
+				}
+				add = 15
+			}
+		}
+
+		create_diplomatic_play = {
+			name = theo
+			target_country = c:NVB
+			type = dp_revolution
+			war = no
+			escalation = 75
+		}
+		set_variable = {
+			name = ru_opened_invasion_event
+			value = no
+		} 
+		set_variable = { 
+			name = ru_war_NVB 
+			value = yes 
+		} 
+    }
+    #WEST SIBERIA
+    option = { #Omsk
+		name = tno_ru_events.1.omsk
+		trigger = {
+			var:ru_war_OSK == no
+			c:OSK = {
+				exists = yes
+				is_adjacent_to_country = root
+			}
+			OR = {
+				AND = { #Stage 1
+					game_date >= 1966.1.1  # \/ modifier of country to invade
+					has_modifier = ural
+
+					is_diplomatic_play_target = no
+					is_diplomatic_play_initiator = no
+				}
+				AND = { #Stage 2 (stage 1 but can attack while at war)
+					game_date >= 1971.1.1  # \/ modifier of country to invade
+					has_modifier = ural
+				}
+	            AND = { # Stage 1 Part B
+	                game_date >= 1965.6.1
+	                # \/ that one needs to be the modifier of the country in question, to ensure we have the same region as them
+                    has_modifier = ural
+	                is_diplomatic_play_target = no
+					is_diplomatic_play_initiator = no
+	                OR = { # We are Siberian or Far Eastern
+	                    has_modifier = siberian
+	                    has_modifier = far_eastern
+	                }
+	                c:OSK = { # The country we are attacking is also Siberian or Far Eastern
+	                    OR = {
+	                        has_modifier = siberian
+	                        has_modifier = far_eastern
+	                    }
+	                }
+	            }
+	            AND = { #Stage 3 (attack neighboring region)
+									  # \/ adjacent region
+					has_modifier = western
+					OR = {
+						game_date >= 1975.1.1
+						AND = {
+							is_ai = no
+							OR = {
+								has_variable = ru_unite_far_east
+								has_variable = ru_unite_central_sib
+								has_variable = ru_unite_west_sib
+								has_variable = ru_unite_west_russia
+							}
+						}
+					}
+				}
+				AND = { #Stage 4 (No restrictions whatsoever)
+					game_date >= 1980.1.1
+				}
+	        }
+		}
+
+		ai_chance = {
+			base = 10
+			modifier = { # The country is stronger than us
+				trigger = {
+					root.army_power_projection <= c:OSK.army_power_projection
+				}
+				add = -25
+			}
+			modifier = { # We are stronger than the country
+				trigger = {
+					root.army_power_projection >= c:OSK.army_power_projection
+				}
+				add = 15
+			}
+		}
+
+		create_diplomatic_play = {
+			name = theo
+			target_country = c:OSK
+			type = dp_revolution
+			war = no
+			escalation = 75
+		}
+		set_variable = {
+			name = ru_opened_invasion_event
+			value = no
+		} 
+		set_variable = { 
+			name = ru_war_OSK
+			value = yes 
+		} 
+    }
+    option = { #Tyumen
+		name = tno_ru_events.1.tyumen
+		trigger = {
+			var:ru_war_WRS == no
+			c:WRS = {
+				exists = yes
+				is_adjacent_to_country = root
+			}
+			OR = {
+				AND = { #Stage 1
+					game_date >= 1966.1.1  # \/ modifier of country to invade
+					has_modifier = ural
+
+					is_diplomatic_play_target = no
+					is_diplomatic_play_initiator = no
+				}
+				AND = { #Stage 2 (stage 1 but can attack while at war)
+					game_date >= 1971.1.1  # \/ modifier of country to invade
+					has_modifier = ural
+				}
+	            AND = { # Stage 1 Part B
+	                game_date >= 1965.6.1
+	                # \/ that one needs to be the modifier of the country in question, to ensure we have the same region as them
+                    has_modifier = ural
+	                is_diplomatic_play_target = no
+					is_diplomatic_play_initiator = no
+	                OR = { # We are Siberian or Far Eastern
+	                    has_modifier = siberian
+	                    has_modifier = far_eastern
+	                }
+	                c:WRS = { # The country we are attacking is also Siberian or Far Eastern
+	                    OR = {
+	                        has_modifier = siberian
+	                        has_modifier = far_eastern
+	                    }
+	                }
+	            }
+	            AND = { #Stage 3 (attack neighboring region)
+									  # \/ adjacent region
+					has_modifier = western
+					OR = {
+						game_date >= 1975.1.1
+						AND = {
+							is_ai = no
+							OR = {
+								has_variable = ru_unite_far_east
+								has_variable = ru_unite_central_sib
+								has_variable = ru_unite_west_sib
+								has_variable = ru_unite_west_russia
+							}
+						}
+					}
+				}
+				AND = { #Stage 4 (No restrictions whatsoever)
+					game_date >= 1980.1.1
+				}
+	        }
+		}
+
+		ai_chance = {
+			base = 10
+			modifier = { # The country is stronger than us
+				trigger = {
+					root.army_power_projection <= c:WRS.army_power_projection
+				}
+				add = -25
+			}
+			modifier = { # We are stronger than the country
+				trigger = {
+					root.army_power_projection >= c:WRS.army_power_projection
+				}
+				add = 15
+			}
+		}
+
+		create_diplomatic_play = {
+			name = theo
+			target_country = c:WRS
+			type = dp_revolution
+			war = no
+			escalation = 75
+		}
+		set_variable = {
+			name = ru_opened_invasion_event
+			value = no
+		} 
+		set_variable = { 
+			name = ru_war_WRS
+			value = yes 
+		} 
+    }
+    option = { #Sverdlosk
+		name = tno_ru_events.1.sverdlosk
+		trigger = {
+			var:ru_war_URL == no
+			c:URL = {
+				exists = yes
+				is_adjacent_to_country = root
+			}
+			OR = {
+				AND = { #Stage 1
+					game_date >= 1966.1.1  # \/ modifier of country to invade
+					has_modifier = ural
+
+					is_diplomatic_play_target = no
+					is_diplomatic_play_initiator = no
+				}
+				AND = { #Stage 2 (stage 1 but can attack while at war)
+					game_date >= 1971.1.1  # \/ modifier of country to invade
+					has_modifier = ural
+				}
+	            AND = { # Stage 1 Part B
+	                game_date >= 1965.6.1
+	                # \/ that one needs to be the modifier of the country in question, to ensure we have the same region as them
+                    has_modifier = ural
+	                is_diplomatic_play_target = no
+					is_diplomatic_play_initiator = no
+	                OR = { # We are Siberian or Far Eastern
+	                    has_modifier = siberian
+	                    has_modifier = far_eastern
+	                }
+	                c:URL = { # The country we are attacking is also Siberian or Far Eastern
+	                    OR = {
+	                        has_modifier = siberian
+	                        has_modifier = far_eastern
+	                    }
+	                }
+	            }
+	            AND = { #Stage 3 (attack neighboring region)
+									  # \/ adjacent region
+					has_modifier = western
+					OR = {
+						game_date >= 1975.1.1
+						AND = {
+							is_ai = no
+							OR = {
+								has_variable = ru_unite_far_east
+								has_variable = ru_unite_central_sib
+								has_variable = ru_unite_west_sib
+								has_variable = ru_unite_west_russia
+							}
+						}
+					}
+				}
+				AND = { #Stage 4 (No restrictions whatsoever)
+					game_date >= 1980.1.1
+				}
+	        }
+		}
+
+		ai_chance = {
+			base = 10
+			modifier = { # The country is stronger than us
+				trigger = {
+					root.army_power_projection <= c:URL.army_power_projection
+				}
+				add = -25
+			}
+			modifier = { # We are stronger than the country
+				trigger = {
+					root.army_power_projection >= c:URL.army_power_projection
+				}
+				add = 15
+			}
+		}
+
+		create_diplomatic_play = {
+			name = theo
+			target_country = c:URL
+			type = dp_revolution
+			war = no
+			escalation = 75
+		}
+		set_variable = {
+			name = ru_opened_invasion_event
+			value = no
+		} 
+		set_variable = { 
+			name = ru_war_URL
+			value = yes 
+		} 
+    }
+    option = { #Free Aviators
+		name = tno_ru_events.1.freeaviators
+		trigger = {
+			var:ru_war_AVI == no
+			c:AVI = {
+				exists = yes
+				is_adjacent_to_country = root
+			}
+			OR = {
+				AND = { #Stage 1
+					game_date >= 1966.1.1  # \/ modifier of country to invade
+					has_modifier = ural
+
+					is_diplomatic_play_target = no
+					is_diplomatic_play_initiator = no
+				}
+				AND = { #Stage 2 (stage 1 but can attack while at war)
+					game_date >= 1971.1.1  # \/ modifier of country to invade
+					has_modifier = ural
+				}
+	            AND = { # Stage 1 Part B
+	                game_date >= 1965.6.1
+	                # \/ that one needs to be the modifier of the country in question, to ensure we have the same region as them
+                    has_modifier = ural
+	                is_diplomatic_play_target = no
+					is_diplomatic_play_initiator = no
+	                OR = { # We are Siberian or Far Eastern
+	                    has_modifier = siberian
+	                    has_modifier = far_eastern
+	                }
+	                c:AVI = { # The country we are attacking is also Siberian or Far Eastern
+	                    OR = {
+	                        has_modifier = siberian
+	                        has_modifier = far_eastern
+	                    }
+	                }
+	            }
+	            AND = { #Stage 3 (attack neighboring region)
+									  # \/ adjacent region
+					has_modifier = western
+					OR = {
+						game_date >= 1975.1.1
+						AND = {
+							is_ai = no
+							OR = {
+								has_variable = ru_unite_far_east
+								has_variable = ru_unite_central_sib
+								has_variable = ru_unite_west_sib
+								has_variable = ru_unite_west_russia
+							}
+						}
+					}
+				}
+				AND = { #Stage 4 (No restrictions whatsoever)
+					game_date >= 1980.1.1
+				}
+	        }
+		}
+
+		ai_chance = {
+			base = 10
+			modifier = { # The country is stronger than us
+				trigger = {
+					root.army_power_projection <= c:AVI.army_power_projection
+				}
+				add = -25
+			}
+			modifier = { # We are stronger than the country
+				trigger = {
+					root.army_power_projection >= c:AVI.army_power_projection
+				}
+				add = 15
+			}
+		}
+
+		create_diplomatic_play = {
+			name = theo
+			target_country = c:AVI
+			type = dp_revolution
+			war = no
+			escalation = 75
+		}
+		set_variable = {
+			name = ru_opened_invasion_event
+			value = no
+		} 
+		set_variable = { 
+			name = ru_war_AVI
+			value = yes 
+		} 
+    }
+    option = { #Zlatoust
+		name = tno_ru_events.1.zlatoust
+		trigger = {
+			var:ru_war_ZLA == no
+			c:ZLA = {
+				exists = yes
+				is_adjacent_to_country = root
+			}
+			OR = {
+				AND = { #Stage 1
+					game_date >= 1966.1.1  # \/ modifier of country to invade
+					has_modifier = ural
+
+					is_diplomatic_play_target = no
+					is_diplomatic_play_initiator = no
+				}
+				AND = { #Stage 2 (stage 1 but can attack while at war)
+					game_date >= 1971.1.1  # \/ modifier of country to invade
+					has_modifier = ural
+				}
+	            AND = { # Stage 1 Part B
+	                game_date >= 1965.6.1
+	                # \/ that one needs to be the modifier of the country in question, to ensure we have the same region as them
+                    has_modifier = ural
+	                is_diplomatic_play_target = no
+					is_diplomatic_play_initiator = no
+	                OR = { # We are Siberian or Far Eastern
+	                    has_modifier = siberian
+	                    has_modifier = far_eastern
+	                }
+	                c:ZLA = { # The country we are attacking is also Siberian or Far Eastern
+	                    OR = {
+	                        has_modifier = siberian
+	                        has_modifier = far_eastern
+	                    }
+	                }
+	            }
+	            AND = { #Stage 3 (attack neighboring region)
+									  # \/ adjacent region
+					has_modifier = western
+					OR = {
+						game_date >= 1975.1.1
+						AND = {
+							is_ai = no
+							OR = {
+								has_variable = ru_unite_far_east
+								has_variable = ru_unite_central_sib
+								has_variable = ru_unite_west_sib
+								has_variable = ru_unite_west_russia
+							}
+						}
+					}
+				}
+				AND = { #Stage 4 (No restrictions whatsoever)
+					game_date >= 1980.1.1
+				}
+	        }
+		}
+
+		ai_chance = {
+			base = 10
+			modifier = { # The country is stronger than us
+				trigger = {
+					root.army_power_projection <= c:ZLA.army_power_projection
+				}
+				add = -25
+			}
+			modifier = { # We are stronger than the country
+				trigger = {
+					root.army_power_projection >= c:ZLA.army_power_projection
+				}
+				add = 15
+			}
+		}
+
+		create_diplomatic_play = {
+			name = theo
+			target_country = c:ZLA
+			type = dp_revolution
+			war = no
+			escalation = 75
+		}
+		set_variable = {
+			name = ru_opened_invasion_event
+			value = no
+		} 
+		set_variable = { 
+			name = ru_war_ZLA 
+			value = yes 
+		} 
+    }
+    option = { #Yugra
+		name = tno_ru_events.1.yugra
+		trigger = {
+			var:ru_war_TTY == no
+			c:TTY = {
+				exists = yes
+				is_adjacent_to_country = root
+			}
+			OR = {
+				AND = { #Stage 1
+					game_date >= 1966.1.1  # \/ modifier of country to invade
+					has_modifier = ural
+
+					is_diplomatic_play_target = no
+					is_diplomatic_play_initiator = no
+				}
+				AND = { #Stage 2 (stage 1 but can attack while at war)
+					game_date >= 1971.1.1  # \/ modifier of country to invade
+					has_modifier = ural
+				}
+	            AND = { # Stage 1 Part B
+	                game_date >= 1965.6.1
+	                # \/ that one needs to be the modifier of the country in question, to ensure we have the same region as them
+                    has_modifier = ural
+	                is_diplomatic_play_target = no
+					is_diplomatic_play_initiator = no
+	                OR = { # We are Siberian or Far Eastern
+	                    has_modifier = siberian
+	                    has_modifier = far_eastern
+	                }
+	                c:TTY = { # The country we are attacking is also Siberian or Far Eastern
+	                    OR = {
+	                        has_modifier = siberian
+	                        has_modifier = far_eastern
+	                    }
+	                }
+	            }
+	            AND = { #Stage 3 (attack neighboring region)
+									  # \/ adjacent region
+					has_modifier = western
+					OR = {
+						game_date >= 1975.1.1
+						AND = {
+							is_ai = no
+							OR = {
+								has_variable = ru_unite_far_east
+								has_variable = ru_unite_central_sib
+								has_variable = ru_unite_west_sib
+								has_variable = ru_unite_west_russia
+							}
+						}
+					}
+				}
+				AND = { #Stage 4 (No restrictions whatsoever)
+					game_date >= 1980.1.1
+				}
+	        }
+		}
+
+		ai_chance = {
+			base = 10
+			modifier = { # The country is stronger than us
+				trigger = {
+					root.army_power_projection <= c:TTY.army_power_projection
+				}
+				add = -25
+			}
+			modifier = { # We are stronger than the country
+				trigger = {
+					root.army_power_projection >= c:TTY.army_power_projection
+				}
+				add = 15
+			}
+		}
+
+		create_diplomatic_play = {
+			name = theo
+			target_country = c:TTY
+			type = dp_revolution
+			war = no
+			escalation = 75
+		}
+		set_variable = {
+			name = ru_opened_invasion_event
+			value = no
+		} 
+		set_variable = { 
+			name = ru_war_TTY 
+			value = yes 
+		} 
+    }
+    option = { #Vorkuta
+		name = tno_ru_events.1.vorkuta
+		trigger = {
+			var:ru_war_VOR == no
+			c:VOR = {
+				exists = yes
+				is_adjacent_to_country = root
+			}
+			OR = {
+				AND = { #Stage 1
+					game_date >= 1966.1.1  # \/ modifier of country to invade
+					has_modifier = ural
+
+					is_diplomatic_play_target = no
+					is_diplomatic_play_initiator = no
+				}
+				AND = { #Stage 2 (stage 1 but can attack while at war)
+					game_date >= 1971.1.1  # \/ modifier of country to invade
+					has_modifier = ural
+				}
+	            AND = { # Stage 1 Part B
+	                game_date >= 1965.6.1
+	                # \/ that one needs to be the modifier of the country in question, to ensure we have the same region as them
+                    has_modifier = ural
+	                is_diplomatic_play_target = no
+					is_diplomatic_play_initiator = no
+	                OR = { # We are Siberian or Far Eastern
+	                    has_modifier = siberian
+	                    has_modifier = far_eastern
+	                }
+	                c:VOR = { # The country we are attacking is also Siberian or Far Eastern
+	                    OR = {
+	                        has_modifier = siberian
+	                        has_modifier = far_eastern
+	                    }
+	                }
+	            }
+	            AND = { #Stage 3 (attack neighboring region)
+									  # \/ adjacent region
+					has_modifier = western
+					OR = {
+						game_date >= 1975.1.1
+						AND = {
+							is_ai = no
+							OR = {
+								has_variable = ru_unite_far_east
+								has_variable = ru_unite_central_sib
+								has_variable = ru_unite_west_sib
+								has_variable = ru_unite_west_russia
+							}
+						}
+					}
+				}
+				AND = { #Stage 4 (No restrictions whatsoever)
+					game_date >= 1980.1.1
+				}
+	        }
+		}
+
+		ai_chance = {
+			base = 10
+			modifier = { # The country is stronger than us
+				trigger = {
+					root.army_power_projection <= c:VOR.army_power_projection
+				}
+				add = -25
+			}
+			modifier = { # We are stronger than the country
+				trigger = {
+					root.army_power_projection >= c:VOR.army_power_projection
+				}
+				add = 15
+			}
+		}
+
+		create_diplomatic_play = {
+			name = theo
+			target_country = c:VOR
+			type = dp_revolution
+			war = no
+			escalation = 75
+		}
+		set_variable = {
+			name = ru_opened_invasion_event
+			value = no
+		} 
+		set_variable = { 
+			name = ru_war_VOR 
+			value = yes 
+		} 
+    }
+    #WEST RUSSIA
+    option = { #Magnitogorsk
+		name = tno_ru_events.1.magnitogorsk
+		trigger = {
+			var:ru_war_MGK == no
+			c:MGK = {
+				exists = yes
+				is_adjacent_to_country = root
+			}
+			OR = {
+				AND = { #Stage 1
+					game_date >= 1966.1.1  # \/ modifier of country to invade
+					has_modifier = western
+
+					is_diplomatic_play_target = no
+					is_diplomatic_play_initiator = no
+				}
+				AND = { #Stage 2 (stage 1 but can attack while at war)
+					game_date >= 1971.1.1  # \/ modifier of country to invade
+					has_modifier = western
+				}
+	            AND = { # Stage 1 Part B
+	                game_date >= 1965.6.1
+	                # \/ that one needs to be the modifier of the country in question, to ensure we have the same region as them
+                    has_modifier = western
+	                is_diplomatic_play_target = no
+					is_diplomatic_play_initiator = no
+	                OR = { # We are Siberian or Far Eastern
+	                    has_modifier = siberian
+	                    has_modifier = far_eastern
+	                }
+	                c:MGK = { # The country we are attacking is also Siberian or Far Eastern
+	                    OR = {
+	                        has_modifier = siberian
+	                        has_modifier = far_eastern
+	                    }
+	                }
+	            }
+	            AND = { #Stage 3 (attack neighboring region)
+									  # \/ adjacent region
+					has_modifier = ural
+					OR = {
+						game_date >= 1975.1.1
+						AND = {
+							is_ai = no
+							OR = {
+								has_variable = ru_unite_far_east
+								has_variable = ru_unite_central_sib
+								has_variable = ru_unite_west_sib
+								has_variable = ru_unite_west_russia
+							}
+						}
+					}
+				}
+				AND = { #Stage 4 (No restrictions whatsoever)
+					game_date >= 1980.1.1
+				}
+	        }
+		}
+
+		ai_chance = {
+			base = 10
+			modifier = { # The country is stronger than us
+				trigger = {
+					root.army_power_projection <= c:MGK.army_power_projection
+				}
+				add = -25
+			}
+			modifier = { # We are stronger than the country
+				trigger = {
+					root.army_power_projection >= c:MGK.army_power_projection
+				}
+				add = 15
+			}
+		}
+
+		create_diplomatic_play = {
+			name = theo
+			target_country = c:MGK
+			type = dp_revolution
+			war = no
+			escalation = 75
+		}
+		set_variable = {
+			name = ru_opened_invasion_event
+			value = no
+		} 
+		set_variable = { 
+			name = ru_war_MGK
+			value = yes 
+		} 
+    }
+    option = { #Dirlewanger Brigade
+		name = tno_ru_events.1.dirbrigade
+		trigger = {
+			var:ru_war_DIR == no
+			c:DIR = {
+				exists = yes
+				is_adjacent_to_country = root
+			}
+			OR = {
+				AND = { #Stage 1
+					game_date >= 1966.1.1  # \/ modifier of country to invade
+					has_modifier = western
+
+					is_diplomatic_play_target = no
+					is_diplomatic_play_initiator = no
+				}
+				AND = { #Stage 2 (stage 1 but can attack while at war)
+					game_date >= 1971.1.1  # \/ modifier of country to invade
+					has_modifier = western
+				}
+	            AND = { # Stage 1 Part B
+	                game_date >= 1965.6.1
+	                # \/ that one needs to be the modifier of the country in question, to ensure we have the same region as them
+                    has_modifier = western
+	                is_diplomatic_play_target = no
+					is_diplomatic_play_initiator = no
+	                OR = { # We are Siberian or Far Eastern
+	                    has_modifier = siberian
+	                    has_modifier = far_eastern
+	                }
+	                c:DIR = { # The country we are attacking is also Siberian or Far Eastern
+	                    OR = {
+	                        has_modifier = siberian
+	                        has_modifier = far_eastern
+	                    }
+	                }
+	            }
+	            AND = { #Stage 3 (attack neighboring region)
+									  # \/ adjacent region
+					has_modifier = ural
+					OR = {
+						game_date >= 1975.1.1
+						AND = {
+							is_ai = no
+							OR = {
+								has_variable = ru_unite_far_east
+								has_variable = ru_unite_central_sib
+								has_variable = ru_unite_west_sib
+								has_variable = ru_unite_west_russia
+							}
+						}
+					}
+				}
+				AND = { #Stage 4 (No restrictions whatsoever)
+					game_date >= 1980.1.1
+				}
+	        }
+		}
+
+		ai_chance = {
+			base = 10
+			modifier = { # The country is stronger than us
+				trigger = {
+					root.army_power_projection <= c:DIR.army_power_projection
+				}
+				add = -25
+			}
+			modifier = { # We are stronger than the country
+				trigger = {
+					root.army_power_projection >= c:DIR.army_power_projection
+				}
+				add = 15
+			}
+		}
+
+		create_diplomatic_play = {
+			name = theo
+			target_country = c:DIR
+			type = dp_revolution
+			war = no
+			escalation = 75
+		}
+		set_variable = {
+			name = ru_opened_invasion_event
+			value = no
+		} 
+		set_variable = { 
+			name = ru_war_DIR
+			value = yes 
+		} 
+    }
+    option = { #Ural League
+		name = tno_ru_events.1.uralleague
+		trigger = {
+			var:ru_war_XUR == no
+			c:XUR = {
+				exists = yes
+				is_adjacent_to_country = root
+			}
+			OR = {
+				AND = { #Stage 1
+					game_date >= 1966.1.1  # \/ modifier of country to invade
+					has_modifier = western
+
+					is_diplomatic_play_target = no
+					is_diplomatic_play_initiator = no
+				}
+				AND = { #Stage 2 (stage 1 but can attack while at war)
+					game_date >= 1971.1.1  # \/ modifier of country to invade
+					has_modifier = western
+				}
+	            AND = { # Stage 1 Part B
+	                game_date >= 1965.6.1
+	                # \/ that one needs to be the modifier of the country in question, to ensure we have the same region as them
+                    has_modifier = western
+	                is_diplomatic_play_target = no
+					is_diplomatic_play_initiator = no
+	                OR = { # We are Siberian or Far Eastern
+	                    has_modifier = siberian
+	                    has_modifier = far_eastern
+	                }
+	                c:XUR = { # The country we are attacking is also Siberian or Far Eastern
+	                    OR = {
+	                        has_modifier = siberian
+	                        has_modifier = far_eastern
+	                    }
+	                }
+	            }
+	            AND = { #Stage 3 (attack neighboring region)
+									  # \/ adjacent region
+					has_modifier = ural
+					OR = {
+						game_date >= 1975.1.1
+						AND = {
+							is_ai = no
+							OR = {
+								has_variable = ru_unite_far_east
+								has_variable = ru_unite_central_sib
+								has_variable = ru_unite_west_sib
+								has_variable = ru_unite_west_russia
+							}
+						}
+					}
+				}
+				AND = { #Stage 4 (No restrictions whatsoever)
+					game_date >= 1980.1.1
+				}
+	        }
+		}
+
+		ai_chance = {
+			base = 10
+			modifier = { # The country is stronger than us
+				trigger = {
+					root.army_power_projection <= c:XUR.army_power_projection
+				}
+				add = -25
+			}
+			modifier = { # We are stronger than the country
+				trigger = {
+					root.army_power_projection >= c:XUR.army_power_projection
+				}
+				add = 15
+			}
+		}
+
+		create_diplomatic_play = {
+			name = theo
+			target_country = c:XUR
+			type = dp_revolution
+			war = no
+			escalation = 75
+		}
+		set_variable = {
+			name = ru_opened_invasion_event
+			value = no
+		} 
+		set_variable = { 
+			name = ru_war_XUR
+			value = yes 
+		} 
+    }
+    option = { #Orenburg
+		name = tno_ru_events.1.orenburg
+		trigger = {
+			var:ru_war_OEN == no
+			c:OEN = {
+				exists = yes
+				is_adjacent_to_country = root
+			}
+			OR = {
+				AND = { #Stage 1
+					game_date >= 1966.1.1  # \/ modifier of country to invade
+					has_modifier = western
+
+					is_diplomatic_play_target = no
+					is_diplomatic_play_initiator = no
+				}
+				AND = { #Stage 2 (stage 1 but can attack while at war)
+					game_date >= 1971.1.1  # \/ modifier of country to invade
+					has_modifier = western
+				}
+	            AND = { # Stage 1 Part B
+	                game_date >= 1965.6.1
+	                # \/ that one needs to be the modifier of the country in question, to ensure we have the same region as them
+                    has_modifier = western
+	                is_diplomatic_play_target = no
+					is_diplomatic_play_initiator = no
+	                OR = { # We are Siberian or Far Eastern
+	                    has_modifier = siberian
+	                    has_modifier = far_eastern
+	                }
+	                c:OEN = { # The country we are attacking is also Siberian or Far Eastern
+	                    OR = {
+	                        has_modifier = siberian
+	                        has_modifier = far_eastern
+	                    }
+	                }
+	            }
+	            AND = { #Stage 3 (attack neighboring region)
+									  # \/ adjacent region
+					has_modifier = ural
+					OR = {
+						game_date >= 1975.1.1
+						AND = {
+							is_ai = no
+							OR = {
+								has_variable = ru_unite_far_east
+								has_variable = ru_unite_central_sib
+								has_variable = ru_unite_west_sib
+								has_variable = ru_unite_west_russia
+							}
+						}
+					}
+				}
+				AND = { #Stage 4 (No restrictions whatsoever)
+					game_date >= 1980.1.1
+				}
+	        }
+		}
+
+		ai_chance = {
+			base = 10
+			modifier = { # The country is stronger than us
+				trigger = {
+					root.army_power_projection <= c:OEN.army_power_projection
+				}
+				add = -25
+			}
+			modifier = { # We are stronger than the country
+				trigger = {
+					root.army_power_projection >= c:OEN.army_power_projection
+				}
+				add = 15
+			}
+		}
+
+		create_diplomatic_play = {
+			name = theo
+			target_country = c:OEN
+			type = dp_revolution
+			war = no
+			escalation = 75
+		}
+		set_variable = {
+			name = ru_opened_invasion_event
+			value = no
+		} 
+		set_variable = { 
+			name = ru_war_OEN
+			value = yes 
+		} 
+    }
+    option = { #Samara
+		name = tno_ru_events.1.samara
+		trigger = {
+			var:ru_war_SAM == no
+			c:SAM = {
+				exists = yes
+				is_adjacent_to_country = root
+			}
+			OR = {
+				AND = { #Stage 1
+					game_date >= 1966.1.1  # \/ modifier of country to invade
+					has_modifier = western
+
+					is_diplomatic_play_target = no
+					is_diplomatic_play_initiator = no
+				}
+				AND = { #Stage 2 (stage 1 but can attack while at war)
+					game_date >= 1971.1.1  # \/ modifier of country to invade
+					has_modifier = western
+				}
+	            AND = { # Stage 1 Part B
+	                game_date >= 1965.6.1
+	                # \/ that one needs to be the modifier of the country in question, to ensure we have the same region as them
+                    has_modifier = western
+	                is_diplomatic_play_target = no
+					is_diplomatic_play_initiator = no
+	                OR = { # We are Siberian or Far Eastern
+	                    has_modifier = siberian
+	                    has_modifier = far_eastern
+	                }
+	                c:SAM = { # The country we are attacking is also Siberian or Far Eastern
+	                    OR = {
+	                        has_modifier = siberian
+	                        has_modifier = far_eastern
+	                    }
+	                }
+	            }
+	            AND = { #Stage 3 (attack neighboring region)
+									  # \/ adjacent region
+					has_modifier = ural
+					OR = {
+						game_date >= 1975.1.1
+						AND = {
+							is_ai = no
+							OR = {
+								has_variable = ru_unite_far_east
+								has_variable = ru_unite_central_sib
+								has_variable = ru_unite_west_sib
+								has_variable = ru_unite_west_russia
+							}
+						}
+					}
+				}
+				AND = { #Stage 4 (No restrictions whatsoever)
+					game_date >= 1980.1.1
+				}
+	        }
+		}
+
+		ai_chance = {
+			base = 10
+			modifier = { # The country is stronger than us
+				trigger = {
+					root.army_power_projection <= c:SAM.army_power_projection
+				}
+				add = -25
+			}
+			modifier = { # We are stronger than the country
+				trigger = {
+					root.army_power_projection >= c:SAM.army_power_projection
+				}
+				add = 15
+			}
+		}
+
+		create_diplomatic_play = {
+			name = theo
+			target_country = c:SAM
+			type = dp_revolution
+			war = no
+			escalation = 75
+		}
+		set_variable = {
+			name = ru_opened_invasion_event
+			value = no
+		} 
+		set_variable = { 
+			name = ru_war_SAM 
+			value = yes 
+		} 
+    }
+    option = { #Bashkortostan
+		name = tno_ru_events.1.bashkortostan
+		trigger = {
+			var:ru_war_BSH == no
+			c:BSH = {
+				exists = yes
+				is_adjacent_to_country = root
+			}
+			OR = {
+				AND = { #Stage 1
+					game_date >= 1966.1.1  # \/ modifier of country to invade
+					has_modifier = western
+
+					is_diplomatic_play_target = no
+					is_diplomatic_play_initiator = no
+				}
+				AND = { #Stage 2 (stage 1 but can attack while at war)
+					game_date >= 1971.1.1  # \/ modifier of country to invade
+					has_modifier = western
+				}
+	            AND = { # Stage 1 Part B
+	                game_date >= 1965.6.1
+	                # \/ that one needs to be the modifier of the country in question, to ensure we have the same region as them
+                    has_modifier = western
+	                is_diplomatic_play_target = no
+					is_diplomatic_play_initiator = no
+	                OR = { # We are Siberian or Far Eastern
+	                    has_modifier = siberian
+	                    has_modifier = far_eastern
+	                }
+	                c:BSH = { # The country we are attacking is also Siberian or Far Eastern
+	                    OR = {
+	                        has_modifier = siberian
+	                        has_modifier = far_eastern
+	                    }
+	                }
+	            }
+	            AND = { #Stage 3 (attack neighboring region)
+									  # \/ adjacent region
+					has_modifier = ural
+					OR = {
+						game_date >= 1975.1.1
+						AND = {
+							is_ai = no
+							OR = {
+								has_variable = ru_unite_far_east
+								has_variable = ru_unite_central_sib
+								has_variable = ru_unite_west_sib
+								has_variable = ru_unite_west_russia
+							}
+						}
+					}
+				}
+				AND = { #Stage 4 (No restrictions whatsoever)
+					game_date >= 1980.1.1
+				}
+	        }
+		}
+
+		ai_chance = {
+			base = 10
+			modifier = { # The country is stronger than us
+				trigger = {
+					root.army_power_projection <= c:BSH.army_power_projection
+				}
+				add = -25
+			}
+			modifier = { # We are stronger than the country
+				trigger = {
+					root.army_power_projection >= c:BSH.army_power_projection
+				}
+				add = 15
+			}
+		}
+
+		create_diplomatic_play = {
+			name = theo
+			target_country = c:BSH
+			type = dp_revolution
+			war = no
+			escalation = 75
+		}
+		set_variable = {
+			name = ru_opened_invasion_event
+			value = no
+		} 
+		set_variable = { 
+			name = ru_war_BSH
+			value = yes 
+		} 
+    }
+    option = { #Hyperborea
+		name = tno_ru_events.1.hyperborea
+		trigger = {
+			var:ru_war_HYP == no
+			c:HYP = {
+				exists = yes
+				is_adjacent_to_country = root
+			}
+			OR = {
+				AND = { #Stage 1
+					game_date >= 1966.1.1  # \/ modifier of country to invade
+					has_modifier = western
+
+					is_diplomatic_play_target = no
+					is_diplomatic_play_initiator = no
+				}
+				AND = { #Stage 2 (stage 1 but can attack while at war)
+					game_date >= 1971.1.1  # \/ modifier of country to invade
+					has_modifier = western
+				}
+	            AND = { # Stage 1 Part B
+	                game_date >= 1965.6.1
+	                # \/ that one needs to be the modifier of the country in question, to ensure we have the same region as them
+                    has_modifier = western
+	                is_diplomatic_play_target = no
+					is_diplomatic_play_initiator = no
+	                OR = { # We are Siberian or Far Eastern
+	                    has_modifier = siberian
+	                    has_modifier = far_eastern
+	                }
+	                c:HYP = { # The country we are attacking is also Siberian or Far Eastern
+	                    OR = {
+	                        has_modifier = siberian
+	                        has_modifier = far_eastern
+	                    }
+	                }
+	            }
+	            AND = { #Stage 3 (attack neighboring region)
+									  # \/ adjacent region
+					has_modifier = ural
+					OR = {
+						game_date >= 1975.1.1
+						AND = {
+							is_ai = no
+							OR = {
+								has_variable = ru_unite_far_east
+								has_variable = ru_unite_central_sib
+								has_variable = ru_unite_west_sib
+								has_variable = ru_unite_west_russia
+							}
+						}
+					}
+				}
+				AND = { #Stage 4 (No restrictions whatsoever)
+					game_date >= 1980.1.1
+				}
+	        }
+		}
+
+		ai_chance = {
+			base = 10
+			modifier = { # The country is stronger than us
+				trigger = {
+					root.army_power_projection <= c:HYP.army_power_projection
+				}
+				add = -25
+			}
+			modifier = { # We are stronger than the country
+				trigger = {
+					root.army_power_projection >= c:HYP.army_power_projection
+				}
+				add = 15
+			}
+		}
+
+		create_diplomatic_play = {
+			name = theo
+			target_country = c:HYP
+			type = dp_revolution
+			war = no
+			escalation = 75
+		}
+		set_variable = {
+			name = ru_opened_invasion_event
+			value = no
+		} 
+		set_variable = { 
+			name = ru_war_HYP
+			value = yes 
+		} 
+    }
+    option = { #Vyatka
+		name = tno_ru_events.1.vyatka
+		trigger = {
+			var:ru_war_VYA == no
+			c:VYA = {
+				exists = yes
+				is_adjacent_to_country = root
+			}
+			OR = {
+				AND = { #Stage 1
+					game_date >= 1966.1.1  # \/ modifier of country to invade
+					has_modifier = western
+
+					is_diplomatic_play_target = no
+					is_diplomatic_play_initiator = no
+				}
+				AND = { #Stage 2 (stage 1 but can attack while at war)
+					game_date >= 1971.1.1  # \/ modifier of country to invade
+					has_modifier = western
+				}
+	            AND = { # Stage 1 Part B
+	                game_date >= 1965.6.1
+	                # \/ that one needs to be the modifier of the country in question, to ensure we have the same region as them
+                    has_modifier = western
+	                is_diplomatic_play_target = no
+					is_diplomatic_play_initiator = no
+	                OR = { # We are Siberian or Far Eastern
+	                    has_modifier = siberian
+	                    has_modifier = far_eastern
+	                }
+	                c:VYA = { # The country we are attacking is also Siberian or Far Eastern
+	                    OR = {
+	                        has_modifier = siberian
+	                        has_modifier = far_eastern
+	                    }
+	                }
+	            }
+	            AND = { #Stage 3 (attack neighboring region)
+									  # \/ adjacent region
+					has_modifier = ural
+					OR = {
+						game_date >= 1975.1.1
+						AND = {
+							is_ai = no
+							OR = {
+								has_variable = ru_unite_far_east
+								has_variable = ru_unite_central_sib
+								has_variable = ru_unite_west_sib
+								has_variable = ru_unite_west_russia
+							}
+						}
+					}
+				}
+				AND = { #Stage 4 (No restrictions whatsoever)
+					game_date >= 1980.1.1
+				}
+	        }
+		}
+
+		ai_chance = {
+			base = 10
+			modifier = { # The country is stronger than us
+				trigger = {
+					root.army_power_projection <= c:VYA.army_power_projection
+				}
+				add = -25
+			}
+			modifier = { # We are stronger than the country
+				trigger = {
+					root.army_power_projection >= c:VYA.army_power_projection
+				}
+				add = 15
+			}
+		}
+
+		create_diplomatic_play = {
+			name = theo
+			target_country = c:VYA
+			type = dp_revolution
+			war = no
+			escalation = 75
+		}
+		set_variable = {
+			name = ru_opened_invasion_event
+			value = no
+		} 
+		set_variable = { 
+			name = ru_war_VYA
+			value = yes 
+		} 
+    }
+    option = { #Ultravisionary Soviet Federation
+		name = tno_ru_events.1.ultravisionary
+		trigger = {
+			var:ru_war_UVS == no
+			c:UVS = {
+				exists = yes
+				is_adjacent_to_country = root
+			}
+			OR = {
+				AND = { #Stage 1
+					game_date >= 1966.1.1  # \/ modifier of country to invade
+					has_modifier = western
+
+					is_diplomatic_play_target = no
+					is_diplomatic_play_initiator = no
+				}
+				AND = { #Stage 2 (stage 1 but can attack while at war)
+					game_date >= 1971.1.1  # \/ modifier of country to invade
+					has_modifier = western
+				}
+	            AND = { # Stage 1 Part B
+	                game_date >= 1965.6.1
+	                # \/ that one needs to be the modifier of the country in question, to ensure we have the same region as them
+                    has_modifier = western
+	                is_diplomatic_play_target = no
+					is_diplomatic_play_initiator = no
+	                OR = { # We are Siberian or Far Eastern
+	                    has_modifier = siberian
+	                    has_modifier = far_eastern
+	                }
+	                c:UVS = { # The country we are attacking is also Siberian or Far Eastern
+	                    OR = {
+	                        has_modifier = siberian
+	                        has_modifier = far_eastern
+	                    }
+	                }
+	            }
+	            AND = { #Stage 3 (attack neighboring region)
+									  # \/ adjacent region
+					has_modifier = ural
+					OR = {
+						game_date >= 1975.1.1
+						AND = {
+							is_ai = no
+							OR = {
+								has_variable = ru_unite_far_east
+								has_variable = ru_unite_central_sib
+								has_variable = ru_unite_west_sib
+								has_variable = ru_unite_west_russia
+							}
+						}
+					}
+				}
+				AND = { #Stage 4 (No restrictions whatsoever)
+					game_date >= 1980.1.1
+				}
+	        }
+		}
+
+		ai_chance = {
+			base = 10
+			modifier = { # The country is stronger than us
+				trigger = {
+					root.army_power_projection <= c:UVS.army_power_projection
+				}
+				add = -25
+			}
+			modifier = { # We are stronger than the country
+				trigger = {
+					root.army_power_projection >= c:UVS.army_power_projection
+				}
+				add = 15
+			}
+		}
+
+		create_diplomatic_play = {
+			name = theo
+			target_country = c:UVS
+			type = dp_revolution
+			war = no
+			escalation = 75
+		}
+		set_variable = {
+			name = ru_opened_invasion_event
+			value = no
+		} 
+		set_variable = { 
+			name = ru_war_UVS 
+			value = yes 
+		} 
+    }
+    option = { #Gorky
+		name = tno_ru_events.1.gorky
+		trigger = {
+			var:ru_war_GOR == no
+			c:GOR = {
+				exists = yes
+				is_adjacent_to_country = root
+			}
+			OR = {
+				AND = { #Stage 1
+					game_date >= 1966.1.1  # \/ modifier of country to invade
+					has_modifier = western
+
+					is_diplomatic_play_target = no
+					is_diplomatic_play_initiator = no
+				}
+				AND = { #Stage 2 (stage 1 but can attack while at war)
+					game_date >= 1971.1.1  # \/ modifier of country to invade
+					has_modifier = western
+				}
+	            AND = { # Stage 1 Part B
+	                game_date >= 1965.6.1
+	                # \/ that one needs to be the modifier of the country in question, to ensure we have the same region as them
+                    has_modifier = western
+	                is_diplomatic_play_target = no
+					is_diplomatic_play_initiator = no
+	                OR = { # We are Siberian or Far Eastern
+	                    has_modifier = siberian
+	                    has_modifier = far_eastern
+	                }
+	                c:GOR = { # The country we are attacking is also Siberian or Far Eastern
+	                    OR = {
+	                        has_modifier = siberian
+	                        has_modifier = far_eastern
+	                    }
+	                }
+	            }
+	            AND = { #Stage 3 (attack neighboring region)
+									  # \/ adjacent region
+					has_modifier = ural
+					OR = {
+						game_date >= 1975.1.1
+						AND = {
+							is_ai = no
+							OR = {
+								has_variable = ru_unite_far_east
+								has_variable = ru_unite_central_sib
+								has_variable = ru_unite_west_sib
+								has_variable = ru_unite_west_russia
+							}
+						}
+					}
+				}
+				AND = { #Stage 4 (No restrictions whatsoever)
+					game_date >= 1980.1.1
+				}
+	        }
+		}
+
+		ai_chance = {
+			base = 10
+			modifier = { # The country is stronger than us
+				trigger = {
+					root.army_power_projection <= c:GOR.army_power_projection
+				}
+				add = -25
+			}
+			modifier = { # We are stronger than the country
+				trigger = {
+					root.army_power_projection >= c:GOR.army_power_projection
+				}
+				add = 15
+			}
+		}
+
+		create_diplomatic_play = {
+			name = theo
+			target_country = c:GOR
+			type = dp_revolution
+			war = no
+			escalation = 75
+		}
+		set_variable = {
+			name = ru_opened_invasion_event
+			value = no
+		} 
+		set_variable = { 
+			name = ru_war_GOR
+			value = yes 
+		} 
+    }
+    option = { #Vologda
+		name = tno_ru_events.1.vologda
+		trigger = {
+			var:ru_war_VOL == no
+			c:VOL = {
+				exists = yes
+				is_adjacent_to_country = root
+			}
+			OR = {
+				AND = { #Stage 1
+					game_date >= 1966.1.1  # \/ modifier of country to invade
+					has_modifier = western
+
+					is_diplomatic_play_target = no
+					is_diplomatic_play_initiator = no
+				}
+				AND = { #Stage 2 (stage 1 but can attack while at war)
+					game_date >= 1971.1.1  # \/ modifier of country to invade
+					has_modifier = western
+				}
+	            AND = { # Stage 1 Part B
+	                game_date >= 1965.6.1
+	                # \/ that one needs to be the modifier of the country in question, to ensure we have the same region as them
+                    has_modifier = western
+	                is_diplomatic_play_target = no
+					is_diplomatic_play_initiator = no
+	                OR = { # We are Siberian or Far Eastern
+	                    has_modifier = siberian
+	                    has_modifier = far_eastern
+	                }
+	                c:VOL = { # The country we are attacking is also Siberian or Far Eastern
+	                    OR = {
+	                        has_modifier = siberian
+	                        has_modifier = far_eastern
+	                    }
+	                }
+	            }
+	            AND = { #Stage 3 (attack neighboring region)
+									  # \/ adjacent region
+					has_modifier = ural
+					OR = {
+						game_date >= 1975.1.1
+						AND = {
+							is_ai = no
+							OR = {
+								has_variable = ru_unite_far_east
+								has_variable = ru_unite_central_sib
+								has_variable = ru_unite_west_sib
+								has_variable = ru_unite_west_russia
+							}
+						}
+					}
+				}
+				AND = { #Stage 4 (No restrictions whatsoever)
+					game_date >= 1980.1.1
+				}
+	        }
+		}
+
+		ai_chance = {
+			base = 10
+			modifier = { # The country is stronger than us
+				trigger = {
+					root.army_power_projection <= c:VOL.army_power_projection
+				}
+				add = -25
+			}
+			modifier = { # We are stronger than the country
+				trigger = {
+					root.army_power_projection >= c:VOL.army_power_projection
+				}
+				add = 15
+			}
+		}
+
+		create_diplomatic_play = {
+			name = theo
+			target_country = c:VOL
+			type = dp_revolution
+			war = no
+			escalation = 75
+		}
+		set_variable = {
+			name = ru_opened_invasion_event
+			value = no
+		} 
+		set_variable = { 
+			name = ru_war_VOL
+			value = yes 
+		} 
+    }
+    option = { #Holy Russian Empire
+		name = tno_ru_events.1.holyrussianempire
+		trigger = {
+			var:ru_war_HLY == no
+			c:HLY = {
+				exists = yes
+				is_adjacent_to_country = root
+			}
+			OR = {
+				AND = { #Stage 1
+					game_date >= 1966.1.1  # \/ modifier of country to invade
+					has_modifier = western
+
+					is_diplomatic_play_target = no
+					is_diplomatic_play_initiator = no
+				}
+				AND = { #Stage 2 (stage 1 but can attack while at war)
+					game_date >= 1971.1.1  # \/ modifier of country to invade
+					has_modifier = western
+				}
+	            AND = { # Stage 1 Part B
+	                game_date >= 1965.6.1
+	                # \/ that one needs to be the modifier of the country in question, to ensure we have the same region as them
+                    has_modifier = western
+	                is_diplomatic_play_target = no
+					is_diplomatic_play_initiator = no
+	                OR = { # We are Siberian or Far Eastern
+	                    has_modifier = siberian
+	                    has_modifier = far_eastern
+	                }
+	                c:HLY = { # The country we are attacking is also Siberian or Far Eastern
+	                    OR = {
+	                        has_modifier = siberian
+	                        has_modifier = far_eastern
+	                    }
+	                }
+	            }
+	            AND = { #Stage 3 (attack neighboring region)
+									  # \/ adjacent region
+					has_modifier = ural
+					OR = {
+						game_date >= 1975.1.1
+						AND = {
+							is_ai = no
+							OR = {
+								has_variable = ru_unite_far_east
+								has_variable = ru_unite_central_sib
+								has_variable = ru_unite_west_sib
+								has_variable = ru_unite_west_russia
+							}
+						}
+					}
+				}
+				AND = { #Stage 4 (No restrictions whatsoever)
+					game_date >= 1980.1.1
+				}
+	        }
+		}
+
+		ai_chance = {
+			base = 10
+			modifier = { # The country is stronger than us
+				trigger = {
+					root.army_power_projection <= c:HLY.army_power_projection
+				}
+				add = -25
+			}
+			modifier = { # We are stronger than the country
+				trigger = {
+					root.army_power_projection >= c:HLY.army_power_projection
+				}
+				add = 15
+			}
+		}
+
+		create_diplomatic_play = {
+			name = theo
+			target_country = c:HLY
+			type = dp_revolution
+			war = no
+			escalation = 75
+		}
+		set_variable = {
+			name = ru_opened_invasion_event
+			value = no
+		} 
+		set_variable = { 
+			name = ru_war_HLY
+			value = yes 
+		} 
+    }
+    option = { #West Russian Revolutionary Front
+		name = tno_ru_events.1.wrrf
+		trigger = {
+			var:ru_war_WST == no
+			c:WST = {
+				exists = yes
+				is_adjacent_to_country = root
+			}
+			OR = {
+				AND = { #Stage 1
+					game_date >= 1966.1.1  # \/ modifier of country to invade
+					has_modifier = western
+
+					is_diplomatic_play_target = no
+					is_diplomatic_play_initiator = no
+				}
+				AND = { #Stage 2 (stage 1 but can attack while at war)
+					game_date >= 1971.1.1  # \/ modifier of country to invade
+					has_modifier = western
+				}
+	            AND = { # Stage 1 Part B
+	                game_date >= 1965.6.1
+	                # \/ that one needs to be the modifier of the country in question, to ensure we have the same region as them
+                    has_modifier = western
+	                is_diplomatic_play_target = no
+					is_diplomatic_play_initiator = no
+	                OR = { # We are Siberian or Far Eastern
+	                    has_modifier = siberian
+	                    has_modifier = far_eastern
+	                }
+	                c:WST = { # The country we are attacking is also Siberian or Far Eastern
+	                    OR = {
+	                        has_modifier = siberian
+	                        has_modifier = far_eastern
+	                    }
+	                }
+	            }
+	            AND = { #Stage 3 (attack neighboring region)
+									  # \/ adjacent region
+					has_modifier = ural
+					OR = {
+						game_date >= 1975.1.1
+						AND = {
+							is_ai = no
+							OR = {
+								has_variable = ru_unite_far_east
+								has_variable = ru_unite_central_sib
+								has_variable = ru_unite_west_sib
+								has_variable = ru_unite_west_russia
+							}
+						}
+					}
+				}
+				AND = { #Stage 4 (No restrictions whatsoever)
+					game_date >= 1980.1.1
+				}
+	        }
+		}
+
+		ai_chance = {
+			base = 10
+			modifier = { # The country is stronger than us
+				trigger = {
+					root.army_power_projection <= c:WST.army_power_projection
+				}
+				add = -25
+			}
+			modifier = { # We are stronger than the country
+				trigger = {
+					root.army_power_projection >= c:WST.army_power_projection
+				}
+				add = 15
+			}
+		}
+
+		create_diplomatic_play = {
+			name = theo
+			target_country = c:WST
+			type = dp_revolution
+			war = no
+			escalation = 75
+		}
+		set_variable = {
+			name = ru_opened_invasion_event
+			value = no
+		} 
+		set_variable = { 
+			name = ru_war_WST
+			value = yes 
+		} 
+    }
+    option = { #Gayny
+		name = tno_ru_events.1.gayny
+		trigger = {
+			var:ru_war_SGE == no
+			c:SGE = {
+				exists = yes
+				is_adjacent_to_country = root
+			}
+			OR = {
+				AND = { #Stage 1
+					game_date >= 1966.1.1  # \/ modifier of country to invade
+					has_modifier = western
+
+					is_diplomatic_play_target = no
+					is_diplomatic_play_initiator = no
+				}
+				AND = { #Stage 2 (stage 1 but can attack while at war)
+					game_date >= 1971.1.1  # \/ modifier of country to invade
+					has_modifier = western
+				}
+	            AND = { # Stage 1 Part B
+	                game_date >= 1965.6.1
+	                # \/ that one needs to be the modifier of the country in question, to ensure we have the same region as them
+                    has_modifier = western
+	                is_diplomatic_play_target = no
+					is_diplomatic_play_initiator = no
+	                OR = { # We are Siberian or Far Eastern
+	                    has_modifier = siberian
+	                    has_modifier = far_eastern
+	                }
+	                c:SGE = { # The country we are attacking is also Siberian or Far Eastern
+	                    OR = {
+	                        has_modifier = siberian
+	                        has_modifier = far_eastern
+	                    }
+	                }
+	            }
+	            AND = { #Stage 3 (attack neighboring region)
+									  # \/ adjacent region
+					has_modifier = ural
+					OR = {
+						game_date >= 1975.1.1
+						AND = {
+							is_ai = no
+							OR = {
+								has_variable = ru_unite_far_east
+								has_variable = ru_unite_central_sib
+								has_variable = ru_unite_west_sib
+								has_variable = ru_unite_west_russia
+							}
+						}
+					}
+				}
+				AND = { #Stage 4 (No restrictions whatsoever)
+					game_date >= 1980.1.1
+				}
+	        }
+		}
+
+		ai_chance = {
+			base = 10
+			modifier = { # The country is stronger than us
+				trigger = {
+					root.army_power_projection <= c:SGE.army_power_projection
+				}
+				add = -25
+			}
+			modifier = { # We are stronger than the country
+				trigger = {
+					root.army_power_projection >= c:SGE.army_power_projection
+				}
+				add = 15
+			}
+		}
+
+		create_diplomatic_play = {
+			name = theo
+			target_country = c:SGE
+			type = dp_revolution
+			war = no
+			escalation = 75
+		}
+		set_variable = {
+			name = ru_opened_invasion_event
+			value = no
+		} 
+		set_variable = { 
+			name = ru_war_SGE 
+			value = yes 
+		} 
+    }
+    option = { #None
 		name = tno_ru_events.1.1
-		highlighted_option = yes
-		activate_law = law_type:law_interventionism
-		add_modifier = {
-        	name = transition_from_warlordism
-       		months = 6
-    	}
-    }
-    option = { #Agrarianism
-		name = tno_ru_events.1.2
-		highlighted_option = yes
-		activate_law = law_type:law_agrarianism
-		add_modifier = {
-        	name = transition_from_warlordism
-       		months = 6
-    	}
-    }
-    option = { #Laissez-Faire
-		name = tno_ru_events.1.3
-		highlighted_option = yes
-		activate_law = law_type:law_laissez_faire
-		add_modifier = {
-        	name = transition_from_warlordism
-       		months = 6
-    	}
-    }
-    option = { #Cooperative Ownership
-		name = tno_ru_events.1.4
-		highlighted_option = yes
-		activate_law = law_type:law_cooperative_ownership
-		add_modifier = {
-        	name = transition_from_warlordism
-       		months = 6
-    	}
-    }
-    option = { #Command Economy
-		name = tno_ru_events.1.5
-		highlighted_option = yes
 		default_option = yes
-		activate_law = law_type:law_command_economy
-		add_modifier = {
-        	name = transition_from_warlordism
-       		months = 6
-    	}
+		custom_tooltip = tno_ru_reunification_stage_tt
+
+		ai_chance = {
+			base = -100
+		}
+
+		set_variable = {
+			name = ru_opened_invasion_event
+			value = no
+		} 
     }
 }
 

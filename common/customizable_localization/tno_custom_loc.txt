@@ -329,3 +329,184 @@ je_ru_tno_second_west_russian_war_reason = {
 		localization_key = 2wrw_reason
 	}
 }
+
+ru_reunification_stage_1 = {
+	type = country
+	random_valid = no
+	text = {
+		trigger = {
+			OR = {
+				game_date >= 1966.1.1
+				AND = {
+					game_date >= 1964.1.1
+					OR = {
+						has_modifier = siberian
+						has_modifier = far_eastern
+					}
+				}
+			}
+		}
+		localization_key = tt_completed
+	}
+
+	text = {
+		localization_key = tt_uncompleted
+	}
+}
+
+ru_reunification_stage_1_b = {
+	type = country
+	random_valid = no
+	text = {
+		trigger = {
+			game_date >= 1964.1.1
+			OR = {
+				has_modifier = siberian
+				has_modifier = far_eastern
+			}
+		}
+		localization_key = tt_completed
+	}
+
+	text = {
+		localization_key = tt_uncompleted
+	}
+}
+
+ru_reunification_stage_2 = {
+	type = country
+	random_valid = no
+	text = {
+		trigger = {
+			game_date >= 1971.1.1
+		}
+		localization_key = tt_completed
+	}
+
+	text = {
+		localization_key = tt_uncompleted
+	}
+}
+
+ru_reunification_stage_3 = {
+	type = country
+	random_valid = no
+	text = {
+		trigger = {
+			OR = {
+				game_date >= 1975.1.1
+				has_variable = ru_unite_far_east
+				has_variable = ru_unite_central_sib
+				has_variable = ru_unite_west_sib
+				has_variable = ru_unite_west_russia
+			}
+			
+		}
+		localization_key = tt_completed
+	}
+
+	text = {
+		localization_key = tt_uncompleted
+	}
+}
+
+ru_reunification_stage_4 = {
+	type = country
+	random_valid = no
+	text = {
+		trigger = {
+			OR = {
+				game_date >= 1980.1.1
+			}
+			
+		}
+		localization_key = tt_completed
+	}
+
+	text = {
+		localization_key = tt_uncompleted
+	}
+}
+
+ru_has_united_region = {
+	type = country
+	random_valid = no
+	text = {
+		trigger = {
+			OR = {
+				has_variable = ru_unite_far_east
+				has_variable = ru_unite_central_sib
+				has_variable = ru_unite_west_sib
+				has_variable = ru_unite_west_russia
+			}
+		}
+		localization_key = tt_completed
+	}
+
+	text = {
+		localization_key = tt_uncompleted
+	}
+}
+
+ru_is_siberian_far_eastern = {
+	type = country
+	random_valid = no
+	text = {
+		trigger = {
+			OR = {
+				has_modifier = siberian
+				has_modifier = far_eastern
+			}
+		}
+		localization_key = tt_completed
+	}
+
+	text = {
+		localization_key = tt_uncompleted
+	}
+}
+
+greater_than_date_1965_june = {
+	type = country
+	random_valid = no
+	text = {
+		trigger = {
+			game_date >= 1965.6.1
+		}
+		localization_key = tt_completed
+	}
+
+	text = {
+		localization_key = tt_uncompleted
+	}
+}
+
+greater_than_date_1975 = {
+	type = country
+	random_valid = no
+	text = {
+		trigger = {
+			game_date >= 1975.1.1
+		}
+		localization_key = tt_completed
+	}
+
+	text = {
+		localization_key = tt_uncompleted
+	}
+}
+
+greater_than_date_1979 = {
+	type = country
+	random_valid = no
+	text = {
+		trigger = {
+			game_date >= 1979.1.1
+		}
+		localization_key = tt_completed
+	}
+
+	text = {
+		localization_key = tt_uncompleted
+	}
+}
