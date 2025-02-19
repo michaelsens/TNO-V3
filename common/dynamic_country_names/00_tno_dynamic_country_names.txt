@@ -1655,6 +1655,32 @@ OSK = {
 		}
 	}
 }
+
+PAK = { 
+	dynamic_country_name = {
+		name = dyn_c_frontier_province
+		adjective = dyn_c_frontier_province_adj
+		
+		is_main_tag_only = yes
+		priority = 1
+		
+		trigger = {
+		}
+	}
+	dynamic_country_name = {
+		name = dyn_c_pakistan
+		adjective = dyn_c_pakistan_adj
+		
+		is_main_tag_only = yes
+		priority = 1000
+		
+		trigger = {
+			c:PAK = {
+				has_variable = pakistan_formed
+			}
+		}
+	}
+}
 UKP = {
 	dynamic_country_name = {
 		name = "Reichskommissariat Ukraine"

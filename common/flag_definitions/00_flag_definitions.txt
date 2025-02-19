@@ -10113,3 +10113,23 @@ PRS = { # Paris Commune
 		priority = 1
 	}
 }
+
+PAK = { # Pakistan (North-West Frontier Province)
+	flag_definition = { # starting flag
+		coa = PAK
+		priority = 2000
+		trigger = {
+			exists = scope:actor
+		}
+	}
+	flag_definition = { # Formed Far East / Siberia
+		coa = PAK_formed
+		priority = 3000
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_variable = pakistan_formed
+			}
+		}
+	}
+}
