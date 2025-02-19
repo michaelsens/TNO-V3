@@ -1051,45 +1051,61 @@ tno_germany_events.17 = { # German Civil War
     set_relations = { country = c:HUN value = -15 }
     set_relations = { country = c:ROM value = -30 }
 
-     #  remove_diplomatic_pact = {
-     #      country = c:RKU
-     #      type = reichskommissariat
-     #  }
-     #  remove_diplomatic_pact = {
-     #      country = c:RKO
-     #      type = reichskommissariat
-     #  }
 
-     #  c:RKO = { #22-24
-     #  trigger_event = { id = tno_RK_events.1 days = 0 popup = yes }
-     #  } 
+       remove_diplomatic_pact = {
+           country = c:RKU
+           type = reichskommissariat
+       }
+       remove_diplomatic_pact = {
+           country = c:RKO
+           type = reichskommissariat
+       }
+
+       remove_diplomatic_pact = {
+           country = c:KSA
+           type = reichskommissariat
+       }
+
+       remove_diplomatic_pact = {
+           country = c:KON
+           type = reichskommissariat
+       }
+
+       remove_diplomatic_pact = {
+           country = c:KZA
+           type = reichskommissariat
+       }
+
+       c:RKO = { #22-24
+       trigger_event = { id = tno_RK_events.1 days = 0 popup = yes }
+       } 
 
 
-     #  c:RKU = { #22-24
-     #		trigger_event = { id = tno_germany_events.21 days = 0 popup = yes }
-     #	} 
-     #  c:UKP = { #22-24
-     #		trigger_event = { id = tno_germany_events.22 days = 0 popup = yes }
-     #	} 
-     #  c:UKP = { #22-24
-     #		trigger_event = { id = tno_germany_events.23 days = 0 popup = yes }
-     #	} 
-     #  c:UKP = { #24-
-     #		trigger_event = { id = tno_germany_events.24 days = 0 popup = yes }
-     #	} 
-     #  c:UKM = { #24-
-     #		trigger_event = { id = tno_germany_events.27 days = 0 popup = yes }
-     #	}
-     #  c:UKM = { #22-24
-     #		trigger_event = { id = tno_germany_events.25 days = 0 popup = yes }
-     #	} 
-     #  c:UKC = { #IGNORE COMMITS THEY DUMB AND OUTDATED LMAO
-     #		trigger_event = { id = tno_germany_events.26 days = 0 popup = yes }
-     #	}
+       c:RKU = { #22-24
+     		trigger_event = { id = tno_germany_events.21 days = 0 popup = yes }
+     	} 
+       #c:UKP = { #22-24
+     	#	trigger_event = { id = tno_germany_events.22 days = 0 popup = yes }
+     	#} 
+       c:UKP = { #22-24
+     		trigger_event = { id = tno_germany_events.23 days = 0 popup = yes }
+     	} 
+       c:UKP = { #24-
+     		trigger_event = { id = tno_germany_events.24 days = 0 popup = yes }
+     	} 
+       c:UKM = { #24-
+     		trigger_event = { id = tno_germany_events.27 days = 0 popup = yes }
+     	}
+       c:UKM = { #22-24
+     		trigger_event = { id = tno_germany_events.25 days = 0 popup = yes }
+     	} 
+       c:UKC = { #IGNORE COMMITS THEY DUMB AND OUTDATED LMAO
+     		trigger_event = { id = tno_germany_events.26 days = 0 popup = yes }
+     	}
 
-     #  
+       
 
-     #
+     
 
     c:GER = {
      set_immune_to_revolutions = yes
@@ -1948,9 +1964,9 @@ tno_germany_events.19 = {   #German Civil War WIn
         c:GER = {
             annex = c:GAS
             set_immune_to_revolutions = no
-            #add_journal_entry = {type = je_ger_reclaim_ost}
-            #add_journal_entry = {type = je_ger_reclaim_ost_2}
-            #add_journal_entry = {type = je_ger_reclaim_ukc}
+            add_journal_entry = {type = je_ger_reclaim_ost}
+            add_journal_entry = {type = je_ger_reclaim_ost_2}
+            add_journal_entry = {type = je_ger_reclaim_ukc}
             create_character = {
                 # Albert Speer
                 first_name = "albert_speer_first_name"
@@ -1987,9 +2003,9 @@ tno_germany_events.19 = {   #German Civil War WIn
         c:GER = {
             annex = c:GHG
             set_immune_to_revolutions = no
-            #add_journal_entry = {type = je_ger_reclaim_ost}
-            #add_journal_entry = {type = je_ger_reclaim_ost_2}
-            #add_journal_entry = {type = je_ger_reclaim_ukc}
+            add_journal_entry = {type = je_ger_reclaim_ost}
+            add_journal_entry = {type = je_ger_reclaim_ost_2}
+            add_journal_entry = {type = je_ger_reclaim_ukc}
             create_character = {
                 # Hermann Göring
                 first_name = "hermann_goring_first_name"
@@ -2031,9 +2047,9 @@ tno_germany_events.19 = {   #German Civil War WIn
         c:GER = {
             annex = c:GMB
             set_immune_to_revolutions = no
-            #add_journal_entry = {type = je_ger_reclaim_ost}
-            #add_journal_entry = {type = je_ger_reclaim_ost_2}
-            #add_journal_entry = {type = je_ger_reclaim_ukc}
+            add_journal_entry = {type = je_ger_reclaim_ost}
+            add_journal_entry = {type = je_ger_reclaim_ost_2}
+            add_journal_entry = {type = je_ger_reclaim_ukc}
             create_character = {
                 # Martin Bormann
                 first_name = "martin_bormann_first_name"
@@ -2071,9 +2087,9 @@ tno_germany_events.19 = {   #German Civil War WIn
         c:GER = {
             annex = c:GRH
             set_immune_to_revolutions = no
-            #add_journal_entry = {type = je_ger_reclaim_ost}
-            #add_journal_entry = {type = je_ger_reclaim_ost_2}
-            #add_journal_entry = {type = je_ger_reclaim_ukc}
+            add_journal_entry = {type = je_ger_reclaim_ost}
+            add_journal_entry = {type = je_ger_reclaim_ost_2}
+            add_journal_entry = {type = je_ger_reclaim_ukc}
             create_character = {
                 # Reinhard Heydrich
                 first_name = "reinhard_heydrich_first_name"
