@@ -1,0 +1,62 @@
+namespace = tno_ukraine_events
+
+
+tno_ukraine_events.1 = {
+    type = country_event
+    placement = ROOT
+
+    hidden = yes
+
+    duration = 3
+    trigger = {
+    }	
+
+    immediate = {
+        create_country = { #communist ukraine
+            tag = UKC
+            origin = c:WST
+            state = s:STATE_LUHANSK.region_state:RKU
+            state = s:STATE_ROSTOV.region_state:RKU
+
+        } 
+        create_country = { #UPO ukraine
+            tag = UKP
+            origin = c:SAM
+            state = s:STATE_VOLHYNIA.region_state:RKU
+            state = s:STATE_EAST_GALICIA.region_state:GOV
+
+        } 
+        create_country = { # ukraine
+            tag = UKM
+            origin = c:USA
+            state = s:STATE_CHERSON.region_state:RKU
+
+        }
+        c:UKC = {
+            set_immune_to_revolutions = yes
+            add_modifier = { 
+                name = rk_german_colonization
+            }
+        }
+        c:UKP = {
+            set_immune_to_revolutions = yes
+            add_modifier = { 
+                name = rk_german_colonization
+            }
+        }
+        c:UKM = {
+            set_immune_to_revolutions = yes
+            add_modifier = { 
+                name = rk_german_colonization
+            }
+        }
+
+
+        create_diplomatic_play = {
+            name = ukraine_civil.1
+            target_country = c:RKU
+            type = dp_revolution
+            war = yes
+        }
+    }
+}
