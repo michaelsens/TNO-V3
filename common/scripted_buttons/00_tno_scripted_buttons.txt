@@ -4839,3 +4839,70 @@ je_ru_restore_russia = {
 		}
 	}
 }
+
+je_ger_reclaim_afk = {  # Reclaim Africa button
+	name = "je_afk_a" 
+	desc = "je_afk_a_desc"
+
+	visible = { always = yes }
+
+	possible = {
+		hidden_trigger = {
+			NOT = { has_global_variable = already_attacked_afk }
+		}	
+	}
+
+	ai_chance = {
+		base = 100
+	}
+
+	effect = {
+		set_global_variable = already_attacked_afk
+		custom_tooltip = {
+			text = je_ger_reclaim_ost_a.tooltip_effect
+
+			if = {
+				limit = {
+					exists = c:KON
+				}
+				create_diplomatic_play = {
+					type = dp_make_protectorate
+					name = afk_prot
+					target_country = c:KON
+					war = no
+					escalation = 75
+				}
+			}
+
+			if = {
+				limit = {
+					exists = c:KSA
+				}
+				create_diplomatic_play = {
+					type = dp_make_protectorate
+					name = afk_prot
+					target_country = c:KSA
+					war = no
+					escalation = 75
+				}
+			}
+
+			if = {
+				limit = {
+					exists = c:KZA
+				}
+				create_diplomatic_play = {
+					type = dp_make_protectorate
+					name = afk_prot
+					target_country = c:KZA
+					war = no
+					escalation = 75
+				}
+			}
+			
+		}
+		hidden_effect = {
+			change_infamy = -100
+		}
+	}
+}

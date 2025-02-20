@@ -6,6 +6,32 @@
 
 KON = {	
 	dynamic_country_name = {
+        name = "Free Kongo"
+        
+        is_main_tag_only = yes
+        priority = 0
+        
+        trigger = {
+            scope:actor = { has_law = law_type:law_state_religion }
+        }
+    }	
+	dynamic_country_name = {
+		name = "Großafrikanischer Reichsstaat"
+		adjective = "Großafrikanischer Reichsstaat"
+		
+		is_main_tag_only = yes
+		priority = 99999
+		
+		trigger = {
+			scope:actor = {
+				NOT = {
+					exists = c:KSA
+					exists = c:KZA
+				}
+			}
+		}
+	}
+	dynamic_country_name = {
 		name = "East African Interim Unity Government"
 		adjective = "Mandate"
 		
@@ -26,16 +52,6 @@ KON = {
 						type = puppet
 						is_initiator = yes
 					}
-					has_diplomatic_pact = {
-						who = c:KON
-						type = dominion
-						is_initiator = yes
-					}
-					has_diplomatic_pact = {
-						who = c:KON
-						type = ofn_millgov
-						is_initiator = yes
-					}
 				}
 				
 			}
@@ -44,6 +60,22 @@ KON = {
 }
 
 KSA = {
+	dynamic_country_name = {
+		name = "Großafrikanischer Reichsstaat"
+		adjective = "Großafrikanischer Reichsstaat"
+		
+		is_main_tag_only = yes
+		priority = 99999
+		
+		trigger = {
+			scope:actor = {
+				NOT = {
+					exists = c:KSA
+					exists = c:KON
+				}
+			}
+		}
+	}
     dynamic_country_name = {
         name = "Free Angola"
         
@@ -93,6 +125,22 @@ KSA = {
 }
 
 KZA = {
+	dynamic_country_name = {
+		name = "Großafrikanischer Reichsstaat"
+		adjective = "Großafrikanischer Reichsstaat"
+		
+		is_main_tag_only = yes
+		priority = 9999
+		
+		trigger = {
+			scope:actor = {
+				NOT = {
+					exists = c:KSA
+					exists = c:KON
+				}
+			}
+		}
+	}
     dynamic_country_name = {
         name = "Free Angola"
         

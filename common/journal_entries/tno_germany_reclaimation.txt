@@ -1,0 +1,95 @@
+je_ger_reclaim_africa = {
+
+    icon = "gfx/interface/icons/new_event_icons/event_reclaim_2.dds"
+
+    scripted_button = je_ger_reclaim_afk
+
+    group = je_group_internal_affairs
+
+    is_shown_when_inactive = {
+        this = c:GER
+    }
+    immediate = {
+
+		
+	}
+
+    possible = {
+        this = c:GER
+        OR = {
+            AND = {
+                NOT = {
+                    exists = c:KSA
+                    exists = c:KZA
+                }
+                exists = c:KON
+            }
+            AND = {
+                NOT = {
+                    exists = c:KSA
+                    exists = c:KON
+                }
+                exists = c:KZA
+            }
+            AND = {
+                NOT = {
+                    exists = c:KZA
+                    exists = c:KON
+                }
+                exists = c:KSA
+            }
+        }
+    }
+    
+    complete = {
+		OR = {
+            AND = {
+                exists = c:KSA
+                c:KSA = {
+                    is_subject_of = c:GER
+                }
+            }
+            AND = {
+                exists = c:KON
+                c:KON = {
+                    is_subject_of = c:GER
+                }
+            }
+            AND = {
+                exists = c:KZA
+                c:KZA = {
+                    is_subject_of = c:GER
+                }
+            }
+        }
+	}
+
+    on_complete = {
+    	hidden_effect = {
+        }
+      
+    }
+
+    on_monthly_pulse = {
+       
+    }
+
+    current_value = {
+	
+	}
+
+   
+
+    goal_add_value = {
+		value = 24
+	}
+
+   
+    
+    weight = 11
+
+   
+    
+    should_be_pinned_by_default = yes
+    
+}
