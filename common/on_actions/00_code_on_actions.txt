@@ -221,7 +221,7 @@ on_yearly_pulse_country = {
 						trigger_event = { id = government_petition_events.100 }
 					}
 					1 = {
-	
+						
 					}
 				}
 				remove_variable = gov_petition_coin_toss
@@ -233,7 +233,7 @@ on_yearly_pulse_country = {
 						trigger_event = { id = government_petition_events.100 }
 					}
 					9 = {
-	
+						
 					}
 				}
 			}
@@ -343,7 +343,7 @@ on_yearly_pulse_country = {
 		3 = natural_disaster_events.7
 		1 = natural_disaster_events.8
 		
-	
+		
 		# Assassination
 		10 = assassination_events.1
 
@@ -1105,7 +1105,7 @@ on_country_released_as_own_subject = {
 					add_ideology = ideology_buddhist_moralist
 				}
 			}
-		
+			
 			if = {
 				limit = {
 					country_has_state_religion = rel:hindu
@@ -1181,7 +1181,7 @@ on_country_released_as_overlord_subject = {
 					add_ideology = ideology_buddhist_moralist
 				}
 			}
-		
+			
 			if = {
 				limit = {
 					country_has_state_religion = rel:hindu
@@ -1292,10 +1292,10 @@ on_capitulation = {
 			remove_variable = revolutionary_prov_gov_var
 		}
 		set_variable = {
-            name = recently_lost_war
-            days = 1825
-            value = yes
-        } 
+			name = recently_lost_war
+			days = 1825
+			value = yes
+		} 
 	}
 }
 
@@ -2127,18 +2127,18 @@ on_political_movement_supported_law_cancelled = {
 on_wargoal_enforced = {
 	effect = {
 		set_variable = {
-            name = recently_won_war
-            days = 1825
-            value = yes
-        }
-        if = {
-        	limit = {
-        		c:PRC ?= root
-        		NOT = {
-        			exists = c:FRA
-        		}
-        	}
-        	c:PRC = {
+			name = recently_won_war
+			days = 1825
+			value = yes
+		}
+		if = {
+			limit = {
+				c:PRC ?= root
+				NOT = {
+					exists = c:FRA
+				}
+			}
+			c:PRC = {
 				change_tag = FRA
 				every_scope_state = {
 					limit = {
@@ -2148,8 +2148,8 @@ on_wargoal_enforced = {
 					}
 					set_state_type = incorporated
 				}
-        	}
-        }   
+			}
+		}   
 	}	
 }
 
@@ -2288,10 +2288,10 @@ on_war_end = {
 	effect = {
 		scope:actor = {
 			set_variable = {
-		        name = recently_had_war
-		        days = 1825
-		        value = yes
-		    } 
+				name = recently_had_war
+				days = 1825
+				value = yes
+			} 
 		    #set_variable = { #Available to use whenever needed
 		    #	name = most_recent_war_opponent
 		    #	value = scope:target
@@ -2299,10 +2299,10 @@ on_war_end = {
 		}
 		scope:target = {
 			set_variable = {
-		        name = recently_had_war
-		        days = 1825
-		        value = yes
-		    }
+				name = recently_had_war
+				days = 1825
+				value = yes
+			}
 		    #set_variable = { 
 		    #	name = most_recent_war_opponent
 		    #	value = scope:actor
