@@ -123,38 +123,37 @@
         }
 
         if = {   #African liberation
-        limit = {
-            exists = c:KSA
-            c:USA = {
-                OR = {
-                    has_diplomatic_pact = {
-                        who = c:KSA
-                        type = protectorate
-                        is_initiator = yes
+            limit = {
+                exists = c:KSA
+                c:USA = {
+                    OR = {
+                        has_diplomatic_pact = {
+                            who = c:KSA
+                            type = protectorate
+                            is_initiator = yes
+                        }
+                        has_diplomatic_pact = {
+                            who = c:KSA
+                            type = puppet
+                            is_initiator = yes
+                        }
+                        has_diplomatic_pact = {
+                            who = c:KSA
+                            type = dominion
+                            is_initiator = yes
+                        }
                     }
-                    has_diplomatic_pact = {
-                        who = c:KSA
-                        type = puppet
-                        is_initiator = yes
-                    }
-                    has_diplomatic_pact = {
-                        who = c:KSA
-                        type = dominion
-                        is_initiator = yes
-                    }
+                    
                 }
-                
+                NOT = { has_variable = liberate_ksa_var }
             }
-            NOT = { has_variable = liberate_ksa_var }
+            set_variable = liberate_ksa_var
+            c:USA = {
+                trigger_event = { id = tno_usa_events.34 popup = yes }
+                trigger_event = { id = tno_usa_events.36 popup = yes }
+            
+            }
         }
-        set_variable = liberate_ksa_var
-        c:USA = {
-            trigger_event = { id = tno_usa_events.34 popup = yes }
-            trigger_event = { id = tno_usa_events.36 popup = yes }
-           
-        }
-       
-    }
 
         if = {   #African liberation
         limit = {
@@ -293,37 +292,34 @@
         }
 
         if = {   # German Hungary
-        limit = {
-            exists = c:HUN
-            c:GER = {
-                OR = {
-                    has_diplomatic_pact = {
-                        who = c:HUN
-                        type = protectorate
-                        is_initiator = yes
+            limit = {
+                exists = c:HUN
+                c:GER = {
+                    OR = {
+                        has_diplomatic_pact = {
+                            who = c:HUN
+                            type = protectorate
+                            is_initiator = yes
+                        }
+                        has_diplomatic_pact = {
+                            who = c:HUN
+                            type = dominion
+                            is_initiator = yes
+                        }
+                        has_diplomatic_pact = {
+                            who = c:HUN
+                            type = puppet
+                            is_initiator = yes
+                        }
                     }
-                    has_diplomatic_pact = {
-                        who = c:HUN
-                        type = dominion
-                        is_initiator = yes
-                    }
-                    has_diplomatic_pact = {
-                        who = c:HUN
-                        type = puppet
-                        is_initiator = yes
-                    }
+                    
                 }
-                
+                NOT = { has_global_variable = germany_hungary }
             }
-            NOT = { has_global_variable = germany_hungary }
-        }
-        set_global_variable = germany_hungary
-        c:GER = {   
-            trigger_event = { id = tno_dynamic_puppets.3 popup = yes }
-            
-           
-        }
-       
+            set_global_variable = germany_hungary
+            c:GER = {   
+                trigger_event = { id = tno_dynamic_puppets.3 popup = yes }
+            }
         }
 
         if = {   # German slovakia
@@ -447,6 +443,84 @@
            
         }
        
+        }
+
+        if = {   # German Kon
+            limit = {
+                exists = c:KON
+                c:GER = {
+                    OR = {
+                        has_diplomatic_pact = {
+                            who = c:KON
+                            type = protectorate
+                            is_initiator = yes
+                        }
+                        has_diplomatic_pact = {
+                            who = c:KON
+                            type = puppet
+                            is_initiator = yes
+                        }
+                    }
+                    
+                }
+                NOT = { has_global_variable = germany_kon }
+            }
+            set_global_variable = germany_kon
+            c:GER = {   
+                trigger_event = { id = tno_dynamic_puppets.12 }
+            }
+        }
+
+        if = {   # German KSA
+            limit = {
+                exists = c:KSA
+                c:GER = {
+                    OR = {
+                        has_diplomatic_pact = {
+                            who = c:KSA
+                            type = protectorate
+                            is_initiator = yes
+                        }
+                        has_diplomatic_pact = {
+                            who = c:KSA
+                            type = puppet
+                            is_initiator = yes
+                        }
+                    }
+                    
+                }
+                NOT = { has_global_variable = germany_ksa }
+            }
+            set_global_variable = germany_ksa
+            c:GER = {   
+                trigger_event = { id = tno_dynamic_puppets.13 }
+            }
+        }
+
+        if = {   # German KZA
+            limit = {
+                exists = c:KZA
+                c:GER = {
+                    OR = {
+                        has_diplomatic_pact = {
+                            who = c:KZA
+                            type = protectorate
+                            is_initiator = yes
+                        }
+                        has_diplomatic_pact = {
+                            who = c:KZA
+                            type = puppet
+                            is_initiator = yes
+                        }
+                    }
+                    
+                }
+                NOT = { has_global_variable = germany_kza }
+            }
+            set_global_variable = germany_kza
+            c:GER = {   
+                trigger_event = { id = tno_dynamic_puppets.14 }
+            }
         }
 
        
@@ -897,19 +971,30 @@
                 remove_modifier = slave_of_the_samurai
             }
         }
-        
-    }
-    
-    
-    #Oil Crisis Random Events
-    
-    random_events = {
-        10 = 0
-        1 = tno_oil_crisis.10
-        1 = tno_oil_crisis.11
-        1 = tno_oil_crisis.12
-    }
 
+        #Mittelafrika unification wars
+
+        if = {
+            limit = {
+                this = c:KZA
+                exists = c:KSA
+                exists = c:KZA
+                exists = c:KON
+                NOT = {
+                    is_subject = c:KSA
+                    is_subject = c:KZA
+                    is_subject = c:KON
+                }     
+                c:KSA = { is_at_war = no }
+                c:KZA = { is_at_war = no }
+                c:KON = { is_at_war = no }
+            }
+            c:KZA = {
+                trigger_event = { id = tno_war_events.11 }
+            }
+        }
+
+    }
 }  
 
 on_wargoal_enforced = {

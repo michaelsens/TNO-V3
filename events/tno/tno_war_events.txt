@@ -16,7 +16,7 @@ tno_war_events.1 = {
             target_country = c:SAF
                 type = dp_conquer_state
                 war = no
-                escalation = 40
+                escalation = 75
                 add_initiator_backers = { c:KZA c:KSA c:GER }
                 add_target_backers = { c:USA  }
                 add_war_goal = {
@@ -391,6 +391,38 @@ tno_war_events.9 = {   #COL Civil war start
             hidden_effect = {
 				change_infamy = -999
 		    }
+        }
+    }
+}
+
+tno_war_events.11 = {
+    type = country_event
+    placement = ROOT
+
+    hidden = yes
+
+    immediate = {
+        c:KON = {
+            create_diplomatic_play = {
+                type = dp_revolution
+                name = afk
+                target_country = c:KSA
+                war = yes
+            }
+            create_diplomatic_play = {
+                type = dp_revolution
+                name = afk
+                target_country = c:KZA
+                war = yes
+            }
+        }
+        c:KSA = {
+            create_diplomatic_play = {
+                type = dp_revolution
+                name = afk
+                target_country = c:KZA
+                war = yes
+            }
         }
     }
 }
