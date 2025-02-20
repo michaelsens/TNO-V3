@@ -1,0 +1,230 @@
+﻿namespace = tno_RepIndia
+namespace = tno_azadhind
+
+tno_RepIndia.1 = { # Set all leaders invincible
+    type = country_event
+	placement = root
+	title = tno_RepIndia.1.t
+	desc = tno_RepIndia.1.d
+	flavor = tno_RepIndia.1.f
+	icon = "gfx/interface/icons/goods_icons/small_arms.dds"
+
+	duration = 5
+	hidden = yes
+
+	immediate = {
+		every_scope_character = {
+	        if = {
+	        	limit = {
+	        		has_variable = is_jawaharlal_nehru
+	        	}
+	        	save_scope_as = is_jawaharlal_nehru
+	        }
+   		}
+	    scope:is_jawaharlal_nehru = {
+	        set_character_immortal = yes
+	    }
+		every_scope_character = {
+	        if = {
+	        	limit = {
+	        		has_variable = is_v_k_krishna_menon
+	        	}
+	        	save_scope_as = is_v_k_krishna_menon
+	        }
+   		}
+	    scope:is_v_k_krishna_menon = {
+	        set_character_immortal = yes
+	    }
+    }
+    
+    trigger = {
+	}
+
+	event_image = {
+        texture = "gfx/interface/icons/goods_icons/automobiles.dds"
+    }
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    option = {
+		name = tno_RepIndia.1.1
+		default_option = yes
+    }
+}
+
+tno_RepIndia.2 = { # Death of Jawaharial Nehru
+    type = country_event
+	placement = root
+	title = tno_RepIndia.2.t
+	desc = tno_RepIndia.2.d
+	flavor = tno_RepIndia.2.f
+	icon = "gfx/interface/icons/generic_icons/unused/culture_icon.dds"
+
+
+	duration = 5
+
+	immediate = {
+		every_scope_character = {
+	        if = {
+	        	limit = {
+	        		has_variable = is_v_k_krishna_menon
+	        	}
+	        	save_scope_as = is_v_k_krishna_menon
+	        }
+   		}
+		every_scope_character = {
+	        if = {
+	        	limit = {
+	        		has_variable = is_jawaharlal_nehru
+	        	}
+	        	save_scope_as = is_jawaharlal_nehru
+	        }
+   		}
+   		c:BHT = {
+   			save_scope_as = bht_nation_scope
+   		}
+    }
+    
+    trigger = {
+	}
+
+	event_image = {
+        texture = "gfx/event_pictures/event_pictures/jawaharlal_nehru_death.dds"
+    }
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    option = {
+		name = tno_RepIndia.2.1
+		default_option = yes
+
+		hidden_effect = {
+			scope:is_v_k_krishna_menon = {
+		        set_character_as_ruler = yes
+		    }
+		    trigger_event = { id = tno_RepIndia.3 days = 40 popup = yes }
+		}
+		custom_tooltip = {
+			text = tno_RepIndia.2.1.tt.1
+			scope:is_jawaharlal_nehru = {
+		        kill_character = yes
+		    }
+		}
+		custom_tooltip = tno_RepIndia.2.1.tt.2
+    }
+}
+
+tno_RepIndia.3 = { # Announcement of the Lucknow Conference
+    type = country_event
+	placement = s:STATE_AGRA.region_state:BHT
+	title = tno_RepIndia.3.t
+	desc = tno_RepIndia.3.d
+	flavor = tno_RepIndia.3.f
+	icon = "gfx/interface/icons/generic_icons/unused/culture_icon.dds"
+
+	duration = 5
+
+	immediate = {
+		every_scope_character = {
+	        if = {
+	        	limit = {
+	        		has_variable = is_v_k_krishna_menon
+	        	}
+	        	save_scope_as = is_v_k_krishna_menon
+	        }
+   		}
+   		c:BHT = {
+   			save_scope_as = bht_nation_scope
+   		}
+   		c:BGL = {
+   			save_scope_as = bgl_nation_scope
+		    trigger_event = { id = tno_azadhind.2 popup = yes }
+   		}
+    }
+    
+    trigger = {
+	}
+
+	event_image = {
+        texture = "gfx/event_pictures/event_pictures/lucknow_conference_announcement.dds"
+    }
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    option = {
+		name = tno_RepIndia.3.1
+		default_option = yes
+		custom_tooltip = tno_RepIndia.3.1.tt.1
+		add_journal_entry = { type = je_Sphere_lucknow_conference }
+    }
+}
+
+
+
+
+tno_azadhind.1 = { # Impending Kolkata economic crash
+    type = country_event
+	placement = root
+	title = tno_azadhind.1.t
+	desc = tno_azadhind.1.d
+	flavor = tno_azadhind.1.f
+	icon = "gfx/interface/icons/famine_icons/mild_starvation.dds"
+
+	duration = 5
+
+	immediate = {
+	    c:BHT = {
+	    	save_scope_as = bht_nation_scope
+	    }
+    }
+    
+    trigger = {
+	}
+
+	event_image = {
+        texture = "gfx/event_pictures/event_pictures/kolkata_1966.dds"
+    }
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    option = {
+		name = tno_azadhind.1.1
+		default_option = yes
+
+		custom_tooltip = tno_azadhind.1.1.tt.1
+    }
+}
+
+tno_azadhind.2 = { # Attending the Lucknow Conference
+    type = country_event
+	placement = s:STATE_AGRA.region_state:BHT
+	title = tno_azadhind.2.t
+	desc = tno_azadhind.2.d
+	flavor = tno_azadhind.2.f
+	icon = "gfx/interface/icons/generic_icons/unused/culture_icon.dds"
+
+	duration = 5
+
+	immediate = {
+	    c:BHT = {
+	    	save_scope_as = bht_nation_scope
+	    }
+    }
+    
+    trigger = {
+	}
+
+	event_image = {
+        texture = "gfx/event_pictures/event_pictures/luncheon.dds"
+    }
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    option = {
+		name = tno_azadhind.2.1
+		default_option = yes
+
+		custom_tooltip = tno_azadhind.2.1.tt.1
+		add_journal_entry = { type = je_Sphere_lucknow_conference }
+    }
+}
