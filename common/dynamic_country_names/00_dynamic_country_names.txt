@@ -3011,45 +3011,6 @@ PRK = {
 	}
 }
 
-FPR = { 
-	dynamic_country_name = {
-		name = "Frontier Provinces"
-		adjective = "Afghan"
-		
-		is_main_tag_only = yes
-		priority = 1
-		
-		trigger = {
-			exists = c:AFG
-			c:AFG = {
-				OR = {
-					has_diplomatic_pact = {
-						who = c:FPR
-						type = protectorate
-						is_initiator = yes
-					}
-					has_diplomatic_pact = {
-						who = c:FPR
-						type = puppet
-						is_initiator = yes
-					}
-					has_diplomatic_pact = {
-						who = c:FPR
-						type = millgov
-						is_initiator = yes
-					}
-					has_diplomatic_pact = {
-						who = c:FPR
-						type = dominion
-						is_initiator = yes
-					}
-				}
-				
-			}
-		}
-	}
-}
-
 USA = { # United States of America
 	dynamic_country_name = {
 		name = dyn_c_united_states

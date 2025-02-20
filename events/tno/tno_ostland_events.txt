@@ -1,0 +1,166 @@
+namespace = tno_ostland_events
+
+tno_ostland_events.1 = {
+    type = country_event
+    placement = ROOT
+    hidden = yes
+    duration  = 3
+    trigger ={
+    }
+    immediate = {
+        create_country = { #SS Main District of Ostland
+            tag  = LLL
+            origin = c:BRG
+            state = s:STATE_TALINN.region_state:RKO
+            state = s:STATE_PSKOV.region_state:RKO
+        }
+        create_country = { #Generalbezirk Lettland
+            tag  = GMG
+            origin = c:OSK
+            state = s:STATE_COURLAND.region_state:RKO
+            state = s:STATE_KAUNAS.region_state:RKO
+        }
+        create_country = { #United Partisan Organization
+            tag  = UPO
+            origin = c:OSK
+            state = s:STATE_VILNIUS.region_state:RKO
+            state = s:STATE_TAURIDA.region_state:RKO
+        }
+        create_country = { #Vereinigte Ostlandliga
+            tag  = RKS
+            origin = c:OSK
+            state = s:STATE_RIGA.region_state:RKO
+            state = s:STATE_VITEBSK.region_state:RKO
+        }
+      c:LLL = {
+        create_diplomatic_play = {
+            name = ostland_civil.1
+            target_country = c:RKS
+            type = dp_revolution
+            war = yes
+        }
+            create_diplomatic_play = {
+            name = ostland_civil.1
+            target_country = c:UPO
+            type = dp_revolution
+            war = yes
+        }
+            create_diplomatic_play = {
+            name = ostland_civil.1
+            target_country = c:RKO
+            type = dp_revolution
+            war = yes
+        }
+            create_diplomatic_play = {
+            name = ostland_civil.1
+            target_country = c:UKM
+            type = dp_revolution
+            war = yes
+        }
+      }
+       c:RKO = {
+        create_diplomatic_play = {
+            name = ostland_civil.1
+            target_country = c:RKS
+            type = dp_revolution
+            war = yes
+        }
+            create_diplomatic_play = {
+            name = ostland_civil.1
+            target_country = c:UPO
+            type = dp_revolution
+            war = yes
+        }
+            create_diplomatic_play = {
+            name = ostland_civil.1
+            target_country = c:LLL
+            type = dp_revolution
+            war = yes
+        }
+            create_diplomatic_play = {
+            name = ostland_civil.1
+            target_country = c:UKM
+            type = dp_revolution
+            war = yes
+        }
+       }
+      c:RKS = {
+        create_diplomatic_play = {
+            name = ostland_civil.1
+            target_country = c:LLL
+            type = dp_revolution
+            war = yes
+        }
+            create_diplomatic_play = {
+            name = ostland_civil.1
+            target_country = c:UPO
+            type = dp_revolution
+            war = yes
+        }
+            create_diplomatic_play = {
+            name = ostland_civil.1
+            target_country = c:RKO
+            type = dp_revolution
+            war = yes
+        }
+            create_diplomatic_play = {
+            name = ostland_civil.1
+            target_country = c:UKM
+            type = dp_revolution
+            war = yes
+        }
+      }
+    c:UPO = {
+        create_diplomatic_play = {
+            name = ostland_civil.1
+            target_country = c:RKS
+            type = dp_revolution
+            war = yes
+        }
+            create_diplomatic_play = {
+            name = ostland_civil.1
+            target_country = c:LLL
+            type = dp_revolution
+            war = yes
+        }
+            create_diplomatic_play = {
+            name = ostland_civil.1
+            target_country = c:RKO
+            type = dp_revolution
+            war = yes
+        }
+            create_diplomatic_play = {
+            name = ostland_civil.1
+            target_country = c:UKM
+            type = dp_revolution
+            war = yes
+        }
+     c:UKM = {
+        create_diplomatic_play = {
+            name = ostland_civil.1
+            target_country = c:RKS
+            type = dp_revolution
+            war = yes
+        }
+            create_diplomatic_play = {
+            name = ostland_civil.1
+            target_country = c:UPO
+            type = dp_revolution
+            war = yes
+        }
+            create_diplomatic_play = {
+            name = ostland_civil.1
+            target_country = c:RKO
+            type = dp_revolution
+            war = yes
+        }
+            create_diplomatic_play = {
+            name = ostland_civil.1
+            target_country = c:LLL
+            type = dp_revolution
+            war = yes
+        }
+}
+}
+}
+}

@@ -1,0 +1,200 @@
+﻿namespace = tno_Pakistan
+
+tno_Pakistan.0 = { # Set all leaders invincible
+    type = country_event
+	placement = root
+	title = tno_Pakistan.0.t
+	desc = tno_Pakistan.0.d
+	flavor = tno_Pakistan.0.f
+	icon = "gfx/interface/icons/goods_icons/small_arms.dds"
+
+	duration = 5
+
+	immediate = {
+		every_scope_character = {
+	        if = {
+	        	limit = {
+	        		has_variable = is_n_s_khan
+	        	}
+	        	save_scope_as = n_s_khan
+	        }
+   		}
+	    scope:n_s_khan = {
+	        set_character_immortal = yes
+	    }
+	    every_scope_character = {
+	        if = {
+	        	limit = {
+	        		has_variable = is_a_q_khan
+	        	}
+	        	save_scope_as = a_q_khan
+	        }
+   		}
+	    scope:a_q_khan = {
+	        set_character_immortal = yes
+	    }
+    }
+    
+    trigger = {
+	}
+
+	event_image = {
+        texture = "gfx/interface/icons/goods_icons/automobiles.dds"
+    }
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    option = {
+		name = tno_Pakistan.0.1
+		default_option = yes
+    }
+}
+
+tno_Pakistan.1 = { # Pakistan movement coup
+    type = country_event
+	placement = root
+	title = tno_Pakistan.1.t
+	desc = tno_Pakistan.1.d
+	flavor = tno_Pakistan.1.f
+	icon = "gfx/interface/icons/goods_icons/small_arms.dds"
+
+	duration = 5
+
+	immediate = {
+		add_modifier = PAK_home_of_the_pakistan_movement
+		ig:ig_landowners = {
+			add_ruling_interest_group = yes
+		}
+		activate_law = law_type:law_presidential_republic
+		activate_law = law_type:law_autocracy
+		remove_diplomatic_pact = {
+			country = c:AFG
+			type = millgov
+		}
+		every_scope_character = {
+	        if = {
+	        	limit = {
+	        		has_variable = is_a_q_khan
+	        	}
+	        	save_scope_as = a_q_khan
+	        }
+   		}
+	    scope:a_q_khan = {
+	        set_character_as_ruler = yes
+	    }
+    }
+    
+    trigger = {
+	}
+
+	event_image = {
+        texture = "gfx/interface/icons/goods_icons/automobiles.dds"
+    }
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    option = {
+		name = tno_Pakistan.1.1
+		default_option = yes
+    }
+}
+
+tno_Pakistan.2 = { # Annex Balochistan
+    type = country_event
+	placement = root
+	title = tno_Pakistan.2.t
+	desc = tno_Pakistan.2.d
+	flavor = tno_Pakistan.2.f
+	icon = "gfx/interface/icons/goods_icons/small_arms.dds"
+
+	duration = 5
+
+	immediate = {
+		annex = c:KAL
+		annex = c:BLH
+    }
+    
+    trigger = {
+	}
+
+	event_image = {
+        texture = "gfx/interface/icons/goods_icons/automobiles.dds"
+    }
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    option = {
+		name = tno_Pakistan.2.1
+		default_option = yes
+    }
+}
+
+tno_Pakistan.3 = { # Invasion of India (Operation Bin Qasim)
+    type = country_event
+	placement = root
+	title = tno_Pakistan.3.t
+	desc = tno_Pakistan.3.d
+	flavor = tno_Pakistan.3.f
+	icon = "gfx/interface/icons/goods_icons/small_arms.dds"
+
+	duration = 5
+
+	immediate = {
+		c:PAK = {
+			set_variable = pakistan_formed
+		}
+		s:STATE_SINDH = {
+			add_claim = c:PAK
+		}
+		s:STATE_PUNJAB = {
+			add_claim = c:PAK
+		}
+		s:STATE_KASHMIR = {
+			add_claim = c:PAK
+		}
+		create_diplomatic_play = {
+			name = bin_qasim
+			target_country = c:BHT
+			type = dp_nat_reclaim
+			war = no
+			escalation = 60
+
+			#target_state = moscow_state_scope
+			add_target_backers = {}
+			add_war_goal = {
+				holder = c:PAK
+				type = return_state
+				target_state = s:STATE_PUNJAB.region_state:BHT
+			}
+			add_war_goal = {
+				holder = c:PAK
+				type = return_state
+				target_state = s:STATE_KASHMIR.region_state:BHT
+			}
+			add_war_goal = {
+				holder = c:PAK
+				type = return_state
+				target_state = s:STATE_SINDH.region_state:BHT
+			}
+			add_war_goal = {
+				holder = c:BHT
+				type = annex_country
+				target_country = c:PAK
+			}
+		}
+    }
+    
+    trigger = {
+	}
+
+	event_image = {
+        texture = "gfx/interface/icons/goods_icons/automobiles.dds"
+    }
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    option = {
+		name = tno_Pakistan.3.1
+		default_option = yes
+    }
+}
