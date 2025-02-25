@@ -3,11 +3,14 @@
     icon = "gfx/interface/icons/tno_event_icons/usa_buy_supplies.dds"
     group = je_group_historical_content
 
-    scripted_button = je_ru_nuke_begin
+    scripted_progress_bar = tno_lucknow_tension_progress_bar
+    scripted_button = je_Sphere_lucknow_tension_reduce_instant
+    scripted_button = je_Sphere_lucknow_tension_reduce_momentum
 
     immediate = {
-        c:RUS = {
-            save_scope_as = rus_nation_scope
+        set_variable = {
+            name = instant_reduce_count
+            value = 0
         }
     }
     

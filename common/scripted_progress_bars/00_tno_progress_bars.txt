@@ -1,0 +1,34 @@
+﻿tno_lucknow_tension_progress_bar = {
+        name = "tno_lucknow_tension_progress_bar"
+        desc = "tno_lucknow_tension_progress_bar_desc" #This will be printed on the left side of the progress bar
+       second_desc = "tno_lucknow_tension_progress_bar_desc" #This will be printed on the right side of the progress bar
+    
+        is_inverted = no #Will treat negative progress as positive meaning that the object is to keep this progress down
+
+        start_value = 50
+        min_value = 0
+        max_value = 100
+        
+        default_bad = yes
+    
+        weekly_progress = {
+            add = {
+                desc = "PROGRESS_BAR_ADD_WEEKLY_DESC2"
+                value = 30
+            }
+        }
+        monthly_progress = {
+            add = {
+                desc = "PROGRESS_BAR_ADD_MONTHLY_DESC1"
+                if = {
+                    limit = {
+                        influence < 100
+                    }
+                    value = 3
+                } 
+            }
+        }
+        yearly_progress = {
+        }
+     }
+
