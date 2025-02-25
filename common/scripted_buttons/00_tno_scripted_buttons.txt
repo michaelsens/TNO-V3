@@ -4906,3 +4906,48 @@ je_ger_reclaim_afk = {  # Reclaim Africa button
 		}
 	}
 }
+
+je_Sphere_lucknow_tension_reduce_instant = {  # Reduce small amount of Tension instantly
+	name = "je_Sphere_lucknow_tension_reduce_instant" 
+	desc = "je_Sphere_lucknow_tension_reduce_instant_desc"
+
+	possible = {
+		custom_tooltip = {
+			text = je_Sphere_lucknow_tension_reduce_instant_counter_text
+			var:instant_reduce_count < 7
+		}
+		
+	}
+
+	ai_chance = {
+		base = 100
+	}
+
+	effect = {
+		change_variable = {
+			name = instant_reduce_count
+			add = 1
+		}
+	}
+}
+
+je_Sphere_lucknow_tension_reduce_momentum = {  # Reduce small amount of Tension instantly
+	name = "je_Sphere_lucknow_tension_reduce_instant" 
+	desc = "je_Sphere_lucknow_tension_reduce_instant_desc"
+
+	possible = {
+		
+	}
+
+	ai_chance = {
+		base = 100
+	}
+
+	effect = {
+		custom_tooltip = {
+			text = je_ger_reclaim_ost_a.tooltip_effect
+
+		}
+			
+	}
+}

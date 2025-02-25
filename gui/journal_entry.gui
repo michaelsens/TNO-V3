@@ -178,7 +178,37 @@ types journal_entry_panel_types
 
 							margin = { 15 15 }
 						}
-						
+
+					}
+				}
+				flowcontainer = {
+					parentanchor = hcenter
+					direction = vertical
+					datamodel = "[JournalEntry.GetScriptedProgressBars]"
+					using = default_list_position
+
+					spacing = 55
+
+					spacer = {
+						size = { 0 10 }
+					}
+
+					dynamicgridbox = {
+						parentanchor = hcenter
+						visible = "[Not( IsDataModelEmpty( JournalEntry.GetScriptedButtons ) )]"
+						datamodel = "[JournalEntry.GetScriptedButtons]"
+						datamodel_wrap = 2
+						flipdirection = yes
+
+						item = {
+							widget = {
+								size = { 245 60 }
+
+								scripted_tension_button = {
+									parentanchor = center
+								}
+							}
+						}
 					}
 				}
 			}
@@ -840,6 +870,39 @@ types journal_entry_panel_types
 		enabled = "[IsValid( ScriptedButton.ExecuteEffect )]"
 		onclick = "[Execute( ScriptedButton.ExecuteEffect )]"
 		size = { 250 50 }
+		margin = { 20 20 }
+
+		widget = {
+			visible = "[ScriptedButton.IsSelected]"
+			size = { 100% 100% }
+
+			background = {
+				using = paper_bg
+			}
+		}
+
+		textbox = {
+			parentanchor = center
+			align = nobaseline
+			autoresize = yes
+			max_width = 230
+			elide = right
+			fontsize_min = 14
+			text = "[ScriptedButton.GetName]"
+		}
+
+		icon = {
+			visible = "[ScriptedButton.IsSelected]"
+			using = highlighted_square_selection
+		}
+	}
+
+	type scripted_tension_button = button {
+		using = default_button_action
+		tooltip = "SCRIPTED_ACTION_TOOLTIP"
+		enabled = "[IsValid( ScriptedButton.ExecuteEffect )]"
+		onclick = "[Execute( ScriptedButton.ExecuteEffect )]"
+		size = { 230 50 }
 		margin = { 20 20 }
 
 		widget = {
