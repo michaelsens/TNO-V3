@@ -58,27 +58,22 @@ types journal_entry_panel_types
 					datacontext = "[JournalEntryPanel.AccessJournalEntry]"
 					direction = vertical
 					using = default_list_position
-					spacing = 105
+					spacing = 50
 
-					widget  = {
-						#size = { @panel_width_plus_20 120 }
-						
-						parentanchor = left
-
-						widget = {
-							#parentanchor = hcenter
-							icon = {
-								parentanchor = hcenter
-								
-								size = { @panel_width_minus_30 110 }
-								texture = "gfx/journal_entries/journal_entry_images/je_image_India_lucknow_conference.png"
-							}
-						}
-
-					}
+					#widget  = {
+					#	parentanchor = left
+					#	widget = {
+					#		icon = {
+					#			parentanchor = hcenter
+					#			size = { @panel_width_minus_30 110 }
+					#			texture = "gfx/journal_entries/journal_entry_images/je_image_India_lucknow_conference.png"
+					#		}
+					#	}
+					#}
 					widget = {
-						#parentanchor = right
+						parentanchor = bottom
 						textbox = {
+							position = { 0 60 }
 							autoresize = yes
 							text = "cgui_lucknow_reason"
 							min_width = @panel_width_minus_30 
@@ -97,8 +92,98 @@ types journal_entry_panel_types
 							}
 						}
 					}
+					widget  = {
+						parentanchor = top
+
+						widget = {
+							icon = {
+								position = { 0 -40 }
+								parentanchor = hcenter
+								size = { @panel_width_minus_30 110 }
+								texture = "gfx/journal_entries/journal_entry_images/je_image_India_lucknow_conference.png"
+							}
+						}
+					}
+				}
+
+				flowcontainer = {
+					parentanchor = hcenter
+					direction = vertical
+					datamodel = "[JournalEntry.GetScriptedProgressBars]"
+					using = default_list_position
+
+					spacing = 30
+
+					spacer = {
+						size = { 0 220 }
+					}
+
+					item = {
+						container = {
+							# Default Bad
+							bad_progressbar_horizontal = {
+								visible = "[ScriptedProgressBar.IsDefaultBad]"
+								block "progressbar_size" {
+									size = { 475 30 }
+								}
+								tooltip = "[ScriptedProgressBar.GetPeriodicProgressBreakdown]"
+								blockoverride "values" {
+									value = "[JournalEntry.GetCurrentBarProgress(ScriptedProgressBar.Self)]"
+									min = 0
+									max = 1
+								}
+								textbox = {
+									text = "[ScriptedProgressBar.GetDesc]"
+									autoresize = yes
+									align = nobaseline
+									margin_left = 10
+									parentanchor = vcenter
+								}
+							}
+						}
+					}
+					widget = {
+						parentanchor = hcenter
+						textbox = {
+							position = { 0 19 }
+							autoresize = yes
+							text = "cgui_lucknow_tension_hack" #bunch of spaces to create illusion of extra space for background
+							min_width = @panel_width_minus_30 
+							max_width = @panel_width_minus_30
+
+							multiline = yes
+							using = default_list_position
+
+							align = nobaseline
+							default_format = "#lore"
+
+							margin = { 15 55 }
+
+							background = {
+								using = entry_bg
+							}
+						}
+						textbox = {
+							position = { 0 55 }
+							autoresize = yes
+							text = "cgui_lucknow_tension_desc"
+							min_width = @panel_width_minus_30 
+							max_width = @panel_width_minus_30
+
+							multiline = yes
+							using = default_list_position
+
+							align = nobaseline
+							default_format = "#lore"
+
+							margin = { 15 15 }
+						}
+						
+					}
 				}
 			}
+
+
 
 			flowcontainer = {
 				datacontext = "[JournalEntryPanel.AccessJournalEntry]"
