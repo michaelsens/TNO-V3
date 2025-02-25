@@ -4906,3 +4906,191 @@ je_ger_reclaim_afk = {  # Reclaim Africa button
 		}
 	}
 }
+
+je_ger_reclaim_ukr = {  # Reclaim Ukraine button
+	name = "je_ukr_a" 
+	desc = "je_ukr_a_desc"
+
+	visible = { always = yes }
+
+	possible = {
+		hidden_trigger = {
+			NOT = { has_global_variable = already_attacked_ukr }
+		}	
+	}
+
+	ai_chance = {
+		base = 100
+	}
+
+	effect = {
+		set_global_variable = already_attacked_ukr
+		custom_tooltip = {
+			text = je_ger_reclaim_ost_a.tooltip_effect
+
+			if = {
+				limit = {
+					exists = c:UKC
+				}
+				create_diplomatic_play = {
+					type = dp_make_protectorate
+					name = afk_prot
+					target_country = c:UKC
+					war = no
+					escalation = 75
+				}
+			}
+
+			if = {
+				limit = {
+					exists = c:UKM
+				}
+				create_diplomatic_play = {
+					type = dp_make_protectorate
+					name = afk_prot
+					target_country = c:UKM
+					war = no
+					escalation = 75
+				}
+			}
+
+			if = {
+				limit = {
+					exists = c:UKP
+				}
+				create_diplomatic_play = {
+					type = dp_make_protectorate
+					name = afk_prot
+					target_country = c:UKP
+					war = no
+					escalation = 75
+				}
+			}
+			
+		}
+		hidden_effect = {
+			change_infamy = -100
+		}
+	}
+}
+
+je_ger_reclaim_ost = {  # Reclaim Ostland button
+	name = "je_ost_a" 
+	desc = "je_ost_a_desc"
+
+	visible = { always = yes }
+
+	possible = {
+		hidden_trigger = {
+			NOT = { has_global_variable = already_attacked_ost }
+		}	
+	}
+
+	ai_chance = {
+		base = 100
+	}
+
+	effect = {
+		set_global_variable = already_attacked_ost
+		custom_tooltip = {
+			text = je_ger_reclaim_ost_a.tooltip_effect
+
+			if = {
+				limit = {
+					exists = c:LLL
+				}
+				create_diplomatic_play = {
+					type = dp_make_protectorate
+					name = afk_prot
+					target_country = c:LLL
+					war = no
+					escalation = 75
+				}
+			}
+
+			if = {
+				limit = {
+					exists = c:GMG
+				}
+				create_diplomatic_play = {
+					type = dp_make_protectorate
+					name = afk_prot
+					target_country = c:GMG
+					war = no
+					escalation = 75
+				}
+			}
+
+			if = {
+				limit = {
+					exists = c:UPO
+				}
+				create_diplomatic_play = {
+					type = dp_make_protectorate
+					name = afk_prot
+					target_country = c:UPO
+					war = no
+					escalation = 75
+				}
+			}
+
+			if = {
+				limit = {
+					exists = c:RKS
+				}
+				create_diplomatic_play = {
+					type = dp_make_protectorate
+					name = afk_prot
+					target_country = c:RKS
+					war = no
+					escalation = 75
+				}
+			}
+			
+		}
+		hidden_effect = {
+			change_infamy = -100
+		}
+	}
+}
+
+je_ger_reclaim_pol = {  # Reclaim Poland button
+	name = "je_pol_a" 
+	desc = "je_pol_a_desc"
+
+	visible = { always = yes }
+
+	possible = {
+		hidden_trigger = {
+			NOT = { has_global_variable = already_attacked_pol }
+		}	
+	}
+
+	ai_chance = {
+		base = 100
+	}
+
+	effect = {
+		set_global_variable = already_attacked_pol
+		custom_tooltip = {
+			text = je_ger_reclaim_ost_a.tooltip_effect
+
+			if = {
+				limit = {
+					exists = c:POL
+				}
+				create_diplomatic_play = {
+					type = dp_make_protectorate
+					name = pol_prot
+					target_country = c:POL
+					war = no
+					escalation = 75
+				}
+			}
+			
+		}
+		hidden_effect = {
+			change_infamy = -100
+		}
+	}
+}

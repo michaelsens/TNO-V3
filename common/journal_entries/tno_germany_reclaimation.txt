@@ -93,3 +93,307 @@ je_ger_reclaim_africa = {
     should_be_pinned_by_default = yes
     
 }
+
+je_ger_reclaim_ukraine = {
+
+    icon = "gfx/interface/icons/new_event_icons/event_reclaim_3.dds"
+
+    scripted_button = je_ger_reclaim_ukr
+
+    group = je_group_internal_affairs
+
+    is_shown_when_inactive = {
+        this = c:GER
+    }
+    immediate = {
+
+		
+	}
+
+    possible = {
+        this = c:GER
+        OR = {
+            AND = {
+                NOT = {
+                    exists = c:RKU
+                    exists = c:UKP
+                    exists = c:UKM
+                }
+                exists = c:UKC
+            }
+            AND = {
+                NOT = {
+                    exists = c:RKU
+                    exists = c:UKP
+                    exists = c:UKC
+                }
+                exists = c:UKM
+            }
+            AND = {
+                NOT = {
+                    exists = c:RKU
+                    exists = c:UKC
+                    exists = c:UKM
+                }
+                exists = c:UKP
+            }
+        }
+    }
+    
+    complete = {
+		OR = {
+            AND = {
+                exists = c:UKC
+                c:UKC = {
+                    is_subject_of = c:GER
+                }
+            }
+            AND = {
+                exists = c:UKM
+                c:UKM = {
+                    is_subject_of = c:GER
+                }
+            }
+            AND = {
+                exists = c:UKP
+                c:UKP = {
+                    is_subject_of = c:GER
+                }
+            }
+            AND = {
+                exists = c:RKU
+                c:RKU = {
+                    is_subject_of = c:GER
+                }
+            }
+        }
+	}
+
+    on_complete = {
+    	hidden_effect = {
+        }
+      
+    }
+
+    on_monthly_pulse = {
+       
+    }
+
+    current_value = {
+	
+	}
+
+   
+
+    goal_add_value = {
+		value = 24
+	}
+
+   
+    
+    weight = 11
+
+   
+    
+    should_be_pinned_by_default = yes
+    
+}
+
+je_ger_reclaim_ostland = {
+
+    icon = "gfx/interface/icons/new_event_icons/event_reclaim_2.dds"
+
+    scripted_button = je_ger_reclaim_ost
+
+    group = je_group_internal_affairs
+
+    is_shown_when_inactive = {
+        this = c:GER
+    }
+    immediate = {
+
+		
+	}
+
+    possible = {
+        this = c:GER
+        OR = {
+            AND = {
+                NOT = {
+                    exists = c:RKO
+                    exists = c:LLL
+                    exists = c:GMG
+                    exists = c:UPO
+                }
+                exists = c:RKS
+            }
+            AND = {
+                NOT = {
+                    exists = c:RKO
+                    exists = c:RKS
+                    exists = c:GMG
+                    exists = c:UPO
+                }
+                exists = c:LLL
+            }
+            AND = {
+                NOT = {
+                    exists = c:RKO
+                    exists = c:RKS
+                    exists = c:LLL
+                    exists = c:UPO
+                }
+                exists = c:GMG
+            }
+            AND = {
+                NOT = {
+                    exists = c:RKO
+                    exists = c:RKS
+                    exists = c:LLL
+                    exists = c:GMG
+                }
+                exists = c:UPO
+            }
+        }
+    }
+    
+    complete = {
+		OR = {
+            AND = {
+                exists = c:RKS
+                c:RKS = {
+                    is_subject_of = c:GER
+                }
+            }
+            AND = {
+                exists = c:LLL
+                c:LLL = {
+                    is_subject_of = c:GER
+                }
+            }
+            AND = {
+                exists = c:GMG
+                c:GMG = {
+                    is_subject_of = c:GER
+                }
+            }
+            AND = {
+                exists = c:UPO
+                c:UPO = {
+                    is_subject_of = c:GER
+                }
+            }
+            AND = {
+                exists = c:RKO
+                c:RKO = {
+                    is_subject_of = c:GER
+                }
+            }
+        }
+	}
+
+    on_complete = {
+    	hidden_effect = {
+        }
+      
+    }
+
+    on_monthly_pulse = {
+       
+    }
+
+    current_value = {
+	
+	}
+
+   
+
+    goal_add_value = {
+		value = 24
+	}
+
+   
+    
+    weight = 11
+
+   
+    
+    should_be_pinned_by_default = yes
+    
+}
+
+
+je_ger_reclaim_poland = {
+
+    icon = "gfx/interface/icons/new_event_icons/event_reclaim_3.dds"
+
+    scripted_button = je_ger_reclaim_pol
+
+    group = je_group_internal_affairs
+
+    is_shown_when_inactive = {
+        this = c:GER
+    }
+    immediate = {
+
+		
+	}
+
+    possible = {
+        this = c:GER
+        OR = {
+            AND = {
+                NOT = {
+                    exists = c:GOV
+                }
+                exists = c:POL
+            }
+        }
+    }
+    
+    complete = {
+		OR = {
+            AND = {
+                exists = c:POL
+                c:POL = {
+                    is_subject_of = c:GER
+                }
+            }
+            AND = {
+                exists = c:GOV
+                c:GOV = {
+                    is_subject_of = c:GER
+                }
+            }
+        }
+	}
+
+    on_complete = {
+    	hidden_effect = {
+        }
+      
+    }
+
+    on_monthly_pulse = {
+       
+    }
+
+    current_value = {
+	
+	}
+
+   
+
+    goal_add_value = {
+		value = 24
+	}
+
+   
+    
+    weight = 11
+
+   
+    
+    should_be_pinned_by_default = yes
+    
+}
