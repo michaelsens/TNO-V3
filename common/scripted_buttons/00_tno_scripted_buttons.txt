@@ -5139,3 +5139,88 @@ je_ger_reclaim_pol = {  # Reclaim Poland button
 		}
 	}
 }
+
+je_bgd_land_grab = {
+	name = "je_bgd_grab_a" 
+	desc = "je_bgd_grab_a_desc"
+
+	visible = { always = yes }
+
+	possible = {
+		hidden_trigger = {
+			NOT = { has_global_variable = already_attacked_fra_grab }
+		}	
+	}
+
+	ai_chance = {
+		base = 100
+	}
+
+	effect = {
+		set_global_variable = already_attacked_fra_grab
+		custom_tooltip = {
+			text = je_ger_reclaim_ost_a.tooltip_effect
+
+			if = {
+				limit = {
+					exists = c:FRA
+				}
+				create_diplomatic_play = {
+					type = dp_conquer_state
+					name = bgd_land_grab
+					target_country = c:FRA
+					war = yes
+					add_war_goal = {
+						holder = c:BGD
+						type = conquer_state
+						target_state = s:STATE_PICARDY.region_state:FRA
+					}
+					add_war_goal = {
+						holder = c:BGD
+						type = conquer_state
+						target_state = s:STATE_CHAMPAGNE.region_state:FRA
+					}
+					add_war_goal = {
+						holder = c:BGD
+						type = conquer_state
+						target_state = s:STATE_BURGUNDY.region_state:FRA
+					}
+					add_war_goal = {
+						holder = c:BGD
+						type = conquer_state
+						target_state = s:STATE_RHONE.region_state:FRA
+					}
+					add_war_goal = {
+						holder = c:FRA
+						type = return_state
+						target_state = s:STATE_FRANCHE_COMTE.region_state:BGD
+					}
+					add_war_goal = {
+						holder = c:FRA
+						type = return_state
+						target_state = s:STATE_LORRAINE.region_state:BGD
+					}
+					add_war_goal = {
+						holder = c:FRA
+						type = return_state
+						target_state = s:STATE_CHAMPAGNE.region_state:BGD
+					}
+					add_war_goal = {
+						holder = c:FRA
+						type = return_state
+						target_state = s:STATE_PICARDY.region_state:BGD
+					}
+					add_war_goal = {
+						holder = c:FRA
+						type = return_state
+						target_state = s:STATE_FRENCH_LOW_COUNTRIES.region_state:BGD
+					}
+				}
+			}
+			
+		}
+		hidden_effect = {
+			change_infamy = 50
+		}
+	}
+}

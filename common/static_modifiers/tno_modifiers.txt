@@ -331,7 +331,7 @@ national_humiliation = {
 	country_soldiers_pol_str_mult = -0.2
 	country_legitimacy_base_add = -5
 	country_opposition_ig_approval_add = -3
-	state_radicals_from_sol_change_mult = 0.20
+	state_radicals_and_loyalists_from_sol_change_mult = 0.20
 	state_standard_of_living_add = -2
 }
 
@@ -789,10 +789,9 @@ sphere_overreliance = {
 fading_fascism = {
 	icon = gfx/interface/icons/tno_modifier_icons/faded_fac.dds
 	country_opposition_ig_approval_add = 1
-	state_radicals_from_sol_change_mult = 0.05
+	state_radicals_and_loyalists_from_sol_change_mult = 0.05
 	interest_group_ig_landowners_pop_attraction_mult = -0.25
 	political_movement_radicalism_from_enactment_disapproval_mult = 0.25
-	state_radicals_from_sol_change_mult = 0.25
 }
 
 masters_of_the_med = {
@@ -830,7 +829,7 @@ shadow_state = {
 	icon = gfx/interface/icons/tno_modifier_icons/shadow_state.dds
 	country_authority_mult = 0.2
 	country_legitimacy_base_add = 40
-	state_radicals_from_sol_change_mult = -0.5
+	state_radicals_and_loyalists_from_sol_change_mult = -0.5
 	country_aristocrats_pol_str_mult = 0.9
 	country_academics_pol_str_mult = -0.9
 	country_laborers_pol_str_mult = -0.9
@@ -858,6 +857,7 @@ shadow_economy = {
 	tax_per_capita_add = 0.75
 	building_group_bg_construction_laborers_mortality_mult = 0.2
 	building_minimum_wage_mult = -0.35
+	country_government_dividends_efficiency_add = 0.1
 }
 
 armed_against_democracy = {
@@ -866,6 +866,7 @@ armed_against_democracy = {
 	country_war_exhaustion_casualties_mult = -0.9
 	country_military_wages_mult = -0.25
 	country_diplomatic_play_maneuvers_add = 60
+	country_military_goods_cost_mult = -0.35
 }
 shattered_union = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_negative.dds
@@ -973,7 +974,7 @@ sony = {
 	country_loan_interest_rate_mult = -0.5
 	state_pop_qualifications_mult = 0.15
 	state_education_access_wealth_add = 0.010
-	state_radicals_from_sol_change_mult = 0.15
+	state_radicals_and_loyalists_from_sol_change_mult = 0.15
 	state_loyalists_from_sol_change_mult = 0.15
 	state_expected_sol_mult = 0.2
 }
@@ -1240,7 +1241,7 @@ slave_of_the_samurai = {
 	country_authority_mult = -0.25
 	country_prestige_mult = -0.15
 	country_legitimacy_base_add = -20
-	state_radicals_from_sol_change_mult = -0.2
+	state_radicals_and_loyalists_from_sol_change_mult = -0.2
 	political_movement_radicalism_from_enactment_disapproval_mult = -0.2
 	political_movement_support_mult = -0.2
 }
@@ -1253,7 +1254,18 @@ french_irredentism = {
 
 treaty_of_vichy = {
 	icon = gfx/interface/icons/tno_modifier_icons/fra_vitch.dds
-	country_military_goods_cost_mult = 0.5
+	country_military_goods_cost_mult = 0.6
+	country_prestige_from_army_power_projection_mult = -0.5
+	country_prestige_from_navy_power_projection_mult = -0.5
+	state_conscription_rate_mult = -0.8
+	unit_army_offense_mult = -0.35
+	unit_army_defense_mult = -0.35
+	unit_morale_loss_mult = 0.35
+}
+
+armed_forces_in_disarray = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
+	country_military_goods_cost_mult = 0.3
 	country_prestige_from_army_power_projection_mult = -0.5
 	country_prestige_from_navy_power_projection_mult = -0.5
 	state_conscription_rate_mult = -0.5
@@ -1262,7 +1274,7 @@ treaty_of_vichy = {
 	unit_morale_loss_mult = 0.15
 }
 
-armed_forces_in_disarray = {
+armed_forces_reorganization = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
 	country_military_goods_cost_mult = 0.1
 	country_prestige_from_army_power_projection_mult = -0.15
@@ -1273,25 +1285,21 @@ armed_forces_in_disarray = {
 	unit_morale_loss_mult = 0.05
 }
 
-armed_forces_reorganization = {
-	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
-	unit_army_offense_mult = 0.05
-	unit_army_defense_mult = 0.05
-	unit_morale_loss_mult = -0.05
-}
-
 professional_armed_forces = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
-	unit_army_offense_mult = 0.15
-	unit_army_defense_mult = 0.15
-	country_military_goods_cost_mult = -0.1
+	unit_army_offense_mult = 0.1
+	unit_army_defense_mult = 0.1
+	unit_morale_loss_mult = -0.05
+	country_military_goods_cost_mult = -0.05
 }
 
 economic_meltdown = {
 	icon = gfx/interface/icons/tno_modifier_icons/eco_melt.dds
 	state_construction_mult = -0.15
-	building_production_mult = -0.1
-	country_trade_route_cost_mult =0.05
+	building_group_bg_manufacturing_throughput_add = -0.15
+	country_trade_route_cost_mult = 0.25
+	state_tax_waste_add = 0.25
+	state_capitalists_investment_pool_efficiency_mult = -0.20
 }
 
 modifier_usa_newengland = {
@@ -1326,22 +1334,26 @@ modifier_usa_crushsouth = {
 
 economic_stagnation = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
-	state_construction_mult = 0.025
-	building_production_mult = 0.025
+	state_construction_mult = -0.05
+	building_group_bg_manufacturing_throughput_add = -0.05
+	country_trade_route_cost_mult = 0.1
+	state_tax_waste_add = 0.1
+	state_capitalists_investment_pool_efficiency_mult = -0.1
 }
 
 economic_upturn = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
-	state_construction_mult = 0.1
-	building_production_mult = 0.1
+	state_construction_mult = 0.05
+	building_group_bg_manufacturing_throughput_add = 0.05
+	state_capitalists_investment_pool_efficiency_mult = 0.05
 }
 
 les_annees_noires = {
 	icon = gfx/interface/icons/tno_modifier_icons/fra_blah.dds
-	state_radicals_from_discrimination_mult = 0.2
-	state_radicals_from_sol_change_mult = 0.2
+	state_radicals_and_loyalists_from_sol_change_mult = 0.2
 	state_tax_waste_add = 0.05
 	country_authority_mult = -0.1
+	country_legitimacy_base_add = -15
 }
 
 reformed_oas = {
@@ -1397,7 +1409,7 @@ birthplace_of_fascism = {
 	interest_group_ig_landowners_pop_attraction_mult = 1.25
 	country_aristocrats_pol_str_mult = 1.25
 	political_movement_radicalism_from_enactment_disapproval_mult = -0.5
-	state_radicals_from_sol_change_mult = -0.5
+	state_radicals_and_loyalists_from_sol_change_mult = -0.5
 	country_opposition_ig_approval_add = -3
 	interest_group_in_government_attraction_mult = 0.33
 }
@@ -1456,7 +1468,7 @@ ineffective_union = {
 	country_bureaucracy_mult = -0.1
 	country_authority_mult = -0.1
 	political_movement_radicalism_from_enactment_disapproval_mult = 0.2
-	state_radicals_from_sol_change_mult = 0.05
+	state_radicals_and_loyalists_from_sol_change_mult = 0.05
 }
 
 revived_union = {
@@ -1602,7 +1614,7 @@ farouks_hedonism = {
 
 arab_socalist_union = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_negative.dds
-	state_radicals_from_sol_change_mult	= 0.1
+	state_radicals_and_loyalists_from_sol_change_mult	= 0.1
 	interest_group_ig_trade_unions_pop_attraction_mult = 0.15
 	state_conscription_rate_mult = -0.3
 }
@@ -1633,7 +1645,7 @@ destroyed_infrastructure = {
 
 oil_crisis_global = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
-	state_radicals_from_sol_change_mult = 0.2
+	state_radicals_and_loyalists_from_sol_change_mult = 0.2
 	country_legitimacy_base_add = -15
 	building_throughput_add = -0.1
 	state_middle_standard_of_living_add	= -2
@@ -1642,7 +1654,7 @@ oil_crisis_global = {
 
 oil_crisis_ger = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
-	state_radicals_from_sol_change_mult = 0.2
+	state_radicals_and_loyalists_from_sol_change_mult = 0.2
 	country_legitimacy_base_add = -15
 	country_authority_add = -200
 	building_throughput_add = -0.15
@@ -1653,7 +1665,7 @@ oil_crisis_ger = {
 oil_crisis_jap = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
 	country_authority_add = -100
-	state_radicals_from_sol_change_mult = 0.2
+	state_radicals_and_loyalists_from_sol_change_mult = 0.2
 	country_legitimacy_base_add = -20
 	building_throughput_add = -0.15
 	state_middle_standard_of_living_add	= -2
@@ -1662,7 +1674,7 @@ oil_crisis_jap = {
 
 oil_crisis_usa = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
-	state_radicals_from_sol_change_mult = 0.15
+	state_radicals_and_loyalists_from_sol_change_mult = 0.15
 	country_legitimacy_base_add = -10
 	state_middle_standard_of_living_add	= -1
 	state_lower_strata_standard_of_living_add = -1
@@ -1698,7 +1710,7 @@ ran_out_of_oil = {
 	country_prestige_mult = -0.3
 	unit_offense_mult = -0.4
 	unit_defense_mult = -0.4
-	state_radicals_from_sol_change_mult = 0.4
+	state_radicals_and_loyalists_from_sol_change_mult = 0.4
 	state_construction_mult = -0.75
 	building_throughput_add = -0.35
 	state_middle_standard_of_living_add	= -3
@@ -1924,7 +1936,7 @@ level_five_partisan = {
 tno_ru_irk_buff_playable = {
 	icon = "gfx/interface/icons/invention_icons/stormtroopers.dds"
 	#hidden_effect = {
-	#	state_radicals_from_sol_change_mult = -1
+	#	state_radicals_and_loyalists_from_sol_change_mult = -1
 	#	state_expected_sol_mult = -50
 	#	state_expected_sol_from_literacy = -1
 	#}
@@ -1940,7 +1952,7 @@ rk_german_colonization = {
 
 the_salons = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_positive.dds
-	state_radicals_from_sol_change_mult = -0.3
+	state_radicals_and_loyalists_from_sol_change_mult = -0.3
 	state_radicals_from_discrimination_mult = -0.2
 	country_weekly_innovation_mult = 0.10
 	country_weekly_innovation_max_add = 10
@@ -1960,7 +1972,7 @@ defence_of_the_republic = {
 disportionate_population = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_Negative.dds
 	state_birth_rate_mult = 0.10
-	state_radicals_from_sol_change_mult = 0.05
+	state_radicals_and_loyalists_from_sol_change_mult = 0.05
 }
 
 the_siberian_army = {
@@ -1975,4 +1987,12 @@ legacy_of_The_siberian_plan = {
 	state_pop_qualifications_mult = 0.1
 	state_construction_mult = 0.10
 	building_group_bg_heavy_industry_throughput_add = 0.05
+}
+
+remove_fra_man = {
+	country_diplomatic_play_maneuvers_add = -100
+}
+
+remove_bgd_man = {
+	country_diplomatic_play_maneuvers_add = -120
 }
