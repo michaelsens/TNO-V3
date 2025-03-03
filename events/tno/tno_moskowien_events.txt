@@ -1,0 +1,265 @@
+namespace = tno_moskowien_events
+
+tno_moskowien_events.1 = {
+    type = country_event
+    placement = ROOT
+    hidden = yes
+    duration  = 3
+    trigger ={
+    }
+    immediate = {
+        create_country = { #Pleskau
+            tag  = PLE
+            origin = c:OSK
+            state = s:STATE_PSKOV.region_state:RKM
+        }
+        create_country = { #Red Star United Army
+            tag  = RSU
+            origin = c:OSK
+            state = s:STATE_NOVGOROD.region_state:RKM
+        }
+        create_country = { #MUSCOVY
+            tag  = MUS
+            origin = c:OSK
+            state = s:STATE_MOSCOW.region_state:RKM
+            state = s:STATE_YAROSLAVL.region_state:RKM
+            state = s:STATE_RYAZAN.region_state:RKM
+        }
+        create_country = { #SMOLENSK
+            tag  = SMO
+            origin = c:OSK
+             state = s:STATE_SMOLENSK.region_state:RKM
+             state = s:STATE_MOGILEV.region_state:RKM
+        }
+        create_country = { #ORYOl
+            tag  = ORY
+            origin = c:OSK
+             state = s:STATE_ORYOL.region_state:RKM
+             state = s:STATE_CHERNIHIV.region_state:RKM
+        }
+        create_country = { #VORONEZH
+            tag  = VRN
+            origin = c:OSK
+             state = s:STATE_KURSK.region_state:RKM
+             state = s:STATE_ROSTOV.region_state:RKM
+        }
+        create_country = { #WOLGASTAT
+            tag  = WOL
+            origin = c:OSK
+             state = s:STATE_SAMARA.region_state:RKM
+             state = s:STATE_ASTRAKHAN.region_state:RKM
+        }
+        create_country = { #PENZA
+            tag  = PEN
+            origin = c:OSK
+             state = s:STATE_TARTARIA.region_state:RKM
+             state = s:STATE_TAMBOV.region_state:RKM
+        }
+            c:PLE = {
+        create_diplomatic_play = {
+            name = moskowien_civil.1
+            target_country = c:RKM
+            type = dp_revolution
+            war = yes
+        }
+        create_diplomatic_play = {
+            name = moskowien_civil.1
+            target_country = c:SMO
+            type = dp_revolution
+            war = yes
+        }
+            create_diplomatic_play = {
+            name = moskowien_civil.1
+            target_country = c:ORY
+            type = dp_revolution
+            war = yes
+        }
+            create_diplomatic_play = {
+            name = moskowien_civil.1
+            target_country = c:VRN
+            type = dp_revolution
+            war = yes
+        }
+            create_diplomatic_play = {
+            name = moskowien_civil.1
+            target_country = c:PEN
+            type = dp_revolution
+            war = yes
+        }
+            create_diplomatic_play = {
+            name = moskowien_civil.1
+            target_country = c:WOL
+            type = dp_revolution
+            war = yes
+        
+        }
+            create_diplomatic_play = {
+            name = moskowien_civil.1
+            target_country = c:MUS
+            type = dp_revolution
+            war = yes
+        
+        }
+            create_diplomatic_play = {
+            name = moskowien_civil.1
+            target_country = c:RSU
+            type = dp_revolution
+            war = yes
+        
+        }
+         c:RKM = {
+            create_diplomatic_play = {
+            name = moskowien_civil.1
+            target_country = c:ORY
+            type = dp_revolution
+            war = yes
+        }
+            create_diplomatic_play = {
+            name = moskowien_civil.1
+            target_country = c:VRN
+            type = dp_revolution
+            war = yes
+        }
+            create_diplomatic_play = {
+            name = moskowien_civil.1
+            target_country = c:PEN
+            type = dp_revolution
+            war = yes
+        }
+            create_diplomatic_play = {
+            name = moskowien_civil.1
+            target_country = c:WOL
+            type = dp_revolution
+            war = yes
+        
+        }
+            create_diplomatic_play = {
+            name = moskowien_civil.1
+            target_country = c:MUS
+            type = dp_revolution
+            war = yes
+        
+        }
+            create_diplomatic_play = {
+            name = moskowien_civil.1
+            target_country = c:RSU
+            type = dp_revolution
+            war = yes
+        
+        }
+      }
+               c:ORY = {
+            create_diplomatic_play = {
+            name = moskowien_civil.1
+            target_country = c:VRN
+            type = dp_revolution
+            war = yes
+        }
+            create_diplomatic_play = {
+            name = moskowien_civil.1
+            target_country = c:PEN
+            type = dp_revolution
+            war = yes
+        }
+            create_diplomatic_play = {
+            name = moskowien_civil.1
+            target_country = c:WOL
+            type = dp_revolution
+            war = yes
+        
+        }
+            create_diplomatic_play = {
+            name = moskowien_civil.1
+            target_country = c:MUS
+            type = dp_revolution
+            war = yes
+        
+        }
+            create_diplomatic_play = {
+            name = moskowien_civil.1
+            target_country = c:RSU
+            type = dp_revolution
+            war = yes
+        
+        }
+      }
+       c:VRN = {
+            create_diplomatic_play = {
+            name = moskowien_civil.1
+            target_country = c:PEN
+            type = dp_revolution
+            war = yes
+        }
+            create_diplomatic_play = {
+            name = moskowien_civil.1
+            target_country = c:WOL
+            type = dp_revolution
+            war = yes
+        
+        }
+            create_diplomatic_play = {
+            name = moskowien_civil.1
+            target_country = c:MUS
+            type = dp_revolution
+            war = yes
+        
+        }
+            create_diplomatic_play = {
+            name = moskowien_civil.1
+            target_country = c:RSU
+            type = dp_revolution
+            war = yes
+        
+        }
+      }
+    }
+        c:PEN = {
+            create_diplomatic_play = {
+            name = moskowien_civil.1
+            target_country = c:WOL
+            type = dp_revolution
+            war = yes
+        
+        }
+            create_diplomatic_play = {
+            name = moskowien_civil.1
+            target_country = c:MUS
+            type = dp_revolution
+            war = yes
+        
+        }
+            create_diplomatic_play = {
+            name = moskowien_civil.1
+            target_country = c:RSU
+            type = dp_revolution
+            war = yes
+        
+        }
+      }
+        c:WOL = {
+            create_diplomatic_play = {
+            name = moskowien_civil.1
+            target_country = c:MUS
+            type = dp_revolution
+            war = yes
+        
+        }
+            create_diplomatic_play = {
+            name = moskowien_civil.1
+            target_country = c:RSU
+            type = dp_revolution
+            war = yes
+        
+        }
+      }
+        c:MUS = {
+            create_diplomatic_play = {
+            name = moskowien_civil.1
+            target_country = c:RSU
+            type = dp_revolution
+            war = yes
+        
+        }
+      }
+}
+}
