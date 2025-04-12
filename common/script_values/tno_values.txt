@@ -3,3 +3,45 @@ normal_modifier_time = 30
 long_modifier_time = 60
 very_long_modifier_time = 120
 stupidly_long_modifier_time = 300
+
+je_Sphere_lucknow_conference_low_acceptance_calculation = { # f(x) = -0.408x + 20.408
+    add = je_Sphere_lucknow_conference_acceptance
+    multiply = -0.408
+    add = 20.408
+}
+
+je_Sphere_lucknow_conference_relations = {
+    if = {
+        limit = {
+            c:BHT ?= THIS
+        }
+        add = c:BGL.relations:root
+    }else_if = {
+        limit = {
+            c:BGL ?= THIS
+        }
+        add = c:BHT.relations:root
+    }
+}
+
+je_Sphere_lucknow_conference_acceptance = {
+    add = 50 #base acceptance
+    add = je_Sphere_lucknow_conference_relations
+    add = global_var:je_Sphere_lucknow_conference_acceptance_modifier
+    if = {
+        limit = {
+            c:BHT = {
+                has_diplomatic_pact = {
+                    who = c:BGL
+                    type = trade_agreement
+                }
+            }
+        }
+        add = 20
+    }
+}
+
+je_Sphere_lucknow_conference_acceptance_actual = {
+    add = je_Sphere_lucknow_conference_acceptance
+    add = 20 #make it slightly easier hopefully
+}

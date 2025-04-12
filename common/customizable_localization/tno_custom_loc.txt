@@ -563,3 +563,363 @@ je_Sphere_lucknow_tension_reduce_instant_counter = {
 		localization_key = je_Sphere_lucknow_tension_reduce_instant_counter_six
 	}
 }
+
+je_Sphere_lucknow_tension_reduce_instant = {
+	type = country
+	random_valid = no
+	text = {
+		trigger = {
+			var:instant_reduce_count = 0
+		}
+		localization_key = je_Sphere_lucknow_tension_reduce_instant_zero
+	}
+
+	text = {
+		trigger = {
+			var:instant_reduce_count = 1
+		}
+		localization_key = je_Sphere_lucknow_tension_reduce_instant_one
+	}
+
+	text = {
+		trigger = {
+			var:instant_reduce_count = 2
+		}
+		localization_key = je_Sphere_lucknow_tension_reduce_instant_two
+	}
+
+	text = {
+		trigger = {
+			var:instant_reduce_count = 3
+		}
+		localization_key = je_Sphere_lucknow_tension_reduce_instant_three
+	}
+
+	text = {
+		trigger = {
+			var:instant_reduce_count = 4
+		}
+		localization_key = je_Sphere_lucknow_tension_reduce_instant_four
+	}
+
+	text = {
+		trigger = {
+			var:instant_reduce_count = 5
+		}
+		localization_key = je_Sphere_lucknow_tension_reduce_instant_five
+	}
+
+	text = {
+		trigger = {
+			var:instant_reduce_count > 5
+		}
+		localization_key = je_Sphere_lucknow_tension_reduce_instant_six
+	}
+}
+
+je_Sphere_lucknow_tension_reduce_instant_desc = {
+	type = country
+	random_valid = no
+	text = {
+		trigger = {
+			var:instant_reduce_count = 0
+		}
+		localization_key = je_Sphere_lucknow_tension_reduce_instant_desc_one
+	}
+
+	text = {
+		trigger = {
+			var:instant_reduce_count = 1
+		}
+		localization_key = je_Sphere_lucknow_tension_reduce_instant_desc_two
+	}
+
+	text = {
+		trigger = {
+			var:instant_reduce_count = 2
+		}
+		localization_key = je_Sphere_lucknow_tension_reduce_instant_desc_three
+	}
+
+	text = {
+		trigger = {
+			var:instant_reduce_count = 3
+		}
+		localization_key = je_Sphere_lucknow_tension_reduce_instant_desc_four
+	}
+
+	text = {
+		trigger = {
+			var:instant_reduce_count = 4
+		}
+		localization_key = je_Sphere_lucknow_tension_reduce_instant_desc_five
+	}
+
+	text = {
+		trigger = {
+			var:instant_reduce_count = 5
+		}
+		localization_key = je_Sphere_lucknow_tension_reduce_instant_desc_six
+	}
+
+	text = {
+		trigger = {
+			var:instant_reduce_count > 5
+		}
+		localization_key = je_Sphere_lucknow_tension_reduce_instant_desc_six
+	}
+}
+
+je_Sphere_lucknow_has_ta = {
+	type = country
+	random_valid = no
+	text = {
+		trigger = {
+			c:BHT = {
+                has_diplomatic_pact = {
+                    who = c:BGL
+                    type = trade_agreement
+                }
+            }
+		}
+		localization_key = je_Sphere_lucknow_has_ta
+	}
+
+	text = {
+		trigger = {
+			NOT = {
+				c:BHT = {
+	                has_diplomatic_pact = {
+	                    who = c:BGL
+	                    type = trade_agreement
+	                }
+	            }
+			}
+		}
+		localization_key = je_Sphere_lucknow_no_ta
+	}
+}
+
+je_Sphere_lucknow_modifiers_loc = {
+	type = country
+	random_valid = no
+	text = {
+		trigger = {
+			global_var:je_Sphere_lucknow_conference_acceptance_modifier < 0
+		}
+		localization_key = je_Sphere_lucknow_modifiers_loc_negative
+	}
+
+	text = {
+		trigger = {
+			global_var:je_Sphere_lucknow_conference_acceptance_modifier == 0
+		}
+		localization_key = je_Sphere_lucknow_modifiers_loc_base
+	}
+
+	text = {
+		trigger = {
+			global_var:je_Sphere_lucknow_conference_acceptance_modifier > 0
+		}
+		localization_key = je_Sphere_lucknow_modifiers_loc_positive
+	}
+}
+
+je_Sphere_lucknow_relations_loc = {
+	type = country
+	random_valid = no
+	text = {
+		trigger = {
+			je_Sphere_lucknow_conference_relations < 0
+		}
+		localization_key = je_Sphere_lucknow_relations_loc_negative
+	}
+
+	text = {
+		trigger = {
+			je_Sphere_lucknow_conference_relations == 0
+		}
+		localization_key = je_Sphere_lucknow_relations_loc_base
+	}
+
+	text = {
+		trigger = {
+			je_Sphere_lucknow_conference_relations > 0
+		}
+		localization_key = je_Sphere_lucknow_relations_loc_positive
+	}
+}
+
+je_Sphere_lucknow_acceptance_loc = {
+	type = country
+	random_valid = no
+	text = {
+		trigger = {
+			je_Sphere_lucknow_conference_acceptance < 50
+		}
+		localization_key = je_Sphere_lucknow_acceptance_loc_negative
+	}
+
+	text = {
+		trigger = {
+			je_Sphere_lucknow_conference_acceptance == 50
+		}
+		localization_key = je_Sphere_lucknow_acceptance_loc_base
+	}
+
+	text = {
+		trigger = {
+			je_Sphere_lucknow_conference_acceptance > 50
+		}
+		localization_key = je_Sphere_lucknow_acceptance_loc_positive
+	}
+}
+
+cgui_lucknow_acceptance_title_loc = {
+	type = country
+	random_valid = no
+	text = {
+		trigger = {
+			je_Sphere_lucknow_conference_acceptance < 50
+		}
+		localization_key = cgui_lucknow_acceptance_title_negative
+	}
+
+	text = {
+		trigger = {
+			je_Sphere_lucknow_conference_acceptance == 50
+		}
+		localization_key = cgui_lucknow_acceptance_title_base
+	}
+
+	text = {
+		trigger = {
+			je_Sphere_lucknow_conference_acceptance > 50
+		}
+		localization_key = cgui_lucknow_acceptance_title_positive
+	}
+}
+
+cgui_lucknow_phase_one_loc = {
+	type = country
+	random_valid = no
+	text = {
+		trigger = {
+			global_var:je_Sphere_lucknow_phase = 0
+		}
+		localization_key = cgui_lucknow_phase_one_enabled
+	}
+	text = {
+		localization_key = cgui_lucknow_phase_one
+	}
+}
+
+cgui_lucknow_phase_two_loc = {
+	type = country
+	random_valid = no
+	text = {
+		trigger = {
+			global_var:je_Sphere_lucknow_phase = 1
+		}
+		localization_key = cgui_lucknow_phase_two_enabled
+	}
+	text = {
+		localization_key = cgui_lucknow_phase_two
+	}
+}
+
+cgui_lucknow_phase_three_loc = {
+	type = country
+	random_valid = no
+	text = {
+		trigger = {
+			global_var:je_Sphere_lucknow_phase = 2
+		}
+		localization_key = cgui_lucknow_phase_three_enabled
+	}
+	text = {
+		localization_key = cgui_lucknow_phase_three
+	}
+}
+
+cgui_lucknow_phase_four_loc = {
+	type = country
+	random_valid = no
+	text = {
+		trigger = {
+			global_var:je_Sphere_lucknow_phase = 3
+		}
+		localization_key = cgui_lucknow_phase_four_enabled
+	}
+	text = {
+		localization_key = cgui_lucknow_phase_four
+	}
+}
+
+cgui_lucknow_phase_five_loc = {
+	type = country
+	random_valid = no
+	text = {
+		trigger = {
+			global_var:je_Sphere_lucknow_phase > 3
+		}
+		localization_key = cgui_lucknow_phase_five_enabled
+	}
+	text = {
+		localization_key = cgui_lucknow_phase_five
+	}
+}
+
+cgui_lucknow_phase_timer_loc = {
+	type = country
+	random_valid = no
+	text = {
+		trigger = {
+			global_var:je_Sphere_lucknow_next_phase_date = 0
+		}
+		localization_key = je_Sphere_lucknow_phase_timer_one
+	}
+	text = {
+		trigger = {
+			global_var:je_Sphere_lucknow_next_phase_date = 1
+		}
+		localization_key = je_Sphere_lucknow_phase_timer_two
+	}
+	text = {
+		trigger = {
+			global_var:je_Sphere_lucknow_next_phase_date = 2
+		}
+		localization_key = je_Sphere_lucknow_phase_timer_three
+	}
+	text = {
+		trigger = {
+			global_var:je_Sphere_lucknow_next_phase_date = 3
+		}
+		localization_key = je_Sphere_lucknow_phase_timer_four
+	}
+	text = {
+		trigger = {
+			global_var:je_Sphere_lucknow_next_phase_date = 4
+		}
+		localization_key = je_Sphere_lucknow_phase_timer_five
+	}
+	text = {
+		trigger = {
+			global_var:je_Sphere_lucknow_next_phase_date = 5
+		}
+		localization_key = je_Sphere_lucknow_phase_timer_six
+	}
+	text = {
+		trigger = {
+			global_var:je_Sphere_lucknow_next_phase_date = 6
+		}
+		localization_key = je_Sphere_lucknow_phase_timer_seven
+	}
+	text = {
+		trigger = {
+			global_var:je_Sphere_lucknow_next_phase_date = 7
+		}
+		localization_key = je_Sphere_lucknow_phase_timer_eight
+	}
+	
+}

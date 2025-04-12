@@ -1,5 +1,4 @@
 ﻿namespace = tno_RepIndia
-namespace = tno_azadhind
 
 tno_RepIndia.1 = { # Set all leaders invincible
     type = country_event
@@ -13,6 +12,10 @@ tno_RepIndia.1 = { # Set all leaders invincible
 	hidden = yes
 
 	immediate = {
+		set_global_variable = {
+			name = je_Sphere_lucknow_conference_acceptance #this is the actual acceptance rate, to be changed every month
+			value = 0
+		}
 		every_scope_character = {
 	        if = {
 	        	limit = {
@@ -83,6 +86,7 @@ tno_RepIndia.2 = { # Death of Jawaharial Nehru
    		c:BHT = {
    			save_scope_as = bht_nation_scope
    		}
+   		trigger_event = { id = tno_RepIndia.3 days = 40 popup = yes }
     }
     
     trigger = {
@@ -102,7 +106,6 @@ tno_RepIndia.2 = { # Death of Jawaharial Nehru
 			scope:is_v_k_krishna_menon = {
 		        set_character_as_ruler = yes
 		    }
-		    trigger_event = { id = tno_RepIndia.3 days = 40 popup = yes }
 		}
 		custom_tooltip = {
 			text = tno_RepIndia.2.1.tt.1
@@ -125,6 +128,32 @@ tno_RepIndia.3 = { # Announcement of the Lucknow Conference
 	duration = 5
 
 	immediate = {
+		c:BHT = {
+   			save_scope_as = bht_nation_scope
+   		}
+
+   		add_journal_entry = { type = je_Sphere_lucknow_conference }
+
+		set_global_variable = {
+			name = je_Sphere_lucknow_conference_acceptance_modifier #this is the total of the added to it like when you click "adds 3 to acceptance rate", it adds to this.  This is then added in the scripted value to create the total, actual acceptance rate
+			value = 0
+		}
+		set_global_variable = {
+			name = je_Sphere_lucknow_conference_tension_momentum #tension momentum for progress bar
+			value = 3.5
+		}
+		set_global_variable = {
+			name = je_Sphere_lucknow_phase
+			value = 0
+		}
+		set_global_variable = { #allows them to do it multiple times with different dates
+			name = je_Sphere_lucknow_next_phase_date
+			value = 0
+		}
+		set_global_variable = { #check if we succeeded for this phase check
+			name = je_Sphere_phase_successful
+			value = 0
+		}
 		every_scope_character = {
 	        if = {
 	        	limit = {
@@ -133,13 +162,14 @@ tno_RepIndia.3 = { # Announcement of the Lucknow Conference
 	        	save_scope_as = is_v_k_krishna_menon
 	        }
    		}
-   		c:BHT = {
-   			save_scope_as = bht_nation_scope
-   		}
+   		trigger_event = { id = tno_lucknow.1 popup = yes days = 32}
+   		trigger_event = { id = tno_lucknow.10 popup = yes days = 100}
    		c:BGL = {
    			save_scope_as = bgl_nation_scope
 		    trigger_event = { id = tno_azadhind.2 popup = yes }
+		    trigger_event = { id = tno_lucknow.1 popup = yes days = 32}
    		}
+   		
     }
     
     trigger = {
@@ -155,76 +185,6 @@ tno_RepIndia.3 = { # Announcement of the Lucknow Conference
 		name = tno_RepIndia.3.1
 		default_option = yes
 		custom_tooltip = tno_RepIndia.3.1.tt.1
-		add_journal_entry = { type = je_Sphere_lucknow_conference }
-    }
-}
-
-
-
-
-tno_azadhind.1 = { # Impending Kolkata economic crash
-    type = country_event
-	placement = root
-	title = tno_azadhind.1.t
-	desc = tno_azadhind.1.d
-	flavor = tno_azadhind.1.f
-	icon = "gfx/interface/icons/famine_icons/mild_starvation.dds"
-
-	duration = 5
-
-	immediate = {
-	    c:BHT = {
-	    	save_scope_as = bht_nation_scope
-	    }
-    }
-    
-    trigger = {
-	}
-
-	event_image = {
-        texture = "gfx/event_pictures/event_pictures/kolkata_1966.dds"
-    }
-
-	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
-
-    option = {
-		name = tno_azadhind.1.1
-		default_option = yes
-
-		custom_tooltip = tno_azadhind.1.1.tt.1
-    }
-}
-
-tno_azadhind.2 = { # Attending the Lucknow Conference
-    type = country_event
-	placement = s:STATE_AGRA.region_state:BHT
-	title = tno_azadhind.2.t
-	desc = tno_azadhind.2.d
-	flavor = tno_azadhind.2.f
-	icon = "gfx/interface/icons/generic_icons/unused/culture_icon.dds"
-
-	duration = 5
-
-	immediate = {
-	    c:BHT = {
-	    	save_scope_as = bht_nation_scope
-	    }
-    }
-    
-    trigger = {
-	}
-
-	event_image = {
-        texture = "gfx/event_pictures/event_pictures/luncheon.dds"
-    }
-
-	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
-
-    option = {
-		name = tno_azadhind.2.1
-		default_option = yes
-
-		custom_tooltip = tno_azadhind.2.1.tt.1
-		add_journal_entry = { type = je_Sphere_lucknow_conference }
+		custom_tooltip = tno_RepIndia.3.1.tt.2
     }
 }

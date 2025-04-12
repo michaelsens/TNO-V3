@@ -1,6 +1,6 @@
 ﻿je_Sphere_lucknow_conference = {
 
-    icon = "gfx/interface/icons/tno_event_icons/usa_buy_supplies.dds"
+    icon = "gfx/interface/icons/generic_icons/unused/culture_icon.dds"
     group = je_group_historical_content
 
     scripted_progress_bar = tno_lucknow_tension_progress_bar
@@ -12,12 +12,18 @@
             name = instant_reduce_count
             value = 0
         }
+        c:JAP = {
+            save_scope_as = jap_nation_scope
+        }
+        ruler = {
+            save_scope_as = ind_leader
+        }
     }
     
     complete = {
         custom_tooltip = {
-            text = complete_zimneye_solntse
-            has_variable = ru_has_nuke
+            text = je_complete_with_custom
+            global_var:je_Sphere_lucknow_phase > 4
         }
     }
 

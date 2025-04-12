@@ -1,0 +1,72 @@
+﻿namespace = tno_azadhind
+
+tno_azadhind.1 = { # Impending Kolkata economic crash
+    type = country_event
+	placement = root
+	title = tno_azadhind.1.t
+	desc = tno_azadhind.1.d
+	flavor = tno_azadhind.1.f
+	icon = "gfx/interface/icons/famine_icons/mild_starvation.dds"
+
+	duration = 5
+
+	immediate = {
+	    c:BHT = {
+	    	save_scope_as = bht_nation_scope
+	    }
+    }
+    
+    trigger = {
+	}
+
+	event_image = {
+        texture = "gfx/event_pictures/event_pictures/kolkata_1966.dds"
+    }
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    option = {
+		name = tno_azadhind.1.1
+		default_option = yes
+
+		custom_tooltip = tno_azadhind.1.1.tt.1
+    }
+}
+
+tno_azadhind.2 = { # Attending the Lucknow Conference
+    type = country_event
+	placement = s:STATE_AGRA.region_state:BHT
+	title = tno_azadhind.2.t
+	desc = tno_azadhind.2.d
+	flavor = tno_azadhind.2.f
+	icon = "gfx/interface/icons/generic_icons/unused/culture_icon.dds"
+
+	duration = 5
+
+	immediate = {
+	    c:BHT = {
+	    	save_scope_as = bht_nation_scope
+	    }
+	    c:BGL = {
+	    	save_scope_as = bgl_nation_scope
+	    }
+	    add_journal_entry = { type = je_Sphere_lucknow_conference }
+    }
+    
+    trigger = {
+	}
+
+	event_image = {
+        texture = "gfx/event_pictures/event_pictures/luncheon.dds"
+    }
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    option = {
+		name = tno_azadhind.2.1
+		default_option = yes
+
+		custom_tooltip = tno_azadhind.2.1.tt.1
+		custom_tooltip = tno_azadhind.2.1.tt.2
+    }
+}

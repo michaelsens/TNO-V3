@@ -1,0 +1,615 @@
+﻿namespace = tno_lucknow
+
+tno_lucknow.1 = { # "keep them on their toes" - skirmishes on the border or smth
+    type = country_event
+	placement = s:STATE_BIHAR.region_state:BHT
+	title = tno_lucknow.1.t
+	desc = tno_lucknow.1.d
+	flavor = tno_lucknow.1.f
+	icon = "gfx/interface/icons/generic_icons/unused/culture_icon.dds"
+
+	duration = 2
+
+	immediate = {
+		if = {
+			limit = {
+				c:BHT ?= THIS
+			}
+			c:BHT = {
+				je:je_Sphere_lucknow_conference = {
+					add_progress = { value = 11 name = tno_lucknow_tension_progress_bar }
+				}
+			}
+			c:BGL = {
+				je:je_Sphere_lucknow_conference = {
+					add_progress = { value = 11 name = tno_lucknow_tension_progress_bar }
+				}
+			}
+		}
+    }
+    
+    trigger = {
+    	has_journal_entry = je_Sphere_lucknow_conference
+    	global_var:je_Sphere_lucknow_phase < 10
+	}
+
+	event_image = {
+        texture = "gfx/event_pictures/event_pictures/lucknow_unfortunate.dds"
+    }
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    option = {
+		name = tno_lucknow.1.1
+		default_option = yes
+
+		custom_tooltip = je_Sphere_lucknow_tension_reduce_instant_tt.tension_increase_11
+    }
+}
+
+tno_lucknow.2 = { # Opening talks completed
+    type = country_event
+	placement = s:STATE_AGRA.region_state:BHT
+	title = tno_lucknow.2.t
+	desc = tno_lucknow.2.d
+	flavor = tno_lucknow.2.f
+	icon = "gfx/interface/icons/generic_icons/unused/culture_icon.dds"
+
+	duration = 2
+
+	immediate = {
+		if = {
+			limit = {
+				c:BHT ?= THIS
+			}
+			c:BHT = {
+				je:je_Sphere_lucknow_conference = {
+					add_progress = { value = 11 name = tno_lucknow_tension_progress_bar }
+				}
+			}
+			c:BGL = {
+				je:je_Sphere_lucknow_conference = {
+					add_progress = { value = 11 name = tno_lucknow_tension_progress_bar }
+				}
+			}
+		}
+    }
+    
+    trigger = {
+    	has_journal_entry = je_Sphere_lucknow_conference
+    	global_var:je_Sphere_lucknow_phase < 10
+	}
+
+	event_image = {
+        texture = "gfx/event_pictures/event_pictures/lucknow_unfortunate.dds"
+    }
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    option = {
+		name = tno_lucknow.2.1
+		default_option = yes
+
+		custom_tooltip = je_Sphere_lucknow_tension_reduce_instant_tt.tension_increase_4
+		set_global_variable = { 
+			name = je_Sphere_phase_successful
+			value = 0
+		}
+    }
+}
+
+tno_lucknow.3 = { # 'Status of the HSS' completed
+    type = country_event
+	placement = s:STATE_AGRA.region_state:BHT
+	title = tno_lucknow.3.t
+	desc = tno_lucknow.3.d
+	flavor = tno_lucknow.3.f
+	icon = "gfx/interface/icons/generic_icons/unused/culture_icon.dds"
+
+	duration = 2
+
+	immediate = {
+		if = {
+			limit = {
+				c:BHT ?= THIS
+			}
+			c:BHT = {
+				je:je_Sphere_lucknow_conference = {
+					add_progress = { value = 11 name = tno_lucknow_tension_progress_bar }
+				}
+			}
+			c:BGL = {
+				je:je_Sphere_lucknow_conference = {
+					add_progress = { value = 11 name = tno_lucknow_tension_progress_bar }
+				}
+			}
+		}
+    }
+    
+    trigger = {
+    	has_journal_entry = je_Sphere_lucknow_conference
+    	global_var:je_Sphere_lucknow_phase < 10
+	}
+
+	event_image = {
+        texture = "gfx/event_pictures/event_pictures/lucknow_unfortunate.dds"
+    }
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    option = {
+		name = tno_lucknow.3.1
+		default_option = yes
+
+		custom_tooltip = je_Sphere_lucknow_tension_reduce_instant_tt.tension_increase_4
+		set_global_variable = { 
+			name = je_Sphere_phase_successful
+			value = 0
+		}
+    }
+}
+
+tno_lucknow.4 = { # Economic Integration completed
+    type = country_event
+	placement = s:STATE_AGRA.region_state:BHT
+	title = tno_lucknow.4.t
+	desc = tno_lucknow.4.d
+	flavor = tno_lucknow.4.f
+	icon = "gfx/interface/icons/generic_icons/unused/culture_icon.dds"
+
+	duration = 2
+
+	immediate = {
+		if = {
+			limit = {
+				c:BHT ?= THIS
+			}
+			c:BHT = {
+				je:je_Sphere_lucknow_conference = {
+					add_progress = { value = 11 name = tno_lucknow_tension_progress_bar }
+				}
+			}
+			c:BGL = {
+				je:je_Sphere_lucknow_conference = {
+					add_progress = { value = 11 name = tno_lucknow_tension_progress_bar }
+				}
+			}
+		}
+    }
+    
+    trigger = {
+    	has_journal_entry = je_Sphere_lucknow_conference
+    	global_var:je_Sphere_lucknow_phase < 10
+	}
+
+	event_image = {
+        texture = "gfx/event_pictures/event_pictures/lucknow_unfortunate.dds"
+    }
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    option = {
+		name = tno_lucknow.4.1
+		default_option = yes
+
+		custom_tooltip = je_Sphere_lucknow_tension_reduce_instant_tt.tension_increase_4
+		set_global_variable = { 
+			name = je_Sphere_phase_successful
+			value = 0
+		}
+    }
+}
+
+tno_lucknow.5 = { # Market completed
+    type = country_event
+	placement = s:STATE_AGRA.region_state:BHT
+	title = tno_lucknow.5.t
+	desc = tno_lucknow.5.d
+	flavor = tno_lucknow.5.f
+	icon = "gfx/interface/icons/generic_icons/unused/culture_icon.dds"
+
+	duration = 2
+
+	immediate = {
+		if = {
+			limit = {
+				c:BHT ?= THIS
+			}
+			c:BHT = {
+				je:je_Sphere_lucknow_conference = {
+					add_progress = { value = 11 name = tno_lucknow_tension_progress_bar }
+				}
+			}
+			c:BGL = {
+				je:je_Sphere_lucknow_conference = {
+					add_progress = { value = 11 name = tno_lucknow_tension_progress_bar }
+				}
+			}
+		}
+    }
+    
+    trigger = {
+    	has_journal_entry = je_Sphere_lucknow_conference
+    	global_var:je_Sphere_lucknow_phase < 10
+	}
+
+	event_image = {
+        texture = "gfx/event_pictures/event_pictures/lucknow_unfortunate.dds"
+    }
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    option = {
+		name = tno_lucknow.5.1
+		default_option = yes
+
+		custom_tooltip = je_Sphere_lucknow_tension_reduce_instant_tt.tension_increase_4
+		set_global_variable = { 
+			name = je_Sphere_phase_successful
+			value = 0
+		}
+    }
+}
+
+tno_lucknow.6 = { # Secret total unification completed
+    type = country_event
+	placement = s:STATE_AGRA.region_state:BHT
+	title = tno_lucknow.6.t
+	desc = tno_lucknow.6.d
+	flavor = tno_lucknow.6.f
+	icon = "gfx/interface/icons/generic_icons/unused/culture_icon.dds"
+
+	duration = 2
+
+	immediate = {
+		if = {
+			limit = {
+				c:BHT ?= THIS
+			}
+			c:BHT = {
+				je:je_Sphere_lucknow_conference = {
+					add_progress = { value = 11 name = tno_lucknow_tension_progress_bar }
+				}
+			}
+			c:BGL = {
+				je:je_Sphere_lucknow_conference = {
+					add_progress = { value = 11 name = tno_lucknow_tension_progress_bar }
+				}
+			}
+		}
+    }
+    
+    trigger = {
+    	has_journal_entry = je_Sphere_lucknow_conference
+    	global_var:je_Sphere_lucknow_phase < 10
+	}
+
+	event_image = {
+        texture = "gfx/event_pictures/event_pictures/lucknow_unfortunate.dds"
+    }
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    option = {
+		name = tno_lucknow.6.1
+		default_option = yes
+
+		custom_tooltip = je_Sphere_lucknow_tension_reduce_instant_tt.tension_increase_4
+		set_global_variable = { 
+			name = je_Sphere_phase_successful
+			value = 0
+		}
+    }
+}
+
+tno_lucknow.8 = { # we failed this phase check - time to try again
+    type = country_event
+	placement = s:STATE_AGRA.region_state:BHT
+	title = tno_lucknow.8.t
+	desc = tno_lucknow.8.d
+	flavor = tno_lucknow.8.f
+	icon = "gfx/interface/icons/generic_icons/unused/culture_icon.dds"
+
+	duration = 2
+
+	immediate = {
+    }
+    
+    trigger = {
+    	has_journal_entry = je_Sphere_lucknow_conference
+    	global_var:je_Sphere_lucknow_phase < 10
+	}
+
+	event_image = {
+        texture = "gfx/event_pictures/event_pictures/lucknow_unfortunate.dds"
+    }
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    option = {
+		name = tno_lucknow.8.1
+		default_option = yes
+    }
+}
+
+tno_lucknow.9 = { # they walk out
+    type = country_event
+	placement = s:STATE_AGRA.region_state:BHT
+	title = tno_lucknow.9.t
+	desc = tno_lucknow.9.d
+	flavor = tno_lucknow.9.f
+	icon = "gfx/interface/icons/generic_icons/unused/culture_icon.dds"
+
+	duration = 2
+
+	immediate = {
+
+    }
+    
+    trigger = {
+	}
+
+	event_image = {
+        texture = "gfx/event_pictures/event_pictures/lucknow_unfortunate.dds"
+    }
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    option = {
+		name = tno_lucknow.9.1
+		default_option = yes
+    }
+}
+
+tno_lucknow.10 = { # Phase completed // phase check
+    type = country_event
+	title = tno_lucknow_debug
+	desc = tno_lucknow_debug
+	flavor = tno_lucknow_debug
+	icon = "gfx/interface/icons/generic_icons/unused/culture_icon.dds"
+	hidden = yes
+
+	duration = 5
+
+	immediate = {
+		if = { #if tension is too high, kill them
+			limit = {
+				c:BHT = {
+					je:je_Sphere_lucknow_conference = {
+						"scripted_bar_progress(tno_lucknow_tension_progress_bar)" > 80
+					}
+				}
+			}
+			random = {
+				chance = 90 #Subhas chandra bose assassination
+				trigger_event = { id = tno_lucknow.12 popup = yes} #event that you died from tension
+
+				change_global_variable = { #end lucknow conference
+					name = je_Sphere_lucknow_phase
+					add = 50
+				}
+
+			}
+		}
+		if = { #if we did not just die
+			limit = {
+				global_var:je_Sphere_lucknow_phase < 10
+			}
+			random = {
+				chance = je_Sphere_lucknow_conference_acceptance_actual #Acceptance chance check succeeded
+
+				set_global_variable = { 
+					name = je_Sphere_phase_successful
+					value = 1
+				}
+				#we win
+
+				change_global_variable = { #move it forward 100 days
+					name = je_Sphere_lucknow_next_phase_date
+					add = 1
+				}
+				trigger_event = { id = tno_lucknow.11 popup = yes} #event for phase check succeeded
+				trigger_event = { id = tno_lucknow.10 days = 100} #next phase
+			}
+
+			if = { #we did not succeed with acceptance
+				limit = { 
+					global_var:je_Sphere_phase_successful == 0 
+				}
+				if = { #if we have more tries
+					limit = {
+						global_var:je_Sphere_lucknow_next_phase_date < 7 #if they have tried 5 times or less
+					}
+					change_global_variable = { #move it forward 100 days
+						name = je_Sphere_lucknow_next_phase_date
+						add = 1
+					}
+					trigger_event = { id = tno_lucknow.8 popup = yes} #event for failed phase check
+					trigger_event = { id = tno_lucknow.10 days = 100} #next phase
+				}else = { #we've run out of tries
+					trigger_event = { id = tno_lucknow.9 popup = yes} #event for them walking out
+					c:BGL = {
+						trigger_event = { id = tno_lucknow.9 popup = yes} #event for them walking out
+					}
+				}
+			}
+		}
+		
+			
+	}
+    
+    trigger = {
+    	has_journal_entry = je_Sphere_lucknow_conference
+    	global_var:je_Sphere_lucknow_phase < 10
+	}
+
+	event_image = {
+        texture = "gfx/event_pictures/event_pictures/lucknow_unfortunate.dds"
+    }
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    option = {
+		name = tno_lucknow_debug
+		default_option = yes
+    }
+}
+
+tno_lucknow.11 = { # phase check successful
+    type = country_event
+	title = tno_lucknow_debug
+	desc = tno_lucknow_debug
+	flavor = tno_lucknow_debug
+	icon = "gfx/interface/icons/generic_icons/unused/culture_icon.dds"
+	hidden = yes
+
+	duration = 5
+
+	immediate = {
+		#get the event for they won
+		if = {
+			limit = {
+				global_var:je_Sphere_lucknow_phase = 0
+			}
+			change_global_variable = { 
+				name = je_Sphere_lucknow_phase
+				add = 1
+			}
+			trigger_event = { id = tno_lucknow.2 popup = yes}
+			c:BGL = {
+				trigger_event = { id = tno_lucknow.2 popup = yes}
+			}
+		}else_if = {
+			limit = {
+				global_var:je_Sphere_lucknow_phase = 1
+			}
+			change_global_variable = { 
+				name = je_Sphere_lucknow_phase
+				add = 1
+			}
+			trigger_event = { id = tno_lucknow.3 popup = yes}
+			c:BGL = {
+				trigger_event = { id = tno_lucknow.3 popup = yes}
+			}
+		}else_if = {
+			limit = {
+				global_var:je_Sphere_lucknow_phase = 2
+			}
+			change_global_variable = { 
+				name = je_Sphere_lucknow_phase
+				add = 1
+			}
+			trigger_event = { id = tno_lucknow.4 popup = yes}
+			c:BGL = {
+				trigger_event = { id = tno_lucknow.4 popup = yes}
+			}
+		}else_if = {
+			limit = {
+				global_var:je_Sphere_lucknow_phase = 3
+			}
+			change_global_variable = { 
+				name = je_Sphere_lucknow_phase
+				add = 1
+			}
+			trigger_event = { id = tno_lucknow.5 popup = yes}
+			c:BGL = {
+				trigger_event = { id = tno_lucknow.5 popup = yes}
+			}
+		}else_if = {
+			limit = {
+				global_var:je_Sphere_lucknow_phase = 4
+			}
+			change_global_variable = { 
+				name = je_Sphere_lucknow_phase
+				add = 1
+			}
+			trigger_event = { id = tno_lucknow.6 popup = yes}
+			c:BGL = {
+				trigger_event = { id = tno_lucknow.6 popup = yes}
+			}
+		}
+		
+	}
+    
+    trigger = {
+    	has_journal_entry = je_Sphere_lucknow_conference
+    	global_var:je_Sphere_lucknow_phase < 10
+	}
+
+	event_image = {
+        texture = "gfx/event_pictures/event_pictures/lucknow_unfortunate.dds"
+    }
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    option = {
+		name = tno_lucknow_debug
+		default_option = yes
+    }
+}
+
+tno_lucknow.12 = { # we died because of tension
+    type = country_event
+	title = tno_lucknow.12.t
+	desc = tno_lucknow.12.d
+	flavor = tno_lucknow.12.f
+	icon = "gfx/interface/icons/generic_icons/unused/culture_icon.dds"
+
+	duration = 5
+
+	immediate = {
+    }
+    
+    trigger = {
+    	has_journal_entry = je_Sphere_lucknow_conference
+    	global_var:je_Sphere_lucknow_phase < 10
+	}
+
+	event_image = {
+        texture = "gfx/event_pictures/event_pictures/lucknow_unfortunate.dds"
+    }
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    option = {
+		name = tno_lucknow.12.1
+		default_option = yes
+
+		custom_tooltip = je_Sphere_lucknow_tension_reduce_instant_tt.tension_increase_4
+    }
+}
+
+tno_lucknow.13 = { # begin shutdown of lucknow conference due to failure
+    type = country_event
+	title = tno_lucknow.13.t
+	desc = tno_lucknow.13.d
+	flavor = tno_lucknow.13.f
+	icon = "gfx/interface/icons/generic_icons/unused/culture_icon.dds"
+
+	duration = 5
+
+	immediate = {
+		change_global_variable = { #end lucknow conference
+			name = je_Sphere_lucknow_phase
+			add = 50
+		}
+    }
+    
+    trigger = {
+    	has_journal_entry = je_Sphere_lucknow_conference
+    	global_var:je_Sphere_lucknow_phase < 10
+	}
+
+	event_image = {
+        texture = "gfx/event_pictures/event_pictures/lucknow_unfortunate.dds"
+    }
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    option = {
+		name = tno_lucknow.13.1
+		default_option = yes
+
+		custom_tooltip = je_Sphere_lucknow_tension_reduce_instant_tt.tension_increase_4
+    }
+}
