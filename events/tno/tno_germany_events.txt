@@ -1047,21 +1047,19 @@ tno_germany_events.17 = { # German Civil War
   immediate = {
     set_global_variable = german_civil_war_start
 
-    trigger_event = { id = tno_ukraine_events.1 }
+    trigger_event = { id = tno_ukraine_events.1 days = 25 }
+    trigger_event = { id = tno_ostland_events.1 days = 40 }
+    trigger_event = { id = tno_poland_events.1 days = 13 }
+    trigger_event = { id = tno_moskowien_events.1 days = 33 }
+
+    c:BGD = {
+        add_journal_entry = {type = je_tno_burgundy_land_grab}
+    }
+    
 
     set_relations = { country = c:FIN value = -50 }
     set_relations = { country = c:HUN value = -15 }
     set_relations = { country = c:ROM value = -30 }
-
-
-       remove_diplomatic_pact = {
-           country = c:RKU
-           type = reichskommissariat
-       }
-       remove_diplomatic_pact = {
-           country = c:RKO
-           type = reichskommissariat
-       }
 
        remove_diplomatic_pact = {
            country = c:KSA

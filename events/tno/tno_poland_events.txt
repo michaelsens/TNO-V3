@@ -1,0 +1,38 @@
+namespace = tno_poland_events
+
+
+tno_poland_events.1 = {
+    type = country_event
+    placement = ROOT
+
+    hidden = yes
+
+    duration = 3
+    trigger = {
+    }	
+
+    immediate = {
+        create_country = {
+            tag = POL
+            origin = c:USA
+            state = s:STATE_GREATER_POLAND.region_state:GOV
+            state = s:STATE_LESSER_POLAND.region_state:GOV
+
+        } 
+        c:GOV = {
+            set_immune_to_revolutions = yes
+        }
+        c:POL = {
+            set_immune_to_revolutions = yes
+        }
+        
+        c:POL = {
+            create_diplomatic_play = {
+                name = poland_civil.1
+                target_country = c:GOV
+                type = dp_revolution
+                war = yes
+            }
+        }
+    }
+}
