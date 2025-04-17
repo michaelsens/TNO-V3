@@ -81,7 +81,7 @@ tno_lucknow.2 = { # Opening talks completed
 	}
 
 	event_image = {
-        texture = "gfx/event_pictures/event_pictures/lucknow_unfortunate.dds"
+        texture = "gfx/event_pictures/event_pictures/luncheon_2.dds"
     }
 
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
@@ -90,7 +90,16 @@ tno_lucknow.2 = { # Opening talks completed
 		name = tno_lucknow.2.1
 		default_option = yes
 
-		custom_tooltip = je_Sphere_lucknow_tension_reduce_instant_tt.tension_increase_4
+		custom_tooltip = tno_lucknow.2.d
+		custom_tooltip = tno_lucknow.2.1.1
+		custom_tooltip = je_Sphere_lucknow_tension_reduce_instant_tt.acceptance_increase_8
+		custom_tooltip = je_Sphere_lucknow_tension_reduce_instant_tt.tension_increase_11
+
+		change_global_variable = {
+			name = je_Sphere_lucknow_conference_acceptance_modifier
+			add = 8
+		}
+
 		set_global_variable = { 
 			name = je_Sphere_phase_successful
 			value = 0
@@ -109,6 +118,15 @@ tno_lucknow.3 = { # 'Status of the HSS' completed
 	duration = 2
 
 	immediate = {
+
+		c:BHT = {
+			save_scope_as = bht_nation_scope
+		}
+
+		c:BGL = {
+			save_scope_as = bgl_nation_scope
+		}
+
 		if = {
 			limit = {
 				c:BHT ?= THIS
@@ -132,7 +150,7 @@ tno_lucknow.3 = { # 'Status of the HSS' completed
 	}
 
 	event_image = {
-        texture = "gfx/event_pictures/event_pictures/lucknow_unfortunate.dds"
+        texture = "gfx/event_pictures/event_pictures/luncheon_speech.dds"
     }
 
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
@@ -141,7 +159,17 @@ tno_lucknow.3 = { # 'Status of the HSS' completed
 		name = tno_lucknow.3.1
 		default_option = yes
 
-		custom_tooltip = je_Sphere_lucknow_tension_reduce_instant_tt.tension_increase_4
+		custom_tooltip = tno_lucknow.3.d
+		custom_tooltip = tno_lucknow.3.1.1
+		custom_tooltip = je_Sphere_lucknow_tension_reduce_instant_tt.acceptance_increase_8
+		custom_tooltip = je_Sphere_lucknow_tension_reduce_instant_tt.tension_increase_11
+		custom_tooltip = tno_lucknow.3.1.2
+
+		change_global_variable = {
+			name = je_Sphere_lucknow_conference_acceptance_modifier
+			add = 8
+		}
+
 		set_global_variable = { 
 			name = je_Sphere_phase_successful
 			value = 0
@@ -183,7 +211,7 @@ tno_lucknow.4 = { # Economic Integration completed
 	}
 
 	event_image = {
-        texture = "gfx/event_pictures/event_pictures/lucknow_unfortunate.dds"
+        texture = "gfx/event_pictures/event_pictures/luncheon_3.dds"
     }
 
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
@@ -192,7 +220,16 @@ tno_lucknow.4 = { # Economic Integration completed
 		name = tno_lucknow.4.1
 		default_option = yes
 
-		custom_tooltip = je_Sphere_lucknow_tension_reduce_instant_tt.tension_increase_4
+		custom_tooltip = tno_lucknow.4.d
+		custom_tooltip = tno_lucknow.4.1.1
+		custom_tooltip = je_Sphere_lucknow_tension_reduce_instant_tt.acceptance_increase_8
+		custom_tooltip = je_Sphere_lucknow_tension_reduce_instant_tt.tension_increase_11
+
+		change_global_variable = {
+			name = je_Sphere_lucknow_conference_acceptance_modifier
+			add = 8
+		}
+
 		set_global_variable = { 
 			name = je_Sphere_phase_successful
 			value = 0
@@ -234,7 +271,7 @@ tno_lucknow.5 = { # Market completed
 	}
 
 	event_image = {
-        texture = "gfx/event_pictures/event_pictures/lucknow_unfortunate.dds"
+        texture = "gfx/event_pictures/event_pictures/bose_arrival.dds"
     }
 
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
@@ -243,7 +280,16 @@ tno_lucknow.5 = { # Market completed
 		name = tno_lucknow.5.1
 		default_option = yes
 
-		custom_tooltip = je_Sphere_lucknow_tension_reduce_instant_tt.tension_increase_4
+		custom_tooltip = tno_lucknow.5.d
+		custom_tooltip = tno_lucknow.5.1.1
+		custom_tooltip = je_Sphere_lucknow_tension_reduce_instant_tt.acceptance_increase_8
+		custom_tooltip = je_Sphere_lucknow_tension_reduce_instant_tt.tension_increase_11
+
+		change_global_variable = {
+			name = je_Sphere_lucknow_conference_acceptance_modifier
+			add = 8
+		}
+
 		set_global_variable = { 
 			name = je_Sphere_phase_successful
 			value = 0
@@ -285,7 +331,7 @@ tno_lucknow.6 = { # Secret total unification completed
 	}
 
 	event_image = {
-        texture = "gfx/event_pictures/event_pictures/lucknow_unfortunate.dds"
+        texture = "gfx/event_pictures/event_pictures/lucknow_view.dds"
     }
 
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
@@ -294,10 +340,18 @@ tno_lucknow.6 = { # Secret total unification completed
 		name = tno_lucknow.6.1
 		default_option = yes
 
-		custom_tooltip = je_Sphere_lucknow_tension_reduce_instant_tt.tension_increase_4
 		set_global_variable = { 
 			name = je_Sphere_phase_successful
 			value = 0
+		}
+		if = {
+			limit = {
+				c:BGL ?= THIS
+			}
+			play_as = c:BHT
+		}
+		c:BHT = {
+			annex = c:BGL
 		}
     }
 }
@@ -321,7 +375,7 @@ tno_lucknow.8 = { # we failed this phase check - time to try again
 	}
 
 	event_image = {
-        texture = "gfx/event_pictures/event_pictures/lucknow_unfortunate.dds"
+        texture = "gfx/event_pictures/event_pictures/luncheon_4.dds"
     }
 
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
@@ -329,6 +383,9 @@ tno_lucknow.8 = { # we failed this phase check - time to try again
     option = {
 		name = tno_lucknow.8.1
 		default_option = yes
+
+		custom_tooltip = tno_lucknow.8.d
+		custom_tooltip = tno_lucknow.8.1.1
     }
 }
 
@@ -344,13 +401,25 @@ tno_lucknow.9 = { # they walk out
 
 	immediate = {
 
+		c:BGL = {
+			save_scope_as = bgl_nation_scope
+		}
+
+		every_scope_character = {
+	        if = {
+	        	limit = {
+	        		has_variable = is_v_k_krishna_menon
+	        	}
+	        	save_scope_as = is_v_k_krishna_menon
+	        }
+   		}
     }
     
     trigger = {
 	}
 
 	event_image = {
-        texture = "gfx/event_pictures/event_pictures/lucknow_unfortunate.dds"
+        texture = "gfx/event_pictures/event_pictures/lucknow_failure.dds"
     }
 
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
@@ -358,6 +427,14 @@ tno_lucknow.9 = { # they walk out
     option = {
 		name = tno_lucknow.9.1
 		default_option = yes
+
+		custom_tooltip = tno_lucknow.9.d
+		custom_tooltip = {
+			text = tno_lucknow.9.1.1
+			scope:is_v_k_krishna_menon = {
+		        kill_character = yes
+		    }
+		}
     }
 }
 
@@ -550,54 +627,30 @@ tno_lucknow.11 = { # phase check successful
 
 tno_lucknow.12 = { # we died because of tension
     type = country_event
-	title = tno_lucknow.12.t
-	desc = tno_lucknow.12.d
-	flavor = tno_lucknow.12.f
+	title = tno_lucknow.9.t
+	desc = tno_lucknow.9.d
+	flavor = tno_lucknow.9.f
 	icon = "gfx/interface/icons/generic_icons/unused/culture_icon.dds"
 
 	duration = 5
 
 	immediate = {
-    }
-    
-    trigger = {
-    	has_journal_entry = je_Sphere_lucknow_conference
-    	global_var:je_Sphere_lucknow_phase < 10
-	}
-
-	event_image = {
-        texture = "gfx/event_pictures/event_pictures/lucknow_unfortunate.dds"
-    }
-
-	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
-
-    option = {
-		name = tno_lucknow.12.1
-		default_option = yes
-
-		custom_tooltip = je_Sphere_lucknow_tension_reduce_instant_tt.tension_increase_4
-    }
-}
-
-tno_lucknow.13 = { # begin shutdown of lucknow conference due to failure
-    type = country_event
-	title = tno_lucknow.13.t
-	desc = tno_lucknow.13.d
-	flavor = tno_lucknow.13.f
-	icon = "gfx/interface/icons/generic_icons/unused/culture_icon.dds"
-
-	duration = 5
-
-	immediate = {
-		change_global_variable = { #end lucknow conference
-			name = je_Sphere_lucknow_phase
-			add = 50
+		c:BGL = {
+			save_scope_as = bgl_nation_scope
 		}
+
+		every_scope_character = {
+	        if = {
+	        	limit = {
+	        		has_variable = is_v_k_krishna_menon
+	        	}
+	        	save_scope_as = is_v_k_krishna_menon
+	        }
+   		}
     }
     
     trigger = {
     	has_journal_entry = je_Sphere_lucknow_conference
-    	global_var:je_Sphere_lucknow_phase < 10
 	}
 
 	event_image = {
@@ -607,9 +660,18 @@ tno_lucknow.13 = { # begin shutdown of lucknow conference due to failure
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 
     option = {
-		name = tno_lucknow.13.1
+		name = tno_lucknow.9.1
 		default_option = yes
 
-		custom_tooltip = je_Sphere_lucknow_tension_reduce_instant_tt.tension_increase_4
+		custom_tooltip = tno_lucknow.12.1
+		custom_tooltip = tno_lucknow.12.2 #space
+		custom_tooltip = tno_lucknow.9.d
+		custom_tooltip = {
+			text = tno_lucknow.9.1.1
+			scope:is_v_k_krishna_menon = {
+		        kill_character = yes
+		    }
+		}
+
     }
 }
