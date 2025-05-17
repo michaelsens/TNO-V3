@@ -62,6 +62,10 @@ tno_lucknow.2 = { # Opening talks completed
 			limit = {
 				c:BHT ?= THIS
 			}
+			change_global_variable = {
+				name = je_Sphere_lucknow_conference_acceptance_modifier
+				add = 8
+			}
 			c:BHT = {
 				je:je_Sphere_lucknow_conference = {
 					add_progress = { value = 11 name = tno_lucknow_tension_progress_bar }
@@ -95,11 +99,6 @@ tno_lucknow.2 = { # Opening talks completed
 		custom_tooltip = je_Sphere_lucknow_tension_reduce_instant_tt.acceptance_increase_8
 		custom_tooltip = je_Sphere_lucknow_tension_reduce_instant_tt.tension_increase_11
 
-		change_global_variable = {
-			name = je_Sphere_lucknow_conference_acceptance_modifier
-			add = 8
-		}
-
 		set_global_variable = { 
 			name = je_Sphere_phase_successful
 			value = 0
@@ -130,6 +129,10 @@ tno_lucknow.3 = { # 'Status of the HSS' completed
 		if = {
 			limit = {
 				c:BHT ?= THIS
+			}
+			change_global_variable = {
+				name = je_Sphere_lucknow_conference_acceptance_modifier
+				add = 8
 			}
 			c:BHT = {
 				je:je_Sphere_lucknow_conference = {
@@ -165,11 +168,6 @@ tno_lucknow.3 = { # 'Status of the HSS' completed
 		custom_tooltip = je_Sphere_lucknow_tension_reduce_instant_tt.tension_increase_11
 		custom_tooltip = tno_lucknow.3.1.2
 
-		change_global_variable = {
-			name = je_Sphere_lucknow_conference_acceptance_modifier
-			add = 8
-		}
-
 		set_global_variable = { 
 			name = je_Sphere_phase_successful
 			value = 0
@@ -191,6 +189,10 @@ tno_lucknow.4 = { # Economic Integration completed
 		if = {
 			limit = {
 				c:BHT ?= THIS
+			}
+			change_global_variable = {
+				name = je_Sphere_lucknow_conference_acceptance_modifier
+				add = 8
 			}
 			c:BHT = {
 				je:je_Sphere_lucknow_conference = {
@@ -225,11 +227,6 @@ tno_lucknow.4 = { # Economic Integration completed
 		custom_tooltip = je_Sphere_lucknow_tension_reduce_instant_tt.acceptance_increase_8
 		custom_tooltip = je_Sphere_lucknow_tension_reduce_instant_tt.tension_increase_11
 
-		change_global_variable = {
-			name = je_Sphere_lucknow_conference_acceptance_modifier
-			add = 8
-		}
-
 		set_global_variable = { 
 			name = je_Sphere_phase_successful
 			value = 0
@@ -251,6 +248,10 @@ tno_lucknow.5 = { # Market completed
 		if = {
 			limit = {
 				c:BHT ?= THIS
+			}
+			change_global_variable = {
+				name = je_Sphere_lucknow_conference_acceptance_modifier
+				add = 8
 			}
 			c:BHT = {
 				je:je_Sphere_lucknow_conference = {
@@ -284,11 +285,6 @@ tno_lucknow.5 = { # Market completed
 		custom_tooltip = tno_lucknow.5.1.1
 		custom_tooltip = je_Sphere_lucknow_tension_reduce_instant_tt.acceptance_increase_8
 		custom_tooltip = je_Sphere_lucknow_tension_reduce_instant_tt.tension_increase_11
-
-		change_global_variable = {
-			name = je_Sphere_lucknow_conference_acceptance_modifier
-			add = 8
-		}
 
 		set_global_variable = { 
 			name = je_Sphere_phase_successful
@@ -343,12 +339,6 @@ tno_lucknow.6 = { # Secret total unification completed
 		set_global_variable = { 
 			name = je_Sphere_phase_successful
 			value = 0
-		}
-		if = {
-			limit = {
-				c:BGL ?= THIS
-			}
-			play_as = c:BHT
 		}
 		c:BHT = {
 			annex = c:BGL
@@ -460,6 +450,13 @@ tno_lucknow.10 = { # Phase completed // phase check
 			random = {
 				chance = 90 #Subhas chandra bose assassination
 				trigger_event = { id = tno_lucknow.12 popup = yes} #event that you died from tension
+				trigger_event = { id = tno_lucknow.20 days = 240} #event about movements on the border
+
+
+				c:BGL = {
+					trigger_event = { id = tno_lucknow.12 popup = yes} #event that you died from tension
+					trigger_event = { id = tno_lucknow.21 days = 240} #event about preparations for war
+				}
 
 				change_global_variable = { #end lucknow conference
 					name = je_Sphere_lucknow_phase
@@ -502,11 +499,16 @@ tno_lucknow.10 = { # Phase completed // phase check
 						add = 1
 					}
 					trigger_event = { id = tno_lucknow.8 popup = yes} #event for failed phase check
+					c:BGL = {
+						trigger_event = { id = tno_lucknow.8 popup = yes} #event for failed phase check
+					}
 					trigger_event = { id = tno_lucknow.10 days = 100} #next phase
 				}else = { #we've run out of tries
 					trigger_event = { id = tno_lucknow.9 popup = yes} #event for them walking out
+					trigger_event = { id = tno_lucknow.20 days = 240} #event about movements on the border
 					c:BGL = {
-						trigger_event = { id = tno_lucknow.9 popup = yes} #event for them walking out
+						trigger_event = { id = tno_lucknow.19 popup = yes} #event for them walking out
+						trigger_event = { id = tno_lucknow.21 days = 240} #event about preparations for war
 					}
 				}
 			}
@@ -554,7 +556,7 @@ tno_lucknow.11 = { # phase check successful
 			}
 			trigger_event = { id = tno_lucknow.2 popup = yes}
 			c:BGL = {
-				trigger_event = { id = tno_lucknow.2 popup = yes}
+				trigger_event = { id = tno_lucknow.13 popup = yes}
 			}
 		}else_if = {
 			limit = {
@@ -566,7 +568,7 @@ tno_lucknow.11 = { # phase check successful
 			}
 			trigger_event = { id = tno_lucknow.3 popup = yes}
 			c:BGL = {
-				trigger_event = { id = tno_lucknow.3 popup = yes}
+				trigger_event = { id = tno_lucknow.14 popup = yes}
 			}
 		}else_if = {
 			limit = {
@@ -578,7 +580,7 @@ tno_lucknow.11 = { # phase check successful
 			}
 			trigger_event = { id = tno_lucknow.4 popup = yes}
 			c:BGL = {
-				trigger_event = { id = tno_lucknow.4 popup = yes}
+				trigger_event = { id = tno_lucknow.15 popup = yes}
 			}
 		}else_if = {
 			limit = {
@@ -590,7 +592,7 @@ tno_lucknow.11 = { # phase check successful
 			}
 			trigger_event = { id = tno_lucknow.5 popup = yes}
 			c:BGL = {
-				trigger_event = { id = tno_lucknow.5 popup = yes}
+				trigger_event = { id = tno_lucknow.16 popup = yes}
 			}
 		}else_if = {
 			limit = {
@@ -602,7 +604,7 @@ tno_lucknow.11 = { # phase check successful
 			}
 			trigger_event = { id = tno_lucknow.6 popup = yes}
 			c:BGL = {
-				trigger_event = { id = tno_lucknow.6 popup = yes}
+				trigger_event = { id = tno_lucknow.17 popup = yes}
 			}
 		}
 		
@@ -673,5 +675,518 @@ tno_lucknow.12 = { # we died because of tension
 		    }
 		}
 
+    }
+}
+
+#Azad Hind version of events
+
+tno_lucknow.13 = { # Opening talks completed
+    type = country_event
+	placement = s:STATE_AGRA.region_state:BHT
+	title = tno_lucknow.13.t
+	desc = tno_lucknow.2.d
+	flavor = tno_lucknow.13.f
+	icon = "gfx/interface/icons/generic_icons/unused/culture_icon.dds"
+
+	duration = 2
+
+	immediate = {
+    }
+    
+    trigger = {
+    	has_journal_entry = je_Sphere_lucknow_conference
+    	global_var:je_Sphere_lucknow_phase < 10
+	}
+
+	event_image = {
+        texture = "gfx/event_pictures/event_pictures/luncheon_2.dds"
+    }
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    option = {
+		name = tno_lucknow.13.1
+		default_option = yes
+
+		custom_tooltip = tno_lucknow.2.d
+		custom_tooltip = tno_lucknow.2.1.1
+		custom_tooltip = je_Sphere_lucknow_tension_reduce_instant_tt.acceptance_increase_8
+		custom_tooltip = je_Sphere_lucknow_tension_reduce_instant_tt.tension_increase_11
+
+		set_global_variable = { 
+			name = je_Sphere_phase_successful
+			value = 0
+		}
+    }
+}
+
+tno_lucknow.14 = { # 'Status of the HSS' completed
+    type = country_event
+	placement = s:STATE_AGRA.region_state:BHT
+	title = tno_lucknow.14.t
+	desc = tno_lucknow.3.d
+	flavor = tno_lucknow.14.f
+	icon = "gfx/interface/icons/generic_icons/unused/culture_icon.dds"
+
+	duration = 2
+
+	immediate = {
+		c:BHT = {
+			save_scope_as = bht_nation_scope
+		}
+
+		c:BGL = {
+			save_scope_as = bgl_nation_scope
+		}
+    }
+    
+    trigger = {
+    	has_journal_entry = je_Sphere_lucknow_conference
+    	global_var:je_Sphere_lucknow_phase < 10
+	}
+
+	event_image = {
+        texture = "gfx/event_pictures/event_pictures/luncheon_speech.dds"
+    }
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    option = {
+		name = tno_lucknow.14.1
+		default_option = yes
+
+		custom_tooltip = tno_lucknow.3.d
+		custom_tooltip = tno_lucknow.3.1.1
+		custom_tooltip = je_Sphere_lucknow_tension_reduce_instant_tt.acceptance_increase_8
+		custom_tooltip = je_Sphere_lucknow_tension_reduce_instant_tt.tension_increase_11
+		custom_tooltip = tno_lucknow.3.1.2
+
+		set_global_variable = { 
+			name = je_Sphere_phase_successful
+			value = 0
+		}
+    }
+}
+
+tno_lucknow.15 = { # Economic Integration completed
+    type = country_event
+	placement = s:STATE_AGRA.region_state:BHT
+	title = tno_lucknow.15.t
+	desc = tno_lucknow.4.d
+	flavor = tno_lucknow.15.f
+	icon = "gfx/interface/icons/generic_icons/unused/culture_icon.dds"
+
+	duration = 2
+
+	immediate = {
+    }
+    
+    trigger = {
+    	has_journal_entry = je_Sphere_lucknow_conference
+    	global_var:je_Sphere_lucknow_phase < 10
+	}
+
+	event_image = {
+        texture = "gfx/event_pictures/event_pictures/kolkata_desk.dds"
+    }
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    option = {
+		name = tno_lucknow.15.1
+		default_option = yes
+
+		custom_tooltip = tno_lucknow.4.d
+		custom_tooltip = tno_lucknow.4.1.1
+		custom_tooltip = je_Sphere_lucknow_tension_reduce_instant_tt.acceptance_increase_8
+		custom_tooltip = je_Sphere_lucknow_tension_reduce_instant_tt.tension_increase_11
+
+		set_global_variable = { 
+			name = je_Sphere_phase_successful
+			value = 0
+		}
+    }
+}
+
+tno_lucknow.16 = { # Market completed
+    type = country_event
+	placement = s:STATE_AGRA.region_state:BHT
+	title = tno_lucknow.16.t
+	desc = tno_lucknow.5.d
+	flavor = tno_lucknow.16.f
+	icon = "gfx/interface/icons/generic_icons/unused/culture_icon.dds"
+
+	duration = 2
+
+	immediate = {
+    }
+    
+    trigger = {
+    	has_journal_entry = je_Sphere_lucknow_conference
+    	global_var:je_Sphere_lucknow_phase < 10
+	}
+
+	event_image = {
+        texture = "gfx/event_pictures/event_pictures/bose_arrival.dds"
+    }
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    option = {
+		name = tno_lucknow.16.1
+		default_option = yes
+
+		custom_tooltip = tno_lucknow.5.d
+		custom_tooltip = tno_lucknow.5.1.1
+		custom_tooltip = je_Sphere_lucknow_tension_reduce_instant_tt.acceptance_increase_8
+		custom_tooltip = je_Sphere_lucknow_tension_reduce_instant_tt.tension_increase_11
+
+		set_global_variable = { 
+			name = je_Sphere_phase_successful
+			value = 0
+		}
+    }
+}
+
+tno_lucknow.17 = { # Secret total unification completed
+    type = country_event
+	placement = s:STATE_AGRA.region_state:BHT
+	title = tno_lucknow.17.t
+	desc = tno_lucknow.6.d
+	flavor = tno_lucknow.17.f
+	icon = "gfx/interface/icons/generic_icons/unused/culture_icon.dds"
+
+	duration = 2
+
+	immediate = {
+    }
+    
+    trigger = {
+    	has_journal_entry = je_Sphere_lucknow_conference
+    	global_var:je_Sphere_lucknow_phase < 10
+	}
+
+	event_image = {
+        texture = "gfx/event_pictures/event_pictures/lucknow_view.dds"
+    }
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    option = {
+		name = tno_lucknow.17.1
+		default_option = yes
+
+		set_global_variable = { 
+			name = je_Sphere_phase_successful
+			value = 0
+		}
+
+		play_as = c:BHT
+		c:BHT = {
+			annex = c:BGL
+		}
+    }
+}
+
+tno_lucknow.18 = { # we failed this phase check - time to try again
+    type = country_event
+	placement = s:STATE_AGRA.region_state:BHT
+	title = tno_lucknow.8.t
+	desc = tno_lucknow.8.d
+	flavor = tno_lucknow.8.f
+	icon = "gfx/interface/icons/generic_icons/unused/culture_icon.dds"
+
+	duration = 2
+
+	immediate = {
+    }
+    
+    trigger = {
+    	has_journal_entry = je_Sphere_lucknow_conference
+    	global_var:je_Sphere_lucknow_phase < 10
+	}
+
+	event_image = {
+        texture = "gfx/event_pictures/event_pictures/luncheon_4.dds"
+    }
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    option = {
+		name = tno_lucknow.8.1
+		default_option = yes
+
+		custom_tooltip = tno_lucknow.8.d
+		custom_tooltip = tno_lucknow.8.1.1
+    }
+}
+
+tno_lucknow.19 = { # they walk out
+    type = country_event
+	placement = s:STATE_AGRA.region_state:BHT
+	title = tno_lucknow.9.t
+	desc = tno_lucknow.9.d
+	flavor = tno_lucknow.9.f
+	icon = "gfx/interface/icons/generic_icons/unused/culture_icon.dds"
+
+	duration = 2
+
+	immediate = {
+
+		c:BGL = {
+			save_scope_as = bgl_nation_scope
+		}
+
+		every_scope_character = {
+	        if = {
+	        	limit = {
+	        		has_variable = is_v_k_krishna_menon
+	        	}
+	        	save_scope_as = is_v_k_krishna_menon
+	        }
+   		}
+    }
+    
+    trigger = {
+	}
+
+	event_image = {
+        texture = "gfx/event_pictures/event_pictures/lucknow_failure.dds"
+    }
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    option = {
+		name = tno_lucknow.9.1
+		default_option = yes
+
+		custom_tooltip = tno_lucknow.9.d
+		custom_tooltip = {
+			text = tno_lucknow.9.1.1
+			scope:is_v_k_krishna_menon = {
+		        kill_character = yes
+		    }
+
+		}
+    }
+}
+
+tno_lucknow.20 = { # movements on the border, BHT
+    type = country_event
+	placement = s:STATE_BUNDELKHAND.region_state:BHT
+	title = tno_lucknow.20.t
+	desc = tno_lucknow.20.d
+	flavor = tno_lucknow.20.f
+	icon = "gfx/interface/icons/pops_icons/soldiers.dds"
+
+	duration = 2
+
+	immediate = {
+
+		c:BGL = {
+			save_scope_as = bgl_nation_scope
+		}
+
+		ruler = {
+			save_scope_as = bht_ruler
+		}
+
+		trigger_event = { id = tno_lucknow.22 popup = yes days = 60} #event for war beginning
+		c:PAK = {
+			trigger_event = { id = tno_Pakistan.4 popup = yes days = 80} #event for pakistan to declare war (Operation Bin Qasim)
+		}
+    }
+    
+    trigger = {
+    	c:BGL = {
+    		exists = yes
+    	}
+	}
+
+	event_image = {
+        texture = "gfx/event_pictures/event_pictures/airport_movements.dds"
+    }
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    option = {
+		name = tno_lucknow.20.1
+		default_option = yes
+
+		custom_tooltip = tno_lucknow.20.1.1
+		custom_tooltip = tno_lucknow.20.1.2
+		custom_tooltip = tno_lucknow.20.1.3
+    }
+}
+
+tno_lucknow.21 = { # preparations for war, BGL
+    type = country_event
+	title = tno_lucknow.21.t
+	desc = tno_lucknow.21.d
+	flavor = tno_lucknow.21.f
+	icon = "gfx/interface/icons/pops_icons/soldiers.dds"
+
+	duration = 2
+
+	immediate = {
+
+		c:BHT = {
+			save_scope_as = bht_nation_scope
+		}
+
+		ruler = {
+			save_scope_as = bgl_ruler
+		}
+
+		trigger_event = { id = tno_lucknow.24 popup = yes days = 60} #event that starts war
+		trigger_event = { id = tno_lucknow.22 popup = yes days = 60} #event for war beginning
+    }
+    
+    trigger = {
+    	c:BGL = {
+    		exists = yes
+    	}
+	}
+
+	event_image = {
+        texture = "gfx/event_pictures/event_pictures/tanks_indian.dds"
+    }
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    option = {
+		name = tno_lucknow.21.1
+		default_option = yes
+
+		custom_tooltip = tno_lucknow.21.1.1
+    }
+}
+
+tno_lucknow.22 = { # war beginning
+    type = country_event
+	title = tno_lucknow.22.t
+	desc = tno_lucknow.22.d
+	flavor = tno_lucknow.22.f
+	icon = "gfx/interface/icons/pops_icons/soldiers.dds"
+
+	duration = 2
+
+	immediate = {
+
+		c:BHT = {
+			save_scope_as = bht_nation_scope
+		}
+
+		c:BGL = {
+			save_scope_as = bgl_nation_scope
+		}
+
+
+		ruler = {
+			save_scope_as = nation_ruler
+		}
+    }
+    
+    trigger = {
+    	c:BGL = {
+    		exists = yes
+    	}
+	}
+
+	event_image = {
+        texture = "gfx/event_pictures/event_pictures/indian_battle.dds"
+    }
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    option = {
+		name = tno_lucknow.22.1
+		default_option = yes
+
+		custom_tooltip = tno_lucknow.22.1.1
+    }
+}
+
+tno_lucknow.23 = { # Operation Bin Qasim (Pakistani invasion of India) from Indian perspective (BHT)
+    type = country_event
+	title = tno_lucknow.23.t
+	desc = tno_lucknow.23.d
+	flavor = tno_lucknow.23.f
+	icon = "gfx/interface/icons/pops_icons/soldiers.dds"
+
+	duration = 2
+
+	immediate = {
+
+		c:PAK = {
+			save_scope_as = pak_nation_scope
+		}
+
+		c:BHT = {
+			save_scope_as = bht_nation_scope
+		}
+
+		ruler = {
+			save_scope_as = bht_ruler
+		}
+    }
+    
+    trigger = {
+    	c:PAK = {
+    		exists = yes
+    	}
+	}
+
+	event_image = {
+        texture = "gfx/event_pictures/event_pictures/indian_bridge_collapse.dds"
+    }
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    option = {
+		name = tno_lucknow.23.1
+		default_option = yes
+
+		custom_tooltip = tno_lucknow.23.1.1
+    }
+}
+
+tno_lucknow.24 = { # Azad Hind-ROI War (must start from azad hind perspective)
+	hidden = yes
+    type = country_event
+	title = tno_lucknow_debug
+	desc = tno_lucknow_debug
+	flavor = tno_lucknow_debug
+	icon = "gfx/interface/icons/pops_icons/soldiers.dds"
+
+	duration = 2
+
+	immediate = {
+		create_diplomatic_play = {
+			name = india_civil_war
+			target_country = c:BHT
+			type = dp_revolution
+			war = yes
+		}
+    }
+    
+    trigger = {
+    	c:BGL = {
+    		exists = yes
+    	}
+    	c:BHT = {
+    		exists = yes
+    	}
+	}
+
+	event_image = {
+        texture = "gfx/event_pictures/event_pictures/indian_bridge_collapse.dds"
+    }
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    option = {
+		name = tno_lucknow_debug
+		default_option = yes
     }
 }
