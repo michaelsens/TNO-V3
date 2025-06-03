@@ -10,11 +10,11 @@
 	@panel_width_plus_20 = 560			# used to be 480
 	@panel_width_plus_30 = 570			# used to be 490
 	@panel_width_plus_70 = 610			# used to be 530
-	
+
 	type lucknow_conference = flowcontainer = {
 		
 
-		visible = "[EqualTo_string(JournalEntry.GetReason, 'custom')]"
+		visible = "[EqualTo_string(JournalEntry.GetName, 'The Lucknow Conference')]"
 		datacontext = "[JournalEntryPanel.AccessJournalEntry]"
 		direction = vertical
 		using = default_list_position
@@ -366,6 +366,363 @@
 						}
 					}
 				}
-
 			}
 		}
+	}
+	type ffr_situation_room = flowcontainer = {
+		visible = "[EqualTo_string(JournalEntry.GetName, 'The Situation Room')]"
+		datacontext = "[JournalEntryPanel.AccessJournalEntry]"
+		direction = vertical
+		using = default_list_position
+
+		spacer = {
+			visible = "[EqualTo_string(JournalEntry.GetName, 'The Situation Room')]"
+			size = { 0 20 }
+		}
+
+		flowcontainer = {
+			datacontext = "[JournalEntryPanel.AccessJournalEntry]"
+			direction = vertical
+			using = default_list_position
+			spacing = 50
+
+			widget = {
+				parentanchor = bottom
+				textbox = {
+					position = { 0 60 }
+					autoresize = yes
+					text = "cgui_lucknow_reason"
+					min_width = @panel_width_minus_30 
+					max_width = @panel_width_minus_30
+
+					multiline = yes
+					using = default_list_position
+
+					align = nobaseline
+					default_format = "#lore"
+
+					margin = { 15 15 }
+
+					background = {
+						using = entry_bg
+					}
+				}
+			}
+			widget  = {
+				parentanchor = top
+
+				widget = {
+					icon = {
+						position = { 0 -40 }
+						parentanchor = hcenter
+						size = { @panel_width_minus_30 110 }
+						texture = "gfx/journal_entries/journal_entry_images/je_image_India_lucknow_conference.png"
+					}
+				}
+			}
+		}
+
+		flowcontainer = {
+			parentanchor = hcenter
+			direction = vertical
+			datamodel = "[JournalEntry.GetScriptedProgressBars]"
+			using = default_list_position
+
+			spacing = 30
+
+			spacer = {
+				size = { 0 220 }
+			}
+
+			item = {
+				container = {
+							# Default Bad
+					bad_progressbar_horizontal = {
+						visible = "[ScriptedProgressBar.IsDefaultBad]"
+						block "progressbar_size" {
+							size = { 475 30 }
+						}
+						tooltip = "[ScriptedProgressBar.GetPeriodicProgressBreakdown]"
+						blockoverride "values" {
+							value = "[JournalEntry.GetCurrentBarProgress(ScriptedProgressBar.Self)]"
+							min = 0
+							max = 1
+						}
+						textbox = {
+							text = "[ScriptedProgressBar.GetDesc]"
+							autoresize = yes
+							align = nobaseline
+							margin_left = 10
+							parentanchor = vcenter
+						}
+					}
+				}
+			}
+			widget = {
+				parentanchor = hcenter
+				textbox = {
+					position = { 0 19 }
+					autoresize = yes
+							text = "cgui_lucknow_tension_hack" #bunch of spaces to create illusion of extra space for background
+							min_width = @panel_width_minus_30 
+							max_width = @panel_width_minus_30
+
+							multiline = yes
+							using = default_list_position
+
+							align = nobaseline
+							default_format = "#lore"
+
+							margin = { 15 55 }
+
+							background = {
+								using = entry_bg
+							}
+						}
+						textbox = {
+							position = { 0 55 }
+							autoresize = yes
+							text = "cgui_lucknow_tension_desc"
+							min_width = @panel_width_minus_30 
+							max_width = @panel_width_minus_30
+
+							multiline = yes
+							using = default_list_position
+
+							align = nobaseline
+							default_format = "#lore"
+
+							margin = { 15 15 }
+						}
+
+					}
+				}
+				flowcontainer = {
+					parentanchor = hcenter
+					direction = vertical
+					datamodel = "[JournalEntry.GetScriptedProgressBars]"
+					using = default_list_position
+
+					spacing = 55
+
+					spacer = {
+						size = { 0 10 }
+					}
+
+					dynamicgridbox = {
+						parentanchor = hcenter
+						visible = "[Not( IsDataModelEmpty( JournalEntry.GetScriptedButtons ) )]"
+						datamodel = "[JournalEntry.GetScriptedButtons]"
+						datamodel_wrap = 2
+						flipdirection = yes
+
+						item = {
+							widget = {
+								size = { 245 60 }
+
+								scripted_tension_button = {
+									parentanchor = center
+								}
+							}
+						}
+					}
+				}
+				flowcontainer = {
+					parentanchor = hcenter
+					direction = vertical
+					datamodel = "[JournalEntry.GetScriptedProgressBars]"
+					using = default_list_position
+
+
+					tooltip = "big"
+					spacing = 25
+
+					widget = {
+						parentanchor = hcenter
+						textbox = {
+							position = { -255 14 }
+							autoresize = yes
+    						#using = fontsize_medium
+							text = "cgui_lucknow_acceptance_list_background"
+							min_width = @panel_width_minus_30 
+							max_width = 200
+							align = right
+
+							#multiline = yes
+							#using = default_list_position
+
+							default_format = "#lore"
+
+							margin = { 20 33 }
+
+							background = {
+								using = entry_bg
+							}
+						}
+						textbox = {
+							position = { -255 8 }
+							autoresize = yes
+    						#using = fontsize_medium
+							text = "cgui_lucknow_acceptance_list"
+							min_width = @panel_width_minus_30 
+							max_width = 200
+							align = right
+
+							#multiline = yes
+							#using = default_list_position
+
+							default_format = "#lore"
+
+							margin = { 20 20 }
+						}
+						
+						textbox = {
+							position = { -255 125 }
+							autoresize = yes
+							text = "cgui_lucknow_acceptance_title"
+							min_width = @panel_width_minus_30 
+							max_width = 200
+
+							align = nobaseline
+							default_format = "#lore"
+
+							margin = { 15 5 }
+
+							textbox = {
+								position = { 75 -10 }
+								autoresize = yes
+								using = fontsize_large
+								text = "cgui_lucknow_acceptance_number"
+								min_width = @panel_width_minus_30 
+								max_width = 45
+
+								align = nobaseline
+								default_format = "#lore"
+
+								margin = { 15 15 }
+
+							}
+						}
+						textbox = {
+							position = { -50 14 }
+							autoresize = yes
+							text = "cgui_lucknow_phases_background"
+							min_width = @panel_width_minus_30 
+							max_width = 305
+
+							align = nobaseline
+							default_format = "#lore"
+
+							margin = { 55 33 }
+
+							background = {
+								using = entry_bg
+							}
+
+							textbox = {
+								position = { -15 50 }
+								autoresize = yes
+								text = "je_Sphere_lucknow_phase_timer"
+								min_width = @panel_width_minus_30 
+								max_width = 160
+
+								align = center
+
+								margin = { 10 3 }
+							}
+
+							textbox = {
+								position = { 130 12 }
+								autoresize = yes
+								using = fontsize_medium
+								text = "cgui_lucknow_phase_title"
+								min_width = @panel_width_minus_30 
+								max_width = 170
+
+								align = center
+
+								margin = { 15 3 }
+							}
+							textbox = {
+								position = { 130 35 }
+								autoresize = yes
+								text = "je_Sphere_lucknow_phase_one"
+								min_width = @panel_width_minus_30 
+								max_width = 170
+
+								align = center
+
+								margin = { 15 3 }
+
+								background = {
+									using = entry_bg_simple
+								}
+							}
+							textbox = {
+								position = { 130 60 }
+								autoresize = yes
+								text = "je_Sphere_lucknow_phase_two"
+								min_width = @panel_width_minus_30 
+								max_width = 170
+
+								align = center
+
+								margin = { 15 3 }
+
+								background = {
+									using = entry_bg_simple
+								}
+							}
+							textbox = {
+								position = { 130 85 }
+								autoresize = yes
+								text = "je_Sphere_lucknow_phase_three"
+								min_width = @panel_width_minus_30 
+								max_width = 170
+
+								align = center
+
+								margin = { 15 3 }
+
+								background = {
+									using = entry_bg_simple
+								}
+							}
+							textbox = {
+								position = { 130 110 }
+								autoresize = yes
+								text = "je_Sphere_lucknow_phase_four"
+								min_width = @panel_width_minus_30 
+								max_width = 170
+
+								align = center
+
+								margin = { 15 3 }
+
+								background = {
+									using = entry_bg_simple
+								}
+							}
+							textbox = {
+								visible = "[GreaterThan_CFixedPoint(GetGlobalVariable('je_Sphere_lucknow_phase').GetValue, '(CFixedPoint)3')]"
+								position = { 130 135 }
+								autoresize = yes
+								text = "je_Sphere_lucknow_phase_five"
+								min_width = @panel_width_minus_30 
+								max_width = 170
+
+								align = center
+
+								margin = { 15 3 }
+
+								background = {
+									using = entry_bg_simple
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
