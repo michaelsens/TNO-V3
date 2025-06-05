@@ -1,0 +1,60 @@
+
+je_bombing_west_africa = { 
+
+    icon = "gfx/interface/icons/tno_modifier_icons/modifier_fire.dds"
+    group = je_group_historical_content
+
+   
+
+
+    immediate = {
+        add_modifier = {
+            name = bombing_west_africa
+        }
+     
+	}
+    
+    complete = {
+
+   
+        c:KSA = {
+           
+           is_subject = no
+        } 
+      }
+
+	
+
+    on_complete = {
+        remove_modifier = bombing_west_africa
+    }
+
+    on_monthly_pulse = {
+        random_events = {
+            20 = 0
+            20 = tno_hidden_events.1
+            20 = tno_hidden_events.2
+            20 = tno_hidden_events.3
+            20 = tno_hidden_events.4
+        }
+    }
+
+    current_value = {
+		
+	}
+
+
+    goal_add_value = {
+		
+	}
+
+    progressbar = no
+    
+    weight = 100
+
+    
+    should_be_pinned_by_default = yes
+    
+}
+
+
