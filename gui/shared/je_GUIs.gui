@@ -25,6 +25,7 @@
 		}
 
 		flowcontainer = {
+			visible = "[EqualTo_string(JournalEntry.GetName, 'The Lucknow Conference')]"
 			datacontext = "[JournalEntryPanel.AccessJournalEntry]"
 			direction = vertical
 			using = default_list_position
@@ -67,6 +68,7 @@
 		}
 
 		flowcontainer = {
+			visible = "[EqualTo_string(JournalEntry.GetName, 'The Lucknow Conference')]"
 			parentanchor = hcenter
 			direction = vertical
 			datamodel = "[JournalEntry.GetScriptedProgressBars]"
@@ -142,6 +144,7 @@
 					}
 				}
 				flowcontainer = {
+					visible = "[EqualTo_string(JournalEntry.GetName, 'The Lucknow Conference')]"
 					parentanchor = hcenter
 					direction = vertical
 					datamodel = "[JournalEntry.GetScriptedProgressBars]"
@@ -172,6 +175,7 @@
 					}
 				}
 				flowcontainer = {
+					visible = "[EqualTo_string(JournalEntry.GetName, 'The Lucknow Conference')]"
 					parentanchor = hcenter
 					direction = vertical
 					datamodel = "[JournalEntry.GetScriptedProgressBars]"
@@ -381,6 +385,7 @@
 		}
 
 		flowcontainer = {
+		 visible = "[EqualTo_string(JournalEntry.GetName, 'The Situation Room')]"
 			datacontext = "[JournalEntryPanel.AccessJournalEntry]"
 			direction = vertical
 			using = default_list_position
@@ -423,6 +428,7 @@
 		}
 
 		flowcontainer = {
+			visible = "[EqualTo_string(JournalEntry.GetName, 'The Situation Room')]"
 			parentanchor = hcenter
 			direction = vertical
 			datamodel = "[JournalEntry.GetScriptedProgressBars]"
@@ -498,6 +504,7 @@
 					}
 				}
 				flowcontainer = {
+					visible = "[EqualTo_string(JournalEntry.GetName, 'The Situation Room')]"
 					parentanchor = hcenter
 					direction = vertical
 					datamodel = "[JournalEntry.GetScriptedProgressBars]"
@@ -528,6 +535,7 @@
 					}
 				}
 				flowcontainer = {
+					visible = "[EqualTo_string(JournalEntry.GetName, 'The Situation Room')]"
 					parentanchor = hcenter
 					direction = vertical
 					datamodel = "[JournalEntry.GetScriptedProgressBars]"
@@ -720,6 +728,63 @@
 								}
 							}
 						}
+					}
+				}
+			}
+		}
+	}
+	
+	type ger_slavery = flowcontainer = {
+		
+
+		#visible = "[EqualTo_string(JournalEntry.GetName, 'Dependence on slavery')]"
+		datacontext = "[JournalEntryPanel.AccessJournalEntry]"
+		direction = vertical
+		using = default_list_position
+
+		spacer = {
+			
+			size = { 0 20 }
+		}
+
+		flowcontainer = {
+			#visible = "[EqualTo_string(JournalEntry.GetName, 'Dependence on slavery')]"
+			datacontext = "[JournalEntryPanel.AccessJournalEntry]"
+			direction = vertical
+			using = default_list_position
+			spacing = 50
+
+			widget = {
+				parentanchor = bottom
+				textbox = {
+					position = { 0 0 }
+					autoresize = yes
+					text = "cgui_ger_slavery_reason"
+					min_width = 7000
+					max_width = 7000
+
+					multiline = yes
+					using = default_list_position
+
+					align = nobaseline
+					default_format = "#lore"
+
+					margin = { 15 15 }
+
+					background = {
+						using = entry_bg
+					}
+				}
+			}
+			widget  = {
+				parentanchor = top
+
+				widget = {
+					icon = {
+						position = { 0 0 }
+						parentanchor = hcenter
+						size = { @panel_width_minus_30 110 }
+						texture = "gfx/journal_entries/journal_entry_images/je_image_ger_slavery_cropped.png"
 					}
 				}
 			}
