@@ -6,7 +6,7 @@ tno_cammroon.1 = { # Decides wether to focus on french or germans
 	title = tno_cammroon.1.t
 	desc = tno_cammroon.1.d
 	flavor = tno_cammroon.1.f
-	icon = "gfx/interface/icons/famine_icons/mild_starvation.dds"
+	icon = "gfx\interface\icons\tno_event_icons/artillery_icon.dds"
 
 	duration = 5
 
@@ -28,9 +28,14 @@ tno_cammroon.1 = { # Decides wether to focus on french or germans
 		default_option = yes
 
 		add_journal_entry = { type = je_kill_yourba }
+		
+
 		trigger_event = {
 			id = tno_cammroon.2
+			days = 5
 		}	
+
+		
 
 		custom_tooltip = tno_cammroon.1.1.tt.1
     }
@@ -38,8 +43,30 @@ tno_cammroon.1 = { # Decides wether to focus on french or germans
 		name = tno_cammroon.1.2
 		default_option = no
 
+		add_journal_entry = { type = je_kill_germany_africa }
+
 		custom_tooltip = tno_cammroon.1.1.tt.2
 		custom_tooltip = tno_cammroon.1.1.tt.3
+
+		trigger_event = {
+			id = tno_cammroon.3
+			days = 5
+		}
+		 c:GER = {
+            trigger_event = { id = tno_cammroon.4 days = 5 popup = yes }
+        } 
+		 c:KZA = {
+            trigger_event = { id = tno_cammroon.4 days = 5 popup = yes }
+        } 
+		 c:KON = {
+            trigger_event = { id = tno_cammroon.4 days = 5 popup = yes }
+			
+        } 
+		 c:KSA = {
+            trigger_event = { id = tno_cammroon.4 days = 5 popup = yes }
+        } 
+		
+
     }
 }
 
@@ -84,6 +111,81 @@ tno_cammroon.2 = { # adds claims to yourba land
 	}
 		
     }
+}
+
+tno_cammroon.3 = { # adds claims german central africa
+    type = country_event
+	placement = root
+	title = tno_cammroon.3.t
+	desc = tno_cammroon.3.d
+	flavor = tno_cammroon.3.f
+	icon = "gfx/interface/icons/famine_icons/mild_starvation.dds"
+
+	duration = 5
+
+	immediate = {
+	    
+    }
+    
+    trigger = {
+	}
+
+	event_image = {
+        texture = "gfx/event_pictures/event_pictures/Africa_01.png"
+    }
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    option = {
+		name = tno_cammroon.3.1
+		default_option = yes
+		
+		s:STATE_UBANGI_SHARI = {
+		add_claim = c:IBO
+	}
+	s:STATE_SOUTH_CAMEROON = {
+		add_claim = c:IBO
+	}
+	s:STATE_GABON= {
+		add_claim = c:IBO
+	}
+	s:STATE_CONGO= {
+		add_claim = c:IBO
+	}
+		
+    }
+	 
+}
+
+tno_cammroon.4 = { # tells germany Cammroon will attack german africa
+    type = country_event
+	placement = root
+	title = tno_cammroon.4.t
+	desc = tno_cammroon.4.d
+	flavor = tno_cammroon.4.f
+	icon = "gfx/interface/icons/famine_icons/mild_starvation.dds"
+
+	duration = 5
+
+	immediate = {
+	    
+    }
+    
+    trigger = {
+	}
+
+	event_image = {
+        texture = "gfx/event_pictures/event_pictures/Africa_01.png"
+    }
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    option = {
+		name = tno_cammroon.4.1
+		default_option = yes
+
+
+	}
 	 
 }
 
