@@ -1,0 +1,47 @@
+je_sokoto_colapse = {
+
+	icon = "gfx/interface/icons/new_event_icons/event_lasthope.dds"
+
+	group = je_group_internal_affairs
+    immediate = {
+
+		set_variable = {
+			name = sokoto_colapse_timer
+			value = 0
+		}
+	}
+    
+    complete = {
+		scope:journal_entry = {
+			is_goal_complete = yes
+		}
+	}
+
+    on_complete = {
+        trigger_event = { id = tno_sokoto_events.1 popup = yes }
+    }
+
+    on_monthly_pulse = {
+        effect = {
+			change_variable = {
+				name = sokoto_colapse_timer
+				add = 2
+			}
+		}
+    }
+
+    current_value = {
+		value = root.var:sokoto_colapse_timer
+	}
+
+    goal_add_value = {
+		value = 10
+	}
+
+    progressbar = yes
+    
+    weight = 100
+    
+    should_be_pinned_by_default = yes
+	
+}
