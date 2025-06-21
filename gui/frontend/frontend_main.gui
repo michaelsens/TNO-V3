@@ -11,11 +11,11 @@ widget = {
 	state = {
 		name = start_title_screen
 		trigger_on_create = yes
-		
+
 		on_start = "[PdxGuiTriggerAllAnimations('main_menu_start')]"
 		on_start = "[PdxGuiTriggerAllAnimations('menu_leaf_animation')]"
 		#on_start = "[PdxGuiTriggerAllAnimations('menu_logo_v_start')]"
-	}		
+	}
 
 	widget = {
 		parentanchor = center
@@ -30,7 +30,7 @@ widget = {
 
 			alpha = 0
 		}
-		
+
 		# video
 		video_icon = {
 			video = "gfx/interface/illustrations/frontend/menu_video.bk2"
@@ -66,7 +66,7 @@ widget = {
 			position = { -300 0 }
 			size = { 500 880 }
 			alpha = 0
-			
+
 			state = {
 				name = main_menu_start
 				next = 2
@@ -82,7 +82,7 @@ widget = {
 				using = Animation_Curve_Default
 				alpha = 1
 				position_x = 160
-				
+
 				start_sound = {
 					soundeffect = "event:/SFX/UI/Frontend/start_panel_show"
 				}
@@ -94,8 +94,8 @@ widget = {
 				alpha = 1
 				position_x = 150
 			}
-			
-			# Continue Game 
+
+			# Continue Game
 			state = {
 				name = "main_menu_continue"
 				duration = 0.4
@@ -109,17 +109,51 @@ widget = {
 					soundeffect = "event:/SFX/UI/Frontend/start_game"
 				}
 			}
-			
+
 			# BG top
+			widget = {
+				size = { 400 200 }
+				parentanchor = hcenter
+
+				icon = {
+					size = { 100% 100% }
+					using = top_header_bg
+
+					modify_texture = {
+						texture = "gfx/interface/menu/menu_frame_top_mask.dds"
+						spriteType = Corneredstretched
+						texture_density = 2
+						spriteborder = { 125 100 }
+						spriteborder_bottom = 0
+						blend_mode = alphamultiply
+					}
+					modify_texture = {
+						texture = "gfx/interface/menu/menu_header_dec.dds"
+						blend_mode = overlay
+					}
+
+					using = main_menu_shimmer
+				}
+				icon = {
+					texture = "gfx/interface/menu/menu_frame_top.dds"
+					size = { 100% 100% }
+					spriteType = Corneredstretched
+					texture_density = 2
+					spriteborder = { 125 100 }
+					spriteborder_bottom = 0
+
+					using = main_menu_shimmer
+				}
+			}
 
 			# Animated leafs
 			icon = {
 				texture = "gfx/interface/menu/menu_top_corner.dds"
-				size = { 112 165 }
+				size = { 112 200 }
 				framesize = { 224 330 }
 				scale = 0
-				position = { 33 15 } 
-				
+				position = { 33 15 }
+
 				modify_texture = {
 					name = overlay
 					texture = "gfx/interface/menu/menu_top_corner_overlay.dds"
@@ -131,7 +165,7 @@ widget = {
 					delay = 1
 					duration = 2
 					using = Animation_Curve_Default
-					
+
 					modify_texture = {
 						name = overlay
 						alpha = 0.6
@@ -139,7 +173,7 @@ widget = {
 				}
 
 				frame = 1
-				
+
 				using = 24_frames_animation
 				blockoverride "trigger" {
 					name = menu_leaf_animation
@@ -150,16 +184,16 @@ widget = {
 				blockoverride "frame_2_delay" {
 					delay = 1.3
 				}
-			} 
+			}
 			icon = {
 				texture = "gfx/interface/menu/menu_top_corner.dds"
-				size = { 112 200 }
+				size = { 112 165 }
 				framesize = { 224 330 }
 				scale = 0
 				position = { -30 15 }
 				parentanchor = right
 				mirror = horizontal
-				
+
 				modify_texture = {
 					name = overlay
 					texture = "gfx/interface/menu/menu_top_corner_overlay.dds"
@@ -171,15 +205,15 @@ widget = {
 					delay = 1
 					duration = 4
 					using = Animation_Curve_Default
-					
+
 					modify_texture = {
 						name = overlay
 						alpha = 0.6
 					}
 				}
-				
+
 				frame = 1
-				
+
 				using = 24_frames_animation
 				blockoverride "trigger" {
 					name = menu_leaf_animation
@@ -188,16 +222,16 @@ widget = {
 					delay = 1.3
 				}
 			}
-			
+
 			# BG bottom
 			widget = {
 				size = { 450 760 }
 				parentanchor = bottom|hcenter
-				
+
 				icon = {
 					size = { 100% 100% }
 					using = default_bg
-					
+
 					modify_texture = {
 						texture = "gfx/interface/menu/menu_frame_bottom_mask.dds"
 						spriteType = Corneredstretched
@@ -230,47 +264,48 @@ widget = {
 					using = main_menu_shimmer
 				}
 			}
+
 			### glow effect on top
 			widget = {
 				position = { 0 -400 }
 				parentanchor = center
 				size = { 500 500 }
 				alpha = 0
-				
+
 				icon = {
 					using = rotate_glow_animation_02
 				}
-				
+
 				state = {
 					name = main_menu_start
 					delay = 1.5
 					next = 2
 					using = Animation_Curve_Default
-					
+
 					size = { 800 800 }
 					duration = 0.6
 					alpha = 0.8
-				} 
+				}
 				state = {
 					name = 2
 					using = Animation_Curve_Default
-					
+
 					size = { 500 500 }
 					duration = 0.8
 					alpha = 0.4
 				}
 			}
-			
+
 			v3_logo_animation = {
 				parentanchor = hcenter
 				position = { 0 35 }
-				
-				blockoverride "menu_logo_delay" { 
+
+				blockoverride "menu_logo_delay" {
 					delay = 1.5
 				}
-			} 
+			}
 
-			### BUTTONS  
+			### BUTTONS
 			vbox = {
 				datacontext = "[FrontEndMainView.AccessLoadView]"
 				margin = { 90 0 }
@@ -322,7 +357,7 @@ widget = {
 								}
 
 								state = {
-									name = _mouse_release								
+									name = _mouse_release
 									on_start = "[FrontEndLoadView.PreContinueSaveCheck]"
 								}
 
@@ -388,7 +423,7 @@ widget = {
 								visible = "[Not(FrontEndLoadView.CanDoContinue)]"
 								enabled = no
 
-								text = "LOAD"
+								text = "LOAD_GAME"
 								default_format = "#weak"
 								using = fontsize_large
 								tooltip = FRONTEND_NO_CONTINUE_TT
@@ -400,7 +435,7 @@ widget = {
 								size = { 310 55 }
 								name = "load_game_button"
 								visible = "[FrontEndLoadView.CanDoContinue]"
-								text = "LOAD"
+								text = "LOAD_GAME"
 								using = fontsize_large
 								onclick = "[FrontEndMainView.OnLoad]"
 								using = black_screen_transition_button_sound
@@ -421,7 +456,7 @@ widget = {
 						}
 
 						vbox = {
-							visible = "[And( POPSStatusIsLoggedIn, Not( POPStatusIsUserNameEmpty ) )]"
+							visible = "[And( StatusIsLoggedIn, Not( StatusIsUserNameEmpty ) )]"
 							spacing = 5
 
 							button = {
@@ -450,7 +485,7 @@ widget = {
 						}
 
 						vbox = {
-							visible = "[Or( Not( POPSStatusIsLoggedIn ), POPStatusIsUserNameEmpty )]"
+							visible = "[Or( Not( StatusIsLoggedIn ), StatusIsUserNameEmpty )]"
 							spacing = 5
 
 							button = {
@@ -535,30 +570,6 @@ widget = {
 					}
 
 					button_group = {
-						onclick = "[ToggleEncyclopedia]"
-						using = select_button_sound
-
-						flowcontainer = {
-							direction = vertical
-
-							button_encyclopedia = {
-								parentanchor = hcenter
-								size = { 35 35 }
-							}
-
-							text_single = {
-								parentanchor = hcenter
-								max_width = 100
-								min_width = 100
-								align = center|nobaseline
-
-								text = "HEADING_ENCYCLOPEDIA"
-								default_format = "#low;glow_color:{0.1,0.1,0.1,1}"
-							}
-						}
-					}
-
-					button_group = {
 						onclick = "[FrontEndMainView.OnCredits]"
 						using = select_button_sound
 
@@ -582,12 +593,64 @@ widget = {
 							}
 						}
 					}
+
+					button_group = {
+
+						onclick = "[ToggleThemeSettings]"
+						using = select_button_sound
+
+						onclick = "[GetVariableSystem.Set( 'theme_selector_theme_tab', 'true' )]"
+	        			onclick = "[GetVariableSystem.Clear( 'theme_selector_settings_tab')]"
+
+						flowcontainer = {
+							direction = vertical
+
+							button_theme_selector = {
+								name = "theme_selector"
+								parentanchor = hcenter
+								size = { 35 35 }
+							}
+
+							text_single = {
+								parentanchor = hcenter
+								max_width = 100
+								min_width = 100
+								autoresize = yes
+
+								text = "THEME"
+								default_format = "#clickable;glow_color:{0.1,0.1,0.1,1}"
+								align = center|nobaseline
+							}
+						}
+
+						icon = {
+							visible = "[And(HasAnyAvailableNewThemes, Not(HasAnyThemeIssues))]"
+							texture = "gfx/interface/current_situations/icon_situation_unread.dds"
+							size = { 25 25 }
+							position = { -20 -20 }
+							parentanchor = bottom|right
+							widgetanchor = bottom|right
+
+							tooltip = "NEW_THEMES_AVAILABLE"
+						}
+
+						icon = {
+							visible = "[HasAnyThemeIssues]"
+							texture = "gfx/interface/icons/generic_icons/warning.dds"
+							size = { 25 25 }
+							position = { -20 -20 }
+							parentanchor = bottom|right
+							widgetanchor = bottom|right
+
+							tooltip = "THEME_ISSUES"
+						}
+					}
 				}
 
 				hbox = {
 					margin_top = 20
 					margin_bottom = 92
-					spacing = 20
+					spacing = 10
 
 					button_group = {
 						onclick = "[FrontEndMainView.OnLogin]"
@@ -596,9 +659,10 @@ widget = {
 						flowcontainer = {
 							direction = vertical
 
-							pops_login_accountwidget = {
+							sdk_login_accountwidget = {
 								parentanchor = hcenter
 								size = { 30 30 }
+								size = { 35 35 }
 
 								blockoverride "properties" {
 									onclick = "[FrontEndMainView.OnLogin]"
@@ -628,6 +692,7 @@ widget = {
 								name = "settings"
 								parentanchor = hcenter
 								size = { 30 30 }
+								size = { 35 35 }
 							}
 
 							text_single = {
@@ -647,17 +712,83 @@ widget = {
 		}
 	}
 
-
-	clickable_version_number = {
-		
-		parentanchor = bottom|right
+	flowcontainer = {
+		scale = "[ScaleToFitElementInside('(int32)1920', '(int32)1080')]"
+		parentanchor = right|bottom
 		position = { -15 -15 }
+		spacing = 5
 
-		using = tooltip_se
+		button_icon_round_big_action = {
+			parentanchor = vcenter
+			size = { 60 60 }
+			tooltip = "WIKI_URL"
+			using = tooltip_above
+			onclick = "[OpenWikiUrl]"
 
-		blockoverride "background"
-		{
-			
+			blockoverride "icon" {
+				texture = "gfx/frontend/interface/icons/flat_icons/wikipedia_white.dds"
+			}
+
+			blockoverride "icon_size" {
+				size = { 60% 60% }
+			}
+		}
+
+		button_icon_round_big_action = {
+			parentanchor = vcenter
+			size = { 60 60 }
+			tooltip = "PLAYER_RESOURCES_URL"
+			using = tooltip_above
+			onclick = "[OpenPlayerResourcesUrl]"
+
+			blockoverride "icon" {
+				texture = "gfx/frontend/interface/icons/flat_icons/player_resource_white.dds"
+			}
+
+			blockoverride "icon_size" {
+				size = { 60% 60% }
+			}
+		}
+
+		button_icon_round_big_action = {
+			parentanchor = vcenter
+			size = { 60 60 }
+			tooltip = "YOUTUBE_CHANNEL_URL"
+			using = tooltip_above
+			onclick = "[OpenYoutubeChannelUrl]"
+
+			blockoverride "icon" {
+				texture = "gfx/frontend/interface/icons/flat_icons/youtube_white.dds"
+			}
+
+			blockoverride "icon_size" {
+				size = { 60% 60% }
+			}
+		}
+
+		button_icon_round_big_action = {
+			parentanchor = vcenter
+			size = { 60 60 }
+			tooltip = "DISCORD_URL"
+			using = tooltip_above
+			onclick = "[OpenDiscordUrl]"
+
+			blockoverride "icon" {
+				texture = "gfx/frontend/interface/icons/flat_icons/discord_white.dds"
+			}
+
+			blockoverride "icon_size" {
+				size = { 60% 60% }
+			}
+		}
+
+		clickable_version_number = {
+			parentanchor = vcenter
+			using = tooltip_above
+
+			background = {
+				using = entry_bg_simple_solid
+			}
 		}
 	}
 
@@ -682,7 +813,7 @@ template main_menu_shimmer
 		}
 		next = shimmer_2
 		duration = 0
-		
+
 		modify_texture = {
 			name = "glow"
 			translate_uv = { 1 1 }
@@ -695,7 +826,7 @@ template main_menu_shimmer
 		}
 		block "main_menu_shimmer_delay" {}
 		using = Animation_Curve_Default
-		
+
 		modify_texture = {
 			name = "glow"
 			translate_uv = { -1 -0.5 }
@@ -716,7 +847,7 @@ template main_menu_logo_shimmer
 		}
 		next = shimmer_2
 		duration = 0
-		
+
 		modify_texture = {
 			name = "glow"
 			translate_uv = { 1 1 }
@@ -727,7 +858,7 @@ template main_menu_logo_shimmer
 		duration = 1
 		delay = 0
 		using = Animation_Curve_EaseOut
-		
+
 		modify_texture = {
 			name = "glow"
 			translate_uv = { -1 -0.5 }
