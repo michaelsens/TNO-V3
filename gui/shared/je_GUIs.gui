@@ -362,4 +362,95 @@
 			}
 		}
 	}
+
+	type west_africa_situation = flowcontainer = {
+		visible = "[EqualTo_string(JournalEntry.GetName, 'The West African Situation')]"
+		datacontext = "[JournalEntryPanel.AccessJournalEntry]"
+		direction = vertical
+		#using = default_list_position
+
+		spacer = {
+			visible = "[EqualTo_string(JournalEntry.GetName, 'The West African Situation')]"
+			size = { 0 20 }
+		}
+
+
+		
+
+		flowcontainer = {
+			visible = "[EqualTo_string(JournalEntry.GetName, 'The West African Situation')]"
+			datacontext = "[JournalEntryPanel.AccessJournalEntry]"
+			direction = vertical
+			using = default_list_position
+			#spacing = 50
+
+
+							
+
+			widget = {
+				parentanchor = hcenter
+
+					
+
+				#open_west_africa_button = {
+				#				position = { 0 375 }
+				#				parentanchor = center
+				#			}
+				icon = {
+					parentanchor = hcenter
+					position = { 0 0 }
+					size = { 510 400 }
+					background = {
+						using = entry_bg
+					}
+				}
+				icon = {
+					position = { 0 0 }
+					parentanchor = hcenter
+					size = { @panel_width_minus_30 110 }
+					texture = "gfx/journal_entries/journal_entry_images/je_image_West_African_Situation.jpeg"
+				}
+				textbox = {
+					position = { 100 100 }
+					autoresize = yes
+					text = "cgui_was_reason_title"
+					min_width = @panel_width_minus_30 
+					max_width = @panel_width_minus_30
+					multiline = yes
+					using = default_list_position
+					align = nobaseline
+					default_format = "#lore"
+					margin = { 15 15 }
+				}
+				textbox = {
+					position = { 0 120 }
+					autoresize = yes
+					text = "cgui_was_reason"
+					min_width = @panel_width_minus_30 
+					max_width = @panel_width_minus_30
+					multiline = yes
+					using = default_list_position
+					align = nobaseline
+					default_format = "#lore"
+					margin = { 15 15 }
+				}
+			}
+		}
+		flowcontainer = {
+			visible = "[EqualTo_string(JournalEntry.GetName, 'The West African Situation')]"
+			datacontext = "[JournalEntryPanel.AccessJournalEntry]"
+			direction = vertical
+
+			spacer = {
+				visible = "[EqualTo_string(JournalEntry.GetName, 'The West African Situation')]"
+				size = { 0 290 }
+			}
+
+			open_west_africa_button = {
+				parentanchor = center
+				onclick = "[GetVariableSystem.Toggle('ve_tab_var')]"
+			}
+		}
+	}
 }
+

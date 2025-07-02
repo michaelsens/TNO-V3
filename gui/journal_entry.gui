@@ -55,6 +55,8 @@ types journal_entry_panel_types
 				}
 				ger_slavery = {
 				}
+				west_africa_situation = {
+				}
 
 
 			}
@@ -740,6 +742,23 @@ types journal_entry_panel_types
 			visible = "[ScriptedButton.IsSelected]"
 			using = highlighted_square_selection
 		}
+	}
+
+	type open_west_africa_button = button {
+		using = default_button
+		parentanchor = hcenter
+		size = { 350 60 }
+		text = "cgui_was_open_west_africa_situation"
+		using = fontsize_large
+		
+		tooltip = "cgui_was_reason"
+		
+		#enabled = "[IsValid( ScriptedButton.ExecuteEffect )]"
+		#onclick = "[Execute( ScriptedButton.ExecuteEffect )]"
+		#icon = {
+		#	visible = "[ScriptedButton.IsSelected]"
+		#	using = highlighted_square_selection
+		#}
 	}
 
 	type scripted_tension_button = button {

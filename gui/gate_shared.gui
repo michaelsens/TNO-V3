@@ -1,0 +1,721 @@
+@panel_width_half = 270				# used to be 230
+@tooltip_max_width = 550            # copied from tooltip.gui
+
+types gate_shared {
+
+    type gate_character = widget {
+        block "character_context" {}
+
+        block "character_size" {
+            size = { @panel_width_half 290 }
+        }
+
+        widget = {
+            size = { @panel_width_half 290 }
+            parentanchor = hcenter
+
+            # Character Tooltip
+            tooltipwidget = {
+                FancyTooltip_Character_Gate = {}
+            }
+
+            # Character Portrait
+            character_portrait_large_torso = {
+                position = { 0 0 }
+                parentanchor = hcenter
+                blockoverride "show_hat" {}
+                blockoverride "tooltip" {}
+                blockoverride "portrait_icons" {}
+                blockoverride "portrait_button" {}
+            }
+
+            # Character Name
+            default_header_clean_faded = {
+                size = { 250 40 }
+                position = { 0 256 }
+                blockoverride "text" {}
+                parentanchor = hcenter
+                textbox = {
+                    text = "[Character.GetFullNameNoFormatting]"
+                    parentanchor = vcenter|hcenter
+                    position = { 0 -2 }
+                    autoresize = yes
+                    max_width = @panel_width_half
+                    using = fontsize_large
+                }
+            }
+
+            # Character Opinion
+            flowcontainer = {
+                position = { 180 50 }
+                margin = { 10 10 }
+                tooltipwidget = {
+                    RegularTooltip = {
+                        blockoverride "text" {
+                            text = "[Character.MakeScope.Var('com_opinion').GetFlagName]"
+                        }
+                    }
+                }
+
+                icon = {
+                    size = { 40 40 }
+                    texture = "gfx/interface/icons/ai_strategy_icons/progressive_agenda.dds"
+                }
+
+                background = {
+                    texture = "gfx/interface/backgrounds/round_button_bg.dds"
+                }
+            }
+        }
+    }
+
+    type gate_character_small = widget {
+        block "character_context" {}
+
+        block "character_size" {
+            size = { 120 120 }
+        }
+
+        # Character Tooltip
+        block "gate_character_tooltip" {
+            tooltipwidget = {
+                FancyTooltip_Character_Gate = {}
+            }
+        }
+
+        widget = {
+            size = { 120 120 }
+            parentanchor = center
+
+            # Character Portrait
+            character_portrait_base_head = {
+                parentanchor = hcenter
+                size = { 120 120 }
+                blockoverride "portrait_size" {
+                    size = { 120 120 }
+                }
+                blockoverride "icon_size" {
+                    size = { 22 22 }
+                }
+
+                blockoverride "rank_icon" {}
+                blockoverride "show_hat" {}
+                blockoverride "tooltip" {}
+                blockoverride "portrait_icons" {}
+                blockoverride "portrait_button" {}
+            }
+
+            # Character Opinion
+            flowcontainer = {
+                block "gate_opinion_visible" {
+                    visible = yes
+                }
+                position = { 80 0 }
+                margin = { 10 10 }
+                tooltipwidget = {
+                    RegularTooltip = {
+                        blockoverride "text" {
+                            text = "[Character.MakeScope.Var('com_opinion').GetFlagName]"
+                        }
+                    }
+                }
+
+                icon = {
+                    size = { 30 30 }
+                    texture = "gfx/interface/icons/ai_strategy_icons/progressive_agenda.dds"
+                }
+
+                background = {
+                    texture = "gfx/interface/backgrounds/round_button_bg.dds"
+                }
+            }
+        }
+    }
+
+    type FancyTooltip_Character_Gate = FancyTooltipWidgetType {
+        blockoverride "text" {
+            text = gg_character_tooltip
+        }
+
+        blockoverride "name" {
+            text = CHARACTER_TOOLTIP_HEADER_NAME
+        }
+
+        blockoverride "type" {
+            text = TOOLTIP_TYPE_CHARACTER
+        }
+
+        blockoverride "replace_icon" {
+            character_portrait_small2 = {
+                blockoverride "tooltip" {}
+                blockoverride "portrait_frame" {}
+                blockoverride "rank_icon" {
+                    rank_icon = {
+                        visible = "[Character.IsCommander]"
+                        parentanchor = bottom|right
+                        blockoverride "icon_size" {
+                            size = { 26 26 }
+                        }
+                    }
+                }
+                parentanchor = center
+            }
+        }
+
+        blockoverride "go_to_button_visibility" {
+            visible = no
+        }
+
+        blockoverride "go_to_button_tooltip" {
+            tooltip = "GO_TO_BUTTON_CHARACTER"
+        }
+
+        blockoverride "go_to_button_properties" {
+            onclick = "[InformationPanelBar.OpenCommanderPanel(Character.AccessSelf)]"
+        }
+
+        blockoverride "go_to_button_properties" {
+            onclick = "[InformationPanelBar.OpenCommanderPanel(Character.AccessSelf)]"
+        }
+
+        blockoverride "tooltip_content_after" {
+            flowcontainer = {
+                visible = "[Character.MakeScope.Var('magic_experience').IsSet]"
+                direction = vertical
+                spacing = 5
+                margin_top = 10
+
+                textbox = {
+                    size = { 100% 20 }
+                    text = gg_character_experience_header
+                }
+                # Novice
+                default_progressbar_horizontal = {
+                    minimumsize = { -1 20 }
+                    maximumsize = { -1 20 }
+                    visible = "[LessThan_CFixedPoint(Character.MakeScope.Var('magic_experience').GetValue, Character.MakeScope.ScriptValue('character_experienced_threshhold'))]"
+                    tooltip = gg_character_experience_novice_tooltip
+
+                    blockoverride "values" {
+                        value = "[FixedPointToFloat(Character.MakeScope.Var('magic_experience').GetValue)]"
+                        min = 0
+                        max = 50
+                    }
+                    blockoverride "on_top_of_the_progressbar" {
+                        textbox = {
+                            size = { 100% 20 }
+                            text = gg_character_experience_novice
+                            align = center
+                        }
+                    }
+                }
+                # Experienced
+                default_progressbar_horizontal = {
+                    minimumsize = { -1 20 }
+                    maximumsize = { -1 20 }
+                    visible = "[And(
+                                    GreaterThanOrEqualTo_CFixedPoint(Character.MakeScope.Var('magic_experience').GetValue, Character.MakeScope.ScriptValue('character_experienced_threshhold')),
+                                    Not(GreaterThanOrEqualTo_CFixedPoint(Character.MakeScope.Var('magic_experience').GetValue, Character.MakeScope.ScriptValue('character_master_threshhold')))
+                               )]"
+                    tooltip = gg_character_experience_experienced_tooltip
+
+                    blockoverride "values" {
+                        value = "[Character.MakeScope.Var('magic_experience').GetValue]"
+                        min = 50
+                        max = 100
+                    }
+                    blockoverride "on_top_of_the_progressbar" {
+                        textbox = {
+                            size = { 100% 20 }
+                            text = gg_character_experience_experienced
+                            align = center
+                        }
+                    }
+                }
+                # Master
+                default_progressbar_horizontal = {
+                    minimumsize = { -1 20 }
+                    maximumsize = { -1 20 }
+                    visible = "[GreaterThanOrEqualTo_CFixedPoint(Character.MakeScope.Var('magic_experience').GetValue, Character.MakeScope.ScriptValue('character_master_threshhold'))]"
+                    tooltip = gg_character_experience_master_tooltip
+
+                    blockoverride "values" {
+                        value = 100
+                        min = 0
+                        max = 100
+                    }
+                    blockoverride "on_top_of_the_progressbar" {
+                        textbox = {
+                            size = { 100% 20 }
+                            text = gg_character_experience_master
+                            align = center
+                        }
+                    }
+                }
+            }
+
+            DefaultTooltipTextBox = {
+                visible = "[InDebugMode]"
+                text = "[Character.GetDebugDesc]"
+                margin_bottom = 0
+                autoresize = yes
+                multiline = yes
+                maximumsize = { 550 -1 }
+                fonttintcolor = "[TooltipInfo.GetTintColor]"
+            }
+        }
+    }
+
+    type gate_mana_density_colored = widget {
+        using = clickthrough_blocker
+        tooltip = gg_map_marker_mana_density_tooltip
+
+        block "mana_density_size" {
+            size = { 70 45 }
+        }
+
+        block "mana_density_visibility" {
+            visible = no
+        }
+
+        gate_mana_density = {
+            blockoverride "visibility" {
+                visible = "[LessThan_CFixedPoint(State.AccessStateRegion.MakeScope.Var('mana_density').GetValue, State.MakeScope.ScriptValue('medium_mana_density_threshhold'))]"
+            }
+            blockoverride "background_color" {
+                texture = "gfx/interface/icons/gui_icons/low_mana_density.dds"
+                tintcolor = { 0.6 0.6 0.6 1 }
+            }
+        }
+        gate_mana_density = {
+            blockoverride "visibility" {
+                visible = "[And(
+								GreaterThanOrEqualTo_CFixedPoint(State.AccessStateRegion.MakeScope.Var('mana_density').GetValue, State.MakeScope.ScriptValue('medium_mana_density_threshhold')),
+								LessThan_CFixedPoint(State.MakeScope.Var('mana_density').GetValue, State.MakeScope.ScriptValue('high_mana_density_threshhold'))
+							)]"
+            }
+            blockoverride "background_color" {
+                texture = "gfx/interface/icons/gui_icons/mid_mana_density.dds"
+                tintcolor = { 0.6 0.6 0.6 1 }
+            }
+        }
+        gate_mana_density = {
+            blockoverride "visibility" {
+                visible = "[GreaterThanOrEqualTo_CFixedPoint(State.AccessStateRegion.MakeScope.Var('mana_density').GetValue, State.MakeScope.ScriptValue('high_mana_density_threshhold'))]"
+            }
+            blockoverride "background_color" {
+                texture = "gfx/interface/icons/gui_icons/high_mana_density.dds"
+                tintcolor = { 0.6 0.6 0.6 1 }
+            }
+        }
+    }
+
+    type gate_mana_density = widget {
+        block "size" {
+            size = { 100% 100% }
+        }
+
+        block "visibility" {}
+
+        textbox = {
+            using = frame_small
+            size = { 100% 100% }
+            text = gg_map_marker_mana_density
+            align = center
+            default_format = "#header"
+            block "font_size" {}
+        }
+
+        background = {
+            using = frame_small_mask
+            spriteType = CorneredTiled
+            spriteborder = { 48 48 }
+            texture_density = 2
+            block "background_color" {
+                texture = "gfx/interface/tooltip/tooltip_bg.dds"
+            }
+
+            modify_texture = {
+                texture = "gfx/interface/backgrounds/default_bg_shading.dds"
+                spriteType = Corneredstretched
+                spriteborder = { 0 0 }
+                blend_mode = overlay
+            }
+            modify_texture = {
+                texture = "gfx/interface/textures/velvet_texture.dds"
+                spriteType = Corneredtiled
+                texture_density = 2
+                spriteborder = { 0 0 }
+                blend_mode = overlay
+            }
+            modify_texture = {
+                texture = "gfx/interface/textures/cloth_texture.dds"
+                spriteType = Corneredtiled
+                texture_density = 2
+                spriteborder = { 0 0 }
+                blend_mode = overlay
+                alpha = 0.15
+            }
+        }
+    }
+
+    # Green progressbar that indicates an upward trend
+    type changed_value_increased_progressbar_horizontal_green = progressbar_properties {
+        blockoverride "progressbar" {
+            progressbar = {
+                noprogresstexture = "gfx/interface/icons/generic_icons/transparent.dds"
+                progresstexture = "gfx/interface/progressbar/progressbar_green.dds"
+                size = { 100% 100% }
+                spriteType = Corneredtiled
+                spriteborder = { 4 4 }
+                texture_density = 2
+                skip_initial_animation = yes
+
+                block "values" {
+                    min = 0
+                    max = 1
+                    block "start_value" {}
+                }
+
+                direction = horizontal
+                using = progressbar_changed_animation
+                animate_negative_changes = yes
+                using = progressbar_texture_properties
+
+                marker = {
+                    widget = {
+                        size = { 100% 100% }
+
+                        icon = {
+                            texture = "gfx/interface/progressbar/progressbar_green_glow.dds"
+                            size = { 30 100% }
+                            widgetanchor = right
+                            alpha = 0.3
+                            using = progressbar_texture_properties
+
+                            ### line
+                            icon = {
+                                texture = "gfx/interface/progressbar/progressbar_green_glow_line.dds"
+                                size = { 3 100% }
+                                parentanchor = right
+                                spriteType = Corneredtiled
+                                spriteborder = { 0 0 }
+                            }
+                        }
+
+                        icon = {
+                            texture = "gfx/interface/progressbar/progressbar_green.dds"
+                            size = { 100% 100% }
+                            spriteType = Corneredtiled
+                            spriteborder = { 4 4 }
+                            texture_density = 2
+                            shaderfile = "gfx/FX/pdxgui_repeat_texture.shader"
+                            widgetanchor = right
+
+                            modify_texture = {
+                                texture = "gfx/interface/backgrounds/light_bg.dds"
+                                spriteType = CorneredTiled
+                                spriteborder = { 6 6 }
+                                texture_density = 2
+                                blend_mode = overlay
+                            }
+
+                            modify_texture = {
+                                name = arrow_animation
+                                texture = "gfx/interface/progressbar/progressbar_arrow.dds"
+                                spriteType = Corneredtiled
+                                spriteborder = { 0 0 }
+                                block "arrow_texture_density" {
+                                    texture_density = 10 #use to match height of progressbar
+                                }
+                                translate_uv = { 0 0 }
+                                blend_mode = alphamultiply
+                            }
+
+                            state = {
+                                trigger_on_create = yes
+                                name = arrow_animation_1
+                                next = arrow_animation_2
+                                duration = 1
+
+                                modify_texture = {
+                                    name = arrow_animation
+                                    translate_uv = { -1 0 }
+                                }
+                            }
+                            state = {
+                                name = arrow_animation_2
+                                next = arrow_animation_1
+                                duration = 0
+
+                                modify_texture = {
+                                    name = arrow_animation
+                                    translate_uv = { 0 0 }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            block "second_progressbar" {
+                progressbar = {
+                    noprogresstexture = "gfx/interface/icons/generic_icons/transparent.dds"
+                    progresstexture = "gfx/interface/progressbar/progressbar_default.dds"
+                    size = { 100% 100% }
+                    spriteType = Corneredtiled
+                    spriteborder = { 4 4 }
+                    texture_density = 2
+                    skip_initial_animation = yes
+
+                    min = 0
+                    max = 1
+                    block "new_value" {}
+
+                    direction = horizontal
+                    using = progressbar_changed_animation
+                    animate_negative_changes = yes
+                    using = progressbar_marker_indicator
+                    using = progressbar_texture_properties
+                }
+            }
+        }
+    }
+
+    # Red progressbar that indicates an downward trend
+    type changed_value_decreased_progressbar_horizontal_bad = progressbar_properties {
+
+        blockoverride "progressbar" {
+            progressbar = {
+                noprogresstexture = "gfx/interface/icons/generic_icons/transparent.dds"
+                progresstexture = "gfx/interface/progressbar/progressbar_bad.dds"
+                size = { 100% 100% }
+                spriteType = Corneredtiled
+                spriteborder = { 4 4 }
+                texture_density = 2
+                skip_initial_animation = yes
+
+                block "values" {
+                    min = 0
+                    max = 1
+                    block "new_value" {}
+                }
+
+                direction = horizontal
+                using = progressbar_changed_animation
+                animate_negative_changes = yes
+                using = progressbar_marker_indicator
+                using = progressbar_texture_properties
+
+                marker = {
+                    widget = {
+                        size = { 100% 100% }
+
+                        icon = {
+                            texture = "gfx/interface/progressbar/progressbar_bad_glow.dds"
+                            size = { 30 100% }
+                            widgetanchor = right
+                            alpha = 0.3
+                            using = progressbar_texture_properties
+
+                            ### line
+                            icon = {
+                                texture = "gfx/interface/progressbar/progressbar_bad_glow_line.dds"
+                                size = { 3 100% }
+                                parentanchor = right
+                                spriteType = Corneredtiled
+                                spriteborder = { 0 0 }
+                            }
+                        }
+
+                        icon = {
+                            texture = "gfx/interface/progressbar/progressbar_bad.dds"
+                            size = { 100% 100% }
+                            spriteType = Corneredtiled
+                            spriteborder = { 4 4 }
+                            texture_density = 2
+                            shaderfile = "gfx/FX/pdxgui_repeat_texture.shader"
+                            widgetanchor = right
+
+                            modify_texture = {
+                                texture = "gfx/interface/backgrounds/light_bg.dds"
+                                spriteType = CorneredTiled
+                                spriteborder = { 6 6 }
+                                texture_density = 2
+                                blend_mode = overlay
+                            }
+
+                            modify_texture = {
+                                name = arrow_animation
+                                texture = "gfx/interface/progressbar/progressbar_arrow.dds"
+                                spriteType = Corneredtiled
+                                spriteborder = { 0 0 }
+                                block "arrow_texture_density" {
+                                    texture_density = 10 #use to match height of progressbar
+                                }
+                                translate_uv = { 0 0 }
+                                blend_mode = alphamultiply
+                                mirror = horizontal
+                            }
+
+                            state = {
+                                trigger_on_create = yes
+                                name = arrow_animation_1
+                                next = arrow_animation_2
+                                duration = 1
+
+                                modify_texture = {
+                                    name = arrow_animation
+                                    translate_uv = { -1 0 }
+                                }
+                            }
+                            state = {
+                                name = arrow_animation_2
+                                next = arrow_animation_1
+                                duration = 0
+
+                                modify_texture = {
+                                    name = arrow_animation
+                                    translate_uv = { 0 0 }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            block "second_progressbar" {
+                progressbar = {
+                    noprogresstexture = "gfx/interface/icons/generic_icons/transparent.dds"
+                    progresstexture = "gfx/interface/progressbar/progressbar_default.dds"
+                    size = { 100% 100% }
+                    spriteType = Corneredtiled
+                    spriteborder = { 4 4 }
+                    texture_density = 2
+                    skip_initial_animation = yes
+
+                    min = 0
+                    max = 1
+                    block "start_value" {}
+
+                    direction = horizontal
+                    using = progressbar_changed_animation
+                    animate_negative_changes = yes
+                    using = progressbar_marker_indicator
+                    using = progressbar_texture_properties
+                }
+            }
+        }
+    }
+
+    type missing_dependency_popup = widget {
+        size = { 100% 100% }
+        using = clickthrough_blocker
+
+        enabled = "[GetMetaPlayer.GetPlayedOrObservedCountry.IsValid]"
+
+        background = {
+            using = dark_area
+            alpha = 0.9
+        }
+
+        block "visible" {
+            visible = "[And4(
+                            Not(GetScriptedGui('gate_dependency_cmf').IsValid(GuiScope.End)),
+                            IsInGame,
+                            Not(IsPauseMenuShown),
+                            Not(IsGameOverScreenShown)
+                       )]"
+        }
+
+        window = {
+            layer = popups
+            using = clickthrough_blocker
+            filter_mouse = all
+            allow_outside = yes
+            parentanchor = hcenter|vcenter
+
+            size = { 700 400 }
+
+
+            widget = {
+                size = { 100% 100% }
+
+                background = {
+                    texture = "gfx/interface/backgrounds/popup_bg.dds"
+                    spriteType = Corneredstretched
+                    spriteborder = { 90 90 }
+                    texture_density = 2
+
+                    modify_texture = {
+                        texture = "gfx/interface/backgrounds/default_bg_shading.dds"
+                        spriteType = Corneredstretched
+                        spriteborder = { 0 0 }
+                        blend_mode = overlay
+                    }
+                    modify_texture = {
+                        using = texture_velvet
+                    }
+                }
+            }
+
+            ### HEADER
+            widget = {
+                size = { 100% 82 }
+
+                popup_top_header = {}
+
+                textbox = {
+                    block "first_line_position" {
+                        position = { 0 24 }
+                    }
+                    size = { 75% 40 }
+                    block "title" {
+                        text = gg_missing_dependency_header
+                    }
+                    elide = right
+                    fontsize_min = 14
+                    parentanchor = hcenter
+                    align = hcenter|nobaseline
+                    using = header_font
+                    using = header_font_size
+                    default_format = "#header"
+                }
+
+                block "second_line" {}
+            }
+
+            ### FRAME
+            popup_bg_frame = {}
+
+            ### Actual stuff
+            textbox = {
+                block "body" {
+                    text = gg_missing_dependency_body
+                }
+                position = { 30 90 }
+                size = { 640 280 }
+                parentanchor = top
+                align = top|left
+                elide = right
+                multiline = yes
+                using = fontsize_large
+            }
+
+            #Close button
+            button_icon_round = {
+                parentanchor = top|right
+                size = { 42 42 }
+                position = { -5 13 }
+
+                enabled = no
+                tooltip = gg_missing_dependency_tooltip
+
+                blockoverride "icon" {
+                    texture = "gfx/interface/buttons/button_icons/close.dds"
+                }
+                blockoverride "icon_size" {
+                    size = { 100% 100% }
+                }
+            }
+        }
+    }
+}
