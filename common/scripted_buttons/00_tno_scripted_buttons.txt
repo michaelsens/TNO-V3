@@ -1617,12 +1617,33 @@ je_ru_launch_raid = {
 			months = 13
 		}
 
+		save_temporary_scope_value_as = {
+			name = war_reparations_amount
+			value = {
+				value = income
+				multiply = define:NDiplomacy|DEFAULT_WAR_REPARATIONS_MONEY_TRANSFER
+			}
+		}
+
 		create_diplomatic_play = {
 			name = theo
 			target_country = scope:raid_target
 			type = dp_raid
 			war = no
-			escalation = 45
+			escalation = 80
+			add_war_goal = {
+				holder = scope:raid_target
+				type = enforce_treaty_article
+				target_country = this
+				article = {
+					article = money_transfer
+					source_country = scope:raid_target
+					target_country = this
+					inputs = {
+						{ quantity = scope:war_reparations_amount }
+					}
+				}
+			}
 		}
 	}
 }
