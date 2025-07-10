@@ -1,0 +1,127 @@
+fading = {
+
+    icon = "gfx/interface/icons/new_event_icons/ita_fade.dds"
+
+  
+
+    group = je_group_internal_affairs
+    
+    complete = {
+        OR = { 
+            has_law = law_type:law_wealth_voting   
+            has_law = law_type:law_census_voting 
+            has_law = law_type:law_universal_suffrage  
+        }
+    }
+
+    on_complete = {
+        remove_modifier = fading_fascism
+
+      trigger_event = { id = tno_italy_events.4 popup = yes }
+        
+    }
+
+    on_monthly_pulse = {
+        random_events = {
+           
+        }
+    }
+    
+    weight = 30
+    
+    should_be_pinned_by_default = yes
+    
+}
+
+king_only_in_name = { 
+
+    icon = "gfx/interface/icons/new_event_icons/ita_king_only_name.dds"
+
+    group = je_group_internal_affairs
+    
+    complete = {
+        OR = { 
+            has_law = law_type:law_monarchy
+        }
+    }
+
+    on_complete = {
+       create_character = {  
+	    name = ita_king
+	 
+	    ruler = yes  
+	    age = 60
+	    ideology = ideology_democrat
+	    interest_group = ig_landowners
+
+        }
+
+    }
+
+    
+    weight = 5
+    
+    should_be_pinned_by_default = yes
+    
+}
+
+colonize_libya = { 
+
+    icon = "gfx/interface/icons/new_event_icons/ita_libya.dds"
+
+    group = je_group_internal_affairs
+
+
+    scripted_button = je_libya_a
+    scripted_button = je_libya_b
+
+	
+    
+    complete = {
+        
+			
+				
+		any_scope_state = {
+            filter = {
+                state_region = s:STATE_LIBYA
+            }
+          
+             culture_percent_state = {
+                target = cu:north_italian
+                 value >= 0.25
+                } 
+        }
+        any_scope_state = {
+            filter = {
+                state_region = s:STATE_TRIPOLI
+            }
+          
+             culture_percent_state = {
+                target = cu:north_italian
+                 value >= 0.25
+                } 
+        }
+
+    }
+
+    on_complete = {
+
+        s:STATE_TRIPOLI = {
+				add_homeland = cu:north_italian
+		}
+        s:STATE_LIBYA = {
+				add_homeland = cu:north_italian
+		}
+   
+
+    }
+
+    
+    weight = 5
+    
+    should_be_pinned_by_default = yes
+    
+}
+
+
+

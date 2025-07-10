@@ -66,6 +66,34 @@ je_civil_rights_b = {
 	}
 }
 
+je_libya_a = {
+	name = "je_colonize_libya_name"
+	desc = "je_colonize_libya_title_desc"
+
+	visible = { always = yes }
+
+	possible = {
+		scope:journal_entry = {
+			not = {
+				custom_tooltip = {
+					text = libya_cooldown
+					has_variable = je_libya_cooldown
+				}
+			}
+		}	
+	}
+
+	effect = {
+		scope:journal_entry = {
+			custom_tooltip = cooldown_pass
+			set_variable = { name = je_libya_cooldown months = 3 }
+		}	
+		
+		custom_tooltip = je_libya_colonize_text_a
+		
+	}
+}
+
 je_insur_ost_a = {
 	name = "je_civil_rights_stall"
 	desc = "je_we_racist"

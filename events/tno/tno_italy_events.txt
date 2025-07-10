@@ -302,6 +302,11 @@ tno_italy_events.2 = {
 	}
 }
 
+
+
+
+
+
 tno_italy_events.3 = {
 	type = country_event
 	hidden = yes
@@ -322,3 +327,59 @@ tno_italy_events.3 = {
 		}
 	}
 }
+
+
+
+tno_italy_events.4 = { # democracy reuturns to italy
+    type = country_event
+    placement = ROOT
+
+	title = tno_italy_events.4
+	desc = tno_italy_events.4.d
+    flavor = tno_italy_events.4.f	
+
+	event_image = {
+		texture  = "gfx/event_pictures/super_pictures/seg.6.dds"
+	}
+
+    icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	trigger = {
+		this ?= c:ITA
+	}	
+	
+	duration = 1
+
+	option = { # i love democracy
+		default_option = yes
+        name = tno_italy_events.4.a
+		
+       
+
+       
+	}
+
+    option = { # The revolution agienst facism is not yet completed
+		name = tno_italy_events.4.b
+
+      
+
+    
+	}
+
+	option = { # i HATE democracy (facism path)
+		name = tno_italy_events.4.c
+
+       
+
+      
+
+       
+
+       
+		
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+}
+
