@@ -383,3 +383,43 @@ tno_italy_events.4 = { # democracy reuturns to italy
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 }
 
+tno_italy_events.5 = { # Italians move into Libya
+    type = country_event
+    placement = ROOT
+
+	title = tno_italy_events.5
+	desc = tno_italy_events.5.d
+    flavor = tno_italy_events.5.f	
+
+	event_image = {
+		texture  = "gfx/event_pictures/super_pictures/seg.6.dds"
+	}
+
+    icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	trigger = {
+		this ?= c:ITA
+	}	
+	
+	duration = 1
+
+	option = {
+		default_option = yes
+        name = tno_italy_events.5.a 
+
+        every_scope_state = {
+			limit = {
+				state_region = {
+					s:STATE_LIBYA = this
+				}
+			}
+			add_modifier = {
+				name = italian_migration
+				years = 10
+			}
+		}
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+}
+
