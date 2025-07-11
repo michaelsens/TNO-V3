@@ -84,13 +84,24 @@ je_libya_a = {
 	}
 
 	effect = {
-		scope:journal_entry = {
-			custom_tooltip = cooldown_pass
-			set_variable = { name = je_libya_cooldown months = 3 }
-		}	
-		
-		custom_tooltip = je_libya_colonize_text_a
-		
+	scope:journal_entry = {
+		custom_tooltip = cooldown_libya_12_month
+		set_variable = { name = je_libya_cooldown months = 12 }
+	}
+
+
+	every_owned_state = {
+		limit = {
+			state_region = state_libya
+		}
+		add_modifier = { 
+			name = italian_migration 
+			duration = 10
+		}
+	}
+
+	custom_tooltip = je_libya_colonize_text_a
+
 	}
 }
 
