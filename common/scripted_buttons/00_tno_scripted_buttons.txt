@@ -94,7 +94,130 @@ je_libya_a = {
 			trigger_event = { id = tno_italy_events.5 popup = yes }
 		}
 
-		custom_tooltip = je_libya_colonize_text_a
+		
+
+	}
+}
+
+je_libya_b = {
+	name = "je_colonize_tripoli_name"
+	desc = "je_colonize_libya_title_desc"
+
+	visible = { always = yes }
+
+	possible = {
+		scope:journal_entry = {
+			not = {
+				custom_tooltip = {
+					text = libya_cooldown
+					has_variable = je_libya_cooldown
+				}
+			}
+		}	
+	}
+
+	effect = {
+
+		scope:journal_entry = {
+			custom_tooltip = cooldown_libya_12_month
+			set_variable = { name = je_libya_cooldown months = 12 }
+		}
+
+		c:ITA = {
+			trigger_event = { id = tno_italy_events.5 popup = yes }
+		}
+
+		
+
+	}
+}
+
+je_libya_b = {
+	name = "je_colonize_tripoli_name"
+	desc = "je_colonize_libya_title_desc"
+
+	visible = { always = yes }
+
+	possible = {
+		scope:journal_entry = {
+			not = {
+				custom_tooltip = {
+					text = libya_cooldown
+					has_variable = je_libya_cooldown
+				}
+			}
+		}	
+	}
+
+	effect = {
+
+		scope:journal_entry = {
+			custom_tooltip = cooldown_libya_12_month
+			set_variable = { name = je_libya_cooldown months = 12 }
+		}
+
+		c:ITA = {
+			trigger_event = { id = tno_italy_events.6 popup = yes }
+		}
+
+		
+
+	}
+}
+
+je_libya_c = {
+	name = "je_decolonize_libya_name"
+	desc = "je_decolonize_libya_name_desc"
+
+	visible = { always = yes }
+
+	possible = {
+		
+		OR = { 
+            has_law = law_type:law_wealth_voting   
+            has_law = law_type:law_census_voting 
+            has_law = law_type:law_universal_suffrage  
+			 OR = { 
+            has_law = law_type:law_council_republic
+        }
+        }
+	}
+
+	effect = {
+
+		
+
+		c:ITA = {
+			trigger_event = { id = tno_italy_events.7 popup = yes }
+		}
+
+		
+
+	}
+}
+
+je_libya_d = {
+	name = "je_libyian_cit_name"
+	desc = "je_libyian_cit_name_desc"
+
+	visible = { always = yes }
+
+	possible = {
+		 OR = 
+            has_law = law_type:law_multicultural
+        
+		
+	}
+
+	effect = {
+
+		
+
+		c:ITA = {
+			trigger_event = { id = tno_italy_events.7 popup = yes }
+		}
+
+		
 
 	}
 }

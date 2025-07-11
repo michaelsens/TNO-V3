@@ -74,6 +74,26 @@ colonize_libya = {
 
     scripted_button = je_libya_a
     scripted_button = je_libya_b
+    scripted_button = je_libya_c
+    scripted_button = je_libya_d
+
+
+    fail = {
+        NOT = {
+
+          c:ITA = {
+            owns_entire_state_region = STATE_LIBYA
+			owns_entire_state_region = STATE_TRIPOLI
+          }
+        }
+    }
+
+    on_fail = {
+        add_radicals = {
+            value = 0.1
+            culture = cu:NORTH_ITALIAN
+        }
+    }
 
 	
     
@@ -101,6 +121,8 @@ colonize_libya = {
                  value >= 0.25
                 } 
         }
+
+        
 
     }
 

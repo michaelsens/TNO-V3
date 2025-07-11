@@ -415,9 +415,85 @@ tno_italy_events.5 = { # Italians move into Libya
 			}
 			add_modifier = {
 				name = italian_migration
-				years = 10
+				years = 1
 			}
 		}
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+}
+
+tno_italy_events.6 = { # Italians move into Tripoli
+    type = country_event
+    placement = ROOT
+
+	title = tno_italy_events.6
+	desc = tno_italy_events.6.d
+    flavor = tno_italy_events.6.f	
+
+	event_image = {
+		texture  = "gfx/event_pictures/super_pictures/seg.6.dds"
+	}
+
+    icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	trigger = {
+		this ?= c:ITA
+	}	
+	
+	duration = 1
+
+	option = {
+		default_option = yes
+        name = tno_italy_events.6.a 
+
+        every_scope_state = {
+			limit = {
+				state_region = {
+					s:STATE_TRIPOLI	 = this
+				}
+			}
+			add_modifier = {
+				name = italian_migration
+				years = 1
+			}
+		}
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+}
+
+tno_italy_events.7 = { # Italians decolonize libya
+    type = country_event
+    placement = ROOT
+
+	title = tno_italy_events.7
+	desc = tno_italy_events.7.d
+    flavor = tno_italy_events.7.f	
+
+	event_image = {
+		texture  = "gfx/event_pictures/super_pictures/seg.6.dds"
+	}
+
+    icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	trigger = {
+		this ?= c:ITA
+	}	
+	
+	duration = 1
+
+	option = { #PUPPET LIBYA #finish later #add 3 opitons
+		default_option = yes
+        name = tno_italy_events.7.a 
+
+		create_country = { 
+			tag = TRI
+			origin = c:ITA
+
+			state = s:STATE_LIBYA.region_state:ITA
+			state = s:STATE_TRIPOLI.region_state:ITA
+		} 
 	}
 
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
