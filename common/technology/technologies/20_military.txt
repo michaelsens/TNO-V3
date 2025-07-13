@@ -20,7 +20,7 @@ navigation = {
 	category = military    
 	
 	modifier = {
-		state_building_port_max_level_add = 2
+		state_building_port_max_level_add = 6
     }
 	
 	ai_weight = {
@@ -35,7 +35,7 @@ drydocks = {
 	category = military
 	
 	modifier = {
-		state_building_port_max_level_add = 3
+		state_building_port_max_level_add = 9
 	}
 	
 	unlocking_technologies = {	
@@ -54,14 +54,10 @@ drydocks = {
 }
 
 mandatory_service = {
-	# Unlocks Army Model - National Militia
 	era = era_1
 	texture = "gfx/interface/icons/invention_icons/mandatory_service.dds"
 	category = military
 	
-	modifier = {
-		state_conscription_rate_mult = 0.2
-	}
 	
 	unlocking_technologies = {
 		standing_army
@@ -73,8 +69,6 @@ mandatory_service = {
 }
 
 gunsmithing = {
-	# Unlocks Arms Industry building
-	# Global Unlock for Muskets PM in Barracks
 	era = era_1
 	texture = "gfx/interface/icons/invention_icons/gunsmithing.dds"
 	category = military
@@ -85,6 +79,70 @@ gunsmithing = {
 	
 	ai_weight = {
 		value = 2 # Important tech in general
+	}
+}
+
+arms_1 = {
+	era = era_2
+	texture = "gfx/interface/icons/invention_icons/gunsmithing.dds"
+	category = military
+	
+	unlocking_technologies = {
+		gunsmithing
+	}
+	
+}
+
+arms_2 = {
+	era = era_3
+	texture = "gfx/interface/icons/invention_icons/gunsmithing.dds"
+	category = military
+	
+	unlocking_technologies = {
+		arms_1
+	}
+	
+}
+
+arms_3 = {
+	era = era_4
+	texture = "gfx/interface/icons/invention_icons/gunsmithing.dds"
+	category = military
+	
+	unlocking_technologies = {
+		arms_2
+	}
+}
+
+arms_4 = {
+	era = era_5
+	texture = "gfx/interface/icons/invention_icons/gunsmithing.dds"
+	category = military
+	
+	unlocking_technologies = {
+		arms_3
+	}
+	
+}
+
+arms_5 = {
+	era = era_6
+	texture = "gfx/interface/icons/invention_icons/gunsmithing.dds"
+	category = military
+	
+	unlocking_technologies = {
+		arms_4
+	}
+	
+}
+
+arms_6 = {
+	era = era_7
+	texture = "gfx/interface/icons/invention_icons/gunsmithing.dds"
+	category = military
+	
+	unlocking_technologies = {
+		arms_5
 	}
 }
 
@@ -101,6 +159,134 @@ artillery = {
 	
 	ai_weight = {
 		value = 2 # Important tech in general
+	}
+}
+
+arty_1 = {
+	era = era_2
+	texture = "gfx/interface/icons/invention_icons/gunsmithing.dds"
+	category = military
+	
+	unlocking_technologies = {
+		artillery
+	}
+	
+}
+
+arty_2 = {
+	era = era_3
+	texture = "gfx/interface/icons/invention_icons/gunsmithing.dds"
+	category = military
+	
+	unlocking_technologies = {
+		arty_1
+	}
+	
+}
+
+arty_3 = {
+	era = era_4
+	texture = "gfx/interface/icons/invention_icons/gunsmithing.dds"
+	category = military
+	
+	unlocking_technologies = {
+		arty_2
+	}
+}
+
+arty_4 = {
+	era = era_5
+	texture = "gfx/interface/icons/invention_icons/gunsmithing.dds"
+	category = military
+	
+	unlocking_technologies = {
+		arty_3
+	}
+	
+}
+
+arty_5 = {
+	era = era_6
+	texture = "gfx/interface/icons/invention_icons/gunsmithing.dds"
+	category = military
+	
+	unlocking_technologies = {
+		arty_4
+	}
+	
+}
+
+arty_6 = {
+	era = era_7
+	texture = "gfx/interface/icons/invention_icons/gunsmithing.dds"
+	category = military
+	
+	unlocking_technologies = {
+		arty_5
+	}
+}
+
+munitions_1 = {
+	era = era_2
+	texture = "gfx/interface/icons/invention_icons/gunsmithing.dds"
+	category = military
+	
+	unlocking_technologies = {
+		napoleonic_warfare
+	}
+	
+}
+
+munitions_2 = {
+	era = era_3
+	texture = "gfx/interface/icons/invention_icons/gunsmithing.dds"
+	category = military
+	
+	unlocking_technologies = {
+		munitions_1
+	}
+	
+}
+
+munitions_3 = {
+	era = era_4
+	texture = "gfx/interface/icons/invention_icons/gunsmithing.dds"
+	category = military
+	
+	unlocking_technologies = {
+		munitions_2
+	}
+}
+
+munitions_4 = {
+	era = era_5
+	texture = "gfx/interface/icons/invention_icons/gunsmithing.dds"
+	category = military
+	
+	unlocking_technologies = {
+		munitions_3
+	}
+	
+}
+
+munitions_5 = {
+	era = era_6
+	texture = "gfx/interface/icons/invention_icons/gunsmithing.dds"
+	category = military
+	
+	unlocking_technologies = {
+		munitions_4
+	}
+	
+}
+
+munitions_6 = {
+	era = era_7
+	texture = "gfx/interface/icons/invention_icons/gunsmithing.dds"
+	category = military
+	
+	unlocking_technologies = {
+		munitions_5
 	}
 }
 
@@ -176,9 +362,9 @@ army_reserves = {
 }
 
 line_infantry = {
-	# Unlocks Line Infantry PM in Barracks
+
 	era = era_1
-	texture = "gfx/interface/icons/invention_icons/line_infantry.dds"
+	texture = "gfx/interface/icons/tno_invention_icons/motrized_bolt_teir_1.dds"
 	category = military
 	
 	unlocking_technologies = {	
@@ -215,6 +401,66 @@ paddle_steamer = {
 	}
 }
 
+mil_ship_1 = {
+	era = era_2
+	texture = "gfx/interface/icons/invention_icons/paddle_steamer.dds"
+	category = military
+	
+	unlocking_technologies = {
+		admiralty
+	}
+}
+
+mil_ship_2 = {
+	era = era_3
+	texture = "gfx/interface/icons/invention_icons/paddle_steamer.dds"
+	category = military
+	
+	unlocking_technologies = {
+		mil_ship_1
+	}
+}
+
+mil_ship_3 = {
+	era = era_4
+	texture = "gfx/interface/icons/invention_icons/paddle_steamer.dds"
+	category = military
+	
+	unlocking_technologies = {
+		mil_ship_2
+	}
+}
+
+mil_ship_4 = {
+	era = era_5
+	texture = "gfx/interface/icons/invention_icons/paddle_steamer.dds"
+	category = military
+	
+	unlocking_technologies = {
+		mil_ship_3
+	}
+}
+
+mil_ship_5 = {
+	era = era_6
+	texture = "gfx/interface/icons/invention_icons/paddle_steamer.dds"
+	category = military
+	
+	unlocking_technologies = {
+		mil_ship_4
+	}
+}
+
+mil_ship_6 = {
+	era = era_7
+	texture = "gfx/interface/icons/invention_icons/paddle_steamer.dds"
+	category = military
+	
+	unlocking_technologies = {
+		mil_ship_5
+	}
+}
+
 ### ERA 2
 
 field_works = {
@@ -226,6 +472,7 @@ field_works = {
 	modifier = {
 		# defensive bonus, either directly to army or (ideally) a fortifications bonus, if we get forts
 		# Lower kill rate?
+		unit_army_defense_mult = 0.1
 	}
 	
 	unlocking_technologies = {
@@ -254,6 +501,66 @@ logistics = {
 	
 	ai_weight = {
 		value = 1
+	}
+}
+
+tank_1 = {
+	era = era_3
+	texture = "gfx/interface/icons/invention_icons/logistics_tech.dds"
+	category = military
+	
+	unlocking_technologies = {	
+		logistics
+	}
+}
+
+tank_2 = {
+	era = era_4
+	texture = "gfx/interface/icons/invention_icons/logistics_tech.dds"
+	category = military
+	
+	unlocking_technologies = {	
+		tank_1
+	}
+}
+
+tank_3 = {
+	era = era_5
+	texture = "gfx/interface/icons/invention_icons/logistics_tech.dds"
+	category = military
+	
+	unlocking_technologies = {	
+		tank_2
+	}
+}
+
+tank_4 = {
+	era = era_6
+	texture = "gfx/interface/icons/invention_icons/logistics_tech.dds"
+	category = military
+	
+	unlocking_technologies = {	
+		tank_3
+	}
+}
+
+tank_5 = {
+	era = era_7
+	texture = "gfx/interface/icons/invention_icons/logistics_tech.dds"
+	category = military
+	
+	unlocking_technologies = {	
+		tank_4
+	}
+}
+
+tank_6 = {
+	era = era_8
+	texture = "gfx/interface/icons/invention_icons/logistics_tech.dds"
+	category = military
+	
+	unlocking_technologies = {	
+		tank_5
 	}
 }
 
@@ -385,7 +692,7 @@ hydraulic_cranes = {
 	category = military
 	
 	modifier = {
-		state_building_port_max_level_add = 3
+		state_building_port_max_level_add = 9
 	}
 	
 	unlocking_technologies = {	
@@ -515,7 +822,7 @@ handcranked_machine_gun = {
 	category = military
 	
 	modifier = {
-		unit_army_defense_mult = 0.1
+		unit_army_defense_add = 5
 		unit_kill_rate_add = 0.05
 	}
 	
@@ -620,7 +927,7 @@ floating_harbor = {
 	category = military
 	
 	modifier = {
-		state_building_port_max_level_add = 4
+		state_building_port_max_level_add = 12
 	}
 	
 	unlocking_technologies = {	
@@ -645,7 +952,7 @@ gantry_cranes = {
 	category = military
 	
 	modifier = {
-		state_building_port_max_level_add = 4
+		state_building_port_max_level_add = 12
 	}
 	
 	unlocking_technologies = {	
@@ -731,7 +1038,7 @@ defense_in_depth = {
 	modifier = {
 		unit_morale_loss_mult = -0.05
 		# defensive bonus, either to the army or ideally to fortifications
-		unit_army_offense_mult = 0.1
+		unit_army_defense_mult = 0.1
 	}
 	
 	unlocking_technologies = {	
@@ -891,7 +1198,7 @@ concrete_dockyards = {
 	category = military
 	
 	modifier = {
-		state_building_port_max_level_add = 4
+		state_building_port_max_level_add = 12
 	}
 	
 	unlocking_technologies = {	
