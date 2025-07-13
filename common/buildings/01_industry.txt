@@ -10,7 +10,7 @@ building_consumer_electronics = {
 	production_method_groups = {
 		pmg_consumer_electronics 
 		pmg_automation_building_consumer_electronics
-		pmg_ownership_capital_building
+		
 	}
 	required_construction = construction_cost_high
 	ownership_type = self
@@ -29,7 +29,7 @@ building_breweries = {
 	production_method_groups = {
 		pmg_base_building_breweries
 		pmg_automation_building_breweries
-		pmg_ownership_capital_building
+		
 	}
 	required_construction = construction_cost_high
 	ownership_type = self
@@ -45,7 +45,7 @@ building_household_appliances = {
 	production_method_groups = {
 		pmg_base_building_household_appliances
 		pmg_automation_building_household_appliances
-		pmg_ownership_capital_building
+		
 	}
 	required_construction = construction_cost_high
 	ownership_type = self
@@ -61,7 +61,7 @@ building_industrial_chemical_plants = {
 	production_method_groups = {
 		pmg_base_building_industrial_chemical_plants
 		pmg_automation_building_industrial_chemical_plants
-		pmg_ownership_capital_building
+		
 	}
 	required_construction = construction_cost_high
 	ownership_type = self
@@ -77,7 +77,7 @@ pharmaceutical_industries = {
 	production_method_groups = {
 		pmg_base_building_pharmaceutical_industries
 		pmg_automation_pharmaceutical_industries
-		pmg_ownership_capital_building
+		
 	}
 	required_construction = construction_cost_high
 	ownership_type = self
@@ -93,7 +93,7 @@ dye_factory = {
 	production_method_groups = {
 		pmg_base_building_dye_factory
 		pmg_automation_dye_factory
-		pmg_ownership_capital_building
+		
 	}
 	required_construction = construction_cost_high
 	ownership_type = self
@@ -112,7 +112,7 @@ semiconductor_plant = {
 	production_method_groups = {
 		pmg_base_building_semiconductor_plant
 		pmg_automation_semiconductor_plant
-		pmg_ownership_capital_building
+		
 	}
 	required_construction = construction_cost_high
 	ownership_type = self
@@ -128,7 +128,7 @@ heavy_equipment_manufactury = {
 	production_method_groups = {
 		pmg_base_building_heavy_equipment_manufactury
 		pmg_automation_heavy_equipment_manufactury
-		pmg_ownership_capital_building
+		
 	}
 	required_construction = construction_cost_high
 	ownership_type = self
@@ -144,7 +144,7 @@ synthetic_rubber_plant = {
 	production_method_groups = {
 		pmg_base_synthetic_rubber_plant
 		pmg_automation_synthetic_rubber_plant
-		pmg_ownership_capital_building
+		
 	}
 	required_construction = construction_cost_high
 	ownership_type = self
@@ -160,7 +160,7 @@ hospital = {
 	production_method_groups = {
 		pmg_base_hospitals
 		pmg_automation_hospital
-		pmg_ownership_capital_building
+		
 	}
 	required_construction = construction_cost_high
 	ownership_type = self
@@ -176,7 +176,7 @@ office_building = {
 	production_method_groups = {
 		pmg_base_office_building
 		pmg_automation_building_office_building
-		pmg_ownership_capital_building
+		
 	}
 	required_construction = construction_cost_high
 	ownership_type = self
@@ -192,7 +192,7 @@ utilities_sector = {
 	production_method_groups = {
 		pmg_base_utilities_sector
 		pmg_automation_utilities_sector
-		pmg_ownership_capital_building
+		
 	}
 	required_construction = construction_cost_high
 	ownership_type = self
@@ -208,7 +208,7 @@ commercial_services = {
 	production_method_groups = {
 		pmg_base_commercial_services
 		pmg_automation_commercial_services
-		pmg_ownership_capital_building
+		
 	}
 	required_construction = construction_cost_high
 	ownership_type = self
@@ -223,7 +223,7 @@ airports = {
 	unlocking_technologies = { airports }
 	production_method_groups = {
 		pmg_base_airports
-		pmg_ownership_capital_building
+		
 	}
 	required_construction = 18000
 	ownership_type = self
@@ -239,7 +239,7 @@ plastic_manufacturing_plants = {
 	production_method_groups = {
 		pmg_base_plastic_manufacturing_plants
 		pmg_automation_plastic_manufacturing_plants
-		pmg_ownership_capital_building
+		
 	}
 	required_construction = construction_cost_high
 	ownership_type = self
@@ -414,7 +414,10 @@ building_shipyards = {
 	city_type = port
 	ai_nationalization_desire = 0.25
 	unlocking_technologies = { navigation }
-	production_method_groups = { pmg_base_building_shipyards }
+	production_method_groups = { 
+		pmg_base_building_shipyards 
+		pmg_automation_building_shipyards
+	}
 	required_construction = construction_cost_high
 	potential = { is_coastal = yes }
 	ownership_type = self
@@ -427,59 +430,14 @@ building_military_shipyards = {
 	city_type = port
 	ai_nationalization_desire = 0.5
 	unlocking_technologies = { admiralty }
-	production_method_groups = { pmg_military_base }
+	production_method_groups = { 
+		pmg_military_base 
+		pmg_automation_building_mil_shipyards
+	}
 	required_construction = construction_cost_very_high
 	potential = { is_coastal = yes }
 	ownership_type = self
 	background = "gfx/interface/icons/building_icons/backgrounds/building_panel_bg_harbour.dds"
-}
-
-building_automotive_industry = {
-	building_group = bg_heavy_industry
-	icon = "gfx/interface/icons/building_icons/vehicles_industry.dds"
-	city_type = city
-	levels_per_mesh = 5
-	unlocking_technologies = { combustion_engine }
-	production_method_groups = {
-		pmg_automobile_production
-		pmg_aeroplanes
-		pmg_tanks
-		pmg_automation_building_automotive_industry
-	}
-	required_construction = construction_cost_very_high
-	possible = { owner = { NOT = { OR = { has_law = law_type:law_industry_banned has_law = law_type:law_extraction_economy } } } }
-	ownership_type = self
-	background = "gfx/interface/icons/building_icons/backgrounds/building_panel_bg_heavy_industry.dds"
-}
-
-building_electrics_industry = {
-	building_group = bg_heavy_industry
-	icon = "gfx/interface/icons/building_icons/electrics_industry.dds"
-	city_type = city
-	levels_per_mesh = 5
-	unlocking_technologies = { electrical_generation }
-	production_method_groups = {
-		pmg_telephones
-		pmg_radios
-		pmg_automation_building_electrics_industry
-	}
-	required_construction = construction_cost_very_high
-	possible = { owner = { NOT = { OR = { has_law = law_type:law_industry_banned has_law = law_type:law_extraction_economy } } } }
-	ownership_type = self
-	background = "gfx/interface/icons/building_icons/backgrounds/building_panel_bg_heavy_industry.dds"
-}
-
-building_power_plant = {
-	building_group = bg_heavy_industry
-	icon = "gfx/interface/icons/building_icons/power_plant.dds"
-	city_type = city
-	levels_per_mesh = 5
-	unlocking_technologies = { electrical_generation }
-	production_method_groups = { pmg_base_building_power_plant }
-	required_construction = construction_cost_very_high
-	possible = { owner = { NOT = { OR = { has_law = law_type:law_industry_banned has_law = law_type:law_extraction_economy } } } }
-	ownership_type = self
-	background = "gfx/interface/icons/building_icons/backgrounds/building_panel_bg_heavy_industry.dds"
 }
 
 building_arms_industry = {
@@ -491,7 +449,6 @@ building_arms_industry = {
 	production_method_groups = {
 		pmg_firearms_manufacturing
 		pmg_automation_arms
-		pmg_ownership_capital_building_arms_industry
 	}
 	required_construction = construction_cost_high
 	ownership_type = self
@@ -507,7 +464,6 @@ building_artillery_foundries = {
 	production_method_groups = {
 		pmg_foundries
 		pmg_automation_arty
-		pmg_ownership_capital_building_artillery_foundries
 	}
 	required_construction = construction_cost_high
 	ownership_type = self
@@ -523,7 +479,6 @@ building_munition_plants = {
 	production_method_groups = {
 		pmg_base_building_munition_plants
 		pmg_automation_munitions
-		pmg_ownership_capital_building_munition_plants
 	}
 	required_construction = construction_cost_very_high
 	possible = { owner = { NOT = { has_law = law_type:law_industry_banned } } }
@@ -540,7 +495,6 @@ building_war_machine_industry = {
 	production_method_groups = {
 		pmg_aeroplanes
 		pmg_automation_building_aeroplanes
-		pmg_ownership_capital_building_war_machine_industry
 	}
 	required_construction = construction_cost_very_high
 	possible = { owner = { NOT = { has_law = law_type:law_industry_banned } } }
