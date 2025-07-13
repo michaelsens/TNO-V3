@@ -1,4 +1,4 @@
-﻿building_suez_canal = {
+building_suez_canal = {
 	building_group = bg_canals
 	icon = "gfx/interface/icons/building_icons/suez_canal.dds"
 	canal = canal_suez
@@ -8,8 +8,9 @@
 	required_construction = construction_cost_canal
 
 	ai_value = 50000 # Canals are very important
-	
+
 	unlocking_technologies = {
+		colonization
 	}
 
 	potential = {
@@ -21,6 +22,10 @@
 			OR = {
 				owns_treaty_port_in = STATE_SINAI
 				owns_entire_state_region = STATE_SINAI
+			}
+			custom_tooltip = {
+				text = suez_survey_complete_tooltip
+				has_variable = suez_survey_complete
 			}
 		}
 	}
@@ -52,8 +57,9 @@ building_panama_canal = {
 	required_construction = construction_cost_canal
 
 	ai_value = 50000 # Canals are very important
-	
+
 	unlocking_technologies = {
+		civilizing_mission
 	}
 
 	potential = {
@@ -66,9 +72,13 @@ building_panama_canal = {
 				owns_treaty_port_in = STATE_PANAMA
 				owns_entire_state_region = STATE_PANAMA
 			}
+			custom_tooltip = {
+				text = panama_survey_complete_tooltip
+				has_variable = panama_survey_complete
+			}
 		}
 	}
-	
+
 	entity_not_constructed = { }
 	entity_under_construction = { "canal_panamacanal_under_construction_01_entity" }
 	entity_constructed = { "canal_panamacanal_01_entity" }

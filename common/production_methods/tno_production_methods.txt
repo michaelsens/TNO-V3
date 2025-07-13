@@ -1,0 +1,28 @@
+pm_advanced_steel_production = {
+	texture = "gfx/interface/icons/production_method_icons/electric_arc_furnace.dds" # Using vanilla icon for now
+
+	unlocking_technologies = {
+		advanced_steel_production
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_iron_add = 30
+			goods_input_coal_add = 30
+			goods_input_electricity_add = 25
+
+			# output goods
+			goods_output_steel_add = 160
+		}
+
+		level_scaled = {
+			# employment
+			building_employment_shopkeepers_add = 250
+			building_employment_laborers_add = 500
+			building_employment_machinists_add = 1000
+			building_employment_engineers_add = 750
+		}
+	}
+	required_input_goods = electricity
+}
