@@ -151,85 +151,6 @@ synthetic_rubber_plant = {
 	background = "gfx/interface/icons/building_icons/backgrounds/building_panel_bg_heavy_industry.dds"
 }
 
-hospital = {
-	building_group = bg_urban_facilities
-	icon = "gfx/interface/icons/building_icons/hospitals.dds"
-	city_type = city
-	levels_per_mesh = 5
-	unlocking_technologies = { hospitals }
-	production_method_groups = {
-		pmg_base_hospitals
-		pmg_automation_hospital
-		
-	}
-	required_construction = construction_cost_high
-	ownership_type = self
-	background = "gfx/interface/icons/building_icons/backgrounds/building_panel_bg_urban.dds"
-}
-
-office_building = {
-	building_group = bg_urban_facilities
-	icon = "gfx/interface/icons/building_icons/government_administration.dds" # Placeholder
-	city_type = city
-	levels_per_mesh = 5
-	unlocking_technologies = { office_building }
-	production_method_groups = {
-		pmg_base_office_building
-		pmg_automation_building_office_building
-		
-	}
-	required_construction = construction_cost_high
-	ownership_type = self
-	background = "gfx/interface/icons/building_icons/backgrounds/building_panel_bg_urban.dds"
-}
-
-utilities_sector = {
-	building_group = bg_urban_facilities
-	icon = "gfx/interface/icons/building_icons/power_plant.dds" # Placeholder
-	city_type = city
-	levels_per_mesh = 5
-	unlocking_technologies = { utilities_sector }
-	production_method_groups = {
-		pmg_base_utilities_sector
-		pmg_automation_utilities_sector
-		
-	}
-	required_construction = construction_cost_high
-	ownership_type = self
-	background = "gfx/interface/icons/building_icons/backgrounds/building_panel_bg_urban.dds"
-}
-
-commercial_services = {
-	building_group = bg_urban_facilities
-	icon = "gfx/interface/icons/building_icons/urban_center.dds" # Placeholder
-	city_type = city
-	levels_per_mesh = 5
-	unlocking_technologies = { commercial_services }
-	production_method_groups = {
-		pmg_base_commercial_services
-		pmg_automation_commercial_services
-		
-	}
-	required_construction = construction_cost_high
-	ownership_type = self
-	background = "gfx/interface/icons/building_icons/backgrounds/building_panel_bg_urban.dds"
-}
-
-airports = {
-	building_group = bg_urban_facilities
-	icon = "gfx/interface/icons/building_icons/airport.dds" # Placeholder
-	city_type = city
-	levels_per_mesh = 5
-	unlocking_technologies = { airports }
-	production_method_groups = {
-		pmg_base_airports
-		
-	}
-	required_construction = 18000
-	ownership_type = self
-	background = "gfx/interface/icons/building_icons/backgrounds/building_panel_bg_urban.dds"
-}
-
 plastic_manufacturing_plants = {
 	building_group = bg_heavy_industry
 	icon = "gfx/interface/icons/building_icons/plastics_factory.dds"
@@ -314,7 +235,7 @@ building_tooling_workshops = {
 	building_group = bg_light_industry
 	icon = "gfx/interface/icons/building_icons/tooling_workshops.dds"
 	ai_nationalization_desire = 0.25
-	unlocking_technologies = { lathe }
+	unlocking_technologies = { tooling_workshops }
 	city_type = city
 	levels_per_mesh = 5
 	production_method_groups = {
@@ -331,7 +252,7 @@ building_paper_mills = {
 	building_group = bg_light_industry
 	icon = "gfx/interface/icons/building_icons/paper_mills.dds"
 	ai_nationalization_desire = 0.25
-	unlocking_technologies = { saw_mills }
+	unlocking_technologies = { paper_mills }
 	city_type = city
 	levels_per_mesh = 5
 	production_method_groups = {
@@ -346,7 +267,7 @@ building_paper_mills = {
 building_chemical_plants = {
 	building_group = bg_heavy_industry
 	icon = "gfx/interface/icons/building_icons/chemicals_industry.dds"
-	unlocking_technologies = { chemistry }
+	unlocking_technologies = { fertilizer_plants }
 	city_type = city
 	levels_per_mesh = 5
 	production_method_groups = {
@@ -362,7 +283,7 @@ building_chemical_plants = {
 building_explosives_factory = {
 	building_group = bg_heavy_industry
 	icon = "gfx/interface/icons/building_icons/explosives_factory.dds"
-	unlocking_technologies = { chemistry }
+	unlocking_technologies = { explosives }
 	city_type = city
 	levels_per_mesh = 5
 	production_method_groups = { 
@@ -381,7 +302,7 @@ building_steel_mills = {
 	city_type = city
 	levels_per_mesh = 5
 	ai_nationalization_desire = 0.25
-	unlocking_technologies = { steelworking }
+	unlocking_technologies = { steel }
 	production_method_groups = {
 		pmg_steelmaking_process
 		pmg_automation_building_steel_mills
@@ -397,7 +318,7 @@ building_motor_industry = {
 	icon = "gfx/interface/icons/building_icons/motor_industry.dds"
 	city_type = city
 	levels_per_mesh = 5
-	unlocking_technologies = { atmospheric_engine }
+	unlocking_technologies = { engines }
 	production_method_groups = {
 		pmg_base_building_motor_industry
 		pmg_automation_building_motor_industry
@@ -413,7 +334,7 @@ building_shipyards = {
 	icon = "gfx/interface/icons/building_icons/shipyards.dds"
 	city_type = port
 	ai_nationalization_desire = 0.25
-	unlocking_technologies = { navigation }
+	unlocking_technologies = { shipyards }
 	production_method_groups = { 
 		pmg_base_building_shipyards 
 		pmg_automation_building_shipyards
@@ -429,7 +350,7 @@ building_military_shipyards = {
 	icon = "gfx/interface/icons/building_icons/military_shipyards.dds"
 	city_type = port
 	ai_nationalization_desire = 0.5
-	unlocking_technologies = { admiralty }
+	unlocking_technologies = { paddle_steamer }
 	production_method_groups = { 
 		pmg_military_base 
 		pmg_automation_building_mil_shipyards

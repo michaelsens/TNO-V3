@@ -37,7 +37,7 @@ building_arts_academy = {
 	levels_per_mesh = 5
 
 	unlocking_technologies = {
-		romanticism
+		urbanization
 	}
 
 	production_method_groups = {
@@ -153,4 +153,84 @@ building_makeshift_plant = {
 	}
 
 	background = "gfx/interface/icons/building_icons/backgrounds/building_panel_bg_monuments.dds"
+}
+
+
+hospital = {
+	building_group = bg_service_facilities
+	icon = "gfx/interface/icons/building_icons/hospitals.dds"
+	city_type = city
+	levels_per_mesh = 5
+	unlocking_technologies = { hospitals }
+	production_method_groups = {
+		pmg_base_hospitals
+		pmg_automation_hospital
+		
+	}
+	required_construction = construction_cost_high
+	ownership_type = self
+	background = "gfx/interface/icons/building_icons/backgrounds/building_panel_bg_urban.dds"
+}
+
+office_building = {
+	building_group = bg_service_facilities
+	icon = "gfx/interface/icons/building_icons/government_administration.dds" # Placeholder
+	city_type = city
+	levels_per_mesh = 5
+	unlocking_technologies = { office_building }
+	production_method_groups = {
+		pmg_base_office_building
+		pmg_automation_building_office_building
+		
+	}
+	required_construction = construction_cost_high
+	ownership_type = self
+	background = "gfx/interface/icons/building_icons/backgrounds/building_panel_bg_urban.dds"
+}
+
+utilities_sector = {
+	building_group = bg_service_facilities
+	icon = "gfx/interface/icons/building_icons/power_plant.dds" # Placeholder
+	city_type = city
+	levels_per_mesh = 5
+	unlocking_technologies = { utilities_sector }
+	production_method_groups = {
+		pmg_base_utilities_sector
+		pmg_automation_utilities_sector
+		
+	}
+	required_construction = construction_cost_high
+	ownership_type = self
+	background = "gfx/interface/icons/building_icons/backgrounds/building_panel_bg_urban.dds"
+}
+
+commercial_services = {
+	building_group = bg_service_facilities
+	icon = "gfx/interface/icons/building_icons/urban_center.dds" # Placeholder
+	city_type = city
+	levels_per_mesh = 5
+	unlocking_technologies = { commercial_services }
+	production_method_groups = {
+		pmg_base_commercial_services
+		pmg_automation_commercial_services
+		
+	}
+	required_construction = construction_cost_high
+	ownership_type = self
+	background = "gfx/interface/icons/building_icons/backgrounds/building_panel_bg_urban.dds"
+}
+
+airports = {
+	building_group = bg_infrastructure
+	icon = "gfx/interface/icons/building_icons/airport.dds" # Placeholder
+	city_type = city
+	levels_per_mesh = 5
+	unlocking_technologies = { airports }
+	production_method_groups = {
+		pmg_base_airports
+		
+	}
+	required_construction = 18000
+	ownership_type = self
+	background = "gfx/interface/icons/building_icons/backgrounds/building_panel_bg_urban.dds"
 }
