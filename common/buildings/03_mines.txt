@@ -125,3 +125,26 @@ building_gold_fields = {
 
 	background = "gfx/interface/icons/building_icons/backgrounds/building_panel_bg_mining.dds"
 }
+
+building_uranium_mine = {
+	building_group = bg_uranium_mine
+	icon = "gfx/interface/icons/building_icons/uranium.dds"
+	city_type = mine
+	levels_per_mesh = 30
+
+	terrain_manipulator = mining
+	
+	unlocking_technologies = {
+		shaft_mining
+	}
+
+	production_method_groups = {
+		pmg_tno_uranium_mine
+		pmg_tno_nuclear_mining_equipment
+		pmg_tno_nuclear_transportaion
+		pmg_tno_ownership_capital_building_nuclear
+	}
+	
+	required_construction = construction_cost_medium
+	ownership_type = self
+}
