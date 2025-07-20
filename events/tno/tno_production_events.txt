@@ -1,0 +1,70 @@
+namespace = tno_production_events
+
+
+tno_production_tech_events.3 = { #booming consumer industry
+	type = country_event
+
+	trigger = {
+		OR = {
+			any_scope_building = {
+				filter = {
+					is_building_type = building_consumer_electronics
+				}
+				has_active_production_method = pm_automation_consumer_electronics_2
+				cash_reserves_ratio >= 0.25
+				weekly_profit > 0
+				level >= 5
+				occupancy >= 0.75
+			}
+			any_scope_building = {
+				filter = {
+					is_building_type = building_household_appliances
+				}
+				percent > 0.75
+				has_active_production_method = pm_automation_household_appliances_2
+				cash_reserves_ratio >= 0.25
+				weekly_profit > 0
+				level >= 5
+				occupancy >= 0.75
+			}
+		}
+	}
+
+	event_image = {
+		video = "southamerica_factory_opening"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_industry.dds"
+
+	duration = 3
+
+	cooldown = { days = never_fire_again_modifier_time }
+
+	placement = ROOT
+
+	title = tno_production_tech_events.3.t
+	desc = tno_production_tech_events.3.d
+	flavor = tno_production_tech_events.3.f
+
+	immediate = {
+	}
+
+	option = { # consumer boost
+		name = tno_production_tech_events.3.a
+		default_option = yes
+		add_modifier = {
+			name = consumer_boom
+			years = 5
+		}
+	}
+
+	option = { #fund millitary
+		name = tno_production_tech_events.3.b 
+		add_modifier = {
+			name = millitary_boom
+			years = 5
+		}
+	}
+}
