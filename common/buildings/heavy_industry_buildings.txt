@@ -132,3 +132,21 @@ synthetic_rubber_plant = {
 	ownership_type = self
 	background = "gfx/interface/icons/building_icons/backgrounds/building_panel_bg_heavy_industry.dds"
 }
+
+automotive_industry = {
+	building_group = bg_heavy_industry
+	texture = "gfx/interface/icons/building_icons/automotive_industry.dds"
+	city_type = city
+	levels_per_mesh = 5
+	
+	unlocking_technologies = {
+		automotive_industry
+	}
+
+	production_method_groups = {
+		pmg_base_building_automotive_industry
+		pmg_automation_automotive_industry
+	}
+
+	required_construction = construction_cost_high
+}

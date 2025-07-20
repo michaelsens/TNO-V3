@@ -1,101 +1,371 @@
 ﻿BUILDINGS={
 	s:STATE_URAL={
-		region_state:RUS={
-			create_building={
-				building="building_iron_mine"
-				add_ownership={
-					building={
-						type="building_financial_district"
-						country="c:RUS"
-						levels=2
-						region="STATE_URAL"
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_picks_and_shovels_building_iron_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts"  }
-			}
-			create_building={
-				building="building_logging_camp"
-				add_ownership={
-					building={
-						type="building_financial_district"
-						country="c:RUS"
-						levels=2
-						region="STATE_URAL"
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_saw_mills" "pm_hardwood" "pm_no_equipment" "pm_road_carts"  }
-			}
+		region_state:MGK={
+			
+		}
+		region_state:ZLA={
+			
+		}
+		region_state:WRS={
+		
+		}
+		region_state:URL={
+
 		}
 	}
 	s:STATE_TOMSK={
-		region_state:RUS={
+		region_state:OYR={
+			
 		}
-	}
-	s:STATE_TUVA={
-		region_state:CHI={
+		region_state:KRK={
+			
 		}
-	}
-	s:STATE_TOBOLSK={
-		region_state:RUS={
+		region_state:KEM={
+			
 		}
-	}
-	s:STATE_UPPER_YENISEYSK={
-		region_state:RUS={
+		region_state:TOM={
+			
+		}
+		region_state:SBA={
+			
 		}
 	}
 	s:STATE_OB={
-		region_state:RUS={
+		region_state:TTY ={
+			
+		}
+		region_state:AVI ={
+			
+		}
+	}
+	s:STATE_TUVA={
+		region_state:TUV={
+			
+		}
+	}
+	s:STATE_TOBOLSK={
+		region_state:OSK={
+			
+		}
+		region_state:TOM={
+			
+		}
+		region_state:NVB={
+			
+		}
+	}
+	s:STATE_UPPER_YENISEYSK={
+		region_state:TOM={
+			
+		}
+		region_state:CHR={
+			
+		}
+	}
+	s:STATE_NENETSIA={
+		region_state:VOR={
+			
+		}
+		region_state:WST={
+			
 		}
 	}
 	s:STATE_CHUKOTKA={
-		region_state:RUS={
+		region_state:DIV={
+			create_building={
+				building="building_barracks"
+				level=1
+				reserves=1
+				activate_production_methods={ "pm_general_training" }
+			}
 		}
 	}
 	s:STATE_KAMCHATKA={
-		region_state:RUS={
-		}
-	}
-	s:STATE_OKHOTSK={
-		region_state:RUS={
+		region_state:FER={
+			create_building={
+				building="building_small_workshop"
+				level=1
+				reserves=1
+				activate_production_methods={ "pm_small_workshop" }
+			}
+			create_building={
+				building="building_military_shipyards"
+				level=1
+				reserves=1
+				activate_production_methods={ "pm_privately_owned_building_military_shipyards" "pm_military_shipbuilding_steam" }
+			}
 			create_building={
 				building="building_port"
-				add_ownership={
-					company={
-						type = company_russian_american_company
-						country="c:RUS"
-						levels=1
-					}
-				}
+				level=1
 				reserves=1
 				activate_production_methods={ "pm_anchorage" }
+			}
+			create_building={
+				building="building_barracks"
+				level=2
+				reserves=1
+				activate_production_methods={ "pm_general_training" }
+			}
+			create_building={
+				building="building_naval_base"
+				level=1
+				reserves=1
+				activate_production_methods={ "pm_power_of_the_purse" }
 			}
 		}
 	}
 	s:STATE_YAKUTSK={
-		region_state:RUS={
+		region_state:DIV={
+			create_building={
+				building="building_small_workshop"
+				level=1
+				reserves=1
+				activate_production_methods={ "pm_small_workshop" }
+			}
+			create_building={
+				building="building_barracks"
+				level=2
+				reserves=1
+				activate_production_methods={ "pm_general_training" }
+			}
 		}
 	}
 	s:STATE_TRANS_BAIKAL={
-		region_state:RUS={
+		region_state:AMR={
 			create_building={
-				building="building_iron_mine"
-				add_ownership={
-					building={
-						type="building_financial_district"
-						country="c:RUS"
-						levels=1
-						region="STATE_INGRIA"
-					}
-				}
+				building="building_barracks"
+				level=2
 				reserves=1
-				activate_production_methods={ "pm_picks_and_shovels_building_iron_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts"  }
+				activate_production_methods={ "pm_general_training" }
+			}
+			create_building={
+				building="building_port"
+				level=1
+				reserves=1
+				activate_production_methods={ "pm_anchorage" }
+			}
+			create_building={
+				building="building_coal_mine"
+				level=1
+				reserves=1
+				activate_production_methods={ "pm_atmospheric_engine_pump_building_coal_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" "pm_privately_owned_building_coal_mine" }
+			}
+			create_building={
+				building="building_small_workshop"
+				level=1
+				reserves=1
+				activate_production_methods={ "pm_small_workshop" }
+			}
+		}
+		region_state:YAK={
+			create_building={
+				building="building_small_workshop"
+				level=1
+				reserves=1
+				activate_production_methods={ "pm_small_workshop" }
+			}
+			create_building={
+				building="building_barracks"
+				level=2
+				reserves=1
+				activate_production_methods={ "pm_general_training" }
+			}
+		}
+		region_state:CHT={
+			create_building={
+				building="building_oil_rig"
+				level=1
+				reserves=1	
+				activate_production_methods={ "pm_steam_derricks" "pm_road_carts" }
+			}
+			create_building={
+				building="building_makeshift_plant"
+				level=3
+				reserves=1
+				activate_production_methods={ "pm_hydroelectric_plant" }
+			}
+			create_building={
+				building="building_logging_camp"
+				level=1
+				reserves=1
+				activate_production_methods={ "pm_saw_mills" "pm_privately_owned_building_logging_camp" "pm_no_equipment" "pm_road_carts" "pm_hardwood" }
+			}
+			create_building={
+				building="building_small_workshop"
+				level=1
+				reserves=1
+				activate_production_methods={ "pm_small_workshop" }
+			}
+			create_building={
+				building="building_barracks"
+				level=2
+				reserves=1
+				activate_production_methods={ "pm_general_training" }
 			}
 		}
 	}
 	s:STATE_IRKUTSK={
-		region_state:RUS={
+		region_state:IRK={
+			create_building={
+				building="building_small_workshop"
+				level=3
+				reserves=1
+				activate_production_methods={ "pm_small_workshop" }
+			}
+			create_building={
+				building="building_barracks"
+				level=6
+				reserves=1
+				activate_production_methods={ "pm_general_training" }
+			}
+		}
+		region_state:BRY={
+			create_building={
+				building="building_small_workshop"
+				level=2
+				reserves=1
+				activate_production_methods={ "pm_small_workshop" }
+			}
+			create_building={
+				building="building_barracks"
+				level=4
+				reserves=1
+				activate_production_methods={ "pm_general_training" }
+			}
+		}
+	}
+	s:STATE_OKHOTSK={
+		region_state:MAG={
+			create_building={
+				building="building_barracks"
+				level=2
+				reserves=1
+				activate_production_methods={ "pm_general_training" }
+			}
+			create_building={
+				building="building_port"
+				level=1
+				reserves=1
+				activate_production_methods={ "pm_anchorage" }
+			}
+			create_building={
+				building="building_small_workshop"
+				level=1
+				reserves=1
+				activate_production_methods={ "pm_small_workshop" }
+			}
+			create_building={
+				building="building_makeshift_plant"
+				level=1
+				reserves=1
+				activate_production_methods={ "pm_hydroelectric_plant" }
+			}
+			create_building={
+				building="building_breweries"
+				level=1
+				reserves=1
+				activate_production_methods={ "" }
+			}
 		}
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

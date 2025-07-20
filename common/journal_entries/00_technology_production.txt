@@ -315,9 +315,6 @@ je_dynamite = {
 			}
 			percent > 0.75
 			OR = {
-				has_active_production_method = pm_leblanc_process
-				has_active_production_method = pm_ammonia-soda_process
-				has_active_production_method = pm_vacuum_evaporation
 				has_active_production_method = pm_brine_electrolysis
 			}
 			cash_reserves_ratio >= 0.25
@@ -330,62 +327,6 @@ je_dynamite = {
 		trigger_event = { id = production_tech_events.102 }
 		set_variable = {
 			name = dynamite_je_done
-		}
-	}
-
-	timeout = 3650
-}
-
-je_combustion_engines = {
-	icon = "gfx/interface/icons/event_icons/event_industry.dds"
-
-	group = je_group_technology
-
-	is_shown_when_inactive = {
-		is_player = yes
-		NOT = { has_variable = combustion_engines_je_done }
-		has_technology_researched = rotary_valve_engine
-	}
-
-	possible = {
-		has_technology_researched = combustion_engine
-		any_scope_building = {
-			OR = {
-				is_building_type = building_urban_center
-				is_building_type = building_motor_industry
-			}
-		}
-	}
-
-	complete = {
-		OR = {
-			any_scope_building = {
-				filter = {
-					is_building_type = building_urban_center
-				}
-				percent > 0.75
-				has_active_production_method = pm_public_motor_carriages
-				cash_reserves_ratio >= 0.25
-				weekly_profit > 0
-				occupancy >= 0.75
-			}
-			any_scope_building = {
-				filter = {
-					is_building_type = building_motor_industry
-				}
-				percent > 0.75
-				has_active_production_method = pm_automobile_production
-				cash_reserves_ratio >= 0.25
-				weekly_profit > 0
-				occupancy >= 0.75
-			}
-		}
-	}
-
-	on_complete = {
-		trigger_event = { id = production_tech_events.103 }
-		set_variable = {
-			name = combustion_engines_je_done
 		}
 	}
 
