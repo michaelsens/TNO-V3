@@ -15,7 +15,7 @@
 
 	building_modifiers = {
 		level_scaled = {
-			building_employment_clerks_add = 30000
+			building_employment_clerks_add = 40000
 		}
 	}
 }
@@ -45,8 +45,8 @@ pm_horizontal_drawer_cabinets = {
 		}
 
 		level_scaled = {
-			building_employment_clerks_add = 17500
-			building_employment_bureaucrats_add = 7500
+			building_employment_clerks_add = 25000
+			building_employment_bureaucrats_add = 10000
 		}
 	}
 }
@@ -77,8 +77,8 @@ pm_vertical_filing_cabinets = {
 		}
 
 		level_scaled = {
-			building_employment_clerks_add = 12500
-			building_employment_bureaucrats_add = 12500
+			building_employment_clerks_add = 15000
+			building_employment_bureaucrats_add = 15000
 		}
 	}
 }
@@ -109,7 +109,7 @@ pm_switch_boards = {
 		}
 
 		level_scaled = {
-			building_employment_bureaucrats_add = 15000
+			building_employment_bureaucrats_add = 25000
 		}
 	}
 }
@@ -173,124 +173,133 @@ pm_religious_bureaucrats = {
 	}
 }
 
+
 pm_scholastic_education = {
 	texture = "gfx/interface/icons/production_method_icons/scholastic_education.dds"
-
+	
 	country_modifiers = {
-		workforce_scaled = {
-			country_weekly_innovation_add = 1
+		workforce_scaled = { 
+			country_weekly_innovation_add = 4
 		}
 	}
-
+	
 	building_modifiers = {
 		workforce_scaled = {
-			goods_input_paper_add = 5
-		}
-
+			goods_input_paper_add = 50
+		}	
+	
 		level_scaled = {
-			building_employment_clerks_add = 250
-			building_employment_laborers_add = 250
+			building_employment_clerks_add = 15000
+			building_employment_laborers_add = 15000
 		}
 	}
-
+	
 	state_modifiers = {
-		workforce_scaled = {
+		workforce_scaled = { 
 			state_pop_qualifications_mult = 0.1
-		}
+		}	
 	}
 }
 
 pm_philosophy_department = {
 	texture = "gfx/interface/icons/production_method_icons/philosophy_dept.dds"
-
+	
 	unlocking_technologies = {
-		dialectics
+		urbanization
 	}
-
+	
 	country_modifiers = {
-		workforce_scaled = {
-			country_weekly_innovation_add = 1.5
+		workforce_scaled = { 
+			country_weekly_innovation_add = 6
 		}
 	}
-
+	
 	building_modifiers = {
 		workforce_scaled = {
-			goods_input_paper_add = 10
+			goods_input_paper_add = 37
+			goods_input_telephones_add = 12
+			goods_input_electricity_add = 10
 		}
-
+		
 		level_scaled = {
-			building_employment_clerks_add = 250
-			building_employment_laborers_add = 250
-		}
+			building_employment_clerks_add = 17500
+			building_employment_laborers_add = 12500
+		}					
 	}
-
+	
 	state_modifiers = {
-		workforce_scaled = {
+		workforce_scaled = { 
 			state_pop_qualifications_mult = 0.15
-		}
+		}	
 	}
 }
 
 pm_analytical_philosophy_department = {
 	texture = "gfx/interface/icons/production_method_icons/analytical_philosophy_department.dds"
-
+	
 	unlocking_technologies = {
-		analytical_philosophy
+		urbanization
 	}
-
+	
 	country_modifiers = {
-		workforce_scaled = {
-			country_weekly_innovation_add = 2
+		workforce_scaled = { 
+			country_weekly_innovation_add = 10
 		}
 	}
-
+	
 	building_modifiers = {
-		workforce_scaled = {
-			goods_input_paper_add = 15
-		}
+		workforce_scaled = { 
+			goods_input_paper_add = 25
+			goods_input_telephones_add = 28
+			goods_input_electricity_add = 16
+			goods_input_pharmaceuticals_add = 3
+			goods_input_engines_add = 1
+			goods_input_chemicals_add = 3
+			goods_input_semiconductors_add = 1
+			goods_input_plastic_add = 2
 
+		}
+		
 		level_scaled = {
-			building_employment_clerks_add = 200
-			building_employment_laborers_add = 200
-			building_employment_academics_add = 100
-		}
+			building_employment_academics_add = 25000
+		}					
 	}
-
+	
 	state_modifiers = {
-		workforce_scaled = {
+		workforce_scaled = { 
 			state_pop_qualifications_mult = 0.2
-		}
+		}	
 	}
-}
+}	
 
 pm_secular_academia = {
 	texture = "gfx/interface/icons/production_method_icons/ownership_academics.dds"
-
+	
 	disallowing_laws = {
 		law_state_religion
 	}
-
+	
 	building_modifiers = {
 		level_scaled = {
-			building_employment_academics_add = 500
+			building_employment_academics_add = 10000
 		}
-	}
+	}			
 }
 
 pm_religious_academia = {
 	texture = "gfx/interface/icons/production_method_icons/ownership_clergy.dds"
-
+	
 	disallowing_laws = {
 		law_total_separation
 		law_state_atheism
-	}
-
+	}	
+	
 	building_modifiers = {
 		level_scaled = {
-			building_employment_clergymen_add = 250
-			building_employment_academics_add = 250
+			building_employment_clergymen_add = 5000
+			building_employment_academics_add = 5000
 		}
-	}
+	}			
 }
 
 pm_skyscraper_bureaucratic_nexus = {

@@ -1,43 +1,49 @@
 ﻿pm_anchorage = {
 	texture = "gfx/interface/icons/production_method_icons/anchorage.dds"
-
+	
 	low_pop_method = yes # AI will activate this method for states with low population
-
+	
 	building_modifiers = {
-		level_scaled = {
-			building_employment_laborers_add = 175
-			building_employment_clerks_add = 50
-			building_employment_bureaucrats_add = 25
+		workforce_scaled = {
+			building_employment_laborers_add = 5000
+			building_employment_clerks_add = 2500
+			building_employment_bureaucrats_add = 500
+			goods_output_transportation_add = 4
 		}
 	}
-}
+	
+	country_modifiers = {
+		workforce_scaled = {
+			country_convoys_capacity_add = 150
+		}
+	}
+}			
 
 pm_basic_port = {
 	texture = "gfx/interface/icons/production_method_icons/basic_port.dds"
-
+	
 	building_modifiers = {
-		workforce_scaled = {
-			goods_input_clippers_add = 5 # 300
-			goods_output_merchant_marine_add = 10 # 500
+		workforce_scaled = {	
 		}
 		level_scaled = {
-			building_employment_laborers_add = 700
-			building_employment_clerks_add = 200
-			building_employment_bureaucrats_add = 100
+			building_employment_laborers_add = 30000
+			building_employment_clerks_add = 15000
+			building_employment_bureaucrats_add = 5000
+			goods_output_transportation_add = 8
 		}
 	}
 
 	country_modifiers = {
 		workforce_scaled = {
-			country_convoys_capacity_add = 100
+			country_convoys_capacity_add = 250
 		}
 	}
 	state_modifiers = {
 		workforce_scaled = {
-			state_infrastructure_add = 3
+			state_infrastructure_add = 50
 		}
 	}
-}
+}		
 
 pm_industrial_port = {
 	texture = "gfx/interface/icons/production_method_icons/industrial_port.dds"
@@ -47,29 +53,29 @@ pm_industrial_port = {
 	}
 
 	building_modifiers = {
-		workforce_scaled = {
-			goods_input_steamers_add = 5 # 350
-			goods_input_coal_add = 5 # 150
-			goods_output_merchant_marine_add = 20 # 1000
+		workforce_scaled = {	
+			goods_input_steamers_add = 5
+			goods_input_coal_add = 5
 		}
 		level_scaled = {
-			building_employment_laborers_add = 500
-			building_employment_machinists_add = 200
-			building_employment_clerks_add = 200
-			building_employment_bureaucrats_add = 100
+			building_employment_laborers_add = 20000
+			building_employment_machinists_add = 5000
+			building_employment_clerks_add = 10000
+			building_employment_bureaucrats_add = 5000
+			goods_output_transportation_add = 16
 		}
 	}
 
 	country_modifiers = {
 		workforce_scaled = {
-			country_convoys_capacity_add = 150
+			country_convoys_capacity_add = 350
 		}
 	}
 	state_modifiers = {
 		workforce_scaled = {
-			state_infrastructure_add = 4
+			state_infrastructure_add = 75
 		}
-	}
+	}	
 }
 
 pm_modern_port = {
@@ -77,30 +83,29 @@ pm_modern_port = {
 	unlocking_technologies = {
 		concrete_dockyards
 	}
-
+	
 	building_modifiers = {
-		workforce_scaled = {
-			goods_input_steamers_add = 5 # 350
-			goods_input_oil_add = 10 # 400
-			goods_output_merchant_marine_add = 30 # 1500
+		workforce_scaled = {	
+			goods_input_steamers_add = 5	
+			goods_input_oil_add = 5
+			goods_output_transportation_add = 32
 		}
 		level_scaled = {
-			building_employment_laborers_add = 400
-			building_employment_machinists_add = 250
-			building_employment_engineers_add = 50
-			building_employment_clerks_add = 200
-			building_employment_bureaucrats_add = 100
+			building_employment_laborers_add = 7500
+			building_employment_machinists_add = 2500
+			building_employment_clerks_add = 5000
+			building_employment_bureaucrats_add = 5000
 		}
 	}
 
 	country_modifiers = {
 		workforce_scaled = {
-			country_convoys_capacity_add = 200
+			country_convoys_capacity_add = 450
 		}
 	}
 	state_modifiers = {
 		workforce_scaled = {
-			state_infrastructure_add = 5
+			state_infrastructure_add = 100
 		}
 	}
 }
