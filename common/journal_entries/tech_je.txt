@@ -1,0 +1,83 @@
+je_drug_crisis = {
+    icon = "gfx/interface/icons/new_event_icons/drug_crisis.dds"
+
+	group = je_group_technology
+
+    is_shown_when_inactive = {
+      is_player = yes 
+    }
+
+    possible = {
+        
+
+        capital.market = {
+			
+			mg:pharmaceuticals = { market_goods_pricier < 0.40 }
+		    
+        }
+
+    }
+
+    immediate = {
+		set_variable = {
+			name = drug_crisis_timer_var
+			value = 0
+		}
+        g:pharmaceuticals = {
+            save_scope_as = relevant_goods
+        }
+    }
+
+    complete = {
+        trigger_if = {
+            limit = {
+                has_variable = prestige_clothes_timer_var
+            }
+            scope:journal_entry = {
+                is_goal_complete = yes
+            }
+        }
+        
+        capital.market = {
+			
+			mg:pharmaceuticals = { market_goods_pricier > 0.30 }
+		    
+        }
+
+    }
+
+    on_monthly_pulse = {
+        effect = {
+           
+                
+                change_variable = { name = prestige_clothes_timer_var add = 1 }
+            
+        }
+    }
+
+    on_complete = {
+     
+    }
+
+    invalid = {
+        
+    }
+
+	current_value = {
+		value = root.var:drug_crisis_timer_var
+	}
+
+	
+
+	progressbar = yes
+
+    weight = 1000
+
+    should_be_pinned_by_default = yes
+}
+
+
+
+
+
+
