@@ -8,9 +8,6 @@ building_logging_camp = {
 
 	production_method_groups = {
 		pmg_base_building_logging_camp
-		pmg_hardwood
-		pmg_equipment
-		pmg_transportation_building_logging_camp
 	}
 	ownership_type = self
 
@@ -33,7 +30,6 @@ building_rubber_plantation = {
 
 	production_method_groups = {
 		pmg_base_building_rubber_plantation
-		pmg_automation_synthetic_rubber_plant
 	}
 	ownership_type = self
 
@@ -48,7 +44,7 @@ building_fishing_wharf = {
 
 	production_method_groups = {
 		pmg_base_building_fishing_wharf
-		pmg_refrigeration_building_fishing_wharf
+		pmg_automation_fishing_wharves
 	}
 
 	potential = {
@@ -58,30 +54,6 @@ building_fishing_wharf = {
 
 	background = "gfx/interface/icons/building_icons/backgrounds/building_panel_bg_fishing.dds"
 }
-
-building_whaling_station = {
-	building_group = bg_whaling
-	icon = "gfx/interface/icons/building_icons/whaling_station.dds"
-	city_type = port
-	required_construction = construction_cost_low
-
-	unlocking_technologies = {
-		navigation
-	}
-
-	production_method_groups = {
-		pmg_base_building_whaling_station
-		pmg_refrigeration_building_whaling_station
-	}
-
-	potential = {
-		is_sea_adjacent = yes
-	}
-	ownership_type = self
-
-	background = "gfx/interface/icons/building_icons/backgrounds/building_panel_bg_fishing.dds"
-}
-
 
 building_oil_rig = {
 	building_group = bg_oil_extraction
@@ -96,7 +68,7 @@ building_oil_rig = {
 
 	production_method_groups = {
 		pmg_base_building_oil_rig
-		pmg_transportation_building_oil_rig
+		pmg_automation_oil_rig
 	}
 	ownership_type = self
 
