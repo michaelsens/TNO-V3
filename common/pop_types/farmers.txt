@@ -1,16 +1,15 @@
-farmers = {
+﻿farmers = {
 	texture = "gfx/interface/icons/pops_icons/farmers.dds"
-	color = hsv{ 0.21 0.65 0.65 }
-	start_quality_of_life = 7
-	wage_weight = 200 # Vanilla is 2
+	color = hsv{ 0.54 0.58 0.82 }
+	start_quality_of_life = 10
+	wage_weight = 200
 	paid_private_wage = yes
-	literacy_target = 0.20
-	dependent_wage = 50	# Vanilla is 0.5
+	dependent_wage = 50	# per year
 	unemployment = yes
 
-	# 30% - 70% politically engaged
-	political_engagement_base = 0.3
-	political_engagement_literacy_factor = 0.4
+	# 40% - 80% politically engaged
+	political_engagement_base = 0.40
+	political_engagement_literacy_factor = 0.40
 
 	political_engagement_mult = {
 		value = 1
@@ -22,13 +21,13 @@ farmers = {
 				limit = {
 					is_in_mild_starvation = yes
 				}
-				value = 0.25
+				value = 0.5
 			}
 			else_if = {
 				limit = {
 					is_in_severe_starvation = yes
 				}
-				value = 1
+				value = 1.5
 			}
 		}
 
@@ -45,19 +44,37 @@ farmers = {
 				value = 1.5
 			}
 		}
+
+		multiply = {
+			desc = "HOMESTEADING_LAW"
+			value = 1.0
+
+			if = {
+				limit = {
+					owner = {
+						has_law = law_type:law_homesteading
+					}
+				}
+				value = 1.25
+			}
+		}
 	}
 
 	qualifications_growth_desc = "FARMERS_QUALIFICATIONS_DESC"
 	qualifications = {
-		# baseline: ( literacy ) * 10, norm 4 for Peasants with Literacy 20%
+		# baseline: wealth (max 30) / 2, norm 10 for Peasants with Wealth 10
 		add = {
-			value = literacy_rate
-			multiply = 20
-			desc = "QUALIFICATIONS_LITERACY_FACTOR"
+			value = wealth
+			max = 30
+			divide = 2
+			desc = "QUALIFICATIONS_WEALTH_FACTOR"
 		}
 		if = {
 			limit = {
-				is_pop_type = peasants
+				OR = {
+					is_pop_type = peasants
+					is_pop_type = laborers
+				}
 			}
 			multiply = {
 				value = 2
@@ -69,7 +86,7 @@ farmers = {
 				is_peasant_under_serfdom = yes
 			}
 			multiply = {
-				value = 0.1
+				value = 0.2
 				desc = "QUALIFICATIONS_PEASANTS_UNDER_SERFDOM"
 			}
 		}

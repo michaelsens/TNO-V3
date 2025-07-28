@@ -1,12 +1,12 @@
-clergymen = {
+﻿clergymen = {
 	texture = "gfx/interface/icons/pops_icons/clergymen.dds"
-	color = hsv{ 0.15 0.51 0.77 }
+	color = hsv{ 0.13 0.52 0.91 }
 	start_quality_of_life = 10
-	wage_weight = 300 # Vanilla is 3
+	wage_weight = 300
 	paid_private_wage = yes
-	literacy_target = 0.50
+	literacy_target = 0.80
 	education_access = 0.5
-	dependent_wage = 50	# Vanilla is 0.5
+	dependent_wage = 50	# per year
 	unemployment = yes
 
 	# 50% - 100% politically engaged
@@ -38,15 +38,23 @@ clergymen = {
 	qualifications = {
 		if = {
 			limit = {
-				is_peasant_under_serfdom = no
 				literacy_rate > 0.2
 			}
-			# baseline: ( literacy - 0.2 ) * 10, norm 4 for Literacy 60%
+			# baseline: ( literacy - 0.2 ) * 20, norm 6 for Literacy 50% and Accepted Religion
 			add = {
 				value = literacy_rate
 				subtract = 0.2
-				multiply = 10
+				multiply = 20
 				desc = "QUALIFICATIONS_LITERACY_FACTOR"
+			}
+			if = {
+				limit = {
+					is_pop_type = academics
+				}
+				multiply = {
+					value = 5
+					desc = "QUALIFICATIONS_FAVORED_TYPE"
+				}
 			}
 			if = {
 				limit = {
@@ -60,25 +68,45 @@ clergymen = {
 			if = {
 				limit = {
 					state = {
-						state_cultural_acceptance = {
-							target = PREV.culture
-						   	value < acceptance_status_4
+						state_religious_acceptance = {
+							target = ROOT.religion
+							value < religious_acceptance_medium
 					   	}
 					}
 				}
 				multiply = {
-					value = 0.1
-					desc = "QUALIFICATIONS_CULTURAL_DISCRIMINATION"
+					value = 0.2
+					desc = "POTENTIALS_RELIGIOUS_DISCRIMINATION"
 				}
 			}
-		}
-		else_if = {
-			limit = {
-				is_peasant_under_serfdom = yes
+			if = {
+				limit = {
+					owner = {
+						has_law = law_type:law_total_separation
+					}
+				}
+				multiply = {
+					value = 0.5
+					desc = "QUALIFICATIONS_CLERGYMEN_UNDER_TOTAL_SEPARATION"
+				}
 			}
-			value = {
-				desc = "QUALIFICATIONS_PEASANTS_UNDER_SERFDOM"
-				value = 0
+			if = {
+				limit = {
+					is_peasant_under_serfdom = yes
+				}
+				multiply = {
+					value = 0.1
+					desc = "QUALIFICATIONS_PEASANTS_UNDER_SERFDOM"
+				}
+			}
+			if = {
+				limit = {
+					religion = rel:atheist
+				}
+				multiply = {
+					value = 0.1
+					desc = "ATHEIST_CLERGYMEN"
+				}
 			}
 		}
 		else = {

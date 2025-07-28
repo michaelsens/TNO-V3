@@ -1,11 +1,10 @@
-capitalists = {
+﻿capitalists = {
 	texture = "gfx/interface/icons/pops_icons/capitalists.dds"
-	color = hsv{ 0.15 0.65 0.65 }
+	color = hsv{ 0.52 0.32 0.49 }
 	start_quality_of_life = 20
-	working_adult_ratio = 0.2
-	wage_weight = 600 # Vanilla is 6
+	wage_weight = 500
 	paid_private_wage = no
-	literacy_target = 0.50
+	literacy_target = 0.70
 	dependent_wage = 0.0	# per year
 	unemployment = yes
 
@@ -33,32 +32,32 @@ capitalists = {
 		if = {
 			limit = {
 				is_peasant_under_serfdom = no
-				wealth >= 15
+				wealth > 10
 			}
-			# baseline: ( wealth - 10 ) / 5 + literacy, norm 3 for Wealth 20 and Literacy 50%
+			# baseline: ( wealth - 10 ) / 10 + ( literacy * 2 ), norm 2 for Wealth 20 and Literacy 50%
 			add = {
 				value = wealth
-				subtract = 14
-				divide = 10
-				add = {
-					value = wealth
-					subtract = 20
-					divide = 2.5
-					min = 0
-				}
+				subtract = 10
+				divide = 5
 				desc = "QUALIFICATIONS_WEALTH_FACTOR"
 			}
-			multiply = {
-				value = 0.5
-				add = {
-					value = literacy_rate
-					divide = 2
-				}
+			add = {
+				value = literacy_rate
+				multiply = 2
 				desc = "QUALIFICATIONS_LITERACY_FACTOR"
 			}
 			if = {
 				limit = {
-					is_pop_type = aristocrats
+					is_pop_type = shopkeepers
+				}
+				multiply = {
+					value = 5
+					desc = "QUALIFICATIONS_FAVORED_TYPE"
+				}
+			}
+			if = {
+				limit = {
+					is_pop_type = engineers
 				}
 				multiply = {
 					value = 5

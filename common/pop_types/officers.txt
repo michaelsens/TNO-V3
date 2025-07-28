@@ -1,17 +1,17 @@
-officers = {
+﻿officers = {
 	texture = "gfx/interface/icons/pops_icons/officers.dds"
-	color = hsv{ 0.0 0.7 0.6 }
-	start_quality_of_life = 15
-	working_adult_ratio = 0.2
-	wage_weight = 500 # Vanilla is 5
+	color = hsv{ 0.12 0.51 0.36 }
+	military = yes
+	start_quality_of_life = 10
+	wage_weight = 500
 	paid_private_wage = yes
 	literacy_target = 0.50
-	dependent_wage = 50	# Vanilla is 0.5
+	dependent_wage = 50	# per year
 	unemployment = yes
 
-	# 60% - 100% politically engaged
-	political_engagement_base = 0.6
-	political_engagement_literacy_factor = 0.4
+	# 70% - 100% politically engaged
+	political_engagement_base = 0.7
+	political_engagement_literacy_factor = 0.3
 
 	political_engagement_mult = {
 		value = 1
@@ -39,35 +39,24 @@ officers = {
 		if = {
 			limit = {
 				is_peasant_under_serfdom = no
-				literacy_rate > 0.2
+				OR = {
+					state = {
+						state_cultural_acceptance = {
+							target = PREV.culture
+						   	value > acceptance_status_4
+					   	}
+					}
+					is_pop_type = soldiers
+				}
 			}
-			# baseline: ( literacy - 0.2 ) * 10 * ( 2 if accepted culture and religion), norm 6 for Literacy 50% and Accepted C/R
+			# baseline: ( literacy - 0.2 ) * 10, norm 2 for Soldiers with Literacy 30%
 			add = {
 				value = literacy_rate
 				subtract = 0.2
-				multiply = 20
+				min = 0
+				multiply = 10
 				desc = "QUALIFICATIONS_LITERACY_FACTOR"
 			}
-
-			if = {
-				limit = {
-					pop_acceptance >= acceptance_status_5
-				}
-				multiply = {
-					value = 2
-					desc = "POTENTIALS_CULTURAL_RELIGIOUS_ACCEPTANCE"
-				}
-			}
-			else_if = {
-				limit = {
-					pop_acceptance >= acceptance_status_4
-				}
-				multiply = {
-					value = 1.5
-					desc = "POTENTIALS_CULTURAL_RELIGIOUS_ACCEPTANCE"
-				}
-			}
-
 			if = {
 				limit = {
 					is_pop_type = aristocrats
@@ -77,20 +66,42 @@ officers = {
 					desc = "QUALIFICATIONS_FAVORED_TYPE"
 				}
 			}
+			if = {
+				limit = {
+					is_pop_type = soldiers
+					owner = {
+						is_at_war = yes
+					}
+					is_employed = yes
+					workplace = {
+						has_deployed_units = yes
+					}
+				}
+				multiply = {
+					value = 5
+					desc = "QUALIFICATIONS_DEPLOYED_SERVICEMEN"
+				}
+			}
+			if = {
+				limit = {
+					owner = {
+						has_law = law_type:law_peasant_levies
+					}
+					NOT = { is_pop_type = aristocrats }
+				}
+				multiply = {
+					value = 0.1
+					desc = "QUALIFICATIONS_OFFICERS_PEASANT_LEVIES"
+				}
+			}
 		}
 		else_if = {
-				limit = {
-					is_peasant_under_serfdom = yes
+			limit = {
+				is_peasant_under_serfdom = yes
 			}
 			value = {
 				desc = "QUALIFICATIONS_PEASANTS_UNDER_SERFDOM"
 				value = 0
-			}
-		}
-		else = {
-			value = {
-				desc = "QUALIFICATIONS_INSUFFICIENT_LITERACY_DECAY"
-				value = -1
 			}
 		}
 	}
