@@ -1,20 +1,22 @@
 peasants = {
 	texture = "gfx/interface/icons/pops_icons/peasants.dds"
-	color = hsv{ 0.14 0.47 0.45 }
-	can_be_serf = yes
-	unemployment = no
+	color = hsv{ 0.58 0.338 0.812 }
+	subsistence_income = yes
 	can_always_hire = yes
-	start_quality_of_life = 1
-	wage_weight = 20 # Vanilla is 0.2
+	ignores_employment_proportionality = yes
+	start_quality_of_life = 5
+	wage_weight = 28
 	paid_private_wage = yes
-	dependent_wage = 25	# Vanilla is 0.25
+	consumption_mult = 1.0 	# The portion of Peasant buy packages that are added as state region consumption
+	dependent_wage = 25	# per year
+	unemployment = no
 
 	# 10% - 50% politically engaged
 	political_engagement_base = 0.1
-	political_engagement_literacy_factor = 0.4
+	political_engagement_literacy_factor = 0.5
 
 	political_engagement_mult = {
-		value = 1.0
+		value = 1
 
 		add = {
 			desc = "POP_STARVATION"
@@ -29,21 +31,7 @@ peasants = {
 				limit = {
 					is_in_severe_starvation = yes
 				}
-				value = 1
-			}
-		}
-
-		multiply = {
-			desc = "NO_LABOR_MOVEMENT"
-			value = 1.0
-
-			if = {
-				limit = {
-					owner = {
-						NOT = { has_technology_researched = labor_movement }
-					}
-				}
-				value = 0.5
+				value = 0.75
 			}
 		}
 
