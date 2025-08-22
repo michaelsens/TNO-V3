@@ -146,7 +146,7 @@ pm_diesel_trains = {
 
 	state_modifiers = {
 		workforce_scaled = {
-			state_infrastructure_add = 200
+			state_infrastructure_add = 20
 		}
 	}
 }
@@ -179,8 +179,36 @@ pm_diesel_trains_principle_transport_3 = {
 
 	state_modifiers = {
 		workforce_scaled = {
-			state_infrastructure_add = 55
+			state_infrastructure_add = 25
 			state_pollution_generation_add = 20
+		}
+	}
+}
+
+pm_airports = {
+	texture = "gfx/interface/icons/production_method_icons/bakeries.dds"
+	unlocking_technologies = {
+		airports
+	}
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_engines_add = 5
+			goods_input_oil_add = 20
+			goods_input_aeroplanes_add = 8
+			goods_input_utility_services_add = 5
+
+			goods_output_transportation_add = 100
+		}
+
+		level_scaled = {
+			building_employment_clerks_add = 15000
+			building_employment_bureaucrats_add = 10000
+			building_employment_engineers_add = 10000
+		}
+	}
+	state_modifiers = {
+		workforce_scaled = {
+			state_infrastructure_add = 100
 		}
 	}
 }

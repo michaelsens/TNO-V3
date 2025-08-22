@@ -77,3 +77,28 @@ pm_oil-fired_plant = {
 		}
 	}
 }
+
+pm_tno_nuclear_energy = {
+	texture = "gfx/interface/icons/production_method_icons/power_plant.dds"
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_uranium_rods_add = 60
+			goods_input_engines_add = 100
+			goods_input_tools_add = 75
+			# output goods
+			goods_output_electricity_add = 1500
+		}
+
+		level_scaled = {
+			# employment		
+			building_employment_machinists_add = 3000
+			building_employment_clerks_add = 500
+			building_employment_engineers_add = 4000
+			building_employment_academics_add = 750
+			building_employment_laborers_add = 3000
+
+		}
+	}
+}
