@@ -114,6 +114,66 @@ pm_switch_boards = {
 	}
 }
 
+pm_mainframe_computers = {
+	texture = "gfx/interface/icons/production_method_icons/telephone_switchboards.dds"
+	unlocking_technologies = {
+		tech_mainframe_computers
+	}
+	country_modifiers = {
+		workforce_scaled = {
+			country_bureaucracy_add = 800
+		}
+	}
+	state_modifiers = {
+		workforce_scaled = {
+			state_tax_capacity_add = 500
+		}
+	}
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_paper_add = 10
+			goods_input_telephones_add = 30
+			goods_input_electricity_add = 30
+			goods_input_semiconductors_add = 10
+			goods_input_plastic_add = 5
+		}
+		level_scaled = {
+			building_employment_bureaucrats_add = 15000
+			building_employment_engineers_add = 5000
+		}
+	}
+}
+pm_networked_pcs = {
+	texture = "gfx/interface/icons/production_method_icons/skyscraper_bureaucratic_nexus.dds"
+	unlocking_technologies = {
+		tech_microcomputers
+	}
+	country_modifiers = {
+		workforce_scaled = {
+			country_bureaucracy_add = 1500
+		}
+	}
+	state_modifiers = {
+		workforce_scaled = {
+			state_tax_capacity_add = 800
+		}
+	}
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_paper_add = 5
+			goods_input_telephones_add = 40
+			goods_input_electricity_add = 50
+			goods_input_semiconductors_add = 25
+			goods_input_plastic_add = 10
+			goods_input_professional_services_add = 10
+		}
+		level_scaled = {
+			building_employment_bureaucrats_add = 10000
+			building_employment_engineers_add = 2500
+		}
+	}
+}
+
 pm_hereditary_bureaucrats = {
 	texture = "gfx/interface/icons/production_method_icons/ownership_aristocrats.dds"
 
@@ -178,7 +238,7 @@ pm_scholastic_education = {
 	texture = "gfx/interface/icons/production_method_icons/scholastic_education.dds"
 	
 	country_modifiers = {
-		workforce_scaled = { 
+		workforce_scaled = { 
 			country_weekly_innovation_add = 4
 		}
 	}
@@ -190,12 +250,12 @@ pm_scholastic_education = {
 	
 		level_scaled = {
 			building_employment_clerks_add = 15000
-			building_employment_laborers_add = 15000
+			building_employment_academics_add = 10000
 		}
 	}
 	
 	state_modifiers = {
-		workforce_scaled = { 
+		workforce_scaled = { 
 			state_pop_qualifications_mult = 0.1
 		}	
 	}
@@ -209,7 +269,7 @@ pm_philosophy_department = {
 	}
 	
 	country_modifiers = {
-		workforce_scaled = { 
+		workforce_scaled = { 
 			country_weekly_innovation_add = 6
 		}
 	}
@@ -222,13 +282,13 @@ pm_philosophy_department = {
 		}
 		
 		level_scaled = {
-			building_employment_clerks_add = 17500
-			building_employment_laborers_add = 12500
+			building_employment_clerks_add = 10000
+			building_employment_academics_add = 20000
 		}					
 	}
 	
 	state_modifiers = {
-		workforce_scaled = { 
+		workforce_scaled = { 
 			state_pop_qualifications_mult = 0.15
 		}	
 	}
@@ -242,13 +302,13 @@ pm_analytical_philosophy_department = {
 	}
 	
 	country_modifiers = {
-		workforce_scaled = { 
+		workforce_scaled = { 
 			country_weekly_innovation_add = 10
 		}
 	}
 	
 	building_modifiers = {
-		workforce_scaled = { 
+		workforce_scaled = { 
 			goods_input_paper_add = 25
 			goods_input_telephones_add = 28
 			goods_input_electricity_add = 16
@@ -261,16 +321,91 @@ pm_analytical_philosophy_department = {
 		}
 		
 		level_scaled = {
-			building_employment_academics_add = 25000
+			building_employment_clerks_add = 5000
+			building_employment_academics_add = 30000
 		}					
 	}
 	
 	state_modifiers = {
-		workforce_scaled = { 
+		workforce_scaled = { 
 			state_pop_qualifications_mult = 0.2
 		}	
 	}
 }	
+
+pm_polytechnic_institutes = {
+	texture = "gfx/interface/icons/production_method_icons/philosophy_dept.dds"
+	
+	unlocking_technologies = {
+		polytechnic_education
+	}
+	
+	country_modifiers = {
+		workforce_scaled = { 
+			country_weekly_innovation_add = 14
+		}
+	}
+	
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_paper_add = 20
+			goods_input_telephones_add = 42
+			goods_input_electricity_add = 25
+			goods_input_chemicals_add = 7
+			goods_input_pharmaceuticals_add = 5
+			goods_input_engines_add = 5
+			goods_input_semiconductors_add = 6
+			goods_input_plastic_add = 5
+		}
+		
+		level_scaled = {
+			building_employment_academics_add = 40000
+		}					
+	}
+	
+	state_modifiers = {
+		workforce_scaled = { 
+			state_pop_qualifications_mult = 0.25
+		}	
+	}
+}
+
+pm_research_university = {
+	texture = "gfx/interface/icons/production_method_icons/analytical_philosophy_department.dds"
+	
+	unlocking_technologies = {
+		research_university
+	}
+	
+	country_modifiers = {
+		workforce_scaled = { 
+			country_weekly_innovation_add = 18
+		}
+	}
+	
+	building_modifiers = {
+		workforce_scaled = { 
+			goods_input_paper_add = 10
+			goods_input_telephones_add = 55
+			goods_input_electricity_add = 40
+			goods_input_chemicals_add = 15
+			goods_input_pharmaceuticals_add = 15
+			goods_input_engines_add = 8
+			goods_input_semiconductors_add = 15
+			goods_input_plastic_add = 12
+		}
+		
+		level_scaled = {
+			building_employment_academics_add = 45000
+		}					
+	}
+	
+	state_modifiers = {
+		workforce_scaled = { 
+			state_pop_qualifications_mult = 0.3
+		}	
+	}
+}
 
 pm_secular_academia = {
 	texture = "gfx/interface/icons/production_method_icons/ownership_academics.dds"
@@ -367,75 +502,136 @@ pm_airship_mooring_post = {
 
 pm_tno_scholastic_education = {
 	texture = "gfx/interface/icons/production_method_icons/scholastic_education.dds"
-	
 	building_modifiers = {
 		workforce_scaled = {
 			goods_input_paper_add = 5
-		}	
-	
+		}
 		level_scaled = {
-			building_employment_clerks_add = 1500
-			building_employment_laborers_add = 1500
+			building_employment_clerks_add = 15000
+			building_employment_academics_add = 15000
 		}
 	}
-	
 	state_modifiers = {
-		workforce_scaled = { 
+		workforce_scaled = {
 			state_pop_qualifications_mult = 0.04
 			state_education_access_add = 0.02
-		}	
+		}
 	}
 }
-
 pm_tno_philosophy_department = {
 	texture = "gfx/interface/icons/production_method_icons/philosophy_dept.dds"
-	
 	unlocking_technologies = {
 		dialectics
 	}
-	
-	
 	building_modifiers = {
 		workforce_scaled = {
 			goods_input_paper_add = 10
 		}
-		
 		level_scaled = {
-			building_employment_clerks_add = 1750
-			building_employment_laborers_add = 1250
-		}					
+			building_employment_clerks_add = 15000
+			building_employment_academics_add = 15000
+		}
 	}
-	
 	state_modifiers = {
-		workforce_scaled = { 
+		workforce_scaled = {
 			state_pop_qualifications_mult = 0.06
 			state_education_access_add = 0.03
-		}	
+		}
 	}
 }
-
 pm_tno_analytical_philosophy_department = {
 	texture = "gfx/interface/icons/production_method_icons/analytical_philosophy_department.dds"
-	
 	unlocking_technologies = {
 		analytical_philosophy
 	}
-	
 	building_modifiers = {
-		workforce_scaled = { 
+		workforce_scaled = {
 			goods_input_paper_add = 15
 		}
-		
 		level_scaled = {
-			building_employment_clerks_add = 2000
-			building_employment_laborers_add = 1000
-		}					
+			building_employment_clerks_add = 10000
+			building_employment_academics_add = 20000
+		}
 	}
-	
 	state_modifiers = {
-		workforce_scaled = { 
+		workforce_scaled = {
 			state_pop_qualifications_mult = 0.08
 			state_education_access_add = 0.04
-		}	
+		}
 	}
-}	
+}
+pm_tno_audiovisual_education = {
+	texture = "gfx/interface/icons/production_method_icons/analytical_philosophy_department.dds"
+	unlocking_technologies = {
+		tech_audiovisual_education
+	}
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_paper_add = 20
+			goods_input_electricity_add = 15
+			goods_input_telephones_add = 5
+			goods_input_plastic_add = 5
+		}
+		level_scaled = {
+			building_employment_clerks_add = 5000
+			building_employment_academics_add = 25000
+		}
+	}
+	state_modifiers = {
+		workforce_scaled = {
+			state_pop_qualifications_mult = 0.12
+			state_education_access_add = 0.05
+		}
+	}
+}
+pm_tno_computer_labs = {
+	texture = "gfx/interface/icons/production_method_icons/ownership_academics.dds"
+	unlocking_technologies = {
+		tech_computer_assisted_learning
+	}
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_paper_add = 15
+			goods_input_electricity_add = 30
+			goods_input_telephones_add = 10
+			goods_input_plastic_add = 15
+			goods_input_semiconductors_add = 10
+		}
+		level_scaled = {
+			building_employment_academics_add = 30000
+			building_employment_engineers_add = 5000
+		}
+	}
+	state_modifiers = {
+		workforce_scaled = {
+			state_pop_qualifications_mult = 0.18
+			state_education_access_add = 0.06
+		}
+	}
+}
+pm_tno_internet_learning = {
+	texture = "gfx/interface/icons/production_method_icons/ownership_academics.dds"
+	unlocking_technologies = {
+		tech_digital_curriculum
+	}
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_paper_add = 10
+			goods_input_electricity_add = 50
+			goods_input_telephones_add = 15
+			goods_input_plastic_add = 20
+			goods_input_semiconductors_add = 25
+			goods_input_professional_services_add = 10
+		}
+		level_scaled = {
+			building_employment_academics_add = 25000
+			building_employment_engineers_add = 10000
+		}
+	}
+	state_modifiers = {
+		workforce_scaled = {
+			state_pop_qualifications_mult = 0.25
+			state_education_access_add = 0.07
+		}
+	}
+}
