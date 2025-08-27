@@ -526,3 +526,81 @@ arc_welding = {
 		value = 1
 	}
 }
+
+tech_mainframe_computers = {
+	era = era_5
+	texture = "gfx/interface/icons/invention_icons/breif.dds"
+	category = society
+	unlocking_technologies = {
+		central_planning
+	}
+	ai_weight = {
+		value = 1
+	}
+}
+tech_microcomputers = {
+	era = era_7
+	texture = "gfx/interface/icons/invention_icons/breif.dds"
+	category = society
+	unlocking_technologies = {
+		tech_mainframe_computers
+	}
+	ai_weight = {
+		value = 1
+	}
+}
+tech_audiovisual_education = {
+	era = era_5
+	texture = "gfx/interface/icons/invention_icons/urbanization.dds"
+	category = society
+	unlocking_technologies = {
+		analytical_philosophy
+	}
+	ai_weight = {
+		value = 1
+	}
+}
+tech_computer_assisted_learning = {
+	era = era_7
+	texture = "gfx/interface/icons/invention_icons/urbanization.dds"
+	category = society
+	unlocking_technologies = {
+		tech_audiovisual_education
+	}
+	ai_weight = {
+		value = 1
+	}
+}
+tech_digital_curriculum = {
+	era = era_9
+	texture = "gfx/interface/icons/invention_icons/comm.dds"
+	category = society
+	unlocking_technologies = {
+		tech_computer_assisted_learning
+	}
+	ai_weight = {
+		value = 1
+	}
+}
+tech_prefabrication = {
+	era = era_6
+	texture = "gfx/interface/icons/invention_icons/steel_frame_buildings.dds"
+	category = society
+	unlocking_technologies = {
+		arc_welding
+	}
+	ai_weight = {
+		value = 1
+	}
+}
+tech_automated_construction = {
+	era = era_8
+	texture = "gfx/interface/icons/invention_icons/arc_welding.dds"
+	category = society
+	unlocking_technologies = {
+		tech_prefabrication
+	}
+	ai_weight = {
+		value = 1
+	}
+}
