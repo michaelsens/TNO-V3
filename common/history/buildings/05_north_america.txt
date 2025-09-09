@@ -87,19 +87,6 @@ reserves=1
 				}
 }
 			create_building={
-				building="building_port"
-				add_ownership={
-					building={
-						type="building_financial_district"
-						country="c:USA"
-						levels=1
-						region="STATE_DISTRICT_OF_COLUMBIA"
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_industrial_port" }
-			}
-			create_building={
 				building="office_building"
 				add_ownership={
 					building={
@@ -233,7 +220,7 @@ reserves=1
 					building={
 						type="building_financial_district"
 						country="c:USA"
-						levels=3
+						levels=1
 						region="STATE_LOUISIANA"
 					}
 					building={
@@ -271,7 +258,7 @@ reserves=1
 					building={
 						type="building_manor_house"
 						country="c:USA"
-						levels=4
+						levels=1
 						region="STATE_LOUISIANA"
 					}
 				}
@@ -759,7 +746,7 @@ reserves=1
 					building={
 						type="building_financial_district"
 						country="c:USA"
-						levels=5
+						levels=1
 						region="STATE_NEW_YORK"
 					}
 				}
@@ -793,7 +780,7 @@ reserves=1
 					building={
 						type="building_financial_district"
 						country="c:USA"
-						levels=7
+						levels=2
 						region="STATE_NEW_YORK"
 					}
 				}
@@ -819,7 +806,7 @@ reserves=1
 					building={
 						type="building_financial_district"
 						country="c:USA"
-						levels=5
+						levels=10
 						region="STATE_NEW_YORK"
 					}
 					building={
@@ -1010,12 +997,33 @@ reserves=1
 	s:STATE_VIRGINIA={
 		region_state:USA={
 			create_building={
+				building="building_shipyards"
+
+				add_ownership={
+
+					building={
+
+						type="building_financial_district"
+
+						country="c:USA"
+
+						levels=7
+
+						region="STATE_VIRGINIA"
+
+					}
+
+				}
+reserves=1
+				activate_production_methods={ "pm_basic_shipbuilding" "pm_merchant_guilds_building_shipyards" }
+			}
+			create_building={
 				building="building_logging_camp"
 				add_ownership={
 					building={
 						type="building_financial_district"
 						country="c:USA"
-						levels=7
+						levels=2
 						region="STATE_VIRGINIA"
 					}
 				}
@@ -1208,7 +1216,7 @@ reserves=1
 					building={
 						type="building_financial_district"
 						country="c:USA"
-						levels=3
+						levels=1
 						region="STATE_VIRGINIA"
 					}
 				}
@@ -1251,7 +1259,7 @@ reserves=1
 					building={
 						type="building_financial_district"
 						country="c:USA"
-						levels=3
+						levels=1
 						region="STATE_ALASKA"
 					}
 				}
@@ -2162,7 +2170,7 @@ reserves=1
 					building={
 						type="building_financial_district"
 						country="c:USA"
-						levels=4
+						levels=2
 						region="STATE_NORTH_DAKOTA"
 					}
 				}
@@ -2261,7 +2269,7 @@ reserves=1
 					building={
 						type="building_financial_district"
 						country="c:USA"
-						levels=3
+						levels=1
 						region="STATE_NEBRASKA"
 					}
 				}
@@ -2584,7 +2592,7 @@ reserves=1
 					building={
 						type="building_financial_district"
 						country="c:USA"
-						levels=2
+						levels=8
 						region="STATE_OKLAHOMA"
 					}
 				}
@@ -2840,7 +2848,7 @@ reserves=1
 					building={
 						type="building_financial_district"
 						country="c:USA"
-						levels=2
+						levels=4
 						region="STATE_MISSOURI"
 					}
 				}
@@ -2866,7 +2874,7 @@ reserves=1
 					building={
 						type="building_financial_district"
 						country="c:USA"
-						levels=7
+						levels=11
 						region="STATE_MISSOURI"
 					}
 				}
@@ -3444,7 +3452,7 @@ reserves=1
 					building={
 						type="building_financial_district"
 						country="c:USA"
-						levels=1
+						levels=5
 						region="STATE_WISCONSIN"
 					}
 				}
@@ -3991,7 +3999,7 @@ reserves=1
 
 						country="c:USA"
 
-						levels=3
+						levels=7
 
 						region="STATE_INDIANA"
 
@@ -4583,7 +4591,7 @@ reserves=1
 
 						country="c:USA"
 
-						levels=1
+						levels=5
 
 						region="STATE_MICHIGAN"
 
@@ -6422,7 +6430,7 @@ reserves=1
 
 						country="c:USA"
 
-						levels=4
+						levels=1
 
 						region="STATE_FLORIDA"
 
@@ -6695,7 +6703,7 @@ reserves=1
 
 						country="c:USA"
 
-						levels=4
+						levels=1
 
 						region="STATE_FLORIDA"
 
@@ -6834,7 +6842,7 @@ reserves=1
 
 						country="c:USA"
 
-						levels=6
+						levels=2
 
 						region="STATE_GEORGIA"
 
@@ -6918,7 +6926,7 @@ reserves=1
 
 						country="c:USA"
 
-						levels=4
+						levels=1
 
 						region="STATE_GEORGIA"
 
@@ -7086,7 +7094,7 @@ reserves=1
 
 						country="c:USA"
 
-						levels=2
+						levels=7
 
 						region="STATE_GEORGIA"
 
@@ -7472,7 +7480,7 @@ reserves=1
 
 						country="c:USA"
 
-						levels=2
+						levels=8
 
 						region="STATE_MARYLAND"
 
@@ -7781,27 +7789,6 @@ reserves=1
 	s:STATE_DELAWARE={
 		region_state:USA={
 			create_building={
-				building="building_fishing_wharf"
-
-				add_ownership={
-
-					building={
-
-						type="building_financial_district"
-
-						country="c:USA"
-
-						levels=1
-
-						region="STATE_DELAWARE"
-
-					}
-
-				}
-reserves=1
-				activate_production_methods={ "pm_steam_trawlers" "pm_unrefrigerated" "pm_merchant_guilds_building_fishing_wharf" }
-			}
-			create_building={
 				building="building_artillery_foundries"
 
 				add_ownership={
@@ -7854,7 +7841,7 @@ reserves=1
 
 						country="c:USA"
 
-						levels=1
+						levels=4
 
 						region="STATE_DELAWARE"
 
@@ -8425,7 +8412,7 @@ reserves=1
 
 						country="c:USA"
 
-						levels=2
+						levels=8
 
 						region="STATE_PENNSYLVANIA"
 
@@ -8551,7 +8538,7 @@ reserves=1
 
 						country="c:USA"
 
-						levels=7
+						levels=2
 
 						region="STATE_PENNSYLVANIA"
 
@@ -8807,7 +8794,7 @@ reserves=1
 
 						country="c:USA"
 
-						levels=8
+						levels=1
 
 						region="STATE_NEW_JERSEY"
 
@@ -8870,7 +8857,7 @@ reserves=1
 
 						country="c:USA"
 
-						levels=2
+						levels=7
 
 						region="STATE_NEW_JERSEY"
 
@@ -8891,7 +8878,7 @@ reserves=1
 
 						country="c:USA"
 
-						levels=1
+						levels=7
 
 						region="STATE_NEW_JERSEY"
 
@@ -8905,6 +8892,19 @@ reserves=1
 	}
 	s:STATE_ILLINOIS={
 		region_state:USA={
+			create_building={
+				building="automotive_industry"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:USA"
+						levels=9
+						region="STATE_ILLINOIS"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "" }
+			}
 			create_building={
 				building="building_nuclear_enrichtigment_facility"
 
@@ -9866,7 +9866,7 @@ reserves=1
 
 						country="c:USA"
 
-						levels=3
+						levels=1
 
 						region="STATE_CONNECTICUT"
 
@@ -10248,7 +10248,7 @@ reserves=1
 
 						country="c:USA"
 
-						levels=1
+						levels=5
 
 						region="STATE_MASSACHUSETTS"
 
@@ -10311,7 +10311,7 @@ reserves=1
 
 						country="c:USA"
 
-						levels=5
+						levels=1
 
 						region="STATE_MASSACHUSETTS"
 
@@ -10332,7 +10332,7 @@ reserves=1
 
 						country="c:USA"
 
-						levels=7
+						levels=1
 
 						region="STATE_MASSACHUSETTS"
 
@@ -10842,27 +10842,6 @@ reserves=1
 	s:STATE_NORTH_CAROLINA={
 		region_state:USA={
 			create_building={
-				building="building_fishing_wharf"
-
-				add_ownership={
-
-					building={
-
-						type="building_financial_district"
-
-						country="c:USA"
-
-						levels=1
-
-						region="STATE_NORTH_CAROLINA"
-
-					}
-
-				}
-reserves=1
-				activate_production_methods={ "pm_steam_trawlers" "pm_unrefrigerated" "pm_merchant_guilds_building_fishing_wharf" }
-			}
-			create_building={
 				building="building_tooling_workshops"
 
 				add_ownership={
@@ -10968,27 +10947,6 @@ reserves=1
 				activate_production_methods={ "pm_steam_trains" "pm_wooden_passenger_carriages" }
 			}
 			create_building={
-				building="building_fishing_wharf"
-
-				add_ownership={
-
-					building={
-
-						type="building_financial_district"
-
-						country="c:USA"
-
-						levels=1
-
-						region="STATE_NORTH_CAROLINA"
-
-					}
-
-				}
-reserves=1
-				activate_production_methods={ "pm_steam_trawlers" "pm_unrefrigerated" "pm_merchant_guilds_building_fishing_wharf" }
-			}
-			create_building={
 				building="building_coal_plant"
 
 				add_ownership={
@@ -11062,7 +11020,7 @@ reserves=1
 
 						country="c:USA"
 
-						levels=6
+						levels=1
 
 						region="STATE_NORTH_CAROLINA"
 
@@ -11791,7 +11749,7 @@ reserves=1
 
 						country="c:JAP"
 
-						levels=2
+						levels=1
 
 						region="STATE_HAWAIIAN_ISLANDS"
 
@@ -12433,7 +12391,7 @@ reserves=1
 
 						country="c:CAN"
 
-						levels=2
+						levels=6
 
 						region="STATE_QUEBEC"
 
@@ -12528,27 +12486,6 @@ reserves=1
 				activate_production_methods={ "pm_steam_trains" "pm_wooden_passenger_carriages" }
 			}
 			create_building={
-				building="building_fishing_wharf"
-
-				add_ownership={
-
-					building={
-
-						type="building_financial_district"
-
-						country="c:CAN"
-
-						levels=2
-
-						region="STATE_QUEBEC"
-
-					}
-
-				}
-reserves=1
-				activate_production_methods={ "pm_steam_trawlers" "pm_unrefrigerated" "pm_merchant_guilds_building_fishing_wharf" }
-			}
-			create_building={
 				building="building_coal_plant"
 
 				add_ownership={
@@ -12622,7 +12559,7 @@ reserves=1
 
 						country="c:CAN"
 
-						levels=9
+						levels=3
 
 						region="STATE_QUEBEC"
 
@@ -12853,7 +12790,7 @@ reserves=1
 
 						country="c:CAN"
 
-						levels=2
+						levels=3
 
 						region="STATE_QUEBEC"
 
@@ -13335,7 +13272,7 @@ reserves=1
 
 						country="c:CAN"
 
-						levels=4
+						levels=2
 
 						region="STATE_MANITOBA"
 
@@ -13607,7 +13544,7 @@ reserves=1
 
 						country="c:USA"
 
-						levels=5
+						levels=1
 
 						region="STATE_TEXAS"
 
@@ -13649,7 +13586,7 @@ reserves=1
 
 						country="c:USA"
 
-						levels=17
+						levels=7
 
 						region="STATE_TEXAS"
 
@@ -13733,7 +13670,7 @@ reserves=1
 
 						country="c:USA"
 
-						levels=2
+						levels=7
 
 						region="STATE_TEXAS"
 
@@ -14094,7 +14031,7 @@ reserves=1
 
 						country="c:USA"
 
-						levels=4
+						levels=8
 
 						region="STATE_NEVADA"
 
@@ -14526,7 +14463,7 @@ reserves=1
 
 						country="c:JAP"
 
-						levels=4
+						levels=1
 
 						region="STATE_CALIFORNIA"
 
@@ -14676,7 +14613,7 @@ reserves=1
 
 						country="c:USA"
 
-						levels=4
+						levels=1
 
 						region="STATE_CALIFORNIA"
 
@@ -14823,7 +14760,7 @@ reserves=1
 
 						country="c:USA"
 
-						levels=8
+						levels=4
 
 						region="STATE_CALIFORNIA"
 
@@ -15000,7 +14937,7 @@ reserves=1
 
 						country="c:USA"
 
-						levels=5
+						levels=11
 
 						region="STATE_CALIFORNIA"
 
@@ -15210,7 +15147,7 @@ reserves=1
 
 						country="c:USA"
 
-						levels=8
+						levels=2
 
 						region="STATE_CALIFORNIA"
 
@@ -15538,7 +15475,7 @@ reserves=1
 
 						country="c:MEX"
 
-						levels=4
+						levels=1
 
 						region="STATE_RIO_GRANDE"
 
@@ -16077,7 +16014,7 @@ reserves=1
 
 						country="c:MEX"
 
-						levels=1
+						levels=6
 
 						region="STATE_MEXICO"
 
@@ -16365,27 +16302,6 @@ reserves=1
 				activate_production_methods={ "default_building_tobacco_plantation" "pm_road_carts"  }
 			}			
 			create_building={
-				building="building_fishing_wharf"
-			
-				add_ownership={
-			
-					building={
-			
-						type="building_financial_district"
-			
-						country="c:MEX"
-			
-						levels=2
-			
-						region="STATE_VERACRUZ"
-			
-					}
-			
-				}
-reserves=1
-				activate_production_methods={ "pm_simple_fishing" "pm_unrefrigerated" "pm_merchant_guilds_building_fishing_wharf" }
-			}
-			create_building={
 				building="building_port"
 
 				add_ownership={
@@ -16396,7 +16312,7 @@ reserves=1
 
 						country="c:MEX"
 
-						levels=2
+						levels=1
 
 						region="STATE_VERACRUZ"
 
@@ -16532,7 +16448,7 @@ reserves=1
 						country="c:MEX"
 
 
-						levels=4
+						levels=1
 
 
 						region="STATE_GUERRERO"
@@ -16837,7 +16753,7 @@ reserves=1
 
 						country="c:MEX"
 
-						levels=4
+						levels=1
 
 						region="STATE_JALISCO"
 
