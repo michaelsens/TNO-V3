@@ -3174,6 +3174,7 @@ reserves=1
 			}
 		}
 	}
+	}
 	s:STATE_EAST_PRUSSIA={
 		region_state:GER={
 			create_building={
@@ -4064,6 +4065,42 @@ reserves=1
 	s:STATE_CENTRAL_HUNGARY={
 		region_state:HUN={
 			create_building={
+				building="automotive_industry"
+				add_ownership={
+					building={
+						type="building_food_industry"
+						country="c:HUN"
+						levels=2
+						region="STATE_CENTRAL_HUNGARY"
+					}
+				}
+				reserves=1
+			}
+			create_building={
+				building="automotive_industry"
+				add_ownership={
+					building={
+						type="building_electrics_industry"
+						country="c:HUN"
+						levels=2
+						region="STATE_CENTRAL_HUNGARY"
+					}
+				}
+				reserves=1
+			}
+			create_building={
+				building="automotive_industry"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:HUN"
+						levels=2
+						region="STATE_CENTRAL_HUNGARY"
+					}
+				}
+				reserves=1
+			}
+			create_building={
 				building="building_trade_center"
 				add_ownership={
 					building={
@@ -4081,15 +4118,13 @@ reserves=1
 
 				add_ownership={
 
-					building={
-
-						type="building_financial_district"
+					country={
 
 						country="c:HUN"
 
 						levels=6
 
-						region="STATE_INGRIA"
+						region="STATE_CENTRAL_HUNGARY"
 
 					}
 
